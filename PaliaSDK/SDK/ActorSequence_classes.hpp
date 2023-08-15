@@ -1,0 +1,81 @@
+#pragma once
+
+// Dumped with Dumper-7!
+
+#ifdef _MSC_VER
+	#pragma pack(push, 0x01)
+#endif
+
+namespace SDK
+{
+//---------------------------------------------------------------------------------------------------------------------
+// CLASSES
+//---------------------------------------------------------------------------------------------------------------------
+
+// 0x28 (0x90 - 0x68)
+// Class ActorSequence.ActorSequence
+class UActorSequence : public UMovieSceneSequence
+{
+public:
+	class UMovieScene*                           MovieScene;                                        // 0x68(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FActorSequenceObjectReferenceMap      ObjectReferences;                                  // 0x70(0x20)(NativeAccessSpecifierPrivate)
+
+	static class UClass* StaticClass()
+	{
+		static class UClass* Clss = nullptr;
+
+		if (!Clss)
+			Clss = UObject::FindClassFast("ActorSequence");
+
+		return Clss;
+	}
+
+};
+
+// 0x30 (0xD0 - 0xA0)
+// Class ActorSequence.ActorSequenceComponent
+class UActorSequenceComponent : public UActorComponent
+{
+public:
+	struct FMovieSceneSequencePlaybackSettings   PlaybackSettings;                                  // 0xA0(0x20)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	class UActorSequence*                        Sequence;                                          // 0xC0(0x8)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UActorSequencePlayer*                  SequencePlayer;                                    // 0xC8(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+	static class UClass* StaticClass()
+	{
+		static class UClass* Clss = nullptr;
+
+		if (!Clss)
+			Clss = UObject::FindClassFast("ActorSequenceComponent");
+
+		return Clss;
+	}
+
+	void StopSequence();
+	void PlaySequence();
+	void PauseSequence();
+};
+
+// 0x0 (0x4A8 - 0x4A8)
+// Class ActorSequence.ActorSequencePlayer
+class UActorSequencePlayer : public UMovieSceneSequencePlayer
+{
+public:
+
+	static class UClass* StaticClass()
+	{
+		static class UClass* Clss = nullptr;
+
+		if (!Clss)
+			Clss = UObject::FindClassFast("ActorSequencePlayer");
+
+		return Clss;
+	}
+
+};
+
+}
+
+#ifdef _MSC_VER
+	#pragma pack(pop)
+#endif

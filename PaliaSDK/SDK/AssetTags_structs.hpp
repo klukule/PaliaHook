@@ -1,0 +1,32 @@
+#pragma once
+
+// Dumped with Dumper-7!
+
+#ifdef _MSC_VER
+	#pragma pack(push, 0x01)
+#endif
+
+namespace SDK
+{
+//---------------------------------------------------------------------------------------------------------------------
+// ENUMS
+//---------------------------------------------------------------------------------------------------------------------
+
+enum class ECollectionScriptingShareType : uint8
+{
+	ECollectionScriptingShareType__Local = 0,
+	ECollectionScriptingShareType__Private = 1,
+	ECollectionScriptingShareType__Shared = 2,
+	ECollectionScriptingShareType__ECollectionScriptingShareType_MAX = 3,
+};
+
+
+//---------------------------------------------------------------------------------------------------------------------
+// STRUCTS
+//---------------------------------------------------------------------------------------------------------------------
+
+}
+
+#ifdef _MSC_VER
+	#pragma pack(pop)
+#endif
