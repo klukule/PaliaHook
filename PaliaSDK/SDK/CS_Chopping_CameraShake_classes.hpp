@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CS_Chopping_CameraShake_C");
-
+		static class UClass* Clss = UObject::FindClassFast("CS_Chopping_CameraShake_C");
 		return Clss;
 	}
 

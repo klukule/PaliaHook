@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -99,7 +99,7 @@ struct UBookViewerWidget_GetContentForPage_Params
 {
 public:
 	int32                                        Index;                                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20C3[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2174[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  ReturnValue;                                       // 0x8(0x18)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -110,7 +110,7 @@ struct UDetailUserWidget_UpdateDetail_Params
 public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20CC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_218E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -167,7 +167,7 @@ public:
 	int32                                        Index;                                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RewardIndex;                                       // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20DC[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21B3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -253,7 +253,7 @@ struct UMailboxViewerUserWidget_GetNumberOfMessagesForFilter_Params
 {
 public:
 	enum class EMailboxViewerFilter              Filter;                                            // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20EA[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_21CB[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -280,7 +280,7 @@ struct UMailboxViewerUserWidget_GetMailMessage_Params
 {
 public:
 	int32                                        Index;                                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20EF[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_21D7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FMailMessageWidgetData                ReturnValue;                                       // 0x8(0x148)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -291,7 +291,7 @@ struct UMailboxViewerUserWidget_GetIndexOfMailMessage_Params
 public:
 	struct FMailMessageWidgetData                Data;                                              // 0x0(0x148)(Parm, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x148(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20F3[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21DA[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -348,6 +348,30 @@ public:
 	class FString                                Message;                                           // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// 0x10 (0x10 - 0x0)
+// Function ValeriaUI.VAL_AsyncActionRequestStorefront.RequestStorefront
+struct UVAL_AsyncActionRequestStorefront_RequestStorefront_Params
+{
+public:
+	class ULocalPlayer*                          LP;                                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UVAL_AsyncActionRequestStorefront*     ReturnValue;                                       // 0x8(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x20 (0x20 - 0x0)
+// DelegateFunction ValeriaUI.VAL_AsyncActionRequestStorefront.OnRequestStorefrontSuccess__DelegateSignature
+struct UVAL_AsyncActionRequestStorefront_OnRequestStorefrontSuccess__DelegateSignature_Params
+{
+public:
+	struct FVALUI_PremiumStorefrontResponse      Response;                                          // 0x0(0x20)(Parm, NativeAccessSpecifierPublic)
+};
+
+// 0x0 (0x0 - 0x0)
+// DelegateFunction ValeriaUI.VAL_AsyncActionRequestStorefront.OnRequestStorefrontFailure__DelegateSignature
+struct UVAL_AsyncActionRequestStorefront_OnRequestStorefrontFailure__DelegateSignature_Params
+{
+public:
+};
+
 // 0x990 (0x990 - 0x0)
 // Function ValeriaUI.VALUI_AsyncUpdateLoadout.UpdateLoadout
 struct UVALUI_AsyncUpdateLoadout_UpdateLoadout_Params
@@ -399,10 +423,10 @@ struct UVALUI_BoundInputActionStateWidget_UpdateInputActionState_Implementation_
 public:
 	struct FKey                                  Key;                                               // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETriggerEvent                     LatestTriggerEvent;                                // 0x18(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_211A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2245[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        OngoingDuration;                                   // 0x1C(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        HoldTimeThreshold;                                 // 0x20(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_211B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2246[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -428,7 +452,7 @@ struct UVALUI_Button_Styled_ShowCursor_Params
 public:
 	class UWidget*                               InCursor;                                          // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2133[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2268[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -526,7 +550,46 @@ struct UVALUI_NameValidator_IsNameValid_Params
 public:
 	class FString                                InCharacterName;                                   // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2156[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_22A5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+};
+
+// 0x1 (0x1 - 0x0)
+// Function ValeriaUI.VALUI_CharacterCreationScreenBase.SetEnableContinueButton
+struct UVALUI_CharacterCreationScreenBase_SetEnableContinueButton_Params
+{
+public:
+	bool                                         bEnable;                                           // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x1 (0x1 - 0x0)
+// Function ValeriaUI.VALUI_CharacterCreationScreenBase.SetEnableAllButtons
+struct UVALUI_CharacterCreationScreenBase_SetEnableAllButtons_Params
+{
+public:
+	bool                                         bEnable;                                           // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x718 (0x718 - 0x0)
+// DelegateFunction ValeriaUI.VALUI_CharacterCreationScreenBase.OnCommitCharacter__DelegateSignature
+struct UVALUI_CharacterCreationScreenBase_OnCommitCharacter__DelegateSignature_Params
+{
+public:
+	struct FVALDTOS_MetaCharacterFormat          CommitedCharacter;                                 // 0x0(0x718)(Parm, NativeAccessSpecifierPublic)
+};
+
+// 0x0 (0x0 - 0x0)
+// DelegateFunction ValeriaUI.VALUI_CharacterCreationScreenBase.OnBodyTypeSelectionConfirm__DelegateSignature
+struct UVALUI_CharacterCreationScreenBase_OnBodyTypeSelectionConfirm__DelegateSignature_Params
+{
+public:
+};
+
+// 0x1 (0x1 - 0x0)
+// DelegateFunction ValeriaUI.VALUI_CharacterCreationScreenBase.OnBodyTypeSelectionChange__DelegateSignature
+struct UVALUI_CharacterCreationScreenBase_OnBodyTypeSelectionChange__DelegateSignature_Params
+{
+public:
+	bool                                         bFirstSelection;                                   // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // 0x18 (0x18 - 0x0)
@@ -544,7 +607,7 @@ struct UVALUI_CharacterCreationScreenBase_HandleCharacterNameChanged_Params
 public:
 	class FText                                  InCharacterName;                                   // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EVAL_CharacterNameType            InCharacterNameType;                               // 0x18(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_215F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_22CA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -562,7 +625,7 @@ struct UVALUI_CharacterCreationStatics_IsCharacterNameValidityResponseValid_Para
 public:
 	struct FVALUI_CharacterNameValidityResponse  Response;                                          // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2165[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_22DB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -613,7 +676,7 @@ public:
 	class FName                                  LoadoutSlotName;                                   // 0x8(0x8)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVALUI_CharCustomization_LoadoutSlotData LoadoutSlotData;                                   // 0x10(0x38)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         bSuccess;                                          // 0x48(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2174[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_22F9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x918 (0x918 - 0x0)
@@ -654,7 +717,7 @@ struct UVALUI_CharacterMovementStick_Mobile_OnUpdateMovmentVirtualStick_Params
 {
 public:
 	bool                                         TouchControlFlag;                                  // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2181[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_231D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             Pos;                                               // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             ControlVector;                                     // 0x18(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -675,7 +738,7 @@ public:
 	float                                        ValidTouchRadius;                                  // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MovementValidDistanceTemp;                         // 0x14(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WalkBoundaryDistanceTemp;                          // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2187[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2333[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x88 (0x88 - 0x0)
@@ -755,7 +818,7 @@ struct UVALUI_ChatInputBar_HandleOnTextCommitted_Params
 public:
 	class FText                                  InText;                                            // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class ETextCommit                       InCommitMethod;                                    // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21A3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2396[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -788,7 +851,7 @@ struct UVALUI_ChatInputBar_HandleOnDisplayCharacterNameSuggestions_Params
 public:
 	class FString                                CharacterNameSubstr;                               // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaxSuggestionsNum;                                 // 0x10(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21AA[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23AA[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x88 (0x88 - 0x0)
@@ -831,7 +894,7 @@ struct UVALUI_ChatInputBar_DisplayActiveCommandHint_Params
 public:
 	class UVAL_ChatCommand_Base*                 Command;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDisplay;                                          // 0x8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21AE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23C3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -862,7 +925,7 @@ struct UVALUI_ChatInputBar_ChangeMessageTarget_Params
 public:
 	struct FMessageTarget                        MessageTarget;                                     // 0x0(0x28)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x28(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21B7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23D2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xD8 (0xD8 - 0x0)
@@ -941,11 +1004,11 @@ struct UVALUI_ChatPanelBase_TryGetTabAndChannelFromMessageConfig_Params
 {
 public:
 	struct FVALUI_ChatMessageConfig              Config;                                            // 0x0(0xC)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21DE[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2420[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVALUI_ChatTab                        OutTab;                                            // 0x10(0x60)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FVALUI_ChatChannel                    OutChannel;                                        // 0x70(0x88)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xF8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21E0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2423[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -988,7 +1051,7 @@ struct UVALUI_ChatPanelBase_RemoveTabChannel_Params
 public:
 	struct FVALUI_ChatTab                        Tab;                                               // 0x0(0x60)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	int32                                        ChannelIndex;                                      // 0x60(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21EF[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2443[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x78 (0x78 - 0x0)
@@ -1015,7 +1078,7 @@ public:
 	struct FVALUI_ChatTab                        Tab;                                               // 0x0(0x60)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FVALUI_ChatChannel                    Channel;                                           // 0x60(0x88)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVALUI_ChatMessageConfig              Config;                                            // 0xE8(0xC)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21F6[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2449[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -1025,7 +1088,7 @@ struct UVALUI_ChatPanelBase_HandleRemoveSidePanelChannel_Params
 public:
 	class UWidget*                               SidePanel;                                         // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ChannelIndex;                                      // 0x8(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21FA[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2451[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -1042,7 +1105,7 @@ struct UVALUI_ChatPanelBase_HandleOnChatroomJoined_Params
 {
 public:
 	bool                                         bWasSuccess;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21FF[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2458[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                RoomId;                                            // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1094,7 +1157,7 @@ public:
 	class UWidget*                               SidePanel;                                         // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVALUI_ChatChannel                    Channel;                                           // 0x8(0x88)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                        ChannelIndex;                                      // 0x90(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_220F[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2473[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -1137,7 +1200,7 @@ public:
 	class UWidget*                               MessagePanel;                                      // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FValeriaChatMessage                   ChatMessage;                                       // 0x8(0x78)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVALUI_ChatMessageConfig              MessageConfig;                                     // 0x80(0xC)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2219[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2488[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -1209,7 +1272,7 @@ public:
 	struct FVALUI_ChatChannel                    InChannel;                                         // 0x0(0x88)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FMessageTarget                        InMessageTarget;                                   // 0x88(0x28)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xB0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2245[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_24DB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xB0 (0xB0 - 0x0)
@@ -1263,7 +1326,7 @@ public:
 	struct FCrafterConfig                        CrafterConfig;                                     // 0x0(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVALUI_Crafter                        CrafterData;                                       // 0xE8(0x50)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x138(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_225C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_24FE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x320 (0x320 - 0x0)
@@ -1412,7 +1475,7 @@ public:
 	class UWidget*                               InstigatingWidget;                                 // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVALUI_ErrorDisplayPayload            ErrorDisplayPayload;                               // 0x8(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22AA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2579[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1447,7 +1510,7 @@ public:
 	class FString                                UserNameInput;                                     // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FText>                          OutErrors;                                         // 0x10(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22BE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_25A5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -1703,7 +1766,7 @@ struct UVALUI_NewsInbox_Widget_GetNewsInboxMessageDefinitionFromRewardIndex_Para
 public:
 	int32                                        Index;                                             // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Claimed;                                           // 0x4(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_230A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26B0[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVALUI_NewsInboxMessageDataAsset*      ReturnValue;                                       // 0x8(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1713,7 +1776,7 @@ struct UVALUI_NewsInbox_Widget_GetNewsInboxMessageDefinitionByType_Params
 {
 public:
 	enum class EVAL_NewsInboxMessageType         EMessageType;                                      // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_230F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26B7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVALUI_NewsInboxMessageDataAsset*      ReturnValue;                                       // 0x8(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1753,7 +1816,7 @@ public:
 	class FText                                  NotificationText;                                  // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UTexture2D>             NotificationIcon;                                  // 0x18(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x48(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_232F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26C5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -1781,7 +1844,7 @@ struct UVALUI_NotificationQueue_TryDismissNotification_Params
 public:
 	struct FGuid                                 NotificationId;                                    // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2340[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26D1[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -1870,7 +1933,7 @@ public:
 	struct FGeometry                             InGeometry;                                        // 0x0(0x40)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FPointerEvent                         InMouseEvent;                                      // 0x40(0x98)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         bInvertYAxis;                                      // 0xD8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2363[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2715[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1912,7 +1975,7 @@ struct UVALUI_UIManagerWidgetBase_NavigateToRecentPhotos_Params
 public:
 	struct FGuid                                 IdOfPhotoToNavigateTo;                             // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShouldSelectPhoto;                                // 0x10(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2370[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2724[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -1922,7 +1985,7 @@ struct UVALUI_UIManagerWidgetBase_NavigateToOnlinePhotoAlbum_Params
 public:
 	struct FGuid                                 IdOfPhotoToNavigateTo;                             // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShouldSelectPhoto;                                // 0x10(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2376[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_272C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -2005,7 +2068,7 @@ public:
 	class AActor*                                RepairStationActor;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowPurchases;                                   // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowRepairKitsFromStorage;                       // 0x9(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2388[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2755[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -2137,7 +2200,7 @@ struct UVALUI_UIManagerWidgetBase_Implementation_NavigateToRecentPhotos_Params
 public:
 	struct FGuid                                 IdOfPhotoToNavigateTo;                             // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShouldSelectPhoto;                                // 0x10(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23B9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_277B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -2147,7 +2210,7 @@ struct UVALUI_UIManagerWidgetBase_Implementation_NavigateToOnlinePhotoAlbum_Para
 public:
 	struct FGuid                                 IdOfPhotoToNavigateTo;                             // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShouldSelectPhoto;                                // 0x10(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23BF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_277E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xE (0xE - 0x0)
@@ -2165,7 +2228,7 @@ struct UVALUI_UIManagerWidgetBase_Implementation_HasAnyHousingPlotsTeleportOptio
 public:
 	class ATeleporterActor*                      Teleporter;                                        // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23CB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2784[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -2190,7 +2253,7 @@ struct UVALUI_PregameUIManager_TryGetCachedCharacters_Params
 public:
 	TArray<struct FVALDTOS_MetaCharacterFormat>  OutOurCharacters;                                  // 0x0(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23DF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2790[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -2207,6 +2270,14 @@ struct UVALUI_PregameUIManager_OnPregameStateChange__DelegateSignature_Params
 {
 public:
 	enum class EVALUI_PregameState               State;                                             // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x1 (0x1 - 0x0)
+// DelegateFunction ValeriaUI.VALUI_PregameUIManager.OnLobbyStateChange__DelegateSignature
+struct UVALUI_PregameUIManager_OnLobbyStateChange__DelegateSignature_Params
+{
+public:
+	enum class EVALUI_LobbyState                 State;                                             // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // 0x4 (0x4 - 0x0)
@@ -2310,7 +2381,7 @@ struct UVALUI_PregameUIManager_GetCachedCharacterAtIndex_Checked_Params
 {
 public:
 	int32                                        Index;                                             // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2414[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_27B8[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVALDTOS_MetaCharacterFormat          OutCharacter;                                      // 0x8(0x718)(Parm, OutParm, NativeAccessSpecifierPublic)
 };
 
@@ -2483,12 +2554,12 @@ struct UVALUI_PremiumStorefrontWidgetBase_HandleStorefrontError_Params
 public:
 };
 
-// 0x10 (0x10 - 0x0)
+// 0x20 (0x20 - 0x0)
 // Function ValeriaUI.VALUI_PremiumStorefrontWidgetBase.HandleStorefrontAvailable
 struct UVALUI_PremiumStorefrontWidgetBase_HandleStorefrontAvailable_Params
 {
 public:
-	TArray<struct FVALUI_PremiumStorefrontWidgetModel> Models;                                            // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FVALUI_PremiumStorefrontResponse      Response;                                          // 0x0(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // 0x1 (0x1 - 0x0)
@@ -2505,7 +2576,7 @@ struct UVALUI_PremiumStorefrontWidgetBase_CreateStorefrontGrid_Params
 {
 public:
 	int32                                        WidgetsPerRow;                                     // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2492[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_27FA[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVALUI_PremiumStorefrontWidgetModel> Models;                                            // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -2516,7 +2587,7 @@ struct UVALUI_PremiumStoreScreenWidgetBase_OnStateChanged__DelegateSignature_Par
 public:
 	class UVALUI_PremiumStoreScreenWidgetBase*   StoreWidget;                                       // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVALUI_PremiumStoreState          State;                                             // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2499[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_280E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -2551,6 +2622,25 @@ struct UVALUI_PremiumStoreScreenWidgetBase_GetPremiumStoreState_Params
 {
 public:
 	enum class EVALUI_PremiumStoreState          ReturnValue;                                       // 0x0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x158 (0x158 - 0x0)
+// Function ValeriaUI.VALUI_PremiumStoreFunctionLibrary.GetPetPurchaseBonusFromPurchaseRewards
+struct UVALUI_PremiumStoreFunctionLibrary_GetPetPurchaseBonusFromPurchaseRewards_Params
+{
+public:
+	struct FVALUI_PremiumStorefrontPurchaseRewards PurchaseRewards;                                   // 0x0(0x10)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FVAL_CharacterCustomization_PetPurchaseBonus ReturnValue;                                       // 0x10(0x148)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+
+// 0x1A8 (0x1A8 - 0x0)
+// Function ValeriaUI.VALUI_PremiumStoreFunctionLibrary.GetNewPetsForBonusReceivedModal
+struct UVALUI_PremiumStoreFunctionLibrary_GetNewPetsForBonusReceivedModal_Params
+{
+public:
+	struct FVAL_CharacterCustomization_PetPurchaseBonus PetPurchaseBonus;                                  // 0x0(0x148)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TSet<struct FGuid>                           NewEntitlements;                                   // 0x148(0x50)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>> ReturnValue;                                       // 0x198(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
 // 0x8 (0x8 - 0x0)
@@ -2590,7 +2680,7 @@ struct UVALUI_RadioSlider_SetIndex_Params
 public:
 	int32                                        Index;                                             // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSkipSliderAnimation;                              // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24BF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2862[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -2608,10 +2698,10 @@ struct UVALUI_RadioSlider_OnSliderChanged__DelegateSignature_Params
 public:
 	class UUserWidget*                           PreviousElementWidget;                             // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PreviousElementIndex;                              // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24C5[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_286E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UUserWidget*                           NewElementWidget;                                  // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        NewElementIndex;                                   // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24C6[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2871[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -2630,7 +2720,7 @@ struct UVALUI_RadioSlider_OnElementWidgetCreated__DelegateSignature_Params
 public:
 	class UUserWidget*                           ElementWidget;                                     // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ElementIndex;                                      // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24CC[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_287D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -2639,7 +2729,7 @@ struct UVALUI_RadioSlider_GetWidgetAtIndex_Params
 {
 public:
 	int32                                        Index;                                             // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24CE[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2886[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UUserWidget*                           ReturnValue;                                       // 0x8(0x8)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -2667,7 +2757,7 @@ public:
 	class UUserWidget*                           Widget;                                            // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Index;                                             // 0x8(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24D5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2895[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -2766,6 +2856,84 @@ public:
 };
 
 // 0x8 (0x8 - 0x0)
+// Function ValeriaUI.VALUI_StateUserWidget_PregameHUD.SetOwner
+struct UVALUI_StateUserWidget_PregameHUD_SetOwner_Params
+{
+public:
+	class UVALUI_PregameUIManager*               Owner;                                             // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x1 (0x1 - 0x0)
+// Function ValeriaUI.VALUI_StateUserWidget_PregameHUD.HandleOnLoginStateChanged
+struct UVALUI_StateUserWidget_PregameHUD_HandleOnLoginStateChanged_Params
+{
+public:
+	enum class EVALUI_LoginState                 NewState;                                          // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x1 (0x1 - 0x0)
+// Function ValeriaUI.VALUI_StateUserWidget_PregameHUD.HandleOnLobbyStateChanged
+struct UVALUI_StateUserWidget_PregameHUD_HandleOnLobbyStateChanged_Params
+{
+public:
+	enum class EVALUI_LobbyState                 NewState;                                          // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x0 (0x0 - 0x0)
+// Function ValeriaUI.VALUI_StateUserWidget_PregameHUD.HandleOnFetchedServerStatus
+struct UVALUI_StateUserWidget_PregameHUD_HandleOnFetchedServerStatus_Params
+{
+public:
+};
+
+// 0x1 (0x1 - 0x0)
+// Function ValeriaUI.VALUI_StateUserWidget_PregameHUD.HandleOnCharacterCreationStateChanged
+struct UVALUI_StateUserWidget_PregameHUD_HandleOnCharacterCreationStateChanged_Params
+{
+public:
+	enum class EVALUI_CharacterCreationState     NewState;                                          // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x8 (0x8 - 0x0)
+// Function ValeriaUI.VALUI_StateUserWidget_PregameHUD.GetLobbyScreen
+struct UVALUI_StateUserWidget_PregameHUD_GetLobbyScreen_Params
+{
+public:
+	class UVALUI_LobbyScreenUserWidget*          ReturnValue;                                       // 0x0(0x8)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x8 (0x8 - 0x0)
+// Function ValeriaUI.VALUI_StateUserWidget_PregameHUD.GetCharacterCreationScreen
+struct UVALUI_StateUserWidget_PregameHUD_GetCharacterCreationScreen_Params
+{
+public:
+	class UVALUI_CharacterCreationScreenBase*    ReturnValue;                                       // 0x0(0x8)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x4 (0x4 - 0x0)
+// Function ValeriaUI.VALUI_StateUserWidget_PregameHUD.DisplayMatchmakingQueueNumber
+struct UVALUI_StateUserWidget_PregameHUD_DisplayMatchmakingQueueNumber_Params
+{
+public:
+	int32                                        Number;                                            // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x1 (0x1 - 0x0)
+// Function ValeriaUI.VALUI_StateUserWidget_PregameHUD.DisplayMatchmakingQueueActive
+struct UVALUI_StateUserWidget_PregameHUD_DisplayMatchmakingQueueActive_Params
+{
+public:
+	bool                                         bActive;                                           // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x0 (0x0 - 0x0)
+// Function ValeriaUI.VALUI_StateUserWidget_PregameHUD.DisplayCharacterCreationMatchmaking
+struct UVALUI_StateUserWidget_PregameHUD_DisplayCharacterCreationMatchmaking_Params
+{
+public:
+};
+
+// 0x8 (0x8 - 0x0)
 // Function ValeriaUI.VALUI_TabButtonHostBase.UnregisterTab
 struct UVALUI_TabButtonHostBase_UnregisterTab_Params
 {
@@ -2781,7 +2949,7 @@ public:
 	class FName                                  TabName;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bForceSet;                                         // 0x8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x9(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_252D[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28F7[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -2792,7 +2960,7 @@ public:
 	class FName                                  TabName;                                           // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVALUI_InstantiatedTabButtonInfo      OutInfo;                                           // 0x8(0x70)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x78(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2538[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28FB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -2802,7 +2970,7 @@ struct UVALUI_TabButtonHostBase_SetTabButtonVisibility_Params
 public:
 	class FName                                  TabName;                                           // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESlateVisibility                  NewVisibility;                                     // 0x8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2543[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28FF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x78 (0x78 - 0x0)

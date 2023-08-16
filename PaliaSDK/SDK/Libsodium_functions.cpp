@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -23,7 +23,7 @@ namespace SDK
 // TArray<uint8>                      PublicKey                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ULibSd_CryptoLibrary::VerifyMessageWithPublicKey_Detached(TArray<uint8>& Signature, TArray<uint8>& Message, TArray<uint8>& PublicKey)
+bool ULibSd_CryptoLibrary::VerifyMessageWithPublicKey_Detached(TArray<uint8>& InSignature, TArray<uint8>& InMessage, TArray<uint8>& InPublicKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,9 +32,9 @@ bool ULibSd_CryptoLibrary::VerifyMessageWithPublicKey_Detached(TArray<uint8>& Si
 
 	Params::ULibSd_CryptoLibrary_VerifyMessageWithPublicKey_Detached_Params Parms{};
 
-	Parms.Signature = Signature;
-	Parms.Message = Message;
-	Parms.PublicKey = PublicKey;
+	Parms.Signature = InSignature;
+	Parms.Message = InMessage;
+	Parms.PublicKey = InPublicKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -57,7 +57,7 @@ bool ULibSd_CryptoLibrary::VerifyMessageWithPublicKey_Detached(TArray<uint8>& Si
 // TArray<uint8>                      Message                                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ULibSd_CryptoLibrary::VerifyMessageWithPublicKey(TArray<uint8>& SignedMessage, TArray<uint8>& PublicKey, TArray<uint8>* Message)
+bool ULibSd_CryptoLibrary::VerifyMessageWithPublicKey(TArray<uint8>& InSignedMessage, TArray<uint8>& InPublicKey, TArray<uint8>* InMessage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -66,8 +66,8 @@ bool ULibSd_CryptoLibrary::VerifyMessageWithPublicKey(TArray<uint8>& SignedMessa
 
 	Params::ULibSd_CryptoLibrary_VerifyMessageWithPublicKey_Params Parms{};
 
-	Parms.SignedMessage = SignedMessage;
-	Parms.PublicKey = PublicKey;
+	Parms.SignedMessage = InSignedMessage;
+	Parms.PublicKey = InPublicKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -77,8 +77,8 @@ bool ULibSd_CryptoLibrary::VerifyMessageWithPublicKey(TArray<uint8>& SignedMessa
 
 	Func->FunctionFlags = Flags;
 
-	if (Message != nullptr)
-		*Message = Parms.Message;
+	if (InMessage != nullptr)
+		*InMessage = Parms.Message;
 
 	return Parms.ReturnValue;
 
@@ -93,7 +93,7 @@ bool ULibSd_CryptoLibrary::VerifyMessageWithPublicKey(TArray<uint8>& SignedMessa
 // TArray<uint8>                      Signature                                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ULibSd_CryptoLibrary::SignMessageWithSecretKey_Detached(TArray<uint8>& Message, TArray<uint8>& SecretKey, TArray<uint8>* Signature)
+bool ULibSd_CryptoLibrary::SignMessageWithSecretKey_Detached(TArray<uint8>& InMessage, TArray<uint8>& InSecretKey, TArray<uint8>* InSignature)
 {
 	static class UFunction* Func = nullptr;
 
@@ -102,8 +102,8 @@ bool ULibSd_CryptoLibrary::SignMessageWithSecretKey_Detached(TArray<uint8>& Mess
 
 	Params::ULibSd_CryptoLibrary_SignMessageWithSecretKey_Detached_Params Parms{};
 
-	Parms.Message = Message;
-	Parms.SecretKey = SecretKey;
+	Parms.Message = InMessage;
+	Parms.SecretKey = InSecretKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -113,8 +113,8 @@ bool ULibSd_CryptoLibrary::SignMessageWithSecretKey_Detached(TArray<uint8>& Mess
 
 	Func->FunctionFlags = Flags;
 
-	if (Signature != nullptr)
-		*Signature = Parms.Signature;
+	if (InSignature != nullptr)
+		*InSignature = Parms.Signature;
 
 	return Parms.ReturnValue;
 
@@ -129,7 +129,7 @@ bool ULibSd_CryptoLibrary::SignMessageWithSecretKey_Detached(TArray<uint8>& Mess
 // TArray<uint8>                      SignedMessage                                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ULibSd_CryptoLibrary::SignMessageWithSecretKey(TArray<uint8>& Message, TArray<uint8>& SecretKey, TArray<uint8>* SignedMessage)
+bool ULibSd_CryptoLibrary::SignMessageWithSecretKey(TArray<uint8>& InMessage, TArray<uint8>& InSecretKey, TArray<uint8>* InSignedMessage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -138,8 +138,8 @@ bool ULibSd_CryptoLibrary::SignMessageWithSecretKey(TArray<uint8>& Message, TArr
 
 	Params::ULibSd_CryptoLibrary_SignMessageWithSecretKey_Params Parms{};
 
-	Parms.Message = Message;
-	Parms.SecretKey = SecretKey;
+	Parms.Message = InMessage;
+	Parms.SecretKey = InSecretKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -149,8 +149,8 @@ bool ULibSd_CryptoLibrary::SignMessageWithSecretKey(TArray<uint8>& Message, TArr
 
 	Func->FunctionFlags = Flags;
 
-	if (SignedMessage != nullptr)
-		*SignedMessage = Parms.SignedMessage;
+	if (InSignedMessage != nullptr)
+		*InSignedMessage = Parms.SignedMessage;
 
 	return Parms.ReturnValue;
 
@@ -192,7 +192,7 @@ bool ULibSd_CryptoLibrary::InitSodium()
 // TArray<uint8>                      OutSecretKey                                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ULibSd_CryptoLibrary::GenerateKeyPair(TArray<uint8>* OutPublicKey, TArray<uint8>* OutSecretKey)
+bool ULibSd_CryptoLibrary::GenerateKeyPair(TArray<uint8>* InOutPublicKey, TArray<uint8>* InOutSecretKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -210,11 +210,11 @@ bool ULibSd_CryptoLibrary::GenerateKeyPair(TArray<uint8>* OutPublicKey, TArray<u
 
 	Func->FunctionFlags = Flags;
 
-	if (OutPublicKey != nullptr)
-		*OutPublicKey = Parms.OutPublicKey;
+	if (InOutPublicKey != nullptr)
+		*InOutPublicKey = Parms.OutPublicKey;
 
-	if (OutSecretKey != nullptr)
-		*OutSecretKey = Parms.OutSecretKey;
+	if (InOutSecretKey != nullptr)
+		*InOutSecretKey = Parms.OutSecretKey;
 
 	return Parms.ReturnValue;
 

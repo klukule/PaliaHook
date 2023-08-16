@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -22,7 +22,7 @@ namespace SDK
 // bool                               bNetwork                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAndroidFileServerBPLibrary::StopFileServer(bool bUSB, bool bNetwork)
+bool UAndroidFileServerBPLibrary::StopFileServer(bool InbUSB, bool InbNetwork)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,8 +31,8 @@ bool UAndroidFileServerBPLibrary::StopFileServer(bool bUSB, bool bNetwork)
 
 	Params::UAndroidFileServerBPLibrary_StopFileServer_Params Parms{};
 
-	Parms.bUSB = bUSB;
-	Parms.bNetwork = bNetwork;
+	Parms.bUSB = InbUSB;
+	Parms.bNetwork = InbNetwork;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -55,7 +55,7 @@ bool UAndroidFileServerBPLibrary::StopFileServer(bool bUSB, bool bNetwork)
 // int32                              Port                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAndroidFileServerBPLibrary::StartFileServer(bool bUSB, bool bNetwork, int32 Port)
+bool UAndroidFileServerBPLibrary::StartFileServer(bool InbUSB, bool InbNetwork, int32 InPort)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,9 +64,9 @@ bool UAndroidFileServerBPLibrary::StartFileServer(bool bUSB, bool bNetwork, int3
 
 	Params::UAndroidFileServerBPLibrary_StartFileServer_Params Parms{};
 
-	Parms.bUSB = bUSB;
-	Parms.bNetwork = bNetwork;
-	Parms.Port = Port;
+	Parms.bUSB = InbUSB;
+	Parms.bNetwork = InbNetwork;
+	Parms.Port = InPort;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

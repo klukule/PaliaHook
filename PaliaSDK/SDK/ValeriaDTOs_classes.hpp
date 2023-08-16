@@ -20,17 +20,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALDTOS_MetaCharacterCustomizationFuncLib");
-
+		static class UClass* Clss = UObject::FindClassFast("VALDTOS_MetaCharacterCustomizationFuncLib");
 		return Clss;
 	}
 
-	bool MetaCharacterFormat_EqualEqual(struct FVALDTOS_MetaCharacterFormat& A, struct FVALDTOS_MetaCharacterFormat& B);
-	bool CharacterCustomizationOptions_EqualEqual(struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile& A, struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile& B);
-	bool CharacterCreationOptions_EqualEqual(struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable& A, struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable& B);
+	bool MetaCharacterFormat_EqualEqual(struct FVALDTOS_MetaCharacterFormat& InA, struct FVALDTOS_MetaCharacterFormat& InB);
+	bool CharacterCustomizationOptions_EqualEqual(struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile& InA, struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile& InB);
+	bool CharacterCreationOptions_EqualEqual(struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable& InA, struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable& InB);
 };
 
 }

@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ToolMenuBase");
-
+		static class UClass* Clss = UObject::FindClassFast("ToolMenuBase");
 		return Clss;
 	}
 
@@ -36,15 +32,11 @@ class USlateSettings : public UObject
 {
 public:
 	bool                                         bExplicitCanvasChildZOrder;                        // 0x28(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22A5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21E8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SlateSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("SlateSettings");
 		return Clss;
 	}
 
@@ -59,11 +51,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ButtonWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("ButtonWidgetStyle");
 		return Clss;
 	}
 
@@ -78,11 +66,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CheckBoxWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("CheckBoxWidgetStyle");
 		return Clss;
 	}
 
@@ -97,11 +81,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ComboBoxWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("ComboBoxWidgetStyle");
 		return Clss;
 	}
 
@@ -116,11 +96,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ComboButtonWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("ComboButtonWidgetStyle");
 		return Clss;
 	}
 
@@ -135,11 +111,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EditableTextBoxWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("EditableTextBoxWidgetStyle");
 		return Clss;
 	}
 
@@ -154,11 +126,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EditableTextWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("EditableTextWidgetStyle");
 		return Clss;
 	}
 
@@ -173,11 +141,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ProgressWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("ProgressWidgetStyle");
 		return Clss;
 	}
 
@@ -192,11 +156,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ScrollBarWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("ScrollBarWidgetStyle");
 		return Clss;
 	}
 
@@ -211,11 +171,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ScrollBoxWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("ScrollBoxWidgetStyle");
 		return Clss;
 	}
 
@@ -230,11 +186,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SpinBoxWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("SpinBoxWidgetStyle");
 		return Clss;
 	}
 
@@ -249,11 +201,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TextBlockWidgetStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("TextBlockWidgetStyle");
 		return Clss;
 	}
 

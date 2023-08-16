@@ -1,12 +1,12 @@
 #pragma once
 
 // Dumped with Dumper-7!
+
 #include "SDK.hpp"
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // enum class ERuntimeVirtualTextureMainPassTypeInType                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALandscapeProxy::SetVirtualTextureRenderPassType(enum class ERuntimeVirtualTextureMainPassType InType)
+void ALandscapeProxy::SetVirtualTextureRenderPassType(enum class ERuntimeVirtualTextureMainPassType InInType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void ALandscapeProxy::SetVirtualTextureRenderPassType(enum class ERuntimeVirtual
 
 	Params::ALandscapeProxy_SetVirtualTextureRenderPassType_Params Parms{};
 
-	Parms.InType = InType;
+	Parms.InType = InInType;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -48,7 +48,7 @@ void ALandscapeProxy::SetVirtualTextureRenderPassType(enum class ERuntimeVirtual
 // class FName                        ParameterName                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FLinearColor                Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALandscapeProxy::SetLandscapeMaterialVectorParameterValue(class FName ParameterName, const struct FLinearColor& Value)
+void ALandscapeProxy::SetLandscapeMaterialVectorParameterValue(class FName InParameterName, const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -57,8 +57,8 @@ void ALandscapeProxy::SetLandscapeMaterialVectorParameterValue(class FName Param
 
 	Params::ALandscapeProxy_SetLandscapeMaterialVectorParameterValue_Params Parms{};
 
-	Parms.ParameterName = ParameterName;
-	Parms.Value = Value;
+	Parms.ParameterName = InParameterName;
+	Parms.Value = InValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -77,7 +77,7 @@ void ALandscapeProxy::SetLandscapeMaterialVectorParameterValue(class FName Param
 // class FName                        ParameterName                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTexture*                    Value                                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALandscapeProxy::SetLandscapeMaterialTextureParameterValue(class FName ParameterName, class UTexture* Value)
+void ALandscapeProxy::SetLandscapeMaterialTextureParameterValue(class FName InParameterName, class UTexture* InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,8 +86,8 @@ void ALandscapeProxy::SetLandscapeMaterialTextureParameterValue(class FName Para
 
 	Params::ALandscapeProxy_SetLandscapeMaterialTextureParameterValue_Params Parms{};
 
-	Parms.ParameterName = ParameterName;
-	Parms.Value = Value;
+	Parms.ParameterName = InParameterName;
+	Parms.Value = InValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -106,7 +106,7 @@ void ALandscapeProxy::SetLandscapeMaterialTextureParameterValue(class FName Para
 // class FName                        ParameterName                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALandscapeProxy::SetLandscapeMaterialScalarParameterValue(class FName ParameterName, float Value)
+void ALandscapeProxy::SetLandscapeMaterialScalarParameterValue(class FName InParameterName, float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -115,8 +115,8 @@ void ALandscapeProxy::SetLandscapeMaterialScalarParameterValue(class FName Param
 
 	Params::ALandscapeProxy_SetLandscapeMaterialScalarParameterValue_Params Parms{};
 
-	Parms.ParameterName = ParameterName;
-	Parms.Value = Value;
+	Parms.ParameterName = InParameterName;
+	Parms.Value = InValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -137,7 +137,7 @@ void ALandscapeProxy::SetLandscapeMaterialScalarParameterValue(class FName Param
 // bool                               InExportLandscapeProxies                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ALandscapeProxy::LandscapeExportHeightmapToRenderTarget(class UTextureRenderTarget2D* InRenderTarget, bool InExportHeightIntoRGChannel, bool InExportLandscapeProxies)
+bool ALandscapeProxy::LandscapeExportHeightmapToRenderTarget(class UTextureRenderTarget2D* InInRenderTarget, bool InInExportHeightIntoRGChannel, bool InInExportLandscapeProxies)
 {
 	static class UFunction* Func = nullptr;
 
@@ -146,9 +146,9 @@ bool ALandscapeProxy::LandscapeExportHeightmapToRenderTarget(class UTextureRende
 
 	Params::ALandscapeProxy_LandscapeExportHeightmapToRenderTarget_Params Parms{};
 
-	Parms.InRenderTarget = InRenderTarget;
-	Parms.InExportHeightIntoRGChannel = InExportHeightIntoRGChannel;
-	Parms.InExportLandscapeProxies = InExportLandscapeProxies;
+	Parms.InRenderTarget = InInRenderTarget;
+	Parms.InExportHeightIntoRGChannel = InInExportHeightIntoRGChannel;
+	Parms.InExportLandscapeProxies = InInExportLandscapeProxies;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -196,7 +196,7 @@ class ALandscape* ALandscapeProxy::GetLandscapeActor()
 // Parameters:
 // class UMaterialInterface*          NewLandscapeMaterial                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALandscapeProxy::EditorSetLandscapeMaterial(class UMaterialInterface* NewLandscapeMaterial)
+void ALandscapeProxy::EditorSetLandscapeMaterial(class UMaterialInterface* InNewLandscapeMaterial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -205,7 +205,7 @@ void ALandscapeProxy::EditorSetLandscapeMaterial(class UMaterialInterface* NewLa
 
 	Params::ALandscapeProxy_EditorSetLandscapeMaterial_Params Parms{};
 
-	Parms.NewLandscapeMaterial = NewLandscapeMaterial;
+	Parms.NewLandscapeMaterial = InNewLandscapeMaterial;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -234,7 +234,7 @@ void ALandscapeProxy::EditorSetLandscapeMaterial(class UMaterialInterface* NewLa
 // class ULandscapeLayerInfoObject*   PaintLayer                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        EditLayerName                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALandscapeProxy::EditorApplySpline(class USplineComponent* InSplineComponent, float StartWidth, float EndWidth, float StartSideFalloff, float EndSideFalloff, float StartRoll, float EndRoll, int32 NumSubdivisions, bool bRaiseHeights, bool bLowerHeights, class ULandscapeLayerInfoObject* PaintLayer, class FName EditLayerName)
+void ALandscapeProxy::EditorApplySpline(class USplineComponent* InInSplineComponent, float InStartWidth, float InEndWidth, float InStartSideFalloff, float InEndSideFalloff, float InStartRoll, float InEndRoll, int32 InNumSubdivisions, bool InbRaiseHeights, bool InbLowerHeights, class ULandscapeLayerInfoObject* InPaintLayer, class FName InEditLayerName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -243,18 +243,18 @@ void ALandscapeProxy::EditorApplySpline(class USplineComponent* InSplineComponen
 
 	Params::ALandscapeProxy_EditorApplySpline_Params Parms{};
 
-	Parms.InSplineComponent = InSplineComponent;
-	Parms.StartWidth = StartWidth;
-	Parms.EndWidth = EndWidth;
-	Parms.StartSideFalloff = StartSideFalloff;
-	Parms.EndSideFalloff = EndSideFalloff;
-	Parms.StartRoll = StartRoll;
-	Parms.EndRoll = EndRoll;
-	Parms.NumSubdivisions = NumSubdivisions;
-	Parms.bRaiseHeights = bRaiseHeights;
-	Parms.bLowerHeights = bLowerHeights;
-	Parms.PaintLayer = PaintLayer;
-	Parms.EditLayerName = EditLayerName;
+	Parms.InSplineComponent = InInSplineComponent;
+	Parms.StartWidth = InStartWidth;
+	Parms.EndWidth = InEndWidth;
+	Parms.StartSideFalloff = InStartSideFalloff;
+	Parms.EndSideFalloff = InEndSideFalloff;
+	Parms.StartRoll = InStartRoll;
+	Parms.EndRoll = InEndRoll;
+	Parms.NumSubdivisions = InNumSubdivisions;
+	Parms.bRaiseHeights = InbRaiseHeights;
+	Parms.bLowerHeights = InbLowerHeights;
+	Parms.PaintLayer = InPaintLayer;
+	Parms.EditLayerName = InEditLayerName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -272,7 +272,7 @@ void ALandscapeProxy::EditorApplySpline(class USplineComponent* InSplineComponen
 // Parameters:
 // float                              InLODDistanceFactor                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALandscapeProxy::ChangeLODDistanceFactor(float InLODDistanceFactor)
+void ALandscapeProxy::ChangeLODDistanceFactor(float InInLODDistanceFactor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -281,7 +281,7 @@ void ALandscapeProxy::ChangeLODDistanceFactor(float InLODDistanceFactor)
 
 	Params::ALandscapeProxy_ChangeLODDistanceFactor_Params Parms{};
 
-	Parms.InLODDistanceFactor = InLODDistanceFactor;
+	Parms.InLODDistanceFactor = InInLODDistanceFactor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -299,7 +299,7 @@ void ALandscapeProxy::ChangeLODDistanceFactor(float InLODDistanceFactor)
 // Parameters:
 // float                              InComponentScreenSizeToUseSubSections                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALandscapeProxy::ChangeComponentScreenSizeToUseSubSections(float InComponentScreenSizeToUseSubSections)
+void ALandscapeProxy::ChangeComponentScreenSizeToUseSubSections(float InInComponentScreenSizeToUseSubSections)
 {
 	static class UFunction* Func = nullptr;
 
@@ -308,7 +308,7 @@ void ALandscapeProxy::ChangeComponentScreenSizeToUseSubSections(float InComponen
 
 	Params::ALandscapeProxy_ChangeComponentScreenSizeToUseSubSections_Params Parms{};
 
-	Parms.InComponentScreenSizeToUseSubSections = InComponentScreenSizeToUseSubSections;
+	Parms.InComponentScreenSizeToUseSubSections = InInComponentScreenSizeToUseSubSections;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -328,7 +328,7 @@ void ALandscapeProxy::ChangeComponentScreenSizeToUseSubSections(float InComponen
 // struct FBox2D                      InExtents                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // class UTextureRenderTarget2D*      OutRenderTarget                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALandscape::RenderHeightmap(struct FTransform& InWorldTransform, struct FBox2D& InExtents, class UTextureRenderTarget2D* OutRenderTarget)
+void ALandscape::RenderHeightmap(struct FTransform& InInWorldTransform, struct FBox2D& InInExtents, class UTextureRenderTarget2D* InOutRenderTarget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -337,9 +337,9 @@ void ALandscape::RenderHeightmap(struct FTransform& InWorldTransform, struct FBo
 
 	Params::ALandscape_RenderHeightmap_Params Parms{};
 
-	Parms.InWorldTransform = InWorldTransform;
-	Parms.InExtents = InExtents;
-	Parms.OutRenderTarget = OutRenderTarget;
+	Parms.InWorldTransform = InInWorldTransform;
+	Parms.InExtents = InInExtents;
+	Parms.OutRenderTarget = InOutRenderTarget;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -357,7 +357,7 @@ void ALandscape::RenderHeightmap(struct FTransform& InWorldTransform, struct FBo
 // Parameters:
 // int32                              InLODBias                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULandscapeComponent::SetLODBias(int32 InLODBias)
+void ULandscapeComponent::SetLODBias(int32 InInLODBias)
 {
 	static class UFunction* Func = nullptr;
 
@@ -366,7 +366,7 @@ void ULandscapeComponent::SetLODBias(int32 InLODBias)
 
 	Params::ULandscapeComponent_SetLODBias_Params Parms{};
 
-	Parms.InLODBias = InLODBias;
+	Parms.InLODBias = InInLODBias;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -384,7 +384,7 @@ void ULandscapeComponent::SetLODBias(int32 InLODBias)
 // Parameters:
 // int32                              InForcedLOD                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULandscapeComponent::SetForcedLOD(int32 InForcedLOD)
+void ULandscapeComponent::SetForcedLOD(int32 InInForcedLOD)
 {
 	static class UFunction* Func = nullptr;
 
@@ -393,7 +393,7 @@ void ULandscapeComponent::SetForcedLOD(int32 InForcedLOD)
 
 	Params::ULandscapeComponent_SetForcedLOD_Params Parms{};
 
-	Parms.InForcedLOD = InForcedLOD;
+	Parms.InForcedLOD = InInForcedLOD;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -412,7 +412,7 @@ void ULandscapeComponent::SetForcedLOD(int32 InForcedLOD)
 // int32                              InIndex                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMaterialInstanceDynamic*    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMaterialInstanceDynamic* ULandscapeComponent::GetMaterialInstanceDynamic(int32 InIndex)
+class UMaterialInstanceDynamic* ULandscapeComponent::GetMaterialInstanceDynamic(int32 InInIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -421,7 +421,7 @@ class UMaterialInstanceDynamic* ULandscapeComponent::GetMaterialInstanceDynamic(
 
 	Params::ULandscapeComponent_GetMaterialInstanceDynamic_Params Parms{};
 
-	Parms.InIndex = InIndex;
+	Parms.InIndex = InInIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -443,7 +443,7 @@ class UMaterialInstanceDynamic* ULandscapeComponent::GetMaterialInstanceDynamic(
 // class FName                        InPaintLayerName                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ULandscapeComponent::EditorGetPaintLayerWeightByNameAtLocation(struct FVector& InLocation, class FName InPaintLayerName)
+float ULandscapeComponent::EditorGetPaintLayerWeightByNameAtLocation(struct FVector& InInLocation, class FName InInPaintLayerName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -452,8 +452,8 @@ float ULandscapeComponent::EditorGetPaintLayerWeightByNameAtLocation(struct FVec
 
 	Params::ULandscapeComponent_EditorGetPaintLayerWeightByNameAtLocation_Params Parms{};
 
-	Parms.InLocation = InLocation;
-	Parms.InPaintLayerName = InPaintLayerName;
+	Parms.InLocation = InInLocation;
+	Parms.InPaintLayerName = InInPaintLayerName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -475,7 +475,7 @@ float ULandscapeComponent::EditorGetPaintLayerWeightByNameAtLocation(struct FVec
 // class ULandscapeLayerInfoObject*   PaintLayer                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ULandscapeComponent::EditorGetPaintLayerWeightAtLocation(struct FVector& InLocation, class ULandscapeLayerInfoObject* PaintLayer)
+float ULandscapeComponent::EditorGetPaintLayerWeightAtLocation(struct FVector& InInLocation, class ULandscapeLayerInfoObject* InPaintLayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -484,8 +484,8 @@ float ULandscapeComponent::EditorGetPaintLayerWeightAtLocation(struct FVector& I
 
 	Params::ULandscapeComponent_EditorGetPaintLayerWeightAtLocation_Params Parms{};
 
-	Parms.InLocation = InLocation;
-	Parms.PaintLayer = PaintLayer;
+	Parms.InLocation = InInLocation;
+	Parms.PaintLayer = InPaintLayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -589,7 +589,7 @@ void ALandscapeBlueprintBrushBase::RequestLandscapeUpdate()
 // class FName                        InWeightmapLayerName                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTextureRenderTarget2D*      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UTextureRenderTarget2D* ALandscapeBlueprintBrushBase::Render(bool InIsHeightmap, class UTextureRenderTarget2D* InCombinedResult, class FName& InWeightmapLayerName)
+class UTextureRenderTarget2D* ALandscapeBlueprintBrushBase::Render(bool InInIsHeightmap, class UTextureRenderTarget2D* InInCombinedResult, class FName& InInWeightmapLayerName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -598,9 +598,9 @@ class UTextureRenderTarget2D* ALandscapeBlueprintBrushBase::Render(bool InIsHeig
 
 	Params::ALandscapeBlueprintBrushBase_Render_Params Parms{};
 
-	Parms.InIsHeightmap = InIsHeightmap;
-	Parms.InCombinedResult = InCombinedResult;
-	Parms.InWeightmapLayerName = InWeightmapLayerName;
+	Parms.InIsHeightmap = InInIsHeightmap;
+	Parms.InCombinedResult = InInCombinedResult;
+	Parms.InWeightmapLayerName = InInWeightmapLayerName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -622,7 +622,7 @@ class UTextureRenderTarget2D* ALandscapeBlueprintBrushBase::Render(bool InIsHeig
 // struct FIntPoint                   InLandscapeSize                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FIntPoint                   InLandscapeRenderTargetSize                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALandscapeBlueprintBrushBase::Initialize(struct FTransform& InLandscapeTransform, struct FIntPoint& InLandscapeSize, struct FIntPoint& InLandscapeRenderTargetSize)
+void ALandscapeBlueprintBrushBase::Initialize(struct FTransform& InInLandscapeTransform, struct FIntPoint& InInLandscapeSize, struct FIntPoint& InInLandscapeRenderTargetSize)
 {
 	static class UFunction* Func = nullptr;
 
@@ -631,9 +631,9 @@ void ALandscapeBlueprintBrushBase::Initialize(struct FTransform& InLandscapeTran
 
 	Params::ALandscapeBlueprintBrushBase_Initialize_Params Parms{};
 
-	Parms.InLandscapeTransform = InLandscapeTransform;
-	Parms.InLandscapeSize = InLandscapeSize;
-	Parms.InLandscapeRenderTargetSize = InLandscapeRenderTargetSize;
+	Parms.InLandscapeTransform = InInLandscapeTransform;
+	Parms.InLandscapeSize = InInLandscapeSize;
+	Parms.InLandscapeRenderTargetSize = InInLandscapeRenderTargetSize;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -651,7 +651,7 @@ void ALandscapeBlueprintBrushBase::Initialize(struct FTransform& InLandscapeTran
 // Parameters:
 // TArray<class UObject*>             OutStreamableAssets                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void ALandscapeBlueprintBrushBase::GetBlueprintRenderDependencies(TArray<class UObject*>* OutStreamableAssets)
+void ALandscapeBlueprintBrushBase::GetBlueprintRenderDependencies(TArray<class UObject*>* InOutStreamableAssets)
 {
 	static class UFunction* Func = nullptr;
 
@@ -663,8 +663,8 @@ void ALandscapeBlueprintBrushBase::GetBlueprintRenderDependencies(TArray<class U
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (OutStreamableAssets != nullptr)
-		*OutStreamableAssets = Parms.OutStreamableAssets;
+	if (InOutStreamableAssets != nullptr)
+		*InOutStreamableAssets = Parms.OutStreamableAssets;
 
 }
 

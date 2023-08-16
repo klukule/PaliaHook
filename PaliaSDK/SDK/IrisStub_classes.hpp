@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DataStream");
-
+		static class UClass* Clss = UObject::FindClassFast("DataStream");
 		return Clss;
 	}
 
@@ -38,11 +34,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("IrisObjectReferencePackageMap");
-
+		static class UClass* Clss = UObject::FindClassFast("IrisObjectReferencePackageMap");
 		return Clss;
 	}
 
@@ -56,11 +48,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NetBlobHandler");
-
+		static class UClass* Clss = UObject::FindClassFast("NetBlobHandler");
 		return Clss;
 	}
 
@@ -74,11 +62,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NetObjectPrioritizerConfig");
-
+		static class UClass* Clss = UObject::FindClassFast("NetObjectPrioritizerConfig");
 		return Clss;
 	}
 
@@ -92,11 +76,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NetObjectCountLimiterConfig");
-
+		static class UClass* Clss = UObject::FindClassFast("NetObjectCountLimiterConfig");
 		return Clss;
 	}
 
@@ -110,11 +90,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NetObjectFilterConfig");
-
+		static class UClass* Clss = UObject::FindClassFast("NetObjectFilterConfig");
 		return Clss;
 	}
 
@@ -128,11 +104,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NetObjectFilter");
-
+		static class UClass* Clss = UObject::FindClassFast("NetObjectFilter");
 		return Clss;
 	}
 
@@ -146,11 +118,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NetObjectPrioritizer");
-
+		static class UClass* Clss = UObject::FindClassFast("NetObjectPrioritizer");
 		return Clss;
 	}
 
@@ -164,11 +132,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationBridge");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationBridge");
 		return Clss;
 	}
 
@@ -182,11 +146,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ObjectReplicationBridge");
-
+		static class UClass* Clss = UObject::FindClassFast("ObjectReplicationBridge");
 		return Clss;
 	}
 
@@ -200,11 +160,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SequentialPartialNetBlobHandlerConfig");
-
+		static class UClass* Clss = UObject::FindClassFast("SequentialPartialNetBlobHandlerConfig");
 		return Clss;
 	}
 
@@ -218,11 +174,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SequentialPartialNetBlobHandler");
-
+		static class UClass* Clss = UObject::FindClassFast("SequentialPartialNetBlobHandler");
 		return Clss;
 	}
 
@@ -236,11 +188,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SphereWithOwnerBoostNetObjectPrioritizerConfig");
-
+		static class UClass* Clss = UObject::FindClassFast("SphereWithOwnerBoostNetObjectPrioritizerConfig");
 		return Clss;
 	}
 

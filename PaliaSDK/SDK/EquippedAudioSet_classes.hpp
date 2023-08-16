@@ -21,15 +21,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EquippedAudioSet_C");
-
+		static class UClass* Clss = UObject::FindClassFast("EquippedAudioSet_C");
 		return Clss;
 	}
 
-	void Get_Audio_Event(enum class E_EquippedEvents Event, class UAkAudioEvent** AudioEvent, bool* Found, class UAkAudioEvent* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue);
+	void Get_Audio_Event(enum class E_EquippedEvents InEvent, class UAkAudioEvent** InAudioEvent, bool* InFound, class UAkAudioEvent* InCallFunc_Map_Find_Value, bool InCallFunc_Map_Find_ReturnValue);
 };
 
 }

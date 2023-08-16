@@ -36,22 +36,18 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MAP_CharacterCreation_C");
-
+		static class UClass* Clss = UObject::FindClassFast("MAP_CharacterCreation_C");
 		return Clss;
 	}
 
-	TSet<class AActor*> GetAllTaggedActors(TSet<class AActor*> K2Node_MakeSet_Set);
-	class AActor* GetCameraActorForCosmeticAsset(class UVAL_CharacterCustomizationItemBase* Item, enum class EVAL_CharacterBodyType BodyType, TSet<class UClass*> FacialCamClassTargets, class AActor* Actor, class AActor* Temp_object_Variable, bool CallFunc_IsValid_ReturnValue, class UClass* CallFunc_GetObjectClass_ReturnValue, TSet<class UClass*> K2Node_MakeVariable_MakeVariableOutput, bool CallFunc_IsValid_ReturnValue_1, bool CallFunc_Set_Contains_ReturnValue, class AActor* CallFunc_GetDefaultCameraActor_ReturnValue, class AActor* Temp_object_Variable_1, enum class EVAL_CharacterBodyType Temp_byte_Variable, class AActor* K2Node_Select_Default);
-	TSet<class AActor*> GetAllCameraActors(TSet<class AActor*> K2Node_MakeSet_Set);
+	TSet<class AActor*> GetAllTaggedActors(TSet<class AActor*> InK2Node_MakeSet_Set);
+	class AActor* GetCameraActorForCosmeticAsset(class UVAL_CharacterCustomizationItemBase* InItem, enum class EVAL_CharacterBodyType InBodyType, TSet<class UClass*> InFacialCamClassTargets, class AActor* InActor, class AActor* InTemp_object_Variable, bool InCallFunc_IsValid_ReturnValue, class UClass* InCallFunc_GetObjectClass_ReturnValue, TSet<class UClass*> InK2Node_MakeVariable_MakeVariableOutput, bool InCallFunc_IsValid_ReturnValue_1, bool InCallFunc_Set_Contains_ReturnValue, class AActor* InCallFunc_GetDefaultCameraActor_ReturnValue, class AActor* InTemp_object_Variable_1, enum class EVAL_CharacterBodyType InTemp_byte_Variable, class AActor* InK2Node_Select_Default);
+	TSet<class AActor*> GetAllCameraActors(TSet<class AActor*> InK2Node_MakeSet_Set);
 	class AActor* GetDefaultCameraActor();
 	class AValeriaCharacter* GetCharacter();
 	void ReceiveBeginPlay();
-	void ReceiveEndPlay(enum class EEndPlayReason EndPlayReason);
-	void ExecuteUbergraph_MAP_CharacterCreation(int32 EntryPoint, enum class EEndPlayReason K2Node_Event_EndPlayReason, class APlayerController* CallFunc_GetPlayerController_ReturnValue, class APlayerController* CallFunc_GetPlayerController_ReturnValue_1, class UCharacterCustomManager* CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue, class UCharacterCustomManager* CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue_1, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, class AVAL_CharacterRenderStudio* CallFunc_GetCharacterRenderStudio_ReturnValue, class AVAL_CharacterRenderStudio* CallFunc_GetCharacterRenderStudio_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_2, bool CallFunc_IsValid_ReturnValue_3, bool CallFunc_IsValid_ReturnValue_4, bool CallFunc_IsValid_ReturnValue_5);
+	void ReceiveEndPlay(enum class EEndPlayReason InEndPlayReason);
+	void ExecuteUbergraph_MAP_CharacterCreation(int32 InEntryPoint, enum class EEndPlayReason InK2Node_Event_EndPlayReason, class APlayerController* InCallFunc_GetPlayerController_ReturnValue, class APlayerController* InCallFunc_GetPlayerController_ReturnValue_1, class UCharacterCustomManager* InCallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue, class UCharacterCustomManager* InCallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, class AVAL_CharacterRenderStudio* InCallFunc_GetCharacterRenderStudio_ReturnValue, class AVAL_CharacterRenderStudio* InCallFunc_GetCharacterRenderStudio_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue_2, bool InCallFunc_IsValid_ReturnValue_3, bool InCallFunc_IsValid_ReturnValue_4, bool InCallFunc_IsValid_ReturnValue_5);
 };
 
 }

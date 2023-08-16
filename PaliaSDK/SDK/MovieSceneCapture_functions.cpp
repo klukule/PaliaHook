@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -76,7 +76,7 @@ enum class EMovieSceneCaptureProtocolState UMovieSceneCaptureProtocolBase::GetSt
 // Parameters:
 // TSubclassOf<class UMovieSceneCaptureProtocolBase>ProtocolType                                                     (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneCapture::SetImageCaptureProtocolType(TSubclassOf<class UMovieSceneCaptureProtocolBase> ProtocolType)
+void UMovieSceneCapture::SetImageCaptureProtocolType(TSubclassOf<class UMovieSceneCaptureProtocolBase> InProtocolType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -85,7 +85,7 @@ void UMovieSceneCapture::SetImageCaptureProtocolType(TSubclassOf<class UMovieSce
 
 	Params::UMovieSceneCapture_SetImageCaptureProtocolType_Params Parms{};
 
-	Parms.ProtocolType = ProtocolType;
+	Parms.ProtocolType = InProtocolType;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -103,7 +103,7 @@ void UMovieSceneCapture::SetImageCaptureProtocolType(TSubclassOf<class UMovieSce
 // Parameters:
 // TSubclassOf<class UMovieSceneCaptureProtocolBase>ProtocolType                                                     (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneCapture::SetAudioCaptureProtocolType(TSubclassOf<class UMovieSceneCaptureProtocolBase> ProtocolType)
+void UMovieSceneCapture::SetAudioCaptureProtocolType(TSubclassOf<class UMovieSceneCaptureProtocolBase> InProtocolType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -112,7 +112,7 @@ void UMovieSceneCapture::SetAudioCaptureProtocolType(TSubclassOf<class UMovieSce
 
 	Params::UMovieSceneCapture_SetAudioCaptureProtocolType_Params Parms{};
 
-	Parms.ProtocolType = ProtocolType;
+	Parms.ProtocolType = InProtocolType;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -351,7 +351,7 @@ void UUserDefinedCaptureProtocol::StopCapturingFinalPixels()
 // Parameters:
 // struct FCapturedPixelsID           StreamID                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UUserDefinedCaptureProtocol::StartCapturingFinalPixels(struct FCapturedPixelsID& StreamID)
+void UUserDefinedCaptureProtocol::StartCapturingFinalPixels(struct FCapturedPixelsID& InStreamID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -360,7 +360,7 @@ void UUserDefinedCaptureProtocol::StartCapturingFinalPixels(struct FCapturedPixe
 
 	Params::UUserDefinedCaptureProtocol_StartCapturingFinalPixels_Params Parms{};
 
-	Parms.StreamID = StreamID;
+	Parms.StreamID = InStreamID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -379,7 +379,7 @@ void UUserDefinedCaptureProtocol::StartCapturingFinalPixels(struct FCapturedPixe
 // class UTexture*                    Buffer                                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FCapturedPixelsID           BufferID                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UUserDefinedCaptureProtocol::ResolveBuffer(class UTexture* Buffer, struct FCapturedPixelsID& BufferID)
+void UUserDefinedCaptureProtocol::ResolveBuffer(class UTexture* InBuffer, struct FCapturedPixelsID& InBufferID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -388,8 +388,8 @@ void UUserDefinedCaptureProtocol::ResolveBuffer(class UTexture* Buffer, struct F
 
 	Params::UUserDefinedCaptureProtocol_ResolveBuffer_Params Parms{};
 
-	Parms.Buffer = Buffer;
-	Parms.BufferID = BufferID;
+	Parms.Buffer = InBuffer;
+	Parms.BufferID = InBufferID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -513,7 +513,7 @@ void UUserDefinedCaptureProtocol::OnPreTick()
 // struct FCapturedPixelsID           ID                                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FFrameMetrics               FrameMetrics                                                     (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UUserDefinedCaptureProtocol::OnPixelsReceived(struct FCapturedPixels& Pixels, struct FCapturedPixelsID& ID, const struct FFrameMetrics& FrameMetrics)
+void UUserDefinedCaptureProtocol::OnPixelsReceived(struct FCapturedPixels& InPixels, struct FCapturedPixelsID& InID, const struct FFrameMetrics& InFrameMetrics)
 {
 	static class UFunction* Func = nullptr;
 
@@ -522,9 +522,9 @@ void UUserDefinedCaptureProtocol::OnPixelsReceived(struct FCapturedPixels& Pixel
 
 	Params::UUserDefinedCaptureProtocol_OnPixelsReceived_Params Parms{};
 
-	Parms.Pixels = Pixels;
-	Parms.ID = ID;
-	Parms.FrameMetrics = FrameMetrics;
+	Parms.Pixels = InPixels;
+	Parms.ID = InID;
+	Parms.FrameMetrics = InFrameMetrics;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -669,7 +669,7 @@ struct FFrameMetrics UUserDefinedCaptureProtocol::GetCurrentFrameMetrics()
 // struct FFrameMetrics               InFrameMetrics                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UUserDefinedCaptureProtocol::GenerateFilename(struct FFrameMetrics& InFrameMetrics)
+class FString UUserDefinedCaptureProtocol::GenerateFilename(struct FFrameMetrics& InInFrameMetrics)
 {
 	static class UFunction* Func = nullptr;
 
@@ -678,7 +678,7 @@ class FString UUserDefinedCaptureProtocol::GenerateFilename(struct FFrameMetrics
 
 	Params::UUserDefinedCaptureProtocol_GenerateFilename_Params Parms{};
 
-	Parms.InFrameMetrics = InFrameMetrics;
+	Parms.InFrameMetrics = InInFrameMetrics;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -701,7 +701,7 @@ class FString UUserDefinedCaptureProtocol::GenerateFilename(struct FFrameMetrics
 // struct FFrameMetrics               FrameMetrics                                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               bCopyImageData                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUserDefinedImageCaptureProtocol::WriteImageToDisk(struct FCapturedPixels& PixelData, struct FCapturedPixelsID& StreamID, struct FFrameMetrics& FrameMetrics, bool bCopyImageData)
+void UUserDefinedImageCaptureProtocol::WriteImageToDisk(struct FCapturedPixels& InPixelData, struct FCapturedPixelsID& InStreamID, struct FFrameMetrics& InFrameMetrics, bool InbCopyImageData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -710,10 +710,10 @@ void UUserDefinedImageCaptureProtocol::WriteImageToDisk(struct FCapturedPixels& 
 
 	Params::UUserDefinedImageCaptureProtocol_WriteImageToDisk_Params Parms{};
 
-	Parms.PixelData = PixelData;
-	Parms.StreamID = StreamID;
-	Parms.FrameMetrics = FrameMetrics;
-	Parms.bCopyImageData = bCopyImageData;
+	Parms.PixelData = InPixelData;
+	Parms.StreamID = InStreamID;
+	Parms.FrameMetrics = InFrameMetrics;
+	Parms.bCopyImageData = InbCopyImageData;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -761,7 +761,7 @@ class FString UUserDefinedImageCaptureProtocol::GenerateFilenameForCurrentFrame(
 // struct FCapturedPixelsID           StreamID                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UUserDefinedImageCaptureProtocol::GenerateFilenameForBuffer(class UTexture* Buffer, struct FCapturedPixelsID& StreamID)
+class FString UUserDefinedImageCaptureProtocol::GenerateFilenameForBuffer(class UTexture* InBuffer, struct FCapturedPixelsID& InStreamID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -770,8 +770,8 @@ class FString UUserDefinedImageCaptureProtocol::GenerateFilenameForBuffer(class 
 
 	Params::UUserDefinedImageCaptureProtocol_GenerateFilenameForBuffer_Params Parms{};
 
-	Parms.Buffer = Buffer;
-	Parms.StreamID = StreamID;
+	Parms.Buffer = InBuffer;
+	Parms.StreamID = InStreamID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -22,7 +22,7 @@ namespace SDK
 // class FString                      Value                                                            (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCommandLineHelper::TryGetCommandlineKeyValuePair(const class FString& Key, class FString* Value)
+bool UCommandLineHelper::TryGetCommandlineKeyValuePair(const class FString& InKey, class FString* InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,7 +31,7 @@ bool UCommandLineHelper::TryGetCommandlineKeyValuePair(const class FString& Key,
 
 	Params::UCommandLineHelper_TryGetCommandlineKeyValuePair_Params Parms{};
 
-	Parms.Key = Key;
+	Parms.Key = InKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -41,8 +41,8 @@ bool UCommandLineHelper::TryGetCommandlineKeyValuePair(const class FString& Key,
 
 	Func->FunctionFlags = Flags;
 
-	if (Value != nullptr)
-		*Value = Parms.Value;
+	if (InValue != nullptr)
+		*InValue = Parms.Value;
 
 	return Parms.ReturnValue;
 
@@ -55,7 +55,7 @@ bool UCommandLineHelper::TryGetCommandlineKeyValuePair(const class FString& Key,
 // class FString                      SWITCH                                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCommandLineHelper::DoesCommandlineHaveSwitch(const class FString& SWITCH)
+bool UCommandLineHelper::DoesCommandlineHaveSwitch(const class FString& InSWITCH)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,7 +64,7 @@ bool UCommandLineHelper::DoesCommandlineHaveSwitch(const class FString& SWITCH)
 
 	Params::UCommandLineHelper_DoesCommandlineHaveSwitch_Params Parms{};
 
-	Parms.SWITCH = SWITCH;
+	Parms.SWITCH = InSWITCH;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -113,7 +113,7 @@ TArray<class UGuidDataAsset*> US6DataAssetManager::GetAllGuidDataAssets()
 // struct FGuid                       Guid                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGuidDataAsset*              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UGuidDataAsset* US6DataAssetManager::FindConfigByGuid(const struct FGuid& Guid)
+class UGuidDataAsset* US6DataAssetManager::FindConfigByGuid(const struct FGuid& InGuid)
 {
 	static class UFunction* Func = nullptr;
 
@@ -122,7 +122,7 @@ class UGuidDataAsset* US6DataAssetManager::FindConfigByGuid(const struct FGuid& 
 
 	Params::US6DataAssetManager_FindConfigByGuid_Params Parms{};
 
-	Parms.Guid = Guid;
+	Parms.Guid = InGuid;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -143,7 +143,7 @@ class UGuidDataAsset* US6DataAssetManager::FindConfigByGuid(const struct FGuid& 
 // class FString                      InVersion                                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6VersioningFunctionLibrary::IsValidVersionString(const class FString& InVersion)
+bool US6VersioningFunctionLibrary::IsValidVersionString(const class FString& InInVersion)
 {
 	static class UFunction* Func = nullptr;
 
@@ -152,7 +152,7 @@ bool US6VersioningFunctionLibrary::IsValidVersionString(const class FString& InV
 
 	Params::US6VersioningFunctionLibrary_IsValidVersionString_Params Parms{};
 
-	Parms.InVersion = InVersion;
+	Parms.InVersion = InInVersion;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -201,7 +201,7 @@ class FString US6VersioningFunctionLibrary::GetVersionString()
 // class FString                      InString                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int64                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int64 US6Core_General_BlueprintFunctionLibrary::ToInt64(const class FString& InString)
+int64 US6Core_General_BlueprintFunctionLibrary::ToInt64(const class FString& InInString)
 {
 	static class UFunction* Func = nullptr;
 
@@ -210,7 +210,7 @@ int64 US6Core_General_BlueprintFunctionLibrary::ToInt64(const class FString& InS
 
 	Params::US6Core_General_BlueprintFunctionLibrary_ToInt64_Params Parms{};
 
-	Parms.InString = InString;
+	Parms.InString = InInString;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -231,7 +231,7 @@ int64 US6Core_General_BlueprintFunctionLibrary::ToInt64(const class FString& InS
 // class UGameInstance*               GameInstance                                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               MaskEnabled                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6Core_General_BlueprintFunctionLibrary::ToggleScreenshotMaskOnCurrentGameViewport(class UGameInstance* GameInstance, bool MaskEnabled)
+void US6Core_General_BlueprintFunctionLibrary::ToggleScreenshotMaskOnCurrentGameViewport(class UGameInstance* InGameInstance, bool InMaskEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -240,8 +240,8 @@ void US6Core_General_BlueprintFunctionLibrary::ToggleScreenshotMaskOnCurrentGame
 
 	Params::US6Core_General_BlueprintFunctionLibrary_ToggleScreenshotMaskOnCurrentGameViewport_Params Parms{};
 
-	Parms.GameInstance = GameInstance;
-	Parms.MaskEnabled = MaskEnabled;
+	Parms.GameInstance = InGameInstance;
+	Parms.MaskEnabled = InMaskEnabled;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -264,7 +264,7 @@ void US6Core_General_BlueprintFunctionLibrary::ToggleScreenshotMaskOnCurrentGame
 // bool                               UseHDR                                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               MaskBackground                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6Core_General_BlueprintFunctionLibrary::TakeHighResScreenshotOfGameViewport(class UGameInstance* GameInstance, int32 ImageSize_X, int32 ImageSize_Y, float ImageResolution, bool UseHDR, bool MaskBackground)
+void US6Core_General_BlueprintFunctionLibrary::TakeHighResScreenshotOfGameViewport(class UGameInstance* InGameInstance, int32 InImageSize_X, int32 InImageSize_Y, float InImageResolution, bool InUseHDR, bool InMaskBackground)
 {
 	static class UFunction* Func = nullptr;
 
@@ -273,12 +273,12 @@ void US6Core_General_BlueprintFunctionLibrary::TakeHighResScreenshotOfGameViewpo
 
 	Params::US6Core_General_BlueprintFunctionLibrary_TakeHighResScreenshotOfGameViewport_Params Parms{};
 
-	Parms.GameInstance = GameInstance;
-	Parms.ImageSize_X = ImageSize_X;
-	Parms.ImageSize_Y = ImageSize_Y;
-	Parms.ImageResolution = ImageResolution;
-	Parms.UseHDR = UseHDR;
-	Parms.MaskBackground = MaskBackground;
+	Parms.GameInstance = InGameInstance;
+	Parms.ImageSize_X = InImageSize_X;
+	Parms.ImageSize_Y = InImageSize_Y;
+	Parms.ImageResolution = InImageResolution;
+	Parms.UseHDR = InUseHDR;
+	Parms.MaskBackground = InMaskBackground;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -298,7 +298,7 @@ void US6Core_General_BlueprintFunctionLibrary::TakeHighResScreenshotOfGameViewpo
 // bool                               bErrorMessage                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              WidthOverride                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6Core_General_BlueprintFunctionLibrary::ShowSimpleNotification(const class FString& Text, bool bErrorMessage, float WidthOverride)
+void US6Core_General_BlueprintFunctionLibrary::ShowSimpleNotification(const class FString& InText, bool InbErrorMessage, float InWidthOverride)
 {
 	static class UFunction* Func = nullptr;
 
@@ -307,9 +307,9 @@ void US6Core_General_BlueprintFunctionLibrary::ShowSimpleNotification(const clas
 
 	Params::US6Core_General_BlueprintFunctionLibrary_ShowSimpleNotification_Params Parms{};
 
-	Parms.Text = Text;
-	Parms.bErrorMessage = bErrorMessage;
-	Parms.WidthOverride = WidthOverride;
+	Parms.Text = InText;
+	Parms.bErrorMessage = InbErrorMessage;
+	Parms.WidthOverride = InWidthOverride;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -327,7 +327,7 @@ void US6Core_General_BlueprintFunctionLibrary::ShowSimpleNotification(const clas
 // Parameters:
 // class FString                      Msg                                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6Core_General_BlueprintFunctionLibrary::PrintToConsoleWindow(const class FString& Msg)
+void US6Core_General_BlueprintFunctionLibrary::PrintToConsoleWindow(const class FString& InMsg)
 {
 	static class UFunction* Func = nullptr;
 
@@ -336,7 +336,7 @@ void US6Core_General_BlueprintFunctionLibrary::PrintToConsoleWindow(const class 
 
 	Params::US6Core_General_BlueprintFunctionLibrary_PrintToConsoleWindow_Params Parms{};
 
-	Parms.Msg = Msg;
+	Parms.Msg = InMsg;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -355,7 +355,7 @@ void US6Core_General_BlueprintFunctionLibrary::PrintToConsoleWindow(const class 
 // class FName                        StatGroupName                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6Core_General_BlueprintFunctionLibrary::IsStatGroupToggled(class FName& StatGroupName)
+bool US6Core_General_BlueprintFunctionLibrary::IsStatGroupToggled(class FName& InStatGroupName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -364,7 +364,7 @@ bool US6Core_General_BlueprintFunctionLibrary::IsStatGroupToggled(class FName& S
 
 	Params::US6Core_General_BlueprintFunctionLibrary_IsStatGroupToggled_Params Parms{};
 
-	Parms.StatGroupName = StatGroupName;
+	Parms.StatGroupName = InStatGroupName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -385,7 +385,7 @@ bool US6Core_General_BlueprintFunctionLibrary::IsStatGroupToggled(class FName& S
 // class AActor*                      InActor                                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6Core_General_BlueprintFunctionLibrary::HasBegunPlay(class AActor* InActor)
+bool US6Core_General_BlueprintFunctionLibrary::HasBegunPlay(class AActor* InInActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -394,7 +394,7 @@ bool US6Core_General_BlueprintFunctionLibrary::HasBegunPlay(class AActor* InActo
 
 	Params::US6Core_General_BlueprintFunctionLibrary_HasBegunPlay_Params Parms{};
 
-	Parms.InActor = InActor;
+	Parms.InActor = InInActor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -415,7 +415,7 @@ bool US6Core_General_BlueprintFunctionLibrary::HasBegunPlay(class AActor* InActo
 // class FName                        StatName                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FS6Core_StatData            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FS6Core_StatData US6Core_General_BlueprintFunctionLibrary::GetStatDataFromName(class FName& StatName)
+struct FS6Core_StatData US6Core_General_BlueprintFunctionLibrary::GetStatDataFromName(class FName& InStatName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -424,7 +424,7 @@ struct FS6Core_StatData US6Core_General_BlueprintFunctionLibrary::GetStatDataFro
 
 	Params::US6Core_General_BlueprintFunctionLibrary_GetStatDataFromName_Params Parms{};
 
-	Parms.StatName = StatName;
+	Parms.StatName = InStatName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -445,7 +445,7 @@ struct FS6Core_StatData US6Core_General_BlueprintFunctionLibrary::GetStatDataFro
 // class APlayerController*           Controller                                                       (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULocalPlayer*                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULocalPlayer* US6Core_General_BlueprintFunctionLibrary::GetLocalPlayerFromController(class APlayerController* Controller)
+class ULocalPlayer* US6Core_General_BlueprintFunctionLibrary::GetLocalPlayerFromController(class APlayerController* InController)
 {
 	static class UFunction* Func = nullptr;
 
@@ -454,7 +454,7 @@ class ULocalPlayer* US6Core_General_BlueprintFunctionLibrary::GetLocalPlayerFrom
 
 	Params::US6Core_General_BlueprintFunctionLibrary_GetLocalPlayerFromController_Params Parms{};
 
-	Parms.Controller = Controller;
+	Parms.Controller = InController;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -475,7 +475,7 @@ class ULocalPlayer* US6Core_General_BlueprintFunctionLibrary::GetLocalPlayerFrom
 // class UObject*                     WorldContextObject                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName US6Core_General_BlueprintFunctionLibrary::GetCurrentMapName(class UObject* WorldContextObject)
+class FName US6Core_General_BlueprintFunctionLibrary::GetCurrentMapName(class UObject* InWorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -484,7 +484,7 @@ class FName US6Core_General_BlueprintFunctionLibrary::GetCurrentMapName(class UO
 
 	Params::US6Core_General_BlueprintFunctionLibrary_GetCurrentMapName_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
+	Parms.WorldContextObject = InWorldContextObject;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -534,7 +534,7 @@ int32 US6Core_General_BlueprintFunctionLibrary::GetCurrentDrawCalls()
 // TSubclassOf<class IInterface>      Interface                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UActorComponent*             ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UActorComponent* US6Core_General_BlueprintFunctionLibrary::GetComponentByInterface(class AActor* InActor, TSubclassOf<class IInterface> Interface)
+class UActorComponent* US6Core_General_BlueprintFunctionLibrary::GetComponentByInterface(class AActor* InInActor, TSubclassOf<class IInterface> InInterface)
 {
 	static class UFunction* Func = nullptr;
 
@@ -543,8 +543,8 @@ class UActorComponent* US6Core_General_BlueprintFunctionLibrary::GetComponentByI
 
 	Params::US6Core_General_BlueprintFunctionLibrary_GetComponentByInterface_Params Parms{};
 
-	Parms.InActor = InActor;
-	Parms.Interface = Interface;
+	Parms.InActor = InInActor;
+	Parms.Interface = InInterface;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -565,7 +565,7 @@ class UActorComponent* US6Core_General_BlueprintFunctionLibrary::GetComponentByI
 // class FName                        StatGroupName                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TMap<class FName, struct FS6Core_StatData>ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-TMap<class FName, struct FS6Core_StatData> US6Core_General_BlueprintFunctionLibrary::GetAllStatDataForStatGroup(class FName& StatGroupName)
+TMap<class FName, struct FS6Core_StatData> US6Core_General_BlueprintFunctionLibrary::GetAllStatDataForStatGroup(class FName& InStatGroupName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -574,7 +574,7 @@ TMap<class FName, struct FS6Core_StatData> US6Core_General_BlueprintFunctionLibr
 
 	Params::US6Core_General_BlueprintFunctionLibrary_GetAllStatDataForStatGroup_Params Parms{};
 
-	Parms.StatGroupName = StatGroupName;
+	Parms.StatGroupName = InStatGroupName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -596,7 +596,7 @@ TMap<class FName, struct FS6Core_StatData> US6Core_General_BlueprintFunctionLibr
 // bool                               bOnlyCollidingComponents                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBox                        OutBounds                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-void US6Core_General_BlueprintFunctionLibrary::GetActorBounds(TSubclassOf<class AActor> InActorClass, bool bOnlyCollidingComponents, struct FBox* OutBounds)
+void US6Core_General_BlueprintFunctionLibrary::GetActorBounds(TSubclassOf<class AActor> InInActorClass, bool InbOnlyCollidingComponents, struct FBox* InOutBounds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -605,8 +605,8 @@ void US6Core_General_BlueprintFunctionLibrary::GetActorBounds(TSubclassOf<class 
 
 	Params::US6Core_General_BlueprintFunctionLibrary_GetActorBounds_Params Parms{};
 
-	Parms.InActorClass = InActorClass;
-	Parms.bOnlyCollidingComponents = bOnlyCollidingComponents;
+	Parms.InActorClass = InInActorClass;
+	Parms.bOnlyCollidingComponents = InbOnlyCollidingComponents;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -616,8 +616,8 @@ void US6Core_General_BlueprintFunctionLibrary::GetActorBounds(TSubclassOf<class 
 
 	Func->FunctionFlags = Flags;
 
-	if (OutBounds != nullptr)
-		*OutBounds = Parms.OutBounds;
+	if (InOutBounds != nullptr)
+		*InOutBounds = Parms.OutBounds;
 
 }
 
@@ -629,7 +629,7 @@ void US6Core_General_BlueprintFunctionLibrary::GetActorBounds(TSubclassOf<class 
 // TSubclassOf<class UActorComponent> InComponentClass                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UActorComponent*>     ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UActorComponent*> US6Core_General_BlueprintFunctionLibrary::FindDefaultComponentsByClass(TSubclassOf<class AActor> InActorClass, TSubclassOf<class UActorComponent> InComponentClass)
+TArray<class UActorComponent*> US6Core_General_BlueprintFunctionLibrary::FindDefaultComponentsByClass(TSubclassOf<class AActor> InInActorClass, TSubclassOf<class UActorComponent> InInComponentClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -638,8 +638,8 @@ TArray<class UActorComponent*> US6Core_General_BlueprintFunctionLibrary::FindDef
 
 	Params::US6Core_General_BlueprintFunctionLibrary_FindDefaultComponentsByClass_Params Parms{};
 
-	Parms.InActorClass = InActorClass;
-	Parms.InComponentClass = InComponentClass;
+	Parms.InActorClass = InInActorClass;
+	Parms.InComponentClass = InInComponentClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -661,7 +661,7 @@ TArray<class UActorComponent*> US6Core_General_BlueprintFunctionLibrary::FindDef
 // TSubclassOf<class UActorComponent> InComponentClass                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UActorComponent*             ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UActorComponent* US6Core_General_BlueprintFunctionLibrary::FindDefaultComponentByClass(TSubclassOf<class AActor> InActorClass, TSubclassOf<class UActorComponent> InComponentClass)
+class UActorComponent* US6Core_General_BlueprintFunctionLibrary::FindDefaultComponentByClass(TSubclassOf<class AActor> InInActorClass, TSubclassOf<class UActorComponent> InInComponentClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -670,8 +670,8 @@ class UActorComponent* US6Core_General_BlueprintFunctionLibrary::FindDefaultComp
 
 	Params::US6Core_General_BlueprintFunctionLibrary_FindDefaultComponentByClass_Params Parms{};
 
-	Parms.InActorClass = InActorClass;
-	Parms.InComponentClass = InComponentClass;
+	Parms.InActorClass = InInActorClass;
+	Parms.InComponentClass = InInComponentClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -693,7 +693,7 @@ class UActorComponent* US6Core_General_BlueprintFunctionLibrary::FindDefaultComp
 // class FName                        FunctionName                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6Core_General_BlueprintFunctionLibrary::DoesFunctionExist(class UObject* Instance, class FName& FunctionName)
+bool US6Core_General_BlueprintFunctionLibrary::DoesFunctionExist(class UObject* InInstance, class FName& InFunctionName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -702,8 +702,8 @@ bool US6Core_General_BlueprintFunctionLibrary::DoesFunctionExist(class UObject* 
 
 	Params::US6Core_General_BlueprintFunctionLibrary_DoesFunctionExist_Params Parms{};
 
-	Parms.Instance = Instance;
-	Parms.FunctionName = FunctionName;
+	Parms.Instance = InInstance;
+	Parms.FunctionName = InFunctionName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -724,7 +724,7 @@ bool US6Core_General_BlueprintFunctionLibrary::DoesFunctionExist(class UObject* 
 // class FString                      FilePath                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6Core_General_BlueprintFunctionLibrary::DeleteFileAtPath(const class FString& FilePath)
+bool US6Core_General_BlueprintFunctionLibrary::DeleteFileAtPath(const class FString& InFilePath)
 {
 	static class UFunction* Func = nullptr;
 
@@ -733,7 +733,7 @@ bool US6Core_General_BlueprintFunctionLibrary::DeleteFileAtPath(const class FStr
 
 	Params::US6Core_General_BlueprintFunctionLibrary_DeleteFileAtPath_Params Parms{};
 
-	Parms.FilePath = FilePath;
+	Parms.FilePath = InFilePath;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -774,7 +774,7 @@ void US6Core_AsyncAction_LevelTravel::OnLevelTravelComplete__DelegateSignature()
 // class UObject*                     InWorldContextObject                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class US6Core_AsyncAction_LevelTravel*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class US6Core_AsyncAction_LevelTravel* US6Core_AsyncAction_LevelTravel::LevelTravel(const class FString& LevelName, class UObject* InWorldContextObject)
+class US6Core_AsyncAction_LevelTravel* US6Core_AsyncAction_LevelTravel::LevelTravel(const class FString& InLevelName, class UObject* InInWorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -783,8 +783,8 @@ class US6Core_AsyncAction_LevelTravel* US6Core_AsyncAction_LevelTravel::LevelTra
 
 	Params::US6Core_AsyncAction_LevelTravel_LevelTravel_Params Parms{};
 
-	Parms.LevelName = LevelName;
-	Parms.InWorldContextObject = InWorldContextObject;
+	Parms.LevelName = InLevelName;
+	Parms.InWorldContextObject = InInWorldContextObject;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -826,7 +826,7 @@ void US6Core_AsyncAction_LoadSublevel::OnSublevelActionCompleted__DelegateSignat
 // bool                               bInShouldBeVisible                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class US6Core_AsyncAction_LoadSublevel*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class US6Core_AsyncAction_LoadSublevel* US6Core_AsyncAction_LoadSublevel::LoadSublevel(const class FString& InLevelName, class UObject* InWorldContextObject, bool bInShouldBeVisible)
+class US6Core_AsyncAction_LoadSublevel* US6Core_AsyncAction_LoadSublevel::LoadSublevel(const class FString& InInLevelName, class UObject* InInWorldContextObject, bool InbInShouldBeVisible)
 {
 	static class UFunction* Func = nullptr;
 
@@ -835,9 +835,9 @@ class US6Core_AsyncAction_LoadSublevel* US6Core_AsyncAction_LoadSublevel::LoadSu
 
 	Params::US6Core_AsyncAction_LoadSublevel_LoadSublevel_Params Parms{};
 
-	Parms.InLevelName = InLevelName;
-	Parms.InWorldContextObject = InWorldContextObject;
-	Parms.bInShouldBeVisible = bInShouldBeVisible;
+	Parms.InLevelName = InInLevelName;
+	Parms.InWorldContextObject = InInWorldContextObject;
+	Parms.bInShouldBeVisible = InbInShouldBeVisible;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -873,34 +873,6 @@ void US6Core_AsyncAction_LoadSublevel::HandleOnLevelLoaded()
 
 
 	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function S6Core.S6PlatformUtils.IsShowCommonUI
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool US6PlatformUtils::IsShowCommonUI()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("S6PlatformUtils", "IsShowCommonUI");
-
-	Params::US6PlatformUtils_IsShowCommonUI_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
 
 }
 
@@ -974,34 +946,6 @@ bool US6PlatformUtils::IsConsole()
 		Func = Class->GetFunction("S6PlatformUtils", "IsConsole");
 
 	Params::US6PlatformUtils_IsConsole_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function S6Core.S6PlatformUtils.GetShowUIStyle
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// enum class EShowUIStyle            ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-enum class EShowUIStyle US6PlatformUtils::GetShowUIStyle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("S6PlatformUtils", "GetShowUIStyle");
-
-	Params::US6PlatformUtils_GetShowUIStyle_Params Parms{};
 
 
 	auto Flags = Func->FunctionFlags;

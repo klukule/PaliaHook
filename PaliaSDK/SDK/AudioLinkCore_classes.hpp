@@ -17,15 +17,11 @@ namespace SDK
 class UAudioLinkSettingsAbstract : public UObject
 {
 public:
-	uint8                                        Pad_251A[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2687[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioLinkSettingsAbstract");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioLinkSettingsAbstract");
 		return Clss;
 	}
 

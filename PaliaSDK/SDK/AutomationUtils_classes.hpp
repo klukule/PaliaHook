@@ -20,15 +20,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AutomationUtilsBlueprintLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("AutomationUtilsBlueprintLibrary");
 		return Clss;
 	}
 
-	void TakeGameplayAutomationScreenshot(const class FString& ScreenshotName, float MaxGlobalError, float MaxLocalError, const class FString& MapNameOverride);
+	void TakeGameplayAutomationScreenshot(const class FString& InScreenshotName, float InMaxGlobalError, float InMaxLocalError, const class FString& InMapNameOverride);
 };
 
 }

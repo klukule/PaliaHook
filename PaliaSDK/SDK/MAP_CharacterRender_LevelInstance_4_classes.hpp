@@ -23,21 +23,17 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MAP_CharacterRender_C");
-
+		static class UClass* Clss = UObject::FindClassFast("MAP_CharacterRender_C");
 		return Clss;
 	}
 
 	TSet<class AActor*> GetAllTaggedActors();
 	TSet<class AActor*> GetAllCameraActors();
-	class AActor* GetCameraActorForCosmeticAsset(class UVAL_CharacterCustomizationItemBase* Item, enum class EVAL_CharacterBodyType BodyType);
+	class AActor* GetCameraActorForCosmeticAsset(class UVAL_CharacterCustomizationItemBase* InItem, enum class EVAL_CharacterBodyType InBodyType);
 	class AValeriaCharacter* GetCharacter();
 	class AActor* GetDefaultCameraActor();
 	void ReceiveBeginPlay();
-	void ExecuteUbergraph_MAP_CharacterRender(int32 EntryPoint);
+	void ExecuteUbergraph_MAP_CharacterRender(int32 InEntryPoint);
 };
 
 }

@@ -20,15 +20,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BPI_VisibilityChanges_C");
-
+		static class UClass* Clss = UObject::FindClassFast("BPI_VisibilityChanges_C");
 		return Clss;
 	}
 
-	void S6OnVisibilityChanged(bool IsVisible);
+	void S6OnVisibilityChanged(bool InIsVisible);
 };
 
 }

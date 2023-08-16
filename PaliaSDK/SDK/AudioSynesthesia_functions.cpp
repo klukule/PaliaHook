@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -49,7 +49,7 @@ int32 USynesthesiaSpectrumAnalyzer::GetNumCenterFrequencies()
 // float                              InSampleRate                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<float>                      OutCenterFrequencies                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void USynesthesiaSpectrumAnalyzer::GetCenterFrequencies(float InSampleRate, TArray<float>* OutCenterFrequencies)
+void USynesthesiaSpectrumAnalyzer::GetCenterFrequencies(float InInSampleRate, TArray<float>* InOutCenterFrequencies)
 {
 	static class UFunction* Func = nullptr;
 
@@ -58,7 +58,7 @@ void USynesthesiaSpectrumAnalyzer::GetCenterFrequencies(float InSampleRate, TArr
 
 	Params::USynesthesiaSpectrumAnalyzer_GetCenterFrequencies_Params Parms{};
 
-	Parms.InSampleRate = InSampleRate;
+	Parms.InSampleRate = InInSampleRate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -68,8 +68,8 @@ void USynesthesiaSpectrumAnalyzer::GetCenterFrequencies(float InSampleRate, TArr
 
 	Func->FunctionFlags = Flags;
 
-	if (OutCenterFrequencies != nullptr)
-		*OutCenterFrequencies = Parms.OutCenterFrequencies;
+	if (InOutCenterFrequencies != nullptr)
+		*InOutCenterFrequencies = Parms.OutCenterFrequencies;
 
 }
 
@@ -81,7 +81,7 @@ void USynesthesiaSpectrumAnalyzer::GetCenterFrequencies(float InSampleRate, TArr
 // int32                              InChannel                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<float>                      OutConstantQ                                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UConstantQNRT::GetNormalizedChannelConstantQAtTime(float InSeconds, int32 InChannel, TArray<float>* OutConstantQ)
+void UConstantQNRT::GetNormalizedChannelConstantQAtTime(float InInSeconds, int32 InInChannel, TArray<float>* InOutConstantQ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,8 +90,8 @@ void UConstantQNRT::GetNormalizedChannelConstantQAtTime(float InSeconds, int32 I
 
 	Params::UConstantQNRT_GetNormalizedChannelConstantQAtTime_Params Parms{};
 
-	Parms.InSeconds = InSeconds;
-	Parms.InChannel = InChannel;
+	Parms.InSeconds = InInSeconds;
+	Parms.InChannel = InInChannel;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -101,8 +101,8 @@ void UConstantQNRT::GetNormalizedChannelConstantQAtTime(float InSeconds, int32 I
 
 	Func->FunctionFlags = Flags;
 
-	if (OutConstantQ != nullptr)
-		*OutConstantQ = Parms.OutConstantQ;
+	if (InOutConstantQ != nullptr)
+		*InOutConstantQ = Parms.OutConstantQ;
 
 }
 
@@ -114,7 +114,7 @@ void UConstantQNRT::GetNormalizedChannelConstantQAtTime(float InSeconds, int32 I
 // int32                              InChannel                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<float>                      OutConstantQ                                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UConstantQNRT::GetChannelConstantQAtTime(float InSeconds, int32 InChannel, TArray<float>* OutConstantQ)
+void UConstantQNRT::GetChannelConstantQAtTime(float InInSeconds, int32 InInChannel, TArray<float>* InOutConstantQ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -123,8 +123,8 @@ void UConstantQNRT::GetChannelConstantQAtTime(float InSeconds, int32 InChannel, 
 
 	Params::UConstantQNRT_GetChannelConstantQAtTime_Params Parms{};
 
-	Parms.InSeconds = InSeconds;
-	Parms.InChannel = InChannel;
+	Parms.InSeconds = InInSeconds;
+	Parms.InChannel = InInChannel;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -134,8 +134,8 @@ void UConstantQNRT::GetChannelConstantQAtTime(float InSeconds, int32 InChannel, 
 
 	Func->FunctionFlags = Flags;
 
-	if (OutConstantQ != nullptr)
-		*OutConstantQ = Parms.OutConstantQ;
+	if (InOutConstantQ != nullptr)
+		*InOutConstantQ = Parms.OutConstantQ;
 
 }
 
@@ -146,7 +146,7 @@ void UConstantQNRT::GetChannelConstantQAtTime(float InSeconds, int32 InChannel, 
 // float                              InSeconds                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              OutLoudness                                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULoudnessNRT::GetNormalizedLoudnessAtTime(float InSeconds, float* OutLoudness)
+void ULoudnessNRT::GetNormalizedLoudnessAtTime(float InInSeconds, float* InOutLoudness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -155,7 +155,7 @@ void ULoudnessNRT::GetNormalizedLoudnessAtTime(float InSeconds, float* OutLoudne
 
 	Params::ULoudnessNRT_GetNormalizedLoudnessAtTime_Params Parms{};
 
-	Parms.InSeconds = InSeconds;
+	Parms.InSeconds = InInSeconds;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -165,8 +165,8 @@ void ULoudnessNRT::GetNormalizedLoudnessAtTime(float InSeconds, float* OutLoudne
 
 	Func->FunctionFlags = Flags;
 
-	if (OutLoudness != nullptr)
-		*OutLoudness = Parms.OutLoudness;
+	if (InOutLoudness != nullptr)
+		*InOutLoudness = Parms.OutLoudness;
 
 }
 
@@ -178,7 +178,7 @@ void ULoudnessNRT::GetNormalizedLoudnessAtTime(float InSeconds, float* OutLoudne
 // int32                              InChannel                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              OutLoudness                                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULoudnessNRT::GetNormalizedChannelLoudnessAtTime(float InSeconds, int32 InChannel, float* OutLoudness)
+void ULoudnessNRT::GetNormalizedChannelLoudnessAtTime(float InInSeconds, int32 InInChannel, float* InOutLoudness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -187,8 +187,8 @@ void ULoudnessNRT::GetNormalizedChannelLoudnessAtTime(float InSeconds, int32 InC
 
 	Params::ULoudnessNRT_GetNormalizedChannelLoudnessAtTime_Params Parms{};
 
-	Parms.InSeconds = InSeconds;
-	Parms.InChannel = InChannel;
+	Parms.InSeconds = InInSeconds;
+	Parms.InChannel = InInChannel;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -198,8 +198,8 @@ void ULoudnessNRT::GetNormalizedChannelLoudnessAtTime(float InSeconds, int32 InC
 
 	Func->FunctionFlags = Flags;
 
-	if (OutLoudness != nullptr)
-		*OutLoudness = Parms.OutLoudness;
+	if (InOutLoudness != nullptr)
+		*InOutLoudness = Parms.OutLoudness;
 
 }
 
@@ -210,7 +210,7 @@ void ULoudnessNRT::GetNormalizedChannelLoudnessAtTime(float InSeconds, int32 InC
 // float                              InSeconds                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              OutLoudness                                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULoudnessNRT::GetLoudnessAtTime(float InSeconds, float* OutLoudness)
+void ULoudnessNRT::GetLoudnessAtTime(float InInSeconds, float* InOutLoudness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -219,7 +219,7 @@ void ULoudnessNRT::GetLoudnessAtTime(float InSeconds, float* OutLoudness)
 
 	Params::ULoudnessNRT_GetLoudnessAtTime_Params Parms{};
 
-	Parms.InSeconds = InSeconds;
+	Parms.InSeconds = InInSeconds;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -229,8 +229,8 @@ void ULoudnessNRT::GetLoudnessAtTime(float InSeconds, float* OutLoudness)
 
 	Func->FunctionFlags = Flags;
 
-	if (OutLoudness != nullptr)
-		*OutLoudness = Parms.OutLoudness;
+	if (InOutLoudness != nullptr)
+		*InOutLoudness = Parms.OutLoudness;
 
 }
 
@@ -242,7 +242,7 @@ void ULoudnessNRT::GetLoudnessAtTime(float InSeconds, float* OutLoudness)
 // int32                              InChannel                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              OutLoudness                                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULoudnessNRT::GetChannelLoudnessAtTime(float InSeconds, int32 InChannel, float* OutLoudness)
+void ULoudnessNRT::GetChannelLoudnessAtTime(float InInSeconds, int32 InInChannel, float* InOutLoudness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -251,8 +251,8 @@ void ULoudnessNRT::GetChannelLoudnessAtTime(float InSeconds, int32 InChannel, fl
 
 	Params::ULoudnessNRT_GetChannelLoudnessAtTime_Params Parms{};
 
-	Parms.InSeconds = InSeconds;
-	Parms.InChannel = InChannel;
+	Parms.InSeconds = InInSeconds;
+	Parms.InChannel = InInChannel;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -262,8 +262,8 @@ void ULoudnessNRT::GetChannelLoudnessAtTime(float InSeconds, int32 InChannel, fl
 
 	Func->FunctionFlags = Flags;
 
-	if (OutLoudness != nullptr)
-		*OutLoudness = Parms.OutLoudness;
+	if (InOutLoudness != nullptr)
+		*InOutLoudness = Parms.OutLoudness;
 
 }
 
@@ -277,7 +277,7 @@ void ULoudnessNRT::GetChannelLoudnessAtTime(float InSeconds, int32 InChannel, fl
 // TArray<float>                      OutOnsetTimestamps                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // TArray<float>                      OutOnsetStrengths                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UOnsetNRT::GetNormalizedChannelOnsetsBetweenTimes(float InStartSeconds, float InEndSeconds, int32 InChannel, TArray<float>* OutOnsetTimestamps, TArray<float>* OutOnsetStrengths)
+void UOnsetNRT::GetNormalizedChannelOnsetsBetweenTimes(float InInStartSeconds, float InInEndSeconds, int32 InInChannel, TArray<float>* InOutOnsetTimestamps, TArray<float>* InOutOnsetStrengths)
 {
 	static class UFunction* Func = nullptr;
 
@@ -286,9 +286,9 @@ void UOnsetNRT::GetNormalizedChannelOnsetsBetweenTimes(float InStartSeconds, flo
 
 	Params::UOnsetNRT_GetNormalizedChannelOnsetsBetweenTimes_Params Parms{};
 
-	Parms.InStartSeconds = InStartSeconds;
-	Parms.InEndSeconds = InEndSeconds;
-	Parms.InChannel = InChannel;
+	Parms.InStartSeconds = InInStartSeconds;
+	Parms.InEndSeconds = InInEndSeconds;
+	Parms.InChannel = InInChannel;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -298,11 +298,11 @@ void UOnsetNRT::GetNormalizedChannelOnsetsBetweenTimes(float InStartSeconds, flo
 
 	Func->FunctionFlags = Flags;
 
-	if (OutOnsetTimestamps != nullptr)
-		*OutOnsetTimestamps = Parms.OutOnsetTimestamps;
+	if (InOutOnsetTimestamps != nullptr)
+		*InOutOnsetTimestamps = Parms.OutOnsetTimestamps;
 
-	if (OutOnsetStrengths != nullptr)
-		*OutOnsetStrengths = Parms.OutOnsetStrengths;
+	if (InOutOnsetStrengths != nullptr)
+		*InOutOnsetStrengths = Parms.OutOnsetStrengths;
 
 }
 
@@ -316,7 +316,7 @@ void UOnsetNRT::GetNormalizedChannelOnsetsBetweenTimes(float InStartSeconds, flo
 // TArray<float>                      OutOnsetTimestamps                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // TArray<float>                      OutOnsetStrengths                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UOnsetNRT::GetChannelOnsetsBetweenTimes(float InStartSeconds, float InEndSeconds, int32 InChannel, TArray<float>* OutOnsetTimestamps, TArray<float>* OutOnsetStrengths)
+void UOnsetNRT::GetChannelOnsetsBetweenTimes(float InInStartSeconds, float InInEndSeconds, int32 InInChannel, TArray<float>* InOutOnsetTimestamps, TArray<float>* InOutOnsetStrengths)
 {
 	static class UFunction* Func = nullptr;
 
@@ -325,9 +325,9 @@ void UOnsetNRT::GetChannelOnsetsBetweenTimes(float InStartSeconds, float InEndSe
 
 	Params::UOnsetNRT_GetChannelOnsetsBetweenTimes_Params Parms{};
 
-	Parms.InStartSeconds = InStartSeconds;
-	Parms.InEndSeconds = InEndSeconds;
-	Parms.InChannel = InChannel;
+	Parms.InStartSeconds = InInStartSeconds;
+	Parms.InEndSeconds = InInEndSeconds;
+	Parms.InChannel = InInChannel;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -337,11 +337,11 @@ void UOnsetNRT::GetChannelOnsetsBetweenTimes(float InStartSeconds, float InEndSe
 
 	Func->FunctionFlags = Flags;
 
-	if (OutOnsetTimestamps != nullptr)
-		*OutOnsetTimestamps = Parms.OutOnsetTimestamps;
+	if (InOutOnsetTimestamps != nullptr)
+		*InOutOnsetTimestamps = Parms.OutOnsetTimestamps;
 
-	if (OutOnsetStrengths != nullptr)
-		*OutOnsetStrengths = Parms.OutOnsetStrengths;
+	if (InOutOnsetStrengths != nullptr)
+		*InOutOnsetStrengths = Parms.OutOnsetStrengths;
 
 }
 

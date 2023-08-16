@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -22,7 +22,7 @@ namespace SDK
 // struct FVector2D                   UV                                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              UVIndex                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UStaticMeshDescription::SetVertexInstanceUV(const struct FVertexInstanceID& VertexInstanceID, const struct FVector2D& UV, int32 UVIndex)
+void UStaticMeshDescription::SetVertexInstanceUV(const struct FVertexInstanceID& InVertexInstanceID, const struct FVector2D& InUV, int32 InUVIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,9 +31,9 @@ void UStaticMeshDescription::SetVertexInstanceUV(const struct FVertexInstanceID&
 
 	Params::UStaticMeshDescription_SetVertexInstanceUV_Params Parms{};
 
-	Parms.VertexInstanceID = VertexInstanceID;
-	Parms.UV = UV;
-	Parms.UVIndex = UVIndex;
+	Parms.VertexInstanceID = InVertexInstanceID;
+	Parms.UV = InUV;
+	Parms.UVIndex = InUVIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -52,7 +52,7 @@ void UStaticMeshDescription::SetVertexInstanceUV(const struct FVertexInstanceID&
 // struct FPolygonGroupID             PolygonGroupID                                                   (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        SlotName                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UStaticMeshDescription::SetPolygonGroupMaterialSlotName(const struct FPolygonGroupID& PolygonGroupID, class FName& SlotName)
+void UStaticMeshDescription::SetPolygonGroupMaterialSlotName(const struct FPolygonGroupID& InPolygonGroupID, class FName& InSlotName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61,8 +61,8 @@ void UStaticMeshDescription::SetPolygonGroupMaterialSlotName(const struct FPolyg
 
 	Params::UStaticMeshDescription_SetPolygonGroupMaterialSlotName_Params Parms{};
 
-	Parms.PolygonGroupID = PolygonGroupID;
-	Parms.SlotName = SlotName;
+	Parms.PolygonGroupID = InPolygonGroupID;
+	Parms.SlotName = InSlotName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -82,7 +82,7 @@ void UStaticMeshDescription::SetPolygonGroupMaterialSlotName(const struct FPolyg
 // int32                              UVIndex                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector2D UStaticMeshDescription::GetVertexInstanceUV(const struct FVertexInstanceID& VertexInstanceID, int32 UVIndex)
+struct FVector2D UStaticMeshDescription::GetVertexInstanceUV(const struct FVertexInstanceID& InVertexInstanceID, int32 InUVIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -91,8 +91,8 @@ struct FVector2D UStaticMeshDescription::GetVertexInstanceUV(const struct FVerte
 
 	Params::UStaticMeshDescription_GetVertexInstanceUV_Params Parms{};
 
-	Parms.VertexInstanceID = VertexInstanceID;
-	Parms.UVIndex = UVIndex;
+	Parms.VertexInstanceID = InVertexInstanceID;
+	Parms.UVIndex = InUVIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -120,7 +120,7 @@ struct FVector2D UStaticMeshDescription::GetVertexInstanceUV(const struct FVerte
 // struct FPolygonID                  PolygonID_PlusZ                                                  (Parm, OutParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPolygonID                  PolygonID_MinusZ                                                 (Parm, OutParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UStaticMeshDescription::CreateCube(const struct FVector& Center, const struct FVector& HalfExtents, const struct FPolygonGroupID& PolygonGroup, struct FPolygonID* PolygonID_PlusX, struct FPolygonID* PolygonID_MinusX, struct FPolygonID* PolygonID_PlusY, struct FPolygonID* PolygonID_MinusY, struct FPolygonID* PolygonID_PlusZ, struct FPolygonID* PolygonID_MinusZ)
+void UStaticMeshDescription::CreateCube(const struct FVector& InCenter, const struct FVector& InHalfExtents, const struct FPolygonGroupID& InPolygonGroup, struct FPolygonID* InPolygonID_PlusX, struct FPolygonID* InPolygonID_MinusX, struct FPolygonID* InPolygonID_PlusY, struct FPolygonID* InPolygonID_MinusY, struct FPolygonID* InPolygonID_PlusZ, struct FPolygonID* InPolygonID_MinusZ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -129,9 +129,9 @@ void UStaticMeshDescription::CreateCube(const struct FVector& Center, const stru
 
 	Params::UStaticMeshDescription_CreateCube_Params Parms{};
 
-	Parms.Center = Center;
-	Parms.HalfExtents = HalfExtents;
-	Parms.PolygonGroup = PolygonGroup;
+	Parms.Center = InCenter;
+	Parms.HalfExtents = InHalfExtents;
+	Parms.PolygonGroup = InPolygonGroup;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -141,23 +141,23 @@ void UStaticMeshDescription::CreateCube(const struct FVector& Center, const stru
 
 	Func->FunctionFlags = Flags;
 
-	if (PolygonID_PlusX != nullptr)
-		*PolygonID_PlusX = Parms.PolygonID_PlusX;
+	if (InPolygonID_PlusX != nullptr)
+		*InPolygonID_PlusX = Parms.PolygonID_PlusX;
 
-	if (PolygonID_MinusX != nullptr)
-		*PolygonID_MinusX = Parms.PolygonID_MinusX;
+	if (InPolygonID_MinusX != nullptr)
+		*InPolygonID_MinusX = Parms.PolygonID_MinusX;
 
-	if (PolygonID_PlusY != nullptr)
-		*PolygonID_PlusY = Parms.PolygonID_PlusY;
+	if (InPolygonID_PlusY != nullptr)
+		*InPolygonID_PlusY = Parms.PolygonID_PlusY;
 
-	if (PolygonID_MinusY != nullptr)
-		*PolygonID_MinusY = Parms.PolygonID_MinusY;
+	if (InPolygonID_MinusY != nullptr)
+		*InPolygonID_MinusY = Parms.PolygonID_MinusY;
 
-	if (PolygonID_PlusZ != nullptr)
-		*PolygonID_PlusZ = Parms.PolygonID_PlusZ;
+	if (InPolygonID_PlusZ != nullptr)
+		*InPolygonID_PlusZ = Parms.PolygonID_PlusZ;
 
-	if (PolygonID_MinusZ != nullptr)
-		*PolygonID_MinusZ = Parms.PolygonID_MinusZ;
+	if (InPolygonID_MinusZ != nullptr)
+		*InPolygonID_MinusZ = Parms.PolygonID_MinusZ;
 
 }
 

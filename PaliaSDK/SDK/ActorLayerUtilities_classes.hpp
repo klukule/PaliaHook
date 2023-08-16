@@ -20,17 +20,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("LayersBlueprintLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("LayersBlueprintLibrary");
 		return Clss;
 	}
 
-	void RemoveActorFromLayer(class AActor* InActor, struct FActorLayer& Layer);
-	TArray<class AActor*> GetActors(class UObject* WorldContextObject, struct FActorLayer& ActorLayer);
-	void AddActorToLayer(class AActor* InActor, struct FActorLayer& Layer);
+	void RemoveActorFromLayer(class AActor* InInActor, struct FActorLayer& InLayer);
+	TArray<class AActor*> GetActors(class UObject* InWorldContextObject, struct FActorLayer& InActorLayer);
+	void AddActorToLayer(class AActor* InInActor, struct FActorLayer& InLayer);
 };
 
 }

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class FString                      Path                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::SetTokenizedSequencePath(const class FString& Path)
+void UImgMediaSource::SetTokenizedSequencePath(const class FString& InPath)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UImgMediaSource::SetTokenizedSequencePath(const class FString& Path)
 
 	Params::UImgMediaSource_SetTokenizedSequencePath_Params Parms{};
 
-	Parms.Path = Path;
+	Parms.Path = InPath;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -47,7 +47,7 @@ void UImgMediaSource::SetTokenizedSequencePath(const class FString& Path)
 // Parameters:
 // class FString                      Path                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::SetSequencePath(const class FString& Path)
+void UImgMediaSource::SetSequencePath(const class FString& InPath)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void UImgMediaSource::SetSequencePath(const class FString& Path)
 
 	Params::UImgMediaSource_SetSequencePath_Params Parms{};
 
-	Parms.Path = Path;
+	Parms.Path = InPath;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -74,7 +74,7 @@ void UImgMediaSource::SetSequencePath(const class FString& Path)
 // Parameters:
 // float                              Distance                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::SetMipLevelDistance(float Distance)
+void UImgMediaSource::SetMipLevelDistance(float InDistance)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,7 +83,7 @@ void UImgMediaSource::SetMipLevelDistance(float Distance)
 
 	Params::UImgMediaSource_SetMipLevelDistance_Params Parms{};
 
-	Parms.Distance = Distance;
+	Parms.Distance = InDistance;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -101,7 +101,7 @@ void UImgMediaSource::SetMipLevelDistance(float Distance)
 // Parameters:
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::RemoveTargetObject(class AActor* InActor)
+void UImgMediaSource::RemoveTargetObject(class AActor* InInActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -110,7 +110,7 @@ void UImgMediaSource::RemoveTargetObject(class AActor* InActor)
 
 	Params::UImgMediaSource_RemoveTargetObject_Params Parms{};
 
-	Parms.InActor = InActor;
+	Parms.InActor = InInActor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -128,7 +128,7 @@ void UImgMediaSource::RemoveTargetObject(class AActor* InActor)
 // Parameters:
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::RemoveGlobalCamera(class AActor* InActor)
+void UImgMediaSource::RemoveGlobalCamera(class AActor* InInActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -137,7 +137,7 @@ void UImgMediaSource::RemoveGlobalCamera(class AActor* InActor)
 
 	Params::UImgMediaSource_RemoveGlobalCamera_Params Parms{};
 
-	Parms.InActor = InActor;
+	Parms.InActor = InInActor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -183,7 +183,7 @@ class FString UImgMediaSource::GetSequencePath()
 // Parameters:
 // TArray<class FString>              OutProxies                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::GetProxies(TArray<class FString>* OutProxies)
+void UImgMediaSource::GetProxies(TArray<class FString>* InOutProxies)
 {
 	static class UFunction* Func = nullptr;
 
@@ -201,8 +201,8 @@ void UImgMediaSource::GetProxies(TArray<class FString>* OutProxies)
 
 	Func->FunctionFlags = Flags;
 
-	if (OutProxies != nullptr)
-		*OutProxies = Parms.OutProxies;
+	if (InOutProxies != nullptr)
+		*InOutProxies = Parms.OutProxies;
 
 }
 
@@ -212,7 +212,7 @@ void UImgMediaSource::GetProxies(TArray<class FString>* OutProxies)
 // Parameters:
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::AddTargetObject(class AActor* InActor)
+void UImgMediaSource::AddTargetObject(class AActor* InInActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -221,7 +221,7 @@ void UImgMediaSource::AddTargetObject(class AActor* InActor)
 
 	Params::UImgMediaSource_AddTargetObject_Params Parms{};
 
-	Parms.InActor = InActor;
+	Parms.InActor = InInActor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -239,7 +239,7 @@ void UImgMediaSource::AddTargetObject(class AActor* InActor)
 // Parameters:
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::AddGlobalCamera(class AActor* InActor)
+void UImgMediaSource::AddGlobalCamera(class AActor* InInActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -248,7 +248,7 @@ void UImgMediaSource::AddGlobalCamera(class AActor* InActor)
 
 	Params::UImgMediaSource_AddGlobalCamera_Params Parms{};
 
-	Parms.InActor = InActor;
+	Parms.InActor = InInActor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

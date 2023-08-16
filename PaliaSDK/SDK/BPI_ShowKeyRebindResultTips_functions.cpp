@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -22,7 +22,7 @@ namespace SDK
 // class FText                        RebindActionNameDesc                                             (BlueprintVisible, BlueprintReadOnly, Parm)
 // TArray<class UTexture2D*>          InputKeyIcons                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void IBPI_ShowKeyRebindResultTips_C::UpdateKeyRebindTips(class FText ConflictActionNameDesc, class FText RebindActionNameDesc, TArray<class UTexture2D*>& InputKeyIcons)
+void IBPI_ShowKeyRebindResultTips_C::UpdateKeyRebindTips(class FText InConflictActionNameDesc, class FText InRebindActionNameDesc, TArray<class UTexture2D*>& InInputKeyIcons)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,9 +31,9 @@ void IBPI_ShowKeyRebindResultTips_C::UpdateKeyRebindTips(class FText ConflictAct
 
 	Params::IBPI_ShowKeyRebindResultTips_C_UpdateKeyRebindTips_Params Parms{};
 
-	Parms.ConflictActionNameDesc = ConflictActionNameDesc;
-	Parms.RebindActionNameDesc = RebindActionNameDesc;
-	Parms.InputKeyIcons = InputKeyIcons;
+	Parms.ConflictActionNameDesc = InConflictActionNameDesc;
+	Parms.RebindActionNameDesc = InRebindActionNameDesc;
+	Parms.InputKeyIcons = InInputKeyIcons;
 
 	UObject::ProcessEvent(Func, &Parms);
 

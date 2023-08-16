@@ -21,15 +21,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AnimationSharingStateProcessor");
-
+		static class UClass* Clss = UObject::FindClassFast("AnimationSharingStateProcessor");
 		return Clss;
 	}
 
-	void ProcessActorState(int32* OutState, class AActor* InActor, uint8 CurrentState, uint8 OnDemandState, bool* bShouldProcess);
+	void ProcessActorState(int32* InOutState, class AActor* InInActor, uint8 InCurrentState, uint8 InOnDemandState, bool* InbShouldProcess);
 	class UEnum* GetAnimationStateEnum();
 };
 
@@ -42,21 +38,17 @@ public:
 	float                                        PermutationTimeOffset;                             // 0x350(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        PlayRate;                                          // 0x354(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bStateBool;                                        // 0x358(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_19A8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A2E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAnimSharingInstance*                  Instance;                                          // 0x360(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_19A9[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A2F[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AnimSharingStateInstance");
-
+		static class UClass* Clss = UObject::FindClassFast("AnimSharingStateInstance");
 		return Clss;
 	}
 
-	void GetInstancedActors(TArray<class AActor*>* Actors);
+	void GetInstancedActors(TArray<class AActor*>* InActors);
 };
 
 // 0x10 (0x360 - 0x350)
@@ -68,15 +60,11 @@ public:
 	TWeakObjectPtr<class USkeletalMeshComponent> ToComponent;                                       // 0x350(0x8)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        BlendTime;                                         // 0x358(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bBlendBool;                                        // 0x35C(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_19AF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A36[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AnimSharingTransitionInstance");
-
+		static class UClass* Clss = UObject::FindClassFast("AnimSharingTransitionInstance");
 		return Clss;
 	}
 
@@ -91,15 +79,11 @@ public:
 	TWeakObjectPtr<class UAnimSequence>          AdditiveAnimation;                                 // 0x350(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        Alpha;                                             // 0x358(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bStateBool;                                        // 0x35C(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_19B4[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A4A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AnimSharingAdditiveInstance");
-
+		static class UClass* Clss = UObject::FindClassFast("AnimSharingAdditiveInstance");
 		return Clss;
 	}
 
@@ -111,22 +95,18 @@ class UAnimSharingInstance : public UObject
 {
 public:
 	TArray<class AActor*>                        RegisteredActors;                                  // 0x28(0x10)(Edit, ZeroConstructor, Transient, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19BA[0x50];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A4E[0x50];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAnimationSharingStateProcessor*       StateProcessor;                                    // 0x88(0x8)(Edit, ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19BC[0x38];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A4F[0x38];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UAnimSequence*>                 UsedAnimationSequences;                            // 0xC8(0x10)(Edit, ZeroConstructor, Transient, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19BD[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A51[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UEnum*                                 StateEnum;                                         // 0xE8(0x8)(Edit, ZeroConstructor, Transient, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                SharingActor;                                      // 0xF0(0x8)(Edit, ZeroConstructor, Transient, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19BF[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A53[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AnimSharingInstance");
-
+		static class UClass* Clss = UObject::FindClassFast("AnimSharingInstance");
 		return Clss;
 	}
 
@@ -139,21 +119,17 @@ class UAnimationSharingManager : public UObject
 public:
 	TArray<class USkeleton*>                     Skeletons;                                         // 0x28(0x10)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	TArray<class UAnimSharingInstance*>          PerSkeletonData;                                   // 0x38(0x10)(Edit, ZeroConstructor, Transient, EditConst, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                        Pad_19DD[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A7B[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AnimationSharingManager");
-
+		static class UClass* Clss = UObject::FindClassFast("AnimationSharingManager");
 		return Clss;
 	}
 
-	void RegisterActorWithSkeletonBP(class AActor* InActor, class USkeleton* SharingSkeleton);
-	class UAnimationSharingManager* GetAnimationSharingManager(class UObject* WorldContextObject);
-	bool CreateAnimationSharingManager(class UObject* WorldContextObject, class UAnimationSharingSetup* Setup);
+	void RegisterActorWithSkeletonBP(class AActor* InInActor, class USkeleton* InSharingSkeleton);
+	class UAnimationSharingManager* GetAnimationSharingManager(class UObject* InWorldContextObject);
+	bool CreateAnimationSharingManager(class UObject* InWorldContextObject, class UAnimationSharingSetup* InSetup);
 	bool AnimationSharingEnabled();
 };
 
@@ -167,11 +143,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AnimationSharingSetup");
-
+		static class UClass* Clss = UObject::FindClassFast("AnimationSharingSetup");
 		return Clss;
 	}
 

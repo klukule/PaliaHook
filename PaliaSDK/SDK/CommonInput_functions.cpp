@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -104,7 +104,7 @@ bool UCommonInputSubsystem::ShouldShowInputKeys()
 // Parameters:
 // class FName                        InGamepadInputType                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCommonInputSubsystem::SetGamepadInputType(class FName InGamepadInputType)
+void UCommonInputSubsystem::SetGamepadInputType(class FName InInGamepadInputType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -113,7 +113,7 @@ void UCommonInputSubsystem::SetGamepadInputType(class FName InGamepadInputType)
 
 	Params::UCommonInputSubsystem_SetGamepadInputType_Params Parms{};
 
-	Parms.InGamepadInputType = InGamepadInputType;
+	Parms.InGamepadInputType = InInGamepadInputType;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -131,7 +131,7 @@ void UCommonInputSubsystem::SetGamepadInputType(class FName InGamepadInputType)
 // Parameters:
 // enum class ECommonInputType        NewInputType                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCommonInputSubsystem::SetCurrentInputType(enum class ECommonInputType NewInputType)
+void UCommonInputSubsystem::SetCurrentInputType(enum class ECommonInputType InNewInputType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -140,7 +140,7 @@ void UCommonInputSubsystem::SetCurrentInputType(enum class ECommonInputType NewI
 
 	Params::UCommonInputSubsystem_SetCurrentInputType_Params Parms{};
 
-	Parms.NewInputType = NewInputType;
+	Parms.NewInputType = InNewInputType;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -187,7 +187,7 @@ bool UCommonInputSubsystem::IsUsingPointerInput()
 // enum class ECommonInputType        InputMethod                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCommonInputSubsystem::IsInputMethodActive(enum class ECommonInputType InputMethod)
+bool UCommonInputSubsystem::IsInputMethodActive(enum class ECommonInputType InInputMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -196,7 +196,7 @@ bool UCommonInputSubsystem::IsInputMethodActive(enum class ECommonInputType Inpu
 
 	Params::UCommonInputSubsystem_IsInputMethodActive_Params Parms{};
 
-	Parms.InputMethod = InputMethod;
+	Parms.InputMethod = InInputMethod;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

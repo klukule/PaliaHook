@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // int32                              NumSubsteps                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UClothingSimulationInteractor::SetNumSubsteps(int32 NumSubsteps)
+void UClothingSimulationInteractor::SetNumSubsteps(int32 InNumSubsteps)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UClothingSimulationInteractor::SetNumSubsteps(int32 NumSubsteps)
 
 	Params::UClothingSimulationInteractor_SetNumSubsteps_Params Parms{};
 
-	Parms.NumSubsteps = NumSubsteps;
+	Parms.NumSubsteps = InNumSubsteps;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -47,7 +47,7 @@ void UClothingSimulationInteractor::SetNumSubsteps(int32 NumSubsteps)
 // Parameters:
 // int32                              NumIterations                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UClothingSimulationInteractor::SetNumIterations(int32 NumIterations)
+void UClothingSimulationInteractor::SetNumIterations(int32 InNumIterations)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void UClothingSimulationInteractor::SetNumIterations(int32 NumIterations)
 
 	Params::UClothingSimulationInteractor_SetNumIterations_Params Parms{};
 
-	Parms.NumIterations = NumIterations;
+	Parms.NumIterations = InNumIterations;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -74,7 +74,7 @@ void UClothingSimulationInteractor::SetNumIterations(int32 NumIterations)
 // Parameters:
 // int32                              MaxNumIterations                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UClothingSimulationInteractor::SetMaxNumIterations(int32 MaxNumIterations)
+void UClothingSimulationInteractor::SetMaxNumIterations(int32 InMaxNumIterations)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,7 +83,7 @@ void UClothingSimulationInteractor::SetMaxNumIterations(int32 MaxNumIterations)
 
 	Params::UClothingSimulationInteractor_SetMaxNumIterations_Params Parms{};
 
-	Parms.MaxNumIterations = MaxNumIterations;
+	Parms.MaxNumIterations = InMaxNumIterations;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -101,7 +101,7 @@ void UClothingSimulationInteractor::SetMaxNumIterations(int32 MaxNumIterations)
 // Parameters:
 // float                              InStiffness                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UClothingSimulationInteractor::SetAnimDriveSpringStiffness(float InStiffness)
+void UClothingSimulationInteractor::SetAnimDriveSpringStiffness(float InInStiffness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -110,7 +110,7 @@ void UClothingSimulationInteractor::SetAnimDriveSpringStiffness(float InStiffnes
 
 	Params::UClothingSimulationInteractor_SetAnimDriveSpringStiffness_Params Parms{};
 
-	Parms.InStiffness = InStiffness;
+	Parms.InStiffness = InInStiffness;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -322,7 +322,7 @@ int32 UClothingSimulationInteractor::GetNumCloths()
 // class FString                      ClothingAssetName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UClothingInteractor*         ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UClothingInteractor* UClothingSimulationInteractor::GetClothingInteractor(const class FString& ClothingAssetName)
+class UClothingInteractor* UClothingSimulationInteractor::GetClothingInteractor(const class FString& InClothingAssetName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -331,7 +331,7 @@ class UClothingInteractor* UClothingSimulationInteractor::GetClothingInteractor(
 
 	Params::UClothingSimulationInteractor_GetClothingInteractor_Params Parms{};
 
-	Parms.ClothingAssetName = ClothingAssetName;
+	Parms.ClothingAssetName = InClothingAssetName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -351,7 +351,7 @@ class UClothingInteractor* UClothingSimulationInteractor::GetClothingInteractor(
 // Parameters:
 // struct FVector                     InVector                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UClothingSimulationInteractor::EnableGravityOverride(struct FVector& InVector)
+void UClothingSimulationInteractor::EnableGravityOverride(struct FVector& InInVector)
 {
 	static class UFunction* Func = nullptr;
 
@@ -360,7 +360,7 @@ void UClothingSimulationInteractor::EnableGravityOverride(struct FVector& InVect
 
 	Params::UClothingSimulationInteractor_EnableGravityOverride_Params Parms{};
 
-	Parms.InVector = InVector;
+	Parms.InVector = InInVector;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

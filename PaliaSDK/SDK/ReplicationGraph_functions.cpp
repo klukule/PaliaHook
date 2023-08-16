@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -71,7 +71,7 @@ void AReplicationGraphDebugActor::ServerStartDebugging()
 // class UClass*                      Class                                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              PeriodFrame                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AReplicationGraphDebugActor::ServerSetPeriodFrameForClass(class UClass* Class, int32 PeriodFrame)
+void AReplicationGraphDebugActor::ServerSetPeriodFrameForClass(class UClass* InClass, int32 InPeriodFrame)
 {
 	static class UFunction* Func = nullptr;
 
@@ -80,8 +80,8 @@ void AReplicationGraphDebugActor::ServerSetPeriodFrameForClass(class UClass* Cla
 
 	Params::AReplicationGraphDebugActor_ServerSetPeriodFrameForClass_Params Parms{};
 
-	Parms.Class = Class;
-	Parms.PeriodFrame = PeriodFrame;
+	Parms.Class = InClass;
+	Parms.PeriodFrame = InPeriodFrame;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -100,7 +100,7 @@ void AReplicationGraphDebugActor::ServerSetPeriodFrameForClass(class UClass* Cla
 // class UClass*                      Class                                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              CullDistance                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AReplicationGraphDebugActor::ServerSetCullDistanceForClass(class UClass* Class, float CullDistance)
+void AReplicationGraphDebugActor::ServerSetCullDistanceForClass(class UClass* InClass, float InCullDistance)
 {
 	static class UFunction* Func = nullptr;
 
@@ -109,8 +109,8 @@ void AReplicationGraphDebugActor::ServerSetCullDistanceForClass(class UClass* Cl
 
 	Params::AReplicationGraphDebugActor_ServerSetCullDistanceForClass_Params Parms{};
 
-	Parms.Class = Class;
-	Parms.CullDistance = CullDistance;
+	Parms.Class = InClass;
+	Parms.CullDistance = InCullDistance;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -128,7 +128,7 @@ void AReplicationGraphDebugActor::ServerSetCullDistanceForClass(class UClass* Cl
 // Parameters:
 // class AActor*                      Actor                                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AReplicationGraphDebugActor::ServerSetConditionalActorBreakpoint(class AActor* Actor)
+void AReplicationGraphDebugActor::ServerSetConditionalActorBreakpoint(class AActor* InActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -137,7 +137,7 @@ void AReplicationGraphDebugActor::ServerSetConditionalActorBreakpoint(class AAct
 
 	Params::AReplicationGraphDebugActor_ServerSetConditionalActorBreakpoint_Params Parms{};
 
-	Parms.Actor = Actor;
+	Parms.Actor = InActor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -180,7 +180,7 @@ void AReplicationGraphDebugActor::ServerPrintCullDistances()
 // Parameters:
 // class FString                      Str                                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AReplicationGraphDebugActor::ServerPrintAllActorInfo(const class FString& Str)
+void AReplicationGraphDebugActor::ServerPrintAllActorInfo(const class FString& InStr)
 {
 	static class UFunction* Func = nullptr;
 
@@ -189,7 +189,7 @@ void AReplicationGraphDebugActor::ServerPrintAllActorInfo(const class FString& S
 
 	Params::AReplicationGraphDebugActor_ServerPrintAllActorInfo_Params Parms{};
 
-	Parms.Str = Str;
+	Parms.Str = InStr;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -234,7 +234,7 @@ void AReplicationGraphDebugActor::ServerCellInfo()
 // struct FVector                     CellExtent                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class AActor*>              Actors                                                           (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void AReplicationGraphDebugActor::ClientCellInfo(const struct FVector& CellLocation, const struct FVector& CellExtent, TArray<class AActor*>& Actors)
+void AReplicationGraphDebugActor::ClientCellInfo(const struct FVector& InCellLocation, const struct FVector& InCellExtent, TArray<class AActor*>& InActors)
 {
 	static class UFunction* Func = nullptr;
 
@@ -243,9 +243,9 @@ void AReplicationGraphDebugActor::ClientCellInfo(const struct FVector& CellLocat
 
 	Params::AReplicationGraphDebugActor_ClientCellInfo_Params Parms{};
 
-	Parms.CellLocation = CellLocation;
-	Parms.CellExtent = CellExtent;
-	Parms.Actors = Actors;
+	Parms.CellLocation = InCellLocation;
+	Parms.CellExtent = InCellExtent;
+	Parms.Actors = InActors;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

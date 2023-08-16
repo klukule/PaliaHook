@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -39,7 +39,7 @@ void UComp_CV_Local_RTPC_C::SetParameters()
 // Parameters:
 // int32                              EntryPoint                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_CV_Local_RTPC_C::ExecuteUbergraph_Comp_CV_Local_RTPC(int32 EntryPoint)
+void UComp_CV_Local_RTPC_C::ExecuteUbergraph_Comp_CV_Local_RTPC(int32 InEntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -48,7 +48,7 @@ void UComp_CV_Local_RTPC_C::ExecuteUbergraph_Comp_CV_Local_RTPC(int32 EntryPoint
 
 	Params::UComp_CV_Local_RTPC_C_ExecuteUbergraph_Comp_CV_Local_RTPC_Params Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.EntryPoint = InEntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 

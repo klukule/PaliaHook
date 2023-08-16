@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GE_Health_Damage_GOD_MODE_C");
-
+		static class UClass* Clss = UObject::FindClassFast("GE_Health_Damage_GOD_MODE_C");
 		return Clss;
 	}
 

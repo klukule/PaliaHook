@@ -20,15 +20,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ImageWriteBlueprintLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("ImageWriteBlueprintLibrary");
 		return Clss;
 	}
 
-	void ExportToDisk(class UTexture* Texture, const class FString& Filename, struct FImageWriteOptions& Options);
+	void ExportToDisk(class UTexture* InTexture, const class FString& InFilename, struct FImageWriteOptions& InOptions);
 };
 
 }

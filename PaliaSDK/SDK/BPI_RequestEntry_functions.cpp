@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class UWBP_RequestsPanel_C*        RequestPanel                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_RequestEntry_C::SetupBinds(class UWBP_RequestsPanel_C* RequestPanel)
+void IBPI_RequestEntry_C::SetupBinds(class UWBP_RequestsPanel_C* InRequestPanel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void IBPI_RequestEntry_C::SetupBinds(class UWBP_RequestsPanel_C* RequestPanel)
 
 	Params::IBPI_RequestEntry_C_SetupBinds_Params Parms{};
 
-	Parms.RequestPanel = RequestPanel;
+	Parms.RequestPanel = InRequestPanel;
 
 	UObject::ProcessEvent(Func, &Parms);
 

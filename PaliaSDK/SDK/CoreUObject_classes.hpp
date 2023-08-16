@@ -18,7 +18,7 @@ class UObject
 {
 public:
 	static class TUObjectArray*                  GObjects;                                          // (0x00[0x00]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_14[0x8];                                       // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_9[0x8];                                        // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	int32                                        Flags;                                             // (0x08[0x04]) NOT AUTO-GENERATED PROPERTY
 	int32                                        Index;                                             // (0x0C[0x04]) NOT AUTO-GENERATED PROPERTY
 	class UClass*                                Class;                                             // (0x10[0x08]) NOT AUTO-GENERATED PROPERTY
@@ -27,11 +27,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Object");
-
+		static class UClass* Clss = UObject::FindClassFast("Object");
 		return Clss;
 	}
 
@@ -43,6 +39,14 @@ public:
 		return (Flags & 0x10) == 0x10;
 	}
 
+	inline bool IsValidLowLevel() {
+		if (this == nullptr)
+			return false;
+		if (!Class)
+			return false;
+
+		return GObjects->GetByIndex(Index) == this;
+	}
 
 	std::string GetName() const;
 
@@ -104,10 +108,10 @@ public:
 
 	inline void ProcessEvent(class UFunction* Function, void* Parms) const
 	{
-		return GetVFunction<void(*)(const UObject*, class UFunction*, void*)>(this, 0x4C /*0x2ABF4F0*/)(this, Function, Parms);
+		return GetVFunction<void(*)(const UObject*, class UFunction*, void*)>(this, 0x4C /*0x2AC8230*/)(this, Function, Parms);
 	}
 
-	void ExecuteUbergraph(int32 EntryPoint);
+	void ExecuteUbergraph(int32 InEntryPoint);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -118,11 +122,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Interface");
-
+		static class UClass* Clss = UObject::FindClassFast("Interface");
 		return Clss;
 	}
 
@@ -133,15 +133,11 @@ public:
 class UPackage : public UObject
 {
 public:
-	uint8                                        Pad_15[0x68];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_A[0x68];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Package");
-
+		static class UClass* Clss = UObject::FindClassFast("Package");
 		return Clss;
 	}
 
@@ -156,11 +152,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Field");
-
+		static class UClass* Clss = UObject::FindClassFast("Field");
 		return Clss;
 	}
 
@@ -171,20 +163,16 @@ public:
 class UStruct : public UField
 {
 public:
-	uint8                                        Pad_16[0x10];                                      // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_B[0x10];                                       // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class UStruct*                               Super;                                             // (0x40[0x08]) NOT AUTO-GENERATED PROPERTY
 	class UField*                                Children;                                          // (0x48[0x08]) NOT AUTO-GENERATED PROPERTY
 	class FField*                                ChildProperties;                                   // (0x50[0x08]) NOT AUTO-GENERATED PROPERTY
 	int32                                        Size;                                              // (0x58[0x04]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_17[0x54];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C[0x54];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Struct");
-
+		static class UClass* Clss = UObject::FindClassFast("Struct");
 		return Clss;
 	}
 
@@ -195,19 +183,15 @@ public:
 class UClass : public UStruct
 {
 public:
-	uint8                                        Pad_18[0x28];                                      // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_D[0x28];                                       // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	enum class EClassCastFlags                   CastFlags;                                         // (0xD8[0x08]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_19[0x30];                                      // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_E[0x30];                                       // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class UObject*                               DefaultObject;                                     // (0x110[0x08]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_1A[0x118];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F[0x118];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Class");
-
+		static class UClass* Clss = UObject::FindClassFast("Class");
 		return Clss;
 	}
 
@@ -220,15 +204,11 @@ public:
 class UGCObjectReferencer : public UObject
 {
 public:
-	uint8                                        Pad_1B[0x48];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10[0x48];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GCObjectReferencer");
-
+		static class UClass* Clss = UObject::FindClassFast("GCObjectReferencer");
 		return Clss;
 	}
 
@@ -239,15 +219,11 @@ public:
 class UTextBuffer : public UObject
 {
 public:
-	uint8                                        Pad_1C[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TextBuffer");
-
+		static class UClass* Clss = UObject::FindClassFast("TextBuffer");
 		return Clss;
 	}
 
@@ -258,15 +234,11 @@ public:
 class UScriptStruct : public UStruct
 {
 public:
-	uint8                                        Pad_1D[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ScriptStruct");
-
+		static class UClass* Clss = UObject::FindClassFast("ScriptStruct");
 		return Clss;
 	}
 
@@ -278,15 +250,11 @@ class UFunction : public UStruct
 {
 public:
 	uint32                                       FunctionFlags;                                     // (0xB0[0x08]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_1F[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Function");
-
+		static class UClass* Clss = UObject::FindClassFast("Function");
 		return Clss;
 	}
 
@@ -300,11 +268,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DelegateFunction");
-
+		static class UClass* Clss = UObject::FindClassFast("DelegateFunction");
 		return Clss;
 	}
 
@@ -315,15 +279,11 @@ public:
 class USparseDelegateFunction : public UDelegateFunction
 {
 public:
-	uint8                                        Pad_21[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SparseDelegateFunction");
-
+		static class UClass* Clss = UObject::FindClassFast("SparseDelegateFunction");
 		return Clss;
 	}
 
@@ -334,15 +294,11 @@ public:
 class UDynamicClass : public UClass
 {
 public:
-	uint8                                        Pad_23[0x80];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15[0x80];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DynamicClass");
-
+		static class UClass* Clss = UObject::FindClassFast("DynamicClass");
 		return Clss;
 	}
 
@@ -353,15 +309,11 @@ public:
 class UPackageMap : public UObject
 {
 public:
-	uint8                                        Pad_24[0xB8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_17[0xB8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PackageMap");
-
+		static class UClass* Clss = UObject::FindClassFast("PackageMap");
 		return Clss;
 	}
 
@@ -372,17 +324,13 @@ public:
 class UEnum : public UField
 {
 public:
-	uint8                                        Pad_25[0x10];                                      // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_18[0x10];                                      // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class TArray<class TPair<class FName, int64>> Names;                                             // (0x40[0x10]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_26[0x18];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_19[0x18];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Enum");
-
+		static class UClass* Clss = UObject::FindClassFast("Enum");
 		return Clss;
 	}
 
@@ -393,15 +341,11 @@ public:
 class ULinkerPlaceholderClass : public UClass
 {
 public:
-	uint8                                        Pad_28[0x1C0];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A[0x1C0];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("LinkerPlaceholderClass");
-
+		static class UClass* Clss = UObject::FindClassFast("LinkerPlaceholderClass");
 		return Clss;
 	}
 
@@ -412,15 +356,11 @@ public:
 class ULinkerPlaceholderExportObject : public UObject
 {
 public:
-	uint8                                        Pad_29[0xD0];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B[0xD0];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("LinkerPlaceholderExportObject");
-
+		static class UClass* Clss = UObject::FindClassFast("LinkerPlaceholderExportObject");
 		return Clss;
 	}
 
@@ -431,15 +371,11 @@ public:
 class ULinkerPlaceholderFunction : public UFunction
 {
 public:
-	uint8                                        Pad_2A[0x1C0];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C[0x1C0];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("LinkerPlaceholderFunction");
-
+		static class UClass* Clss = UObject::FindClassFast("LinkerPlaceholderFunction");
 		return Clss;
 	}
 
@@ -450,15 +386,11 @@ public:
 class UMetaData : public UObject
 {
 public:
-	uint8                                        Pad_2C[0xA0];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D[0xA0];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MetaData");
-
+		static class UClass* Clss = UObject::FindClassFast("MetaData");
 		return Clss;
 	}
 
@@ -469,15 +401,11 @@ public:
 class UObjectRedirector : public UObject
 {
 public:
-	uint8                                        Pad_2D[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ObjectRedirector");
-
+		static class UClass* Clss = UObject::FindClassFast("ObjectRedirector");
 		return Clss;
 	}
 
@@ -488,15 +416,11 @@ public:
 class UProperty : public UField
 {
 public:
-	uint8                                        Pad_2F[0x40];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F[0x40];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Property");
-
+		static class UClass* Clss = UObject::FindClassFast("Property");
 		return Clss;
 	}
 
@@ -507,15 +431,11 @@ public:
 class UEnumProperty : public UProperty
 {
 public:
-	uint8                                        Pad_30[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_20[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnumProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("EnumProperty");
 		return Clss;
 	}
 
@@ -526,15 +446,11 @@ public:
 class UArrayProperty : public UProperty
 {
 public:
-	uint8                                        Pad_33[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ArrayProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("ArrayProperty");
 		return Clss;
 	}
 
@@ -545,15 +461,11 @@ public:
 class UObjectPropertyBase : public UProperty
 {
 public:
-	uint8                                        Pad_35[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_22[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ObjectPropertyBase");
-
+		static class UClass* Clss = UObject::FindClassFast("ObjectPropertyBase");
 		return Clss;
 	}
 
@@ -564,15 +476,11 @@ public:
 class UBoolProperty : public UProperty
 {
 public:
-	uint8                                        Pad_37[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_25[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BoolProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("BoolProperty");
 		return Clss;
 	}
 
@@ -586,11 +494,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NumericProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("NumericProperty");
 		return Clss;
 	}
 
@@ -601,15 +505,11 @@ public:
 class UByteProperty : public UNumericProperty
 {
 public:
-	uint8                                        Pad_38[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ByteProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("ByteProperty");
 		return Clss;
 	}
 
@@ -623,11 +523,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ObjectProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("ObjectProperty");
 		return Clss;
 	}
 
@@ -638,15 +534,11 @@ public:
 class UClassProperty : public UObjectProperty
 {
 public:
-	uint8                                        Pad_39[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClassProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("ClassProperty");
 		return Clss;
 	}
 
@@ -657,15 +549,11 @@ public:
 class UDelegateProperty : public UProperty
 {
 public:
-	uint8                                        Pad_3B[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DelegateProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("DelegateProperty");
 		return Clss;
 	}
 
@@ -679,11 +567,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DoubleProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("DoubleProperty");
 		return Clss;
 	}
 
@@ -697,11 +581,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("FloatProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("FloatProperty");
 		return Clss;
 	}
 
@@ -715,11 +595,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("IntProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("IntProperty");
 		return Clss;
 	}
 
@@ -733,11 +609,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Int8Property");
-
+		static class UClass* Clss = UObject::FindClassFast("Int8Property");
 		return Clss;
 	}
 
@@ -751,11 +623,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Int16Property");
-
+		static class UClass* Clss = UObject::FindClassFast("Int16Property");
 		return Clss;
 	}
 
@@ -769,11 +637,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Int64Property");
-
+		static class UClass* Clss = UObject::FindClassFast("Int64Property");
 		return Clss;
 	}
 
@@ -784,15 +648,11 @@ public:
 class UInterfaceProperty : public UProperty
 {
 public:
-	uint8                                        Pad_3E[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("InterfaceProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("InterfaceProperty");
 		return Clss;
 	}
 
@@ -806,11 +666,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("LazyObjectProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("LazyObjectProperty");
 		return Clss;
 	}
 
@@ -821,15 +677,11 @@ public:
 class UMapProperty : public UProperty
 {
 public:
-	uint8                                        Pad_3F[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2A[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MapProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("MapProperty");
 		return Clss;
 	}
 
@@ -840,15 +692,11 @@ public:
 class UMulticastDelegateProperty : public UProperty
 {
 public:
-	uint8                                        Pad_41[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2B[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MulticastDelegateProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("MulticastDelegateProperty");
 		return Clss;
 	}
 
@@ -862,11 +710,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MulticastInlineDelegateProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("MulticastInlineDelegateProperty");
 		return Clss;
 	}
 
@@ -880,11 +724,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MulticastSparseDelegateProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("MulticastSparseDelegateProperty");
 		return Clss;
 	}
 
@@ -898,11 +738,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NameProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("NameProperty");
 		return Clss;
 	}
 
@@ -913,15 +749,11 @@ public:
 class USetProperty : public UProperty
 {
 public:
-	uint8                                        Pad_42[0x20];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F[0x20];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SetProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("SetProperty");
 		return Clss;
 	}
 
@@ -935,11 +767,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SoftObjectProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("SoftObjectProperty");
 		return Clss;
 	}
 
@@ -950,15 +778,11 @@ public:
 class USoftClassProperty : public USoftObjectProperty
 {
 public:
-	uint8                                        Pad_43[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_32[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SoftClassProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("SoftClassProperty");
 		return Clss;
 	}
 
@@ -972,11 +796,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("StrProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("StrProperty");
 		return Clss;
 	}
 
@@ -987,15 +807,11 @@ public:
 class UStructProperty : public UProperty
 {
 public:
-	uint8                                        Pad_45[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("StructProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("StructProperty");
 		return Clss;
 	}
 
@@ -1009,11 +825,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("UInt16Property");
-
+		static class UClass* Clss = UObject::FindClassFast("UInt16Property");
 		return Clss;
 	}
 
@@ -1027,11 +839,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("UInt32Property");
-
+		static class UClass* Clss = UObject::FindClassFast("UInt32Property");
 		return Clss;
 	}
 
@@ -1045,11 +853,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("UInt64Property");
-
+		static class UClass* Clss = UObject::FindClassFast("UInt64Property");
 		return Clss;
 	}
 
@@ -1063,11 +867,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("WeakObjectProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("WeakObjectProperty");
 		return Clss;
 	}
 
@@ -1081,11 +881,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TextProperty");
-
+		static class UClass* Clss = UObject::FindClassFast("TextProperty");
 		return Clss;
 	}
 
@@ -1096,15 +892,11 @@ public:
 class UPropertyWrapper : public UObject
 {
 public:
-	uint8                                        Pad_48[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PropertyWrapper");
-
+		static class UClass* Clss = UObject::FindClassFast("PropertyWrapper");
 		return Clss;
 	}
 
@@ -1118,11 +910,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MulticastDelegatePropertyWrapper");
-
+		static class UClass* Clss = UObject::FindClassFast("MulticastDelegatePropertyWrapper");
 		return Clss;
 	}
 
@@ -1136,11 +924,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MulticastInlineDelegatePropertyWrapper");
-
+		static class UClass* Clss = UObject::FindClassFast("MulticastInlineDelegatePropertyWrapper");
 		return Clss;
 	}
 

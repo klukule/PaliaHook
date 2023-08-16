@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // struct FS6PLAT_PlayerBehaviorReportFormReportForm                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6PLAT_PlayerBehaviorSubsystem::ValidateReportForm(struct FS6PLAT_PlayerBehaviorReportForm& ReportForm)
+bool US6PLAT_PlayerBehaviorSubsystem::ValidateReportForm(struct FS6PLAT_PlayerBehaviorReportForm& InReportForm)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ bool US6PLAT_PlayerBehaviorSubsystem::ValidateReportForm(struct FS6PLAT_PlayerBe
 
 	Params::US6PLAT_PlayerBehaviorSubsystem_ValidateReportForm_Params Parms{};
 
-	Parms.ReportForm = ReportForm;
+	Parms.ReportForm = InReportForm;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -52,7 +52,7 @@ bool US6PLAT_PlayerBehaviorSubsystem::ValidateReportForm(struct FS6PLAT_PlayerBe
 // struct FS6PLAT_PlayerBehaviorReportFormReportForm                                                       (ConstParm, Parm, NativeAccessSpecifierPublic)
 // bool                               bDidSucceed                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6PLAT_PlayerBehaviorSubsystem::ReportSubmitedDelegate__DelegateSignature(class US6PLAT_PlayerBehaviorSubsystem* PlayerBehaviorSubsystem, const struct FS6PLAT_PlayerBehaviorReportForm& ReportForm, bool bDidSucceed)
+void US6PLAT_PlayerBehaviorSubsystem::ReportSubmitedDelegate__DelegateSignature(class US6PLAT_PlayerBehaviorSubsystem* InPlayerBehaviorSubsystem, const struct FS6PLAT_PlayerBehaviorReportForm& InReportForm, bool InbDidSucceed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61,9 +61,9 @@ void US6PLAT_PlayerBehaviorSubsystem::ReportSubmitedDelegate__DelegateSignature(
 
 	Params::US6PLAT_PlayerBehaviorSubsystem_ReportSubmitedDelegate__DelegateSignature_Params Parms{};
 
-	Parms.PlayerBehaviorSubsystem = PlayerBehaviorSubsystem;
-	Parms.ReportForm = ReportForm;
-	Parms.bDidSucceed = bDidSucceed;
+	Parms.PlayerBehaviorSubsystem = InPlayerBehaviorSubsystem;
+	Parms.ReportForm = InReportForm;
+	Parms.bDidSucceed = InbDidSucceed;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -75,7 +75,7 @@ void US6PLAT_PlayerBehaviorSubsystem::ReportSubmitedDelegate__DelegateSignature(
 // Parameters:
 // struct FS6PLAT_PlayerBehaviorReportFormReportForm                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void US6PLAT_PlayerBehaviorSubsystem::ReportPlayerBehavior(struct FS6PLAT_PlayerBehaviorReportForm& ReportForm)
+void US6PLAT_PlayerBehaviorSubsystem::ReportPlayerBehavior(struct FS6PLAT_PlayerBehaviorReportForm& InReportForm)
 {
 	static class UFunction* Func = nullptr;
 
@@ -84,7 +84,7 @@ void US6PLAT_PlayerBehaviorSubsystem::ReportPlayerBehavior(struct FS6PLAT_Player
 
 	Params::US6PLAT_PlayerBehaviorSubsystem_ReportPlayerBehavior_Params Parms{};
 
-	Parms.ReportForm = ReportForm;
+	Parms.ReportForm = InReportForm;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -131,7 +131,7 @@ bool US6PLAT_PlayerBehaviorSubsystem::IsReady()
 // enum class ES6PLAT_PlayerBehaviorReportTypeReportType                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TMap<class FName, struct FS6PLAT_PlayerBehaviorReportCategoryInfo>ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-TMap<class FName, struct FS6PLAT_PlayerBehaviorReportCategoryInfo> US6PLAT_PlayerBehaviorSubsystem::GetValidReportCategoriesByType(enum class ES6PLAT_PlayerBehaviorReportType ReportType)
+TMap<class FName, struct FS6PLAT_PlayerBehaviorReportCategoryInfo> US6PLAT_PlayerBehaviorSubsystem::GetValidReportCategoriesByType(enum class ES6PLAT_PlayerBehaviorReportType InReportType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -140,7 +140,7 @@ TMap<class FName, struct FS6PLAT_PlayerBehaviorReportCategoryInfo> US6PLAT_Playe
 
 	Params::US6PLAT_PlayerBehaviorSubsystem_GetValidReportCategoriesByType_Params Parms{};
 
-	Parms.ReportType = ReportType;
+	Parms.ReportType = InReportType;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

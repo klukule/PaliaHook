@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ModalWidgetBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ModalWidgetBase");
 		return Clss;
 	}
 
@@ -37,23 +33,19 @@ class UBaitUserWidget : public UVALUI_ModalWidgetBase
 public:
 	TArray<struct FValeriaItem>                  Bait;                                              // 0x4D8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPrivate)
 	struct FValeriaItem                          SelectedBait;                                      // 0x4E8(0x50)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_20A7[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2167[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BaitUserWidget");
-
+		static class UClass* Clss = UObject::FindClassFast("BaitUserWidget");
 		return Clss;
 	}
 
-	void ShowAmmoType(enum class EAmmoType AmmoType);
-	void OnShown(enum class EAmmoType AmmoType);
+	void ShowAmmoType(enum class EAmmoType InAmmoType);
+	void OnShown(enum class EAmmoType InAmmoType);
 	void OnRightMouseReleased();
 	void OnHidden();
-	void OnBaitSelected(const struct FValeriaItem& baitItem);
+	void OnBaitSelected(const struct FValeriaItem& InbaitItem);
 	void EndBaitSelection();
 };
 
@@ -63,23 +55,19 @@ class UBookViewerWidget : public UVALUI_ModalWidgetBase
 {
 public:
 	int32                                        CurrentBookId;                                     // 0x4D8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20C4[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2176[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BookViewerWidget");
-
+		static class UClass* Clss = UObject::FindClassFast("BookViewerWidget");
 		return Clss;
 	}
 
-	void MarkPageAsRead(int32 Index);
+	void MarkPageAsRead(int32 InIndex);
 	class FText GetTitle();
 	class FText GetSubTitle();
 	int32 GetNumberOfPages();
-	class FText GetContentForPage(int32 Index);
+	class FText GetContentForPage(int32 InIndex);
 };
 
 // 0x58 (0x2D0 - 0x278)
@@ -91,19 +79,15 @@ public:
 	class UTextBlock*                            DetailCategory;                                    // 0x280(0x8)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTextBlock*                            DetailDescription;                                 // 0x288(0x8)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UImage*                                DetailIcon;                                        // 0x290(0x8)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20D0[0x38];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2193[0x38];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DetailUserWidget");
-
+		static class UClass* Clss = UObject::FindClassFast("DetailUserWidget");
 		return Clss;
 	}
 
-	bool UpdateDetail(TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>& ItemType);
+	bool UpdateDetail(TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>& InItemType);
 };
 
 // 0x48 (0x2C0 - 0x278)
@@ -113,23 +97,19 @@ class UVALUI_LoadingScreenUserWidget : public UUserWidget
 public:
 	class UVALUI_LoadingScreenBlackWidget*       LoadingScreenBlackWidget;                          // 0x278(0x8)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UTexture2D*                            CurrentBackgroundTexture;                          // 0x280(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_20D9[0x38];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21A7[0x38];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_LoadingScreenUserWidget");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_LoadingScreenUserWidget");
 		return Clss;
 	}
 
 	void ShowLoadingScreenBackground();
 	void ShowFadeToBlack();
-	void HandleSetLoadingScreenTip(struct FPaliaLoadingScreenTip& Tip);
-	void HandleSetBackgroundImage(class UTexture2D* Texture);
-	void HandleOnPawnChanged(class APawn* Pawn);
+	void HandleSetLoadingScreenTip(struct FPaliaLoadingScreenTip& InTip);
+	void HandleSetBackgroundImage(class UTexture2D* InTexture);
+	void HandleOnPawnChanged(class APawn* InPawn);
 };
 
 // 0x30 (0x508 - 0x4D8)
@@ -138,39 +118,35 @@ class UMailboxViewerUserWidget : public UVALUI_ModalWidgetBase
 {
 public:
 	bool                                         bIsLoadingMail;                                    // 0x4D8(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_20F7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_21E5[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FMailMessageWidgetData>        MailMessages;                                      // 0x4E0(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	enum class EMailboxViewerFilter              CurrentFilter;                                     // 0x4F0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_20F8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_21E7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FMailbox                              LoadedMailbox;                                     // 0x4F8(0x10)(NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MailboxViewerUserWidget");
-
+		static class UClass* Clss = UObject::FindClassFast("MailboxViewerUserWidget");
 		return Clss;
 	}
 
-	void UpdateMailFilter(enum class EMailboxViewerFilter Filter);
-	bool TryCollectReward(int32 Index, int32 RewardIndex);
-	void RefreshMailMessages(bool AllowRemoval);
-	void OnVillagerMailChanged(class UVillagerMailInboxComponent* VillagerMail);
-	void OnPlayerToPlayerMailSuccess(const struct FMailbox& Mailbox);
-	void OnPlayerToPlayerMailFailed(const class FString& Error);
+	void UpdateMailFilter(enum class EMailboxViewerFilter InFilter);
+	bool TryCollectReward(int32 InIndex, int32 InRewardIndex);
+	void RefreshMailMessages(bool InAllowRemoval);
+	void OnVillagerMailChanged(class UVillagerMailInboxComponent* InVillagerMail);
+	void OnPlayerToPlayerMailSuccess(const struct FMailbox& InMailbox);
+	void OnPlayerToPlayerMailFailed(const class FString& InError);
 	void OnMailLoaded();
 	void OnMailChanged();
-	void MarkAsRead(int32 Index);
+	void MarkAsRead(int32 InIndex);
 	void LoadMail();
-	void HideMessage(int32 Index);
+	void HideMessage(int32 InIndex);
 	int32 GetNumberOfNonHiddenMessages();
-	int32 GetNumberOfMessagesForFilter(enum class EMailboxViewerFilter Filter);
+	int32 GetNumberOfMessagesForFilter(enum class EMailboxViewerFilter InFilter);
 	int32 GetNumberOfMessages();
-	int32 GetNextNonHiddenMessage(int32 StartIndex);
-	struct FMailMessageWidgetData GetMailMessage(int32 Index);
-	int32 GetIndexOfMailMessage(const struct FMailMessageWidgetData& Data);
+	int32 GetNextNonHiddenMessage(int32 InStartIndex);
+	struct FMailMessageWidgetData GetMailMessage(int32 InIndex);
+	int32 GetIndexOfMailMessage(const struct FMailMessageWidgetData& InData);
 	enum class EMailboxViewerFilter GetCurrentFilter();
 };
 
@@ -179,23 +155,19 @@ public:
 class UValeriaViewportClient : public US6UI_GameViewportClient
 {
 public:
-	uint8                                        Pad_2106[0x50];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_21FD[0x50];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVALUI_LoadingScreenUserWidget*        LoadingScreenWidget;                               // 0x430(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_2107[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21FE[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ValeriaViewportClient");
-
+		static class UClass* Clss = UObject::FindClassFast("ValeriaViewportClient");
 		return Clss;
 	}
 
 	void ReceiveOnFadeOutBlack();
-	void HandleOnFadeOutBlack(float DurationSeconds);
-	void HandleOnFadeInBlack(float DurationSeconds);
+	void HandleOnFadeOutBlack(float InDurationSeconds);
+	void HandleOnFadeInBlack(float InDurationSeconds);
 };
 
 // 0x10 (0x4E8 - 0x4D8)
@@ -207,17 +179,33 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_AnnouncementsMessageModalDialog");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_AnnouncementsMessageModalDialog");
 		return Clss;
 	}
 
-	void SetURL(const class FString& NewURL);
+	void SetURL(const class FString& InNewURL);
 	void RefreshMessageFromWeb();
-	void HandleRefreshedMessageFromWeb(const class FString& Message);
+	void HandleRefreshedMessageFromWeb(const class FString& InMessage);
+};
+
+// 0x28 (0x58 - 0x30)
+// Class ValeriaUI.VAL_AsyncActionRequestStorefront
+class UVAL_AsyncActionRequestStorefront : public UBlueprintAsyncActionBase
+{
+public:
+	FMulticastInlineDelegateProperty_            Successful;                                        // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_            Failure;                                           // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                        Pad_220E[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+
+	static class UClass* StaticClass()
+	{
+		static class UClass* Clss = UObject::FindClassFast("VAL_AsyncActionRequestStorefront");
+		return Clss;
+	}
+
+	class UVAL_AsyncActionRequestStorefront* RequestStorefront(class ULocalPlayer* InLP);
+	void OnRequestStorefrontSuccess__DelegateSignature(const struct FVALUI_PremiumStorefrontResponse& InResponse);
+	void OnRequestStorefrontFailure__DelegateSignature();
 };
 
 // 0x9A8 (0x9D8 - 0x30)
@@ -227,21 +215,17 @@ class UVALUI_AsyncUpdateLoadout : public UBlueprintAsyncActionBase
 public:
 	FMulticastInlineDelegateProperty_            Completed;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            Failed;                                            // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_210F[0x988];                                   // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2233[0x988];                                   // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_AsyncUpdateLoadout");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_AsyncUpdateLoadout");
 		return Clss;
 	}
 
-	class UVALUI_AsyncUpdateLoadout* UpdateLoadout(class UVALUI_CharacterCustomizationPanelBase* CustPanel, struct FVAL_CharacterCustomizationLoadout& NewLoadout, struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& ContextPayload);
-	void OnUpdateLoadoutFailed__DelegateSignature(struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& ContextPayload);
-	void OnUpdateLoadoutCompleted__DelegateSignature(class UVALUI_CharacterCustomizationPanelBase* CharacterCustomizationPanel, struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& ContextPayload);
+	class UVALUI_AsyncUpdateLoadout* UpdateLoadout(class UVALUI_CharacterCustomizationPanelBase* InCustPanel, struct FVAL_CharacterCustomizationLoadout& InNewLoadout, struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& InContextPayload);
+	void OnUpdateLoadoutFailed__DelegateSignature(struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& InContextPayload);
+	void OnUpdateLoadoutCompleted__DelegateSignature(class UVALUI_CharacterCustomizationPanelBase* InCharacterCustomizationPanel, struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& InContextPayload);
 };
 
 // 0x0 (0x30 - 0x30)
@@ -252,11 +236,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_WidgetStyleBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_WidgetStyleBase");
 		return Clss;
 	}
 
@@ -268,26 +248,22 @@ class UVALUI_BorderStyle : public UVALUI_WidgetStyleBase
 {
 public:
 	bool                                         bShowEffectWhenDisabled;                           // 0x30(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2111[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2237[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FMargin                               Padding;                                           // 0x34(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FLinearColor                          ContentColorAndOpacity;                            // 0x44(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2112[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2238[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           Background;                                        // 0x60(0xD0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	struct FLinearColor                          BrushColor;                                        // 0x130(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFlipForRightToLeftFlowDirection;                  // 0x140(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2113[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2239[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_BorderStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_BorderStyle");
 		return Clss;
 	}
 
-	void Apply(class UBorder* Border);
+	void Apply(class UBorder* InBorder);
 };
 
 // 0x8 (0x310 - 0x308)
@@ -299,15 +275,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_Border_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_Border_Styled");
 		return Clss;
 	}
 
-	void SetBorderStyle(class UVALUI_BorderStyle* NewStyle);
+	void SetBorderStyle(class UVALUI_BorderStyle* InNewStyle);
 };
 
 // 0x58 (0x2D0 - 0x278)
@@ -316,20 +288,16 @@ class UVALUI_BoundInputActionStateWidget : public UUserWidget
 {
 public:
 	class UInputAction*                          InputAction;                                       // 0x278(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_211D[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_224C[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_BoundInputActionStateWidget");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_BoundInputActionStateWidget");
 		return Clss;
 	}
 
-	void UpdateInputActionState_Implementation(struct FKey& Key, enum class ETriggerEvent LatestTriggerEvent, float OngoingDuration, float HoldTimeThreshold);
-	void SetInputAction(class UInputAction* InInputAction);
+	void UpdateInputActionState_Implementation(struct FKey& InKey, enum class ETriggerEvent InLatestTriggerEvent, float InOngoingDuration, float InHoldTimeThreshold);
+	void SetInputAction(class UInputAction* InInInputAction);
 };
 
 // 0x38 (0x1A0 - 0x168)
@@ -341,15 +309,11 @@ public:
 	float                                        ShadowHardness;                                    // 0x178(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CornerRadius;                                      // 0x17C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          ShadowColor;                                       // 0x180(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2122[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2250[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_BoxDropShadow");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_BoxDropShadow");
 		return Clss;
 	}
 
@@ -364,7 +328,7 @@ public:
 	struct FLinearColor                          ColorAndOpacity;                                   // 0x420(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          BackgroundColor;                                   // 0x430(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        DropShadowCornerRadius;                            // 0x440(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_212B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2258[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             ShadowOffset_Normal;                               // 0x448(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             ShadowOffset_Pressed;                              // 0x458(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ShadowHardness_Normal;                             // 0x468(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -374,15 +338,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ButtonStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ButtonStyle");
 		return Clss;
 	}
 
-	void Apply(class UVALUI_Button_Styled* Button);
+	void Apply(class UVALUI_Button_Styled* InButton);
 };
 
 // 0x4E0 (0x970 - 0x490)
@@ -391,19 +351,15 @@ class UVALUI_ButtonStyle_WithBG : public UVALUI_ButtonStyle
 {
 public:
 	bool                                         bUseBackgroundImage;                               // 0x490(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2130[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_225F[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BackgroundImage;                                   // 0x4A0(0xD0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	bool                                         bUseBackgroundStyle;                               // 0x570(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2131[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2260[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FButtonStyle                          BackgroundStyle;                                   // 0x580(0x3F0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ButtonStyle_WithBG");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ButtonStyle_WithBG");
 		return Clss;
 	}
 
@@ -416,28 +372,24 @@ class UVALUI_Button_Styled : public UButton
 public:
 	class UVALUI_ButtonStyle*                    Style;                                             // 0x5E8(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEffectWhenReleased;                               // 0x5F0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2143[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_228A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        FEffectTime;                                       // 0x5F4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2145[0x38];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_228C[0x38];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class ECursorState                      CursorState;                                       // 0x630(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	enum class EFocusDirection                   DirectionOfCursorOnButton;                         // 0x631(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2147[0x1E];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_228E[0x1E];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_Button_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_Button_Styled");
 		return Clss;
 	}
 
-	bool ShowCursor(class UWidget* InCursor);
-	void SetButtonStyle(class UVALUI_ButtonStyle* NewStyle);
+	bool ShowCursor(class UWidget* InInCursor);
+	void SetButtonStyle(class UVALUI_ButtonStyle* InNewStyle);
 	void SetButtonFocus();
-	void RemoveCursor(class UWidget* InCursor);
-	void PreConstruct(bool IsDesignTime);
+	void RemoveCursor(class UWidget* InInCursor);
+	void PreConstruct(bool InIsDesignTime);
 	void OnInitialized();
 	bool HasFocus();
 	void HandleReleased();
@@ -451,22 +403,18 @@ public:
 class UVALUI_Button_Styled_WithBG : public UVALUI_Button_Styled
 {
 public:
-	uint8                                        Pad_214A[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_229B[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           GamepadKeyHint;                                    // 0x660(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	enum class EGamepadKeyHintLocation           HintShowLocation;                                  // 0x730(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_214C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_229E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             HintMargin;                                        // 0x738(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2151[0xD8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_229F[0xD8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EFocusDirection                   DirectionOfCursorOnBG;                             // 0x820(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_2152[0x4F];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_22A0[0x4F];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_Button_Styled_WithBG");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_Button_Styled_WithBG");
 		return Clss;
 	}
 
@@ -482,11 +430,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_CameraVirtualMoveHooker_Mobile");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_CameraVirtualMoveHooker_Mobile");
 		return Clss;
 	}
 
@@ -502,15 +446,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_NameValidator");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_NameValidator");
 		return Clss;
 	}
 
-	bool IsNameValid(const class FString& InCharacterName);
+	bool IsNameValid(const class FString& InInCharacterName);
 };
 
 // 0x10 (0xA0 - 0x90)
@@ -522,11 +462,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_NameValidator_Regex");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_NameValidator_Regex");
 		return Clss;
 	}
 
@@ -540,11 +476,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_NameValidator_Regex_PerWord");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_NameValidator_Regex_PerWord");
 		return Clss;
 	}
 
@@ -559,17 +491,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_NameValidatorDataAsset");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_NameValidatorDataAsset");
 		return Clss;
 	}
 
 };
 
-// 0x20 (0x298 - 0x278)
+// 0x50 (0x2C8 - 0x278)
 // Class ValeriaUI.VALUI_CharacterCreationScreenBase
 class UVALUI_CharacterCreationScreenBase : public UUserWidget
 {
@@ -577,19 +505,23 @@ public:
 	class UVALUI_CharacterCustomizationPanelBase* CustomizationPanel;                                // 0x278(0x8)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UVALUI_NameValidatorDataAsset*         NameValidatorDataAsset;                            // 0x280(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TArray<class UVALUI_NameValidator*>          NameValidators;                                    // 0x288(0x10)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	FMulticastInlineDelegateProperty_            EventOnCommitCharacter;                            // 0x298(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_            EventOnBodyTypeSelectionConfirm;                   // 0x2A8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_            EventOnBodyTypeSelectionChange;                    // 0x2B8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_CharacterCreationScreenBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_CharacterCreationScreenBase");
 		return Clss;
 	}
 
-	void HandleCharacterNameValidityResponse(struct FVALUI_CharacterNameValidityResponse& Response);
-	void HandleCharacterNameChanged(class FText& InCharacterName, enum class EVAL_CharacterNameType InCharacterNameType);
+	void SetEnableContinueButton(bool InbEnable);
+	void SetEnableAllButtons(bool InbEnable);
+	void OnCommitCharacter__DelegateSignature(const struct FVALDTOS_MetaCharacterFormat& InCommitedCharacter);
+	void OnBodyTypeSelectionConfirm__DelegateSignature();
+	void OnBodyTypeSelectionChange__DelegateSignature(bool InbFirstSelection);
+	void HandleCharacterNameValidityResponse(struct FVALUI_CharacterNameValidityResponse& InResponse);
+	void HandleCharacterNameChanged(class FText& InInCharacterName, enum class EVAL_CharacterNameType InInCharacterNameType);
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase>> GetAllowedCustomizationItems();
 };
 
@@ -601,15 +533,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_CharacterCreationStatics");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_CharacterCreationStatics");
 		return Clss;
 	}
 
-	bool IsCharacterNameValidityResponseValid(struct FVALUI_CharacterNameValidityResponse& Response);
+	bool IsCharacterNameValidityResponseValid(struct FVALUI_CharacterNameValidityResponse& InResponse);
 };
 
 // 0x9E0 (0xC58 - 0x278)
@@ -617,7 +545,7 @@ public:
 class UVALUI_CharacterCustomizationPanelBase : public UUserWidget
 {
 public:
-	uint8                                        Pad_217C[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_230B[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                PreviewCharacterActor;                             // 0x288(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UVAL_CharacterCustomizationComponent*  CharacterCustomizationComponent;                   // 0x290(0x8)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FVAL_CharacterCustomizationLoadout    CurrentLoadout;                                    // 0x298(0x918)(BlueprintVisible, Protected, NativeAccessSpecifierProtected)
@@ -627,23 +555,19 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_CharacterCustomizationPanelBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_CharacterCustomizationPanelBase");
 		return Clss;
 	}
 
-	void SetPreviewCharacterActor(class AActor* Actor);
+	void SetPreviewCharacterActor(class AActor* InActor);
 	void PopulateLoadoutSlotMap();
 	void HandleOnAllLoadoutSlotItemsGenerated();
-	void HandleLoadoutUpdated(struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& ContextPayload);
-	void HandleLoadoutSlotItemsGenerated(class FName& LoadoutSlotName, struct FVALUI_CharCustomization_LoadoutSlotData& LoadoutSlotData);
-	void GetLoadoutSlotDataFromItemObject(class UObject* ItemObject, class FName* LoadoutSlotName, struct FVALUI_CharCustomization_LoadoutSlotData* LoadoutSlotData, bool* bSuccess);
+	void HandleLoadoutUpdated(struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& InContextPayload);
+	void HandleLoadoutSlotItemsGenerated(class FName& InLoadoutSlotName, struct FVALUI_CharCustomization_LoadoutSlotData& InLoadoutSlotData);
+	void GetLoadoutSlotDataFromItemObject(class UObject* InItemObject, class FName* InLoadoutSlotName, struct FVALUI_CharCustomization_LoadoutSlotData* InLoadoutSlotData, bool* InbSuccess);
 	struct FVAL_CharacterCustomizationLoadout GetCurrentLoadout();
 	void GenerateLoadoutSlotItems();
-	class UObject* GenerateItemObject(struct FVAL_CharCustomization_AssetData& AssetData);
+	class UObject* GenerateItemObject(struct FVAL_CharCustomization_AssetData& InAssetData);
 };
 
 // 0x60 (0x500 - 0x4A0)
@@ -651,24 +575,20 @@ public:
 class UVALUI_CharacterMovementStick_Mobile : public US6UI_InputActionHandlingUserWidget
 {
 public:
-	uint8                                        Pad_218A[0x50];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2336[0x50];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVALUI_CameraVirtualMoveHooker_Mobile* Hooker;                                            // 0x4F0(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_218C[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2338[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_CharacterMovementStick_Mobile");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_CharacterMovementStick_Mobile");
 		return Clss;
 	}
 
-	void SetHooker(class UVALUI_CameraVirtualMoveHooker_Mobile* VirtualMoveHooker);
-	void OnUpdateMovmentVirtualStick(bool TouchControlFlag, struct FVector2D& Pos, struct FVector2D& ControlVector);
+	void SetHooker(class UVALUI_CameraVirtualMoveHooker_Mobile* InVirtualMoveHooker);
+	void OnUpdateMovmentVirtualStick(bool InTouchControlFlag, struct FVector2D& InPos, struct FVector2D& InControlVector);
 	void OnFirstTouch();
-	void InitMovementVirtualStack(const struct FVector2D& DefaultPosition, float ValidTouchRadius, float MovementValidDistanceTemp, float WalkBoundaryDistanceTemp);
+	void InitMovementVirtualStack(const struct FVector2D& InDefaultPosition, float InValidTouchRadius, float InMovementValidDistanceTemp, float InWalkBoundaryDistanceTemp);
 };
 
 // 0x0 (0x278 - 0x278)
@@ -679,15 +599,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ChatEmojiPanel");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ChatEmojiPanel");
 		return Clss;
 	}
 
-	TSoftObjectPtr<class UTexture2D> GetTexture(struct FS6UI_FRichImageRow_Soft& ImageRow);
+	TSoftObjectPtr<class UTexture2D> GetTexture(struct FS6UI_FRichImageRow_Soft& InImageRow);
 };
 
 // 0x1E0 (0x458 - 0x278)
@@ -695,51 +611,47 @@ public:
 class UVALUI_ChatInputBar : public UUserWidget
 {
 public:
-	uint8                                        Pad_21B8[0x68];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_23D5[0x68];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnCommitBlankText;                                 // 0x2E0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnMessageSubmitted;                                // 0x2F0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnTextChanged;                                     // 0x300(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnMessageTargetCycled;                             // 0x310(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnCommandSuggestionsChanged;                       // 0x320(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21BB[0x20];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_23D8[0x20];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_ChatCommand_Base*                 ActiveChatCommand;                                 // 0x350(0x8)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TArray<TSubclassOf<class UVAL_ChatCommand_Base>> ChatCommandClasses;                                // 0x358(0x10)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	TMap<enum class EVAL_DirectMessageResult, class FText> DirectMessageErrorMessageTable;                    // 0x368(0x50)(Edit, BlueprintVisible, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
 	class UVALUI_ChatInputEditableText*          EditableText;                                      // 0x3B8(0x8)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSet<class UVAL_ChatCommand_Base*>           PendingActiveCommands;                             // 0x3C0(0x50)(Transient, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_21BE[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23DE[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ChatInputBar");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ChatInputBar");
 		return Clss;
 	}
 
-	void VALUIEvent_OnTextChanged__DelegateSignature(class UVALUI_ChatInputBar* InputBar, class FText& PreviousText, class FText& NewText);
-	void VALUIEvent_OnMessageTargetCycled__DelegateSignature(class UVALUI_ChatInputBar* InputBar, struct FMessageTarget& MessageTarget);
-	void VALUIEvent_OnMessageSubmitted__DelegateSignature(class UVALUI_ChatInputBar* InputBar, struct FMessageTarget& MessageTarget, class FText& Message);
-	void VALUIEvent_OnCommitBlankText__DelegateSignature(class UVALUI_ChatInputBar* InputBar);
-	void VALUIEvent_OnCommandSuggestionsChanged__DelegateSignature(const class FString& InString, TArray<TSubclassOf<class UVAL_ChatCommand_Base>>& CommandClasses);
+	void VALUIEvent_OnTextChanged__DelegateSignature(class UVALUI_ChatInputBar* InInputBar, class FText& InPreviousText, class FText& InNewText);
+	void VALUIEvent_OnMessageTargetCycled__DelegateSignature(class UVALUI_ChatInputBar* InInputBar, struct FMessageTarget& InMessageTarget);
+	void VALUIEvent_OnMessageSubmitted__DelegateSignature(class UVALUI_ChatInputBar* InInputBar, struct FMessageTarget& InMessageTarget, class FText& InMessage);
+	void VALUIEvent_OnCommitBlankText__DelegateSignature(class UVALUI_ChatInputBar* InInputBar);
+	void VALUIEvent_OnCommandSuggestionsChanged__DelegateSignature(const class FString& InInString, TArray<TSubclassOf<class UVAL_ChatCommand_Base>>& InCommandClasses);
 	void TryUpdateChatChannel();
-	void PushErrorNotification(class FText& InErrorText);
-	void HandleOnTextCommitted(class FText& InText, enum class ETextCommit InCommitMethod);
-	void HandleOnTextChanged(class FText& InText);
-	void HandleOnStateChanged(enum class EVALUI_ChatInputBarState NewStateId);
+	void PushErrorNotification(class FText& InInErrorText);
+	void HandleOnTextCommitted(class FText& InInText, enum class ETextCommit InInCommitMethod);
+	void HandleOnTextChanged(class FText& InInText);
+	void HandleOnStateChanged(enum class EVALUI_ChatInputBarState InNewStateId);
 	void HandleOnHideSuggestions();
-	void HandleOnDisplayCharacterNameSuggestions(const class FString& CharacterNameSubstr, int32 MaxSuggestionsNum);
-	void HandleOnChatChannelSet(struct FVALUI_ChatChannel& Channel);
+	void HandleOnDisplayCharacterNameSuggestions(const class FString& InCharacterNameSubstr, int32 InMaxSuggestionsNum);
+	void HandleOnChatChannelSet(struct FVALUI_ChatChannel& InChannel);
 	class FString GetCharacterName();
-	void DisplayStringsSuggestions(const class FString& InString, TArray<class FString>& Suggestions);
-	void DisplayCommandSuggestions(bool bInDisplay);
-	void DisplayActiveCommandHint(class UVAL_ChatCommand_Base* Command, bool bDisplay);
+	void DisplayStringsSuggestions(const class FString& InInString, TArray<class FString>& InSuggestions);
+	void DisplayCommandSuggestions(bool InbInDisplay);
+	void DisplayActiveCommandHint(class UVAL_ChatCommand_Base* InCommand, bool InbDisplay);
 	void CycleToPrevSuggestion();
 	void CycleToNextSuggestion();
 	void CompleteSuggestion();
-	bool ChangeMessageTarget(struct FMessageTarget& MessageTarget);
+	bool ChangeMessageTarget(struct FMessageTarget& InMessageTarget);
 };
 
 // 0x8 (0x818 - 0x810)
@@ -751,11 +663,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_EditableRichText_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_EditableRichText_Styled");
 		return Clss;
 	}
 
@@ -768,7 +676,7 @@ class UVALUI_ChatInputEditableText : public UVALUI_EditableRichText_Styled
 public:
 	FMulticastInlineDelegateProperty_            OnSummonContextMenu;                               // 0x818(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	int32                                        MaximumCharacterLimit;                             // 0x828(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21D6[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_23F1[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                PlainTextTag;                                      // 0x830(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                BoldTextTag;                                       // 0x840(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                ItalicTextTag;                                     // 0x850(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -778,25 +686,21 @@ public:
 	struct FKey                                  PlainTextKey;                                      // 0x8A8(0x18)(Edit, BlueprintVisible, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FKey                                  BoldKey;                                           // 0x8C0(0x18)(Edit, BlueprintVisible, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FKey                                  ItalicKey;                                         // 0x8D8(0x18)(Edit, BlueprintVisible, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_21D7[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23F6[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ChatInputEditableText");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ChatInputEditableText");
 		return Clss;
 	}
 
-	void VALUI_OnSummonContextMenu__DelegateSignature(struct FGeometry& Geometry, struct FPointerEvent& MouseEvent);
-	void StyleSelectedText(const class FString& StyleTagString);
+	void VALUI_OnSummonContextMenu__DelegateSignature(struct FGeometry& InGeometry, struct FPointerEvent& InMouseEvent);
+	void StyleSelectedText(const class FString& InStyleTagString);
 	void PasteTextFromClipboardChecked();
 	void MakeSelectedTextPlain();
 	void MakeSelectedTextItalic();
 	void MakeSelectedTextBold();
-	void InsertTextAtCursorChecked(class FText& InText);
+	void InsertTextAtCursorChecked(class FText& InInText);
 };
 
 // 0x0 (0x278 - 0x278)
@@ -807,16 +711,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ChatMessage");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ChatMessage");
 		return Clss;
 	}
 
 	class FString GetTimeZone();
-	class FString ColorToHexString(struct FLinearColor& Color);
+	class FString ColorToHexString(struct FLinearColor& InColor);
 };
 
 // 0xE8 (0x588 - 0x4A0)
@@ -824,52 +724,48 @@ public:
 class UVALUI_ChatPanelBase : public US6UI_InputActionHandlingUserWidget
 {
 public:
-	uint8                                        Pad_222E[0x68];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_24BD[0x68];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnChatPanelStateChanged;                           // 0x508(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMap<class FName, struct FVALUI_ChatTab>     TabTable;                                          // 0x518(0x50)(Edit, BlueprintVisible, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	class FName                                  ActiveTabName;                                     // 0x568(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UVALUI_ChatInputBar*                   InputBar;                                          // 0x570(0x8)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2231[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_24BE[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ChatPanelBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ChatPanelBase");
 		return Clss;
 	}
 
-	bool TryGetTabAndChannelFromMessageConfig(struct FVALUI_ChatMessageConfig& Config, struct FVALUI_ChatTab* OutTab, struct FVALUI_ChatChannel* OutChannel);
-	void ToggleChatChannel(struct FVALUI_ChatMessageConfig& MessageConfig);
-	void ToggleChannelsByType(bool bEnabled, enum class EMessageTargetType Type);
-	void ToggleAllChannels(bool bEnabled);
-	void SwitchTab(class FName& TabName);
-	void RemoveTabChannel(struct FVALUI_ChatTab* Tab, int32 ChannelIndex);
-	void OnNewChatMessageAdded(struct FValeriaChatMessage& ChatMessage);
-	void HandleToggleTabHost(bool bEnabled);
-	void HandleTabChannelEnabled(struct FVALUI_ChatTab& Tab, struct FVALUI_ChatChannel& Channel, struct FVALUI_ChatMessageConfig& Config);
-	void HandleRemoveSidePanelChannel(class UWidget* SidePanel, int32 ChannelIndex);
-	void HandleOnStateChanged(enum class EVALUI_ChatPanelState State);
-	void HandleOnChatroomJoined(bool bWasSuccess, const class FString& RoomId);
-	void HandleNewMessageTarget(const struct FMessageTarget& MessageTarget);
-	void HandleNewControlMessage(struct FControlMessage& ControlMessage);
-	void HandleNewChatMessage(struct FValeriaChatMessage& ChatMessage);
-	void HandleMessageTargetRemoved(const struct FMessageTarget& MessageTarget);
-	void HandleDisplayTab(class FName& TabName);
-	void HandleDisplayChannelGlow(class UWidget* SidePanel, struct FVALUI_ChatChannel& Channel, int32 ChannelIndex);
+	bool TryGetTabAndChannelFromMessageConfig(struct FVALUI_ChatMessageConfig& InConfig, struct FVALUI_ChatTab* InOutTab, struct FVALUI_ChatChannel* InOutChannel);
+	void ToggleChatChannel(struct FVALUI_ChatMessageConfig& InMessageConfig);
+	void ToggleChannelsByType(bool InbEnabled, enum class EMessageTargetType InType);
+	void ToggleAllChannels(bool InbEnabled);
+	void SwitchTab(class FName& InTabName);
+	void RemoveTabChannel(struct FVALUI_ChatTab* InTab, int32 InChannelIndex);
+	void OnNewChatMessageAdded(struct FValeriaChatMessage& InChatMessage);
+	void HandleToggleTabHost(bool InbEnabled);
+	void HandleTabChannelEnabled(struct FVALUI_ChatTab& InTab, struct FVALUI_ChatChannel& InChannel, struct FVALUI_ChatMessageConfig& InConfig);
+	void HandleRemoveSidePanelChannel(class UWidget* InSidePanel, int32 InChannelIndex);
+	void HandleOnStateChanged(enum class EVALUI_ChatPanelState InState);
+	void HandleOnChatroomJoined(bool InbWasSuccess, const class FString& InRoomId);
+	void HandleNewMessageTarget(const struct FMessageTarget& InMessageTarget);
+	void HandleNewControlMessage(struct FControlMessage& InControlMessage);
+	void HandleNewChatMessage(struct FValeriaChatMessage& InChatMessage);
+	void HandleMessageTargetRemoved(const struct FMessageTarget& InMessageTarget);
+	void HandleDisplayTab(class FName& InTabName);
+	void HandleDisplayChannelGlow(class UWidget* InSidePanel, struct FVALUI_ChatChannel& InChannel, int32 InChannelIndex);
 	void HandleClearTabHost();
-	void HandleClearMessagePanel(class UWidget* MessagePanel);
-	void HandleAddTabToTabHost(class FName& TabName, class FText& TabDisplayName);
-	void HandleAddTabChannel(struct FVALUI_ChatMessageConfig& MessageConfig);
-	void HandleAddMessageToPanel(class UWidget* MessagePanel, struct FValeriaChatMessage& ChatMessage, struct FVALUI_ChatMessageConfig& MessageConfig);
-	void GotoChatState(enum class EVALUI_ChatPanelState State);
-	void GetTabWidgetReferences(class FName& TabName, class UWidget** OutSidePanelWidget, class UWidget** OutMessagePanelWidget);
+	void HandleClearMessagePanel(class UWidget* InMessagePanel);
+	void HandleAddTabToTabHost(class FName& InTabName, class FText& InTabDisplayName);
+	void HandleAddTabChannel(struct FVALUI_ChatMessageConfig& InMessageConfig);
+	void HandleAddMessageToPanel(class UWidget* InMessagePanel, struct FValeriaChatMessage& InChatMessage, struct FVALUI_ChatMessageConfig& InMessageConfig);
+	void GotoChatState(enum class EVALUI_ChatPanelState InState);
+	void GetTabWidgetReferences(class FName& InTabName, class UWidget** InOutSidePanelWidget, class UWidget** InOutMessagePanelWidget);
 	enum class EVALUI_ChatPanelState GetCurrentChatState();
-	void GetChatMessageConfigs(struct FValeriaChatMessage& Message, TArray<struct FVALUI_ChatMessageConfig>* OutMessageConfigs);
-	void DisplayTab(class FName& TabName);
-	void ClearTabSidePanel(struct FVALUI_ChatTab& Tab);
+	void GetChatMessageConfigs(struct FValeriaChatMessage& InMessage, TArray<struct FVALUI_ChatMessageConfig>* InOutMessageConfigs);
+	void DisplayTab(class FName& InTabName);
+	void ClearTabSidePanel(struct FVALUI_ChatTab& InTab);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -880,18 +776,14 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ChatStatics");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ChatStatics");
 		return Clss;
 	}
 
-	TArray<struct FMessageTarget> GetMessageTargetsOfChannel(class UWorld* WorldContext, struct FVALUI_ChatChannel& InChannel);
-	bool DoesChannelMatchMessageTarget(struct FVALUI_ChatChannel& InChannel, struct FMessageTarget& InMessageTarget);
-	struct FS6PLAT_ChatMessage ConvertValeriaChatMessageToPlatformChatMessage(struct FValeriaChatMessage& ChatMessages);
-	TArray<struct FS6PLAT_ChatMessage> ConvertValeriaChatMessagesArrayToPlatformChatMessagesArray(TArray<struct FValeriaChatMessage>& ChatMessages);
+	TArray<struct FMessageTarget> GetMessageTargetsOfChannel(class UWorld* InWorldContext, struct FVALUI_ChatChannel& InInChannel);
+	bool DoesChannelMatchMessageTarget(struct FVALUI_ChatChannel& InInChannel, struct FMessageTarget& InInMessageTarget);
+	struct FS6PLAT_ChatMessage ConvertValeriaChatMessageToPlatformChatMessage(struct FValeriaChatMessage& InChatMessages);
+	TArray<struct FS6PLAT_ChatMessage> ConvertValeriaChatMessagesArrayToPlatformChatMessagesArray(TArray<struct FValeriaChatMessage>& InChatMessages);
 };
 
 // 0xAD0 (0xB00 - 0x30)
@@ -903,15 +795,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_CheckBoxStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_CheckBoxStyle");
 		return Clss;
 	}
 
-	void Apply(class UCheckBox* CheckBox);
+	void Apply(class UCheckBox* InCheckBox);
 };
 
 // 0x8 (0xC80 - 0xC78)
@@ -923,15 +811,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_CheckBox_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_CheckBox_Styled");
 		return Clss;
 	}
 
-	void SetCheckBoxStyle(class UVALUI_CheckBoxStyle* NewStyle);
+	void SetCheckBoxStyle(class UVALUI_CheckBoxStyle* InNewStyle);
 };
 
 // 0x58 (0x2D0 - 0x278)
@@ -944,16 +828,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_CrafterContentWidget");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_CrafterContentWidget");
 		return Clss;
 	}
 
-	class FName GetCrafterRowName(struct FCrafterConfig& CrafterConfig);
-	bool GetCrafterData(struct FCrafterConfig& CrafterConfig, struct FVALUI_Crafter* CrafterData);
+	class FName GetCrafterRowName(struct FCrafterConfig& InCrafterConfig);
+	bool GetCrafterData(struct FCrafterConfig& InCrafterConfig, struct FVALUI_Crafter* InCrafterData);
 };
 
 // 0x0 (0x278 - 0x278)
@@ -964,15 +844,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_CrafterStationsViewWidget");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_CrafterStationsViewWidget");
 		return Clss;
 	}
 
-	void DisplayCrafterStations(struct FRecipeNeeds& RecipeNeeds);
+	void DisplayCrafterStations(struct FRecipeNeeds& InRecipeNeeds);
 };
 
 // 0x18 (0x180 - 0x168)
@@ -981,15 +857,11 @@ class UVALUI_DebugOnly : public UContentWidget
 {
 public:
 	bool                                         bShouldCollapseIfNotDebugMode;                     // 0x168(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2266[0x17];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2507[0x17];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_DebugOnly");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_DebugOnly");
 		return Clss;
 	}
 
@@ -1001,19 +873,15 @@ class UVALUI_DepthSortedHorizontalBox : public UHorizontalBox
 {
 public:
 	int32                                        ForemostWidgetIndex;                               // 0x178(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_226C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_250C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_DepthSortedHorizontalBox");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_DepthSortedHorizontalBox");
 		return Clss;
 	}
 
-	void SetForemostWidgetIndex(int32 Index);
+	void SetForemostWidgetIndex(int32 InIndex);
 };
 
 // 0x18 (0xA8 - 0x90)
@@ -1023,19 +891,15 @@ class UVALUI_DragDropOperation : public UDragDropOperation
 public:
 	FMulticastInlineDelegateProperty_            OnDragStarted;                                     // 0x90(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	bool                                         bStartedDrag;                                      // 0xA0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_226F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2513[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_DragDropOperation");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_DragDropOperation");
 		return Clss;
 	}
 
-	void DragStarted(struct FPointerEvent& PointerEvent);
+	void DragStarted(struct FPointerEvent& InPointerEvent);
 };
 
 // 0x48 (0x70 - 0x28)
@@ -1043,15 +907,11 @@ public:
 class UVALUI_Functor_Button_OnClicked : public UObject
 {
 public:
-	uint8                                        Pad_2272[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2516[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_Functor_Button_OnClicked");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_Functor_Button_OnClicked");
 		return Clss;
 	}
 
@@ -1066,15 +926,11 @@ public:
 	class FName                                  TargetContainer;                                   // 0x30(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftClassPtr<class UUserWidget>             TargetWidget;                                      // 0x38(0x30)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                       Priority;                                          // 0x68(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2275[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_251A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_DynamicExtensionBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_DynamicExtensionBase");
 		return Clss;
 	}
 
@@ -1089,20 +945,16 @@ public:
 	class UDataTable*                            TextStyleSet;                                      // 0x30(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<TSubclassOf<class US6UI_EditableRichTextDecorator>> DecoratorClasses;                                  // 0x38(0x10)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	bool                                         bOverrideDefaultStyle;                             // 0x48(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_227D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2523[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FEditableTextStyle                    DefaultTextStyleOverride;                          // 0x50(0x2F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_EditableRichTextStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_EditableRichTextStyle");
 		return Clss;
 	}
 
-	void ApplyToTextBlock(class US6UI_EditableRichText* TextWidget);
+	void ApplyToTextBlock(class US6UI_EditableRichText* InTextWidget);
 };
 
 // 0xE80 (0xEB0 - 0x30)
@@ -1114,15 +966,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_EditableTextBoxStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_EditableTextBoxStyle");
 		return Clss;
 	}
 
-	void ApplyToTextBox(class UEditableTextBox* TextWidget);
+	void ApplyToTextBox(class UEditableTextBox* InTextWidget);
 };
 
 // 0x10 (0x1080 - 0x1070)
@@ -1131,19 +979,15 @@ class UVALUI_EditableTextBox_Styled : public UEditableTextBox
 {
 public:
 	class UVALUI_EditableTextBoxStyle*           Style;                                             // 0x1070(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2282[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2538[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_EditableTextBox_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_EditableTextBox_Styled");
 		return Clss;
 	}
 
-	void SetTextStyle(class UVALUI_EditableTextBoxStyle* NewStyle);
+	void SetTextStyle(class UVALUI_EditableTextBoxStyle* InNewStyle);
 };
 
 // 0x630 (0x660 - 0x30)
@@ -1156,15 +1000,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_EditableTextStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_EditableTextStyle");
 		return Clss;
 	}
 
-	void ApplyToTextBlock(class UEditableText* TextWidget);
+	void ApplyToTextBlock(class UEditableText* InTextWidget);
 };
 
 // 0x18 (0x4F0 - 0x4D8)
@@ -1177,17 +1017,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_EditableText_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_EditableText_Styled");
 		return Clss;
 	}
 
-	void VALUIEvent_UMGEditableTextOnCursorMoved__DelegateSignature(int32 LineIndex, int32 Offset);
-	void SetTextStyle(class UVALUI_EditableTextStyle* NewStyle);
-	void CaretGoTo(int32 LineIndex, int32 Offset);
+	void VALUIEvent_UMGEditableTextOnCursorMoved__DelegateSignature(int32 InLineIndex, int32 InOffset);
+	void SetTextStyle(class UVALUI_EditableTextStyle* InNewStyle);
+	void CaretGoTo(int32 InLineIndex, int32 InOffset);
 };
 
 // 0x18 (0x290 - 0x278)
@@ -1200,11 +1036,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_EmoteButton");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_EmoteButton");
 		return Clss;
 	}
 
@@ -1221,18 +1053,14 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_EmoteButtonContainer");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_EmoteButtonContainer");
 		return Clss;
 	}
 
-	void OnEmoteContainerButtonClicked__DelegateSignature(class UVALUI_EmoteButtonContainer* Container, class UVALUI_EmoteButton* ButtonClicked, class UEmoteDataAsset* EmoteDataAsset);
-	void OnEmoteButtonClicked(class UVALUI_EmoteButton* InButtonClicked, class UEmoteDataAsset* InEmoteDataAsset);
+	void OnEmoteContainerButtonClicked__DelegateSignature(class UVALUI_EmoteButtonContainer* InContainer, class UVALUI_EmoteButton* InButtonClicked, class UEmoteDataAsset* InEmoteDataAsset);
+	void OnEmoteButtonClicked(class UVALUI_EmoteButton* InInButtonClicked, class UEmoteDataAsset* InInEmoteDataAsset);
 	void HandleClearContainer();
-	void HandleAddButtonToContainer(class UVALUI_EmoteButton* Button);
+	void HandleAddButtonToContainer(class UVALUI_EmoteButton* InButton);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -1243,15 +1071,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ErrorDisplayHandlerInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ErrorDisplayHandlerInterface");
 		return Clss;
 	}
 
-	void HandleErrorDisplay(struct FVALUI_ErrorDisplayPayload& ErrorDisplayPayload);
+	void HandleErrorDisplay(struct FVALUI_ErrorDisplayPayload& InErrorDisplayPayload);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -1262,15 +1086,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ErrorDisplayHandling");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ErrorDisplayHandling");
 		return Clss;
 	}
 
-	bool TryRaiseErrorForDisplay(class UWidget* InstigatingWidget, struct FVALUI_ErrorDisplayPayload& ErrorDisplayPayload);
+	bool TryRaiseErrorForDisplay(class UWidget* InInstigatingWidget, struct FVALUI_ErrorDisplayPayload& InErrorDisplayPayload);
 };
 
 // 0x2D0 (0x300 - 0x30)
@@ -1283,19 +1103,15 @@ public:
 	struct FSlateColor                           BorderColor;                                       // 0x2C0(0x14)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	struct FMargin                               HeaderPadding;                                     // 0x2D4(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FMargin                               AreaPadding;                                       // 0x2E4(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22AB[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2584[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ExpandableAreaStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ExpandableAreaStyle");
 		return Clss;
 	}
 
-	void Apply(class UExpandableArea* ExpandableArea);
+	void Apply(class UExpandableArea* InExpandableArea);
 };
 
 // 0x10 (0x470 - 0x460)
@@ -1304,19 +1120,15 @@ class UVALUI_ExpandableArea_Styled : public UExpandableArea
 {
 public:
 	class UVALUI_ExpandableAreaStyle*            ExpandableAreaStyle;                               // 0x460(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22B7[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_258F[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ExpandableArea_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ExpandableArea_Styled");
 		return Clss;
 	}
 
-	void SetExpandableAreaStyle(class UVALUI_ExpandableAreaStyle* NewStyle);
+	void SetExpandableAreaStyle(class UVALUI_ExpandableAreaStyle* InNewStyle);
 };
 
 // 0x8 (0x280 - 0x278)
@@ -1328,15 +1140,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ExtensionPointContainerBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ExtensionPointContainerBase");
 		return Clss;
 	}
 
-	void AddExtensibleWidget(TSoftClassPtr<class UUserWidget>& WidgetReference);
+	void AddExtensibleWidget(TSoftClassPtr<class UUserWidget>& InWidgetReference);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -1347,15 +1155,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_InputValidationFunctionLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_InputValidationFunctionLibrary");
 		return Clss;
 	}
 
-	bool ValidateUserName(const class FString& UserNameInput, TArray<class FText>* OutErrors);
+	bool ValidateUserName(const class FString& InUserNameInput, TArray<class FText>* InOutErrors);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -1366,17 +1170,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ItemAcquisitionNotificationInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ItemAcquisitionNotificationInterface");
 		return Clss;
 	}
 
-	void SetInitialData(const struct FValeriaItem& Item);
+	void SetInitialData(const struct FValeriaItem& InItem);
 	bool CanAppendAdditionalData();
-	void AppendAdditionalData(const struct FValeriaItem& Item);
+	void AppendAdditionalData(const struct FValeriaItem& InItem);
 };
 
 // 0xE0 (0x108 - 0x28)
@@ -1385,22 +1185,18 @@ class UVALUI_ItemAcquisitionNotifier : public UObject
 {
 public:
 	TSoftClassPtr<class UUserWidget>             WidgetClass;                                       // 0x28(0x30)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_22D1[0xB0];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_25E5[0xB0];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ItemAcquisitionNotifier");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ItemAcquisitionNotifier");
 		return Clss;
 	}
 
-	void Setup(class UInventoryComponent* SourceInventoryComponent, class UVALUI_NotificationQueue* TargetNotificationQueue, TSoftClassPtr<class UUserWidget>& InWidgetClass);
-	class UWidget* OnCreateItemAcquisitionNotification__DelegateSignature(class UVALUI_ItemAcquisitionNotifier* Notifier);
-	void HandleNotificationDismissed(class UVALUI_NotificationQueue* NotificationQueue, struct FGuid& AffectedNotificationId, class UWidget* NotificationWidget);
-	void HandleItemAcquired(const struct FValeriaItem& Item);
+	void Setup(class UInventoryComponent* InSourceInventoryComponent, class UVALUI_NotificationQueue* InTargetNotificationQueue, TSoftClassPtr<class UUserWidget>& InInWidgetClass);
+	class UWidget* OnCreateItemAcquisitionNotification__DelegateSignature(class UVALUI_ItemAcquisitionNotifier* InNotifier);
+	void HandleNotificationDismissed(class UVALUI_NotificationQueue* InNotificationQueue, struct FGuid& InAffectedNotificationId, class UWidget* InNotificationWidget);
+	void HandleItemAcquired(const struct FValeriaItem& InItem);
 };
 
 // 0x8 (0xB0 - 0xA8)
@@ -1409,15 +1205,11 @@ class UVALUI_ItemDragDrop : public UVALUI_DragDropOperation
 {
 public:
 	bool                                         WasShiftDown;                                      // 0xA8(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22D7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_25F1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ItemDragDrop");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ItemDragDrop");
 		return Clss;
 	}
 
@@ -1437,15 +1229,11 @@ public:
 	struct FSlateBrush                           Brush_Disabled;                                    // 0x440(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                         bRaiseOnHover;                                     // 0x510(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bPlayAnimOnHover;                                  // 0x511(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22DC[0xE];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2607[0xE];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ItemSlotStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ItemSlotStyle");
 		return Clss;
 	}
 
@@ -1459,7 +1247,7 @@ public:
 	enum class EItemEmptyDisplayType             EmptyDisplayType;                                  // 0x30(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EItemAmountDisplayType            AmountDisplayType;                                 // 0x31(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUseCustomAmountDisplayColor;                      // 0x32(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22E0[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2610[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateColor                           AmountDisplayColor;                                // 0x34(0x14)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	bool                                         bCanShowDurability;                                // 0x48(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bCanShowCapacity;                                  // 0x49(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1467,15 +1255,11 @@ public:
 	bool                                         bCanShowQuestIcon;                                 // 0x4B(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bCanShowAmmo;                                      // 0x4C(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShowTooltipOnHover;                               // 0x4D(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22E3[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_261A[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ItemStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ItemStyle");
 		return Clss;
 	}
 
@@ -1488,52 +1272,47 @@ class UVALUI_ListViewStyle : public UVALUI_WidgetStyleBase
 public:
 	struct FScrollBarStyle                       WidgetBarStyle;                                    // 0x30(0x770)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	enum class ESlateVisibility                  ScrollBarVisibility;                               // 0x7A0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22E4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2621[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             ScrollbarThickness;                                // 0x7A8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMargin                               ScrollbarPadding;                                  // 0x7B8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bScrollBarAlwaysVisible;                           // 0x7C8(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22E5[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2624[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        NumberOfItemsToMakeScrollBarVisible;               // 0x7CC(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ListViewStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ListViewStyle");
 		return Clss;
 	}
 
 };
 
-// 0x48 (0xC68 - 0xC20)
+// 0x58 (0xC78 - 0xC20)
 // Class ValeriaUI.VALUI_ListView_Styled
 class UVALUI_ListView_Styled : public UListView
 {
 public:
-	class UVALUI_ListViewStyle*                  Style;                                             // 0xC20(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	FMulticastInlineDelegateProperty_            OnUserScrolled;                                    // 0xC28(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	FMulticastInlineDelegateProperty_            OnUserMouseWheelScrolled;                          // 0xC38(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	FMulticastInlineDelegateProperty_            OnListItemsChanged;                                // 0xC48(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22F1[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2643[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	class UVALUI_ListViewStyle*                  Style;                                             // 0xC28(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                         bHandleDirectionalNavigation;                      // 0xC30(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                        Pad_2645[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	FMulticastInlineDelegateProperty_            OnUserScrolled;                                    // 0xC38(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_            OnUserMouseWheelScrolled;                          // 0xC48(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_            OnListItemsChanged;                                // 0xC58(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                        Pad_2646[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ListView_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ListView_Styled");
 		return Clss;
 	}
 
-	void VALUI_OnListViewUserScrolled__DelegateSignature(float ScrollFraction);
-	void VALUI_OnListViewUserMouseWheelScrolled__DelegateSignature(float DesiredOffset);
+	void VALUI_OnListViewUserScrolled__DelegateSignature(float InScrollFraction);
+	void VALUI_OnListViewUserMouseWheelScrolled__DelegateSignature(float InDesiredOffset);
 	bool ShouldScrollBarBeVisible();
-	void OnListItemsChanged__DelegateSignature(TArray<class UObject*>& AddedItems, TArray<class UObject*>& RemovedItems);
+	void OnListItemsChanged__DelegateSignature(TArray<class UObject*>& InAddedItems, TArray<class UObject*>& InRemovedItems);
 	float GetScrollbarDistanceFromBottom();
-	TArray<class UObject*> GetItemsWithinRange(int32& StartingIndex, int32& Range);
+	TArray<class UObject*> GetItemsWithinRange(int32& InStartingIndex, int32& InRange);
 };
 
 // 0x0 (0x278 - 0x278)
@@ -1544,17 +1323,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_LoadingScreenBlackWidget");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_LoadingScreenBlackWidget");
 		return Clss;
 	}
 
 	class UWidgetAnimation* GetFadeFromBlackAnimation();
-	void FadeFromNoneToBlack(float FadeTimeInSeconds);
-	void FadeFromBlackToNone(float FadeTimeInSeconds);
+	void FadeFromNoneToBlack(float InFadeTimeInSeconds);
+	void FadeFromBlackToNone(float InFadeTimeInSeconds);
 };
 
 // 0x20 (0x98 - 0x78)
@@ -1567,11 +1342,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_MainHUDViewModel");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_MainHUDViewModel");
 		return Clss;
 	}
 
@@ -1587,18 +1358,14 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_MainHUDWidget");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_MainHUDWidget");
 		return Clss;
 	}
 
-	void HandleOnViewModelSocialTrackingDataChanged(class UObject* Object, const struct FFieldNotificationId& Field);
-	void HandleOnViewModelHUDStateChanged(class UObject* Object, const struct FFieldNotificationId& Field);
-	void HandleOnSocialTrackingDataChanged(struct FVALUI_SocialTrackingData& SocialData);
-	void HandleOnHUDStateChanged(struct FVALUI_MainHUDState& State);
+	void HandleOnViewModelSocialTrackingDataChanged(class UObject* InObject, const struct FFieldNotificationId& InField);
+	void HandleOnViewModelHUDStateChanged(class UObject* InObject, const struct FFieldNotificationId& InField);
+	void HandleOnSocialTrackingDataChanged(struct FVALUI_SocialTrackingData& InSocialData);
+	void HandleOnHUDStateChanged(struct FVALUI_MainHUDState& InState);
 };
 
 // 0x11C0 (0x11F0 - 0x30)
@@ -1611,15 +1378,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_MultiLineEditableTextBoxStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_MultiLineEditableTextBoxStyle");
 		return Clss;
 	}
 
-	void ApplyToTextBox(class UMultiLineEditableTextBox* TextWidget);
+	void ApplyToTextBox(class UMultiLineEditableTextBox* InTextWidget);
 };
 
 // 0x8 (0x1070 - 0x1068)
@@ -1631,15 +1394,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_MultiLineEditableTextBox_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_MultiLineEditableTextBox_Styled");
 		return Clss;
 	}
 
-	void SetTextBoxStyle(class UVALUI_MultiLineEditableTextBoxStyle* NewStyle);
+	void SetTextBoxStyle(class UVALUI_MultiLineEditableTextBoxStyle* InNewStyle);
 };
 
 // 0x340 (0x370 - 0x30)
@@ -1651,15 +1410,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_MultiLineEditableTextStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_MultiLineEditableTextStyle");
 		return Clss;
 	}
 
-	void ApplyToTextBlock(class UMultiLineEditableText* TextWidget);
+	void ApplyToTextBlock(class UMultiLineEditableText* InTextWidget);
 };
 
 // 0x8 (0x530 - 0x528)
@@ -1671,15 +1426,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_MultiLineEditableText_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_MultiLineEditableText_Styled");
 		return Clss;
 	}
 
-	void SetTextStyle(class UVALUI_MultiLineEditableTextStyle* NewStyle);
+	void SetTextStyle(class UVALUI_MultiLineEditableTextStyle* InNewStyle);
 };
 
 // 0x48 (0x78 - 0x30)
@@ -1689,17 +1440,13 @@ class UVALUI_NewsInboxMessageDataAsset : public UDataAsset
 public:
 	struct FGuid                                 Guid;                                              // 0x30(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_NewsInboxMessageType         MessageType;                                       // 0x40(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2303[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26A7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  Subject;                                           // 0x48(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	class FText                                  Body;                                              // 0x60(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_NewsInboxMessageDataAsset");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_NewsInboxMessageDataAsset");
 		return Clss;
 	}
 
@@ -1711,26 +1458,22 @@ class UVALUI_NewsInbox_Widget : public UVALUI_ModalWidgetBase
 {
 public:
 	bool                                         MessageDefsLoaded;                                 // 0x4D8(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_231F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26BC[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_NewsInboxComponent*               CurrentNewsInbox;                                  // 0x4E0(0x8)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UVALUI_NewsInboxMessageDataAsset*> NewsInboxMessageDefinitions;                       // 0x4E8(0x10)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_2320[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26BD[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_NewsInbox_Widget");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_NewsInbox_Widget");
 		return Clss;
 	}
 
 	void OnLoadSuccess();
 	void LoadNewsInboxMessageDefinitions();
 	class AValeriaPlayerController* GetValeriaPlayer();
-	class UVALUI_NewsInboxMessageDataAsset* GetNewsInboxMessageDefinitionFromRewardIndex(int32 Index, bool Claimed);
-	class UVALUI_NewsInboxMessageDataAsset* GetNewsInboxMessageDefinitionByType(enum class EVAL_NewsInboxMessageType EMessageType);
+	class UVALUI_NewsInboxMessageDataAsset* GetNewsInboxMessageDefinitionFromRewardIndex(int32 InIndex, bool InClaimed);
+	class UVALUI_NewsInboxMessageDataAsset* GetNewsInboxMessageDefinitionByType(enum class EVAL_NewsInboxMessageType InEMessageType);
 	void BP_OnRewardRefresh();
 	void BP_OnRedemptionSuccess();
 	void BP_OnRedemptionFailure();
@@ -1745,11 +1488,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_NotificationFactory");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_NotificationFactory");
 		return Clss;
 	}
 
@@ -1763,17 +1502,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_NotificationWidgetInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_NotificationWidgetInterface");
 		return Clss;
 	}
 
-	bool MatchesNotification(class FText& NotificationText, TSoftObjectPtr<class UTexture2D>& NotificationIcon);
-	void HandleNotificationShown(class UVALUI_NotificationQueue* NotificationQueue, struct FGuid& NotificationId);
-	void HandleNotificationDismissed(class UVALUI_NotificationQueue* NotificationQueue, struct FGuid& NotificationId);
+	bool MatchesNotification(class FText& InNotificationText, TSoftObjectPtr<class UTexture2D>& InNotificationIcon);
+	void HandleNotificationShown(class UVALUI_NotificationQueue* InNotificationQueue, struct FGuid& InNotificationId);
+	void HandleNotificationDismissed(class UVALUI_NotificationQueue* InNotificationQueue, struct FGuid& InNotificationId);
 };
 
 // 0x30 (0x58 - 0x28)
@@ -1787,22 +1522,18 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_NotificationQueue");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_NotificationQueue");
 		return Clss;
 	}
 
-	bool TryDismissNotification(struct FGuid& NotificationId);
-	struct FGuid PushNotification(class UWidget* NotificationWidget);
-	void OnNotificationShown(struct FGuid& NotificationId);
-	void OnNotificationPushed__DelegateSignature(class UVALUI_NotificationQueue* NotificationQueue, struct FGuid& AffectedNotificationId);
-	void OnNotificationDismissed__DelegateSignature(class UVALUI_NotificationQueue* NotificationQueue, struct FGuid& AffectedNotificationId, class UWidget* NotificationWidget);
-	class UWidget* GetNotificationById(struct FGuid& NotificationId);
+	bool TryDismissNotification(struct FGuid& InNotificationId);
+	struct FGuid PushNotification(class UWidget* InNotificationWidget);
+	void OnNotificationShown(struct FGuid& InNotificationId);
+	void OnNotificationPushed__DelegateSignature(class UVALUI_NotificationQueue* InNotificationQueue, struct FGuid& InAffectedNotificationId);
+	void OnNotificationDismissed__DelegateSignature(class UVALUI_NotificationQueue* InNotificationQueue, struct FGuid& InAffectedNotificationId, class UWidget* InNotificationWidget);
+	class UWidget* GetNotificationById(struct FGuid& InNotificationId);
 	class UWidget* GetLastNotificationOnStack();
-	struct FGuid GetIdForNotification(class UWidget* NotificationWidget);
+	struct FGuid GetIdForNotification(class UWidget* InNotificationWidget);
 	TArray<struct FGuid> GetAlllNotificationIds();
 };
 
@@ -1812,178 +1543,160 @@ class UVALUI_PhotoCameraScreenBase : public US6UI_StateUserWidget
 {
 public:
 	enum class EVALUI_PhotoCameraScreenLookMode  LookMode;                                          // 0x4D8(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2364[0x2F];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2718[0x2F];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_PhotoCameraScreenBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_PhotoCameraScreenBase");
 		return Clss;
 	}
 
-	void SetLookMode(enum class EVALUI_PhotoCameraScreenLookMode Value);
-	void AccumulateLookModeInput(struct FGeometry& InGeometry, struct FPointerEvent& InMouseEvent, bool bInvertYAxis);
+	void SetLookMode(enum class EVALUI_PhotoCameraScreenLookMode InValue);
+	void AccumulateLookModeInput(struct FGeometry& InInGeometry, struct FPointerEvent& InInMouseEvent, bool InbInvertYAxis);
 };
 
-// 0x68 (0x5A0 - 0x538)
+// 0x68 (0x578 - 0x510)
 // Class ValeriaUI.VALUI_UIManagerWidgetBase
 class UVALUI_UIManagerWidgetBase : public US6UI_UIManagerWidgetBase
 {
 public:
-	uint8                                        Pad_23CE[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
-	FMulticastInlineDelegateProperty_            OnItemDragDrop;                                    // 0x540(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23CF[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2785[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	FMulticastInlineDelegateProperty_            OnItemDragDrop;                                    // 0x518(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	uint8                                        Pad_2786[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_UIManagerWidgetBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_UIManagerWidgetBase");
 		return Clss;
 	}
 
-	void RegisterCallbacksAndBroadcastNewDragDrop(class UVALUI_ItemDragDrop* ItemDragDrop);
-	void OpenVillagerStore(int32 VillagerConfigId);
-	void OpenBook(int32 BookId);
-	void OnItemDragDropped(class UDragDropOperation* Operation);
-	void NavigateToRecentPhotos(struct FGuid& IdOfPhotoToNavigateTo, bool bShouldSelectPhoto);
-	void NavigateToOnlinePhotoAlbum(struct FGuid& IdOfPhotoToNavigateTo, bool bShouldSelectPhoto);
-	void Implementation_ToggleGameplayMenuMode(enum class EVAL_GameplayMenuMode Mode);
-	void Implementation_ToggleCollectionsMenu(enum class EVAL_CollectionsTabState& TabState);
-	void Implementation_OpenVillagerStore(int32 VillagerConfigId);
-	void Implementation_OpenSubgameScreen(class USubgameConfig* InSubgameConfig);
-	void Implementation_OpenStore(class UVillagerStoreConfig* StoreConfig);
-	void Implementation_OpenStables(class AActor* StablesActor);
-	void Implementation_OpenSignTeleporter(class AActor* TeleporterActor);
-	void Implementation_OpenShippingBin(class UShippingBinComponent* ShippingBinComponent);
-	void Implementation_OpenRequestItem(class FName Tag);
-	void Implementation_OpenRepairStation(class AActor* RepairStationActor, bool bAllowPurchases, bool bAllowRepairKitsFromStorage);
+	void RegisterCallbacksAndBroadcastNewDragDrop(class UVALUI_ItemDragDrop* InItemDragDrop);
+	void OpenVillagerStore(int32 InVillagerConfigId);
+	void OpenBook(int32 InBookId);
+	void OnItemDragDropped(class UDragDropOperation* InOperation);
+	void NavigateToRecentPhotos(struct FGuid& InIdOfPhotoToNavigateTo, bool InbShouldSelectPhoto);
+	void NavigateToOnlinePhotoAlbum(struct FGuid& InIdOfPhotoToNavigateTo, bool InbShouldSelectPhoto);
+	void Implementation_ToggleGameplayMenuMode(enum class EVAL_GameplayMenuMode InMode);
+	void Implementation_ToggleCollectionsMenu(enum class EVAL_CollectionsTabState& InTabState);
+	void Implementation_OpenVillagerStore(int32 InVillagerConfigId);
+	void Implementation_OpenSubgameScreen(class USubgameConfig* InInSubgameConfig);
+	void Implementation_OpenStore(class UVillagerStoreConfig* InStoreConfig);
+	void Implementation_OpenStables(class AActor* InStablesActor);
+	void Implementation_OpenSignTeleporter(class AActor* InTeleporterActor);
+	void Implementation_OpenShippingBin(class UShippingBinComponent* InShippingBinComponent);
+	void Implementation_OpenRequestItem(class FName InTag);
+	void Implementation_OpenRepairStation(class AActor* InRepairStationActor, bool InbAllowPurchases, bool InbAllowRepairKitsFromStorage);
 	void Implementation_OpenRecipeInspiration();
-	void Implementation_OpenPremiumStore(struct FVAL_OpenStorePayload& Payload);
+	void Implementation_OpenPremiumStore(struct FVAL_OpenStorePayload& InPayload);
 	void Implementation_OpenPlayerStorage();
-	void Implementation_OpenPetBonus(TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>& Items);
+	void Implementation_OpenPetBonus(TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>& InItems);
 	void Implementation_OpenNewsInbox();
 	void Implementation_OpenMailbox();
-	void Implementation_OpenItemVariantCustomizer(class UItemVariantCustomizerComponent* Customizer);
-	void Implementation_OpenHousingEdit(class AHousingPlotActor* HousingPlot);
-	void Implementation_OpenHouseUpgrade(class ULevelerComponent* LevelerComponent);
-	void Implementation_OpenHomeTeleporter(class ATeleporterActor* Teleporter);
+	void Implementation_OpenItemVariantCustomizer(class UItemVariantCustomizerComponent* InCustomizer);
+	void Implementation_OpenHousingEdit(class AHousingPlotActor* InHousingPlot);
+	void Implementation_OpenHouseUpgrade(class ULevelerComponent* InLevelerComponent);
+	void Implementation_OpenHomeTeleporter(class ATeleporterActor* InTeleporter);
 	void Implementation_OpenCVarMenu();
-	void Implementation_OpenCrafter(class UCrafterComponent* CrafterComponent);
+	void Implementation_OpenCrafter(class UCrafterComponent* InCrafterComponent);
 	void Implementation_OpenCommunityActivities();
-	void Implementation_OpenBundleDropOffMenu(class UBundleShrineConfig* BundleConfig);
-	void Implementation_OpenBook(int32 BookId);
-	void Implementation_OpenAmmoMenu(enum class EAmmoType AmmoType);
-	void Implementation_NavigateToRecentPhotos(struct FGuid& IdOfPhotoToNavigateTo, bool bShouldSelectPhoto);
-	void Implementation_NavigateToOnlinePhotoAlbum(struct FGuid& IdOfPhotoToNavigateTo, bool bShouldSelectPhoto);
-	void Implementation_NavigateToCharacterCustomization(struct FVAL_CharacterCustomizationModeConfig& Config);
-	bool Implementation_HasAnyHousingPlotsTeleportOptions(class ATeleporterActor* Teleporter);
+	void Implementation_OpenBundleDropOffMenu(class UBundleShrineConfig* InBundleConfig);
+	void Implementation_OpenBook(int32 InBookId);
+	void Implementation_OpenAmmoMenu(enum class EAmmoType InAmmoType);
+	void Implementation_NavigateToRecentPhotos(struct FGuid& InIdOfPhotoToNavigateTo, bool InbShouldSelectPhoto);
+	void Implementation_NavigateToOnlinePhotoAlbum(struct FGuid& InIdOfPhotoToNavigateTo, bool InbShouldSelectPhoto);
+	void Implementation_NavigateToCharacterCustomization(struct FVAL_CharacterCustomizationModeConfig& InConfig);
+	bool Implementation_HasAnyHousingPlotsTeleportOptions(class ATeleporterActor* InTeleporter);
 	void Implementation_CloseSubgameScreen();
 };
 
-// 0xE0 (0x680 - 0x5A0)
+// 0xF0 (0x668 - 0x578)
 // Class ValeriaUI.VALUI_PregameUIManager
 class UVALUI_PregameUIManager : public UVALUI_UIManagerWidgetBase
 {
 public:
-	uint8                                        Pad_2419[0x68];                                    // Fixing Size After Last Property  [ Dumper-7 ]
-	FMulticastInlineDelegateProperty_            OnPregameStateChange;                              // 0x608(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	class AVAL_CharacterRenderStudio*            RenderStudio;                                      // 0x618(0x8)(BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                AnnouncementURL;                                   // 0x620(0x10)(Edit, BlueprintVisible, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                Announcement;                                      // 0x630(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FDateTime                             AnnouncementTimestamp;                             // 0x640(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                ServerStatusURL;                                   // 0x648(0x10)(Edit, BlueprintVisible, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                ServerStatus;                                      // 0x658(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_241F[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27BB[0x68];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	FMulticastInlineDelegateProperty_            OnPregameStateChange;                              // 0x5E0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_            OnLobbyStateChange;                                // 0x5F0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	class AVAL_CharacterRenderStudio*            RenderStudio;                                      // 0x600(0x8)(BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                AnnouncementURL;                                   // 0x608(0x10)(Edit, BlueprintVisible, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                Announcement;                                      // 0x618(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FDateTime                             AnnouncementTimestamp;                             // 0x628(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                ServerStatusURL;                                   // 0x630(0x10)(Edit, BlueprintVisible, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                ServerStatus;                                      // 0x640(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                        Pad_27BD[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_PregameUIManager");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_PregameUIManager");
 		return Clss;
 	}
 
-	void TryGetCachedCharacters_Checked(TArray<struct FVALDTOS_MetaCharacterFormat>* OutOurCharacters);
-	bool TryGetCachedCharacters(TArray<struct FVALDTOS_MetaCharacterFormat>* OutOurCharacters);
-	void SetAnnouncementURL(const class FString& URL);
-	void OnPregameStateChange__DelegateSignature(enum class EVALUI_PregameState State);
-	void HandleOnRetrievingCharacterListFailed(int32 ErrorCode);
-	void HandleOnPregameStateChanged(enum class EVALUI_PregameState NewState);
-	void HandleOnLoginStateChanged(enum class EVALUI_LoginState NewState);
-	void HandleOnLobbyStateChanged(enum class EVALUI_LobbyState NewState);
+	void TryGetCachedCharacters_Checked(TArray<struct FVALDTOS_MetaCharacterFormat>* InOutOurCharacters);
+	bool TryGetCachedCharacters(TArray<struct FVALDTOS_MetaCharacterFormat>* InOutOurCharacters);
+	void SetAnnouncementURL(const class FString& InURL);
+	void OnPregameStateChange__DelegateSignature(enum class EVALUI_PregameState InState);
+	void OnLobbyStateChange__DelegateSignature(enum class EVALUI_LobbyState InState);
+	void HandleOnRetrievingCharacterListFailed(int32 InErrorCode);
+	void HandleOnPregameStateChanged(enum class EVALUI_PregameState InNewState);
+	void HandleOnLoginStateChanged(enum class EVALUI_LoginState InNewState);
+	void HandleOnLobbyStateChanged(enum class EVALUI_LobbyState InNewState);
 	void HandleOnFetchedServerStatus();
-	void HandleOnCharacterListObtained(TArray<struct FVALDTOS_MetaCharacterFormat>& InCachedCharacters);
-	void HandleOnCharacterCreationStateChanged(enum class EVALUI_CharacterCreationState NewState);
-	void GoToPregameState(enum class EVALUI_PregameState NewState);
-	void GoToLoginState(enum class EVALUI_LoginState NewState);
-	void GoToLobbyState(enum class EVALUI_LobbyState NewState);
-	void GoToCharacterCreationState(enum class EVALUI_CharacterCreationState NewState);
+	void HandleOnCharacterListObtained(TArray<struct FVALDTOS_MetaCharacterFormat>& InInCachedCharacters);
+	void HandleOnCharacterCreationStateChanged(enum class EVALUI_CharacterCreationState InNewState);
+	void GoToPregameState(enum class EVALUI_PregameState InNewState);
+	void GoToLoginState(enum class EVALUI_LoginState InNewState);
+	void GoToLobbyState(enum class EVALUI_LobbyState InNewState);
+	void GoToCharacterCreationState(enum class EVALUI_CharacterCreationState InNewState);
 	enum class EVALUI_PregameState GetCurrentPregameStateId();
-	void GetCachedCharacterAtIndex_Checked(int32 Index, struct FVALDTOS_MetaCharacterFormat* OutCharacter);
+	void GetCachedCharacterAtIndex_Checked(int32 InIndex, struct FVALDTOS_MetaCharacterFormat* InOutCharacter);
 	void FetchServerStatus();
 	void FetchAnnouncements();
 };
 
-// 0x40 (0x2B8 - 0x278)
+// 0x40 (0x418 - 0x3D8)
 // Class ValeriaUI.VALUI_PremiumCurrencyPurchaseWidgetBase
-class UVALUI_PremiumCurrencyPurchaseWidgetBase : public UUserWidget
+class UVALUI_PremiumCurrencyPurchaseWidgetBase : public UCommonActivatableWidget
 {
 public:
-	enum class EVALUI_PremiumCurrencyPurchaseState PurchaseState;                                     // 0x278(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_244E[0x13];                                    // Fixing Size After Last Property  [ Dumper-7 ]
-	float                                        ValidatePurchaseTimerSecs;                         // 0x28C(0x4)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                        ValidatePurchaseMaxAttempts;                       // 0x290(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_244F[0x24];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	enum class EVALUI_PremiumCurrencyPurchaseState PurchaseState;                                     // 0x3D8(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                        Pad_27D6[0x13];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	float                                        ValidatePurchaseTimerSecs;                         // 0x3EC(0x4)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                        ValidatePurchaseMaxAttempts;                       // 0x3F0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                        Pad_27D7[0x24];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_PremiumCurrencyPurchaseWidgetBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_PremiumCurrencyPurchaseWidgetBase");
 		return Clss;
 	}
 
 	void RequestBundleOffers();
-	void PurchasePremiumCurrency(struct FGuid& BundleID);
-	void HandleValidatePaymentFulfillmentTick(struct FGuid& PaymentID);
-	void HandleUrlChanged(class FText& Text);
+	void PurchasePremiumCurrency(struct FGuid& InBundleID);
+	void HandleValidatePaymentFulfillmentTick(struct FGuid& InPaymentID);
+	void HandleUrlChanged(class FText& InText);
 	void HandlePaymentFulfilled();
 	void HandlePaymentCompleted();
 	void HandlePaymentCancelled();
-	void HandleCheckoutSessionCreated(const class FString& URL);
+	void HandleCheckoutSessionCreated(const class FString& InURL);
 	void HandleBundleOffersFailed();
-	void HandleBundleOffersAvailable(TArray<struct FVALUI_PremiumCurrencyBundle>& Bundles);
+	void HandleBundleOffersAvailable(TArray<struct FVALUI_PremiumCurrencyBundle>& InBundles);
 	void CancelValidatePaymentPolling();
 };
 
-// 0x0 (0x278 - 0x278)
+// 0x0 (0x3D8 - 0x3D8)
 // Class ValeriaUI.VALUI_PremiumItemPurchaseWidgetBase
-class UVALUI_PremiumItemPurchaseWidgetBase : public UUserWidget
+class UVALUI_PremiumItemPurchaseWidgetBase : public UCommonActivatableWidget
 {
 public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_PremiumItemPurchaseWidgetBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_PremiumItemPurchaseWidgetBase");
 		return Clss;
 	}
 
-	TMap<class FName, class UVAL_CharacterCustomizationItemBase*> GetLoadoutOverridesForCatalogItems(TArray<class UVAL_CharacterCustomizationItemBase*>& Items);
-	TArray<class UVAL_CharacterCustomizationItemBase*> GetCustomizationItemsForGuids(TArray<struct FGuid>& ItemIds);
+	TMap<class FName, class UVAL_CharacterCustomizationItemBase*> GetLoadoutOverridesForCatalogItems(TArray<class UVAL_CharacterCustomizationItemBase*>& InItems);
+	TArray<class UVAL_CharacterCustomizationItemBase*> GetCustomizationItemsForGuids(TArray<struct FGuid>& InItemIds);
 };
 
 // 0x60 (0x2D8 - 0x278)
@@ -1996,46 +1709,38 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_PremiumStorefrontTileWidgetBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_PremiumStorefrontTileWidgetBase");
 		return Clss;
 	}
 
-	void SetModel(struct FVALUI_PremiumStorefrontWidgetModel& NewModel);
-	void OnSelected__DelegateSignature(class UVALUI_PremiumStorefrontTileWidgetBase* Widget);
-	void HandleModelUpdate(struct FVALUI_PremiumStorefrontWidgetModel& NewModel);
+	void SetModel(struct FVALUI_PremiumStorefrontWidgetModel& InNewModel);
+	void OnSelected__DelegateSignature(class UVALUI_PremiumStorefrontTileWidgetBase* InWidget);
+	void HandleModelUpdate(struct FVALUI_PremiumStorefrontWidgetModel& InNewModel);
 	struct FVALUI_PremiumStorefrontWidgetModel GetModel();
 };
 
-// 0x18 (0x290 - 0x278)
+// 0x18 (0x3F0 - 0x3D8)
 // Class ValeriaUI.VALUI_PremiumStorefrontWidgetBase
-class UVALUI_PremiumStorefrontWidgetBase : public UUserWidget
+class UVALUI_PremiumStorefrontWidgetBase : public UCommonActivatableWidget
 {
 public:
-	int32                                        TilePaddingAmount;                                 // 0x278(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2493[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
-	class UGridPanel*                            StoreGrid;                                         // 0x280(0x8)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TSubclassOf<class UVALUI_PremiumStorefrontTileWidgetBase> TileWidgetClass;                                   // 0x288(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                        TilePaddingAmount;                                 // 0x3D8(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                        Pad_2807[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	class UGridPanel*                            StoreGrid;                                         // 0x3E0(0x8)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSubclassOf<class UVALUI_PremiumStorefrontTileWidgetBase> TileWidgetClass;                                   // 0x3E8(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_PremiumStorefrontWidgetBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_PremiumStorefrontWidgetBase");
 		return Clss;
 	}
 
-	void HandleTileWidgetSelected(class UVALUI_PremiumStorefrontTileWidgetBase* Tile);
-	void HandleTileSelected(struct FVALUI_PremiumStorefrontWidgetModel& Model);
+	void HandleTileWidgetSelected(class UVALUI_PremiumStorefrontTileWidgetBase* InTile);
+	void HandleTileSelected(struct FVALUI_PremiumStorefrontWidgetModel& InModel);
 	void HandleStorefrontError();
-	void HandleStorefrontAvailable(TArray<struct FVALUI_PremiumStorefrontWidgetModel>& Models);
+	void HandleStorefrontAvailable(struct FVALUI_PremiumStorefrontResponse& InResponse);
 	bool FetchStorefront();
-	void CreateStorefrontGrid(int32 WidgetsPerRow, TArray<struct FVALUI_PremiumStorefrontWidgetModel>& Models);
+	void CreateStorefrontGrid(int32 InWidgetsPerRow, TArray<struct FVALUI_PremiumStorefrontWidgetModel>& InModels);
 };
 
 // 0x78 (0x550 - 0x4D8)
@@ -2043,24 +1748,36 @@ public:
 class UVALUI_PremiumStoreScreenWidgetBase : public UVALUI_ModalWidgetBase
 {
 public:
-	uint8                                        Pad_24A7[0x68];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_281F[0x68];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnStudioStateChanged;                              // 0x540(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_PremiumStoreScreenWidgetBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_PremiumStoreScreenWidgetBase");
 		return Clss;
 	}
 
-	void OnStateChanged__DelegateSignature(class UVALUI_PremiumStoreScreenWidgetBase* StoreWidget, enum class EVALUI_PremiumStoreState State);
-	void HandleOnStateChanged(enum class EVALUI_PremiumStoreState State);
-	void HandleBackAction(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime);
-	void GoToPremiumStoreState(enum class EVALUI_PremiumStoreState NewState);
+	void OnStateChanged__DelegateSignature(class UVALUI_PremiumStoreScreenWidgetBase* InStoreWidget, enum class EVALUI_PremiumStoreState InState);
+	void HandleOnStateChanged(enum class EVALUI_PremiumStoreState InState);
+	void HandleBackAction(const struct FInputActionValue& InActionValue, float InElapsedTime, float InTriggeredTime);
+	void GoToPremiumStoreState(enum class EVALUI_PremiumStoreState InNewState);
 	enum class EVALUI_PremiumStoreState GetPremiumStoreState();
+};
+
+// 0x0 (0x28 - 0x28)
+// Class ValeriaUI.VALUI_PremiumStoreFunctionLibrary
+class UVALUI_PremiumStoreFunctionLibrary : public UBlueprintFunctionLibrary
+{
+public:
+
+	static class UClass* StaticClass()
+	{
+		static class UClass* Clss = UObject::FindClassFast("VALUI_PremiumStoreFunctionLibrary");
+		return Clss;
+	}
+
+	struct FVAL_CharacterCustomization_PetPurchaseBonus GetPetPurchaseBonusFromPurchaseRewards(struct FVALUI_PremiumStorefrontPurchaseRewards& InPurchaseRewards);
+	TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>> GetNewPetsForBonusReceivedModal(struct FVAL_CharacterCustomization_PetPurchaseBonus& InPetPurchaseBonus, TSet<struct FGuid>& InNewEntitlements);
 };
 
 // 0x0 (0x1A8 - 0x1A8)
@@ -2071,11 +1788,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_PremiumStoreWebBrowser");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_PremiumStoreWebBrowser");
 		return Clss;
 	}
 
@@ -2091,15 +1804,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ProgressBarStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ProgressBarStyle");
 		return Clss;
 	}
 
-	void Apply(class UProgressBar* ProgressBar);
+	void Apply(class UProgressBar* InProgressBar);
 };
 
 // 0x8 (0x440 - 0x438)
@@ -2111,15 +1820,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ProgressBar_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ProgressBar_Styled");
 		return Clss;
 	}
 
-	void SetProgressBarStyle(class UVALUI_ProgressBarStyle* NewStyle);
+	void SetProgressBarStyle(class UVALUI_ProgressBarStyle* InNewStyle);
 };
 
 // 0x210 (0x360 - 0x150)
@@ -2138,34 +1843,30 @@ public:
 	int32                                        SliderIndex;                                       // 0x1B4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FVALUI_RadioSliderPaginationSettings  PaginationSettings;                                // 0x1B8(0x98)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
 	float                                        SliderAnimationTime;                               // 0x250(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_24E5[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_28A2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRuntimeFloatCurve                    SliderAnimationCurve;                              // 0x258(0x88)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
 	struct FMargin                               ElementPadding;                                    // 0x2E0(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
 	class UUserWidget*                           SliderWidget;                                      // 0x2F0(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TMap<int32, class UUserWidget*>              ElementWidgetsTable;                               // 0x2F8(0x50)(ExportObject, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_24E6[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28AB[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_RadioSlider");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_RadioSlider");
 		return Clss;
 	}
 
 	void TryIncrementPage();
 	void TryDecrementPage();
-	void SetIndex(int32 Index, bool bSkipSliderAnimation);
-	void OnSliderWidgetCreated__DelegateSignature(class UUserWidget* SliderWidget);
-	void OnSliderChanged__DelegateSignature(class UUserWidget* PreviousElementWidget, int32 PreviousElementIndex, class UUserWidget* NewElementWidget, int32 NewElementIndex);
-	void OnPageChanged__DelegateSignature(int32 PageIndex, int32 TotalNumPages);
-	void OnElementWidgetCreated__DelegateSignature(class UUserWidget* ElementWidget, int32 ElementIndex);
-	class UUserWidget* GetWidgetAtIndex(int32 Index);
+	void SetIndex(int32 InIndex, bool InbSkipSliderAnimation);
+	void OnSliderWidgetCreated__DelegateSignature(class UUserWidget* InSliderWidget);
+	void OnSliderChanged__DelegateSignature(class UUserWidget* InPreviousElementWidget, int32 InPreviousElementIndex, class UUserWidget* InNewElementWidget, int32 InNewElementIndex);
+	void OnPageChanged__DelegateSignature(int32 InPageIndex, int32 InTotalNumPages);
+	void OnElementWidgetCreated__DelegateSignature(class UUserWidget* InElementWidget, int32 InElementIndex);
+	class UUserWidget* GetWidgetAtIndex(int32 InIndex);
 	int32 GetTotalNumPages();
 	class UUserWidget* GetSliderWidget();
-	bool GetIndexFromWidget(class UUserWidget* Widget, int32* Index);
+	bool GetIndexFromWidget(class UUserWidget* InWidget, int32* InIndex);
 	TMap<int32, class UUserWidget*> GetElementWidgetsTable();
 	int32 GetCurrentPageIndex();
 	int32 GetCurrentIndex();
@@ -2180,20 +1881,16 @@ public:
 	class UDataTable*                            TextStyleSet;                                      // 0x30(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<TSubclassOf<class URichTextBlockDecorator>> DecoratorClasses;                                  // 0x38(0x10)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	bool                                         bOverrideDefaultStyle;                             // 0x48(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24F0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_28B2[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTextBlockStyle                       DefaultTextStyleOverride;                          // 0x50(0x340)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_RichTextBlockStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_RichTextBlockStyle");
 		return Clss;
 	}
 
-	void ApplyToTextBlock(class URichTextBlock* TextWidget);
+	void ApplyToTextBlock(class URichTextBlock* InTextWidget);
 };
 
 // 0x10 (0x880 - 0x870)
@@ -2202,19 +1899,15 @@ class UVALUI_RichTextBlock_Styled : public URichTextBlock
 {
 public:
 	class UVALUI_RichTextBlockStyle*             Style;                                             // 0x870(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24F5[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28B5[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_RichTextBlock_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_RichTextBlock_Styled");
 		return Clss;
 	}
 
-	void SetTextBlockStyle(class UVALUI_RichTextBlockStyle* NewStyle);
+	void SetTextBlockStyle(class UVALUI_RichTextBlockStyle* InNewStyle);
 };
 
 // 0xAE0 (0xB10 - 0x30)
@@ -2229,15 +1922,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ScrollBoxStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ScrollBoxStyle");
 		return Clss;
 	}
 
-	void ApplyToScrollBox(class UScrollBox* ScrollBox);
+	void ApplyToScrollBox(class UScrollBox* InScrollBox);
 };
 
 // 0x8 (0xCA0 - 0xC98)
@@ -2249,15 +1938,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_ScrollBox_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_ScrollBox_Styled");
 		return Clss;
 	}
 
-	void SetScrollBoxStyle(class UVALUI_ScrollBoxStyle* NewStyle);
+	void SetScrollBoxStyle(class UVALUI_ScrollBoxStyle* InNewStyle);
 };
 
 // 0x38 (0x70 - 0x38)
@@ -2270,11 +1955,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_Settings");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_Settings");
 		return Clss;
 	}
 
@@ -2289,15 +1970,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_SliderStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_SliderStyle");
 		return Clss;
 	}
 
-	void Apply(class USlider* Slider);
+	void Apply(class USlider* InSlider);
 };
 
 // 0x10 (0x710 - 0x700)
@@ -2306,19 +1983,15 @@ class UVALUI_Slider_Styled : public USlider
 {
 public:
 	class UVALUI_SliderStyle*                    Style;                                             // 0x700(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_250B[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28D9[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_Slider_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_Slider_Styled");
 		return Clss;
 	}
 
-	void SetSliderStyle(class UVALUI_SliderStyle* NewStyle);
+	void SetSliderStyle(class UVALUI_SliderStyle* InNewStyle);
 };
 
 // 0x10 (0x4B0 - 0x4A0)
@@ -2330,16 +2003,53 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_SocialPanelBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_SocialPanelBase");
 		return Clss;
 	}
 
-	void ToggleDebugSimulation__DelegateSignature(bool bDisplay);
+	void ToggleDebugSimulation__DelegateSignature(bool InbDisplay);
 	class FString GetDebugSimulationFlag();
+};
+
+// 0x30 (0x4D0 - 0x4A0)
+// Class ValeriaUI.VALUI_LobbyScreenUserWidget
+class UVALUI_LobbyScreenUserWidget : public US6UI_InputActionHandlingUserWidget
+{
+public:
+	FMulticastInlineDelegateProperty_            EventUpdateSelectedCharacter;                      // 0x4A0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_            EventOnPlayButtonClicked;                          // 0x4B0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_            EventOnCancelLoginQueueButtonClicked;              // 0x4C0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+	static class UClass* StaticClass()
+	{
+		static class UClass* Clss = UObject::FindClassFast("VALUI_LobbyScreenUserWidget");
+		return Clss;
+	}
+
+};
+
+// 0x0 (0x4D8 - 0x4D8)
+// Class ValeriaUI.VALUI_StateUserWidget_PregameHUD
+class UVALUI_StateUserWidget_PregameHUD : public US6UI_StateUserWidget
+{
+public:
+
+	static class UClass* StaticClass()
+	{
+		static class UClass* Clss = UObject::FindClassFast("VALUI_StateUserWidget_PregameHUD");
+		return Clss;
+	}
+
+	void SetOwner(class UVALUI_PregameUIManager* InOwner);
+	void HandleOnLoginStateChanged(enum class EVALUI_LoginState InNewState);
+	void HandleOnLobbyStateChanged(enum class EVALUI_LobbyState InNewState);
+	void HandleOnFetchedServerStatus();
+	void HandleOnCharacterCreationStateChanged(enum class EVALUI_CharacterCreationState InNewState);
+	class UVALUI_LobbyScreenUserWidget* GetLobbyScreen();
+	class UVALUI_CharacterCreationScreenBase* GetCharacterCreationScreen();
+	void DisplayMatchmakingQueueNumber(int32 InNumber);
+	void DisplayMatchmakingQueueActive(bool InbActive);
+	void DisplayCharacterCreationMatchmaking();
 };
 
 // 0x78 (0x2F0 - 0x278)
@@ -2354,25 +2064,21 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_TabButtonHostBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_TabButtonHostBase");
 		return Clss;
 	}
 
-	void UnregisterTab(class FName& TabName);
-	bool TrySetActiveTabName(class FName TabName, bool bForceSet);
-	bool TryGetTabInfo(class FName& TabName, struct FVALUI_InstantiatedTabButtonInfo* OutInfo);
-	void SetTabButtonVisibility(class FName& TabName, enum class ESlateVisibility NewVisibility);
-	void RemoveTabButton(class FName& TabName, struct FVALUI_InstantiatedTabButtonInfo& Info);
-	void RegisterNewTab(class FName& TabName, class FText& TabDisplayName, class UButton* Button, class UWidget* AssociatedContent, TSoftObjectPtr<class UTexture2D> IconTexture, struct FVector2D& IconSize);
-	void OnDifferentActiveTabSet__DelegateSignature(class UVALUI_TabButtonHostBase* TabButtonHost);
-	void HandleDifferentActiveTabSet(class FName TabName);
+	void UnregisterTab(class FName& InTabName);
+	bool TrySetActiveTabName(class FName InTabName, bool InbForceSet);
+	bool TryGetTabInfo(class FName& InTabName, struct FVALUI_InstantiatedTabButtonInfo* InOutInfo);
+	void SetTabButtonVisibility(class FName& InTabName, enum class ESlateVisibility InNewVisibility);
+	void RemoveTabButton(class FName& InTabName, struct FVALUI_InstantiatedTabButtonInfo& InInfo);
+	void RegisterNewTab(class FName& InTabName, class FText& InTabDisplayName, class UButton* InButton, class UWidget* InAssociatedContent, TSoftObjectPtr<class UTexture2D> InIconTexture, struct FVector2D& InIconSize);
+	void OnDifferentActiveTabSet__DelegateSignature(class UVALUI_TabButtonHostBase* InTabButtonHost);
+	void HandleDifferentActiveTabSet(class FName InTabName);
 	TArray<class FName> GetTabNames();
 	class FName GetActiveTabName();
-	void AddTabButton(class FName& TabName, struct FVALUI_InstantiatedTabButtonInfo& Info);
+	void AddTabButton(class FName& InTabName, struct FVALUI_InstantiatedTabButtonInfo& InInfo);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -2383,15 +2089,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_TabButtonInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_TabButtonInterface");
 		return Clss;
 	}
 
-	void SetIsActiveTabButton(bool bIsActive);
+	void SetIsActiveTabButton(bool InbIsActive);
 };
 
 // 0x160 (0x190 - 0x30)
@@ -2400,7 +2102,7 @@ class UVALUI_TextBlockStyle : public UVALUI_WidgetStyleBase
 {
 public:
 	struct FSlateColor                           ColorAndOpacity;                                   // 0x30(0x14)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	uint8                                        Pad_257A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_293C[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateFontInfo                        Font;                                              // 0x48(0x58)(Edit, BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           StrikeBrush;                                       // 0xA0(0xD0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	struct FVector2D                             ShadowOffset;                                      // 0x170(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2408,15 +2110,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_TextBlockStyle");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_TextBlockStyle");
 		return Clss;
 	}
 
-	void ApplyToTextBlock(class UTextBlock* TextWidget);
+	void ApplyToTextBlock(class UTextBlock* InTextWidget);
 };
 
 // 0x8 (0x340 - 0x338)
@@ -2428,40 +2126,32 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_TextBlock_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_TextBlock_Styled");
 		return Clss;
 	}
 
-	void SetTextBlockStyle(class UVALUI_TextBlockStyle* NewStyle);
+	void SetTextBlockStyle(class UVALUI_TextBlockStyle* InNewStyle);
 };
 
-// 0x28 (0xC90 - 0xC68)
+// 0x28 (0xCA0 - 0xC78)
 // Class ValeriaUI.VALUI_TileView_Styled
 class UVALUI_TileView_Styled : public UVALUI_ListView_Styled
 {
 public:
-	float                                        EntryHeight;                                       // 0xC68(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                        EntryWidth;                                        // 0xC6C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	enum class EListItemAlignment                TileAlignment;                                     // 0xC70(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                         bWrapHorizontalNavigation;                         // 0xC71(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_258A[0x1E];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	float                                        EntryHeight;                                       // 0xC78(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                        EntryWidth;                                        // 0xC7C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	enum class EListItemAlignment                TileAlignment;                                     // 0xC80(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                         bWrapHorizontalNavigation;                         // 0xC81(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                        Pad_2949[0x1E];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_TileView_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_TileView_Styled");
 		return Clss;
 	}
 
-	void SetEntryWidth(float NewWidth);
-	void SetEntryHeight(float NewHeight);
+	void SetEntryWidth(float InNewWidth);
+	void SetEntryHeight(float InNewHeight);
 	float GetEntryWidth();
 	float GetEntryHeight();
 };
@@ -2474,21 +2164,17 @@ public:
 	struct FMargin                               Padding;                                           // 0x38(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EHorizontalAlignment              HorizontalAlignment;                               // 0x48(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVerticalAlignment                VerticalAlignment;                                 // 0x49(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_259D[0x16];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_294E[0x16];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_UButtonSlot");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_UButtonSlot");
 		return Clss;
 	}
 
-	void SetVerticalAlignment(enum class EVerticalAlignment InVerticalAlignment);
-	void SetPadding(const struct FMargin& InPadding);
-	void SetHorizontalAlignment(enum class EHorizontalAlignment InHorizontalAlignment);
+	void SetVerticalAlignment(enum class EVerticalAlignment InInVerticalAlignment);
+	void SetPadding(const struct FMargin& InInPadding);
+	void SetHorizontalAlignment(enum class EHorizontalAlignment InInHorizontalAlignment);
 };
 
 // 0x4A8 (0x610 - 0x168)
@@ -2503,35 +2189,31 @@ public:
 	enum class EButtonTouchMethod                TouchMethod;                                       // 0x191(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EButtonPressMethod                PressMethod;                                       // 0x192(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsFocusable;                                       // 0x193(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25E1[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2954[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnButtonClicked;                                   // 0x198(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnButtonPressed;                                   // 0x1A8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnButtonReleased;                                  // 0x1B8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnButtonHovered;                                   // 0x1C8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnButtonUnhovered;                                 // 0x1D8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnButtonDrop;                                      // 0x1E8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25E6[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2957[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FButtonStyle                          WidgetStyleOverride;                               // 0x210(0x3F0)(Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_25E7[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2958[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_UButton_Styled");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_UButton_Styled");
 		return Clss;
 	}
 
 	void VisualRelease();
 	void VisualPress();
-	void SetTouchMethod(enum class EButtonTouchMethod InTouchMethod);
-	void SetPressMethod(enum class EButtonPressMethod InPressMethod);
-	void SetClickMethod(enum class EButtonClickMethod InClickMethod);
-	void SetButtonStyle(struct FButtonStyle& WidgetStyle);
-	void SetButtonConfig(class UVALUI_ButtonStyle* NewButtonStyle);
-	struct FEventReply OnMouseButtonClicked(const struct FGeometry& MyGeometry, struct FPointerEvent& InMouseEvent);
+	void SetTouchMethod(enum class EButtonTouchMethod InInTouchMethod);
+	void SetPressMethod(enum class EButtonPressMethod InInPressMethod);
+	void SetClickMethod(enum class EButtonClickMethod InInClickMethod);
+	void SetButtonStyle(struct FButtonStyle& InWidgetStyle);
+	void SetButtonConfig(class UVALUI_ButtonStyle* InNewButtonStyle);
+	struct FEventReply OnMouseButtonClicked(const struct FGeometry& InMyGeometry, struct FPointerEvent& InInMouseEvent);
 };
 
 // 0x0 (0x3B8 - 0x3B8)
@@ -2542,11 +2224,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_UIManagerHUDBase");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_UIManagerHUDBase");
 		return Clss;
 	}
 
@@ -2560,18 +2238,14 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VALUI_WidgetBlueprintLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("VALUI_WidgetBlueprintLibrary");
 		return Clss;
 	}
 
-	void UpdateEntryWidgetTypeOnListView(class UListViewBase* ListView, TSubclassOf<class UUserWidget> EntryWidgetType);
-	class UObject* GetOuterForConstructingNativeWidget(class UUserWidget* HostUserWidget);
-	class UWidget* FindOuterMostWidget(class UWidget* BaseWidget);
-	struct FEventReply CaptureMouseWithHighPrecision(struct FEventReply& Reply, class UWidget* CapturingWidget);
+	void UpdateEntryWidgetTypeOnListView(class UListViewBase* InListView, TSubclassOf<class UUserWidget> InEntryWidgetType);
+	class UObject* GetOuterForConstructingNativeWidget(class UUserWidget* InHostUserWidget);
+	class UWidget* FindOuterMostWidget(class UWidget* InBaseWidget);
+	struct FEventReply CaptureMouseWithHighPrecision(struct FEventReply& InReply, class UWidget* InCapturingWidget);
 };
 
 }

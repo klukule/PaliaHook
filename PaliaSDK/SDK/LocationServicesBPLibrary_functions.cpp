@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -77,7 +77,7 @@ bool ULocationServices::StartLocationServices()
 // enum class ELocationAccuracy       Accuracy                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ULocationServices::IsLocationAccuracyAvailable(enum class ELocationAccuracy Accuracy)
+bool ULocationServices::IsLocationAccuracyAvailable(enum class ELocationAccuracy InAccuracy)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,7 +86,7 @@ bool ULocationServices::IsLocationAccuracyAvailable(enum class ELocationAccuracy
 
 	Params::ULocationServices_IsLocationAccuracyAvailable_Params Parms{};
 
-	Parms.Accuracy = Accuracy;
+	Parms.Accuracy = InAccuracy;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -109,7 +109,7 @@ bool ULocationServices::IsLocationAccuracyAvailable(enum class ELocationAccuracy
 // float                              MinDistanceFilter                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ULocationServices::InitLocationServices(enum class ELocationAccuracy Accuracy, float UpdateFrequency, float MinDistanceFilter)
+bool ULocationServices::InitLocationServices(enum class ELocationAccuracy InAccuracy, float InUpdateFrequency, float InMinDistanceFilter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -118,9 +118,9 @@ bool ULocationServices::InitLocationServices(enum class ELocationAccuracy Accura
 
 	Params::ULocationServices_InitLocationServices_Params Parms{};
 
-	Parms.Accuracy = Accuracy;
-	Parms.UpdateFrequency = UpdateFrequency;
-	Parms.MinDistanceFilter = MinDistanceFilter;
+	Parms.Accuracy = InAccuracy;
+	Parms.UpdateFrequency = InUpdateFrequency;
+	Parms.MinDistanceFilter = InMinDistanceFilter;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

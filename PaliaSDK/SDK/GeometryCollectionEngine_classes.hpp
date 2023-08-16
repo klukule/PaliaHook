@@ -21,11 +21,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GeometryCollectionISMPoolActor");
-
+		static class UClass* Clss = UObject::FindClassFast("GeometryCollectionISMPoolActor");
 		return Clss;
 	}
 
@@ -36,15 +32,11 @@ public:
 class UGeometryCollectionISMPoolComponent : public USceneComponent
 {
 public:
-	uint8                                        Pad_24E3[0xC0];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_25C7[0xC0];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GeometryCollectionISMPoolComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("GeometryCollectionISMPoolComponent");
 		return Clss;
 	}
 
@@ -59,48 +51,44 @@ public:
 	uint8                                        bIsBreakingEventListeningEnabled : 1;              // Mask: 0x2, PropSize: 0x10x2A0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bIsTrailingEventListeningEnabled : 1;              // Mask: 0x4, PropSize: 0x10x2A0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bIsRemovalEventListeningEnabled : 1;               // Mask: 0x8, PropSize: 0x10x2A0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_198 : 4;                                    // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_2546[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_189 : 4;                                    // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_2660[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FChaosCollisionEventRequestSettings   CollisionEventRequestSettings;                     // 0x2A4(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 	struct FChaosBreakingEventRequestSettings    BreakingEventRequestSettings;                      // 0x2BC(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 	struct FChaosTrailingEventRequestSettings    TrailingEventRequestSettings;                      // 0x2D4(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 	struct FChaosRemovalEventRequestSettings     RemovalEventRequestSettings;                       // 0x2EC(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_254B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2664[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<class AChaosSolverActor*>               ChaosSolverActors;                                 // 0x300(0x50)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, NativeAccessSpecifierPublic)
 	TSet<class AGeometryCollectionActor*>        GeometryCollectionActors;                          // 0x350(0x50)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnCollisionEvents;                                 // 0x3A0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnBreakingEvents;                                  // 0x3B0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnTrailingEvents;                                  // 0x3C0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnRemovalEvents;                                   // 0x3D0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_254D[0x170];                                   // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2668[0x170];                                   // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ChaosDestructionListener");
-
+		static class UClass* Clss = UObject::FindClassFast("ChaosDestructionListener");
 		return Clss;
 	}
 
-	void SortTrailingEvents(TArray<struct FChaosTrailingEventData>& TrailingEvents, enum class EChaosTrailingSortMethod SortMethod);
-	void SortRemovalEvents(TArray<struct FChaosRemovalEventData>& RemovalEvents, enum class EChaosRemovalSortMethod SortMethod);
-	void SortCollisionEvents(TArray<struct FChaosCollisionEventData>& CollisionEvents, enum class EChaosCollisionSortMethod SortMethod);
-	void SortBreakingEvents(TArray<struct FChaosBreakingEventData>& BreakingEvents, enum class EChaosBreakingSortMethod SortMethod);
-	void SetTrailingEventRequestSettings(struct FChaosTrailingEventRequestSettings& InSettings);
-	void SetTrailingEventEnabled(bool bIsEnabled);
-	void SetRemovalEventRequestSettings(struct FChaosRemovalEventRequestSettings& InSettings);
-	void SetRemovalEventEnabled(bool bIsEnabled);
-	void SetCollisionEventRequestSettings(struct FChaosCollisionEventRequestSettings& InSettings);
-	void SetCollisionEventEnabled(bool bIsEnabled);
-	void SetBreakingEventRequestSettings(struct FChaosBreakingEventRequestSettings& InSettings);
-	void SetBreakingEventEnabled(bool bIsEnabled);
-	void RemoveGeometryCollectionActor(class AGeometryCollectionActor* GeometryCollectionActor);
-	void RemoveChaosSolverActor(class AChaosSolverActor* ChaosSolverActor);
+	void SortTrailingEvents(TArray<struct FChaosTrailingEventData>& InTrailingEvents, enum class EChaosTrailingSortMethod InSortMethod);
+	void SortRemovalEvents(TArray<struct FChaosRemovalEventData>& InRemovalEvents, enum class EChaosRemovalSortMethod InSortMethod);
+	void SortCollisionEvents(TArray<struct FChaosCollisionEventData>& InCollisionEvents, enum class EChaosCollisionSortMethod InSortMethod);
+	void SortBreakingEvents(TArray<struct FChaosBreakingEventData>& InBreakingEvents, enum class EChaosBreakingSortMethod InSortMethod);
+	void SetTrailingEventRequestSettings(struct FChaosTrailingEventRequestSettings& InInSettings);
+	void SetTrailingEventEnabled(bool InbIsEnabled);
+	void SetRemovalEventRequestSettings(struct FChaosRemovalEventRequestSettings& InInSettings);
+	void SetRemovalEventEnabled(bool InbIsEnabled);
+	void SetCollisionEventRequestSettings(struct FChaosCollisionEventRequestSettings& InInSettings);
+	void SetCollisionEventEnabled(bool InbIsEnabled);
+	void SetBreakingEventRequestSettings(struct FChaosBreakingEventRequestSettings& InInSettings);
+	void SetBreakingEventEnabled(bool InbIsEnabled);
+	void RemoveGeometryCollectionActor(class AGeometryCollectionActor* InGeometryCollectionActor);
+	void RemoveChaosSolverActor(class AChaosSolverActor* InChaosSolverActor);
 	bool IsEventListening();
-	void AddGeometryCollectionActor(class AGeometryCollectionActor* GeometryCollectionActor);
-	void AddChaosSolverActor(class AChaosSolverActor* ChaosSolverActor);
+	void AddGeometryCollectionActor(class AGeometryCollectionActor* InGeometryCollectionActor);
+	void AddChaosSolverActor(class AChaosSolverActor* InChaosSolverActor);
 };
 
 // 0x10 (0x2A0 - 0x290)
@@ -113,15 +101,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GeometryCollectionActor");
-
+		static class UClass* Clss = UObject::FindClassFast("GeometryCollectionActor");
 		return Clss;
 	}
 
-	bool RaycastSingle(const struct FVector& Start, const struct FVector& End, struct FHitResult* OutHit);
+	bool RaycastSingle(const struct FVector& InStart, const struct FVector& InEnd, struct FHitResult* InOutHit);
 };
 
 // 0x28 (0x50 - 0x28)
@@ -135,11 +119,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GeometryCollectionCache");
-
+		static class UClass* Clss = UObject::FindClassFast("GeometryCollectionCache");
 		return Clss;
 	}
 
@@ -150,36 +130,36 @@ public:
 class UGeometryCollectionComponent : public UMeshComponent
 {
 public:
-	uint8                                        Pad_25C7[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26E5[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AChaosSolverActor*                     ChaosSolverActor;                                  // 0x578(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25C8[0xE8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26E7[0xE8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UGeometryCollection*                   RestCollection;                                    // 0x668(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoClear, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class AFieldSystemActor*>             InitializationFields;                              // 0x670(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoClear, UObjectWrapper, NativeAccessSpecifierPublic)
 	bool                                         Simulating;                                        // 0x680(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25CB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26E8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EObjectStateTypeEnum              ObjectType;                                        // 0x688(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bForceMotionBlur;                                  // 0x689(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         EnableClustering;                                  // 0x68A(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25CE[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26EC[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ClusterGroupIndex;                                 // 0x68C(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaxClusterLevel;                                   // 0x690(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25CF[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26ED[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<float>                                DamageThreshold;                                   // 0x698(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bUseSizeSpecificDamageThreshold;                   // 0x6A8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25D1[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26EF[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGeometryCollectionDamagePropagationData DamagePropagationData;                             // 0x6AC(0xC)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bAllowRemovalOnSleep;                              // 0x6B8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowRemovalOnBreak;                              // 0x6B9(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EClusterConnectionTypeEnum        ClusterConnectionType;                             // 0x6BA(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25D5[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26F2[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        CollisionGroup;                                    // 0x6BC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CollisionSampleFraction;                           // 0x6C0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        LinearEtherDrag;                                   // 0x6C4(0x4)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AngularEtherDrag;                                  // 0x6C8(0x4)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25D7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26F4[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UChaosPhysicalMaterial*                PhysicalMaterial;                                  // 0x6D0(0x8)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInitialVelocityTypeEnum          InitialVelocityType;                               // 0x6D8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25D8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26F6[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               InitialLinearVelocity;                             // 0x6E0(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               InitialAngularVelocity;                            // 0x6F8(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPhysicalMaterial*                     PhysicalMaterialOverride;                          // 0x710(0x8)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -187,13 +167,13 @@ public:
 	TArray<struct FTransform>                    RestTransforms;                                    // 0x768(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            NotifyGeometryCollectionPhysicsStateChange;        // 0x778(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            NotifyGeometryCollectionPhysicsLoadingStateChange; // 0x788(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25DB[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26FC[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnChaosBreakEvent;                                 // 0x7B0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnChaosRemovalEvent;                               // 0x7C0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnChaosCrumblingEvent;                             // 0x7D0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	float                                        DesiredCacheTime;                                  // 0x7E0(0x4)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         CachePlayback;                                     // 0x7E4(0x1)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25DC[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26FF[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnChaosPhysicsCollision;                           // 0x7E8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	bool                                         bNotifyBreaks;                                     // 0x7F8(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bNotifyCollisions;                                 // 0x7F9(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -204,49 +184,45 @@ public:
 	bool                                         bStoreVelocities;                                  // 0x7FE(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShowBoneColors;                                   // 0x7FF(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AGeometryCollectionISMPoolActor*       ISMPool;                                           // 0x800(0x8)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_25E5[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2704[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	bool                                         bEnableReplication;                                // 0x80C(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bEnableAbandonAfterLevel;                          // 0x80D(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_25E8[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2705[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReplicationAbandonClusterLevel;                    // 0x810(0x4)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                        ReplicationAbandonAfterLevel;                      // 0x814(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FGeometryCollectionRepData            RepData;                                           // 0x818(0x28)(Net, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_25ED[0x288];                                   // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2707[0x288];                                   // Fixing Size After Last Property  [ Dumper-7 ]
 	class UBodySetup*                            DummyBodySetup;                                    // 0xAC8(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_25EF[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2708[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UInstancedStaticMeshComponent*> EmbeddedGeometryComponents;                        // 0xAD8(0x10)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_25F1[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2709[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GeometryCollectionComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("GeometryCollectionComponent");
 		return Clss;
 	}
 
-	void SetRestCollection(class UGeometryCollection* RestCollectionIn);
-	void SetNotifyRemovals(bool bNewNotifyRemovals);
-	void SetNotifyCrumblings(bool bNewNotifyCrumblings);
-	void SetNotifyBreaks(bool bNewNotifyBreaks);
+	void SetRestCollection(class UGeometryCollection* InRestCollectionIn);
+	void SetNotifyRemovals(bool InbNewNotifyRemovals);
+	void SetNotifyCrumblings(bool InbNewNotifyCrumblings);
+	void SetNotifyBreaks(bool InbNewNotifyBreaks);
 	void RemoveAllAnchors();
-	void ReceivePhysicsCollision(struct FChaosPhysicsCollisionInfo& CollisionInfo);
-	void NotifyGeometryCollectionPhysicsStateChange__DelegateSignature(class UGeometryCollectionComponent* FracturedComponent);
-	void NotifyGeometryCollectionPhysicsLoadingStateChange__DelegateSignature(class UGeometryCollectionComponent* FracturedComponent);
-	void GetMassAndExtents(int32 ItemIndex, float* OutMass, struct FBox* OutExtents);
-	int32 GetInitialLevel(int32 ItemIndex);
-	void CrumbleCluster(int32 ItemIndex);
+	void ReceivePhysicsCollision(struct FChaosPhysicsCollisionInfo& InCollisionInfo);
+	void NotifyGeometryCollectionPhysicsStateChange__DelegateSignature(class UGeometryCollectionComponent* InFracturedComponent);
+	void NotifyGeometryCollectionPhysicsLoadingStateChange__DelegateSignature(class UGeometryCollectionComponent* InFracturedComponent);
+	void GetMassAndExtents(int32 InItemIndex, float* InOutMass, struct FBox* InOutExtents);
+	int32 GetInitialLevel(int32 InItemIndex);
+	void CrumbleCluster(int32 InItemIndex);
 	void CrumbleActiveClusters();
-	void ApplyPhysicsField(bool Enabled, enum class EGeometryCollectionPhysicsTypeEnum Target, class UFieldSystemMetaData* MetaData, class UFieldNodeBase* Field);
-	void ApplyLinearVelocity(int32 ItemIndex, struct FVector& LinearVelocity);
-	void ApplyKinematicField(float Radius, const struct FVector& Position);
-	void ApplyInternalStrain(int32 ItemIndex, struct FVector& Location, float Radius, int32 PropagationDepth, float PropagationFactor, float Strain);
-	void ApplyExternalStrain(int32 ItemIndex, struct FVector& Location, float Radius, int32 PropagationDepth, float PropagationFactor, float Strain);
-	void ApplyBreakingLinearVelocity(int32 ItemIndex, struct FVector& LinearVelocity);
-	void ApplyBreakingAngularVelocity(int32 ItemIndex, struct FVector& AngularVelocity);
-	void ApplyAngularVelocity(int32 ItemIndex, struct FVector& AngularVelocity);
+	void ApplyPhysicsField(bool InEnabled, enum class EGeometryCollectionPhysicsTypeEnum InTarget, class UFieldSystemMetaData* InMetaData, class UFieldNodeBase* InField);
+	void ApplyLinearVelocity(int32 InItemIndex, struct FVector& InLinearVelocity);
+	void ApplyKinematicField(float InRadius, const struct FVector& InPosition);
+	void ApplyInternalStrain(int32 InItemIndex, struct FVector& InLocation, float InRadius, int32 InPropagationDepth, float InPropagationFactor, float InStrain);
+	void ApplyExternalStrain(int32 InItemIndex, struct FVector& InLocation, float InRadius, int32 InPropagationDepth, float InPropagationFactor, float InStrain);
+	void ApplyBreakingLinearVelocity(int32 InItemIndex, struct FVector& InLinearVelocity);
+	void ApplyBreakingAngularVelocity(int32 InItemIndex, struct FVector& InAngularVelocity);
+	void ApplyAngularVelocity(int32 InItemIndex, struct FVector& InAngularVelocity);
 };
 
 // 0xC0 (0x350 - 0x290)
@@ -255,7 +231,7 @@ class AGeometryCollectionDebugDrawActor : public AActor
 {
 public:
 	struct FGeometryCollectionDebugDrawWarningMessage WarningMessage;                                    // 0x290(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25FD[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2712[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGeometryCollectionDebugDrawActorSelectedRigidBody SelectedRigidBody;                                 // 0x298(0x18)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bDebugDrawWholeCollection;                         // 0x2B0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDebugDrawHierarchy;                               // 0x2B1(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -289,7 +265,7 @@ public:
 	float                                        PointThickness;                                    // 0x2D0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        LineThickness;                                     // 0x2D4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bTextShadow;                                       // 0x2D8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2609[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_271A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        TextScale;                                         // 0x2DC(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        NormalScale;                                       // 0x2E0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AxisScale;                                         // 0x2E4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -316,16 +292,12 @@ public:
 	struct FColor                                VertexColor;                                       // 0x338(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FColor                                VertexIndexColor;                                  // 0x33C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FColor                                VertexNormalColor;                                 // 0x340(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2616[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2722[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UBillboardComponent*                   SpriteComponent;                                   // 0x348(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GeometryCollectionDebugDrawActor");
-
+		static class UClass* Clss = UObject::FindClassFast("GeometryCollectionDebugDrawActor");
 		return Clss;
 	}
 
@@ -338,15 +310,11 @@ class UGeometryCollectionDebugDrawComponent : public UActorComponent
 public:
 	class AGeometryCollectionDebugDrawActor*     GeometryCollectionDebugDrawActor;                  // 0xA0(0x8)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AGeometryCollectionRenderLevelSetActor* GeometryCollectionRenderLevelSetActor;             // 0xA8(0x8)(Edit, ZeroConstructor, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_261F[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2728[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GeometryCollectionDebugDrawComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("GeometryCollectionDebugDrawComponent");
 		return Clss;
 	}
 
@@ -357,57 +325,53 @@ public:
 class UGeometryCollection : public UObject
 {
 public:
-	uint8                                        Pad_2622[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_272A[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	bool                                         EnableClustering;                                  // 0x30(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2623[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_272B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ClusterGroupIndex;                                 // 0x34(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaxClusterLevel;                                   // 0x38(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2625[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_272D[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<float>                                DamageThreshold;                                   // 0x40(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bUseSizeSpecificDamageThreshold;                   // 0x50(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         PerClusterOnlyDamageThreshold;                     // 0x51(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2627[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_272F[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGeometryCollectionDamagePropagationData DamagePropagationData;                             // 0x54(0xC)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EClusterConnectionTypeEnum        ClusterConnectionType;                             // 0x60(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2628[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2731[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ConnectionGraphBoundsFilteringMargin;              // 0x64(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UMaterialInterface*>            Materials;                                         // 0x68(0x10)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<struct FGeometryCollectionEmbeddedExemplar> EmbeddedGeometryExemplar;                          // 0x78(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bUseFullPrecisionUVs;                              // 0x88(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_262B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2734[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FGeometryCollectionAutoInstanceMesh> AutoInstanceMeshes;                                // 0x90(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FSoftObjectPath                       RootProxy;                                         // 0xA0(0x20)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStripOnCook;                                      // 0xC0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         EnableNanite;                                      // 0xC1(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bMassAsDensity;                                    // 0xC2(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2630[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2739[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Mass;                                              // 0xC4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MinimumMassClamp;                                  // 0xC8(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bImportCollisionFromSource;                        // 0xCC(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bRemoveOnMaxSleep;                                 // 0xCD(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2635[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_273B[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             MaximumSleepTime;                                  // 0xD0(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             RemovalDuration;                                   // 0xE0(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSlowMovingAsSleeping;                             // 0xF0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_263C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_273D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        SlowMovingVelocityThreshold;                       // 0xF4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FGeometryCollectionSizeSpecificData> SizeSpecificData;                                  // 0xF8(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         EnableRemovePiecesOnFracture;                      // 0x108(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2642[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_273E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UMaterialInterface*>            RemoveOnFractureMaterials;                         // 0x110(0x10)(ZeroConstructor, Deprecated, UObjectWrapper, NativeAccessSpecifierPublic)
 	class UDataflow*                             Dataflow;                                          // 0x120(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 PersistentGuid;                                    // 0x128(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FGuid                                 StateGuid;                                         // 0x138(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                        BoneSelectedMaterialIndex;                         // 0x148(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_2645[0x14];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_273F[0x14];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GeometryCollection");
-
+		static class UClass* Clss = UObject::FindClassFast("GeometryCollection");
 		return Clss;
 	}
 
@@ -424,15 +388,11 @@ public:
 	float                                        Isovalue;                                          // 0x2A4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Enabled;                                           // 0x2A8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         RenderVolumeBoundingBox;                           // 0x2A9(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_264D[0xD6];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2742[0xD6];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GeometryCollectionRenderLevelSetActor");
-
+		static class UClass* Clss = UObject::FindClassFast("GeometryCollectionRenderLevelSetActor");
 		return Clss;
 	}
 

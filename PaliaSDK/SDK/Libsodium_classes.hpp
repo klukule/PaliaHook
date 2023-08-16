@@ -20,20 +20,16 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("LibSd_CryptoLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("LibSd_CryptoLibrary");
 		return Clss;
 	}
 
-	bool VerifyMessageWithPublicKey_Detached(TArray<uint8>& Signature, TArray<uint8>& Message, TArray<uint8>& PublicKey);
-	bool VerifyMessageWithPublicKey(TArray<uint8>& SignedMessage, TArray<uint8>& PublicKey, TArray<uint8>* Message);
-	bool SignMessageWithSecretKey_Detached(TArray<uint8>& Message, TArray<uint8>& SecretKey, TArray<uint8>* Signature);
-	bool SignMessageWithSecretKey(TArray<uint8>& Message, TArray<uint8>& SecretKey, TArray<uint8>* SignedMessage);
+	bool VerifyMessageWithPublicKey_Detached(TArray<uint8>& InSignature, TArray<uint8>& InMessage, TArray<uint8>& InPublicKey);
+	bool VerifyMessageWithPublicKey(TArray<uint8>& InSignedMessage, TArray<uint8>& InPublicKey, TArray<uint8>* InMessage);
+	bool SignMessageWithSecretKey_Detached(TArray<uint8>& InMessage, TArray<uint8>& InSecretKey, TArray<uint8>* InSignature);
+	bool SignMessageWithSecretKey(TArray<uint8>& InMessage, TArray<uint8>& InSecretKey, TArray<uint8>* InSignedMessage);
 	bool InitSodium();
-	bool GenerateKeyPair(TArray<uint8>* OutPublicKey, TArray<uint8>* OutSecretKey);
+	bool GenerateKeyPair(TArray<uint8>* InOutPublicKey, TArray<uint8>* InOutSecretKey);
 };
 
 }

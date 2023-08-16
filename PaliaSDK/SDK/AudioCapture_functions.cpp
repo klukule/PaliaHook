@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -99,7 +99,7 @@ bool UAudioCapture::IsCapturingAudio()
 // struct FAudioCaptureDeviceInfo     OutInfo                                                          (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAudioCapture::GetAudioCaptureDeviceInfo(struct FAudioCaptureDeviceInfo* OutInfo)
+bool UAudioCapture::GetAudioCaptureDeviceInfo(struct FAudioCaptureDeviceInfo* InOutInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -117,8 +117,8 @@ bool UAudioCapture::GetAudioCaptureDeviceInfo(struct FAudioCaptureDeviceInfo* Ou
 
 	Func->FunctionFlags = Flags;
 
-	if (OutInfo != nullptr)
-		*OutInfo = Parms.OutInfo;
+	if (InOutInfo != nullptr)
+		*InOutInfo = Parms.OutInfo;
 
 	return Parms.ReturnValue;
 
@@ -159,7 +159,7 @@ class UAudioCapture* UAudioCaptureFunctionLibrary::CreateAudioCapture()
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 OnObtainDevicesEvent                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioCaptureBlueprintLibrary::GetAvailableAudioInputDevices(class UObject* WorldContextObject, FDelegateProperty_& OnObtainDevicesEvent)
+void UAudioCaptureBlueprintLibrary::GetAvailableAudioInputDevices(class UObject* InWorldContextObject, FDelegateProperty_& InOnObtainDevicesEvent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -168,8 +168,8 @@ void UAudioCaptureBlueprintLibrary::GetAvailableAudioInputDevices(class UObject*
 
 	Params::UAudioCaptureBlueprintLibrary_GetAvailableAudioInputDevices_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.OnObtainDevicesEvent = OnObtainDevicesEvent;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.OnObtainDevicesEvent = InOnObtainDevicesEvent;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -188,7 +188,7 @@ void UAudioCaptureBlueprintLibrary::GetAvailableAudioInputDevices(class UObject*
 // struct FAudioInputDeviceInfo       Info                                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UAudioCaptureBlueprintLibrary::Conv_AudioInputDeviceInfoToString(struct FAudioInputDeviceInfo& Info)
+class FString UAudioCaptureBlueprintLibrary::Conv_AudioInputDeviceInfoToString(struct FAudioInputDeviceInfo& InInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -197,7 +197,7 @@ class FString UAudioCaptureBlueprintLibrary::Conv_AudioInputDeviceInfoToString(s
 
 	Params::UAudioCaptureBlueprintLibrary_Conv_AudioInputDeviceInfoToString_Params Parms{};
 
-	Parms.Info = Info;
+	Parms.Info = InInfo;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

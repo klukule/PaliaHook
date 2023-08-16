@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FActorLayer                 Layer                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void ULayersBlueprintLibrary::RemoveActorFromLayer(class AActor* InActor, struct FActorLayer& Layer)
+void ULayersBlueprintLibrary::RemoveActorFromLayer(class AActor* InInActor, struct FActorLayer& InLayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,8 +30,8 @@ void ULayersBlueprintLibrary::RemoveActorFromLayer(class AActor* InActor, struct
 
 	Params::ULayersBlueprintLibrary_RemoveActorFromLayer_Params Parms{};
 
-	Parms.InActor = InActor;
-	Parms.Layer = Layer;
+	Parms.InActor = InInActor;
+	Parms.Layer = InLayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -51,7 +51,7 @@ void ULayersBlueprintLibrary::RemoveActorFromLayer(class AActor* InActor, struct
 // struct FActorLayer                 ActorLayer                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // TArray<class AActor*>              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class AActor*> ULayersBlueprintLibrary::GetActors(class UObject* WorldContextObject, struct FActorLayer& ActorLayer)
+TArray<class AActor*> ULayersBlueprintLibrary::GetActors(class UObject* InWorldContextObject, struct FActorLayer& InActorLayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,8 +60,8 @@ TArray<class AActor*> ULayersBlueprintLibrary::GetActors(class UObject* WorldCon
 
 	Params::ULayersBlueprintLibrary_GetActors_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.ActorLayer = ActorLayer;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.ActorLayer = InActorLayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -82,7 +82,7 @@ TArray<class AActor*> ULayersBlueprintLibrary::GetActors(class UObject* WorldCon
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FActorLayer                 Layer                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void ULayersBlueprintLibrary::AddActorToLayer(class AActor* InActor, struct FActorLayer& Layer)
+void ULayersBlueprintLibrary::AddActorToLayer(class AActor* InInActor, struct FActorLayer& InLayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -91,8 +91,8 @@ void ULayersBlueprintLibrary::AddActorToLayer(class AActor* InActor, struct FAct
 
 	Params::ULayersBlueprintLibrary_AddActorToLayer_Params Parms{};
 
-	Parms.InActor = InActor;
-	Parms.Layer = Layer;
+	Parms.InActor = InInActor;
+	Parms.Layer = InLayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("HandlerComponentFactory");
-
+		static class UClass* Clss = UObject::FindClassFast("HandlerComponentFactory");
 		return Clss;
 	}
 
@@ -39,11 +35,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PacketHandlerProfileConfig");
-
+		static class UClass* Clss = UObject::FindClassFast("PacketHandlerProfileConfig");
 		return Clss;
 	}
 

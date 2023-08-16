@@ -20,16 +20,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AnimationBudgetBlueprintLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("AnimationBudgetBlueprintLibrary");
 		return Clss;
 	}
 
-	void SetAnimationBudgetParameters(class UObject* WorldContextObject, struct FAnimationBudgetAllocatorParameters& InParameters);
-	void EnableAnimationBudget(class UObject* WorldContextObject, bool bEnabled);
+	void SetAnimationBudgetParameters(class UObject* InWorldContextObject, struct FAnimationBudgetAllocatorParameters& InInParameters);
+	void EnableAnimationBudget(class UObject* InWorldContextObject, bool InbEnabled);
 };
 
 // 0x30 (0xFB0 - 0xF80)
@@ -37,23 +33,19 @@ public:
 class USkeletalMeshComponentBudgeted : public USkeletalMeshComponent
 {
 public:
-	uint8                                        Pad_183C[0x20];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1814[0x20];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bAutoRegisterWithBudgetAllocator : 1;              // Mask: 0x1, PropSize: 0x10xFA0(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                        bAutoCalculateSignificance : 1;                    // Mask: 0x2, PropSize: 0x10xFA0(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                        bShouldUseActorRenderedFlag : 1;                   // Mask: 0x4, PropSize: 0x10xFA0(0x1)(Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_183F[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1816[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SkeletalMeshComponentBudgeted");
-
+		static class UClass* Clss = UObject::FindClassFast("SkeletalMeshComponentBudgeted");
 		return Clss;
 	}
 
-	void SetAutoRegisterWithBudgetAllocator(bool bInAutoRegisterWithBudgetAllocator);
+	void SetAutoRegisterWithBudgetAllocator(bool InbInAutoRegisterWithBudgetAllocator);
 };
 
 }

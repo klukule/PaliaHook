@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // TSoftObjectPtr<class UObject>      SoftObject                                                       (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FS6AssetReleaseTargetingInfoReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetReleaseTargetingInfo_SoftObject(TSoftObjectPtr<class UObject>& SoftObject)
+struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetReleaseTargetingInfo_SoftObject(TSoftObjectPtr<class UObject>& InSoftObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetRel
 
 	Params::US6AssetReleaseTargetingLibrary_GetAssetReleaseTargetingInfo_SoftObject_Params Parms{};
 
-	Parms.SoftObject = SoftObject;
+	Parms.SoftObject = InSoftObject;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -51,7 +51,7 @@ struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetRel
 // struct FPrimaryAssetId             AssetId                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FS6AssetReleaseTargetingInfoReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetReleaseTargetingInfo_PrimaryAssetId(struct FPrimaryAssetId& AssetId)
+struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetReleaseTargetingInfo_PrimaryAssetId(struct FPrimaryAssetId& InAssetId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,7 +60,7 @@ struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetRel
 
 	Params::US6AssetReleaseTargetingLibrary_GetAssetReleaseTargetingInfo_PrimaryAssetId_Params Parms{};
 
-	Parms.AssetId = AssetId;
+	Parms.AssetId = InAssetId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -81,7 +81,7 @@ struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetRel
 // struct FSoftObjectPath             SoftObjectPath                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FS6AssetReleaseTargetingInfoReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetReleaseTargetingInfo_ObjectPath(struct FSoftObjectPath& SoftObjectPath)
+struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetReleaseTargetingInfo_ObjectPath(struct FSoftObjectPath& InSoftObjectPath)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,7 +90,7 @@ struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetRel
 
 	Params::US6AssetReleaseTargetingLibrary_GetAssetReleaseTargetingInfo_ObjectPath_Params Parms{};
 
-	Parms.SoftObjectPath = SoftObjectPath;
+	Parms.SoftObjectPath = InSoftObjectPath;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -111,7 +111,7 @@ struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetRel
 // class UObject*                     Object                                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FS6AssetReleaseTargetingInfoReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetReleaseTargetingInfo_Object(class UObject* Object)
+struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetReleaseTargetingInfo_Object(class UObject* InObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -120,7 +120,7 @@ struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetRel
 
 	Params::US6AssetReleaseTargetingLibrary_GetAssetReleaseTargetingInfo_Object_Params Parms{};
 
-	Parms.Object = Object;
+	Parms.Object = InObject;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -141,7 +141,7 @@ struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetRel
 // struct FAssetData                  AssetData                                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FS6AssetReleaseTargetingInfoReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetReleaseTargetingInfo_AssetData(struct FAssetData& AssetData)
+struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetReleaseTargetingInfo_AssetData(struct FAssetData& InAssetData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -150,7 +150,7 @@ struct FS6AssetReleaseTargetingInfo US6AssetReleaseTargetingLibrary::GetAssetRel
 
 	Params::US6AssetReleaseTargetingLibrary_GetAssetReleaseTargetingInfo_AssetData_Params Parms{};
 
-	Parms.AssetData = AssetData;
+	Parms.AssetData = InAssetData;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

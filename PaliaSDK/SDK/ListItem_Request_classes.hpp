@@ -21,11 +21,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ListItem_Request_C");
-
+		static class UClass* Clss = UObject::FindClassFast("ListItem_Request_C");
 		return Clss;
 	}
 

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // struct FPoseLink                   AnimGraph                                                        (Parm, OutParm, NoDestructor)
 
-void UThirdPerson_AnimBP_C::AnimGraph(struct FPoseLink* AnimGraph)
+void UThirdPerson_AnimBP_C::AnimGraph(struct FPoseLink* InAnimGraph)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,8 +32,8 @@ void UThirdPerson_AnimBP_C::AnimGraph(struct FPoseLink* AnimGraph)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (AnimGraph != nullptr)
-		*AnimGraph = Parms.AnimGraph;
+	if (InAnimGraph != nullptr)
+		*InAnimGraph = Parms.AnimGraph;
 
 }
 
@@ -81,7 +81,7 @@ void UThirdPerson_AnimBP_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPer
 // Parameters:
 // float                              DeltaTimeX                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UThirdPerson_AnimBP_C::BlueprintUpdateAnimation(float DeltaTimeX)
+void UThirdPerson_AnimBP_C::BlueprintUpdateAnimation(float InDeltaTimeX)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,7 +90,7 @@ void UThirdPerson_AnimBP_C::BlueprintUpdateAnimation(float DeltaTimeX)
 
 	Params::UThirdPerson_AnimBP_C_BlueprintUpdateAnimation_Params Parms{};
 
-	Parms.DeltaTimeX = DeltaTimeX;
+	Parms.DeltaTimeX = InDeltaTimeX;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -117,7 +117,7 @@ void UThirdPerson_AnimBP_C::BlueprintUpdateAnimation(float DeltaTimeX)
 // double                             CallFunc_Less_DoubleDouble_A_ImplicitCast                        (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_Less_DoubleDouble_A_ImplicitCast_1                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UThirdPerson_AnimBP_C::ExecuteUbergraph_ThirdPerson_AnimBP(int32 EntryPoint, float CallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue, bool CallFunc_Less_DoubleDouble_ReturnValue, float K2Node_Event_DeltaTimeX, class APawn* CallFunc_TryGetPawnOwner_ReturnValue, float CallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue_1, const struct FVector& CallFunc_GetVelocity_ReturnValue, bool CallFunc_Less_DoubleDouble_ReturnValue_1, double CallFunc_VSize_ReturnValue, bool CallFunc_IsValid_ReturnValue, class UPawnMovementComponent* CallFunc_GetMovementComponent_ReturnValue, bool CallFunc_IsActive_ReturnValue, bool CallFunc_IsFalling_ReturnValue, bool CallFunc_BooleanAND_ReturnValue, double CallFunc_Less_DoubleDouble_A_ImplicitCast, double CallFunc_Less_DoubleDouble_A_ImplicitCast_1)
+void UThirdPerson_AnimBP_C::ExecuteUbergraph_ThirdPerson_AnimBP(int32 InEntryPoint, float InCallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue, bool InCallFunc_Less_DoubleDouble_ReturnValue, float InK2Node_Event_DeltaTimeX, class APawn* InCallFunc_TryGetPawnOwner_ReturnValue, float InCallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue_1, const struct FVector& InCallFunc_GetVelocity_ReturnValue, bool InCallFunc_Less_DoubleDouble_ReturnValue_1, double InCallFunc_VSize_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class UPawnMovementComponent* InCallFunc_GetMovementComponent_ReturnValue, bool InCallFunc_IsActive_ReturnValue, bool InCallFunc_IsFalling_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue, double InCallFunc_Less_DoubleDouble_A_ImplicitCast, double InCallFunc_Less_DoubleDouble_A_ImplicitCast_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -126,22 +126,22 @@ void UThirdPerson_AnimBP_C::ExecuteUbergraph_ThirdPerson_AnimBP(int32 EntryPoint
 
 	Params::UThirdPerson_AnimBP_C_ExecuteUbergraph_ThirdPerson_AnimBP_Params Parms{};
 
-	Parms.EntryPoint = EntryPoint;
-	Parms.CallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue = CallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue;
-	Parms.CallFunc_Less_DoubleDouble_ReturnValue = CallFunc_Less_DoubleDouble_ReturnValue;
-	Parms.K2Node_Event_DeltaTimeX = K2Node_Event_DeltaTimeX;
-	Parms.CallFunc_TryGetPawnOwner_ReturnValue = CallFunc_TryGetPawnOwner_ReturnValue;
-	Parms.CallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue_1 = CallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue_1;
-	Parms.CallFunc_GetVelocity_ReturnValue = CallFunc_GetVelocity_ReturnValue;
-	Parms.CallFunc_Less_DoubleDouble_ReturnValue_1 = CallFunc_Less_DoubleDouble_ReturnValue_1;
-	Parms.CallFunc_VSize_ReturnValue = CallFunc_VSize_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_GetMovementComponent_ReturnValue = CallFunc_GetMovementComponent_ReturnValue;
-	Parms.CallFunc_IsActive_ReturnValue = CallFunc_IsActive_ReturnValue;
-	Parms.CallFunc_IsFalling_ReturnValue = CallFunc_IsFalling_ReturnValue;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
-	Parms.CallFunc_Less_DoubleDouble_A_ImplicitCast = CallFunc_Less_DoubleDouble_A_ImplicitCast;
-	Parms.CallFunc_Less_DoubleDouble_A_ImplicitCast_1 = CallFunc_Less_DoubleDouble_A_ImplicitCast_1;
+	Parms.EntryPoint = InEntryPoint;
+	Parms.CallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue = InCallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue;
+	Parms.CallFunc_Less_DoubleDouble_ReturnValue = InCallFunc_Less_DoubleDouble_ReturnValue;
+	Parms.K2Node_Event_DeltaTimeX = InK2Node_Event_DeltaTimeX;
+	Parms.CallFunc_TryGetPawnOwner_ReturnValue = InCallFunc_TryGetPawnOwner_ReturnValue;
+	Parms.CallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue_1 = InCallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue_1;
+	Parms.CallFunc_GetVelocity_ReturnValue = InCallFunc_GetVelocity_ReturnValue;
+	Parms.CallFunc_Less_DoubleDouble_ReturnValue_1 = InCallFunc_Less_DoubleDouble_ReturnValue_1;
+	Parms.CallFunc_VSize_ReturnValue = InCallFunc_VSize_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_GetMovementComponent_ReturnValue = InCallFunc_GetMovementComponent_ReturnValue;
+	Parms.CallFunc_IsActive_ReturnValue = InCallFunc_IsActive_ReturnValue;
+	Parms.CallFunc_IsFalling_ReturnValue = InCallFunc_IsFalling_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
+	Parms.CallFunc_Less_DoubleDouble_A_ImplicitCast = InCallFunc_Less_DoubleDouble_A_ImplicitCast;
+	Parms.CallFunc_Less_DoubleDouble_A_ImplicitCast_1 = InCallFunc_Less_DoubleDouble_A_ImplicitCast_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 

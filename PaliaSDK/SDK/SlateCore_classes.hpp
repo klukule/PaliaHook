@@ -21,11 +21,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SlateWidgetStyleAsset");
-
+		static class UClass* Clss = UObject::FindClassFast("SlateWidgetStyleAsset");
 		return Clss;
 	}
 
@@ -36,15 +32,11 @@ public:
 class UFontBulkData : public UObject
 {
 public:
-	uint8                                        Pad_AF6[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21B1[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("FontBulkData");
-
+		static class UClass* Clss = UObject::FindClassFast("FontBulkData");
 		return Clss;
 	}
 
@@ -58,11 +50,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("FontFaceInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("FontFaceInterface");
 		return Clss;
 	}
 
@@ -76,11 +64,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("FontProviderInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("FontProviderInterface");
 		return Clss;
 	}
 
@@ -94,11 +78,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SlateTypes");
-
+		static class UClass* Clss = UObject::FindClassFast("SlateTypes");
 		return Clss;
 	}
 
@@ -109,15 +89,11 @@ public:
 class USlateWidgetStyleContainerBase : public UObject
 {
 public:
-	uint8                                        Pad_AF9[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21B5[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SlateWidgetStyleContainerBase");
-
+		static class UClass* Clss = UObject::FindClassFast("SlateWidgetStyleContainerBase");
 		return Clss;
 	}
 
@@ -131,11 +107,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SlateWidgetStyleContainerInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("SlateWidgetStyleContainerInterface");
 		return Clss;
 	}
 
@@ -151,11 +123,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SlateThemeManager");
-
+		static class UClass* Clss = UObject::FindClassFast("SlateThemeManager");
 		return Clss;
 	}
 

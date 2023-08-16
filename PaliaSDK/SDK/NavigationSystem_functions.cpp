@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -188,7 +188,7 @@ class FString UNavigationPath::GetDebugString()
 // Parameters:
 // enum class ENavigationOptionFlag   DoRecalculation                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNavigationPath::EnableRecalculationOnInvalidation(enum class ENavigationOptionFlag DoRecalculation)
+void UNavigationPath::EnableRecalculationOnInvalidation(enum class ENavigationOptionFlag InDoRecalculation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -197,7 +197,7 @@ void UNavigationPath::EnableRecalculationOnInvalidation(enum class ENavigationOp
 
 	Params::UNavigationPath_EnableRecalculationOnInvalidation_Params Parms{};
 
-	Parms.DoRecalculation = DoRecalculation;
+	Parms.DoRecalculation = InDoRecalculation;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -216,7 +216,7 @@ void UNavigationPath::EnableRecalculationOnInvalidation(enum class ENavigationOp
 // bool                               bShouldDrawDebugData                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FLinearColor                PathColor                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNavigationPath::EnableDebugDrawing(bool bShouldDrawDebugData, const struct FLinearColor& PathColor)
+void UNavigationPath::EnableDebugDrawing(bool InbShouldDrawDebugData, const struct FLinearColor& InPathColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -225,8 +225,8 @@ void UNavigationPath::EnableDebugDrawing(bool bShouldDrawDebugData, const struct
 
 	Params::UNavigationPath_EnableDebugDrawing_Params Parms{};
 
-	Parms.bShouldDrawDebugData = bShouldDrawDebugData;
-	Parms.PathColor = PathColor;
+	Parms.bShouldDrawDebugData = InbShouldDrawDebugData;
+	Parms.PathColor = InPathColor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -244,7 +244,7 @@ void UNavigationPath::EnableDebugDrawing(bool bShouldDrawDebugData, const struct
 // Parameters:
 // class AActor*                      Invoker                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNavigationSystemV1::UnregisterNavigationInvoker(class AActor* Invoker)
+void UNavigationSystemV1::UnregisterNavigationInvoker(class AActor* InInvoker)
 {
 	static class UFunction* Func = nullptr;
 
@@ -253,7 +253,7 @@ void UNavigationSystemV1::UnregisterNavigationInvoker(class AActor* Invoker)
 
 	Params::UNavigationSystemV1_UnregisterNavigationInvoker_Params Parms{};
 
-	Parms.Invoker = Invoker;
+	Parms.Invoker = InInvoker;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -271,7 +271,7 @@ void UNavigationSystemV1::UnregisterNavigationInvoker(class AActor* Invoker)
 // Parameters:
 // int32                              MaxNumberOfJobs                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNavigationSystemV1::SetMaxSimultaneousTileGenerationJobsCount(int32 MaxNumberOfJobs)
+void UNavigationSystemV1::SetMaxSimultaneousTileGenerationJobsCount(int32 InMaxNumberOfJobs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -280,7 +280,7 @@ void UNavigationSystemV1::SetMaxSimultaneousTileGenerationJobsCount(int32 MaxNum
 
 	Params::UNavigationSystemV1_SetMaxSimultaneousTileGenerationJobsCount_Params Parms{};
 
-	Parms.MaxNumberOfJobs = MaxNumberOfJobs;
+	Parms.MaxNumberOfJobs = InMaxNumberOfJobs;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -298,7 +298,7 @@ void UNavigationSystemV1::SetMaxSimultaneousTileGenerationJobsCount(int32 MaxNum
 // Parameters:
 // enum class ENavDataGatheringModeConfigNewMode                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNavigationSystemV1::SetGeometryGatheringMode(enum class ENavDataGatheringModeConfig NewMode)
+void UNavigationSystemV1::SetGeometryGatheringMode(enum class ENavDataGatheringModeConfig InNewMode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -307,7 +307,7 @@ void UNavigationSystemV1::SetGeometryGatheringMode(enum class ENavDataGatheringM
 
 	Params::UNavigationSystemV1_SetGeometryGatheringMode_Params Parms{};
 
-	Parms.NewMode = NewMode;
+	Parms.NewMode = InNewMode;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -352,7 +352,7 @@ void UNavigationSystemV1::ResetMaxSimultaneousTileGenerationJobsCount()
 // float                              TileGenerationRadius                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              TileRemovalRadius                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNavigationSystemV1::RegisterNavigationInvoker(class AActor* Invoker, float TileGenerationRadius, float TileRemovalRadius)
+void UNavigationSystemV1::RegisterNavigationInvoker(class AActor* InInvoker, float InTileGenerationRadius, float InTileRemovalRadius)
 {
 	static class UFunction* Func = nullptr;
 
@@ -361,9 +361,9 @@ void UNavigationSystemV1::RegisterNavigationInvoker(class AActor* Invoker, float
 
 	Params::UNavigationSystemV1_RegisterNavigationInvoker_Params Parms{};
 
-	Parms.Invoker = Invoker;
-	Parms.TileGenerationRadius = TileGenerationRadius;
-	Parms.TileRemovalRadius = TileRemovalRadius;
+	Parms.Invoker = InInvoker;
+	Parms.TileGenerationRadius = InTileGenerationRadius;
+	Parms.TileRemovalRadius = InTileRemovalRadius;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -381,7 +381,7 @@ void UNavigationSystemV1::RegisterNavigationInvoker(class AActor* Invoker, float
 // Parameters:
 // class ANavMeshBoundsVolume*        NavVolume                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNavigationSystemV1::OnNavigationBoundsUpdated(class ANavMeshBoundsVolume* NavVolume)
+void UNavigationSystemV1::OnNavigationBoundsUpdated(class ANavMeshBoundsVolume* InNavVolume)
 {
 	static class UFunction* Func = nullptr;
 
@@ -390,7 +390,7 @@ void UNavigationSystemV1::OnNavigationBoundsUpdated(class ANavMeshBoundsVolume* 
 
 	Params::UNavigationSystemV1_OnNavigationBoundsUpdated_Params Parms{};
 
-	Parms.NavVolume = NavVolume;
+	Parms.NavVolume = InNavVolume;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -414,7 +414,7 @@ void UNavigationSystemV1::OnNavigationBoundsUpdated(class ANavMeshBoundsVolume* 
 // class AController*                 Querier                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UNavigationSystemV1::NavigationRaycast(class UObject* WorldContextObject, struct FVector& RayStart, struct FVector& RayEnd, struct FVector* HitLocation, TSubclassOf<class UNavigationQueryFilter> FilterClass, class AController* Querier)
+bool UNavigationSystemV1::NavigationRaycast(class UObject* InWorldContextObject, struct FVector& InRayStart, struct FVector& InRayEnd, struct FVector* InHitLocation, TSubclassOf<class UNavigationQueryFilter> InFilterClass, class AController* InQuerier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -423,11 +423,11 @@ bool UNavigationSystemV1::NavigationRaycast(class UObject* WorldContextObject, s
 
 	Params::UNavigationSystemV1_NavigationRaycast_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.RayStart = RayStart;
-	Parms.RayEnd = RayEnd;
-	Parms.FilterClass = FilterClass;
-	Parms.Querier = Querier;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.RayStart = InRayStart;
+	Parms.RayEnd = InRayEnd;
+	Parms.FilterClass = InFilterClass;
+	Parms.Querier = InQuerier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -437,8 +437,8 @@ bool UNavigationSystemV1::NavigationRaycast(class UObject* WorldContextObject, s
 
 	Func->FunctionFlags = Flags;
 
-	if (HitLocation != nullptr)
-		*HitLocation = Parms.HitLocation;
+	if (InHitLocation != nullptr)
+		*InHitLocation = Parms.HitLocation;
 
 	return Parms.ReturnValue;
 
@@ -453,7 +453,7 @@ bool UNavigationSystemV1::NavigationRaycast(class UObject* WorldContextObject, s
 // TSubclassOf<class UNavArea>        NewArea                                                          (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UNavigationSystemV1::K2_ReplaceAreaInOctreeData(class UObject* Object, TSubclassOf<class UNavArea> OldArea, TSubclassOf<class UNavArea> NewArea)
+bool UNavigationSystemV1::K2_ReplaceAreaInOctreeData(class UObject* InObject, TSubclassOf<class UNavArea> InOldArea, TSubclassOf<class UNavArea> InNewArea)
 {
 	static class UFunction* Func = nullptr;
 
@@ -462,9 +462,9 @@ bool UNavigationSystemV1::K2_ReplaceAreaInOctreeData(class UObject* Object, TSub
 
 	Params::UNavigationSystemV1_K2_ReplaceAreaInOctreeData_Params Parms{};
 
-	Parms.Object = Object;
-	Parms.OldArea = OldArea;
-	Parms.NewArea = NewArea;
+	Parms.Object = InObject;
+	Parms.OldArea = InOldArea;
+	Parms.NewArea = InNewArea;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -490,7 +490,7 @@ bool UNavigationSystemV1::K2_ReplaceAreaInOctreeData(class UObject* Object, TSub
 // struct FVector                     QueryExtent                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UNavigationSystemV1::K2_ProjectPointToNavigation(class UObject* WorldContextObject, struct FVector& Point, struct FVector* ProjectedLocation, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass, const struct FVector& QueryExtent)
+bool UNavigationSystemV1::K2_ProjectPointToNavigation(class UObject* InWorldContextObject, struct FVector& InPoint, struct FVector* InProjectedLocation, class ANavigationData* InNavData, TSubclassOf<class UNavigationQueryFilter> InFilterClass, const struct FVector& InQueryExtent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -499,11 +499,11 @@ bool UNavigationSystemV1::K2_ProjectPointToNavigation(class UObject* WorldContex
 
 	Params::UNavigationSystemV1_K2_ProjectPointToNavigation_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Point = Point;
-	Parms.NavData = NavData;
-	Parms.FilterClass = FilterClass;
-	Parms.QueryExtent = QueryExtent;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.Point = InPoint;
+	Parms.NavData = InNavData;
+	Parms.FilterClass = InFilterClass;
+	Parms.QueryExtent = InQueryExtent;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -513,8 +513,8 @@ bool UNavigationSystemV1::K2_ProjectPointToNavigation(class UObject* WorldContex
 
 	Func->FunctionFlags = Flags;
 
-	if (ProjectedLocation != nullptr)
-		*ProjectedLocation = Parms.ProjectedLocation;
+	if (InProjectedLocation != nullptr)
+		*InProjectedLocation = Parms.ProjectedLocation;
 
 	return Parms.ReturnValue;
 
@@ -532,7 +532,7 @@ bool UNavigationSystemV1::K2_ProjectPointToNavigation(class UObject* WorldContex
 // TSubclassOf<class UNavigationQueryFilter>FilterClass                                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UNavigationSystemV1::K2_GetRandomReachablePointInRadius(class UObject* WorldContextObject, struct FVector& Origin, struct FVector* RandomLocation, float Radius, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass)
+bool UNavigationSystemV1::K2_GetRandomReachablePointInRadius(class UObject* InWorldContextObject, struct FVector& InOrigin, struct FVector* InRandomLocation, float InRadius, class ANavigationData* InNavData, TSubclassOf<class UNavigationQueryFilter> InFilterClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -541,11 +541,11 @@ bool UNavigationSystemV1::K2_GetRandomReachablePointInRadius(class UObject* Worl
 
 	Params::UNavigationSystemV1_K2_GetRandomReachablePointInRadius_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Origin = Origin;
-	Parms.Radius = Radius;
-	Parms.NavData = NavData;
-	Parms.FilterClass = FilterClass;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.Origin = InOrigin;
+	Parms.Radius = InRadius;
+	Parms.NavData = InNavData;
+	Parms.FilterClass = InFilterClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -555,8 +555,8 @@ bool UNavigationSystemV1::K2_GetRandomReachablePointInRadius(class UObject* Worl
 
 	Func->FunctionFlags = Flags;
 
-	if (RandomLocation != nullptr)
-		*RandomLocation = Parms.RandomLocation;
+	if (InRandomLocation != nullptr)
+		*InRandomLocation = Parms.RandomLocation;
 
 	return Parms.ReturnValue;
 
@@ -574,7 +574,7 @@ bool UNavigationSystemV1::K2_GetRandomReachablePointInRadius(class UObject* Worl
 // TSubclassOf<class UNavigationQueryFilter>FilterClass                                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UNavigationSystemV1::K2_GetRandomPointInNavigableRadius(class UObject* WorldContextObject, struct FVector& Origin, struct FVector* RandomLocation, float Radius, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass)
+bool UNavigationSystemV1::K2_GetRandomPointInNavigableRadius(class UObject* InWorldContextObject, struct FVector& InOrigin, struct FVector* InRandomLocation, float InRadius, class ANavigationData* InNavData, TSubclassOf<class UNavigationQueryFilter> InFilterClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -583,11 +583,11 @@ bool UNavigationSystemV1::K2_GetRandomPointInNavigableRadius(class UObject* Worl
 
 	Params::UNavigationSystemV1_K2_GetRandomPointInNavigableRadius_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Origin = Origin;
-	Parms.Radius = Radius;
-	Parms.NavData = NavData;
-	Parms.FilterClass = FilterClass;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.Origin = InOrigin;
+	Parms.Radius = InRadius;
+	Parms.NavData = InNavData;
+	Parms.FilterClass = InFilterClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -597,8 +597,8 @@ bool UNavigationSystemV1::K2_GetRandomPointInNavigableRadius(class UObject* Worl
 
 	Func->FunctionFlags = Flags;
 
-	if (RandomLocation != nullptr)
-		*RandomLocation = Parms.RandomLocation;
+	if (InRandomLocation != nullptr)
+		*InRandomLocation = Parms.RandomLocation;
 
 	return Parms.ReturnValue;
 
@@ -616,7 +616,7 @@ bool UNavigationSystemV1::K2_GetRandomPointInNavigableRadius(class UObject* Worl
 // TSubclassOf<class UNavigationQueryFilter>FilterClass                                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UNavigationSystemV1::K2_GetRandomLocationInNavigableRadius(class UObject* WorldContextObject, struct FVector& Origin, struct FVector* RandomLocation, float Radius, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass)
+bool UNavigationSystemV1::K2_GetRandomLocationInNavigableRadius(class UObject* InWorldContextObject, struct FVector& InOrigin, struct FVector* InRandomLocation, float InRadius, class ANavigationData* InNavData, TSubclassOf<class UNavigationQueryFilter> InFilterClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -625,11 +625,11 @@ bool UNavigationSystemV1::K2_GetRandomLocationInNavigableRadius(class UObject* W
 
 	Params::UNavigationSystemV1_K2_GetRandomLocationInNavigableRadius_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Origin = Origin;
-	Parms.Radius = Radius;
-	Parms.NavData = NavData;
-	Parms.FilterClass = FilterClass;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.Origin = InOrigin;
+	Parms.Radius = InRadius;
+	Parms.NavData = InNavData;
+	Parms.FilterClass = InFilterClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -639,8 +639,8 @@ bool UNavigationSystemV1::K2_GetRandomLocationInNavigableRadius(class UObject* W
 
 	Func->FunctionFlags = Flags;
 
-	if (RandomLocation != nullptr)
-		*RandomLocation = Parms.RandomLocation;
+	if (InRandomLocation != nullptr)
+		*InRandomLocation = Parms.RandomLocation;
 
 	return Parms.ReturnValue;
 
@@ -653,7 +653,7 @@ bool UNavigationSystemV1::K2_GetRandomLocationInNavigableRadius(class UObject* W
 // class UObject*                     WorldContextObject                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UNavigationSystemV1::IsNavigationBeingBuiltOrLocked(class UObject* WorldContextObject)
+bool UNavigationSystemV1::IsNavigationBeingBuiltOrLocked(class UObject* InWorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -662,7 +662,7 @@ bool UNavigationSystemV1::IsNavigationBeingBuiltOrLocked(class UObject* WorldCon
 
 	Params::UNavigationSystemV1_IsNavigationBeingBuiltOrLocked_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
+	Parms.WorldContextObject = InWorldContextObject;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -683,7 +683,7 @@ bool UNavigationSystemV1::IsNavigationBeingBuiltOrLocked(class UObject* WorldCon
 // class UObject*                     WorldContextObject                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UNavigationSystemV1::IsNavigationBeingBuilt(class UObject* WorldContextObject)
+bool UNavigationSystemV1::IsNavigationBeingBuilt(class UObject* InWorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -692,7 +692,7 @@ bool UNavigationSystemV1::IsNavigationBeingBuilt(class UObject* WorldContextObje
 
 	Params::UNavigationSystemV1_IsNavigationBeingBuilt_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
+	Parms.WorldContextObject = InWorldContextObject;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -718,7 +718,7 @@ bool UNavigationSystemV1::IsNavigationBeingBuilt(class UObject* WorldContextObje
 // TSubclassOf<class UNavigationQueryFilter>FilterClass                                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ENavigationQueryResult  ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class ENavigationQueryResult UNavigationSystemV1::GetPathLength(class UObject* WorldContextObject, struct FVector& PathStart, struct FVector& PathEnd, float* PathLength, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass)
+enum class ENavigationQueryResult UNavigationSystemV1::GetPathLength(class UObject* InWorldContextObject, struct FVector& InPathStart, struct FVector& InPathEnd, float* InPathLength, class ANavigationData* InNavData, TSubclassOf<class UNavigationQueryFilter> InFilterClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -727,11 +727,11 @@ enum class ENavigationQueryResult UNavigationSystemV1::GetPathLength(class UObje
 
 	Params::UNavigationSystemV1_GetPathLength_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.PathStart = PathStart;
-	Parms.PathEnd = PathEnd;
-	Parms.NavData = NavData;
-	Parms.FilterClass = FilterClass;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.PathStart = InPathStart;
+	Parms.PathEnd = InPathEnd;
+	Parms.NavData = InNavData;
+	Parms.FilterClass = InFilterClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -741,8 +741,8 @@ enum class ENavigationQueryResult UNavigationSystemV1::GetPathLength(class UObje
 
 	Func->FunctionFlags = Flags;
 
-	if (PathLength != nullptr)
-		*PathLength = Parms.PathLength;
+	if (InPathLength != nullptr)
+		*InPathLength = Parms.PathLength;
 
 	return Parms.ReturnValue;
 
@@ -760,7 +760,7 @@ enum class ENavigationQueryResult UNavigationSystemV1::GetPathLength(class UObje
 // TSubclassOf<class UNavigationQueryFilter>FilterClass                                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ENavigationQueryResult  ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class ENavigationQueryResult UNavigationSystemV1::GetPathCost(class UObject* WorldContextObject, struct FVector& PathStart, struct FVector& PathEnd, float* PathCost, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass)
+enum class ENavigationQueryResult UNavigationSystemV1::GetPathCost(class UObject* InWorldContextObject, struct FVector& InPathStart, struct FVector& InPathEnd, float* InPathCost, class ANavigationData* InNavData, TSubclassOf<class UNavigationQueryFilter> InFilterClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -769,11 +769,11 @@ enum class ENavigationQueryResult UNavigationSystemV1::GetPathCost(class UObject
 
 	Params::UNavigationSystemV1_GetPathCost_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.PathStart = PathStart;
-	Parms.PathEnd = PathEnd;
-	Parms.NavData = NavData;
-	Parms.FilterClass = FilterClass;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.PathStart = InPathStart;
+	Parms.PathEnd = InPathEnd;
+	Parms.NavData = InNavData;
+	Parms.FilterClass = InFilterClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -783,8 +783,8 @@ enum class ENavigationQueryResult UNavigationSystemV1::GetPathCost(class UObject
 
 	Func->FunctionFlags = Flags;
 
-	if (PathCost != nullptr)
-		*PathCost = Parms.PathCost;
+	if (InPathCost != nullptr)
+		*InPathCost = Parms.PathCost;
 
 	return Parms.ReturnValue;
 
@@ -797,7 +797,7 @@ enum class ENavigationQueryResult UNavigationSystemV1::GetPathCost(class UObject
 // class UObject*                     WorldContextObject                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UNavigationSystemV1*         ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UNavigationSystemV1* UNavigationSystemV1::GetNavigationSystem(class UObject* WorldContextObject)
+class UNavigationSystemV1* UNavigationSystemV1::GetNavigationSystem(class UObject* InWorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -806,7 +806,7 @@ class UNavigationSystemV1* UNavigationSystemV1::GetNavigationSystem(class UObjec
 
 	Params::UNavigationSystemV1_GetNavigationSystem_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
+	Parms.WorldContextObject = InWorldContextObject;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -831,7 +831,7 @@ class UNavigationSystemV1* UNavigationSystemV1::GetNavigationSystem(class UObjec
 // TSubclassOf<class UNavigationQueryFilter>FilterClass                                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UNavigationPath*             ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UNavigationPath* UNavigationSystemV1::FindPathToLocationSynchronously(class UObject* WorldContextObject, struct FVector& PathStart, struct FVector& PathEnd, class AActor* PathfindingContext, TSubclassOf<class UNavigationQueryFilter> FilterClass)
+class UNavigationPath* UNavigationSystemV1::FindPathToLocationSynchronously(class UObject* InWorldContextObject, struct FVector& InPathStart, struct FVector& InPathEnd, class AActor* InPathfindingContext, TSubclassOf<class UNavigationQueryFilter> InFilterClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -840,11 +840,11 @@ class UNavigationPath* UNavigationSystemV1::FindPathToLocationSynchronously(clas
 
 	Params::UNavigationSystemV1_FindPathToLocationSynchronously_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.PathStart = PathStart;
-	Parms.PathEnd = PathEnd;
-	Parms.PathfindingContext = PathfindingContext;
-	Parms.FilterClass = FilterClass;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.PathStart = InPathStart;
+	Parms.PathEnd = InPathEnd;
+	Parms.PathfindingContext = InPathfindingContext;
+	Parms.FilterClass = InFilterClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -870,7 +870,7 @@ class UNavigationPath* UNavigationSystemV1::FindPathToLocationSynchronously(clas
 // TSubclassOf<class UNavigationQueryFilter>FilterClass                                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UNavigationPath*             ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UNavigationPath* UNavigationSystemV1::FindPathToActorSynchronously(class UObject* WorldContextObject, struct FVector& PathStart, class AActor* GoalActor, float TetherDistance, class AActor* PathfindingContext, TSubclassOf<class UNavigationQueryFilter> FilterClass)
+class UNavigationPath* UNavigationSystemV1::FindPathToActorSynchronously(class UObject* InWorldContextObject, struct FVector& InPathStart, class AActor* InGoalActor, float InTetherDistance, class AActor* InPathfindingContext, TSubclassOf<class UNavigationQueryFilter> InFilterClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -879,12 +879,12 @@ class UNavigationPath* UNavigationSystemV1::FindPathToActorSynchronously(class U
 
 	Params::UNavigationSystemV1_FindPathToActorSynchronously_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.PathStart = PathStart;
-	Parms.GoalActor = GoalActor;
-	Parms.TetherDistance = TetherDistance;
-	Parms.PathfindingContext = PathfindingContext;
-	Parms.FilterClass = FilterClass;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.PathStart = InPathStart;
+	Parms.GoalActor = InGoalActor;
+	Parms.TetherDistance = InTetherDistance;
+	Parms.PathfindingContext = InPathfindingContext;
+	Parms.FilterClass = InFilterClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -904,7 +904,7 @@ class UNavigationPath* UNavigationSystemV1::FindPathToActorSynchronously(class U
 // Parameters:
 // bool                               bRelevant                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNavRelevantComponent::SetNavigationRelevancy(bool bRelevant)
+void UNavRelevantComponent::SetNavigationRelevancy(bool InbRelevant)
 {
 	static class UFunction* Func = nullptr;
 
@@ -913,7 +913,7 @@ void UNavRelevantComponent::SetNavigationRelevancy(bool bRelevant)
 
 	Params::UNavRelevantComponent_SetNavigationRelevancy_Params Parms{};
 
-	Parms.bRelevant = bRelevant;
+	Parms.bRelevant = InbRelevant;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -935,7 +935,7 @@ void UNavRelevantComponent::SetNavigationRelevancy(bool bRelevant)
 // bool                               ReplaceLinks                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ARecastNavMesh::K2_ReplaceAreaInTileBounds(const struct FBox& Bounds, TSubclassOf<class UNavArea> OldArea, TSubclassOf<class UNavArea> NewArea, bool ReplaceLinks)
+bool ARecastNavMesh::K2_ReplaceAreaInTileBounds(const struct FBox& InBounds, TSubclassOf<class UNavArea> InOldArea, TSubclassOf<class UNavArea> InNewArea, bool InReplaceLinks)
 {
 	static class UFunction* Func = nullptr;
 
@@ -944,10 +944,10 @@ bool ARecastNavMesh::K2_ReplaceAreaInTileBounds(const struct FBox& Bounds, TSubc
 
 	Params::ARecastNavMesh_K2_ReplaceAreaInTileBounds_Params Parms{};
 
-	Parms.Bounds = Bounds;
-	Parms.OldArea = OldArea;
-	Parms.NewArea = NewArea;
-	Parms.ReplaceLinks = ReplaceLinks;
+	Parms.Bounds = InBounds;
+	Parms.OldArea = InOldArea;
+	Parms.NewArea = InNewArea;
+	Parms.ReplaceLinks = InReplaceLinks;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -967,7 +967,7 @@ bool ARecastNavMesh::K2_ReplaceAreaInTileBounds(const struct FBox& Bounds, TSubc
 // Parameters:
 // TSubclassOf<class UNavArea>        NewAreaClass                                                     (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNavModifierComponent::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass)
+void UNavModifierComponent::SetAreaClass(TSubclassOf<class UNavArea> InNewAreaClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -976,7 +976,7 @@ void UNavModifierComponent::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClas
 
 	Params::UNavModifierComponent_SetAreaClass_Params Parms{};
 
-	Parms.NewAreaClass = NewAreaClass;
+	Parms.NewAreaClass = InNewAreaClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -994,7 +994,7 @@ void UNavModifierComponent::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClas
 // Parameters:
 // TSubclassOf<class UNavArea>        NewAreaClass                                                     (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ANavModifierVolume::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass)
+void ANavModifierVolume::SetAreaClass(TSubclassOf<class UNavArea> InNewAreaClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1003,7 +1003,7 @@ void ANavModifierVolume::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass)
 
 	Params::ANavModifierVolume_SetAreaClass_Params Parms{};
 
-	Parms.NewAreaClass = NewAreaClass;
+	Parms.NewAreaClass = InNewAreaClass;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

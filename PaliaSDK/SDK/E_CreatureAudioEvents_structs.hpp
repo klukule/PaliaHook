@@ -23,7 +23,8 @@ enum class E_CreatureAudioEvents : uint8
 	E_CreatureAudioEvents__NewEnumerator4 = 6,
 	E_CreatureAudioEvents__NewEnumerator5 = 7,
 	E_CreatureAudioEvents__NewEnumerator6 = 8,
-	E_CreatureAudioEvents__E_MAX   = 9,
+	E_CreatureAudioEvents__NewEnumerator13 = 9,
+	E_CreatureAudioEvents__E_MAX   = 10,
 };
 
 

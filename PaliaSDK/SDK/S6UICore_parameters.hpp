@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -15,17 +15,6 @@ namespace Params
 //---------------------------------------------------------------------------------------------------------------------
 // PARAMETERS
 //---------------------------------------------------------------------------------------------------------------------
-
-// 0x18 (0x18 - 0x0)
-// Function S6UICore.PlatformStateWidgetFactory.CreatePlatformBasedStateWidget
-struct UPlatformStateWidgetFactory_CreatePlatformBasedStateWidget_Params
-{
-public:
-	class US6UI_UIManagerWidgetBase*             UIManager;                                         // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	enum class EStateWidgetType                  StateWidgetType;                                   // 0x8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8E9[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
-	class UUserWidget*                           ReturnValue;                                       // 0x10(0x8)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
 
 // 0x40 (0x40 - 0x0)
 // Function S6UICore.S6UI_AsyncAction_OpenModal.OpenModal
@@ -156,6 +145,56 @@ public:
 	bool                                         ReturnValue;                                       // 0x0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// 0x0 (0x0 - 0x0)
+// Function S6UICore.S6UI_CustomNavigationGroup.MarkNavigationDirty
+struct US6UI_CustomNavigationGroup_MarkNavigationDirty_Params
+{
+public:
+};
+
+// 0x2 (0x2 - 0x0)
+// Function S6UICore.S6UI_CustomNavigationGroup.ExcuteNavigation
+struct US6UI_CustomNavigationGroup_ExcuteNavigation_Params
+{
+public:
+	enum class EUINavigation                     InNavigationType;                                  // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                         ReturnValue;                                       // 0x1(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x8 (0x8 - 0x0)
+// Function S6UICore.S6UI_CustomNavigationGroup.DelayExcuteNavigationFromParentGroup
+struct US6UI_CustomNavigationGroup_DelayExcuteNavigationFromParentGroup_Params
+{
+public:
+	struct FFocusEvent                           InFocusEvent;                                      // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+
+// 0x1 (0x1 - 0x0)
+// Function S6UICore.S6UI_CustomNavigationGroup.ClearNavigationData
+struct US6UI_CustomNavigationGroup_ClearNavigationData_Params
+{
+public:
+	bool                                         bInClearNavWidgets;                                // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x18 (0x18 - 0x0)
+// Function S6UICore.S6UI_CustomNavigationGroup.AddNavWidgets
+struct US6UI_CustomNavigationGroup_AddNavWidgets_Params
+{
+public:
+	TArray<class UWidget*>                       InWidgetArray;                                     // 0x0(0x10)(ConstParm, Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                         bInMarkNavigationDirty;                            // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                        Pad_E66[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+};
+
+// 0x28 (0x28 - 0x0)
+// Function S6UICore.S6UI_CustomNavigationGroup.AddNavExplicitData
+struct US6UI_CustomNavigationGroup_AddNavExplicitData_Params
+{
+public:
+	struct FS6UI_NavExplicitData                 InNavExplicitData;                                 // 0x0(0x28)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+
 // 0x10 (0x10 - 0x0)
 // Function S6UICore.S6UI_InputActionHandlingWidgetComponent.UnregisterInputActionBinding
 struct US6UI_InputActionHandlingWidgetComponent_UnregisterInputActionBinding_Params
@@ -179,10 +218,10 @@ struct US6UI_InputActionHandlingWidgetComponent_RegisterInputActionBinding_Param
 public:
 	class UInputAction*                          InputAction;                                       // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETriggerEvent                     TriggerEventType;                                  // 0x8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_99B[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E8F[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	FDelegateProperty_                           Delegate;                                          // 0xC(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 ReturnValue;                                       // 0x1C(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_99C[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E91[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -424,7 +463,7 @@ public:
 	class UWidget*                               Widget;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShouldForceClose;                                 // 0x8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bPermitLatentClosing;                              // 0x9(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B1F[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EE5[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -451,6 +490,24 @@ public:
 	class US6UI_UIManagerWidgetBase*             ReturnValue;                                       // 0x0(0x8)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// 0x60 (0x60 - 0x0)
+// Function S6UICore.S6UI_UIManagerCrossPlatformHelper.RedirectStateType
+struct US6UI_UIManagerCrossPlatformHelper_RedirectStateType_Params
+{
+public:
+	TSoftClassPtr<class US6UI_StateUserWidget>   DefaultStateType;                                  // 0x0(0x30)(Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftClassPtr<class US6UI_StateUserWidget>   ReturnValue;                                       // 0x30(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x60 (0x60 - 0x0)
+// Function S6UICore.S6UI_UIManagerCrossPlatformHelper.RedirectModalType
+struct US6UI_UIManagerCrossPlatformHelper_RedirectModalType_Params
+{
+public:
+	TSoftClassPtr<class US6UI_ModalWidgetBase>   DefaultModalType;                                  // 0x0(0x30)(Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftClassPtr<class US6UI_ModalWidgetBase>   ReturnValue;                                       // 0x30(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // 0x50 (0x50 - 0x0)
 // Function S6UICore.S6UI_Utils.SummonContextMenuAtPosition
 struct US6UI_Utils_SummonContextMenuAtPosition_Params
@@ -462,7 +519,7 @@ public:
 	TSubclassOf<class UUserWidget>               ContentWidgetClass;                                // 0x20(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FS6UI_ContextMenu                     OutContextMenu;                                    // 0x28(0x20)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x48(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_BA3[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F0C[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xD0 (0xD0 - 0x0)
@@ -475,7 +532,15 @@ public:
 	TSubclassOf<class UUserWidget>               ContentWidgetClass;                                // 0xA0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FS6UI_ContextMenu                     OutContextMenu;                                    // 0xA8(0x20)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_BB6[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F19[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+};
+
+// 0x1 (0x1 - 0x0)
+// Function S6UICore.S6UI_Utils.IsShowCommonUI
+struct US6UI_Utils_IsShowCommonUI_Params
+{
+public:
+	bool                                         ReturnValue;                                       // 0x0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // 0x28 (0x28 - 0x0)
@@ -527,9 +592,9 @@ public:
 	class UWidget*                               WidgetToFocus;                                     // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ES6UI_MouseLockMode               MouseLockMode;                                     // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShowCursor;                                       // 0x9(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_BE8[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F35[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FS6UI_InputMode                       ReturnValue;                                       // 0xC(0x10)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_BE9[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F36[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -549,9 +614,9 @@ public:
 	enum class ES6UI_MouseLockMode               MouseLockMode;                                     // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHideCursorDuringCapture;                          // 0x9(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShowCursor;                                       // 0xA(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_BFF[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F3F[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FS6UI_InputMode                       ReturnValue;                                       // 0xC(0x10)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_C01[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F41[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

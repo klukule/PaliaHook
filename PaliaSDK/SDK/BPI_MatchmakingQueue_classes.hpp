@@ -20,16 +20,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BPI_MatchmakingQueue_C");
-
+		static class UClass* Clss = UObject::FindClassFast("BPI_MatchmakingQueue_C");
 		return Clss;
 	}
 
 	void ResetQueue();
-	void UpdateNumber(int32 Number);
+	void UpdateNumber(int32 InNumber);
 };
 
 }

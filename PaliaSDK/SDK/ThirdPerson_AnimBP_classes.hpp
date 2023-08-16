@@ -36,24 +36,20 @@ public:
 	struct FAnimNode_StateResult                 AnimGraphNode_StateResult;                         // 0x5D8(0x20)()
 	struct FAnimNode_StateMachine                AnimGraphNode_StateMachine;                        // 0x5F8(0xC8)()
 	bool                                         IsInAir_;                                          // 0x6C0(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_2D1A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C83[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       Speed;                                             // 0x6C8(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ThirdPerson_AnimBP_C");
-
+		static class UClass* Clss = UObject::FindClassFast("ThirdPerson_AnimBP_C");
 		return Clss;
 	}
 
-	void AnimGraph(struct FPoseLink* AnimGraph);
+	void AnimGraph(struct FPoseLink* InAnimGraph);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_AnimGraphNode_TransitionResult_F867B5374C7EFB9ED9010FA7431019DF();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ThirdPerson_AnimBP_AnimGraphNode_TransitionResult_175FFF54400CA0EC412B7083B0989D7E();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void ExecuteUbergraph_ThirdPerson_AnimBP(int32 EntryPoint, float CallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue, bool CallFunc_Less_DoubleDouble_ReturnValue, float K2Node_Event_DeltaTimeX, class APawn* CallFunc_TryGetPawnOwner_ReturnValue, float CallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue_1, const struct FVector& CallFunc_GetVelocity_ReturnValue, bool CallFunc_Less_DoubleDouble_ReturnValue_1, double CallFunc_VSize_ReturnValue, bool CallFunc_IsValid_ReturnValue, class UPawnMovementComponent* CallFunc_GetMovementComponent_ReturnValue, bool CallFunc_IsActive_ReturnValue, bool CallFunc_IsFalling_ReturnValue, bool CallFunc_BooleanAND_ReturnValue, double CallFunc_Less_DoubleDouble_A_ImplicitCast, double CallFunc_Less_DoubleDouble_A_ImplicitCast_1);
+	void BlueprintUpdateAnimation(float InDeltaTimeX);
+	void ExecuteUbergraph_ThirdPerson_AnimBP(int32 InEntryPoint, float InCallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue, bool InCallFunc_Less_DoubleDouble_ReturnValue, float InK2Node_Event_DeltaTimeX, class APawn* InCallFunc_TryGetPawnOwner_ReturnValue, float InCallFunc_GetInstanceAssetPlayerTimeFromEndFraction_ReturnValue_1, const struct FVector& InCallFunc_GetVelocity_ReturnValue, bool InCallFunc_Less_DoubleDouble_ReturnValue_1, double InCallFunc_VSize_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class UPawnMovementComponent* InCallFunc_GetMovementComponent_ReturnValue, bool InCallFunc_IsActive_ReturnValue, bool InCallFunc_IsFalling_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue, double InCallFunc_Less_DoubleDouble_A_ImplicitCast, double InCallFunc_Less_DoubleDouble_A_ImplicitCast_1);
 };
 
 }

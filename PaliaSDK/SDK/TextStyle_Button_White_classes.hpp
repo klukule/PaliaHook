@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TextStyle_Button_White_C");
-
+		static class UClass* Clss = UObject::FindClassFast("TextStyle_Button_White_C");
 		return Clss;
 	}
 

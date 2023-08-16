@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SoundfieldEncodingSettingsBase");
-
+		static class UClass* Clss = UObject::FindClassFast("SoundfieldEncodingSettingsBase");
 		return Clss;
 	}
 
@@ -38,11 +34,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SpatializationPluginSourceSettingsBase");
-
+		static class UClass* Clss = UObject::FindClassFast("SpatializationPluginSourceSettingsBase");
 		return Clss;
 	}
 
@@ -56,11 +48,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SourceDataOverridePluginSourceSettingsBase");
-
+		static class UClass* Clss = UObject::FindClassFast("SourceDataOverridePluginSourceSettingsBase");
 		return Clss;
 	}
 
@@ -74,11 +62,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OcclusionPluginSourceSettingsBase");
-
+		static class UClass* Clss = UObject::FindClassFast("OcclusionPluginSourceSettingsBase");
 		return Clss;
 	}
 
@@ -92,11 +76,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReverbPluginSourceSettingsBase");
-
+		static class UClass* Clss = UObject::FindClassFast("ReverbPluginSourceSettingsBase");
 		return Clss;
 	}
 
@@ -110,26 +90,22 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioParameterControllerInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioParameterControllerInterface");
 		return Clss;
 	}
 
-	void SetTriggerParameter(class FName InName);
-	void SetStringParameter(class FName InName, const class FString& InValue);
-	void SetStringArrayParameter(class FName InName, TArray<class FString>& InValue);
-	void SetParameters_Blueprint(TArray<struct FAudioParameter>& InParameters);
-	void SetObjectParameter(class FName InName, class UObject* InValue);
-	void SetObjectArrayParameter(class FName InName, TArray<class UObject*>& InValue);
-	void SetIntParameter(class FName InName, int32 InInt);
-	void SetIntArrayParameter(class FName InName, TArray<int32>& InValue);
-	void SetFloatParameter(class FName InName, float InFloat);
-	void SetFloatArrayParameter(class FName InName, TArray<float>& InValue);
-	void SetBoolParameter(class FName InName, bool InBool);
-	void SetBoolArrayParameter(class FName InName, TArray<bool>& InValue);
+	void SetTriggerParameter(class FName InInName);
+	void SetStringParameter(class FName InInName, const class FString& InInValue);
+	void SetStringArrayParameter(class FName InInName, TArray<class FString>& InInValue);
+	void SetParameters_Blueprint(TArray<struct FAudioParameter>& InInParameters);
+	void SetObjectParameter(class FName InInName, class UObject* InInValue);
+	void SetObjectArrayParameter(class FName InInName, TArray<class UObject*>& InInValue);
+	void SetIntParameter(class FName InInName, int32 InInInt);
+	void SetIntArrayParameter(class FName InInName, TArray<int32>& InInValue);
+	void SetFloatParameter(class FName InInName, float InInFloat);
+	void SetFloatArrayParameter(class FName InInName, TArray<float>& InInValue);
+	void SetBoolParameter(class FName InInName, bool InInBool);
+	void SetBoolArrayParameter(class FName InInName, TArray<bool>& InInValue);
 	void ResetParameters();
 };
 
@@ -139,15 +115,11 @@ class UAudioCodecEncoderSettings : public UObject
 {
 public:
 	int32                                        Version;                                           // 0x28(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_814[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C53[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioCodecEncoderSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioCodecEncoderSettings");
 		return Clss;
 	}
 
@@ -161,11 +133,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioEndpointSettingsBase");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioEndpointSettingsBase");
 		return Clss;
 	}
 
@@ -179,11 +147,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DummyEndpointSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("DummyEndpointSettings");
 		return Clss;
 	}
 
@@ -194,15 +158,11 @@ public:
 class USoundModulatorBase : public UObject
 {
 public:
-	uint8                                        Pad_818[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C55[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SoundModulatorBase");
-
+		static class UClass* Clss = UObject::FindClassFast("SoundModulatorBase");
 		return Clss;
 	}
 
@@ -216,11 +176,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SoundfieldEndpointSettingsBase");
-
+		static class UClass* Clss = UObject::FindClassFast("SoundfieldEndpointSettingsBase");
 		return Clss;
 	}
 
@@ -234,11 +190,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SoundfieldEffectSettingsBase");
-
+		static class UClass* Clss = UObject::FindClassFast("SoundfieldEffectSettingsBase");
 		return Clss;
 	}
 
@@ -253,11 +205,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SoundfieldEffectBase");
-
+		static class UClass* Clss = UObject::FindClassFast("SoundfieldEffectBase");
 		return Clss;
 	}
 
@@ -271,11 +219,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("WaveformTransformationBase");
-
+		static class UClass* Clss = UObject::FindClassFast("WaveformTransformationBase");
 		return Clss;
 	}
 
@@ -290,11 +234,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("WaveformTransformationChain");
-
+		static class UClass* Clss = UObject::FindClassFast("WaveformTransformationChain");
 		return Clss;
 	}
 
@@ -306,15 +246,11 @@ class UAudioPcmEncoderSettings : public UAudioCodecEncoderSettings
 {
 public:
 	enum class EPcmBitDepthConversion            BitDepthConversion;                                // 0x30(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_81C[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C5A[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioPcmEncoderSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioPcmEncoderSettings");
 		return Clss;
 	}
 

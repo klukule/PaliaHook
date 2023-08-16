@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -86,7 +86,7 @@ namespace SDK
 // Parameters:
 // int32                              EntryPoint                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UObject::ExecuteUbergraph(int32 EntryPoint)
+void UObject::ExecuteUbergraph(int32 InEntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -95,7 +95,7 @@ void UObject::ExecuteUbergraph(int32 EntryPoint)
 
 	Params::UObject_ExecuteUbergraph_Params Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.EntryPoint = InEntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 

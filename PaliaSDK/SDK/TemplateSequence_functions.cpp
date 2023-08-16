@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class UTemplateSequence*           InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ATemplateSequenceActor::SetSequence(class UTemplateSequence* InSequence)
+void ATemplateSequenceActor::SetSequence(class UTemplateSequence* InInSequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void ATemplateSequenceActor::SetSequence(class UTemplateSequence* InSequence)
 
 	Params::ATemplateSequenceActor_SetSequence_Params Parms{};
 
-	Parms.InSequence = InSequence;
+	Parms.InSequence = InInSequence;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -48,7 +48,7 @@ void ATemplateSequenceActor::SetSequence(class UTemplateSequence* InSequence)
 // class AActor*                      Actor                                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bOverridesDefault                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ATemplateSequenceActor::SetBinding(class AActor* Actor, bool bOverridesDefault)
+void ATemplateSequenceActor::SetBinding(class AActor* InActor, bool InbOverridesDefault)
 {
 	static class UFunction* Func = nullptr;
 
@@ -57,8 +57,8 @@ void ATemplateSequenceActor::SetBinding(class AActor* Actor, bool bOverridesDefa
 
 	Params::ATemplateSequenceActor_SetBinding_Params Parms{};
 
-	Parms.Actor = Actor;
-	Parms.bOverridesDefault = bOverridesDefault;
+	Parms.Actor = InActor;
+	Parms.bOverridesDefault = InbOverridesDefault;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -164,7 +164,7 @@ class UTemplateSequence* ATemplateSequenceActor::GetSequence()
 // class ATemplateSequenceActor*      OutActor                                                         (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTemplateSequencePlayer*     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UTemplateSequencePlayer* UTemplateSequencePlayer::CreateTemplateSequencePlayer(class UObject* WorldContextObject, class UTemplateSequence* TemplateSequence, const struct FMovieSceneSequencePlaybackSettings& Settings, class ATemplateSequenceActor** OutActor)
+class UTemplateSequencePlayer* UTemplateSequencePlayer::CreateTemplateSequencePlayer(class UObject* InWorldContextObject, class UTemplateSequence* InTemplateSequence, const struct FMovieSceneSequencePlaybackSettings& InSettings, class ATemplateSequenceActor** InOutActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -173,9 +173,9 @@ class UTemplateSequencePlayer* UTemplateSequencePlayer::CreateTemplateSequencePl
 
 	Params::UTemplateSequencePlayer_CreateTemplateSequencePlayer_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.TemplateSequence = TemplateSequence;
-	Parms.Settings = Settings;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.TemplateSequence = InTemplateSequence;
+	Parms.Settings = InSettings;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -185,8 +185,8 @@ class UTemplateSequencePlayer* UTemplateSequencePlayer::CreateTemplateSequencePl
 
 	Func->FunctionFlags = Flags;
 
-	if (OutActor != nullptr)
-		*OutActor = Parms.OutActor;
+	if (InOutActor != nullptr)
+		*InOutActor = Parms.OutActor;
 
 	return Parms.ReturnValue;
 
@@ -202,7 +202,7 @@ class UTemplateSequencePlayer* UTemplateSequencePlayer::CreateTemplateSequencePl
 // float                              OutPPBlendWeight                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USequenceCameraShakeTestUtil::GetPostProcessBlendCache(class APlayerController* PlayerController, int32 PPIndex, struct FPostProcessSettings* OutPPSettings, float* OutPPBlendWeight)
+bool USequenceCameraShakeTestUtil::GetPostProcessBlendCache(class APlayerController* InPlayerController, int32 InPPIndex, struct FPostProcessSettings* InOutPPSettings, float* InOutPPBlendWeight)
 {
 	static class UFunction* Func = nullptr;
 
@@ -211,8 +211,8 @@ bool USequenceCameraShakeTestUtil::GetPostProcessBlendCache(class APlayerControl
 
 	Params::USequenceCameraShakeTestUtil_GetPostProcessBlendCache_Params Parms{};
 
-	Parms.PlayerController = PlayerController;
-	Parms.PPIndex = PPIndex;
+	Parms.PlayerController = InPlayerController;
+	Parms.PPIndex = InPPIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -222,11 +222,11 @@ bool USequenceCameraShakeTestUtil::GetPostProcessBlendCache(class APlayerControl
 
 	Func->FunctionFlags = Flags;
 
-	if (OutPPSettings != nullptr)
-		*OutPPSettings = Parms.OutPPSettings;
+	if (InOutPPSettings != nullptr)
+		*InOutPPSettings = Parms.OutPPSettings;
 
-	if (OutPPBlendWeight != nullptr)
-		*OutPPBlendWeight = Parms.OutPPBlendWeight;
+	if (InOutPPBlendWeight != nullptr)
+		*InOutPPBlendWeight = Parms.OutPPBlendWeight;
 
 	return Parms.ReturnValue;
 
@@ -239,7 +239,7 @@ bool USequenceCameraShakeTestUtil::GetPostProcessBlendCache(class APlayerControl
 // class APlayerController*           PlayerController                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMinimalViewInfo            ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FMinimalViewInfo USequenceCameraShakeTestUtil::GetLastFrameCameraCachePOV(class APlayerController* PlayerController)
+struct FMinimalViewInfo USequenceCameraShakeTestUtil::GetLastFrameCameraCachePOV(class APlayerController* InPlayerController)
 {
 	static class UFunction* Func = nullptr;
 
@@ -248,7 +248,7 @@ struct FMinimalViewInfo USequenceCameraShakeTestUtil::GetLastFrameCameraCachePOV
 
 	Params::USequenceCameraShakeTestUtil_GetLastFrameCameraCachePOV_Params Parms{};
 
-	Parms.PlayerController = PlayerController;
+	Parms.PlayerController = InPlayerController;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -269,7 +269,7 @@ struct FMinimalViewInfo USequenceCameraShakeTestUtil::GetLastFrameCameraCachePOV
 // class APlayerController*           PlayerController                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMinimalViewInfo            ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FMinimalViewInfo USequenceCameraShakeTestUtil::GetCameraCachePOV(class APlayerController* PlayerController)
+struct FMinimalViewInfo USequenceCameraShakeTestUtil::GetCameraCachePOV(class APlayerController* InPlayerController)
 {
 	static class UFunction* Func = nullptr;
 
@@ -278,7 +278,7 @@ struct FMinimalViewInfo USequenceCameraShakeTestUtil::GetCameraCachePOV(class AP
 
 	Params::USequenceCameraShakeTestUtil_GetCameraCachePOV_Params Parms{};
 
-	Parms.PlayerController = PlayerController;
+	Parms.PlayerController = InPlayerController;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

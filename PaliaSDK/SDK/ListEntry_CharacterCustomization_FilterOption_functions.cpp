@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // bool                               IsSelected                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVAL_CharacterCustomization_CosmeticTagFilterStructSelectedCosmeticTag                                              (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UListEntry_CharacterCustomization_FilterOption_C::OnOptionSelected__DelegateSignature(bool IsSelected, const struct FVAL_CharacterCustomization_CosmeticTagFilterStruct& SelectedCosmeticTag)
+void UListEntry_CharacterCustomization_FilterOption_C::OnOptionSelected__DelegateSignature(bool InIsSelected, const struct FVAL_CharacterCustomization_CosmeticTagFilterStruct& InSelectedCosmeticTag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,8 +30,8 @@ void UListEntry_CharacterCustomization_FilterOption_C::OnOptionSelected__Delegat
 
 	Params::UListEntry_CharacterCustomization_FilterOption_C_OnOptionSelected__DelegateSignature_Params Parms{};
 
-	Parms.IsSelected = IsSelected;
-	Parms.SelectedCosmeticTag = SelectedCosmeticTag;
+	Parms.IsSelected = InIsSelected;
+	Parms.SelectedCosmeticTag = InSelectedCosmeticTag;
 
 	UObject::ProcessEvent(Func, &Parms);
 

@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Seq_CharSelect_Outro_Master (Director BP)_C");
-
+		static class UClass* Clss = UObject::FindClassFast("Seq_CharSelect_Outro_Master (Director BP)_C");
 		return Clss;
 	}
 

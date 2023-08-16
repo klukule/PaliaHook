@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -25,7 +25,7 @@ namespace SDK
 // struct FGLTFExportMessages         OutMessages                                                      (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UGLTFExporter::ExportToGLTF(class UObject* Object, const class FString& FilePath, class UGLTFExportOptions* Options, TSet<class AActor*>& SelectedActors, struct FGLTFExportMessages* OutMessages)
+bool UGLTFExporter::ExportToGLTF(class UObject* InObject, const class FString& InFilePath, class UGLTFExportOptions* InOptions, TSet<class AActor*>& InSelectedActors, struct FGLTFExportMessages* InOutMessages)
 {
 	static class UFunction* Func = nullptr;
 
@@ -34,10 +34,10 @@ bool UGLTFExporter::ExportToGLTF(class UObject* Object, const class FString& Fil
 
 	Params::UGLTFExporter_ExportToGLTF_Params Parms{};
 
-	Parms.Object = Object;
-	Parms.FilePath = FilePath;
-	Parms.Options = Options;
-	Parms.SelectedActors = SelectedActors;
+	Parms.Object = InObject;
+	Parms.FilePath = InFilePath;
+	Parms.Options = InOptions;
+	Parms.SelectedActors = InSelectedActors;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -47,8 +47,8 @@ bool UGLTFExporter::ExportToGLTF(class UObject* Object, const class FString& Fil
 
 	Func->FunctionFlags = Flags;
 
-	if (OutMessages != nullptr)
-		*OutMessages = Parms.OutMessages;
+	if (InOutMessages != nullptr)
+		*InOutMessages = Parms.OutMessages;
 
 	return Parms.ReturnValue;
 

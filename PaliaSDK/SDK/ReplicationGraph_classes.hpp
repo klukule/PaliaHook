@@ -21,18 +21,14 @@ public:
 	class UNetDriver*                            NetDriver;                                         // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UNetReplicationGraphConnection*> Connections;                                       // 0x38(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class UNetReplicationGraphConnection*> PendingConnections;                                // 0x48(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6D4[0x40];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_C57[0x40];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UReplicationGraphNode*>         GlobalGraphNodes;                                  // 0x98(0x10)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	TArray<class UReplicationGraphNode*>         PrepareForReplicationNodes;                        // 0xA8(0x10)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                        Pad_6D5[0x4B8];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C59[0x4B8];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraph");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraph");
 		return Clss;
 	}
 
@@ -50,11 +46,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BasicReplicationGraph");
-
+		static class UClass* Clss = UObject::FindClassFast("BasicReplicationGraph");
 		return Clss;
 	}
 
@@ -66,15 +58,11 @@ class UReplicationGraphNode : public UObject
 {
 public:
 	TArray<class UReplicationGraphNode*>         AllChildNodes;                                     // 0x28(0x10)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                        Pad_6D7[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C5B[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode");
 		return Clss;
 	}
 
@@ -85,15 +73,11 @@ public:
 class UReplicationGraphNode_ActorList : public UReplicationGraphNode
 {
 public:
-	uint8                                        Pad_6D8[0x80];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C5C[0x80];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode_ActorList");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode_ActorList");
 		return Clss;
 	}
 
@@ -104,15 +88,11 @@ public:
 class UReplicationGraphNode_ActorListFrequencyBuckets : public UReplicationGraphNode
 {
 public:
-	uint8                                        Pad_6D9[0xB8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C5D[0xB8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode_ActorListFrequencyBuckets");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode_ActorListFrequencyBuckets");
 		return Clss;
 	}
 
@@ -123,15 +103,11 @@ public:
 class UReplicationGraphNode_DynamicSpatialFrequency : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                        Pad_6DA[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C5F[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode_DynamicSpatialFrequency");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode_DynamicSpatialFrequency");
 		return Clss;
 	}
 
@@ -142,15 +118,11 @@ public:
 class UReplicationGraphNode_ConnectionDormancyNode : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                        Pad_6DB[0x80];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C60[0x80];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode_ConnectionDormancyNode");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode_ConnectionDormancyNode");
 		return Clss;
 	}
 
@@ -161,15 +133,11 @@ public:
 class UReplicationGraphNode_DormancyNode : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                        Pad_6DD[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C61[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode_DormancyNode");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode_DormancyNode");
 		return Clss;
 	}
 
@@ -180,17 +148,13 @@ public:
 class UReplicationGraphNode_GridCell : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                        Pad_6DF[0x40];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_C64[0x40];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UReplicationGraphNode*                 DynamicNode;                                       // 0x110(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UReplicationGraphNode_DormancyNode*    DormancyNode;                                      // 0x118(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode_GridCell");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode_GridCell");
 		return Clss;
 	}
 
@@ -201,15 +165,11 @@ public:
 class UReplicationGraphNode_GridSpatialization2D : public UReplicationGraphNode
 {
 public:
-	uint8                                        Pad_6E0[0x210];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C67[0x210];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode_GridSpatialization2D");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode_GridSpatialization2D");
 		return Clss;
 	}
 
@@ -221,15 +181,11 @@ class UReplicationGraphNode_AlwaysRelevant : public UReplicationGraphNode
 {
 public:
 	class UReplicationGraphNode*                 ChildNode;                                         // 0x50(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_6E1[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C6D[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode_AlwaysRelevant");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode_AlwaysRelevant");
 		return Clss;
 	}
 
@@ -240,16 +196,12 @@ public:
 class UReplicationGraphNode_AlwaysRelevant_ForConnection : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                        Pad_6E2[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_C6F[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FAlwaysRelevantActorInfo>      PastRelevantActors;                                // 0xE0(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode_AlwaysRelevant_ForConnection");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode_AlwaysRelevant_ForConnection");
 		return Clss;
 	}
 
@@ -261,15 +213,11 @@ class UReplicationGraphNode_TearOff_ForConnection : public UReplicationGraphNode
 {
 public:
 	TArray<struct FTearOffActorInfo>             TearOffActors;                                     // 0x50(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6E3[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C70[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphNode_TearOff_ForConnection");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphNode_TearOff_ForConnection");
 		return Clss;
 	}
 
@@ -281,22 +229,18 @@ class UNetReplicationGraphConnection : public UReplicationConnectionDriver
 {
 public:
 	class UNetConnection*                        NetConnection;                                     // 0x28(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6E4[0x148];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_C73[0x148];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class AReplicationGraphDebugActor*           DebugActor;                                        // 0x178(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6E5[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_C74[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FLastLocationGatherInfo>       LastGatherLocations;                               // 0x188(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6E6[0x58];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_C75[0x58];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UReplicationGraphNode*>         ConnectionGraphNodes;                              // 0x1F0(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
 	class UReplicationGraphNode_TearOff_ForConnection* TearOffNode;                                       // 0x200(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_6E8[0xD0];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C78[0xD0];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NetReplicationGraphConnection");
-
+		static class UClass* Clss = UObject::FindClassFast("NetReplicationGraphConnection");
 		return Clss;
 	}
 
@@ -312,23 +256,19 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ReplicationGraphDebugActor");
-
+		static class UClass* Clss = UObject::FindClassFast("ReplicationGraphDebugActor");
 		return Clss;
 	}
 
 	void ServerStopDebugging();
 	void ServerStartDebugging();
-	void ServerSetPeriodFrameForClass(class UClass* Class, int32 PeriodFrame);
-	void ServerSetCullDistanceForClass(class UClass* Class, float CullDistance);
-	void ServerSetConditionalActorBreakpoint(class AActor* Actor);
+	void ServerSetPeriodFrameForClass(class UClass* InClass, int32 InPeriodFrame);
+	void ServerSetCullDistanceForClass(class UClass* InClass, float InCullDistance);
+	void ServerSetConditionalActorBreakpoint(class AActor* InActor);
 	void ServerPrintCullDistances();
-	void ServerPrintAllActorInfo(const class FString& Str);
+	void ServerPrintAllActorInfo(const class FString& InStr);
 	void ServerCellInfo();
-	void ClientCellInfo(const struct FVector& CellLocation, const struct FVector& CellExtent, TArray<class AActor*>& Actors);
+	void ClientCellInfo(const struct FVector& InCellLocation, const struct FVector& InCellExtent, TArray<class AActor*>& InActors);
 };
 
 }

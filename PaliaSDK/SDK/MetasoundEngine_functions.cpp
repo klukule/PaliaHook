@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // TArray<struct FMetaSoundAssetDirectory>Directories                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UMetaSoundAssetSubsystem::UnregisterAssetClassesInDirectories(TArray<struct FMetaSoundAssetDirectory>& Directories)
+void UMetaSoundAssetSubsystem::UnregisterAssetClassesInDirectories(TArray<struct FMetaSoundAssetDirectory>& InDirectories)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UMetaSoundAssetSubsystem::UnregisterAssetClassesInDirectories(TArray<struct
 
 	Params::UMetaSoundAssetSubsystem_UnregisterAssetClassesInDirectories_Params Parms{};
 
-	Parms.Directories = Directories;
+	Parms.Directories = InDirectories;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -47,7 +47,7 @@ void UMetaSoundAssetSubsystem::UnregisterAssetClassesInDirectories(TArray<struct
 // Parameters:
 // TArray<struct FMetaSoundAssetDirectory>Directories                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UMetaSoundAssetSubsystem::RegisterAssetClassesInDirectories(TArray<struct FMetaSoundAssetDirectory>& Directories)
+void UMetaSoundAssetSubsystem::RegisterAssetClassesInDirectories(TArray<struct FMetaSoundAssetDirectory>& InDirectories)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void UMetaSoundAssetSubsystem::RegisterAssetClassesInDirectories(TArray<struct F
 
 	Params::UMetaSoundAssetSubsystem_RegisterAssetClassesInDirectories_Params Parms{};
 
-	Parms.Directories = Directories;
+	Parms.Directories = InDirectories;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

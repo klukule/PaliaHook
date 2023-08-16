@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // enum class EHandKeypoint           Input                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UHandKeypointConversion::Conv_HandKeypointToInt32(enum class EHandKeypoint Input)
+int32 UHandKeypointConversion::Conv_HandKeypointToInt32(enum class EHandKeypoint InInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ int32 UHandKeypointConversion::Conv_HandKeypointToInt32(enum class EHandKeypoint
 
 	Params::UHandKeypointConversion_Conv_HandKeypointToInt32_Params Parms{};
 
-	Parms.Input = Input;
+	Parms.Input = InInput;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -50,7 +50,7 @@ int32 UHandKeypointConversion::Conv_HandKeypointToInt32(enum class EHandKeypoint
 // Parameters:
 // struct FTransform                  ExternalTrackingTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::UpdateExternalTrackingHMDPosition(struct FTransform& ExternalTrackingTransform)
+void UHeadMountedDisplayFunctionLibrary::UpdateExternalTrackingHMDPosition(struct FTransform& InExternalTrackingTransform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -59,7 +59,7 @@ void UHeadMountedDisplayFunctionLibrary::UpdateExternalTrackingHMDPosition(struc
 
 	Params::UHeadMountedDisplayFunctionLibrary_UpdateExternalTrackingHMDPosition_Params Parms{};
 
-	Parms.ExternalTrackingTransform = ExternalTrackingTransform;
+	Parms.ExternalTrackingTransform = InExternalTrackingTransform;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -78,7 +78,7 @@ void UHeadMountedDisplayFunctionLibrary::UpdateExternalTrackingHMDPosition(struc
 // class FName                        ActionName                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 InDelegate                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::SetXRTimedInputActionDelegate(class FName& ActionName, FDelegateProperty_& InDelegate)
+void UHeadMountedDisplayFunctionLibrary::SetXRTimedInputActionDelegate(class FName& InActionName, FDelegateProperty_& InInDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -87,8 +87,8 @@ void UHeadMountedDisplayFunctionLibrary::SetXRTimedInputActionDelegate(class FNa
 
 	Params::UHeadMountedDisplayFunctionLibrary_SetXRTimedInputActionDelegate_Params Parms{};
 
-	Parms.ActionName = ActionName;
-	Parms.InDelegate = InDelegate;
+	Parms.ActionName = InActionName;
+	Parms.InDelegate = InInDelegate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -106,7 +106,7 @@ void UHeadMountedDisplayFunctionLibrary::SetXRTimedInputActionDelegate(class FNa
 // Parameters:
 // FDelegateProperty_                 InDisconnectedDelegate                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::SetXRDisconnectDelegate(FDelegateProperty_& InDisconnectedDelegate)
+void UHeadMountedDisplayFunctionLibrary::SetXRDisconnectDelegate(FDelegateProperty_& InInDisconnectedDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -115,7 +115,7 @@ void UHeadMountedDisplayFunctionLibrary::SetXRDisconnectDelegate(FDelegateProper
 
 	Params::UHeadMountedDisplayFunctionLibrary_SetXRDisconnectDelegate_Params Parms{};
 
-	Parms.InDisconnectedDelegate = InDisconnectedDelegate;
+	Parms.InDisconnectedDelegate = InInDisconnectedDelegate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -134,7 +134,7 @@ void UHeadMountedDisplayFunctionLibrary::SetXRDisconnectDelegate(FDelegateProper
 // class UObject*                     WorldContext                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              NewScale                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::SetWorldToMetersScale(class UObject* WorldContext, float NewScale)
+void UHeadMountedDisplayFunctionLibrary::SetWorldToMetersScale(class UObject* InWorldContext, float InNewScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -143,8 +143,8 @@ void UHeadMountedDisplayFunctionLibrary::SetWorldToMetersScale(class UObject* Wo
 
 	Params::UHeadMountedDisplayFunctionLibrary_SetWorldToMetersScale_Params Parms{};
 
-	Parms.WorldContext = WorldContext;
-	Parms.NewScale = NewScale;
+	Parms.WorldContext = InWorldContext;
+	Parms.NewScale = InNewScale;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -162,7 +162,7 @@ void UHeadMountedDisplayFunctionLibrary::SetWorldToMetersScale(class UObject* Wo
 // Parameters:
 // enum class EHMDTrackingOrigin      Origin                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::SetTrackingOrigin(enum class EHMDTrackingOrigin Origin)
+void UHeadMountedDisplayFunctionLibrary::SetTrackingOrigin(enum class EHMDTrackingOrigin InOrigin)
 {
 	static class UFunction* Func = nullptr;
 
@@ -171,7 +171,7 @@ void UHeadMountedDisplayFunctionLibrary::SetTrackingOrigin(enum class EHMDTracki
 
 	Params::UHeadMountedDisplayFunctionLibrary_SetTrackingOrigin_Params Parms{};
 
-	Parms.Origin = Origin;
+	Parms.Origin = InOrigin;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -189,7 +189,7 @@ void UHeadMountedDisplayFunctionLibrary::SetTrackingOrigin(enum class EHMDTracki
 // Parameters:
 // class UTexture*                    InTexture                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenTexture(class UTexture* InTexture)
+void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenTexture(class UTexture* InInTexture)
 {
 	static class UFunction* Func = nullptr;
 
@@ -198,7 +198,7 @@ void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenTexture(class UTextur
 
 	Params::UHeadMountedDisplayFunctionLibrary_SetSpectatorScreenTexture_Params Parms{};
 
-	Parms.InTexture = InTexture;
+	Parms.InTexture = InInTexture;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -222,7 +222,7 @@ void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenTexture(class UTextur
 // bool                               bClearBlack                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bUseAlpha                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenModeTexturePlusEyeLayout(const struct FVector2D& EyeRectMin, const struct FVector2D& EyeRectMax, const struct FVector2D& TextureRectMin, const struct FVector2D& TextureRectMax, bool bDrawEyeFirst, bool bClearBlack, bool bUseAlpha)
+void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenModeTexturePlusEyeLayout(const struct FVector2D& InEyeRectMin, const struct FVector2D& InEyeRectMax, const struct FVector2D& InTextureRectMin, const struct FVector2D& InTextureRectMax, bool InbDrawEyeFirst, bool InbClearBlack, bool InbUseAlpha)
 {
 	static class UFunction* Func = nullptr;
 
@@ -231,13 +231,13 @@ void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenModeTexturePlusEyeLay
 
 	Params::UHeadMountedDisplayFunctionLibrary_SetSpectatorScreenModeTexturePlusEyeLayout_Params Parms{};
 
-	Parms.EyeRectMin = EyeRectMin;
-	Parms.EyeRectMax = EyeRectMax;
-	Parms.TextureRectMin = TextureRectMin;
-	Parms.TextureRectMax = TextureRectMax;
-	Parms.bDrawEyeFirst = bDrawEyeFirst;
-	Parms.bClearBlack = bClearBlack;
-	Parms.bUseAlpha = bUseAlpha;
+	Parms.EyeRectMin = InEyeRectMin;
+	Parms.EyeRectMax = InEyeRectMax;
+	Parms.TextureRectMin = InTextureRectMin;
+	Parms.TextureRectMax = InTextureRectMax;
+	Parms.bDrawEyeFirst = InbDrawEyeFirst;
+	Parms.bClearBlack = InbClearBlack;
+	Parms.bUseAlpha = InbUseAlpha;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -255,7 +255,7 @@ void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenModeTexturePlusEyeLay
 // Parameters:
 // enum class ESpectatorScreenMode    Mode                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenMode(enum class ESpectatorScreenMode Mode)
+void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenMode(enum class ESpectatorScreenMode InMode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -264,7 +264,7 @@ void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenMode(enum class ESpec
 
 	Params::UHeadMountedDisplayFunctionLibrary_SetSpectatorScreenMode_Params Parms{};
 
-	Parms.Mode = Mode;
+	Parms.Mode = InMode;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -283,7 +283,7 @@ void UHeadMountedDisplayFunctionLibrary::SetSpectatorScreenMode(enum class ESpec
 // float                              Near                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Far                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::SetClippingPlanes(float Near, float Far)
+void UHeadMountedDisplayFunctionLibrary::SetClippingPlanes(float InNear, float InFar)
 {
 	static class UFunction* Func = nullptr;
 
@@ -292,8 +292,8 @@ void UHeadMountedDisplayFunctionLibrary::SetClippingPlanes(float Near, float Far
 
 	Params::UHeadMountedDisplayFunctionLibrary_SetClippingPlanes_Params Parms{};
 
-	Parms.Near = Near;
-	Parms.Far = Far;
+	Parms.Near = InNear;
+	Parms.Far = InFar;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -312,7 +312,7 @@ void UHeadMountedDisplayFunctionLibrary::SetClippingPlanes(float Near, float Far
 // float                              Yaw                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EOrientPositionSelector Options                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition(float Yaw, enum class EOrientPositionSelector Options)
+void UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition(float InYaw, enum class EOrientPositionSelector InOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -321,8 +321,8 @@ void UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition(float Yaw, 
 
 	Params::UHeadMountedDisplayFunctionLibrary_ResetOrientationAndPosition_Params Parms{};
 
-	Parms.Yaw = Yaw;
-	Parms.Options = Options;
+	Parms.Yaw = InYaw;
+	Parms.Options = InOptions;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -453,7 +453,7 @@ bool UHeadMountedDisplayFunctionLibrary::IsHeadMountedDisplayConnected()
 // struct FXRDeviceId                 XRDeviceId                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHeadMountedDisplayFunctionLibrary::IsDeviceTracking(struct FXRDeviceId& XRDeviceId)
+bool UHeadMountedDisplayFunctionLibrary::IsDeviceTracking(struct FXRDeviceId& InXRDeviceId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -462,7 +462,7 @@ bool UHeadMountedDisplayFunctionLibrary::IsDeviceTracking(struct FXRDeviceId& XR
 
 	Params::UHeadMountedDisplayFunctionLibrary_IsDeviceTracking_Params Parms{};
 
-	Parms.XRDeviceId = XRDeviceId;
+	Parms.XRDeviceId = InXRDeviceId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -539,7 +539,7 @@ int32 UHeadMountedDisplayFunctionLibrary::GetXRSystemFlags()
 // class UObject*                     WorldContext                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UHeadMountedDisplayFunctionLibrary::GetWorldToMetersScale(class UObject* WorldContext)
+float UHeadMountedDisplayFunctionLibrary::GetWorldToMetersScale(class UObject* InWorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -548,7 +548,7 @@ float UHeadMountedDisplayFunctionLibrary::GetWorldToMetersScale(class UObject* W
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetWorldToMetersScale_Params Parms{};
 
-	Parms.WorldContext = WorldContext;
+	Parms.WorldContext = InWorldContext;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -569,7 +569,7 @@ float UHeadMountedDisplayFunctionLibrary::GetWorldToMetersScale(class UObject* W
 // bool                               bUseFocus                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bHasFocus                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::GetVRFocusState(bool* bUseFocus, bool* bHasFocus)
+void UHeadMountedDisplayFunctionLibrary::GetVRFocusState(bool* InbUseFocus, bool* InbHasFocus)
 {
 	static class UFunction* Func = nullptr;
 
@@ -587,11 +587,11 @@ void UHeadMountedDisplayFunctionLibrary::GetVRFocusState(bool* bUseFocus, bool* 
 
 	Func->FunctionFlags = Flags;
 
-	if (bUseFocus != nullptr)
-		*bUseFocus = Parms.bUseFocus;
+	if (InbUseFocus != nullptr)
+		*InbUseFocus = Parms.bUseFocus;
 
-	if (bHasFocus != nullptr)
-		*bHasFocus = Parms.bHasFocus;
+	if (InbHasFocus != nullptr)
+		*InbHasFocus = Parms.bHasFocus;
 
 }
 
@@ -630,7 +630,7 @@ class FString UHeadMountedDisplayFunctionLibrary::GetVersionString()
 // class UObject*                     WorldContext                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform UHeadMountedDisplayFunctionLibrary::GetTrackingToWorldTransform(class UObject* WorldContext)
+struct FTransform UHeadMountedDisplayFunctionLibrary::GetTrackingToWorldTransform(class UObject* InWorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -639,7 +639,7 @@ struct FTransform UHeadMountedDisplayFunctionLibrary::GetTrackingToWorldTransfor
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetTrackingToWorldTransform_Params Parms{};
 
-	Parms.WorldContext = WorldContext;
+	Parms.WorldContext = InWorldContext;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -669,7 +669,7 @@ struct FTransform UHeadMountedDisplayFunctionLibrary::GetTrackingToWorldTransfor
 // bool                               IsActive                                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::GetTrackingSensorParameters(struct FVector* Origin, struct FRotator* Rotation, float* LeftFOV, float* RightFOV, float* TopFOV, float* BottomFOV, float* Distance, float* NearPlane, float* FarPlane, bool* IsActive, int32 Index)
+void UHeadMountedDisplayFunctionLibrary::GetTrackingSensorParameters(struct FVector* InOrigin, struct FRotator* InRotation, float* InLeftFOV, float* InRightFOV, float* InTopFOV, float* InBottomFOV, float* InDistance, float* InNearPlane, float* InFarPlane, bool* InIsActive, int32 InIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -678,7 +678,7 @@ void UHeadMountedDisplayFunctionLibrary::GetTrackingSensorParameters(struct FVec
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetTrackingSensorParameters_Params Parms{};
 
-	Parms.Index = Index;
+	Parms.Index = InIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -688,35 +688,35 @@ void UHeadMountedDisplayFunctionLibrary::GetTrackingSensorParameters(struct FVec
 
 	Func->FunctionFlags = Flags;
 
-	if (Origin != nullptr)
-		*Origin = Parms.Origin;
+	if (InOrigin != nullptr)
+		*InOrigin = Parms.Origin;
 
-	if (Rotation != nullptr)
-		*Rotation = Parms.Rotation;
+	if (InRotation != nullptr)
+		*InRotation = Parms.Rotation;
 
-	if (LeftFOV != nullptr)
-		*LeftFOV = Parms.LeftFOV;
+	if (InLeftFOV != nullptr)
+		*InLeftFOV = Parms.LeftFOV;
 
-	if (RightFOV != nullptr)
-		*RightFOV = Parms.RightFOV;
+	if (InRightFOV != nullptr)
+		*InRightFOV = Parms.RightFOV;
 
-	if (TopFOV != nullptr)
-		*TopFOV = Parms.TopFOV;
+	if (InTopFOV != nullptr)
+		*InTopFOV = Parms.TopFOV;
 
-	if (BottomFOV != nullptr)
-		*BottomFOV = Parms.BottomFOV;
+	if (InBottomFOV != nullptr)
+		*InBottomFOV = Parms.BottomFOV;
 
-	if (Distance != nullptr)
-		*Distance = Parms.Distance;
+	if (InDistance != nullptr)
+		*InDistance = Parms.Distance;
 
-	if (NearPlane != nullptr)
-		*NearPlane = Parms.NearPlane;
+	if (InNearPlane != nullptr)
+		*InNearPlane = Parms.NearPlane;
 
-	if (FarPlane != nullptr)
-		*FarPlane = Parms.FarPlane;
+	if (InFarPlane != nullptr)
+		*InFarPlane = Parms.FarPlane;
 
-	if (IsActive != nullptr)
-		*IsActive = Parms.IsActive;
+	if (InIsActive != nullptr)
+		*InIsActive = Parms.IsActive;
 
 }
 
@@ -728,7 +728,7 @@ void UHeadMountedDisplayFunctionLibrary::GetTrackingSensorParameters(struct FVec
 // struct FTransform                  OutTransform                                                     (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHeadMountedDisplayFunctionLibrary::GetTrackingOriginTransform(enum class EHMDTrackingOrigin Origin, struct FTransform* OutTransform)
+bool UHeadMountedDisplayFunctionLibrary::GetTrackingOriginTransform(enum class EHMDTrackingOrigin InOrigin, struct FTransform* InOutTransform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -737,7 +737,7 @@ bool UHeadMountedDisplayFunctionLibrary::GetTrackingOriginTransform(enum class E
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetTrackingOriginTransform_Params Parms{};
 
-	Parms.Origin = Origin;
+	Parms.Origin = InOrigin;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -747,8 +747,8 @@ bool UHeadMountedDisplayFunctionLibrary::GetTrackingOriginTransform(enum class E
 
 	Func->FunctionFlags = Flags;
 
-	if (OutTransform != nullptr)
-		*OutTransform = Parms.OutTransform;
+	if (InOutTransform != nullptr)
+		*InOutTransform = Parms.OutTransform;
 
 	return Parms.ReturnValue;
 
@@ -794,7 +794,7 @@ enum class EHMDTrackingOrigin UHeadMountedDisplayFunctionLibrary::GetTrackingOri
 // float                              NearPlane                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              FarPlane                                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::GetPositionalTrackingCameraParameters(struct FVector* CameraOrigin, struct FRotator* CameraRotation, float* HFOV, float* VFOV, float* CameraDistance, float* NearPlane, float* FarPlane)
+void UHeadMountedDisplayFunctionLibrary::GetPositionalTrackingCameraParameters(struct FVector* InCameraOrigin, struct FRotator* InCameraRotation, float* InHFOV, float* InVFOV, float* InCameraDistance, float* InNearPlane, float* InFarPlane)
 {
 	static class UFunction* Func = nullptr;
 
@@ -812,26 +812,26 @@ void UHeadMountedDisplayFunctionLibrary::GetPositionalTrackingCameraParameters(s
 
 	Func->FunctionFlags = Flags;
 
-	if (CameraOrigin != nullptr)
-		*CameraOrigin = Parms.CameraOrigin;
+	if (InCameraOrigin != nullptr)
+		*InCameraOrigin = Parms.CameraOrigin;
 
-	if (CameraRotation != nullptr)
-		*CameraRotation = Parms.CameraRotation;
+	if (InCameraRotation != nullptr)
+		*InCameraRotation = Parms.CameraRotation;
 
-	if (HFOV != nullptr)
-		*HFOV = Parms.HFOV;
+	if (InHFOV != nullptr)
+		*InHFOV = Parms.HFOV;
 
-	if (VFOV != nullptr)
-		*VFOV = Parms.VFOV;
+	if (InVFOV != nullptr)
+		*InVFOV = Parms.VFOV;
 
-	if (CameraDistance != nullptr)
-		*CameraDistance = Parms.CameraDistance;
+	if (InCameraDistance != nullptr)
+		*InCameraDistance = Parms.CameraDistance;
 
-	if (NearPlane != nullptr)
-		*NearPlane = Parms.NearPlane;
+	if (InNearPlane != nullptr)
+		*InNearPlane = Parms.NearPlane;
 
-	if (FarPlane != nullptr)
-		*FarPlane = Parms.FarPlane;
+	if (InFarPlane != nullptr)
+		*InFarPlane = Parms.FarPlane;
 
 }
 
@@ -843,7 +843,7 @@ void UHeadMountedDisplayFunctionLibrary::GetPositionalTrackingCameraParameters(s
 // struct FVector2D                   OutRect                                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHeadMountedDisplayFunctionLibrary::GetPlayAreaRect(struct FTransform* OutTransform, struct FVector2D* OutRect)
+bool UHeadMountedDisplayFunctionLibrary::GetPlayAreaRect(struct FTransform* InOutTransform, struct FVector2D* InOutRect)
 {
 	static class UFunction* Func = nullptr;
 
@@ -861,11 +861,11 @@ bool UHeadMountedDisplayFunctionLibrary::GetPlayAreaRect(struct FTransform* OutT
 
 	Func->FunctionFlags = Flags;
 
-	if (OutTransform != nullptr)
-		*OutTransform = Parms.OutTransform;
+	if (InOutTransform != nullptr)
+		*InOutTransform = Parms.OutTransform;
 
-	if (OutRect != nullptr)
-		*OutRect = Parms.OutRect;
+	if (InOutRect != nullptr)
+		*InOutRect = Parms.OutRect;
 
 	return Parms.ReturnValue;
 
@@ -878,7 +878,7 @@ bool UHeadMountedDisplayFunctionLibrary::GetPlayAreaRect(struct FTransform* OutT
 // enum class EHMDTrackingOrigin      Origin                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector2D UHeadMountedDisplayFunctionLibrary::GetPlayAreaBounds(enum class EHMDTrackingOrigin Origin)
+struct FVector2D UHeadMountedDisplayFunctionLibrary::GetPlayAreaBounds(enum class EHMDTrackingOrigin InOrigin)
 {
 	static class UFunction* Func = nullptr;
 
@@ -887,7 +887,7 @@ struct FVector2D UHeadMountedDisplayFunctionLibrary::GetPlayAreaBounds(enum clas
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetPlayAreaBounds_Params Parms{};
 
-	Parms.Origin = Origin;
+	Parms.Origin = InOrigin;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -936,7 +936,7 @@ float UHeadMountedDisplayFunctionLibrary::GetPixelDensity()
 // struct FRotator                    DeviceRotation                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector                     DevicePosition                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::GetOrientationAndPosition(struct FRotator* DeviceRotation, struct FVector* DevicePosition)
+void UHeadMountedDisplayFunctionLibrary::GetOrientationAndPosition(struct FRotator* InDeviceRotation, struct FVector* InDevicePosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -954,11 +954,11 @@ void UHeadMountedDisplayFunctionLibrary::GetOrientationAndPosition(struct FRotat
 
 	Func->FunctionFlags = Flags;
 
-	if (DeviceRotation != nullptr)
-		*DeviceRotation = Parms.DeviceRotation;
+	if (InDeviceRotation != nullptr)
+		*InDeviceRotation = Parms.DeviceRotation;
 
-	if (DevicePosition != nullptr)
-		*DevicePosition = Parms.DevicePosition;
+	if (InDevicePosition != nullptr)
+		*InDevicePosition = Parms.DevicePosition;
 
 }
 
@@ -998,7 +998,7 @@ int32 UHeadMountedDisplayFunctionLibrary::GetNumOfTrackingSensors()
 // enum class EControllerHand         Hand                                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FXRMotionControllerData     MotionControllerData                                             (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::GetMotionControllerData(class UObject* WorldContext, enum class EControllerHand Hand, struct FXRMotionControllerData* MotionControllerData)
+void UHeadMountedDisplayFunctionLibrary::GetMotionControllerData(class UObject* InWorldContext, enum class EControllerHand InHand, struct FXRMotionControllerData* InMotionControllerData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1007,8 +1007,8 @@ void UHeadMountedDisplayFunctionLibrary::GetMotionControllerData(class UObject* 
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetMotionControllerData_Params Parms{};
 
-	Parms.WorldContext = WorldContext;
-	Parms.Hand = Hand;
+	Parms.WorldContext = InWorldContext;
+	Parms.Hand = InHand;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1018,8 +1018,8 @@ void UHeadMountedDisplayFunctionLibrary::GetMotionControllerData(class UObject* 
 
 	Func->FunctionFlags = Flags;
 
-	if (MotionControllerData != nullptr)
-		*MotionControllerData = Parms.MotionControllerData;
+	if (InMotionControllerData != nullptr)
+		*InMotionControllerData = Parms.MotionControllerData;
 
 }
 
@@ -1086,7 +1086,7 @@ class FName UHeadMountedDisplayFunctionLibrary::GetHMDDeviceName()
 // class UObject*                     WorldContext                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FXRHMDData                  HMDData                                                          (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::GetHMDData(class UObject* WorldContext, struct FXRHMDData* HMDData)
+void UHeadMountedDisplayFunctionLibrary::GetHMDData(class UObject* InWorldContext, struct FXRHMDData* InHMDData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1095,7 +1095,7 @@ void UHeadMountedDisplayFunctionLibrary::GetHMDData(class UObject* WorldContext,
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetHMDData_Params Parms{};
 
-	Parms.WorldContext = WorldContext;
+	Parms.WorldContext = InWorldContext;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1105,8 +1105,8 @@ void UHeadMountedDisplayFunctionLibrary::GetHMDData(class UObject* WorldContext,
 
 	Func->FunctionFlags = Flags;
 
-	if (HMDData != nullptr)
-		*HMDData = Parms.HMDData;
+	if (InHMDData != nullptr)
+		*InHMDData = Parms.HMDData;
 
 }
 
@@ -1121,7 +1121,7 @@ void UHeadMountedDisplayFunctionLibrary::GetHMDData(class UObject* WorldContext,
 // bool                               bHasPositionalTracking                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     Position                                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::GetDeviceWorldPose(class UObject* WorldContext, struct FXRDeviceId& XRDeviceId, bool* bIsTracked, struct FRotator* Orientation, bool* bHasPositionalTracking, struct FVector* Position)
+void UHeadMountedDisplayFunctionLibrary::GetDeviceWorldPose(class UObject* InWorldContext, struct FXRDeviceId& InXRDeviceId, bool* InbIsTracked, struct FRotator* InOrientation, bool* InbHasPositionalTracking, struct FVector* InPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1130,8 +1130,8 @@ void UHeadMountedDisplayFunctionLibrary::GetDeviceWorldPose(class UObject* World
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetDeviceWorldPose_Params Parms{};
 
-	Parms.WorldContext = WorldContext;
-	Parms.XRDeviceId = XRDeviceId;
+	Parms.WorldContext = InWorldContext;
+	Parms.XRDeviceId = InXRDeviceId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1141,17 +1141,17 @@ void UHeadMountedDisplayFunctionLibrary::GetDeviceWorldPose(class UObject* World
 
 	Func->FunctionFlags = Flags;
 
-	if (bIsTracked != nullptr)
-		*bIsTracked = Parms.bIsTracked;
+	if (InbIsTracked != nullptr)
+		*InbIsTracked = Parms.bIsTracked;
 
-	if (Orientation != nullptr)
-		*Orientation = Parms.Orientation;
+	if (InOrientation != nullptr)
+		*InOrientation = Parms.Orientation;
 
-	if (bHasPositionalTracking != nullptr)
-		*bHasPositionalTracking = Parms.bHasPositionalTracking;
+	if (InbHasPositionalTracking != nullptr)
+		*InbHasPositionalTracking = Parms.bHasPositionalTracking;
 
-	if (Position != nullptr)
-		*Position = Parms.Position;
+	if (InPosition != nullptr)
+		*InPosition = Parms.Position;
 
 }
 
@@ -1165,7 +1165,7 @@ void UHeadMountedDisplayFunctionLibrary::GetDeviceWorldPose(class UObject* World
 // bool                               bHasPositionalTracking                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     Position                                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::GetDevicePose(struct FXRDeviceId& XRDeviceId, bool* bIsTracked, struct FRotator* Orientation, bool* bHasPositionalTracking, struct FVector* Position)
+void UHeadMountedDisplayFunctionLibrary::GetDevicePose(struct FXRDeviceId& InXRDeviceId, bool* InbIsTracked, struct FRotator* InOrientation, bool* InbHasPositionalTracking, struct FVector* InPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1174,7 +1174,7 @@ void UHeadMountedDisplayFunctionLibrary::GetDevicePose(struct FXRDeviceId& XRDev
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetDevicePose_Params Parms{};
 
-	Parms.XRDeviceId = XRDeviceId;
+	Parms.XRDeviceId = InXRDeviceId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1184,17 +1184,17 @@ void UHeadMountedDisplayFunctionLibrary::GetDevicePose(struct FXRDeviceId& XRDev
 
 	Func->FunctionFlags = Flags;
 
-	if (bIsTracked != nullptr)
-		*bIsTracked = Parms.bIsTracked;
+	if (InbIsTracked != nullptr)
+		*InbIsTracked = Parms.bIsTracked;
 
-	if (Orientation != nullptr)
-		*Orientation = Parms.Orientation;
+	if (InOrientation != nullptr)
+		*InOrientation = Parms.Orientation;
 
-	if (bHasPositionalTracking != nullptr)
-		*bHasPositionalTracking = Parms.bHasPositionalTracking;
+	if (InbHasPositionalTracking != nullptr)
+		*InbHasPositionalTracking = Parms.bHasPositionalTracking;
 
-	if (Position != nullptr)
-		*Position = Parms.Position;
+	if (InPosition != nullptr)
+		*InPosition = Parms.Position;
 
 }
 
@@ -1206,7 +1206,7 @@ void UHeadMountedDisplayFunctionLibrary::GetDevicePose(struct FXRDeviceId& XRDev
 // class FString                      InteractionProfile                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHeadMountedDisplayFunctionLibrary::GetCurrentInteractionProfile(enum class EControllerHand Hand, class FString* InteractionProfile)
+bool UHeadMountedDisplayFunctionLibrary::GetCurrentInteractionProfile(enum class EControllerHand InHand, class FString* InInteractionProfile)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1215,7 +1215,7 @@ bool UHeadMountedDisplayFunctionLibrary::GetCurrentInteractionProfile(enum class
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetCurrentInteractionProfile_Params Parms{};
 
-	Parms.Hand = Hand;
+	Parms.Hand = InHand;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1225,8 +1225,8 @@ bool UHeadMountedDisplayFunctionLibrary::GetCurrentInteractionProfile(enum class
 
 	Func->FunctionFlags = Flags;
 
-	if (InteractionProfile != nullptr)
-		*InteractionProfile = Parms.InteractionProfile;
+	if (InInteractionProfile != nullptr)
+		*InInteractionProfile = Parms.InteractionProfile;
 
 	return Parms.ReturnValue;
 
@@ -1251,7 +1251,7 @@ bool UHeadMountedDisplayFunctionLibrary::GetCurrentInteractionProfile(enum class
 // struct FVector                     LinearAcceleration                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHeadMountedDisplayFunctionLibrary::GetControllerTransformForTime(class UObject* WorldContext, int32 ControllerIndex, class FName MotionSource, const struct FTimespan& Time, bool* bTimeWasUsed, struct FRotator* Orientation, struct FVector* Position, bool* bProvidedLinearVelocity, struct FVector* LinearVelocity, bool* bProvidedAngularVelocity, struct FVector* AngularVelocityRadPerSec, bool* bProvidedLinearAcceleration, struct FVector* LinearAcceleration)
+bool UHeadMountedDisplayFunctionLibrary::GetControllerTransformForTime(class UObject* InWorldContext, int32 InControllerIndex, class FName InMotionSource, const struct FTimespan& InTime, bool* InbTimeWasUsed, struct FRotator* InOrientation, struct FVector* InPosition, bool* InbProvidedLinearVelocity, struct FVector* InLinearVelocity, bool* InbProvidedAngularVelocity, struct FVector* InAngularVelocityRadPerSec, bool* InbProvidedLinearAcceleration, struct FVector* InLinearAcceleration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1260,10 +1260,10 @@ bool UHeadMountedDisplayFunctionLibrary::GetControllerTransformForTime(class UOb
 
 	Params::UHeadMountedDisplayFunctionLibrary_GetControllerTransformForTime_Params Parms{};
 
-	Parms.WorldContext = WorldContext;
-	Parms.ControllerIndex = ControllerIndex;
-	Parms.MotionSource = MotionSource;
-	Parms.Time = Time;
+	Parms.WorldContext = InWorldContext;
+	Parms.ControllerIndex = InControllerIndex;
+	Parms.MotionSource = InMotionSource;
+	Parms.Time = InTime;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1273,32 +1273,32 @@ bool UHeadMountedDisplayFunctionLibrary::GetControllerTransformForTime(class UOb
 
 	Func->FunctionFlags = Flags;
 
-	if (bTimeWasUsed != nullptr)
-		*bTimeWasUsed = Parms.bTimeWasUsed;
+	if (InbTimeWasUsed != nullptr)
+		*InbTimeWasUsed = Parms.bTimeWasUsed;
 
-	if (Orientation != nullptr)
-		*Orientation = Parms.Orientation;
+	if (InOrientation != nullptr)
+		*InOrientation = Parms.Orientation;
 
-	if (Position != nullptr)
-		*Position = Parms.Position;
+	if (InPosition != nullptr)
+		*InPosition = Parms.Position;
 
-	if (bProvidedLinearVelocity != nullptr)
-		*bProvidedLinearVelocity = Parms.bProvidedLinearVelocity;
+	if (InbProvidedLinearVelocity != nullptr)
+		*InbProvidedLinearVelocity = Parms.bProvidedLinearVelocity;
 
-	if (LinearVelocity != nullptr)
-		*LinearVelocity = Parms.LinearVelocity;
+	if (InLinearVelocity != nullptr)
+		*InLinearVelocity = Parms.LinearVelocity;
 
-	if (bProvidedAngularVelocity != nullptr)
-		*bProvidedAngularVelocity = Parms.bProvidedAngularVelocity;
+	if (InbProvidedAngularVelocity != nullptr)
+		*InbProvidedAngularVelocity = Parms.bProvidedAngularVelocity;
 
-	if (AngularVelocityRadPerSec != nullptr)
-		*AngularVelocityRadPerSec = Parms.AngularVelocityRadPerSec;
+	if (InAngularVelocityRadPerSec != nullptr)
+		*InAngularVelocityRadPerSec = Parms.AngularVelocityRadPerSec;
 
-	if (bProvidedLinearAcceleration != nullptr)
-		*bProvidedLinearAcceleration = Parms.bProvidedLinearAcceleration;
+	if (InbProvidedLinearAcceleration != nullptr)
+		*InbProvidedLinearAcceleration = Parms.bProvidedLinearAcceleration;
 
-	if (LinearAcceleration != nullptr)
-		*LinearAcceleration = Parms.LinearAcceleration;
+	if (InLinearAcceleration != nullptr)
+		*InLinearAcceleration = Parms.LinearAcceleration;
 
 	return Parms.ReturnValue;
 
@@ -1312,7 +1312,7 @@ bool UHeadMountedDisplayFunctionLibrary::GetControllerTransformForTime(class UOb
 // enum class EXRTrackedDeviceType    DeviceType                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FXRDeviceId>         ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FXRDeviceId> UHeadMountedDisplayFunctionLibrary::EnumerateTrackedDevices(class FName SystemId, enum class EXRTrackedDeviceType DeviceType)
+TArray<struct FXRDeviceId> UHeadMountedDisplayFunctionLibrary::EnumerateTrackedDevices(class FName InSystemId, enum class EXRTrackedDeviceType InDeviceType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1321,8 +1321,8 @@ TArray<struct FXRDeviceId> UHeadMountedDisplayFunctionLibrary::EnumerateTrackedD
 
 	Params::UHeadMountedDisplayFunctionLibrary_EnumerateTrackedDevices_Params Parms{};
 
-	Parms.SystemId = SystemId;
-	Parms.DeviceType = DeviceType;
+	Parms.SystemId = InSystemId;
+	Parms.DeviceType = InDeviceType;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1342,7 +1342,7 @@ TArray<struct FXRDeviceId> UHeadMountedDisplayFunctionLibrary::EnumerateTrackedD
 // Parameters:
 // bool                               bEnable                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::EnableLowPersistenceMode(bool bEnable)
+void UHeadMountedDisplayFunctionLibrary::EnableLowPersistenceMode(bool InbEnable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1351,7 +1351,7 @@ void UHeadMountedDisplayFunctionLibrary::EnableLowPersistenceMode(bool bEnable)
 
 	Params::UHeadMountedDisplayFunctionLibrary_EnableLowPersistenceMode_Params Parms{};
 
-	Parms.bEnable = bEnable;
+	Parms.bEnable = InbEnable;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1370,7 +1370,7 @@ void UHeadMountedDisplayFunctionLibrary::EnableLowPersistenceMode(bool bEnable)
 // bool                               bEnable                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHeadMountedDisplayFunctionLibrary::EnableHMD(bool bEnable)
+bool UHeadMountedDisplayFunctionLibrary::EnableHMD(bool InbEnable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1379,7 +1379,7 @@ bool UHeadMountedDisplayFunctionLibrary::EnableHMD(bool bEnable)
 
 	Params::UHeadMountedDisplayFunctionLibrary_EnableHMD_Params Parms{};
 
-	Parms.bEnable = bEnable;
+	Parms.bEnable = InbEnable;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1426,7 +1426,7 @@ void UHeadMountedDisplayFunctionLibrary::DisconnectRemoteXRDevice()
 // int32                              BitRate                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EXRDeviceConnectionResultReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EXRDeviceConnectionResult UHeadMountedDisplayFunctionLibrary::ConnectRemoteXRDevice(const class FString& IpAddress, int32 BitRate)
+enum class EXRDeviceConnectionResult UHeadMountedDisplayFunctionLibrary::ConnectRemoteXRDevice(const class FString& InIpAddress, int32 InBitRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1435,8 +1435,8 @@ enum class EXRDeviceConnectionResult UHeadMountedDisplayFunctionLibrary::Connect
 
 	Params::UHeadMountedDisplayFunctionLibrary_ConnectRemoteXRDevice_Params Parms{};
 
-	Parms.IpAddress = IpAddress;
-	Parms.BitRate = BitRate;
+	Parms.IpAddress = InIpAddress;
+	Parms.BitRate = InBitRate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1457,7 +1457,7 @@ enum class EXRDeviceConnectionResult UHeadMountedDisplayFunctionLibrary::Connect
 // struct FXRGestureConfig            GestureConfig                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHeadMountedDisplayFunctionLibrary::ConfigureGestures(struct FXRGestureConfig& GestureConfig)
+bool UHeadMountedDisplayFunctionLibrary::ConfigureGestures(struct FXRGestureConfig& InGestureConfig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1466,7 +1466,7 @@ bool UHeadMountedDisplayFunctionLibrary::ConfigureGestures(struct FXRGestureConf
 
 	Params::UHeadMountedDisplayFunctionLibrary_ConfigureGestures_Params Parms{};
 
-	Parms.GestureConfig = GestureConfig;
+	Parms.GestureConfig = InGestureConfig;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1486,7 +1486,7 @@ bool UHeadMountedDisplayFunctionLibrary::ConfigureGestures(struct FXRGestureConf
 // Parameters:
 // class FName                        ActionPath                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::ClearXRTimedInputActionDelegate(class FName& ActionPath)
+void UHeadMountedDisplayFunctionLibrary::ClearXRTimedInputActionDelegate(class FName& InActionPath)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1495,7 +1495,7 @@ void UHeadMountedDisplayFunctionLibrary::ClearXRTimedInputActionDelegate(class F
 
 	Params::UHeadMountedDisplayFunctionLibrary_ClearXRTimedInputActionDelegate_Params Parms{};
 
-	Parms.ActionPath = ActionPath;
+	Parms.ActionPath = InActionPath;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1513,7 +1513,7 @@ void UHeadMountedDisplayFunctionLibrary::ClearXRTimedInputActionDelegate(class F
 // Parameters:
 // struct FTransform                  ExternalTrackingTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::CalibrateExternalTrackingToHMD(struct FTransform& ExternalTrackingTransform)
+void UHeadMountedDisplayFunctionLibrary::CalibrateExternalTrackingToHMD(struct FTransform& InExternalTrackingTransform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1522,7 +1522,7 @@ void UHeadMountedDisplayFunctionLibrary::CalibrateExternalTrackingToHMD(struct F
 
 	Params::UHeadMountedDisplayFunctionLibrary_CalibrateExternalTrackingToHMD_Params Parms{};
 
-	Parms.ExternalTrackingTransform = ExternalTrackingTransform;
+	Parms.ExternalTrackingTransform = InExternalTrackingTransform;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1545,7 +1545,7 @@ void UHeadMountedDisplayFunctionLibrary::CalibrateExternalTrackingToHMD(struct F
 // class FString                      Indentifier                                                      (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      Component                                                        (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHeadMountedDisplayFunctionLibrary::BreakKey(const struct FKey& InKey, class FString* InteractionProfile, enum class EControllerHand* Hand, class FName* MotionSource, class FString* Indentifier, class FString* Component)
+void UHeadMountedDisplayFunctionLibrary::BreakKey(const struct FKey& InInKey, class FString* InInteractionProfile, enum class EControllerHand* InHand, class FName* InMotionSource, class FString* InIndentifier, class FString* InComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1554,7 +1554,7 @@ void UHeadMountedDisplayFunctionLibrary::BreakKey(const struct FKey& InKey, clas
 
 	Params::UHeadMountedDisplayFunctionLibrary_BreakKey_Params Parms{};
 
-	Parms.InKey = InKey;
+	Parms.InKey = InInKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1564,20 +1564,20 @@ void UHeadMountedDisplayFunctionLibrary::BreakKey(const struct FKey& InKey, clas
 
 	Func->FunctionFlags = Flags;
 
-	if (InteractionProfile != nullptr)
-		*InteractionProfile = Parms.InteractionProfile;
+	if (InInteractionProfile != nullptr)
+		*InInteractionProfile = Parms.InteractionProfile;
 
-	if (Hand != nullptr)
-		*Hand = Parms.Hand;
+	if (InHand != nullptr)
+		*InHand = Parms.Hand;
 
-	if (MotionSource != nullptr)
-		*MotionSource = Parms.MotionSource;
+	if (InMotionSource != nullptr)
+		*InMotionSource = Parms.MotionSource;
 
-	if (Indentifier != nullptr)
-		*Indentifier = Parms.Indentifier;
+	if (InIndentifier != nullptr)
+		*InIndentifier = Parms.Indentifier;
 
-	if (Component != nullptr)
-		*Component = Parms.Component;
+	if (InComponent != nullptr)
+		*InComponent = Parms.Component;
 
 }
 
@@ -1587,7 +1587,7 @@ void UHeadMountedDisplayFunctionLibrary::BreakKey(const struct FKey& InKey, clas
 // Parameters:
 // enum class EControllerHand         NewSource                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionControllerComponent::SetTrackingSource(enum class EControllerHand NewSource)
+void UMotionControllerComponent::SetTrackingSource(enum class EControllerHand InNewSource)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1596,7 +1596,7 @@ void UMotionControllerComponent::SetTrackingSource(enum class EControllerHand Ne
 
 	Params::UMotionControllerComponent_SetTrackingSource_Params Parms{};
 
-	Parms.NewSource = NewSource;
+	Parms.NewSource = InNewSource;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1614,7 +1614,7 @@ void UMotionControllerComponent::SetTrackingSource(enum class EControllerHand Ne
 // Parameters:
 // class FName                        NewSource                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionControllerComponent::SetTrackingMotionSource(class FName NewSource)
+void UMotionControllerComponent::SetTrackingMotionSource(class FName InNewSource)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1623,7 +1623,7 @@ void UMotionControllerComponent::SetTrackingMotionSource(class FName NewSource)
 
 	Params::UMotionControllerComponent_SetTrackingMotionSource_Params Parms{};
 
-	Parms.NewSource = NewSource;
+	Parms.NewSource = InNewSource;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1641,7 +1641,7 @@ void UMotionControllerComponent::SetTrackingMotionSource(class FName NewSource)
 // Parameters:
 // bool                               bShowControllerModel                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionControllerComponent::SetShowDeviceModel(bool bShowControllerModel)
+void UMotionControllerComponent::SetShowDeviceModel(bool InbShowControllerModel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1650,7 +1650,7 @@ void UMotionControllerComponent::SetShowDeviceModel(bool bShowControllerModel)
 
 	Params::UMotionControllerComponent_SetShowDeviceModel_Params Parms{};
 
-	Parms.bShowControllerModel = bShowControllerModel;
+	Parms.bShowControllerModel = InbShowControllerModel;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1668,7 +1668,7 @@ void UMotionControllerComponent::SetShowDeviceModel(bool bShowControllerModel)
 // Parameters:
 // class FName                        NewDisplayModelSource                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionControllerComponent::SetDisplayModelSource(class FName NewDisplayModelSource)
+void UMotionControllerComponent::SetDisplayModelSource(class FName InNewDisplayModelSource)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1677,7 +1677,7 @@ void UMotionControllerComponent::SetDisplayModelSource(class FName NewDisplayMod
 
 	Params::UMotionControllerComponent_SetDisplayModelSource_Params Parms{};
 
-	Parms.NewDisplayModelSource = NewDisplayModelSource;
+	Parms.NewDisplayModelSource = InNewDisplayModelSource;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1695,7 +1695,7 @@ void UMotionControllerComponent::SetDisplayModelSource(class FName NewDisplayMod
 // Parameters:
 // class UStaticMesh*                 NewDisplayMesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionControllerComponent::SetCustomDisplayMesh(class UStaticMesh* NewDisplayMesh)
+void UMotionControllerComponent::SetCustomDisplayMesh(class UStaticMesh* InNewDisplayMesh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1704,7 +1704,7 @@ void UMotionControllerComponent::SetCustomDisplayMesh(class UStaticMesh* NewDisp
 
 	Params::UMotionControllerComponent_SetCustomDisplayMesh_Params Parms{};
 
-	Parms.NewDisplayMesh = NewDisplayMesh;
+	Parms.NewDisplayMesh = InNewDisplayMesh;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1722,7 +1722,7 @@ void UMotionControllerComponent::SetCustomDisplayMesh(class UStaticMesh* NewDisp
 // Parameters:
 // int32                              NewPlayer                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionControllerComponent::SetAssociatedPlayerIndex(int32 NewPlayer)
+void UMotionControllerComponent::SetAssociatedPlayerIndex(int32 InNewPlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1731,7 +1731,7 @@ void UMotionControllerComponent::SetAssociatedPlayerIndex(int32 NewPlayer)
 
 	Params::UMotionControllerComponent_SetAssociatedPlayerIndex_Params Parms{};
 
-	Parms.NewPlayer = NewPlayer;
+	Parms.NewPlayer = InNewPlayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1826,7 +1826,7 @@ enum class EControllerHand UMotionControllerComponent::GetTrackingSource()
 // bool                               bValueFound                                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMotionControllerComponent::GetParameterValue(class FName InName, bool* bValueFound)
+float UMotionControllerComponent::GetParameterValue(class FName InInName, bool* InbValueFound)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1835,7 +1835,7 @@ float UMotionControllerComponent::GetParameterValue(class FName InName, bool* bV
 
 	Params::UMotionControllerComponent_GetParameterValue_Params Parms{};
 
-	Parms.InName = InName;
+	Parms.InName = InInName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1845,8 +1845,8 @@ float UMotionControllerComponent::GetParameterValue(class FName InName, bool* bV
 
 	Func->FunctionFlags = Flags;
 
-	if (bValueFound != nullptr)
-		*bValueFound = Parms.bValueFound;
+	if (InbValueFound != nullptr)
+		*InbValueFound = Parms.bValueFound;
 
 	return Parms.ReturnValue;
 
@@ -1860,7 +1860,7 @@ float UMotionControllerComponent::GetParameterValue(class FName InName, bool* bV
 // bool                               bValueFound                                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UMotionControllerComponent::GetHandJointPosition(int32 JointIndex, bool* bValueFound)
+struct FVector UMotionControllerComponent::GetHandJointPosition(int32 InJointIndex, bool* InbValueFound)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1869,7 +1869,7 @@ struct FVector UMotionControllerComponent::GetHandJointPosition(int32 JointIndex
 
 	Params::UMotionControllerComponent_GetHandJointPosition_Params Parms{};
 
-	Parms.JointIndex = JointIndex;
+	Parms.JointIndex = InJointIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1879,8 +1879,8 @@ struct FVector UMotionControllerComponent::GetHandJointPosition(int32 JointIndex
 
 	Func->FunctionFlags = Flags;
 
-	if (bValueFound != nullptr)
-		*bValueFound = Parms.bValueFound;
+	if (InbValueFound != nullptr)
+		*InbValueFound = Parms.bValueFound;
 
 	return Parms.ReturnValue;
 
@@ -1892,7 +1892,7 @@ struct FVector UMotionControllerComponent::GetHandJointPosition(int32 JointIndex
 // Parameters:
 // bool                               Enable                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionTrackedDeviceFunctionLibrary::SetIsControllerMotionTrackingEnabledByDefault(bool Enable)
+void UMotionTrackedDeviceFunctionLibrary::SetIsControllerMotionTrackingEnabledByDefault(bool InEnable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1901,7 +1901,7 @@ void UMotionTrackedDeviceFunctionLibrary::SetIsControllerMotionTrackingEnabledBy
 
 	Params::UMotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault_Params Parms{};
 
-	Parms.Enable = Enable;
+	Parms.Enable = InEnable;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1921,7 +1921,7 @@ void UMotionTrackedDeviceFunctionLibrary::SetIsControllerMotionTrackingEnabledBy
 // class FName                        SourceName                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForSource(int32 PlayerIndex, class FName SourceName)
+bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForSource(int32 InPlayerIndex, class FName InSourceName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1930,8 +1930,8 @@ bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForSource(int32
 
 	Params::UMotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource_Params Parms{};
 
-	Parms.PlayerIndex = PlayerIndex;
-	Parms.SourceName = SourceName;
+	Parms.PlayerIndex = InPlayerIndex;
+	Parms.SourceName = InSourceName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1953,7 +1953,7 @@ bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForSource(int32
 // enum class EControllerHand         Hand                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForDevice(int32 PlayerIndex, enum class EControllerHand Hand)
+bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForDevice(int32 InPlayerIndex, enum class EControllerHand InHand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1962,8 +1962,8 @@ bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForDevice(int32
 
 	Params::UMotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice_Params Parms{};
 
-	Parms.PlayerIndex = PlayerIndex;
-	Parms.Hand = Hand;
+	Parms.PlayerIndex = InPlayerIndex;
+	Parms.Hand = InHand;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1984,7 +1984,7 @@ bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForDevice(int32
 // class UMotionControllerComponent*  MotionControllerComponent                                        (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForComponent(class UMotionControllerComponent* MotionControllerComponent)
+bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForComponent(class UMotionControllerComponent* InMotionControllerComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1993,7 +1993,7 @@ bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackingEnabledForComponent(cl
 
 	Params::UMotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent_Params Parms{};
 
-	Parms.MotionControllerComponent = MotionControllerComponent;
+	Parms.MotionControllerComponent = InMotionControllerComponent;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2043,7 +2043,7 @@ bool UMotionTrackedDeviceFunctionLibrary::IsMotionTrackedDeviceCountManagementNe
 // class FName                        SourceName                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMotionTrackedDeviceFunctionLibrary::IsMotionSourceTracking(int32 PlayerIndex, class FName SourceName)
+bool UMotionTrackedDeviceFunctionLibrary::IsMotionSourceTracking(int32 InPlayerIndex, class FName InSourceName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2052,8 +2052,8 @@ bool UMotionTrackedDeviceFunctionLibrary::IsMotionSourceTracking(int32 PlayerInd
 
 	Params::UMotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking_Params Parms{};
 
-	Parms.PlayerIndex = PlayerIndex;
-	Parms.SourceName = SourceName;
+	Parms.PlayerIndex = InPlayerIndex;
+	Parms.SourceName = InSourceName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2187,7 +2187,7 @@ TArray<class FName> UMotionTrackedDeviceFunctionLibrary::EnumerateMotionSources(
 // class FName                        SourceName                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingOfSource(int32 PlayerIndex, class FName SourceName)
+bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingOfSource(int32 InPlayerIndex, class FName InSourceName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2196,8 +2196,8 @@ bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingOfSource(int32 Pla
 
 	Params::UMotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource_Params Parms{};
 
-	Parms.PlayerIndex = PlayerIndex;
-	Parms.SourceName = SourceName;
+	Parms.PlayerIndex = InPlayerIndex;
+	Parms.SourceName = InSourceName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2219,7 +2219,7 @@ bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingOfSource(int32 Pla
 // enum class EControllerHand         Hand                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingOfDevice(int32 PlayerIndex, enum class EControllerHand Hand)
+bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingOfDevice(int32 InPlayerIndex, enum class EControllerHand InHand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2228,8 +2228,8 @@ bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingOfDevice(int32 Pla
 
 	Params::UMotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice_Params Parms{};
 
-	Parms.PlayerIndex = PlayerIndex;
-	Parms.Hand = Hand;
+	Parms.PlayerIndex = InPlayerIndex;
+	Parms.Hand = InHand;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2250,7 +2250,7 @@ bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingOfDevice(int32 Pla
 // class UMotionControllerComponent*  MotionControllerComponent                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingForComponent(class UMotionControllerComponent* MotionControllerComponent)
+bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingForComponent(class UMotionControllerComponent* InMotionControllerComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2259,7 +2259,7 @@ bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingForComponent(class
 
 	Params::UMotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent_Params Parms{};
 
-	Parms.MotionControllerComponent = MotionControllerComponent;
+	Parms.MotionControllerComponent = InMotionControllerComponent;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2280,7 +2280,7 @@ bool UMotionTrackedDeviceFunctionLibrary::EnableMotionTrackingForComponent(class
 // int32                              PlayerIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        SourceName                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfSource(int32 PlayerIndex, class FName SourceName)
+void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfSource(int32 InPlayerIndex, class FName InSourceName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2289,8 +2289,8 @@ void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfSource(int32 Pl
 
 	Params::UMotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource_Params Parms{};
 
-	Parms.PlayerIndex = PlayerIndex;
-	Parms.SourceName = SourceName;
+	Parms.PlayerIndex = InPlayerIndex;
+	Parms.SourceName = InSourceName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2309,7 +2309,7 @@ void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfSource(int32 Pl
 // int32                              PlayerIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EControllerHand         Hand                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfDevice(int32 PlayerIndex, enum class EControllerHand Hand)
+void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfDevice(int32 InPlayerIndex, enum class EControllerHand InHand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2318,8 +2318,8 @@ void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfDevice(int32 Pl
 
 	Params::UMotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice_Params Parms{};
 
-	Parms.PlayerIndex = PlayerIndex;
-	Parms.Hand = Hand;
+	Parms.PlayerIndex = InPlayerIndex;
+	Parms.Hand = InHand;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2337,7 +2337,7 @@ void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfDevice(int32 Pl
 // Parameters:
 // int32                              PlayerIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfControllersForPlayer(int32 PlayerIndex)
+void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfControllersForPlayer(int32 InPlayerIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2346,7 +2346,7 @@ void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfControllersForP
 
 	Params::UMotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer_Params Parms{};
 
-	Parms.PlayerIndex = PlayerIndex;
+	Parms.PlayerIndex = InPlayerIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2389,7 +2389,7 @@ void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingOfAllControllers(
 // Parameters:
 // class UMotionControllerComponent*  MotionControllerComponent                                        (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingForComponent(class UMotionControllerComponent* MotionControllerComponent)
+void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingForComponent(class UMotionControllerComponent* InMotionControllerComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2398,7 +2398,7 @@ void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingForComponent(clas
 
 	Params::UMotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent_Params Parms{};
 
-	Parms.MotionControllerComponent = MotionControllerComponent;
+	Parms.MotionControllerComponent = InMotionControllerComponent;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2422,7 +2422,7 @@ void UMotionTrackedDeviceFunctionLibrary::DisableMotionTrackingForComponent(clas
 // struct FXRDeviceId                 XRDeviceId                                                       (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // class UPrimitiveComponent*         ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UPrimitiveComponent* UXRAssetFunctionLibrary::AddNamedDeviceVisualizationComponentBlocking(class AActor* Target, class FName SystemName, class FName DeviceName, bool bManualAttachment, struct FTransform& RelativeTransform, struct FXRDeviceId* XRDeviceId)
+class UPrimitiveComponent* UXRAssetFunctionLibrary::AddNamedDeviceVisualizationComponentBlocking(class AActor* InTarget, class FName InSystemName, class FName InDeviceName, bool InbManualAttachment, struct FTransform& InRelativeTransform, struct FXRDeviceId* InXRDeviceId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2431,11 +2431,11 @@ class UPrimitiveComponent* UXRAssetFunctionLibrary::AddNamedDeviceVisualizationC
 
 	Params::UXRAssetFunctionLibrary_AddNamedDeviceVisualizationComponentBlocking_Params Parms{};
 
-	Parms.Target = Target;
-	Parms.SystemName = SystemName;
-	Parms.DeviceName = DeviceName;
-	Parms.bManualAttachment = bManualAttachment;
-	Parms.RelativeTransform = RelativeTransform;
+	Parms.Target = InTarget;
+	Parms.SystemName = InSystemName;
+	Parms.DeviceName = InDeviceName;
+	Parms.bManualAttachment = InbManualAttachment;
+	Parms.RelativeTransform = InRelativeTransform;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2445,8 +2445,8 @@ class UPrimitiveComponent* UXRAssetFunctionLibrary::AddNamedDeviceVisualizationC
 
 	Func->FunctionFlags = Flags;
 
-	if (XRDeviceId != nullptr)
-		*XRDeviceId = Parms.XRDeviceId;
+	if (InXRDeviceId != nullptr)
+		*InXRDeviceId = Parms.XRDeviceId;
 
 	return Parms.ReturnValue;
 
@@ -2462,7 +2462,7 @@ class UPrimitiveComponent* UXRAssetFunctionLibrary::AddNamedDeviceVisualizationC
 // struct FTransform                  RelativeTransform                                                (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPrimitiveComponent*         ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UPrimitiveComponent* UXRAssetFunctionLibrary::AddDeviceVisualizationComponentBlocking(class AActor* Target, struct FXRDeviceId& XRDeviceId, bool bManualAttachment, struct FTransform& RelativeTransform)
+class UPrimitiveComponent* UXRAssetFunctionLibrary::AddDeviceVisualizationComponentBlocking(class AActor* InTarget, struct FXRDeviceId& InXRDeviceId, bool InbManualAttachment, struct FTransform& InRelativeTransform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2471,10 +2471,10 @@ class UPrimitiveComponent* UXRAssetFunctionLibrary::AddDeviceVisualizationCompon
 
 	Params::UXRAssetFunctionLibrary_AddDeviceVisualizationComponentBlocking_Params Parms{};
 
-	Parms.Target = Target;
-	Parms.XRDeviceId = XRDeviceId;
-	Parms.bManualAttachment = bManualAttachment;
-	Parms.RelativeTransform = RelativeTransform;
+	Parms.Target = InTarget;
+	Parms.XRDeviceId = InXRDeviceId;
+	Parms.bManualAttachment = InbManualAttachment;
+	Parms.RelativeTransform = InRelativeTransform;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2501,7 +2501,7 @@ class UPrimitiveComponent* UXRAssetFunctionLibrary::AddDeviceVisualizationCompon
 // class UPrimitiveComponent*         NewComponent                                                     (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTask_LoadXRDeviceVisComponent*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::AddNamedDeviceVisualizationComponentAsync(class AActor* Target, class FName SystemName, class FName DeviceName, bool bManualAttachment, struct FTransform& RelativeTransform, struct FXRDeviceId* XRDeviceId, class UPrimitiveComponent** NewComponent)
+class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::AddNamedDeviceVisualizationComponentAsync(class AActor* InTarget, class FName InSystemName, class FName InDeviceName, bool InbManualAttachment, struct FTransform& InRelativeTransform, struct FXRDeviceId* InXRDeviceId, class UPrimitiveComponent** InNewComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2510,11 +2510,11 @@ class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::
 
 	Params::UAsyncTask_LoadXRDeviceVisComponent_AddNamedDeviceVisualizationComponentAsync_Params Parms{};
 
-	Parms.Target = Target;
-	Parms.SystemName = SystemName;
-	Parms.DeviceName = DeviceName;
-	Parms.bManualAttachment = bManualAttachment;
-	Parms.RelativeTransform = RelativeTransform;
+	Parms.Target = InTarget;
+	Parms.SystemName = InSystemName;
+	Parms.DeviceName = InDeviceName;
+	Parms.bManualAttachment = InbManualAttachment;
+	Parms.RelativeTransform = InRelativeTransform;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2524,11 +2524,11 @@ class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::
 
 	Func->FunctionFlags = Flags;
 
-	if (XRDeviceId != nullptr)
-		*XRDeviceId = Parms.XRDeviceId;
+	if (InXRDeviceId != nullptr)
+		*InXRDeviceId = Parms.XRDeviceId;
 
-	if (NewComponent != nullptr)
-		*NewComponent = Parms.NewComponent;
+	if (InNewComponent != nullptr)
+		*InNewComponent = Parms.NewComponent;
 
 	return Parms.ReturnValue;
 
@@ -2545,7 +2545,7 @@ class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::
 // class UPrimitiveComponent*         NewComponent                                                     (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTask_LoadXRDeviceVisComponent*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::AddDeviceVisualizationComponentAsync(class AActor* Target, struct FXRDeviceId& XRDeviceId, bool bManualAttachment, struct FTransform& RelativeTransform, class UPrimitiveComponent** NewComponent)
+class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::AddDeviceVisualizationComponentAsync(class AActor* InTarget, struct FXRDeviceId& InXRDeviceId, bool InbManualAttachment, struct FTransform& InRelativeTransform, class UPrimitiveComponent** InNewComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2554,10 +2554,10 @@ class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::
 
 	Params::UAsyncTask_LoadXRDeviceVisComponent_AddDeviceVisualizationComponentAsync_Params Parms{};
 
-	Parms.Target = Target;
-	Parms.XRDeviceId = XRDeviceId;
-	Parms.bManualAttachment = bManualAttachment;
-	Parms.RelativeTransform = RelativeTransform;
+	Parms.Target = InTarget;
+	Parms.XRDeviceId = InXRDeviceId;
+	Parms.bManualAttachment = InbManualAttachment;
+	Parms.RelativeTransform = InRelativeTransform;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2567,8 +2567,8 @@ class UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::
 
 	Func->FunctionFlags = Flags;
 
-	if (NewComponent != nullptr)
-		*NewComponent = Parms.NewComponent;
+	if (InNewComponent != nullptr)
+		*InNewComponent = Parms.NewComponent;
 
 	return Parms.ReturnValue;
 
@@ -2609,7 +2609,7 @@ void UXRLoadingScreenFunctionLibrary::ShowLoadingScreen()
 // bool                               bShowLoadingMovie                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bShowOnSet                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UXRLoadingScreenFunctionLibrary::SetLoadingScreen(class UTexture* Texture, const struct FVector2D& Scale, const struct FVector& Offset, bool bShowLoadingMovie, bool bShowOnSet)
+void UXRLoadingScreenFunctionLibrary::SetLoadingScreen(class UTexture* InTexture, const struct FVector2D& InScale, const struct FVector& InOffset, bool InbShowLoadingMovie, bool InbShowOnSet)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2618,11 +2618,11 @@ void UXRLoadingScreenFunctionLibrary::SetLoadingScreen(class UTexture* Texture, 
 
 	Params::UXRLoadingScreenFunctionLibrary_SetLoadingScreen_Params Parms{};
 
-	Parms.Texture = Texture;
-	Parms.Scale = Scale;
-	Parms.Offset = Offset;
-	Parms.bShowLoadingMovie = bShowLoadingMovie;
-	Parms.bShowOnSet = bShowOnSet;
+	Parms.Texture = InTexture;
+	Parms.Scale = InScale;
+	Parms.Offset = InOffset;
+	Parms.bShowLoadingMovie = InbShowLoadingMovie;
+	Parms.bShowOnSet = InbShowOnSet;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2695,7 +2695,7 @@ void UXRLoadingScreenFunctionLibrary::ClearLoadingScreenSplashes()
 // struct FRotator                    DeltaRotation                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               bClearBeforeAdd                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UXRLoadingScreenFunctionLibrary::AddLoadingScreenSplash(class UTexture* Texture, const struct FVector& Translation, const struct FRotator& Rotation, const struct FVector2D& Size, const struct FRotator& DeltaRotation, bool bClearBeforeAdd)
+void UXRLoadingScreenFunctionLibrary::AddLoadingScreenSplash(class UTexture* InTexture, const struct FVector& InTranslation, const struct FRotator& InRotation, const struct FVector2D& InSize, const struct FRotator& InDeltaRotation, bool InbClearBeforeAdd)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2704,12 +2704,12 @@ void UXRLoadingScreenFunctionLibrary::AddLoadingScreenSplash(class UTexture* Tex
 
 	Params::UXRLoadingScreenFunctionLibrary_AddLoadingScreenSplash_Params Parms{};
 
-	Parms.Texture = Texture;
-	Parms.Translation = Translation;
-	Parms.Rotation = Rotation;
-	Parms.Size = Size;
-	Parms.DeltaRotation = DeltaRotation;
-	Parms.bClearBeforeAdd = bClearBeforeAdd;
+	Parms.Texture = InTexture;
+	Parms.Translation = InTranslation;
+	Parms.Rotation = InRotation;
+	Parms.Size = InSize;
+	Parms.DeltaRotation = InDeltaRotation;
+	Parms.bClearBeforeAdd = InbClearBeforeAdd;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

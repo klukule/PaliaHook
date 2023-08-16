@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DmgTypeBP_Environmental_C");
-
+		static class UClass* Clss = UObject::FindClassFast("DmgTypeBP_Environmental_C");
 		return Clss;
 	}
 

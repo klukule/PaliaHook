@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -23,7 +23,7 @@ namespace SDK
 // float                              MaxLocalError                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      MapNameOverride                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAutomationUtilsBlueprintLibrary::TakeGameplayAutomationScreenshot(const class FString& ScreenshotName, float MaxGlobalError, float MaxLocalError, const class FString& MapNameOverride)
+void UAutomationUtilsBlueprintLibrary::TakeGameplayAutomationScreenshot(const class FString& InScreenshotName, float InMaxGlobalError, float InMaxLocalError, const class FString& InMapNameOverride)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,10 +32,10 @@ void UAutomationUtilsBlueprintLibrary::TakeGameplayAutomationScreenshot(const cl
 
 	Params::UAutomationUtilsBlueprintLibrary_TakeGameplayAutomationScreenshot_Params Parms{};
 
-	Parms.ScreenshotName = ScreenshotName;
-	Parms.MaxGlobalError = MaxGlobalError;
-	Parms.MaxLocalError = MaxLocalError;
-	Parms.MapNameOverride = MapNameOverride;
+	Parms.ScreenshotName = InScreenshotName;
+	Parms.MaxGlobalError = InMaxGlobalError;
+	Parms.MaxLocalError = InMaxLocalError;
+	Parms.MapNameOverride = InMapNameOverride;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GE_TrackerForaging_PlayerBuff_C");
-
+		static class UClass* Clss = UObject::FindClassFast("GE_TrackerForaging_PlayerBuff_C");
 		return Clss;
 	}
 

@@ -17,22 +17,18 @@ namespace SDK
 class UAudioCapture : public UAudioGenerator
 {
 public:
-	uint8                                        Pad_1DAA[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1EAA[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioCapture");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioCapture");
 		return Clss;
 	}
 
 	void StopCapturingAudio();
 	void StartCapturingAudio();
 	bool IsCapturingAudio();
-	bool GetAudioCaptureDeviceInfo(struct FAudioCaptureDeviceInfo* OutInfo);
+	bool GetAudioCaptureDeviceInfo(struct FAudioCaptureDeviceInfo* InOutInfo);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -43,11 +39,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioCaptureFunctionLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioCaptureFunctionLibrary");
 		return Clss;
 	}
 
@@ -62,16 +54,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioCaptureBlueprintLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioCaptureBlueprintLibrary");
 		return Clss;
 	}
 
-	void GetAvailableAudioInputDevices(class UObject* WorldContextObject, FDelegateProperty_& OnObtainDevicesEvent);
-	class FString Conv_AudioInputDeviceInfoToString(struct FAudioInputDeviceInfo& Info);
+	void GetAvailableAudioInputDevices(class UObject* InWorldContextObject, FDelegateProperty_& InOnObtainDevicesEvent);
+	class FString Conv_AudioInputDeviceInfoToString(struct FAudioInputDeviceInfo& InInfo);
 };
 
 // 0xC0 (0x850 - 0x790)
@@ -80,15 +68,11 @@ class UAudioCaptureComponent : public USynthComponent
 {
 public:
 	int32                                        JitterLatencyFrames;                               // 0x790(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DCC[0xBC];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1EBC[0xBC];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioCaptureComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioCaptureComponent");
 		return Clss;
 	}
 

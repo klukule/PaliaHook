@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -22,7 +22,7 @@ namespace SDK
 // struct FDataRegistryType           B                                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDataRegistrySubsystem::NotEqual_DataRegistryType(const struct FDataRegistryType& A, const struct FDataRegistryType& B)
+bool UDataRegistrySubsystem::NotEqual_DataRegistryType(const struct FDataRegistryType& InA, const struct FDataRegistryType& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,8 +31,8 @@ bool UDataRegistrySubsystem::NotEqual_DataRegistryType(const struct FDataRegistr
 
 	Params::UDataRegistrySubsystem_NotEqual_DataRegistryType_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -54,7 +54,7 @@ bool UDataRegistrySubsystem::NotEqual_DataRegistryType(const struct FDataRegistr
 // struct FDataRegistryId             B                                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDataRegistrySubsystem::NotEqual_DataRegistryId(const struct FDataRegistryId& A, const struct FDataRegistryId& B)
+bool UDataRegistrySubsystem::NotEqual_DataRegistryId(const struct FDataRegistryId& InA, const struct FDataRegistryId& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -63,8 +63,8 @@ bool UDataRegistrySubsystem::NotEqual_DataRegistryId(const struct FDataRegistryI
 
 	Params::UDataRegistrySubsystem_NotEqual_DataRegistryId_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85,7 +85,7 @@ bool UDataRegistrySubsystem::NotEqual_DataRegistryId(const struct FDataRegistryI
 // struct FDataRegistryType           DataRegistryType                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDataRegistrySubsystem::IsValidDataRegistryType(const struct FDataRegistryType& DataRegistryType)
+bool UDataRegistrySubsystem::IsValidDataRegistryType(const struct FDataRegistryType& InDataRegistryType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -94,7 +94,7 @@ bool UDataRegistrySubsystem::IsValidDataRegistryType(const struct FDataRegistryT
 
 	Params::UDataRegistrySubsystem_IsValidDataRegistryType_Params Parms{};
 
-	Parms.DataRegistryType = DataRegistryType;
+	Parms.DataRegistryType = InDataRegistryType;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -115,7 +115,7 @@ bool UDataRegistrySubsystem::IsValidDataRegistryType(const struct FDataRegistryT
 // struct FDataRegistryId             DataRegistryId                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDataRegistrySubsystem::IsValidDataRegistryId(const struct FDataRegistryId& DataRegistryId)
+bool UDataRegistrySubsystem::IsValidDataRegistryId(const struct FDataRegistryId& InDataRegistryId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -124,7 +124,7 @@ bool UDataRegistrySubsystem::IsValidDataRegistryId(const struct FDataRegistryId&
 
 	Params::UDataRegistrySubsystem_IsValidDataRegistryId_Params Parms{};
 
-	Parms.DataRegistryId = DataRegistryId;
+	Parms.DataRegistryId = InDataRegistryId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -147,7 +147,7 @@ bool UDataRegistrySubsystem::IsValidDataRegistryId(const struct FDataRegistryId&
 // struct FTableRowBase               OutItem                                                          (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDataRegistrySubsystem::GetCachedItemFromLookupBP(const struct FDataRegistryId& ItemId, struct FDataRegistryLookup& ResolvedLookup, struct FTableRowBase* OutItem)
+bool UDataRegistrySubsystem::GetCachedItemFromLookupBP(const struct FDataRegistryId& InItemId, struct FDataRegistryLookup& InResolvedLookup, struct FTableRowBase* InOutItem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -156,8 +156,8 @@ bool UDataRegistrySubsystem::GetCachedItemFromLookupBP(const struct FDataRegistr
 
 	Params::UDataRegistrySubsystem_GetCachedItemFromLookupBP_Params Parms{};
 
-	Parms.ItemId = ItemId;
-	Parms.ResolvedLookup = ResolvedLookup;
+	Parms.ItemId = InItemId;
+	Parms.ResolvedLookup = InResolvedLookup;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -167,8 +167,8 @@ bool UDataRegistrySubsystem::GetCachedItemFromLookupBP(const struct FDataRegistr
 
 	Func->FunctionFlags = Flags;
 
-	if (OutItem != nullptr)
-		*OutItem = Parms.OutItem;
+	if (InOutItem != nullptr)
+		*InOutItem = Parms.OutItem;
 
 	return Parms.ReturnValue;
 
@@ -182,7 +182,7 @@ bool UDataRegistrySubsystem::GetCachedItemFromLookupBP(const struct FDataRegistr
 // struct FTableRowBase               OutItem                                                          (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDataRegistrySubsystem::GetCachedItemBP(const struct FDataRegistryId& ItemId, struct FTableRowBase& OutItem)
+bool UDataRegistrySubsystem::GetCachedItemBP(const struct FDataRegistryId& InItemId, struct FTableRowBase& InOutItem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -191,8 +191,8 @@ bool UDataRegistrySubsystem::GetCachedItemBP(const struct FDataRegistryId& ItemI
 
 	Params::UDataRegistrySubsystem_GetCachedItemBP_Params Parms{};
 
-	Parms.ItemId = ItemId;
-	Parms.OutItem = OutItem;
+	Parms.ItemId = InItemId;
+	Parms.OutItem = InOutItem;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -214,7 +214,7 @@ bool UDataRegistrySubsystem::GetCachedItemBP(const struct FDataRegistryId& ItemI
 // enum class EDataRegistrySubsystemGetItemResultOutResult                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTableRowBase               OutItem                                                          (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void UDataRegistrySubsystem::FindCachedItemBP(const struct FDataRegistryId& ItemId, enum class EDataRegistrySubsystemGetItemResult* OutResult, struct FTableRowBase* OutItem)
+void UDataRegistrySubsystem::FindCachedItemBP(const struct FDataRegistryId& InItemId, enum class EDataRegistrySubsystemGetItemResult* InOutResult, struct FTableRowBase* InOutItem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -223,7 +223,7 @@ void UDataRegistrySubsystem::FindCachedItemBP(const struct FDataRegistryId& Item
 
 	Params::UDataRegistrySubsystem_FindCachedItemBP_Params Parms{};
 
-	Parms.ItemId = ItemId;
+	Parms.ItemId = InItemId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -233,11 +233,11 @@ void UDataRegistrySubsystem::FindCachedItemBP(const struct FDataRegistryId& Item
 
 	Func->FunctionFlags = Flags;
 
-	if (OutResult != nullptr)
-		*OutResult = Parms.OutResult;
+	if (InOutResult != nullptr)
+		*InOutResult = Parms.OutResult;
 
-	if (OutItem != nullptr)
-		*OutItem = Parms.OutItem;
+	if (InOutItem != nullptr)
+		*InOutItem = Parms.OutItem;
 
 }
 
@@ -251,7 +251,7 @@ void UDataRegistrySubsystem::FindCachedItemBP(const struct FDataRegistryId& Item
 // enum class EDataRegistrySubsystemGetItemResultOutResult                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              OutValue                                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDataRegistrySubsystem::EvaluateDataRegistryCurve(const struct FDataRegistryId& ItemId, float InputValue, float DefaultValue, enum class EDataRegistrySubsystemGetItemResult* OutResult, float* OutValue)
+void UDataRegistrySubsystem::EvaluateDataRegistryCurve(const struct FDataRegistryId& InItemId, float InInputValue, float InDefaultValue, enum class EDataRegistrySubsystemGetItemResult* InOutResult, float* InOutValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -260,9 +260,9 @@ void UDataRegistrySubsystem::EvaluateDataRegistryCurve(const struct FDataRegistr
 
 	Params::UDataRegistrySubsystem_EvaluateDataRegistryCurve_Params Parms{};
 
-	Parms.ItemId = ItemId;
-	Parms.InputValue = InputValue;
-	Parms.DefaultValue = DefaultValue;
+	Parms.ItemId = InItemId;
+	Parms.InputValue = InInputValue;
+	Parms.DefaultValue = InDefaultValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -272,11 +272,11 @@ void UDataRegistrySubsystem::EvaluateDataRegistryCurve(const struct FDataRegistr
 
 	Func->FunctionFlags = Flags;
 
-	if (OutResult != nullptr)
-		*OutResult = Parms.OutResult;
+	if (InOutResult != nullptr)
+		*InOutResult = Parms.OutResult;
 
-	if (OutValue != nullptr)
-		*OutValue = Parms.OutValue;
+	if (InOutValue != nullptr)
+		*InOutValue = Parms.OutValue;
 
 }
 
@@ -288,7 +288,7 @@ void UDataRegistrySubsystem::EvaluateDataRegistryCurve(const struct FDataRegistr
 // struct FDataRegistryType           B                                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDataRegistrySubsystem::EqualEqual_DataRegistryType(const struct FDataRegistryType& A, const struct FDataRegistryType& B)
+bool UDataRegistrySubsystem::EqualEqual_DataRegistryType(const struct FDataRegistryType& InA, const struct FDataRegistryType& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -297,8 +297,8 @@ bool UDataRegistrySubsystem::EqualEqual_DataRegistryType(const struct FDataRegis
 
 	Params::UDataRegistrySubsystem_EqualEqual_DataRegistryType_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -320,7 +320,7 @@ bool UDataRegistrySubsystem::EqualEqual_DataRegistryType(const struct FDataRegis
 // struct FDataRegistryId             B                                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDataRegistrySubsystem::EqualEqual_DataRegistryId(const struct FDataRegistryId& A, const struct FDataRegistryId& B)
+bool UDataRegistrySubsystem::EqualEqual_DataRegistryId(const struct FDataRegistryId& InA, const struct FDataRegistryId& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -329,8 +329,8 @@ bool UDataRegistrySubsystem::EqualEqual_DataRegistryId(const struct FDataRegistr
 
 	Params::UDataRegistrySubsystem_EqualEqual_DataRegistryId_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -351,7 +351,7 @@ bool UDataRegistrySubsystem::EqualEqual_DataRegistryId(const struct FDataRegistr
 // struct FDataRegistryType           DataRegistryType                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UDataRegistrySubsystem::Conv_DataRegistryTypeToString(const struct FDataRegistryType& DataRegistryType)
+class FString UDataRegistrySubsystem::Conv_DataRegistryTypeToString(const struct FDataRegistryType& InDataRegistryType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -360,7 +360,7 @@ class FString UDataRegistrySubsystem::Conv_DataRegistryTypeToString(const struct
 
 	Params::UDataRegistrySubsystem_Conv_DataRegistryTypeToString_Params Parms{};
 
-	Parms.DataRegistryType = DataRegistryType;
+	Parms.DataRegistryType = InDataRegistryType;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -381,7 +381,7 @@ class FString UDataRegistrySubsystem::Conv_DataRegistryTypeToString(const struct
 // struct FDataRegistryId             DataRegistryId                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UDataRegistrySubsystem::Conv_DataRegistryIdToString(const struct FDataRegistryId& DataRegistryId)
+class FString UDataRegistrySubsystem::Conv_DataRegistryIdToString(const struct FDataRegistryId& InDataRegistryId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -390,7 +390,7 @@ class FString UDataRegistrySubsystem::Conv_DataRegistryIdToString(const struct F
 
 	Params::UDataRegistrySubsystem_Conv_DataRegistryIdToString_Params Parms{};
 
-	Parms.DataRegistryId = DataRegistryId;
+	Parms.DataRegistryId = InDataRegistryId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -412,7 +412,7 @@ class FString UDataRegistrySubsystem::Conv_DataRegistryIdToString(const struct F
 // FDelegateProperty_                 AcquireCallback                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDataRegistrySubsystem::AcquireItemBP(const struct FDataRegistryId& ItemId, FDelegateProperty_ AcquireCallback)
+bool UDataRegistrySubsystem::AcquireItemBP(const struct FDataRegistryId& InItemId, FDelegateProperty_ InAcquireCallback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -421,8 +421,8 @@ bool UDataRegistrySubsystem::AcquireItemBP(const struct FDataRegistryId& ItemId,
 
 	Params::UDataRegistrySubsystem_AcquireItemBP_Params Parms{};
 
-	Parms.ItemId = ItemId;
-	Parms.AcquireCallback = AcquireCallback;
+	Parms.ItemId = InItemId;
+	Parms.AcquireCallback = InAcquireCallback;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

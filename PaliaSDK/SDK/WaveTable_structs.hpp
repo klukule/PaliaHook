@@ -58,7 +58,7 @@ struct FWaveTableTransform
 {
 public:
 	enum class EWaveTableCurve                   Curve;                                             // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F5C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2049[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Scalar;                                            // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRichCurve                            CurveCustom;                                       // 0x8(0x80)(NativeAccessSpecifierPublic)
 	class UCurveFloat*                           CurveShared;                                       // 0x88(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -87,7 +87,7 @@ public:
 	float                                        FadeOut;                                           // 0x24(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bNormalize;                                        // 0x28(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bRemoveOffset;                                     // 0x29(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F62[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2052[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<float>                                SourcePCMData;                                     // 0x30(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 

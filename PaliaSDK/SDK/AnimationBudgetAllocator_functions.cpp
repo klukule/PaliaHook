@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // class UObject*                     WorldContextObject                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FAnimationBudgetAllocatorParametersInParameters                                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UAnimationBudgetBlueprintLibrary::SetAnimationBudgetParameters(class UObject* WorldContextObject, struct FAnimationBudgetAllocatorParameters& InParameters)
+void UAnimationBudgetBlueprintLibrary::SetAnimationBudgetParameters(class UObject* InWorldContextObject, struct FAnimationBudgetAllocatorParameters& InInParameters)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,8 +30,8 @@ void UAnimationBudgetBlueprintLibrary::SetAnimationBudgetParameters(class UObjec
 
 	Params::UAnimationBudgetBlueprintLibrary_SetAnimationBudgetParameters_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.InParameters = InParameters;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.InParameters = InInParameters;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -50,7 +50,7 @@ void UAnimationBudgetBlueprintLibrary::SetAnimationBudgetParameters(class UObjec
 // class UObject*                     WorldContextObject                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bEnabled                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAnimationBudgetBlueprintLibrary::EnableAnimationBudget(class UObject* WorldContextObject, bool bEnabled)
+void UAnimationBudgetBlueprintLibrary::EnableAnimationBudget(class UObject* InWorldContextObject, bool InbEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -59,8 +59,8 @@ void UAnimationBudgetBlueprintLibrary::EnableAnimationBudget(class UObject* Worl
 
 	Params::UAnimationBudgetBlueprintLibrary_EnableAnimationBudget_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.bEnabled = bEnabled;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.bEnabled = InbEnabled;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -78,7 +78,7 @@ void UAnimationBudgetBlueprintLibrary::EnableAnimationBudget(class UObject* Worl
 // Parameters:
 // bool                               bInAutoRegisterWithBudgetAllocator                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USkeletalMeshComponentBudgeted::SetAutoRegisterWithBudgetAllocator(bool bInAutoRegisterWithBudgetAllocator)
+void USkeletalMeshComponentBudgeted::SetAutoRegisterWithBudgetAllocator(bool InbInAutoRegisterWithBudgetAllocator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -87,7 +87,7 @@ void USkeletalMeshComponentBudgeted::SetAutoRegisterWithBudgetAllocator(bool bIn
 
 	Params::USkeletalMeshComponentBudgeted_SetAutoRegisterWithBudgetAllocator_Params Parms{};
 
-	Parms.bInAutoRegisterWithBudgetAllocator = bInAutoRegisterWithBudgetAllocator;
+	Parms.bInAutoRegisterWithBudgetAllocator = InbInAutoRegisterWithBudgetAllocator;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

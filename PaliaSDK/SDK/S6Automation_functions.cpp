@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // TArray<class US6Auto_Suite*>       Suites                                                           (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void US6Auto_SuiteSubsystem::RunSuites(const TArray<class US6Auto_Suite*>& Suites)
+void US6Auto_SuiteSubsystem::RunSuites(const TArray<class US6Auto_Suite*>& InSuites)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void US6Auto_SuiteSubsystem::RunSuites(const TArray<class US6Auto_Suite*>& Suite
 
 	Params::US6Auto_SuiteSubsystem_RunSuites_Params Parms{};
 
-	Parms.Suites = Suites;
+	Parms.Suites = InSuites;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -66,7 +66,7 @@ void US6Auto_SuiteStepScript::StartStep()
 // Parameters:
 // class FString                      ErrorMessage                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6Auto_SuiteStepScript::MarkStepFailed(const class FString& ErrorMessage)
+void US6Auto_SuiteStepScript::MarkStepFailed(const class FString& InErrorMessage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -75,7 +75,7 @@ void US6Auto_SuiteStepScript::MarkStepFailed(const class FString& ErrorMessage)
 
 	Params::US6Auto_SuiteStepScript_MarkStepFailed_Params Parms{};
 
-	Parms.ErrorMessage = ErrorMessage;
+	Parms.ErrorMessage = InErrorMessage;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -119,7 +119,7 @@ void US6Auto_SuiteStepScript::MarkStepCompleted()
 // class US6Auto_SuiteStepPayload*    ScriptPayload                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString US6Auto_SuiteStepScript::GetScriptDisplayName(class US6Auto_SuiteStepPayload* ScriptPayload)
+class FString US6Auto_SuiteStepScript::GetScriptDisplayName(class US6Auto_SuiteStepPayload* InScriptPayload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -128,7 +128,7 @@ class FString US6Auto_SuiteStepScript::GetScriptDisplayName(class US6Auto_SuiteS
 
 	Params::US6Auto_SuiteStepScript_GetScriptDisplayName_Params Parms{};
 
-	Parms.ScriptPayload = ScriptPayload;
+	Parms.ScriptPayload = InScriptPayload;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -143,7 +143,7 @@ class FString US6Auto_SuiteStepScript::GetScriptDisplayName(class US6Auto_SuiteS
 // class FString                      SuiteId                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<TSoftObjectPtr<class US6Auto_Suite>>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 
-TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromId(const class FString& SuiteId)
+TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromId(const class FString& InSuiteId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -152,7 +152,7 @@ TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromId(cons
 
 	Params::US6AutoStatics_GetSuitesFromId_Params Parms{};
 
-	Parms.SuiteId = SuiteId;
+	Parms.SuiteId = InSuiteId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -173,7 +173,7 @@ TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromId(cons
 // class FName                        SuiteAssetName                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<TSoftObjectPtr<class US6Auto_Suite>>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 
-TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromAssetName(class FName& SuiteAssetName)
+TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromAssetName(class FName& InSuiteAssetName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -182,7 +182,7 @@ TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromAssetNa
 
 	Params::US6AutoStatics_GetSuitesFromAssetName_Params Parms{};
 
-	Parms.SuiteAssetName = SuiteAssetName;
+	Parms.SuiteAssetName = InSuiteAssetName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

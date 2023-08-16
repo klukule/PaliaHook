@@ -25,11 +25,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ListEntry_CharacterCustomization_VariantOption_C");
-
+		static class UClass* Clss = UObject::FindClassFast("ListEntry_CharacterCustomization_VariantOption_C");
 		return Clss;
 	}
 

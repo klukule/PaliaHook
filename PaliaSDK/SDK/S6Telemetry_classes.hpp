@@ -17,17 +17,13 @@ namespace SDK
 class US6Telemetry : public UGameInstanceSubsystem
 {
 public:
-	uint8                                        Pad_26D5[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_D5E[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FS6TelemtryPendingEnvelope>    Ingest_Queue;                                      // 0x38(0x10)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_26D6[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D60[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("S6Telemetry");
-
+		static class UClass* Clss = UObject::FindClassFast("S6Telemetry");
 		return Clss;
 	}
 

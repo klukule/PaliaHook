@@ -20,16 +20,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BPFL_Matchmaking_C");
-
+		static class UClass* Clss = UObject::FindClassFast("BPFL_Matchmaking_C");
 		return Clss;
 	}
 
-	void GetAlreadyMatchmakingErrorText(class UObject* __WorldContext, class FText* Text);
-	void CreateErrorPayloadForMatchmakingResult(const struct FOSSVAL_MatchmakingResult& Result, class UObject* __WorldContext, struct FF_GenericErrorModalPayload* Payload, class FText SubErrorText, class FText CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, int64 CallFunc_Conv_IntToInt64_ReturnValue, const struct FFormatArgumentData& K2Node_MakeStruct_FormatArgumentData, TArray<struct FFormatArgumentData>& K2Node_MakeArray_Array, int64 CallFunc_Conv_IntToInt64_ReturnValue_1, class FText CallFunc_Format_ReturnValue, const struct FFormatArgumentData& K2Node_MakeStruct_FormatArgumentData_1, TArray<struct FFormatArgumentData>& K2Node_MakeArray_Array_1, bool CallFunc_EqualEqual_IntInt_ReturnValue, class FText CallFunc_Format_ReturnValue_1, bool CallFunc_EqualEqual_ByteByte_ReturnValue, const struct FF_GenericErrorModalPayload& K2Node_MakeStruct_F_GenericErrorModalPayload);
+	void GetAlreadyMatchmakingErrorText(class UObject* In__WorldContext, class FText* InText);
+	void CreateErrorPayloadForMatchmakingResult(const struct FOSSVAL_MatchmakingResult& InResult, class UObject* In__WorldContext, struct FF_GenericErrorModalPayload* InPayload, class FText InSubErrorText, class FText InCallFunc_Map_Find_Value, bool InCallFunc_Map_Find_ReturnValue, int64 InCallFunc_Conv_IntToInt64_ReturnValue, const struct FFormatArgumentData& InK2Node_MakeStruct_FormatArgumentData, TArray<struct FFormatArgumentData>& InK2Node_MakeArray_Array, int64 InCallFunc_Conv_IntToInt64_ReturnValue_1, class FText InCallFunc_Format_ReturnValue, const struct FFormatArgumentData& InK2Node_MakeStruct_FormatArgumentData_1, TArray<struct FFormatArgumentData>& InK2Node_MakeArray_Array_1, bool InCallFunc_EqualEqual_IntInt_ReturnValue, class FText InCallFunc_Format_ReturnValue_1, bool InCallFunc_EqualEqual_ByteByte_ReturnValue, const struct FF_GenericErrorModalPayload& InK2Node_MakeStruct_F_GenericErrorModalPayload);
 };
 
 }

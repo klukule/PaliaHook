@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("S6BPFunctorObjectBase");
-
+		static class UClass* Clss = UObject::FindClassFast("S6BPFunctorObjectBase");
 		return Clss;
 	}
 

@@ -18,34 +18,30 @@ class UImgMediaSource : public UBaseMediaSource
 {
 public:
 	bool                                         IsPathRelativeToProjectRoot;                       // 0x88(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C7A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D54[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FFrameRate                            FrameRateOverride;                                 // 0x8C(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C7B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D56[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                ProxyOverride;                                     // 0x98(0x10)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFillGapsInSequence;                               // 0xA8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C7D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D57[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FDirectoryPath                        SequencePath;                                      // 0xB0(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_1C7E[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D58[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ImgMediaSource");
-
+		static class UClass* Clss = UObject::FindClassFast("ImgMediaSource");
 		return Clss;
 	}
 
-	void SetTokenizedSequencePath(const class FString& Path);
-	void SetSequencePath(const class FString& Path);
-	void SetMipLevelDistance(float Distance);
-	void RemoveTargetObject(class AActor* InActor);
-	void RemoveGlobalCamera(class AActor* InActor);
+	void SetTokenizedSequencePath(const class FString& InPath);
+	void SetSequencePath(const class FString& InPath);
+	void SetMipLevelDistance(float InDistance);
+	void RemoveTargetObject(class AActor* InInActor);
+	void RemoveGlobalCamera(class AActor* InInActor);
 	class FString GetSequencePath();
-	void GetProxies(TArray<class FString>* OutProxies);
-	void AddTargetObject(class AActor* InActor);
-	void AddGlobalCamera(class AActor* InActor);
+	void GetProxies(TArray<class FString>* InOutProxies);
+	void AddTargetObject(class AActor* InInActor);
+	void AddGlobalCamera(class AActor* InInActor);
 };
 
 }

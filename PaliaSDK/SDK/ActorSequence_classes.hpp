@@ -22,11 +22,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ActorSequence");
-
+		static class UClass* Clss = UObject::FindClassFast("ActorSequence");
 		return Clss;
 	}
 
@@ -43,11 +39,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ActorSequenceComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("ActorSequenceComponent");
 		return Clss;
 	}
 
@@ -64,11 +56,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ActorSequencePlayer");
-
+		static class UClass* Clss = UObject::FindClassFast("ActorSequencePlayer");
 		return Clss;
 	}
 

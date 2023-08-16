@@ -23,17 +23,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MAP_PreGame_C");
-
+		static class UClass* Clss = UObject::FindClassFast("MAP_PreGame_C");
 		return Clss;
 	}
 
 	struct FVector GetRenderStudioSpawnLocation();
 	class AVAL_CharacterPreviewer* GetCharacterInventoryPreviewer();
-	class AVAL_CharacterPreviewer* GetCharacterPreviewer(bool CallFunc_IsValid_ReturnValue, const struct FTransform& CallFunc_MakeTransform_ReturnValue, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue, class ABP_CharacterPreview_C* CallFunc_FinishSpawningActor_ReturnValue);
+	class AVAL_CharacterPreviewer* GetCharacterPreviewer(bool InCallFunc_IsValid_ReturnValue, const struct FTransform& InCallFunc_MakeTransform_ReturnValue, class AActor* InCallFunc_BeginDeferredActorSpawnFromClass_ReturnValue, class ABP_CharacterPreview_C* InCallFunc_FinishSpawningActor_ReturnValue);
 	class AVAL_CharacterRenderStudio* GetCharacterRenderStudio();
 	struct FVector GetItemPreviewerSpawnLocation();
 	class AValeriaCharacter* GetLobbyCharacter();

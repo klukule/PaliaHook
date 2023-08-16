@@ -2,17 +2,72 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Function BPFL_UiHelpers.BPFL_UiHelpers_C.TryDisplayBonusReceivedModal
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVALUI_PremiumStorefrontResponseStorefrontResponse                                               (BlueprintVisible, BlueprintReadOnly, Parm)
+// TSet<struct FGuid>                 NewEntitlements                                                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UWBP_PetsBonusReceived_ModalWidget_C*Bonus_Received_Modal                                             (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UWBP_PetsBonusReceived_ModalWidget_C*Modal                                                            (Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// struct FVAL_CharacterCustomization_PetPurchaseBonusPetPurchaseBonus                                                 (Edit, BlueprintVisible)
+// class AValeriaPlayerController*    ValeriaPlayerController                                          (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
+// TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>NewPets                                                          (Edit, BlueprintVisible)
+// enum class EValeriaFuncResult      CallFunc_GetValeriaPlayerController_OutResult                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AValeriaPlayerController*    CallFunc_GetValeriaPlayerController_ReturnValue                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               K2Node_SwitchEnum_CmpSuccess                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class US6UI_UIManagerWidgetBase*   CallFunc_GetUIManagerWidget_ReturnValue                          (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UWBP_PetsBonusReceived_ModalWidget_C*CallFunc_Create_ReturnValue                                      (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>CallFunc_GetNewPetsForBonusReceivedModal_ReturnValue             (ReferenceParm)
+// struct FVAL_CharacterCustomization_PetPurchaseBonusCallFunc_GetPetPurchaseBonusFromPurchaseRewards_ReturnValue      ()
+// int32                              CallFunc_Array_Length_ReturnValue                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_Greater_IntInt_ReturnValue                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBPFL_UiHelpers_C::TryDisplayBonusReceivedModal(const struct FVALUI_PremiumStorefrontResponse& InStorefrontResponse, TSet<struct FGuid> InNewEntitlements, class UObject* In__WorldContext, class UWBP_PetsBonusReceived_ModalWidget_C** InBonus_Received_Modal, class UWBP_PetsBonusReceived_ModalWidget_C* InModal, const struct FVAL_CharacterCustomization_PetPurchaseBonus& InPetPurchaseBonus, class AValeriaPlayerController* InValeriaPlayerController, const TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>& InNewPets, enum class EValeriaFuncResult InCallFunc_GetValeriaPlayerController_OutResult, class AValeriaPlayerController* InCallFunc_GetValeriaPlayerController_ReturnValue, bool InK2Node_SwitchEnum_CmpSuccess, class US6UI_UIManagerWidgetBase* InCallFunc_GetUIManagerWidget_ReturnValue, class UWBP_PetsBonusReceived_ModalWidget_C* InCallFunc_Create_ReturnValue, TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>& InCallFunc_GetNewPetsForBonusReceivedModal_ReturnValue, const struct FVAL_CharacterCustomization_PetPurchaseBonus& InCallFunc_GetPetPurchaseBonusFromPurchaseRewards_ReturnValue, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Greater_IntInt_ReturnValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BPFL_UiHelpers_C", "TryDisplayBonusReceivedModal");
+
+	Params::UBPFL_UiHelpers_C_TryDisplayBonusReceivedModal_Params Parms{};
+
+	Parms.StorefrontResponse = InStorefrontResponse;
+	Parms.NewEntitlements = InNewEntitlements;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Modal = InModal;
+	Parms.PetPurchaseBonus = InPetPurchaseBonus;
+	Parms.ValeriaPlayerController = InValeriaPlayerController;
+	Parms.NewPets = InNewPets;
+	Parms.CallFunc_GetValeriaPlayerController_OutResult = InCallFunc_GetValeriaPlayerController_OutResult;
+	Parms.CallFunc_GetValeriaPlayerController_ReturnValue = InCallFunc_GetValeriaPlayerController_ReturnValue;
+	Parms.K2Node_SwitchEnum_CmpSuccess = InK2Node_SwitchEnum_CmpSuccess;
+	Parms.CallFunc_GetUIManagerWidget_ReturnValue = InCallFunc_GetUIManagerWidget_ReturnValue;
+	Parms.CallFunc_Create_ReturnValue = InCallFunc_Create_ReturnValue;
+	Parms.CallFunc_GetNewPetsForBonusReceivedModal_ReturnValue = InCallFunc_GetNewPetsForBonusReceivedModal_ReturnValue;
+	Parms.CallFunc_GetPetPurchaseBonusFromPurchaseRewards_ReturnValue = InCallFunc_GetPetPurchaseBonusFromPurchaseRewards_ReturnValue;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Greater_IntInt_ReturnValue = InCallFunc_Greater_IntInt_ReturnValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (InBonus_Received_Modal != nullptr)
+		*InBonus_Received_Modal = Parms.Bonus_Received_Modal;
+
+}
 
 
 // Function BPFL_UiHelpers.BPFL_UiHelpers_C.DoesWorldLocationContextMatchCurrentTravelType
@@ -30,7 +85,7 @@ namespace SDK
 // bool                               CallFunc_EqualEqual_ByteByte_ReturnValue_3                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_EqualEqual_ByteByte_ReturnValue_4                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::DoesWorldLocationContextMatchCurrentTravelType(enum class EWorldLocationContext WorldLocationContext, enum class ETeleportTravelType TravelType, class UObject* __WorldContext, bool* DoesMatch, bool K2Node_SwitchEnum_CmpSuccess, bool CallFunc_EqualEqual_ByteByte_ReturnValue, bool CallFunc_EqualEqual_ByteByte_ReturnValue_1, bool CallFunc_EqualEqual_ByteByte_ReturnValue_2, bool CallFunc_BooleanOR_ReturnValue, bool CallFunc_EqualEqual_ByteByte_ReturnValue_3, bool CallFunc_EqualEqual_ByteByte_ReturnValue_4)
+void UBPFL_UiHelpers_C::DoesWorldLocationContextMatchCurrentTravelType(enum class EWorldLocationContext InWorldLocationContext, enum class ETeleportTravelType InTravelType, class UObject* In__WorldContext, bool* InDoesMatch, bool InK2Node_SwitchEnum_CmpSuccess, bool InCallFunc_EqualEqual_ByteByte_ReturnValue, bool InCallFunc_EqualEqual_ByteByte_ReturnValue_1, bool InCallFunc_EqualEqual_ByteByte_ReturnValue_2, bool InCallFunc_BooleanOR_ReturnValue, bool InCallFunc_EqualEqual_ByteByte_ReturnValue_3, bool InCallFunc_EqualEqual_ByteByte_ReturnValue_4)
 {
 	static class UFunction* Func = nullptr;
 
@@ -39,21 +94,21 @@ void UBPFL_UiHelpers_C::DoesWorldLocationContextMatchCurrentTravelType(enum clas
 
 	Params::UBPFL_UiHelpers_C_DoesWorldLocationContextMatchCurrentTravelType_Params Parms{};
 
-	Parms.WorldLocationContext = WorldLocationContext;
-	Parms.TravelType = TravelType;
-	Parms.__WorldContext = __WorldContext;
-	Parms.K2Node_SwitchEnum_CmpSuccess = K2Node_SwitchEnum_CmpSuccess;
-	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = CallFunc_EqualEqual_ByteByte_ReturnValue;
-	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue_1 = CallFunc_EqualEqual_ByteByte_ReturnValue_1;
-	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue_2 = CallFunc_EqualEqual_ByteByte_ReturnValue_2;
-	Parms.CallFunc_BooleanOR_ReturnValue = CallFunc_BooleanOR_ReturnValue;
-	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue_3 = CallFunc_EqualEqual_ByteByte_ReturnValue_3;
-	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue_4 = CallFunc_EqualEqual_ByteByte_ReturnValue_4;
+	Parms.WorldLocationContext = InWorldLocationContext;
+	Parms.TravelType = InTravelType;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.K2Node_SwitchEnum_CmpSuccess = InK2Node_SwitchEnum_CmpSuccess;
+	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = InCallFunc_EqualEqual_ByteByte_ReturnValue;
+	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue_1 = InCallFunc_EqualEqual_ByteByte_ReturnValue_1;
+	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue_2 = InCallFunc_EqualEqual_ByteByte_ReturnValue_2;
+	Parms.CallFunc_BooleanOR_ReturnValue = InCallFunc_BooleanOR_ReturnValue;
+	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue_3 = InCallFunc_EqualEqual_ByteByte_ReturnValue_3;
+	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue_4 = InCallFunc_EqualEqual_ByteByte_ReturnValue_4;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (DoesMatch != nullptr)
-		*DoesMatch = Parms.DoesMatch;
+	if (InDoesMatch != nullptr)
+		*InDoesMatch = Parms.DoesMatch;
 
 }
 
@@ -66,7 +121,7 @@ void UBPFL_UiHelpers_C::DoesWorldLocationContextMatchCurrentTravelType(enum clas
 // class UTexture2D*                  DeterminedTexture                                                (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_SwitchEnum_CmpSuccess                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetVillagerMarkerTextureForDialogueType(enum class EDialogueType DialogueType, class UObject* __WorldContext, class UTexture2D** DeterminedTexture, bool K2Node_SwitchEnum_CmpSuccess)
+void UBPFL_UiHelpers_C::GetVillagerMarkerTextureForDialogueType(enum class EDialogueType InDialogueType, class UObject* In__WorldContext, class UTexture2D** InDeterminedTexture, bool InK2Node_SwitchEnum_CmpSuccess)
 {
 	static class UFunction* Func = nullptr;
 
@@ -75,14 +130,14 @@ void UBPFL_UiHelpers_C::GetVillagerMarkerTextureForDialogueType(enum class EDial
 
 	Params::UBPFL_UiHelpers_C_GetVillagerMarkerTextureForDialogueType_Params Parms{};
 
-	Parms.DialogueType = DialogueType;
-	Parms.__WorldContext = __WorldContext;
-	Parms.K2Node_SwitchEnum_CmpSuccess = K2Node_SwitchEnum_CmpSuccess;
+	Parms.DialogueType = InDialogueType;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.K2Node_SwitchEnum_CmpSuccess = InK2Node_SwitchEnum_CmpSuccess;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (DeterminedTexture != nullptr)
-		*DeterminedTexture = Parms.DeterminedTexture;
+	if (InDeterminedTexture != nullptr)
+		*InDeterminedTexture = Parms.DeterminedTexture;
 
 }
 
@@ -95,7 +150,7 @@ void UBPFL_UiHelpers_C::GetVillagerMarkerTextureForDialogueType(enum class EDial
 // class UTexture2D*                  DeterminedTexture                                                (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_SwitchEnum_CmpSuccess                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetVillagerMarkerTextureForStatus(enum class EVillagerMarkerStatus VillagerMarkerStatus, class UObject* __WorldContext, class UTexture2D** DeterminedTexture, bool K2Node_SwitchEnum_CmpSuccess)
+void UBPFL_UiHelpers_C::GetVillagerMarkerTextureForStatus(enum class EVillagerMarkerStatus InVillagerMarkerStatus, class UObject* In__WorldContext, class UTexture2D** InDeterminedTexture, bool InK2Node_SwitchEnum_CmpSuccess)
 {
 	static class UFunction* Func = nullptr;
 
@@ -104,14 +159,14 @@ void UBPFL_UiHelpers_C::GetVillagerMarkerTextureForStatus(enum class EVillagerMa
 
 	Params::UBPFL_UiHelpers_C_GetVillagerMarkerTextureForStatus_Params Parms{};
 
-	Parms.VillagerMarkerStatus = VillagerMarkerStatus;
-	Parms.__WorldContext = __WorldContext;
-	Parms.K2Node_SwitchEnum_CmpSuccess = K2Node_SwitchEnum_CmpSuccess;
+	Parms.VillagerMarkerStatus = InVillagerMarkerStatus;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.K2Node_SwitchEnum_CmpSuccess = InK2Node_SwitchEnum_CmpSuccess;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (DeterminedTexture != nullptr)
-		*DeterminedTexture = Parms.DeterminedTexture;
+	if (InDeterminedTexture != nullptr)
+		*InDeterminedTexture = Parms.DeterminedTexture;
 
 }
 
@@ -125,7 +180,7 @@ void UBPFL_UiHelpers_C::GetVillagerMarkerTextureForStatus(enum class EVillagerMa
 // enum class ESlateVisibility        CallFunc_GetVisibility_ReturnValue                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_NotEqual_ByteByte_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::SetVisibility(class UWidget* Target, enum class ESlateVisibility Visibility, class UObject* __WorldContext, enum class ESlateVisibility CallFunc_GetVisibility_ReturnValue, bool CallFunc_NotEqual_ByteByte_ReturnValue)
+void UBPFL_UiHelpers_C::SetVisibility(class UWidget* InTarget, enum class ESlateVisibility InVisibility, class UObject* In__WorldContext, enum class ESlateVisibility InCallFunc_GetVisibility_ReturnValue, bool InCallFunc_NotEqual_ByteByte_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -134,11 +189,11 @@ void UBPFL_UiHelpers_C::SetVisibility(class UWidget* Target, enum class ESlateVi
 
 	Params::UBPFL_UiHelpers_C_SetVisibility_Params Parms{};
 
-	Parms.Target = Target;
-	Parms.Visibility = Visibility;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_GetVisibility_ReturnValue = CallFunc_GetVisibility_ReturnValue;
-	Parms.CallFunc_NotEqual_ByteByte_ReturnValue = CallFunc_NotEqual_ByteByte_ReturnValue;
+	Parms.Target = InTarget;
+	Parms.Visibility = InVisibility;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_GetVisibility_ReturnValue = InCallFunc_GetVisibility_ReturnValue;
+	Parms.CallFunc_NotEqual_ByteByte_ReturnValue = InCallFunc_NotEqual_ByteByte_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -162,7 +217,7 @@ void UBPFL_UiHelpers_C::SetVisibility(class UWidget* Target, enum class ESlateVi
 // bool                               CallFunc_FNameIsNone_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Not_PreBool_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetCostIcon(const struct FStoreItem& StoreItem, class UObject* Context, class UObject* __WorldContext, class UTexture2D** Icon, enum class EValeriaFuncResult CallFunc_FindVitalConfigByType_OutResult, const struct FVitalConfig& CallFunc_FindVitalConfigByType_ReturnValue, const struct FPrimaryAssetId& K2Node_MakeStruct_PrimaryAssetId, class UObject* CallFunc_GetObjectFromPrimaryAssetId_ReturnValue, class UCurrencyConfig* K2Node_DynamicCast_AsCurrency_Config, bool K2Node_DynamicCast_bSuccess, bool K2Node_SwitchEnum_CmpSuccess, bool CallFunc_FNameIsNone_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue)
+void UBPFL_UiHelpers_C::GetCostIcon(const struct FStoreItem& InStoreItem, class UObject* InContext, class UObject* In__WorldContext, class UTexture2D** InIcon, enum class EValeriaFuncResult InCallFunc_FindVitalConfigByType_OutResult, const struct FVitalConfig& InCallFunc_FindVitalConfigByType_ReturnValue, const struct FPrimaryAssetId& InK2Node_MakeStruct_PrimaryAssetId, class UObject* InCallFunc_GetObjectFromPrimaryAssetId_ReturnValue, class UCurrencyConfig* InK2Node_DynamicCast_AsCurrency_Config, bool InK2Node_DynamicCast_bSuccess, bool InK2Node_SwitchEnum_CmpSuccess, bool InCallFunc_FNameIsNone_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -171,23 +226,23 @@ void UBPFL_UiHelpers_C::GetCostIcon(const struct FStoreItem& StoreItem, class UO
 
 	Params::UBPFL_UiHelpers_C_GetCostIcon_Params Parms{};
 
-	Parms.StoreItem = StoreItem;
-	Parms.Context = Context;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_FindVitalConfigByType_OutResult = CallFunc_FindVitalConfigByType_OutResult;
-	Parms.CallFunc_FindVitalConfigByType_ReturnValue = CallFunc_FindVitalConfigByType_ReturnValue;
-	Parms.K2Node_MakeStruct_PrimaryAssetId = K2Node_MakeStruct_PrimaryAssetId;
-	Parms.CallFunc_GetObjectFromPrimaryAssetId_ReturnValue = CallFunc_GetObjectFromPrimaryAssetId_ReturnValue;
-	Parms.K2Node_DynamicCast_AsCurrency_Config = K2Node_DynamicCast_AsCurrency_Config;
-	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
-	Parms.K2Node_SwitchEnum_CmpSuccess = K2Node_SwitchEnum_CmpSuccess;
-	Parms.CallFunc_FNameIsNone_ReturnValue = CallFunc_FNameIsNone_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
+	Parms.StoreItem = InStoreItem;
+	Parms.Context = InContext;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_FindVitalConfigByType_OutResult = InCallFunc_FindVitalConfigByType_OutResult;
+	Parms.CallFunc_FindVitalConfigByType_ReturnValue = InCallFunc_FindVitalConfigByType_ReturnValue;
+	Parms.K2Node_MakeStruct_PrimaryAssetId = InK2Node_MakeStruct_PrimaryAssetId;
+	Parms.CallFunc_GetObjectFromPrimaryAssetId_ReturnValue = InCallFunc_GetObjectFromPrimaryAssetId_ReturnValue;
+	Parms.K2Node_DynamicCast_AsCurrency_Config = InK2Node_DynamicCast_AsCurrency_Config;
+	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
+	Parms.K2Node_SwitchEnum_CmpSuccess = InK2Node_SwitchEnum_CmpSuccess;
+	Parms.CallFunc_FNameIsNone_ReturnValue = InCallFunc_FNameIsNone_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Icon != nullptr)
-		*Icon = Parms.Icon;
+	if (InIcon != nullptr)
+		*InIcon = Parms.Icon;
 
 }
 
@@ -227,7 +282,7 @@ void UBPFL_UiHelpers_C::GetCostIcon(const struct FStoreItem& StoreItem, class UO
 // bool                               CallFunc_BooleanAND_ReturnValue_2                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanOR_ReturnValue                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::IsWithinMap(const struct FVector& Location, const struct FWorldMapConfig& WorldMapConfig, class UObject* __WorldContext, bool* InsideOf, double CallFunc_BreakVector_X, double CallFunc_BreakVector_Y, double CallFunc_BreakVector_Z, double CallFunc_BreakVector_X_1, double CallFunc_BreakVector_Y_1, double CallFunc_BreakVector_Z_1, bool CallFunc_Not_PreBool_ReturnValue, double CallFunc_BreakVector_X_2, double CallFunc_BreakVector_Y_2, double CallFunc_BreakVector_Z_2, double CallFunc_BreakVector_X_3, double CallFunc_BreakVector_Y_3, double CallFunc_BreakVector_Z_3, bool CallFunc_LessEqual_DoubleDouble_ReturnValue, bool CallFunc_LessEqual_DoubleDouble_ReturnValue_1, double CallFunc_BreakVector_X_4, double CallFunc_BreakVector_Y_4, double CallFunc_BreakVector_Z_4, double CallFunc_BreakVector_X_5, double CallFunc_BreakVector_Y_5, double CallFunc_BreakVector_Z_5, bool CallFunc_LessEqual_DoubleDouble_ReturnValue_2, bool CallFunc_LessEqual_DoubleDouble_ReturnValue_3, bool CallFunc_BooleanAND_ReturnValue, bool CallFunc_BooleanAND_ReturnValue_1, bool CallFunc_BooleanAND_ReturnValue_2, bool CallFunc_BooleanOR_ReturnValue)
+void UBPFL_UiHelpers_C::IsWithinMap(const struct FVector& InLocation, const struct FWorldMapConfig& InWorldMapConfig, class UObject* In__WorldContext, bool* InInsideOf, double InCallFunc_BreakVector_X, double InCallFunc_BreakVector_Y, double InCallFunc_BreakVector_Z, double InCallFunc_BreakVector_X_1, double InCallFunc_BreakVector_Y_1, double InCallFunc_BreakVector_Z_1, bool InCallFunc_Not_PreBool_ReturnValue, double InCallFunc_BreakVector_X_2, double InCallFunc_BreakVector_Y_2, double InCallFunc_BreakVector_Z_2, double InCallFunc_BreakVector_X_3, double InCallFunc_BreakVector_Y_3, double InCallFunc_BreakVector_Z_3, bool InCallFunc_LessEqual_DoubleDouble_ReturnValue, bool InCallFunc_LessEqual_DoubleDouble_ReturnValue_1, double InCallFunc_BreakVector_X_4, double InCallFunc_BreakVector_Y_4, double InCallFunc_BreakVector_Z_4, double InCallFunc_BreakVector_X_5, double InCallFunc_BreakVector_Y_5, double InCallFunc_BreakVector_Z_5, bool InCallFunc_LessEqual_DoubleDouble_ReturnValue_2, bool InCallFunc_LessEqual_DoubleDouble_ReturnValue_3, bool InCallFunc_BooleanAND_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue_1, bool InCallFunc_BooleanAND_ReturnValue_2, bool InCallFunc_BooleanOR_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -236,41 +291,41 @@ void UBPFL_UiHelpers_C::IsWithinMap(const struct FVector& Location, const struct
 
 	Params::UBPFL_UiHelpers_C_IsWithinMap_Params Parms{};
 
-	Parms.Location = Location;
-	Parms.WorldMapConfig = WorldMapConfig;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_BreakVector_X = CallFunc_BreakVector_X;
-	Parms.CallFunc_BreakVector_Y = CallFunc_BreakVector_Y;
-	Parms.CallFunc_BreakVector_Z = CallFunc_BreakVector_Z;
-	Parms.CallFunc_BreakVector_X_1 = CallFunc_BreakVector_X_1;
-	Parms.CallFunc_BreakVector_Y_1 = CallFunc_BreakVector_Y_1;
-	Parms.CallFunc_BreakVector_Z_1 = CallFunc_BreakVector_Z_1;
-	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
-	Parms.CallFunc_BreakVector_X_2 = CallFunc_BreakVector_X_2;
-	Parms.CallFunc_BreakVector_Y_2 = CallFunc_BreakVector_Y_2;
-	Parms.CallFunc_BreakVector_Z_2 = CallFunc_BreakVector_Z_2;
-	Parms.CallFunc_BreakVector_X_3 = CallFunc_BreakVector_X_3;
-	Parms.CallFunc_BreakVector_Y_3 = CallFunc_BreakVector_Y_3;
-	Parms.CallFunc_BreakVector_Z_3 = CallFunc_BreakVector_Z_3;
-	Parms.CallFunc_LessEqual_DoubleDouble_ReturnValue = CallFunc_LessEqual_DoubleDouble_ReturnValue;
-	Parms.CallFunc_LessEqual_DoubleDouble_ReturnValue_1 = CallFunc_LessEqual_DoubleDouble_ReturnValue_1;
-	Parms.CallFunc_BreakVector_X_4 = CallFunc_BreakVector_X_4;
-	Parms.CallFunc_BreakVector_Y_4 = CallFunc_BreakVector_Y_4;
-	Parms.CallFunc_BreakVector_Z_4 = CallFunc_BreakVector_Z_4;
-	Parms.CallFunc_BreakVector_X_5 = CallFunc_BreakVector_X_5;
-	Parms.CallFunc_BreakVector_Y_5 = CallFunc_BreakVector_Y_5;
-	Parms.CallFunc_BreakVector_Z_5 = CallFunc_BreakVector_Z_5;
-	Parms.CallFunc_LessEqual_DoubleDouble_ReturnValue_2 = CallFunc_LessEqual_DoubleDouble_ReturnValue_2;
-	Parms.CallFunc_LessEqual_DoubleDouble_ReturnValue_3 = CallFunc_LessEqual_DoubleDouble_ReturnValue_3;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
-	Parms.CallFunc_BooleanAND_ReturnValue_1 = CallFunc_BooleanAND_ReturnValue_1;
-	Parms.CallFunc_BooleanAND_ReturnValue_2 = CallFunc_BooleanAND_ReturnValue_2;
-	Parms.CallFunc_BooleanOR_ReturnValue = CallFunc_BooleanOR_ReturnValue;
+	Parms.Location = InLocation;
+	Parms.WorldMapConfig = InWorldMapConfig;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_BreakVector_X = InCallFunc_BreakVector_X;
+	Parms.CallFunc_BreakVector_Y = InCallFunc_BreakVector_Y;
+	Parms.CallFunc_BreakVector_Z = InCallFunc_BreakVector_Z;
+	Parms.CallFunc_BreakVector_X_1 = InCallFunc_BreakVector_X_1;
+	Parms.CallFunc_BreakVector_Y_1 = InCallFunc_BreakVector_Y_1;
+	Parms.CallFunc_BreakVector_Z_1 = InCallFunc_BreakVector_Z_1;
+	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_BreakVector_X_2 = InCallFunc_BreakVector_X_2;
+	Parms.CallFunc_BreakVector_Y_2 = InCallFunc_BreakVector_Y_2;
+	Parms.CallFunc_BreakVector_Z_2 = InCallFunc_BreakVector_Z_2;
+	Parms.CallFunc_BreakVector_X_3 = InCallFunc_BreakVector_X_3;
+	Parms.CallFunc_BreakVector_Y_3 = InCallFunc_BreakVector_Y_3;
+	Parms.CallFunc_BreakVector_Z_3 = InCallFunc_BreakVector_Z_3;
+	Parms.CallFunc_LessEqual_DoubleDouble_ReturnValue = InCallFunc_LessEqual_DoubleDouble_ReturnValue;
+	Parms.CallFunc_LessEqual_DoubleDouble_ReturnValue_1 = InCallFunc_LessEqual_DoubleDouble_ReturnValue_1;
+	Parms.CallFunc_BreakVector_X_4 = InCallFunc_BreakVector_X_4;
+	Parms.CallFunc_BreakVector_Y_4 = InCallFunc_BreakVector_Y_4;
+	Parms.CallFunc_BreakVector_Z_4 = InCallFunc_BreakVector_Z_4;
+	Parms.CallFunc_BreakVector_X_5 = InCallFunc_BreakVector_X_5;
+	Parms.CallFunc_BreakVector_Y_5 = InCallFunc_BreakVector_Y_5;
+	Parms.CallFunc_BreakVector_Z_5 = InCallFunc_BreakVector_Z_5;
+	Parms.CallFunc_LessEqual_DoubleDouble_ReturnValue_2 = InCallFunc_LessEqual_DoubleDouble_ReturnValue_2;
+	Parms.CallFunc_LessEqual_DoubleDouble_ReturnValue_3 = InCallFunc_LessEqual_DoubleDouble_ReturnValue_3;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue_1 = InCallFunc_BooleanAND_ReturnValue_1;
+	Parms.CallFunc_BooleanAND_ReturnValue_2 = InCallFunc_BooleanAND_ReturnValue_2;
+	Parms.CallFunc_BooleanOR_ReturnValue = InCallFunc_BooleanOR_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InsideOf != nullptr)
-		*InsideOf = Parms.InsideOf;
+	if (InInsideOf != nullptr)
+		*InInsideOf = Parms.InsideOf;
 
 }
 
@@ -298,7 +353,7 @@ void UBPFL_UiHelpers_C::IsWithinMap(const struct FVector& Location, const struct
 // int32                              CallFunc_Add_IntInt_ReturnValue_1                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UUniformGridSlot*            CallFunc_SlotAsUniformGridSlot_ReturnValue                       (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::SortUniformGridPanelByVisibility(class UUniformGridPanel* UniformGridPanel, int32 ColumnSize, class UObject* __WorldContext, class UUniformGridSlot* LocalGridSlot, class UWidget* LocalWidgetVar, int32 LocalNumVisibleChildren, int32 CallFunc_GetChildrenCount_ReturnValue, int32 CallFunc_Subtract_IntInt_ReturnValue, enum class ESlateVisibility CallFunc_GetVisibility_ReturnValue, bool CallFunc_EqualEqual_ByteByte_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue, int32 CallFunc_Divide_IntInt_ReturnValue, int32 CallFunc_Percent_IntInt_ReturnValue, int32 Temp_int_Variable, int32 Temp_int_Variable_1, class UWidget* CallFunc_GetChildAt_ReturnValue, bool CallFunc_LessEqual_IntInt_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue_1, class UUniformGridSlot* CallFunc_SlotAsUniformGridSlot_ReturnValue)
+void UBPFL_UiHelpers_C::SortUniformGridPanelByVisibility(class UUniformGridPanel* InUniformGridPanel, int32 InColumnSize, class UObject* In__WorldContext, class UUniformGridSlot* InLocalGridSlot, class UWidget* InLocalWidgetVar, int32 InLocalNumVisibleChildren, int32 InCallFunc_GetChildrenCount_ReturnValue, int32 InCallFunc_Subtract_IntInt_ReturnValue, enum class ESlateVisibility InCallFunc_GetVisibility_ReturnValue, bool InCallFunc_EqualEqual_ByteByte_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue, int32 InCallFunc_Divide_IntInt_ReturnValue, int32 InCallFunc_Percent_IntInt_ReturnValue, int32 InTemp_int_Variable, int32 InTemp_int_Variable_1, class UWidget* InCallFunc_GetChildAt_ReturnValue, bool InCallFunc_LessEqual_IntInt_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue_1, class UUniformGridSlot* InCallFunc_SlotAsUniformGridSlot_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -307,25 +362,25 @@ void UBPFL_UiHelpers_C::SortUniformGridPanelByVisibility(class UUniformGridPanel
 
 	Params::UBPFL_UiHelpers_C_SortUniformGridPanelByVisibility_Params Parms{};
 
-	Parms.UniformGridPanel = UniformGridPanel;
-	Parms.ColumnSize = ColumnSize;
-	Parms.__WorldContext = __WorldContext;
-	Parms.LocalGridSlot = LocalGridSlot;
-	Parms.LocalWidgetVar = LocalWidgetVar;
-	Parms.LocalNumVisibleChildren = LocalNumVisibleChildren;
-	Parms.CallFunc_GetChildrenCount_ReturnValue = CallFunc_GetChildrenCount_ReturnValue;
-	Parms.CallFunc_Subtract_IntInt_ReturnValue = CallFunc_Subtract_IntInt_ReturnValue;
-	Parms.CallFunc_GetVisibility_ReturnValue = CallFunc_GetVisibility_ReturnValue;
-	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = CallFunc_EqualEqual_ByteByte_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Divide_IntInt_ReturnValue = CallFunc_Divide_IntInt_ReturnValue;
-	Parms.CallFunc_Percent_IntInt_ReturnValue = CallFunc_Percent_IntInt_ReturnValue;
-	Parms.Temp_int_Variable = Temp_int_Variable;
-	Parms.Temp_int_Variable_1 = Temp_int_Variable_1;
-	Parms.CallFunc_GetChildAt_ReturnValue = CallFunc_GetChildAt_ReturnValue;
-	Parms.CallFunc_LessEqual_IntInt_ReturnValue = CallFunc_LessEqual_IntInt_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue_1 = CallFunc_Add_IntInt_ReturnValue_1;
-	Parms.CallFunc_SlotAsUniformGridSlot_ReturnValue = CallFunc_SlotAsUniformGridSlot_ReturnValue;
+	Parms.UniformGridPanel = InUniformGridPanel;
+	Parms.ColumnSize = InColumnSize;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.LocalGridSlot = InLocalGridSlot;
+	Parms.LocalWidgetVar = InLocalWidgetVar;
+	Parms.LocalNumVisibleChildren = InLocalNumVisibleChildren;
+	Parms.CallFunc_GetChildrenCount_ReturnValue = InCallFunc_GetChildrenCount_ReturnValue;
+	Parms.CallFunc_Subtract_IntInt_ReturnValue = InCallFunc_Subtract_IntInt_ReturnValue;
+	Parms.CallFunc_GetVisibility_ReturnValue = InCallFunc_GetVisibility_ReturnValue;
+	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = InCallFunc_EqualEqual_ByteByte_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Divide_IntInt_ReturnValue = InCallFunc_Divide_IntInt_ReturnValue;
+	Parms.CallFunc_Percent_IntInt_ReturnValue = InCallFunc_Percent_IntInt_ReturnValue;
+	Parms.Temp_int_Variable = InTemp_int_Variable;
+	Parms.Temp_int_Variable_1 = InTemp_int_Variable_1;
+	Parms.CallFunc_GetChildAt_ReturnValue = InCallFunc_GetChildAt_ReturnValue;
+	Parms.CallFunc_LessEqual_IntInt_ReturnValue = InCallFunc_LessEqual_IntInt_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue_1 = InCallFunc_Add_IntInt_ReturnValue_1;
+	Parms.CallFunc_SlotAsUniformGridSlot_ReturnValue = InCallFunc_SlotAsUniformGridSlot_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -353,7 +408,7 @@ void UBPFL_UiHelpers_C::SortUniformGridPanelByVisibility(class UUniformGridPanel
 // bool                               CallFunc_IsWithinMap_InsideOf                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Contains_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::Get_World_Map_by_Player_Position(class UObject* __WorldContext, struct FWorldMapConfig* WorldMapConfig, bool* Found, int32 Temp_int_Array_Index_Variable, class APlayerController* CallFunc_GetPlayerController_ReturnValue, class APawn* CallFunc_K2_GetPawn_ReturnValue, const class FString& CallFunc_GetCurrentLevelName_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, int32 Temp_int_Loop_Counter_Variable, const struct FConfigsManager& CallFunc_GetConfigsManager_ConfigsManager, bool CallFunc_GetConfigsManager_IsValid, int32 CallFunc_Add_IntInt_ReturnValue, const struct FWorldMapConfig& CallFunc_Array_Get_Item, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, bool CallFunc_IsWithinMap_InsideOf, bool CallFunc_Contains_ReturnValue)
+void UBPFL_UiHelpers_C::Get_World_Map_by_Player_Position(class UObject* In__WorldContext, struct FWorldMapConfig* InWorldMapConfig, bool* InFound, int32 InTemp_int_Array_Index_Variable, class APlayerController* InCallFunc_GetPlayerController_ReturnValue, class APawn* InCallFunc_K2_GetPawn_ReturnValue, const class FString& InCallFunc_GetCurrentLevelName_ReturnValue, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue, int32 InTemp_int_Loop_Counter_Variable, const struct FConfigsManager& InCallFunc_GetConfigsManager_ConfigsManager, bool InCallFunc_GetConfigsManager_IsValid, int32 InCallFunc_Add_IntInt_ReturnValue, const struct FWorldMapConfig& InCallFunc_Array_Get_Item, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue, bool InCallFunc_IsWithinMap_InsideOf, bool InCallFunc_Contains_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -362,29 +417,29 @@ void UBPFL_UiHelpers_C::Get_World_Map_by_Player_Position(class UObject* __WorldC
 
 	Params::UBPFL_UiHelpers_C_Get_World_Map_by_Player_Position_Params Parms{};
 
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
-	Parms.CallFunc_GetPlayerController_ReturnValue = CallFunc_GetPlayerController_ReturnValue;
-	Parms.CallFunc_K2_GetPawn_ReturnValue = CallFunc_K2_GetPawn_ReturnValue;
-	Parms.CallFunc_GetCurrentLevelName_ReturnValue = CallFunc_GetCurrentLevelName_ReturnValue;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
-	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
-	Parms.CallFunc_GetConfigsManager_ConfigsManager = CallFunc_GetConfigsManager_ConfigsManager;
-	Parms.CallFunc_GetConfigsManager_IsValid = CallFunc_GetConfigsManager_IsValid;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
-	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_IsWithinMap_InsideOf = CallFunc_IsWithinMap_InsideOf;
-	Parms.CallFunc_Contains_ReturnValue = CallFunc_Contains_ReturnValue;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
+	Parms.CallFunc_GetPlayerController_ReturnValue = InCallFunc_GetPlayerController_ReturnValue;
+	Parms.CallFunc_K2_GetPawn_ReturnValue = InCallFunc_K2_GetPawn_ReturnValue;
+	Parms.CallFunc_GetCurrentLevelName_ReturnValue = InCallFunc_GetCurrentLevelName_ReturnValue;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue = InCallFunc_K2_GetActorLocation_ReturnValue;
+	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
+	Parms.CallFunc_GetConfigsManager_ConfigsManager = InCallFunc_GetConfigsManager_ConfigsManager;
+	Parms.CallFunc_GetConfigsManager_IsValid = InCallFunc_GetConfigsManager_IsValid;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_IsWithinMap_InsideOf = InCallFunc_IsWithinMap_InsideOf;
+	Parms.CallFunc_Contains_ReturnValue = InCallFunc_Contains_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (WorldMapConfig != nullptr)
-		*WorldMapConfig = Parms.WorldMapConfig;
+	if (InWorldMapConfig != nullptr)
+		*InWorldMapConfig = Parms.WorldMapConfig;
 
-	if (Found != nullptr)
-		*Found = Parms.Found;
+	if (InFound != nullptr)
+		*InFound = Parms.Found;
 
 }
 
@@ -400,7 +455,7 @@ void UBPFL_UiHelpers_C::Get_World_Map_by_Player_Position(class UObject* __WorldC
 // bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FConfigsManager             CallFunc_GetConfigsManager_ReturnValue                           (ConstParm)
 
-void UBPFL_UiHelpers_C::GetConfigsManager(class UObject* __WorldContext, struct FConfigsManager* ConfigsManager, bool* IsValid, class UGameInstance* CallFunc_GetGameInstance_ReturnValue, class UValeriaGameInstance* K2Node_DynamicCast_AsValeria_Game_Instance, bool K2Node_DynamicCast_bSuccess, const struct FConfigsManager& CallFunc_GetConfigsManager_ReturnValue)
+void UBPFL_UiHelpers_C::GetConfigsManager(class UObject* In__WorldContext, struct FConfigsManager* InConfigsManager, bool* InIsValid, class UGameInstance* InCallFunc_GetGameInstance_ReturnValue, class UValeriaGameInstance* InK2Node_DynamicCast_AsValeria_Game_Instance, bool InK2Node_DynamicCast_bSuccess, const struct FConfigsManager& InCallFunc_GetConfigsManager_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -409,19 +464,19 @@ void UBPFL_UiHelpers_C::GetConfigsManager(class UObject* __WorldContext, struct 
 
 	Params::UBPFL_UiHelpers_C_GetConfigsManager_Params Parms{};
 
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_GetGameInstance_ReturnValue = CallFunc_GetGameInstance_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Game_Instance = K2Node_DynamicCast_AsValeria_Game_Instance;
-	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetConfigsManager_ReturnValue = CallFunc_GetConfigsManager_ReturnValue;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_GetGameInstance_ReturnValue = InCallFunc_GetGameInstance_ReturnValue;
+	Parms.K2Node_DynamicCast_AsValeria_Game_Instance = InK2Node_DynamicCast_AsValeria_Game_Instance;
+	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetConfigsManager_ReturnValue = InCallFunc_GetConfigsManager_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (ConfigsManager != nullptr)
-		*ConfigsManager = Parms.ConfigsManager;
+	if (InConfigsManager != nullptr)
+		*InConfigsManager = Parms.ConfigsManager;
 
-	if (IsValid != nullptr)
-		*IsValid = Parms.IsValid;
+	if (InIsValid != nullptr)
+		*InIsValid = Parms.IsValid;
 
 }
 
@@ -441,7 +496,7 @@ void UBPFL_UiHelpers_C::GetConfigsManager(class UObject* __WorldContext, struct 
 // bool                               CallFunc_AreCheatsEnabled_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue_1                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::AreCheatsEnabled(class UObject* Context, class UObject* __WorldContext, bool* Result, class AValeriaCharacter* CharacterCached, enum class EValeriaFuncResult CallFunc_GetValeriaCharacter_OutResult, class AValeriaCharacter* CallFunc_GetValeriaCharacter_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool K2Node_SwitchEnum_CmpSuccess, class UDebugInfoComponent* CallFunc_GetDebugInfoComponent_ReturnValue, bool CallFunc_AreCheatsEnabled_ReturnValue, bool CallFunc_IsValid_ReturnValue_1)
+void UBPFL_UiHelpers_C::AreCheatsEnabled(class UObject* InContext, class UObject* In__WorldContext, bool* InResult, class AValeriaCharacter* InCharacterCached, enum class EValeriaFuncResult InCallFunc_GetValeriaCharacter_OutResult, class AValeriaCharacter* InCallFunc_GetValeriaCharacter_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InK2Node_SwitchEnum_CmpSuccess, class UDebugInfoComponent* InCallFunc_GetDebugInfoComponent_ReturnValue, bool InCallFunc_AreCheatsEnabled_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -450,21 +505,21 @@ void UBPFL_UiHelpers_C::AreCheatsEnabled(class UObject* Context, class UObject* 
 
 	Params::UBPFL_UiHelpers_C_AreCheatsEnabled_Params Parms{};
 
-	Parms.Context = Context;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CharacterCached = CharacterCached;
-	Parms.CallFunc_GetValeriaCharacter_OutResult = CallFunc_GetValeriaCharacter_OutResult;
-	Parms.CallFunc_GetValeriaCharacter_ReturnValue = CallFunc_GetValeriaCharacter_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.K2Node_SwitchEnum_CmpSuccess = K2Node_SwitchEnum_CmpSuccess;
-	Parms.CallFunc_GetDebugInfoComponent_ReturnValue = CallFunc_GetDebugInfoComponent_ReturnValue;
-	Parms.CallFunc_AreCheatsEnabled_ReturnValue = CallFunc_AreCheatsEnabled_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.Context = InContext;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CharacterCached = InCharacterCached;
+	Parms.CallFunc_GetValeriaCharacter_OutResult = InCallFunc_GetValeriaCharacter_OutResult;
+	Parms.CallFunc_GetValeriaCharacter_ReturnValue = InCallFunc_GetValeriaCharacter_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.K2Node_SwitchEnum_CmpSuccess = InK2Node_SwitchEnum_CmpSuccess;
+	Parms.CallFunc_GetDebugInfoComponent_ReturnValue = InCallFunc_GetDebugInfoComponent_ReturnValue;
+	Parms.CallFunc_AreCheatsEnabled_ReturnValue = InCallFunc_AreCheatsEnabled_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Result != nullptr)
-		*Result = Parms.Result;
+	if (InResult != nullptr)
+		*InResult = Parms.Result;
 
 }
 
@@ -492,7 +547,7 @@ void UBPFL_UiHelpers_C::AreCheatsEnabled(class UObject* Context, class UObject* 
 // class UTexture2D*                  Temp_object_Variable_13                                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UTexture2D*                  K2Node_Select_Default                                            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetItemStorageCategoryIcon(enum class EItemStorageCategory Category, class UObject* __WorldContext, class UTexture2D** Name, enum class EItemStorageCategory Temp_byte_Variable, class UTexture2D* Temp_object_Variable, class UTexture2D* Temp_object_Variable_1, class UTexture2D* Temp_object_Variable_2, class UTexture2D* Temp_object_Variable_3, class UTexture2D* Temp_object_Variable_4, class UTexture2D* Temp_object_Variable_5, class UTexture2D* Temp_object_Variable_6, class UTexture2D* Temp_object_Variable_7, class UTexture2D* Temp_object_Variable_8, class UTexture2D* Temp_object_Variable_9, class UTexture2D* Temp_object_Variable_10, class UTexture2D* Temp_object_Variable_11, class UTexture2D* Temp_object_Variable_12, class UTexture2D* Temp_object_Variable_13, class UTexture2D* K2Node_Select_Default)
+void UBPFL_UiHelpers_C::GetItemStorageCategoryIcon(enum class EItemStorageCategory InCategory, class UObject* In__WorldContext, class UTexture2D** InName, enum class EItemStorageCategory InTemp_byte_Variable, class UTexture2D* InTemp_object_Variable, class UTexture2D* InTemp_object_Variable_1, class UTexture2D* InTemp_object_Variable_2, class UTexture2D* InTemp_object_Variable_3, class UTexture2D* InTemp_object_Variable_4, class UTexture2D* InTemp_object_Variable_5, class UTexture2D* InTemp_object_Variable_6, class UTexture2D* InTemp_object_Variable_7, class UTexture2D* InTemp_object_Variable_8, class UTexture2D* InTemp_object_Variable_9, class UTexture2D* InTemp_object_Variable_10, class UTexture2D* InTemp_object_Variable_11, class UTexture2D* InTemp_object_Variable_12, class UTexture2D* InTemp_object_Variable_13, class UTexture2D* InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -501,29 +556,29 @@ void UBPFL_UiHelpers_C::GetItemStorageCategoryIcon(enum class EItemStorageCatego
 
 	Params::UBPFL_UiHelpers_C_GetItemStorageCategoryIcon_Params Parms{};
 
-	Parms.Category = Category;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.Temp_object_Variable = Temp_object_Variable;
-	Parms.Temp_object_Variable_1 = Temp_object_Variable_1;
-	Parms.Temp_object_Variable_2 = Temp_object_Variable_2;
-	Parms.Temp_object_Variable_3 = Temp_object_Variable_3;
-	Parms.Temp_object_Variable_4 = Temp_object_Variable_4;
-	Parms.Temp_object_Variable_5 = Temp_object_Variable_5;
-	Parms.Temp_object_Variable_6 = Temp_object_Variable_6;
-	Parms.Temp_object_Variable_7 = Temp_object_Variable_7;
-	Parms.Temp_object_Variable_8 = Temp_object_Variable_8;
-	Parms.Temp_object_Variable_9 = Temp_object_Variable_9;
-	Parms.Temp_object_Variable_10 = Temp_object_Variable_10;
-	Parms.Temp_object_Variable_11 = Temp_object_Variable_11;
-	Parms.Temp_object_Variable_12 = Temp_object_Variable_12;
-	Parms.Temp_object_Variable_13 = Temp_object_Variable_13;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.Category = InCategory;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.Temp_object_Variable = InTemp_object_Variable;
+	Parms.Temp_object_Variable_1 = InTemp_object_Variable_1;
+	Parms.Temp_object_Variable_2 = InTemp_object_Variable_2;
+	Parms.Temp_object_Variable_3 = InTemp_object_Variable_3;
+	Parms.Temp_object_Variable_4 = InTemp_object_Variable_4;
+	Parms.Temp_object_Variable_5 = InTemp_object_Variable_5;
+	Parms.Temp_object_Variable_6 = InTemp_object_Variable_6;
+	Parms.Temp_object_Variable_7 = InTemp_object_Variable_7;
+	Parms.Temp_object_Variable_8 = InTemp_object_Variable_8;
+	Parms.Temp_object_Variable_9 = InTemp_object_Variable_9;
+	Parms.Temp_object_Variable_10 = InTemp_object_Variable_10;
+	Parms.Temp_object_Variable_11 = InTemp_object_Variable_11;
+	Parms.Temp_object_Variable_12 = InTemp_object_Variable_12;
+	Parms.Temp_object_Variable_13 = InTemp_object_Variable_13;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Name != nullptr)
-		*Name = Parms.Name;
+	if (InName != nullptr)
+		*InName = Parms.Name;
 
 }
 
@@ -544,7 +599,7 @@ void UBPFL_UiHelpers_C::GetItemStorageCategoryIcon(enum class EItemStorageCatego
 // class FText                        Temp_text_Variable_6                                             ()
 // class FText                        K2Node_Select_Default                                            ()
 
-void UBPFL_UiHelpers_C::GetItemQualityName(enum class EItemQuality ItemQuality, class UObject* __WorldContext, class FText* Name, enum class EItemQuality Temp_byte_Variable, class FText Temp_text_Variable, class FText Temp_text_Variable_1, class FText Temp_text_Variable_2, class FText Temp_text_Variable_3, class FText Temp_text_Variable_4, class FText Temp_text_Variable_5, class FText Temp_text_Variable_6, class FText K2Node_Select_Default)
+void UBPFL_UiHelpers_C::GetItemQualityName(enum class EItemQuality InItemQuality, class UObject* In__WorldContext, class FText* InName, enum class EItemQuality InTemp_byte_Variable, class FText InTemp_text_Variable, class FText InTemp_text_Variable_1, class FText InTemp_text_Variable_2, class FText InTemp_text_Variable_3, class FText InTemp_text_Variable_4, class FText InTemp_text_Variable_5, class FText InTemp_text_Variable_6, class FText InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -553,22 +608,22 @@ void UBPFL_UiHelpers_C::GetItemQualityName(enum class EItemQuality ItemQuality, 
 
 	Params::UBPFL_UiHelpers_C_GetItemQualityName_Params Parms{};
 
-	Parms.ItemQuality = ItemQuality;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.Temp_text_Variable = Temp_text_Variable;
-	Parms.Temp_text_Variable_1 = Temp_text_Variable_1;
-	Parms.Temp_text_Variable_2 = Temp_text_Variable_2;
-	Parms.Temp_text_Variable_3 = Temp_text_Variable_3;
-	Parms.Temp_text_Variable_4 = Temp_text_Variable_4;
-	Parms.Temp_text_Variable_5 = Temp_text_Variable_5;
-	Parms.Temp_text_Variable_6 = Temp_text_Variable_6;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.ItemQuality = InItemQuality;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.Temp_text_Variable = InTemp_text_Variable;
+	Parms.Temp_text_Variable_1 = InTemp_text_Variable_1;
+	Parms.Temp_text_Variable_2 = InTemp_text_Variable_2;
+	Parms.Temp_text_Variable_3 = InTemp_text_Variable_3;
+	Parms.Temp_text_Variable_4 = InTemp_text_Variable_4;
+	Parms.Temp_text_Variable_5 = InTemp_text_Variable_5;
+	Parms.Temp_text_Variable_6 = InTemp_text_Variable_6;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Name != nullptr)
-		*Name = Parms.Name;
+	if (InName != nullptr)
+		*InName = Parms.Name;
 
 }
 
@@ -589,7 +644,7 @@ void UBPFL_UiHelpers_C::GetItemQualityName(enum class EItemQuality ItemQuality, 
 // struct FLinearColor                Temp_struct_Variable_6                                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FLinearColor                K2Node_Select_Default                                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetItemQualityColor(enum class EItemQuality ItemQuality, class UObject* __WorldContext, struct FLinearColor* Color, enum class EItemQuality Temp_byte_Variable, const struct FLinearColor& Temp_struct_Variable, const struct FLinearColor& Temp_struct_Variable_1, const struct FLinearColor& Temp_struct_Variable_2, const struct FLinearColor& Temp_struct_Variable_3, const struct FLinearColor& Temp_struct_Variable_4, const struct FLinearColor& Temp_struct_Variable_5, const struct FLinearColor& Temp_struct_Variable_6, const struct FLinearColor& K2Node_Select_Default)
+void UBPFL_UiHelpers_C::GetItemQualityColor(enum class EItemQuality InItemQuality, class UObject* In__WorldContext, struct FLinearColor* InColor, enum class EItemQuality InTemp_byte_Variable, const struct FLinearColor& InTemp_struct_Variable, const struct FLinearColor& InTemp_struct_Variable_1, const struct FLinearColor& InTemp_struct_Variable_2, const struct FLinearColor& InTemp_struct_Variable_3, const struct FLinearColor& InTemp_struct_Variable_4, const struct FLinearColor& InTemp_struct_Variable_5, const struct FLinearColor& InTemp_struct_Variable_6, const struct FLinearColor& InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -598,22 +653,22 @@ void UBPFL_UiHelpers_C::GetItemQualityColor(enum class EItemQuality ItemQuality,
 
 	Params::UBPFL_UiHelpers_C_GetItemQualityColor_Params Parms{};
 
-	Parms.ItemQuality = ItemQuality;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.Temp_struct_Variable = Temp_struct_Variable;
-	Parms.Temp_struct_Variable_1 = Temp_struct_Variable_1;
-	Parms.Temp_struct_Variable_2 = Temp_struct_Variable_2;
-	Parms.Temp_struct_Variable_3 = Temp_struct_Variable_3;
-	Parms.Temp_struct_Variable_4 = Temp_struct_Variable_4;
-	Parms.Temp_struct_Variable_5 = Temp_struct_Variable_5;
-	Parms.Temp_struct_Variable_6 = Temp_struct_Variable_6;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.ItemQuality = InItemQuality;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.Temp_struct_Variable = InTemp_struct_Variable;
+	Parms.Temp_struct_Variable_1 = InTemp_struct_Variable_1;
+	Parms.Temp_struct_Variable_2 = InTemp_struct_Variable_2;
+	Parms.Temp_struct_Variable_3 = InTemp_struct_Variable_3;
+	Parms.Temp_struct_Variable_4 = InTemp_struct_Variable_4;
+	Parms.Temp_struct_Variable_5 = InTemp_struct_Variable_5;
+	Parms.Temp_struct_Variable_6 = InTemp_struct_Variable_6;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Color != nullptr)
-		*Color = Parms.Color;
+	if (InColor != nullptr)
+		*InColor = Parms.Color;
 
 }
 
@@ -634,7 +689,7 @@ void UBPFL_UiHelpers_C::GetItemQualityColor(enum class EItemQuality ItemQuality,
 // class FText                        Temp_text_Variable_6                                             ()
 // class FText                        K2Node_Select_Default                                            ()
 
-void UBPFL_UiHelpers_C::GetItemRarityName(enum class EItemRarity ItemRarity, class UObject* __WorldContext, class FText* Name, enum class EItemRarity Temp_byte_Variable, class FText Temp_text_Variable, class FText Temp_text_Variable_1, class FText Temp_text_Variable_2, class FText Temp_text_Variable_3, class FText Temp_text_Variable_4, class FText Temp_text_Variable_5, class FText Temp_text_Variable_6, class FText K2Node_Select_Default)
+void UBPFL_UiHelpers_C::GetItemRarityName(enum class EItemRarity InItemRarity, class UObject* In__WorldContext, class FText* InName, enum class EItemRarity InTemp_byte_Variable, class FText InTemp_text_Variable, class FText InTemp_text_Variable_1, class FText InTemp_text_Variable_2, class FText InTemp_text_Variable_3, class FText InTemp_text_Variable_4, class FText InTemp_text_Variable_5, class FText InTemp_text_Variable_6, class FText InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -643,22 +698,22 @@ void UBPFL_UiHelpers_C::GetItemRarityName(enum class EItemRarity ItemRarity, cla
 
 	Params::UBPFL_UiHelpers_C_GetItemRarityName_Params Parms{};
 
-	Parms.ItemRarity = ItemRarity;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.Temp_text_Variable = Temp_text_Variable;
-	Parms.Temp_text_Variable_1 = Temp_text_Variable_1;
-	Parms.Temp_text_Variable_2 = Temp_text_Variable_2;
-	Parms.Temp_text_Variable_3 = Temp_text_Variable_3;
-	Parms.Temp_text_Variable_4 = Temp_text_Variable_4;
-	Parms.Temp_text_Variable_5 = Temp_text_Variable_5;
-	Parms.Temp_text_Variable_6 = Temp_text_Variable_6;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.ItemRarity = InItemRarity;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.Temp_text_Variable = InTemp_text_Variable;
+	Parms.Temp_text_Variable_1 = InTemp_text_Variable_1;
+	Parms.Temp_text_Variable_2 = InTemp_text_Variable_2;
+	Parms.Temp_text_Variable_3 = InTemp_text_Variable_3;
+	Parms.Temp_text_Variable_4 = InTemp_text_Variable_4;
+	Parms.Temp_text_Variable_5 = InTemp_text_Variable_5;
+	Parms.Temp_text_Variable_6 = InTemp_text_Variable_6;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Name != nullptr)
-		*Name = Parms.Name;
+	if (InName != nullptr)
+		*InName = Parms.Name;
 
 }
 
@@ -679,7 +734,7 @@ void UBPFL_UiHelpers_C::GetItemRarityName(enum class EItemRarity ItemRarity, cla
 // struct FLinearColor                Temp_struct_Variable_6                                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FLinearColor                K2Node_Select_Default                                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetItemRarityColor(enum class EItemRarity ItemRarity, class UObject* __WorldContext, struct FLinearColor* Color, enum class EItemRarity Temp_byte_Variable, const struct FLinearColor& Temp_struct_Variable, const struct FLinearColor& Temp_struct_Variable_1, const struct FLinearColor& Temp_struct_Variable_2, const struct FLinearColor& Temp_struct_Variable_3, const struct FLinearColor& Temp_struct_Variable_4, const struct FLinearColor& Temp_struct_Variable_5, const struct FLinearColor& Temp_struct_Variable_6, const struct FLinearColor& K2Node_Select_Default)
+void UBPFL_UiHelpers_C::GetItemRarityColor(enum class EItemRarity InItemRarity, class UObject* In__WorldContext, struct FLinearColor* InColor, enum class EItemRarity InTemp_byte_Variable, const struct FLinearColor& InTemp_struct_Variable, const struct FLinearColor& InTemp_struct_Variable_1, const struct FLinearColor& InTemp_struct_Variable_2, const struct FLinearColor& InTemp_struct_Variable_3, const struct FLinearColor& InTemp_struct_Variable_4, const struct FLinearColor& InTemp_struct_Variable_5, const struct FLinearColor& InTemp_struct_Variable_6, const struct FLinearColor& InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -688,22 +743,22 @@ void UBPFL_UiHelpers_C::GetItemRarityColor(enum class EItemRarity ItemRarity, cl
 
 	Params::UBPFL_UiHelpers_C_GetItemRarityColor_Params Parms{};
 
-	Parms.ItemRarity = ItemRarity;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.Temp_struct_Variable = Temp_struct_Variable;
-	Parms.Temp_struct_Variable_1 = Temp_struct_Variable_1;
-	Parms.Temp_struct_Variable_2 = Temp_struct_Variable_2;
-	Parms.Temp_struct_Variable_3 = Temp_struct_Variable_3;
-	Parms.Temp_struct_Variable_4 = Temp_struct_Variable_4;
-	Parms.Temp_struct_Variable_5 = Temp_struct_Variable_5;
-	Parms.Temp_struct_Variable_6 = Temp_struct_Variable_6;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.ItemRarity = InItemRarity;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.Temp_struct_Variable = InTemp_struct_Variable;
+	Parms.Temp_struct_Variable_1 = InTemp_struct_Variable_1;
+	Parms.Temp_struct_Variable_2 = InTemp_struct_Variable_2;
+	Parms.Temp_struct_Variable_3 = InTemp_struct_Variable_3;
+	Parms.Temp_struct_Variable_4 = InTemp_struct_Variable_4;
+	Parms.Temp_struct_Variable_5 = InTemp_struct_Variable_5;
+	Parms.Temp_struct_Variable_6 = InTemp_struct_Variable_6;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Color != nullptr)
-		*Color = Parms.Color;
+	if (InColor != nullptr)
+		*InColor = Parms.Color;
 
 }
 
@@ -719,7 +774,7 @@ void UBPFL_UiHelpers_C::GetItemRarityColor(enum class EItemRarity ItemRarity, cl
 // bool                               CallFunc_IsValeriaTimeValid_ReturnValue                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_GetCurrentDay_ReturnValue                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetCurrentDay(class UObject* __WorldContext, int32* CurrentDay, bool* IsValid, class UValeriaTimeManager* CallFunc_GetGameInstanceSubsystem_ReturnValue, class UValeriaTimeManager* CallFunc_GetGameInstanceSubsystem_ReturnValue_1, bool CallFunc_IsValeriaTimeValid_ReturnValue, int32 CallFunc_GetCurrentDay_ReturnValue)
+void UBPFL_UiHelpers_C::GetCurrentDay(class UObject* In__WorldContext, int32* InCurrentDay, bool* InIsValid, class UValeriaTimeManager* InCallFunc_GetGameInstanceSubsystem_ReturnValue, class UValeriaTimeManager* InCallFunc_GetGameInstanceSubsystem_ReturnValue_1, bool InCallFunc_IsValeriaTimeValid_ReturnValue, int32 InCallFunc_GetCurrentDay_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -728,19 +783,19 @@ void UBPFL_UiHelpers_C::GetCurrentDay(class UObject* __WorldContext, int32* Curr
 
 	Params::UBPFL_UiHelpers_C_GetCurrentDay_Params Parms{};
 
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_GetGameInstanceSubsystem_ReturnValue = CallFunc_GetGameInstanceSubsystem_ReturnValue;
-	Parms.CallFunc_GetGameInstanceSubsystem_ReturnValue_1 = CallFunc_GetGameInstanceSubsystem_ReturnValue_1;
-	Parms.CallFunc_IsValeriaTimeValid_ReturnValue = CallFunc_IsValeriaTimeValid_ReturnValue;
-	Parms.CallFunc_GetCurrentDay_ReturnValue = CallFunc_GetCurrentDay_ReturnValue;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_GetGameInstanceSubsystem_ReturnValue = InCallFunc_GetGameInstanceSubsystem_ReturnValue;
+	Parms.CallFunc_GetGameInstanceSubsystem_ReturnValue_1 = InCallFunc_GetGameInstanceSubsystem_ReturnValue_1;
+	Parms.CallFunc_IsValeriaTimeValid_ReturnValue = InCallFunc_IsValeriaTimeValid_ReturnValue;
+	Parms.CallFunc_GetCurrentDay_ReturnValue = InCallFunc_GetCurrentDay_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (CurrentDay != nullptr)
-		*CurrentDay = Parms.CurrentDay;
+	if (InCurrentDay != nullptr)
+		*InCurrentDay = Parms.CurrentDay;
 
-	if (IsValid != nullptr)
-		*IsValid = Parms.IsValid;
+	if (InIsValid != nullptr)
+		*InIsValid = Parms.IsValid;
 
 }
 
@@ -759,7 +814,7 @@ void UBPFL_UiHelpers_C::GetCurrentDay(class UObject* __WorldContext, int32* Curr
 // bool                               CallFunc_Not_PreBool_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::CanItemBeRequested_(TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType, class UObject* __WorldContext, bool* IsRequestable_, class UObject* CallFunc_LoadAsset_Blocking_ReturnValue, class UVAL_ItemTypeDefinitionAsset* K2Node_DynamicCast_AsItem_Type_Definition, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsValid_ReturnValue, bool CallFunc_Greater_IntInt_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, bool CallFunc_BooleanAND_ReturnValue)
+void UBPFL_UiHelpers_C::CanItemBeRequested_(TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> InItemType, class UObject* In__WorldContext, bool* InIsRequestable_, class UObject* InCallFunc_LoadAsset_Blocking_ReturnValue, class UVAL_ItemTypeDefinitionAsset* InK2Node_DynamicCast_AsItem_Type_Definition, bool InK2Node_DynamicCast_bSuccess, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_Greater_IntInt_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -768,20 +823,20 @@ void UBPFL_UiHelpers_C::CanItemBeRequested_(TSoftObjectPtr<class UVAL_ItemTypeDe
 
 	Params::UBPFL_UiHelpers_C_CanItemBeRequested__Params Parms{};
 
-	Parms.ItemType = ItemType;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_LoadAsset_Blocking_ReturnValue = CallFunc_LoadAsset_Blocking_ReturnValue;
-	Parms.K2Node_DynamicCast_AsItem_Type_Definition = K2Node_DynamicCast_AsItem_Type_Definition;
-	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_Greater_IntInt_ReturnValue = CallFunc_Greater_IntInt_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
+	Parms.ItemType = InItemType;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_LoadAsset_Blocking_ReturnValue = InCallFunc_LoadAsset_Blocking_ReturnValue;
+	Parms.K2Node_DynamicCast_AsItem_Type_Definition = InK2Node_DynamicCast_AsItem_Type_Definition;
+	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_Greater_IntInt_ReturnValue = InCallFunc_Greater_IntInt_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (IsRequestable_ != nullptr)
-		*IsRequestable_ = Parms.IsRequestable_;
+	if (InIsRequestable_ != nullptr)
+		*InIsRequestable_ = Parms.IsRequestable_;
 
 }
 
@@ -809,7 +864,7 @@ void UBPFL_UiHelpers_C::CanItemBeRequested_(TSoftObjectPtr<class UVAL_ItemTypeDe
 // class FText                        Temp_text_Variable_13                                            ()
 // class FText                        K2Node_Select_Default                                            ()
 
-void UBPFL_UiHelpers_C::GetItemStorageCategoryName(enum class EItemStorageCategory Category, class UObject* __WorldContext, class FText* Name, enum class EItemStorageCategory Temp_byte_Variable, class FText Temp_text_Variable, class FText Temp_text_Variable_1, class FText Temp_text_Variable_2, class FText Temp_text_Variable_3, class FText Temp_text_Variable_4, class FText Temp_text_Variable_5, class FText Temp_text_Variable_6, class FText Temp_text_Variable_7, class FText Temp_text_Variable_8, class FText Temp_text_Variable_9, class FText Temp_text_Variable_10, class FText Temp_text_Variable_11, class FText Temp_text_Variable_12, class FText Temp_text_Variable_13, class FText K2Node_Select_Default)
+void UBPFL_UiHelpers_C::GetItemStorageCategoryName(enum class EItemStorageCategory InCategory, class UObject* In__WorldContext, class FText* InName, enum class EItemStorageCategory InTemp_byte_Variable, class FText InTemp_text_Variable, class FText InTemp_text_Variable_1, class FText InTemp_text_Variable_2, class FText InTemp_text_Variable_3, class FText InTemp_text_Variable_4, class FText InTemp_text_Variable_5, class FText InTemp_text_Variable_6, class FText InTemp_text_Variable_7, class FText InTemp_text_Variable_8, class FText InTemp_text_Variable_9, class FText InTemp_text_Variable_10, class FText InTemp_text_Variable_11, class FText InTemp_text_Variable_12, class FText InTemp_text_Variable_13, class FText InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -818,29 +873,29 @@ void UBPFL_UiHelpers_C::GetItemStorageCategoryName(enum class EItemStorageCatego
 
 	Params::UBPFL_UiHelpers_C_GetItemStorageCategoryName_Params Parms{};
 
-	Parms.Category = Category;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.Temp_text_Variable = Temp_text_Variable;
-	Parms.Temp_text_Variable_1 = Temp_text_Variable_1;
-	Parms.Temp_text_Variable_2 = Temp_text_Variable_2;
-	Parms.Temp_text_Variable_3 = Temp_text_Variable_3;
-	Parms.Temp_text_Variable_4 = Temp_text_Variable_4;
-	Parms.Temp_text_Variable_5 = Temp_text_Variable_5;
-	Parms.Temp_text_Variable_6 = Temp_text_Variable_6;
-	Parms.Temp_text_Variable_7 = Temp_text_Variable_7;
-	Parms.Temp_text_Variable_8 = Temp_text_Variable_8;
-	Parms.Temp_text_Variable_9 = Temp_text_Variable_9;
-	Parms.Temp_text_Variable_10 = Temp_text_Variable_10;
-	Parms.Temp_text_Variable_11 = Temp_text_Variable_11;
-	Parms.Temp_text_Variable_12 = Temp_text_Variable_12;
-	Parms.Temp_text_Variable_13 = Temp_text_Variable_13;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.Category = InCategory;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.Temp_text_Variable = InTemp_text_Variable;
+	Parms.Temp_text_Variable_1 = InTemp_text_Variable_1;
+	Parms.Temp_text_Variable_2 = InTemp_text_Variable_2;
+	Parms.Temp_text_Variable_3 = InTemp_text_Variable_3;
+	Parms.Temp_text_Variable_4 = InTemp_text_Variable_4;
+	Parms.Temp_text_Variable_5 = InTemp_text_Variable_5;
+	Parms.Temp_text_Variable_6 = InTemp_text_Variable_6;
+	Parms.Temp_text_Variable_7 = InTemp_text_Variable_7;
+	Parms.Temp_text_Variable_8 = InTemp_text_Variable_8;
+	Parms.Temp_text_Variable_9 = InTemp_text_Variable_9;
+	Parms.Temp_text_Variable_10 = InTemp_text_Variable_10;
+	Parms.Temp_text_Variable_11 = InTemp_text_Variable_11;
+	Parms.Temp_text_Variable_12 = InTemp_text_Variable_12;
+	Parms.Temp_text_Variable_13 = InTemp_text_Variable_13;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Name != nullptr)
-		*Name = Parms.Name;
+	if (InName != nullptr)
+		*InName = Parms.Name;
 
 }
 
@@ -858,7 +913,7 @@ void UBPFL_UiHelpers_C::GetItemStorageCategoryName(enum class EItemStorageCatego
 // double                             CallFunc_Add_DoubleDouble_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_GreaterEqual_DoubleDouble_ReturnValue                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::CheckTimePassed(double TimePassed, double DeltaTime, double Period, class UObject* __WorldContext, double* NewTimePassed, bool* HasPassed, double TmpTimePassed, double CallFunc_Add_DoubleDouble_ReturnValue, bool CallFunc_GreaterEqual_DoubleDouble_ReturnValue)
+void UBPFL_UiHelpers_C::CheckTimePassed(double InTimePassed, double InDeltaTime, double InPeriod, class UObject* In__WorldContext, double* InNewTimePassed, bool* InHasPassed, double InTmpTimePassed, double InCallFunc_Add_DoubleDouble_ReturnValue, bool InCallFunc_GreaterEqual_DoubleDouble_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -867,21 +922,21 @@ void UBPFL_UiHelpers_C::CheckTimePassed(double TimePassed, double DeltaTime, dou
 
 	Params::UBPFL_UiHelpers_C_CheckTimePassed_Params Parms{};
 
-	Parms.TimePassed = TimePassed;
-	Parms.DeltaTime = DeltaTime;
-	Parms.Period = Period;
-	Parms.__WorldContext = __WorldContext;
-	Parms.TmpTimePassed = TmpTimePassed;
-	Parms.CallFunc_Add_DoubleDouble_ReturnValue = CallFunc_Add_DoubleDouble_ReturnValue;
-	Parms.CallFunc_GreaterEqual_DoubleDouble_ReturnValue = CallFunc_GreaterEqual_DoubleDouble_ReturnValue;
+	Parms.TimePassed = InTimePassed;
+	Parms.DeltaTime = InDeltaTime;
+	Parms.Period = InPeriod;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.TmpTimePassed = InTmpTimePassed;
+	Parms.CallFunc_Add_DoubleDouble_ReturnValue = InCallFunc_Add_DoubleDouble_ReturnValue;
+	Parms.CallFunc_GreaterEqual_DoubleDouble_ReturnValue = InCallFunc_GreaterEqual_DoubleDouble_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (NewTimePassed != nullptr)
-		*NewTimePassed = Parms.NewTimePassed;
+	if (InNewTimePassed != nullptr)
+		*InNewTimePassed = Parms.NewTimePassed;
 
-	if (HasPassed != nullptr)
-		*HasPassed = Parms.HasPassed;
+	if (InHasPassed != nullptr)
+		*InHasPassed = Parms.HasPassed;
 
 }
 
@@ -913,7 +968,7 @@ void UBPFL_UiHelpers_C::CheckTimePassed(double TimePassed, double DeltaTime, dou
 // struct FVector2D                   CallFunc_Divide_Vector2DVector2D_ReturnValue                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector2D                   CallFunc_Multiply_Vector2DVector2D_ReturnValue                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::WorldPositionToUiPosition(const struct FVector& WorldPosition, const struct FBox2D& WorldBounds, const struct FVector2D& UiSize, enum class EWorldToUiScaling Scaling, class UObject* __WorldContext, struct FVector2D* UiPosition, const struct FVector2D& TmpWorldHalfExtents, const struct FVector2D& TmpWorldCenter, enum class EWorldToUiScaling Temp_byte_Variable, double CallFunc_BreakVector2D_X, double CallFunc_BreakVector2D_Y, const struct FVector2D& CallFunc_MakeVector2D_ReturnValue, const struct FVector2D& CallFunc_MakeVector2D_ReturnValue_1, const struct FVector2D& CallFunc_MakeVector2D_ReturnValue_2, const struct FVector2D& K2Node_Select_Default, const struct FVector2D& CallFunc_Multiply_Vector2DFloat_ReturnValue, const struct FVector2D& CallFunc_Subtract_Vector2DVector2D_ReturnValue, const struct FVector2D& CallFunc_Conv_VectorToVector2D_ReturnValue, const struct FVector2D& CallFunc_Divide_Vector2DFloat_ReturnValue, const struct FVector2D& CallFunc_Add_Vector2DVector2D_ReturnValue, const struct FVector2D& CallFunc_Subtract_Vector2DVector2D_ReturnValue_1, const struct FVector2D& CallFunc_Divide_Vector2DVector2D_ReturnValue, const struct FVector2D& CallFunc_Multiply_Vector2DVector2D_ReturnValue)
+void UBPFL_UiHelpers_C::WorldPositionToUiPosition(const struct FVector& InWorldPosition, const struct FBox2D& InWorldBounds, const struct FVector2D& InUiSize, enum class EWorldToUiScaling InScaling, class UObject* In__WorldContext, struct FVector2D* InUiPosition, const struct FVector2D& InTmpWorldHalfExtents, const struct FVector2D& InTmpWorldCenter, enum class EWorldToUiScaling InTemp_byte_Variable, double InCallFunc_BreakVector2D_X, double InCallFunc_BreakVector2D_Y, const struct FVector2D& InCallFunc_MakeVector2D_ReturnValue, const struct FVector2D& InCallFunc_MakeVector2D_ReturnValue_1, const struct FVector2D& InCallFunc_MakeVector2D_ReturnValue_2, const struct FVector2D& InK2Node_Select_Default, const struct FVector2D& InCallFunc_Multiply_Vector2DFloat_ReturnValue, const struct FVector2D& InCallFunc_Subtract_Vector2DVector2D_ReturnValue, const struct FVector2D& InCallFunc_Conv_VectorToVector2D_ReturnValue, const struct FVector2D& InCallFunc_Divide_Vector2DFloat_ReturnValue, const struct FVector2D& InCallFunc_Add_Vector2DVector2D_ReturnValue, const struct FVector2D& InCallFunc_Subtract_Vector2DVector2D_ReturnValue_1, const struct FVector2D& InCallFunc_Divide_Vector2DVector2D_ReturnValue, const struct FVector2D& InCallFunc_Multiply_Vector2DVector2D_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -922,33 +977,33 @@ void UBPFL_UiHelpers_C::WorldPositionToUiPosition(const struct FVector& WorldPos
 
 	Params::UBPFL_UiHelpers_C_WorldPositionToUiPosition_Params Parms{};
 
-	Parms.WorldPosition = WorldPosition;
-	Parms.WorldBounds = WorldBounds;
-	Parms.UiSize = UiSize;
-	Parms.Scaling = Scaling;
-	Parms.__WorldContext = __WorldContext;
-	Parms.TmpWorldHalfExtents = TmpWorldHalfExtents;
-	Parms.TmpWorldCenter = TmpWorldCenter;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.CallFunc_BreakVector2D_X = CallFunc_BreakVector2D_X;
-	Parms.CallFunc_BreakVector2D_Y = CallFunc_BreakVector2D_Y;
-	Parms.CallFunc_MakeVector2D_ReturnValue = CallFunc_MakeVector2D_ReturnValue;
-	Parms.CallFunc_MakeVector2D_ReturnValue_1 = CallFunc_MakeVector2D_ReturnValue_1;
-	Parms.CallFunc_MakeVector2D_ReturnValue_2 = CallFunc_MakeVector2D_ReturnValue_2;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
-	Parms.CallFunc_Multiply_Vector2DFloat_ReturnValue = CallFunc_Multiply_Vector2DFloat_ReturnValue;
-	Parms.CallFunc_Subtract_Vector2DVector2D_ReturnValue = CallFunc_Subtract_Vector2DVector2D_ReturnValue;
-	Parms.CallFunc_Conv_VectorToVector2D_ReturnValue = CallFunc_Conv_VectorToVector2D_ReturnValue;
-	Parms.CallFunc_Divide_Vector2DFloat_ReturnValue = CallFunc_Divide_Vector2DFloat_ReturnValue;
-	Parms.CallFunc_Add_Vector2DVector2D_ReturnValue = CallFunc_Add_Vector2DVector2D_ReturnValue;
-	Parms.CallFunc_Subtract_Vector2DVector2D_ReturnValue_1 = CallFunc_Subtract_Vector2DVector2D_ReturnValue_1;
-	Parms.CallFunc_Divide_Vector2DVector2D_ReturnValue = CallFunc_Divide_Vector2DVector2D_ReturnValue;
-	Parms.CallFunc_Multiply_Vector2DVector2D_ReturnValue = CallFunc_Multiply_Vector2DVector2D_ReturnValue;
+	Parms.WorldPosition = InWorldPosition;
+	Parms.WorldBounds = InWorldBounds;
+	Parms.UiSize = InUiSize;
+	Parms.Scaling = InScaling;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.TmpWorldHalfExtents = InTmpWorldHalfExtents;
+	Parms.TmpWorldCenter = InTmpWorldCenter;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.CallFunc_BreakVector2D_X = InCallFunc_BreakVector2D_X;
+	Parms.CallFunc_BreakVector2D_Y = InCallFunc_BreakVector2D_Y;
+	Parms.CallFunc_MakeVector2D_ReturnValue = InCallFunc_MakeVector2D_ReturnValue;
+	Parms.CallFunc_MakeVector2D_ReturnValue_1 = InCallFunc_MakeVector2D_ReturnValue_1;
+	Parms.CallFunc_MakeVector2D_ReturnValue_2 = InCallFunc_MakeVector2D_ReturnValue_2;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
+	Parms.CallFunc_Multiply_Vector2DFloat_ReturnValue = InCallFunc_Multiply_Vector2DFloat_ReturnValue;
+	Parms.CallFunc_Subtract_Vector2DVector2D_ReturnValue = InCallFunc_Subtract_Vector2DVector2D_ReturnValue;
+	Parms.CallFunc_Conv_VectorToVector2D_ReturnValue = InCallFunc_Conv_VectorToVector2D_ReturnValue;
+	Parms.CallFunc_Divide_Vector2DFloat_ReturnValue = InCallFunc_Divide_Vector2DFloat_ReturnValue;
+	Parms.CallFunc_Add_Vector2DVector2D_ReturnValue = InCallFunc_Add_Vector2DVector2D_ReturnValue;
+	Parms.CallFunc_Subtract_Vector2DVector2D_ReturnValue_1 = InCallFunc_Subtract_Vector2DVector2D_ReturnValue_1;
+	Parms.CallFunc_Divide_Vector2DVector2D_ReturnValue = InCallFunc_Divide_Vector2DVector2D_ReturnValue;
+	Parms.CallFunc_Multiply_Vector2DVector2D_ReturnValue = InCallFunc_Multiply_Vector2DVector2D_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (UiPosition != nullptr)
-		*UiPosition = Parms.UiPosition;
+	if (InUiPosition != nullptr)
+		*InUiPosition = Parms.UiPosition;
 
 }
 
@@ -971,7 +1026,7 @@ void UBPFL_UiHelpers_C::WorldPositionToUiPosition(const struct FVector& WorldPos
 // enum class ECrafterState           Temp_byte_Variable                                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_Select_Default                                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::IsAlmostBurnt_(class UCrafterComponent* Crafter, class UObject* __WorldContext, bool* IsAlmostBurnt, bool Temp_bool_Variable, int32 CallFunc_GetTimeRemainingTillBurntMs_ReturnValue, bool CallFunc_InRange_IntInt_ReturnValue, enum class ECrafterState CallFunc_GetCrafterState_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool Temp_bool_Variable_1, bool Temp_bool_Variable_2, bool Temp_bool_Variable_3, bool Temp_bool_Variable_4, enum class ECrafterState Temp_byte_Variable, bool K2Node_Select_Default)
+void UBPFL_UiHelpers_C::IsAlmostBurnt_(class UCrafterComponent* InCrafter, class UObject* In__WorldContext, bool* InIsAlmostBurnt, bool InTemp_bool_Variable, int32 InCallFunc_GetTimeRemainingTillBurntMs_ReturnValue, bool InCallFunc_InRange_IntInt_ReturnValue, enum class ECrafterState InCallFunc_GetCrafterState_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InTemp_bool_Variable_1, bool InTemp_bool_Variable_2, bool InTemp_bool_Variable_3, bool InTemp_bool_Variable_4, enum class ECrafterState InTemp_byte_Variable, bool InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -980,24 +1035,24 @@ void UBPFL_UiHelpers_C::IsAlmostBurnt_(class UCrafterComponent* Crafter, class U
 
 	Params::UBPFL_UiHelpers_C_IsAlmostBurnt__Params Parms{};
 
-	Parms.Crafter = Crafter;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_bool_Variable = Temp_bool_Variable;
-	Parms.CallFunc_GetTimeRemainingTillBurntMs_ReturnValue = CallFunc_GetTimeRemainingTillBurntMs_ReturnValue;
-	Parms.CallFunc_InRange_IntInt_ReturnValue = CallFunc_InRange_IntInt_ReturnValue;
-	Parms.CallFunc_GetCrafterState_ReturnValue = CallFunc_GetCrafterState_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.Temp_bool_Variable_1 = Temp_bool_Variable_1;
-	Parms.Temp_bool_Variable_2 = Temp_bool_Variable_2;
-	Parms.Temp_bool_Variable_3 = Temp_bool_Variable_3;
-	Parms.Temp_bool_Variable_4 = Temp_bool_Variable_4;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.Crafter = InCrafter;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_bool_Variable = InTemp_bool_Variable;
+	Parms.CallFunc_GetTimeRemainingTillBurntMs_ReturnValue = InCallFunc_GetTimeRemainingTillBurntMs_ReturnValue;
+	Parms.CallFunc_InRange_IntInt_ReturnValue = InCallFunc_InRange_IntInt_ReturnValue;
+	Parms.CallFunc_GetCrafterState_ReturnValue = InCallFunc_GetCrafterState_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.Temp_bool_Variable_1 = InTemp_bool_Variable_1;
+	Parms.Temp_bool_Variable_2 = InTemp_bool_Variable_2;
+	Parms.Temp_bool_Variable_3 = InTemp_bool_Variable_3;
+	Parms.Temp_bool_Variable_4 = InTemp_bool_Variable_4;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (IsAlmostBurnt != nullptr)
-		*IsAlmostBurnt = Parms.IsAlmostBurnt;
+	if (InIsAlmostBurnt != nullptr)
+		*InIsAlmostBurnt = Parms.IsAlmostBurnt;
 
 }
 
@@ -1013,7 +1068,7 @@ void UBPFL_UiHelpers_C::IsAlmostBurnt_(class UCrafterComponent* Crafter, class U
 // struct FLinearColor                Temp_struct_Variable_1                                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FLinearColor                K2Node_Select_Default                                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetGwgTriplesTeamColor(bool GoodGuys, class UObject* __WorldContext, struct FLinearColor* Color, bool Temp_bool_Variable, const struct FLinearColor& Temp_struct_Variable, const struct FLinearColor& Temp_struct_Variable_1, const struct FLinearColor& K2Node_Select_Default)
+void UBPFL_UiHelpers_C::GetGwgTriplesTeamColor(bool InGoodGuys, class UObject* In__WorldContext, struct FLinearColor* InColor, bool InTemp_bool_Variable, const struct FLinearColor& InTemp_struct_Variable, const struct FLinearColor& InTemp_struct_Variable_1, const struct FLinearColor& InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1022,17 +1077,17 @@ void UBPFL_UiHelpers_C::GetGwgTriplesTeamColor(bool GoodGuys, class UObject* __W
 
 	Params::UBPFL_UiHelpers_C_GetGwgTriplesTeamColor_Params Parms{};
 
-	Parms.GoodGuys = GoodGuys;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_bool_Variable = Temp_bool_Variable;
-	Parms.Temp_struct_Variable = Temp_struct_Variable;
-	Parms.Temp_struct_Variable_1 = Temp_struct_Variable_1;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.GoodGuys = InGoodGuys;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_bool_Variable = InTemp_bool_Variable;
+	Parms.Temp_struct_Variable = InTemp_struct_Variable;
+	Parms.Temp_struct_Variable_1 = InTemp_struct_Variable_1;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Color != nullptr)
-		*Color = Parms.Color;
+	if (InColor != nullptr)
+		*InColor = Parms.Color;
 
 }
 
@@ -1048,7 +1103,7 @@ void UBPFL_UiHelpers_C::GetGwgTriplesTeamColor(bool GoodGuys, class UObject* __W
 // bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsDebuggingOn_ReturnValue                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::IsDebuggingOn_(class UObject* Context, class UObject* __WorldContext, bool* IsDebuggingOn, class UGameInstance* CallFunc_GetGameInstance_ReturnValue, class UValeriaGameInstance* K2Node_DynamicCast_AsValeria_Game_Instance, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsDebuggingOn_ReturnValue)
+void UBPFL_UiHelpers_C::IsDebuggingOn_(class UObject* InContext, class UObject* In__WorldContext, bool* InIsDebuggingOn, class UGameInstance* InCallFunc_GetGameInstance_ReturnValue, class UValeriaGameInstance* InK2Node_DynamicCast_AsValeria_Game_Instance, bool InK2Node_DynamicCast_bSuccess, bool InCallFunc_IsDebuggingOn_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1057,17 +1112,17 @@ void UBPFL_UiHelpers_C::IsDebuggingOn_(class UObject* Context, class UObject* __
 
 	Params::UBPFL_UiHelpers_C_IsDebuggingOn__Params Parms{};
 
-	Parms.Context = Context;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_GetGameInstance_ReturnValue = CallFunc_GetGameInstance_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Game_Instance = K2Node_DynamicCast_AsValeria_Game_Instance;
-	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_IsDebuggingOn_ReturnValue = CallFunc_IsDebuggingOn_ReturnValue;
+	Parms.Context = InContext;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_GetGameInstance_ReturnValue = InCallFunc_GetGameInstance_ReturnValue;
+	Parms.K2Node_DynamicCast_AsValeria_Game_Instance = InK2Node_DynamicCast_AsValeria_Game_Instance;
+	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_IsDebuggingOn_ReturnValue = InCallFunc_IsDebuggingOn_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (IsDebuggingOn != nullptr)
-		*IsDebuggingOn = Parms.IsDebuggingOn;
+	if (InIsDebuggingOn != nullptr)
+		*InIsDebuggingOn = Parms.IsDebuggingOn;
 
 }
 
@@ -1084,7 +1139,7 @@ void UBPFL_UiHelpers_C::IsDebuggingOn_(class UObject* Context, class UObject* __
 // class FString                      CallFunc_Concat_StrStr_ReturnValue_1                             (ZeroConstructor, HasGetValueTypeHash)
 // class FString                      CallFunc_Concat_StrStr_ReturnValue_2                             (ZeroConstructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::FormatClockTimInValeriaDHM(const struct FClockTimeInValeria& Time, class UObject* __WorldContext, class FString* Result, const class FString& CallFunc_FormatClockTimeInValeria_Result, const class FString& CallFunc_Conv_IntToString_ReturnValue, const class FString& CallFunc_Concat_StrStr_ReturnValue, const class FString& CallFunc_Concat_StrStr_ReturnValue_1, const class FString& CallFunc_Concat_StrStr_ReturnValue_2)
+void UBPFL_UiHelpers_C::FormatClockTimInValeriaDHM(const struct FClockTimeInValeria& InTime, class UObject* In__WorldContext, class FString* InResult, const class FString& InCallFunc_FormatClockTimeInValeria_Result, const class FString& InCallFunc_Conv_IntToString_ReturnValue, const class FString& InCallFunc_Concat_StrStr_ReturnValue, const class FString& InCallFunc_Concat_StrStr_ReturnValue_1, const class FString& InCallFunc_Concat_StrStr_ReturnValue_2)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1093,18 +1148,18 @@ void UBPFL_UiHelpers_C::FormatClockTimInValeriaDHM(const struct FClockTimeInVale
 
 	Params::UBPFL_UiHelpers_C_FormatClockTimInValeriaDHM_Params Parms{};
 
-	Parms.Time = Time;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_FormatClockTimeInValeria_Result = CallFunc_FormatClockTimeInValeria_Result;
-	Parms.CallFunc_Conv_IntToString_ReturnValue = CallFunc_Conv_IntToString_ReturnValue;
-	Parms.CallFunc_Concat_StrStr_ReturnValue = CallFunc_Concat_StrStr_ReturnValue;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_1 = CallFunc_Concat_StrStr_ReturnValue_1;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_2 = CallFunc_Concat_StrStr_ReturnValue_2;
+	Parms.Time = InTime;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_FormatClockTimeInValeria_Result = InCallFunc_FormatClockTimeInValeria_Result;
+	Parms.CallFunc_Conv_IntToString_ReturnValue = InCallFunc_Conv_IntToString_ReturnValue;
+	Parms.CallFunc_Concat_StrStr_ReturnValue = InCallFunc_Concat_StrStr_ReturnValue;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_1 = InCallFunc_Concat_StrStr_ReturnValue_1;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_2 = InCallFunc_Concat_StrStr_ReturnValue_2;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Result != nullptr)
-		*Result = Parms.Result;
+	if (InResult != nullptr)
+		*InResult = Parms.Result;
 
 }
 
@@ -1138,7 +1193,7 @@ void UBPFL_UiHelpers_C::FormatClockTimInValeriaDHM(const struct FClockTimeInVale
 // class FString                      CallFunc_Concat_StrStr_ReturnValue_3                             (ZeroConstructor, HasGetValueTypeHash)
 // class FString                      CallFunc_Concat_StrStr_ReturnValue_4                             (ZeroConstructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::FormatClockTimeInValeria(const struct FClockTimeInValeria& Time, class UObject* __WorldContext, class FString* Result, const class FString& Temp_string_Variable, bool CallFunc_GreaterEqual_IntInt_ReturnValue, const class FString& CallFunc_Conv_IntToString_ReturnValue, bool CallFunc_GreaterEqual_IntInt_ReturnValue_1, int32 CallFunc_Percent_IntInt_ReturnValue, const class FString& Temp_string_Variable_1, bool CallFunc_EqualEqual_IntInt_ReturnValue, bool Temp_bool_Variable, int32 Temp_int_Variable, bool Temp_bool_Variable_1, int32 K2Node_Select_Default, const class FString& CallFunc_Conv_IntToString_ReturnValue_1, const class FString& Temp_string_Variable_2, const class FString& CallFunc_Concat_StrStr_ReturnValue, const class FString& Temp_string_Variable_3, bool Temp_bool_Variable_2, const class FString& K2Node_Select_Default_1, const class FString& K2Node_Select_Default_2, const class FString& CallFunc_Concat_StrStr_ReturnValue_1, const class FString& CallFunc_Concat_StrStr_ReturnValue_2, const class FString& CallFunc_Concat_StrStr_ReturnValue_3, const class FString& CallFunc_Concat_StrStr_ReturnValue_4)
+void UBPFL_UiHelpers_C::FormatClockTimeInValeria(const struct FClockTimeInValeria& InTime, class UObject* In__WorldContext, class FString* InResult, const class FString& InTemp_string_Variable, bool InCallFunc_GreaterEqual_IntInt_ReturnValue, const class FString& InCallFunc_Conv_IntToString_ReturnValue, bool InCallFunc_GreaterEqual_IntInt_ReturnValue_1, int32 InCallFunc_Percent_IntInt_ReturnValue, const class FString& InTemp_string_Variable_1, bool InCallFunc_EqualEqual_IntInt_ReturnValue, bool InTemp_bool_Variable, int32 InTemp_int_Variable, bool InTemp_bool_Variable_1, int32 InK2Node_Select_Default, const class FString& InCallFunc_Conv_IntToString_ReturnValue_1, const class FString& InTemp_string_Variable_2, const class FString& InCallFunc_Concat_StrStr_ReturnValue, const class FString& InTemp_string_Variable_3, bool InTemp_bool_Variable_2, const class FString& InK2Node_Select_Default_1, const class FString& InK2Node_Select_Default_2, const class FString& InCallFunc_Concat_StrStr_ReturnValue_1, const class FString& InCallFunc_Concat_StrStr_ReturnValue_2, const class FString& InCallFunc_Concat_StrStr_ReturnValue_3, const class FString& InCallFunc_Concat_StrStr_ReturnValue_4)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1147,35 +1202,35 @@ void UBPFL_UiHelpers_C::FormatClockTimeInValeria(const struct FClockTimeInValeri
 
 	Params::UBPFL_UiHelpers_C_FormatClockTimeInValeria_Params Parms{};
 
-	Parms.Time = Time;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_string_Variable = Temp_string_Variable;
-	Parms.CallFunc_GreaterEqual_IntInt_ReturnValue = CallFunc_GreaterEqual_IntInt_ReturnValue;
-	Parms.CallFunc_Conv_IntToString_ReturnValue = CallFunc_Conv_IntToString_ReturnValue;
-	Parms.CallFunc_GreaterEqual_IntInt_ReturnValue_1 = CallFunc_GreaterEqual_IntInt_ReturnValue_1;
-	Parms.CallFunc_Percent_IntInt_ReturnValue = CallFunc_Percent_IntInt_ReturnValue;
-	Parms.Temp_string_Variable_1 = Temp_string_Variable_1;
-	Parms.CallFunc_EqualEqual_IntInt_ReturnValue = CallFunc_EqualEqual_IntInt_ReturnValue;
-	Parms.Temp_bool_Variable = Temp_bool_Variable;
-	Parms.Temp_int_Variable = Temp_int_Variable;
-	Parms.Temp_bool_Variable_1 = Temp_bool_Variable_1;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
-	Parms.CallFunc_Conv_IntToString_ReturnValue_1 = CallFunc_Conv_IntToString_ReturnValue_1;
-	Parms.Temp_string_Variable_2 = Temp_string_Variable_2;
-	Parms.CallFunc_Concat_StrStr_ReturnValue = CallFunc_Concat_StrStr_ReturnValue;
-	Parms.Temp_string_Variable_3 = Temp_string_Variable_3;
-	Parms.Temp_bool_Variable_2 = Temp_bool_Variable_2;
-	Parms.K2Node_Select_Default_1 = K2Node_Select_Default_1;
-	Parms.K2Node_Select_Default_2 = K2Node_Select_Default_2;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_1 = CallFunc_Concat_StrStr_ReturnValue_1;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_2 = CallFunc_Concat_StrStr_ReturnValue_2;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_3 = CallFunc_Concat_StrStr_ReturnValue_3;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_4 = CallFunc_Concat_StrStr_ReturnValue_4;
+	Parms.Time = InTime;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_string_Variable = InTemp_string_Variable;
+	Parms.CallFunc_GreaterEqual_IntInt_ReturnValue = InCallFunc_GreaterEqual_IntInt_ReturnValue;
+	Parms.CallFunc_Conv_IntToString_ReturnValue = InCallFunc_Conv_IntToString_ReturnValue;
+	Parms.CallFunc_GreaterEqual_IntInt_ReturnValue_1 = InCallFunc_GreaterEqual_IntInt_ReturnValue_1;
+	Parms.CallFunc_Percent_IntInt_ReturnValue = InCallFunc_Percent_IntInt_ReturnValue;
+	Parms.Temp_string_Variable_1 = InTemp_string_Variable_1;
+	Parms.CallFunc_EqualEqual_IntInt_ReturnValue = InCallFunc_EqualEqual_IntInt_ReturnValue;
+	Parms.Temp_bool_Variable = InTemp_bool_Variable;
+	Parms.Temp_int_Variable = InTemp_int_Variable;
+	Parms.Temp_bool_Variable_1 = InTemp_bool_Variable_1;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
+	Parms.CallFunc_Conv_IntToString_ReturnValue_1 = InCallFunc_Conv_IntToString_ReturnValue_1;
+	Parms.Temp_string_Variable_2 = InTemp_string_Variable_2;
+	Parms.CallFunc_Concat_StrStr_ReturnValue = InCallFunc_Concat_StrStr_ReturnValue;
+	Parms.Temp_string_Variable_3 = InTemp_string_Variable_3;
+	Parms.Temp_bool_Variable_2 = InTemp_bool_Variable_2;
+	Parms.K2Node_Select_Default_1 = InK2Node_Select_Default_1;
+	Parms.K2Node_Select_Default_2 = InK2Node_Select_Default_2;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_1 = InCallFunc_Concat_StrStr_ReturnValue_1;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_2 = InCallFunc_Concat_StrStr_ReturnValue_2;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_3 = InCallFunc_Concat_StrStr_ReturnValue_3;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_4 = InCallFunc_Concat_StrStr_ReturnValue_4;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Result != nullptr)
-		*Result = Parms.Result;
+	if (InResult != nullptr)
+		*InResult = Parms.Result;
 
 }
 
@@ -1193,7 +1248,7 @@ void UBPFL_UiHelpers_C::FormatClockTimeInValeria(const struct FClockTimeInValeri
 // bool                               CallFunc_IsValeriaTimeValid_ReturnValue                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             K2Node_FunctionResult_TimeOfDayLerp_ImplicitCast                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetTimeOfDayLerp(class UObject* Context, class UObject* __WorldContext, double* TimeOfDayLerp, bool* IsValid, class UValeriaTimeManager* CallFunc_GetGameInstanceSubsystem_ReturnValue, class UValeriaTimeManager* CallFunc_GetGameInstanceSubsystem_ReturnValue_1, float CallFunc_GetTimeOfDayLerp_ReturnValue, bool CallFunc_IsValeriaTimeValid_ReturnValue, double K2Node_FunctionResult_TimeOfDayLerp_ImplicitCast)
+void UBPFL_UiHelpers_C::GetTimeOfDayLerp(class UObject* InContext, class UObject* In__WorldContext, double* InTimeOfDayLerp, bool* InIsValid, class UValeriaTimeManager* InCallFunc_GetGameInstanceSubsystem_ReturnValue, class UValeriaTimeManager* InCallFunc_GetGameInstanceSubsystem_ReturnValue_1, float InCallFunc_GetTimeOfDayLerp_ReturnValue, bool InCallFunc_IsValeriaTimeValid_ReturnValue, double InK2Node_FunctionResult_TimeOfDayLerp_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1202,21 +1257,21 @@ void UBPFL_UiHelpers_C::GetTimeOfDayLerp(class UObject* Context, class UObject* 
 
 	Params::UBPFL_UiHelpers_C_GetTimeOfDayLerp_Params Parms{};
 
-	Parms.Context = Context;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_GetGameInstanceSubsystem_ReturnValue = CallFunc_GetGameInstanceSubsystem_ReturnValue;
-	Parms.CallFunc_GetGameInstanceSubsystem_ReturnValue_1 = CallFunc_GetGameInstanceSubsystem_ReturnValue_1;
-	Parms.CallFunc_GetTimeOfDayLerp_ReturnValue = CallFunc_GetTimeOfDayLerp_ReturnValue;
-	Parms.CallFunc_IsValeriaTimeValid_ReturnValue = CallFunc_IsValeriaTimeValid_ReturnValue;
-	Parms.K2Node_FunctionResult_TimeOfDayLerp_ImplicitCast = K2Node_FunctionResult_TimeOfDayLerp_ImplicitCast;
+	Parms.Context = InContext;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_GetGameInstanceSubsystem_ReturnValue = InCallFunc_GetGameInstanceSubsystem_ReturnValue;
+	Parms.CallFunc_GetGameInstanceSubsystem_ReturnValue_1 = InCallFunc_GetGameInstanceSubsystem_ReturnValue_1;
+	Parms.CallFunc_GetTimeOfDayLerp_ReturnValue = InCallFunc_GetTimeOfDayLerp_ReturnValue;
+	Parms.CallFunc_IsValeriaTimeValid_ReturnValue = InCallFunc_IsValeriaTimeValid_ReturnValue;
+	Parms.K2Node_FunctionResult_TimeOfDayLerp_ImplicitCast = InK2Node_FunctionResult_TimeOfDayLerp_ImplicitCast;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (TimeOfDayLerp != nullptr)
-		*TimeOfDayLerp = Parms.TimeOfDayLerp;
+	if (InTimeOfDayLerp != nullptr)
+		*InTimeOfDayLerp = Parms.TimeOfDayLerp;
 
-	if (IsValid != nullptr)
-		*IsValid = Parms.IsValid;
+	if (InIsValid != nullptr)
+		*InIsValid = Parms.IsValid;
 
 }
 
@@ -1257,7 +1312,7 @@ void UBPFL_UiHelpers_C::GetTimeOfDayLerp(class UObject* Context, class UObject* 
 // class FText                        Temp_text_Variable_26                                            ()
 // class FText                        K2Node_Select_Default                                            ()
 
-void UBPFL_UiHelpers_C::GetItemCategoryName(enum class EItemCategory ItemCategory, class UObject* __WorldContext, class FText* Name, enum class EItemCategory Temp_byte_Variable, class FText Temp_text_Variable, class FText Temp_text_Variable_1, class FText Temp_text_Variable_2, class FText Temp_text_Variable_3, class FText Temp_text_Variable_4, class FText Temp_text_Variable_5, class FText Temp_text_Variable_6, class FText Temp_text_Variable_7, class FText Temp_text_Variable_8, class FText Temp_text_Variable_9, class FText Temp_text_Variable_10, class FText Temp_text_Variable_11, class FText Temp_text_Variable_12, class FText Temp_text_Variable_13, class FText Temp_text_Variable_14, class FText Temp_text_Variable_15, class FText Temp_text_Variable_16, class FText Temp_text_Variable_17, class FText Temp_text_Variable_18, class FText Temp_text_Variable_19, class FText Temp_text_Variable_20, class FText Temp_text_Variable_21, class FText Temp_text_Variable_22, class FText Temp_text_Variable_23, class FText Temp_text_Variable_24, class FText Temp_text_Variable_25, class FText Temp_text_Variable_26, class FText K2Node_Select_Default)
+void UBPFL_UiHelpers_C::GetItemCategoryName(enum class EItemCategory InItemCategory, class UObject* In__WorldContext, class FText* InName, enum class EItemCategory InTemp_byte_Variable, class FText InTemp_text_Variable, class FText InTemp_text_Variable_1, class FText InTemp_text_Variable_2, class FText InTemp_text_Variable_3, class FText InTemp_text_Variable_4, class FText InTemp_text_Variable_5, class FText InTemp_text_Variable_6, class FText InTemp_text_Variable_7, class FText InTemp_text_Variable_8, class FText InTemp_text_Variable_9, class FText InTemp_text_Variable_10, class FText InTemp_text_Variable_11, class FText InTemp_text_Variable_12, class FText InTemp_text_Variable_13, class FText InTemp_text_Variable_14, class FText InTemp_text_Variable_15, class FText InTemp_text_Variable_16, class FText InTemp_text_Variable_17, class FText InTemp_text_Variable_18, class FText InTemp_text_Variable_19, class FText InTemp_text_Variable_20, class FText InTemp_text_Variable_21, class FText InTemp_text_Variable_22, class FText InTemp_text_Variable_23, class FText InTemp_text_Variable_24, class FText InTemp_text_Variable_25, class FText InTemp_text_Variable_26, class FText InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1266,42 +1321,42 @@ void UBPFL_UiHelpers_C::GetItemCategoryName(enum class EItemCategory ItemCategor
 
 	Params::UBPFL_UiHelpers_C_GetItemCategoryName_Params Parms{};
 
-	Parms.ItemCategory = ItemCategory;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.Temp_text_Variable = Temp_text_Variable;
-	Parms.Temp_text_Variable_1 = Temp_text_Variable_1;
-	Parms.Temp_text_Variable_2 = Temp_text_Variable_2;
-	Parms.Temp_text_Variable_3 = Temp_text_Variable_3;
-	Parms.Temp_text_Variable_4 = Temp_text_Variable_4;
-	Parms.Temp_text_Variable_5 = Temp_text_Variable_5;
-	Parms.Temp_text_Variable_6 = Temp_text_Variable_6;
-	Parms.Temp_text_Variable_7 = Temp_text_Variable_7;
-	Parms.Temp_text_Variable_8 = Temp_text_Variable_8;
-	Parms.Temp_text_Variable_9 = Temp_text_Variable_9;
-	Parms.Temp_text_Variable_10 = Temp_text_Variable_10;
-	Parms.Temp_text_Variable_11 = Temp_text_Variable_11;
-	Parms.Temp_text_Variable_12 = Temp_text_Variable_12;
-	Parms.Temp_text_Variable_13 = Temp_text_Variable_13;
-	Parms.Temp_text_Variable_14 = Temp_text_Variable_14;
-	Parms.Temp_text_Variable_15 = Temp_text_Variable_15;
-	Parms.Temp_text_Variable_16 = Temp_text_Variable_16;
-	Parms.Temp_text_Variable_17 = Temp_text_Variable_17;
-	Parms.Temp_text_Variable_18 = Temp_text_Variable_18;
-	Parms.Temp_text_Variable_19 = Temp_text_Variable_19;
-	Parms.Temp_text_Variable_20 = Temp_text_Variable_20;
-	Parms.Temp_text_Variable_21 = Temp_text_Variable_21;
-	Parms.Temp_text_Variable_22 = Temp_text_Variable_22;
-	Parms.Temp_text_Variable_23 = Temp_text_Variable_23;
-	Parms.Temp_text_Variable_24 = Temp_text_Variable_24;
-	Parms.Temp_text_Variable_25 = Temp_text_Variable_25;
-	Parms.Temp_text_Variable_26 = Temp_text_Variable_26;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.ItemCategory = InItemCategory;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.Temp_text_Variable = InTemp_text_Variable;
+	Parms.Temp_text_Variable_1 = InTemp_text_Variable_1;
+	Parms.Temp_text_Variable_2 = InTemp_text_Variable_2;
+	Parms.Temp_text_Variable_3 = InTemp_text_Variable_3;
+	Parms.Temp_text_Variable_4 = InTemp_text_Variable_4;
+	Parms.Temp_text_Variable_5 = InTemp_text_Variable_5;
+	Parms.Temp_text_Variable_6 = InTemp_text_Variable_6;
+	Parms.Temp_text_Variable_7 = InTemp_text_Variable_7;
+	Parms.Temp_text_Variable_8 = InTemp_text_Variable_8;
+	Parms.Temp_text_Variable_9 = InTemp_text_Variable_9;
+	Parms.Temp_text_Variable_10 = InTemp_text_Variable_10;
+	Parms.Temp_text_Variable_11 = InTemp_text_Variable_11;
+	Parms.Temp_text_Variable_12 = InTemp_text_Variable_12;
+	Parms.Temp_text_Variable_13 = InTemp_text_Variable_13;
+	Parms.Temp_text_Variable_14 = InTemp_text_Variable_14;
+	Parms.Temp_text_Variable_15 = InTemp_text_Variable_15;
+	Parms.Temp_text_Variable_16 = InTemp_text_Variable_16;
+	Parms.Temp_text_Variable_17 = InTemp_text_Variable_17;
+	Parms.Temp_text_Variable_18 = InTemp_text_Variable_18;
+	Parms.Temp_text_Variable_19 = InTemp_text_Variable_19;
+	Parms.Temp_text_Variable_20 = InTemp_text_Variable_20;
+	Parms.Temp_text_Variable_21 = InTemp_text_Variable_21;
+	Parms.Temp_text_Variable_22 = InTemp_text_Variable_22;
+	Parms.Temp_text_Variable_23 = InTemp_text_Variable_23;
+	Parms.Temp_text_Variable_24 = InTemp_text_Variable_24;
+	Parms.Temp_text_Variable_25 = InTemp_text_Variable_25;
+	Parms.Temp_text_Variable_26 = InTemp_text_Variable_26;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Name != nullptr)
-		*Name = Parms.Name;
+	if (InName != nullptr)
+		*InName = Parms.Name;
 
 }
 
@@ -1314,7 +1369,7 @@ void UBPFL_UiHelpers_C::GetItemCategoryName(enum class EItemCategory ItemCategor
 // class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FAnchors                    K2Node_MakeStruct_Anchors                                        (NoDestructor)
 
-void UBPFL_UiHelpers_C::SetCanvasSlotToScreenCoords(const struct FVector2D& Screen_Position, class UCanvasPanelSlot* Canvas_Slot, class UObject* __WorldContext, const struct FAnchors& K2Node_MakeStruct_Anchors)
+void UBPFL_UiHelpers_C::SetCanvasSlotToScreenCoords(const struct FVector2D& InScreen_Position, class UCanvasPanelSlot* InCanvas_Slot, class UObject* In__WorldContext, const struct FAnchors& InK2Node_MakeStruct_Anchors)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1323,10 +1378,10 @@ void UBPFL_UiHelpers_C::SetCanvasSlotToScreenCoords(const struct FVector2D& Scre
 
 	Params::UBPFL_UiHelpers_C_SetCanvasSlotToScreenCoords_Params Parms{};
 
-	Parms.Screen_Position = Screen_Position;
-	Parms.Canvas_Slot = Canvas_Slot;
-	Parms.__WorldContext = __WorldContext;
-	Parms.K2Node_MakeStruct_Anchors = K2Node_MakeStruct_Anchors;
+	Parms.Screen_Position = InScreen_Position;
+	Parms.Canvas_Slot = InCanvas_Slot;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.K2Node_MakeStruct_Anchors = InK2Node_MakeStruct_Anchors;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1350,7 +1405,7 @@ void UBPFL_UiHelpers_C::SetCanvasSlotToScreenCoords(const struct FVector2D& Scre
 // bool                               CallFunc_IsValid_ReturnValue_1                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::ChangeCanvasSlotPosition(class UCanvasPanelSlot* ToChange, class UCanvasPanelSlot* ToCopyFrom, class UObject* __WorldContext, int32 CallFunc_GetZOrder_ReturnValue, const struct FVector2D& CallFunc_GetSize_ReturnValue, const struct FAnchorData& CallFunc_GetLayout_ReturnValue, bool CallFunc_GetAutoSize_ReturnValue, const struct FVector2D& CallFunc_GetAlignment_ReturnValue, const struct FVector2D& CallFunc_GetPosition_ReturnValue, const struct FAnchors& CallFunc_GetAnchors_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, bool CallFunc_BooleanAND_ReturnValue)
+void UBPFL_UiHelpers_C::ChangeCanvasSlotPosition(class UCanvasPanelSlot* InToChange, class UCanvasPanelSlot* InToCopyFrom, class UObject* In__WorldContext, int32 InCallFunc_GetZOrder_ReturnValue, const struct FVector2D& InCallFunc_GetSize_ReturnValue, const struct FAnchorData& InCallFunc_GetLayout_ReturnValue, bool InCallFunc_GetAutoSize_ReturnValue, const struct FVector2D& InCallFunc_GetAlignment_ReturnValue, const struct FVector2D& InCallFunc_GetPosition_ReturnValue, const struct FAnchors& InCallFunc_GetAnchors_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, bool InCallFunc_BooleanAND_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1359,19 +1414,19 @@ void UBPFL_UiHelpers_C::ChangeCanvasSlotPosition(class UCanvasPanelSlot* ToChang
 
 	Params::UBPFL_UiHelpers_C_ChangeCanvasSlotPosition_Params Parms{};
 
-	Parms.ToChange = ToChange;
-	Parms.ToCopyFrom = ToCopyFrom;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_GetZOrder_ReturnValue = CallFunc_GetZOrder_ReturnValue;
-	Parms.CallFunc_GetSize_ReturnValue = CallFunc_GetSize_ReturnValue;
-	Parms.CallFunc_GetLayout_ReturnValue = CallFunc_GetLayout_ReturnValue;
-	Parms.CallFunc_GetAutoSize_ReturnValue = CallFunc_GetAutoSize_ReturnValue;
-	Parms.CallFunc_GetAlignment_ReturnValue = CallFunc_GetAlignment_ReturnValue;
-	Parms.CallFunc_GetPosition_ReturnValue = CallFunc_GetPosition_ReturnValue;
-	Parms.CallFunc_GetAnchors_ReturnValue = CallFunc_GetAnchors_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
+	Parms.ToChange = InToChange;
+	Parms.ToCopyFrom = InToCopyFrom;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_GetZOrder_ReturnValue = InCallFunc_GetZOrder_ReturnValue;
+	Parms.CallFunc_GetSize_ReturnValue = InCallFunc_GetSize_ReturnValue;
+	Parms.CallFunc_GetLayout_ReturnValue = InCallFunc_GetLayout_ReturnValue;
+	Parms.CallFunc_GetAutoSize_ReturnValue = InCallFunc_GetAutoSize_ReturnValue;
+	Parms.CallFunc_GetAlignment_ReturnValue = InCallFunc_GetAlignment_ReturnValue;
+	Parms.CallFunc_GetPosition_ReturnValue = InCallFunc_GetPosition_ReturnValue;
+	Parms.CallFunc_GetAnchors_ReturnValue = InCallFunc_GetAnchors_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1392,7 +1447,7 @@ void UBPFL_UiHelpers_C::ChangeCanvasSlotPosition(class UCanvasPanelSlot* ToChang
 // int32                              CallFunc_FTrunc_ReturnValue                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_FTrunc_ReturnValue_1                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::CenterMousePointer(class UObject* WorldContextObject, class UObject* __WorldContext, class APlayerController* CallFunc_GetPlayerController_ReturnValue, const struct FVector2D& CallFunc_GetViewportSize_ReturnValue, double CallFunc_BreakVector2D_X, double CallFunc_BreakVector2D_Y, double CallFunc_Divide_DoubleDouble_ReturnValue, double CallFunc_Divide_DoubleDouble_ReturnValue_1, int32 CallFunc_FTrunc_ReturnValue, int32 CallFunc_FTrunc_ReturnValue_1)
+void UBPFL_UiHelpers_C::CenterMousePointer(class UObject* InWorldContextObject, class UObject* In__WorldContext, class APlayerController* InCallFunc_GetPlayerController_ReturnValue, const struct FVector2D& InCallFunc_GetViewportSize_ReturnValue, double InCallFunc_BreakVector2D_X, double InCallFunc_BreakVector2D_Y, double InCallFunc_Divide_DoubleDouble_ReturnValue, double InCallFunc_Divide_DoubleDouble_ReturnValue_1, int32 InCallFunc_FTrunc_ReturnValue, int32 InCallFunc_FTrunc_ReturnValue_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1401,16 +1456,16 @@ void UBPFL_UiHelpers_C::CenterMousePointer(class UObject* WorldContextObject, cl
 
 	Params::UBPFL_UiHelpers_C_CenterMousePointer_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_GetPlayerController_ReturnValue = CallFunc_GetPlayerController_ReturnValue;
-	Parms.CallFunc_GetViewportSize_ReturnValue = CallFunc_GetViewportSize_ReturnValue;
-	Parms.CallFunc_BreakVector2D_X = CallFunc_BreakVector2D_X;
-	Parms.CallFunc_BreakVector2D_Y = CallFunc_BreakVector2D_Y;
-	Parms.CallFunc_Divide_DoubleDouble_ReturnValue = CallFunc_Divide_DoubleDouble_ReturnValue;
-	Parms.CallFunc_Divide_DoubleDouble_ReturnValue_1 = CallFunc_Divide_DoubleDouble_ReturnValue_1;
-	Parms.CallFunc_FTrunc_ReturnValue = CallFunc_FTrunc_ReturnValue;
-	Parms.CallFunc_FTrunc_ReturnValue_1 = CallFunc_FTrunc_ReturnValue_1;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_GetPlayerController_ReturnValue = InCallFunc_GetPlayerController_ReturnValue;
+	Parms.CallFunc_GetViewportSize_ReturnValue = InCallFunc_GetViewportSize_ReturnValue;
+	Parms.CallFunc_BreakVector2D_X = InCallFunc_BreakVector2D_X;
+	Parms.CallFunc_BreakVector2D_Y = InCallFunc_BreakVector2D_Y;
+	Parms.CallFunc_Divide_DoubleDouble_ReturnValue = InCallFunc_Divide_DoubleDouble_ReturnValue;
+	Parms.CallFunc_Divide_DoubleDouble_ReturnValue_1 = InCallFunc_Divide_DoubleDouble_ReturnValue_1;
+	Parms.CallFunc_FTrunc_ReturnValue = InCallFunc_FTrunc_ReturnValue;
+	Parms.CallFunc_FTrunc_ReturnValue_1 = InCallFunc_FTrunc_ReturnValue_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1431,7 +1486,7 @@ void UBPFL_UiHelpers_C::CenterMousePointer(class UObject* WorldContextObject, cl
 // double                             CallFunc_Greater_DoubleDouble_A_ImplicitCast                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_Greater_DoubleDouble_A_ImplicitCast_1                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::IsShiftDown_(class APlayerController* PlayerController, class UObject* __WorldContext, bool* Result, float CallFunc_GetInputKeyTimeDown_ReturnValue, float CallFunc_GetInputKeyTimeDown_ReturnValue_1, bool CallFunc_Greater_DoubleDouble_ReturnValue, bool CallFunc_Greater_DoubleDouble_ReturnValue_1, bool CallFunc_BooleanOR_ReturnValue, double CallFunc_Greater_DoubleDouble_A_ImplicitCast, double CallFunc_Greater_DoubleDouble_A_ImplicitCast_1)
+void UBPFL_UiHelpers_C::IsShiftDown_(class APlayerController* InPlayerController, class UObject* In__WorldContext, bool* InResult, float InCallFunc_GetInputKeyTimeDown_ReturnValue, float InCallFunc_GetInputKeyTimeDown_ReturnValue_1, bool InCallFunc_Greater_DoubleDouble_ReturnValue, bool InCallFunc_Greater_DoubleDouble_ReturnValue_1, bool InCallFunc_BooleanOR_ReturnValue, double InCallFunc_Greater_DoubleDouble_A_ImplicitCast, double InCallFunc_Greater_DoubleDouble_A_ImplicitCast_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1440,20 +1495,20 @@ void UBPFL_UiHelpers_C::IsShiftDown_(class APlayerController* PlayerController, 
 
 	Params::UBPFL_UiHelpers_C_IsShiftDown__Params Parms{};
 
-	Parms.PlayerController = PlayerController;
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_GetInputKeyTimeDown_ReturnValue = CallFunc_GetInputKeyTimeDown_ReturnValue;
-	Parms.CallFunc_GetInputKeyTimeDown_ReturnValue_1 = CallFunc_GetInputKeyTimeDown_ReturnValue_1;
-	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = CallFunc_Greater_DoubleDouble_ReturnValue;
-	Parms.CallFunc_Greater_DoubleDouble_ReturnValue_1 = CallFunc_Greater_DoubleDouble_ReturnValue_1;
-	Parms.CallFunc_BooleanOR_ReturnValue = CallFunc_BooleanOR_ReturnValue;
-	Parms.CallFunc_Greater_DoubleDouble_A_ImplicitCast = CallFunc_Greater_DoubleDouble_A_ImplicitCast;
-	Parms.CallFunc_Greater_DoubleDouble_A_ImplicitCast_1 = CallFunc_Greater_DoubleDouble_A_ImplicitCast_1;
+	Parms.PlayerController = InPlayerController;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.CallFunc_GetInputKeyTimeDown_ReturnValue = InCallFunc_GetInputKeyTimeDown_ReturnValue;
+	Parms.CallFunc_GetInputKeyTimeDown_ReturnValue_1 = InCallFunc_GetInputKeyTimeDown_ReturnValue_1;
+	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = InCallFunc_Greater_DoubleDouble_ReturnValue;
+	Parms.CallFunc_Greater_DoubleDouble_ReturnValue_1 = InCallFunc_Greater_DoubleDouble_ReturnValue_1;
+	Parms.CallFunc_BooleanOR_ReturnValue = InCallFunc_BooleanOR_ReturnValue;
+	Parms.CallFunc_Greater_DoubleDouble_A_ImplicitCast = InCallFunc_Greater_DoubleDouble_A_ImplicitCast;
+	Parms.CallFunc_Greater_DoubleDouble_A_ImplicitCast_1 = InCallFunc_Greater_DoubleDouble_A_ImplicitCast_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Result != nullptr)
-		*Result = Parms.Result;
+	if (InResult != nullptr)
+		*InResult = Parms.Result;
 
 }
 
@@ -1477,7 +1532,7 @@ void UBPFL_UiHelpers_C::IsShiftDown_(class APlayerController* PlayerController, 
 // bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsVisible_ReturnValue                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::ShowHideWidget(class UUserWidget* UserWidget, bool IsVisible_, bool UiBlocksInput_, class UObject* __WorldContext, bool TmpWasVisible, class UUserWidget* TmpUserWidgetToToggle, enum class ESlateVisibility Temp_byte_Variable, enum class ESlateVisibility Temp_byte_Variable_1, bool Temp_bool_Variable, bool CallFunc_BooleanAND_ReturnValue, enum class ESlateVisibility K2Node_Select_Default, bool CallFunc_NotEqual_BoolBool_ReturnValue, TScriptInterface<class IBPI_VisibilityChanges_C> K2Node_DynamicCast_AsBPI_Visibility_Changes, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsVisible_ReturnValue)
+void UBPFL_UiHelpers_C::ShowHideWidget(class UUserWidget* InUserWidget, bool InIsVisible_, bool InUiBlocksInput_, class UObject* In__WorldContext, bool InTmpWasVisible, class UUserWidget* InTmpUserWidgetToToggle, enum class ESlateVisibility InTemp_byte_Variable, enum class ESlateVisibility InTemp_byte_Variable_1, bool InTemp_bool_Variable, bool InCallFunc_BooleanAND_ReturnValue, enum class ESlateVisibility InK2Node_Select_Default, bool InCallFunc_NotEqual_BoolBool_ReturnValue, TScriptInterface<class IBPI_VisibilityChanges_C> InK2Node_DynamicCast_AsBPI_Visibility_Changes, bool InK2Node_DynamicCast_bSuccess, bool InCallFunc_IsVisible_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1486,21 +1541,21 @@ void UBPFL_UiHelpers_C::ShowHideWidget(class UUserWidget* UserWidget, bool IsVis
 
 	Params::UBPFL_UiHelpers_C_ShowHideWidget_Params Parms{};
 
-	Parms.UserWidget = UserWidget;
-	Parms.IsVisible_ = IsVisible_;
-	Parms.UiBlocksInput_ = UiBlocksInput_;
-	Parms.__WorldContext = __WorldContext;
-	Parms.TmpWasVisible = TmpWasVisible;
-	Parms.TmpUserWidgetToToggle = TmpUserWidgetToToggle;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.Temp_byte_Variable_1 = Temp_byte_Variable_1;
-	Parms.Temp_bool_Variable = Temp_bool_Variable;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
-	Parms.CallFunc_NotEqual_BoolBool_ReturnValue = CallFunc_NotEqual_BoolBool_ReturnValue;
-	Parms.K2Node_DynamicCast_AsBPI_Visibility_Changes = K2Node_DynamicCast_AsBPI_Visibility_Changes;
-	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_IsVisible_ReturnValue = CallFunc_IsVisible_ReturnValue;
+	Parms.UserWidget = InUserWidget;
+	Parms.IsVisible_ = InIsVisible_;
+	Parms.UiBlocksInput_ = InUiBlocksInput_;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.TmpWasVisible = InTmpWasVisible;
+	Parms.TmpUserWidgetToToggle = InTmpUserWidgetToToggle;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.Temp_byte_Variable_1 = InTemp_byte_Variable_1;
+	Parms.Temp_bool_Variable = InTemp_bool_Variable;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
+	Parms.CallFunc_NotEqual_BoolBool_ReturnValue = InCallFunc_NotEqual_BoolBool_ReturnValue;
+	Parms.K2Node_DynamicCast_AsBPI_Visibility_Changes = InK2Node_DynamicCast_AsBPI_Visibility_Changes;
+	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_IsVisible_ReturnValue = InCallFunc_IsVisible_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1543,7 +1598,7 @@ void UBPFL_UiHelpers_C::ShowHideWidget(class UUserWidget* UserWidget, bool IsVis
 // struct FLinearColor                Temp_struct_Variable_26                                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FLinearColor                K2Node_Select_Default                                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetItemCategoryColor(enum class EItemCategory ItemCategory, class UObject* __WorldContext, struct FLinearColor* Color, enum class EItemCategory Temp_byte_Variable, const struct FLinearColor& Temp_struct_Variable, const struct FLinearColor& Temp_struct_Variable_1, const struct FLinearColor& Temp_struct_Variable_2, const struct FLinearColor& Temp_struct_Variable_3, const struct FLinearColor& Temp_struct_Variable_4, const struct FLinearColor& Temp_struct_Variable_5, const struct FLinearColor& Temp_struct_Variable_6, const struct FLinearColor& Temp_struct_Variable_7, const struct FLinearColor& Temp_struct_Variable_8, const struct FLinearColor& Temp_struct_Variable_9, const struct FLinearColor& Temp_struct_Variable_10, const struct FLinearColor& Temp_struct_Variable_11, const struct FLinearColor& Temp_struct_Variable_12, const struct FLinearColor& Temp_struct_Variable_13, const struct FLinearColor& Temp_struct_Variable_14, const struct FLinearColor& Temp_struct_Variable_15, const struct FLinearColor& Temp_struct_Variable_16, const struct FLinearColor& Temp_struct_Variable_17, const struct FLinearColor& Temp_struct_Variable_18, const struct FLinearColor& Temp_struct_Variable_19, const struct FLinearColor& Temp_struct_Variable_20, const struct FLinearColor& Temp_struct_Variable_21, const struct FLinearColor& Temp_struct_Variable_22, const struct FLinearColor& Temp_struct_Variable_23, const struct FLinearColor& Temp_struct_Variable_24, const struct FLinearColor& Temp_struct_Variable_25, const struct FLinearColor& Temp_struct_Variable_26, const struct FLinearColor& K2Node_Select_Default)
+void UBPFL_UiHelpers_C::GetItemCategoryColor(enum class EItemCategory InItemCategory, class UObject* In__WorldContext, struct FLinearColor* InColor, enum class EItemCategory InTemp_byte_Variable, const struct FLinearColor& InTemp_struct_Variable, const struct FLinearColor& InTemp_struct_Variable_1, const struct FLinearColor& InTemp_struct_Variable_2, const struct FLinearColor& InTemp_struct_Variable_3, const struct FLinearColor& InTemp_struct_Variable_4, const struct FLinearColor& InTemp_struct_Variable_5, const struct FLinearColor& InTemp_struct_Variable_6, const struct FLinearColor& InTemp_struct_Variable_7, const struct FLinearColor& InTemp_struct_Variable_8, const struct FLinearColor& InTemp_struct_Variable_9, const struct FLinearColor& InTemp_struct_Variable_10, const struct FLinearColor& InTemp_struct_Variable_11, const struct FLinearColor& InTemp_struct_Variable_12, const struct FLinearColor& InTemp_struct_Variable_13, const struct FLinearColor& InTemp_struct_Variable_14, const struct FLinearColor& InTemp_struct_Variable_15, const struct FLinearColor& InTemp_struct_Variable_16, const struct FLinearColor& InTemp_struct_Variable_17, const struct FLinearColor& InTemp_struct_Variable_18, const struct FLinearColor& InTemp_struct_Variable_19, const struct FLinearColor& InTemp_struct_Variable_20, const struct FLinearColor& InTemp_struct_Variable_21, const struct FLinearColor& InTemp_struct_Variable_22, const struct FLinearColor& InTemp_struct_Variable_23, const struct FLinearColor& InTemp_struct_Variable_24, const struct FLinearColor& InTemp_struct_Variable_25, const struct FLinearColor& InTemp_struct_Variable_26, const struct FLinearColor& InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1552,42 +1607,42 @@ void UBPFL_UiHelpers_C::GetItemCategoryColor(enum class EItemCategory ItemCatego
 
 	Params::UBPFL_UiHelpers_C_GetItemCategoryColor_Params Parms{};
 
-	Parms.ItemCategory = ItemCategory;
-	Parms.__WorldContext = __WorldContext;
-	Parms.Temp_byte_Variable = Temp_byte_Variable;
-	Parms.Temp_struct_Variable = Temp_struct_Variable;
-	Parms.Temp_struct_Variable_1 = Temp_struct_Variable_1;
-	Parms.Temp_struct_Variable_2 = Temp_struct_Variable_2;
-	Parms.Temp_struct_Variable_3 = Temp_struct_Variable_3;
-	Parms.Temp_struct_Variable_4 = Temp_struct_Variable_4;
-	Parms.Temp_struct_Variable_5 = Temp_struct_Variable_5;
-	Parms.Temp_struct_Variable_6 = Temp_struct_Variable_6;
-	Parms.Temp_struct_Variable_7 = Temp_struct_Variable_7;
-	Parms.Temp_struct_Variable_8 = Temp_struct_Variable_8;
-	Parms.Temp_struct_Variable_9 = Temp_struct_Variable_9;
-	Parms.Temp_struct_Variable_10 = Temp_struct_Variable_10;
-	Parms.Temp_struct_Variable_11 = Temp_struct_Variable_11;
-	Parms.Temp_struct_Variable_12 = Temp_struct_Variable_12;
-	Parms.Temp_struct_Variable_13 = Temp_struct_Variable_13;
-	Parms.Temp_struct_Variable_14 = Temp_struct_Variable_14;
-	Parms.Temp_struct_Variable_15 = Temp_struct_Variable_15;
-	Parms.Temp_struct_Variable_16 = Temp_struct_Variable_16;
-	Parms.Temp_struct_Variable_17 = Temp_struct_Variable_17;
-	Parms.Temp_struct_Variable_18 = Temp_struct_Variable_18;
-	Parms.Temp_struct_Variable_19 = Temp_struct_Variable_19;
-	Parms.Temp_struct_Variable_20 = Temp_struct_Variable_20;
-	Parms.Temp_struct_Variable_21 = Temp_struct_Variable_21;
-	Parms.Temp_struct_Variable_22 = Temp_struct_Variable_22;
-	Parms.Temp_struct_Variable_23 = Temp_struct_Variable_23;
-	Parms.Temp_struct_Variable_24 = Temp_struct_Variable_24;
-	Parms.Temp_struct_Variable_25 = Temp_struct_Variable_25;
-	Parms.Temp_struct_Variable_26 = Temp_struct_Variable_26;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.ItemCategory = InItemCategory;
+	Parms.__WorldContext = In__WorldContext;
+	Parms.Temp_byte_Variable = InTemp_byte_Variable;
+	Parms.Temp_struct_Variable = InTemp_struct_Variable;
+	Parms.Temp_struct_Variable_1 = InTemp_struct_Variable_1;
+	Parms.Temp_struct_Variable_2 = InTemp_struct_Variable_2;
+	Parms.Temp_struct_Variable_3 = InTemp_struct_Variable_3;
+	Parms.Temp_struct_Variable_4 = InTemp_struct_Variable_4;
+	Parms.Temp_struct_Variable_5 = InTemp_struct_Variable_5;
+	Parms.Temp_struct_Variable_6 = InTemp_struct_Variable_6;
+	Parms.Temp_struct_Variable_7 = InTemp_struct_Variable_7;
+	Parms.Temp_struct_Variable_8 = InTemp_struct_Variable_8;
+	Parms.Temp_struct_Variable_9 = InTemp_struct_Variable_9;
+	Parms.Temp_struct_Variable_10 = InTemp_struct_Variable_10;
+	Parms.Temp_struct_Variable_11 = InTemp_struct_Variable_11;
+	Parms.Temp_struct_Variable_12 = InTemp_struct_Variable_12;
+	Parms.Temp_struct_Variable_13 = InTemp_struct_Variable_13;
+	Parms.Temp_struct_Variable_14 = InTemp_struct_Variable_14;
+	Parms.Temp_struct_Variable_15 = InTemp_struct_Variable_15;
+	Parms.Temp_struct_Variable_16 = InTemp_struct_Variable_16;
+	Parms.Temp_struct_Variable_17 = InTemp_struct_Variable_17;
+	Parms.Temp_struct_Variable_18 = InTemp_struct_Variable_18;
+	Parms.Temp_struct_Variable_19 = InTemp_struct_Variable_19;
+	Parms.Temp_struct_Variable_20 = InTemp_struct_Variable_20;
+	Parms.Temp_struct_Variable_21 = InTemp_struct_Variable_21;
+	Parms.Temp_struct_Variable_22 = InTemp_struct_Variable_22;
+	Parms.Temp_struct_Variable_23 = InTemp_struct_Variable_23;
+	Parms.Temp_struct_Variable_24 = InTemp_struct_Variable_24;
+	Parms.Temp_struct_Variable_25 = InTemp_struct_Variable_25;
+	Parms.Temp_struct_Variable_26 = InTemp_struct_Variable_26;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Color != nullptr)
-		*Color = Parms.Color;
+	if (InColor != nullptr)
+		*InColor = Parms.Color;
 
 }
 

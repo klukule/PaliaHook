@@ -20,19 +20,15 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EyeTrackerFunctionLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("EyeTrackerFunctionLibrary");
 		return Clss;
 	}
 
-	void SetEyeTrackedPlayer(class APlayerController* PlayerController);
+	void SetEyeTrackedPlayer(class APlayerController* InPlayerController);
 	bool IsStereoGazeDataAvailable();
 	bool IsEyeTrackerConnected();
-	bool GetStereoGazeData(struct FEyeTrackerStereoGazeData* OutGazeData);
-	bool GetGazeData(struct FEyeTrackerGazeData* OutGazeData);
+	bool GetStereoGazeData(struct FEyeTrackerStereoGazeData* InOutGazeData);
+	bool GetGazeData(struct FEyeTrackerGazeData* InOutGazeData);
 };
 
 }

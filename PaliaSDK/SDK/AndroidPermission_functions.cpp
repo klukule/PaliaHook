@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // class FString                      Permission                                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAndroidPermissionFunctionLibrary::CheckPermission(const class FString& Permission)
+bool UAndroidPermissionFunctionLibrary::CheckPermission(const class FString& InPermission)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ bool UAndroidPermissionFunctionLibrary::CheckPermission(const class FString& Per
 
 	Params::UAndroidPermissionFunctionLibrary_CheckPermission_Params Parms{};
 
-	Parms.Permission = Permission;
+	Parms.Permission = InPermission;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -51,7 +51,7 @@ bool UAndroidPermissionFunctionLibrary::CheckPermission(const class FString& Per
 // TArray<class FString>              Permissions                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // class UAndroidPermissionCallbackProxy*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAndroidPermissionCallbackProxy* UAndroidPermissionFunctionLibrary::AcquirePermissions(TArray<class FString>& Permissions)
+class UAndroidPermissionCallbackProxy* UAndroidPermissionFunctionLibrary::AcquirePermissions(TArray<class FString>& InPermissions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,7 +60,7 @@ class UAndroidPermissionCallbackProxy* UAndroidPermissionFunctionLibrary::Acquir
 
 	Params::UAndroidPermissionFunctionLibrary_AcquirePermissions_Params Parms{};
 
-	Parms.Permissions = Permissions;
+	Parms.Permissions = InPermissions;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

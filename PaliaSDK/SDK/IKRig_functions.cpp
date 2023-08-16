@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // TMap<class FName, struct FIKRigGoal>OutGoals                                                         (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void IIKGoalCreatorInterface::AddIKGoals(TMap<class FName, struct FIKRigGoal>* OutGoals)
+void IIKGoalCreatorInterface::AddIKGoals(TMap<class FName, struct FIKRigGoal>* InOutGoals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -38,8 +38,8 @@ void IIKGoalCreatorInterface::AddIKGoals(TMap<class FName, struct FIKRigGoal>* O
 
 	Func->FunctionFlags = Flags;
 
-	if (OutGoals != nullptr)
-		*OutGoals = Parms.OutGoals;
+	if (InOutGoals != nullptr)
+		*InOutGoals = Parms.OutGoals;
 
 }
 
@@ -52,7 +52,7 @@ void IIKGoalCreatorInterface::AddIKGoals(TMap<class FName, struct FIKRigGoal>* O
 // float                              PositionAlpha                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              RotationAlpha                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRigComponent::SetIKRigGoalTransform(class FName GoalName, const struct FTransform& Transform, float PositionAlpha, float RotationAlpha)
+void UIKRigComponent::SetIKRigGoalTransform(class FName InGoalName, const struct FTransform& InTransform, float InPositionAlpha, float InRotationAlpha)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61,10 +61,10 @@ void UIKRigComponent::SetIKRigGoalTransform(class FName GoalName, const struct F
 
 	Params::UIKRigComponent_SetIKRigGoalTransform_Params Parms{};
 
-	Parms.GoalName = GoalName;
-	Parms.Transform = Transform;
-	Parms.PositionAlpha = PositionAlpha;
-	Parms.RotationAlpha = RotationAlpha;
+	Parms.GoalName = InGoalName;
+	Parms.Transform = InTransform;
+	Parms.PositionAlpha = InPositionAlpha;
+	Parms.RotationAlpha = InRotationAlpha;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86,7 +86,7 @@ void UIKRigComponent::SetIKRigGoalTransform(class FName GoalName, const struct F
 // float                              PositionAlpha                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              RotationAlpha                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRigComponent::SetIKRigGoalPositionAndRotation(class FName GoalName, const struct FVector& Position, const struct FQuat& Rotation, float PositionAlpha, float RotationAlpha)
+void UIKRigComponent::SetIKRigGoalPositionAndRotation(class FName InGoalName, const struct FVector& InPosition, const struct FQuat& InRotation, float InPositionAlpha, float InRotationAlpha)
 {
 	static class UFunction* Func = nullptr;
 
@@ -95,11 +95,11 @@ void UIKRigComponent::SetIKRigGoalPositionAndRotation(class FName GoalName, cons
 
 	Params::UIKRigComponent_SetIKRigGoalPositionAndRotation_Params Parms{};
 
-	Parms.GoalName = GoalName;
-	Parms.Position = Position;
-	Parms.Rotation = Rotation;
-	Parms.PositionAlpha = PositionAlpha;
-	Parms.RotationAlpha = RotationAlpha;
+	Parms.GoalName = InGoalName;
+	Parms.Position = InPosition;
+	Parms.Rotation = InRotation;
+	Parms.PositionAlpha = InPositionAlpha;
+	Parms.RotationAlpha = InRotationAlpha;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -117,7 +117,7 @@ void UIKRigComponent::SetIKRigGoalPositionAndRotation(class FName GoalName, cons
 // Parameters:
 // struct FIKRigGoal                  Goal                                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRigComponent::SetIKRigGoal(struct FIKRigGoal& Goal)
+void UIKRigComponent::SetIKRigGoal(struct FIKRigGoal& InGoal)
 {
 	static class UFunction* Func = nullptr;
 
@@ -126,7 +126,7 @@ void UIKRigComponent::SetIKRigGoal(struct FIKRigGoal& Goal)
 
 	Params::UIKRigComponent_SetIKRigGoal_Params Parms{};
 
-	Parms.Goal = Goal;
+	Parms.Goal = InGoal;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -170,7 +170,7 @@ void UIKRigComponent::ClearAllGoals()
 // struct FRetargetProfile            RetargetProfile                                                  (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FTargetRootSettings         RootSettings                                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetRootSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FTargetRootSettings& RootSettings)
+void UIKRetargeter::SetRootSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FTargetRootSettings& InRootSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -179,8 +179,8 @@ void UIKRetargeter::SetRootSettingsInRetargetProfile(struct FRetargetProfile& Re
 
 	Params::UIKRetargeter_SetRootSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = RetargetProfile;
-	Parms.RootSettings = RootSettings;
+	Parms.RetargetProfile = InRetargetProfile;
+	Parms.RootSettings = InRootSettings;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -199,7 +199,7 @@ void UIKRetargeter::SetRootSettingsInRetargetProfile(struct FRetargetProfile& Re
 // struct FRetargetProfile            RetargetProfile                                                  (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FRetargetGlobalSettings     GlobalSettings                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetGlobalSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FRetargetGlobalSettings& GlobalSettings)
+void UIKRetargeter::SetGlobalSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FRetargetGlobalSettings& InGlobalSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -208,8 +208,8 @@ void UIKRetargeter::SetGlobalSettingsInRetargetProfile(struct FRetargetProfile& 
 
 	Params::UIKRetargeter_SetGlobalSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = RetargetProfile;
-	Parms.GlobalSettings = GlobalSettings;
+	Parms.RetargetProfile = InRetargetProfile;
+	Parms.GlobalSettings = InGlobalSettings;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -229,7 +229,7 @@ void UIKRetargeter::SetGlobalSettingsInRetargetProfile(struct FRetargetProfile& 
 // struct FTargetChainSpeedPlantSettingsSpeedPlantSettings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                        TargetChainName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetChainSpeedPlantSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FTargetChainSpeedPlantSettings& SpeedPlantSettings, class FName TargetChainName)
+void UIKRetargeter::SetChainSpeedPlantSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FTargetChainSpeedPlantSettings& InSpeedPlantSettings, class FName InTargetChainName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -238,9 +238,9 @@ void UIKRetargeter::SetChainSpeedPlantSettingsInRetargetProfile(struct FRetarget
 
 	Params::UIKRetargeter_SetChainSpeedPlantSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = RetargetProfile;
-	Parms.SpeedPlantSettings = SpeedPlantSettings;
-	Parms.TargetChainName = TargetChainName;
+	Parms.RetargetProfile = InRetargetProfile;
+	Parms.SpeedPlantSettings = InSpeedPlantSettings;
+	Parms.TargetChainName = InTargetChainName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -260,7 +260,7 @@ void UIKRetargeter::SetChainSpeedPlantSettingsInRetargetProfile(struct FRetarget
 // struct FTargetChainSettings        ChainSettings                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                        TargetChainName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetChainSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FTargetChainSettings& ChainSettings, class FName TargetChainName)
+void UIKRetargeter::SetChainSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FTargetChainSettings& InChainSettings, class FName InTargetChainName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -269,9 +269,9 @@ void UIKRetargeter::SetChainSettingsInRetargetProfile(struct FRetargetProfile& R
 
 	Params::UIKRetargeter_SetChainSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = RetargetProfile;
-	Parms.ChainSettings = ChainSettings;
-	Parms.TargetChainName = TargetChainName;
+	Parms.RetargetProfile = InRetargetProfile;
+	Parms.ChainSettings = InChainSettings;
+	Parms.TargetChainName = InTargetChainName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -291,7 +291,7 @@ void UIKRetargeter::SetChainSettingsInRetargetProfile(struct FRetargetProfile& R
 // struct FTargetChainIKSettings      IKSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                        TargetChainName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetChainIKSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FTargetChainIKSettings& IKSettings, class FName TargetChainName)
+void UIKRetargeter::SetChainIKSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FTargetChainIKSettings& InIKSettings, class FName InTargetChainName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -300,9 +300,9 @@ void UIKRetargeter::SetChainIKSettingsInRetargetProfile(struct FRetargetProfile&
 
 	Params::UIKRetargeter_SetChainIKSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = RetargetProfile;
-	Parms.IKSettings = IKSettings;
-	Parms.TargetChainName = TargetChainName;
+	Parms.RetargetProfile = InRetargetProfile;
+	Parms.IKSettings = InIKSettings;
+	Parms.TargetChainName = InTargetChainName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -322,7 +322,7 @@ void UIKRetargeter::SetChainIKSettingsInRetargetProfile(struct FRetargetProfile&
 // struct FTargetChainFKSettings      FKSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                        TargetChainName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetChainFKSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FTargetChainFKSettings& FKSettings, class FName TargetChainName)
+void UIKRetargeter::SetChainFKSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FTargetChainFKSettings& InFKSettings, class FName InTargetChainName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -331,9 +331,9 @@ void UIKRetargeter::SetChainFKSettingsInRetargetProfile(struct FRetargetProfile&
 
 	Params::UIKRetargeter_SetChainFKSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = RetargetProfile;
-	Parms.FKSettings = FKSettings;
-	Parms.TargetChainName = TargetChainName;
+	Parms.RetargetProfile = InRetargetProfile;
+	Parms.FKSettings = InFKSettings;
+	Parms.TargetChainName = InTargetChainName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -352,7 +352,7 @@ void UIKRetargeter::SetChainFKSettingsInRetargetProfile(struct FRetargetProfile&
 // struct FRetargetProfile            RetargetProfile                                                  (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FTargetRootSettings         ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FTargetRootSettings UIKRetargeter::GetRootSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile)
+struct FTargetRootSettings UIKRetargeter::GetRootSettingsFromRetargetProfile(struct FRetargetProfile& InRetargetProfile)
 {
 	static class UFunction* Func = nullptr;
 
@@ -361,7 +361,7 @@ struct FTargetRootSettings UIKRetargeter::GetRootSettingsFromRetargetProfile(str
 
 	Params::UIKRetargeter_GetRootSettingsFromRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = RetargetProfile;
+	Parms.RetargetProfile = InRetargetProfile;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -383,7 +383,7 @@ struct FTargetRootSettings UIKRetargeter::GetRootSettingsFromRetargetProfile(str
 // class FName                        OptionalProfileName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTargetRootSettings         OutSettings                                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::GetRootSettingsFromRetargetAsset(class UIKRetargeter* RetargetAsset, class FName OptionalProfileName, struct FTargetRootSettings* OutSettings)
+void UIKRetargeter::GetRootSettingsFromRetargetAsset(class UIKRetargeter* InRetargetAsset, class FName InOptionalProfileName, struct FTargetRootSettings* InOutSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -392,8 +392,8 @@ void UIKRetargeter::GetRootSettingsFromRetargetAsset(class UIKRetargeter* Retarg
 
 	Params::UIKRetargeter_GetRootSettingsFromRetargetAsset_Params Parms{};
 
-	Parms.RetargetAsset = RetargetAsset;
-	Parms.OptionalProfileName = OptionalProfileName;
+	Parms.RetargetAsset = InRetargetAsset;
+	Parms.OptionalProfileName = InOptionalProfileName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -403,8 +403,8 @@ void UIKRetargeter::GetRootSettingsFromRetargetAsset(class UIKRetargeter* Retarg
 
 	Func->FunctionFlags = Flags;
 
-	if (OutSettings != nullptr)
-		*OutSettings = Parms.OutSettings;
+	if (InOutSettings != nullptr)
+		*InOutSettings = Parms.OutSettings;
 
 }
 
@@ -415,7 +415,7 @@ void UIKRetargeter::GetRootSettingsFromRetargetAsset(class UIKRetargeter* Retarg
 // struct FRetargetProfile            RetargetProfile                                                  (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FRetargetGlobalSettings     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRetargetGlobalSettings UIKRetargeter::GetGlobalSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile)
+struct FRetargetGlobalSettings UIKRetargeter::GetGlobalSettingsFromRetargetProfile(struct FRetargetProfile& InRetargetProfile)
 {
 	static class UFunction* Func = nullptr;
 
@@ -424,7 +424,7 @@ struct FRetargetGlobalSettings UIKRetargeter::GetGlobalSettingsFromRetargetProfi
 
 	Params::UIKRetargeter_GetGlobalSettingsFromRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = RetargetProfile;
+	Parms.RetargetProfile = InRetargetProfile;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -446,7 +446,7 @@ struct FRetargetGlobalSettings UIKRetargeter::GetGlobalSettingsFromRetargetProfi
 // class FName                        OptionalProfileName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRetargetGlobalSettings     OutSettings                                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::GetGlobalSettingsFromRetargetAsset(class UIKRetargeter* RetargetAsset, class FName OptionalProfileName, struct FRetargetGlobalSettings* OutSettings)
+void UIKRetargeter::GetGlobalSettingsFromRetargetAsset(class UIKRetargeter* InRetargetAsset, class FName InOptionalProfileName, struct FRetargetGlobalSettings* InOutSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -455,8 +455,8 @@ void UIKRetargeter::GetGlobalSettingsFromRetargetAsset(class UIKRetargeter* Reta
 
 	Params::UIKRetargeter_GetGlobalSettingsFromRetargetAsset_Params Parms{};
 
-	Parms.RetargetAsset = RetargetAsset;
-	Parms.OptionalProfileName = OptionalProfileName;
+	Parms.RetargetAsset = InRetargetAsset;
+	Parms.OptionalProfileName = InOptionalProfileName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -466,8 +466,8 @@ void UIKRetargeter::GetGlobalSettingsFromRetargetAsset(class UIKRetargeter* Reta
 
 	Func->FunctionFlags = Flags;
 
-	if (OutSettings != nullptr)
-		*OutSettings = Parms.OutSettings;
+	if (InOutSettings != nullptr)
+		*InOutSettings = Parms.OutSettings;
 
 }
 
@@ -479,7 +479,7 @@ void UIKRetargeter::GetGlobalSettingsFromRetargetAsset(class UIKRetargeter* Reta
 // class FName                        IKGoalName                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTargetChainSettings        ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FTargetChainSettings UIKRetargeter::GetChainUsingGoalFromRetargetAsset(class UIKRetargeter* RetargetAsset, class FName IKGoalName)
+struct FTargetChainSettings UIKRetargeter::GetChainUsingGoalFromRetargetAsset(class UIKRetargeter* InRetargetAsset, class FName InIKGoalName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -488,8 +488,8 @@ struct FTargetChainSettings UIKRetargeter::GetChainUsingGoalFromRetargetAsset(cl
 
 	Params::UIKRetargeter_GetChainUsingGoalFromRetargetAsset_Params Parms{};
 
-	Parms.RetargetAsset = RetargetAsset;
-	Parms.IKGoalName = IKGoalName;
+	Parms.RetargetAsset = InRetargetAsset;
+	Parms.IKGoalName = InIKGoalName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -511,7 +511,7 @@ struct FTargetChainSettings UIKRetargeter::GetChainUsingGoalFromRetargetAsset(cl
 // class FName                        TargetChainName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTargetChainSettings        ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile, class FName TargetChainName)
+struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetProfile(struct FRetargetProfile& InRetargetProfile, class FName InTargetChainName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -520,8 +520,8 @@ struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetProfile(s
 
 	Params::UIKRetargeter_GetChainSettingsFromRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = RetargetProfile;
-	Parms.TargetChainName = TargetChainName;
+	Parms.RetargetProfile = InRetargetProfile;
+	Parms.TargetChainName = InTargetChainName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -544,7 +544,7 @@ struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetProfile(s
 // class FName                        OptionalProfileName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTargetChainSettings        ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetAsset(class UIKRetargeter* RetargetAsset, class FName TargetChainName, class FName OptionalProfileName)
+struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetAsset(class UIKRetargeter* InRetargetAsset, class FName InTargetChainName, class FName InOptionalProfileName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -553,9 +553,9 @@ struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetAsset(cla
 
 	Params::UIKRetargeter_GetChainSettingsFromRetargetAsset_Params Parms{};
 
-	Parms.RetargetAsset = RetargetAsset;
-	Parms.TargetChainName = TargetChainName;
-	Parms.OptionalProfileName = OptionalProfileName;
+	Parms.RetargetAsset = InRetargetAsset;
+	Parms.TargetChainName = InTargetChainName;
+	Parms.OptionalProfileName = InOptionalProfileName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

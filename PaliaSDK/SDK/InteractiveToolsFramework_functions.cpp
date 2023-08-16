@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // bool                               bWorldIn                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGizmoBaseComponent::UpdateWorldLocalState(bool bWorldIn)
+void UGizmoBaseComponent::UpdateWorldLocalState(bool InbWorldIn)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UGizmoBaseComponent::UpdateWorldLocalState(bool bWorldIn)
 
 	Params::UGizmoBaseComponent_UpdateWorldLocalState_Params Parms{};
 
-	Parms.bWorldIn = bWorldIn;
+	Parms.bWorldIn = InbWorldIn;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -47,7 +47,7 @@ void UGizmoBaseComponent::UpdateWorldLocalState(bool bWorldIn)
 // Parameters:
 // bool                               bHoveringIn                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGizmoBaseComponent::UpdateHoverState(bool bHoveringIn)
+void UGizmoBaseComponent::UpdateHoverState(bool InbHoveringIn)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void UGizmoBaseComponent::UpdateHoverState(bool bHoveringIn)
 
 	Params::UGizmoBaseComponent_UpdateHoverState_Params Parms{};
 
-	Parms.bHoveringIn = bHoveringIn;
+	Parms.bHoveringIn = InbHoveringIn;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -74,7 +74,7 @@ void UGizmoBaseComponent::UpdateHoverState(bool bHoveringIn)
 // Parameters:
 // struct FTransform                  NewTransform                                                     (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IGizmoTransformSource::SetTransform(struct FTransform& NewTransform)
+void IGizmoTransformSource::SetTransform(struct FTransform& InNewTransform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,7 +83,7 @@ void IGizmoTransformSource::SetTransform(struct FTransform& NewTransform)
 
 	Params::IGizmoTransformSource_SetTransform_Params Parms{};
 
-	Parms.NewTransform = NewTransform;
+	Parms.NewTransform = InNewTransform;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -158,7 +158,7 @@ bool IGizmoAxisSource::HasTangentVectors()
 // struct FVector                     TangentXOut                                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     TangentYOut                                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IGizmoAxisSource::GetTangentVectors(struct FVector* TangentXOut, struct FVector* TangentYOut)
+void IGizmoAxisSource::GetTangentVectors(struct FVector* InTangentXOut, struct FVector* InTangentYOut)
 {
 	static class UFunction* Func = nullptr;
 
@@ -176,11 +176,11 @@ void IGizmoAxisSource::GetTangentVectors(struct FVector* TangentXOut, struct FVe
 
 	Func->FunctionFlags = Flags;
 
-	if (TangentXOut != nullptr)
-		*TangentXOut = Parms.TangentXOut;
+	if (InTangentXOut != nullptr)
+		*InTangentXOut = Parms.TangentXOut;
 
-	if (TangentYOut != nullptr)
-		*TangentYOut = Parms.TangentYOut;
+	if (InTangentYOut != nullptr)
+		*InTangentYOut = Parms.TangentYOut;
 
 }
 
@@ -246,7 +246,7 @@ struct FVector IGizmoAxisSource::GetDirection()
 // Parameters:
 // bool                               bInteracting                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IGizmoClickTarget::UpdateInteractingState(bool bInteracting)
+void IGizmoClickTarget::UpdateInteractingState(bool InbInteracting)
 {
 	static class UFunction* Func = nullptr;
 
@@ -255,7 +255,7 @@ void IGizmoClickTarget::UpdateInteractingState(bool bInteracting)
 
 	Params::IGizmoClickTarget_UpdateInteractingState_Params Parms{};
 
-	Parms.bInteracting = bInteracting;
+	Parms.bInteracting = InbInteracting;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -273,7 +273,7 @@ void IGizmoClickTarget::UpdateInteractingState(bool bInteracting)
 // Parameters:
 // bool                               bHovering                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IGizmoClickTarget::UpdateHoverState(bool bHovering)
+void IGizmoClickTarget::UpdateHoverState(bool InbHovering)
 {
 	static class UFunction* Func = nullptr;
 
@@ -282,7 +282,7 @@ void IGizmoClickTarget::UpdateHoverState(bool bHovering)
 
 	Params::IGizmoClickTarget_UpdateHoverState_Params Parms{};
 
-	Parms.bHovering = bHovering;
+	Parms.bHovering = InbHovering;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -301,7 +301,7 @@ void IGizmoClickTarget::UpdateHoverState(bool bHovering)
 // bool                               bInteracting                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // uint32                             InPartIdentifier                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IGizmoClickMultiTarget::UpdateInteractingState(bool bInteracting, uint32 InPartIdentifier)
+void IGizmoClickMultiTarget::UpdateInteractingState(bool InbInteracting, uint32 InInPartIdentifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -310,8 +310,8 @@ void IGizmoClickMultiTarget::UpdateInteractingState(bool bInteracting, uint32 In
 
 	Params::IGizmoClickMultiTarget_UpdateInteractingState_Params Parms{};
 
-	Parms.bInteracting = bInteracting;
-	Parms.InPartIdentifier = InPartIdentifier;
+	Parms.bInteracting = InbInteracting;
+	Parms.InPartIdentifier = InInPartIdentifier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -330,7 +330,7 @@ void IGizmoClickMultiTarget::UpdateInteractingState(bool bInteracting, uint32 In
 // bool                               bHovering                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // uint32                             InPartIdentifier                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IGizmoClickMultiTarget::UpdateHoverState(bool bHovering, uint32 InPartIdentifier)
+void IGizmoClickMultiTarget::UpdateHoverState(bool InbHovering, uint32 InInPartIdentifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -339,8 +339,8 @@ void IGizmoClickMultiTarget::UpdateHoverState(bool bHovering, uint32 InPartIdent
 
 	Params::IGizmoClickMultiTarget_UpdateHoverState_Params Parms{};
 
-	Parms.bHovering = bHovering;
-	Parms.InPartIdentifier = InPartIdentifier;
+	Parms.bHovering = InbHovering;
+	Parms.InPartIdentifier = InInPartIdentifier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -359,7 +359,7 @@ void IGizmoClickMultiTarget::UpdateHoverState(bool bHovering, uint32 InPartIdent
 // bool                               bHittable                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // uint32                             InPartIdentifier                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IGizmoClickMultiTarget::UpdateHittableState(bool bHittable, uint32 InPartIdentifier)
+void IGizmoClickMultiTarget::UpdateHittableState(bool InbHittable, uint32 InInPartIdentifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -368,8 +368,8 @@ void IGizmoClickMultiTarget::UpdateHittableState(bool bHittable, uint32 InPartId
 
 	Params::IGizmoClickMultiTarget_UpdateHittableState_Params Parms{};
 
-	Parms.bHittable = bHittable;
-	Parms.InPartIdentifier = InPartIdentifier;
+	Parms.bHittable = InbHittable;
+	Parms.InPartIdentifier = InInPartIdentifier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -388,7 +388,7 @@ void IGizmoClickMultiTarget::UpdateHittableState(bool bHittable, uint32 InPartId
 // bool                               bVisible                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // uint32                             InPartIdentifier                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IGizmoRenderMultiTarget::UpdateVisibilityState(bool bVisible, uint32 InPartIdentifier)
+void IGizmoRenderMultiTarget::UpdateVisibilityState(bool InbVisible, uint32 InInPartIdentifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -397,8 +397,8 @@ void IGizmoRenderMultiTarget::UpdateVisibilityState(bool bVisible, uint32 InPart
 
 	Params::IGizmoRenderMultiTarget_UpdateVisibilityState_Params Parms{};
 
-	Parms.bVisible = bVisible;
-	Parms.InPartIdentifier = InPartIdentifier;
+	Parms.bVisible = InbVisible;
+	Parms.InPartIdentifier = InInPartIdentifier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -466,7 +466,7 @@ void IGizmoStateTarget::BeginUpdate()
 // Parameters:
 // float                              NewValue                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IGizmoFloatParameterSource::SetParameter(float NewValue)
+void IGizmoFloatParameterSource::SetParameter(float InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -475,7 +475,7 @@ void IGizmoFloatParameterSource::SetParameter(float NewValue)
 
 	Params::IGizmoFloatParameterSource_SetParameter_Params Parms{};
 
-	Parms.NewValue = NewValue;
+	Parms.NewValue = InNewValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -571,7 +571,7 @@ void IGizmoFloatParameterSource::BeginModify()
 // Parameters:
 // struct FVector2D                   NewValue                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IGizmoVec2ParameterSource::SetParameter(struct FVector2D& NewValue)
+void IGizmoVec2ParameterSource::SetParameter(struct FVector2D& InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -580,7 +580,7 @@ void IGizmoVec2ParameterSource::SetParameter(struct FVector2D& NewValue)
 
 	Params::IGizmoVec2ParameterSource_SetParameter_Params Parms{};
 
-	Parms.NewValue = NewValue;
+	Parms.NewValue = InNewValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

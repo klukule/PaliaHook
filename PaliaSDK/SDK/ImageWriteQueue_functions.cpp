@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -22,7 +22,7 @@ namespace SDK
 // class FString                      Filename                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FImageWriteOptions          Options                                                          (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UImageWriteBlueprintLibrary::ExportToDisk(class UTexture* Texture, const class FString& Filename, struct FImageWriteOptions& Options)
+void UImageWriteBlueprintLibrary::ExportToDisk(class UTexture* InTexture, const class FString& InFilename, struct FImageWriteOptions& InOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,9 +31,9 @@ void UImageWriteBlueprintLibrary::ExportToDisk(class UTexture* Texture, const cl
 
 	Params::UImageWriteBlueprintLibrary_ExportToDisk_Params Parms{};
 
-	Parms.Texture = Texture;
-	Parms.Filename = Filename;
-	Parms.Options = Options;
+	Parms.Texture = InTexture;
+	Parms.Filename = InFilename;
+	Parms.Options = InOptions;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // bool                               NewTickWhenPaused                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNiagaraSystemWidget::UpdateTickWhenPaused(bool NewTickWhenPaused)
+void UNiagaraSystemWidget::UpdateTickWhenPaused(bool InNewTickWhenPaused)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UNiagaraSystemWidget::UpdateTickWhenPaused(bool NewTickWhenPaused)
 
 	Params::UNiagaraSystemWidget_UpdateTickWhenPaused_Params Parms{};
 
-	Parms.NewTickWhenPaused = NewTickWhenPaused;
+	Parms.NewTickWhenPaused = InNewTickWhenPaused;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -47,7 +47,7 @@ void UNiagaraSystemWidget::UpdateTickWhenPaused(bool NewTickWhenPaused)
 // Parameters:
 // class UNiagaraSystem*              NewNiagaraSystem                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNiagaraSystemWidget::UpdateNiagaraSystemReference(class UNiagaraSystem* NewNiagaraSystem)
+void UNiagaraSystemWidget::UpdateNiagaraSystemReference(class UNiagaraSystem* InNewNiagaraSystem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void UNiagaraSystemWidget::UpdateNiagaraSystemReference(class UNiagaraSystem* Ne
 
 	Params::UNiagaraSystemWidget_UpdateNiagaraSystemReference_Params Parms{};
 
-	Parms.NewNiagaraSystem = NewNiagaraSystem;
+	Parms.NewNiagaraSystem = InNewNiagaraSystem;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -127,7 +127,7 @@ void UNiagaraSystemWidget::DeactivateSystem()
 // Parameters:
 // bool                               Reset                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNiagaraSystemWidget::ActivateSystem(bool Reset)
+void UNiagaraSystemWidget::ActivateSystem(bool InReset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -136,7 +136,7 @@ void UNiagaraSystemWidget::ActivateSystem(bool Reset)
 
 	Params::UNiagaraSystemWidget_ActivateSystem_Params Parms{};
 
-	Parms.Reset = Reset;
+	Parms.Reset = InReset;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

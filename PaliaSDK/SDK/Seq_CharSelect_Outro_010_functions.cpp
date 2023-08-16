@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -59,7 +59,7 @@ void USeq_CharSelect_Outro_010__Director_BP__C::StopFlowAudio()
 // int32                              EntryPoint                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_AkEventGlobal_ReturnValue                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void USeq_CharSelect_Outro_010__Director_BP__C::ExecuteUbergraph_Seq_CharSelect_Outro_010__Director_BP_(int32 EntryPoint, int32 CallFunc_AkEventGlobal_ReturnValue)
+void USeq_CharSelect_Outro_010__Director_BP__C::ExecuteUbergraph_Seq_CharSelect_Outro_010__Director_BP_(int32 InEntryPoint, int32 InCallFunc_AkEventGlobal_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -68,8 +68,8 @@ void USeq_CharSelect_Outro_010__Director_BP__C::ExecuteUbergraph_Seq_CharSelect_
 
 	Params::USeq_CharSelect_Outro_010__Director_BP__C_ExecuteUbergraph_Seq_CharSelect_Outro_010__Director_BP__Params Parms{};
 
-	Parms.EntryPoint = EntryPoint;
-	Parms.CallFunc_AkEventGlobal_ReturnValue = CallFunc_AkEventGlobal_ReturnValue;
+	Parms.EntryPoint = InEntryPoint;
+	Parms.CallFunc_AkEventGlobal_ReturnValue = InCallFunc_AkEventGlobal_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 

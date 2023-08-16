@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class UResonanceAudioReverbPluginPreset*InPreset                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioBlueprintFunctionLibrary::SetGlobalReverbPreset(class UResonanceAudioReverbPluginPreset* InPreset)
+void UResonanceAudioBlueprintFunctionLibrary::SetGlobalReverbPreset(class UResonanceAudioReverbPluginPreset* InInPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UResonanceAudioBlueprintFunctionLibrary::SetGlobalReverbPreset(class UReson
 
 	Params::UResonanceAudioBlueprintFunctionLibrary_SetGlobalReverbPreset_Params Parms{};
 
-	Parms.InPreset = InPreset;
+	Parms.InPreset = InInPreset;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -75,7 +75,7 @@ class UResonanceAudioReverbPluginPreset* UResonanceAudioBlueprintFunctionLibrary
 // Parameters:
 // struct FQuat                       InRotation                                                       (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetRoomRotation(struct FQuat& InRotation)
+void UResonanceAudioReverbPluginPreset::SetRoomRotation(struct FQuat& InInRotation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -84,7 +84,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomRotation(struct FQuat& InRotation
 
 	Params::UResonanceAudioReverbPluginPreset_SetRoomRotation_Params Parms{};
 
-	Parms.InRotation = InRotation;
+	Parms.InRotation = InInRotation;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -102,7 +102,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomRotation(struct FQuat& InRotation
 // Parameters:
 // struct FVector                     InPosition                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetRoomPosition(struct FVector& InPosition)
+void UResonanceAudioReverbPluginPreset::SetRoomPosition(struct FVector& InInPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -111,7 +111,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomPosition(struct FVector& InPositi
 
 	Params::UResonanceAudioReverbPluginPreset_SetRoomPosition_Params Parms{};
 
-	Parms.InPosition = InPosition;
+	Parms.InPosition = InInPosition;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -129,7 +129,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomPosition(struct FVector& InPositi
 // Parameters:
 // TArray<enum class ERaMaterialName> InMaterials                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetRoomMaterials(TArray<enum class ERaMaterialName>& InMaterials)
+void UResonanceAudioReverbPluginPreset::SetRoomMaterials(TArray<enum class ERaMaterialName>& InInMaterials)
 {
 	static class UFunction* Func = nullptr;
 
@@ -138,7 +138,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomMaterials(TArray<enum class ERaMa
 
 	Params::UResonanceAudioReverbPluginPreset_SetRoomMaterials_Params Parms{};
 
-	Parms.InMaterials = InMaterials;
+	Parms.InMaterials = InInMaterials;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -156,7 +156,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomMaterials(TArray<enum class ERaMa
 // Parameters:
 // struct FVector                     InDimensions                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetRoomDimensions(struct FVector& InDimensions)
+void UResonanceAudioReverbPluginPreset::SetRoomDimensions(struct FVector& InInDimensions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -165,7 +165,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomDimensions(struct FVector& InDime
 
 	Params::UResonanceAudioReverbPluginPreset_SetRoomDimensions_Params Parms{};
 
-	Parms.InDimensions = InDimensions;
+	Parms.InDimensions = InInDimensions;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -183,7 +183,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomDimensions(struct FVector& InDime
 // Parameters:
 // float                              InReverbTimeModifier                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetReverbTimeModifier(float InReverbTimeModifier)
+void UResonanceAudioReverbPluginPreset::SetReverbTimeModifier(float InInReverbTimeModifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -192,7 +192,7 @@ void UResonanceAudioReverbPluginPreset::SetReverbTimeModifier(float InReverbTime
 
 	Params::UResonanceAudioReverbPluginPreset_SetReverbTimeModifier_Params Parms{};
 
-	Parms.InReverbTimeModifier = InReverbTimeModifier;
+	Parms.InReverbTimeModifier = InInReverbTimeModifier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -210,7 +210,7 @@ void UResonanceAudioReverbPluginPreset::SetReverbTimeModifier(float InReverbTime
 // Parameters:
 // float                              InReverbGain                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetReverbGain(float InReverbGain)
+void UResonanceAudioReverbPluginPreset::SetReverbGain(float InInReverbGain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -219,7 +219,7 @@ void UResonanceAudioReverbPluginPreset::SetReverbGain(float InReverbGain)
 
 	Params::UResonanceAudioReverbPluginPreset_SetReverbGain_Params Parms{};
 
-	Parms.InReverbGain = InReverbGain;
+	Parms.InReverbGain = InInReverbGain;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -237,7 +237,7 @@ void UResonanceAudioReverbPluginPreset::SetReverbGain(float InReverbGain)
 // Parameters:
 // float                              InReverbBrightness                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetReverbBrightness(float InReverbBrightness)
+void UResonanceAudioReverbPluginPreset::SetReverbBrightness(float InInReverbBrightness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -246,7 +246,7 @@ void UResonanceAudioReverbPluginPreset::SetReverbBrightness(float InReverbBright
 
 	Params::UResonanceAudioReverbPluginPreset_SetReverbBrightness_Params Parms{};
 
-	Parms.InReverbBrightness = InReverbBrightness;
+	Parms.InReverbBrightness = InInReverbBrightness;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -264,7 +264,7 @@ void UResonanceAudioReverbPluginPreset::SetReverbBrightness(float InReverbBright
 // Parameters:
 // float                              InReflectionScalar                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetReflectionScalar(float InReflectionScalar)
+void UResonanceAudioReverbPluginPreset::SetReflectionScalar(float InInReflectionScalar)
 {
 	static class UFunction* Func = nullptr;
 
@@ -273,7 +273,7 @@ void UResonanceAudioReverbPluginPreset::SetReflectionScalar(float InReflectionSc
 
 	Params::UResonanceAudioReverbPluginPreset_SetReflectionScalar_Params Parms{};
 
-	Parms.InReflectionScalar = InReflectionScalar;
+	Parms.InReflectionScalar = InInReflectionScalar;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -291,7 +291,7 @@ void UResonanceAudioReverbPluginPreset::SetReflectionScalar(float InReflectionSc
 // Parameters:
 // bool                               bInEnableRoomEffects                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetEnableRoomEffects(bool bInEnableRoomEffects)
+void UResonanceAudioReverbPluginPreset::SetEnableRoomEffects(bool InbInEnableRoomEffects)
 {
 	static class UFunction* Func = nullptr;
 
@@ -300,7 +300,7 @@ void UResonanceAudioReverbPluginPreset::SetEnableRoomEffects(bool bInEnableRoomE
 
 	Params::UResonanceAudioReverbPluginPreset_SetEnableRoomEffects_Params Parms{};
 
-	Parms.bInEnableRoomEffects = bInEnableRoomEffects;
+	Parms.bInEnableRoomEffects = InbInEnableRoomEffects;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -318,7 +318,7 @@ void UResonanceAudioReverbPluginPreset::SetEnableRoomEffects(bool bInEnableRoomE
 // Parameters:
 // float                              InSpread                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioSpatializationSourceSettings::SetSoundSourceSpread(float InSpread)
+void UResonanceAudioSpatializationSourceSettings::SetSoundSourceSpread(float InInSpread)
 {
 	static class UFunction* Func = nullptr;
 
@@ -327,7 +327,7 @@ void UResonanceAudioSpatializationSourceSettings::SetSoundSourceSpread(float InS
 
 	Params::UResonanceAudioSpatializationSourceSettings_SetSoundSourceSpread_Params Parms{};
 
-	Parms.InSpread = InSpread;
+	Parms.InSpread = InInSpread;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -346,7 +346,7 @@ void UResonanceAudioSpatializationSourceSettings::SetSoundSourceSpread(float InS
 // float                              InPattern                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              InSharpness                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioSpatializationSourceSettings::SetSoundSourceDirectivity(float InPattern, float InSharpness)
+void UResonanceAudioSpatializationSourceSettings::SetSoundSourceDirectivity(float InInPattern, float InInSharpness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -355,8 +355,8 @@ void UResonanceAudioSpatializationSourceSettings::SetSoundSourceDirectivity(floa
 
 	Params::UResonanceAudioSpatializationSourceSettings_SetSoundSourceDirectivity_Params Parms{};
 
-	Parms.InPattern = InPattern;
-	Parms.InSharpness = InSharpness;
+	Parms.InPattern = InInPattern;
+	Parms.InSharpness = InInSharpness;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

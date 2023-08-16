@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -51,7 +51,7 @@ class UGeometryCacheComponent* AGeometryCacheActor::GetGeometryCacheComponent()
 // bool                               bInBackwards                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bInIsLooping                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCacheComponent::TickAtThisTime(float Time, bool bInIsRunning, bool bInBackwards, bool bInIsLooping)
+void UGeometryCacheComponent::TickAtThisTime(float InTime, bool InbInIsRunning, bool InbInBackwards, bool InbInIsLooping)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,10 +60,10 @@ void UGeometryCacheComponent::TickAtThisTime(float Time, bool bInIsRunning, bool
 
 	Params::UGeometryCacheComponent_TickAtThisTime_Params Parms{};
 
-	Parms.Time = Time;
-	Parms.bInIsRunning = bInIsRunning;
-	Parms.bInBackwards = bInBackwards;
-	Parms.bInIsLooping = bInIsLooping;
+	Parms.Time = InTime;
+	Parms.bInIsRunning = InbInIsRunning;
+	Parms.bInBackwards = InbInBackwards;
+	Parms.bInIsLooping = InbInIsLooping;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -106,7 +106,7 @@ void UGeometryCacheComponent::Stop()
 // Parameters:
 // struct FLinearColor                Color                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCacheComponent::SetWireframeOverrideColor(const struct FLinearColor& Color)
+void UGeometryCacheComponent::SetWireframeOverrideColor(const struct FLinearColor& InColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -115,7 +115,7 @@ void UGeometryCacheComponent::SetWireframeOverrideColor(const struct FLinearColo
 
 	Params::UGeometryCacheComponent_SetWireframeOverrideColor_Params Parms{};
 
-	Parms.Color = Color;
+	Parms.Color = InColor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -133,7 +133,7 @@ void UGeometryCacheComponent::SetWireframeOverrideColor(const struct FLinearColo
 // Parameters:
 // float                              NewStartTimeOffset                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCacheComponent::SetStartTimeOffset(float NewStartTimeOffset)
+void UGeometryCacheComponent::SetStartTimeOffset(float InNewStartTimeOffset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -142,7 +142,7 @@ void UGeometryCacheComponent::SetStartTimeOffset(float NewStartTimeOffset)
 
 	Params::UGeometryCacheComponent_SetStartTimeOffset_Params Parms{};
 
-	Parms.NewStartTimeOffset = NewStartTimeOffset;
+	Parms.NewStartTimeOffset = InNewStartTimeOffset;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -160,7 +160,7 @@ void UGeometryCacheComponent::SetStartTimeOffset(float NewStartTimeOffset)
 // Parameters:
 // float                              NewPlaybackSpeed                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCacheComponent::SetPlaybackSpeed(float NewPlaybackSpeed)
+void UGeometryCacheComponent::SetPlaybackSpeed(float InNewPlaybackSpeed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -169,7 +169,7 @@ void UGeometryCacheComponent::SetPlaybackSpeed(float NewPlaybackSpeed)
 
 	Params::UGeometryCacheComponent_SetPlaybackSpeed_Params Parms{};
 
-	Parms.NewPlaybackSpeed = NewPlaybackSpeed;
+	Parms.NewPlaybackSpeed = InNewPlaybackSpeed;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -187,7 +187,7 @@ void UGeometryCacheComponent::SetPlaybackSpeed(float NewPlaybackSpeed)
 // Parameters:
 // bool                               bOverride                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCacheComponent::SetOverrideWireframeColor(bool bOverride)
+void UGeometryCacheComponent::SetOverrideWireframeColor(bool InbOverride)
 {
 	static class UFunction* Func = nullptr;
 
@@ -196,7 +196,7 @@ void UGeometryCacheComponent::SetOverrideWireframeColor(bool bOverride)
 
 	Params::UGeometryCacheComponent_SetOverrideWireframeColor_Params Parms{};
 
-	Parms.bOverride = bOverride;
+	Parms.bOverride = InbOverride;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -214,7 +214,7 @@ void UGeometryCacheComponent::SetOverrideWireframeColor(bool bOverride)
 // Parameters:
 // float                              NewMotionVectorScale                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCacheComponent::SetMotionVectorScale(float NewMotionVectorScale)
+void UGeometryCacheComponent::SetMotionVectorScale(float InNewMotionVectorScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -223,7 +223,7 @@ void UGeometryCacheComponent::SetMotionVectorScale(float NewMotionVectorScale)
 
 	Params::UGeometryCacheComponent_SetMotionVectorScale_Params Parms{};
 
-	Parms.NewMotionVectorScale = NewMotionVectorScale;
+	Parms.NewMotionVectorScale = InNewMotionVectorScale;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -241,7 +241,7 @@ void UGeometryCacheComponent::SetMotionVectorScale(float NewMotionVectorScale)
 // Parameters:
 // bool                               bNewLooping                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCacheComponent::SetLooping(bool bNewLooping)
+void UGeometryCacheComponent::SetLooping(bool InbNewLooping)
 {
 	static class UFunction* Func = nullptr;
 
@@ -250,7 +250,7 @@ void UGeometryCacheComponent::SetLooping(bool bNewLooping)
 
 	Params::UGeometryCacheComponent_SetLooping_Params Parms{};
 
-	Parms.bNewLooping = bNewLooping;
+	Parms.bNewLooping = InbNewLooping;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -269,7 +269,7 @@ void UGeometryCacheComponent::SetLooping(bool bNewLooping)
 // class UGeometryCache*              NewGeomCache                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UGeometryCacheComponent::SetGeometryCache(class UGeometryCache* NewGeomCache)
+bool UGeometryCacheComponent::SetGeometryCache(class UGeometryCache* InNewGeomCache)
 {
 	static class UFunction* Func = nullptr;
 
@@ -278,7 +278,7 @@ bool UGeometryCacheComponent::SetGeometryCache(class UGeometryCache* NewGeomCach
 
 	Params::UGeometryCacheComponent_SetGeometryCache_Params Parms{};
 
-	Parms.NewGeomCache = NewGeomCache;
+	Parms.NewGeomCache = InNewGeomCache;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -298,7 +298,7 @@ bool UGeometryCacheComponent::SetGeometryCache(class UGeometryCache* NewGeomCach
 // Parameters:
 // bool                               bNewExtrapolating                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCacheComponent::SetExtrapolateFrames(bool bNewExtrapolating)
+void UGeometryCacheComponent::SetExtrapolateFrames(bool InbNewExtrapolating)
 {
 	static class UFunction* Func = nullptr;
 
@@ -307,7 +307,7 @@ void UGeometryCacheComponent::SetExtrapolateFrames(bool bNewExtrapolating)
 
 	Params::UGeometryCacheComponent_SetExtrapolateFrames_Params Parms{};
 
-	Parms.bNewExtrapolating = bNewExtrapolating;
+	Parms.bNewExtrapolating = InbNewExtrapolating;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -815,7 +815,7 @@ float UGeometryCacheComponent::GetAnimationTime()
 // struct FGeometryCacheMeshData      MeshData                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                              SampleTime                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCacheTrack_FlipbookAnimation::AddMeshSample(struct FGeometryCacheMeshData& MeshData, float SampleTime)
+void UGeometryCacheTrack_FlipbookAnimation::AddMeshSample(struct FGeometryCacheMeshData& InMeshData, float InSampleTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -824,8 +824,8 @@ void UGeometryCacheTrack_FlipbookAnimation::AddMeshSample(struct FGeometryCacheM
 
 	Params::UGeometryCacheTrack_FlipbookAnimation_AddMeshSample_Params Parms{};
 
-	Parms.MeshData = MeshData;
-	Parms.SampleTime = SampleTime;
+	Parms.MeshData = InMeshData;
+	Parms.SampleTime = InSampleTime;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -843,7 +843,7 @@ void UGeometryCacheTrack_FlipbookAnimation::AddMeshSample(struct FGeometryCacheM
 // Parameters:
 // struct FGeometryCacheMeshData      NewMeshData                                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UGeometryCacheTrack_TransformAnimation::SetMesh(struct FGeometryCacheMeshData& NewMeshData)
+void UGeometryCacheTrack_TransformAnimation::SetMesh(struct FGeometryCacheMeshData& InNewMeshData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -852,7 +852,7 @@ void UGeometryCacheTrack_TransformAnimation::SetMesh(struct FGeometryCacheMeshDa
 
 	Params::UGeometryCacheTrack_TransformAnimation_SetMesh_Params Parms{};
 
-	Parms.NewMeshData = NewMeshData;
+	Parms.NewMeshData = InNewMeshData;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -870,7 +870,7 @@ void UGeometryCacheTrack_TransformAnimation::SetMesh(struct FGeometryCacheMeshDa
 // Parameters:
 // struct FGeometryCacheMeshData      NewMeshData                                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UGeometryCacheTrack_TransformGroupAnimation::SetMesh(struct FGeometryCacheMeshData& NewMeshData)
+void UGeometryCacheTrack_TransformGroupAnimation::SetMesh(struct FGeometryCacheMeshData& InNewMeshData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -879,7 +879,7 @@ void UGeometryCacheTrack_TransformGroupAnimation::SetMesh(struct FGeometryCacheM
 
 	Params::UGeometryCacheTrack_TransformGroupAnimation_SetMesh_Params Parms{};
 
-	Parms.NewMeshData = NewMeshData;
+	Parms.NewMeshData = InNewMeshData;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

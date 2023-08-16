@@ -27,10 +27,10 @@ public:
 	enum class EHorizontalAlignment              HorizontalAlignment;                               // 0x20(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVerticalAlignment                VerticalAlignment;                                 // 0x21(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bApplyAlphaToBlur;                                 // 0x22(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_616[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1350[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        BlurStrength;                                      // 0x24(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOverrideAutoRadiusCalculation;                    // 0x28(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_617[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1352[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        BlurRadius;                                        // 0x2C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           LowQualityFallbackBrush;                           // 0x30(0xD0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
@@ -40,7 +40,7 @@ public:
 struct FS6UI_FEditableRichTextStyleRow : public FTableRowBase
 {
 public:
-	uint8                                        Pad_61B[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1355[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FEditableTextStyle                    TextStyle;                                         // 0x10(0x2F0)(Edit, NativeAccessSpecifierPublic)
 };
 
@@ -59,7 +59,7 @@ public:
 struct FS6UI_RichTextHyperlinkStyle : public FTableRowBase
 {
 public:
-	uint8                                        Pad_61E[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1357[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHyperlinkStyle                       Style;                                             // 0x10(0x750)(Edit, NativeAccessSpecifierPublic)
 };
 

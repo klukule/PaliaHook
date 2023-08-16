@@ -21,11 +21,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MyPluginObject");
-
+		static class UClass* Clss = UObject::FindClassFast("MyPluginObject");
 		return Clss;
 	}
 

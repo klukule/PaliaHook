@@ -20,16 +20,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BPI_LoadingScreen_C");
-
+		static class UClass* Clss = UObject::FindClassFast("BPI_LoadingScreen_C");
 		return Clss;
 	}
 
-	void AddLoadingExtension(class UUserWidget* Widget);
-	void DisplayLoadingExtension(bool Display);
+	void AddLoadingExtension(class UUserWidget* InWidget);
+	void DisplayLoadingExtension(bool InDisplay);
 };
 
 }

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class FText                        Text                                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UWebBrowser::OnUrlChanged__DelegateSignature(class FText& Text)
+void UWebBrowser::OnUrlChanged__DelegateSignature(class FText& InText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UWebBrowser::OnUrlChanged__DelegateSignature(class FText& Text)
 
 	Params::UWebBrowser_OnUrlChanged__DelegateSignature_Params Parms{};
 
-	Parms.Text = Text;
+	Parms.Text = InText;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -43,7 +43,7 @@ void UWebBrowser::OnUrlChanged__DelegateSignature(class FText& Text)
 // class FString                      Source                                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              Line                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWebBrowser::OnConsoleMessage__DelegateSignature(const class FString& Message, const class FString& Source, int32 Line)
+void UWebBrowser::OnConsoleMessage__DelegateSignature(const class FString& InMessage, const class FString& InSource, int32 InLine)
 {
 	static class UFunction* Func = nullptr;
 
@@ -52,9 +52,9 @@ void UWebBrowser::OnConsoleMessage__DelegateSignature(const class FString& Messa
 
 	Params::UWebBrowser_OnConsoleMessage__DelegateSignature_Params Parms{};
 
-	Parms.Message = Message;
-	Parms.Source = Source;
-	Parms.Line = Line;
+	Parms.Message = InMessage;
+	Parms.Source = InSource;
+	Parms.Line = InLine;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -67,7 +67,7 @@ void UWebBrowser::OnConsoleMessage__DelegateSignature(const class FString& Messa
 // class FString                      URL                                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      Frame                                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWebBrowser::OnBeforePopup__DelegateSignature(const class FString& URL, const class FString& Frame)
+void UWebBrowser::OnBeforePopup__DelegateSignature(const class FString& InURL, const class FString& InFrame)
 {
 	static class UFunction* Func = nullptr;
 
@@ -76,8 +76,8 @@ void UWebBrowser::OnBeforePopup__DelegateSignature(const class FString& URL, con
 
 	Params::UWebBrowser_OnBeforePopup__DelegateSignature_Params Parms{};
 
-	Parms.URL = URL;
-	Parms.Frame = Frame;
+	Parms.URL = InURL;
+	Parms.Frame = InFrame;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -89,7 +89,7 @@ void UWebBrowser::OnBeforePopup__DelegateSignature(const class FString& URL, con
 // Parameters:
 // class FString                      NewURL                                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWebBrowser::LoadURL(const class FString& NewURL)
+void UWebBrowser::LoadURL(const class FString& InNewURL)
 {
 	static class UFunction* Func = nullptr;
 
@@ -98,7 +98,7 @@ void UWebBrowser::LoadURL(const class FString& NewURL)
 
 	Params::UWebBrowser_LoadURL_Params Parms{};
 
-	Parms.NewURL = NewURL;
+	Parms.NewURL = InNewURL;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -117,7 +117,7 @@ void UWebBrowser::LoadURL(const class FString& NewURL)
 // class FString                      Contents                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      DummyURL                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWebBrowser::LoadString(const class FString& Contents, const class FString& DummyURL)
+void UWebBrowser::LoadString(const class FString& InContents, const class FString& InDummyURL)
 {
 	static class UFunction* Func = nullptr;
 
@@ -126,8 +126,8 @@ void UWebBrowser::LoadString(const class FString& Contents, const class FString&
 
 	Params::UWebBrowser_LoadString_Params Parms{};
 
-	Parms.Contents = Contents;
-	Parms.DummyURL = DummyURL;
+	Parms.Contents = InContents;
+	Parms.DummyURL = InDummyURL;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -201,7 +201,7 @@ class FText UWebBrowser::GetTitleText()
 // Parameters:
 // class FString                      ScriptText                                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWebBrowser::ExecuteJavascript(const class FString& ScriptText)
+void UWebBrowser::ExecuteJavascript(const class FString& InScriptText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -210,7 +210,7 @@ void UWebBrowser::ExecuteJavascript(const class FString& ScriptText)
 
 	Params::UWebBrowser_ExecuteJavascript_Params Parms{};
 
-	Parms.ScriptText = ScriptText;
+	Parms.ScriptText = InScriptText;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

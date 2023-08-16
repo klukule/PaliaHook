@@ -21,11 +21,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MovieSceneGeometryCacheSection");
-
+		static class UClass* Clss = UObject::FindClassFast("MovieSceneGeometryCacheSection");
 		return Clss;
 	}
 
@@ -36,16 +32,12 @@ public:
 class UMovieSceneGeometryCacheTrack : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                        Pad_1BD8[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C88[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UMovieSceneSection*>            AnimationSections;                                 // 0xA0(0x10)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MovieSceneGeometryCacheTrack");
-
+		static class UClass* Clss = UObject::FindClassFast("MovieSceneGeometryCacheTrack");
 		return Clss;
 	}
 

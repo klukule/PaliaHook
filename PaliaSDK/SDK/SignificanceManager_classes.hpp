@@ -17,16 +17,12 @@ namespace SDK
 class USignificanceManager : public UObject
 {
 public:
-	uint8                                        Pad_19AA[0xF8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_CE7[0xF8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSoftClassPath                        SignificanceManagerClassName;                      // 0x120(0x20)(Edit, ZeroConstructor, Config, GlobalConfig, NoClear, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("SignificanceManager");
-
+		static class UClass* Clss = UObject::FindClassFast("SignificanceManager");
 		return Clss;
 	}
 

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -23,7 +23,7 @@ namespace SDK
 // class UAkAudioEvent*               CallFunc_GetVoiceEvent_Value                                     (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_VoiceSet_C::GetVoiceEvent(enum class E_VoiceEffortEvent Effort, class UAkAudioEvent** Value, class UAkAudioEvent* CallFunc_GetVoiceEvent_Value, bool CallFunc_IsValid_ReturnValue)
+void UComp_VoiceSet_C::GetVoiceEvent(enum class E_VoiceEffortEvent InEffort, class UAkAudioEvent** InValue, class UAkAudioEvent* InCallFunc_GetVoiceEvent_Value, bool InCallFunc_IsValid_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,14 +32,14 @@ void UComp_VoiceSet_C::GetVoiceEvent(enum class E_VoiceEffortEvent Effort, class
 
 	Params::UComp_VoiceSet_C_GetVoiceEvent_Params Parms{};
 
-	Parms.Effort = Effort;
-	Parms.CallFunc_GetVoiceEvent_Value = CallFunc_GetVoiceEvent_Value;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.Effort = InEffort;
+	Parms.CallFunc_GetVoiceEvent_Value = InCallFunc_GetVoiceEvent_Value;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Value != nullptr)
-		*Value = Parms.Value;
+	if (InValue != nullptr)
+		*InValue = Parms.Value;
 
 }
 

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -22,7 +22,7 @@ namespace SDK
 // bool                               Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniAssetBlueprintComponent::SetToggleValueAt(const class FString& Name, bool Value, int32 Index)
+void UHoudiniAssetBlueprintComponent::SetToggleValueAt(const class FString& InName, bool InValue, int32 InIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,9 +31,9 @@ void UHoudiniAssetBlueprintComponent::SetToggleValueAt(const class FString& Name
 
 	Params::UHoudiniAssetBlueprintComponent_SetToggleValueAt_Params Parms{};
 
-	Parms.Name = Name;
-	Parms.Value = Value;
-	Parms.Index = Index;
+	Parms.Name = InName;
+	Parms.Value = InValue;
+	Parms.Index = InIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -53,7 +53,7 @@ void UHoudiniAssetBlueprintComponent::SetToggleValueAt(const class FString& Name
 // float                              Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniAssetBlueprintComponent::SetFloatParameter(const class FString& Name, float Value, int32 Index)
+void UHoudiniAssetBlueprintComponent::SetFloatParameter(const class FString& InName, float InValue, int32 InIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -62,9 +62,9 @@ void UHoudiniAssetBlueprintComponent::SetFloatParameter(const class FString& Nam
 
 	Params::UHoudiniAssetBlueprintComponent_SetFloatParameter_Params Parms{};
 
-	Parms.Name = Name;
-	Parms.Value = Value;
-	Parms.Index = Index;
+	Parms.Name = InName;
+	Parms.Value = InValue;
+	Parms.Index = InIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -83,7 +83,7 @@ void UHoudiniAssetBlueprintComponent::SetFloatParameter(const class FString& Nam
 // class FString                      Name                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHoudiniAssetBlueprintComponent::HasParameter(const class FString& Name)
+bool UHoudiniAssetBlueprintComponent::HasParameter(const class FString& InName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -92,7 +92,7 @@ bool UHoudiniAssetBlueprintComponent::HasParameter(const class FString& Name)
 
 	Params::UHoudiniAssetBlueprintComponent_HasParameter_Params Parms{};
 
-	Parms.Name = Name;
+	Parms.Name = InName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -113,7 +113,7 @@ bool UHoudiniAssetBlueprintComponent::HasParameter(const class FString& Name)
 // uint32                             InVertexIndex                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector3f                   InPosition                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetVertexPosition(uint32 InVertexIndex, struct FVector3f& InPosition)
+void UHoudiniStaticMesh::SetVertexPosition(uint32 InInVertexIndex, struct FVector3f& InInPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -122,8 +122,8 @@ void UHoudiniStaticMesh::SetVertexPosition(uint32 InVertexIndex, struct FVector3
 
 	Params::UHoudiniStaticMesh_SetVertexPosition_Params Parms{};
 
-	Parms.InVertexIndex = InVertexIndex;
-	Parms.InPosition = InPosition;
+	Parms.InVertexIndex = InInVertexIndex;
+	Parms.InPosition = InInPosition;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -143,7 +143,7 @@ void UHoudiniStaticMesh::SetVertexPosition(uint32 InVertexIndex, struct FVector3
 // uint8                              InTriangleVertexIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector3f                   InVTangent                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetTriangleVertexVTangent(uint32 InTriangleIndex, uint8 InTriangleVertexIndex, struct FVector3f& InVTangent)
+void UHoudiniStaticMesh::SetTriangleVertexVTangent(uint32 InInTriangleIndex, uint8 InInTriangleVertexIndex, struct FVector3f& InInVTangent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -152,9 +152,9 @@ void UHoudiniStaticMesh::SetTriangleVertexVTangent(uint32 InTriangleIndex, uint8
 
 	Params::UHoudiniStaticMesh_SetTriangleVertexVTangent_Params Parms{};
 
-	Parms.InTriangleIndex = InTriangleIndex;
-	Parms.InTriangleVertexIndex = InTriangleVertexIndex;
-	Parms.InVTangent = InVTangent;
+	Parms.InTriangleIndex = InInTriangleIndex;
+	Parms.InTriangleVertexIndex = InInTriangleVertexIndex;
+	Parms.InVTangent = InInVTangent;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -175,7 +175,7 @@ void UHoudiniStaticMesh::SetTriangleVertexVTangent(uint32 InTriangleIndex, uint8
 // uint8                              InUVLayer                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   InUV                                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetTriangleVertexUV(uint32 InTriangleIndex, uint8 InTriangleVertexIndex, uint8 InUVLayer, struct FVector2D& InUV)
+void UHoudiniStaticMesh::SetTriangleVertexUV(uint32 InInTriangleIndex, uint8 InInTriangleVertexIndex, uint8 InInUVLayer, struct FVector2D& InInUV)
 {
 	static class UFunction* Func = nullptr;
 
@@ -184,10 +184,10 @@ void UHoudiniStaticMesh::SetTriangleVertexUV(uint32 InTriangleIndex, uint8 InTri
 
 	Params::UHoudiniStaticMesh_SetTriangleVertexUV_Params Parms{};
 
-	Parms.InTriangleIndex = InTriangleIndex;
-	Parms.InTriangleVertexIndex = InTriangleVertexIndex;
-	Parms.InUVLayer = InUVLayer;
-	Parms.InUV = InUV;
+	Parms.InTriangleIndex = InInTriangleIndex;
+	Parms.InTriangleVertexIndex = InInTriangleVertexIndex;
+	Parms.InUVLayer = InInUVLayer;
+	Parms.InUV = InInUV;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -207,7 +207,7 @@ void UHoudiniStaticMesh::SetTriangleVertexUV(uint32 InTriangleIndex, uint8 InTri
 // uint8                              InTriangleVertexIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector3f                   InUTangent                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetTriangleVertexUTangent(uint32 InTriangleIndex, uint8 InTriangleVertexIndex, struct FVector3f& InUTangent)
+void UHoudiniStaticMesh::SetTriangleVertexUTangent(uint32 InInTriangleIndex, uint8 InInTriangleVertexIndex, struct FVector3f& InInUTangent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -216,9 +216,9 @@ void UHoudiniStaticMesh::SetTriangleVertexUTangent(uint32 InTriangleIndex, uint8
 
 	Params::UHoudiniStaticMesh_SetTriangleVertexUTangent_Params Parms{};
 
-	Parms.InTriangleIndex = InTriangleIndex;
-	Parms.InTriangleVertexIndex = InTriangleVertexIndex;
-	Parms.InUTangent = InUTangent;
+	Parms.InTriangleIndex = InInTriangleIndex;
+	Parms.InTriangleVertexIndex = InInTriangleVertexIndex;
+	Parms.InUTangent = InInUTangent;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -238,7 +238,7 @@ void UHoudiniStaticMesh::SetTriangleVertexUTangent(uint32 InTriangleIndex, uint8
 // uint8                              InTriangleVertexIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector3f                   InNormal                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetTriangleVertexNormal(uint32 InTriangleIndex, uint8 InTriangleVertexIndex, struct FVector3f& InNormal)
+void UHoudiniStaticMesh::SetTriangleVertexNormal(uint32 InInTriangleIndex, uint8 InInTriangleVertexIndex, struct FVector3f& InInNormal)
 {
 	static class UFunction* Func = nullptr;
 
@@ -247,9 +247,9 @@ void UHoudiniStaticMesh::SetTriangleVertexNormal(uint32 InTriangleIndex, uint8 I
 
 	Params::UHoudiniStaticMesh_SetTriangleVertexNormal_Params Parms{};
 
-	Parms.InTriangleIndex = InTriangleIndex;
-	Parms.InTriangleVertexIndex = InTriangleVertexIndex;
-	Parms.InNormal = InNormal;
+	Parms.InTriangleIndex = InInTriangleIndex;
+	Parms.InTriangleVertexIndex = InInTriangleVertexIndex;
+	Parms.InNormal = InInNormal;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -268,7 +268,7 @@ void UHoudiniStaticMesh::SetTriangleVertexNormal(uint32 InTriangleIndex, uint8 I
 // uint32                             InTriangleIndex                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FIntVector                  InTriangleVertexIndices                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetTriangleVertexIndices(uint32 InTriangleIndex, struct FIntVector& InTriangleVertexIndices)
+void UHoudiniStaticMesh::SetTriangleVertexIndices(uint32 InInTriangleIndex, struct FIntVector& InInTriangleVertexIndices)
 {
 	static class UFunction* Func = nullptr;
 
@@ -277,8 +277,8 @@ void UHoudiniStaticMesh::SetTriangleVertexIndices(uint32 InTriangleIndex, struct
 
 	Params::UHoudiniStaticMesh_SetTriangleVertexIndices_Params Parms{};
 
-	Parms.InTriangleIndex = InTriangleIndex;
-	Parms.InTriangleVertexIndices = InTriangleVertexIndices;
+	Parms.InTriangleIndex = InInTriangleIndex;
+	Parms.InTriangleVertexIndices = InInTriangleVertexIndices;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -298,7 +298,7 @@ void UHoudiniStaticMesh::SetTriangleVertexIndices(uint32 InTriangleIndex, struct
 // uint8                              InTriangleVertexIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FColor                      InColor                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetTriangleVertexColor(uint32 InTriangleIndex, uint8 InTriangleVertexIndex, struct FColor& InColor)
+void UHoudiniStaticMesh::SetTriangleVertexColor(uint32 InInTriangleIndex, uint8 InInTriangleVertexIndex, struct FColor& InInColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -307,9 +307,9 @@ void UHoudiniStaticMesh::SetTriangleVertexColor(uint32 InTriangleIndex, uint8 In
 
 	Params::UHoudiniStaticMesh_SetTriangleVertexColor_Params Parms{};
 
-	Parms.InTriangleIndex = InTriangleIndex;
-	Parms.InTriangleVertexIndex = InTriangleVertexIndex;
-	Parms.InColor = InColor;
+	Parms.InTriangleIndex = InInTriangleIndex;
+	Parms.InTriangleVertexIndex = InInTriangleVertexIndex;
+	Parms.InColor = InInColor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -328,7 +328,7 @@ void UHoudiniStaticMesh::SetTriangleVertexColor(uint32 InTriangleIndex, uint8 In
 // uint32                             InTriangleIndex                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              InMaterialID                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetTriangleMaterialID(uint32 InTriangleIndex, int32 InMaterialID)
+void UHoudiniStaticMesh::SetTriangleMaterialID(uint32 InInTriangleIndex, int32 InInMaterialID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -337,8 +337,8 @@ void UHoudiniStaticMesh::SetTriangleMaterialID(uint32 InTriangleIndex, int32 InM
 
 	Params::UHoudiniStaticMesh_SetTriangleMaterialID_Params Parms{};
 
-	Parms.InTriangleIndex = InTriangleIndex;
-	Parms.InMaterialID = InMaterialID;
+	Parms.InTriangleIndex = InInTriangleIndex;
+	Parms.InMaterialID = InInMaterialID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -357,7 +357,7 @@ void UHoudiniStaticMesh::SetTriangleMaterialID(uint32 InTriangleIndex, int32 InM
 // uint32                             InMaterialIndex                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FStaticMaterial             InStaticMaterial                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetStaticMaterial(uint32 InMaterialIndex, struct FStaticMaterial& InStaticMaterial)
+void UHoudiniStaticMesh::SetStaticMaterial(uint32 InInMaterialIndex, struct FStaticMaterial& InInStaticMaterial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -366,8 +366,8 @@ void UHoudiniStaticMesh::SetStaticMaterial(uint32 InMaterialIndex, struct FStati
 
 	Params::UHoudiniStaticMesh_SetStaticMaterial_Params Parms{};
 
-	Parms.InMaterialIndex = InMaterialIndex;
-	Parms.InStaticMaterial = InStaticMaterial;
+	Parms.InMaterialIndex = InInMaterialIndex;
+	Parms.InStaticMaterial = InInStaticMaterial;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -385,7 +385,7 @@ void UHoudiniStaticMesh::SetStaticMaterial(uint32 InMaterialIndex, struct FStati
 // Parameters:
 // uint32                             InNumUVLayers                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetNumUVLayers(uint32 InNumUVLayers)
+void UHoudiniStaticMesh::SetNumUVLayers(uint32 InInNumUVLayers)
 {
 	static class UFunction* Func = nullptr;
 
@@ -394,7 +394,7 @@ void UHoudiniStaticMesh::SetNumUVLayers(uint32 InNumUVLayers)
 
 	Params::UHoudiniStaticMesh_SetNumUVLayers_Params Parms{};
 
-	Parms.InNumUVLayers = InNumUVLayers;
+	Parms.InNumUVLayers = InInNumUVLayers;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -412,7 +412,7 @@ void UHoudiniStaticMesh::SetNumUVLayers(uint32 InNumUVLayers)
 // Parameters:
 // uint32                             InNumStaticMaterials                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetNumStaticMaterials(uint32 InNumStaticMaterials)
+void UHoudiniStaticMesh::SetNumStaticMaterials(uint32 InInNumStaticMaterials)
 {
 	static class UFunction* Func = nullptr;
 
@@ -421,7 +421,7 @@ void UHoudiniStaticMesh::SetNumStaticMaterials(uint32 InNumStaticMaterials)
 
 	Params::UHoudiniStaticMesh_SetNumStaticMaterials_Params Parms{};
 
-	Parms.InNumStaticMaterials = InNumStaticMaterials;
+	Parms.InNumStaticMaterials = InInNumStaticMaterials;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -439,7 +439,7 @@ void UHoudiniStaticMesh::SetNumStaticMaterials(uint32 InNumStaticMaterials)
 // Parameters:
 // bool                               bInHasTangents                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetHasTangents(bool bInHasTangents)
+void UHoudiniStaticMesh::SetHasTangents(bool InbInHasTangents)
 {
 	static class UFunction* Func = nullptr;
 
@@ -448,7 +448,7 @@ void UHoudiniStaticMesh::SetHasTangents(bool bInHasTangents)
 
 	Params::UHoudiniStaticMesh_SetHasTangents_Params Parms{};
 
-	Parms.bInHasTangents = bInHasTangents;
+	Parms.bInHasTangents = InbInHasTangents;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -466,7 +466,7 @@ void UHoudiniStaticMesh::SetHasTangents(bool bInHasTangents)
 // Parameters:
 // bool                               bInHasPerFaceMaterials                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetHasPerFaceMaterials(bool bInHasPerFaceMaterials)
+void UHoudiniStaticMesh::SetHasPerFaceMaterials(bool InbInHasPerFaceMaterials)
 {
 	static class UFunction* Func = nullptr;
 
@@ -475,7 +475,7 @@ void UHoudiniStaticMesh::SetHasPerFaceMaterials(bool bInHasPerFaceMaterials)
 
 	Params::UHoudiniStaticMesh_SetHasPerFaceMaterials_Params Parms{};
 
-	Parms.bInHasPerFaceMaterials = bInHasPerFaceMaterials;
+	Parms.bInHasPerFaceMaterials = InbInHasPerFaceMaterials;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -493,7 +493,7 @@ void UHoudiniStaticMesh::SetHasPerFaceMaterials(bool bInHasPerFaceMaterials)
 // Parameters:
 // bool                               bInHasNormals                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetHasNormals(bool bInHasNormals)
+void UHoudiniStaticMesh::SetHasNormals(bool InbInHasNormals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -502,7 +502,7 @@ void UHoudiniStaticMesh::SetHasNormals(bool bInHasNormals)
 
 	Params::UHoudiniStaticMesh_SetHasNormals_Params Parms{};
 
-	Parms.bInHasNormals = bInHasNormals;
+	Parms.bInHasNormals = InbInHasNormals;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -520,7 +520,7 @@ void UHoudiniStaticMesh::SetHasNormals(bool bInHasNormals)
 // Parameters:
 // bool                               bInHasColors                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::SetHasColors(bool bInHasColors)
+void UHoudiniStaticMesh::SetHasColors(bool InbInHasColors)
 {
 	static class UFunction* Func = nullptr;
 
@@ -529,7 +529,7 @@ void UHoudiniStaticMesh::SetHasColors(bool bInHasColors)
 
 	Params::UHoudiniStaticMesh_SetHasColors_Params Parms{};
 
-	Parms.bInHasColors = bInHasColors;
+	Parms.bInHasColors = InbInHasColors;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -573,7 +573,7 @@ void UHoudiniStaticMesh::Optimize()
 // bool                               bInSkipVertexIndicesCheck                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHoudiniStaticMesh::IsValid(bool bInSkipVertexIndicesCheck)
+bool UHoudiniStaticMesh::IsValid(bool InbInSkipVertexIndicesCheck)
 {
 	static class UFunction* Func = nullptr;
 
@@ -582,7 +582,7 @@ bool UHoudiniStaticMesh::IsValid(bool bInSkipVertexIndicesCheck)
 
 	Params::UHoudiniStaticMesh_IsValid_Params Parms{};
 
-	Parms.bInSkipVertexIndicesCheck = bInSkipVertexIndicesCheck;
+	Parms.bInSkipVertexIndicesCheck = InbInSkipVertexIndicesCheck;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -609,7 +609,7 @@ bool UHoudiniStaticMesh::IsValid(bool bInSkipVertexIndicesCheck)
 // bool                               bInHasColors                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bInHasPerFaceMaterials                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::Initialize(uint32 InNumVertices, uint32 InNumTriangles, uint32 InNumUVLayers, uint32 InInitialNumStaticMaterials, bool bInHasNormals, bool bInHasTangents, bool bInHasColors, bool bInHasPerFaceMaterials)
+void UHoudiniStaticMesh::Initialize(uint32 InInNumVertices, uint32 InInNumTriangles, uint32 InInNumUVLayers, uint32 InInInitialNumStaticMaterials, bool InbInHasNormals, bool InbInHasTangents, bool InbInHasColors, bool InbInHasPerFaceMaterials)
 {
 	static class UFunction* Func = nullptr;
 
@@ -618,14 +618,14 @@ void UHoudiniStaticMesh::Initialize(uint32 InNumVertices, uint32 InNumTriangles,
 
 	Params::UHoudiniStaticMesh_Initialize_Params Parms{};
 
-	Parms.InNumVertices = InNumVertices;
-	Parms.InNumTriangles = InNumTriangles;
-	Parms.InNumUVLayers = InNumUVLayers;
-	Parms.InInitialNumStaticMaterials = InInitialNumStaticMaterials;
-	Parms.bInHasNormals = bInHasNormals;
-	Parms.bInHasTangents = bInHasTangents;
-	Parms.bInHasColors = bInHasColors;
-	Parms.bInHasPerFaceMaterials = bInHasPerFaceMaterials;
+	Parms.InNumVertices = InInNumVertices;
+	Parms.InNumTriangles = InInNumTriangles;
+	Parms.InNumUVLayers = InInNumUVLayers;
+	Parms.InInitialNumStaticMaterials = InInInitialNumStaticMaterials;
+	Parms.bInHasNormals = InbInHasNormals;
+	Parms.bInHasTangents = InbInHasTangents;
+	Parms.bInHasColors = InbInHasColors;
+	Parms.bInHasPerFaceMaterials = InbInHasPerFaceMaterials;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1120,7 +1120,7 @@ uint32 UHoudiniStaticMesh::GetNumStaticMaterials()
 // class FName                        InMaterialSlotName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UHoudiniStaticMesh::GetMaterialIndex(class FName InMaterialSlotName)
+int32 UHoudiniStaticMesh::GetMaterialIndex(class FName InInMaterialSlotName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1129,7 +1129,7 @@ int32 UHoudiniStaticMesh::GetMaterialIndex(class FName InMaterialSlotName)
 
 	Params::UHoudiniStaticMesh_GetMaterialIndex_Params Parms{};
 
-	Parms.InMaterialSlotName = InMaterialSlotName;
+	Parms.InMaterialSlotName = InInMaterialSlotName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1178,7 +1178,7 @@ TArray<int32> UHoudiniStaticMesh::GetMaterialIDsPerTriangle()
 // int32                              InMaterialIndex                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMaterialInterface*          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMaterialInterface* UHoudiniStaticMesh::GetMaterial(int32 InMaterialIndex)
+class UMaterialInterface* UHoudiniStaticMesh::GetMaterial(int32 InInMaterialIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1187,7 +1187,7 @@ class UMaterialInterface* UHoudiniStaticMesh::GetMaterial(int32 InMaterialIndex)
 
 	Params::UHoudiniStaticMesh_GetMaterial_Params Parms{};
 
-	Parms.InMaterialIndex = InMaterialIndex;
+	Parms.InMaterialIndex = InInMaterialIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1207,7 +1207,7 @@ class UMaterialInterface* UHoudiniStaticMesh::GetMaterial(int32 InMaterialIndex)
 // Parameters:
 // bool                               bInComputeWeightedNormals                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::CalculateTangents(bool bInComputeWeightedNormals)
+void UHoudiniStaticMesh::CalculateTangents(bool InbInComputeWeightedNormals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1216,7 +1216,7 @@ void UHoudiniStaticMesh::CalculateTangents(bool bInComputeWeightedNormals)
 
 	Params::UHoudiniStaticMesh_CalculateTangents_Params Parms{};
 
-	Parms.bInComputeWeightedNormals = bInComputeWeightedNormals;
+	Parms.bInComputeWeightedNormals = InbInComputeWeightedNormals;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1234,7 +1234,7 @@ void UHoudiniStaticMesh::CalculateTangents(bool bInComputeWeightedNormals)
 // Parameters:
 // bool                               bInComputeWeightedNormals                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMesh::CalculateNormals(bool bInComputeWeightedNormals)
+void UHoudiniStaticMesh::CalculateNormals(bool InbInComputeWeightedNormals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1243,7 +1243,7 @@ void UHoudiniStaticMesh::CalculateNormals(bool bInComputeWeightedNormals)
 
 	Params::UHoudiniStaticMesh_CalculateNormals_Params Parms{};
 
-	Parms.bInComputeWeightedNormals = bInComputeWeightedNormals;
+	Parms.bInComputeWeightedNormals = InbInComputeWeightedNormals;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1290,7 +1290,7 @@ struct FBox UHoudiniStaticMesh::CalcBounds()
 // struct FStaticMaterial             InStaticMaterial                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // uint32                             ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-uint32 UHoudiniStaticMesh::AddStaticMaterial(struct FStaticMaterial& InStaticMaterial)
+uint32 UHoudiniStaticMesh::AddStaticMaterial(struct FStaticMaterial& InInStaticMaterial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1299,7 +1299,7 @@ uint32 UHoudiniStaticMesh::AddStaticMaterial(struct FStaticMaterial& InStaticMat
 
 	Params::UHoudiniStaticMesh_AddStaticMaterial_Params Parms{};
 
-	Parms.InStaticMaterial = InStaticMaterial;
+	Parms.InStaticMaterial = InInStaticMaterial;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1319,7 +1319,7 @@ uint32 UHoudiniStaticMesh::AddStaticMaterial(struct FStaticMaterial& InStaticMat
 // Parameters:
 // class UHoudiniStaticMesh*          InMesh                                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMeshComponent::SetMesh(class UHoudiniStaticMesh* InMesh)
+void UHoudiniStaticMeshComponent::SetMesh(class UHoudiniStaticMesh* InInMesh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1328,7 +1328,7 @@ void UHoudiniStaticMeshComponent::SetMesh(class UHoudiniStaticMesh* InMesh)
 
 	Params::UHoudiniStaticMeshComponent_SetMesh_Params Parms{};
 
-	Parms.InMesh = InMesh;
+	Parms.InMesh = InInMesh;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1346,7 +1346,7 @@ void UHoudiniStaticMeshComponent::SetMesh(class UHoudiniStaticMesh* InMesh)
 // Parameters:
 // bool                               bInHoudiniIconVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniStaticMeshComponent::SetHoudiniIconVisible(bool bInHoudiniIconVisible)
+void UHoudiniStaticMeshComponent::SetHoudiniIconVisible(bool InbInHoudiniIconVisible)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1355,7 +1355,7 @@ void UHoudiniStaticMeshComponent::SetHoudiniIconVisible(bool bInHoudiniIconVisib
 
 	Params::UHoudiniStaticMeshComponent_SetHoudiniIconVisible_Params Parms{};
 
-	Parms.bInHoudiniIconVisible = bInHoudiniIconVisible;
+	Parms.bInHoudiniIconVisible = InbInHoudiniIconVisible;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

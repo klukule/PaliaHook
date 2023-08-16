@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     Position                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::SetVertexPosition(const struct FVertexID& VertexID, struct FVector& Position)
+void UMeshDescriptionBase::SetVertexPosition(const struct FVertexID& InVertexID, struct FVector& InPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,8 +30,8 @@ void UMeshDescriptionBase::SetVertexPosition(const struct FVertexID& VertexID, s
 
 	Params::UMeshDescriptionBase_SetVertexPosition_Params Parms{};
 
-	Parms.VertexID = VertexID;
-	Parms.Position = Position;
+	Parms.VertexID = InVertexID;
+	Parms.Position = InPosition;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -50,7 +50,7 @@ void UMeshDescriptionBase::SetVertexPosition(const struct FVertexID& VertexID, s
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVertexInstanceID>   VertexInstanceIDs                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::SetPolygonVertexInstances(const struct FPolygonID& PolygonID, TArray<struct FVertexInstanceID>& VertexInstanceIDs)
+void UMeshDescriptionBase::SetPolygonVertexInstances(const struct FPolygonID& InPolygonID, TArray<struct FVertexInstanceID>& InVertexInstanceIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -59,8 +59,8 @@ void UMeshDescriptionBase::SetPolygonVertexInstances(const struct FPolygonID& Po
 
 	Params::UMeshDescriptionBase_SetPolygonVertexInstances_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
-	Parms.VertexInstanceIDs = VertexInstanceIDs;
+	Parms.PolygonID = InPolygonID;
+	Parms.VertexInstanceIDs = InVertexInstanceIDs;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -79,7 +79,7 @@ void UMeshDescriptionBase::SetPolygonVertexInstances(const struct FPolygonID& Po
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPolygonGroupID             PolygonGroupID                                                   (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::SetPolygonPolygonGroup(const struct FPolygonID& PolygonID, const struct FPolygonGroupID& PolygonGroupID)
+void UMeshDescriptionBase::SetPolygonPolygonGroup(const struct FPolygonID& InPolygonID, const struct FPolygonGroupID& InPolygonGroupID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -88,8 +88,8 @@ void UMeshDescriptionBase::SetPolygonPolygonGroup(const struct FPolygonID& Polyg
 
 	Params::UMeshDescriptionBase_SetPolygonPolygonGroup_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
-	Parms.PolygonGroupID = PolygonGroupID;
+	Parms.PolygonID = InPolygonID;
+	Parms.PolygonGroupID = InPolygonGroupID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -107,7 +107,7 @@ void UMeshDescriptionBase::SetPolygonPolygonGroup(const struct FPolygonID& Polyg
 // Parameters:
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::ReversePolygonFacing(const struct FPolygonID& PolygonID)
+void UMeshDescriptionBase::ReversePolygonFacing(const struct FPolygonID& InPolygonID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -116,7 +116,7 @@ void UMeshDescriptionBase::ReversePolygonFacing(const struct FPolygonID& Polygon
 
 	Params::UMeshDescriptionBase_ReversePolygonFacing_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -134,7 +134,7 @@ void UMeshDescriptionBase::ReversePolygonFacing(const struct FPolygonID& Polygon
 // Parameters:
 // int32                              NumberOfNewVertices                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::ReserveNewVertices(int32 NumberOfNewVertices)
+void UMeshDescriptionBase::ReserveNewVertices(int32 InNumberOfNewVertices)
 {
 	static class UFunction* Func = nullptr;
 
@@ -143,7 +143,7 @@ void UMeshDescriptionBase::ReserveNewVertices(int32 NumberOfNewVertices)
 
 	Params::UMeshDescriptionBase_ReserveNewVertices_Params Parms{};
 
-	Parms.NumberOfNewVertices = NumberOfNewVertices;
+	Parms.NumberOfNewVertices = InNumberOfNewVertices;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -161,7 +161,7 @@ void UMeshDescriptionBase::ReserveNewVertices(int32 NumberOfNewVertices)
 // Parameters:
 // int32                              NumberOfNewVertexInstances                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::ReserveNewVertexInstances(int32 NumberOfNewVertexInstances)
+void UMeshDescriptionBase::ReserveNewVertexInstances(int32 InNumberOfNewVertexInstances)
 {
 	static class UFunction* Func = nullptr;
 
@@ -170,7 +170,7 @@ void UMeshDescriptionBase::ReserveNewVertexInstances(int32 NumberOfNewVertexInst
 
 	Params::UMeshDescriptionBase_ReserveNewVertexInstances_Params Parms{};
 
-	Parms.NumberOfNewVertexInstances = NumberOfNewVertexInstances;
+	Parms.NumberOfNewVertexInstances = InNumberOfNewVertexInstances;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -188,7 +188,7 @@ void UMeshDescriptionBase::ReserveNewVertexInstances(int32 NumberOfNewVertexInst
 // Parameters:
 // int32                              NumberOfNewTriangles                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::ReserveNewTriangles(int32 NumberOfNewTriangles)
+void UMeshDescriptionBase::ReserveNewTriangles(int32 InNumberOfNewTriangles)
 {
 	static class UFunction* Func = nullptr;
 
@@ -197,7 +197,7 @@ void UMeshDescriptionBase::ReserveNewTriangles(int32 NumberOfNewTriangles)
 
 	Params::UMeshDescriptionBase_ReserveNewTriangles_Params Parms{};
 
-	Parms.NumberOfNewTriangles = NumberOfNewTriangles;
+	Parms.NumberOfNewTriangles = InNumberOfNewTriangles;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -215,7 +215,7 @@ void UMeshDescriptionBase::ReserveNewTriangles(int32 NumberOfNewTriangles)
 // Parameters:
 // int32                              NumberOfNewPolygons                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::ReserveNewPolygons(int32 NumberOfNewPolygons)
+void UMeshDescriptionBase::ReserveNewPolygons(int32 InNumberOfNewPolygons)
 {
 	static class UFunction* Func = nullptr;
 
@@ -224,7 +224,7 @@ void UMeshDescriptionBase::ReserveNewPolygons(int32 NumberOfNewPolygons)
 
 	Params::UMeshDescriptionBase_ReserveNewPolygons_Params Parms{};
 
-	Parms.NumberOfNewPolygons = NumberOfNewPolygons;
+	Parms.NumberOfNewPolygons = InNumberOfNewPolygons;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -242,7 +242,7 @@ void UMeshDescriptionBase::ReserveNewPolygons(int32 NumberOfNewPolygons)
 // Parameters:
 // int32                              NumberOfNewPolygonGroups                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::ReserveNewPolygonGroups(int32 NumberOfNewPolygonGroups)
+void UMeshDescriptionBase::ReserveNewPolygonGroups(int32 InNumberOfNewPolygonGroups)
 {
 	static class UFunction* Func = nullptr;
 
@@ -251,7 +251,7 @@ void UMeshDescriptionBase::ReserveNewPolygonGroups(int32 NumberOfNewPolygonGroup
 
 	Params::UMeshDescriptionBase_ReserveNewPolygonGroups_Params Parms{};
 
-	Parms.NumberOfNewPolygonGroups = NumberOfNewPolygonGroups;
+	Parms.NumberOfNewPolygonGroups = InNumberOfNewPolygonGroups;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -269,7 +269,7 @@ void UMeshDescriptionBase::ReserveNewPolygonGroups(int32 NumberOfNewPolygonGroup
 // Parameters:
 // int32                              NumberOfNewEdges                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::ReserveNewEdges(int32 NumberOfNewEdges)
+void UMeshDescriptionBase::ReserveNewEdges(int32 InNumberOfNewEdges)
 {
 	static class UFunction* Func = nullptr;
 
@@ -278,7 +278,7 @@ void UMeshDescriptionBase::ReserveNewEdges(int32 NumberOfNewEdges)
 
 	Params::UMeshDescriptionBase_ReserveNewEdges_Params Parms{};
 
-	Parms.NumberOfNewEdges = NumberOfNewEdges;
+	Parms.NumberOfNewEdges = InNumberOfNewEdges;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -297,7 +297,7 @@ void UMeshDescriptionBase::ReserveNewEdges(int32 NumberOfNewEdges)
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMeshDescriptionBase::IsVertexValid(const struct FVertexID& VertexID)
+bool UMeshDescriptionBase::IsVertexValid(const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -306,7 +306,7 @@ bool UMeshDescriptionBase::IsVertexValid(const struct FVertexID& VertexID)
 
 	Params::UMeshDescriptionBase_IsVertexValid_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -327,7 +327,7 @@ bool UMeshDescriptionBase::IsVertexValid(const struct FVertexID& VertexID)
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMeshDescriptionBase::IsVertexOrphaned(const struct FVertexID& VertexID)
+bool UMeshDescriptionBase::IsVertexOrphaned(const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -336,7 +336,7 @@ bool UMeshDescriptionBase::IsVertexOrphaned(const struct FVertexID& VertexID)
 
 	Params::UMeshDescriptionBase_IsVertexOrphaned_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -357,7 +357,7 @@ bool UMeshDescriptionBase::IsVertexOrphaned(const struct FVertexID& VertexID)
 // struct FVertexInstanceID           VertexInstanceID                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMeshDescriptionBase::IsVertexInstanceValid(const struct FVertexInstanceID& VertexInstanceID)
+bool UMeshDescriptionBase::IsVertexInstanceValid(const struct FVertexInstanceID& InVertexInstanceID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -366,7 +366,7 @@ bool UMeshDescriptionBase::IsVertexInstanceValid(const struct FVertexInstanceID&
 
 	Params::UMeshDescriptionBase_IsVertexInstanceValid_Params Parms{};
 
-	Parms.VertexInstanceID = VertexInstanceID;
+	Parms.VertexInstanceID = InVertexInstanceID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -387,7 +387,7 @@ bool UMeshDescriptionBase::IsVertexInstanceValid(const struct FVertexInstanceID&
 // struct FTriangleID                 TriangleID                                                       (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMeshDescriptionBase::IsTriangleValid(const struct FTriangleID& TriangleID)
+bool UMeshDescriptionBase::IsTriangleValid(const struct FTriangleID& InTriangleID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -396,7 +396,7 @@ bool UMeshDescriptionBase::IsTriangleValid(const struct FTriangleID& TriangleID)
 
 	Params::UMeshDescriptionBase_IsTriangleValid_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
+	Parms.TriangleID = InTriangleID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -417,7 +417,7 @@ bool UMeshDescriptionBase::IsTriangleValid(const struct FTriangleID& TriangleID)
 // struct FTriangleID                 TriangleID                                                       (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMeshDescriptionBase::IsTrianglePartOfNgon(const struct FTriangleID& TriangleID)
+bool UMeshDescriptionBase::IsTrianglePartOfNgon(const struct FTriangleID& InTriangleID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -426,7 +426,7 @@ bool UMeshDescriptionBase::IsTrianglePartOfNgon(const struct FTriangleID& Triang
 
 	Params::UMeshDescriptionBase_IsTrianglePartOfNgon_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
+	Parms.TriangleID = InTriangleID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -447,7 +447,7 @@ bool UMeshDescriptionBase::IsTrianglePartOfNgon(const struct FTriangleID& Triang
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMeshDescriptionBase::IsPolygonValid(const struct FPolygonID& PolygonID)
+bool UMeshDescriptionBase::IsPolygonValid(const struct FPolygonID& InPolygonID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -456,7 +456,7 @@ bool UMeshDescriptionBase::IsPolygonValid(const struct FPolygonID& PolygonID)
 
 	Params::UMeshDescriptionBase_IsPolygonValid_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -477,7 +477,7 @@ bool UMeshDescriptionBase::IsPolygonValid(const struct FPolygonID& PolygonID)
 // struct FPolygonGroupID             PolygonGroupID                                                   (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMeshDescriptionBase::IsPolygonGroupValid(const struct FPolygonGroupID& PolygonGroupID)
+bool UMeshDescriptionBase::IsPolygonGroupValid(const struct FPolygonGroupID& InPolygonGroupID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -486,7 +486,7 @@ bool UMeshDescriptionBase::IsPolygonGroupValid(const struct FPolygonGroupID& Pol
 
 	Params::UMeshDescriptionBase_IsPolygonGroupValid_Params Parms{};
 
-	Parms.PolygonGroupID = PolygonGroupID;
+	Parms.PolygonGroupID = InPolygonGroupID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -535,7 +535,7 @@ bool UMeshDescriptionBase::IsEmpty()
 // struct FEdgeID                     EdgeID                                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMeshDescriptionBase::IsEdgeValid(const struct FEdgeID& EdgeID)
+bool UMeshDescriptionBase::IsEdgeValid(const struct FEdgeID& InEdgeID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -544,7 +544,7 @@ bool UMeshDescriptionBase::IsEdgeValid(const struct FEdgeID& EdgeID)
 
 	Params::UMeshDescriptionBase_IsEdgeValid_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
+	Parms.EdgeID = InEdgeID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -566,7 +566,7 @@ bool UMeshDescriptionBase::IsEdgeValid(const struct FEdgeID& EdgeID)
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMeshDescriptionBase::IsEdgeInternalToPolygon(const struct FEdgeID& EdgeID, const struct FPolygonID& PolygonID)
+bool UMeshDescriptionBase::IsEdgeInternalToPolygon(const struct FEdgeID& InEdgeID, const struct FPolygonID& InPolygonID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -575,8 +575,8 @@ bool UMeshDescriptionBase::IsEdgeInternalToPolygon(const struct FEdgeID& EdgeID,
 
 	Params::UMeshDescriptionBase_IsEdgeInternalToPolygon_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
-	Parms.PolygonID = PolygonID;
+	Parms.EdgeID = InEdgeID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -597,7 +597,7 @@ bool UMeshDescriptionBase::IsEdgeInternalToPolygon(const struct FEdgeID& EdgeID,
 // struct FEdgeID                     EdgeID                                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMeshDescriptionBase::IsEdgeInternal(const struct FEdgeID& EdgeID)
+bool UMeshDescriptionBase::IsEdgeInternal(const struct FEdgeID& InEdgeID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -606,7 +606,7 @@ bool UMeshDescriptionBase::IsEdgeInternal(const struct FEdgeID& EdgeID)
 
 	Params::UMeshDescriptionBase_IsEdgeInternal_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
+	Parms.EdgeID = InEdgeID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -627,7 +627,7 @@ bool UMeshDescriptionBase::IsEdgeInternal(const struct FEdgeID& EdgeID)
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVertexInstanceID>   OutVertexInstanceIDs                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetVertexVertexInstances(const struct FVertexID& VertexID, TArray<struct FVertexInstanceID>* OutVertexInstanceIDs)
+void UMeshDescriptionBase::GetVertexVertexInstances(const struct FVertexID& InVertexID, TArray<struct FVertexInstanceID>* InOutVertexInstanceIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -636,7 +636,7 @@ void UMeshDescriptionBase::GetVertexVertexInstances(const struct FVertexID& Vert
 
 	Params::UMeshDescriptionBase_GetVertexVertexInstances_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -646,8 +646,8 @@ void UMeshDescriptionBase::GetVertexVertexInstances(const struct FVertexID& Vert
 
 	Func->FunctionFlags = Flags;
 
-	if (OutVertexInstanceIDs != nullptr)
-		*OutVertexInstanceIDs = Parms.OutVertexInstanceIDs;
+	if (InOutVertexInstanceIDs != nullptr)
+		*InOutVertexInstanceIDs = Parms.OutVertexInstanceIDs;
 
 }
 
@@ -658,7 +658,7 @@ void UMeshDescriptionBase::GetVertexVertexInstances(const struct FVertexID& Vert
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UMeshDescriptionBase::GetVertexPosition(const struct FVertexID& VertexID)
+struct FVector UMeshDescriptionBase::GetVertexPosition(const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -667,7 +667,7 @@ struct FVector UMeshDescriptionBase::GetVertexPosition(const struct FVertexID& V
 
 	Params::UMeshDescriptionBase_GetVertexPosition_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -689,7 +689,7 @@ struct FVector UMeshDescriptionBase::GetVertexPosition(const struct FVertexID& V
 // struct FVertexID                   VertexID1                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FEdgeID                     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FEdgeID UMeshDescriptionBase::GetVertexPairEdge(const struct FVertexID& VertexID0, const struct FVertexID& VertexID1)
+struct FEdgeID UMeshDescriptionBase::GetVertexPairEdge(const struct FVertexID& InVertexID0, const struct FVertexID& InVertexID1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -698,8 +698,8 @@ struct FEdgeID UMeshDescriptionBase::GetVertexPairEdge(const struct FVertexID& V
 
 	Params::UMeshDescriptionBase_GetVertexPairEdge_Params Parms{};
 
-	Parms.VertexID0 = VertexID0;
-	Parms.VertexID1 = VertexID1;
+	Parms.VertexID0 = InVertexID0;
+	Parms.VertexID1 = InVertexID1;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -720,7 +720,7 @@ struct FEdgeID UMeshDescriptionBase::GetVertexPairEdge(const struct FVertexID& V
 // struct FVertexInstanceID           VertexInstanceID                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVertexID                   ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVertexID UMeshDescriptionBase::GetVertexInstanceVertex(const struct FVertexInstanceID& VertexInstanceID)
+struct FVertexID UMeshDescriptionBase::GetVertexInstanceVertex(const struct FVertexInstanceID& InVertexInstanceID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -729,7 +729,7 @@ struct FVertexID UMeshDescriptionBase::GetVertexInstanceVertex(const struct FVer
 
 	Params::UMeshDescriptionBase_GetVertexInstanceVertex_Params Parms{};
 
-	Parms.VertexInstanceID = VertexInstanceID;
+	Parms.VertexInstanceID = InVertexInstanceID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -751,7 +751,7 @@ struct FVertexID UMeshDescriptionBase::GetVertexInstanceVertex(const struct FVer
 // struct FVertexInstanceID           VertexInstanceID1                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FEdgeID                     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FEdgeID UMeshDescriptionBase::GetVertexInstancePairEdge(const struct FVertexInstanceID& VertexInstanceID0, const struct FVertexInstanceID& VertexInstanceID1)
+struct FEdgeID UMeshDescriptionBase::GetVertexInstancePairEdge(const struct FVertexInstanceID& InVertexInstanceID0, const struct FVertexInstanceID& InVertexInstanceID1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -760,8 +760,8 @@ struct FEdgeID UMeshDescriptionBase::GetVertexInstancePairEdge(const struct FVer
 
 	Params::UMeshDescriptionBase_GetVertexInstancePairEdge_Params Parms{};
 
-	Parms.VertexInstanceID0 = VertexInstanceID0;
-	Parms.VertexInstanceID1 = VertexInstanceID1;
+	Parms.VertexInstanceID0 = InVertexInstanceID0;
+	Parms.VertexInstanceID1 = InVertexInstanceID1;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -783,7 +783,7 @@ struct FEdgeID UMeshDescriptionBase::GetVertexInstancePairEdge(const struct FVer
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVertexInstanceID           ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVertexInstanceID UMeshDescriptionBase::GetVertexInstanceForTriangleVertex(const struct FTriangleID& TriangleID, const struct FVertexID& VertexID)
+struct FVertexInstanceID UMeshDescriptionBase::GetVertexInstanceForTriangleVertex(const struct FTriangleID& InTriangleID, const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -792,8 +792,8 @@ struct FVertexInstanceID UMeshDescriptionBase::GetVertexInstanceForTriangleVerte
 
 	Params::UMeshDescriptionBase_GetVertexInstanceForTriangleVertex_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
-	Parms.VertexID = VertexID;
+	Parms.TriangleID = InTriangleID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -815,7 +815,7 @@ struct FVertexInstanceID UMeshDescriptionBase::GetVertexInstanceForTriangleVerte
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVertexInstanceID           ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVertexInstanceID UMeshDescriptionBase::GetVertexInstanceForPolygonVertex(const struct FPolygonID& PolygonID, const struct FVertexID& VertexID)
+struct FVertexInstanceID UMeshDescriptionBase::GetVertexInstanceForPolygonVertex(const struct FPolygonID& InPolygonID, const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -824,8 +824,8 @@ struct FVertexInstanceID UMeshDescriptionBase::GetVertexInstanceForPolygonVertex
 
 	Params::UMeshDescriptionBase_GetVertexInstanceForPolygonVertex_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
-	Parms.VertexID = VertexID;
+	Parms.PolygonID = InPolygonID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -874,7 +874,7 @@ int32 UMeshDescriptionBase::GetVertexInstanceCount()
 // struct FVertexInstanceID           VertexInstanceID                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FTriangleID>         OutConnectedTriangleIDs                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetVertexInstanceConnectedTriangles(const struct FVertexInstanceID& VertexInstanceID, TArray<struct FTriangleID>* OutConnectedTriangleIDs)
+void UMeshDescriptionBase::GetVertexInstanceConnectedTriangles(const struct FVertexInstanceID& InVertexInstanceID, TArray<struct FTriangleID>* InOutConnectedTriangleIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -883,7 +883,7 @@ void UMeshDescriptionBase::GetVertexInstanceConnectedTriangles(const struct FVer
 
 	Params::UMeshDescriptionBase_GetVertexInstanceConnectedTriangles_Params Parms{};
 
-	Parms.VertexInstanceID = VertexInstanceID;
+	Parms.VertexInstanceID = InVertexInstanceID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -893,8 +893,8 @@ void UMeshDescriptionBase::GetVertexInstanceConnectedTriangles(const struct FVer
 
 	Func->FunctionFlags = Flags;
 
-	if (OutConnectedTriangleIDs != nullptr)
-		*OutConnectedTriangleIDs = Parms.OutConnectedTriangleIDs;
+	if (InOutConnectedTriangleIDs != nullptr)
+		*InOutConnectedTriangleIDs = Parms.OutConnectedTriangleIDs;
 
 }
 
@@ -905,7 +905,7 @@ void UMeshDescriptionBase::GetVertexInstanceConnectedTriangles(const struct FVer
 // struct FVertexInstanceID           VertexInstanceID                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FPolygonID>          OutConnectedPolygonIDs                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetVertexInstanceConnectedPolygons(const struct FVertexInstanceID& VertexInstanceID, TArray<struct FPolygonID>* OutConnectedPolygonIDs)
+void UMeshDescriptionBase::GetVertexInstanceConnectedPolygons(const struct FVertexInstanceID& InVertexInstanceID, TArray<struct FPolygonID>* InOutConnectedPolygonIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -914,7 +914,7 @@ void UMeshDescriptionBase::GetVertexInstanceConnectedPolygons(const struct FVert
 
 	Params::UMeshDescriptionBase_GetVertexInstanceConnectedPolygons_Params Parms{};
 
-	Parms.VertexInstanceID = VertexInstanceID;
+	Parms.VertexInstanceID = InVertexInstanceID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -924,8 +924,8 @@ void UMeshDescriptionBase::GetVertexInstanceConnectedPolygons(const struct FVert
 
 	Func->FunctionFlags = Flags;
 
-	if (OutConnectedPolygonIDs != nullptr)
-		*OutConnectedPolygonIDs = Parms.OutConnectedPolygonIDs;
+	if (InOutConnectedPolygonIDs != nullptr)
+		*InOutConnectedPolygonIDs = Parms.OutConnectedPolygonIDs;
 
 }
 
@@ -964,7 +964,7 @@ int32 UMeshDescriptionBase::GetVertexCount()
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FTriangleID>         OutConnectedTriangleIDs                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetVertexConnectedTriangles(const struct FVertexID& VertexID, TArray<struct FTriangleID>* OutConnectedTriangleIDs)
+void UMeshDescriptionBase::GetVertexConnectedTriangles(const struct FVertexID& InVertexID, TArray<struct FTriangleID>* InOutConnectedTriangleIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -973,7 +973,7 @@ void UMeshDescriptionBase::GetVertexConnectedTriangles(const struct FVertexID& V
 
 	Params::UMeshDescriptionBase_GetVertexConnectedTriangles_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -983,8 +983,8 @@ void UMeshDescriptionBase::GetVertexConnectedTriangles(const struct FVertexID& V
 
 	Func->FunctionFlags = Flags;
 
-	if (OutConnectedTriangleIDs != nullptr)
-		*OutConnectedTriangleIDs = Parms.OutConnectedTriangleIDs;
+	if (InOutConnectedTriangleIDs != nullptr)
+		*InOutConnectedTriangleIDs = Parms.OutConnectedTriangleIDs;
 
 }
 
@@ -995,7 +995,7 @@ void UMeshDescriptionBase::GetVertexConnectedTriangles(const struct FVertexID& V
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FPolygonID>          OutConnectedPolygonIDs                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetVertexConnectedPolygons(const struct FVertexID& VertexID, TArray<struct FPolygonID>* OutConnectedPolygonIDs)
+void UMeshDescriptionBase::GetVertexConnectedPolygons(const struct FVertexID& InVertexID, TArray<struct FPolygonID>* InOutConnectedPolygonIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1004,7 +1004,7 @@ void UMeshDescriptionBase::GetVertexConnectedPolygons(const struct FVertexID& Ve
 
 	Params::UMeshDescriptionBase_GetVertexConnectedPolygons_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1014,8 +1014,8 @@ void UMeshDescriptionBase::GetVertexConnectedPolygons(const struct FVertexID& Ve
 
 	Func->FunctionFlags = Flags;
 
-	if (OutConnectedPolygonIDs != nullptr)
-		*OutConnectedPolygonIDs = Parms.OutConnectedPolygonIDs;
+	if (InOutConnectedPolygonIDs != nullptr)
+		*InOutConnectedPolygonIDs = Parms.OutConnectedPolygonIDs;
 
 }
 
@@ -1026,7 +1026,7 @@ void UMeshDescriptionBase::GetVertexConnectedPolygons(const struct FVertexID& Ve
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FEdgeID>             OutEdgeIDs                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetVertexConnectedEdges(const struct FVertexID& VertexID, TArray<struct FEdgeID>* OutEdgeIDs)
+void UMeshDescriptionBase::GetVertexConnectedEdges(const struct FVertexID& InVertexID, TArray<struct FEdgeID>* InOutEdgeIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1035,7 +1035,7 @@ void UMeshDescriptionBase::GetVertexConnectedEdges(const struct FVertexID& Verte
 
 	Params::UMeshDescriptionBase_GetVertexConnectedEdges_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1045,8 +1045,8 @@ void UMeshDescriptionBase::GetVertexConnectedEdges(const struct FVertexID& Verte
 
 	Func->FunctionFlags = Flags;
 
-	if (OutEdgeIDs != nullptr)
-		*OutEdgeIDs = Parms.OutEdgeIDs;
+	if (InOutEdgeIDs != nullptr)
+		*InOutEdgeIDs = Parms.OutEdgeIDs;
 
 }
 
@@ -1057,7 +1057,7 @@ void UMeshDescriptionBase::GetVertexConnectedEdges(const struct FVertexID& Verte
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVertexID>           OutAdjacentVertexIDs                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetVertexAdjacentVertices(const struct FVertexID& VertexID, TArray<struct FVertexID>* OutAdjacentVertexIDs)
+void UMeshDescriptionBase::GetVertexAdjacentVertices(const struct FVertexID& InVertexID, TArray<struct FVertexID>* InOutAdjacentVertexIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1066,7 +1066,7 @@ void UMeshDescriptionBase::GetVertexAdjacentVertices(const struct FVertexID& Ver
 
 	Params::UMeshDescriptionBase_GetVertexAdjacentVertices_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1076,8 +1076,8 @@ void UMeshDescriptionBase::GetVertexAdjacentVertices(const struct FVertexID& Ver
 
 	Func->FunctionFlags = Flags;
 
-	if (OutAdjacentVertexIDs != nullptr)
-		*OutAdjacentVertexIDs = Parms.OutAdjacentVertexIDs;
+	if (InOutAdjacentVertexIDs != nullptr)
+		*InOutAdjacentVertexIDs = Parms.OutAdjacentVertexIDs;
 
 }
 
@@ -1088,7 +1088,7 @@ void UMeshDescriptionBase::GetVertexAdjacentVertices(const struct FVertexID& Ver
 // struct FTriangleID                 TriangleID                                                       (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVertexID>           OutVertexIDs                                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetTriangleVertices(const struct FTriangleID& TriangleID, TArray<struct FVertexID>* OutVertexIDs)
+void UMeshDescriptionBase::GetTriangleVertices(const struct FTriangleID& InTriangleID, TArray<struct FVertexID>* InOutVertexIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1097,7 +1097,7 @@ void UMeshDescriptionBase::GetTriangleVertices(const struct FTriangleID& Triangl
 
 	Params::UMeshDescriptionBase_GetTriangleVertices_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
+	Parms.TriangleID = InTriangleID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1107,8 +1107,8 @@ void UMeshDescriptionBase::GetTriangleVertices(const struct FTriangleID& Triangl
 
 	Func->FunctionFlags = Flags;
 
-	if (OutVertexIDs != nullptr)
-		*OutVertexIDs = Parms.OutVertexIDs;
+	if (InOutVertexIDs != nullptr)
+		*InOutVertexIDs = Parms.OutVertexIDs;
 
 }
 
@@ -1119,7 +1119,7 @@ void UMeshDescriptionBase::GetTriangleVertices(const struct FTriangleID& Triangl
 // struct FTriangleID                 TriangleID                                                       (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVertexInstanceID>   OutVertexInstanceIDs                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetTriangleVertexInstances(const struct FTriangleID& TriangleID, TArray<struct FVertexInstanceID>* OutVertexInstanceIDs)
+void UMeshDescriptionBase::GetTriangleVertexInstances(const struct FTriangleID& InTriangleID, TArray<struct FVertexInstanceID>* InOutVertexInstanceIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1128,7 +1128,7 @@ void UMeshDescriptionBase::GetTriangleVertexInstances(const struct FTriangleID& 
 
 	Params::UMeshDescriptionBase_GetTriangleVertexInstances_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
+	Parms.TriangleID = InTriangleID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1138,8 +1138,8 @@ void UMeshDescriptionBase::GetTriangleVertexInstances(const struct FTriangleID& 
 
 	Func->FunctionFlags = Flags;
 
-	if (OutVertexInstanceIDs != nullptr)
-		*OutVertexInstanceIDs = Parms.OutVertexInstanceIDs;
+	if (InOutVertexInstanceIDs != nullptr)
+		*InOutVertexInstanceIDs = Parms.OutVertexInstanceIDs;
 
 }
 
@@ -1151,7 +1151,7 @@ void UMeshDescriptionBase::GetTriangleVertexInstances(const struct FTriangleID& 
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVertexInstanceID           ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVertexInstanceID UMeshDescriptionBase::GetTriangleVertexInstance(const struct FTriangleID& TriangleID, int32 Index)
+struct FVertexInstanceID UMeshDescriptionBase::GetTriangleVertexInstance(const struct FTriangleID& InTriangleID, int32 InIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1160,8 +1160,8 @@ struct FVertexInstanceID UMeshDescriptionBase::GetTriangleVertexInstance(const s
 
 	Params::UMeshDescriptionBase_GetTriangleVertexInstance_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
-	Parms.Index = Index;
+	Parms.TriangleID = InTriangleID;
+	Parms.Index = InIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1182,7 +1182,7 @@ struct FVertexInstanceID UMeshDescriptionBase::GetTriangleVertexInstance(const s
 // struct FTriangleID                 TriangleID                                                       (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPolygonGroupID             ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FPolygonGroupID UMeshDescriptionBase::GetTrianglePolygonGroup(const struct FTriangleID& TriangleID)
+struct FPolygonGroupID UMeshDescriptionBase::GetTrianglePolygonGroup(const struct FTriangleID& InTriangleID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1191,7 +1191,7 @@ struct FPolygonGroupID UMeshDescriptionBase::GetTrianglePolygonGroup(const struc
 
 	Params::UMeshDescriptionBase_GetTrianglePolygonGroup_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
+	Parms.TriangleID = InTriangleID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1212,7 +1212,7 @@ struct FPolygonGroupID UMeshDescriptionBase::GetTrianglePolygonGroup(const struc
 // struct FTriangleID                 TriangleID                                                       (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPolygonID                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FPolygonID UMeshDescriptionBase::GetTrianglePolygon(const struct FTriangleID& TriangleID)
+struct FPolygonID UMeshDescriptionBase::GetTrianglePolygon(const struct FTriangleID& InTriangleID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1221,7 +1221,7 @@ struct FPolygonID UMeshDescriptionBase::GetTrianglePolygon(const struct FTriangl
 
 	Params::UMeshDescriptionBase_GetTrianglePolygon_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
+	Parms.TriangleID = InTriangleID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1242,7 +1242,7 @@ struct FPolygonID UMeshDescriptionBase::GetTrianglePolygon(const struct FTriangl
 // struct FTriangleID                 TriangleID                                                       (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FEdgeID>             OutEdgeIDs                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetTriangleEdges(const struct FTriangleID& TriangleID, TArray<struct FEdgeID>* OutEdgeIDs)
+void UMeshDescriptionBase::GetTriangleEdges(const struct FTriangleID& InTriangleID, TArray<struct FEdgeID>* InOutEdgeIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1251,7 +1251,7 @@ void UMeshDescriptionBase::GetTriangleEdges(const struct FTriangleID& TriangleID
 
 	Params::UMeshDescriptionBase_GetTriangleEdges_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
+	Parms.TriangleID = InTriangleID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1261,8 +1261,8 @@ void UMeshDescriptionBase::GetTriangleEdges(const struct FTriangleID& TriangleID
 
 	Func->FunctionFlags = Flags;
 
-	if (OutEdgeIDs != nullptr)
-		*OutEdgeIDs = Parms.OutEdgeIDs;
+	if (InOutEdgeIDs != nullptr)
+		*InOutEdgeIDs = Parms.OutEdgeIDs;
 
 }
 
@@ -1301,7 +1301,7 @@ int32 UMeshDescriptionBase::GetTriangleCount()
 // struct FTriangleID                 TriangleID                                                       (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FTriangleID>         OutTriangleIDs                                                   (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetTriangleAdjacentTriangles(const struct FTriangleID& TriangleID, TArray<struct FTriangleID>* OutTriangleIDs)
+void UMeshDescriptionBase::GetTriangleAdjacentTriangles(const struct FTriangleID& InTriangleID, TArray<struct FTriangleID>* InOutTriangleIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1310,7 +1310,7 @@ void UMeshDescriptionBase::GetTriangleAdjacentTriangles(const struct FTriangleID
 
 	Params::UMeshDescriptionBase_GetTriangleAdjacentTriangles_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
+	Parms.TriangleID = InTriangleID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1320,8 +1320,8 @@ void UMeshDescriptionBase::GetTriangleAdjacentTriangles(const struct FTriangleID
 
 	Func->FunctionFlags = Flags;
 
-	if (OutTriangleIDs != nullptr)
-		*OutTriangleIDs = Parms.OutTriangleIDs;
+	if (InOutTriangleIDs != nullptr)
+		*InOutTriangleIDs = Parms.OutTriangleIDs;
 
 }
 
@@ -1332,7 +1332,7 @@ void UMeshDescriptionBase::GetTriangleAdjacentTriangles(const struct FTriangleID
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVertexID>           OutVertexIDs                                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetPolygonVertices(const struct FPolygonID& PolygonID, TArray<struct FVertexID>* OutVertexIDs)
+void UMeshDescriptionBase::GetPolygonVertices(const struct FPolygonID& InPolygonID, TArray<struct FVertexID>* InOutVertexIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1341,7 +1341,7 @@ void UMeshDescriptionBase::GetPolygonVertices(const struct FPolygonID& PolygonID
 
 	Params::UMeshDescriptionBase_GetPolygonVertices_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1351,8 +1351,8 @@ void UMeshDescriptionBase::GetPolygonVertices(const struct FPolygonID& PolygonID
 
 	Func->FunctionFlags = Flags;
 
-	if (OutVertexIDs != nullptr)
-		*OutVertexIDs = Parms.OutVertexIDs;
+	if (InOutVertexIDs != nullptr)
+		*InOutVertexIDs = Parms.OutVertexIDs;
 
 }
 
@@ -1363,7 +1363,7 @@ void UMeshDescriptionBase::GetPolygonVertices(const struct FPolygonID& PolygonID
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVertexInstanceID>   OutVertexInstanceIDs                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetPolygonVertexInstances(const struct FPolygonID& PolygonID, TArray<struct FVertexInstanceID>* OutVertexInstanceIDs)
+void UMeshDescriptionBase::GetPolygonVertexInstances(const struct FPolygonID& InPolygonID, TArray<struct FVertexInstanceID>* InOutVertexInstanceIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1372,7 +1372,7 @@ void UMeshDescriptionBase::GetPolygonVertexInstances(const struct FPolygonID& Po
 
 	Params::UMeshDescriptionBase_GetPolygonVertexInstances_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1382,8 +1382,8 @@ void UMeshDescriptionBase::GetPolygonVertexInstances(const struct FPolygonID& Po
 
 	Func->FunctionFlags = Flags;
 
-	if (OutVertexInstanceIDs != nullptr)
-		*OutVertexInstanceIDs = Parms.OutVertexInstanceIDs;
+	if (InOutVertexInstanceIDs != nullptr)
+		*InOutVertexInstanceIDs = Parms.OutVertexInstanceIDs;
 
 }
 
@@ -1394,7 +1394,7 @@ void UMeshDescriptionBase::GetPolygonVertexInstances(const struct FPolygonID& Po
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FTriangleID>         OutTriangleIDs                                                   (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetPolygonTriangles(const struct FPolygonID& PolygonID, TArray<struct FTriangleID>* OutTriangleIDs)
+void UMeshDescriptionBase::GetPolygonTriangles(const struct FPolygonID& InPolygonID, TArray<struct FTriangleID>* InOutTriangleIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1403,7 +1403,7 @@ void UMeshDescriptionBase::GetPolygonTriangles(const struct FPolygonID& PolygonI
 
 	Params::UMeshDescriptionBase_GetPolygonTriangles_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1413,8 +1413,8 @@ void UMeshDescriptionBase::GetPolygonTriangles(const struct FPolygonID& PolygonI
 
 	Func->FunctionFlags = Flags;
 
-	if (OutTriangleIDs != nullptr)
-		*OutTriangleIDs = Parms.OutTriangleIDs;
+	if (InOutTriangleIDs != nullptr)
+		*InOutTriangleIDs = Parms.OutTriangleIDs;
 
 }
 
@@ -1425,7 +1425,7 @@ void UMeshDescriptionBase::GetPolygonTriangles(const struct FPolygonID& PolygonI
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPolygonGroupID             ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FPolygonGroupID UMeshDescriptionBase::GetPolygonPolygonGroup(const struct FPolygonID& PolygonID)
+struct FPolygonGroupID UMeshDescriptionBase::GetPolygonPolygonGroup(const struct FPolygonID& InPolygonID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1434,7 +1434,7 @@ struct FPolygonGroupID UMeshDescriptionBase::GetPolygonPolygonGroup(const struct
 
 	Params::UMeshDescriptionBase_GetPolygonPolygonGroup_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1455,7 +1455,7 @@ struct FPolygonGroupID UMeshDescriptionBase::GetPolygonPolygonGroup(const struct
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FEdgeID>             OutEdgeIDs                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetPolygonPerimeterEdges(const struct FPolygonID& PolygonID, TArray<struct FEdgeID>* OutEdgeIDs)
+void UMeshDescriptionBase::GetPolygonPerimeterEdges(const struct FPolygonID& InPolygonID, TArray<struct FEdgeID>* InOutEdgeIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1464,7 +1464,7 @@ void UMeshDescriptionBase::GetPolygonPerimeterEdges(const struct FPolygonID& Pol
 
 	Params::UMeshDescriptionBase_GetPolygonPerimeterEdges_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1474,8 +1474,8 @@ void UMeshDescriptionBase::GetPolygonPerimeterEdges(const struct FPolygonID& Pol
 
 	Func->FunctionFlags = Flags;
 
-	if (OutEdgeIDs != nullptr)
-		*OutEdgeIDs = Parms.OutEdgeIDs;
+	if (InOutEdgeIDs != nullptr)
+		*InOutEdgeIDs = Parms.OutEdgeIDs;
 
 }
 
@@ -1486,7 +1486,7 @@ void UMeshDescriptionBase::GetPolygonPerimeterEdges(const struct FPolygonID& Pol
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FEdgeID>             OutEdgeIDs                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetPolygonInternalEdges(const struct FPolygonID& PolygonID, TArray<struct FEdgeID>* OutEdgeIDs)
+void UMeshDescriptionBase::GetPolygonInternalEdges(const struct FPolygonID& InPolygonID, TArray<struct FEdgeID>* InOutEdgeIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1495,7 +1495,7 @@ void UMeshDescriptionBase::GetPolygonInternalEdges(const struct FPolygonID& Poly
 
 	Params::UMeshDescriptionBase_GetPolygonInternalEdges_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1505,8 +1505,8 @@ void UMeshDescriptionBase::GetPolygonInternalEdges(const struct FPolygonID& Poly
 
 	Func->FunctionFlags = Flags;
 
-	if (OutEdgeIDs != nullptr)
-		*OutEdgeIDs = Parms.OutEdgeIDs;
+	if (InOutEdgeIDs != nullptr)
+		*InOutEdgeIDs = Parms.OutEdgeIDs;
 
 }
 
@@ -1517,7 +1517,7 @@ void UMeshDescriptionBase::GetPolygonInternalEdges(const struct FPolygonID& Poly
 // struct FPolygonGroupID             PolygonGroupID                                                   (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FPolygonID>          OutPolygonIDs                                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetPolygonGroupPolygons(const struct FPolygonGroupID& PolygonGroupID, TArray<struct FPolygonID>* OutPolygonIDs)
+void UMeshDescriptionBase::GetPolygonGroupPolygons(const struct FPolygonGroupID& InPolygonGroupID, TArray<struct FPolygonID>* InOutPolygonIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1526,7 +1526,7 @@ void UMeshDescriptionBase::GetPolygonGroupPolygons(const struct FPolygonGroupID&
 
 	Params::UMeshDescriptionBase_GetPolygonGroupPolygons_Params Parms{};
 
-	Parms.PolygonGroupID = PolygonGroupID;
+	Parms.PolygonGroupID = InPolygonGroupID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1536,8 +1536,8 @@ void UMeshDescriptionBase::GetPolygonGroupPolygons(const struct FPolygonGroupID&
 
 	Func->FunctionFlags = Flags;
 
-	if (OutPolygonIDs != nullptr)
-		*OutPolygonIDs = Parms.OutPolygonIDs;
+	if (InOutPolygonIDs != nullptr)
+		*InOutPolygonIDs = Parms.OutPolygonIDs;
 
 }
 
@@ -1604,7 +1604,7 @@ int32 UMeshDescriptionBase::GetPolygonCount()
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FPolygonID>          OutPolygonIDs                                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetPolygonAdjacentPolygons(const struct FPolygonID& PolygonID, TArray<struct FPolygonID>* OutPolygonIDs)
+void UMeshDescriptionBase::GetPolygonAdjacentPolygons(const struct FPolygonID& InPolygonID, TArray<struct FPolygonID>* InOutPolygonIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1613,7 +1613,7 @@ void UMeshDescriptionBase::GetPolygonAdjacentPolygons(const struct FPolygonID& P
 
 	Params::UMeshDescriptionBase_GetPolygonAdjacentPolygons_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1623,8 +1623,8 @@ void UMeshDescriptionBase::GetPolygonAdjacentPolygons(const struct FPolygonID& P
 
 	Func->FunctionFlags = Flags;
 
-	if (OutPolygonIDs != nullptr)
-		*OutPolygonIDs = Parms.OutPolygonIDs;
+	if (InOutPolygonIDs != nullptr)
+		*InOutPolygonIDs = Parms.OutPolygonIDs;
 
 }
 
@@ -1635,7 +1635,7 @@ void UMeshDescriptionBase::GetPolygonAdjacentPolygons(const struct FPolygonID& P
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumVertexVertexInstances(const struct FVertexID& VertexID)
+int32 UMeshDescriptionBase::GetNumVertexVertexInstances(const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1644,7 +1644,7 @@ int32 UMeshDescriptionBase::GetNumVertexVertexInstances(const struct FVertexID& 
 
 	Params::UMeshDescriptionBase_GetNumVertexVertexInstances_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1665,7 +1665,7 @@ int32 UMeshDescriptionBase::GetNumVertexVertexInstances(const struct FVertexID& 
 // struct FVertexInstanceID           VertexInstanceID                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumVertexInstanceConnectedTriangles(const struct FVertexInstanceID& VertexInstanceID)
+int32 UMeshDescriptionBase::GetNumVertexInstanceConnectedTriangles(const struct FVertexInstanceID& InVertexInstanceID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1674,7 +1674,7 @@ int32 UMeshDescriptionBase::GetNumVertexInstanceConnectedTriangles(const struct 
 
 	Params::UMeshDescriptionBase_GetNumVertexInstanceConnectedTriangles_Params Parms{};
 
-	Parms.VertexInstanceID = VertexInstanceID;
+	Parms.VertexInstanceID = InVertexInstanceID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1695,7 +1695,7 @@ int32 UMeshDescriptionBase::GetNumVertexInstanceConnectedTriangles(const struct 
 // struct FVertexInstanceID           VertexInstanceID                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumVertexInstanceConnectedPolygons(const struct FVertexInstanceID& VertexInstanceID)
+int32 UMeshDescriptionBase::GetNumVertexInstanceConnectedPolygons(const struct FVertexInstanceID& InVertexInstanceID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1704,7 +1704,7 @@ int32 UMeshDescriptionBase::GetNumVertexInstanceConnectedPolygons(const struct F
 
 	Params::UMeshDescriptionBase_GetNumVertexInstanceConnectedPolygons_Params Parms{};
 
-	Parms.VertexInstanceID = VertexInstanceID;
+	Parms.VertexInstanceID = InVertexInstanceID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1725,7 +1725,7 @@ int32 UMeshDescriptionBase::GetNumVertexInstanceConnectedPolygons(const struct F
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumVertexConnectedTriangles(const struct FVertexID& VertexID)
+int32 UMeshDescriptionBase::GetNumVertexConnectedTriangles(const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1734,7 +1734,7 @@ int32 UMeshDescriptionBase::GetNumVertexConnectedTriangles(const struct FVertexI
 
 	Params::UMeshDescriptionBase_GetNumVertexConnectedTriangles_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1755,7 +1755,7 @@ int32 UMeshDescriptionBase::GetNumVertexConnectedTriangles(const struct FVertexI
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumVertexConnectedPolygons(const struct FVertexID& VertexID)
+int32 UMeshDescriptionBase::GetNumVertexConnectedPolygons(const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1764,7 +1764,7 @@ int32 UMeshDescriptionBase::GetNumVertexConnectedPolygons(const struct FVertexID
 
 	Params::UMeshDescriptionBase_GetNumVertexConnectedPolygons_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1785,7 +1785,7 @@ int32 UMeshDescriptionBase::GetNumVertexConnectedPolygons(const struct FVertexID
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumVertexConnectedEdges(const struct FVertexID& VertexID)
+int32 UMeshDescriptionBase::GetNumVertexConnectedEdges(const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1794,7 +1794,7 @@ int32 UMeshDescriptionBase::GetNumVertexConnectedEdges(const struct FVertexID& V
 
 	Params::UMeshDescriptionBase_GetNumVertexConnectedEdges_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1815,7 +1815,7 @@ int32 UMeshDescriptionBase::GetNumVertexConnectedEdges(const struct FVertexID& V
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumPolygonVertices(const struct FPolygonID& PolygonID)
+int32 UMeshDescriptionBase::GetNumPolygonVertices(const struct FPolygonID& InPolygonID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1824,7 +1824,7 @@ int32 UMeshDescriptionBase::GetNumPolygonVertices(const struct FPolygonID& Polyg
 
 	Params::UMeshDescriptionBase_GetNumPolygonVertices_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1845,7 +1845,7 @@ int32 UMeshDescriptionBase::GetNumPolygonVertices(const struct FPolygonID& Polyg
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumPolygonTriangles(const struct FPolygonID& PolygonID)
+int32 UMeshDescriptionBase::GetNumPolygonTriangles(const struct FPolygonID& InPolygonID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1854,7 +1854,7 @@ int32 UMeshDescriptionBase::GetNumPolygonTriangles(const struct FPolygonID& Poly
 
 	Params::UMeshDescriptionBase_GetNumPolygonTriangles_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1875,7 +1875,7 @@ int32 UMeshDescriptionBase::GetNumPolygonTriangles(const struct FPolygonID& Poly
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumPolygonInternalEdges(const struct FPolygonID& PolygonID)
+int32 UMeshDescriptionBase::GetNumPolygonInternalEdges(const struct FPolygonID& InPolygonID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1884,7 +1884,7 @@ int32 UMeshDescriptionBase::GetNumPolygonInternalEdges(const struct FPolygonID& 
 
 	Params::UMeshDescriptionBase_GetNumPolygonInternalEdges_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1905,7 +1905,7 @@ int32 UMeshDescriptionBase::GetNumPolygonInternalEdges(const struct FPolygonID& 
 // struct FPolygonGroupID             PolygonGroupID                                                   (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumPolygonGroupPolygons(const struct FPolygonGroupID& PolygonGroupID)
+int32 UMeshDescriptionBase::GetNumPolygonGroupPolygons(const struct FPolygonGroupID& InPolygonGroupID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1914,7 +1914,7 @@ int32 UMeshDescriptionBase::GetNumPolygonGroupPolygons(const struct FPolygonGrou
 
 	Params::UMeshDescriptionBase_GetNumPolygonGroupPolygons_Params Parms{};
 
-	Parms.PolygonGroupID = PolygonGroupID;
+	Parms.PolygonGroupID = InPolygonGroupID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1935,7 +1935,7 @@ int32 UMeshDescriptionBase::GetNumPolygonGroupPolygons(const struct FPolygonGrou
 // struct FEdgeID                     EdgeID                                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumEdgeConnectedTriangles(const struct FEdgeID& EdgeID)
+int32 UMeshDescriptionBase::GetNumEdgeConnectedTriangles(const struct FEdgeID& InEdgeID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1944,7 +1944,7 @@ int32 UMeshDescriptionBase::GetNumEdgeConnectedTriangles(const struct FEdgeID& E
 
 	Params::UMeshDescriptionBase_GetNumEdgeConnectedTriangles_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
+	Parms.EdgeID = InEdgeID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1965,7 +1965,7 @@ int32 UMeshDescriptionBase::GetNumEdgeConnectedTriangles(const struct FEdgeID& E
 // struct FEdgeID                     EdgeID                                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMeshDescriptionBase::GetNumEdgeConnectedPolygons(const struct FEdgeID& EdgeID)
+int32 UMeshDescriptionBase::GetNumEdgeConnectedPolygons(const struct FEdgeID& InEdgeID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1974,7 +1974,7 @@ int32 UMeshDescriptionBase::GetNumEdgeConnectedPolygons(const struct FEdgeID& Ed
 
 	Params::UMeshDescriptionBase_GetNumEdgeConnectedPolygons_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
+	Parms.EdgeID = InEdgeID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1995,7 +1995,7 @@ int32 UMeshDescriptionBase::GetNumEdgeConnectedPolygons(const struct FEdgeID& Ed
 // struct FEdgeID                     EdgeID                                                           (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVertexID>           OutVertexIDs                                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetEdgeVertices(const struct FEdgeID& EdgeID, TArray<struct FVertexID>* OutVertexIDs)
+void UMeshDescriptionBase::GetEdgeVertices(const struct FEdgeID& InEdgeID, TArray<struct FVertexID>* InOutVertexIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2004,7 +2004,7 @@ void UMeshDescriptionBase::GetEdgeVertices(const struct FEdgeID& EdgeID, TArray<
 
 	Params::UMeshDescriptionBase_GetEdgeVertices_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
+	Parms.EdgeID = InEdgeID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2014,8 +2014,8 @@ void UMeshDescriptionBase::GetEdgeVertices(const struct FEdgeID& EdgeID, TArray<
 
 	Func->FunctionFlags = Flags;
 
-	if (OutVertexIDs != nullptr)
-		*OutVertexIDs = Parms.OutVertexIDs;
+	if (InOutVertexIDs != nullptr)
+		*InOutVertexIDs = Parms.OutVertexIDs;
 
 }
 
@@ -2027,7 +2027,7 @@ void UMeshDescriptionBase::GetEdgeVertices(const struct FEdgeID& EdgeID, TArray<
 // int32                              VertexNumber                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVertexID                   ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVertexID UMeshDescriptionBase::GetEdgeVertex(const struct FEdgeID& EdgeID, int32 VertexNumber)
+struct FVertexID UMeshDescriptionBase::GetEdgeVertex(const struct FEdgeID& InEdgeID, int32 InVertexNumber)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2036,8 +2036,8 @@ struct FVertexID UMeshDescriptionBase::GetEdgeVertex(const struct FEdgeID& EdgeI
 
 	Params::UMeshDescriptionBase_GetEdgeVertex_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
-	Parms.VertexNumber = VertexNumber;
+	Parms.EdgeID = InEdgeID;
+	Parms.VertexNumber = InVertexNumber;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2086,7 +2086,7 @@ int32 UMeshDescriptionBase::GetEdgeCount()
 // struct FEdgeID                     EdgeID                                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FTriangleID>         OutConnectedTriangleIDs                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetEdgeConnectedTriangles(const struct FEdgeID& EdgeID, TArray<struct FTriangleID>* OutConnectedTriangleIDs)
+void UMeshDescriptionBase::GetEdgeConnectedTriangles(const struct FEdgeID& InEdgeID, TArray<struct FTriangleID>* InOutConnectedTriangleIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2095,7 +2095,7 @@ void UMeshDescriptionBase::GetEdgeConnectedTriangles(const struct FEdgeID& EdgeI
 
 	Params::UMeshDescriptionBase_GetEdgeConnectedTriangles_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
+	Parms.EdgeID = InEdgeID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2105,8 +2105,8 @@ void UMeshDescriptionBase::GetEdgeConnectedTriangles(const struct FEdgeID& EdgeI
 
 	Func->FunctionFlags = Flags;
 
-	if (OutConnectedTriangleIDs != nullptr)
-		*OutConnectedTriangleIDs = Parms.OutConnectedTriangleIDs;
+	if (InOutConnectedTriangleIDs != nullptr)
+		*InOutConnectedTriangleIDs = Parms.OutConnectedTriangleIDs;
 
 }
 
@@ -2117,7 +2117,7 @@ void UMeshDescriptionBase::GetEdgeConnectedTriangles(const struct FEdgeID& EdgeI
 // struct FEdgeID                     EdgeID                                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FPolygonID>          OutConnectedPolygonIDs                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::GetEdgeConnectedPolygons(const struct FEdgeID& EdgeID, TArray<struct FPolygonID>* OutConnectedPolygonIDs)
+void UMeshDescriptionBase::GetEdgeConnectedPolygons(const struct FEdgeID& InEdgeID, TArray<struct FPolygonID>* InOutConnectedPolygonIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2126,7 +2126,7 @@ void UMeshDescriptionBase::GetEdgeConnectedPolygons(const struct FEdgeID& EdgeID
 
 	Params::UMeshDescriptionBase_GetEdgeConnectedPolygons_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
+	Parms.EdgeID = InEdgeID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2136,8 +2136,8 @@ void UMeshDescriptionBase::GetEdgeConnectedPolygons(const struct FEdgeID& EdgeID
 
 	Func->FunctionFlags = Flags;
 
-	if (OutConnectedPolygonIDs != nullptr)
-		*OutConnectedPolygonIDs = Parms.OutConnectedPolygonIDs;
+	if (InOutConnectedPolygonIDs != nullptr)
+		*InOutConnectedPolygonIDs = Parms.OutConnectedPolygonIDs;
 
 }
 
@@ -2173,7 +2173,7 @@ void UMeshDescriptionBase::Empty()
 // struct FVertexInstanceID           VertexInstanceID                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVertexID>           OrphanedVertices                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::DeleteVertexInstance(const struct FVertexInstanceID& VertexInstanceID, TArray<struct FVertexID>* OrphanedVertices)
+void UMeshDescriptionBase::DeleteVertexInstance(const struct FVertexInstanceID& InVertexInstanceID, TArray<struct FVertexID>* InOrphanedVertices)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2182,7 +2182,7 @@ void UMeshDescriptionBase::DeleteVertexInstance(const struct FVertexInstanceID& 
 
 	Params::UMeshDescriptionBase_DeleteVertexInstance_Params Parms{};
 
-	Parms.VertexInstanceID = VertexInstanceID;
+	Parms.VertexInstanceID = InVertexInstanceID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2192,8 +2192,8 @@ void UMeshDescriptionBase::DeleteVertexInstance(const struct FVertexInstanceID& 
 
 	Func->FunctionFlags = Flags;
 
-	if (OrphanedVertices != nullptr)
-		*OrphanedVertices = Parms.OrphanedVertices;
+	if (InOrphanedVertices != nullptr)
+		*InOrphanedVertices = Parms.OrphanedVertices;
 
 }
 
@@ -2203,7 +2203,7 @@ void UMeshDescriptionBase::DeleteVertexInstance(const struct FVertexInstanceID& 
 // Parameters:
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::DeleteVertex(const struct FVertexID& VertexID)
+void UMeshDescriptionBase::DeleteVertex(const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2212,7 +2212,7 @@ void UMeshDescriptionBase::DeleteVertex(const struct FVertexID& VertexID)
 
 	Params::UMeshDescriptionBase_DeleteVertex_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2233,7 +2233,7 @@ void UMeshDescriptionBase::DeleteVertex(const struct FVertexID& VertexID)
 // TArray<struct FVertexInstanceID>   OrphanedVertexInstances                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // TArray<struct FPolygonGroupID>     OrphanedPolygonGroupsPtr                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::DeleteTriangle(const struct FTriangleID& TriangleID, TArray<struct FEdgeID>* OrphanedEdges, TArray<struct FVertexInstanceID>* OrphanedVertexInstances, TArray<struct FPolygonGroupID>* OrphanedPolygonGroupsPtr)
+void UMeshDescriptionBase::DeleteTriangle(const struct FTriangleID& InTriangleID, TArray<struct FEdgeID>* InOrphanedEdges, TArray<struct FVertexInstanceID>* InOrphanedVertexInstances, TArray<struct FPolygonGroupID>* InOrphanedPolygonGroupsPtr)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2242,7 +2242,7 @@ void UMeshDescriptionBase::DeleteTriangle(const struct FTriangleID& TriangleID, 
 
 	Params::UMeshDescriptionBase_DeleteTriangle_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
+	Parms.TriangleID = InTriangleID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2252,14 +2252,14 @@ void UMeshDescriptionBase::DeleteTriangle(const struct FTriangleID& TriangleID, 
 
 	Func->FunctionFlags = Flags;
 
-	if (OrphanedEdges != nullptr)
-		*OrphanedEdges = Parms.OrphanedEdges;
+	if (InOrphanedEdges != nullptr)
+		*InOrphanedEdges = Parms.OrphanedEdges;
 
-	if (OrphanedVertexInstances != nullptr)
-		*OrphanedVertexInstances = Parms.OrphanedVertexInstances;
+	if (InOrphanedVertexInstances != nullptr)
+		*InOrphanedVertexInstances = Parms.OrphanedVertexInstances;
 
-	if (OrphanedPolygonGroupsPtr != nullptr)
-		*OrphanedPolygonGroupsPtr = Parms.OrphanedPolygonGroupsPtr;
+	if (InOrphanedPolygonGroupsPtr != nullptr)
+		*InOrphanedPolygonGroupsPtr = Parms.OrphanedPolygonGroupsPtr;
 
 }
 
@@ -2269,7 +2269,7 @@ void UMeshDescriptionBase::DeleteTriangle(const struct FTriangleID& TriangleID, 
 // Parameters:
 // struct FPolygonGroupID             PolygonGroupID                                                   (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::DeletePolygonGroup(const struct FPolygonGroupID& PolygonGroupID)
+void UMeshDescriptionBase::DeletePolygonGroup(const struct FPolygonGroupID& InPolygonGroupID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2278,7 +2278,7 @@ void UMeshDescriptionBase::DeletePolygonGroup(const struct FPolygonGroupID& Poly
 
 	Params::UMeshDescriptionBase_DeletePolygonGroup_Params Parms{};
 
-	Parms.PolygonGroupID = PolygonGroupID;
+	Parms.PolygonGroupID = InPolygonGroupID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2299,7 +2299,7 @@ void UMeshDescriptionBase::DeletePolygonGroup(const struct FPolygonGroupID& Poly
 // TArray<struct FVertexInstanceID>   OrphanedVertexInstances                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // TArray<struct FPolygonGroupID>     OrphanedPolygonGroups                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::DeletePolygon(const struct FPolygonID& PolygonID, TArray<struct FEdgeID>* OrphanedEdges, TArray<struct FVertexInstanceID>* OrphanedVertexInstances, TArray<struct FPolygonGroupID>* OrphanedPolygonGroups)
+void UMeshDescriptionBase::DeletePolygon(const struct FPolygonID& InPolygonID, TArray<struct FEdgeID>* InOrphanedEdges, TArray<struct FVertexInstanceID>* InOrphanedVertexInstances, TArray<struct FPolygonGroupID>* InOrphanedPolygonGroups)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2308,7 +2308,7 @@ void UMeshDescriptionBase::DeletePolygon(const struct FPolygonID& PolygonID, TAr
 
 	Params::UMeshDescriptionBase_DeletePolygon_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2318,14 +2318,14 @@ void UMeshDescriptionBase::DeletePolygon(const struct FPolygonID& PolygonID, TAr
 
 	Func->FunctionFlags = Flags;
 
-	if (OrphanedEdges != nullptr)
-		*OrphanedEdges = Parms.OrphanedEdges;
+	if (InOrphanedEdges != nullptr)
+		*InOrphanedEdges = Parms.OrphanedEdges;
 
-	if (OrphanedVertexInstances != nullptr)
-		*OrphanedVertexInstances = Parms.OrphanedVertexInstances;
+	if (InOrphanedVertexInstances != nullptr)
+		*InOrphanedVertexInstances = Parms.OrphanedVertexInstances;
 
-	if (OrphanedPolygonGroups != nullptr)
-		*OrphanedPolygonGroups = Parms.OrphanedPolygonGroups;
+	if (InOrphanedPolygonGroups != nullptr)
+		*InOrphanedPolygonGroups = Parms.OrphanedPolygonGroups;
 
 }
 
@@ -2336,7 +2336,7 @@ void UMeshDescriptionBase::DeletePolygon(const struct FPolygonID& PolygonID, TAr
 // struct FEdgeID                     EdgeID                                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVertexID>           OrphanedVertices                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::DeleteEdge(const struct FEdgeID& EdgeID, TArray<struct FVertexID>* OrphanedVertices)
+void UMeshDescriptionBase::DeleteEdge(const struct FEdgeID& InEdgeID, TArray<struct FVertexID>* InOrphanedVertices)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2345,7 +2345,7 @@ void UMeshDescriptionBase::DeleteEdge(const struct FEdgeID& EdgeID, TArray<struc
 
 	Params::UMeshDescriptionBase_DeleteEdge_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
+	Parms.EdgeID = InEdgeID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2355,8 +2355,8 @@ void UMeshDescriptionBase::DeleteEdge(const struct FEdgeID& EdgeID, TArray<struc
 
 	Func->FunctionFlags = Flags;
 
-	if (OrphanedVertices != nullptr)
-		*OrphanedVertices = Parms.OrphanedVertices;
+	if (InOrphanedVertices != nullptr)
+		*InOrphanedVertices = Parms.OrphanedVertices;
 
 }
 
@@ -2366,7 +2366,7 @@ void UMeshDescriptionBase::DeleteEdge(const struct FEdgeID& EdgeID, TArray<struc
 // Parameters:
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::CreateVertexWithID(const struct FVertexID& VertexID)
+void UMeshDescriptionBase::CreateVertexWithID(const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2375,7 +2375,7 @@ void UMeshDescriptionBase::CreateVertexWithID(const struct FVertexID& VertexID)
 
 	Params::UMeshDescriptionBase_CreateVertexWithID_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2394,7 +2394,7 @@ void UMeshDescriptionBase::CreateVertexWithID(const struct FVertexID& VertexID)
 // struct FVertexInstanceID           VertexInstanceID                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::CreateVertexInstanceWithID(const struct FVertexInstanceID& VertexInstanceID, const struct FVertexID& VertexID)
+void UMeshDescriptionBase::CreateVertexInstanceWithID(const struct FVertexInstanceID& InVertexInstanceID, const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2403,8 +2403,8 @@ void UMeshDescriptionBase::CreateVertexInstanceWithID(const struct FVertexInstan
 
 	Params::UMeshDescriptionBase_CreateVertexInstanceWithID_Params Parms{};
 
-	Parms.VertexInstanceID = VertexInstanceID;
-	Parms.VertexID = VertexID;
+	Parms.VertexInstanceID = InVertexInstanceID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2423,7 +2423,7 @@ void UMeshDescriptionBase::CreateVertexInstanceWithID(const struct FVertexInstan
 // struct FVertexID                   VertexID                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVertexInstanceID           ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVertexInstanceID UMeshDescriptionBase::CreateVertexInstance(const struct FVertexID& VertexID)
+struct FVertexInstanceID UMeshDescriptionBase::CreateVertexInstance(const struct FVertexID& InVertexID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2432,7 +2432,7 @@ struct FVertexInstanceID UMeshDescriptionBase::CreateVertexInstance(const struct
 
 	Params::UMeshDescriptionBase_CreateVertexInstance_Params Parms{};
 
-	Parms.VertexID = VertexID;
+	Parms.VertexID = InVertexID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2483,7 +2483,7 @@ struct FVertexID UMeshDescriptionBase::CreateVertex()
 // TArray<struct FVertexInstanceID>   VertexInstanceIDs                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FEdgeID>             NewEdgeIDs                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::CreateTriangleWithID(const struct FTriangleID& TriangleID, const struct FPolygonGroupID& PolygonGroupID, TArray<struct FVertexInstanceID>& VertexInstanceIDs, TArray<struct FEdgeID>* NewEdgeIDs)
+void UMeshDescriptionBase::CreateTriangleWithID(const struct FTriangleID& InTriangleID, const struct FPolygonGroupID& InPolygonGroupID, TArray<struct FVertexInstanceID>& InVertexInstanceIDs, TArray<struct FEdgeID>* InNewEdgeIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2492,9 +2492,9 @@ void UMeshDescriptionBase::CreateTriangleWithID(const struct FTriangleID& Triang
 
 	Params::UMeshDescriptionBase_CreateTriangleWithID_Params Parms{};
 
-	Parms.TriangleID = TriangleID;
-	Parms.PolygonGroupID = PolygonGroupID;
-	Parms.VertexInstanceIDs = VertexInstanceIDs;
+	Parms.TriangleID = InTriangleID;
+	Parms.PolygonGroupID = InPolygonGroupID;
+	Parms.VertexInstanceIDs = InVertexInstanceIDs;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2504,8 +2504,8 @@ void UMeshDescriptionBase::CreateTriangleWithID(const struct FTriangleID& Triang
 
 	Func->FunctionFlags = Flags;
 
-	if (NewEdgeIDs != nullptr)
-		*NewEdgeIDs = Parms.NewEdgeIDs;
+	if (InNewEdgeIDs != nullptr)
+		*InNewEdgeIDs = Parms.NewEdgeIDs;
 
 }
 
@@ -2518,7 +2518,7 @@ void UMeshDescriptionBase::CreateTriangleWithID(const struct FTriangleID& Triang
 // TArray<struct FEdgeID>             NewEdgeIDs                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // struct FTriangleID                 ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTriangleID UMeshDescriptionBase::CreateTriangle(const struct FPolygonGroupID& PolygonGroupID, TArray<struct FVertexInstanceID>& VertexInstanceIDs, TArray<struct FEdgeID>* NewEdgeIDs)
+struct FTriangleID UMeshDescriptionBase::CreateTriangle(const struct FPolygonGroupID& InPolygonGroupID, TArray<struct FVertexInstanceID>& InVertexInstanceIDs, TArray<struct FEdgeID>* InNewEdgeIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2527,8 +2527,8 @@ struct FTriangleID UMeshDescriptionBase::CreateTriangle(const struct FPolygonGro
 
 	Params::UMeshDescriptionBase_CreateTriangle_Params Parms{};
 
-	Parms.PolygonGroupID = PolygonGroupID;
-	Parms.VertexInstanceIDs = VertexInstanceIDs;
+	Parms.PolygonGroupID = InPolygonGroupID;
+	Parms.VertexInstanceIDs = InVertexInstanceIDs;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2538,8 +2538,8 @@ struct FTriangleID UMeshDescriptionBase::CreateTriangle(const struct FPolygonGro
 
 	Func->FunctionFlags = Flags;
 
-	if (NewEdgeIDs != nullptr)
-		*NewEdgeIDs = Parms.NewEdgeIDs;
+	if (InNewEdgeIDs != nullptr)
+		*InNewEdgeIDs = Parms.NewEdgeIDs;
 
 	return Parms.ReturnValue;
 
@@ -2554,7 +2554,7 @@ struct FTriangleID UMeshDescriptionBase::CreateTriangle(const struct FPolygonGro
 // TArray<struct FVertexInstanceID>   VertexInstanceIDs                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // TArray<struct FEdgeID>             NewEdgeIDs                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::CreatePolygonWithID(const struct FPolygonID& PolygonID, const struct FPolygonGroupID& PolygonGroupID, TArray<struct FVertexInstanceID>* VertexInstanceIDs, TArray<struct FEdgeID>* NewEdgeIDs)
+void UMeshDescriptionBase::CreatePolygonWithID(const struct FPolygonID& InPolygonID, const struct FPolygonGroupID& InPolygonGroupID, TArray<struct FVertexInstanceID>* InVertexInstanceIDs, TArray<struct FEdgeID>* InNewEdgeIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2563,8 +2563,8 @@ void UMeshDescriptionBase::CreatePolygonWithID(const struct FPolygonID& PolygonI
 
 	Params::UMeshDescriptionBase_CreatePolygonWithID_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
-	Parms.PolygonGroupID = PolygonGroupID;
+	Parms.PolygonID = InPolygonID;
+	Parms.PolygonGroupID = InPolygonGroupID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2574,11 +2574,11 @@ void UMeshDescriptionBase::CreatePolygonWithID(const struct FPolygonID& PolygonI
 
 	Func->FunctionFlags = Flags;
 
-	if (VertexInstanceIDs != nullptr)
-		*VertexInstanceIDs = Parms.VertexInstanceIDs;
+	if (InVertexInstanceIDs != nullptr)
+		*InVertexInstanceIDs = Parms.VertexInstanceIDs;
 
-	if (NewEdgeIDs != nullptr)
-		*NewEdgeIDs = Parms.NewEdgeIDs;
+	if (InNewEdgeIDs != nullptr)
+		*InNewEdgeIDs = Parms.NewEdgeIDs;
 
 }
 
@@ -2588,7 +2588,7 @@ void UMeshDescriptionBase::CreatePolygonWithID(const struct FPolygonID& PolygonI
 // Parameters:
 // struct FPolygonGroupID             PolygonGroupID                                                   (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::CreatePolygonGroupWithID(const struct FPolygonGroupID& PolygonGroupID)
+void UMeshDescriptionBase::CreatePolygonGroupWithID(const struct FPolygonGroupID& InPolygonGroupID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2597,7 +2597,7 @@ void UMeshDescriptionBase::CreatePolygonGroupWithID(const struct FPolygonGroupID
 
 	Params::UMeshDescriptionBase_CreatePolygonGroupWithID_Params Parms{};
 
-	Parms.PolygonGroupID = PolygonGroupID;
+	Parms.PolygonGroupID = InPolygonGroupID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2646,7 +2646,7 @@ struct FPolygonGroupID UMeshDescriptionBase::CreatePolygonGroup()
 // TArray<struct FEdgeID>             NewEdgeIDs                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // struct FPolygonID                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FPolygonID UMeshDescriptionBase::CreatePolygon(const struct FPolygonGroupID& PolygonGroupID, TArray<struct FVertexInstanceID>* VertexInstanceIDs, TArray<struct FEdgeID>* NewEdgeIDs)
+struct FPolygonID UMeshDescriptionBase::CreatePolygon(const struct FPolygonGroupID& InPolygonGroupID, TArray<struct FVertexInstanceID>* InVertexInstanceIDs, TArray<struct FEdgeID>* InNewEdgeIDs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2655,7 +2655,7 @@ struct FPolygonID UMeshDescriptionBase::CreatePolygon(const struct FPolygonGroup
 
 	Params::UMeshDescriptionBase_CreatePolygon_Params Parms{};
 
-	Parms.PolygonGroupID = PolygonGroupID;
+	Parms.PolygonGroupID = InPolygonGroupID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2665,11 +2665,11 @@ struct FPolygonID UMeshDescriptionBase::CreatePolygon(const struct FPolygonGroup
 
 	Func->FunctionFlags = Flags;
 
-	if (VertexInstanceIDs != nullptr)
-		*VertexInstanceIDs = Parms.VertexInstanceIDs;
+	if (InVertexInstanceIDs != nullptr)
+		*InVertexInstanceIDs = Parms.VertexInstanceIDs;
 
-	if (NewEdgeIDs != nullptr)
-		*NewEdgeIDs = Parms.NewEdgeIDs;
+	if (InNewEdgeIDs != nullptr)
+		*InNewEdgeIDs = Parms.NewEdgeIDs;
 
 	return Parms.ReturnValue;
 
@@ -2683,7 +2683,7 @@ struct FPolygonID UMeshDescriptionBase::CreatePolygon(const struct FPolygonGroup
 // struct FVertexID                   VertexID0                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVertexID                   VertexID1                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::CreateEdgeWithID(const struct FEdgeID& EdgeID, const struct FVertexID& VertexID0, const struct FVertexID& VertexID1)
+void UMeshDescriptionBase::CreateEdgeWithID(const struct FEdgeID& InEdgeID, const struct FVertexID& InVertexID0, const struct FVertexID& InVertexID1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2692,9 +2692,9 @@ void UMeshDescriptionBase::CreateEdgeWithID(const struct FEdgeID& EdgeID, const 
 
 	Params::UMeshDescriptionBase_CreateEdgeWithID_Params Parms{};
 
-	Parms.EdgeID = EdgeID;
-	Parms.VertexID0 = VertexID0;
-	Parms.VertexID1 = VertexID1;
+	Parms.EdgeID = InEdgeID;
+	Parms.VertexID0 = InVertexID0;
+	Parms.VertexID1 = InVertexID1;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2714,7 +2714,7 @@ void UMeshDescriptionBase::CreateEdgeWithID(const struct FEdgeID& EdgeID, const 
 // struct FVertexID                   VertexID1                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FEdgeID                     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FEdgeID UMeshDescriptionBase::CreateEdge(const struct FVertexID& VertexID0, const struct FVertexID& VertexID1)
+struct FEdgeID UMeshDescriptionBase::CreateEdge(const struct FVertexID& InVertexID0, const struct FVertexID& InVertexID1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2723,8 +2723,8 @@ struct FEdgeID UMeshDescriptionBase::CreateEdge(const struct FVertexID& VertexID
 
 	Params::UMeshDescriptionBase_CreateEdge_Params Parms{};
 
-	Parms.VertexID0 = VertexID0;
-	Parms.VertexID1 = VertexID1;
+	Parms.VertexID0 = InVertexID0;
+	Parms.VertexID1 = InVertexID1;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2744,7 +2744,7 @@ struct FEdgeID UMeshDescriptionBase::CreateEdge(const struct FVertexID& VertexID
 // Parameters:
 // struct FPolygonID                  PolygonID                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshDescriptionBase::ComputePolygonTriangulation(const struct FPolygonID& PolygonID)
+void UMeshDescriptionBase::ComputePolygonTriangulation(const struct FPolygonID& InPolygonID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2753,7 +2753,7 @@ void UMeshDescriptionBase::ComputePolygonTriangulation(const struct FPolygonID& 
 
 	Params::UMeshDescriptionBase_ComputePolygonTriangulation_Params Parms{};
 
-	Parms.PolygonID = PolygonID;
+	Parms.PolygonID = InPolygonID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

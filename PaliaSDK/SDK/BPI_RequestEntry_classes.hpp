@@ -20,15 +20,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BPI_RequestEntry_C");
-
+		static class UClass* Clss = UObject::FindClassFast("BPI_RequestEntry_C");
 		return Clss;
 	}
 
-	void SetupBinds(class UWBP_RequestsPanel_C* RequestPanel);
+	void SetupBinds(class UWBP_RequestsPanel_C* InRequestPanel);
 };
 
 }

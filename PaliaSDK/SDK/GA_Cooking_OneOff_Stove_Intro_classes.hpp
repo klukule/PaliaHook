@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GA_Cooking_OneOff_Stove_Intro_C");
-
+		static class UClass* Clss = UObject::FindClassFast("GA_Cooking_OneOff_Stove_Intro_C");
 		return Clss;
 	}
 

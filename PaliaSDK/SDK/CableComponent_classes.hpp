@@ -21,11 +21,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CableActor");
-
+		static class UClass* Clss = UObject::FindClassFast("CableActor");
 		return Clss;
 	}
 
@@ -38,7 +34,7 @@ class UCableComponent : public UMeshComponent
 public:
 	bool                                         bAttachStart;                                      // 0x570(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAttachEnd;                                        // 0x571(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DEA[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1EDB[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FComponentReference                   AttachEndTo;                                       // 0x578(0x28)(Edit, NativeAccessSpecifierPublic)
 	class FName                                  AttachEndToSocketName;                             // 0x5A0(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               EndLocation;                                       // 0x5A8(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -51,29 +47,25 @@ public:
 	bool                                         bSkipCableUpdateWhenNotVisible;                    // 0x5D2(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSkipCableUpdateWhenNotOwnerRecentlyRendered;      // 0x5D3(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableCollision;                                  // 0x5D4(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DFA[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1EDD[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        CollisionFriction;                                 // 0x5D8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DFC[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1EDF[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               CableForce;                                        // 0x5E0(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CableGravityScale;                                 // 0x5F8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CableWidth;                                        // 0x5FC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        NumSides;                                          // 0x600(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        TileMaterial;                                      // 0x604(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E02[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1EE2[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CableComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("CableComponent");
 		return Clss;
 	}
 
-	void SetAttachEndToComponent(class USceneComponent* Component, class FName SocketName);
-	void SetAttachEndTo(class AActor* Actor, class FName ComponentProperty, class FName SocketName);
-	void GetCableParticleLocations(TArray<struct FVector>* Locations);
+	void SetAttachEndToComponent(class USceneComponent* InComponent, class FName InSocketName);
+	void SetAttachEndTo(class AActor* InActor, class FName InComponentProperty, class FName InSocketName);
+	void GetCableParticleLocations(TArray<struct FVector>* InLocations);
 	class USceneComponent* GetAttachedComponent();
 	class AActor* GetAttachedActor();
 };

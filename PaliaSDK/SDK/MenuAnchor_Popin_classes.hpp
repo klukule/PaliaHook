@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MenuAnchor_Popin_C");
-
+		static class UClass* Clss = UObject::FindClassFast("MenuAnchor_Popin_C");
 		return Clss;
 	}
 

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // struct FSphericalPontoon           Pontoon                                                          (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UBuoyancyComponent::OnPontoonExitedWater(struct FSphericalPontoon& Pontoon)
+void UBuoyancyComponent::OnPontoonExitedWater(struct FSphericalPontoon& InPontoon)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UBuoyancyComponent::OnPontoonExitedWater(struct FSphericalPontoon& Pontoon)
 
 	Params::UBuoyancyComponent_OnPontoonExitedWater_Params Parms{};
 
-	Parms.Pontoon = Pontoon;
+	Parms.Pontoon = InPontoon;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -47,7 +47,7 @@ void UBuoyancyComponent::OnPontoonExitedWater(struct FSphericalPontoon& Pontoon)
 // Parameters:
 // struct FSphericalPontoon           Pontoon                                                          (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UBuoyancyComponent::OnPontoonEnteredWater(struct FSphericalPontoon& Pontoon)
+void UBuoyancyComponent::OnPontoonEnteredWater(struct FSphericalPontoon& InPontoon)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void UBuoyancyComponent::OnPontoonEnteredWater(struct FSphericalPontoon& Pontoon
 
 	Params::UBuoyancyComponent_OnPontoonEnteredWater_Params Parms{};
 
-	Parms.Pontoon = Pontoon;
+	Parms.Pontoon = InPontoon;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -135,7 +135,7 @@ bool UBuoyancyComponent::IsInWaterBody()
 // int32                              OutWaterBodyIdx                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     OutWaterVelocity                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBuoyancyComponent::GetLastWaterSurfaceInfo(struct FVector* OutWaterPlaneLocation, struct FVector* OutWaterPlaneNormal, struct FVector* OutWaterSurfacePosition, float* OutWaterDepth, int32* OutWaterBodyIdx, struct FVector* OutWaterVelocity)
+void UBuoyancyComponent::GetLastWaterSurfaceInfo(struct FVector* InOutWaterPlaneLocation, struct FVector* InOutWaterPlaneNormal, struct FVector* InOutWaterSurfacePosition, float* InOutWaterDepth, int32* InOutWaterBodyIdx, struct FVector* InOutWaterVelocity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -153,23 +153,23 @@ void UBuoyancyComponent::GetLastWaterSurfaceInfo(struct FVector* OutWaterPlaneLo
 
 	Func->FunctionFlags = Flags;
 
-	if (OutWaterPlaneLocation != nullptr)
-		*OutWaterPlaneLocation = Parms.OutWaterPlaneLocation;
+	if (InOutWaterPlaneLocation != nullptr)
+		*InOutWaterPlaneLocation = Parms.OutWaterPlaneLocation;
 
-	if (OutWaterPlaneNormal != nullptr)
-		*OutWaterPlaneNormal = Parms.OutWaterPlaneNormal;
+	if (InOutWaterPlaneNormal != nullptr)
+		*InOutWaterPlaneNormal = Parms.OutWaterPlaneNormal;
 
-	if (OutWaterSurfacePosition != nullptr)
-		*OutWaterSurfacePosition = Parms.OutWaterSurfacePosition;
+	if (InOutWaterSurfacePosition != nullptr)
+		*InOutWaterSurfacePosition = Parms.OutWaterSurfacePosition;
 
-	if (OutWaterDepth != nullptr)
-		*OutWaterDepth = Parms.OutWaterDepth;
+	if (InOutWaterDepth != nullptr)
+		*InOutWaterDepth = Parms.OutWaterDepth;
 
-	if (OutWaterBodyIdx != nullptr)
-		*OutWaterBodyIdx = Parms.OutWaterBodyIdx;
+	if (InOutWaterBodyIdx != nullptr)
+		*InOutWaterBodyIdx = Parms.OutWaterBodyIdx;
 
-	if (OutWaterVelocity != nullptr)
-		*OutWaterVelocity = Parms.OutWaterVelocity;
+	if (InOutWaterVelocity != nullptr)
+		*InOutWaterVelocity = Parms.OutWaterVelocity;
 
 }
 
@@ -209,7 +209,7 @@ TArray<class UWaterBodyComponent*> UBuoyancyComponent::GetCurrentWaterBodyCompon
 // class ABuoyancyManager*            Manager                                                          (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ABuoyancyManager::GetBuoyancyComponentManager(class UObject* WorldContextObject, class ABuoyancyManager** Manager)
+bool ABuoyancyManager::GetBuoyancyComponentManager(class UObject* InWorldContextObject, class ABuoyancyManager** InManager)
 {
 	static class UFunction* Func = nullptr;
 
@@ -218,7 +218,7 @@ bool ABuoyancyManager::GetBuoyancyComponentManager(class UObject* WorldContextOb
 
 	Params::ABuoyancyManager_GetBuoyancyComponentManager_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
+	Parms.WorldContextObject = InWorldContextObject;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -228,8 +228,8 @@ bool ABuoyancyManager::GetBuoyancyComponentManager(class UObject* WorldContextOb
 
 	Func->FunctionFlags = Flags;
 
-	if (Manager != nullptr)
-		*Manager = Parms.Manager;
+	if (InManager != nullptr)
+		*InManager = Parms.Manager;
 
 	return Parms.ReturnValue;
 
@@ -241,7 +241,7 @@ bool ABuoyancyManager::GetBuoyancyComponentManager(class UObject* WorldContextOb
 // Parameters:
 // TArray<struct FGerstnerWave>       OutWaves                                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UGerstnerWaterWaveGeneratorBase::GenerateGerstnerWaves(TArray<struct FGerstnerWave>* OutWaves)
+void UGerstnerWaterWaveGeneratorBase::GenerateGerstnerWaves(TArray<struct FGerstnerWave>* InOutWaves)
 {
 	static class UFunction* Func = nullptr;
 
@@ -259,8 +259,8 @@ void UGerstnerWaterWaveGeneratorBase::GenerateGerstnerWaves(TArray<struct FGerst
 
 	Func->FunctionFlags = Flags;
 
-	if (OutWaves != nullptr)
-		*OutWaves = Parms.OutWaves;
+	if (InOutWaves != nullptr)
+		*InOutWaves = Parms.OutWaves;
 
 }
 
@@ -272,7 +272,7 @@ void UGerstnerWaterWaveGeneratorBase::GenerateGerstnerWaves(TArray<struct FGerst
 // class FString                      OverrideName                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWaterBodyComponent*         WaterBodyComponent                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNiagaraWaterFunctionLibrary::SetWaterBodyComponent(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class UWaterBodyComponent* WaterBodyComponent)
+void UNiagaraWaterFunctionLibrary::SetWaterBodyComponent(class UNiagaraComponent* InNiagaraSystem, const class FString& InOverrideName, class UWaterBodyComponent* InWaterBodyComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -281,9 +281,9 @@ void UNiagaraWaterFunctionLibrary::SetWaterBodyComponent(class UNiagaraComponent
 
 	Params::UNiagaraWaterFunctionLibrary_SetWaterBodyComponent_Params Parms{};
 
-	Parms.NiagaraSystem = NiagaraSystem;
-	Parms.OverrideName = OverrideName;
-	Parms.WaterBodyComponent = WaterBodyComponent;
+	Parms.NiagaraSystem = InNiagaraSystem;
+	Parms.OverrideName = InOverrideName;
+	Parms.WaterBodyComponent = InWaterBodyComponent;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -303,7 +303,7 @@ void UNiagaraWaterFunctionLibrary::SetWaterBodyComponent(class UNiagaraComponent
 // class FString                      OverrideName                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AWaterBody*                  WaterBody                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNiagaraWaterFunctionLibrary::SetWaterBody(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class AWaterBody* WaterBody)
+void UNiagaraWaterFunctionLibrary::SetWaterBody(class UNiagaraComponent* InNiagaraSystem, const class FString& InOverrideName, class AWaterBody* InWaterBody)
 {
 	static class UFunction* Func = nullptr;
 
@@ -312,9 +312,9 @@ void UNiagaraWaterFunctionLibrary::SetWaterBody(class UNiagaraComponent* Niagara
 
 	Params::UNiagaraWaterFunctionLibrary_SetWaterBody_Params Parms{};
 
-	Parms.NiagaraSystem = NiagaraSystem;
-	Parms.OverrideName = OverrideName;
-	Parms.WaterBody = WaterBody;
+	Parms.NiagaraSystem = InNiagaraSystem;
+	Parms.OverrideName = InOverrideName;
+	Parms.WaterBody = InWaterBody;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -332,7 +332,7 @@ void UNiagaraWaterFunctionLibrary::SetWaterBody(class UNiagaraComponent* Niagara
 // Parameters:
 // class UWaterWavesBase*             InWaterWaves                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AWaterBody::SetWaterWaves(class UWaterWavesBase* InWaterWaves)
+void AWaterBody::SetWaterWaves(class UWaterWavesBase* InInWaterWaves)
 {
 	static class UFunction* Func = nullptr;
 
@@ -341,7 +341,7 @@ void AWaterBody::SetWaterWaves(class UWaterWavesBase* InWaterWaves)
 
 	Params::AWaterBody_SetWaterWaves_Params Parms{};
 
-	Parms.InWaterWaves = InWaterWaves;
+	Parms.InWaterWaves = InInWaterWaves;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -359,7 +359,7 @@ void AWaterBody::SetWaterWaves(class UWaterWavesBase* InWaterWaves)
 // Parameters:
 // class UMaterialInterface*          InMaterial                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AWaterBody::SetWaterMaterial(class UMaterialInterface* InMaterial)
+void AWaterBody::SetWaterMaterial(class UMaterialInterface* InInMaterial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -368,7 +368,7 @@ void AWaterBody::SetWaterMaterial(class UMaterialInterface* InMaterial)
 
 	Params::AWaterBody_SetWaterMaterial_Params Parms{};
 
-	Parms.InMaterial = InMaterial;
+	Parms.InMaterial = InInMaterial;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -387,7 +387,7 @@ void AWaterBody::SetWaterMaterial(class UMaterialInterface* InMaterial)
 // bool                               bShapeOrPositionChanged                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bWeightmapSettingsChanged                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AWaterBody::OnWaterBodyChanged(bool bShapeOrPositionChanged, bool bWeightmapSettingsChanged)
+void AWaterBody::OnWaterBodyChanged(bool InbShapeOrPositionChanged, bool InbWeightmapSettingsChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -396,8 +396,8 @@ void AWaterBody::OnWaterBodyChanged(bool bShapeOrPositionChanged, bool bWeightma
 
 	Params::AWaterBody_OnWaterBodyChanged_Params Parms{};
 
-	Parms.bShapeOrPositionChanged = bShapeOrPositionChanged;
-	Parms.bWeightmapSettingsChanged = bWeightmapSettingsChanged;
+	Parms.bShapeOrPositionChanged = InbShapeOrPositionChanged;
+	Parms.bWeightmapSettingsChanged = InbWeightmapSettingsChanged;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -416,7 +416,7 @@ void AWaterBody::OnWaterBodyChanged(bool bShapeOrPositionChanged, bool bWeightma
 // float                              InKey                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector AWaterBody::GetWaterVelocityVectorAtSplineInputKey(float InKey)
+struct FVector AWaterBody::GetWaterVelocityVectorAtSplineInputKey(float InInKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -425,7 +425,7 @@ struct FVector AWaterBody::GetWaterVelocityVectorAtSplineInputKey(float InKey)
 
 	Params::AWaterBody_GetWaterVelocityVectorAtSplineInputKey_Params Parms{};
 
-	Parms.InKey = InKey;
+	Parms.InKey = InInKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -446,7 +446,7 @@ struct FVector AWaterBody::GetWaterVelocityVectorAtSplineInputKey(float InKey)
 // float                              InKey                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float AWaterBody::GetWaterVelocityAtSplineInputKey(float InKey)
+float AWaterBody::GetWaterVelocityAtSplineInputKey(float InInKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -455,7 +455,7 @@ float AWaterBody::GetWaterVelocityAtSplineInputKey(float InKey)
 
 	Params::AWaterBody_GetWaterVelocityAtSplineInputKey_Params Parms{};
 
-	Parms.InKey = InKey;
+	Parms.InKey = InInKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -700,7 +700,7 @@ TArray<class AWaterBodyExclusionVolume*> AWaterBody::GetExclusionVolumes()
 // float                              InKey                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float AWaterBody::GetAudioIntensityAtSplineInputKey(float InKey)
+float AWaterBody::GetAudioIntensityAtSplineInputKey(float InInKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -709,7 +709,7 @@ float AWaterBody::GetAudioIntensityAtSplineInputKey(float InKey)
 
 	Params::AWaterBody_GetAudioIntensityAtSplineInputKey_Params Parms{};
 
-	Parms.InKey = InKey;
+	Parms.InKey = InInKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -730,7 +730,7 @@ float AWaterBody::GetAudioIntensityAtSplineInputKey(float InKey)
 // class UMaterialInterface*          InWaterMaterial                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMaterialInterface*          InUnderWaterPostProcessMaterial                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWaterBodyComponent::SetWaterAndUnderWaterPostProcessMaterial(class UMaterialInterface* InWaterMaterial, class UMaterialInterface* InUnderWaterPostProcessMaterial)
+void UWaterBodyComponent::SetWaterAndUnderWaterPostProcessMaterial(class UMaterialInterface* InInWaterMaterial, class UMaterialInterface* InInUnderWaterPostProcessMaterial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -739,8 +739,8 @@ void UWaterBodyComponent::SetWaterAndUnderWaterPostProcessMaterial(class UMateri
 
 	Params::UWaterBodyComponent_SetWaterAndUnderWaterPostProcessMaterial_Params Parms{};
 
-	Parms.InWaterMaterial = InWaterMaterial;
-	Parms.InUnderWaterPostProcessMaterial = InUnderWaterPostProcessMaterial;
+	Parms.InWaterMaterial = InInWaterMaterial;
+	Parms.InUnderWaterPostProcessMaterial = InInUnderWaterPostProcessMaterial;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -759,7 +759,7 @@ void UWaterBodyComponent::SetWaterAndUnderWaterPostProcessMaterial(class UMateri
 // bool                               bShapeOrPositionChanged                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bWeightmapSettingsChanged                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWaterBodyComponent::OnWaterBodyChanged(bool bShapeOrPositionChanged, bool bWeightmapSettingsChanged)
+void UWaterBodyComponent::OnWaterBodyChanged(bool InbShapeOrPositionChanged, bool InbWeightmapSettingsChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -768,8 +768,8 @@ void UWaterBodyComponent::OnWaterBodyChanged(bool bShapeOrPositionChanged, bool 
 
 	Params::UWaterBodyComponent_OnWaterBodyChanged_Params Parms{};
 
-	Parms.bShapeOrPositionChanged = bShapeOrPositionChanged;
-	Parms.bWeightmapSettingsChanged = bWeightmapSettingsChanged;
+	Parms.bShapeOrPositionChanged = InbShapeOrPositionChanged;
+	Parms.bWeightmapSettingsChanged = InbWeightmapSettingsChanged;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -816,7 +816,7 @@ class UWaterWavesBase* UWaterBodyComponent::GetWaterWaves()
 // float                              InKey                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UWaterBodyComponent::GetWaterVelocityAtSplineInputKey(float InKey)
+float UWaterBodyComponent::GetWaterVelocityAtSplineInputKey(float InInKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -825,7 +825,7 @@ float UWaterBodyComponent::GetWaterVelocityAtSplineInputKey(float InKey)
 
 	Params::UWaterBodyComponent_GetWaterVelocityAtSplineInputKey_Params Parms{};
 
-	Parms.InKey = InKey;
+	Parms.InKey = InInKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -850,7 +850,7 @@ float UWaterBodyComponent::GetWaterVelocityAtSplineInputKey(float InKey)
 // float                              OutWaterDepth                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bIncludeDepth                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWaterBodyComponent::GetWaterSurfaceInfoAtLocation(struct FVector& InLocation, struct FVector* OutWaterSurfaceLocation, struct FVector* OutWaterSurfaceNormal, struct FVector* OutWaterVelocity, float* OutWaterDepth, bool bIncludeDepth)
+void UWaterBodyComponent::GetWaterSurfaceInfoAtLocation(struct FVector& InInLocation, struct FVector* InOutWaterSurfaceLocation, struct FVector* InOutWaterSurfaceNormal, struct FVector* InOutWaterVelocity, float* InOutWaterDepth, bool InbIncludeDepth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -859,8 +859,8 @@ void UWaterBodyComponent::GetWaterSurfaceInfoAtLocation(struct FVector& InLocati
 
 	Params::UWaterBodyComponent_GetWaterSurfaceInfoAtLocation_Params Parms{};
 
-	Parms.InLocation = InLocation;
-	Parms.bIncludeDepth = bIncludeDepth;
+	Parms.InLocation = InInLocation;
+	Parms.bIncludeDepth = InbIncludeDepth;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -870,17 +870,17 @@ void UWaterBodyComponent::GetWaterSurfaceInfoAtLocation(struct FVector& InLocati
 
 	Func->FunctionFlags = Flags;
 
-	if (OutWaterSurfaceLocation != nullptr)
-		*OutWaterSurfaceLocation = Parms.OutWaterSurfaceLocation;
+	if (InOutWaterSurfaceLocation != nullptr)
+		*InOutWaterSurfaceLocation = Parms.OutWaterSurfaceLocation;
 
-	if (OutWaterSurfaceNormal != nullptr)
-		*OutWaterSurfaceNormal = Parms.OutWaterSurfaceNormal;
+	if (InOutWaterSurfaceNormal != nullptr)
+		*InOutWaterSurfaceNormal = Parms.OutWaterSurfaceNormal;
 
-	if (OutWaterVelocity != nullptr)
-		*OutWaterVelocity = Parms.OutWaterVelocity;
+	if (InOutWaterVelocity != nullptr)
+		*InOutWaterVelocity = Parms.OutWaterVelocity;
 
-	if (OutWaterDepth != nullptr)
-		*OutWaterDepth = Parms.OutWaterDepth;
+	if (InOutWaterDepth != nullptr)
+		*InOutWaterDepth = Parms.OutWaterDepth;
 
 }
 
@@ -1255,7 +1255,7 @@ TArray<class AWaterBodyExclusionVolume*> UWaterBodyComponent::GetExclusionVolume
 // bool                               bInOnlyEnabledComponents                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UPrimitiveComponent*> ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UPrimitiveComponent*> UWaterBodyComponent::GetCollisionComponents(bool bInOnlyEnabledComponents)
+TArray<class UPrimitiveComponent*> UWaterBodyComponent::GetCollisionComponents(bool InbInOnlyEnabledComponents)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1264,7 +1264,7 @@ TArray<class UPrimitiveComponent*> UWaterBodyComponent::GetCollisionComponents(b
 
 	Params::UWaterBodyComponent_GetCollisionComponents_Params Parms{};
 
-	Parms.bInOnlyEnabledComponents = bInOnlyEnabledComponents;
+	Parms.bInOnlyEnabledComponents = InbInOnlyEnabledComponents;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1340,7 +1340,7 @@ bool UWaterMeshComponent::IsEnabled()
 // Parameters:
 // float                              InFloodHeight                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWaterSubsystem::SetOceanFloodHeight(float InFloodHeight)
+void UWaterSubsystem::SetOceanFloodHeight(float InInFloodHeight)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1349,7 +1349,7 @@ void UWaterSubsystem::SetOceanFloodHeight(float InFloodHeight)
 
 	Params::UWaterSubsystem_SetOceanFloodHeight_Params Parms{};
 
-	Parms.InFloodHeight = InFloodHeight;
+	Parms.InFloodHeight = InInFloodHeight;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1368,7 +1368,7 @@ void UWaterSubsystem::SetOceanFloodHeight(float InFloodHeight)
 // class FString                      Message                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bWarning                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UWaterSubsystem::PrintToWaterLog(const class FString& Message, bool bWarning)
+void UWaterSubsystem::PrintToWaterLog(const class FString& InMessage, bool InbWarning)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1377,8 +1377,8 @@ void UWaterSubsystem::PrintToWaterLog(const class FString& Message, bool bWarnin
 
 	Params::UWaterSubsystem_PrintToWaterLog_Params Parms{};
 
-	Parms.Message = Message;
-	Parms.bWarning = bWarning;
+	Parms.Message = InMessage;
+	Parms.bWarning = InbWarning;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

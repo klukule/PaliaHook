@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -28,7 +28,7 @@ namespace SDK
 // bool                               bStopWhenAbilityEnds                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_AnimInstancePlayMontageAndWait*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAbilityTask_AnimInstancePlayMontageAndWait* UAbilityTask_AnimInstancePlayMontageAndWait::AnimInstancePlayMontageAndWaitForEvent(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, class UAnimInstance* InAnimInstance, class UAnimMontage* MontageToPlay, const struct FGameplayTagContainer& EventTags, float Rate, class FName StartSection, bool bStopWhenAbilityEnds)
+class UAbilityTask_AnimInstancePlayMontageAndWait* UAbilityTask_AnimInstancePlayMontageAndWait::AnimInstancePlayMontageAndWaitForEvent(class UGameplayAbility* InOwningAbility, class FName InTaskInstanceName, class UAnimInstance* InInAnimInstance, class UAnimMontage* InMontageToPlay, const struct FGameplayTagContainer& InEventTags, float InRate, class FName InStartSection, bool InbStopWhenAbilityEnds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -37,14 +37,14 @@ class UAbilityTask_AnimInstancePlayMontageAndWait* UAbilityTask_AnimInstancePlay
 
 	Params::UAbilityTask_AnimInstancePlayMontageAndWait_AnimInstancePlayMontageAndWaitForEvent_Params Parms{};
 
-	Parms.OwningAbility = OwningAbility;
-	Parms.TaskInstanceName = TaskInstanceName;
-	Parms.InAnimInstance = InAnimInstance;
-	Parms.MontageToPlay = MontageToPlay;
-	Parms.EventTags = EventTags;
-	Parms.Rate = Rate;
-	Parms.StartSection = StartSection;
-	Parms.bStopWhenAbilityEnds = bStopWhenAbilityEnds;
+	Parms.OwningAbility = InOwningAbility;
+	Parms.TaskInstanceName = InTaskInstanceName;
+	Parms.InAnimInstance = InInAnimInstance;
+	Parms.MontageToPlay = InMontageToPlay;
+	Parms.EventTags = InEventTags;
+	Parms.Rate = InRate;
+	Parms.StartSection = InStartSection;
+	Parms.bStopWhenAbilityEnds = InbStopWhenAbilityEnds;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -72,7 +72,7 @@ class UAbilityTask_AnimInstancePlayMontageAndWait* UAbilityTask_AnimInstancePlay
 // float                              AnimRootMotionTranslationScale                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class URPGAbilityTask_PlayMontageAndWaitForEvent*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class URPGAbilityTask_PlayMontageAndWaitForEvent* URPGAbilityTask_PlayMontageAndWaitForEvent::PlayMontageAndWaitForEvent(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, class UAnimMontage* MontageToPlay, const struct FGameplayTagContainer& EventTags, float Rate, class FName StartSection, bool bStopWhenAbilityEnds, float AnimRootMotionTranslationScale)
+class URPGAbilityTask_PlayMontageAndWaitForEvent* URPGAbilityTask_PlayMontageAndWaitForEvent::PlayMontageAndWaitForEvent(class UGameplayAbility* InOwningAbility, class FName InTaskInstanceName, class UAnimMontage* InMontageToPlay, const struct FGameplayTagContainer& InEventTags, float InRate, class FName InStartSection, bool InbStopWhenAbilityEnds, float InAnimRootMotionTranslationScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -81,14 +81,14 @@ class URPGAbilityTask_PlayMontageAndWaitForEvent* URPGAbilityTask_PlayMontageAnd
 
 	Params::URPGAbilityTask_PlayMontageAndWaitForEvent_PlayMontageAndWaitForEvent_Params Parms{};
 
-	Parms.OwningAbility = OwningAbility;
-	Parms.TaskInstanceName = TaskInstanceName;
-	Parms.MontageToPlay = MontageToPlay;
-	Parms.EventTags = EventTags;
-	Parms.Rate = Rate;
-	Parms.StartSection = StartSection;
-	Parms.bStopWhenAbilityEnds = bStopWhenAbilityEnds;
-	Parms.AnimRootMotionTranslationScale = AnimRootMotionTranslationScale;
+	Parms.OwningAbility = InOwningAbility;
+	Parms.TaskInstanceName = InTaskInstanceName;
+	Parms.MontageToPlay = InMontageToPlay;
+	Parms.EventTags = InEventTags;
+	Parms.Rate = InRate;
+	Parms.StartSection = InStartSection;
+	Parms.bStopWhenAbilityEnds = InbStopWhenAbilityEnds;
+	Parms.AnimRootMotionTranslationScale = InAnimRootMotionTranslationScale;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -23,7 +23,7 @@ namespace SDK
 // float                              AirDensity                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     WindVelocity                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetWind(const struct FVector2D& Drag, const struct FVector2D& Lift, float AirDensity, const struct FVector& WindVelocity)
+void UChaosClothingInteractor::SetWind(const struct FVector2D& InDrag, const struct FVector2D& InLift, float InAirDensity, const struct FVector& InWindVelocity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,10 +32,10 @@ void UChaosClothingInteractor::SetWind(const struct FVector2D& Drag, const struc
 
 	Params::UChaosClothingInteractor_SetWind_Params Parms{};
 
-	Parms.Drag = Drag;
-	Parms.Lift = Lift;
-	Parms.AirDensity = AirDensity;
-	Parms.WindVelocity = WindVelocity;
+	Parms.Drag = InDrag;
+	Parms.Lift = InLift;
+	Parms.AirDensity = InAirDensity;
+	Parms.WindVelocity = InWindVelocity;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -55,7 +55,7 @@ void UChaosClothingInteractor::SetWind(const struct FVector2D& Drag, const struc
 // float                              AngularVelocityScale                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              FictitiousAngularScale                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetVelocityScale(const struct FVector& LinearVelocityScale, float AngularVelocityScale, float FictitiousAngularScale)
+void UChaosClothingInteractor::SetVelocityScale(const struct FVector& InLinearVelocityScale, float InAngularVelocityScale, float InFictitiousAngularScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,9 +64,9 @@ void UChaosClothingInteractor::SetVelocityScale(const struct FVector& LinearVelo
 
 	Params::UChaosClothingInteractor_SetVelocityScale_Params Parms{};
 
-	Parms.LinearVelocityScale = LinearVelocityScale;
-	Parms.AngularVelocityScale = AngularVelocityScale;
-	Parms.FictitiousAngularScale = FictitiousAngularScale;
+	Parms.LinearVelocityScale = InLinearVelocityScale;
+	Parms.AngularVelocityScale = InAngularVelocityScale;
+	Parms.FictitiousAngularScale = InFictitiousAngularScale;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -84,7 +84,7 @@ void UChaosClothingInteractor::SetVelocityScale(const struct FVector& LinearVelo
 // Parameters:
 // struct FVector2D                   Pressure                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetPressure(const struct FVector2D& Pressure)
+void UChaosClothingInteractor::SetPressure(const struct FVector2D& InPressure)
 {
 	static class UFunction* Func = nullptr;
 
@@ -93,7 +93,7 @@ void UChaosClothingInteractor::SetPressure(const struct FVector2D& Pressure)
 
 	Params::UChaosClothingInteractor_SetPressure_Params Parms{};
 
-	Parms.Pressure = Pressure;
+	Parms.Pressure = InPressure;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -113,7 +113,7 @@ void UChaosClothingInteractor::SetPressure(const struct FVector2D& Pressure)
 // float                              BendingStiffness                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              AreaStiffness                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetMaterialLinear(float EdgeStiffness, float BendingStiffness, float AreaStiffness)
+void UChaosClothingInteractor::SetMaterialLinear(float InEdgeStiffness, float InBendingStiffness, float InAreaStiffness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -122,9 +122,9 @@ void UChaosClothingInteractor::SetMaterialLinear(float EdgeStiffness, float Bend
 
 	Params::UChaosClothingInteractor_SetMaterialLinear_Params Parms{};
 
-	Parms.EdgeStiffness = EdgeStiffness;
-	Parms.BendingStiffness = BendingStiffness;
-	Parms.AreaStiffness = AreaStiffness;
+	Parms.EdgeStiffness = InEdgeStiffness;
+	Parms.BendingStiffness = InBendingStiffness;
+	Parms.AreaStiffness = InAreaStiffness;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -144,7 +144,7 @@ void UChaosClothingInteractor::SetMaterialLinear(float EdgeStiffness, float Bend
 // struct FVector2D                   BendingStiffness                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   AreaStiffness                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetMaterial(const struct FVector2D& EdgeStiffness, const struct FVector2D& BendingStiffness, const struct FVector2D& AreaStiffness)
+void UChaosClothingInteractor::SetMaterial(const struct FVector2D& InEdgeStiffness, const struct FVector2D& InBendingStiffness, const struct FVector2D& InAreaStiffness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -153,9 +153,9 @@ void UChaosClothingInteractor::SetMaterial(const struct FVector2D& EdgeStiffness
 
 	Params::UChaosClothingInteractor_SetMaterial_Params Parms{};
 
-	Parms.EdgeStiffness = EdgeStiffness;
-	Parms.BendingStiffness = BendingStiffness;
-	Parms.AreaStiffness = AreaStiffness;
+	Parms.EdgeStiffness = InEdgeStiffness;
+	Parms.BendingStiffness = InBendingStiffness;
+	Parms.AreaStiffness = InAreaStiffness;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -174,7 +174,7 @@ void UChaosClothingInteractor::SetMaterial(const struct FVector2D& EdgeStiffness
 // float                              TetherStiffness                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              TetherScale                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetLongRangeAttachmentLinear(float TetherStiffness, float TetherScale)
+void UChaosClothingInteractor::SetLongRangeAttachmentLinear(float InTetherStiffness, float InTetherScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -183,8 +183,8 @@ void UChaosClothingInteractor::SetLongRangeAttachmentLinear(float TetherStiffnes
 
 	Params::UChaosClothingInteractor_SetLongRangeAttachmentLinear_Params Parms{};
 
-	Parms.TetherStiffness = TetherStiffness;
-	Parms.TetherScale = TetherScale;
+	Parms.TetherStiffness = InTetherStiffness;
+	Parms.TetherScale = InTetherScale;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -203,7 +203,7 @@ void UChaosClothingInteractor::SetLongRangeAttachmentLinear(float TetherStiffnes
 // struct FVector2D                   TetherStiffness                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   TetherScale                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetLongRangeAttachment(const struct FVector2D& TetherStiffness, const struct FVector2D& TetherScale)
+void UChaosClothingInteractor::SetLongRangeAttachment(const struct FVector2D& InTetherStiffness, const struct FVector2D& InTetherScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -212,8 +212,8 @@ void UChaosClothingInteractor::SetLongRangeAttachment(const struct FVector2D& Te
 
 	Params::UChaosClothingInteractor_SetLongRangeAttachment_Params Parms{};
 
-	Parms.TetherStiffness = TetherStiffness;
-	Parms.TetherScale = TetherScale;
+	Parms.TetherStiffness = InTetherStiffness;
+	Parms.TetherScale = InTetherScale;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -233,7 +233,7 @@ void UChaosClothingInteractor::SetLongRangeAttachment(const struct FVector2D& Te
 // bool                               bIsGravityOverridden                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     GravityOverride                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetGravity(float GravityScale, bool bIsGravityOverridden, const struct FVector& GravityOverride)
+void UChaosClothingInteractor::SetGravity(float InGravityScale, bool InbIsGravityOverridden, const struct FVector& InGravityOverride)
 {
 	static class UFunction* Func = nullptr;
 
@@ -242,9 +242,9 @@ void UChaosClothingInteractor::SetGravity(float GravityScale, bool bIsGravityOve
 
 	Params::UChaosClothingInteractor_SetGravity_Params Parms{};
 
-	Parms.GravityScale = GravityScale;
-	Parms.bIsGravityOverridden = bIsGravityOverridden;
-	Parms.GravityOverride = GravityOverride;
+	Parms.GravityScale = InGravityScale;
+	Parms.bIsGravityOverridden = InbIsGravityOverridden;
+	Parms.GravityOverride = InGravityOverride;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -263,7 +263,7 @@ void UChaosClothingInteractor::SetGravity(float GravityScale, bool bIsGravityOve
 // float                              DampingCoefficient                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              LocalDampingCoefficient                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetDamping(float DampingCoefficient, float LocalDampingCoefficient)
+void UChaosClothingInteractor::SetDamping(float InDampingCoefficient, float InLocalDampingCoefficient)
 {
 	static class UFunction* Func = nullptr;
 
@@ -272,8 +272,8 @@ void UChaosClothingInteractor::SetDamping(float DampingCoefficient, float LocalD
 
 	Params::UChaosClothingInteractor_SetDamping_Params Parms{};
 
-	Parms.DampingCoefficient = DampingCoefficient;
-	Parms.LocalDampingCoefficient = LocalDampingCoefficient;
+	Parms.DampingCoefficient = InDampingCoefficient;
+	Parms.LocalDampingCoefficient = InLocalDampingCoefficient;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -294,7 +294,7 @@ void UChaosClothingInteractor::SetDamping(float DampingCoefficient, float LocalD
 // bool                               bUseCCD                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              SelfCollisionThickness                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetCollision(float CollisionThickness, float FrictionCoefficient, bool bUseCCD, float SelfCollisionThickness)
+void UChaosClothingInteractor::SetCollision(float InCollisionThickness, float InFrictionCoefficient, bool InbUseCCD, float InSelfCollisionThickness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -303,10 +303,10 @@ void UChaosClothingInteractor::SetCollision(float CollisionThickness, float Fric
 
 	Params::UChaosClothingInteractor_SetCollision_Params Parms{};
 
-	Parms.CollisionThickness = CollisionThickness;
-	Parms.FrictionCoefficient = FrictionCoefficient;
-	Parms.bUseCCD = bUseCCD;
-	Parms.SelfCollisionThickness = SelfCollisionThickness;
+	Parms.CollisionThickness = InCollisionThickness;
+	Parms.FrictionCoefficient = InFrictionCoefficient;
+	Parms.bUseCCD = InbUseCCD;
+	Parms.SelfCollisionThickness = InSelfCollisionThickness;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -324,7 +324,7 @@ void UChaosClothingInteractor::SetCollision(float CollisionThickness, float Fric
 // Parameters:
 // bool                               bEnabled                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetBackstop(bool bEnabled)
+void UChaosClothingInteractor::SetBackstop(bool InbEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -333,7 +333,7 @@ void UChaosClothingInteractor::SetBackstop(bool bEnabled)
 
 	Params::UChaosClothingInteractor_SetBackstop_Params Parms{};
 
-	Parms.bEnabled = bEnabled;
+	Parms.bEnabled = InbEnabled;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -351,7 +351,7 @@ void UChaosClothingInteractor::SetBackstop(bool bEnabled)
 // Parameters:
 // float                              AnimDriveStiffness                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetAnimDriveLinear(float AnimDriveStiffness)
+void UChaosClothingInteractor::SetAnimDriveLinear(float InAnimDriveStiffness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -360,7 +360,7 @@ void UChaosClothingInteractor::SetAnimDriveLinear(float AnimDriveStiffness)
 
 	Params::UChaosClothingInteractor_SetAnimDriveLinear_Params Parms{};
 
-	Parms.AnimDriveStiffness = AnimDriveStiffness;
+	Parms.AnimDriveStiffness = InAnimDriveStiffness;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -379,7 +379,7 @@ void UChaosClothingInteractor::SetAnimDriveLinear(float AnimDriveStiffness)
 // struct FVector2D                   AnimDriveStiffness                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   AnimDriveDamping                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetAnimDrive(const struct FVector2D& AnimDriveStiffness, const struct FVector2D& AnimDriveDamping)
+void UChaosClothingInteractor::SetAnimDrive(const struct FVector2D& InAnimDriveStiffness, const struct FVector2D& InAnimDriveDamping)
 {
 	static class UFunction* Func = nullptr;
 
@@ -388,8 +388,8 @@ void UChaosClothingInteractor::SetAnimDrive(const struct FVector2D& AnimDriveSti
 
 	Params::UChaosClothingInteractor_SetAnimDrive_Params Parms{};
 
-	Parms.AnimDriveStiffness = AnimDriveStiffness;
-	Parms.AnimDriveDamping = AnimDriveDamping;
+	Parms.AnimDriveStiffness = InAnimDriveStiffness;
+	Parms.AnimDriveDamping = InAnimDriveDamping;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -409,7 +409,7 @@ void UChaosClothingInteractor::SetAnimDrive(const struct FVector2D& AnimDriveSti
 // float                              LiftCoefficient                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     WindVelocity                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::SetAerodynamics(float DragCoefficient, float LiftCoefficient, const struct FVector& WindVelocity)
+void UChaosClothingInteractor::SetAerodynamics(float InDragCoefficient, float InLiftCoefficient, const struct FVector& InWindVelocity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -418,9 +418,9 @@ void UChaosClothingInteractor::SetAerodynamics(float DragCoefficient, float Lift
 
 	Params::UChaosClothingInteractor_SetAerodynamics_Params Parms{};
 
-	Parms.DragCoefficient = DragCoefficient;
-	Parms.LiftCoefficient = LiftCoefficient;
-	Parms.WindVelocity = WindVelocity;
+	Parms.DragCoefficient = InDragCoefficient;
+	Parms.LiftCoefficient = InLiftCoefficient;
+	Parms.WindVelocity = InWindVelocity;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -439,7 +439,7 @@ void UChaosClothingInteractor::SetAerodynamics(float DragCoefficient, float Lift
 // bool                               bReset                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bTeleport                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosClothingInteractor::ResetAndTeleport(bool bReset, bool bTeleport)
+void UChaosClothingInteractor::ResetAndTeleport(bool InbReset, bool InbTeleport)
 {
 	static class UFunction* Func = nullptr;
 
@@ -448,8 +448,8 @@ void UChaosClothingInteractor::ResetAndTeleport(bool bReset, bool bTeleport)
 
 	Params::UChaosClothingInteractor_ResetAndTeleport_Params Parms{};
 
-	Parms.bReset = bReset;
-	Parms.bTeleport = bTeleport;
+	Parms.bReset = InbReset;
+	Parms.bTeleport = InbTeleport;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

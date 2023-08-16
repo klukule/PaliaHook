@@ -24,15 +24,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ListEntry_CharacterCustomization_FilteringDropdownMenu_C");
-
+		static class UClass* Clss = UObject::FindClassFast("ListEntry_CharacterCustomization_FilteringDropdownMenu_C");
 		return Clss;
 	}
 
-	void HasTagOptions(bool* HasOptions, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Greater_IntInt_ReturnValue);
+	void HasTagOptions(bool* InHasOptions, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Greater_IntInt_ReturnValue);
 	void OnSelectionChanged__DelegateSignature();
 };
 

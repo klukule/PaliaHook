@@ -21,15 +21,11 @@ public:
 	TSet<class UInputAction*>                    StartFlagMap;                                      // 0x428(0x50)(Transient, Protected, NativeAccessSpecifierProtected)
 	bool                                         bIsPersistentBinding;                              // 0x478(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	enum class ECommonInputMode                  InputModeOverride;                                 // 0x479(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_97E[0x16];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FA7[0x16];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CommonActivatableWidgetInputExtended");
-
+		static class UClass* Clss = UObject::FindClassFast("CommonActivatableWidgetInputExtended");
 		return Clss;
 	}
 
@@ -43,11 +39,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CommonButtonBaseInputExtended");
-
+		static class UClass* Clss = UObject::FindClassFast("CommonButtonBaseInputExtended");
 		return Clss;
 	}
 
@@ -62,15 +54,11 @@ public:
 	TSet<class UInputAction*>                    StartFlagMap;                                      // 0x2F0(0x50)(Transient, Protected, NativeAccessSpecifierProtected)
 	bool                                         bIsPersistentBinding;                              // 0x340(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	enum class ECommonInputMode                  InputModeOverride;                                 // 0x341(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_982[0x16];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FAC[0x16];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CommonUserWidgetInputExtended");
-
+		static class UClass* Clss = UObject::FindClassFast("CommonUserWidgetInputExtended");
 		return Clss;
 	}
 

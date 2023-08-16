@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -45,7 +45,7 @@ void US6PersistSubsystem::ProcessPersistQueue()
 // Parameters:
 // bool                               bSuccess                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6PersistSubsystem::HandlePendingOpSetComplete(bool bSuccess)
+void US6PersistSubsystem::HandlePendingOpSetComplete(bool InbSuccess)
 {
 	static class UFunction* Func = nullptr;
 
@@ -54,7 +54,7 @@ void US6PersistSubsystem::HandlePendingOpSetComplete(bool bSuccess)
 
 	Params::US6PersistSubsystem_HandlePendingOpSetComplete_Params Parms{};
 
-	Parms.bSuccess = bSuccess;
+	Parms.bSuccess = InbSuccess;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

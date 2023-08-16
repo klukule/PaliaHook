@@ -20,21 +20,17 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AssetTagsSubsystem");
-
+		static class UClass* Clss = UObject::FindClassFast("AssetTagsSubsystem");
 		return Clss;
 	}
 
-	TArray<class FName> K2_GetCollectionsContainingAsset(struct FSoftObjectPath& AssetPath);
-	TArray<class FName> GetCollectionsContainingAssetPtr(class UObject* AssetPtr);
-	TArray<class FName> GetCollectionsContainingAssetData(struct FAssetData& AssetData);
-	TArray<class FName> GetCollectionsContainingAsset(class FName AssetPathName);
+	TArray<class FName> K2_GetCollectionsContainingAsset(struct FSoftObjectPath& InAssetPath);
+	TArray<class FName> GetCollectionsContainingAssetPtr(class UObject* InAssetPtr);
+	TArray<class FName> GetCollectionsContainingAssetData(struct FAssetData& InAssetData);
+	TArray<class FName> GetCollectionsContainingAsset(class FName InAssetPathName);
 	TArray<class FName> GetCollections();
-	TArray<struct FAssetData> GetAssetsInCollection(class FName Name);
-	bool CollectionExists(class FName Name);
+	TArray<struct FAssetData> GetAssetsInCollection(class FName InName);
+	bool CollectionExists(class FName InName);
 };
 
 }

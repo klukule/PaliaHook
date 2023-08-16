@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothConfigCommon");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothConfigCommon");
 		return Clss;
 	}
 
@@ -38,11 +34,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothSharedConfigCommon");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothSharedConfigCommon");
 		return Clss;
 	}
 
@@ -56,11 +48,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothingAssetCustomData");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothingAssetCustomData");
 		return Clss;
 	}
 
@@ -78,16 +66,12 @@ public:
 	TArray<class FName>                          UsedBoneNames;                                     // 0xC0(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                UsedBoneIndices;                                   // 0xD0(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                        ReferenceBoneIndex;                                // 0xE0(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A8D[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B80[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UClothingAssetCustomData*              CustomData;                                        // 0xE8(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothingAssetCommon");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothingAssetCommon");
 		return Clss;
 	}
 
@@ -101,15 +85,11 @@ public:
 	class UClothPhysicalMeshDataBase_Legacy*     PhysicalMeshData;                                  // 0x28(0x8)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FClothPhysicalMeshData                ClothPhysicalMeshData;                             // 0x30(0xD8)(NativeAccessSpecifierPublic)
 	struct FClothCollisionData                   CollisionData;                                     // 0x108(0x40)(NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A90[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B82[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothLODDataCommon_Legacy");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothLODDataCommon_Legacy");
 		return Clss;
 	}
 

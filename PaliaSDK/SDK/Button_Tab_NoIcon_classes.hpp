@@ -27,17 +27,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Button_Tab_NoIcon_C");
-
+		static class UClass* Clss = UObject::FindClassFast("Button_Tab_NoIcon_C");
 		return Clss;
 	}
 
-	void PreConstruct(bool IsDesignTime);
-	void SetIsActiveTabButton(bool bIsActive);
-	void ExecuteUbergraph_Button_Tab_NoIcon(int32 EntryPoint, bool K2Node_Event_bIsActive, bool K2Node_Event_IsDesignTime, bool Temp_bool_Variable, class UVALUI_ButtonStyle* K2Node_Select_Default);
+	void PreConstruct(bool InIsDesignTime);
+	void SetIsActiveTabButton(bool InbIsActive);
+	void ExecuteUbergraph_Button_Tab_NoIcon(int32 InEntryPoint, bool InK2Node_Event_bIsActive, bool InK2Node_Event_IsDesignTime, bool InTemp_bool_Variable, class UVALUI_ButtonStyle* InK2Node_Select_Default);
 };
 
 }

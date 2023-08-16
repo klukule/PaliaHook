@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioAnalyzer::StopAnalyzing(class UObject* WorldContextObject)
+void UAudioAnalyzer::StopAnalyzing(class UObject* InWorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UAudioAnalyzer::StopAnalyzing(class UObject* WorldContextObject)
 
 	Params::UAudioAnalyzer_StopAnalyzing_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
+	Parms.WorldContextObject = InWorldContextObject;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -48,7 +48,7 @@ void UAudioAnalyzer::StopAnalyzing(class UObject* WorldContextObject)
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAudioBus*                   AudioBusToAnalyze                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioAnalyzer::StartAnalyzing(class UObject* WorldContextObject, class UAudioBus* AudioBusToAnalyze)
+void UAudioAnalyzer::StartAnalyzing(class UObject* InWorldContextObject, class UAudioBus* InAudioBusToAnalyze)
 {
 	static class UFunction* Func = nullptr;
 
@@ -57,8 +57,8 @@ void UAudioAnalyzer::StartAnalyzing(class UObject* WorldContextObject, class UAu
 
 	Params::UAudioAnalyzer_StartAnalyzing_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.AudioBusToAnalyze = AudioBusToAnalyze;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.AudioBusToAnalyze = InAudioBusToAnalyze;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

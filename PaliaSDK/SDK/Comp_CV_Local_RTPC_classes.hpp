@@ -25,16 +25,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Comp_CV_Local_RTPC_C");
-
+		static class UClass* Clss = UObject::FindClassFast("Comp_CV_Local_RTPC_C");
 		return Clss;
 	}
 
 	void SetParameters();
-	void ExecuteUbergraph_Comp_CV_Local_RTPC(int32 EntryPoint);
+	void ExecuteUbergraph_Comp_CV_Local_RTPC(int32 InEntryPoint);
 };
 
 }

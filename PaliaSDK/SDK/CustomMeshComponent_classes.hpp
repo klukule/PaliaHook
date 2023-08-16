@@ -17,21 +17,17 @@ namespace SDK
 class UCustomMeshComponent : public UMeshComponent
 {
 public:
-	uint8                                        Pad_1E25[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1EDA[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CustomMeshComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("CustomMeshComponent");
 		return Clss;
 	}
 
-	bool SetCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& Triangles);
+	bool SetCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& InTriangles);
 	void ClearCustomMeshTriangles();
-	void AddCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& Triangles);
+	void AddCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& InTriangles);
 };
 
 }

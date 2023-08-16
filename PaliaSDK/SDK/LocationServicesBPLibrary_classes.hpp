@@ -20,18 +20,14 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("LocationServices");
-
+		static class UClass* Clss = UObject::FindClassFast("LocationServices");
 		return Clss;
 	}
 
 	bool StopLocationServices();
 	bool StartLocationServices();
-	bool IsLocationAccuracyAvailable(enum class ELocationAccuracy Accuracy);
-	bool InitLocationServices(enum class ELocationAccuracy Accuracy, float UpdateFrequency, float MinDistanceFilter);
+	bool IsLocationAccuracyAvailable(enum class ELocationAccuracy InAccuracy);
+	bool InitLocationServices(enum class ELocationAccuracy InAccuracy, float InUpdateFrequency, float InMinDistanceFilter);
 	class ULocationServicesImpl* GetLocationServicesImpl();
 	struct FLocationServicesData GetLastKnownLocation();
 	bool AreLocationServicesEnabled();
@@ -46,11 +42,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("LocationServicesImpl");
-
+		static class UClass* Clss = UObject::FindClassFast("LocationServicesImpl");
 		return Clss;
 	}
 

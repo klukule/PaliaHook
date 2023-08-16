@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GA_CraftingCampfire_OneOff_Craft_C");
-
+		static class UClass* Clss = UObject::FindClassFast("GA_CraftingCampfire_OneOff_Craft_C");
 		return Clss;
 	}
 

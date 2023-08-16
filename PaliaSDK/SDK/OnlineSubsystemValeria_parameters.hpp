@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -169,7 +169,7 @@ struct AOSSVAL_BeaconClient_RpcClient_SendTicketValidationResponse_Params
 public:
 	struct FGuid                                 RequestId;                                         // 0x0(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAccepted;                                         // 0x10(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2703[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_28E9[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FOSSVAL_MatchmakingTicket             Ticket;                                            // 0x18(0x98)(ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FOSSVAL_MatchmakingTicketContext      Context;                                           // 0xB0(0x10)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };

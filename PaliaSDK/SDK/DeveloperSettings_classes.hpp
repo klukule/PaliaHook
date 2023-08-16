@@ -17,15 +17,11 @@ namespace SDK
 class UDeveloperSettings : public UObject
 {
 public:
-	uint8                                        Pad_35E[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4ED[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DeveloperSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("DeveloperSettings");
 		return Clss;
 	}
 
@@ -39,11 +35,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DeveloperSettingsBackedByCVars");
-
+		static class UClass* Clss = UObject::FindClassFast("DeveloperSettingsBackedByCVars");
 		return Clss;
 	}
 
@@ -54,15 +46,11 @@ public:
 class UPlatformSettings : public UObject
 {
 public:
-	uint8                                        Pad_362[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4EF[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PlatformSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("PlatformSettings");
 		return Clss;
 	}
 
@@ -74,15 +62,11 @@ class UPlatformSettingsManager : public UObject
 {
 public:
 	TMap<TSubclassOf<class UPlatformSettings>, struct FPlatformSettingsInstances> SettingsMap;                                       // 0x28(0x50)(Transient, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_364[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4F1[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PlatformSettingsManager");
-
+		static class UClass* Clss = UObject::FindClassFast("PlatformSettingsManager");
 		return Clss;
 	}
 

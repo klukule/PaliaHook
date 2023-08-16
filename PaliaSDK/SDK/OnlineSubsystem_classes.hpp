@@ -19,15 +19,11 @@ class UNamedInterfaces : public UObject
 public:
 	TArray<struct FNamedInterface>               NamedInterfaces;                                   // 0x28(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<struct FNamedInterfaceDef>            NamedInterfaceDefs;                                // 0x38(0x10)(ZeroConstructor, Config, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_635[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9C5[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NamedInterfaces");
-
+		static class UClass* Clss = UObject::FindClassFast("NamedInterfaces");
 		return Clss;
 	}
 
@@ -41,16 +37,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TurnBasedMatchInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("TurnBasedMatchInterface");
 		return Clss;
 	}
 
-	void OnMatchReceivedTurn(const class FString& Match, bool bDidBecomeActive);
-	void OnMatchEnded(const class FString& Match);
+	void OnMatchReceivedTurn(const class FString& InMatch, bool InbDidBecomeActive);
+	void OnMatchEnded(const class FString& InMatch);
 };
 
 }

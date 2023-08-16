@@ -22,19 +22,15 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Comp_CV_Overlaps_C");
-
+		static class UClass* Clss = UObject::FindClassFast("Comp_CV_Overlaps_C");
 		return Clss;
 	}
 
 	void ReceiveBeginPlay();
-	void BeginOverlap(class AActor* OverlappedActor, class AActor* OtherActor);
-	void EndOverlap(class AActor* OverlappedActor, class AActor* OtherActor);
-	void ReceiveEndPlay(enum class EEndPlayReason EndPlayReason);
-	void ExecuteUbergraph_Comp_CV_Overlaps(int32 EntryPoint, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, int32 Temp_int_Array_Index_Variable, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_1, class AActor* CallFunc_GetOwner_ReturnValue, class AActor* K2Node_CustomEvent_OverlappedActor_1, class AActor* K2Node_CustomEvent_OtherActor_1, class AActor* K2Node_CustomEvent_OverlappedActor, class AActor* K2Node_CustomEvent_OtherActor, enum class EEndPlayReason K2Node_Event_EndPlayReason, int32 Temp_int_Loop_Counter_Variable, TArray<class AActor*>& CallFunc_GetOverlappingActors_OverlappingActors, class AActor* CallFunc_Array_Get_Item, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue);
+	void BeginOverlap(class AActor* InOverlappedActor, class AActor* InOtherActor);
+	void EndOverlap(class AActor* InOverlappedActor, class AActor* InOtherActor);
+	void ReceiveEndPlay(enum class EEndPlayReason InEndPlayReason);
+	void ExecuteUbergraph_Comp_CV_Overlaps(int32 InEntryPoint, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate, int32 InTemp_int_Array_Index_Variable, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_1, class AActor* InCallFunc_GetOwner_ReturnValue, class AActor* InK2Node_CustomEvent_OverlappedActor_1, class AActor* InK2Node_CustomEvent_OtherActor_1, class AActor* InK2Node_CustomEvent_OverlappedActor, class AActor* InK2Node_CustomEvent_OtherActor, enum class EEndPlayReason InK2Node_Event_EndPlayReason, int32 InTemp_int_Loop_Counter_Variable, TArray<class AActor*>& InCallFunc_GetOverlappingActors_OverlappingActors, class AActor* InCallFunc_Array_Get_Item, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue);
 };
 
 }

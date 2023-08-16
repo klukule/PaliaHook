@@ -34,11 +34,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_IdentitySettings");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_IdentitySettings");
 		return Clss;
 	}
 
@@ -54,11 +50,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_PresenceSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_PresenceSettings");
 		return Clss;
 	}
 
@@ -71,21 +63,17 @@ class UOSSVAL_GetCharacterNamesByAccountIdProxy : public UBlueprintAsyncActionBa
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailure;                                         // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26B6[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2898[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_GetCharacterNamesByAccountIdProxy");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_GetCharacterNamesByAccountIdProxy");
 		return Clss;
 	}
 
-	void OnGetCharacterNames_Success__DelegateSignature(struct FGuid& AccountId, TArray<struct FOSSVAL_CharacterNameAndId>& Names);
-	void OnGetCharacterNames_Fail__DelegateSignature(struct FGuid& AccountId);
-	class UOSSVAL_GetCharacterNamesByAccountIdProxy* GetCharacterNamesByAccountId(class UObject* WorldContextObject, struct FGuid& AccountId);
+	void OnGetCharacterNames_Success__DelegateSignature(struct FGuid& InAccountId, TArray<struct FOSSVAL_CharacterNameAndId>& InNames);
+	void OnGetCharacterNames_Fail__DelegateSignature(struct FGuid& InAccountId);
+	class UOSSVAL_GetCharacterNamesByAccountIdProxy* GetCharacterNamesByAccountId(class UObject* InWorldContextObject, struct FGuid& InAccountId);
 };
 
 // 0x48 (0x78 - 0x30)
@@ -95,21 +83,17 @@ class UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy : public UBlueprint
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailure;                                         // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26CB[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28B0[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy");
 		return Clss;
 	}
 
-	void OnGetCharacterNames_Success__DelegateSignature(struct FGuid& AccountId, struct FGuid& CharacterId, struct FOSSVAL_CharacterNameAndId& Name);
-	void OnGetCharacterNames_Fail__DelegateSignature(struct FGuid& AccountId, struct FGuid& CharacterId);
-	class UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy* GetCharacterNameByAccountIdAndCharacterId(class UObject* WorldContextObject, struct FGuid& AccountId, struct FGuid& CharacterId);
+	void OnGetCharacterNames_Success__DelegateSignature(struct FGuid& InAccountId, struct FGuid& InCharacterId, struct FOSSVAL_CharacterNameAndId& InName);
+	void OnGetCharacterNames_Fail__DelegateSignature(struct FGuid& InAccountId, struct FGuid& InCharacterId);
+	class UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy* GetCharacterNameByAccountIdAndCharacterId(class UObject* InWorldContextObject, struct FGuid& InAccountId, struct FGuid& InCharacterId);
 };
 
 // 0x38 (0x68 - 0x30)
@@ -119,21 +103,17 @@ class UOSSVAL_GetCharacterNameByCharacterIdProxy : public UBlueprintAsyncActionB
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailure;                                         // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26D2[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28CD[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_GetCharacterNameByCharacterIdProxy");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_GetCharacterNameByCharacterIdProxy");
 		return Clss;
 	}
 
-	void OnFetchCharacter_Success__DelegateSignature(struct FGuid& CharacterId, struct FOSSVAL_CharacterNameAndId& FetchedCharacter);
-	void OnFetchCharacter_Failure__DelegateSignature(struct FGuid& CharacterId);
-	class UOSSVAL_GetCharacterNameByCharacterIdProxy* GetCharacterNameByCharacterId(class UObject* WorldContextObject, struct FGuid& CharacterId);
+	void OnFetchCharacter_Success__DelegateSignature(struct FGuid& InCharacterId, struct FOSSVAL_CharacterNameAndId& InFetchedCharacter);
+	void OnFetchCharacter_Failure__DelegateSignature(struct FGuid& InCharacterId);
+	class UOSSVAL_GetCharacterNameByCharacterIdProxy* GetCharacterNameByCharacterId(class UObject* InWorldContextObject, struct FGuid& InCharacterId);
 };
 
 // 0x38 (0x68 - 0x30)
@@ -143,21 +123,17 @@ class UOSSVAL_GetNetIdByCharacterIdProxy : public UBlueprintAsyncActionBase
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailure;                                         // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26E9[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28DD[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_GetNetIdByCharacterIdProxy");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_GetNetIdByCharacterIdProxy");
 		return Clss;
 	}
 
-	void OnFetchNetId_Success__DelegateSignature(struct FGuid& CharacterId, struct FUniqueNetIdRepl& FetchedNetId);
-	void OnFetchNetId_Failure__DelegateSignature(struct FGuid& CharacterId);
-	class UOSSVAL_GetNetIdByCharacterIdProxy* GetNetIdByCharacterId(class UObject* WorldContextObject, struct FGuid& CharacterId);
+	void OnFetchNetId_Success__DelegateSignature(struct FGuid& InCharacterId, struct FUniqueNetIdRepl& InFetchedNetId);
+	void OnFetchNetId_Failure__DelegateSignature(struct FGuid& InCharacterId);
+	class UOSSVAL_GetNetIdByCharacterIdProxy* GetNetIdByCharacterId(class UObject* InWorldContextObject, struct FGuid& InCharacterId);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -168,11 +144,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAl_ChatLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAl_ChatLibrary");
 		return Clss;
 	}
 
@@ -186,11 +158,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_OnlineEngineInterfaceImpl");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_OnlineEngineInterfaceImpl");
 		return Clss;
 	}
 
@@ -203,21 +171,17 @@ class UOSSVAL_AsyncActionGetCharactersByAccountId : public UBlueprintAsyncAction
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailed;                                          // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26FA[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28E1[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_AsyncActionGetCharactersByAccountId");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_AsyncActionGetCharactersByAccountId");
 		return Clss;
 	}
 
-	void OnGetCharactersObtained__DelegateSignature(TArray<struct FVALDTOS_MetaCharacterFormat>& CharactersFound);
+	void OnGetCharactersObtained__DelegateSignature(TArray<struct FVALDTOS_MetaCharacterFormat>& InCharactersFound);
 	void OnGetCharactersFailed__DelegateSignature();
-	class UOSSVAL_AsyncActionGetCharactersByAccountId* GetCharactersByAccountId(class ULocalPlayer* LocalPlayer, struct FGuid& ID);
+	class UOSSVAL_AsyncActionGetCharactersByAccountId* GetCharactersByAccountId(class ULocalPlayer* InLocalPlayer, struct FGuid& InID);
 };
 
 // 0x20 (0x340 - 0x320)
@@ -225,20 +189,16 @@ public:
 class AOSSVAL_BeaconClient : public AOnlineBeaconClient
 {
 public:
-	uint8                                        Pad_2704[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28EA[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_BeaconClient");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_BeaconClient");
 		return Clss;
 	}
 
-	void RpcServer_ValidateTicket(struct FGuid& RequestId, struct FOSSVAL_MatchmakingTicket& Ticket, struct FOSSVAL_MatchmakingTicketContext& Context);
-	void RpcClient_SendTicketValidationResponse(struct FGuid& RequestId, bool bAccepted, struct FOSSVAL_MatchmakingTicket& Ticket, struct FOSSVAL_MatchmakingTicketContext& Context);
+	void RpcServer_ValidateTicket(struct FGuid& InRequestId, struct FOSSVAL_MatchmakingTicket& InTicket, struct FOSSVAL_MatchmakingTicketContext& InContext);
+	void RpcClient_SendTicketValidationResponse(struct FGuid& InRequestId, bool InbAccepted, struct FOSSVAL_MatchmakingTicket& InTicket, struct FOSSVAL_MatchmakingTicketContext& InContext);
 };
 
 // 0x0 (0x3D0 - 0x3D0)
@@ -249,11 +209,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_BeaconHost");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_BeaconHost");
 		return Clss;
 	}
 
@@ -264,15 +220,11 @@ public:
 class AOSSVAL_BeaconHostObject : public AOnlineBeaconHostObject
 {
 public:
-	uint8                                        Pad_2708[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28F4[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("OSSVAL_BeaconHostObject");
-
+		static class UClass* Clss = UObject::FindClassFast("OSSVAL_BeaconHostObject");
 		return Clss;
 	}
 
@@ -286,15 +238,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ValeriaOnlineBlueprintFunctions");
-
+		static class UClass* Clss = UObject::FindClassFast("ValeriaOnlineBlueprintFunctions");
 		return Clss;
 	}
 
-	struct FBlueprintSessionResult CreateSessionResult(const class FString& ServerName, const class FString& Addr);
+	struct FBlueprintSessionResult CreateSessionResult(const class FString& InServerName, const class FString& InAddr);
 };
 
 // 0x0 (0xA0 - 0xA0)
@@ -305,11 +253,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ValeriaPartyBeaconState");
-
+		static class UClass* Clss = UObject::FindClassFast("ValeriaPartyBeaconState");
 		return Clss;
 	}
 

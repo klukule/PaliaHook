@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -24,7 +24,7 @@ namespace SDK
 // uint8                              OnDemandState                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bShouldProcess                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAnimationSharingStateProcessor::ProcessActorState(int32* OutState, class AActor* InActor, uint8 CurrentState, uint8 OnDemandState, bool* bShouldProcess)
+void UAnimationSharingStateProcessor::ProcessActorState(int32* InOutState, class AActor* InInActor, uint8 InCurrentState, uint8 InOnDemandState, bool* InbShouldProcess)
 {
 	static class UFunction* Func = nullptr;
 
@@ -33,9 +33,9 @@ void UAnimationSharingStateProcessor::ProcessActorState(int32* OutState, class A
 
 	Params::UAnimationSharingStateProcessor_ProcessActorState_Params Parms{};
 
-	Parms.InActor = InActor;
-	Parms.CurrentState = CurrentState;
-	Parms.OnDemandState = OnDemandState;
+	Parms.InActor = InInActor;
+	Parms.CurrentState = InCurrentState;
+	Parms.OnDemandState = InOnDemandState;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -45,11 +45,11 @@ void UAnimationSharingStateProcessor::ProcessActorState(int32* OutState, class A
 
 	Func->FunctionFlags = Flags;
 
-	if (OutState != nullptr)
-		*OutState = Parms.OutState;
+	if (InOutState != nullptr)
+		*InOutState = Parms.OutState;
 
-	if (bShouldProcess != nullptr)
-		*bShouldProcess = Parms.bShouldProcess;
+	if (InbShouldProcess != nullptr)
+		*InbShouldProcess = Parms.bShouldProcess;
 
 }
 
@@ -87,7 +87,7 @@ class UEnum* UAnimationSharingStateProcessor::GetAnimationStateEnum()
 // Parameters:
 // TArray<class AActor*>              Actors                                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UAnimSharingStateInstance::GetInstancedActors(TArray<class AActor*>* Actors)
+void UAnimSharingStateInstance::GetInstancedActors(TArray<class AActor*>* InActors)
 {
 	static class UFunction* Func = nullptr;
 
@@ -105,8 +105,8 @@ void UAnimSharingStateInstance::GetInstancedActors(TArray<class AActor*>* Actors
 
 	Func->FunctionFlags = Flags;
 
-	if (Actors != nullptr)
-		*Actors = Parms.Actors;
+	if (InActors != nullptr)
+		*InActors = Parms.Actors;
 
 }
 
@@ -117,7 +117,7 @@ void UAnimSharingStateInstance::GetInstancedActors(TArray<class AActor*>* Actors
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USkeleton*                   SharingSkeleton                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAnimationSharingManager::RegisterActorWithSkeletonBP(class AActor* InActor, class USkeleton* SharingSkeleton)
+void UAnimationSharingManager::RegisterActorWithSkeletonBP(class AActor* InInActor, class USkeleton* InSharingSkeleton)
 {
 	static class UFunction* Func = nullptr;
 
@@ -126,8 +126,8 @@ void UAnimationSharingManager::RegisterActorWithSkeletonBP(class AActor* InActor
 
 	Params::UAnimationSharingManager_RegisterActorWithSkeletonBP_Params Parms{};
 
-	Parms.InActor = InActor;
-	Parms.SharingSkeleton = SharingSkeleton;
+	Parms.InActor = InInActor;
+	Parms.SharingSkeleton = InSharingSkeleton;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -146,7 +146,7 @@ void UAnimationSharingManager::RegisterActorWithSkeletonBP(class AActor* InActor
 // class UObject*                     WorldContextObject                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAnimationSharingManager*    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAnimationSharingManager* UAnimationSharingManager::GetAnimationSharingManager(class UObject* WorldContextObject)
+class UAnimationSharingManager* UAnimationSharingManager::GetAnimationSharingManager(class UObject* InWorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -155,7 +155,7 @@ class UAnimationSharingManager* UAnimationSharingManager::GetAnimationSharingMan
 
 	Params::UAnimationSharingManager_GetAnimationSharingManager_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
+	Parms.WorldContextObject = InWorldContextObject;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -177,7 +177,7 @@ class UAnimationSharingManager* UAnimationSharingManager::GetAnimationSharingMan
 // class UAnimationSharingSetup*      Setup                                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAnimationSharingManager::CreateAnimationSharingManager(class UObject* WorldContextObject, class UAnimationSharingSetup* Setup)
+bool UAnimationSharingManager::CreateAnimationSharingManager(class UObject* InWorldContextObject, class UAnimationSharingSetup* InSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -186,8 +186,8 @@ bool UAnimationSharingManager::CreateAnimationSharingManager(class UObject* Worl
 
 	Params::UAnimationSharingManager_CreateAnimationSharingManager_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Setup = Setup;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.Setup = InSetup;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

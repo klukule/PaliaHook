@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // class FString                      Match                                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bDidBecomeActive                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ITurnBasedMatchInterface::OnMatchReceivedTurn(const class FString& Match, bool bDidBecomeActive)
+void ITurnBasedMatchInterface::OnMatchReceivedTurn(const class FString& InMatch, bool InbDidBecomeActive)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,8 +30,8 @@ void ITurnBasedMatchInterface::OnMatchReceivedTurn(const class FString& Match, b
 
 	Params::ITurnBasedMatchInterface_OnMatchReceivedTurn_Params Parms{};
 
-	Parms.Match = Match;
-	Parms.bDidBecomeActive = bDidBecomeActive;
+	Parms.Match = InMatch;
+	Parms.bDidBecomeActive = InbDidBecomeActive;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -43,7 +43,7 @@ void ITurnBasedMatchInterface::OnMatchReceivedTurn(const class FString& Match, b
 // Parameters:
 // class FString                      Match                                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ITurnBasedMatchInterface::OnMatchEnded(const class FString& Match)
+void ITurnBasedMatchInterface::OnMatchEnded(const class FString& InMatch)
 {
 	static class UFunction* Func = nullptr;
 
@@ -52,7 +52,7 @@ void ITurnBasedMatchInterface::OnMatchEnded(const class FString& Match)
 
 	Params::ITurnBasedMatchInterface_OnMatchEnded_Params Parms{};
 
-	Parms.Match = Match;
+	Parms.Match = InMatch;
 
 	UObject::ProcessEvent(Func, &Parms);
 

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // bool                               bSkipFirstPlayer                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGameMapsSettings::SetSkipAssigningGamepadToPlayer1(bool bSkipFirstPlayer)
+void UGameMapsSettings::SetSkipAssigningGamepadToPlayer1(bool InbSkipFirstPlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UGameMapsSettings::SetSkipAssigningGamepadToPlayer1(bool bSkipFirstPlayer)
 
 	Params::UGameMapsSettings_SetSkipAssigningGamepadToPlayer1_Params Parms{};
 
-	Parms.bSkipFirstPlayer = bSkipFirstPlayer;
+	Parms.bSkipFirstPlayer = InbSkipFirstPlayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

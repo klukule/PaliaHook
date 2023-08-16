@@ -20,25 +20,21 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TraceUtilLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("TraceUtilLibrary");
 		return Clss;
 	}
 
-	void TraceMarkRegionStart(const class FString& Name);
-	void TraceMarkRegionEnd(const class FString& Name);
-	void TraceBookmark(const class FString& Name);
-	bool ToggleChannel(const class FString& ChannelName, bool Enabled);
+	void TraceMarkRegionStart(const class FString& InName);
+	void TraceMarkRegionEnd(const class FString& InName);
+	void TraceBookmark(const class FString& InName);
+	bool ToggleChannel(const class FString& InChannelName, bool InEnabled);
 	bool StopTracing();
-	bool StartTraceToFile(const class FString& Filename, TArray<class FString>& Channels);
-	bool StartTraceSendTo(const class FString& Target, TArray<class FString>& Channels);
+	bool StartTraceToFile(const class FString& InFilename, TArray<class FString>& InChannels);
+	bool StartTraceSendTo(const class FString& InTarget, TArray<class FString>& InChannels);
 	bool ResumeTracing();
 	bool PauseTracing();
 	bool IsTracing();
-	bool IsChannelEnabled(const class FString& ChannelName);
+	bool IsChannelEnabled(const class FString& InChannelName);
 	TArray<class FString> GetEnabledChannels();
 	TArray<class FString> GetAllChannels();
 };

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetTriggerParameter(class FName InName)
+void IAudioParameterControllerInterface::SetTriggerParameter(class FName InInName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void IAudioParameterControllerInterface::SetTriggerParameter(class FName InName)
 
 	Params::IAudioParameterControllerInterface_SetTriggerParameter_Params Parms{};
 
-	Parms.InName = InName;
+	Parms.InName = InInName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -48,7 +48,7 @@ void IAudioParameterControllerInterface::SetTriggerParameter(class FName InName)
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      InValue                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetStringParameter(class FName InName, const class FString& InValue)
+void IAudioParameterControllerInterface::SetStringParameter(class FName InInName, const class FString& InInValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -57,8 +57,8 @@ void IAudioParameterControllerInterface::SetStringParameter(class FName InName, 
 
 	Params::IAudioParameterControllerInterface_SetStringParameter_Params Parms{};
 
-	Parms.InName = InName;
-	Parms.InValue = InValue;
+	Parms.InName = InInName;
+	Parms.InValue = InInValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -77,7 +77,7 @@ void IAudioParameterControllerInterface::SetStringParameter(class FName InName, 
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>              InValue                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetStringArrayParameter(class FName InName, TArray<class FString>& InValue)
+void IAudioParameterControllerInterface::SetStringArrayParameter(class FName InInName, TArray<class FString>& InInValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,8 +86,8 @@ void IAudioParameterControllerInterface::SetStringArrayParameter(class FName InN
 
 	Params::IAudioParameterControllerInterface_SetStringArrayParameter_Params Parms{};
 
-	Parms.InName = InName;
-	Parms.InValue = InValue;
+	Parms.InName = InInName;
+	Parms.InValue = InInValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -105,7 +105,7 @@ void IAudioParameterControllerInterface::SetStringArrayParameter(class FName InN
 // Parameters:
 // TArray<struct FAudioParameter>     InParameters                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetParameters_Blueprint(TArray<struct FAudioParameter>& InParameters)
+void IAudioParameterControllerInterface::SetParameters_Blueprint(TArray<struct FAudioParameter>& InInParameters)
 {
 	static class UFunction* Func = nullptr;
 
@@ -114,7 +114,7 @@ void IAudioParameterControllerInterface::SetParameters_Blueprint(TArray<struct F
 
 	Params::IAudioParameterControllerInterface_SetParameters_Blueprint_Params Parms{};
 
-	Parms.InParameters = InParameters;
+	Parms.InParameters = InInParameters;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -133,7 +133,7 @@ void IAudioParameterControllerInterface::SetParameters_Blueprint(TArray<struct F
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                     InValue                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetObjectParameter(class FName InName, class UObject* InValue)
+void IAudioParameterControllerInterface::SetObjectParameter(class FName InInName, class UObject* InInValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -142,8 +142,8 @@ void IAudioParameterControllerInterface::SetObjectParameter(class FName InName, 
 
 	Params::IAudioParameterControllerInterface_SetObjectParameter_Params Parms{};
 
-	Parms.InName = InName;
-	Parms.InValue = InValue;
+	Parms.InName = InInName;
+	Parms.InValue = InInValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -162,7 +162,7 @@ void IAudioParameterControllerInterface::SetObjectParameter(class FName InName, 
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UObject*>             InValue                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetObjectArrayParameter(class FName InName, TArray<class UObject*>& InValue)
+void IAudioParameterControllerInterface::SetObjectArrayParameter(class FName InInName, TArray<class UObject*>& InInValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -171,8 +171,8 @@ void IAudioParameterControllerInterface::SetObjectArrayParameter(class FName InN
 
 	Params::IAudioParameterControllerInterface_SetObjectArrayParameter_Params Parms{};
 
-	Parms.InName = InName;
-	Parms.InValue = InValue;
+	Parms.InName = InInName;
+	Parms.InValue = InInValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -191,7 +191,7 @@ void IAudioParameterControllerInterface::SetObjectArrayParameter(class FName InN
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              InInt                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetIntParameter(class FName InName, int32 InInt)
+void IAudioParameterControllerInterface::SetIntParameter(class FName InInName, int32 InInInt)
 {
 	static class UFunction* Func = nullptr;
 
@@ -200,8 +200,8 @@ void IAudioParameterControllerInterface::SetIntParameter(class FName InName, int
 
 	Params::IAudioParameterControllerInterface_SetIntParameter_Params Parms{};
 
-	Parms.InName = InName;
-	Parms.InInt = InInt;
+	Parms.InName = InInName;
+	Parms.InInt = InInInt;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -220,7 +220,7 @@ void IAudioParameterControllerInterface::SetIntParameter(class FName InName, int
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<int32>                      InValue                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetIntArrayParameter(class FName InName, TArray<int32>& InValue)
+void IAudioParameterControllerInterface::SetIntArrayParameter(class FName InInName, TArray<int32>& InInValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -229,8 +229,8 @@ void IAudioParameterControllerInterface::SetIntArrayParameter(class FName InName
 
 	Params::IAudioParameterControllerInterface_SetIntArrayParameter_Params Parms{};
 
-	Parms.InName = InName;
-	Parms.InValue = InValue;
+	Parms.InName = InInName;
+	Parms.InValue = InInValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -249,7 +249,7 @@ void IAudioParameterControllerInterface::SetIntArrayParameter(class FName InName
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              InFloat                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetFloatParameter(class FName InName, float InFloat)
+void IAudioParameterControllerInterface::SetFloatParameter(class FName InInName, float InInFloat)
 {
 	static class UFunction* Func = nullptr;
 
@@ -258,8 +258,8 @@ void IAudioParameterControllerInterface::SetFloatParameter(class FName InName, f
 
 	Params::IAudioParameterControllerInterface_SetFloatParameter_Params Parms{};
 
-	Parms.InName = InName;
-	Parms.InFloat = InFloat;
+	Parms.InName = InInName;
+	Parms.InFloat = InInFloat;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -278,7 +278,7 @@ void IAudioParameterControllerInterface::SetFloatParameter(class FName InName, f
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<float>                      InValue                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetFloatArrayParameter(class FName InName, TArray<float>& InValue)
+void IAudioParameterControllerInterface::SetFloatArrayParameter(class FName InInName, TArray<float>& InInValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -287,8 +287,8 @@ void IAudioParameterControllerInterface::SetFloatArrayParameter(class FName InNa
 
 	Params::IAudioParameterControllerInterface_SetFloatArrayParameter_Params Parms{};
 
-	Parms.InName = InName;
-	Parms.InValue = InValue;
+	Parms.InName = InInName;
+	Parms.InValue = InInValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -307,7 +307,7 @@ void IAudioParameterControllerInterface::SetFloatArrayParameter(class FName InNa
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               InBool                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetBoolParameter(class FName InName, bool InBool)
+void IAudioParameterControllerInterface::SetBoolParameter(class FName InInName, bool InInBool)
 {
 	static class UFunction* Func = nullptr;
 
@@ -316,8 +316,8 @@ void IAudioParameterControllerInterface::SetBoolParameter(class FName InName, bo
 
 	Params::IAudioParameterControllerInterface_SetBoolParameter_Params Parms{};
 
-	Parms.InName = InName;
-	Parms.InBool = InBool;
+	Parms.InName = InInName;
+	Parms.InBool = InInBool;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -336,7 +336,7 @@ void IAudioParameterControllerInterface::SetBoolParameter(class FName InName, bo
 // class FName                        InName                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<bool>                       InValue                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void IAudioParameterControllerInterface::SetBoolArrayParameter(class FName InName, TArray<bool>& InValue)
+void IAudioParameterControllerInterface::SetBoolArrayParameter(class FName InInName, TArray<bool>& InInValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -345,8 +345,8 @@ void IAudioParameterControllerInterface::SetBoolArrayParameter(class FName InNam
 
 	Params::IAudioParameterControllerInterface_SetBoolArrayParameter_Params Parms{};
 
-	Parms.InName = InName;
-	Parms.InValue = InValue;
+	Parms.InName = InInName;
+	Parms.InValue = InInValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

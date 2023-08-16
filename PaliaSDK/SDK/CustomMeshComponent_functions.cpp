@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // TArray<struct FCustomMeshTriangle> Triangles                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCustomMeshComponent::SetCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& Triangles)
+bool UCustomMeshComponent::SetCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& InTriangles)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ bool UCustomMeshComponent::SetCustomMeshTriangles(TArray<struct FCustomMeshTrian
 
 	Params::UCustomMeshComponent_SetCustomMeshTriangles_Params Parms{};
 
-	Parms.Triangles = Triangles;
+	Parms.Triangles = InTriangles;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -75,7 +75,7 @@ void UCustomMeshComponent::ClearCustomMeshTriangles()
 // Parameters:
 // TArray<struct FCustomMeshTriangle> Triangles                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCustomMeshComponent::AddCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& Triangles)
+void UCustomMeshComponent::AddCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& InTriangles)
 {
 	static class UFunction* Func = nullptr;
 
@@ -84,7 +84,7 @@ void UCustomMeshComponent::AddCustomMeshTriangles(TArray<struct FCustomMeshTrian
 
 	Params::UCustomMeshComponent_AddCustomMeshTriangles_Params Parms{};
 
-	Parms.Triangles = Triangles;
+	Parms.Triangles = InTriangles;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

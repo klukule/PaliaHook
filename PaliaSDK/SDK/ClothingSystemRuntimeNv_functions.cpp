@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // float                              InStiffness                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UClothingSimulationInteractorNv::SetAnimDriveDamperStiffness(float InStiffness)
+void UClothingSimulationInteractorNv::SetAnimDriveDamperStiffness(float InInStiffness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UClothingSimulationInteractorNv::SetAnimDriveDamperStiffness(float InStiffn
 
 	Params::UClothingSimulationInteractorNv_SetAnimDriveDamperStiffness_Params Parms{};
 
-	Parms.InStiffness = InStiffness;
+	Parms.InStiffness = InInStiffness;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

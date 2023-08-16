@@ -21,11 +21,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("S6ReleaseVersioningSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("S6ReleaseVersioningSettings");
 		return Clss;
 	}
 
@@ -40,28 +36,24 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("S6ReleaseVersioningLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("S6ReleaseVersioningLibrary");
 		return Clss;
 	}
 
-	bool TryParse(const class FString& VersionString, struct FS6ReleaseVersionSpecification* OutReleaseVersion);
-	class FString ToString(struct FS6ReleaseVersionSpecification& Value);
-	bool NotEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
-	struct FS6ReleaseVersionSpecification Min(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
-	struct FS6ReleaseVersionSpecification Max(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
-	bool LessEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
-	bool Less(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
-	bool IsValid(struct FS6ReleaseVersionSpecification& Value);
-	bool GreaterEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
-	bool Greater(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
+	bool TryParse(const class FString& InVersionString, struct FS6ReleaseVersionSpecification* InOutReleaseVersion);
+	class FString ToString(struct FS6ReleaseVersionSpecification& InValue);
+	bool NotEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
+	struct FS6ReleaseVersionSpecification Min(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
+	struct FS6ReleaseVersionSpecification Max(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
+	bool LessEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
+	bool Less(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
+	bool IsValid(struct FS6ReleaseVersionSpecification& InValue);
+	bool GreaterEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
+	bool Greater(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
 	struct FS6ReleaseVersionSpecification GetUnspecifiedReleaseVersionSpec();
 	struct FS6ReleaseVersionSpecification GetFutureReleaseVersionSpec();
 	struct FS6ReleaseVersionSpecification GetCurrentReleaseVersionSpec();
-	bool EqualEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
+	bool EqualEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
 };
 
 }

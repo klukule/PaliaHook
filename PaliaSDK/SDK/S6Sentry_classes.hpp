@@ -22,11 +22,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("S6SentryConfig");
-
+		static class UClass* Clss = UObject::FindClassFast("S6SentryConfig");
 		return Clss;
 	}
 

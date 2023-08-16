@@ -20,17 +20,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioLinkBlueprintInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioLinkBlueprintInterface");
 		return Clss;
 	}
 
 	void StopLink();
-	void SetLinkSound(class USoundBase* NewSound);
-	void PlayLink(float StartTime);
+	void SetLinkSound(class USoundBase* InNewSound);
+	void PlayLink(float InStartTime);
 	bool IsLinkPlaying();
 };
 

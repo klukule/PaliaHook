@@ -18,7 +18,7 @@ class UClothConfigNv : public UClothConfigCommon
 {
 public:
 	enum class EClothingWindMethodNv             ClothingWindMethod;                                // 0x28(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2631[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_27B9[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FClothConstraintSetupNv               VerticalConstraint;                                // 0x2C(0x10)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetupNv               HorizontalConstraint;                              // 0x3C(0x10)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetupNv               BendConstraint;                                    // 0x4C(0x10)(Edit, NoDestructor, NativeAccessSpecifierPublic)
@@ -30,7 +30,7 @@ public:
 	float                                        Friction;                                          // 0x90(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WindDragCoefficient;                               // 0x94(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WindLiftCoefficient;                               // 0x98(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2641[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_27BC[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               LinearDrag;                                        // 0xA0(0x18)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               AngularDrag;                                       // 0xB8(0x18)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               LinearInertiaScale;                                // 0xD0(0x18)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -39,30 +39,26 @@ public:
 	float                                        SolverFrequency;                                   // 0x118(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        StiffnessFrequency;                                // 0x11C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        GravityScale;                                      // 0x120(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2649[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_27BE[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               GravityOverride;                                   // 0x128(0x18)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUseGravityOverride;                               // 0x140(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_264B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_27BF[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        TetherStiffness;                                   // 0x144(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        TetherLimit;                                       // 0x148(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CollisionThickness;                                // 0x14C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AnimDriveSpringStiffness;                          // 0x150(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AnimDriveDamperStiffness;                          // 0x154(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EClothingWindMethod_Legacy        WindMethod;                                        // 0x158(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2651[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_27C1[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FClothConstraintSetup_Legacy          VerticalConstraintConfig;                          // 0x15C(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetup_Legacy          HorizontalConstraintConfig;                        // 0x16C(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetup_Legacy          BendConstraintConfig;                              // 0x17C(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetup_Legacy          ShearConstraintConfig;                             // 0x18C(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2653[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27C2[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothConfigNv");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothConfigNv");
 		return Clss;
 	}
 
@@ -76,11 +72,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothingSimulationFactoryNv");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothingSimulationFactoryNv");
 		return Clss;
 	}
 
@@ -94,15 +86,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothingSimulationInteractorNv");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothingSimulationInteractorNv");
 		return Clss;
 	}
 
-	void SetAnimDriveDamperStiffness(float InStiffness);
+	void SetAnimDriveDamperStiffness(float InInStiffness);
 };
 
 // 0x40 (0x120 - 0xE0)
@@ -117,11 +105,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothPhysicalMeshDataNv_Legacy");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothPhysicalMeshDataNv_Legacy");
 		return Clss;
 	}
 

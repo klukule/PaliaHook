@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // struct FCameraLensSettings         NewLensSettings                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UCineCameraComponent::SetLensSettings(struct FCameraLensSettings& NewLensSettings)
+void UCineCameraComponent::SetLensSettings(struct FCameraLensSettings& InNewLensSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UCineCameraComponent::SetLensSettings(struct FCameraLensSettings& NewLensSe
 
 	Params::UCineCameraComponent_SetLensSettings_Params Parms{};
 
-	Parms.NewLensSettings = NewLensSettings;
+	Parms.NewLensSettings = InNewLensSettings;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -47,7 +47,7 @@ void UCineCameraComponent::SetLensSettings(struct FCameraLensSettings& NewLensSe
 // Parameters:
 // class FString                      InPresetName                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCineCameraComponent::SetLensPresetByName(const class FString& InPresetName)
+void UCineCameraComponent::SetLensPresetByName(const class FString& InInPresetName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void UCineCameraComponent::SetLensPresetByName(const class FString& InPresetName
 
 	Params::UCineCameraComponent_SetLensPresetByName_Params Parms{};
 
-	Parms.InPresetName = InPresetName;
+	Parms.InPresetName = InInPresetName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -74,7 +74,7 @@ void UCineCameraComponent::SetLensPresetByName(const class FString& InPresetName
 // Parameters:
 // struct FCameraFocusSettings        NewFocusSettings                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCineCameraComponent::SetFocusSettings(struct FCameraFocusSettings& NewFocusSettings)
+void UCineCameraComponent::SetFocusSettings(struct FCameraFocusSettings& InNewFocusSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,7 +83,7 @@ void UCineCameraComponent::SetFocusSettings(struct FCameraFocusSettings& NewFocu
 
 	Params::UCineCameraComponent_SetFocusSettings_Params Parms{};
 
-	Parms.NewFocusSettings = NewFocusSettings;
+	Parms.NewFocusSettings = InNewFocusSettings;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -101,7 +101,7 @@ void UCineCameraComponent::SetFocusSettings(struct FCameraFocusSettings& NewFocu
 // Parameters:
 // class FString                      InPresetName                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCineCameraComponent::SetFilmbackPresetByName(const class FString& InPresetName)
+void UCineCameraComponent::SetFilmbackPresetByName(const class FString& InInPresetName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -110,7 +110,7 @@ void UCineCameraComponent::SetFilmbackPresetByName(const class FString& InPreset
 
 	Params::UCineCameraComponent_SetFilmbackPresetByName_Params Parms{};
 
-	Parms.InPresetName = InPresetName;
+	Parms.InPresetName = InInPresetName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -128,7 +128,7 @@ void UCineCameraComponent::SetFilmbackPresetByName(const class FString& InPreset
 // Parameters:
 // struct FCameraFilmbackSettings     NewFilmback                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UCineCameraComponent::SetFilmback(struct FCameraFilmbackSettings& NewFilmback)
+void UCineCameraComponent::SetFilmback(struct FCameraFilmbackSettings& InNewFilmback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -137,7 +137,7 @@ void UCineCameraComponent::SetFilmback(struct FCameraFilmbackSettings& NewFilmba
 
 	Params::UCineCameraComponent_SetFilmback_Params Parms{};
 
-	Parms.NewFilmback = NewFilmback;
+	Parms.NewFilmback = InNewFilmback;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -155,7 +155,7 @@ void UCineCameraComponent::SetFilmback(struct FCameraFilmbackSettings& NewFilmba
 // Parameters:
 // float                              InFocalLength                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCineCameraComponent::SetCurrentFocalLength(float InFocalLength)
+void UCineCameraComponent::SetCurrentFocalLength(float InInFocalLength)
 {
 	static class UFunction* Func = nullptr;
 
@@ -164,7 +164,7 @@ void UCineCameraComponent::SetCurrentFocalLength(float InFocalLength)
 
 	Params::UCineCameraComponent_SetCurrentFocalLength_Params Parms{};
 
-	Parms.InFocalLength = InFocalLength;
+	Parms.InFocalLength = InInFocalLength;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -182,7 +182,7 @@ void UCineCameraComponent::SetCurrentFocalLength(float InFocalLength)
 // Parameters:
 // float                              NewCurrentAperture                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCineCameraComponent::SetCurrentAperture(float NewCurrentAperture)
+void UCineCameraComponent::SetCurrentAperture(float InNewCurrentAperture)
 {
 	static class UFunction* Func = nullptr;
 
@@ -191,7 +191,7 @@ void UCineCameraComponent::SetCurrentAperture(float NewCurrentAperture)
 
 	Params::UCineCameraComponent_SetCurrentAperture_Params Parms{};
 
-	Parms.NewCurrentAperture = NewCurrentAperture;
+	Parms.NewCurrentAperture = InNewCurrentAperture;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -209,7 +209,7 @@ void UCineCameraComponent::SetCurrentAperture(float NewCurrentAperture)
 // Parameters:
 // struct FPlateCropSettings          NewCropSettings                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UCineCameraComponent::SetCropSettings(struct FPlateCropSettings& NewCropSettings)
+void UCineCameraComponent::SetCropSettings(struct FPlateCropSettings& InNewCropSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -218,7 +218,7 @@ void UCineCameraComponent::SetCropSettings(struct FPlateCropSettings& NewCropSet
 
 	Params::UCineCameraComponent_SetCropSettings_Params Parms{};
 
-	Parms.NewCropSettings = NewCropSettings;
+	Parms.NewCropSettings = InNewCropSettings;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -236,7 +236,7 @@ void UCineCameraComponent::SetCropSettings(struct FPlateCropSettings& NewCropSet
 // Parameters:
 // class FString                      InPresetName                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCineCameraComponent::SetCropPresetByName(const class FString& InPresetName)
+void UCineCameraComponent::SetCropPresetByName(const class FString& InInPresetName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -245,7 +245,7 @@ void UCineCameraComponent::SetCropPresetByName(const class FString& InPresetName
 
 	Params::UCineCameraComponent_SetCropPresetByName_Params Parms{};
 
-	Parms.InPresetName = InPresetName;
+	Parms.InPresetName = InInPresetName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -487,7 +487,7 @@ class FString UCineCameraComponent::GetCropPresetName()
 // Parameters:
 // TArray<struct FNamedLensPreset>    InLensPresets                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCineCameraSettings::SetLensPresets(TArray<struct FNamedLensPreset>& InLensPresets)
+void UCineCameraSettings::SetLensPresets(TArray<struct FNamedLensPreset>& InInLensPresets)
 {
 	static class UFunction* Func = nullptr;
 
@@ -496,7 +496,7 @@ void UCineCameraSettings::SetLensPresets(TArray<struct FNamedLensPreset>& InLens
 
 	Params::UCineCameraSettings_SetLensPresets_Params Parms{};
 
-	Parms.InLensPresets = InLensPresets;
+	Parms.InLensPresets = InInLensPresets;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -514,7 +514,7 @@ void UCineCameraSettings::SetLensPresets(TArray<struct FNamedLensPreset>& InLens
 // Parameters:
 // TArray<struct FNamedFilmbackPreset>InFilmbackPresets                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCineCameraSettings::SetFilmbackPresets(TArray<struct FNamedFilmbackPreset>& InFilmbackPresets)
+void UCineCameraSettings::SetFilmbackPresets(TArray<struct FNamedFilmbackPreset>& InInFilmbackPresets)
 {
 	static class UFunction* Func = nullptr;
 
@@ -523,7 +523,7 @@ void UCineCameraSettings::SetFilmbackPresets(TArray<struct FNamedFilmbackPreset>
 
 	Params::UCineCameraSettings_SetFilmbackPresets_Params Parms{};
 
-	Parms.InFilmbackPresets = InFilmbackPresets;
+	Parms.InFilmbackPresets = InInFilmbackPresets;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -541,7 +541,7 @@ void UCineCameraSettings::SetFilmbackPresets(TArray<struct FNamedFilmbackPreset>
 // Parameters:
 // class FString                      InDefaultLensPresetName                                          (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCineCameraSettings::SetDefaultLensPresetName(const class FString& InDefaultLensPresetName)
+void UCineCameraSettings::SetDefaultLensPresetName(const class FString& InInDefaultLensPresetName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -550,7 +550,7 @@ void UCineCameraSettings::SetDefaultLensPresetName(const class FString& InDefaul
 
 	Params::UCineCameraSettings_SetDefaultLensPresetName_Params Parms{};
 
-	Parms.InDefaultLensPresetName = InDefaultLensPresetName;
+	Parms.InDefaultLensPresetName = InInDefaultLensPresetName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -568,7 +568,7 @@ void UCineCameraSettings::SetDefaultLensPresetName(const class FString& InDefaul
 // Parameters:
 // float                              InDefaultLensFStop                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCineCameraSettings::SetDefaultLensFStop(float InDefaultLensFStop)
+void UCineCameraSettings::SetDefaultLensFStop(float InInDefaultLensFStop)
 {
 	static class UFunction* Func = nullptr;
 
@@ -577,7 +577,7 @@ void UCineCameraSettings::SetDefaultLensFStop(float InDefaultLensFStop)
 
 	Params::UCineCameraSettings_SetDefaultLensFStop_Params Parms{};
 
-	Parms.InDefaultLensFStop = InDefaultLensFStop;
+	Parms.InDefaultLensFStop = InInDefaultLensFStop;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -595,7 +595,7 @@ void UCineCameraSettings::SetDefaultLensFStop(float InDefaultLensFStop)
 // Parameters:
 // float                              InDefaultLensFocalLength                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCineCameraSettings::SetDefaultLensFocalLength(float InDefaultLensFocalLength)
+void UCineCameraSettings::SetDefaultLensFocalLength(float InInDefaultLensFocalLength)
 {
 	static class UFunction* Func = nullptr;
 
@@ -604,7 +604,7 @@ void UCineCameraSettings::SetDefaultLensFocalLength(float InDefaultLensFocalLeng
 
 	Params::UCineCameraSettings_SetDefaultLensFocalLength_Params Parms{};
 
-	Parms.InDefaultLensFocalLength = InDefaultLensFocalLength;
+	Parms.InDefaultLensFocalLength = InInDefaultLensFocalLength;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -622,7 +622,7 @@ void UCineCameraSettings::SetDefaultLensFocalLength(float InDefaultLensFocalLeng
 // Parameters:
 // class FString                      InDefaultFilmbackPreset                                          (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCineCameraSettings::SetDefaultFilmbackPreset(const class FString& InDefaultFilmbackPreset)
+void UCineCameraSettings::SetDefaultFilmbackPreset(const class FString& InInDefaultFilmbackPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -631,7 +631,7 @@ void UCineCameraSettings::SetDefaultFilmbackPreset(const class FString& InDefaul
 
 	Params::UCineCameraSettings_SetDefaultFilmbackPreset_Params Parms{};
 
-	Parms.InDefaultFilmbackPreset = InDefaultFilmbackPreset;
+	Parms.InDefaultFilmbackPreset = InInDefaultFilmbackPreset;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -649,7 +649,7 @@ void UCineCameraSettings::SetDefaultFilmbackPreset(const class FString& InDefaul
 // Parameters:
 // class FString                      InDefaultCropPresetName                                          (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCineCameraSettings::SetDefaultCropPresetName(const class FString& InDefaultCropPresetName)
+void UCineCameraSettings::SetDefaultCropPresetName(const class FString& InInDefaultCropPresetName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -658,7 +658,7 @@ void UCineCameraSettings::SetDefaultCropPresetName(const class FString& InDefaul
 
 	Params::UCineCameraSettings_SetDefaultCropPresetName_Params Parms{};
 
-	Parms.InDefaultCropPresetName = InDefaultCropPresetName;
+	Parms.InDefaultCropPresetName = InInDefaultCropPresetName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -676,7 +676,7 @@ void UCineCameraSettings::SetDefaultCropPresetName(const class FString& InDefaul
 // Parameters:
 // TArray<struct FNamedPlateCropPreset>InCropPresets                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UCineCameraSettings::SetCropPresets(TArray<struct FNamedPlateCropPreset>& InCropPresets)
+void UCineCameraSettings::SetCropPresets(TArray<struct FNamedPlateCropPreset>& InInCropPresets)
 {
 	static class UFunction* Func = nullptr;
 
@@ -685,7 +685,7 @@ void UCineCameraSettings::SetCropPresets(TArray<struct FNamedPlateCropPreset>& I
 
 	Params::UCineCameraSettings_SetCropPresets_Params Parms{};
 
-	Parms.InCropPresets = InCropPresets;
+	Parms.InCropPresets = InInCropPresets;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -733,7 +733,7 @@ TArray<class FString> UCineCameraSettings::GetLensPresetNames()
 // struct FCameraLensSettings         LensSettings                                                     (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCineCameraSettings::GetLensPresetByName(const class FString& PresetName, struct FCameraLensSettings* LensSettings)
+bool UCineCameraSettings::GetLensPresetByName(const class FString& InPresetName, struct FCameraLensSettings* InLensSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -742,7 +742,7 @@ bool UCineCameraSettings::GetLensPresetByName(const class FString& PresetName, s
 
 	Params::UCineCameraSettings_GetLensPresetByName_Params Parms{};
 
-	Parms.PresetName = PresetName;
+	Parms.PresetName = InPresetName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -752,8 +752,8 @@ bool UCineCameraSettings::GetLensPresetByName(const class FString& PresetName, s
 
 	Func->FunctionFlags = Flags;
 
-	if (LensSettings != nullptr)
-		*LensSettings = Parms.LensSettings;
+	if (InLensSettings != nullptr)
+		*InLensSettings = Parms.LensSettings;
 
 	return Parms.ReturnValue;
 
@@ -795,7 +795,7 @@ TArray<class FString> UCineCameraSettings::GetFilmbackPresetNames()
 // struct FCameraFilmbackSettings     FilmbackSettings                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCineCameraSettings::GetFilmbackPresetByName(const class FString& PresetName, struct FCameraFilmbackSettings* FilmbackSettings)
+bool UCineCameraSettings::GetFilmbackPresetByName(const class FString& InPresetName, struct FCameraFilmbackSettings* InFilmbackSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -804,7 +804,7 @@ bool UCineCameraSettings::GetFilmbackPresetByName(const class FString& PresetNam
 
 	Params::UCineCameraSettings_GetFilmbackPresetByName_Params Parms{};
 
-	Parms.PresetName = PresetName;
+	Parms.PresetName = InPresetName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -814,8 +814,8 @@ bool UCineCameraSettings::GetFilmbackPresetByName(const class FString& PresetNam
 
 	Func->FunctionFlags = Flags;
 
-	if (FilmbackSettings != nullptr)
-		*FilmbackSettings = Parms.FilmbackSettings;
+	if (InFilmbackSettings != nullptr)
+		*InFilmbackSettings = Parms.FilmbackSettings;
 
 	return Parms.ReturnValue;
 
@@ -857,7 +857,7 @@ TArray<class FString> UCineCameraSettings::GetCropPresetNames()
 // struct FPlateCropSettings          CropSettings                                                     (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCineCameraSettings::GetCropPresetByName(const class FString& PresetName, struct FPlateCropSettings* CropSettings)
+bool UCineCameraSettings::GetCropPresetByName(const class FString& InPresetName, struct FPlateCropSettings* InCropSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -866,7 +866,7 @@ bool UCineCameraSettings::GetCropPresetByName(const class FString& PresetName, s
 
 	Params::UCineCameraSettings_GetCropPresetByName_Params Parms{};
 
-	Parms.PresetName = PresetName;
+	Parms.PresetName = InPresetName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -876,8 +876,8 @@ bool UCineCameraSettings::GetCropPresetByName(const class FString& PresetName, s
 
 	Func->FunctionFlags = Flags;
 
-	if (CropSettings != nullptr)
-		*CropSettings = Parms.CropSettings;
+	if (InCropSettings != nullptr)
+		*InCropSettings = Parms.CropSettings;
 
 	return Parms.ReturnValue;
 

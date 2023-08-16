@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -39,7 +39,7 @@ void IBPI_MatchmakingQueue_C::ResetQueue()
 // Parameters:
 // int32                              Number                                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_MatchmakingQueue_C::UpdateNumber(int32 Number)
+void IBPI_MatchmakingQueue_C::UpdateNumber(int32 InNumber)
 {
 	static class UFunction* Func = nullptr;
 
@@ -48,7 +48,7 @@ void IBPI_MatchmakingQueue_C::UpdateNumber(int32 Number)
 
 	Params::IBPI_MatchmakingQueue_C_UpdateNumber_Params Parms{};
 
-	Parms.Number = Number;
+	Parms.Number = InNumber;
 
 	UObject::ProcessEvent(Func, &Parms);
 

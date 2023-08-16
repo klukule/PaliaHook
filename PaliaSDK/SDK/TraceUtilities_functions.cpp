@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class FString                      Name                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTraceUtilLibrary::TraceMarkRegionStart(const class FString& Name)
+void UTraceUtilLibrary::TraceMarkRegionStart(const class FString& InName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UTraceUtilLibrary::TraceMarkRegionStart(const class FString& Name)
 
 	Params::UTraceUtilLibrary_TraceMarkRegionStart_Params Parms{};
 
-	Parms.Name = Name;
+	Parms.Name = InName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -47,7 +47,7 @@ void UTraceUtilLibrary::TraceMarkRegionStart(const class FString& Name)
 // Parameters:
 // class FString                      Name                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTraceUtilLibrary::TraceMarkRegionEnd(const class FString& Name)
+void UTraceUtilLibrary::TraceMarkRegionEnd(const class FString& InName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void UTraceUtilLibrary::TraceMarkRegionEnd(const class FString& Name)
 
 	Params::UTraceUtilLibrary_TraceMarkRegionEnd_Params Parms{};
 
-	Parms.Name = Name;
+	Parms.Name = InName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -74,7 +74,7 @@ void UTraceUtilLibrary::TraceMarkRegionEnd(const class FString& Name)
 // Parameters:
 // class FString                      Name                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTraceUtilLibrary::TraceBookmark(const class FString& Name)
+void UTraceUtilLibrary::TraceBookmark(const class FString& InName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,7 +83,7 @@ void UTraceUtilLibrary::TraceBookmark(const class FString& Name)
 
 	Params::UTraceUtilLibrary_TraceBookmark_Params Parms{};
 
-	Parms.Name = Name;
+	Parms.Name = InName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -103,7 +103,7 @@ void UTraceUtilLibrary::TraceBookmark(const class FString& Name)
 // bool                               Enabled                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTraceUtilLibrary::ToggleChannel(const class FString& ChannelName, bool Enabled)
+bool UTraceUtilLibrary::ToggleChannel(const class FString& InChannelName, bool InEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -112,8 +112,8 @@ bool UTraceUtilLibrary::ToggleChannel(const class FString& ChannelName, bool Ena
 
 	Params::UTraceUtilLibrary_ToggleChannel_Params Parms{};
 
-	Parms.ChannelName = ChannelName;
-	Parms.Enabled = Enabled;
+	Parms.ChannelName = InChannelName;
+	Parms.Enabled = InEnabled;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -163,7 +163,7 @@ bool UTraceUtilLibrary::StopTracing()
 // TArray<class FString>              Channels                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTraceUtilLibrary::StartTraceToFile(const class FString& Filename, TArray<class FString>& Channels)
+bool UTraceUtilLibrary::StartTraceToFile(const class FString& InFilename, TArray<class FString>& InChannels)
 {
 	static class UFunction* Func = nullptr;
 
@@ -172,8 +172,8 @@ bool UTraceUtilLibrary::StartTraceToFile(const class FString& Filename, TArray<c
 
 	Params::UTraceUtilLibrary_StartTraceToFile_Params Parms{};
 
-	Parms.Filename = Filename;
-	Parms.Channels = Channels;
+	Parms.Filename = InFilename;
+	Parms.Channels = InChannels;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -195,7 +195,7 @@ bool UTraceUtilLibrary::StartTraceToFile(const class FString& Filename, TArray<c
 // TArray<class FString>              Channels                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTraceUtilLibrary::StartTraceSendTo(const class FString& Target, TArray<class FString>& Channels)
+bool UTraceUtilLibrary::StartTraceSendTo(const class FString& InTarget, TArray<class FString>& InChannels)
 {
 	static class UFunction* Func = nullptr;
 
@@ -204,8 +204,8 @@ bool UTraceUtilLibrary::StartTraceSendTo(const class FString& Target, TArray<cla
 
 	Params::UTraceUtilLibrary_StartTraceSendTo_Params Parms{};
 
-	Parms.Target = Target;
-	Parms.Channels = Channels;
+	Parms.Target = InTarget;
+	Parms.Channels = InChannels;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -310,7 +310,7 @@ bool UTraceUtilLibrary::IsTracing()
 // class FString                      ChannelName                                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTraceUtilLibrary::IsChannelEnabled(const class FString& ChannelName)
+bool UTraceUtilLibrary::IsChannelEnabled(const class FString& InChannelName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -319,7 +319,7 @@ bool UTraceUtilLibrary::IsChannelEnabled(const class FString& ChannelName)
 
 	Params::UTraceUtilLibrary_IsChannelEnabled_Params Parms{};
 
-	Parms.ChannelName = ChannelName;
+	Parms.ChannelName = InChannelName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

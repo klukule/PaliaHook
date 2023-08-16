@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // struct FSoftObjectPath             AssetPath                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class FName> UAssetTagsSubsystem::K2_GetCollectionsContainingAsset(struct FSoftObjectPath& AssetPath)
+TArray<class FName> UAssetTagsSubsystem::K2_GetCollectionsContainingAsset(struct FSoftObjectPath& InAssetPath)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ TArray<class FName> UAssetTagsSubsystem::K2_GetCollectionsContainingAsset(struct
 
 	Params::UAssetTagsSubsystem_K2_GetCollectionsContainingAsset_Params Parms{};
 
-	Parms.AssetPath = AssetPath;
+	Parms.AssetPath = InAssetPath;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -51,7 +51,7 @@ TArray<class FName> UAssetTagsSubsystem::K2_GetCollectionsContainingAsset(struct
 // class UObject*                     AssetPtr                                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAssetPtr(class UObject* AssetPtr)
+TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAssetPtr(class UObject* InAssetPtr)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,7 +60,7 @@ TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAssetPtr(class 
 
 	Params::UAssetTagsSubsystem_GetCollectionsContainingAssetPtr_Params Parms{};
 
-	Parms.AssetPtr = AssetPtr;
+	Parms.AssetPtr = InAssetPtr;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -81,7 +81,7 @@ TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAssetPtr(class 
 // struct FAssetData                  AssetData                                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAssetData(struct FAssetData& AssetData)
+TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAssetData(struct FAssetData& InAssetData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,7 +90,7 @@ TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAssetData(struc
 
 	Params::UAssetTagsSubsystem_GetCollectionsContainingAssetData_Params Parms{};
 
-	Parms.AssetData = AssetData;
+	Parms.AssetData = InAssetData;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -111,7 +111,7 @@ TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAssetData(struc
 // class FName                        AssetPathName                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAsset(class FName AssetPathName)
+TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAsset(class FName InAssetPathName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -120,7 +120,7 @@ TArray<class FName> UAssetTagsSubsystem::GetCollectionsContainingAsset(class FNa
 
 	Params::UAssetTagsSubsystem_GetCollectionsContainingAsset_Params Parms{};
 
-	Parms.AssetPathName = AssetPathName;
+	Parms.AssetPathName = InAssetPathName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -169,7 +169,7 @@ TArray<class FName> UAssetTagsSubsystem::GetCollections()
 // class FName                        Name                                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FAssetData>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FAssetData> UAssetTagsSubsystem::GetAssetsInCollection(class FName Name)
+TArray<struct FAssetData> UAssetTagsSubsystem::GetAssetsInCollection(class FName InName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -178,7 +178,7 @@ TArray<struct FAssetData> UAssetTagsSubsystem::GetAssetsInCollection(class FName
 
 	Params::UAssetTagsSubsystem_GetAssetsInCollection_Params Parms{};
 
-	Parms.Name = Name;
+	Parms.Name = InName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -199,7 +199,7 @@ TArray<struct FAssetData> UAssetTagsSubsystem::GetAssetsInCollection(class FName
 // class FName                        Name                                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAssetTagsSubsystem::CollectionExists(class FName Name)
+bool UAssetTagsSubsystem::CollectionExists(class FName InName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -208,7 +208,7 @@ bool UAssetTagsSubsystem::CollectionExists(class FName Name)
 
 	Params::UAssetTagsSubsystem_CollectionExists_Params Parms{};
 
-	Parms.Name = Name;
+	Parms.Name = InName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

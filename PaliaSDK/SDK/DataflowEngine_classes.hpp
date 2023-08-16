@@ -17,15 +17,11 @@ namespace SDK
 class UDataflowEdNode : public UEdGraphNode
 {
 public:
-	uint8                                        Pad_248C[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_254A[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DataflowEdNode");
-
+		static class UClass* Clss = UObject::FindClassFast("DataflowEdNode");
 		return Clss;
 	}
 
@@ -36,18 +32,14 @@ public:
 class UDataflow : public UEdGraph
 {
 public:
-	uint8                                        Pad_248F[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_254C[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	bool                                         bActive;                                           // 0x70(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2490[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_254D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UObject*>                       Targets;                                           // 0x78(0x10)(Edit, ZeroConstructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Dataflow");
-
+		static class UClass* Clss = UObject::FindClassFast("Dataflow");
 		return Clss;
 	}
 

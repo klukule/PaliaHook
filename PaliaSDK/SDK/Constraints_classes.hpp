@@ -18,15 +18,11 @@ class UTransformableHandle : public UObject
 {
 public:
 	struct FMovieSceneObjectBindingID            ConstraintBindingID;                               // 0x28(0x18)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_755[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12D7[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TransformableHandle");
-
+		static class UClass* Clss = UObject::FindClassFast("TransformableHandle");
 		return Clss;
 	}
 
@@ -41,11 +37,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ConstraintsActor");
-
+		static class UClass* Clss = UObject::FindClassFast("ConstraintsActor");
 		return Clss;
 	}
 
@@ -58,15 +50,11 @@ class UTickableConstraint : public UObject
 public:
 	struct FConstraintTickFunction               ConstraintTick;                                    // 0x28(0x40)(NativeAccessSpecifierPublic)
 	bool                                         Active;                                            // 0x68(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_75C[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12D8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TickableConstraint");
-
+		static class UClass* Clss = UObject::FindClassFast("TickableConstraint");
 		return Clss;
 	}
 
@@ -79,16 +67,12 @@ class UConstraintsManager : public UObject
 public:
 	FMulticastSparseDelegateProperty_            OnConstraintAdded_BP;                              // 0x28(0x1)(InstancedReference, BlueprintAssignable, NoDestructor, NativeAccessSpecifierPublic)
 	FMulticastSparseDelegateProperty_            OnConstraintRemoved_BP;                            // 0x29(0x1)(InstancedReference, BlueprintAssignable, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_75F[0xE];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_12DA[0xE];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UTickableConstraint*>           Constraints;                                       // 0x38(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ConstraintsManager");
-
+		static class UClass* Clss = UObject::FindClassFast("ConstraintsManager");
 		return Clss;
 	}
 
@@ -102,19 +86,15 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ConstraintsScriptingLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("ConstraintsScriptingLibrary");
 		return Clss;
 	}
 
-	bool RemoveConstraint(class UWorld* InWorld, int32 InIndex);
-	class UConstraintsManager* GetManager(class UWorld* InWorld);
-	class UTransformableComponentHandle* CreateTransformableComponentHandle(class UWorld* InWorld, class USceneComponent* InSceneComponent, class FName& InSocketName);
-	class UTickableTransformConstraint* CreateFromType(class UWorld* InWorld, enum class ETransformConstraintType InType);
-	bool AddConstraint(class UWorld* InWorld, class UTransformableHandle* InParentHandle, class UTransformableHandle* InChildHandle, class UTickableTransformConstraint* InConstraint, bool bMaintainOffset);
+	bool RemoveConstraint(class UWorld* InInWorld, int32 InInIndex);
+	class UConstraintsManager* GetManager(class UWorld* InInWorld);
+	class UTransformableComponentHandle* CreateTransformableComponentHandle(class UWorld* InInWorld, class USceneComponent* InInSceneComponent, class FName& InInSocketName);
+	class UTickableTransformConstraint* CreateFromType(class UWorld* InInWorld, enum class ETransformConstraintType InInType);
+	bool AddConstraint(class UWorld* InInWorld, class UTransformableHandle* InInParentHandle, class UTransformableHandle* InInChildHandle, class UTickableTransformConstraint* InInConstraint, bool InbMaintainOffset);
 };
 
 // 0x10 (0x68 - 0x58)
@@ -127,11 +107,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TransformableComponentHandle");
-
+		static class UClass* Clss = UObject::FindClassFast("TransformableComponentHandle");
 		return Clss;
 	}
 
@@ -145,19 +121,15 @@ public:
 	class UTransformableHandle*                  ParentTRSHandle;                                   // 0x70(0x8)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTransformableHandle*                  ChildTRSHandle;                                    // 0x78(0x8)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bMaintainOffset;                                   // 0x80(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_79D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_12F2[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Weight;                                            // 0x84(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDynamicOffset;                                    // 0x88(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETransformConstraintType          Type;                                              // 0x89(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_79E[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12F4[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TickableTransformConstraint");
-
+		static class UClass* Clss = UObject::FindClassFast("TickableTransformConstraint");
 		return Clss;
 	}
 
@@ -168,16 +140,12 @@ public:
 class UTickableTranslationConstraint : public UTickableTransformConstraint
 {
 public:
-	uint8                                        Pad_7A0[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_12F7[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               OffsetTranslation;                                 // 0x98(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TickableTranslationConstraint");
-
+		static class UClass* Clss = UObject::FindClassFast("TickableTranslationConstraint");
 		return Clss;
 	}
 
@@ -188,16 +156,12 @@ public:
 class UTickableRotationConstraint : public UTickableTransformConstraint
 {
 public:
-	uint8                                        Pad_7A4[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_12F9[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuat                                 OffsetRotation;                                    // 0xA0(0x20)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TickableRotationConstraint");
-
+		static class UClass* Clss = UObject::FindClassFast("TickableRotationConstraint");
 		return Clss;
 	}
 
@@ -208,16 +172,12 @@ public:
 class UTickableScaleConstraint : public UTickableTransformConstraint
 {
 public:
-	uint8                                        Pad_7A5[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_12FB[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               OffsetScale;                                       // 0x98(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TickableScaleConstraint");
-
+		static class UClass* Clss = UObject::FindClassFast("TickableScaleConstraint");
 		return Clss;
 	}
 
@@ -228,18 +188,14 @@ public:
 class UTickableParentConstraint : public UTickableTransformConstraint
 {
 public:
-	uint8                                        Pad_7A9[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_12FC[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTransform                            OffsetTransform;                                   // 0xA0(0x60)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bScaling;                                          // 0x100(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_7AA[0xF];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12FD[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TickableParentConstraint");
-
+		static class UClass* Clss = UObject::FindClassFast("TickableParentConstraint");
 		return Clss;
 	}
 
@@ -254,11 +210,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TickableLookAtConstraint");
-
+		static class UClass* Clss = UObject::FindClassFast("TickableLookAtConstraint");
 		return Clss;
 	}
 

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -26,7 +26,7 @@ namespace SDK
 // struct FRotator                    UserPlaySpaceRot                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // class ULegacyCameraShake*          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULegacyCameraShake* ULegacyCameraShake::StartLegacyCameraShakeFromSource(class APlayerCameraManager* PlayerCameraManager, TSubclassOf<class ULegacyCameraShake> ShakeClass, class UCameraShakeSourceComponent* SourceComponent, float Scale, enum class ECameraShakePlaySpace PlaySpace, const struct FRotator& UserPlaySpaceRot)
+class ULegacyCameraShake* ULegacyCameraShake::StartLegacyCameraShakeFromSource(class APlayerCameraManager* InPlayerCameraManager, TSubclassOf<class ULegacyCameraShake> InShakeClass, class UCameraShakeSourceComponent* InSourceComponent, float InScale, enum class ECameraShakePlaySpace InPlaySpace, const struct FRotator& InUserPlaySpaceRot)
 {
 	static class UFunction* Func = nullptr;
 
@@ -35,12 +35,12 @@ class ULegacyCameraShake* ULegacyCameraShake::StartLegacyCameraShakeFromSource(c
 
 	Params::ULegacyCameraShake_StartLegacyCameraShakeFromSource_Params Parms{};
 
-	Parms.PlayerCameraManager = PlayerCameraManager;
-	Parms.ShakeClass = ShakeClass;
-	Parms.SourceComponent = SourceComponent;
-	Parms.Scale = Scale;
-	Parms.PlaySpace = PlaySpace;
-	Parms.UserPlaySpaceRot = UserPlaySpaceRot;
+	Parms.PlayerCameraManager = InPlayerCameraManager;
+	Parms.ShakeClass = InShakeClass;
+	Parms.SourceComponent = InSourceComponent;
+	Parms.Scale = InScale;
+	Parms.PlaySpace = InPlaySpace;
+	Parms.UserPlaySpaceRot = InUserPlaySpaceRot;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -65,7 +65,7 @@ class ULegacyCameraShake* ULegacyCameraShake::StartLegacyCameraShakeFromSource(c
 // struct FRotator                    UserPlaySpaceRot                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // class ULegacyCameraShake*          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULegacyCameraShake* ULegacyCameraShake::StartLegacyCameraShake(class APlayerCameraManager* PlayerCameraManager, TSubclassOf<class ULegacyCameraShake> ShakeClass, float Scale, enum class ECameraShakePlaySpace PlaySpace, const struct FRotator& UserPlaySpaceRot)
+class ULegacyCameraShake* ULegacyCameraShake::StartLegacyCameraShake(class APlayerCameraManager* InPlayerCameraManager, TSubclassOf<class ULegacyCameraShake> InShakeClass, float InScale, enum class ECameraShakePlaySpace InPlaySpace, const struct FRotator& InUserPlaySpaceRot)
 {
 	static class UFunction* Func = nullptr;
 
@@ -74,11 +74,11 @@ class ULegacyCameraShake* ULegacyCameraShake::StartLegacyCameraShake(class APlay
 
 	Params::ULegacyCameraShake_StartLegacyCameraShake_Params Parms{};
 
-	Parms.PlayerCameraManager = PlayerCameraManager;
-	Parms.ShakeClass = ShakeClass;
-	Parms.Scale = Scale;
-	Parms.PlaySpace = PlaySpace;
-	Parms.UserPlaySpaceRot = UserPlaySpaceRot;
+	Parms.PlayerCameraManager = InPlayerCameraManager;
+	Parms.ShakeClass = InShakeClass;
+	Parms.Scale = InScale;
+	Parms.PlaySpace = InPlaySpace;
+	Parms.UserPlaySpaceRot = InUserPlaySpaceRot;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -98,7 +98,7 @@ class ULegacyCameraShake* ULegacyCameraShake::StartLegacyCameraShake(class APlay
 // Parameters:
 // bool                               bImmediately                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULegacyCameraShake::ReceiveStopShake(bool bImmediately)
+void ULegacyCameraShake::ReceiveStopShake(bool InbImmediately)
 {
 	static class UFunction* Func = nullptr;
 
@@ -107,7 +107,7 @@ void ULegacyCameraShake::ReceiveStopShake(bool bImmediately)
 
 	Params::ULegacyCameraShake_ReceiveStopShake_Params Parms{};
 
-	Parms.bImmediately = bImmediately;
+	Parms.bImmediately = InbImmediately;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -119,7 +119,7 @@ void ULegacyCameraShake::ReceiveStopShake(bool bImmediately)
 // Parameters:
 // float                              Scale                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULegacyCameraShake::ReceivePlayShake(float Scale)
+void ULegacyCameraShake::ReceivePlayShake(float InScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -128,7 +128,7 @@ void ULegacyCameraShake::ReceivePlayShake(float Scale)
 
 	Params::ULegacyCameraShake_ReceivePlayShake_Params Parms{};
 
-	Parms.Scale = Scale;
+	Parms.Scale = InScale;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -171,7 +171,7 @@ bool ULegacyCameraShake::ReceiveIsFinished()
 // struct FMinimalViewInfo            POV                                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FMinimalViewInfo            ModifiedPOV                                                      (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void ULegacyCameraShake::BlueprintUpdateCameraShake(float DeltaTime, float Alpha, struct FMinimalViewInfo& POV, struct FMinimalViewInfo* ModifiedPOV)
+void ULegacyCameraShake::BlueprintUpdateCameraShake(float InDeltaTime, float InAlpha, struct FMinimalViewInfo& InPOV, struct FMinimalViewInfo* InModifiedPOV)
 {
 	static class UFunction* Func = nullptr;
 
@@ -180,14 +180,14 @@ void ULegacyCameraShake::BlueprintUpdateCameraShake(float DeltaTime, float Alpha
 
 	Params::ULegacyCameraShake_BlueprintUpdateCameraShake_Params Parms{};
 
-	Parms.DeltaTime = DeltaTime;
-	Parms.Alpha = Alpha;
-	Parms.POV = POV;
+	Parms.DeltaTime = InDeltaTime;
+	Parms.Alpha = InAlpha;
+	Parms.POV = InPOV;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (ModifiedPOV != nullptr)
-		*ModifiedPOV = Parms.ModifiedPOV;
+	if (InModifiedPOV != nullptr)
+		*InModifiedPOV = Parms.ModifiedPOV;
 
 }
 
@@ -198,7 +198,7 @@ void ULegacyCameraShake::BlueprintUpdateCameraShake(float DeltaTime, float Alpha
 // class UCameraShakeBase*            CameraShake                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULegacyCameraShake*          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULegacyCameraShake* ULegacyCameraShakeFunctionLibrary::Conv_LegacyCameraShake(class UCameraShakeBase* CameraShake)
+class ULegacyCameraShake* ULegacyCameraShakeFunctionLibrary::Conv_LegacyCameraShake(class UCameraShakeBase* InCameraShake)
 {
 	static class UFunction* Func = nullptr;
 
@@ -207,7 +207,7 @@ class ULegacyCameraShake* ULegacyCameraShakeFunctionLibrary::Conv_LegacyCameraSh
 
 	Params::ULegacyCameraShakeFunctionLibrary_Conv_LegacyCameraShake_Params Parms{};
 
-	Parms.CameraShake = CameraShake;
+	Parms.CameraShake = InCameraShake;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -228,7 +228,7 @@ class ULegacyCameraShake* ULegacyCameraShakeFunctionLibrary::Conv_LegacyCameraSh
 // struct FCameraAnimationHandle      Handle                                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bImmediate                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCameraAnimationCameraModifier::StopCameraAnimation(struct FCameraAnimationHandle& Handle, bool bImmediate)
+void UCameraAnimationCameraModifier::StopCameraAnimation(struct FCameraAnimationHandle& InHandle, bool InbImmediate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -237,8 +237,8 @@ void UCameraAnimationCameraModifier::StopCameraAnimation(struct FCameraAnimation
 
 	Params::UCameraAnimationCameraModifier_StopCameraAnimation_Params Parms{};
 
-	Parms.Handle = Handle;
-	Parms.bImmediate = bImmediate;
+	Parms.Handle = InHandle;
+	Parms.bImmediate = InbImmediate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -257,7 +257,7 @@ void UCameraAnimationCameraModifier::StopCameraAnimation(struct FCameraAnimation
 // class UCameraAnimationSequence*    Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bImmediate                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCameraAnimationCameraModifier::StopAllCameraAnimationsOf(class UCameraAnimationSequence* Sequence, bool bImmediate)
+void UCameraAnimationCameraModifier::StopAllCameraAnimationsOf(class UCameraAnimationSequence* InSequence, bool InbImmediate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -266,8 +266,8 @@ void UCameraAnimationCameraModifier::StopAllCameraAnimationsOf(class UCameraAnim
 
 	Params::UCameraAnimationCameraModifier_StopAllCameraAnimationsOf_Params Parms{};
 
-	Parms.Sequence = Sequence;
-	Parms.bImmediate = bImmediate;
+	Parms.Sequence = InSequence;
+	Parms.bImmediate = InbImmediate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -285,7 +285,7 @@ void UCameraAnimationCameraModifier::StopAllCameraAnimationsOf(class UCameraAnim
 // Parameters:
 // bool                               bImmediate                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCameraAnimationCameraModifier::StopAllCameraAnimations(bool bImmediate)
+void UCameraAnimationCameraModifier::StopAllCameraAnimations(bool InbImmediate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -294,7 +294,7 @@ void UCameraAnimationCameraModifier::StopAllCameraAnimations(bool bImmediate)
 
 	Params::UCameraAnimationCameraModifier_StopAllCameraAnimations_Params Parms{};
 
-	Parms.bImmediate = bImmediate;
+	Parms.bImmediate = InbImmediate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -314,7 +314,7 @@ void UCameraAnimationCameraModifier::StopAllCameraAnimations(bool bImmediate)
 // struct FCameraAnimationParams      Params                                                           (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FCameraAnimationHandle      ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FCameraAnimationHandle UCameraAnimationCameraModifier::PlayCameraAnimation(class UCameraAnimationSequence* Sequence, const struct FCameraAnimationParams& Params)
+struct FCameraAnimationHandle UCameraAnimationCameraModifier::PlayCameraAnimation(class UCameraAnimationSequence* InSequence, const struct FCameraAnimationParams& InParams)
 {
 	static class UFunction* Func = nullptr;
 
@@ -323,8 +323,8 @@ struct FCameraAnimationHandle UCameraAnimationCameraModifier::PlayCameraAnimatio
 
 	Params::UCameraAnimationCameraModifier_PlayCameraAnimation_Params Parms{};
 
-	Parms.Sequence = Sequence;
-	Parms.Params = Params;
+	Parms.Sequence = InSequence;
+	Parms.Params = InParams;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -345,7 +345,7 @@ struct FCameraAnimationHandle UCameraAnimationCameraModifier::PlayCameraAnimatio
 // struct FCameraAnimationHandle      Handle                                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCameraAnimationCameraModifier::IsCameraAnimationActive(struct FCameraAnimationHandle& Handle)
+bool UCameraAnimationCameraModifier::IsCameraAnimationActive(struct FCameraAnimationHandle& InHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -354,7 +354,7 @@ bool UCameraAnimationCameraModifier::IsCameraAnimationActive(struct FCameraAnima
 
 	Params::UCameraAnimationCameraModifier_IsCameraAnimationActive_Params Parms{};
 
-	Parms.Handle = Handle;
+	Parms.Handle = InHandle;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -375,7 +375,7 @@ bool UCameraAnimationCameraModifier::IsCameraAnimationActive(struct FCameraAnima
 // class APlayerController*           PlayerController                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCameraAnimationCameraModifier*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraAnimationCameraModifierFromPlayerController(class APlayerController* PlayerController)
+class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraAnimationCameraModifierFromPlayerController(class APlayerController* InPlayerController)
 {
 	static class UFunction* Func = nullptr;
 
@@ -384,7 +384,7 @@ class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraA
 
 	Params::UCameraAnimationCameraModifier_GetCameraAnimationCameraModifierFromPlayerController_Params Parms{};
 
-	Parms.PlayerController = PlayerController;
+	Parms.PlayerController = InPlayerController;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -406,7 +406,7 @@ class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraA
 // int32                              ControllerId                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCameraAnimationCameraModifier*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraAnimationCameraModifierFromID(class UObject* WorldContextObject, int32 ControllerId)
+class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraAnimationCameraModifierFromID(class UObject* InWorldContextObject, int32 InControllerId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -415,8 +415,8 @@ class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraA
 
 	Params::UCameraAnimationCameraModifier_GetCameraAnimationCameraModifierFromID_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.ControllerId = ControllerId;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.ControllerId = InControllerId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -438,7 +438,7 @@ class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraA
 // int32                              PlayerIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCameraAnimationCameraModifier*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraAnimationCameraModifier(class UObject* WorldContextObject, int32 PlayerIndex)
+class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraAnimationCameraModifier(class UObject* InWorldContextObject, int32 InPlayerIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -447,8 +447,8 @@ class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraA
 
 	Params::UCameraAnimationCameraModifier_GetCameraAnimationCameraModifier_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.PlayerIndex = PlayerIndex;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.PlayerIndex = InPlayerIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -469,7 +469,7 @@ class UCameraAnimationCameraModifier* UCameraAnimationCameraModifier::GetCameraA
 // enum class ECameraAnimationPlaySpaceCameraAnimationPlaySpace                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ECameraShakePlaySpace   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class ECameraShakePlaySpace UGameplayCamerasFunctionLibrary::Conv_CameraShakePlaySpace(enum class ECameraAnimationPlaySpace CameraAnimationPlaySpace)
+enum class ECameraShakePlaySpace UGameplayCamerasFunctionLibrary::Conv_CameraShakePlaySpace(enum class ECameraAnimationPlaySpace InCameraAnimationPlaySpace)
 {
 	static class UFunction* Func = nullptr;
 
@@ -478,7 +478,7 @@ enum class ECameraShakePlaySpace UGameplayCamerasFunctionLibrary::Conv_CameraSha
 
 	Params::UGameplayCamerasFunctionLibrary_Conv_CameraShakePlaySpace_Params Parms{};
 
-	Parms.CameraAnimationPlaySpace = CameraAnimationPlaySpace;
+	Parms.CameraAnimationPlaySpace = InCameraAnimationPlaySpace;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -499,7 +499,7 @@ enum class ECameraShakePlaySpace UGameplayCamerasFunctionLibrary::Conv_CameraSha
 // enum class ECameraShakePlaySpace   CameraShakePlaySpace                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ECameraAnimationPlaySpaceReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class ECameraAnimationPlaySpace UGameplayCamerasFunctionLibrary::Conv_CameraAnimationPlaySpace(enum class ECameraShakePlaySpace CameraShakePlaySpace)
+enum class ECameraAnimationPlaySpace UGameplayCamerasFunctionLibrary::Conv_CameraAnimationPlaySpace(enum class ECameraShakePlaySpace InCameraShakePlaySpace)
 {
 	static class UFunction* Func = nullptr;
 
@@ -508,7 +508,7 @@ enum class ECameraAnimationPlaySpace UGameplayCamerasFunctionLibrary::Conv_Camer
 
 	Params::UGameplayCamerasFunctionLibrary_Conv_CameraAnimationPlaySpace_Params Parms{};
 
-	Parms.CameraShakePlaySpace = CameraShakePlaySpace;
+	Parms.CameraShakePlaySpace = InCameraShakePlaySpace;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -529,7 +529,7 @@ enum class ECameraAnimationPlaySpace UGameplayCamerasFunctionLibrary::Conv_Camer
 // class APlayerCameraManager*        PlayerCameraManager                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCameraAnimationCameraModifier*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UCameraAnimationCameraModifier* UGameplayCamerasFunctionLibrary::Conv_CameraAnimationCameraModifier(class APlayerCameraManager* PlayerCameraManager)
+class UCameraAnimationCameraModifier* UGameplayCamerasFunctionLibrary::Conv_CameraAnimationCameraModifier(class APlayerCameraManager* InPlayerCameraManager)
 {
 	static class UFunction* Func = nullptr;
 
@@ -538,7 +538,7 @@ class UCameraAnimationCameraModifier* UGameplayCamerasFunctionLibrary::Conv_Came
 
 	Params::UGameplayCamerasFunctionLibrary_Conv_CameraAnimationCameraModifier_Params Parms{};
 
-	Parms.PlayerCameraManager = PlayerCameraManager;
+	Parms.PlayerCameraManager = InPlayerCameraManager;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -560,7 +560,7 @@ class UCameraAnimationCameraModifier* UGameplayCamerasFunctionLibrary::Conv_Came
 // struct FCameraAnimationHandle      Handle                                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bImmediate                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGameplayCamerasSubsystem::StopCameraAnimation(class APlayerController* PlayerController, struct FCameraAnimationHandle& Handle, bool bImmediate)
+void UGameplayCamerasSubsystem::StopCameraAnimation(class APlayerController* InPlayerController, struct FCameraAnimationHandle& InHandle, bool InbImmediate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -569,9 +569,9 @@ void UGameplayCamerasSubsystem::StopCameraAnimation(class APlayerController* Pla
 
 	Params::UGameplayCamerasSubsystem_StopCameraAnimation_Params Parms{};
 
-	Parms.PlayerController = PlayerController;
-	Parms.Handle = Handle;
-	Parms.bImmediate = bImmediate;
+	Parms.PlayerController = InPlayerController;
+	Parms.Handle = InHandle;
+	Parms.bImmediate = InbImmediate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -591,7 +591,7 @@ void UGameplayCamerasSubsystem::StopCameraAnimation(class APlayerController* Pla
 // class UCameraAnimationSequence*    Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bImmediate                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGameplayCamerasSubsystem::StopAllCameraAnimationsOf(class APlayerController* PlayerController, class UCameraAnimationSequence* Sequence, bool bImmediate)
+void UGameplayCamerasSubsystem::StopAllCameraAnimationsOf(class APlayerController* InPlayerController, class UCameraAnimationSequence* InSequence, bool InbImmediate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -600,9 +600,9 @@ void UGameplayCamerasSubsystem::StopAllCameraAnimationsOf(class APlayerControlle
 
 	Params::UGameplayCamerasSubsystem_StopAllCameraAnimationsOf_Params Parms{};
 
-	Parms.PlayerController = PlayerController;
-	Parms.Sequence = Sequence;
-	Parms.bImmediate = bImmediate;
+	Parms.PlayerController = InPlayerController;
+	Parms.Sequence = InSequence;
+	Parms.bImmediate = InbImmediate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -621,7 +621,7 @@ void UGameplayCamerasSubsystem::StopAllCameraAnimationsOf(class APlayerControlle
 // class APlayerController*           PlayerController                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bImmediate                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGameplayCamerasSubsystem::StopAllCameraAnimations(class APlayerController* PlayerController, bool bImmediate)
+void UGameplayCamerasSubsystem::StopAllCameraAnimations(class APlayerController* InPlayerController, bool InbImmediate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -630,8 +630,8 @@ void UGameplayCamerasSubsystem::StopAllCameraAnimations(class APlayerController*
 
 	Params::UGameplayCamerasSubsystem_StopAllCameraAnimations_Params Parms{};
 
-	Parms.PlayerController = PlayerController;
-	Parms.bImmediate = bImmediate;
+	Parms.PlayerController = InPlayerController;
+	Parms.bImmediate = InbImmediate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -652,7 +652,7 @@ void UGameplayCamerasSubsystem::StopAllCameraAnimations(class APlayerController*
 // struct FCameraAnimationParams      Params                                                           (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FCameraAnimationHandle      ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FCameraAnimationHandle UGameplayCamerasSubsystem::PlayCameraAnimation(class APlayerController* PlayerController, class UCameraAnimationSequence* Sequence, const struct FCameraAnimationParams& Params)
+struct FCameraAnimationHandle UGameplayCamerasSubsystem::PlayCameraAnimation(class APlayerController* InPlayerController, class UCameraAnimationSequence* InSequence, const struct FCameraAnimationParams& InParams)
 {
 	static class UFunction* Func = nullptr;
 
@@ -661,9 +661,9 @@ struct FCameraAnimationHandle UGameplayCamerasSubsystem::PlayCameraAnimation(cla
 
 	Params::UGameplayCamerasSubsystem_PlayCameraAnimation_Params Parms{};
 
-	Parms.PlayerController = PlayerController;
-	Parms.Sequence = Sequence;
-	Parms.Params = Params;
+	Parms.PlayerController = InPlayerController;
+	Parms.Sequence = InSequence;
+	Parms.Params = InParams;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -685,7 +685,7 @@ struct FCameraAnimationHandle UGameplayCamerasSubsystem::PlayCameraAnimation(cla
 // struct FCameraAnimationHandle      Handle                                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UGameplayCamerasSubsystem::IsCameraAnimationActive(class APlayerController* PlayerController, struct FCameraAnimationHandle& Handle)
+bool UGameplayCamerasSubsystem::IsCameraAnimationActive(class APlayerController* InPlayerController, struct FCameraAnimationHandle& InHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -694,8 +694,8 @@ bool UGameplayCamerasSubsystem::IsCameraAnimationActive(class APlayerController*
 
 	Params::UGameplayCamerasSubsystem_IsCameraAnimationActive_Params Parms{};
 
-	Parms.PlayerController = PlayerController;
-	Parms.Handle = Handle;
+	Parms.PlayerController = InPlayerController;
+	Parms.Handle = InHandle;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

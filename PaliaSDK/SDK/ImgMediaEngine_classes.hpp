@@ -18,15 +18,11 @@ class UImgMediaPlaybackComponent : public UActorComponent
 {
 public:
 	float                                        LODBias;                                           // 0xA0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C8F[0x24];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D6E[0x24];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ImgMediaPlaybackComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("ImgMediaPlaybackComponent");
 		return Clss;
 	}
 

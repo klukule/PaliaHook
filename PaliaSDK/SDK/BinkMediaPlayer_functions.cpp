@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -159,7 +159,7 @@ bool UBinkMediaPlayer::SupportsScrubbing()
 // bool                               Unthinned                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBinkMediaPlayer::SupportsRate(float Rate, bool Unthinned)
+bool UBinkMediaPlayer::SupportsRate(float InRate, bool InUnthinned)
 {
 	static class UFunction* Func = nullptr;
 
@@ -168,8 +168,8 @@ bool UBinkMediaPlayer::SupportsRate(float Rate, bool Unthinned)
 
 	Params::UBinkMediaPlayer_SupportsRate_Params Parms{};
 
-	Parms.Rate = Rate;
-	Parms.Unthinned = Unthinned;
+	Parms.Rate = InRate;
+	Parms.Unthinned = InUnthinned;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -214,7 +214,7 @@ void UBinkMediaPlayer::Stop()
 // Parameters:
 // float                              Rate                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBinkMediaPlayer::SetVolume(float Rate)
+void UBinkMediaPlayer::SetVolume(float InRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -223,7 +223,7 @@ void UBinkMediaPlayer::SetVolume(float Rate)
 
 	Params::UBinkMediaPlayer_SetVolume_Params Parms{};
 
-	Parms.Rate = Rate;
+	Parms.Rate = InRate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -242,7 +242,7 @@ void UBinkMediaPlayer::SetVolume(float Rate)
 // float                              Rate                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBinkMediaPlayer::SetRate(float Rate)
+bool UBinkMediaPlayer::SetRate(float InRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -251,7 +251,7 @@ bool UBinkMediaPlayer::SetRate(float Rate)
 
 	Params::UBinkMediaPlayer_SetRate_Params Parms{};
 
-	Parms.Rate = Rate;
+	Parms.Rate = InRate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -272,7 +272,7 @@ bool UBinkMediaPlayer::SetRate(float Rate)
 // bool                               InLooping                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBinkMediaPlayer::SetLooping(bool InLooping)
+bool UBinkMediaPlayer::SetLooping(bool InInLooping)
 {
 	static class UFunction* Func = nullptr;
 
@@ -281,7 +281,7 @@ bool UBinkMediaPlayer::SetLooping(bool InLooping)
 
 	Params::UBinkMediaPlayer_SetLooping_Params Parms{};
 
-	Parms.InLooping = InLooping;
+	Parms.InLooping = InInLooping;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -302,7 +302,7 @@ bool UBinkMediaPlayer::SetLooping(bool InLooping)
 // struct FTimespan                   InTime                                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBinkMediaPlayer::Seek(struct FTimespan& InTime)
+bool UBinkMediaPlayer::Seek(struct FTimespan& InInTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -311,7 +311,7 @@ bool UBinkMediaPlayer::Seek(struct FTimespan& InTime)
 
 	Params::UBinkMediaPlayer_Seek_Params Parms{};
 
-	Parms.InTime = InTime;
+	Parms.InTime = InInTime;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -416,7 +416,7 @@ bool UBinkMediaPlayer::Pause()
 // class FString                      NewURL                                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBinkMediaPlayer::OpenUrl(const class FString& NewURL)
+bool UBinkMediaPlayer::OpenUrl(const class FString& InNewURL)
 {
 	static class UFunction* Func = nullptr;
 
@@ -425,7 +425,7 @@ bool UBinkMediaPlayer::OpenUrl(const class FString& NewURL)
 
 	Params::UBinkMediaPlayer_OpenUrl_Params Parms{};
 
-	Parms.NewURL = NewURL;
+	Parms.NewURL = InNewURL;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -702,7 +702,7 @@ struct FTimespan UBinkMediaPlayer::GetDuration()
 // bool                               Srgb_decode                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               Hdr                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBinkMediaPlayer::Draw(class UTexture* Texture, bool Tonemap, int32 Out_nits, float Alpha, bool Srgb_decode, bool Hdr)
+void UBinkMediaPlayer::Draw(class UTexture* InTexture, bool InTonemap, int32 InOut_nits, float InAlpha, bool InSrgb_decode, bool InHdr)
 {
 	static class UFunction* Func = nullptr;
 
@@ -711,12 +711,12 @@ void UBinkMediaPlayer::Draw(class UTexture* Texture, bool Tonemap, int32 Out_nit
 
 	Params::UBinkMediaPlayer_Draw_Params Parms{};
 
-	Parms.Texture = Texture;
-	Parms.Tonemap = Tonemap;
-	Parms.Out_nits = Out_nits;
-	Parms.Alpha = Alpha;
-	Parms.Srgb_decode = Srgb_decode;
-	Parms.Hdr = Hdr;
+	Parms.Texture = InTexture;
+	Parms.Tonemap = InTonemap;
+	Parms.Out_nits = InOut_nits;
+	Parms.Alpha = InAlpha;
+	Parms.Srgb_decode = InSrgb_decode;
+	Parms.Hdr = InHdr;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -815,7 +815,7 @@ bool UBinkMediaPlayer::CanPause()
 // Parameters:
 // class UBinkMediaPlayer*            InMediaPlayer                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBinkMediaTexture::SetMediaPlayer(class UBinkMediaPlayer* InMediaPlayer)
+void UBinkMediaTexture::SetMediaPlayer(class UBinkMediaPlayer* InInMediaPlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -824,7 +824,7 @@ void UBinkMediaTexture::SetMediaPlayer(class UBinkMediaPlayer* InMediaPlayer)
 
 	Params::UBinkMediaTexture_SetMediaPlayer_Params Parms{};
 
-	Parms.InMediaPlayer = InMediaPlayer;
+	Parms.InMediaPlayer = InInMediaPlayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

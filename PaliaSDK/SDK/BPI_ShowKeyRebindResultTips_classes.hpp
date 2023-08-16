@@ -20,15 +20,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BPI_ShowKeyRebindResultTips_C");
-
+		static class UClass* Clss = UObject::FindClassFast("BPI_ShowKeyRebindResultTips_C");
 		return Clss;
 	}
 
-	void UpdateKeyRebindTips(class FText ConflictActionNameDesc, class FText RebindActionNameDesc, TArray<class UTexture2D*>& InputKeyIcons);
+	void UpdateKeyRebindTips(class FText InConflictActionNameDesc, class FText InRebindActionNameDesc, TArray<class UTexture2D*>& InInputKeyIcons);
 };
 
 }

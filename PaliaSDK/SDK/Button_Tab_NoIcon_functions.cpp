@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // bool                               IsDesignTime                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UButton_Tab_NoIcon_C::PreConstruct(bool IsDesignTime)
+void UButton_Tab_NoIcon_C::PreConstruct(bool InIsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UButton_Tab_NoIcon_C::PreConstruct(bool IsDesignTime)
 
 	Params::UButton_Tab_NoIcon_C_PreConstruct_Params Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.IsDesignTime = InIsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -41,7 +41,7 @@ void UButton_Tab_NoIcon_C::PreConstruct(bool IsDesignTime)
 // Parameters:
 // bool                               bIsActive                                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UButton_Tab_NoIcon_C::SetIsActiveTabButton(bool bIsActive)
+void UButton_Tab_NoIcon_C::SetIsActiveTabButton(bool InbIsActive)
 {
 	static class UFunction* Func = nullptr;
 
@@ -50,7 +50,7 @@ void UButton_Tab_NoIcon_C::SetIsActiveTabButton(bool bIsActive)
 
 	Params::UButton_Tab_NoIcon_C_SetIsActiveTabButton_Params Parms{};
 
-	Parms.bIsActive = bIsActive;
+	Parms.bIsActive = InbIsActive;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -66,7 +66,7 @@ void UButton_Tab_NoIcon_C::SetIsActiveTabButton(bool bIsActive)
 // bool                               Temp_bool_Variable                                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UVALUI_ButtonStyle*          K2Node_Select_Default                                            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UButton_Tab_NoIcon_C::ExecuteUbergraph_Button_Tab_NoIcon(int32 EntryPoint, bool K2Node_Event_bIsActive, bool K2Node_Event_IsDesignTime, bool Temp_bool_Variable, class UVALUI_ButtonStyle* K2Node_Select_Default)
+void UButton_Tab_NoIcon_C::ExecuteUbergraph_Button_Tab_NoIcon(int32 InEntryPoint, bool InK2Node_Event_bIsActive, bool InK2Node_Event_IsDesignTime, bool InTemp_bool_Variable, class UVALUI_ButtonStyle* InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -75,11 +75,11 @@ void UButton_Tab_NoIcon_C::ExecuteUbergraph_Button_Tab_NoIcon(int32 EntryPoint, 
 
 	Params::UButton_Tab_NoIcon_C_ExecuteUbergraph_Button_Tab_NoIcon_Params Parms{};
 
-	Parms.EntryPoint = EntryPoint;
-	Parms.K2Node_Event_bIsActive = K2Node_Event_bIsActive;
-	Parms.K2Node_Event_IsDesignTime = K2Node_Event_IsDesignTime;
-	Parms.Temp_bool_Variable = Temp_bool_Variable;
-	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.EntryPoint = InEntryPoint;
+	Parms.K2Node_Event_bIsActive = InK2Node_Event_bIsActive;
+	Parms.K2Node_Event_IsDesignTime = InK2Node_Event_IsDesignTime;
+	Parms.Temp_bool_Variable = InTemp_bool_Variable;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 

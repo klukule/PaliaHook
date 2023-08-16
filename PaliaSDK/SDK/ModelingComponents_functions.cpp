@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class UDynamicMesh*                NewMesh                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UOctreeDynamicMeshComponent::SetDynamicMesh(class UDynamicMesh* NewMesh)
+void UOctreeDynamicMeshComponent::SetDynamicMesh(class UDynamicMesh* InNewMesh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void UOctreeDynamicMeshComponent::SetDynamicMesh(class UDynamicMesh* NewMesh)
 
 	Params::UOctreeDynamicMeshComponent_SetDynamicMesh_Params Parms{};
 
-	Parms.NewMesh = NewMesh;
+	Parms.NewMesh = InNewMesh;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -49,7 +49,7 @@ void UOctreeDynamicMeshComponent::SetDynamicMesh(class UDynamicMesh* NewMesh)
 // bool                               bVisible                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreviewGeometry::SetPointSetVisibility(const class FString& PointSetIdentifier, bool bVisible)
+bool UPreviewGeometry::SetPointSetVisibility(const class FString& InPointSetIdentifier, bool InbVisible)
 {
 	static class UFunction* Func = nullptr;
 
@@ -58,8 +58,8 @@ bool UPreviewGeometry::SetPointSetVisibility(const class FString& PointSetIdenti
 
 	Params::UPreviewGeometry_SetPointSetVisibility_Params Parms{};
 
-	Parms.PointSetIdentifier = PointSetIdentifier;
-	Parms.bVisible = bVisible;
+	Parms.PointSetIdentifier = InPointSetIdentifier;
+	Parms.bVisible = InbVisible;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -81,7 +81,7 @@ bool UPreviewGeometry::SetPointSetVisibility(const class FString& PointSetIdenti
 // class UMaterialInterface*          NewMaterial                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreviewGeometry::SetPointSetMaterial(const class FString& PointSetIdentifier, class UMaterialInterface* NewMaterial)
+bool UPreviewGeometry::SetPointSetMaterial(const class FString& InPointSetIdentifier, class UMaterialInterface* InNewMaterial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,8 +90,8 @@ bool UPreviewGeometry::SetPointSetMaterial(const class FString& PointSetIdentifi
 
 	Params::UPreviewGeometry_SetPointSetMaterial_Params Parms{};
 
-	Parms.PointSetIdentifier = PointSetIdentifier;
-	Parms.NewMaterial = NewMaterial;
+	Parms.PointSetIdentifier = InPointSetIdentifier;
+	Parms.NewMaterial = InNewMaterial;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -113,7 +113,7 @@ bool UPreviewGeometry::SetPointSetMaterial(const class FString& PointSetIdentifi
 // bool                               bVisible                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreviewGeometry::SetLineSetVisibility(const class FString& LineSetIdentifier, bool bVisible)
+bool UPreviewGeometry::SetLineSetVisibility(const class FString& InLineSetIdentifier, bool InbVisible)
 {
 	static class UFunction* Func = nullptr;
 
@@ -122,8 +122,8 @@ bool UPreviewGeometry::SetLineSetVisibility(const class FString& LineSetIdentifi
 
 	Params::UPreviewGeometry_SetLineSetVisibility_Params Parms{};
 
-	Parms.LineSetIdentifier = LineSetIdentifier;
-	Parms.bVisible = bVisible;
+	Parms.LineSetIdentifier = InLineSetIdentifier;
+	Parms.bVisible = InbVisible;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -145,7 +145,7 @@ bool UPreviewGeometry::SetLineSetVisibility(const class FString& LineSetIdentifi
 // class UMaterialInterface*          NewMaterial                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreviewGeometry::SetLineSetMaterial(const class FString& LineSetIdentifier, class UMaterialInterface* NewMaterial)
+bool UPreviewGeometry::SetLineSetMaterial(const class FString& InLineSetIdentifier, class UMaterialInterface* InNewMaterial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -154,8 +154,8 @@ bool UPreviewGeometry::SetLineSetMaterial(const class FString& LineSetIdentifier
 
 	Params::UPreviewGeometry_SetLineSetMaterial_Params Parms{};
 
-	Parms.LineSetIdentifier = LineSetIdentifier;
-	Parms.NewMaterial = NewMaterial;
+	Parms.LineSetIdentifier = InLineSetIdentifier;
+	Parms.NewMaterial = InNewMaterial;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -175,7 +175,7 @@ bool UPreviewGeometry::SetLineSetMaterial(const class FString& LineSetIdentifier
 // Parameters:
 // class UMaterialInterface*          Material                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreviewGeometry::SetAllPointSetsMaterial(class UMaterialInterface* Material)
+void UPreviewGeometry::SetAllPointSetsMaterial(class UMaterialInterface* InMaterial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -184,7 +184,7 @@ void UPreviewGeometry::SetAllPointSetsMaterial(class UMaterialInterface* Materia
 
 	Params::UPreviewGeometry_SetAllPointSetsMaterial_Params Parms{};
 
-	Parms.Material = Material;
+	Parms.Material = InMaterial;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -202,7 +202,7 @@ void UPreviewGeometry::SetAllPointSetsMaterial(class UMaterialInterface* Materia
 // Parameters:
 // class UMaterialInterface*          Material                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreviewGeometry::SetAllLineSetsMaterial(class UMaterialInterface* Material)
+void UPreviewGeometry::SetAllLineSetsMaterial(class UMaterialInterface* InMaterial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -211,7 +211,7 @@ void UPreviewGeometry::SetAllLineSetsMaterial(class UMaterialInterface* Material
 
 	Params::UPreviewGeometry_SetAllLineSetsMaterial_Params Parms{};
 
-	Parms.Material = Material;
+	Parms.Material = InMaterial;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -231,7 +231,7 @@ void UPreviewGeometry::SetAllLineSetsMaterial(class UMaterialInterface* Material
 // bool                               bDestroy                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreviewGeometry::RemovePointSet(const class FString& PointSetIdentifier, bool bDestroy)
+bool UPreviewGeometry::RemovePointSet(const class FString& InPointSetIdentifier, bool InbDestroy)
 {
 	static class UFunction* Func = nullptr;
 
@@ -240,8 +240,8 @@ bool UPreviewGeometry::RemovePointSet(const class FString& PointSetIdentifier, b
 
 	Params::UPreviewGeometry_RemovePointSet_Params Parms{};
 
-	Parms.PointSetIdentifier = PointSetIdentifier;
-	Parms.bDestroy = bDestroy;
+	Parms.PointSetIdentifier = InPointSetIdentifier;
+	Parms.bDestroy = InbDestroy;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -263,7 +263,7 @@ bool UPreviewGeometry::RemovePointSet(const class FString& PointSetIdentifier, b
 // bool                               bDestroy                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreviewGeometry::RemoveLineSet(const class FString& LineSetIdentifier, bool bDestroy)
+bool UPreviewGeometry::RemoveLineSet(const class FString& InLineSetIdentifier, bool InbDestroy)
 {
 	static class UFunction* Func = nullptr;
 
@@ -272,8 +272,8 @@ bool UPreviewGeometry::RemoveLineSet(const class FString& LineSetIdentifier, boo
 
 	Params::UPreviewGeometry_RemoveLineSet_Params Parms{};
 
-	Parms.LineSetIdentifier = LineSetIdentifier;
-	Parms.bDestroy = bDestroy;
+	Parms.LineSetIdentifier = InLineSetIdentifier;
+	Parms.bDestroy = InbDestroy;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -293,7 +293,7 @@ bool UPreviewGeometry::RemoveLineSet(const class FString& LineSetIdentifier, boo
 // Parameters:
 // bool                               bDestroy                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreviewGeometry::RemoveAllPointSets(bool bDestroy)
+void UPreviewGeometry::RemoveAllPointSets(bool InbDestroy)
 {
 	static class UFunction* Func = nullptr;
 
@@ -302,7 +302,7 @@ void UPreviewGeometry::RemoveAllPointSets(bool bDestroy)
 
 	Params::UPreviewGeometry_RemoveAllPointSets_Params Parms{};
 
-	Parms.bDestroy = bDestroy;
+	Parms.bDestroy = InbDestroy;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -320,7 +320,7 @@ void UPreviewGeometry::RemoveAllPointSets(bool bDestroy)
 // Parameters:
 // bool                               bDestroy                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreviewGeometry::RemoveAllLineSets(bool bDestroy)
+void UPreviewGeometry::RemoveAllLineSets(bool InbDestroy)
 {
 	static class UFunction* Func = nullptr;
 
@@ -329,7 +329,7 @@ void UPreviewGeometry::RemoveAllLineSets(bool bDestroy)
 
 	Params::UPreviewGeometry_RemoveAllLineSets_Params Parms{};
 
-	Parms.bDestroy = bDestroy;
+	Parms.bDestroy = InbDestroy;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -376,7 +376,7 @@ class APreviewGeometryActor* UPreviewGeometry::GetActor()
 // class FString                      PointSetIdentifier                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPointSetComponent*          ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UPointSetComponent* UPreviewGeometry::FindPointSet(const class FString& PointSetIdentifier)
+class UPointSetComponent* UPreviewGeometry::FindPointSet(const class FString& InPointSetIdentifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -385,7 +385,7 @@ class UPointSetComponent* UPreviewGeometry::FindPointSet(const class FString& Po
 
 	Params::UPreviewGeometry_FindPointSet_Params Parms{};
 
-	Parms.PointSetIdentifier = PointSetIdentifier;
+	Parms.PointSetIdentifier = InPointSetIdentifier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -406,7 +406,7 @@ class UPointSetComponent* UPreviewGeometry::FindPointSet(const class FString& Po
 // class FString                      LineSetIdentifier                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULineSetComponent*           ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULineSetComponent* UPreviewGeometry::FindLineSet(const class FString& LineSetIdentifier)
+class ULineSetComponent* UPreviewGeometry::FindLineSet(const class FString& InLineSetIdentifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -415,7 +415,7 @@ class ULineSetComponent* UPreviewGeometry::FindLineSet(const class FString& Line
 
 	Params::UPreviewGeometry_FindLineSet_Params Parms{};
 
-	Parms.LineSetIdentifier = LineSetIdentifier;
+	Parms.LineSetIdentifier = InLineSetIdentifier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -461,7 +461,7 @@ void UPreviewGeometry::Disconnect()
 // class UWorld*                      World                                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  WithTransform                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreviewGeometry::CreateInWorld(class UWorld* World, struct FTransform& WithTransform)
+void UPreviewGeometry::CreateInWorld(class UWorld* InWorld, struct FTransform& InWithTransform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -470,8 +470,8 @@ void UPreviewGeometry::CreateInWorld(class UWorld* World, struct FTransform& Wit
 
 	Params::UPreviewGeometry_CreateInWorld_Params Parms{};
 
-	Parms.World = World;
-	Parms.WithTransform = WithTransform;
+	Parms.World = InWorld;
+	Parms.WithTransform = InWithTransform;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -490,7 +490,7 @@ void UPreviewGeometry::CreateInWorld(class UWorld* World, struct FTransform& Wit
 // class FString                      PointSetIdentifier                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPointSetComponent*          ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UPointSetComponent* UPreviewGeometry::AddPointSet(const class FString& PointSetIdentifier)
+class UPointSetComponent* UPreviewGeometry::AddPointSet(const class FString& InPointSetIdentifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -499,7 +499,7 @@ class UPointSetComponent* UPreviewGeometry::AddPointSet(const class FString& Poi
 
 	Params::UPreviewGeometry_AddPointSet_Params Parms{};
 
-	Parms.PointSetIdentifier = PointSetIdentifier;
+	Parms.PointSetIdentifier = InPointSetIdentifier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -520,7 +520,7 @@ class UPointSetComponent* UPreviewGeometry::AddPointSet(const class FString& Poi
 // class FString                      LineSetIdentifier                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULineSetComponent*           ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULineSetComponent* UPreviewGeometry::AddLineSet(const class FString& LineSetIdentifier)
+class ULineSetComponent* UPreviewGeometry::AddLineSet(const class FString& InLineSetIdentifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -529,7 +529,7 @@ class ULineSetComponent* UPreviewGeometry::AddLineSet(const class FString& LineS
 
 	Params::UPreviewGeometry_AddLineSet_Params Parms{};
 
-	Parms.LineSetIdentifier = LineSetIdentifier;
+	Parms.LineSetIdentifier = InLineSetIdentifier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -550,7 +550,7 @@ class ULineSetComponent* UPreviewGeometry::AddLineSet(const class FString& LineS
 // struct FCreateTextureObjectParams  CreateTexParams                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FCreateTextureObjectResult  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FCreateTextureObjectResult UModelingObjectsCreationAPI::CreateTextureObject(struct FCreateTextureObjectParams& CreateTexParams)
+struct FCreateTextureObjectResult UModelingObjectsCreationAPI::CreateTextureObject(struct FCreateTextureObjectParams& InCreateTexParams)
 {
 	static class UFunction* Func = nullptr;
 
@@ -559,7 +559,7 @@ struct FCreateTextureObjectResult UModelingObjectsCreationAPI::CreateTextureObje
 
 	Params::UModelingObjectsCreationAPI_CreateTextureObject_Params Parms{};
 
-	Parms.CreateTexParams = CreateTexParams;
+	Parms.CreateTexParams = InCreateTexParams;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -580,7 +580,7 @@ struct FCreateTextureObjectResult UModelingObjectsCreationAPI::CreateTextureObje
 // struct FCreateMeshObjectParams     CreateMeshParams                                                 (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FCreateMeshObjectResult     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-struct FCreateMeshObjectResult UModelingObjectsCreationAPI::CreateMeshObject(struct FCreateMeshObjectParams& CreateMeshParams)
+struct FCreateMeshObjectResult UModelingObjectsCreationAPI::CreateMeshObject(struct FCreateMeshObjectParams& InCreateMeshParams)
 {
 	static class UFunction* Func = nullptr;
 
@@ -589,7 +589,7 @@ struct FCreateMeshObjectResult UModelingObjectsCreationAPI::CreateMeshObject(str
 
 	Params::UModelingObjectsCreationAPI_CreateMeshObject_Params Parms{};
 
-	Parms.CreateMeshParams = CreateMeshParams;
+	Parms.CreateMeshParams = InCreateMeshParams;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -26,11 +26,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MovieSceneTakeSection");
-
+		static class UClass* Clss = UObject::FindClassFast("MovieSceneTakeSection");
 		return Clss;
 	}
 
@@ -50,11 +46,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MovieSceneTakeSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("MovieSceneTakeSettings");
 		return Clss;
 	}
 
@@ -69,11 +61,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MovieSceneTakeTrack");
-
+		static class UClass* Clss = UObject::FindClassFast("MovieSceneTakeTrack");
 		return Clss;
 	}
 

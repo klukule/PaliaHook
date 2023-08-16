@@ -20,18 +20,14 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("StaticMeshDescription");
-
+		static class UClass* Clss = UObject::FindClassFast("StaticMeshDescription");
 		return Clss;
 	}
 
-	void SetVertexInstanceUV(const struct FVertexInstanceID& VertexInstanceID, const struct FVector2D& UV, int32 UVIndex);
-	void SetPolygonGroupMaterialSlotName(const struct FPolygonGroupID& PolygonGroupID, class FName& SlotName);
-	struct FVector2D GetVertexInstanceUV(const struct FVertexInstanceID& VertexInstanceID, int32 UVIndex);
-	void CreateCube(const struct FVector& Center, const struct FVector& HalfExtents, const struct FPolygonGroupID& PolygonGroup, struct FPolygonID* PolygonID_PlusX, struct FPolygonID* PolygonID_MinusX, struct FPolygonID* PolygonID_PlusY, struct FPolygonID* PolygonID_MinusY, struct FPolygonID* PolygonID_PlusZ, struct FPolygonID* PolygonID_MinusZ);
+	void SetVertexInstanceUV(const struct FVertexInstanceID& InVertexInstanceID, const struct FVector2D& InUV, int32 InUVIndex);
+	void SetPolygonGroupMaterialSlotName(const struct FPolygonGroupID& InPolygonGroupID, class FName& InSlotName);
+	struct FVector2D GetVertexInstanceUV(const struct FVertexInstanceID& InVertexInstanceID, int32 InUVIndex);
+	void CreateCube(const struct FVector& InCenter, const struct FVector& InHalfExtents, const struct FPolygonGroupID& InPolygonGroup, struct FPolygonID* InPolygonID_PlusX, struct FPolygonID* InPolygonID_MinusX, struct FPolygonID* InPolygonID_PlusY, struct FPolygonID* InPolygonID_MinusY, struct FPolygonID* InPolygonID_PlusZ, struct FPolygonID* InPolygonID_MinusZ);
 };
 
 }

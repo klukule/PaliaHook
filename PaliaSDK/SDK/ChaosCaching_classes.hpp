@@ -21,11 +21,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ChaosCacheCollection");
-
+		static class UClass* Clss = UObject::FindClassFast("ChaosCacheCollection");
 		return Clss;
 	}
 
@@ -39,27 +35,23 @@ public:
 	class UChaosCacheCollection*                 CacheCollection;                                   // 0x290(0x8)(Edit, ZeroConstructor, DisableEditOnTemplate, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECacheMode                        CacheMode;                                         // 0x298(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStartMode                        StartMode;                                         // 0x299(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B11[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1BF8[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        StartTime;                                         // 0x29C(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B14[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1BF9[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FObservedComponent>            ObservedComponents;                                // 0x2A8(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1B15[0x80];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1BFA[0x80];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ChaosCacheManager");
-
+		static class UClass* Clss = UObject::FindClassFast("ChaosCacheManager");
 		return Clss;
 	}
 
-	void TriggerComponentByCache(class FName InCacheName);
-	void TriggerComponent(class UPrimitiveComponent* InComponent);
+	void TriggerComponentByCache(class FName InInCacheName);
+	void TriggerComponent(class UPrimitiveComponent* InInComponent);
 	void TriggerAll();
-	void SetStartTime(float InStartTime);
-	void ResetSingleTransform(int32 InIndex);
+	void SetStartTime(float InInStartTime);
+	void ResetSingleTransform(int32 InInIndex);
 	void ResetAllComponentTransforms();
 };
 
@@ -71,11 +63,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ChaosCachePlayer");
-
+		static class UClass* Clss = UObject::FindClassFast("ChaosCachePlayer");
 		return Clss;
 	}
 
@@ -96,15 +84,11 @@ public:
 	struct FCacheSpawnableTemplate               Spawnable;                                         // 0x140(0xD0)(Edit, EditConst, NoDestructor, NativeAccessSpecifierPrivate)
 	struct FGuid                                 AdapterGuid;                                       // 0x210(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                        Version;                                           // 0x220(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1B1F[0x2C];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1BFF[0x2C];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ChaosCache");
-
+		static class UClass* Clss = UObject::FindClassFast("ChaosCache");
 		return Clss;
 	}
 
@@ -119,11 +103,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MovieSceneChaosCacheSection");
-
+		static class UClass* Clss = UObject::FindClassFast("MovieSceneChaosCacheSection");
 		return Clss;
 	}
 
@@ -134,16 +114,12 @@ public:
 class UMovieSceneChaosCacheTrack : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                        Pad_1B22[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C01[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UMovieSceneSection*>            AnimationSections;                                 // 0xA0(0x10)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MovieSceneChaosCacheTrack");
-
+		static class UClass* Clss = UObject::FindClassFast("MovieSceneChaosCacheTrack");
 		return Clss;
 	}
 

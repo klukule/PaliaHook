@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothConfigBase");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothConfigBase");
 		return Clss;
 	}
 
@@ -38,11 +34,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothingSimulationFactory");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothingSimulationFactory");
 		return Clss;
 	}
 
@@ -53,15 +45,11 @@ public:
 class UClothingInteractor : public UObject
 {
 public:
-	uint8                                        Pad_59E[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B58[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothingInteractor");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothingInteractor");
 		return Clss;
 	}
 
@@ -73,22 +61,18 @@ class UClothingSimulationInteractor : public UObject
 {
 public:
 	TMap<class FName, class UClothingInteractor*> ClothingInteractors;                               // 0x28(0x50)(UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5CC[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B94[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothingSimulationInteractor");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothingSimulationInteractor");
 		return Clss;
 	}
 
-	void SetNumSubsteps(int32 NumSubsteps);
-	void SetNumIterations(int32 NumIterations);
-	void SetMaxNumIterations(int32 MaxNumIterations);
-	void SetAnimDriveSpringStiffness(float InStiffness);
+	void SetNumSubsteps(int32 InNumSubsteps);
+	void SetNumIterations(int32 InNumIterations);
+	void SetMaxNumIterations(int32 InMaxNumIterations);
+	void SetAnimDriveSpringStiffness(float InInStiffness);
 	void PhysicsAssetUpdated();
 	float GetSimulationTime();
 	int32 GetNumSubsteps();
@@ -96,8 +80,8 @@ public:
 	int32 GetNumIterations();
 	int32 GetNumDynamicParticles();
 	int32 GetNumCloths();
-	class UClothingInteractor* GetClothingInteractor(const class FString& ClothingAssetName);
-	void EnableGravityOverride(struct FVector& InVector);
+	class UClothingInteractor* GetClothingInteractor(const class FString& InClothingAssetName);
+	void EnableGravityOverride(struct FVector& InInVector);
 	void DisableGravityOverride();
 	void ClothConfigUpdated();
 };
@@ -112,11 +96,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothingAssetBase");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothingAssetBase");
 		return Clss;
 	}
 
@@ -130,11 +110,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothSharedSimConfigBase");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothSharedSimConfigBase");
 		return Clss;
 	}
 
@@ -153,15 +129,11 @@ public:
 	int32                                        NumFixedVerts;                                     // 0x78(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaxBoneWeights;                                    // 0x7C(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<uint32>                               SelfCollisionIndices;                              // 0x80(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5D2[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1BA4[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ClothPhysicalMeshDataBase_Legacy");
-
+		static class UClass* Clss = UObject::FindClassFast("ClothPhysicalMeshDataBase_Legacy");
 		return Clss;
 	}
 

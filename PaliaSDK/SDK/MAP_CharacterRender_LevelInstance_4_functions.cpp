@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -66,7 +66,7 @@ TSet<class AActor*> AMAP_CharacterRender_C::GetAllCameraActors()
 // enum class EVAL_CharacterBodyType  BodyType                                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
-class AActor* AMAP_CharacterRender_C::GetCameraActorForCosmeticAsset(class UVAL_CharacterCustomizationItemBase* Item, enum class EVAL_CharacterBodyType BodyType)
+class AActor* AMAP_CharacterRender_C::GetCameraActorForCosmeticAsset(class UVAL_CharacterCustomizationItemBase* InItem, enum class EVAL_CharacterBodyType InBodyType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -75,8 +75,8 @@ class AActor* AMAP_CharacterRender_C::GetCameraActorForCosmeticAsset(class UVAL_
 
 	Params::AMAP_CharacterRender_C_GetCameraActorForCosmeticAsset_Params Parms{};
 
-	Parms.Item = Item;
-	Parms.BodyType = BodyType;
+	Parms.Item = InItem;
+	Parms.BodyType = InBodyType;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -153,7 +153,7 @@ void AMAP_CharacterRender_C::ReceiveBeginPlay()
 // Parameters:
 // int32                              EntryPoint                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AMAP_CharacterRender_C::ExecuteUbergraph_MAP_CharacterRender(int32 EntryPoint)
+void AMAP_CharacterRender_C::ExecuteUbergraph_MAP_CharacterRender(int32 InEntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -162,7 +162,7 @@ void AMAP_CharacterRender_C::ExecuteUbergraph_MAP_CharacterRender(int32 EntryPoi
 
 	Params::AMAP_CharacterRender_C_ExecuteUbergraph_MAP_CharacterRender_Params Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.EntryPoint = InEntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 

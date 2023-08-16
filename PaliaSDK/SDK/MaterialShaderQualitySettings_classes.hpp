@@ -18,15 +18,11 @@ class UShaderPlatformQualitySettings : public UObject
 {
 public:
 	struct FMaterialQualityOverrides             QualityOverrides[0x4];                             // 0x28(0x20)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22F5[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A3A[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ShaderPlatformQualitySettings");
-
+		static class UClass* Clss = UObject::FindClassFast("ShaderPlatformQualitySettings");
 		return Clss;
 	}
 
@@ -41,11 +37,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MaterialShaderQualitySettings");
-
+		static class UClass* Clss = UObject::FindClassFast("MaterialShaderQualitySettings");
 		return Clss;
 	}
 

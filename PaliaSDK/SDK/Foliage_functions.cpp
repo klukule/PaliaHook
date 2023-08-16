@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -24,7 +24,7 @@ namespace SDK
 // float                              Radius                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UFoliageStatistics::FoliageOverlappingSphereCount(class UObject* WorldContextObject, class UStaticMesh* StaticMesh, const struct FVector& CenterPosition, float Radius)
+int32 UFoliageStatistics::FoliageOverlappingSphereCount(class UObject* InWorldContextObject, class UStaticMesh* InStaticMesh, const struct FVector& InCenterPosition, float InRadius)
 {
 	static class UFunction* Func = nullptr;
 
@@ -33,10 +33,10 @@ int32 UFoliageStatistics::FoliageOverlappingSphereCount(class UObject* WorldCont
 
 	Params::UFoliageStatistics_FoliageOverlappingSphereCount_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.StaticMesh = StaticMesh;
-	Parms.CenterPosition = CenterPosition;
-	Parms.Radius = Radius;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.StaticMesh = InStaticMesh;
+	Parms.CenterPosition = InCenterPosition;
+	Parms.Radius = InRadius;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -59,7 +59,7 @@ int32 UFoliageStatistics::FoliageOverlappingSphereCount(class UObject* WorldCont
 // struct FBox                        Box                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // TArray<struct FTransform>          OutTransforms                                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UFoliageStatistics::FoliageOverlappingBoxTransforms(class UObject* WorldContextObject, class UStaticMesh* StaticMesh, const struct FBox& Box, TArray<struct FTransform>* OutTransforms)
+void UFoliageStatistics::FoliageOverlappingBoxTransforms(class UObject* InWorldContextObject, class UStaticMesh* InStaticMesh, const struct FBox& InBox, TArray<struct FTransform>* InOutTransforms)
 {
 	static class UFunction* Func = nullptr;
 
@@ -68,9 +68,9 @@ void UFoliageStatistics::FoliageOverlappingBoxTransforms(class UObject* WorldCon
 
 	Params::UFoliageStatistics_FoliageOverlappingBoxTransforms_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.StaticMesh = StaticMesh;
-	Parms.Box = Box;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.StaticMesh = InStaticMesh;
+	Parms.Box = InBox;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -80,8 +80,8 @@ void UFoliageStatistics::FoliageOverlappingBoxTransforms(class UObject* WorldCon
 
 	Func->FunctionFlags = Flags;
 
-	if (OutTransforms != nullptr)
-		*OutTransforms = Parms.OutTransforms;
+	if (InOutTransforms != nullptr)
+		*InOutTransforms = Parms.OutTransforms;
 
 }
 
@@ -94,7 +94,7 @@ void UFoliageStatistics::FoliageOverlappingBoxTransforms(class UObject* WorldCon
 // struct FBox                        Box                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UFoliageStatistics::FoliageOverlappingBoxCount(class UObject* WorldContextObject, class UStaticMesh* StaticMesh, const struct FBox& Box)
+int32 UFoliageStatistics::FoliageOverlappingBoxCount(class UObject* InWorldContextObject, class UStaticMesh* InStaticMesh, const struct FBox& InBox)
 {
 	static class UFunction* Func = nullptr;
 
@@ -103,9 +103,9 @@ int32 UFoliageStatistics::FoliageOverlappingBoxCount(class UObject* WorldContext
 
 	Params::UFoliageStatistics_FoliageOverlappingBoxCount_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.StaticMesh = StaticMesh;
-	Parms.Box = Box;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.StaticMesh = InStaticMesh;
+	Parms.Box = InBox;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -130,7 +130,7 @@ int32 UFoliageStatistics::FoliageOverlappingBoxCount(class UObject* WorldContext
 // bool                               bFromSweep                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FHitResult                  OverlapInfo                                                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void AInteractiveFoliageActor::CapsuleTouched(class UPrimitiveComponent* OverlappedComp, class AActor* Other, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, struct FHitResult& OverlapInfo)
+void AInteractiveFoliageActor::CapsuleTouched(class UPrimitiveComponent* InOverlappedComp, class AActor* InOther, class UPrimitiveComponent* InOtherComp, int32 InOtherBodyIndex, bool InbFromSweep, struct FHitResult& InOverlapInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -139,12 +139,12 @@ void AInteractiveFoliageActor::CapsuleTouched(class UPrimitiveComponent* Overlap
 
 	Params::AInteractiveFoliageActor_CapsuleTouched_Params Parms{};
 
-	Parms.OverlappedComp = OverlappedComp;
-	Parms.Other = Other;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.OverlapInfo = OverlapInfo;
+	Parms.OverlappedComp = InOverlappedComp;
+	Parms.Other = InOther;
+	Parms.OtherComp = InOtherComp;
+	Parms.OtherBodyIndex = InOtherBodyIndex;
+	Parms.bFromSweep = InbFromSweep;
+	Parms.OverlapInfo = InOverlapInfo;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -162,7 +162,7 @@ void AInteractiveFoliageActor::CapsuleTouched(class UPrimitiveComponent* Overlap
 // Parameters:
 // int32                              NumSteps                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UProceduralFoliageSpawner::Simulate(int32 NumSteps)
+void UProceduralFoliageSpawner::Simulate(int32 InNumSteps)
 {
 	static class UFunction* Func = nullptr;
 
@@ -171,7 +171,7 @@ void UProceduralFoliageSpawner::Simulate(int32 NumSteps)
 
 	Params::UProceduralFoliageSpawner_Simulate_Params Parms{};
 
-	Parms.NumSteps = NumSteps;
+	Parms.NumSteps = InNumSteps;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

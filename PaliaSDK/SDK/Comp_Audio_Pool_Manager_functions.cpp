@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -29,7 +29,7 @@ namespace SDK
 // bool                               CallFunc_Array_RemoveItem_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Array_Contains_ReturnValue                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::UpdateWindObjects(TArray<class ABP_Env_Audio_Pool_Base_C*>& ClosestObjects, int32 Temp_int_Loop_Counter_Variable, int32 CallFunc_Array_Length_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, int32 Temp_int_Array_Index_Variable, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item, bool CallFunc_Set_Contains_ReturnValue, bool CallFunc_Array_RemoveItem_ReturnValue, bool CallFunc_Array_Contains_ReturnValue)
+void UComp_Audio_Pool_Manager_C::UpdateWindObjects(TArray<class ABP_Env_Audio_Pool_Base_C*>& InClosestObjects, int32 InTemp_int_Loop_Counter_Variable, int32 InCallFunc_Array_Length_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue, int32 InTemp_int_Array_Index_Variable, class ABP_Env_Audio_Pool_Base_C* InCallFunc_Array_Get_Item, bool InCallFunc_Set_Contains_ReturnValue, bool InCallFunc_Array_RemoveItem_ReturnValue, bool InCallFunc_Array_Contains_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -38,16 +38,16 @@ void UComp_Audio_Pool_Manager_C::UpdateWindObjects(TArray<class ABP_Env_Audio_Po
 
 	Params::UComp_Audio_Pool_Manager_C_UpdateWindObjects_Params Parms{};
 
-	Parms.ClosestObjects = ClosestObjects;
-	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
-	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
-	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
-	Parms.CallFunc_Set_Contains_ReturnValue = CallFunc_Set_Contains_ReturnValue;
-	Parms.CallFunc_Array_RemoveItem_ReturnValue = CallFunc_Array_RemoveItem_ReturnValue;
-	Parms.CallFunc_Array_Contains_ReturnValue = CallFunc_Array_Contains_ReturnValue;
+	Parms.ClosestObjects = InClosestObjects;
+	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
+	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
+	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
+	Parms.CallFunc_Set_Contains_ReturnValue = InCallFunc_Set_Contains_ReturnValue;
+	Parms.CallFunc_Array_RemoveItem_ReturnValue = InCallFunc_Array_RemoveItem_ReturnValue;
+	Parms.CallFunc_Array_Contains_ReturnValue = InCallFunc_Array_Contains_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -70,7 +70,7 @@ void UComp_Audio_Pool_Manager_C::UpdateWindObjects(TArray<class ABP_Env_Audio_Po
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue_1                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::GetCritterValidFoliage(TArray<class ABP_Env_Audio_Pool_Base_C*>* CritterValidFoliage, const TArray<class ABP_Env_Audio_Pool_Base_C*>& LocalCritterValidFoliage, int32 Temp_int_Array_Index_Variable, int32 Temp_int_Loop_Counter_Variable, int32 CallFunc_Add_IntInt_ReturnValue, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_Set_ToArray_Result, int32 CallFunc_Array_Length_ReturnValue, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_Array_Add_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsValid_ReturnValue_1)
+void UComp_Audio_Pool_Manager_C::GetCritterValidFoliage(TArray<class ABP_Env_Audio_Pool_Base_C*>* InCritterValidFoliage, const TArray<class ABP_Env_Audio_Pool_Base_C*>& InLocalCritterValidFoliage, int32 InTemp_int_Array_Index_Variable, int32 InTemp_int_Loop_Counter_Variable, int32 InCallFunc_Add_IntInt_ReturnValue, TArray<class ABP_Env_Audio_Pool_Base_C*>& InCallFunc_Set_ToArray_Result, int32 InCallFunc_Array_Length_ReturnValue, class ABP_Env_Audio_Pool_Base_C* InCallFunc_Array_Get_Item, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_Array_Add_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -79,22 +79,22 @@ void UComp_Audio_Pool_Manager_C::GetCritterValidFoliage(TArray<class ABP_Env_Aud
 
 	Params::UComp_Audio_Pool_Manager_C_GetCritterValidFoliage_Params Parms{};
 
-	Parms.LocalCritterValidFoliage = LocalCritterValidFoliage;
-	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
-	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Set_ToArray_Result = CallFunc_Set_ToArray_Result;
-	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
-	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_Array_Add_ReturnValue = CallFunc_Array_Add_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.LocalCritterValidFoliage = InLocalCritterValidFoliage;
+	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
+	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Set_ToArray_Result = InCallFunc_Set_ToArray_Result;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
+	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_Array_Add_ReturnValue = InCallFunc_Array_Add_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (CritterValidFoliage != nullptr)
-		*CritterValidFoliage = Parms.CritterValidFoliage;
+	if (InCritterValidFoliage != nullptr)
+		*InCritterValidFoliage = Parms.CritterValidFoliage;
 
 }
 
@@ -124,7 +124,7 @@ void UComp_Audio_Pool_Manager_C::GetCritterValidFoliage(TArray<class ABP_Env_Aud
 // bool                               CallFunc_Less_IntInt_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::GetAvailableInsectEmitter(class ABP_AudioPool_RandomLoop_C** Emitter, bool* Found, TMap<struct FVector, class UObject*> InsectLocations, bool EmitterFound, class ABP_AudioPool_RandomLoop_C* EmitterLocal, bool Temp_bool_True_if_break_was_hit_Variable, int32 Temp_int_Array_Index_Variable, bool CallFunc_Not_PreBool_ReturnValue, int32 Temp_int_Loop_Counter_Variable, int32 CallFunc_Add_IntInt_ReturnValue, TArray<class ABP_AudioPool_RandomLoop_C*>& CallFunc_Set_ToArray_Result, TArray<class ABP_AudioPool_RandomLoop_C*>& CallFunc_Set_ToArray_Result_1, TArray<class AActor*>& CallFunc_SortActorsByClosest_ReturnValue, class ABP_AudioPool_RandomLoop_C* CallFunc_Array_Get_Item, int32 CallFunc_Array_LastIndex_ReturnValue, class AActor* CallFunc_Array_Get_Item_1, class ABP_AudioPool_RandomLoop_C* K2Node_DynamicCast_AsBP_Audio_Pool_Random_Loop, bool K2Node_DynamicCast_bSuccess, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, bool CallFunc_BooleanAND_ReturnValue)
+void UComp_Audio_Pool_Manager_C::GetAvailableInsectEmitter(class ABP_AudioPool_RandomLoop_C** InEmitter, bool* InFound, TMap<struct FVector, class UObject*> InInsectLocations, bool InEmitterFound, class ABP_AudioPool_RandomLoop_C* InEmitterLocal, bool InTemp_bool_True_if_break_was_hit_Variable, int32 InTemp_int_Array_Index_Variable, bool InCallFunc_Not_PreBool_ReturnValue, int32 InTemp_int_Loop_Counter_Variable, int32 InCallFunc_Add_IntInt_ReturnValue, TArray<class ABP_AudioPool_RandomLoop_C*>& InCallFunc_Set_ToArray_Result, TArray<class ABP_AudioPool_RandomLoop_C*>& InCallFunc_Set_ToArray_Result_1, TArray<class AActor*>& InCallFunc_SortActorsByClosest_ReturnValue, class ABP_AudioPool_RandomLoop_C* InCallFunc_Array_Get_Item, int32 InCallFunc_Array_LastIndex_ReturnValue, class AActor* InCallFunc_Array_Get_Item_1, class ABP_AudioPool_RandomLoop_C* InK2Node_DynamicCast_AsBP_Audio_Pool_Random_Loop, bool InK2Node_DynamicCast_bSuccess, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -133,33 +133,33 @@ void UComp_Audio_Pool_Manager_C::GetAvailableInsectEmitter(class ABP_AudioPool_R
 
 	Params::UComp_Audio_Pool_Manager_C_GetAvailableInsectEmitter_Params Parms{};
 
-	Parms.InsectLocations = InsectLocations;
-	Parms.EmitterFound = EmitterFound;
-	Parms.EmitterLocal = EmitterLocal;
-	Parms.Temp_bool_True_if_break_was_hit_Variable = Temp_bool_True_if_break_was_hit_Variable;
-	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
-	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
-	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Set_ToArray_Result = CallFunc_Set_ToArray_Result;
-	Parms.CallFunc_Set_ToArray_Result_1 = CallFunc_Set_ToArray_Result_1;
-	Parms.CallFunc_SortActorsByClosest_ReturnValue = CallFunc_SortActorsByClosest_ReturnValue;
-	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
-	Parms.CallFunc_Array_LastIndex_ReturnValue = CallFunc_Array_LastIndex_ReturnValue;
-	Parms.CallFunc_Array_Get_Item_1 = CallFunc_Array_Get_Item_1;
-	Parms.K2Node_DynamicCast_AsBP_Audio_Pool_Random_Loop = K2Node_DynamicCast_AsBP_Audio_Pool_Random_Loop;
-	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
+	Parms.InsectLocations = InInsectLocations;
+	Parms.EmitterFound = InEmitterFound;
+	Parms.EmitterLocal = InEmitterLocal;
+	Parms.Temp_bool_True_if_break_was_hit_Variable = InTemp_bool_True_if_break_was_hit_Variable;
+	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
+	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
+	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Set_ToArray_Result = InCallFunc_Set_ToArray_Result;
+	Parms.CallFunc_Set_ToArray_Result_1 = InCallFunc_Set_ToArray_Result_1;
+	Parms.CallFunc_SortActorsByClosest_ReturnValue = InCallFunc_SortActorsByClosest_ReturnValue;
+	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
+	Parms.CallFunc_Array_LastIndex_ReturnValue = InCallFunc_Array_LastIndex_ReturnValue;
+	Parms.CallFunc_Array_Get_Item_1 = InCallFunc_Array_Get_Item_1;
+	Parms.K2Node_DynamicCast_AsBP_Audio_Pool_Random_Loop = InK2Node_DynamicCast_AsBP_Audio_Pool_Random_Loop;
+	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Emitter != nullptr)
-		*Emitter = Parms.Emitter;
+	if (InEmitter != nullptr)
+		*InEmitter = Parms.Emitter;
 
-	if (Found != nullptr)
-		*Found = Parms.Found;
+	if (InFound != nullptr)
+		*InFound = Parms.Found;
 
 }
 
@@ -195,7 +195,7 @@ void UComp_Audio_Pool_Manager_C::GetAvailableInsectEmitter(class ABP_AudioPool_R
 // bool                               CallFunc_Less_IntInt_ReturnValue_1                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::GetAvailableWindEmitter(class ABP_AudioPool_StaticLoop_C** Output, bool Break, class ABP_AudioPool_StaticLoop_C* FoliageActor, double LDistance, bool Temp_bool_True_if_break_was_hit_Variable, int32 Temp_int_Array_Index_Variable, bool CallFunc_Not_PreBool_ReturnValue, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutLocation, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutFrontDir, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutRightDir, int32 Temp_int_Loop_Counter_Variable, int32 CallFunc_Add_IntInt_ReturnValue, int32 Temp_int_Array_Index_Variable_1, int32 Temp_int_Loop_Counter_Variable_1, int32 CallFunc_Add_IntInt_ReturnValue_1, TArray<class ABP_AudioPool_StaticLoop_C*>& CallFunc_Set_ToArray_Result, TArray<class ABP_AudioPool_StaticLoop_C*>& CallFunc_Set_ToArray_Result_1, class ABP_AudioPool_StaticLoop_C* CallFunc_Array_Get_Item, class ABP_AudioPool_StaticLoop_C* CallFunc_Array_Get_Item_1, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, double CallFunc_Vector_Distance_ReturnValue, bool CallFunc_Greater_DoubleDouble_ReturnValue, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_Array_Length_ReturnValue_1, bool CallFunc_Less_IntInt_ReturnValue_1, bool CallFunc_BooleanAND_ReturnValue)
+void UComp_Audio_Pool_Manager_C::GetAvailableWindEmitter(class ABP_AudioPool_StaticLoop_C** InOutput, bool InBreak, class ABP_AudioPool_StaticLoop_C* InFoliageActor, double InLDistance, bool InTemp_bool_True_if_break_was_hit_Variable, int32 InTemp_int_Array_Index_Variable, bool InCallFunc_Not_PreBool_ReturnValue, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutLocation, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutRightDir, int32 InTemp_int_Loop_Counter_Variable, int32 InCallFunc_Add_IntInt_ReturnValue, int32 InTemp_int_Array_Index_Variable_1, int32 InTemp_int_Loop_Counter_Variable_1, int32 InCallFunc_Add_IntInt_ReturnValue_1, TArray<class ABP_AudioPool_StaticLoop_C*>& InCallFunc_Set_ToArray_Result, TArray<class ABP_AudioPool_StaticLoop_C*>& InCallFunc_Set_ToArray_Result_1, class ABP_AudioPool_StaticLoop_C* InCallFunc_Array_Get_Item, class ABP_AudioPool_StaticLoop_C* InCallFunc_Array_Get_Item_1, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue, double InCallFunc_Vector_Distance_ReturnValue, bool InCallFunc_Greater_DoubleDouble_ReturnValue, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_Array_Length_ReturnValue_1, bool InCallFunc_Less_IntInt_ReturnValue_1, bool InCallFunc_BooleanAND_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -204,37 +204,37 @@ void UComp_Audio_Pool_Manager_C::GetAvailableWindEmitter(class ABP_AudioPool_Sta
 
 	Params::UComp_Audio_Pool_Manager_C_GetAvailableWindEmitter_Params Parms{};
 
-	Parms.Break = Break;
-	Parms.FoliageActor = FoliageActor;
-	Parms.LDistance = LDistance;
-	Parms.Temp_bool_True_if_break_was_hit_Variable = Temp_bool_True_if_break_was_hit_Variable;
-	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
-	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation = CallFunc_GetValeriaAudioListenerPosition_OutLocation;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir = CallFunc_GetValeriaAudioListenerPosition_OutFrontDir;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir = CallFunc_GetValeriaAudioListenerPosition_OutRightDir;
-	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
-	Parms.Temp_int_Array_Index_Variable_1 = Temp_int_Array_Index_Variable_1;
-	Parms.Temp_int_Loop_Counter_Variable_1 = Temp_int_Loop_Counter_Variable_1;
-	Parms.CallFunc_Add_IntInt_ReturnValue_1 = CallFunc_Add_IntInt_ReturnValue_1;
-	Parms.CallFunc_Set_ToArray_Result = CallFunc_Set_ToArray_Result;
-	Parms.CallFunc_Set_ToArray_Result_1 = CallFunc_Set_ToArray_Result_1;
-	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
-	Parms.CallFunc_Array_Get_Item_1 = CallFunc_Array_Get_Item_1;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
-	Parms.CallFunc_Vector_Distance_ReturnValue = CallFunc_Vector_Distance_ReturnValue;
-	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = CallFunc_Greater_DoubleDouble_ReturnValue;
-	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_Array_Length_ReturnValue_1 = CallFunc_Array_Length_ReturnValue_1;
-	Parms.CallFunc_Less_IntInt_ReturnValue_1 = CallFunc_Less_IntInt_ReturnValue_1;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
+	Parms.Break = InBreak;
+	Parms.FoliageActor = InFoliageActor;
+	Parms.LDistance = InLDistance;
+	Parms.Temp_bool_True_if_break_was_hit_Variable = InTemp_bool_True_if_break_was_hit_Variable;
+	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
+	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation = InCallFunc_GetValeriaAudioListenerPosition_OutLocation;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir = InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir = InCallFunc_GetValeriaAudioListenerPosition_OutRightDir;
+	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.Temp_int_Array_Index_Variable_1 = InTemp_int_Array_Index_Variable_1;
+	Parms.Temp_int_Loop_Counter_Variable_1 = InTemp_int_Loop_Counter_Variable_1;
+	Parms.CallFunc_Add_IntInt_ReturnValue_1 = InCallFunc_Add_IntInt_ReturnValue_1;
+	Parms.CallFunc_Set_ToArray_Result = InCallFunc_Set_ToArray_Result;
+	Parms.CallFunc_Set_ToArray_Result_1 = InCallFunc_Set_ToArray_Result_1;
+	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
+	Parms.CallFunc_Array_Get_Item_1 = InCallFunc_Array_Get_Item_1;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue = InCallFunc_K2_GetActorLocation_ReturnValue;
+	Parms.CallFunc_Vector_Distance_ReturnValue = InCallFunc_Vector_Distance_ReturnValue;
+	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = InCallFunc_Greater_DoubleDouble_ReturnValue;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_Array_Length_ReturnValue_1 = InCallFunc_Array_Length_ReturnValue_1;
+	Parms.CallFunc_Less_IntInt_ReturnValue_1 = InCallFunc_Less_IntInt_ReturnValue_1;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Output != nullptr)
-		*Output = Parms.Output;
+	if (InOutput != nullptr)
+		*InOutput = Parms.Output;
 
 }
 
@@ -257,7 +257,7 @@ void UComp_Audio_Pool_Manager_C::GetAvailableWindEmitter(class ABP_AudioPool_Sta
 // int32                              CallFunc_Add_IntInt_ReturnValue_1                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_GreaterEqual_IntInt_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::GetClosestInsectObjects(TArray<class ABP_Env_Audio_Pool_Base_C*>* ClosestInsectObjects, const TArray<class ABP_Env_Audio_Pool_Base_C*>& LClosestInsectObjects, bool Temp_bool_True_if_break_was_hit_Variable, int32 Temp_int_Array_Index_Variable, bool CallFunc_Not_PreBool_ReturnValue, int32 Temp_int_Loop_Counter_Variable, int32 CallFunc_Add_IntInt_ReturnValue, int32 CallFunc_Array_Length_ReturnValue, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_Array_Add_ReturnValue, bool CallFunc_BooleanAND_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue_1, bool CallFunc_GreaterEqual_IntInt_ReturnValue)
+void UComp_Audio_Pool_Manager_C::GetClosestInsectObjects(TArray<class ABP_Env_Audio_Pool_Base_C*>* InClosestInsectObjects, const TArray<class ABP_Env_Audio_Pool_Base_C*>& InLClosestInsectObjects, bool InTemp_bool_True_if_break_was_hit_Variable, int32 InTemp_int_Array_Index_Variable, bool InCallFunc_Not_PreBool_ReturnValue, int32 InTemp_int_Loop_Counter_Variable, int32 InCallFunc_Add_IntInt_ReturnValue, int32 InCallFunc_Array_Length_ReturnValue, class ABP_Env_Audio_Pool_Base_C* InCallFunc_Array_Get_Item, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_Array_Add_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue_1, bool InCallFunc_GreaterEqual_IntInt_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -266,24 +266,24 @@ void UComp_Audio_Pool_Manager_C::GetClosestInsectObjects(TArray<class ABP_Env_Au
 
 	Params::UComp_Audio_Pool_Manager_C_GetClosestInsectObjects_Params Parms{};
 
-	Parms.LClosestInsectObjects = LClosestInsectObjects;
-	Parms.Temp_bool_True_if_break_was_hit_Variable = Temp_bool_True_if_break_was_hit_Variable;
-	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
-	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
-	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
-	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_Array_Add_ReturnValue = CallFunc_Array_Add_ReturnValue;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue_1 = CallFunc_Add_IntInt_ReturnValue_1;
-	Parms.CallFunc_GreaterEqual_IntInt_ReturnValue = CallFunc_GreaterEqual_IntInt_ReturnValue;
+	Parms.LClosestInsectObjects = InLClosestInsectObjects;
+	Parms.Temp_bool_True_if_break_was_hit_Variable = InTemp_bool_True_if_break_was_hit_Variable;
+	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
+	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
+	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
+	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_Array_Add_ReturnValue = InCallFunc_Array_Add_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue_1 = InCallFunc_Add_IntInt_ReturnValue_1;
+	Parms.CallFunc_GreaterEqual_IntInt_ReturnValue = InCallFunc_GreaterEqual_IntInt_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (ClosestInsectObjects != nullptr)
-		*ClosestInsectObjects = Parms.ClosestInsectObjects;
+	if (InClosestInsectObjects != nullptr)
+		*InClosestInsectObjects = Parms.ClosestInsectObjects;
 
 }
 
@@ -303,7 +303,7 @@ void UComp_Audio_Pool_Manager_C::GetClosestInsectObjects(TArray<class ABP_Env_Au
 // int32                              CallFunc_Subtract_IntInt_ReturnValue                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_LessEqual_IntInt_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::GetClosestWindObjects(TArray<class ABP_Env_Audio_Pool_Base_C*>* ClosestWindObjects, const TArray<class ABP_Env_Audio_Pool_Base_C*>& LClosestWindObjects, int32 CallFunc_Array_Length_ReturnValue, int32 Temp_int_Variable, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item, int32 CallFunc_Add_IntInt_ReturnValue, int32 CallFunc_Array_Add_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_SelectInt_ReturnValue, int32 CallFunc_Subtract_IntInt_ReturnValue, bool CallFunc_LessEqual_IntInt_ReturnValue)
+void UComp_Audio_Pool_Manager_C::GetClosestWindObjects(TArray<class ABP_Env_Audio_Pool_Base_C*>* InClosestWindObjects, const TArray<class ABP_Env_Audio_Pool_Base_C*>& InLClosestWindObjects, int32 InCallFunc_Array_Length_ReturnValue, int32 InTemp_int_Variable, class ABP_Env_Audio_Pool_Base_C* InCallFunc_Array_Get_Item, int32 InCallFunc_Add_IntInt_ReturnValue, int32 InCallFunc_Array_Add_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_SelectInt_ReturnValue, int32 InCallFunc_Subtract_IntInt_ReturnValue, bool InCallFunc_LessEqual_IntInt_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -312,21 +312,21 @@ void UComp_Audio_Pool_Manager_C::GetClosestWindObjects(TArray<class ABP_Env_Audi
 
 	Params::UComp_Audio_Pool_Manager_C_GetClosestWindObjects_Params Parms{};
 
-	Parms.LClosestWindObjects = LClosestWindObjects;
-	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
-	Parms.Temp_int_Variable = Temp_int_Variable;
-	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Array_Add_ReturnValue = CallFunc_Array_Add_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_SelectInt_ReturnValue = CallFunc_SelectInt_ReturnValue;
-	Parms.CallFunc_Subtract_IntInt_ReturnValue = CallFunc_Subtract_IntInt_ReturnValue;
-	Parms.CallFunc_LessEqual_IntInt_ReturnValue = CallFunc_LessEqual_IntInt_ReturnValue;
+	Parms.LClosestWindObjects = InLClosestWindObjects;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.Temp_int_Variable = InTemp_int_Variable;
+	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Array_Add_ReturnValue = InCallFunc_Array_Add_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_SelectInt_ReturnValue = InCallFunc_SelectInt_ReturnValue;
+	Parms.CallFunc_Subtract_IntInt_ReturnValue = InCallFunc_Subtract_IntInt_ReturnValue;
+	Parms.CallFunc_LessEqual_IntInt_ReturnValue = InCallFunc_LessEqual_IntInt_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (ClosestWindObjects != nullptr)
-		*ClosestWindObjects = Parms.ClosestWindObjects;
+	if (InClosestWindObjects != nullptr)
+		*InClosestWindObjects = Parms.ClosestWindObjects;
 
 }
 
@@ -353,7 +353,7 @@ void UComp_Audio_Pool_Manager_C::GetClosestWindObjects(TArray<class ABP_Env_Audi
 // bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_Array_Add_ReturnValue                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::GetClosestObjects(TArray<class ABP_Env_Audio_Pool_Base_C*>* ClosestFoliage, const TArray<class ABP_Env_Audio_Pool_Base_C*>& SortedObjectsNear, TSet<class ABP_Env_Audio_Pool_Base_C*> LocalAllObjectsNear, const TArray<struct FVector>& Closest, int32 Temp_int_Array_Index_Variable, int32 Temp_int_Loop_Counter_Variable, int32 CallFunc_Add_IntInt_ReturnValue, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_Set_ToArray_Result, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutLocation, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutFrontDir, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutRightDir, TArray<class AActor*>& CallFunc_SortActorsByClosest_ReturnValue, int32 CallFunc_Array_Length_ReturnValue, class AActor* CallFunc_Array_Get_Item, bool CallFunc_Less_IntInt_ReturnValue, class ABP_Env_Audio_Pool_Base_C* K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base, bool K2Node_DynamicCast_bSuccess, int32 CallFunc_Array_Add_ReturnValue)
+void UComp_Audio_Pool_Manager_C::GetClosestObjects(TArray<class ABP_Env_Audio_Pool_Base_C*>* InClosestFoliage, const TArray<class ABP_Env_Audio_Pool_Base_C*>& InSortedObjectsNear, TSet<class ABP_Env_Audio_Pool_Base_C*> InLocalAllObjectsNear, const TArray<struct FVector>& InClosest, int32 InTemp_int_Array_Index_Variable, int32 InTemp_int_Loop_Counter_Variable, int32 InCallFunc_Add_IntInt_ReturnValue, TArray<class ABP_Env_Audio_Pool_Base_C*>& InCallFunc_Set_ToArray_Result, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutLocation, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutRightDir, TArray<class AActor*>& InCallFunc_SortActorsByClosest_ReturnValue, int32 InCallFunc_Array_Length_ReturnValue, class AActor* InCallFunc_Array_Get_Item, bool InCallFunc_Less_IntInt_ReturnValue, class ABP_Env_Audio_Pool_Base_C* InK2Node_DynamicCast_AsBP_Env_Audio_Pool_Base, bool InK2Node_DynamicCast_bSuccess, int32 InCallFunc_Array_Add_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -362,28 +362,28 @@ void UComp_Audio_Pool_Manager_C::GetClosestObjects(TArray<class ABP_Env_Audio_Po
 
 	Params::UComp_Audio_Pool_Manager_C_GetClosestObjects_Params Parms{};
 
-	Parms.SortedObjectsNear = SortedObjectsNear;
-	Parms.LocalAllObjectsNear = LocalAllObjectsNear;
-	Parms.Closest = Closest;
-	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
-	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Set_ToArray_Result = CallFunc_Set_ToArray_Result;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation = CallFunc_GetValeriaAudioListenerPosition_OutLocation;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir = CallFunc_GetValeriaAudioListenerPosition_OutFrontDir;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir = CallFunc_GetValeriaAudioListenerPosition_OutRightDir;
-	Parms.CallFunc_SortActorsByClosest_ReturnValue = CallFunc_SortActorsByClosest_ReturnValue;
-	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
-	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
-	Parms.K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base = K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base;
-	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_Array_Add_ReturnValue = CallFunc_Array_Add_ReturnValue;
+	Parms.SortedObjectsNear = InSortedObjectsNear;
+	Parms.LocalAllObjectsNear = InLocalAllObjectsNear;
+	Parms.Closest = InClosest;
+	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
+	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Set_ToArray_Result = InCallFunc_Set_ToArray_Result;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation = InCallFunc_GetValeriaAudioListenerPosition_OutLocation;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir = InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir = InCallFunc_GetValeriaAudioListenerPosition_OutRightDir;
+	Parms.CallFunc_SortActorsByClosest_ReturnValue = InCallFunc_SortActorsByClosest_ReturnValue;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
+	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
+	Parms.K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base = InK2Node_DynamicCast_AsBP_Env_Audio_Pool_Base;
+	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_Array_Add_ReturnValue = InCallFunc_Array_Add_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (ClosestFoliage != nullptr)
-		*ClosestFoliage = Parms.ClosestFoliage;
+	if (InClosestFoliage != nullptr)
+		*InClosestFoliage = Parms.ClosestFoliage;
 
 }
 
@@ -412,7 +412,7 @@ void UComp_Audio_Pool_Manager_C::ReceiveBeginPlay()
 // Parameters:
 // float                              DeltaSeconds                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::ReceiveTick(float DeltaSeconds)
+void UComp_Audio_Pool_Manager_C::ReceiveTick(float InDeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -421,7 +421,7 @@ void UComp_Audio_Pool_Manager_C::ReceiveTick(float DeltaSeconds)
 
 	Params::UComp_Audio_Pool_Manager_C_ReceiveTick_Params Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.DeltaSeconds = InDeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -452,7 +452,7 @@ void UComp_Audio_Pool_Manager_C::DrawDebugText()
 // Parameters:
 // bool                               On                                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::AudioDebugFoliage(bool On)
+void UComp_Audio_Pool_Manager_C::AudioDebugFoliage(bool InOn)
 {
 	static class UFunction* Func = nullptr;
 
@@ -461,7 +461,7 @@ void UComp_Audio_Pool_Manager_C::AudioDebugFoliage(bool On)
 
 	Params::UComp_Audio_Pool_Manager_C_AudioDebugFoliage_Params Parms{};
 
-	Parms.On = On;
+	Parms.On = InOn;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -596,7 +596,7 @@ void UComp_Audio_Pool_Manager_C::AudioDebugFoliage(bool On)
 // float                              CallFunc_DrawDebugSphere_Duration_ImplicitCast                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_DrawDebugSphere_Duration_ImplicitCast_1                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::ExecuteUbergraph_Comp_Audio_Pool_Manager(int32 EntryPoint, TArray<class AActor*>& Temp_object_Variable, const struct FTransform& CallFunc_MakeTransform_ReturnValue, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutLocation, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutFrontDir, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutRightDir, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutLocation_1, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_1, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutRightDir_1, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutLocation_2, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_2, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutRightDir_2, int32 CallFunc_Array_Length_ReturnValue, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_Set_ToArray_Result, int32 CallFunc_Array_Length_ReturnValue_1, class ABP_AudioPool_StaticLoop_C* CallFunc_GetAvailableWindEmitter_Output, double CallFunc_Vector_Distance_ReturnValue, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_GetClosestWindObjects_ClosestWindObjects, bool CallFunc_Greater_DoubleDouble_ReturnValue, int32 Temp_int_Array_Index_Variable, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_GetClosestObjects_ClosestFoliage, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item, bool CallFunc_Set_Remove_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, int32 Temp_int_Variable, int32 CallFunc_Add_IntInt_ReturnValue, class ABP_AudioPool_RandomLoop_C* CallFunc_GetAvailableInsectEmitter_Emitter, bool CallFunc_GetAvailableInsectEmitter_Found, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_GetClosestWindObjects_ClosestWindObjects_1, bool CallFunc_IsValid_ReturnValue_2, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_GetClosestInsectObjects_ClosestInsectObjects, int32 CallFunc_Array_Length_ReturnValue_2, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutLocation_3, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_3, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutRightDir_3, int32 Temp_int_Loop_Counter_Variable, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue_1, int32 Temp_int_Variable_1, int32 CallFunc_Add_IntInt_ReturnValue_2, int32 Temp_int_Variable_2, int32 CallFunc_Add_IntInt_ReturnValue_3, TArray<enum class EObjectTypeQuery>& K2Node_MakeArray_Array, TArray<class AActor*>& CallFunc_SphereOverlapActors_OutActors, bool CallFunc_SphereOverlapActors_ReturnValue, int32 Temp_int_Array_Index_Variable_1, int32 CallFunc_Array_Length_ReturnValue_3, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item_1, int32 Temp_int_Loop_Counter_Variable_1, int32 CallFunc_Add_IntInt_ReturnValue_4, int32 Temp_int_Array_Index_Variable_2, int32 Temp_int_Loop_Counter_Variable_2, int32 CallFunc_Add_IntInt_ReturnValue_5, int32 Temp_int_Array_Index_Variable_3, float K2Node_Event_DeltaSeconds, class AActor* CallFunc_GetOwner_ReturnValue, class APawn* K2Node_DynamicCast_AsPawn, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsLocallyControlled_ReturnValue, int32 CallFunc_Subtract_IntInt_ReturnValue, bool CallFunc_LessEqual_IntInt_ReturnValue, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue, int32 CallFunc_Multiply_IntInt_ReturnValue, class ABP_AudioPool_OneShot_C* CallFunc_FinishSpawningActor_ReturnValue, bool CallFunc_IsServer_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, int32 Temp_int_Loop_Counter_Variable_3, bool CallFunc_BooleanAND_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue_1, int32 CallFunc_Add_IntInt_ReturnValue_6, int32 Temp_int_Loop_Counter_Variable_4, bool CallFunc_LessEqual_IntInt_ReturnValue_1, bool CallFunc_Less_IntInt_ReturnValue_2, int32 CallFunc_Add_IntInt_ReturnValue_7, const struct FTransform& CallFunc_MakeTransform_ReturnValue_1, int32 Temp_int_Array_Index_Variable_4, class AActor* CallFunc_Array_Get_Item_2, class ABP_Env_Audio_Pool_Base_C* K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base, bool K2Node_DynamicCast_bSuccess_1, bool CallFunc_LessEqual_IntInt_ReturnValue_2, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1, class ABP_AudioPool_RandomLoop_C* CallFunc_FinishSpawningActor_ReturnValue_1, const struct FTransform& CallFunc_MakeTransform_ReturnValue_2, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2, int32 Temp_int_Loop_Counter_Variable_5, bool CallFunc_Less_IntInt_ReturnValue_3, int32 CallFunc_Add_IntInt_ReturnValue_8, class ABP_AudioPool_StaticLoop_C* CallFunc_FinishSpawningActor_ReturnValue_2, int32 CallFunc_Set_Length_ReturnValue, const class FString& CallFunc_Conv_IntToString_ReturnValue, int32 CallFunc_Set_Length_ReturnValue_1, const class FString& CallFunc_Conv_IntToString_ReturnValue_1, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_Set_ToArray_Result_1, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item_3, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_Set_ToArray_Result_2, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item_4, int32 CallFunc_Array_Length_ReturnValue_4, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue_1, bool CallFunc_Less_IntInt_ReturnValue_4, bool CallFunc_IsValid_ReturnValue_3, bool CallFunc_IsValid_ReturnValue_4, int32 CallFunc_Array_Length_ReturnValue_5, bool CallFunc_Less_IntInt_ReturnValue_5, int32 Temp_int_Array_Index_Variable_5, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item_5, int32 CallFunc_Set_Length_ReturnValue_2, bool K2Node_CustomEvent_On, const class FString& CallFunc_Conv_IntToString_ReturnValue_2, double CallFunc_SelectFloat_ReturnValue, const class FString& CallFunc_Concat_StrStr_ReturnValue, const struct FTimerHandle& CallFunc_K2_SetTimer_ReturnValue, const class FString& CallFunc_Concat_StrStr_ReturnValue_1, const class FString& CallFunc_Concat_StrStr_ReturnValue_2, const class FString& CallFunc_Concat_StrStr_ReturnValue_3, const class FString& CallFunc_Concat_StrStr_ReturnValue_4, const class FString& CallFunc_Concat_StrStr_ReturnValue_5, const class FString& CallFunc_Concat_StrStr_ReturnValue_6, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue_2, float CallFunc_SetComponentTickInterval_TickInterval_ImplicitCast, float CallFunc_K2_SetTimer_Time_ImplicitCast, float CallFunc_DrawDebugSphere_Duration_ImplicitCast, float CallFunc_DrawDebugSphere_Duration_ImplicitCast_1)
+void UComp_Audio_Pool_Manager_C::ExecuteUbergraph_Comp_Audio_Pool_Manager(int32 InEntryPoint, TArray<class AActor*>& InTemp_object_Variable, const struct FTransform& InCallFunc_MakeTransform_ReturnValue, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutLocation, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutRightDir, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutLocation_1, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir_1, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutRightDir_1, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutLocation_2, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir_2, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutRightDir_2, int32 InCallFunc_Array_Length_ReturnValue, TArray<class ABP_Env_Audio_Pool_Base_C*>& InCallFunc_Set_ToArray_Result, int32 InCallFunc_Array_Length_ReturnValue_1, class ABP_AudioPool_StaticLoop_C* InCallFunc_GetAvailableWindEmitter_Output, double InCallFunc_Vector_Distance_ReturnValue, TArray<class ABP_Env_Audio_Pool_Base_C*>& InCallFunc_GetClosestWindObjects_ClosestWindObjects, bool InCallFunc_Greater_DoubleDouble_ReturnValue, int32 InTemp_int_Array_Index_Variable, TArray<class ABP_Env_Audio_Pool_Base_C*>& InCallFunc_GetClosestObjects_ClosestFoliage, class ABP_Env_Audio_Pool_Base_C* InCallFunc_Array_Get_Item, bool InCallFunc_Set_Remove_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, int32 InTemp_int_Variable, int32 InCallFunc_Add_IntInt_ReturnValue, class ABP_AudioPool_RandomLoop_C* InCallFunc_GetAvailableInsectEmitter_Emitter, bool InCallFunc_GetAvailableInsectEmitter_Found, TArray<class ABP_Env_Audio_Pool_Base_C*>& InCallFunc_GetClosestWindObjects_ClosestWindObjects_1, bool InCallFunc_IsValid_ReturnValue_2, TArray<class ABP_Env_Audio_Pool_Base_C*>& InCallFunc_GetClosestInsectObjects_ClosestInsectObjects, int32 InCallFunc_Array_Length_ReturnValue_2, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutLocation_3, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir_3, const struct FVector& InCallFunc_GetValeriaAudioListenerPosition_OutRightDir_3, int32 InTemp_int_Loop_Counter_Variable, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue_1, int32 InTemp_int_Variable_1, int32 InCallFunc_Add_IntInt_ReturnValue_2, int32 InTemp_int_Variable_2, int32 InCallFunc_Add_IntInt_ReturnValue_3, TArray<enum class EObjectTypeQuery>& InK2Node_MakeArray_Array, TArray<class AActor*>& InCallFunc_SphereOverlapActors_OutActors, bool InCallFunc_SphereOverlapActors_ReturnValue, int32 InTemp_int_Array_Index_Variable_1, int32 InCallFunc_Array_Length_ReturnValue_3, class ABP_Env_Audio_Pool_Base_C* InCallFunc_Array_Get_Item_1, int32 InTemp_int_Loop_Counter_Variable_1, int32 InCallFunc_Add_IntInt_ReturnValue_4, int32 InTemp_int_Array_Index_Variable_2, int32 InTemp_int_Loop_Counter_Variable_2, int32 InCallFunc_Add_IntInt_ReturnValue_5, int32 InTemp_int_Array_Index_Variable_3, float InK2Node_Event_DeltaSeconds, class AActor* InCallFunc_GetOwner_ReturnValue, class APawn* InK2Node_DynamicCast_AsPawn, bool InK2Node_DynamicCast_bSuccess, bool InCallFunc_IsLocallyControlled_ReturnValue, int32 InCallFunc_Subtract_IntInt_ReturnValue, bool InCallFunc_LessEqual_IntInt_ReturnValue, class AActor* InCallFunc_BeginDeferredActorSpawnFromClass_ReturnValue, int32 InCallFunc_Multiply_IntInt_ReturnValue, class ABP_AudioPool_OneShot_C* InCallFunc_FinishSpawningActor_ReturnValue, bool InCallFunc_IsServer_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, int32 InTemp_int_Loop_Counter_Variable_3, bool InCallFunc_BooleanAND_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue_1, int32 InCallFunc_Add_IntInt_ReturnValue_6, int32 InTemp_int_Loop_Counter_Variable_4, bool InCallFunc_LessEqual_IntInt_ReturnValue_1, bool InCallFunc_Less_IntInt_ReturnValue_2, int32 InCallFunc_Add_IntInt_ReturnValue_7, const struct FTransform& InCallFunc_MakeTransform_ReturnValue_1, int32 InTemp_int_Array_Index_Variable_4, class AActor* InCallFunc_Array_Get_Item_2, class ABP_Env_Audio_Pool_Base_C* InK2Node_DynamicCast_AsBP_Env_Audio_Pool_Base, bool InK2Node_DynamicCast_bSuccess_1, bool InCallFunc_LessEqual_IntInt_ReturnValue_2, class AActor* InCallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1, class ABP_AudioPool_RandomLoop_C* InCallFunc_FinishSpawningActor_ReturnValue_1, const struct FTransform& InCallFunc_MakeTransform_ReturnValue_2, class AActor* InCallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2, int32 InTemp_int_Loop_Counter_Variable_5, bool InCallFunc_Less_IntInt_ReturnValue_3, int32 InCallFunc_Add_IntInt_ReturnValue_8, class ABP_AudioPool_StaticLoop_C* InCallFunc_FinishSpawningActor_ReturnValue_2, int32 InCallFunc_Set_Length_ReturnValue, const class FString& InCallFunc_Conv_IntToString_ReturnValue, int32 InCallFunc_Set_Length_ReturnValue_1, const class FString& InCallFunc_Conv_IntToString_ReturnValue_1, TArray<class ABP_Env_Audio_Pool_Base_C*>& InCallFunc_Set_ToArray_Result_1, class ABP_Env_Audio_Pool_Base_C* InCallFunc_Array_Get_Item_3, TArray<class ABP_Env_Audio_Pool_Base_C*>& InCallFunc_Set_ToArray_Result_2, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue, class ABP_Env_Audio_Pool_Base_C* InCallFunc_Array_Get_Item_4, int32 InCallFunc_Array_Length_ReturnValue_4, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue_1, bool InCallFunc_Less_IntInt_ReturnValue_4, bool InCallFunc_IsValid_ReturnValue_3, bool InCallFunc_IsValid_ReturnValue_4, int32 InCallFunc_Array_Length_ReturnValue_5, bool InCallFunc_Less_IntInt_ReturnValue_5, int32 InTemp_int_Array_Index_Variable_5, class ABP_Env_Audio_Pool_Base_C* InCallFunc_Array_Get_Item_5, int32 InCallFunc_Set_Length_ReturnValue_2, bool InK2Node_CustomEvent_On, const class FString& InCallFunc_Conv_IntToString_ReturnValue_2, double InCallFunc_SelectFloat_ReturnValue, const class FString& InCallFunc_Concat_StrStr_ReturnValue, const struct FTimerHandle& InCallFunc_K2_SetTimer_ReturnValue, const class FString& InCallFunc_Concat_StrStr_ReturnValue_1, const class FString& InCallFunc_Concat_StrStr_ReturnValue_2, const class FString& InCallFunc_Concat_StrStr_ReturnValue_3, const class FString& InCallFunc_Concat_StrStr_ReturnValue_4, const class FString& InCallFunc_Concat_StrStr_ReturnValue_5, const class FString& InCallFunc_Concat_StrStr_ReturnValue_6, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue_2, float InCallFunc_SetComponentTickInterval_TickInterval_ImplicitCast, float InCallFunc_K2_SetTimer_Time_ImplicitCast, float InCallFunc_DrawDebugSphere_Duration_ImplicitCast, float InCallFunc_DrawDebugSphere_Duration_ImplicitCast_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -605,130 +605,130 @@ void UComp_Audio_Pool_Manager_C::ExecuteUbergraph_Comp_Audio_Pool_Manager(int32 
 
 	Params::UComp_Audio_Pool_Manager_C_ExecuteUbergraph_Comp_Audio_Pool_Manager_Params Parms{};
 
-	Parms.EntryPoint = EntryPoint;
-	Parms.Temp_object_Variable = Temp_object_Variable;
-	Parms.CallFunc_MakeTransform_ReturnValue = CallFunc_MakeTransform_ReturnValue;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation = CallFunc_GetValeriaAudioListenerPosition_OutLocation;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir = CallFunc_GetValeriaAudioListenerPosition_OutFrontDir;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir = CallFunc_GetValeriaAudioListenerPosition_OutRightDir;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation_1 = CallFunc_GetValeriaAudioListenerPosition_OutLocation_1;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_1 = CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_1;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir_1 = CallFunc_GetValeriaAudioListenerPosition_OutRightDir_1;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation_2 = CallFunc_GetValeriaAudioListenerPosition_OutLocation_2;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_2 = CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_2;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir_2 = CallFunc_GetValeriaAudioListenerPosition_OutRightDir_2;
-	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Set_ToArray_Result = CallFunc_Set_ToArray_Result;
-	Parms.CallFunc_Array_Length_ReturnValue_1 = CallFunc_Array_Length_ReturnValue_1;
-	Parms.CallFunc_GetAvailableWindEmitter_Output = CallFunc_GetAvailableWindEmitter_Output;
-	Parms.CallFunc_Vector_Distance_ReturnValue = CallFunc_Vector_Distance_ReturnValue;
-	Parms.CallFunc_GetClosestWindObjects_ClosestWindObjects = CallFunc_GetClosestWindObjects_ClosestWindObjects;
-	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = CallFunc_Greater_DoubleDouble_ReturnValue;
-	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
-	Parms.CallFunc_GetClosestObjects_ClosestFoliage = CallFunc_GetClosestObjects_ClosestFoliage;
-	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
-	Parms.CallFunc_Set_Remove_ReturnValue = CallFunc_Set_Remove_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
-	Parms.Temp_int_Variable = Temp_int_Variable;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_GetAvailableInsectEmitter_Emitter = CallFunc_GetAvailableInsectEmitter_Emitter;
-	Parms.CallFunc_GetAvailableInsectEmitter_Found = CallFunc_GetAvailableInsectEmitter_Found;
-	Parms.CallFunc_GetClosestWindObjects_ClosestWindObjects_1 = CallFunc_GetClosestWindObjects_ClosestWindObjects_1;
-	Parms.CallFunc_IsValid_ReturnValue_2 = CallFunc_IsValid_ReturnValue_2;
-	Parms.CallFunc_GetClosestInsectObjects_ClosestInsectObjects = CallFunc_GetClosestInsectObjects_ClosestInsectObjects;
-	Parms.CallFunc_Array_Length_ReturnValue_2 = CallFunc_Array_Length_ReturnValue_2;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation_3 = CallFunc_GetValeriaAudioListenerPosition_OutLocation_3;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_3 = CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_3;
-	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir_3 = CallFunc_GetValeriaAudioListenerPosition_OutRightDir_3;
-	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue_1 = CallFunc_Add_IntInt_ReturnValue_1;
-	Parms.Temp_int_Variable_1 = Temp_int_Variable_1;
-	Parms.CallFunc_Add_IntInt_ReturnValue_2 = CallFunc_Add_IntInt_ReturnValue_2;
-	Parms.Temp_int_Variable_2 = Temp_int_Variable_2;
-	Parms.CallFunc_Add_IntInt_ReturnValue_3 = CallFunc_Add_IntInt_ReturnValue_3;
-	Parms.K2Node_MakeArray_Array = K2Node_MakeArray_Array;
-	Parms.CallFunc_SphereOverlapActors_OutActors = CallFunc_SphereOverlapActors_OutActors;
-	Parms.CallFunc_SphereOverlapActors_ReturnValue = CallFunc_SphereOverlapActors_ReturnValue;
-	Parms.Temp_int_Array_Index_Variable_1 = Temp_int_Array_Index_Variable_1;
-	Parms.CallFunc_Array_Length_ReturnValue_3 = CallFunc_Array_Length_ReturnValue_3;
-	Parms.CallFunc_Array_Get_Item_1 = CallFunc_Array_Get_Item_1;
-	Parms.Temp_int_Loop_Counter_Variable_1 = Temp_int_Loop_Counter_Variable_1;
-	Parms.CallFunc_Add_IntInt_ReturnValue_4 = CallFunc_Add_IntInt_ReturnValue_4;
-	Parms.Temp_int_Array_Index_Variable_2 = Temp_int_Array_Index_Variable_2;
-	Parms.Temp_int_Loop_Counter_Variable_2 = Temp_int_Loop_Counter_Variable_2;
-	Parms.CallFunc_Add_IntInt_ReturnValue_5 = CallFunc_Add_IntInt_ReturnValue_5;
-	Parms.Temp_int_Array_Index_Variable_3 = Temp_int_Array_Index_Variable_3;
-	Parms.K2Node_Event_DeltaSeconds = K2Node_Event_DeltaSeconds;
-	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
-	Parms.K2Node_DynamicCast_AsPawn = K2Node_DynamicCast_AsPawn;
-	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_IsLocallyControlled_ReturnValue = CallFunc_IsLocallyControlled_ReturnValue;
-	Parms.CallFunc_Subtract_IntInt_ReturnValue = CallFunc_Subtract_IntInt_ReturnValue;
-	Parms.CallFunc_LessEqual_IntInt_ReturnValue = CallFunc_LessEqual_IntInt_ReturnValue;
-	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue = CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue;
-	Parms.CallFunc_Multiply_IntInt_ReturnValue = CallFunc_Multiply_IntInt_ReturnValue;
-	Parms.CallFunc_FinishSpawningActor_ReturnValue = CallFunc_FinishSpawningActor_ReturnValue;
-	Parms.CallFunc_IsServer_ReturnValue = CallFunc_IsServer_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
-	Parms.Temp_int_Loop_Counter_Variable_3 = Temp_int_Loop_Counter_Variable_3;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue_1 = CallFunc_Less_IntInt_ReturnValue_1;
-	Parms.CallFunc_Add_IntInt_ReturnValue_6 = CallFunc_Add_IntInt_ReturnValue_6;
-	Parms.Temp_int_Loop_Counter_Variable_4 = Temp_int_Loop_Counter_Variable_4;
-	Parms.CallFunc_LessEqual_IntInt_ReturnValue_1 = CallFunc_LessEqual_IntInt_ReturnValue_1;
-	Parms.CallFunc_Less_IntInt_ReturnValue_2 = CallFunc_Less_IntInt_ReturnValue_2;
-	Parms.CallFunc_Add_IntInt_ReturnValue_7 = CallFunc_Add_IntInt_ReturnValue_7;
-	Parms.CallFunc_MakeTransform_ReturnValue_1 = CallFunc_MakeTransform_ReturnValue_1;
-	Parms.Temp_int_Array_Index_Variable_4 = Temp_int_Array_Index_Variable_4;
-	Parms.CallFunc_Array_Get_Item_2 = CallFunc_Array_Get_Item_2;
-	Parms.K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base = K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base;
-	Parms.K2Node_DynamicCast_bSuccess_1 = K2Node_DynamicCast_bSuccess_1;
-	Parms.CallFunc_LessEqual_IntInt_ReturnValue_2 = CallFunc_LessEqual_IntInt_ReturnValue_2;
-	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1 = CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1;
-	Parms.CallFunc_FinishSpawningActor_ReturnValue_1 = CallFunc_FinishSpawningActor_ReturnValue_1;
-	Parms.CallFunc_MakeTransform_ReturnValue_2 = CallFunc_MakeTransform_ReturnValue_2;
-	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2 = CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2;
-	Parms.Temp_int_Loop_Counter_Variable_5 = Temp_int_Loop_Counter_Variable_5;
-	Parms.CallFunc_Less_IntInt_ReturnValue_3 = CallFunc_Less_IntInt_ReturnValue_3;
-	Parms.CallFunc_Add_IntInt_ReturnValue_8 = CallFunc_Add_IntInt_ReturnValue_8;
-	Parms.CallFunc_FinishSpawningActor_ReturnValue_2 = CallFunc_FinishSpawningActor_ReturnValue_2;
-	Parms.CallFunc_Set_Length_ReturnValue = CallFunc_Set_Length_ReturnValue;
-	Parms.CallFunc_Conv_IntToString_ReturnValue = CallFunc_Conv_IntToString_ReturnValue;
-	Parms.CallFunc_Set_Length_ReturnValue_1 = CallFunc_Set_Length_ReturnValue_1;
-	Parms.CallFunc_Conv_IntToString_ReturnValue_1 = CallFunc_Conv_IntToString_ReturnValue_1;
-	Parms.CallFunc_Set_ToArray_Result_1 = CallFunc_Set_ToArray_Result_1;
-	Parms.CallFunc_Array_Get_Item_3 = CallFunc_Array_Get_Item_3;
-	Parms.CallFunc_Set_ToArray_Result_2 = CallFunc_Set_ToArray_Result_2;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
-	Parms.CallFunc_Array_Get_Item_4 = CallFunc_Array_Get_Item_4;
-	Parms.CallFunc_Array_Length_ReturnValue_4 = CallFunc_Array_Length_ReturnValue_4;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue_1 = CallFunc_K2_GetActorLocation_ReturnValue_1;
-	Parms.CallFunc_Less_IntInt_ReturnValue_4 = CallFunc_Less_IntInt_ReturnValue_4;
-	Parms.CallFunc_IsValid_ReturnValue_3 = CallFunc_IsValid_ReturnValue_3;
-	Parms.CallFunc_IsValid_ReturnValue_4 = CallFunc_IsValid_ReturnValue_4;
-	Parms.CallFunc_Array_Length_ReturnValue_5 = CallFunc_Array_Length_ReturnValue_5;
-	Parms.CallFunc_Less_IntInt_ReturnValue_5 = CallFunc_Less_IntInt_ReturnValue_5;
-	Parms.Temp_int_Array_Index_Variable_5 = Temp_int_Array_Index_Variable_5;
-	Parms.CallFunc_Array_Get_Item_5 = CallFunc_Array_Get_Item_5;
-	Parms.CallFunc_Set_Length_ReturnValue_2 = CallFunc_Set_Length_ReturnValue_2;
-	Parms.K2Node_CustomEvent_On = K2Node_CustomEvent_On;
-	Parms.CallFunc_Conv_IntToString_ReturnValue_2 = CallFunc_Conv_IntToString_ReturnValue_2;
-	Parms.CallFunc_SelectFloat_ReturnValue = CallFunc_SelectFloat_ReturnValue;
-	Parms.CallFunc_Concat_StrStr_ReturnValue = CallFunc_Concat_StrStr_ReturnValue;
-	Parms.CallFunc_K2_SetTimer_ReturnValue = CallFunc_K2_SetTimer_ReturnValue;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_1 = CallFunc_Concat_StrStr_ReturnValue_1;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_2 = CallFunc_Concat_StrStr_ReturnValue_2;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_3 = CallFunc_Concat_StrStr_ReturnValue_3;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_4 = CallFunc_Concat_StrStr_ReturnValue_4;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_5 = CallFunc_Concat_StrStr_ReturnValue_5;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_6 = CallFunc_Concat_StrStr_ReturnValue_6;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue_2 = CallFunc_K2_GetActorLocation_ReturnValue_2;
-	Parms.CallFunc_SetComponentTickInterval_TickInterval_ImplicitCast = CallFunc_SetComponentTickInterval_TickInterval_ImplicitCast;
-	Parms.CallFunc_K2_SetTimer_Time_ImplicitCast = CallFunc_K2_SetTimer_Time_ImplicitCast;
-	Parms.CallFunc_DrawDebugSphere_Duration_ImplicitCast = CallFunc_DrawDebugSphere_Duration_ImplicitCast;
-	Parms.CallFunc_DrawDebugSphere_Duration_ImplicitCast_1 = CallFunc_DrawDebugSphere_Duration_ImplicitCast_1;
+	Parms.EntryPoint = InEntryPoint;
+	Parms.Temp_object_Variable = InTemp_object_Variable;
+	Parms.CallFunc_MakeTransform_ReturnValue = InCallFunc_MakeTransform_ReturnValue;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation = InCallFunc_GetValeriaAudioListenerPosition_OutLocation;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir = InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir = InCallFunc_GetValeriaAudioListenerPosition_OutRightDir;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation_1 = InCallFunc_GetValeriaAudioListenerPosition_OutLocation_1;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_1 = InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir_1;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir_1 = InCallFunc_GetValeriaAudioListenerPosition_OutRightDir_1;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation_2 = InCallFunc_GetValeriaAudioListenerPosition_OutLocation_2;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_2 = InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir_2;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir_2 = InCallFunc_GetValeriaAudioListenerPosition_OutRightDir_2;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Set_ToArray_Result = InCallFunc_Set_ToArray_Result;
+	Parms.CallFunc_Array_Length_ReturnValue_1 = InCallFunc_Array_Length_ReturnValue_1;
+	Parms.CallFunc_GetAvailableWindEmitter_Output = InCallFunc_GetAvailableWindEmitter_Output;
+	Parms.CallFunc_Vector_Distance_ReturnValue = InCallFunc_Vector_Distance_ReturnValue;
+	Parms.CallFunc_GetClosestWindObjects_ClosestWindObjects = InCallFunc_GetClosestWindObjects_ClosestWindObjects;
+	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = InCallFunc_Greater_DoubleDouble_ReturnValue;
+	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
+	Parms.CallFunc_GetClosestObjects_ClosestFoliage = InCallFunc_GetClosestObjects_ClosestFoliage;
+	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
+	Parms.CallFunc_Set_Remove_ReturnValue = InCallFunc_Set_Remove_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
+	Parms.Temp_int_Variable = InTemp_int_Variable;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_GetAvailableInsectEmitter_Emitter = InCallFunc_GetAvailableInsectEmitter_Emitter;
+	Parms.CallFunc_GetAvailableInsectEmitter_Found = InCallFunc_GetAvailableInsectEmitter_Found;
+	Parms.CallFunc_GetClosestWindObjects_ClosestWindObjects_1 = InCallFunc_GetClosestWindObjects_ClosestWindObjects_1;
+	Parms.CallFunc_IsValid_ReturnValue_2 = InCallFunc_IsValid_ReturnValue_2;
+	Parms.CallFunc_GetClosestInsectObjects_ClosestInsectObjects = InCallFunc_GetClosestInsectObjects_ClosestInsectObjects;
+	Parms.CallFunc_Array_Length_ReturnValue_2 = InCallFunc_Array_Length_ReturnValue_2;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutLocation_3 = InCallFunc_GetValeriaAudioListenerPosition_OutLocation_3;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir_3 = InCallFunc_GetValeriaAudioListenerPosition_OutFrontDir_3;
+	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir_3 = InCallFunc_GetValeriaAudioListenerPosition_OutRightDir_3;
+	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue_1 = InCallFunc_Add_IntInt_ReturnValue_1;
+	Parms.Temp_int_Variable_1 = InTemp_int_Variable_1;
+	Parms.CallFunc_Add_IntInt_ReturnValue_2 = InCallFunc_Add_IntInt_ReturnValue_2;
+	Parms.Temp_int_Variable_2 = InTemp_int_Variable_2;
+	Parms.CallFunc_Add_IntInt_ReturnValue_3 = InCallFunc_Add_IntInt_ReturnValue_3;
+	Parms.K2Node_MakeArray_Array = InK2Node_MakeArray_Array;
+	Parms.CallFunc_SphereOverlapActors_OutActors = InCallFunc_SphereOverlapActors_OutActors;
+	Parms.CallFunc_SphereOverlapActors_ReturnValue = InCallFunc_SphereOverlapActors_ReturnValue;
+	Parms.Temp_int_Array_Index_Variable_1 = InTemp_int_Array_Index_Variable_1;
+	Parms.CallFunc_Array_Length_ReturnValue_3 = InCallFunc_Array_Length_ReturnValue_3;
+	Parms.CallFunc_Array_Get_Item_1 = InCallFunc_Array_Get_Item_1;
+	Parms.Temp_int_Loop_Counter_Variable_1 = InTemp_int_Loop_Counter_Variable_1;
+	Parms.CallFunc_Add_IntInt_ReturnValue_4 = InCallFunc_Add_IntInt_ReturnValue_4;
+	Parms.Temp_int_Array_Index_Variable_2 = InTemp_int_Array_Index_Variable_2;
+	Parms.Temp_int_Loop_Counter_Variable_2 = InTemp_int_Loop_Counter_Variable_2;
+	Parms.CallFunc_Add_IntInt_ReturnValue_5 = InCallFunc_Add_IntInt_ReturnValue_5;
+	Parms.Temp_int_Array_Index_Variable_3 = InTemp_int_Array_Index_Variable_3;
+	Parms.K2Node_Event_DeltaSeconds = InK2Node_Event_DeltaSeconds;
+	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
+	Parms.K2Node_DynamicCast_AsPawn = InK2Node_DynamicCast_AsPawn;
+	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_IsLocallyControlled_ReturnValue = InCallFunc_IsLocallyControlled_ReturnValue;
+	Parms.CallFunc_Subtract_IntInt_ReturnValue = InCallFunc_Subtract_IntInt_ReturnValue;
+	Parms.CallFunc_LessEqual_IntInt_ReturnValue = InCallFunc_LessEqual_IntInt_ReturnValue;
+	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue = InCallFunc_BeginDeferredActorSpawnFromClass_ReturnValue;
+	Parms.CallFunc_Multiply_IntInt_ReturnValue = InCallFunc_Multiply_IntInt_ReturnValue;
+	Parms.CallFunc_FinishSpawningActor_ReturnValue = InCallFunc_FinishSpawningActor_ReturnValue;
+	Parms.CallFunc_IsServer_ReturnValue = InCallFunc_IsServer_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
+	Parms.Temp_int_Loop_Counter_Variable_3 = InTemp_int_Loop_Counter_Variable_3;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue_1 = InCallFunc_Less_IntInt_ReturnValue_1;
+	Parms.CallFunc_Add_IntInt_ReturnValue_6 = InCallFunc_Add_IntInt_ReturnValue_6;
+	Parms.Temp_int_Loop_Counter_Variable_4 = InTemp_int_Loop_Counter_Variable_4;
+	Parms.CallFunc_LessEqual_IntInt_ReturnValue_1 = InCallFunc_LessEqual_IntInt_ReturnValue_1;
+	Parms.CallFunc_Less_IntInt_ReturnValue_2 = InCallFunc_Less_IntInt_ReturnValue_2;
+	Parms.CallFunc_Add_IntInt_ReturnValue_7 = InCallFunc_Add_IntInt_ReturnValue_7;
+	Parms.CallFunc_MakeTransform_ReturnValue_1 = InCallFunc_MakeTransform_ReturnValue_1;
+	Parms.Temp_int_Array_Index_Variable_4 = InTemp_int_Array_Index_Variable_4;
+	Parms.CallFunc_Array_Get_Item_2 = InCallFunc_Array_Get_Item_2;
+	Parms.K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base = InK2Node_DynamicCast_AsBP_Env_Audio_Pool_Base;
+	Parms.K2Node_DynamicCast_bSuccess_1 = InK2Node_DynamicCast_bSuccess_1;
+	Parms.CallFunc_LessEqual_IntInt_ReturnValue_2 = InCallFunc_LessEqual_IntInt_ReturnValue_2;
+	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1 = InCallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1;
+	Parms.CallFunc_FinishSpawningActor_ReturnValue_1 = InCallFunc_FinishSpawningActor_ReturnValue_1;
+	Parms.CallFunc_MakeTransform_ReturnValue_2 = InCallFunc_MakeTransform_ReturnValue_2;
+	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2 = InCallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2;
+	Parms.Temp_int_Loop_Counter_Variable_5 = InTemp_int_Loop_Counter_Variable_5;
+	Parms.CallFunc_Less_IntInt_ReturnValue_3 = InCallFunc_Less_IntInt_ReturnValue_3;
+	Parms.CallFunc_Add_IntInt_ReturnValue_8 = InCallFunc_Add_IntInt_ReturnValue_8;
+	Parms.CallFunc_FinishSpawningActor_ReturnValue_2 = InCallFunc_FinishSpawningActor_ReturnValue_2;
+	Parms.CallFunc_Set_Length_ReturnValue = InCallFunc_Set_Length_ReturnValue;
+	Parms.CallFunc_Conv_IntToString_ReturnValue = InCallFunc_Conv_IntToString_ReturnValue;
+	Parms.CallFunc_Set_Length_ReturnValue_1 = InCallFunc_Set_Length_ReturnValue_1;
+	Parms.CallFunc_Conv_IntToString_ReturnValue_1 = InCallFunc_Conv_IntToString_ReturnValue_1;
+	Parms.CallFunc_Set_ToArray_Result_1 = InCallFunc_Set_ToArray_Result_1;
+	Parms.CallFunc_Array_Get_Item_3 = InCallFunc_Array_Get_Item_3;
+	Parms.CallFunc_Set_ToArray_Result_2 = InCallFunc_Set_ToArray_Result_2;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue = InCallFunc_K2_GetActorLocation_ReturnValue;
+	Parms.CallFunc_Array_Get_Item_4 = InCallFunc_Array_Get_Item_4;
+	Parms.CallFunc_Array_Length_ReturnValue_4 = InCallFunc_Array_Length_ReturnValue_4;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue_1 = InCallFunc_K2_GetActorLocation_ReturnValue_1;
+	Parms.CallFunc_Less_IntInt_ReturnValue_4 = InCallFunc_Less_IntInt_ReturnValue_4;
+	Parms.CallFunc_IsValid_ReturnValue_3 = InCallFunc_IsValid_ReturnValue_3;
+	Parms.CallFunc_IsValid_ReturnValue_4 = InCallFunc_IsValid_ReturnValue_4;
+	Parms.CallFunc_Array_Length_ReturnValue_5 = InCallFunc_Array_Length_ReturnValue_5;
+	Parms.CallFunc_Less_IntInt_ReturnValue_5 = InCallFunc_Less_IntInt_ReturnValue_5;
+	Parms.Temp_int_Array_Index_Variable_5 = InTemp_int_Array_Index_Variable_5;
+	Parms.CallFunc_Array_Get_Item_5 = InCallFunc_Array_Get_Item_5;
+	Parms.CallFunc_Set_Length_ReturnValue_2 = InCallFunc_Set_Length_ReturnValue_2;
+	Parms.K2Node_CustomEvent_On = InK2Node_CustomEvent_On;
+	Parms.CallFunc_Conv_IntToString_ReturnValue_2 = InCallFunc_Conv_IntToString_ReturnValue_2;
+	Parms.CallFunc_SelectFloat_ReturnValue = InCallFunc_SelectFloat_ReturnValue;
+	Parms.CallFunc_Concat_StrStr_ReturnValue = InCallFunc_Concat_StrStr_ReturnValue;
+	Parms.CallFunc_K2_SetTimer_ReturnValue = InCallFunc_K2_SetTimer_ReturnValue;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_1 = InCallFunc_Concat_StrStr_ReturnValue_1;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_2 = InCallFunc_Concat_StrStr_ReturnValue_2;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_3 = InCallFunc_Concat_StrStr_ReturnValue_3;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_4 = InCallFunc_Concat_StrStr_ReturnValue_4;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_5 = InCallFunc_Concat_StrStr_ReturnValue_5;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_6 = InCallFunc_Concat_StrStr_ReturnValue_6;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue_2 = InCallFunc_K2_GetActorLocation_ReturnValue_2;
+	Parms.CallFunc_SetComponentTickInterval_TickInterval_ImplicitCast = InCallFunc_SetComponentTickInterval_TickInterval_ImplicitCast;
+	Parms.CallFunc_K2_SetTimer_Time_ImplicitCast = InCallFunc_K2_SetTimer_Time_ImplicitCast;
+	Parms.CallFunc_DrawDebugSphere_Duration_ImplicitCast = InCallFunc_DrawDebugSphere_Duration_ImplicitCast;
+	Parms.CallFunc_DrawDebugSphere_Duration_ImplicitCast_1 = InCallFunc_DrawDebugSphere_Duration_ImplicitCast_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 

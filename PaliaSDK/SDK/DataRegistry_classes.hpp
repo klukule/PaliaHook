@@ -20,15 +20,11 @@ public:
 	TArray<struct FDirectoryPath>                DirectoriesToScan;                                 // 0x38(0x10)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 	bool                                         bInitializeAllLoadedRegistries;                    // 0x48(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIgnoreMissingCookedAssetRegistryData;             // 0x49(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5D6[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_730[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DataRegistrySettings");
-
+		static class UClass* Clss = UObject::FindClassFast("DataRegistrySettings");
 		return Clss;
 	}
 
@@ -46,15 +42,11 @@ public:
 	TArray<class UDataRegistrySource*>           RuntimeSources;                                    // 0x50(0x10)(Edit, ExportObject, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	float                                        TimerUpdateFrequency;                              // 0x60(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FDataRegistryCachePolicy              DefaultCachePolicy;                                // 0x64(0x14)(Edit, DisableEditOnInstance, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_5E1[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_73B[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DataRegistry");
-
+		static class UClass* Clss = UObject::FindClassFast("DataRegistry");
 		return Clss;
 	}
 
@@ -65,16 +57,12 @@ public:
 class UDataRegistrySource : public UObject
 {
 public:
-	uint8                                        Pad_5E2[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_73C[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UDataRegistrySource*                   ParentSource;                                      // 0x30(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DataRegistrySource");
-
+		static class UClass* Clss = UObject::FindClassFast("DataRegistrySource");
 		return Clss;
 	}
 
@@ -86,18 +74,14 @@ class UMetaDataRegistrySource : public UDataRegistrySource
 {
 public:
 	enum class EMetaDataRegistrySourceAssetUsage AssetUsage;                                        // 0x38(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5E3[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_73D[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAssetManagerSearchRules              SearchRules;                                       // 0x40(0x50)(Edit, NativeAccessSpecifierPublic)
 	TMap<class FName, class UDataRegistrySource*> RuntimeChildren;                                   // 0x90(0x50)(ExportObject, Transient, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                        Pad_5E4[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_73E[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MetaDataRegistrySource");
-
+		static class UClass* Clss = UObject::FindClassFast("MetaDataRegistrySource");
 		return Clss;
 	}
 
@@ -112,15 +96,11 @@ public:
 	struct FDataRegistrySource_DataTableRules    TableRules;                                        // 0x68(0x8)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	class UCurveTable*                           CachedTable;                                       // 0x70(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UCurveTable*                           PreloadTable;                                      // 0x78(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_5E6[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_746[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DataRegistrySource_CurveTable");
-
+		static class UClass* Clss = UObject::FindClassFast("DataRegistrySource_CurveTable");
 		return Clss;
 	}
 
@@ -136,11 +116,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MetaDataRegistrySource_CurveTable");
-
+		static class UClass* Clss = UObject::FindClassFast("MetaDataRegistrySource_CurveTable");
 		return Clss;
 	}
 
@@ -155,15 +131,11 @@ public:
 	struct FDataRegistrySource_DataTableRules    TableRules;                                        // 0x68(0x8)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	class UDataTable*                            CachedTable;                                       // 0x70(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UDataTable*                            PreloadTable;                                      // 0x78(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_5E8[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_74F[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DataRegistrySource_DataTable");
-
+		static class UClass* Clss = UObject::FindClassFast("DataRegistrySource_DataTable");
 		return Clss;
 	}
 
@@ -179,11 +151,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MetaDataRegistrySource_DataTable");
-
+		static class UClass* Clss = UObject::FindClassFast("MetaDataRegistrySource_DataTable");
 		return Clss;
 	}
 
@@ -194,31 +162,27 @@ public:
 class UDataRegistrySubsystem : public UEngineSubsystem
 {
 public:
-	uint8                                        Pad_66A[0x98];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7B8[0x98];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DataRegistrySubsystem");
-
+		static class UClass* Clss = UObject::FindClassFast("DataRegistrySubsystem");
 		return Clss;
 	}
 
-	bool NotEqual_DataRegistryType(const struct FDataRegistryType& A, const struct FDataRegistryType& B);
-	bool NotEqual_DataRegistryId(const struct FDataRegistryId& A, const struct FDataRegistryId& B);
-	bool IsValidDataRegistryType(const struct FDataRegistryType& DataRegistryType);
-	bool IsValidDataRegistryId(const struct FDataRegistryId& DataRegistryId);
-	bool GetCachedItemFromLookupBP(const struct FDataRegistryId& ItemId, struct FDataRegistryLookup& ResolvedLookup, struct FTableRowBase* OutItem);
-	bool GetCachedItemBP(const struct FDataRegistryId& ItemId, struct FTableRowBase& OutItem);
-	void FindCachedItemBP(const struct FDataRegistryId& ItemId, enum class EDataRegistrySubsystemGetItemResult* OutResult, struct FTableRowBase* OutItem);
-	void EvaluateDataRegistryCurve(const struct FDataRegistryId& ItemId, float InputValue, float DefaultValue, enum class EDataRegistrySubsystemGetItemResult* OutResult, float* OutValue);
-	bool EqualEqual_DataRegistryType(const struct FDataRegistryType& A, const struct FDataRegistryType& B);
-	bool EqualEqual_DataRegistryId(const struct FDataRegistryId& A, const struct FDataRegistryId& B);
-	class FString Conv_DataRegistryTypeToString(const struct FDataRegistryType& DataRegistryType);
-	class FString Conv_DataRegistryIdToString(const struct FDataRegistryId& DataRegistryId);
-	bool AcquireItemBP(const struct FDataRegistryId& ItemId, FDelegateProperty_ AcquireCallback);
+	bool NotEqual_DataRegistryType(const struct FDataRegistryType& InA, const struct FDataRegistryType& InB);
+	bool NotEqual_DataRegistryId(const struct FDataRegistryId& InA, const struct FDataRegistryId& InB);
+	bool IsValidDataRegistryType(const struct FDataRegistryType& InDataRegistryType);
+	bool IsValidDataRegistryId(const struct FDataRegistryId& InDataRegistryId);
+	bool GetCachedItemFromLookupBP(const struct FDataRegistryId& InItemId, struct FDataRegistryLookup& InResolvedLookup, struct FTableRowBase* InOutItem);
+	bool GetCachedItemBP(const struct FDataRegistryId& InItemId, struct FTableRowBase& InOutItem);
+	void FindCachedItemBP(const struct FDataRegistryId& InItemId, enum class EDataRegistrySubsystemGetItemResult* InOutResult, struct FTableRowBase* InOutItem);
+	void EvaluateDataRegistryCurve(const struct FDataRegistryId& InItemId, float InInputValue, float InDefaultValue, enum class EDataRegistrySubsystemGetItemResult* InOutResult, float* InOutValue);
+	bool EqualEqual_DataRegistryType(const struct FDataRegistryType& InA, const struct FDataRegistryType& InB);
+	bool EqualEqual_DataRegistryId(const struct FDataRegistryId& InA, const struct FDataRegistryId& InB);
+	class FString Conv_DataRegistryTypeToString(const struct FDataRegistryType& InDataRegistryType);
+	class FString Conv_DataRegistryIdToString(const struct FDataRegistryId& InDataRegistryId);
+	bool AcquireItemBP(const struct FDataRegistryId& InItemId, FDelegateProperty_ InAcquireCallback);
 };
 
 }

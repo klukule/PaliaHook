@@ -30,7 +30,7 @@ enum class EMeshTrackerVertexColorMode : uint8
 struct FMRMeshConfiguration
 {
 public:
-	uint8                                        Pad_1E6A[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FBB[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

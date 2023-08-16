@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // class USceneComponent*             Component                                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        SocketName                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCableComponent::SetAttachEndToComponent(class USceneComponent* Component, class FName SocketName)
+void UCableComponent::SetAttachEndToComponent(class USceneComponent* InComponent, class FName InSocketName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,8 +30,8 @@ void UCableComponent::SetAttachEndToComponent(class USceneComponent* Component, 
 
 	Params::UCableComponent_SetAttachEndToComponent_Params Parms{};
 
-	Parms.Component = Component;
-	Parms.SocketName = SocketName;
+	Parms.Component = InComponent;
+	Parms.SocketName = InSocketName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -51,7 +51,7 @@ void UCableComponent::SetAttachEndToComponent(class USceneComponent* Component, 
 // class FName                        ComponentProperty                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        SocketName                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCableComponent::SetAttachEndTo(class AActor* Actor, class FName ComponentProperty, class FName SocketName)
+void UCableComponent::SetAttachEndTo(class AActor* InActor, class FName InComponentProperty, class FName InSocketName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,9 +60,9 @@ void UCableComponent::SetAttachEndTo(class AActor* Actor, class FName ComponentP
 
 	Params::UCableComponent_SetAttachEndTo_Params Parms{};
 
-	Parms.Actor = Actor;
-	Parms.ComponentProperty = ComponentProperty;
-	Parms.SocketName = SocketName;
+	Parms.Actor = InActor;
+	Parms.ComponentProperty = InComponentProperty;
+	Parms.SocketName = InSocketName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -80,7 +80,7 @@ void UCableComponent::SetAttachEndTo(class AActor* Actor, class FName ComponentP
 // Parameters:
 // TArray<struct FVector>             Locations                                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UCableComponent::GetCableParticleLocations(TArray<struct FVector>* Locations)
+void UCableComponent::GetCableParticleLocations(TArray<struct FVector>* InLocations)
 {
 	static class UFunction* Func = nullptr;
 
@@ -98,8 +98,8 @@ void UCableComponent::GetCableParticleLocations(TArray<struct FVector>* Location
 
 	Func->FunctionFlags = Flags;
 
-	if (Locations != nullptr)
-		*Locations = Parms.Locations;
+	if (InLocations != nullptr)
+		*InLocations = Parms.Locations;
 
 }
 

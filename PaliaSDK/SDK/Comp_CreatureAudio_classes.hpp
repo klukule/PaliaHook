@@ -22,16 +22,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Comp_CreatureAudio_C");
-
+		static class UClass* Clss = UObject::FindClassFast("Comp_CreatureAudio_C");
 		return Clss;
 	}
 
-	void FindInCreatureSurfaceMap(class FName& Key, class UDataTable** Value, bool* Found, class UDataTable* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool CallFunc_BooleanAND_ReturnValue);
-	void GetCreatureAudioEvent(enum class E_CreatureAudioEvents Event, class UAkAudioEvent** AkEvent, bool* Found, class UAkAudioEvent* CallFunc_Get_Creature_Audio_Event_AkEvent, bool CallFunc_Get_Creature_Audio_Event_Found);
+	void FindInCreatureSurfaceMap(class FName& InKey, class UDataTable** InValue, bool* InFound, class UDataTable* InCallFunc_Map_Find_Value, bool InCallFunc_Map_Find_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue);
+	void GetCreatureAudioEvent(enum class E_CreatureAudioEvents InEvent, class UAkAudioEvent** InAkEvent, bool* InFound, class UAkAudioEvent* InCallFunc_Get_Creature_Audio_Event_AkEvent, bool InCallFunc_Get_Creature_Audio_Event_Found);
 };
 
 }

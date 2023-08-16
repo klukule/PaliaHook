@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // struct FGuid                       AccountId                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FOSSVAL_CharacterNameAndId>Names                                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UOSSVAL_GetCharacterNamesByAccountIdProxy::OnGetCharacterNames_Success__DelegateSignature(struct FGuid& AccountId, TArray<struct FOSSVAL_CharacterNameAndId>& Names)
+void UOSSVAL_GetCharacterNamesByAccountIdProxy::OnGetCharacterNames_Success__DelegateSignature(struct FGuid& InAccountId, TArray<struct FOSSVAL_CharacterNameAndId>& InNames)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,8 +30,8 @@ void UOSSVAL_GetCharacterNamesByAccountIdProxy::OnGetCharacterNames_Success__Del
 
 	Params::UOSSVAL_GetCharacterNamesByAccountIdProxy_OnGetCharacterNames_Success__DelegateSignature_Params Parms{};
 
-	Parms.AccountId = AccountId;
-	Parms.Names = Names;
+	Parms.AccountId = InAccountId;
+	Parms.Names = InNames;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -43,7 +43,7 @@ void UOSSVAL_GetCharacterNamesByAccountIdProxy::OnGetCharacterNames_Success__Del
 // Parameters:
 // struct FGuid                       AccountId                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UOSSVAL_GetCharacterNamesByAccountIdProxy::OnGetCharacterNames_Fail__DelegateSignature(struct FGuid& AccountId)
+void UOSSVAL_GetCharacterNamesByAccountIdProxy::OnGetCharacterNames_Fail__DelegateSignature(struct FGuid& InAccountId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -52,7 +52,7 @@ void UOSSVAL_GetCharacterNamesByAccountIdProxy::OnGetCharacterNames_Fail__Delega
 
 	Params::UOSSVAL_GetCharacterNamesByAccountIdProxy_OnGetCharacterNames_Fail__DelegateSignature_Params Parms{};
 
-	Parms.AccountId = AccountId;
+	Parms.AccountId = InAccountId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -66,7 +66,7 @@ void UOSSVAL_GetCharacterNamesByAccountIdProxy::OnGetCharacterNames_Fail__Delega
 // struct FGuid                       AccountId                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UOSSVAL_GetCharacterNamesByAccountIdProxy*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UOSSVAL_GetCharacterNamesByAccountIdProxy* UOSSVAL_GetCharacterNamesByAccountIdProxy::GetCharacterNamesByAccountId(class UObject* WorldContextObject, struct FGuid& AccountId)
+class UOSSVAL_GetCharacterNamesByAccountIdProxy* UOSSVAL_GetCharacterNamesByAccountIdProxy::GetCharacterNamesByAccountId(class UObject* InWorldContextObject, struct FGuid& InAccountId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -75,8 +75,8 @@ class UOSSVAL_GetCharacterNamesByAccountIdProxy* UOSSVAL_GetCharacterNamesByAcco
 
 	Params::UOSSVAL_GetCharacterNamesByAccountIdProxy_GetCharacterNamesByAccountId_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.AccountId = AccountId;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.AccountId = InAccountId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -98,7 +98,7 @@ class UOSSVAL_GetCharacterNamesByAccountIdProxy* UOSSVAL_GetCharacterNamesByAcco
 // struct FGuid                       CharacterId                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSSVAL_CharacterNameAndId  Name                                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy::OnGetCharacterNames_Success__DelegateSignature(struct FGuid& AccountId, struct FGuid& CharacterId, struct FOSSVAL_CharacterNameAndId& Name)
+void UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy::OnGetCharacterNames_Success__DelegateSignature(struct FGuid& InAccountId, struct FGuid& InCharacterId, struct FOSSVAL_CharacterNameAndId& InName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -107,9 +107,9 @@ void UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy::OnGetCharacterNames
 
 	Params::UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy_OnGetCharacterNames_Success__DelegateSignature_Params Parms{};
 
-	Parms.AccountId = AccountId;
-	Parms.CharacterId = CharacterId;
-	Parms.Name = Name;
+	Parms.AccountId = InAccountId;
+	Parms.CharacterId = InCharacterId;
+	Parms.Name = InName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -122,7 +122,7 @@ void UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy::OnGetCharacterNames
 // struct FGuid                       AccountId                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGuid                       CharacterId                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy::OnGetCharacterNames_Fail__DelegateSignature(struct FGuid& AccountId, struct FGuid& CharacterId)
+void UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy::OnGetCharacterNames_Fail__DelegateSignature(struct FGuid& InAccountId, struct FGuid& InCharacterId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -131,8 +131,8 @@ void UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy::OnGetCharacterNames
 
 	Params::UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy_OnGetCharacterNames_Fail__DelegateSignature_Params Parms{};
 
-	Parms.AccountId = AccountId;
-	Parms.CharacterId = CharacterId;
+	Parms.AccountId = InAccountId;
+	Parms.CharacterId = InCharacterId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -147,7 +147,7 @@ void UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy::OnGetCharacterNames
 // struct FGuid                       CharacterId                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy* UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy::GetCharacterNameByAccountIdAndCharacterId(class UObject* WorldContextObject, struct FGuid& AccountId, struct FGuid& CharacterId)
+class UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy* UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy::GetCharacterNameByAccountIdAndCharacterId(class UObject* InWorldContextObject, struct FGuid& InAccountId, struct FGuid& InCharacterId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -156,9 +156,9 @@ class UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy* UOSSVAL_GetCharact
 
 	Params::UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy_GetCharacterNameByAccountIdAndCharacterId_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.AccountId = AccountId;
-	Parms.CharacterId = CharacterId;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.AccountId = InAccountId;
+	Parms.CharacterId = InCharacterId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -179,7 +179,7 @@ class UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy* UOSSVAL_GetCharact
 // struct FGuid                       CharacterId                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSSVAL_CharacterNameAndId  FetchedCharacter                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UOSSVAL_GetCharacterNameByCharacterIdProxy::OnFetchCharacter_Success__DelegateSignature(struct FGuid& CharacterId, struct FOSSVAL_CharacterNameAndId& FetchedCharacter)
+void UOSSVAL_GetCharacterNameByCharacterIdProxy::OnFetchCharacter_Success__DelegateSignature(struct FGuid& InCharacterId, struct FOSSVAL_CharacterNameAndId& InFetchedCharacter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -188,8 +188,8 @@ void UOSSVAL_GetCharacterNameByCharacterIdProxy::OnFetchCharacter_Success__Deleg
 
 	Params::UOSSVAL_GetCharacterNameByCharacterIdProxy_OnFetchCharacter_Success__DelegateSignature_Params Parms{};
 
-	Parms.CharacterId = CharacterId;
-	Parms.FetchedCharacter = FetchedCharacter;
+	Parms.CharacterId = InCharacterId;
+	Parms.FetchedCharacter = InFetchedCharacter;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -201,7 +201,7 @@ void UOSSVAL_GetCharacterNameByCharacterIdProxy::OnFetchCharacter_Success__Deleg
 // Parameters:
 // struct FGuid                       CharacterId                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UOSSVAL_GetCharacterNameByCharacterIdProxy::OnFetchCharacter_Failure__DelegateSignature(struct FGuid& CharacterId)
+void UOSSVAL_GetCharacterNameByCharacterIdProxy::OnFetchCharacter_Failure__DelegateSignature(struct FGuid& InCharacterId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -210,7 +210,7 @@ void UOSSVAL_GetCharacterNameByCharacterIdProxy::OnFetchCharacter_Failure__Deleg
 
 	Params::UOSSVAL_GetCharacterNameByCharacterIdProxy_OnFetchCharacter_Failure__DelegateSignature_Params Parms{};
 
-	Parms.CharacterId = CharacterId;
+	Parms.CharacterId = InCharacterId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -224,7 +224,7 @@ void UOSSVAL_GetCharacterNameByCharacterIdProxy::OnFetchCharacter_Failure__Deleg
 // struct FGuid                       CharacterId                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UOSSVAL_GetCharacterNameByCharacterIdProxy*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UOSSVAL_GetCharacterNameByCharacterIdProxy* UOSSVAL_GetCharacterNameByCharacterIdProxy::GetCharacterNameByCharacterId(class UObject* WorldContextObject, struct FGuid& CharacterId)
+class UOSSVAL_GetCharacterNameByCharacterIdProxy* UOSSVAL_GetCharacterNameByCharacterIdProxy::GetCharacterNameByCharacterId(class UObject* InWorldContextObject, struct FGuid& InCharacterId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -233,8 +233,8 @@ class UOSSVAL_GetCharacterNameByCharacterIdProxy* UOSSVAL_GetCharacterNameByChar
 
 	Params::UOSSVAL_GetCharacterNameByCharacterIdProxy_GetCharacterNameByCharacterId_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.CharacterId = CharacterId;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.CharacterId = InCharacterId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -255,7 +255,7 @@ class UOSSVAL_GetCharacterNameByCharacterIdProxy* UOSSVAL_GetCharacterNameByChar
 // struct FGuid                       CharacterId                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FUniqueNetIdRepl            FetchedNetId                                                     (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UOSSVAL_GetNetIdByCharacterIdProxy::OnFetchNetId_Success__DelegateSignature(struct FGuid& CharacterId, struct FUniqueNetIdRepl& FetchedNetId)
+void UOSSVAL_GetNetIdByCharacterIdProxy::OnFetchNetId_Success__DelegateSignature(struct FGuid& InCharacterId, struct FUniqueNetIdRepl& InFetchedNetId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -264,8 +264,8 @@ void UOSSVAL_GetNetIdByCharacterIdProxy::OnFetchNetId_Success__DelegateSignature
 
 	Params::UOSSVAL_GetNetIdByCharacterIdProxy_OnFetchNetId_Success__DelegateSignature_Params Parms{};
 
-	Parms.CharacterId = CharacterId;
-	Parms.FetchedNetId = FetchedNetId;
+	Parms.CharacterId = InCharacterId;
+	Parms.FetchedNetId = InFetchedNetId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -277,7 +277,7 @@ void UOSSVAL_GetNetIdByCharacterIdProxy::OnFetchNetId_Success__DelegateSignature
 // Parameters:
 // struct FGuid                       CharacterId                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UOSSVAL_GetNetIdByCharacterIdProxy::OnFetchNetId_Failure__DelegateSignature(struct FGuid& CharacterId)
+void UOSSVAL_GetNetIdByCharacterIdProxy::OnFetchNetId_Failure__DelegateSignature(struct FGuid& InCharacterId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -286,7 +286,7 @@ void UOSSVAL_GetNetIdByCharacterIdProxy::OnFetchNetId_Failure__DelegateSignature
 
 	Params::UOSSVAL_GetNetIdByCharacterIdProxy_OnFetchNetId_Failure__DelegateSignature_Params Parms{};
 
-	Parms.CharacterId = CharacterId;
+	Parms.CharacterId = InCharacterId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -300,7 +300,7 @@ void UOSSVAL_GetNetIdByCharacterIdProxy::OnFetchNetId_Failure__DelegateSignature
 // struct FGuid                       CharacterId                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UOSSVAL_GetNetIdByCharacterIdProxy*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UOSSVAL_GetNetIdByCharacterIdProxy* UOSSVAL_GetNetIdByCharacterIdProxy::GetNetIdByCharacterId(class UObject* WorldContextObject, struct FGuid& CharacterId)
+class UOSSVAL_GetNetIdByCharacterIdProxy* UOSSVAL_GetNetIdByCharacterIdProxy::GetNetIdByCharacterId(class UObject* InWorldContextObject, struct FGuid& InCharacterId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -309,8 +309,8 @@ class UOSSVAL_GetNetIdByCharacterIdProxy* UOSSVAL_GetNetIdByCharacterIdProxy::Ge
 
 	Params::UOSSVAL_GetNetIdByCharacterIdProxy_GetNetIdByCharacterId_Params Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.CharacterId = CharacterId;
+	Parms.WorldContextObject = InWorldContextObject;
+	Parms.CharacterId = InCharacterId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -330,7 +330,7 @@ class UOSSVAL_GetNetIdByCharacterIdProxy* UOSSVAL_GetNetIdByCharacterIdProxy::Ge
 // Parameters:
 // TArray<struct FVALDTOS_MetaCharacterFormat>CharactersFound                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UOSSVAL_AsyncActionGetCharactersByAccountId::OnGetCharactersObtained__DelegateSignature(TArray<struct FVALDTOS_MetaCharacterFormat>& CharactersFound)
+void UOSSVAL_AsyncActionGetCharactersByAccountId::OnGetCharactersObtained__DelegateSignature(TArray<struct FVALDTOS_MetaCharacterFormat>& InCharactersFound)
 {
 	static class UFunction* Func = nullptr;
 
@@ -339,7 +339,7 @@ void UOSSVAL_AsyncActionGetCharactersByAccountId::OnGetCharactersObtained__Deleg
 
 	Params::UOSSVAL_AsyncActionGetCharactersByAccountId_OnGetCharactersObtained__DelegateSignature_Params Parms{};
 
-	Parms.CharactersFound = CharactersFound;
+	Parms.CharactersFound = InCharactersFound;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -372,7 +372,7 @@ void UOSSVAL_AsyncActionGetCharactersByAccountId::OnGetCharactersFailed__Delegat
 // struct FGuid                       ID                                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UOSSVAL_AsyncActionGetCharactersByAccountId*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UOSSVAL_AsyncActionGetCharactersByAccountId* UOSSVAL_AsyncActionGetCharactersByAccountId::GetCharactersByAccountId(class ULocalPlayer* LocalPlayer, struct FGuid& ID)
+class UOSSVAL_AsyncActionGetCharactersByAccountId* UOSSVAL_AsyncActionGetCharactersByAccountId::GetCharactersByAccountId(class ULocalPlayer* InLocalPlayer, struct FGuid& InID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -381,8 +381,8 @@ class UOSSVAL_AsyncActionGetCharactersByAccountId* UOSSVAL_AsyncActionGetCharact
 
 	Params::UOSSVAL_AsyncActionGetCharactersByAccountId_GetCharactersByAccountId_Params Parms{};
 
-	Parms.LocalPlayer = LocalPlayer;
-	Parms.ID = ID;
+	Parms.LocalPlayer = InLocalPlayer;
+	Parms.ID = InID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -404,7 +404,7 @@ class UOSSVAL_AsyncActionGetCharactersByAccountId* UOSSVAL_AsyncActionGetCharact
 // struct FOSSVAL_MatchmakingTicket   Ticket                                                           (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FOSSVAL_MatchmakingTicketContextContext                                                          (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void AOSSVAL_BeaconClient::RpcServer_ValidateTicket(struct FGuid& RequestId, struct FOSSVAL_MatchmakingTicket& Ticket, struct FOSSVAL_MatchmakingTicketContext& Context)
+void AOSSVAL_BeaconClient::RpcServer_ValidateTicket(struct FGuid& InRequestId, struct FOSSVAL_MatchmakingTicket& InTicket, struct FOSSVAL_MatchmakingTicketContext& InContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -413,9 +413,9 @@ void AOSSVAL_BeaconClient::RpcServer_ValidateTicket(struct FGuid& RequestId, str
 
 	Params::AOSSVAL_BeaconClient_RpcServer_ValidateTicket_Params Parms{};
 
-	Parms.RequestId = RequestId;
-	Parms.Ticket = Ticket;
-	Parms.Context = Context;
+	Parms.RequestId = InRequestId;
+	Parms.Ticket = InTicket;
+	Parms.Context = InContext;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -436,7 +436,7 @@ void AOSSVAL_BeaconClient::RpcServer_ValidateTicket(struct FGuid& RequestId, str
 // struct FOSSVAL_MatchmakingTicket   Ticket                                                           (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FOSSVAL_MatchmakingTicketContextContext                                                          (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void AOSSVAL_BeaconClient::RpcClient_SendTicketValidationResponse(struct FGuid& RequestId, bool bAccepted, struct FOSSVAL_MatchmakingTicket& Ticket, struct FOSSVAL_MatchmakingTicketContext& Context)
+void AOSSVAL_BeaconClient::RpcClient_SendTicketValidationResponse(struct FGuid& InRequestId, bool InbAccepted, struct FOSSVAL_MatchmakingTicket& InTicket, struct FOSSVAL_MatchmakingTicketContext& InContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -445,10 +445,10 @@ void AOSSVAL_BeaconClient::RpcClient_SendTicketValidationResponse(struct FGuid& 
 
 	Params::AOSSVAL_BeaconClient_RpcClient_SendTicketValidationResponse_Params Parms{};
 
-	Parms.RequestId = RequestId;
-	Parms.bAccepted = bAccepted;
-	Parms.Ticket = Ticket;
-	Parms.Context = Context;
+	Parms.RequestId = InRequestId;
+	Parms.bAccepted = InbAccepted;
+	Parms.Ticket = InTicket;
+	Parms.Context = InContext;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -468,7 +468,7 @@ void AOSSVAL_BeaconClient::RpcClient_SendTicketValidationResponse(struct FGuid& 
 // class FString                      Addr                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBlueprintSessionResult     ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FBlueprintSessionResult UValeriaOnlineBlueprintFunctions::CreateSessionResult(const class FString& ServerName, const class FString& Addr)
+struct FBlueprintSessionResult UValeriaOnlineBlueprintFunctions::CreateSessionResult(const class FString& InServerName, const class FString& InAddr)
 {
 	static class UFunction* Func = nullptr;
 
@@ -477,8 +477,8 @@ struct FBlueprintSessionResult UValeriaOnlineBlueprintFunctions::CreateSessionRe
 
 	Params::UValeriaOnlineBlueprintFunctions_CreateSessionResult_Params Parms{};
 
-	Parms.ServerName = ServerName;
-	Parms.Addr = Addr;
+	Parms.ServerName = InServerName;
+	Parms.Addr = InAddr;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

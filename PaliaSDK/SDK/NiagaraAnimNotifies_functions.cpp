@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // class UMeshComponent*              MeshComp                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UFXSystemComponent*          ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UFXSystemComponent* UAnimNotifyState_TimedNiagaraEffect::GetSpawnedEffect(class UMeshComponent* MeshComp)
+class UFXSystemComponent* UAnimNotifyState_TimedNiagaraEffect::GetSpawnedEffect(class UMeshComponent* InMeshComp)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ class UFXSystemComponent* UAnimNotifyState_TimedNiagaraEffect::GetSpawnedEffect(
 
 	Params::UAnimNotifyState_TimedNiagaraEffect_GetSpawnedEffect_Params Parms{};
 
-	Parms.MeshComp = MeshComp;
+	Parms.MeshComp = InMeshComp;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -51,7 +51,7 @@ class UFXSystemComponent* UAnimNotifyState_TimedNiagaraEffect::GetSpawnedEffect(
 // class UMeshComponent*              MeshComp                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAnimNotifyState_TimedNiagaraEffectAdvanced::GetNotifyProgress(class UMeshComponent* MeshComp)
+float UAnimNotifyState_TimedNiagaraEffectAdvanced::GetNotifyProgress(class UMeshComponent* InMeshComp)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,7 +60,7 @@ float UAnimNotifyState_TimedNiagaraEffectAdvanced::GetNotifyProgress(class UMesh
 
 	Params::UAnimNotifyState_TimedNiagaraEffectAdvanced_GetNotifyProgress_Params Parms{};
 
-	Parms.MeshComp = MeshComp;
+	Parms.MeshComp = InMeshComp;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

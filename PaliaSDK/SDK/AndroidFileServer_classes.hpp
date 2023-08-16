@@ -20,16 +20,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AndroidFileServerBPLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("AndroidFileServerBPLibrary");
 		return Clss;
 	}
 
-	bool StopFileServer(bool bUSB, bool bNetwork);
-	bool StartFileServer(bool bUSB, bool bNetwork, int32 Port);
+	bool StopFileServer(bool InbUSB, bool InbNetwork);
+	bool StartFileServer(bool InbUSB, bool InbNetwork, int32 InPort);
 	enum class EAFSActiveType IsFileServerRunning();
 };
 

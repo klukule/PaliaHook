@@ -22,17 +22,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("MAP_Character_Lighting_CharacterCreation_C");
-
+		static class UClass* Clss = UObject::FindClassFast("MAP_Character_Lighting_CharacterCreation_C");
 		return Clss;
 	}
 
 	void ReceiveBeginPlay();
-	void ReceiveEndPlay(enum class EEndPlayReason EndPlayReason);
-	void ExecuteUbergraph_MAP_Character_Lighting_CharacterCreation(int32 EntryPoint, const struct FVector& CallFunc_GetForwardVector_ReturnValue, const struct FLinearColor& CallFunc_GetLightColor_ReturnValue, const struct FLinearColor& CallFunc_Conv_VectorToLinearColor_ReturnValue, enum class EEndPlayReason K2Node_Event_EndPlayReason);
+	void ReceiveEndPlay(enum class EEndPlayReason InEndPlayReason);
+	void ExecuteUbergraph_MAP_Character_Lighting_CharacterCreation(int32 InEntryPoint, const struct FVector& InCallFunc_GetForwardVector_ReturnValue, const struct FLinearColor& InCallFunc_GetLightColor_ReturnValue, const struct FLinearColor& InCallFunc_Conv_VectorToLinearColor_ReturnValue, enum class EEndPlayReason InK2Node_Event_EndPlayReason);
 };
 
 }

@@ -18,15 +18,11 @@ class UEnvQueryNode : public UObject
 {
 public:
 	int32                                        VerNum;                                            // 0x28(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_850[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D5B[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryNode");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryNode");
 		return Clss;
 	}
 
@@ -39,37 +35,33 @@ class UEnvQueryTest : public UEnvQueryNode
 public:
 	int32                                        TestOrder;                                         // 0x30(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvTestPurpose                   TestPurpose;                                       // 0x34(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_859[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_D5D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                TestComment;                                       // 0x38(0x10)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvTestFilterOperator            MultipleContextFilterOp;                           // 0x48(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvTestScoreOperator             MultipleContextScoreOp;                            // 0x49(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvTestFilterType                FilterType;                                        // 0x4A(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_85C[0x5];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_D61[0x5];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAIDataProviderBoolValue              BoolValue;                                         // 0x50(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FAIDataProviderFloatValue             FloatValueMin;                                     // 0x88(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FAIDataProviderFloatValue             FloatValueMax;                                     // 0xC0(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	uint8                                        Pad_85E[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_D62[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EEnvTestScoreEquation             ScoringEquation;                                   // 0xF9(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvQueryTestClamping             ClampMinType;                                      // 0xFA(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvQueryTestClamping             ClampMaxType;                                      // 0xFB(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEQSNormalizationType             NormalizationType;                                 // 0xFC(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_860[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_D64[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAIDataProviderFloatValue             ScoreClampMin;                                     // 0x100(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FAIDataProviderFloatValue             ScoreClampMax;                                     // 0x138(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FAIDataProviderFloatValue             ScoringFactor;                                     // 0x170(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FAIDataProviderFloatValue             ReferenceValue;                                    // 0x1A8(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         bDefineReferenceValue;                             // 0x1E0(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_867[0xF];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_D66[0xF];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bWorkOnFloatValues : 1;                            // Mask: 0x1, PropSize: 0x10x1F0(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_868[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D67[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest");
 		return Clss;
 	}
 
@@ -83,15 +75,11 @@ public:
 	struct FColor                                DebugColor;                                        // 0x28(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        MaxAge;                                            // 0x2C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bStartsEnabled : 1;                                // Mask: 0x1, PropSize: 0x10x30(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_871[0x17];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D6B[0x17];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseConfig");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseConfig");
 		return Clss;
 	}
 
@@ -105,11 +93,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseEvent");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseEvent");
 		return Clss;
 	}
 
@@ -122,21 +106,17 @@ class UAISense : public UObject
 public:
 	float                                        DefaultExpirationAge;                              // 0x28(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	enum class EAISenseNotifyType                NotifyType;                                        // 0x2C(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_877[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_D6E[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bWantsNewPawnNotification : 1;                     // Mask: 0x1, PropSize: 0x10x30(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, Config, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bAutoRegisterAllPawnsAsSources : 1;                // Mask: 0x2, PropSize: 0x10x30(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, Config, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        BitPad_62 : 6;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_87C[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_9E : 6;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_D6F[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAIPerceptionSystem*                   PerceptionSystemInstance;                          // 0x38(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_87D[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D70[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISense");
-
+		static class UClass* Clss = UObject::FindClassFast("AISense");
 		return Clss;
 	}
 
@@ -147,19 +127,15 @@ public:
 class UBTNode : public UObject
 {
 public:
-	uint8                                        Pad_880[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_D71[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                NodeName;                                          // 0x30(0x10)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UBehaviorTree*                         TreeAsset;                                         // 0x40(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UBTCompositeNode*                      ParentNode;                                        // 0x48(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_883[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D73[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTNode");
-
+		static class UClass* Clss = UObject::FindClassFast("BTNode");
 		return Clss;
 	}
 
@@ -172,15 +148,11 @@ class UBTTaskNode : public UBTNode
 public:
 	TArray<class UBTService*>                    Services;                                          // 0x58(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	uint8                                        bIgnoreRestartSelf : 1;                            // Mask: 0x1, PropSize: 0x10x68(0x1)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_884[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D75[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTaskNode");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTaskNode");
 		return Clss;
 	}
 
@@ -195,11 +167,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_BlackboardBase");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_BlackboardBase");
 		return Clss;
 	}
 
@@ -215,11 +183,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_Wait");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_Wait");
 		return Clss;
 	}
 
@@ -230,7 +194,7 @@ public:
 class AAIController : public AController
 {
 public:
-	uint8                                        Pad_937[0x38];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_DC6[0x38];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bStartAILogicOnPossess : 1;                        // Mask: 0x1, PropSize: 0x10x360(0x1)(Edit, BlueprintVisible, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bStopAILogicOnUnposses : 1;                        // Mask: 0x2, PropSize: 0x10x360(0x1)(Edit, BlueprintVisible, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bLOSflag : 1;                                      // Mask: 0x4, PropSize: 0x10x360(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -238,8 +202,8 @@ public:
 	uint8                                        bAllowStrafe : 1;                                  // Mask: 0x10, PropSize: 0x10x360(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bWantsPlayerState : 1;                             // Mask: 0x20, PropSize: 0x10x360(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bSetControlRotationFromPawnOrientation : 1;        // Mask: 0x40, PropSize: 0x10x360(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_71 : 1;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_93D[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_A3 : 1;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_DCF[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UPathFollowingComponent*               PathFollowingComponent;                            // 0x368(0x8)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UBrainComponent*                       BrainComponent;                                    // 0x370(0x8)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAIPerceptionComponent*                PerceptionComponent;                               // 0x378(0x8)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -248,39 +212,35 @@ public:
 	class UGameplayTasksComponent*               CachedGameplayTasksComponent;                      // 0x390(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSubclassOf<class UNavigationQueryFilter>    DefaultNavigationFilterClass;                      // 0x398(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	FMulticastInlineDelegateProperty_            ReceiveMoveCompleted;                              // 0x3A0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_946[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_DD1[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIController");
-
+		static class UClass* Clss = UObject::FindClassFast("AIController");
 		return Clss;
 	}
 
-	bool UseBlackboard(class UBlackboardData* BlackboardAsset, class UBlackboardComponent** BlackboardComponent);
-	void UnclaimTaskResource(TSubclassOf<class UGameplayTaskResource> ResourceClass);
-	void SetPathFollowingComponent(class UPathFollowingComponent* NewPFComponent);
-	void SetMoveBlockDetection(bool bEnable);
-	bool RunBehaviorTree(class UBehaviorTree* BTAsset);
-	void OnUsingBlackBoard(class UBlackboardComponent* BlackboardComp, class UBlackboardData* BlackboardAsset);
-	void OnGameplayTaskResourcesClaimed(const struct FGameplayResourceSet& NewlyClaimed, const struct FGameplayResourceSet& FreshlyReleased);
-	enum class EPathFollowingRequestResult MoveToLocation(struct FVector& Dest, float AcceptanceRadius, bool bStopOnOverlap, bool bUsePathfinding, bool bProjectDestinationToNavigation, bool bCanStrafe, TSubclassOf<class UNavigationQueryFilter> FilterClass, bool bAllowPartialPath);
-	enum class EPathFollowingRequestResult MoveToActor(class AActor* Goal, float AcceptanceRadius, bool bStopOnOverlap, bool bUsePathfinding, bool bCanStrafe, TSubclassOf<class UNavigationQueryFilter> FilterClass, bool bAllowPartialPath);
-	void K2_SetFocus(class AActor* NewFocus);
-	void K2_SetFocalPoint(const struct FVector& FP);
+	bool UseBlackboard(class UBlackboardData* InBlackboardAsset, class UBlackboardComponent** InBlackboardComponent);
+	void UnclaimTaskResource(TSubclassOf<class UGameplayTaskResource> InResourceClass);
+	void SetPathFollowingComponent(class UPathFollowingComponent* InNewPFComponent);
+	void SetMoveBlockDetection(bool InbEnable);
+	bool RunBehaviorTree(class UBehaviorTree* InBTAsset);
+	void OnUsingBlackBoard(class UBlackboardComponent* InBlackboardComp, class UBlackboardData* InBlackboardAsset);
+	void OnGameplayTaskResourcesClaimed(const struct FGameplayResourceSet& InNewlyClaimed, const struct FGameplayResourceSet& InFreshlyReleased);
+	enum class EPathFollowingRequestResult MoveToLocation(struct FVector& InDest, float InAcceptanceRadius, bool InbStopOnOverlap, bool InbUsePathfinding, bool InbProjectDestinationToNavigation, bool InbCanStrafe, TSubclassOf<class UNavigationQueryFilter> InFilterClass, bool InbAllowPartialPath);
+	enum class EPathFollowingRequestResult MoveToActor(class AActor* InGoal, float InAcceptanceRadius, bool InbStopOnOverlap, bool InbUsePathfinding, bool InbCanStrafe, TSubclassOf<class UNavigationQueryFilter> InFilterClass, bool InbAllowPartialPath);
+	void K2_SetFocus(class AActor* InNewFocus);
+	void K2_SetFocalPoint(const struct FVector& InFP);
 	void K2_ClearFocus();
 	bool HasPartialPath();
 	class UPathFollowingComponent* GetPathFollowingComponent();
 	enum class EPathFollowingStatus GetMoveStatus();
 	struct FVector GetImmediateMoveDestination();
 	class AActor* GetFocusActor();
-	struct FVector GetFocalPointOnActor(class AActor* Actor);
+	struct FVector GetFocalPointOnActor(class AActor* InActor);
 	struct FVector GetFocalPoint();
 	class UAIPerceptionComponent* GetAIPerceptionComponent();
-	void ClaimTaskResource(TSubclassOf<class UGameplayTaskResource> ResourceClass);
+	void ClaimTaskResource(TSubclassOf<class UGameplayTaskResource> InResourceClass);
 };
 
 // 0x0 (0x48 - 0x48)
@@ -291,11 +251,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NavFilter_AIControllerDefault");
-
+		static class UClass* Clss = UObject::FindClassFast("NavFilter_AIControllerDefault");
 		return Clss;
 	}
 
@@ -308,19 +264,15 @@ class UAIAsyncTaskBlueprintProxy : public UObject
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x28(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFail;                                            // 0x38(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_967[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_DDC[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIAsyncTaskBlueprintProxy");
-
+		static class UClass* Clss = UObject::FindClassFast("AIAsyncTaskBlueprintProxy");
 		return Clss;
 	}
 
-	void OnMoveCompleted(const struct FAIRequestID& RequestId, enum class EPathFollowingResult MovementResult);
+	void OnMoveCompleted(const struct FAIRequestID& InRequestId, enum class EPathFollowingResult InMovementResult);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -331,11 +283,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIResourceInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("AIResourceInterface");
 		return Clss;
 	}
 
@@ -349,11 +297,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseBlueprintListener");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseBlueprintListener");
 		return Clss;
 	}
 
@@ -368,11 +312,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseConfig_Blueprint");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseConfig_Blueprint");
 		return Clss;
 	}
 
@@ -387,17 +327,13 @@ public:
 	float                                        HearingRange;                                      // 0x50(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        LoSHearingRange;                                   // 0x54(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bUseLoSHearing : 1;                                // Mask: 0x1, PropSize: 0x10x58(0x1)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_72 : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_96D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_A4 : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_DE2[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAISenseAffiliationFilter             DetectionByAffiliation;                            // 0x5C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, Config, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseConfig_Hearing");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseConfig_Hearing");
 		return Clss;
 	}
 
@@ -411,11 +347,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseConfig_Prediction");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseConfig_Prediction");
 		return Clss;
 	}
 
@@ -434,15 +366,11 @@ public:
 	float                                        AutoSuccessRangeFromLastSeenLocation;              // 0x60(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        PointOfViewBackwardOffset;                         // 0x64(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        NearClippingRadius;                                // 0x68(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_978[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_DEA[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseConfig_Sight");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseConfig_Sight");
 		return Clss;
 	}
 
@@ -456,11 +384,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseConfig_Team");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseConfig_Team");
 		return Clss;
 	}
 
@@ -474,11 +398,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseConfig_Touch");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseConfig_Touch");
 		return Clss;
 	}
 
@@ -493,11 +413,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseEvent_Damage");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseEvent_Damage");
 		return Clss;
 	}
 
@@ -512,11 +428,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseEvent_Hearing");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseEvent_Hearing");
 		return Clss;
 	}
 
@@ -530,11 +442,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CrowdAgentInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("CrowdAgentInterface");
 		return Clss;
 	}
 
@@ -548,11 +456,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTypes");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTypes");
 		return Clss;
 	}
 
@@ -566,11 +470,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EQSQueryResultSourceInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("EQSQueryResultSourceInterface");
 		return Clss;
 	}
 
@@ -584,11 +484,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GenericTeamAgentInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("GenericTeamAgentInterface");
 		return Clss;
 	}
 
@@ -604,26 +500,22 @@ public:
 	class UPawnActionsComponent*                 OwnerComponent;                                    // 0x38(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UObject*                               Instigator;                                        // 0x40(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UBrainComponent*                       BrainComp;                                         // 0x48(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_9B5[0x30];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_DF3[0x30];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bAllowNewSameClassInstance : 1;                    // Mask: 0x1, PropSize: 0x10x80(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bReplaceActiveSameClassInstance : 1;               // Mask: 0x2, PropSize: 0x10x80(0x1)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bShouldPauseMovement : 1;                          // Mask: 0x4, PropSize: 0x10x80(0x1)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bAlwaysNotifyOnFinished : 1;                       // Mask: 0x8, PropSize: 0x10x80(0x1)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_9C8[0xF];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_DF7[0xF];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PawnAction");
-
+		static class UClass* Clss = UObject::FindClassFast("PawnAction");
 		return Clss;
 	}
 
 	enum class EAIRequestPriority GetActionPriority();
-	void Finish(enum class EPawnActionResult WithResult);
-	class UPawnAction* CreateActionInstance(class UObject* WorldContextObject, TSubclassOf<class UPawnAction> ActionClass);
+	void Finish(enum class EPawnActionResult InWithResult);
+	class UPawnAction* CreateActionInstance(class UObject* InWorldContextObject, TSubclassOf<class UPawnAction> InActionClass);
 };
 
 // 0x38 (0xD8 - 0xA0)
@@ -635,22 +527,18 @@ public:
 	TArray<struct FPawnActionStack>              ActionStacks;                                      // 0xA8(0x10)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	TArray<struct FPawnActionEvent>              ActionEvents;                                      // 0xB8(0x10)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	class UPawnAction*                           CurrentAction;                                     // 0xC8(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_A29[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E12[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PawnActionsComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("PawnActionsComponent");
 		return Clss;
 	}
 
-	bool K2_PushAction(class UPawnAction* NewAction, enum class EAIRequestPriority Priority, class UObject* Instigator);
-	bool K2_PerformAction(class APawn* Pawn, class UPawnAction* Action, enum class EAIRequestPriority Priority);
-	enum class EPawnActionAbortState K2_ForceAbortAction(class UPawnAction* ActionToAbort);
-	enum class EPawnActionAbortState K2_AbortAction(class UPawnAction* ActionToAbort);
+	bool K2_PushAction(class UPawnAction* InNewAction, enum class EAIRequestPriority InPriority, class UObject* InInstigator);
+	bool K2_PerformAction(class APawn* InPawn, class UPawnAction* InAction, enum class EAIRequestPriority InPriority);
+	enum class EPawnActionAbortState K2_ForceAbortAction(class UPawnAction* InActionToAbort);
+	enum class EPawnActionAbortState K2_AbortAction(class UPawnAction* InActionToAbort);
 };
 
 // 0x0 (0x90 - 0x90)
@@ -661,19 +549,15 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PawnAction_BlueprintBase");
-
+		static class UClass* Clss = UObject::FindClassFast("PawnAction_BlueprintBase");
 		return Clss;
 	}
 
-	void ActionTick(class APawn* ControlledPawn, float DeltaSeconds);
-	void ActionStart(class APawn* ControlledPawn);
-	void ActionResume(class APawn* ControlledPawn);
-	void ActionPause(class APawn* ControlledPawn);
-	void ActionFinished(class APawn* ControlledPawn, enum class EPawnActionResult WithResult);
+	void ActionTick(class APawn* InControlledPawn, float InDeltaSeconds);
+	void ActionStart(class APawn* InControlledPawn);
+	void ActionResume(class APawn* InControlledPawn);
+	void ActionPause(class APawn* InControlledPawn);
+	void ActionFinished(class APawn* InControlledPawn, enum class EPawnActionResult InWithResult);
 };
 
 // 0x60 (0xF0 - 0x90)
@@ -684,7 +568,7 @@ public:
 	class AActor*                                GoalActor;                                         // 0x90(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FVector                               GoalLocation;                                      // 0x98(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        AcceptableRadius;                                  // 0xB0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_A68[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E2D[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UNavigationQueryFilter>    FilterClass;                                       // 0xB8(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bAllowStrafe : 1;                                  // Mask: 0x1, PropSize: 0x10xC0(0x1)(Edit, BlueprintVisible, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bFinishOnOverlap : 1;                              // Mask: 0x2, PropSize: 0x10xC0(0x1)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -693,15 +577,11 @@ public:
 	uint8                                        bProjectGoalToNavigation : 1;                      // Mask: 0x10, PropSize: 0x10xC0(0x1)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bUpdatePathToGoal : 1;                             // Mask: 0x20, PropSize: 0x10xC0(0x1)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bAbortSubActionOnPathChange : 1;                   // Mask: 0x40, PropSize: 0x10xC0(0x1)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_A6D[0x2F];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E31[0x2F];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PawnAction_Move");
-
+		static class UClass* Clss = UObject::FindClassFast("PawnAction_Move");
 		return Clss;
 	}
 
@@ -715,15 +595,11 @@ public:
 	class UPawnAction*                           ActionToRepeat;                                    // 0x90(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPawnAction*                           RecentActionCopy;                                  // 0x98(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EPawnActionFailHandling           ChildFailureHandlingMode;                          // 0xA0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A6E[0xF];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E35[0xF];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PawnAction_Repeat");
-
+		static class UClass* Clss = UObject::FindClassFast("PawnAction_Repeat");
 		return Clss;
 	}
 
@@ -736,17 +612,13 @@ class UPawnAction_Sequence : public UPawnAction
 public:
 	TArray<class UPawnAction*>                   ActionSequence;                                    // 0x90(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	enum class EPawnActionFailHandling           ChildFailureHandlingMode;                          // 0xA0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A71[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E36[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UPawnAction*                           RecentActionCopy;                                  // 0xA8(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A72[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E37[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PawnAction_Sequence");
-
+		static class UClass* Clss = UObject::FindClassFast("PawnAction_Sequence");
 		return Clss;
 	}
 
@@ -758,15 +630,11 @@ class UPawnAction_Wait : public UPawnAction
 {
 public:
 	float                                        TimeToWait;                                        // 0x90(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A73[0xC];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E38[0xC];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PawnAction_Wait");
-
+		static class UClass* Clss = UObject::FindClassFast("PawnAction_Wait");
 		return Clss;
 	}
 
@@ -780,11 +648,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIResource_Movement");
-
+		static class UClass* Clss = UObject::FindClassFast("AIResource_Movement");
 		return Clss;
 	}
 
@@ -798,11 +662,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIResource_Logic");
-
+		static class UClass* Clss = UObject::FindClassFast("AIResource_Logic");
 		return Clss;
 	}
 
@@ -813,16 +673,12 @@ public:
 class UAISubsystem : public UObject
 {
 public:
-	uint8                                        Pad_A75[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E3B[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAISystem*                             AISystem;                                          // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISubsystem");
-
+		static class UClass* Clss = UObject::FindClassFast("AISubsystem");
 		return Clss;
 	}
 
@@ -849,22 +705,18 @@ public:
 	bool                                         bAddBlackboardSelfKey;                             // 0xD3(0x1)(Edit, ZeroConstructor, Config, DisableEditOnInstance, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bClearBBEntryOnBTEQSFail;                          // 0xD4(0x1)(Edit, ZeroConstructor, Config, DisableEditOnInstance, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECollisionChannel                 DefaultSightCollisionChannel;                      // 0xD5(0x1)(Edit, ZeroConstructor, Config, DisableEditOnInstance, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A96[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E4A[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UBehaviorTreeManager*                  BehaviorTreeManager;                               // 0xD8(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UEnvQueryManager*                      EnvironmentQueryManager;                           // 0xE0(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UAIPerceptionSystem*                   PerceptionSystem;                                  // 0xE8(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TArray<class UAIAsyncTaskBlueprintProxy*>    AllProxyObjects;                                   // 0xF0(0x10)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	class UAIHotSpotManager*                     HotSpotManager;                                    // 0x100(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UNavLocalGridManager*                  NavLocalGrids;                                     // 0x108(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_A9B[0x58];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E52[0x58];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISystem");
-
+		static class UClass* Clss = UObject::FindClassFast("AISystem");
 		return Clss;
 	}
 
@@ -877,20 +729,16 @@ public:
 class UBehaviorTree : public UObject
 {
 public:
-	uint8                                        Pad_A9C[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E53[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UBTCompositeNode*                      RootNode;                                          // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UBlackboardData*                       BlackboardAsset;                                   // 0x38(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UBTDecorator*>                  RootDecorators;                                    // 0x40(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<struct FBTDecoratorLogic>             RootDecoratorOps;                                  // 0x50(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A9E[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E54[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BehaviorTree");
-
+		static class UClass* Clss = UObject::FindClassFast("BehaviorTree");
 		return Clss;
 	}
 
@@ -901,22 +749,18 @@ public:
 class UBrainComponent : public UActorComponent
 {
 public:
-	uint8                                        Pad_AAE[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E62[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UBlackboardComponent*                  BlackboardComp;                                    // 0xA8(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AAIController*                         AIOwner;                                           // 0xB0(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_AB0[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E64[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BrainComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("BrainComponent");
 		return Clss;
 	}
 
-	void StopLogic(const class FString& Reason);
+	void StopLogic(const class FString& InReason);
 	void StartLogic();
 	void RestartLogic();
 	bool IsRunning();
@@ -928,25 +772,21 @@ public:
 class UBehaviorTreeComponent : public UBrainComponent
 {
 public:
-	uint8                                        Pad_AD0[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E81[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UBTNode*>                       NodeInstances;                                     // 0x118(0x10)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                        Pad_AD1[0x148];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E84[0x148];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UBehaviorTree*                         DefaultBehaviorTreeAsset;                          // 0x270(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_AD2[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E85[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BehaviorTreeComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("BehaviorTreeComponent");
 		return Clss;
 	}
 
-	void SetDynamicSubtree(const struct FGameplayTag& InjectTag, class UBehaviorTree* BehaviorAsset);
-	float GetTagCooldownEndTime(const struct FGameplayTag& CooldownTag);
-	void AddCooldownTagDuration(const struct FGameplayTag& CooldownTag, float CooldownDuration, bool bAddToExistingDuration);
+	void SetDynamicSubtree(const struct FGameplayTag& InInjectTag, class UBehaviorTree* InBehaviorAsset);
+	float GetTagCooldownEndTime(const struct FGameplayTag& InCooldownTag);
+	void AddCooldownTagDuration(const struct FGameplayTag& InCooldownTag, float InCooldownDuration, bool InbAddToExistingDuration);
 };
 
 // 0x28 (0x50 - 0x28)
@@ -955,17 +795,13 @@ class UBehaviorTreeManager : public UObject
 {
 public:
 	int32                                        MaxDebuggerSteps;                                  // 0x28(0x4)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_AD9[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E88[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FBehaviorTreeTemplateInfo>     LoadedTemplates;                                   // 0x30(0x10)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	TArray<class UBehaviorTreeComponent*>        ActiveComponents;                                  // 0x40(0x10)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BehaviorTreeManager");
-
+		static class UClass* Clss = UObject::FindClassFast("BehaviorTreeManager");
 		return Clss;
 	}
 
@@ -979,11 +815,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BehaviorTreeTypes");
-
+		static class UClass* Clss = UObject::FindClassFast("BehaviorTreeTypes");
 		return Clss;
 	}
 
@@ -997,11 +829,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardAssetProvider");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardAssetProvider");
 		return Clss;
 	}
 
@@ -1016,44 +844,40 @@ public:
 	class UBrainComponent*                       BrainComp;                                         // 0xA0(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UBlackboardData*                       DefaultBlackboardAsset;                            // 0xA8(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UBlackboardData*                       BlackboardAsset;                                   // 0xB0(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_BA0[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_ED7[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UBlackboardKeyType*>            KeyInstances;                                      // 0xD8(0x10)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                        Pad_BA2[0xC0];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_ED8[0xC0];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardComponent");
 		return Clss;
 	}
 
-	void SetValueAsVector(class FName& KeyName, const struct FVector& VectorValue);
-	void SetValueAsString(class FName& KeyName, const class FString& StringValue);
-	void SetValueAsRotator(class FName& KeyName, const struct FRotator& VectorValue);
-	void SetValueAsObject(class FName& KeyName, class UObject* ObjectValue);
-	void SetValueAsName(class FName& KeyName, class FName NameValue);
-	void SetValueAsInt(class FName& KeyName, int32 IntValue);
-	void SetValueAsFloat(class FName& KeyName, float FloatValue);
-	void SetValueAsEnum(class FName& KeyName, uint8 EnumValue);
-	void SetValueAsClass(class FName& KeyName, class UClass* ClassValue);
-	void SetValueAsBool(class FName& KeyName, bool BoolValue);
-	bool IsVectorValueSet(class FName& KeyName);
-	struct FVector GetValueAsVector(class FName& KeyName);
-	class FString GetValueAsString(class FName& KeyName);
-	struct FRotator GetValueAsRotator(class FName& KeyName);
-	class UObject* GetValueAsObject(class FName& KeyName);
-	class FName GetValueAsName(class FName& KeyName);
-	int32 GetValueAsInt(class FName& KeyName);
-	float GetValueAsFloat(class FName& KeyName);
-	uint8 GetValueAsEnum(class FName& KeyName);
-	class UClass* GetValueAsClass(class FName& KeyName);
-	bool GetValueAsBool(class FName& KeyName);
-	bool GetRotationFromEntry(class FName& KeyName, struct FRotator* ResultRotation);
-	bool GetLocationFromEntry(class FName& KeyName, struct FVector* ResultLocation);
-	void ClearValue(class FName& KeyName);
+	void SetValueAsVector(class FName& InKeyName, const struct FVector& InVectorValue);
+	void SetValueAsString(class FName& InKeyName, const class FString& InStringValue);
+	void SetValueAsRotator(class FName& InKeyName, const struct FRotator& InVectorValue);
+	void SetValueAsObject(class FName& InKeyName, class UObject* InObjectValue);
+	void SetValueAsName(class FName& InKeyName, class FName InNameValue);
+	void SetValueAsInt(class FName& InKeyName, int32 InIntValue);
+	void SetValueAsFloat(class FName& InKeyName, float InFloatValue);
+	void SetValueAsEnum(class FName& InKeyName, uint8 InEnumValue);
+	void SetValueAsClass(class FName& InKeyName, class UClass* InClassValue);
+	void SetValueAsBool(class FName& InKeyName, bool InBoolValue);
+	bool IsVectorValueSet(class FName& InKeyName);
+	struct FVector GetValueAsVector(class FName& InKeyName);
+	class FString GetValueAsString(class FName& InKeyName);
+	struct FRotator GetValueAsRotator(class FName& InKeyName);
+	class UObject* GetValueAsObject(class FName& InKeyName);
+	class FName GetValueAsName(class FName& InKeyName);
+	int32 GetValueAsInt(class FName& InKeyName);
+	float GetValueAsFloat(class FName& InKeyName);
+	uint8 GetValueAsEnum(class FName& InKeyName);
+	class UClass* GetValueAsClass(class FName& InKeyName);
+	bool GetValueAsBool(class FName& InKeyName);
+	bool GetRotationFromEntry(class FName& InKeyName, struct FRotator* InResultRotation);
+	bool GetLocationFromEntry(class FName& InKeyName, struct FVector* InResultLocation);
+	void ClearValue(class FName& InKeyName);
 };
 
 // 0x20 (0x50 - 0x30)
@@ -1064,15 +888,11 @@ public:
 	class UBlackboardData*                       Parent;                                            // 0x30(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FBlackboardEntry>              Keys;                                              // 0x38(0x10)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	uint8                                        bHasSynchronizedKeys : 1;                          // Mask: 0x1, PropSize: 0x10x48(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_BC0[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EDF[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardData");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardData");
 		return Clss;
 	}
 
@@ -1083,15 +903,11 @@ public:
 class UBlackboardKeyType : public UObject
 {
 public:
-	uint8                                        Pad_BC1[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EE0[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType");
 		return Clss;
 	}
 
@@ -1105,11 +921,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_Bool");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_Bool");
 		return Clss;
 	}
 
@@ -1124,11 +936,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_Class");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_Class");
 		return Clss;
 	}
 
@@ -1142,15 +950,11 @@ public:
 	class UEnum*                                 EnumType;                                          // 0x30(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                EnumName;                                          // 0x38(0x10)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bIsEnumNameValid : 1;                              // Mask: 0x1, PropSize: 0x10x48(0x1)(Edit, DisableEditOnInstance, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_BC2[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EE3[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_Enum");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_Enum");
 		return Clss;
 	}
 
@@ -1164,11 +968,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_Float");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_Float");
 		return Clss;
 	}
 
@@ -1182,11 +982,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_Int");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_Int");
 		return Clss;
 	}
 
@@ -1200,11 +996,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_Name");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_Name");
 		return Clss;
 	}
 
@@ -1220,11 +1012,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_NativeEnum");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_NativeEnum");
 		return Clss;
 	}
 
@@ -1239,11 +1027,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_Object");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_Object");
 		return Clss;
 	}
 
@@ -1257,11 +1041,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_Rotator");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_Rotator");
 		return Clss;
 	}
 
@@ -1276,11 +1056,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_String");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_String");
 		return Clss;
 	}
 
@@ -1294,11 +1070,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlackboardKeyType_Vector");
-
+		static class UClass* Clss = UObject::FindClassFast("BlackboardKeyType_Vector");
 		return Clss;
 	}
 
@@ -1309,15 +1081,11 @@ public:
 class UBTAuxiliaryNode : public UBTNode
 {
 public:
-	uint8                                        Pad_BC9[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EE9[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTAuxiliaryNode");
-
+		static class UClass* Clss = UObject::FindClassFast("BTAuxiliaryNode");
 		return Clss;
 	}
 
@@ -1330,17 +1098,13 @@ class UBTCompositeNode : public UBTNode
 public:
 	TArray<struct FBTCompositeChild>             Children;                                          // 0x58(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class UBTService*>                    Services;                                          // 0x68(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                        Pad_BCA[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EEA[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bApplyDecoratorScope : 1;                          // Mask: 0x1, PropSize: 0x10x88(0x1)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_BCC[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EEB[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTCompositeNode");
-
+		static class UClass* Clss = UObject::FindClassFast("BTCompositeNode");
 		return Clss;
 	}
 
@@ -1351,19 +1115,15 @@ public:
 class UBTDecorator : public UBTAuxiliaryNode
 {
 public:
-	uint8                                        BitPad_7F : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        BitPad_A6 : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
 	uint8                                        bInverseCondition : 1;                             // Mask: 0x80, PropSize: 0x10x60(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_BCE[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EEE[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EBTFlowAbortMode                  FlowAbortMode;                                     // 0x64(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_BCF[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EEF[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator");
 		return Clss;
 	}
 
@@ -1377,41 +1137,37 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTFunctionLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("BTFunctionLibrary");
 		return Clss;
 	}
 
-	void StopUsingExternalEvent(class UBTNode* NodeOwner);
-	void StartUsingExternalEvent(class UBTNode* NodeOwner, class AActor* OwningActor);
-	void SetBlackboardValueAsVector(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key, const struct FVector& Value);
-	void SetBlackboardValueAsString(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key, const class FString& Value);
-	void SetBlackboardValueAsRotator(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key, const struct FRotator& Value);
-	void SetBlackboardValueAsObject(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key, class UObject* Value);
-	void SetBlackboardValueAsName(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key, class FName Value);
-	void SetBlackboardValueAsInt(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key, int32 Value);
-	void SetBlackboardValueAsFloat(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key, float Value);
-	void SetBlackboardValueAsEnum(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key, uint8 Value);
-	void SetBlackboardValueAsClass(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key, class UClass* Value);
-	void SetBlackboardValueAsBool(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key, bool Value);
-	class UBlackboardComponent* GetOwnersBlackboard(class UBTNode* NodeOwner);
-	class UBehaviorTreeComponent* GetOwnerComponent(class UBTNode* NodeOwner);
-	struct FVector GetBlackboardValueAsVector(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	class FString GetBlackboardValueAsString(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	struct FRotator GetBlackboardValueAsRotator(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	class UObject* GetBlackboardValueAsObject(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	class FName GetBlackboardValueAsName(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	int32 GetBlackboardValueAsInt(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	float GetBlackboardValueAsFloat(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	uint8 GetBlackboardValueAsEnum(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	class UClass* GetBlackboardValueAsClass(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	bool GetBlackboardValueAsBool(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	class AActor* GetBlackboardValueAsActor(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	void ClearBlackboardValueAsVector(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
-	void ClearBlackboardValue(class UBTNode* NodeOwner, struct FBlackboardKeySelector& Key);
+	void StopUsingExternalEvent(class UBTNode* InNodeOwner);
+	void StartUsingExternalEvent(class UBTNode* InNodeOwner, class AActor* InOwningActor);
+	void SetBlackboardValueAsVector(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey, const struct FVector& InValue);
+	void SetBlackboardValueAsString(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey, const class FString& InValue);
+	void SetBlackboardValueAsRotator(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey, const struct FRotator& InValue);
+	void SetBlackboardValueAsObject(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey, class UObject* InValue);
+	void SetBlackboardValueAsName(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey, class FName InValue);
+	void SetBlackboardValueAsInt(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey, int32 InValue);
+	void SetBlackboardValueAsFloat(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey, float InValue);
+	void SetBlackboardValueAsEnum(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey, uint8 InValue);
+	void SetBlackboardValueAsClass(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey, class UClass* InValue);
+	void SetBlackboardValueAsBool(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey, bool InValue);
+	class UBlackboardComponent* GetOwnersBlackboard(class UBTNode* InNodeOwner);
+	class UBehaviorTreeComponent* GetOwnerComponent(class UBTNode* InNodeOwner);
+	struct FVector GetBlackboardValueAsVector(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	class FString GetBlackboardValueAsString(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	struct FRotator GetBlackboardValueAsRotator(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	class UObject* GetBlackboardValueAsObject(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	class FName GetBlackboardValueAsName(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	int32 GetBlackboardValueAsInt(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	float GetBlackboardValueAsFloat(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	uint8 GetBlackboardValueAsEnum(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	class UClass* GetBlackboardValueAsClass(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	bool GetBlackboardValueAsBool(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	class AActor* GetBlackboardValueAsActor(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	void ClearBlackboardValueAsVector(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
+	void ClearBlackboardValue(class UBTNode* InNodeOwner, struct FBlackboardKeySelector& InKey);
 };
 
 // 0x10 (0x70 - 0x60)
@@ -1423,15 +1179,11 @@ public:
 	float                                        RandomDeviation;                                   // 0x64(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bCallTickOnSearchStart : 1;                        // Mask: 0x1, PropSize: 0x10x68(0x1)(Edit, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bRestartTimerOnEachActivation : 1;                 // Mask: 0x2, PropSize: 0x10x68(0x1)(Edit, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_C9E[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F79[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTService");
-
+		static class UClass* Clss = UObject::FindClassFast("BTService");
 		return Clss;
 	}
 
@@ -1445,11 +1197,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTComposite_Selector");
-
+		static class UClass* Clss = UObject::FindClassFast("BTComposite_Selector");
 		return Clss;
 	}
 
@@ -1463,11 +1211,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTComposite_Sequence");
-
+		static class UClass* Clss = UObject::FindClassFast("BTComposite_Sequence");
 		return Clss;
 	}
 
@@ -1479,15 +1223,11 @@ class UBTComposite_SimpleParallel : public UBTCompositeNode
 {
 public:
 	enum class EBTParallelMode                   FinishMode;                                        // 0x90(0x1)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_CA3[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F7C[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTComposite_SimpleParallel");
-
+		static class UClass* Clss = UObject::FindClassFast("BTComposite_SimpleParallel");
 		return Clss;
 	}
 
@@ -1502,11 +1242,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_BlackboardBase");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_BlackboardBase");
 		return Clss;
 	}
 
@@ -1523,15 +1259,11 @@ public:
 	class FString                                CachedDescription;                                 // 0xA8(0x10)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        OperationType;                                     // 0xB8(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	enum class EBTBlackboardRestart              NotifyObserver;                                    // 0xB9(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_CA6[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F7E[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_Blackboard");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_Blackboard");
 		return Clss;
 	}
 
@@ -1545,34 +1277,30 @@ public:
 	class AAIController*                         AIOwner;                                           // 0x68(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AActor*                                ActorOwner;                                        // 0x70(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TArray<class FName>                          ObservedKeyNames;                                  // 0x78(0x10)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_CFC[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F9E[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bShowPropertyDetails : 1;                          // Mask: 0x1, PropSize: 0x10x98(0x1)(Edit, DisableEditOnTemplate, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bCheckConditionOnlyBlackBoardChanges : 1;          // Mask: 0x2, PropSize: 0x10x98(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bIsObservingBB : 1;                                // Mask: 0x4, PropSize: 0x10x98(0x1)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_CFE[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FA0[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_BlueprintBase");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_BlueprintBase");
 		return Clss;
 	}
 
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
-	void ReceiveTick(class AActor* OwnerActor, float DeltaSeconds);
-	void ReceiveObserverDeactivatedAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	void ReceiveObserverDeactivated(class AActor* OwnerActor);
-	void ReceiveObserverActivatedAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	void ReceiveObserverActivated(class AActor* OwnerActor);
-	void ReceiveExecutionStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	void ReceiveExecutionStart(class AActor* OwnerActor);
-	void ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, enum class EBTNodeResult NodeResult);
-	void ReceiveExecutionFinish(class AActor* OwnerActor, enum class EBTNodeResult NodeResult);
-	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	bool PerformConditionCheck(class AActor* OwnerActor);
+	void ReceiveTickAI(class AAIController* InOwnerController, class APawn* InControlledPawn, float InDeltaSeconds);
+	void ReceiveTick(class AActor* InOwnerActor, float InDeltaSeconds);
+	void ReceiveObserverDeactivatedAI(class AAIController* InOwnerController, class APawn* InControlledPawn);
+	void ReceiveObserverDeactivated(class AActor* InOwnerActor);
+	void ReceiveObserverActivatedAI(class AAIController* InOwnerController, class APawn* InControlledPawn);
+	void ReceiveObserverActivated(class AActor* InOwnerActor);
+	void ReceiveExecutionStartAI(class AAIController* InOwnerController, class APawn* InControlledPawn);
+	void ReceiveExecutionStart(class AActor* InOwnerActor);
+	void ReceiveExecutionFinishAI(class AAIController* InOwnerController, class APawn* InControlledPawn, enum class EBTNodeResult InNodeResult);
+	void ReceiveExecutionFinish(class AActor* InOwnerActor, enum class EBTNodeResult InNodeResult);
+	bool PerformConditionCheckAI(class AAIController* InOwnerController, class APawn* InControlledPawn);
+	bool PerformConditionCheck(class AActor* InOwnerActor);
 	bool IsDecoratorObserverActive();
 	bool IsDecoratorExecutionActive();
 };
@@ -1584,17 +1312,13 @@ class UBTDecorator_CheckGameplayTagsOnActor : public UBTDecorator
 public:
 	struct FBlackboardKeySelector                ActorToCheck;                                      // 0x68(0x28)(Edit, Protected, NativeAccessSpecifierProtected)
 	enum class EGameplayContainerMatchType       TagsToMatch;                                       // 0x90(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D06[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FA4[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayTagContainer                 GameplayTags;                                      // 0x98(0x20)(Edit, Protected, NativeAccessSpecifierProtected)
 	class FString                                CachedDescription;                                 // 0xB8(0x10)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_CheckGameplayTagsOnActor");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_CheckGameplayTagsOnActor");
 		return Clss;
 	}
 
@@ -1606,17 +1330,13 @@ class UBTDecorator_CompareBBEntries : public UBTDecorator
 {
 public:
 	enum class EBlackBoardEntryComparison        Operator;                                          // 0x68(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D07[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FA5[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FBlackboardKeySelector                BlackboardKeyA;                                    // 0x70(0x28)(Edit, Protected, NativeAccessSpecifierProtected)
 	struct FBlackboardKeySelector                BlackboardKeyB;                                    // 0x98(0x28)(Edit, Protected, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_CompareBBEntries");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_CompareBBEntries");
 		return Clss;
 	}
 
@@ -1630,11 +1350,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_ConditionalLoop");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_ConditionalLoop");
 		return Clss;
 	}
 
@@ -1646,19 +1362,15 @@ class UBTDecorator_ConeCheck : public UBTDecorator
 {
 public:
 	float                                        ConeHalfAngle;                                     // 0x68(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D08[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FA6[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FBlackboardKeySelector                ConeOrigin;                                        // 0x70(0x28)(Edit, NativeAccessSpecifierPublic)
 	struct FBlackboardKeySelector                ConeDirection;                                     // 0x98(0x28)(Edit, NativeAccessSpecifierPublic)
 	struct FBlackboardKeySelector                Observed;                                          // 0xC0(0x28)(Edit, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D0A[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FA8[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_ConeCheck");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_ConeCheck");
 		return Clss;
 	}
 
@@ -1670,15 +1382,11 @@ class UBTDecorator_Cooldown : public UBTDecorator
 {
 public:
 	float                                        CoolDownTime;                                      // 0x68(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D0D[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FAA[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_Cooldown");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_Cooldown");
 		return Clss;
 	}
 
@@ -1692,19 +1400,15 @@ public:
 	struct FBlackboardKeySelector                BlackboardKeyA;                                    // 0x68(0x28)(Edit, Protected, NativeAccessSpecifierProtected)
 	struct FBlackboardKeySelector                BlackboardKeyB;                                    // 0x90(0x28)(Edit, Protected, NativeAccessSpecifierProtected)
 	uint8                                        bUseSelf : 1;                                      // Mask: 0x1, PropSize: 0x10xB8(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_89 : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_D11[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_AC : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_FAD[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EPathExistanceQueryType           PathQueryType;                                     // 0xBC(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D12[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FAE[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UNavigationQueryFilter>    FilterClass;                                       // 0xC0(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_DoesPathExist");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_DoesPathExist");
 		return Clss;
 	}
 
@@ -1718,11 +1422,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_ForceSuccess");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_ForceSuccess");
 		return Clss;
 	}
 
@@ -1734,22 +1434,18 @@ class UBTDecorator_IsAtLocation : public UBTDecorator_BlackboardBase
 {
 public:
 	float                                        AcceptableRadius;                                  // 0x90(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D13[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FB0[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAIDataProviderFloatValue             ParametrizedAcceptableRadius;                      // 0x98(0x38)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	enum class EFAIDistanceType                  GeometricDistanceType;                             // 0xD0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D16[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FB2[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bUseParametrizedRadius : 1;                        // Mask: 0x1, PropSize: 0x10xD4(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bUseNavAgentGoalLocation : 1;                      // Mask: 0x2, PropSize: 0x10xD4(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bPathFindingBasedTest : 1;                         // Mask: 0x4, PropSize: 0x10xD4(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D17[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FB3[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_IsAtLocation");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_IsAtLocation");
 		return Clss;
 	}
 
@@ -1764,11 +1460,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_IsBBEntryOfClass");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_IsBBEntryOfClass");
 		return Clss;
 	}
 
@@ -1780,20 +1472,16 @@ class UBTDecorator_KeepInCone : public UBTDecorator
 {
 public:
 	float                                        ConeHalfAngle;                                     // 0x68(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D18[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FB6[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FBlackboardKeySelector                ConeOrigin;                                        // 0x70(0x28)(Edit, NativeAccessSpecifierPublic)
 	struct FBlackboardKeySelector                Observed;                                          // 0x98(0x28)(Edit, NativeAccessSpecifierPublic)
 	uint8                                        bUseSelfAsOrigin : 1;                              // Mask: 0x1, PropSize: 0x10xC0(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bUseSelfAsObserved : 1;                            // Mask: 0x2, PropSize: 0x10xC0(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D19[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FB9[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_KeepInCone");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_KeepInCone");
 		return Clss;
 	}
 
@@ -1806,17 +1494,13 @@ class UBTDecorator_Loop : public UBTDecorator
 public:
 	int32                                        NumLoops;                                          // 0x68(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bInfiniteLoop;                                     // 0x6C(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D1C[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FBA[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        InfiniteLoopTimeoutTime;                           // 0x70(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D1D[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FBB[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_Loop");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_Loop");
 		return Clss;
 	}
 
@@ -1830,11 +1514,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_ReachedMoveGoal");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_ReachedMoveGoal");
 		return Clss;
 	}
 
@@ -1848,15 +1528,11 @@ public:
 	struct FGameplayTag                          CooldownTag;                                       // 0x68(0x8)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CooldownDuration;                                  // 0x70(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAddToExistingDuration;                            // 0x74(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D1E[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FBC[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_SetTagCooldown");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_SetTagCooldown");
 		return Clss;
 	}
 
@@ -1871,15 +1547,11 @@ public:
 	float                                        CooldownDuration;                                  // 0x70(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAddToExistingDuration;                            // 0x74(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bActivatesCooldown;                                // 0x75(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D20[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FBD[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_TagCooldown");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_TagCooldown");
 		return Clss;
 	}
 
@@ -1891,15 +1563,11 @@ class UBTDecorator_TimeLimit : public UBTDecorator
 {
 public:
 	float                                        TimeLimit;                                         // 0x68(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D23[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FBE[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTDecorator_TimeLimit");
-
+		static class UClass* Clss = UObject::FindClassFast("BTDecorator_TimeLimit");
 		return Clss;
 	}
 
@@ -1914,11 +1582,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTService_BlackboardBase");
-
+		static class UClass* Clss = UObject::FindClassFast("BTService_BlackboardBase");
 		return Clss;
 	}
 
@@ -1931,29 +1595,25 @@ class UBTService_BlueprintBase : public UBTService
 public:
 	class AAIController*                         AIOwner;                                           // 0x70(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AActor*                                ActorOwner;                                        // 0x78(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D41[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FD5[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bShowPropertyDetails : 1;                          // Mask: 0x1, PropSize: 0x10x90(0x1)(Edit, DisableEditOnTemplate, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bShowEventDetails : 1;                             // Mask: 0x2, PropSize: 0x10x90(0x1)(Edit, DisableEditOnTemplate, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D42[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FD6[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTService_BlueprintBase");
-
+		static class UClass* Clss = UObject::FindClassFast("BTService_BlueprintBase");
 		return Clss;
 	}
 
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
-	void ReceiveTick(class AActor* OwnerActor, float DeltaSeconds);
-	void ReceiveSearchStartAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	void ReceiveSearchStart(class AActor* OwnerActor);
-	void ReceiveDeactivationAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	void ReceiveDeactivation(class AActor* OwnerActor);
-	void ReceiveActivationAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	void ReceiveActivation(class AActor* OwnerActor);
+	void ReceiveTickAI(class AAIController* InOwnerController, class APawn* InControlledPawn, float InDeltaSeconds);
+	void ReceiveTick(class AActor* InOwnerActor, float InDeltaSeconds);
+	void ReceiveSearchStartAI(class AAIController* InOwnerController, class APawn* InControlledPawn);
+	void ReceiveSearchStart(class AActor* InOwnerActor);
+	void ReceiveDeactivationAI(class AAIController* InOwnerController, class APawn* InControlledPawn);
+	void ReceiveDeactivation(class AActor* InOwnerActor);
+	void ReceiveActivationAI(class AAIController* InOwnerController, class APawn* InControlledPawn);
+	void ReceiveActivation(class AActor* InOwnerActor);
 	bool IsServiceActive();
 };
 
@@ -1963,15 +1623,11 @@ class UBTService_DefaultFocus : public UBTService_BlackboardBase
 {
 public:
 	uint8                                        FocusPriority;                                     // 0x98(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D47[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FD8[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTService_DefaultFocus");
-
+		static class UClass* Clss = UObject::FindClassFast("BTService_DefaultFocus");
 		return Clss;
 	}
 
@@ -1984,15 +1640,11 @@ class UBTService_RunEQS : public UBTService_BlackboardBase
 public:
 	struct FEQSParametrizedQueryExecutionRequest EQSRequest;                                        // 0x98(0x48)(Edit, Protected, NativeAccessSpecifierProtected)
 	bool                                         bUpdateBBOnFail;                                   // 0xE0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D4A[0x17];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FD9[0x17];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTService_RunEQS");
-
+		static class UClass* Clss = UObject::FindClassFast("BTService_RunEQS");
 		return Clss;
 	}
 
@@ -2006,31 +1658,27 @@ public:
 	class AAIController*                         AIOwner;                                           // 0x70(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AActor*                                ActorOwner;                                        // 0x78(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FIntervalCountdown                    TickInterval;                                      // 0x80(0x8)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D63[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FF4[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bShowPropertyDetails : 1;                          // Mask: 0x1, PropSize: 0x10xA0(0x1)(Edit, DisableEditOnTemplate, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D64[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FF5[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_BlueprintBase");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_BlueprintBase");
 		return Clss;
 	}
 
-	void SetFinishOnMessageWithId(class FName MessageName, int32 RequestId);
-	void SetFinishOnMessage(class FName MessageName);
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
-	void ReceiveTick(class AActor* OwnerActor, float DeltaSeconds);
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	void ReceiveExecute(class AActor* OwnerActor);
-	void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	void ReceiveAbort(class AActor* OwnerActor);
+	void SetFinishOnMessageWithId(class FName InMessageName, int32 InRequestId);
+	void SetFinishOnMessage(class FName InMessageName);
+	void ReceiveTickAI(class AAIController* InOwnerController, class APawn* InControlledPawn, float InDeltaSeconds);
+	void ReceiveTick(class AActor* InOwnerActor, float InDeltaSeconds);
+	void ReceiveExecuteAI(class AAIController* InOwnerController, class APawn* InControlledPawn);
+	void ReceiveExecute(class AActor* InOwnerActor);
+	void ReceiveAbortAI(class AAIController* InOwnerController, class APawn* InControlledPawn);
+	void ReceiveAbort(class AActor* InOwnerActor);
 	bool IsTaskExecuting();
 	bool IsTaskAborting();
-	void FinishExecute(bool bSuccess);
+	void FinishExecute(bool InbSuccess);
 	void FinishAbort();
 };
 
@@ -2040,15 +1688,11 @@ class UBTTask_FinishWithResult : public UBTTaskNode
 {
 public:
 	enum class EBTNodeResult                     Result;                                            // 0x70(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D69[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FF8[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_FinishWithResult");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_FinishWithResult");
 		return Clss;
 	}
 
@@ -2060,15 +1704,11 @@ class UBTTask_GameplayTaskBase : public UBTTaskNode
 {
 public:
 	uint8                                        bWaitForGameplayTask : 1;                          // Mask: 0x1, PropSize: 0x10x70(0x1)(Edit, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D6B[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FF9[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_GameplayTaskBase");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_GameplayTaskBase");
 		return Clss;
 	}
 
@@ -2080,15 +1720,11 @@ class UBTTask_MakeNoise : public UBTTaskNode
 {
 public:
 	float                                        Loudnes;                                           // 0x70(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D6C[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FFB[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_MakeNoise");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_MakeNoise");
 		return Clss;
 	}
 
@@ -2100,7 +1736,7 @@ class UBTTask_MoveTo : public UBTTask_BlackboardBase
 {
 public:
 	float                                        AcceptableRadius;                                  // 0x98(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D6F[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FFC[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UNavigationQueryFilter>    FilterClass;                                       // 0xA0(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ObservedBlackboardValueTolerance;                  // 0xA8(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bObserveBlackboardValue : 1;                       // Mask: 0x1, PropSize: 0x10xAC(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2112,15 +1748,11 @@ public:
 	uint8                                        bReachTestIncludesGoalRadius : 1;                  // Mask: 0x40, PropSize: 0x10xAC(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bStopOnOverlap : 1;                                // Mask: 0x80, PropSize: 0x10xAC(0x1)(Edit, DisableEditOnTemplate, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bStopOnOverlapNeedsUpdate : 1;                     // Mask: 0x1, PropSize: 0x10xAD(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D75[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FFF[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_MoveTo");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_MoveTo");
 		return Clss;
 	}
 
@@ -2134,15 +1766,11 @@ public:
 	uint8                                        bDisablePathUpdateOnGoalLocationChange : 1;        // Mask: 0x1, PropSize: 0x10xB0(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bProjectVectorGoalToNavigation : 1;                // Mask: 0x2, PropSize: 0x10xB0(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bUpdatedDeprecatedProperties : 1;                  // Mask: 0x4, PropSize: 0x10xB0(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_D77[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1000[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_MoveDirectlyToward");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_MoveDirectlyToward");
 		return Clss;
 	}
 
@@ -2156,11 +1784,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_PawnActionBase");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_PawnActionBase");
 		return Clss;
 	}
 
@@ -2174,19 +1798,15 @@ public:
 	class UAnimationAsset*                       AnimationToPlay;                                   // 0x70(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bLooping : 1;                                      // Mask: 0x1, PropSize: 0x10x78(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bNonBlocking : 1;                                  // Mask: 0x2, PropSize: 0x10x78(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_8B : 6;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_D7A[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_B5 : 6;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_1002[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UBehaviorTreeComponent*                MyOwnerComp;                                       // 0x80(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USkeletalMeshComponent*                CachedSkelMesh;                                    // 0x88(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D7B[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1003[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_PlayAnimation");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_PlayAnimation");
 		return Clss;
 	}
 
@@ -2201,11 +1821,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_PlaySound");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_PlaySound");
 		return Clss;
 	}
 
@@ -2220,11 +1836,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_PushPawnAction");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_PushPawnAction");
 		return Clss;
 	}
 
@@ -2236,15 +1848,11 @@ class UBTTask_RotateToFaceBBEntry : public UBTTask_BlackboardBase
 {
 public:
 	float                                        Precision;                                         // 0x98(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_D7C[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1005[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_RotateToFaceBBEntry");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_RotateToFaceBBEntry");
 		return Clss;
 	}
 
@@ -2259,11 +1867,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_RunBehavior");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_RunBehavior");
 		return Clss;
 	}
 
@@ -2280,11 +1884,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_RunBehaviorDynamic");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_RunBehaviorDynamic");
 		return Clss;
 	}
 
@@ -2299,21 +1899,17 @@ public:
 	TArray<struct FEnvNamedValue>                QueryParams;                                       // 0xA0(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FAIDynamicParam>               QueryConfig;                                       // 0xB0(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	enum class EEnvQueryRunMode                  RunMode;                                           // 0xC0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D80[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1009[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FBlackboardKeySelector                EQSQueryBlackboardKey;                             // 0xC8(0x28)(NativeAccessSpecifierPublic)
 	bool                                         bUseBBKey;                                         // 0xF0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D81[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_100A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FEQSParametrizedQueryExecutionRequest EQSRequest;                                        // 0xF8(0x48)(Edit, NativeAccessSpecifierPublic)
 	bool                                         bUpdateBBOnFail;                                   // 0x140(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D82[0x17];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_100D[0x17];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_RunEQSQuery");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_RunEQSQuery");
 		return Clss;
 	}
 
@@ -2326,16 +1922,12 @@ class UBTTask_SetTagCooldown : public UBTTaskNode
 public:
 	struct FGameplayTag                          CooldownTag;                                       // 0x70(0x8)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAddToExistingDuration;                            // 0x78(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D84[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1011[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        CooldownDuration;                                  // 0x7C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_SetTagCooldown");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_SetTagCooldown");
 		return Clss;
 	}
 
@@ -2350,11 +1942,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BTTask_WaitBlackboardTime");
-
+		static class UClass* Clss = UObject::FindClassFast("BTTask_WaitBlackboardTime");
 		return Clss;
 	}
 
@@ -2368,30 +1956,26 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIBlueprintHelperLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("AIBlueprintHelperLibrary");
 		return Clss;
 	}
 
-	void UnlockAIResourcesWithAnimation(class UAnimInstance* AnimInstance, bool bUnlockMovement, bool UnlockAILogic);
-	class APawn* SpawnAIFromClass(class UObject* WorldContextObject, TSubclassOf<class APawn> PawnClass, class UBehaviorTree* BehaviorTree, const struct FVector& Location, const struct FRotator& Rotation, bool bNoCollisionFail, class AActor* Owner);
-	void SimpleMoveToLocation(class AController* Controller, struct FVector& Goal);
-	void SimpleMoveToActor(class AController* Controller, class AActor* Goal);
-	void SendAIMessage(class APawn* Target, class FName Message, class UObject* MessageSource, bool bSuccess);
-	void LockAIResourcesWithAnimation(class UAnimInstance* AnimInstance, bool bLockMovement, bool LockAILogic);
-	bool IsValidAIRotation(const struct FRotator& Rotation);
-	bool IsValidAILocation(const struct FVector& Location);
-	bool IsValidAIDirection(const struct FVector& DirectionVector);
-	int32 GetNextNavLinkIndex(class AController* Controller);
-	TArray<struct FVector> GetCurrentPathPoints(class AController* Controller);
-	int32 GetCurrentPathIndex(class AController* Controller);
-	class UNavigationPath* GetCurrentPath(class AController* Controller);
-	class UBlackboardComponent* GetBlackboard(class AActor* Target);
-	class AAIController* GetAIController(class AActor* ControlledActor);
-	class UAIAsyncTaskBlueprintProxy* CreateMoveToProxyObject(class UObject* WorldContextObject, class APawn* Pawn, const struct FVector& Destination, class AActor* TargetActor, float AcceptanceRadius, bool bStopOnOverlap);
+	void UnlockAIResourcesWithAnimation(class UAnimInstance* InAnimInstance, bool InbUnlockMovement, bool InUnlockAILogic);
+	class APawn* SpawnAIFromClass(class UObject* InWorldContextObject, TSubclassOf<class APawn> InPawnClass, class UBehaviorTree* InBehaviorTree, const struct FVector& InLocation, const struct FRotator& InRotation, bool InbNoCollisionFail, class AActor* InOwner);
+	void SimpleMoveToLocation(class AController* InController, struct FVector& InGoal);
+	void SimpleMoveToActor(class AController* InController, class AActor* InGoal);
+	void SendAIMessage(class APawn* InTarget, class FName InMessage, class UObject* InMessageSource, bool InbSuccess);
+	void LockAIResourcesWithAnimation(class UAnimInstance* InAnimInstance, bool InbLockMovement, bool InLockAILogic);
+	bool IsValidAIRotation(const struct FRotator& InRotation);
+	bool IsValidAILocation(const struct FVector& InLocation);
+	bool IsValidAIDirection(const struct FVector& InDirectionVector);
+	int32 GetNextNavLinkIndex(class AController* InController);
+	TArray<struct FVector> GetCurrentPathPoints(class AController* InController);
+	int32 GetCurrentPathIndex(class AController* InController);
+	class UNavigationPath* GetCurrentPath(class AController* InController);
+	class UBlackboardComponent* GetBlackboard(class AActor* InTarget);
+	class AAIController* GetAIController(class AActor* InControlledActor);
+	class UAIAsyncTaskBlueprintProxy* CreateMoveToProxyObject(class UObject* InWorldContextObject, class APawn* InPawn, const struct FVector& InDestination, class AActor* InTargetActor, float InAcceptanceRadius, bool InbStopOnOverlap);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -2402,11 +1986,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIDataProvider");
-
+		static class UClass* Clss = UObject::FindClassFast("AIDataProvider");
 		return Clss;
 	}
 
@@ -2421,15 +2001,11 @@ public:
 	float                                        FloatValue;                                        // 0x30(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        IntValue;                                          // 0x34(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         BoolValue;                                         // 0x38(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_DCC[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1069[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIDataProvider_QueryParams");
-
+		static class UClass* Clss = UObject::FindClassFast("AIDataProvider_QueryParams");
 		return Clss;
 	}
 
@@ -2443,15 +2019,11 @@ public:
 	float                                        Min;                                               // 0x40(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        Max;                                               // 0x44(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bInteger : 1;                                      // Mask: 0x1, PropSize: 0x10x48(0x1)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_DCE[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_106A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIDataProvider_Random");
-
+		static class UClass* Clss = UObject::FindClassFast("AIDataProvider_Random");
 		return Clss;
 	}
 
@@ -2465,11 +2037,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("DetourCrowdAIController");
-
+		static class UClass* Clss = UObject::FindClassFast("DetourCrowdAIController");
 		return Clss;
 	}
 
@@ -2483,11 +2051,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryContext");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryContext");
 		return Clss;
 	}
 
@@ -2498,22 +2062,18 @@ public:
 class UEnvQueryContext_BlueprintBase : public UEnvQueryContext
 {
 public:
-	uint8                                        Pad_DE4[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1072[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryContext_BlueprintBase");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryContext_BlueprintBase");
 		return Clss;
 	}
 
-	void ProvideSingleLocation(class UObject* QuerierObject, class AActor* QuerierActor, struct FVector* ResultingLocation);
-	void ProvideSingleActor(class UObject* QuerierObject, class AActor* QuerierActor, class AActor** ResultingActor);
-	void ProvideLocationsSet(class UObject* QuerierObject, class AActor* QuerierActor, TArray<struct FVector>* ResultingLocationSet);
-	void ProvideActorsSet(class UObject* QuerierObject, class AActor* QuerierActor, TArray<class AActor*>* ResultingActorsSet);
+	void ProvideSingleLocation(class UObject* InQuerierObject, class AActor* InQuerierActor, struct FVector* InResultingLocation);
+	void ProvideSingleActor(class UObject* InQuerierObject, class AActor* InQuerierActor, class AActor** InResultingActor);
+	void ProvideLocationsSet(class UObject* InQuerierObject, class AActor* InQuerierActor, TArray<struct FVector>* InResultingLocationSet);
+	void ProvideActorsSet(class UObject* InQuerierObject, class AActor* InQuerierActor, TArray<class AActor*>* InResultingActorsSet);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -2524,11 +2084,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryContext_Item");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryContext_Item");
 		return Clss;
 	}
 
@@ -2542,11 +2098,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryContext_Querier");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryContext_Querier");
 		return Clss;
 	}
 
@@ -2562,11 +2114,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQuery");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQuery");
 		return Clss;
 	}
 
@@ -2580,11 +2128,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryDebugHelpers");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryDebugHelpers");
 		return Clss;
 	}
 
@@ -2598,15 +2142,11 @@ public:
 	class FString                                OptionName;                                        // 0x30(0x10)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UEnvQueryItemType>         ItemType;                                          // 0x40(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bAutoSortTests : 1;                                // Mask: 0x1, PropSize: 0x10x48(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_DE9[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1075[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator");
 		return Clss;
 	}
 
@@ -2617,31 +2157,27 @@ public:
 class UEnvQueryInstanceBlueprintWrapper : public UObject
 {
 public:
-	uint8                                        Pad_E07[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1083[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        QueryID;                                           // 0x30(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E08[0x24];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1084[0x24];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UEnvQueryItemType>         ItemType;                                          // 0x58(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                        OptionIndex;                                       // 0x60(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E0A[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1086[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnQueryFinishedEvent;                              // 0x68(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryInstanceBlueprintWrapper");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryInstanceBlueprintWrapper");
 		return Clss;
 	}
 
-	void SetNamedParam(class FName ParamName, float Value);
+	void SetNamedParam(class FName InParamName, float InValue);
 	TArray<struct FVector> GetResultsAsLocations();
 	TArray<class AActor*> GetResultsAsActors();
-	bool GetQueryResultsAsLocations(TArray<struct FVector>* ResultLocations);
-	bool GetQueryResultsAsActors(TArray<class AActor*>* ResultActors);
-	float GetItemScore(int32 ItemIndex);
-	void EQSQueryDoneSignature__DelegateSignature(class UEnvQueryInstanceBlueprintWrapper* QueryInstance, enum class EEnvQueryStatus QueryStatus);
+	bool GetQueryResultsAsLocations(TArray<struct FVector>* InResultLocations);
+	bool GetQueryResultsAsActors(TArray<class AActor*>* InResultActors);
+	float GetItemScore(int32 InItemIndex);
+	void EQSQueryDoneSignature__DelegateSignature(class UEnvQueryInstanceBlueprintWrapper* InQueryInstance, enum class EEnvQueryStatus InQueryStatus);
 };
 
 // 0x120 (0x158 - 0x38)
@@ -2649,14 +2185,14 @@ public:
 class UEnvQueryManager : public UAISubsystem
 {
 public:
-	uint8                                        Pad_E13[0x70];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_108E[0x70];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FEnvQueryInstanceCache>        InstanceCache;                                     // 0xA8(0x10)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
 	TArray<class UEnvQueryContext*>              LocalContexts;                                     // 0xB8(0x10)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	TArray<class UEnvQueryInstanceBlueprintWrapper*> GCShieldedWrappers;                                // 0xC8(0x10)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E14[0x54];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_108F[0x54];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MaxAllowedTestingTime;                             // 0x12C(0x4)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bTestQueriesUsingBreadth;                          // 0x130(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E16[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1090[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        QueryCountWarningThreshold;                        // 0x134(0x4)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	double                                       QueryCountWarningInterval;                         // 0x138(0x8)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	double                                       ExecutionTimeWarningSeconds;                       // 0x140(0x8)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -2665,15 +2201,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryManager");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryManager");
 		return Clss;
 	}
 
-	class UEnvQueryInstanceBlueprintWrapper* RunEQSQuery(class UObject* WorldContextObject, class UEnvQuery* QueryTemplate, class UObject* Querier, enum class EEnvQueryRunMode RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass);
+	class UEnvQueryInstanceBlueprintWrapper* RunEQSQuery(class UObject* InWorldContextObject, class UEnvQuery* InQueryTemplate, class UObject* InQuerier, enum class EEnvQueryRunMode InRunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> InWrapperClass);
 };
 
 // 0x18 (0x40 - 0x28)
@@ -2686,11 +2218,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryOption");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryOption");
 		return Clss;
 	}
 
@@ -2701,15 +2229,11 @@ public:
 class UEQSRenderingComponent : public UDebugDrawComponent
 {
 public:
-	uint8                                        Pad_E1B[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1093[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EQSRenderingComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("EQSRenderingComponent");
 		return Clss;
 	}
 
@@ -2726,26 +2250,22 @@ public:
 	float                                        TimeLimitPerStep;                                  // 0x648(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        StepToDebugDraw;                                   // 0x64C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvQueryHightlightMode           HighlightMode;                                     // 0x650(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E1D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1096[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bDrawLabels : 1;                                   // Mask: 0x1, PropSize: 0x10x654(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bDrawFailedItems : 1;                              // Mask: 0x2, PropSize: 0x10x654(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bReRunQueryOnlyOnFinishedMove : 1;                 // Mask: 0x4, PropSize: 0x10x654(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bShouldBeVisibleInGame : 1;                        // Mask: 0x8, PropSize: 0x10x654(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bTickDuringGame : 1;                               // Mask: 0x10, PropSize: 0x10x654(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_90 : 3;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_E21[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_B8 : 3;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_1097[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EEnvQueryRunMode                  QueryingMode;                                      // 0x658(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E22[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1098[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FNavAgentProperties                   NavAgentProperties;                                // 0x660(0x38)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E24[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1099[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EQSTestingPawn");
-
+		static class UClass* Clss = UObject::FindClassFast("EQSTestingPawn");
 		return Clss;
 	}
 
@@ -2763,11 +2283,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_ActorsOfClass");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_ActorsOfClass");
 		return Clss;
 	}
 
@@ -2781,23 +2297,19 @@ public:
 	class FText                                  GeneratorsActionDescription;                       // 0x50(0x18)(Edit, NativeAccessSpecifierPublic)
 	TSubclassOf<class UEnvQueryContext>          Context;                                           // 0x68(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UEnvQueryItemType>         GeneratedItemType;                                 // 0x70(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E2F[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10A5[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_BlueprintBase");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_BlueprintBase");
 		return Clss;
 	}
 
 	class UObject* GetQuerier();
-	void DoItemGenerationFromActors(TArray<class AActor*>& ContextActors);
-	void DoItemGeneration(TArray<struct FVector>& ContextLocations);
-	void AddGeneratedVector(const struct FVector& GeneratedVector);
-	void AddGeneratedActor(class AActor* GeneratedActor);
+	void DoItemGenerationFromActors(TArray<class AActor*>& InContextActors);
+	void DoItemGeneration(TArray<struct FVector>& InContextLocations);
+	void AddGeneratedVector(const struct FVector& InGeneratedVector);
+	void AddGeneratedActor(class AActor* InGeneratedActor);
 };
 
 // 0x20 (0x70 - 0x50)
@@ -2808,17 +2320,13 @@ public:
 	TArray<class UEnvQueryGenerator*>            Generators;                                        // 0x50(0x10)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 	uint8                                        bAllowDifferentItemTypes : 1;                      // Mask: 0x1, PropSize: 0x10x60(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bHasMatchingItemType : 1;                          // Mask: 0x2, PropSize: 0x10x60(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_91 : 6;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_E32[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_B9 : 6;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_10A7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UEnvQueryItemType>         ForcedItemType;                                    // 0x68(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_Composite");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_Composite");
 		return Clss;
 	}
 
@@ -2833,11 +2341,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_ProjectedPoints");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_ProjectedPoints");
 		return Clss;
 	}
 
@@ -2854,15 +2358,11 @@ public:
 	struct FAIDataProviderFloatValue             Range;                                             // 0x138(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	TSubclassOf<class UEnvQueryContext>          CenterActor;                                       // 0x170(0x8)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bIncludeContextLocation : 1;                       // Mask: 0x1, PropSize: 0x10x178(0x1)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E34[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10AC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_Cone");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_Cone");
 		return Clss;
 	}
 
@@ -2877,11 +2377,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_CurrentLocation");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_CurrentLocation");
 		return Clss;
 	}
 
@@ -2899,18 +2395,14 @@ public:
 	struct FEnvDirection                         ArcDirection;                                      // 0x170(0x20)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
 	struct FAIDataProviderFloatValue             ArcAngle;                                          // 0x190(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         bUseSpiralPattern;                                 // 0x1C8(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E37[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10B0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UEnvQueryContext>          Center;                                            // 0x1D0(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bDefineArc : 1;                                    // Mask: 0x1, PropSize: 0x10x1D8(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E38[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10B2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_Donut");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_Donut");
 		return Clss;
 	}
 
@@ -2925,26 +2417,22 @@ public:
 	struct FAIDataProviderFloatValue             SpaceBetween;                                      // 0xC8(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FAIDataProviderIntValue               NumberOfPoints;                                    // 0x100(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	enum class EPointOnCircleSpacingMethod       PointOnCircleSpacingMethod;                        // 0x138(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E3B[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10B6[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FEnvDirection                         ArcDirection;                                      // 0x140(0x20)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
 	struct FAIDataProviderFloatValue             ArcAngle;                                          // 0x160(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	float                                        AngleRadians;                                      // 0x198(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E3C[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10B9[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UEnvQueryContext>          CircleCenter;                                      // 0x1A0(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIgnoreAnyContextActorsWhenGeneratingCircle;       // 0x1A8(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E3D[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10BB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAIDataProviderFloatValue             CircleCenterZOffset;                               // 0x1B0(0x38)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FEnvTraceData                         TraceData;                                         // 0x1E8(0x40)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                        bDefineArc : 1;                                    // Mask: 0x1, PropSize: 0x10x228(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E3F[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10BC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_OnCircle");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_OnCircle");
 		return Clss;
 	}
 
@@ -2961,11 +2449,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_SimpleGrid");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_SimpleGrid");
 		return Clss;
 	}
 
@@ -2982,11 +2466,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_PathingGrid");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_PathingGrid");
 		return Clss;
 	}
 
@@ -3002,15 +2482,11 @@ public:
 	TSubclassOf<class UEnvQueryContext>          ListenerContext;                                   // 0x90(0x8)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSubclassOf<class UAISense>                  SenseToUse;                                        // 0x98(0x8)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bIncludeKnownActors;                               // 0xA0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E45[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10C0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryGenerator_PerceivedActors");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryGenerator_PerceivedActors");
 		return Clss;
 	}
 
@@ -3021,15 +2497,11 @@ public:
 class UEnvQueryItemType : public UObject
 {
 public:
-	uint8                                        Pad_E47[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10C1[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryItemType");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryItemType");
 		return Clss;
 	}
 
@@ -3043,11 +2515,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryItemType_VectorBase");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryItemType_VectorBase");
 		return Clss;
 	}
 
@@ -3061,11 +2529,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryItemType_ActorBase");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryItemType_ActorBase");
 		return Clss;
 	}
 
@@ -3079,11 +2543,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryItemType_Actor");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryItemType_Actor");
 		return Clss;
 	}
 
@@ -3097,11 +2557,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryItemType_Direction");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryItemType_Direction");
 		return Clss;
 	}
 
@@ -3115,11 +2571,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryItemType_Point");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryItemType_Point");
 		return Clss;
 	}
 
@@ -3131,16 +2583,12 @@ class UEnvQueryTest_Distance : public UEnvQueryTest
 {
 public:
 	enum class EEnvTestDistance                  TestMode;                                          // 0x1F8(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E48[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10C3[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UEnvQueryContext>          DistanceTo;                                        // 0x200(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest_Distance");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest_Distance");
 		return Clss;
 	}
 
@@ -3155,15 +2603,11 @@ public:
 	struct FEnvDirection                         LineB;                                             // 0x218(0x20)(Edit, DisableEditOnInstance, NoDestructor, Protected, NativeAccessSpecifierProtected)
 	enum class EEnvTestDot                       TestMode;                                          // 0x238(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bAbsoluteValue;                                    // 0x239(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E49[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10C6[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest_Dot");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest_Dot");
 		return Clss;
 	}
 
@@ -3178,16 +2622,12 @@ public:
 	bool                                         bRejectIncompatibleItems;                          // 0x240(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bUpdatedToUseQuery;                                // 0x241(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	enum class EGameplayContainerMatchType       TagsToMatch;                                       // 0x242(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E4A[0x5];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10C8[0x5];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayTagContainer                 GameplayTags;                                      // 0x248(0x20)(Protected, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest_GameplayTags");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest_GameplayTags");
 		return Clss;
 	}
 
@@ -3202,11 +2642,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest_Overlap");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest_Overlap");
 		return Clss;
 	}
 
@@ -3218,7 +2654,7 @@ class UEnvQueryTest_Pathfinding : public UEnvQueryTest
 {
 public:
 	enum class EEnvTestPathfinding               TestMode;                                          // 0x1F8(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E4C[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10C9[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UEnvQueryContext>          Context;                                           // 0x200(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FAIDataProviderBoolValue              PathFromContext;                                   // 0x208(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FAIDataProviderBoolValue              SkipUnreachable;                                   // 0x240(0x38)(Edit, DisableEditOnInstance, ContainsInstancedReference, AdvancedDisplay, NativeAccessSpecifierPublic)
@@ -3226,11 +2662,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest_Pathfinding");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest_Pathfinding");
 		return Clss;
 	}
 
@@ -3245,11 +2677,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest_PathfindingBatch");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest_PathfindingBatch");
 		return Clss;
 	}
 
@@ -3264,11 +2692,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest_Project");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest_Project");
 		return Clss;
 	}
 
@@ -3282,11 +2706,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest_Random");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest_Random");
 		return Clss;
 	}
 
@@ -3305,11 +2725,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest_Trace");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest_Trace");
 		return Clss;
 	}
 
@@ -3323,15 +2739,11 @@ public:
 	TSubclassOf<class UEnvQueryContext>          VolumeContext;                                     // 0x1F8(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TSubclassOf<class AVolume>                   VolumeClass;                                       // 0x200(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                        bDoComplexVolumeTest : 1;                          // Mask: 0x1, PropSize: 0x10x208(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_E56[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10CC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EnvQueryTest_Volume");
-
+		static class UClass* Clss = UObject::FindClassFast("EnvQueryTest_Volume");
 		return Clss;
 	}
 
@@ -3345,11 +2757,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GridPathAIController");
-
+		static class UClass* Clss = UObject::FindClassFast("GridPathAIController");
 		return Clss;
 	}
 
@@ -3363,11 +2771,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIHotSpotManager");
-
+		static class UClass* Clss = UObject::FindClassFast("AIHotSpotManager");
 		return Clss;
 	}
 
@@ -3378,24 +2782,20 @@ public:
 class UPathFollowingComponent : public UActorComponent
 {
 public:
-	uint8                                        Pad_E5C[0x38];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10DA[0x38];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UNavMovementComponent*                 MovementComp;                                      // 0xD8(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E5D[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10DB[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class ANavigationData*                       MyNavData;                                         // 0xE8(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E5E[0x1C8];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10DC[0x1C8];                                   // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PathFollowingComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("PathFollowingComponent");
 		return Clss;
 	}
 
-	void OnNavDataRegistered(class ANavigationData* NavData);
-	void OnActorBump(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, struct FHitResult& Hit);
+	void OnNavDataRegistered(class ANavigationData* InNavData);
+	void OnActorBump(class AActor* InSelfActor, class AActor* InOtherActor, const struct FVector& InNormalImpulse, struct FHitResult& InHit);
 	struct FVector GetPathDestination();
 	enum class EPathFollowingAction GetPathActionType();
 };
@@ -3405,21 +2805,17 @@ public:
 class UCrowdFollowingComponent : public UPathFollowingComponent
 {
 public:
-	uint8                                        Pad_E67[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10E0[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               CrowdAgentMoveDirection;                           // 0x2D0(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E68[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10E1[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CrowdFollowingComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("CrowdFollowingComponent");
 		return Clss;
 	}
 
-	void SuspendCrowdSteering(bool bSuspend);
+	void SuspendCrowdSteering(bool InbSuspend);
 };
 
 // 0xC8 (0xF0 - 0x28)
@@ -3438,17 +2834,13 @@ public:
 	float                                        PathOptimizationInterval;                          // 0x64(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        SeparationDirClamp;                                // 0x68(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        PathOffsetRadiusMultiplier;                        // 0x6C(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        BitPad_92 : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        BitPad_BB : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
 	uint8                                        bResolveCollisions : 1;                            // Mask: 0x10, PropSize: 0x10x70(0x1)(Edit, Config, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E6C[0x7F];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10E5[0x7F];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("CrowdManager");
-
+		static class UClass* Clss = UObject::FindClassFast("CrowdManager");
 		return Clss;
 	}
 
@@ -3460,15 +2852,11 @@ class UGridPathFollowingComponent : public UPathFollowingComponent
 {
 public:
 	class UNavLocalGridManager*                  GridManager;                                       // 0x2B8(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E6E[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10E7[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GridPathFollowingComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("GridPathFollowingComponent");
 		return Clss;
 	}
 
@@ -3479,27 +2867,23 @@ public:
 class ANavLinkProxy : public AActor
 {
 public:
-	uint8                                        Pad_E74[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10EB[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FNavigationLink>               PointLinks;                                        // 0x2A0(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FNavigationSegmentLink>        SegmentLinks;                                      // 0x2B0(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	class UNavLinkCustomComponent*               SmartLinkComp;                                     // 0x2C0(0x8)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                         bSmartLinkIsRelevant;                              // 0x2C8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E76[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10ED[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnSmartLinkReached;                                // 0x2D0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NavLinkProxy");
-
+		static class UClass* Clss = UObject::FindClassFast("NavLinkProxy");
 		return Clss;
 	}
 
-	void SetSmartLinkEnabled(bool bEnabled);
-	void ResumePathFollowing(class AActor* Agent);
-	void ReceiveSmartLinkReached(class AActor* Agent, struct FVector& Destination);
+	void SetSmartLinkEnabled(bool InbEnabled);
+	void ResumePathFollowing(class AActor* InAgent);
+	void ReceiveSmartLinkReached(class AActor* InAgent, struct FVector& InDestination);
 	bool IsSmartLinkEnabled();
 	bool HasMovingAgents();
 };
@@ -3509,25 +2893,21 @@ public:
 class UNavLocalGridManager : public UObject
 {
 public:
-	uint8                                        Pad_EAE[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1123[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NavLocalGridManager");
-
+		static class UClass* Clss = UObject::FindClassFast("NavLocalGridManager");
 		return Clss;
 	}
 
-	bool SetLocalNavigationGridDensity(class UObject* WorldContextObject, float CellSize);
-	void RemoveLocalNavigationGrid(class UObject* WorldContextObject, int32 GridId, bool bRebuildGrids);
-	bool FindLocalNavigationGridPath(class UObject* WorldContextObject, struct FVector& Start, struct FVector& End, TArray<struct FVector>* PathPoints);
-	int32 AddLocalNavigationGridForPoints(class UObject* WorldContextObject, TArray<struct FVector>& Locations, int32 Radius2D, float Height, bool bRebuildGrids);
-	int32 AddLocalNavigationGridForPoint(class UObject* WorldContextObject, struct FVector& Location, int32 Radius2D, float Height, bool bRebuildGrids);
-	int32 AddLocalNavigationGridForCapsule(class UObject* WorldContextObject, struct FVector& Location, float CapsuleRadius, float CapsuleHalfHeight, int32 Radius2D, float Height, bool bRebuildGrids);
-	int32 AddLocalNavigationGridForBox(class UObject* WorldContextObject, struct FVector& Location, const struct FVector& Extent, const struct FRotator& Rotation, int32 Radius2D, float Height, bool bRebuildGrids);
+	bool SetLocalNavigationGridDensity(class UObject* InWorldContextObject, float InCellSize);
+	void RemoveLocalNavigationGrid(class UObject* InWorldContextObject, int32 InGridId, bool InbRebuildGrids);
+	bool FindLocalNavigationGridPath(class UObject* InWorldContextObject, struct FVector& InStart, struct FVector& InEnd, TArray<struct FVector>* InPathPoints);
+	int32 AddLocalNavigationGridForPoints(class UObject* InWorldContextObject, TArray<struct FVector>& InLocations, int32 InRadius2D, float InHeight, bool InbRebuildGrids);
+	int32 AddLocalNavigationGridForPoint(class UObject* InWorldContextObject, struct FVector& InLocation, int32 InRadius2D, float InHeight, bool InbRebuildGrids);
+	int32 AddLocalNavigationGridForCapsule(class UObject* InWorldContextObject, struct FVector& InLocation, float InCapsuleRadius, float InCapsuleHalfHeight, int32 InRadius2D, float InHeight, bool InbRebuildGrids);
+	int32 AddLocalNavigationGridForBox(class UObject* InWorldContextObject, struct FVector& InLocation, const struct FVector& InExtent, const struct FRotator& InRotation, int32 InRadius2D, float InHeight, bool InbRebuildGrids);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -3538,11 +2918,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PathFollowingManager");
-
+		static class UClass* Clss = UObject::FindClassFast("PathFollowingManager");
 		return Clss;
 	}
 
@@ -3555,32 +2931,28 @@ class UAIPerceptionComponent : public UActorComponent
 public:
 	TArray<class UAISenseConfig*>                SensesConfig;                                      // 0xA0(0x10)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	TSubclassOf<class UAISense>                  DominantSense;                                     // 0xB0(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_EC2[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1134[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class AAIController*                         AIOwner;                                           // 0xC8(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_EC4[0x80];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1135[0x80];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnPerceptionUpdated;                               // 0x150(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnTargetPerceptionUpdated;                         // 0x160(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnTargetPerceptionInfoUpdated;                     // 0x170(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIPerceptionComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("AIPerceptionComponent");
 		return Clss;
 	}
 
-	void SetSenseEnabled(TSubclassOf<class UAISense> SenseClass, bool bEnable);
+	void SetSenseEnabled(TSubclassOf<class UAISense> InSenseClass, bool InbEnable);
 	void RequestStimuliListenerUpdate();
-	void OnOwnerEndPlay(class AActor* Actor, enum class EEndPlayReason EndPlayReason);
-	void GetPerceivedHostileActorsBySense(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors);
-	void GetPerceivedHostileActors(TArray<class AActor*>* OutActors);
-	void GetPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors);
-	void GetKnownPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors);
-	void GetCurrentlyPerceivedActors(TSubclassOf<class UAISense> SenseToUse, TArray<class AActor*>* OutActors);
-	bool GetActorsPerception(class AActor* Actor, struct FActorPerceptionBlueprintInfo* Info);
+	void OnOwnerEndPlay(class AActor* InActor, enum class EEndPlayReason InEndPlayReason);
+	void GetPerceivedHostileActorsBySense(TSubclassOf<class UAISense> InSenseToUse, TArray<class AActor*>* InOutActors);
+	void GetPerceivedHostileActors(TArray<class AActor*>* InOutActors);
+	void GetPerceivedActors(TSubclassOf<class UAISense> InSenseToUse, TArray<class AActor*>* InOutActors);
+	void GetKnownPerceivedActors(TSubclassOf<class UAISense> InSenseToUse, TArray<class AActor*>* InOutActors);
+	void GetCurrentlyPerceivedActors(TSubclassOf<class UAISense> InSenseToUse, TArray<class AActor*>* InOutActors);
+	bool GetActorsPerception(class AActor* InActor, struct FActorPerceptionBlueprintInfo* InInfo);
 	void ForgetAll();
 };
 
@@ -3592,11 +2964,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIPerceptionListenerInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("AIPerceptionListenerInterface");
 		return Clss;
 	}
 
@@ -3608,24 +2976,20 @@ class UAIPerceptionStimuliSourceComponent : public UActorComponent
 {
 public:
 	uint8                                        bAutoRegisterAsSource : 1;                         // Mask: 0x1, PropSize: 0x10xA0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        BitPad_93 : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_ECC[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_BC : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_1144[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<TSubclassOf<class UAISense>>          RegisterAsSourceForSenses;                         // 0xA8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIPerceptionStimuliSourceComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("AIPerceptionStimuliSourceComponent");
 		return Clss;
 	}
 
-	void UnregisterFromSense(TSubclassOf<class UAISense> SenseClass);
+	void UnregisterFromSense(TSubclassOf<class UAISense> InSenseClass);
 	void UnregisterFromPerceptionSystem();
 	void RegisterWithPerceptionSystem();
-	void RegisterForSense(TSubclassOf<class UAISense> SenseClass);
+	void RegisterForSense(TSubclassOf<class UAISense> InSenseClass);
 };
 
 // 0xF8 (0x130 - 0x38)
@@ -3633,26 +2997,22 @@ public:
 class UAIPerceptionSystem : public UAISubsystem
 {
 public:
-	uint8                                        Pad_EE0[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1157[0x50];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UAISense*>                      Senses;                                            // 0x88(0x10)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	float                                        PerceptionAgingRate;                               // 0x98(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_EE1[0x94];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1158[0x94];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AIPerceptionSystem");
-
+		static class UClass* Clss = UObject::FindClassFast("AIPerceptionSystem");
 		return Clss;
 	}
 
-	void ReportPerceptionEvent(class UObject* WorldContextObject, class UAISenseEvent* PerceptionEvent);
-	void ReportEvent(class UAISenseEvent* PerceptionEvent);
-	bool RegisterPerceptionStimuliSource(class UObject* WorldContextObject, TSubclassOf<class UAISense> Sense, class AActor* Target);
-	void OnPerceptionStimuliSourceEndPlay(class AActor* Actor, enum class EEndPlayReason EndPlayReason);
-	TSubclassOf<class UAISense> GetSenseClassForStimulus(class UObject* WorldContextObject, struct FAIStimulus& Stimulus);
+	void ReportPerceptionEvent(class UObject* InWorldContextObject, class UAISenseEvent* InPerceptionEvent);
+	void ReportEvent(class UAISenseEvent* InPerceptionEvent);
+	bool RegisterPerceptionStimuliSource(class UObject* InWorldContextObject, TSubclassOf<class UAISense> InSense, class AActor* InTarget);
+	void OnPerceptionStimuliSourceEndPlay(class AActor* InActor, enum class EEndPlayReason InEndPlayReason);
+	TSubclassOf<class UAISense> GetSenseClassForStimulus(class UObject* InWorldContextObject, struct FAIStimulus& InStimulus);
 };
 
 // 0x8 (0x50 - 0x48)
@@ -3664,11 +3024,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISenseConfig_Damage");
-
+		static class UClass* Clss = UObject::FindClassFast("AISenseConfig_Damage");
 		return Clss;
 	}
 
@@ -3685,21 +3041,17 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISense_Blueprint");
-
+		static class UClass* Clss = UObject::FindClassFast("AISense_Blueprint");
 		return Clss;
 	}
 
-	float OnUpdate(TArray<class UAISenseEvent*>& EventsToProcess);
-	void OnListenerUpdated(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent);
-	void OnListenerUnregistered(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent);
-	void OnListenerRegistered(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent);
-	void K2_OnNewPawn(class APawn* NewPawn);
-	void GetAllListenerComponents(TArray<class UAIPerceptionComponent*>* ListenerComponents);
-	void GetAllListenerActors(TArray<class AActor*>* ListenerActors);
+	float OnUpdate(TArray<class UAISenseEvent*>& InEventsToProcess);
+	void OnListenerUpdated(class AActor* InActorListener, class UAIPerceptionComponent* InPerceptionComponent);
+	void OnListenerUnregistered(class AActor* InActorListener, class UAIPerceptionComponent* InPerceptionComponent);
+	void OnListenerRegistered(class AActor* InActorListener, class UAIPerceptionComponent* InPerceptionComponent);
+	void K2_OnNewPawn(class APawn* InNewPawn);
+	void GetAllListenerComponents(TArray<class UAIPerceptionComponent*>* InListenerComponents);
+	void GetAllListenerActors(TArray<class AActor*>* InListenerActors);
 };
 
 // 0x10 (0x90 - 0x80)
@@ -3711,15 +3063,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISense_Damage");
-
+		static class UClass* Clss = UObject::FindClassFast("AISense_Damage");
 		return Clss;
 	}
 
-	void ReportDamageEvent(class UObject* WorldContextObject, class AActor* DamagedActor, class AActor* Instigator, float DamageAmount, const struct FVector& EventLocation, const struct FVector& HitLocation, class FName Tag);
+	void ReportDamageEvent(class UObject* InWorldContextObject, class AActor* InDamagedActor, class AActor* InInstigator, float InDamageAmount, const struct FVector& InEventLocation, const struct FVector& InHitLocation, class FName InTag);
 };
 
 // 0x68 (0xE8 - 0x80)
@@ -3729,19 +3077,15 @@ class UAISense_Hearing : public UAISense
 public:
 	TArray<struct FAINoiseEvent>                 NoiseEvents;                                       // 0x80(0x10)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	float                                        SpeedOfSoundSq;                                    // 0x90(0x4)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_F23[0x54];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_118D[0x54];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISense_Hearing");
-
+		static class UClass* Clss = UObject::FindClassFast("AISense_Hearing");
 		return Clss;
 	}
 
-	void ReportNoiseEvent(class UObject* WorldContextObject, const struct FVector& NoiseLocation, float Loudness, class AActor* Instigator, float MaxRange, class FName Tag);
+	void ReportNoiseEvent(class UObject* InWorldContextObject, const struct FVector& InNoiseLocation, float InLoudness, class AActor* InInstigator, float InMaxRange, class FName InTag);
 };
 
 // 0x10 (0x90 - 0x80)
@@ -3753,16 +3097,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISense_Prediction");
-
+		static class UClass* Clss = UObject::FindClassFast("AISense_Prediction");
 		return Clss;
 	}
 
-	void RequestPawnPredictionEvent(class APawn* Requestor, class AActor* PredictedActor, float PredictionTime);
-	void RequestControllerPredictionEvent(class AAIController* Requestor, class AActor* PredictedActor, float PredictionTime);
+	void RequestPawnPredictionEvent(class APawn* InRequestor, class AActor* InPredictedActor, float InPredictionTime);
+	void RequestControllerPredictionEvent(class AAIController* InRequestor, class AActor* InPredictedActor, float InPredictionTime);
 };
 
 // 0xF0 (0x170 - 0x80)
@@ -3770,23 +3110,19 @@ public:
 class UAISense_Sight : public UAISense
 {
 public:
-	uint8                                        Pad_F2F[0xC8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1197[0xC8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        MaxTracesPerTick;                                  // 0x148(0x4)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                        MinQueriesPerTimeSliceCheck;                       // 0x14C(0x4)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	double                                       MaxTimeSlicePerTick;                               // 0x150(0x8)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        HighImportanceQueryDistanceThreshold;              // 0x158(0x4)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_F30[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1198[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MaxQueryImportance;                                // 0x160(0x4)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        SightLimitQueryImportance;                         // 0x164(0x4)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_F31[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_119A[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISense_Sight");
-
+		static class UClass* Clss = UObject::FindClassFast("AISense_Sight");
 		return Clss;
 	}
 
@@ -3801,11 +3137,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISense_Team");
-
+		static class UClass* Clss = UObject::FindClassFast("AISense_Team");
 		return Clss;
 	}
 
@@ -3820,15 +3152,11 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISense_Touch");
-
+		static class UClass* Clss = UObject::FindClassFast("AISense_Touch");
 		return Clss;
 	}
 
-	void ReportTouchEvent(class UObject* WorldContextObject, class AActor* TouchReceiver, class AActor* OtherActor, const struct FVector& Location);
+	void ReportTouchEvent(class UObject* InWorldContextObject, class AActor* InTouchReceiver, class AActor* InOtherActor, const struct FVector& InLocation);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -3839,11 +3167,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AISightTargetInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("AISightTargetInterface");
 		return Clss;
 	}
 
@@ -3863,8 +3187,8 @@ public:
 	uint8                                        bOnlySensePlayers : 1;                             // Mask: 0x2, PropSize: 0x10xB4(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bSeePawns : 1;                                     // Mask: 0x4, PropSize: 0x10xB4(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bHearNoises : 1;                                   // Mask: 0x8, PropSize: 0x10xB4(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_99 : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_F4A[0xB];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_BD : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_11AB[0xB];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnSeePawn;                                         // 0xC0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnHearNoise;                                       // 0xD0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	float                                        PeripheralVisionAngle;                             // 0xE0(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -3872,19 +3196,15 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("PawnSensingComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("PawnSensingComponent");
 		return Clss;
 	}
 
-	void SetSensingUpdatesEnabled(bool bEnabled);
-	void SetSensingInterval(float NewSensingInterval);
-	void SetPeripheralVisionAngle(float NewPeripheralVisionAngle);
-	void SeePawnDelegate__DelegateSignature(class APawn* Pawn);
-	void HearNoiseDelegate__DelegateSignature(class APawn* Instigator, struct FVector& Location, float Volume);
+	void SetSensingUpdatesEnabled(bool InbEnabled);
+	void SetSensingInterval(float InNewSensingInterval);
+	void SetPeripheralVisionAngle(float InNewPeripheralVisionAngle);
+	void SeePawnDelegate__DelegateSignature(class APawn* InPawn);
+	void HearNoiseDelegate__DelegateSignature(class APawn* InInstigator, struct FVector& InLocation, float InVolume);
 	float GetPeripheralVisionCosine();
 	float GetPeripheralVisionAngle();
 };
@@ -3898,11 +3218,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AITask");
-
+		static class UClass* Clss = UObject::FindClassFast("AITask");
 		return Clss;
 	}
 
@@ -3916,11 +3232,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AITask_LockLogic");
-
+		static class UClass* Clss = UObject::FindClassFast("AITask_LockLogic");
 		return Clss;
 	}
 
@@ -3934,19 +3246,15 @@ public:
 	FMulticastInlineDelegateProperty_            OnRequestFailed;                                   // 0x70(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	FMulticastInlineDelegateProperty_            OnMoveFinished;                                    // 0x80(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	struct FAIMoveRequest                        MoveRequest;                                       // 0x90(0x48)(Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_F61[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11B6[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AITask_MoveTo");
-
+		static class UClass* Clss = UObject::FindClassFast("AITask_MoveTo");
 		return Clss;
 	}
 
-	class UAITask_MoveTo* AIMoveTo(class AAIController* Controller, const struct FVector& GoalLocation, class AActor* GoalActor, float AcceptanceRadius, enum class EAIOptionFlag StopOnOverlap, enum class EAIOptionFlag AcceptPartialPath, bool bUsePathfinding, bool bLockAILogic, bool bUseContinuousGoalTracking, enum class EAIOptionFlag ProjectGoalOnNavigation);
+	class UAITask_MoveTo* AIMoveTo(class AAIController* InController, const struct FVector& InGoalLocation, class AActor* InGoalActor, float InAcceptanceRadius, enum class EAIOptionFlag InStopOnOverlap, enum class EAIOptionFlag InAcceptPartialPath, bool InbUsePathfinding, bool InbLockAILogic, bool InbUseContinuousGoalTracking, enum class EAIOptionFlag InProjectGoalOnNavigation);
 };
 
 // 0x78 (0xE8 - 0x70)
@@ -3954,19 +3262,15 @@ public:
 class UAITask_RunEQS : public UAITask
 {
 public:
-	uint8                                        Pad_F6A[0x78];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11B9[0x78];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AITask_RunEQS");
-
+		static class UClass* Clss = UObject::FindClassFast("AITask_RunEQS");
 		return Clss;
 	}
 
-	class UAITask_RunEQS* RunEQS(class AAIController* Controller, class UEnvQuery* QueryTemplate);
+	class UAITask_RunEQS* RunEQS(class AAIController* InController, class UEnvQuery* InQueryTemplate);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -3977,11 +3281,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("VisualLoggerExtension");
-
+		static class UClass* Clss = UObject::FindClassFast("VisualLoggerExtension");
 		return Clss;
 	}
 

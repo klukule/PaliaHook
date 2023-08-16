@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class FName                        InCacheName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AChaosCacheManager::TriggerComponentByCache(class FName InCacheName)
+void AChaosCacheManager::TriggerComponentByCache(class FName InInCacheName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void AChaosCacheManager::TriggerComponentByCache(class FName InCacheName)
 
 	Params::AChaosCacheManager_TriggerComponentByCache_Params Parms{};
 
-	Parms.InCacheName = InCacheName;
+	Parms.InCacheName = InInCacheName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -47,7 +47,7 @@ void AChaosCacheManager::TriggerComponentByCache(class FName InCacheName)
 // Parameters:
 // class UPrimitiveComponent*         InComponent                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AChaosCacheManager::TriggerComponent(class UPrimitiveComponent* InComponent)
+void AChaosCacheManager::TriggerComponent(class UPrimitiveComponent* InInComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void AChaosCacheManager::TriggerComponent(class UPrimitiveComponent* InComponent
 
 	Params::AChaosCacheManager_TriggerComponent_Params Parms{};
 
-	Parms.InComponent = InComponent;
+	Parms.InComponent = InInComponent;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -99,7 +99,7 @@ void AChaosCacheManager::TriggerAll()
 // Parameters:
 // float                              InStartTime                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AChaosCacheManager::SetStartTime(float InStartTime)
+void AChaosCacheManager::SetStartTime(float InInStartTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -108,7 +108,7 @@ void AChaosCacheManager::SetStartTime(float InStartTime)
 
 	Params::AChaosCacheManager_SetStartTime_Params Parms{};
 
-	Parms.InStartTime = InStartTime;
+	Parms.InStartTime = InInStartTime;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -126,7 +126,7 @@ void AChaosCacheManager::SetStartTime(float InStartTime)
 // Parameters:
 // int32                              InIndex                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AChaosCacheManager::ResetSingleTransform(int32 InIndex)
+void AChaosCacheManager::ResetSingleTransform(int32 InInIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -135,7 +135,7 @@ void AChaosCacheManager::ResetSingleTransform(int32 InIndex)
 
 	Params::AChaosCacheManager_ResetSingleTransform_Params Parms{};
 
-	Parms.InIndex = InIndex;
+	Parms.InIndex = InInIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

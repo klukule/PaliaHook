@@ -12,19 +12,15 @@ namespace SDK
 // CLASSES
 //---------------------------------------------------------------------------------------------------------------------
 
-// 0x0 (0x860 - 0x860)
-// BlueprintGeneratedClass GE_Sprinting_Stamina_CostReductionPercent_T3.GE_Sprinting_Stamina_CostReductionPercent_T3_C
-class UGE_Sprinting_Stamina_CostReductionPercent_T3_C : public UGameplayEffect
+// 0x0 (0x800 - 0x800)
+// BlueprintGeneratedClass ButtonStyle_Primary_01_CM.ButtonStyle_Primary_01_CM_C
+class UButtonStyle_Primary_01_CM_C : public US6UI_CommonButtonStyle
 {
 public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GE_Sprinting_Stamina_CostReductionPercent_T3_C");
-
+		static class UClass* Clss = UObject::FindClassFast("ButtonStyle_Primary_01_CM_C");
 		return Clss;
 	}
 

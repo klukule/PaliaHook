@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -22,7 +22,7 @@ namespace SDK
 // class FString                      MountPoint                                                       (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMobileInstalledContent::Mount(int32 PakOrder, const class FString& MountPoint)
+bool UMobileInstalledContent::Mount(int32 InPakOrder, const class FString& InMountPoint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,8 +31,8 @@ bool UMobileInstalledContent::Mount(int32 PakOrder, const class FString& MountPo
 
 	Params::UMobileInstalledContent_Mount_Params Parms{};
 
-	Parms.PakOrder = PakOrder;
-	Parms.MountPoint = MountPoint;
+	Parms.PakOrder = InPakOrder;
+	Parms.MountPoint = InMountPoint;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -109,7 +109,7 @@ float UMobileInstalledContent::GetDiskFreeSpace()
 // FDelegateProperty_                 OnSucceeded                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 OnFailed                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMobilePendingContent::StartInstall(FDelegateProperty_ OnSucceeded, FDelegateProperty_ OnFailed)
+void UMobilePendingContent::StartInstall(FDelegateProperty_ InOnSucceeded, FDelegateProperty_ InOnFailed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -118,8 +118,8 @@ void UMobilePendingContent::StartInstall(FDelegateProperty_ OnSucceeded, FDelega
 
 	Params::UMobilePendingContent_StartInstall_Params Parms{};
 
-	Parms.OnSucceeded = OnSucceeded;
-	Parms.OnFailed = OnFailed;
+	Parms.OnSucceeded = InOnSucceeded;
+	Parms.OnFailed = InOnFailed;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -309,7 +309,7 @@ float UMobilePendingContent::GetDownloadSize()
 // FDelegateProperty_                 OnSucceeded                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 OnFailed                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMobilePatchingLibrary::RequestContent(const class FString& RemoteManifestURL, const class FString& CloudURL, const class FString& InstallDirectory, FDelegateProperty_ OnSucceeded, FDelegateProperty_ OnFailed)
+void UMobilePatchingLibrary::RequestContent(const class FString& InRemoteManifestURL, const class FString& InCloudURL, const class FString& InInstallDirectory, FDelegateProperty_ InOnSucceeded, FDelegateProperty_ InOnFailed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -318,11 +318,11 @@ void UMobilePatchingLibrary::RequestContent(const class FString& RemoteManifestU
 
 	Params::UMobilePatchingLibrary_RequestContent_Params Parms{};
 
-	Parms.RemoteManifestURL = RemoteManifestURL;
-	Parms.CloudURL = CloudURL;
-	Parms.InstallDirectory = InstallDirectory;
-	Parms.OnSucceeded = OnSucceeded;
-	Parms.OnFailed = OnFailed;
+	Parms.RemoteManifestURL = InRemoteManifestURL;
+	Parms.CloudURL = InCloudURL;
+	Parms.InstallDirectory = InInstallDirectory;
+	Parms.OnSucceeded = InOnSucceeded;
+	Parms.OnFailed = InOnFailed;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -397,7 +397,7 @@ TArray<class FString> UMobilePatchingLibrary::GetSupportedPlatformNames()
 // class FString                      InstallDirectory                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMobileInstalledContent*     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMobileInstalledContent* UMobilePatchingLibrary::GetInstalledContent(const class FString& InstallDirectory)
+class UMobileInstalledContent* UMobilePatchingLibrary::GetInstalledContent(const class FString& InInstallDirectory)
 {
 	static class UFunction* Func = nullptr;
 
@@ -406,7 +406,7 @@ class UMobileInstalledContent* UMobilePatchingLibrary::GetInstalledContent(const
 
 	Params::UMobilePatchingLibrary_GetInstalledContent_Params Parms{};
 
-	Parms.InstallDirectory = InstallDirectory;
+	Parms.InstallDirectory = InInstallDirectory;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -19,22 +19,18 @@ class URigVMUserWorkflowOptions : public UObject
 public:
 	class UObject*                               Subject;                                           // 0x28(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FRigVMUserWorkflow                    Workflow;                                          // 0x30(0x58)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_190F[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D97[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("RigVMUserWorkflowOptions");
-
+		static class UClass* Clss = UObject::FindClassFast("RigVMUserWorkflowOptions");
 		return Clss;
 	}
 
 	bool RequiresDialog();
-	void ReportWarning(const class FString& InMessage);
-	void ReportInfo(const class FString& InMessage);
-	void ReportError(const class FString& InMessage);
+	void ReportWarning(const class FString& InInMessage);
+	void ReportInfo(const class FString& InInMessage);
+	void ReportError(const class FString& InInMessage);
 	bool IsValid();
 };
 
@@ -46,55 +42,51 @@ public:
 	class URigVMMemoryStorage*                   WorkMemoryStorageObject;                           // 0x28(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class URigVMMemoryStorage*                   LiteralMemoryStorageObject;                        // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class URigVMMemoryStorage*                   DebugMemoryStorageObject;                          // 0x38(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19C5[0x20];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E04[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRigVMByteCode                        ByteCodeStorage;                                   // 0x60(0x30)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19C7[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E05[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRigVMInstructionArray                Instructions;                                      // 0x98(0x10)(Transient, NativeAccessSpecifierPrivate)
 	struct FRigVMExtendedExecuteContext          Context;                                           // 0xA8(0x78)(Transient, Protected, NativeAccessSpecifierProtected)
 	uint32                                       NumExecutions;                                     // 0x120(0x4)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_19C9[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E06[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class FName>                          FunctionNamesStorage;                              // 0x128(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_19CA[0x38];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E07[0x38];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FRigVMParameter>               Parameters;                                        // 0x170(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TMap<class FName, int32>                     ParametersNameMap;                                 // 0x180(0x50)(NativeAccessSpecifierPrivate)
-	uint8                                        Pad_19CC[0xB8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E09[0xB8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class URigVM*                                DeferredVMToCopy;                                  // 0x288(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_19CF[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E0A[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("RigVM");
-
+		static class UClass* Clss = UObject::FindClassFast("RigVM");
 		return Clss;
 	}
 
-	void SetParameterValueVector2D(class FName& InParameterName, struct FVector2D& InValue, int32 InArrayIndex);
-	void SetParameterValueVector(class FName& InParameterName, struct FVector& InValue, int32 InArrayIndex);
-	void SetParameterValueTransform(class FName& InParameterName, struct FTransform& InValue, int32 InArrayIndex);
-	void SetParameterValueString(class FName& InParameterName, const class FString& InValue, int32 InArrayIndex);
-	void SetParameterValueQuat(class FName& InParameterName, struct FQuat& InValue, int32 InArrayIndex);
-	void SetParameterValueName(class FName& InParameterName, class FName& InValue, int32 InArrayIndex);
-	void SetParameterValueInt(class FName& InParameterName, int32 InValue, int32 InArrayIndex);
-	void SetParameterValueFloat(class FName& InParameterName, float InValue, int32 InArrayIndex);
-	void SetParameterValueDouble(class FName& InParameterName, double InValue, int32 InArrayIndex);
-	void SetParameterValueBool(class FName& InParameterName, bool InValue, int32 InArrayIndex);
+	void SetParameterValueVector2D(class FName& InInParameterName, struct FVector2D& InInValue, int32 InInArrayIndex);
+	void SetParameterValueVector(class FName& InInParameterName, struct FVector& InInValue, int32 InInArrayIndex);
+	void SetParameterValueTransform(class FName& InInParameterName, struct FTransform& InInValue, int32 InInArrayIndex);
+	void SetParameterValueString(class FName& InInParameterName, const class FString& InInValue, int32 InInArrayIndex);
+	void SetParameterValueQuat(class FName& InInParameterName, struct FQuat& InInValue, int32 InInArrayIndex);
+	void SetParameterValueName(class FName& InInParameterName, class FName& InInValue, int32 InInArrayIndex);
+	void SetParameterValueInt(class FName& InInParameterName, int32 InInValue, int32 InInArrayIndex);
+	void SetParameterValueFloat(class FName& InInParameterName, float InInValue, int32 InInArrayIndex);
+	void SetParameterValueDouble(class FName& InInParameterName, double InInValue, int32 InInArrayIndex);
+	void SetParameterValueBool(class FName& InInParameterName, bool InInValue, int32 InInArrayIndex);
 	struct FRigVMStatistics GetStatistics();
-	class FString GetRigVMFunctionName(int32 InFunctionIndex);
-	struct FVector2D GetParameterValueVector2D(class FName& InParameterName, int32 InArrayIndex);
-	struct FVector GetParameterValueVector(class FName& InParameterName, int32 InArrayIndex);
-	struct FTransform GetParameterValueTransform(class FName& InParameterName, int32 InArrayIndex);
-	class FString GetParameterValueString(class FName& InParameterName, int32 InArrayIndex);
-	struct FQuat GetParameterValueQuat(class FName& InParameterName, int32 InArrayIndex);
-	class FName GetParameterValueName(class FName& InParameterName, int32 InArrayIndex);
-	int32 GetParameterValueInt(class FName& InParameterName, int32 InArrayIndex);
-	float GetParameterValueFloat(class FName& InParameterName, int32 InArrayIndex);
-	double GetParameterValueDouble(class FName& InParameterName, int32 InArrayIndex);
-	bool GetParameterValueBool(class FName& InParameterName, int32 InArrayIndex);
-	bool Execute(class FName& InEntryName);
-	int32 AddRigVMFunction(class UScriptStruct* InRigVMStruct, class FName& InMethodName);
+	class FString GetRigVMFunctionName(int32 InInFunctionIndex);
+	struct FVector2D GetParameterValueVector2D(class FName& InInParameterName, int32 InInArrayIndex);
+	struct FVector GetParameterValueVector(class FName& InInParameterName, int32 InInArrayIndex);
+	struct FTransform GetParameterValueTransform(class FName& InInParameterName, int32 InInArrayIndex);
+	class FString GetParameterValueString(class FName& InInParameterName, int32 InInArrayIndex);
+	struct FQuat GetParameterValueQuat(class FName& InInParameterName, int32 InInArrayIndex);
+	class FName GetParameterValueName(class FName& InInParameterName, int32 InInArrayIndex);
+	int32 GetParameterValueInt(class FName& InInParameterName, int32 InInArrayIndex);
+	float GetParameterValueFloat(class FName& InInParameterName, int32 InInArrayIndex);
+	double GetParameterValueDouble(class FName& InInParameterName, int32 InInArrayIndex);
+	bool GetParameterValueBool(class FName& InInParameterName, int32 InInArrayIndex);
+	bool Execute(class FName& InInEntryName);
+	int32 AddRigVMFunction(class UScriptStruct* InInRigVMStruct, class FName& InInMethodName);
 };
 
 // 0x40 (0x270 - 0x230)
@@ -102,15 +94,11 @@ public:
 class URigVMMemoryStorageGeneratorClass : public UClass
 {
 public:
-	uint8                                        Pad_19DE[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E1F[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("RigVMMemoryStorageGeneratorClass");
-
+		static class UClass* Clss = UObject::FindClassFast("RigVMMemoryStorageGeneratorClass");
 		return Clss;
 	}
 
@@ -124,11 +112,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("RigVMMemoryStorage");
-
+		static class UClass* Clss = UObject::FindClassFast("RigVMMemoryStorage");
 		return Clss;
 	}
 
@@ -139,15 +123,11 @@ public:
 class URigVMNativized : public URigVM
 {
 public:
-	uint8                                        Pad_19E0[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E22[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("RigVMNativized");
-
+		static class UClass* Clss = UObject::FindClassFast("RigVMNativized");
 		return Clss;
 	}
 

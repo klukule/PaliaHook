@@ -21,7 +21,7 @@ public:
 	FDelegateProperty_                           MeterChannelInfoDelegate;                          // 0x160(0x10)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FAudioMeterStyle                      WidgetStyle;                                       // 0x170(0x4D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	enum class EOrientation                      Orientation;                                       // 0x640(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8F4[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FDA[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FLinearColor                          BackgroundColor;                                   // 0x644(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          MeterBackgroundColor;                              // 0x654(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          MeterValueColor;                                   // 0x664(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -29,26 +29,22 @@ public:
 	struct FLinearColor                          MeterClippingColor;                                // 0x684(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          MeterScaleColor;                                   // 0x694(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          MeterScaleLabelColor;                              // 0x6A4(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_909[0x1C];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FDD[0x1C];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioMeter");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioMeter");
 		return Clss;
 	}
 
-	void SetMeterValueColor(const struct FLinearColor& InValue);
-	void SetMeterScaleLabelColor(const struct FLinearColor& InValue);
-	void SetMeterScaleColor(const struct FLinearColor& InValue);
-	void SetMeterPeakColor(const struct FLinearColor& InValue);
-	void SetMeterClippingColor(const struct FLinearColor& InValue);
-	void SetMeterChannelInfo(TArray<struct FMeterChannelInfo>& InMeterChannelInfo);
-	void SetMeterBackgroundColor(const struct FLinearColor& InValue);
-	void SetBackgroundColor(const struct FLinearColor& InValue);
+	void SetMeterValueColor(const struct FLinearColor& InInValue);
+	void SetMeterScaleLabelColor(const struct FLinearColor& InInValue);
+	void SetMeterScaleColor(const struct FLinearColor& InInValue);
+	void SetMeterPeakColor(const struct FLinearColor& InInValue);
+	void SetMeterClippingColor(const struct FLinearColor& InInValue);
+	void SetMeterChannelInfo(TArray<struct FMeterChannelInfo>& InInMeterChannelInfo);
+	void SetMeterBackgroundColor(const struct FLinearColor& InInValue);
+	void SetBackgroundColor(const struct FLinearColor& InInValue);
 	TArray<struct FMeterChannelInfo> GetMeterChannelInfo__DelegateSignature();
 	TArray<struct FMeterChannelInfo> GetMeterChannelInfo();
 };
@@ -61,7 +57,7 @@ public:
 	float                                        Value;                                             // 0x150(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           ValueDelegate;                                     // 0x154(0x10)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAudioRadialSliderLayout          WidgetLayout;                                      // 0x164(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_979[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2016[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FLinearColor                          CenterBackgroundColor;                             // 0x168(0x10)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          SliderProgressColor;                               // 0x178(0x10)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          SliderBarColor;                                    // 0x188(0x10)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -75,33 +71,29 @@ public:
 	float                                        SliderThickness;                                   // 0x1D4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             OutputRange;                                       // 0x1D8(0x10)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnValueChanged;                                    // 0x1E8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_97B[0x178];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_201A[0x178];                                   // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioRadialSlider");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioRadialSlider");
 		return Clss;
 	}
 
-	void SetWidgetLayout(enum class EAudioRadialSliderLayout InLayout);
-	void SetValueTextReadOnly(bool bIsReadOnly);
-	void SetUnitsTextReadOnly(bool bIsReadOnly);
-	void SetUnitsText(class FText Units);
-	void SetTextLabelBackgroundColor(const struct FSlateColor& InColor);
-	void SetSliderThickness(float InThickness);
-	void SetSliderProgressColor(const struct FLinearColor& InValue);
-	void SetSliderBarColor(const struct FLinearColor& InValue);
-	void SetShowUnitsText(bool bShowUnitsText);
-	void SetShowLabelOnlyOnHover(bool bShowLabelOnlyOnHover);
-	void SetOutputRange(const struct FVector2D& InOutputRange);
-	void SetHandStartEndRatio(const struct FVector2D& InHandStartEndRatio);
-	void SetCenterBackgroundColor(const struct FLinearColor& InValue);
-	float GetSliderValue(float OutputValue);
-	float GetOutputValue(float InSliderValue);
+	void SetWidgetLayout(enum class EAudioRadialSliderLayout InInLayout);
+	void SetValueTextReadOnly(bool InbIsReadOnly);
+	void SetUnitsTextReadOnly(bool InbIsReadOnly);
+	void SetUnitsText(class FText InUnits);
+	void SetTextLabelBackgroundColor(const struct FSlateColor& InInColor);
+	void SetSliderThickness(float InInThickness);
+	void SetSliderProgressColor(const struct FLinearColor& InInValue);
+	void SetSliderBarColor(const struct FLinearColor& InInValue);
+	void SetShowUnitsText(bool InbShowUnitsText);
+	void SetShowLabelOnlyOnHover(bool InbShowLabelOnlyOnHover);
+	void SetOutputRange(const struct FVector2D& InInOutputRange);
+	void SetHandStartEndRatio(const struct FVector2D& InInHandStartEndRatio);
+	void SetCenterBackgroundColor(const struct FLinearColor& InInValue);
+	float GetSliderValue(float InOutputValue);
+	float GetOutputValue(float InInSliderValue);
 };
 
 // 0x0 (0x370 - 0x370)
@@ -112,11 +104,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioVolumeRadialSlider");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioVolumeRadialSlider");
 		return Clss;
 	}
 
@@ -130,11 +118,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioFrequencyRadialSlider");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioFrequencyRadialSlider");
 		return Clss;
 	}
 
@@ -146,7 +130,7 @@ class UAudioSliderBase : public UWidget
 {
 public:
 	float                                        Value;                                             // 0x150(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9E2[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_203B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  UnitsText;                                         // 0x158(0x18)(Edit, NativeAccessSpecifierPublic)
 	struct FLinearColor                          TextLabelBackgroundColor;                          // 0x170(0x10)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           TextLabelBackgroundColorDelegate;                  // 0x180(0x10)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -164,33 +148,29 @@ public:
 	struct FLinearColor                          WidgetBackgroundColor;                             // 0x204(0x10)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           WidgetBackgroundColorDelegate;                     // 0x214(0x10)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EOrientation                      Orientation;                                       // 0x224(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A0A[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2044[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnValueChanged;                                    // 0x228(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A0B[0x768];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2045[0x768];                                   // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioSliderBase");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioSliderBase");
 		return Clss;
 	}
 
-	void SetWidgetBackgroundColor(const struct FLinearColor& InValue);
-	void SetValueTextReadOnly(bool bIsReadOnly);
-	void SetUnitsTextReadOnly(bool bIsReadOnly);
-	void SetUnitsText(class FText Units);
-	void SetTextLabelBackgroundColor(const struct FSlateColor& InColor);
-	void SetSliderThumbColor(const struct FLinearColor& InValue);
-	void SetSliderBarColor(const struct FLinearColor& InValue);
-	void SetSliderBackgroundColor(const struct FLinearColor& InValue);
-	void SetShowUnitsText(bool bShowUnitsText);
-	void SetShowLabelOnlyOnHover(bool bShowLabelOnlyOnHover);
-	float GetSliderValue(float OutputValue);
-	float GetOutputValue(float InSliderValue);
-	float GetLinValue(float OutputValue);
+	void SetWidgetBackgroundColor(const struct FLinearColor& InInValue);
+	void SetValueTextReadOnly(bool InbIsReadOnly);
+	void SetUnitsTextReadOnly(bool InbIsReadOnly);
+	void SetUnitsText(class FText InUnits);
+	void SetTextLabelBackgroundColor(const struct FSlateColor& InInColor);
+	void SetSliderThumbColor(const struct FLinearColor& InInValue);
+	void SetSliderBarColor(const struct FLinearColor& InInValue);
+	void SetSliderBackgroundColor(const struct FLinearColor& InInValue);
+	void SetShowUnitsText(bool InbShowUnitsText);
+	void SetShowLabelOnlyOnHover(bool InbShowLabelOnlyOnHover);
+	float GetSliderValue(float InOutputValue);
+	float GetOutputValue(float InInSliderValue);
+	float GetLinValue(float InOutputValue);
 };
 
 // 0x10 (0x9B0 - 0x9A0)
@@ -203,11 +183,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioSlider");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioSlider");
 		return Clss;
 	}
 
@@ -221,11 +197,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioVolumeSlider");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioVolumeSlider");
 		return Clss;
 	}
 
@@ -240,11 +212,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("AudioFrequencySlider");
-
+		static class UClass* Clss = UObject::FindClassFast("AudioFrequencySlider");
 		return Clss;
 	}
 

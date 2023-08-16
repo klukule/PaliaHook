@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class UUserWidget*                 Widget                                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_LoadingScreen_C::AddLoadingExtension(class UUserWidget* Widget)
+void IBPI_LoadingScreen_C::AddLoadingExtension(class UUserWidget* InWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +29,7 @@ void IBPI_LoadingScreen_C::AddLoadingExtension(class UUserWidget* Widget)
 
 	Params::IBPI_LoadingScreen_C_AddLoadingExtension_Params Parms{};
 
-	Parms.Widget = Widget;
+	Parms.Widget = InWidget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -41,7 +41,7 @@ void IBPI_LoadingScreen_C::AddLoadingExtension(class UUserWidget* Widget)
 // Parameters:
 // bool                               Display                                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_LoadingScreen_C::DisplayLoadingExtension(bool Display)
+void IBPI_LoadingScreen_C::DisplayLoadingExtension(bool InDisplay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -50,7 +50,7 @@ void IBPI_LoadingScreen_C::DisplayLoadingExtension(bool Display)
 
 	Params::IBPI_LoadingScreen_C_DisplayLoadingExtension_Params Parms{};
 
-	Parms.Display = Display;
+	Parms.Display = InDisplay;
 
 	UObject::ProcessEvent(Func, &Parms);
 

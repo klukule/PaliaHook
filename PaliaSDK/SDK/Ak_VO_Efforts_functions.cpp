@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -35,7 +35,7 @@ namespace SDK
 // class UVAL_CharacterCustomizationComponent*CallFunc_GetComponentByClass_ReturnValue                         (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_Add_IntInt_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-class UAkComponent* UAk_VO_Efforts_C::PrepVoAkComponent(class USceneComponent* AttachToComponent, class UAkComponent* AkComp, class UVAL_CharacterCustomizationComponent* CustomizationComp, int32 Temp_int_Array_Index_Variable, bool CallFunc_AkGetComponent_ComponentCreated, class UAkComponent* CallFunc_AkGetComponent_AkComponent, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, class UAkRtpc* CallFunc_Array_Get_Item, int32 CallFunc_Array_Length_ReturnValue, int32 Temp_int_Loop_Counter_Variable, class AActor* CallFunc_GetOwner_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, class UVAL_CharacterCustomizationComponent* CallFunc_GetComponentByClass_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue)
+class UAkComponent* UAk_VO_Efforts_C::PrepVoAkComponent(class USceneComponent* InAttachToComponent, class UAkComponent* InAkComp, class UVAL_CharacterCustomizationComponent* InCustomizationComp, int32 InTemp_int_Array_Index_Variable, bool InCallFunc_AkGetComponent_ComponentCreated, class UAkComponent* InCallFunc_AkGetComponent_AkComponent, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, class UAkRtpc* InCallFunc_Array_Get_Item, int32 InCallFunc_Array_Length_ReturnValue, int32 InTemp_int_Loop_Counter_Variable, class AActor* InCallFunc_GetOwner_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue, class UVAL_CharacterCustomizationComponent* InCallFunc_GetComponentByClass_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,21 +44,21 @@ class UAkComponent* UAk_VO_Efforts_C::PrepVoAkComponent(class USceneComponent* A
 
 	Params::UAk_VO_Efforts_C_PrepVoAkComponent_Params Parms{};
 
-	Parms.AttachToComponent = AttachToComponent;
-	Parms.AkComp = AkComp;
-	Parms.CustomizationComp = CustomizationComp;
-	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
-	Parms.CallFunc_AkGetComponent_ComponentCreated = CallFunc_AkGetComponent_ComponentCreated;
-	Parms.CallFunc_AkGetComponent_AkComponent = CallFunc_AkGetComponent_AkComponent;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
-	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
-	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
-	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
+	Parms.AttachToComponent = InAttachToComponent;
+	Parms.AkComp = InAkComp;
+	Parms.CustomizationComp = InCustomizationComp;
+	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
+	Parms.CallFunc_AkGetComponent_ComponentCreated = InCallFunc_AkGetComponent_ComponentCreated;
+	Parms.CallFunc_AkGetComponent_AkComponent = InCallFunc_AkGetComponent_AkComponent;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
+	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
+	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
+	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = InCallFunc_GetComponentByClass_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -74,7 +74,7 @@ class UAkComponent* UAk_VO_Efforts_C::PrepVoAkComponent(class USceneComponent* A
 // class FString                      CallFunc_GetEnumeratorUserFriendlyName_ReturnValue               (ZeroConstructor, HasGetValueTypeHash)
 // class FString                      CallFunc_Concat_StrStr_ReturnValue                               (ZeroConstructor, HasGetValueTypeHash)
 
-class FString UAk_VO_Efforts_C::GetNotifyName(const class FString& CallFunc_GetEnumeratorUserFriendlyName_ReturnValue, const class FString& CallFunc_Concat_StrStr_ReturnValue)
+class FString UAk_VO_Efforts_C::GetNotifyName(const class FString& InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue, const class FString& InCallFunc_Concat_StrStr_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,8 +83,8 @@ class FString UAk_VO_Efforts_C::GetNotifyName(const class FString& CallFunc_GetE
 
 	Params::UAk_VO_Efforts_C_GetNotifyName_Params Parms{};
 
-	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = CallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
-	Parms.CallFunc_Concat_StrStr_ReturnValue = CallFunc_Concat_StrStr_ReturnValue;
+	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
+	Parms.CallFunc_Concat_StrStr_ReturnValue = InCallFunc_Concat_StrStr_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -119,7 +119,7 @@ class FString UAk_VO_Efforts_C::GetNotifyName(const class FString& CallFunc_GetE
 // bool                               CallFunc_IsValid_ReturnValue_2                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue_3                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UAk_VO_Efforts_C::Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, struct FAnimNotifyEventReference& EventReference, class UAkAudioEvent* VoiceSetEvent, class UAkAudioEvent* CallFunc_GetVoiceEvent_Value, class AActor* CallFunc_GetOwner_ReturnValue, int32 CallFunc_AkEventGlobal_ReturnValue, class UBP_CharacterCustomizationComponent_C* CallFunc_GetComponentByClass_ReturnValue, class UGameInstance* CallFunc_GetGameInstance_ReturnValue, class UVAL_VoiceSet* CallFunc_GetVoiceSet_ReturnValue, bool CallFunc_IsValid_ReturnValue, class UVoiceSet_C* K2Node_DynamicCast_AsVoice_Set, bool K2Node_DynamicCast_bSuccess, class UAkAudioEvent* CallFunc_GetVoiceEvent_Value_1, bool CallFunc_IsValid_ReturnValue_1, bool CallFunc_IsServer_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, class UAkComponent* CallFunc_PrepVoAkComponent_ReturnValue, int32 CallFunc_AkEventComponent_ReturnValue, bool CallFunc_IsValid_ReturnValue_2, bool CallFunc_IsValid_ReturnValue_3)
+bool UAk_VO_Efforts_C::Received_Notify(class USkeletalMeshComponent* InMeshComp, class UAnimSequenceBase* InAnimation, struct FAnimNotifyEventReference& InEventReference, class UAkAudioEvent* InVoiceSetEvent, class UAkAudioEvent* InCallFunc_GetVoiceEvent_Value, class AActor* InCallFunc_GetOwner_ReturnValue, int32 InCallFunc_AkEventGlobal_ReturnValue, class UBP_CharacterCustomizationComponent_C* InCallFunc_GetComponentByClass_ReturnValue, class UGameInstance* InCallFunc_GetGameInstance_ReturnValue, class UVAL_VoiceSet* InCallFunc_GetVoiceSet_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class UVoiceSet_C* InK2Node_DynamicCast_AsVoice_Set, bool InK2Node_DynamicCast_bSuccess, class UAkAudioEvent* InCallFunc_GetVoiceEvent_Value_1, bool InCallFunc_IsValid_ReturnValue_1, bool InCallFunc_IsServer_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, class UAkComponent* InCallFunc_PrepVoAkComponent_ReturnValue, int32 InCallFunc_AkEventComponent_ReturnValue, bool InCallFunc_IsValid_ReturnValue_2, bool InCallFunc_IsValid_ReturnValue_3)
 {
 	static class UFunction* Func = nullptr;
 
@@ -128,27 +128,27 @@ bool UAk_VO_Efforts_C::Received_Notify(class USkeletalMeshComponent* MeshComp, c
 
 	Params::UAk_VO_Efforts_C_Received_Notify_Params Parms{};
 
-	Parms.MeshComp = MeshComp;
-	Parms.Animation = Animation;
-	Parms.EventReference = EventReference;
-	Parms.VoiceSetEvent = VoiceSetEvent;
-	Parms.CallFunc_GetVoiceEvent_Value = CallFunc_GetVoiceEvent_Value;
-	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
-	Parms.CallFunc_AkEventGlobal_ReturnValue = CallFunc_AkEventGlobal_ReturnValue;
-	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
-	Parms.CallFunc_GetGameInstance_ReturnValue = CallFunc_GetGameInstance_ReturnValue;
-	Parms.CallFunc_GetVoiceSet_ReturnValue = CallFunc_GetVoiceSet_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.K2Node_DynamicCast_AsVoice_Set = K2Node_DynamicCast_AsVoice_Set;
-	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetVoiceEvent_Value_1 = CallFunc_GetVoiceEvent_Value_1;
-	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_IsServer_ReturnValue = CallFunc_IsServer_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
-	Parms.CallFunc_PrepVoAkComponent_ReturnValue = CallFunc_PrepVoAkComponent_ReturnValue;
-	Parms.CallFunc_AkEventComponent_ReturnValue = CallFunc_AkEventComponent_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_2 = CallFunc_IsValid_ReturnValue_2;
-	Parms.CallFunc_IsValid_ReturnValue_3 = CallFunc_IsValid_ReturnValue_3;
+	Parms.MeshComp = InMeshComp;
+	Parms.Animation = InAnimation;
+	Parms.EventReference = InEventReference;
+	Parms.VoiceSetEvent = InVoiceSetEvent;
+	Parms.CallFunc_GetVoiceEvent_Value = InCallFunc_GetVoiceEvent_Value;
+	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
+	Parms.CallFunc_AkEventGlobal_ReturnValue = InCallFunc_AkEventGlobal_ReturnValue;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = InCallFunc_GetComponentByClass_ReturnValue;
+	Parms.CallFunc_GetGameInstance_ReturnValue = InCallFunc_GetGameInstance_ReturnValue;
+	Parms.CallFunc_GetVoiceSet_ReturnValue = InCallFunc_GetVoiceSet_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.K2Node_DynamicCast_AsVoice_Set = InK2Node_DynamicCast_AsVoice_Set;
+	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetVoiceEvent_Value_1 = InCallFunc_GetVoiceEvent_Value_1;
+	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_IsServer_ReturnValue = InCallFunc_IsServer_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_PrepVoAkComponent_ReturnValue = InCallFunc_PrepVoAkComponent_ReturnValue;
+	Parms.CallFunc_AkEventComponent_ReturnValue = InCallFunc_AkEventComponent_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_2 = InCallFunc_IsValid_ReturnValue_2;
+	Parms.CallFunc_IsValid_ReturnValue_3 = InCallFunc_IsValid_ReturnValue_3;
 
 	UObject::ProcessEvent(Func, &Parms);
 

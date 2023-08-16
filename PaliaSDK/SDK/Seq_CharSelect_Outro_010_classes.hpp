@@ -21,17 +21,13 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Seq_CharSelect_Outro_010 (Director BP)_C");
-
+		static class UClass* Clss = UObject::FindClassFast("Seq_CharSelect_Outro_010 (Director BP)_C");
 		return Clss;
 	}
 
 	void SequenceEvent__ENTRYPOINTSeq_CharSelect_Outro_010__Director_BP_();
 	void StopFlowAudio();
-	void ExecuteUbergraph_Seq_CharSelect_Outro_010__Director_BP_(int32 EntryPoint, int32 CallFunc_AkEventGlobal_ReturnValue);
+	void ExecuteUbergraph_Seq_CharSelect_Outro_010__Director_BP_(int32 InEntryPoint, int32 InCallFunc_AkEventGlobal_ReturnValue);
 };
 
 }

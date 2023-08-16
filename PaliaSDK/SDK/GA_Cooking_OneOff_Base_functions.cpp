@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -22,7 +22,7 @@ namespace SDK
 // class UObject*                     CallFunc_SelectObject_ReturnValue                                (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FVAL_InteractorLockParams   K2Node_MakeStruct_VAL_InteractorLockParams                       (NoDestructor, ContainsInstancedReference)
 
-void UGA_Cooking_OneOff_Base_C::GetLockParams(struct FVAL_InteractorLockParams* VAL_InteractorLockParams, class UObject* CallFunc_SelectObject_ReturnValue, const struct FVAL_InteractorLockParams& K2Node_MakeStruct_VAL_InteractorLockParams)
+void UGA_Cooking_OneOff_Base_C::GetLockParams(struct FVAL_InteractorLockParams* InVAL_InteractorLockParams, class UObject* InCallFunc_SelectObject_ReturnValue, const struct FVAL_InteractorLockParams& InK2Node_MakeStruct_VAL_InteractorLockParams)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,13 +31,13 @@ void UGA_Cooking_OneOff_Base_C::GetLockParams(struct FVAL_InteractorLockParams* 
 
 	Params::UGA_Cooking_OneOff_Base_C_GetLockParams_Params Parms{};
 
-	Parms.CallFunc_SelectObject_ReturnValue = CallFunc_SelectObject_ReturnValue;
-	Parms.K2Node_MakeStruct_VAL_InteractorLockParams = K2Node_MakeStruct_VAL_InteractorLockParams;
+	Parms.CallFunc_SelectObject_ReturnValue = InCallFunc_SelectObject_ReturnValue;
+	Parms.K2Node_MakeStruct_VAL_InteractorLockParams = InK2Node_MakeStruct_VAL_InteractorLockParams;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (VAL_InteractorLockParams != nullptr)
-		*VAL_InteractorLockParams = Parms.VAL_InteractorLockParams;
+	if (InVAL_InteractorLockParams != nullptr)
+		*InVAL_InteractorLockParams = Parms.VAL_InteractorLockParams;
 
 }
 
@@ -47,7 +47,7 @@ void UGA_Cooking_OneOff_Base_C::GetLockParams(struct FVAL_InteractorLockParams* 
 // Parameters:
 // bool                               CanUnlock                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Cooking_OneOff_Base_C::CanUnlockCharacterDuringAnimation(bool* CanUnlock)
+void UGA_Cooking_OneOff_Base_C::CanUnlockCharacterDuringAnimation(bool* InCanUnlock)
 {
 	static class UFunction* Func = nullptr;
 
@@ -59,8 +59,8 @@ void UGA_Cooking_OneOff_Base_C::CanUnlockCharacterDuringAnimation(bool* CanUnloc
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (CanUnlock != nullptr)
-		*CanUnlock = Parms.CanUnlock;
+	if (InCanUnlock != nullptr)
+		*InCanUnlock = Parms.CanUnlock;
 
 }
 
@@ -92,7 +92,7 @@ void UGA_Cooking_OneOff_Base_C::CanUnlockCharacterDuringAnimation(bool* CanUnloc
 // bool                               CallFunc_CanPlayerChangeLockWith_ReturnValue                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Cooking_OneOff_Base_C::SetMovementBlock(bool bLock, bool* Changed, const struct FVAL_InteractorLockParams& CallFunc_GetLockParams_VAL_InteractorLockParams, const struct FVAL_InteractorLockParams& CallFunc_GetLockParams_VAL_InteractorLockParams_1, bool CallFunc_IsServer_ReturnValue, bool CallFunc_IsServer_ReturnValue_1, bool CallFunc_IsAbilityLockedIn_ReturnValue, bool CallFunc_NotEqual_BoolBool_ReturnValue, bool CallFunc_SetMovementBlock_Changed, bool CallFunc_SetMovementBlock_Changed_1, bool CallFunc_IsShuttingDown_NewParam, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, class UInteractorComponent* CallFunc_GetInteractorComponent_ReturnValue, bool CallFunc_LockPlayerToInteractable_ReturnValue, bool CallFunc_CanUnlockCharacterDuringAnimation_CanUnlock, bool CallFunc_BooleanOR_ReturnValue, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1, class UInteractorComponent* CallFunc_GetInteractorComponent_ReturnValue_1, const struct FVAL_InteractorLockParams& CallFunc_GetLockParams_VAL_InteractorLockParams_2, bool CallFunc_IsPlayerLockedToInteractable_ReturnValue, bool CallFunc_UnLockPlayerFromInteractable_ReturnValue, bool CallFunc_CanPlayerChangeLockWith_ReturnValue, bool CallFunc_BooleanAND_ReturnValue)
+void UGA_Cooking_OneOff_Base_C::SetMovementBlock(bool InbLock, bool* InChanged, const struct FVAL_InteractorLockParams& InCallFunc_GetLockParams_VAL_InteractorLockParams, const struct FVAL_InteractorLockParams& InCallFunc_GetLockParams_VAL_InteractorLockParams_1, bool InCallFunc_IsServer_ReturnValue, bool InCallFunc_IsServer_ReturnValue_1, bool InCallFunc_IsAbilityLockedIn_ReturnValue, bool InCallFunc_NotEqual_BoolBool_ReturnValue, bool InCallFunc_SetMovementBlock_Changed, bool InCallFunc_SetMovementBlock_Changed_1, bool InCallFunc_IsShuttingDown_NewParam, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, class UInteractorComponent* InCallFunc_GetInteractorComponent_ReturnValue, bool InCallFunc_LockPlayerToInteractable_ReturnValue, bool InCallFunc_CanUnlockCharacterDuringAnimation_CanUnlock, bool InCallFunc_BooleanOR_ReturnValue, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1, class UInteractorComponent* InCallFunc_GetInteractorComponent_ReturnValue_1, const struct FVAL_InteractorLockParams& InCallFunc_GetLockParams_VAL_InteractorLockParams_2, bool InCallFunc_IsPlayerLockedToInteractable_ReturnValue, bool InCallFunc_UnLockPlayerFromInteractable_ReturnValue, bool InCallFunc_CanPlayerChangeLockWith_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -101,33 +101,33 @@ void UGA_Cooking_OneOff_Base_C::SetMovementBlock(bool bLock, bool* Changed, cons
 
 	Params::UGA_Cooking_OneOff_Base_C_SetMovementBlock_Params Parms{};
 
-	Parms.bLock = bLock;
-	Parms.CallFunc_GetLockParams_VAL_InteractorLockParams = CallFunc_GetLockParams_VAL_InteractorLockParams;
-	Parms.CallFunc_GetLockParams_VAL_InteractorLockParams_1 = CallFunc_GetLockParams_VAL_InteractorLockParams_1;
-	Parms.CallFunc_IsServer_ReturnValue = CallFunc_IsServer_ReturnValue;
-	Parms.CallFunc_IsServer_ReturnValue_1 = CallFunc_IsServer_ReturnValue_1;
-	Parms.CallFunc_IsAbilityLockedIn_ReturnValue = CallFunc_IsAbilityLockedIn_ReturnValue;
-	Parms.CallFunc_NotEqual_BoolBool_ReturnValue = CallFunc_NotEqual_BoolBool_ReturnValue;
-	Parms.CallFunc_SetMovementBlock_Changed = CallFunc_SetMovementBlock_Changed;
-	Parms.CallFunc_SetMovementBlock_Changed_1 = CallFunc_SetMovementBlock_Changed_1;
-	Parms.CallFunc_IsShuttingDown_NewParam = CallFunc_IsShuttingDown_NewParam;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
-	Parms.CallFunc_GetInteractorComponent_ReturnValue = CallFunc_GetInteractorComponent_ReturnValue;
-	Parms.CallFunc_LockPlayerToInteractable_ReturnValue = CallFunc_LockPlayerToInteractable_ReturnValue;
-	Parms.CallFunc_CanUnlockCharacterDuringAnimation_CanUnlock = CallFunc_CanUnlockCharacterDuringAnimation_CanUnlock;
-	Parms.CallFunc_BooleanOR_ReturnValue = CallFunc_BooleanOR_ReturnValue;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1 = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1;
-	Parms.CallFunc_GetInteractorComponent_ReturnValue_1 = CallFunc_GetInteractorComponent_ReturnValue_1;
-	Parms.CallFunc_GetLockParams_VAL_InteractorLockParams_2 = CallFunc_GetLockParams_VAL_InteractorLockParams_2;
-	Parms.CallFunc_IsPlayerLockedToInteractable_ReturnValue = CallFunc_IsPlayerLockedToInteractable_ReturnValue;
-	Parms.CallFunc_UnLockPlayerFromInteractable_ReturnValue = CallFunc_UnLockPlayerFromInteractable_ReturnValue;
-	Parms.CallFunc_CanPlayerChangeLockWith_ReturnValue = CallFunc_CanPlayerChangeLockWith_ReturnValue;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
+	Parms.bLock = InbLock;
+	Parms.CallFunc_GetLockParams_VAL_InteractorLockParams = InCallFunc_GetLockParams_VAL_InteractorLockParams;
+	Parms.CallFunc_GetLockParams_VAL_InteractorLockParams_1 = InCallFunc_GetLockParams_VAL_InteractorLockParams_1;
+	Parms.CallFunc_IsServer_ReturnValue = InCallFunc_IsServer_ReturnValue;
+	Parms.CallFunc_IsServer_ReturnValue_1 = InCallFunc_IsServer_ReturnValue_1;
+	Parms.CallFunc_IsAbilityLockedIn_ReturnValue = InCallFunc_IsAbilityLockedIn_ReturnValue;
+	Parms.CallFunc_NotEqual_BoolBool_ReturnValue = InCallFunc_NotEqual_BoolBool_ReturnValue;
+	Parms.CallFunc_SetMovementBlock_Changed = InCallFunc_SetMovementBlock_Changed;
+	Parms.CallFunc_SetMovementBlock_Changed_1 = InCallFunc_SetMovementBlock_Changed_1;
+	Parms.CallFunc_IsShuttingDown_NewParam = InCallFunc_IsShuttingDown_NewParam;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
+	Parms.CallFunc_GetInteractorComponent_ReturnValue = InCallFunc_GetInteractorComponent_ReturnValue;
+	Parms.CallFunc_LockPlayerToInteractable_ReturnValue = InCallFunc_LockPlayerToInteractable_ReturnValue;
+	Parms.CallFunc_CanUnlockCharacterDuringAnimation_CanUnlock = InCallFunc_CanUnlockCharacterDuringAnimation_CanUnlock;
+	Parms.CallFunc_BooleanOR_ReturnValue = InCallFunc_BooleanOR_ReturnValue;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1 = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1;
+	Parms.CallFunc_GetInteractorComponent_ReturnValue_1 = InCallFunc_GetInteractorComponent_ReturnValue_1;
+	Parms.CallFunc_GetLockParams_VAL_InteractorLockParams_2 = InCallFunc_GetLockParams_VAL_InteractorLockParams_2;
+	Parms.CallFunc_IsPlayerLockedToInteractable_ReturnValue = InCallFunc_IsPlayerLockedToInteractable_ReturnValue;
+	Parms.CallFunc_UnLockPlayerFromInteractable_ReturnValue = InCallFunc_UnLockPlayerFromInteractable_ReturnValue;
+	Parms.CallFunc_CanPlayerChangeLockWith_ReturnValue = InCallFunc_CanPlayerChangeLockWith_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Changed != nullptr)
-		*Changed = Parms.Changed;
+	if (InChanged != nullptr)
+		*InChanged = Parms.Changed;
 
 }
 
@@ -137,7 +137,7 @@ void UGA_Cooking_OneOff_Base_C::SetMovementBlock(bool bLock, bool* Changed, cons
 // Parameters:
 // struct FGameplayEventData          EventData                                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UGA_Cooking_OneOff_Base_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData& EventData)
+void UGA_Cooking_OneOff_Base_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData& InEventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -146,7 +146,7 @@ void UGA_Cooking_OneOff_Base_C::K2_ActivateAbilityFromEvent(struct FGameplayEven
 
 	Params::UGA_Cooking_OneOff_Base_C_K2_ActivateAbilityFromEvent_Params Parms{};
 
-	Parms.EventData = EventData;
+	Parms.EventData = InEventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -168,9 +168,10 @@ void UGA_Cooking_OneOff_Base_C::K2_ActivateAbilityFromEvent(struct FGameplayEven
 // bool                               CallFunc_Not_PreBool_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AValeriaCharacter*           CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UInteractorComponent*        CallFunc_GetInteractorComponent_ReturnValue                      (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_Client_TryInteractableLockSetup_ReturnValue             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_CanPlayerChangeLockWith_ReturnValue                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Cooking_OneOff_Base_C::ExecuteUbergraph_GA_Cooking_OneOff_Base(int32 EntryPoint, const struct FGameplayEventData& K2Node_Event_EventData, bool CallFunc_IsValid_ReturnValue, class UInteractableComponent* CallFunc_GetComponentByClass_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_2, class UCrafterComponent* CallFunc_GetComponentByClass_ReturnValue_1, bool CallFunc_IsServer_ReturnValue, const struct FVAL_InteractorLockParams& CallFunc_GetLockParams_VAL_InteractorLockParams, bool CallFunc_Not_PreBool_ReturnValue, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, class UInteractorComponent* CallFunc_GetInteractorComponent_ReturnValue, bool CallFunc_CanPlayerChangeLockWith_ReturnValue)
+void UGA_Cooking_OneOff_Base_C::ExecuteUbergraph_GA_Cooking_OneOff_Base(int32 InEntryPoint, const struct FGameplayEventData& InK2Node_Event_EventData, bool InCallFunc_IsValid_ReturnValue, class UInteractableComponent* InCallFunc_GetComponentByClass_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue_2, class UCrafterComponent* InCallFunc_GetComponentByClass_ReturnValue_1, bool InCallFunc_IsServer_ReturnValue, const struct FVAL_InteractorLockParams& InCallFunc_GetLockParams_VAL_InteractorLockParams, bool InCallFunc_Not_PreBool_ReturnValue, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, class UInteractorComponent* InCallFunc_GetInteractorComponent_ReturnValue, bool InCallFunc_Client_TryInteractableLockSetup_ReturnValue, bool InCallFunc_CanPlayerChangeLockWith_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -179,19 +180,20 @@ void UGA_Cooking_OneOff_Base_C::ExecuteUbergraph_GA_Cooking_OneOff_Base(int32 En
 
 	Params::UGA_Cooking_OneOff_Base_C_ExecuteUbergraph_GA_Cooking_OneOff_Base_Params Parms{};
 
-	Parms.EntryPoint = EntryPoint;
-	Parms.K2Node_Event_EventData = K2Node_Event_EventData;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_IsValid_ReturnValue_2 = CallFunc_IsValid_ReturnValue_2;
-	Parms.CallFunc_GetComponentByClass_ReturnValue_1 = CallFunc_GetComponentByClass_ReturnValue_1;
-	Parms.CallFunc_IsServer_ReturnValue = CallFunc_IsServer_ReturnValue;
-	Parms.CallFunc_GetLockParams_VAL_InteractorLockParams = CallFunc_GetLockParams_VAL_InteractorLockParams;
-	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
-	Parms.CallFunc_GetInteractorComponent_ReturnValue = CallFunc_GetInteractorComponent_ReturnValue;
-	Parms.CallFunc_CanPlayerChangeLockWith_ReturnValue = CallFunc_CanPlayerChangeLockWith_ReturnValue;
+	Parms.EntryPoint = InEntryPoint;
+	Parms.K2Node_Event_EventData = InK2Node_Event_EventData;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = InCallFunc_GetComponentByClass_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_IsValid_ReturnValue_2 = InCallFunc_IsValid_ReturnValue_2;
+	Parms.CallFunc_GetComponentByClass_ReturnValue_1 = InCallFunc_GetComponentByClass_ReturnValue_1;
+	Parms.CallFunc_IsServer_ReturnValue = InCallFunc_IsServer_ReturnValue;
+	Parms.CallFunc_GetLockParams_VAL_InteractorLockParams = InCallFunc_GetLockParams_VAL_InteractorLockParams;
+	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
+	Parms.CallFunc_GetInteractorComponent_ReturnValue = InCallFunc_GetInteractorComponent_ReturnValue;
+	Parms.CallFunc_Client_TryInteractableLockSetup_ReturnValue = InCallFunc_Client_TryInteractableLockSetup_ReturnValue;
+	Parms.CallFunc_CanPlayerChangeLockWith_ReturnValue = InCallFunc_CanPlayerChangeLockWith_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPaperFlipbook::IsValidKeyFrameIndex(int32 Index)
+bool UPaperFlipbook::IsValidKeyFrameIndex(int32 InIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ bool UPaperFlipbook::IsValidKeyFrameIndex(int32 Index)
 
 	Params::UPaperFlipbook_IsValidKeyFrameIndex_Params Parms{};
 
-	Parms.Index = Index;
+	Parms.Index = InIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -80,7 +80,7 @@ float UPaperFlipbook::GetTotalDuration()
 // bool                               bClampToEnds                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPaperSprite*                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UPaperSprite* UPaperFlipbook::GetSpriteAtTime(float Time, bool bClampToEnds)
+class UPaperSprite* UPaperFlipbook::GetSpriteAtTime(float InTime, bool InbClampToEnds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -89,8 +89,8 @@ class UPaperSprite* UPaperFlipbook::GetSpriteAtTime(float Time, bool bClampToEnd
 
 	Params::UPaperFlipbook_GetSpriteAtTime_Params Parms{};
 
-	Parms.Time = Time;
-	Parms.bClampToEnds = bClampToEnds;
+	Parms.Time = InTime;
+	Parms.bClampToEnds = InbClampToEnds;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -111,7 +111,7 @@ class UPaperSprite* UPaperFlipbook::GetSpriteAtTime(float Time, bool bClampToEnd
 // int32                              FrameIndex                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPaperSprite*                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UPaperSprite* UPaperFlipbook::GetSpriteAtFrame(int32 FrameIndex)
+class UPaperSprite* UPaperFlipbook::GetSpriteAtFrame(int32 InFrameIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -120,7 +120,7 @@ class UPaperSprite* UPaperFlipbook::GetSpriteAtFrame(int32 FrameIndex)
 
 	Params::UPaperFlipbook_GetSpriteAtFrame_Params Parms{};
 
-	Parms.FrameIndex = FrameIndex;
+	Parms.FrameIndex = InFrameIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -198,7 +198,7 @@ int32 UPaperFlipbook::GetNumFrames()
 // bool                               bClampToEnds                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UPaperFlipbook::GetKeyFrameIndexAtTime(float Time, bool bClampToEnds)
+int32 UPaperFlipbook::GetKeyFrameIndexAtTime(float InTime, bool InbClampToEnds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -207,8 +207,8 @@ int32 UPaperFlipbook::GetKeyFrameIndexAtTime(float Time, bool bClampToEnds)
 
 	Params::UPaperFlipbook_GetKeyFrameIndexAtTime_Params Parms{};
 
-	Parms.Time = Time;
-	Parms.bClampToEnds = bClampToEnds;
+	Parms.Time = InTime;
+	Parms.bClampToEnds = InbClampToEnds;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -253,7 +253,7 @@ void UPaperFlipbookComponent::Stop()
 // Parameters:
 // struct FLinearColor                NewColor                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperFlipbookComponent::SetSpriteColor(const struct FLinearColor& NewColor)
+void UPaperFlipbookComponent::SetSpriteColor(const struct FLinearColor& InNewColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -262,7 +262,7 @@ void UPaperFlipbookComponent::SetSpriteColor(const struct FLinearColor& NewColor
 
 	Params::UPaperFlipbookComponent_SetSpriteColor_Params Parms{};
 
-	Parms.NewColor = NewColor;
+	Parms.NewColor = InNewColor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -280,7 +280,7 @@ void UPaperFlipbookComponent::SetSpriteColor(const struct FLinearColor& NewColor
 // Parameters:
 // float                              NewRate                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperFlipbookComponent::SetPlayRate(float NewRate)
+void UPaperFlipbookComponent::SetPlayRate(float InNewRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -289,7 +289,7 @@ void UPaperFlipbookComponent::SetPlayRate(float NewRate)
 
 	Params::UPaperFlipbookComponent_SetPlayRate_Params Parms{};
 
-	Parms.NewRate = NewRate;
+	Parms.NewRate = InNewRate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -308,7 +308,7 @@ void UPaperFlipbookComponent::SetPlayRate(float NewRate)
 // int32                              NewFramePosition                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bFireEvents                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperFlipbookComponent::SetPlaybackPositionInFrames(int32 NewFramePosition, bool bFireEvents)
+void UPaperFlipbookComponent::SetPlaybackPositionInFrames(int32 InNewFramePosition, bool InbFireEvents)
 {
 	static class UFunction* Func = nullptr;
 
@@ -317,8 +317,8 @@ void UPaperFlipbookComponent::SetPlaybackPositionInFrames(int32 NewFramePosition
 
 	Params::UPaperFlipbookComponent_SetPlaybackPositionInFrames_Params Parms{};
 
-	Parms.NewFramePosition = NewFramePosition;
-	Parms.bFireEvents = bFireEvents;
+	Parms.NewFramePosition = InNewFramePosition;
+	Parms.bFireEvents = InbFireEvents;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -337,7 +337,7 @@ void UPaperFlipbookComponent::SetPlaybackPositionInFrames(int32 NewFramePosition
 // float                              NewPosition                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bFireEvents                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperFlipbookComponent::SetPlaybackPosition(float NewPosition, bool bFireEvents)
+void UPaperFlipbookComponent::SetPlaybackPosition(float InNewPosition, bool InbFireEvents)
 {
 	static class UFunction* Func = nullptr;
 
@@ -346,8 +346,8 @@ void UPaperFlipbookComponent::SetPlaybackPosition(float NewPosition, bool bFireE
 
 	Params::UPaperFlipbookComponent_SetPlaybackPosition_Params Parms{};
 
-	Parms.NewPosition = NewPosition;
-	Parms.bFireEvents = bFireEvents;
+	Parms.NewPosition = InNewPosition;
+	Parms.bFireEvents = InbFireEvents;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -365,7 +365,7 @@ void UPaperFlipbookComponent::SetPlaybackPosition(float NewPosition, bool bFireE
 // Parameters:
 // float                              NewTime                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperFlipbookComponent::SetNewTime(float NewTime)
+void UPaperFlipbookComponent::SetNewTime(float InNewTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -374,7 +374,7 @@ void UPaperFlipbookComponent::SetNewTime(float NewTime)
 
 	Params::UPaperFlipbookComponent_SetNewTime_Params Parms{};
 
-	Parms.NewTime = NewTime;
+	Parms.NewTime = InNewTime;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -392,7 +392,7 @@ void UPaperFlipbookComponent::SetNewTime(float NewTime)
 // Parameters:
 // bool                               bNewLooping                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperFlipbookComponent::SetLooping(bool bNewLooping)
+void UPaperFlipbookComponent::SetLooping(bool InbNewLooping)
 {
 	static class UFunction* Func = nullptr;
 
@@ -401,7 +401,7 @@ void UPaperFlipbookComponent::SetLooping(bool bNewLooping)
 
 	Params::UPaperFlipbookComponent_SetLooping_Params Parms{};
 
-	Parms.bNewLooping = bNewLooping;
+	Parms.bNewLooping = InbNewLooping;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -420,7 +420,7 @@ void UPaperFlipbookComponent::SetLooping(bool bNewLooping)
 // class UPaperFlipbook*              NewFlipbook                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPaperFlipbookComponent::SetFlipbook(class UPaperFlipbook* NewFlipbook)
+bool UPaperFlipbookComponent::SetFlipbook(class UPaperFlipbook* InNewFlipbook)
 {
 	static class UFunction* Func = nullptr;
 
@@ -429,7 +429,7 @@ bool UPaperFlipbookComponent::SetFlipbook(class UPaperFlipbook* NewFlipbook)
 
 	Params::UPaperFlipbookComponent_SetFlipbook_Params Parms{};
 
-	Parms.NewFlipbook = NewFlipbook;
+	Parms.NewFlipbook = InNewFlipbook;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -549,7 +549,7 @@ void UPaperFlipbookComponent::Play()
 // Parameters:
 // class UPaperFlipbook*              OldFlipbook                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperFlipbookComponent::OnRep_SourceFlipbook(class UPaperFlipbook* OldFlipbook)
+void UPaperFlipbookComponent::OnRep_SourceFlipbook(class UPaperFlipbook* InOldFlipbook)
 {
 	static class UFunction* Func = nullptr;
 
@@ -558,7 +558,7 @@ void UPaperFlipbookComponent::OnRep_SourceFlipbook(class UPaperFlipbook* OldFlip
 
 	Params::UPaperFlipbookComponent_OnRep_SourceFlipbook_Params Parms{};
 
-	Parms.OldFlipbook = OldFlipbook;
+	Parms.OldFlipbook = InOldFlipbook;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -889,7 +889,7 @@ class UPaperFlipbook* UPaperFlipbookComponent::GetFlipbook()
 // bool                               bTeleport                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPaperGroupedSpriteComponent::UpdateInstanceTransform(int32 InstanceIndex, struct FTransform& NewInstanceTransform, bool bWorldSpace, bool bMarkRenderStateDirty, bool bTeleport)
+bool UPaperGroupedSpriteComponent::UpdateInstanceTransform(int32 InInstanceIndex, struct FTransform& InNewInstanceTransform, bool InbWorldSpace, bool InbMarkRenderStateDirty, bool InbTeleport)
 {
 	static class UFunction* Func = nullptr;
 
@@ -898,11 +898,11 @@ bool UPaperGroupedSpriteComponent::UpdateInstanceTransform(int32 InstanceIndex, 
 
 	Params::UPaperGroupedSpriteComponent_UpdateInstanceTransform_Params Parms{};
 
-	Parms.InstanceIndex = InstanceIndex;
-	Parms.NewInstanceTransform = NewInstanceTransform;
-	Parms.bWorldSpace = bWorldSpace;
-	Parms.bMarkRenderStateDirty = bMarkRenderStateDirty;
-	Parms.bTeleport = bTeleport;
+	Parms.InstanceIndex = InInstanceIndex;
+	Parms.NewInstanceTransform = InNewInstanceTransform;
+	Parms.bWorldSpace = InbWorldSpace;
+	Parms.bMarkRenderStateDirty = InbMarkRenderStateDirty;
+	Parms.bTeleport = InbTeleport;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -925,7 +925,7 @@ bool UPaperGroupedSpriteComponent::UpdateInstanceTransform(int32 InstanceIndex, 
 // bool                               bMarkRenderStateDirty                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPaperGroupedSpriteComponent::UpdateInstanceColor(int32 InstanceIndex, const struct FLinearColor& NewInstanceColor, bool bMarkRenderStateDirty)
+bool UPaperGroupedSpriteComponent::UpdateInstanceColor(int32 InInstanceIndex, const struct FLinearColor& InNewInstanceColor, bool InbMarkRenderStateDirty)
 {
 	static class UFunction* Func = nullptr;
 
@@ -934,9 +934,9 @@ bool UPaperGroupedSpriteComponent::UpdateInstanceColor(int32 InstanceIndex, cons
 
 	Params::UPaperGroupedSpriteComponent_UpdateInstanceColor_Params Parms{};
 
-	Parms.InstanceIndex = InstanceIndex;
-	Parms.NewInstanceColor = NewInstanceColor;
-	Parms.bMarkRenderStateDirty = bMarkRenderStateDirty;
+	Parms.InstanceIndex = InInstanceIndex;
+	Parms.NewInstanceColor = InNewInstanceColor;
+	Parms.bMarkRenderStateDirty = InbMarkRenderStateDirty;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -956,7 +956,7 @@ bool UPaperGroupedSpriteComponent::UpdateInstanceColor(int32 InstanceIndex, cons
 // Parameters:
 // struct FVector                     WorldSpaceSortAxis                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperGroupedSpriteComponent::SortInstancesAlongAxis(const struct FVector& WorldSpaceSortAxis)
+void UPaperGroupedSpriteComponent::SortInstancesAlongAxis(const struct FVector& InWorldSpaceSortAxis)
 {
 	static class UFunction* Func = nullptr;
 
@@ -965,7 +965,7 @@ void UPaperGroupedSpriteComponent::SortInstancesAlongAxis(const struct FVector& 
 
 	Params::UPaperGroupedSpriteComponent_SortInstancesAlongAxis_Params Parms{};
 
-	Parms.WorldSpaceSortAxis = WorldSpaceSortAxis;
+	Parms.WorldSpaceSortAxis = InWorldSpaceSortAxis;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -984,7 +984,7 @@ void UPaperGroupedSpriteComponent::SortInstancesAlongAxis(const struct FVector& 
 // int32                              InstanceIndex                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPaperGroupedSpriteComponent::RemoveInstance(int32 InstanceIndex)
+bool UPaperGroupedSpriteComponent::RemoveInstance(int32 InInstanceIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -993,7 +993,7 @@ bool UPaperGroupedSpriteComponent::RemoveInstance(int32 InstanceIndex)
 
 	Params::UPaperGroupedSpriteComponent_RemoveInstance_Params Parms{};
 
-	Parms.InstanceIndex = InstanceIndex;
+	Parms.InstanceIndex = InInstanceIndex;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1016,7 +1016,7 @@ bool UPaperGroupedSpriteComponent::RemoveInstance(int32 InstanceIndex)
 // bool                               bWorldSpace                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPaperGroupedSpriteComponent::GetInstanceTransform(int32 InstanceIndex, struct FTransform* OutInstanceTransform, bool bWorldSpace)
+bool UPaperGroupedSpriteComponent::GetInstanceTransform(int32 InInstanceIndex, struct FTransform* InOutInstanceTransform, bool InbWorldSpace)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1025,8 +1025,8 @@ bool UPaperGroupedSpriteComponent::GetInstanceTransform(int32 InstanceIndex, str
 
 	Params::UPaperGroupedSpriteComponent_GetInstanceTransform_Params Parms{};
 
-	Parms.InstanceIndex = InstanceIndex;
-	Parms.bWorldSpace = bWorldSpace;
+	Parms.InstanceIndex = InInstanceIndex;
+	Parms.bWorldSpace = InbWorldSpace;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1036,8 +1036,8 @@ bool UPaperGroupedSpriteComponent::GetInstanceTransform(int32 InstanceIndex, str
 
 	Func->FunctionFlags = Flags;
 
-	if (OutInstanceTransform != nullptr)
-		*OutInstanceTransform = Parms.OutInstanceTransform;
+	if (InOutInstanceTransform != nullptr)
+		*InOutInstanceTransform = Parms.OutInstanceTransform;
 
 	return Parms.ReturnValue;
 
@@ -1106,7 +1106,7 @@ void UPaperGroupedSpriteComponent::ClearInstances()
 // struct FLinearColor                Color                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UPaperGroupedSpriteComponent::AddInstance(struct FTransform& Transform, class UPaperSprite* Sprite, bool bWorldSpace, const struct FLinearColor& Color)
+int32 UPaperGroupedSpriteComponent::AddInstance(struct FTransform& InTransform, class UPaperSprite* InSprite, bool InbWorldSpace, const struct FLinearColor& InColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1115,10 +1115,10 @@ int32 UPaperGroupedSpriteComponent::AddInstance(struct FTransform& Transform, cl
 
 	Params::UPaperGroupedSpriteComponent_AddInstance_Params Parms{};
 
-	Parms.Transform = Transform;
-	Parms.Sprite = Sprite;
-	Parms.bWorldSpace = bWorldSpace;
-	Parms.Color = Color;
+	Parms.Transform = InTransform;
+	Parms.Sprite = InSprite;
+	Parms.bWorldSpace = InbWorldSpace;
+	Parms.Color = InColor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1141,7 +1141,7 @@ int32 UPaperGroupedSpriteComponent::AddInstance(struct FTransform& Transform, cl
 // int32                              Height                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSlateBrush                 ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FSlateBrush UPaperSpriteBlueprintLibrary::MakeBrushFromSprite(class UPaperSprite* Sprite, int32 Width, int32 Height)
+struct FSlateBrush UPaperSpriteBlueprintLibrary::MakeBrushFromSprite(class UPaperSprite* InSprite, int32 InWidth, int32 InHeight)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1150,9 +1150,9 @@ struct FSlateBrush UPaperSpriteBlueprintLibrary::MakeBrushFromSprite(class UPape
 
 	Params::UPaperSpriteBlueprintLibrary_MakeBrushFromSprite_Params Parms{};
 
-	Parms.Sprite = Sprite;
-	Parms.Width = Width;
-	Parms.Height = Height;
+	Parms.Sprite = InSprite;
+	Parms.Width = InWidth;
+	Parms.Height = InHeight;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1172,7 +1172,7 @@ struct FSlateBrush UPaperSpriteBlueprintLibrary::MakeBrushFromSprite(class UPape
 // Parameters:
 // struct FLinearColor                NewColor                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperSpriteComponent::SetSpriteColor(const struct FLinearColor& NewColor)
+void UPaperSpriteComponent::SetSpriteColor(const struct FLinearColor& InNewColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1181,7 +1181,7 @@ void UPaperSpriteComponent::SetSpriteColor(const struct FLinearColor& NewColor)
 
 	Params::UPaperSpriteComponent_SetSpriteColor_Params Parms{};
 
-	Parms.NewColor = NewColor;
+	Parms.NewColor = InNewColor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1200,7 +1200,7 @@ void UPaperSpriteComponent::SetSpriteColor(const struct FLinearColor& NewColor)
 // class UPaperSprite*                NewSprite                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPaperSpriteComponent::SetSprite(class UPaperSprite* NewSprite)
+bool UPaperSpriteComponent::SetSprite(class UPaperSprite* InNewSprite)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1209,7 +1209,7 @@ bool UPaperSpriteComponent::SetSprite(class UPaperSprite* NewSprite)
 
 	Params::UPaperSpriteComponent_SetSprite_Params Parms{};
 
-	Parms.NewSprite = NewSprite;
+	Parms.NewSprite = InNewSprite;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1257,7 +1257,7 @@ class UPaperSprite* UPaperSpriteComponent::GetSprite()
 // Parameters:
 // struct FLinearColor                NewColor                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperTileMapComponent::SetTileMapColor(const struct FLinearColor& NewColor)
+void UPaperTileMapComponent::SetTileMapColor(const struct FLinearColor& InNewColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1266,7 +1266,7 @@ void UPaperTileMapComponent::SetTileMapColor(const struct FLinearColor& NewColor
 
 	Params::UPaperTileMapComponent_SetTileMapColor_Params Parms{};
 
-	Parms.NewColor = NewColor;
+	Parms.NewColor = InNewColor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1285,7 +1285,7 @@ void UPaperTileMapComponent::SetTileMapColor(const struct FLinearColor& NewColor
 // class UPaperTileMap*               NewTileMap                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPaperTileMapComponent::SetTileMap(class UPaperTileMap* NewTileMap)
+bool UPaperTileMapComponent::SetTileMap(class UPaperTileMap* InNewTileMap)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1294,7 +1294,7 @@ bool UPaperTileMapComponent::SetTileMap(class UPaperTileMap* NewTileMap)
 
 	Params::UPaperTileMapComponent_SetTileMap_Params Parms{};
 
-	Parms.NewTileMap = NewTileMap;
+	Parms.NewTileMap = InNewTileMap;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1317,7 +1317,7 @@ bool UPaperTileMapComponent::SetTileMap(class UPaperTileMap* NewTileMap)
 // int32                              Layer                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPaperTileInfo              NewValue                                                         (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UPaperTileMapComponent::SetTile(int32 X, int32 Y, int32 Layer, const struct FPaperTileInfo& NewValue)
+void UPaperTileMapComponent::SetTile(int32 InX, int32 InY, int32 InLayer, const struct FPaperTileInfo& InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1326,10 +1326,10 @@ void UPaperTileMapComponent::SetTile(int32 X, int32 Y, int32 Layer, const struct
 
 	Params::UPaperTileMapComponent_SetTile_Params Parms{};
 
-	Parms.X = X;
-	Parms.Y = Y;
-	Parms.Layer = Layer;
-	Parms.NewValue = NewValue;
+	Parms.X = InX;
+	Parms.Y = InY;
+	Parms.Layer = InLayer;
+	Parms.NewValue = InNewValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1348,7 +1348,7 @@ void UPaperTileMapComponent::SetTile(int32 X, int32 Y, int32 Layer, const struct
 // struct FLinearColor                NewColor                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              Layer                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperTileMapComponent::SetLayerColor(const struct FLinearColor& NewColor, int32 Layer)
+void UPaperTileMapComponent::SetLayerColor(const struct FLinearColor& InNewColor, int32 InLayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1357,8 +1357,8 @@ void UPaperTileMapComponent::SetLayerColor(const struct FLinearColor& NewColor, 
 
 	Params::UPaperTileMapComponent_SetLayerColor_Params Parms{};
 
-	Parms.NewColor = NewColor;
-	Parms.Layer = Layer;
+	Parms.NewColor = InNewColor;
+	Parms.Layer = InLayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1382,7 +1382,7 @@ void UPaperTileMapComponent::SetLayerColor(const struct FLinearColor& NewColor, 
 // float                              CustomOffset                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bRebuildCollision                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperTileMapComponent::SetLayerCollision(int32 Layer, bool bHasCollision, bool bOverrideThickness, float CustomThickness, bool bOverrideOffset, float CustomOffset, bool bRebuildCollision)
+void UPaperTileMapComponent::SetLayerCollision(int32 InLayer, bool InbHasCollision, bool InbOverrideThickness, float InCustomThickness, bool InbOverrideOffset, float InCustomOffset, bool InbRebuildCollision)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1391,13 +1391,13 @@ void UPaperTileMapComponent::SetLayerCollision(int32 Layer, bool bHasCollision, 
 
 	Params::UPaperTileMapComponent_SetLayerCollision_Params Parms{};
 
-	Parms.Layer = Layer;
-	Parms.bHasCollision = bHasCollision;
-	Parms.bOverrideThickness = bOverrideThickness;
-	Parms.CustomThickness = CustomThickness;
-	Parms.bOverrideOffset = bOverrideOffset;
-	Parms.CustomOffset = CustomOffset;
-	Parms.bRebuildCollision = bRebuildCollision;
+	Parms.Layer = InLayer;
+	Parms.bHasCollision = InbHasCollision;
+	Parms.bOverrideThickness = InbOverrideThickness;
+	Parms.CustomThickness = InCustomThickness;
+	Parms.bOverrideOffset = InbOverrideOffset;
+	Parms.CustomOffset = InCustomOffset;
+	Parms.bRebuildCollision = InbRebuildCollision;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1416,7 +1416,7 @@ void UPaperTileMapComponent::SetLayerCollision(int32 Layer, bool bHasCollision, 
 // float                              Thickness                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bRebuildCollision                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperTileMapComponent::SetDefaultCollisionThickness(float Thickness, bool bRebuildCollision)
+void UPaperTileMapComponent::SetDefaultCollisionThickness(float InThickness, bool InbRebuildCollision)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1425,8 +1425,8 @@ void UPaperTileMapComponent::SetDefaultCollisionThickness(float Thickness, bool 
 
 	Params::UPaperTileMapComponent_SetDefaultCollisionThickness_Params Parms{};
 
-	Parms.Thickness = Thickness;
-	Parms.bRebuildCollision = bRebuildCollision;
+	Parms.Thickness = InThickness;
+	Parms.bRebuildCollision = InbRebuildCollision;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1445,7 +1445,7 @@ void UPaperTileMapComponent::SetDefaultCollisionThickness(float Thickness, bool 
 // int32                              NewWidthInTiles                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              NewHeightInTiles                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperTileMapComponent::ResizeMap(int32 NewWidthInTiles, int32 NewHeightInTiles)
+void UPaperTileMapComponent::ResizeMap(int32 InNewWidthInTiles, int32 InNewHeightInTiles)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1454,8 +1454,8 @@ void UPaperTileMapComponent::ResizeMap(int32 NewWidthInTiles, int32 NewHeightInT
 
 	Params::UPaperTileMapComponent_ResizeMap_Params Parms{};
 
-	Parms.NewWidthInTiles = NewWidthInTiles;
-	Parms.NewHeightInTiles = NewHeightInTiles;
+	Parms.NewWidthInTiles = InNewWidthInTiles;
+	Parms.NewHeightInTiles = InNewHeightInTiles;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1555,7 +1555,7 @@ void UPaperTileMapComponent::MakeTileMapEditable()
 // int32                              LayerIndex                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bWorldSpace                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperTileMapComponent::GetTilePolygon(int32 TileX, int32 TileY, TArray<struct FVector>* Points, int32 LayerIndex, bool bWorldSpace)
+void UPaperTileMapComponent::GetTilePolygon(int32 InTileX, int32 InTileY, TArray<struct FVector>* InPoints, int32 InLayerIndex, bool InbWorldSpace)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1564,10 +1564,10 @@ void UPaperTileMapComponent::GetTilePolygon(int32 TileX, int32 TileY, TArray<str
 
 	Params::UPaperTileMapComponent_GetTilePolygon_Params Parms{};
 
-	Parms.TileX = TileX;
-	Parms.TileY = TileY;
-	Parms.LayerIndex = LayerIndex;
-	Parms.bWorldSpace = bWorldSpace;
+	Parms.TileX = InTileX;
+	Parms.TileY = InTileY;
+	Parms.LayerIndex = InLayerIndex;
+	Parms.bWorldSpace = InbWorldSpace;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1577,8 +1577,8 @@ void UPaperTileMapComponent::GetTilePolygon(int32 TileX, int32 TileY, TArray<str
 
 	Func->FunctionFlags = Flags;
 
-	if (Points != nullptr)
-		*Points = Parms.Points;
+	if (InPoints != nullptr)
+		*InPoints = Parms.Points;
 
 }
 
@@ -1620,7 +1620,7 @@ struct FLinearColor UPaperTileMapComponent::GetTileMapColor()
 // bool                               bWorldSpace                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UPaperTileMapComponent::GetTileCornerPosition(int32 TileX, int32 TileY, int32 LayerIndex, bool bWorldSpace)
+struct FVector UPaperTileMapComponent::GetTileCornerPosition(int32 InTileX, int32 InTileY, int32 InLayerIndex, bool InbWorldSpace)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1629,10 +1629,10 @@ struct FVector UPaperTileMapComponent::GetTileCornerPosition(int32 TileX, int32 
 
 	Params::UPaperTileMapComponent_GetTileCornerPosition_Params Parms{};
 
-	Parms.TileX = TileX;
-	Parms.TileY = TileY;
-	Parms.LayerIndex = LayerIndex;
-	Parms.bWorldSpace = bWorldSpace;
+	Parms.TileX = InTileX;
+	Parms.TileY = InTileY;
+	Parms.LayerIndex = InLayerIndex;
+	Parms.bWorldSpace = InbWorldSpace;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1656,7 +1656,7 @@ struct FVector UPaperTileMapComponent::GetTileCornerPosition(int32 TileX, int32 
 // bool                               bWorldSpace                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UPaperTileMapComponent::GetTileCenterPosition(int32 TileX, int32 TileY, int32 LayerIndex, bool bWorldSpace)
+struct FVector UPaperTileMapComponent::GetTileCenterPosition(int32 InTileX, int32 InTileY, int32 InLayerIndex, bool InbWorldSpace)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1665,10 +1665,10 @@ struct FVector UPaperTileMapComponent::GetTileCenterPosition(int32 TileX, int32 
 
 	Params::UPaperTileMapComponent_GetTileCenterPosition_Params Parms{};
 
-	Parms.TileX = TileX;
-	Parms.TileY = TileY;
-	Parms.LayerIndex = LayerIndex;
-	Parms.bWorldSpace = bWorldSpace;
+	Parms.TileX = InTileX;
+	Parms.TileY = InTileY;
+	Parms.LayerIndex = InLayerIndex;
+	Parms.bWorldSpace = InbWorldSpace;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1691,7 +1691,7 @@ struct FVector UPaperTileMapComponent::GetTileCenterPosition(int32 TileX, int32 
 // int32                              Layer                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPaperTileInfo              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FPaperTileInfo UPaperTileMapComponent::GetTile(int32 X, int32 Y, int32 Layer)
+struct FPaperTileInfo UPaperTileMapComponent::GetTile(int32 InX, int32 InY, int32 InLayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1700,9 +1700,9 @@ struct FPaperTileInfo UPaperTileMapComponent::GetTile(int32 X, int32 Y, int32 La
 
 	Params::UPaperTileMapComponent_GetTile_Params Parms{};
 
-	Parms.X = X;
-	Parms.Y = Y;
-	Parms.Layer = Layer;
+	Parms.X = InX;
+	Parms.Y = InY;
+	Parms.Layer = InLayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1724,7 +1724,7 @@ struct FPaperTileInfo UPaperTileMapComponent::GetTile(int32 X, int32 Y, int32 La
 // int32                              MapHeight                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              NumLayers                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperTileMapComponent::GetMapSize(int32* MapWidth, int32* MapHeight, int32* NumLayers)
+void UPaperTileMapComponent::GetMapSize(int32* InMapWidth, int32* InMapHeight, int32* InNumLayers)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1742,14 +1742,14 @@ void UPaperTileMapComponent::GetMapSize(int32* MapWidth, int32* MapHeight, int32
 
 	Func->FunctionFlags = Flags;
 
-	if (MapWidth != nullptr)
-		*MapWidth = Parms.MapWidth;
+	if (InMapWidth != nullptr)
+		*InMapWidth = Parms.MapWidth;
 
-	if (MapHeight != nullptr)
-		*MapHeight = Parms.MapHeight;
+	if (InMapHeight != nullptr)
+		*InMapHeight = Parms.MapHeight;
 
-	if (NumLayers != nullptr)
-		*NumLayers = Parms.NumLayers;
+	if (InNumLayers != nullptr)
+		*InNumLayers = Parms.NumLayers;
 
 }
 
@@ -1760,7 +1760,7 @@ void UPaperTileMapComponent::GetMapSize(int32* MapWidth, int32* MapHeight, int32
 // int32                              Layer                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FLinearColor                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FLinearColor UPaperTileMapComponent::GetLayerColor(int32 Layer)
+struct FLinearColor UPaperTileMapComponent::GetLayerColor(int32 InLayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1769,7 +1769,7 @@ struct FLinearColor UPaperTileMapComponent::GetLayerColor(int32 Layer)
 
 	Params::UPaperTileMapComponent_GetLayerColor_Params Parms{};
 
-	Parms.Layer = Layer;
+	Parms.Layer = InLayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1794,7 +1794,7 @@ struct FLinearColor UPaperTileMapComponent::GetLayerColor(int32 Layer)
 // float                              PixelsPerUnrealUnit                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bCreateLayer                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperTileMapComponent::CreateNewTileMap(int32 MapWidth, int32 MapHeight, int32 TileWidth, int32 TileHeight, float PixelsPerUnrealUnit, bool bCreateLayer)
+void UPaperTileMapComponent::CreateNewTileMap(int32 InMapWidth, int32 InMapHeight, int32 InTileWidth, int32 InTileHeight, float InPixelsPerUnrealUnit, bool InbCreateLayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1803,12 +1803,12 @@ void UPaperTileMapComponent::CreateNewTileMap(int32 MapWidth, int32 MapHeight, i
 
 	Params::UPaperTileMapComponent_CreateNewTileMap_Params Parms{};
 
-	Parms.MapWidth = MapWidth;
-	Parms.MapHeight = MapHeight;
-	Parms.TileWidth = TileWidth;
-	Parms.TileHeight = TileHeight;
-	Parms.PixelsPerUnrealUnit = PixelsPerUnrealUnit;
-	Parms.bCreateLayer = bCreateLayer;
+	Parms.MapWidth = InMapWidth;
+	Parms.MapHeight = InMapHeight;
+	Parms.TileWidth = InTileWidth;
+	Parms.TileHeight = InTileHeight;
+	Parms.PixelsPerUnrealUnit = InPixelsPerUnrealUnit;
+	Parms.bCreateLayer = InbCreateLayer;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1854,7 +1854,7 @@ class UPaperTileLayer* UPaperTileMapComponent::AddNewLayer()
 // Parameters:
 // struct FLinearColor                NewColor                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPaperTerrainComponent::SetTerrainColor(const struct FLinearColor& NewColor)
+void UPaperTerrainComponent::SetTerrainColor(const struct FLinearColor& InNewColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1863,7 +1863,7 @@ void UPaperTerrainComponent::SetTerrainColor(const struct FLinearColor& NewColor
 
 	Params::UPaperTerrainComponent_SetTerrainColor_Params Parms{};
 
-	Parms.NewColor = NewColor;
+	Parms.NewColor = InNewColor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1886,7 +1886,7 @@ void UPaperTerrainComponent::SetTerrainColor(const struct FLinearColor& NewColor
 // bool                               bFlipD                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPaperTileInfo              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FPaperTileInfo UTileMapBlueprintLibrary::MakeTile(int32 TileIndex, class UPaperTileSet* TileSet, bool bFlipH, bool bFlipV, bool bFlipD)
+struct FPaperTileInfo UTileMapBlueprintLibrary::MakeTile(int32 InTileIndex, class UPaperTileSet* InTileSet, bool InbFlipH, bool InbFlipV, bool InbFlipD)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1895,11 +1895,11 @@ struct FPaperTileInfo UTileMapBlueprintLibrary::MakeTile(int32 TileIndex, class 
 
 	Params::UTileMapBlueprintLibrary_MakeTile_Params Parms{};
 
-	Parms.TileIndex = TileIndex;
-	Parms.TileSet = TileSet;
-	Parms.bFlipH = bFlipH;
-	Parms.bFlipV = bFlipV;
-	Parms.bFlipD = bFlipD;
+	Parms.TileIndex = InTileIndex;
+	Parms.TileSet = InTileSet;
+	Parms.bFlipH = InbFlipH;
+	Parms.bFlipV = InbFlipV;
+	Parms.bFlipD = InbFlipD;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1920,7 +1920,7 @@ struct FPaperTileInfo UTileMapBlueprintLibrary::MakeTile(int32 TileIndex, class 
 // struct FPaperTileInfo              Tile                                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName UTileMapBlueprintLibrary::GetTileUserData(const struct FPaperTileInfo& Tile)
+class FName UTileMapBlueprintLibrary::GetTileUserData(const struct FPaperTileInfo& InTile)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1929,7 +1929,7 @@ class FName UTileMapBlueprintLibrary::GetTileUserData(const struct FPaperTileInf
 
 	Params::UTileMapBlueprintLibrary_GetTileUserData_Params Parms{};
 
-	Parms.Tile = Tile;
+	Parms.Tile = InTile;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1950,7 +1950,7 @@ class FName UTileMapBlueprintLibrary::GetTileUserData(const struct FPaperTileInf
 // struct FPaperTileInfo              Tile                                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform UTileMapBlueprintLibrary::GetTileTransform(const struct FPaperTileInfo& Tile)
+struct FTransform UTileMapBlueprintLibrary::GetTileTransform(const struct FPaperTileInfo& InTile)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1959,7 +1959,7 @@ struct FTransform UTileMapBlueprintLibrary::GetTileTransform(const struct FPaper
 
 	Params::UTileMapBlueprintLibrary_GetTileTransform_Params Parms{};
 
-	Parms.Tile = Tile;
+	Parms.Tile = InTile;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1984,7 +1984,7 @@ struct FTransform UTileMapBlueprintLibrary::GetTileTransform(const struct FPaper
 // bool                               bFlipV                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bFlipD                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTileMapBlueprintLibrary::BreakTile(const struct FPaperTileInfo& Tile, int32* TileIndex, class UPaperTileSet** TileSet, bool* bFlipH, bool* bFlipV, bool* bFlipD)
+void UTileMapBlueprintLibrary::BreakTile(const struct FPaperTileInfo& InTile, int32* InTileIndex, class UPaperTileSet** InTileSet, bool* InbFlipH, bool* InbFlipV, bool* InbFlipD)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1993,7 +1993,7 @@ void UTileMapBlueprintLibrary::BreakTile(const struct FPaperTileInfo& Tile, int3
 
 	Params::UTileMapBlueprintLibrary_BreakTile_Params Parms{};
 
-	Parms.Tile = Tile;
+	Parms.Tile = InTile;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2003,20 +2003,20 @@ void UTileMapBlueprintLibrary::BreakTile(const struct FPaperTileInfo& Tile, int3
 
 	Func->FunctionFlags = Flags;
 
-	if (TileIndex != nullptr)
-		*TileIndex = Parms.TileIndex;
+	if (InTileIndex != nullptr)
+		*InTileIndex = Parms.TileIndex;
 
-	if (TileSet != nullptr)
-		*TileSet = Parms.TileSet;
+	if (InTileSet != nullptr)
+		*InTileSet = Parms.TileSet;
 
-	if (bFlipH != nullptr)
-		*bFlipH = Parms.bFlipH;
+	if (InbFlipH != nullptr)
+		*InbFlipH = Parms.bFlipH;
 
-	if (bFlipV != nullptr)
-		*bFlipV = Parms.bFlipV;
+	if (InbFlipV != nullptr)
+		*InbFlipV = Parms.bFlipV;
 
-	if (bFlipD != nullptr)
-		*bFlipD = Parms.bFlipD;
+	if (InbFlipD != nullptr)
+		*InbFlipD = Parms.bFlipD;
 
 }
 

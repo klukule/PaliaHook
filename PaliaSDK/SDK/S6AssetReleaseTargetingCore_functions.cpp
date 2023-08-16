@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -47,7 +47,7 @@ void US6ReleaseVersioningSettings::SanitizeReleaseVersions()
 // struct FS6ReleaseVersionSpecificationOutReleaseVersion                                                (Parm, OutParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6ReleaseVersioningLibrary::TryParse(const class FString& VersionString, struct FS6ReleaseVersionSpecification* OutReleaseVersion)
+bool US6ReleaseVersioningLibrary::TryParse(const class FString& InVersionString, struct FS6ReleaseVersionSpecification* InOutReleaseVersion)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ bool US6ReleaseVersioningLibrary::TryParse(const class FString& VersionString, s
 
 	Params::US6ReleaseVersioningLibrary_TryParse_Params Parms{};
 
-	Parms.VersionString = VersionString;
+	Parms.VersionString = InVersionString;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -66,8 +66,8 @@ bool US6ReleaseVersioningLibrary::TryParse(const class FString& VersionString, s
 
 	Func->FunctionFlags = Flags;
 
-	if (OutReleaseVersion != nullptr)
-		*OutReleaseVersion = Parms.OutReleaseVersion;
+	if (InOutReleaseVersion != nullptr)
+		*InOutReleaseVersion = Parms.OutReleaseVersion;
 
 	return Parms.ReturnValue;
 
@@ -80,7 +80,7 @@ bool US6ReleaseVersioningLibrary::TryParse(const class FString& VersionString, s
 // struct FS6ReleaseVersionSpecificationValue                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString US6ReleaseVersioningLibrary::ToString(struct FS6ReleaseVersionSpecification& Value)
+class FString US6ReleaseVersioningLibrary::ToString(struct FS6ReleaseVersionSpecification& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -89,7 +89,7 @@ class FString US6ReleaseVersioningLibrary::ToString(struct FS6ReleaseVersionSpec
 
 	Params::US6ReleaseVersioningLibrary_ToString_Params Parms{};
 
-	Parms.Value = Value;
+	Parms.Value = InValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -111,7 +111,7 @@ class FString US6ReleaseVersioningLibrary::ToString(struct FS6ReleaseVersionSpec
 // struct FS6ReleaseVersionSpecificationB                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6ReleaseVersioningLibrary::NotEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B)
+bool US6ReleaseVersioningLibrary::NotEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -120,8 +120,8 @@ bool US6ReleaseVersioningLibrary::NotEqual(const struct FS6ReleaseVersionSpecifi
 
 	Params::US6ReleaseVersioningLibrary_NotEqual_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -143,7 +143,7 @@ bool US6ReleaseVersioningLibrary::NotEqual(const struct FS6ReleaseVersionSpecifi
 // struct FS6ReleaseVersionSpecificationB                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FS6ReleaseVersionSpecificationReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FS6ReleaseVersionSpecification US6ReleaseVersioningLibrary::Min(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B)
+struct FS6ReleaseVersionSpecification US6ReleaseVersioningLibrary::Min(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -152,8 +152,8 @@ struct FS6ReleaseVersionSpecification US6ReleaseVersioningLibrary::Min(const str
 
 	Params::US6ReleaseVersioningLibrary_Min_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -175,7 +175,7 @@ struct FS6ReleaseVersionSpecification US6ReleaseVersioningLibrary::Min(const str
 // struct FS6ReleaseVersionSpecificationB                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FS6ReleaseVersionSpecificationReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FS6ReleaseVersionSpecification US6ReleaseVersioningLibrary::Max(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B)
+struct FS6ReleaseVersionSpecification US6ReleaseVersioningLibrary::Max(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -184,8 +184,8 @@ struct FS6ReleaseVersionSpecification US6ReleaseVersioningLibrary::Max(const str
 
 	Params::US6ReleaseVersioningLibrary_Max_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -207,7 +207,7 @@ struct FS6ReleaseVersionSpecification US6ReleaseVersioningLibrary::Max(const str
 // struct FS6ReleaseVersionSpecificationB                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6ReleaseVersioningLibrary::LessEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B)
+bool US6ReleaseVersioningLibrary::LessEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -216,8 +216,8 @@ bool US6ReleaseVersioningLibrary::LessEqual(const struct FS6ReleaseVersionSpecif
 
 	Params::US6ReleaseVersioningLibrary_LessEqual_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -239,7 +239,7 @@ bool US6ReleaseVersioningLibrary::LessEqual(const struct FS6ReleaseVersionSpecif
 // struct FS6ReleaseVersionSpecificationB                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6ReleaseVersioningLibrary::Less(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B)
+bool US6ReleaseVersioningLibrary::Less(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -248,8 +248,8 @@ bool US6ReleaseVersioningLibrary::Less(const struct FS6ReleaseVersionSpecificati
 
 	Params::US6ReleaseVersioningLibrary_Less_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -270,7 +270,7 @@ bool US6ReleaseVersioningLibrary::Less(const struct FS6ReleaseVersionSpecificati
 // struct FS6ReleaseVersionSpecificationValue                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6ReleaseVersioningLibrary::IsValid(struct FS6ReleaseVersionSpecification& Value)
+bool US6ReleaseVersioningLibrary::IsValid(struct FS6ReleaseVersionSpecification& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -279,7 +279,7 @@ bool US6ReleaseVersioningLibrary::IsValid(struct FS6ReleaseVersionSpecification&
 
 	Params::US6ReleaseVersioningLibrary_IsValid_Params Parms{};
 
-	Parms.Value = Value;
+	Parms.Value = InValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -301,7 +301,7 @@ bool US6ReleaseVersioningLibrary::IsValid(struct FS6ReleaseVersionSpecification&
 // struct FS6ReleaseVersionSpecificationB                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6ReleaseVersioningLibrary::GreaterEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B)
+bool US6ReleaseVersioningLibrary::GreaterEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -310,8 +310,8 @@ bool US6ReleaseVersioningLibrary::GreaterEqual(const struct FS6ReleaseVersionSpe
 
 	Params::US6ReleaseVersioningLibrary_GreaterEqual_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -333,7 +333,7 @@ bool US6ReleaseVersioningLibrary::GreaterEqual(const struct FS6ReleaseVersionSpe
 // struct FS6ReleaseVersionSpecificationB                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6ReleaseVersioningLibrary::Greater(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B)
+bool US6ReleaseVersioningLibrary::Greater(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -342,8 +342,8 @@ bool US6ReleaseVersioningLibrary::Greater(const struct FS6ReleaseVersionSpecific
 
 	Params::US6ReleaseVersioningLibrary_Greater_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -449,7 +449,7 @@ struct FS6ReleaseVersionSpecification US6ReleaseVersioningLibrary::GetCurrentRel
 // struct FS6ReleaseVersionSpecificationB                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6ReleaseVersioningLibrary::EqualEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B)
+bool US6ReleaseVersioningLibrary::EqualEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB)
 {
 	static class UFunction* Func = nullptr;
 
@@ -458,8 +458,8 @@ bool US6ReleaseVersioningLibrary::EqualEqual(const struct FS6ReleaseVersionSpeci
 
 	Params::US6ReleaseVersioningLibrary_EqualEqual_Params Parms{};
 
-	Parms.A = A;
-	Parms.B = B;
+	Parms.A = InA;
+	Parms.B = InB;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -21,7 +21,7 @@ namespace SDK
 // struct FChaosPhysicsCollisionInfo  PhysicsCollision                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FHitResult                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-struct FHitResult UChaosSolverEngineBlueprintLibrary::ConvertPhysicsCollisionToHitResult(struct FChaosPhysicsCollisionInfo& PhysicsCollision)
+struct FHitResult UChaosSolverEngineBlueprintLibrary::ConvertPhysicsCollisionToHitResult(struct FChaosPhysicsCollisionInfo& InPhysicsCollision)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +30,7 @@ struct FHitResult UChaosSolverEngineBlueprintLibrary::ConvertPhysicsCollisionToH
 
 	Params::UChaosSolverEngineBlueprintLibrary_ConvertPhysicsCollisionToHitResult_Params Parms{};
 
-	Parms.PhysicsCollision = PhysicsCollision;
+	Parms.PhysicsCollision = InPhysicsCollision;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -50,7 +50,7 @@ struct FHitResult UChaosSolverEngineBlueprintLibrary::ConvertPhysicsCollisionToH
 // Parameters:
 // bool                               bActive                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AChaosSolverActor::SetSolverActive(bool bActive)
+void AChaosSolverActor::SetSolverActive(bool InbActive)
 {
 	static class UFunction* Func = nullptr;
 
@@ -59,7 +59,7 @@ void AChaosSolverActor::SetSolverActive(bool bActive)
 
 	Params::AChaosSolverActor_SetSolverActive_Params Parms{};
 
-	Parms.bActive = bActive;
+	Parms.bActive = InbActive;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

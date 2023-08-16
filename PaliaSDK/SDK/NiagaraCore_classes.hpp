@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NiagaraMergeable");
-
+		static class UClass* Clss = UObject::FindClassFast("NiagaraMergeable");
 		return Clss;
 	}
 
@@ -38,11 +34,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("NiagaraDataInterfaceBase");
-
+		static class UClass* Clss = UObject::FindClassFast("NiagaraDataInterfaceBase");
 		return Clss;
 	}
 

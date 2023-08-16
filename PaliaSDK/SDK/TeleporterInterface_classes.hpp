@@ -20,16 +20,12 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("TeleporterInterface_C");
-
+		static class UClass* Clss = UObject::FindClassFast("TeleporterInterface_C");
 		return Clss;
 	}
 
-	void GetTeleportEntrance(class UTeleportFromComponent** TeleportEntrance);
-	void GetTeleporterExitNode(class UTeleportToComponent** TeleporterExitNode);
+	void GetTeleportEntrance(class UTeleportFromComponent** InTeleportEntrance);
+	void GetTeleporterExitNode(class UTeleportToComponent** InTeleporterExitNode);
 };
 
 }

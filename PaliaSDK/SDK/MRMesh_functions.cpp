@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -24,7 +24,7 @@ namespace SDK
 // TArray<struct FVector>             Normals                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<float>                      Confidence                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UMockDataMeshTrackerComponent::OnMockDataMeshTrackerUpdated__DelegateSignature(int32 Index, TArray<struct FVector>& Vertices, TArray<int32>& Triangles, TArray<struct FVector>& Normals, TArray<float>& Confidence)
+void UMockDataMeshTrackerComponent::OnMockDataMeshTrackerUpdated__DelegateSignature(int32 InIndex, TArray<struct FVector>& InVertices, TArray<int32>& InTriangles, TArray<struct FVector>& InNormals, TArray<float>& InConfidence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -33,11 +33,11 @@ void UMockDataMeshTrackerComponent::OnMockDataMeshTrackerUpdated__DelegateSignat
 
 	Params::UMockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature_Params Parms{};
 
-	Parms.Index = Index;
-	Parms.Vertices = Vertices;
-	Parms.Triangles = Triangles;
-	Parms.Normals = Normals;
-	Parms.Confidence = Confidence;
+	Parms.Index = InIndex;
+	Parms.Vertices = InVertices;
+	Parms.Triangles = InTriangles;
+	Parms.Normals = InNormals;
+	Parms.Confidence = InConfidence;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -49,7 +49,7 @@ void UMockDataMeshTrackerComponent::OnMockDataMeshTrackerUpdated__DelegateSignat
 // Parameters:
 // class UMRMeshComponent*            InMRMeshPtr                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMockDataMeshTrackerComponent::DisconnectMRMesh(class UMRMeshComponent* InMRMeshPtr)
+void UMockDataMeshTrackerComponent::DisconnectMRMesh(class UMRMeshComponent* InInMRMeshPtr)
 {
 	static class UFunction* Func = nullptr;
 
@@ -58,7 +58,7 @@ void UMockDataMeshTrackerComponent::DisconnectMRMesh(class UMRMeshComponent* InM
 
 	Params::UMockDataMeshTrackerComponent_DisconnectMRMesh_Params Parms{};
 
-	Parms.InMRMeshPtr = InMRMeshPtr;
+	Parms.InMRMeshPtr = InInMRMeshPtr;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -76,7 +76,7 @@ void UMockDataMeshTrackerComponent::DisconnectMRMesh(class UMRMeshComponent* InM
 // Parameters:
 // class UMRMeshComponent*            InMRMeshPtr                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMockDataMeshTrackerComponent::ConnectMRMesh(class UMRMeshComponent* InMRMeshPtr)
+void UMockDataMeshTrackerComponent::ConnectMRMesh(class UMRMeshComponent* InInMRMeshPtr)
 {
 	static class UFunction* Func = nullptr;
 
@@ -85,7 +85,7 @@ void UMockDataMeshTrackerComponent::ConnectMRMesh(class UMRMeshComponent* InMRMe
 
 	Params::UMockDataMeshTrackerComponent_ConnectMRMesh_Params Parms{};
 
-	Parms.InMRMeshPtr = InMRMeshPtr;
+	Parms.InMRMeshPtr = InInMRMeshPtr;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -103,7 +103,7 @@ void UMockDataMeshTrackerComponent::ConnectMRMesh(class UMRMeshComponent* InMRMe
 // Parameters:
 // class UMaterialInterface*          InMaterial                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMRMeshComponent::SetWireframeMaterial(class UMaterialInterface* InMaterial)
+void UMRMeshComponent::SetWireframeMaterial(class UMaterialInterface* InInMaterial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -112,7 +112,7 @@ void UMRMeshComponent::SetWireframeMaterial(class UMaterialInterface* InMaterial
 
 	Params::UMRMeshComponent_SetWireframeMaterial_Params Parms{};
 
-	Parms.InMaterial = InMaterial;
+	Parms.InMaterial = InInMaterial;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -130,7 +130,7 @@ void UMRMeshComponent::SetWireframeMaterial(class UMaterialInterface* InMaterial
 // Parameters:
 // struct FLinearColor                InColor                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMRMeshComponent::SetWireframeColor(struct FLinearColor& InColor)
+void UMRMeshComponent::SetWireframeColor(struct FLinearColor& InInColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -139,7 +139,7 @@ void UMRMeshComponent::SetWireframeColor(struct FLinearColor& InColor)
 
 	Params::UMRMeshComponent_SetWireframeColor_Params Parms{};
 
-	Parms.InColor = InColor;
+	Parms.InColor = InInColor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -157,7 +157,7 @@ void UMRMeshComponent::SetWireframeColor(struct FLinearColor& InColor)
 // Parameters:
 // bool                               bUseWireframe                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMRMeshComponent::SetUseWireframe(bool bUseWireframe)
+void UMRMeshComponent::SetUseWireframe(bool InbUseWireframe)
 {
 	static class UFunction* Func = nullptr;
 
@@ -166,7 +166,7 @@ void UMRMeshComponent::SetUseWireframe(bool bUseWireframe)
 
 	Params::UMRMeshComponent_SetUseWireframe_Params Parms{};
 
-	Parms.bUseWireframe = bUseWireframe;
+	Parms.bUseWireframe = InbUseWireframe;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -184,7 +184,7 @@ void UMRMeshComponent::SetUseWireframe(bool bUseWireframe)
 // Parameters:
 // bool                               bEnable                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMRMeshComponent::SetEnableMeshOcclusion(bool bEnable)
+void UMRMeshComponent::SetEnableMeshOcclusion(bool InbEnable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -193,7 +193,7 @@ void UMRMeshComponent::SetEnableMeshOcclusion(bool bEnable)
 
 	Params::UMRMeshComponent_SetEnableMeshOcclusion_Params Parms{};
 
-	Parms.bEnable = bEnable;
+	Parms.bEnable = InbEnable;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -554,7 +554,7 @@ void UMeshReconstructorBase::DisconnectMRMesh()
 // Parameters:
 // class UMRMeshComponent*            Mesh                                                             (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMeshReconstructorBase::ConnectMRMesh(class UMRMeshComponent* Mesh)
+void UMeshReconstructorBase::ConnectMRMesh(class UMRMeshComponent* InMesh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -563,7 +563,7 @@ void UMeshReconstructorBase::ConnectMRMesh(class UMRMeshComponent* Mesh)
 
 	Params::UMeshReconstructorBase_ConnectMRMesh_Params Parms{};
 
-	Parms.Mesh = Mesh;
+	Parms.Mesh = InMesh;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

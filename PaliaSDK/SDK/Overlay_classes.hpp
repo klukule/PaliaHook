@@ -20,11 +20,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("Overlays");
-
+		static class UClass* Clss = UObject::FindClassFast("Overlays");
 		return Clss;
 	}
 
@@ -39,11 +35,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BasicOverlays");
-
+		static class UClass* Clss = UObject::FindClassFast("BasicOverlays");
 		return Clss;
 	}
 
@@ -59,11 +51,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("LocalizedOverlays");
-
+		static class UClass* Clss = UObject::FindClassFast("LocalizedOverlays");
 		return Clss;
 	}
 

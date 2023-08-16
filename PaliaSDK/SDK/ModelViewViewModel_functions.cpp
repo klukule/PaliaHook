@@ -2,11 +2,11 @@
 
 // Dumped with Dumper-7!
 
+#include "SDK.hpp"
+
 #ifdef _MSC_VER
 	#pragma pack(push, 0x01)
 #endif
-
-#include "SDK.hpp"
 
 namespace SDK
 {
@@ -22,7 +22,7 @@ namespace SDK
 // int32                              NewValue                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMVVMViewModelBase::K2_SetPropertyValue(int32& OldValue, int32& NewValue)
+bool UMVVMViewModelBase::K2_SetPropertyValue(int32& InOldValue, int32& InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,8 +31,8 @@ bool UMVVMViewModelBase::K2_SetPropertyValue(int32& OldValue, int32& NewValue)
 
 	Params::UMVVMViewModelBase_K2_SetPropertyValue_Params Parms{};
 
-	Parms.OldValue = OldValue;
-	Parms.NewValue = NewValue;
+	Parms.OldValue = InOldValue;
+	Parms.NewValue = InNewValue;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -53,7 +53,7 @@ bool UMVVMViewModelBase::K2_SetPropertyValue(int32& OldValue, int32& NewValue)
 // struct FFieldNotificationId        FieldId                                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 Delegate                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMVVMViewModelBase::K2_RemoveFieldValueChangedDelegate(const struct FFieldNotificationId& FieldId, FDelegateProperty_ Delegate)
+void UMVVMViewModelBase::K2_RemoveFieldValueChangedDelegate(const struct FFieldNotificationId& InFieldId, FDelegateProperty_ InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -62,8 +62,8 @@ void UMVVMViewModelBase::K2_RemoveFieldValueChangedDelegate(const struct FFieldN
 
 	Params::UMVVMViewModelBase_K2_RemoveFieldValueChangedDelegate_Params Parms{};
 
-	Parms.FieldId = FieldId;
-	Parms.Delegate = Delegate;
+	Parms.FieldId = InFieldId;
+	Parms.Delegate = InDelegate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -81,7 +81,7 @@ void UMVVMViewModelBase::K2_RemoveFieldValueChangedDelegate(const struct FFieldN
 // Parameters:
 // struct FFieldNotificationId        FieldId                                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMVVMViewModelBase::K2_BroadcastFieldValueChanged(const struct FFieldNotificationId& FieldId)
+void UMVVMViewModelBase::K2_BroadcastFieldValueChanged(const struct FFieldNotificationId& InFieldId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,7 +90,7 @@ void UMVVMViewModelBase::K2_BroadcastFieldValueChanged(const struct FFieldNotifi
 
 	Params::UMVVMViewModelBase_K2_BroadcastFieldValueChanged_Params Parms{};
 
-	Parms.FieldId = FieldId;
+	Parms.FieldId = InFieldId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -109,7 +109,7 @@ void UMVVMViewModelBase::K2_BroadcastFieldValueChanged(const struct FFieldNotifi
 // struct FFieldNotificationId        FieldId                                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 Delegate                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMVVMViewModelBase::K2_AddFieldValueChangedDelegate(const struct FFieldNotificationId& FieldId, FDelegateProperty_ Delegate)
+void UMVVMViewModelBase::K2_AddFieldValueChangedDelegate(const struct FFieldNotificationId& InFieldId, FDelegateProperty_ InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -118,8 +118,8 @@ void UMVVMViewModelBase::K2_AddFieldValueChangedDelegate(const struct FFieldNoti
 
 	Params::UMVVMViewModelBase_K2_AddFieldValueChangedDelegate_Params Parms{};
 
-	Parms.FieldId = FieldId;
-	Parms.Delegate = Delegate;
+	Parms.FieldId = InFieldId;
+	Parms.Delegate = InDelegate;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -138,7 +138,7 @@ void UMVVMViewModelBase::K2_AddFieldValueChangedDelegate(const struct FFieldNoti
 // class UUserWidget*                 UserWidget                                                       (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMVVMView*                   ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMVVMView* UMVVMSubsystem::GetViewFromUserWidget(class UUserWidget* UserWidget)
+class UMVVMView* UMVVMSubsystem::GetViewFromUserWidget(class UUserWidget* InUserWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -147,7 +147,7 @@ class UMVVMView* UMVVMSubsystem::GetViewFromUserWidget(class UUserWidget* UserWi
 
 	Params::UMVVMSubsystem_GetViewFromUserWidget_Params Parms{};
 
-	Parms.UserWidget = UserWidget;
+	Parms.UserWidget = InUserWidget;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -197,7 +197,7 @@ class UMVVMViewModelCollectionObject* UMVVMSubsystem::GetGlobalViewModelCollecti
 // class UClass*                      Accessor                                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FMVVMAvailableBinding>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FMVVMAvailableBinding> UMVVMSubsystem::GetAvailableBindings(class UClass* Class, class UClass* Accessor)
+TArray<struct FMVVMAvailableBinding> UMVVMSubsystem::GetAvailableBindings(class UClass* InClass, class UClass* InAccessor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -206,8 +206,8 @@ TArray<struct FMVVMAvailableBinding> UMVVMSubsystem::GetAvailableBindings(class 
 
 	Params::UMVVMSubsystem_GetAvailableBindings_Params Parms{};
 
-	Parms.Class = Class;
-	Parms.Accessor = Accessor;
+	Parms.Class = InClass;
+	Parms.Accessor = InAccessor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -230,7 +230,7 @@ TArray<struct FMVVMAvailableBinding> UMVVMSubsystem::GetAvailableBindings(class 
 // class UClass*                      Accessor                                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMVVMAvailableBinding       ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FMVVMAvailableBinding UMVVMSubsystem::GetAvailableBinding(class UClass* Class, const struct FMVVMBindingName& BindingName, class UClass* Accessor)
+struct FMVVMAvailableBinding UMVVMSubsystem::GetAvailableBinding(class UClass* InClass, const struct FMVVMBindingName& InBindingName, class UClass* InAccessor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -239,9 +239,9 @@ struct FMVVMAvailableBinding UMVVMSubsystem::GetAvailableBinding(class UClass* C
 
 	Params::UMVVMSubsystem_GetAvailableBinding_Params Parms{};
 
-	Parms.Class = Class;
-	Parms.BindingName = BindingName;
-	Parms.Accessor = Accessor;
+	Parms.Class = InClass;
+	Parms.BindingName = InBindingName;
+	Parms.Accessor = InAccessor;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -263,7 +263,7 @@ struct FMVVMAvailableBinding UMVVMSubsystem::GetAvailableBinding(class UClass* C
 // class UWidget*                     ViewWidget                                                       (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMVVMSubsystem::DoesWidgetTreeContainedWidget(class UWidgetTree* WidgetTree, class UWidget* ViewWidget)
+bool UMVVMSubsystem::DoesWidgetTreeContainedWidget(class UWidgetTree* InWidgetTree, class UWidget* InViewWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -272,8 +272,8 @@ bool UMVVMSubsystem::DoesWidgetTreeContainedWidget(class UWidgetTree* WidgetTree
 
 	Params::UMVVMSubsystem_DoesWidgetTreeContainedWidget_Params Parms{};
 
-	Parms.WidgetTree = WidgetTree;
-	Parms.ViewWidget = ViewWidget;
+	Parms.WidgetTree = InWidgetTree;
+	Parms.ViewWidget = InViewWidget;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -294,7 +294,7 @@ bool UMVVMSubsystem::DoesWidgetTreeContainedWidget(class UWidgetTree* WidgetTree
 // struct FMVVMViewModelContext       Context                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMVVMViewModelCollectionObject::RemoveViewModel(const struct FMVVMViewModelContext& Context)
+bool UMVVMViewModelCollectionObject::RemoveViewModel(const struct FMVVMViewModelContext& InContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -303,7 +303,7 @@ bool UMVVMViewModelCollectionObject::RemoveViewModel(const struct FMVVMViewModel
 
 	Params::UMVVMViewModelCollectionObject_RemoveViewModel_Params Parms{};
 
-	Parms.Context = Context;
+	Parms.Context = InContext;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -324,7 +324,7 @@ bool UMVVMViewModelCollectionObject::RemoveViewModel(const struct FMVVMViewModel
 // class UMVVMViewModelBase*          ViewModel                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMVVMViewModelCollectionObject::RemoveAllViewModelInstance(class UMVVMViewModelBase* ViewModel)
+int32 UMVVMViewModelCollectionObject::RemoveAllViewModelInstance(class UMVVMViewModelBase* InViewModel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -333,7 +333,7 @@ int32 UMVVMViewModelCollectionObject::RemoveAllViewModelInstance(class UMVVMView
 
 	Params::UMVVMViewModelCollectionObject_RemoveAllViewModelInstance_Params Parms{};
 
-	Parms.ViewModel = ViewModel;
+	Parms.ViewModel = InViewModel;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -354,7 +354,7 @@ int32 UMVVMViewModelCollectionObject::RemoveAllViewModelInstance(class UMVVMView
 // struct FMVVMViewModelContext       Context                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // class UMVVMViewModelBase*          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMVVMViewModelBase* UMVVMViewModelCollectionObject::FindViewModelInstance(const struct FMVVMViewModelContext& Context)
+class UMVVMViewModelBase* UMVVMViewModelCollectionObject::FindViewModelInstance(const struct FMVVMViewModelContext& InContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -363,7 +363,7 @@ class UMVVMViewModelBase* UMVVMViewModelCollectionObject::FindViewModelInstance(
 
 	Params::UMVVMViewModelCollectionObject_FindViewModelInstance_Params Parms{};
 
-	Parms.Context = Context;
+	Parms.Context = InContext;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -385,7 +385,7 @@ class UMVVMViewModelBase* UMVVMViewModelCollectionObject::FindViewModelInstance(
 // class UMVVMViewModelBase*          ViewModel                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMVVMViewModelCollectionObject::AddViewModelInstance(const struct FMVVMViewModelContext& Context, class UMVVMViewModelBase* ViewModel)
+bool UMVVMViewModelCollectionObject::AddViewModelInstance(const struct FMVVMViewModelContext& InContext, class UMVVMViewModelBase* InViewModel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -394,8 +394,8 @@ bool UMVVMViewModelCollectionObject::AddViewModelInstance(const struct FMVVMView
 
 	Params::UMVVMViewModelCollectionObject_AddViewModelInstance_Params Parms{};
 
-	Parms.Context = Context;
-	Parms.ViewModel = ViewModel;
+	Parms.Context = InContext;
+	Parms.ViewModel = InViewModel;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -417,7 +417,7 @@ bool UMVVMViewModelCollectionObject::AddViewModelInstance(const struct FMVVMView
 // class UMVVMViewModelBase*          ViewModel                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMVVMView::SetViewModel(class FName ViewModelName, class UMVVMViewModelBase* ViewModel)
+bool UMVVMView::SetViewModel(class FName InViewModelName, class UMVVMViewModelBase* InViewModel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -426,8 +426,8 @@ bool UMVVMView::SetViewModel(class FName ViewModelName, class UMVVMViewModelBase
 
 	Params::UMVVMView_SetViewModel_Params Parms{};
 
-	Parms.ViewModelName = ViewModelName;
-	Parms.ViewModel = ViewModel;
+	Parms.ViewModelName = InViewModelName;
+	Parms.ViewModel = InViewModel;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

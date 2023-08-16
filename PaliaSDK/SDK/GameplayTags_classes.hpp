@@ -20,44 +20,40 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("BlueprintGameplayTagLibrary");
-
+		static class UClass* Clss = UObject::FindClassFast("BlueprintGameplayTagLibrary");
 		return Clss;
 	}
 
-	bool RemoveGameplayTag(struct FGameplayTagContainer& TagContainer, const struct FGameplayTag& Tag);
-	bool NotEqual_TagTag(const struct FGameplayTag& A, const class FString& B);
-	bool NotEqual_TagContainerTagContainer(const struct FGameplayTagContainer& A, const class FString& B);
-	bool NotEqual_GameplayTagContainer(struct FGameplayTagContainer& A, struct FGameplayTagContainer& B);
-	bool NotEqual_GameplayTag(const struct FGameplayTag& A, const struct FGameplayTag& B);
-	bool MatchesTag(const struct FGameplayTag& TagOne, const struct FGameplayTag& TagTwo, bool bExactMatch);
-	bool MatchesAnyTags(const struct FGameplayTag& TagOne, struct FGameplayTagContainer& OtherContainer, bool bExactMatch);
-	struct FGameplayTagContainer MakeLiteralGameplayTagContainer(const struct FGameplayTagContainer& Value);
-	struct FGameplayTag MakeLiteralGameplayTag(const struct FGameplayTag& Value);
-	struct FGameplayTagQuery MakeGameplayTagQuery(const struct FGameplayTagQuery& TagQuery);
-	struct FGameplayTagContainer MakeGameplayTagContainerFromTag(const struct FGameplayTag& SingleTag);
-	struct FGameplayTagContainer MakeGameplayTagContainerFromArray(TArray<struct FGameplayTag>& GameplayTags);
-	bool IsTagQueryEmpty(struct FGameplayTagQuery& TagQuery);
-	bool IsGameplayTagValid(const struct FGameplayTag& GameplayTag);
-	bool HasTag(struct FGameplayTagContainer& TagContainer, const struct FGameplayTag& Tag, bool bExactMatch);
-	bool HasAnyTags(struct FGameplayTagContainer& TagContainer, struct FGameplayTagContainer& OtherContainer, bool bExactMatch);
-	bool HasAllTags(struct FGameplayTagContainer& TagContainer, struct FGameplayTagContainer& OtherContainer, bool bExactMatch);
-	bool HasAllMatchingGameplayTags(TScriptInterface<class IGameplayTagAssetInterface> TagContainerInterface, struct FGameplayTagContainer& OtherContainer);
-	class FName GetTagName(struct FGameplayTag& GameplayTag);
-	int32 GetNumGameplayTagsInContainer(struct FGameplayTagContainer& TagContainer);
-	class FString GetDebugStringFromGameplayTagContainer(struct FGameplayTagContainer& TagContainer);
-	class FString GetDebugStringFromGameplayTag(const struct FGameplayTag& GameplayTag);
-	void GetAllActorsOfClassMatchingTagQuery(class UObject* WorldContextObject, TSubclassOf<class AActor> ActorClass, struct FGameplayTagQuery& GameplayTagQuery, TArray<class AActor*>* OutActors);
-	bool EqualEqual_GameplayTagContainer(struct FGameplayTagContainer& A, struct FGameplayTagContainer& B);
-	bool EqualEqual_GameplayTag(const struct FGameplayTag& A, const struct FGameplayTag& B);
-	bool DoesTagAssetInterfaceHaveTag(TScriptInterface<class IGameplayTagAssetInterface> TagContainerInterface, const struct FGameplayTag& Tag);
-	bool DoesContainerMatchTagQuery(struct FGameplayTagContainer& TagContainer, struct FGameplayTagQuery& TagQuery);
-	void BreakGameplayTagContainer(struct FGameplayTagContainer& GameplayTagContainer, TArray<struct FGameplayTag>* GameplayTags);
-	void AppendGameplayTagContainers(struct FGameplayTagContainer& InOutTagContainer, struct FGameplayTagContainer& InTagContainer);
-	void AddGameplayTag(struct FGameplayTagContainer& TagContainer, const struct FGameplayTag& Tag);
+	bool RemoveGameplayTag(struct FGameplayTagContainer& InTagContainer, const struct FGameplayTag& InTag);
+	bool NotEqual_TagTag(const struct FGameplayTag& InA, const class FString& InB);
+	bool NotEqual_TagContainerTagContainer(const struct FGameplayTagContainer& InA, const class FString& InB);
+	bool NotEqual_GameplayTagContainer(struct FGameplayTagContainer& InA, struct FGameplayTagContainer& InB);
+	bool NotEqual_GameplayTag(const struct FGameplayTag& InA, const struct FGameplayTag& InB);
+	bool MatchesTag(const struct FGameplayTag& InTagOne, const struct FGameplayTag& InTagTwo, bool InbExactMatch);
+	bool MatchesAnyTags(const struct FGameplayTag& InTagOne, struct FGameplayTagContainer& InOtherContainer, bool InbExactMatch);
+	struct FGameplayTagContainer MakeLiteralGameplayTagContainer(const struct FGameplayTagContainer& InValue);
+	struct FGameplayTag MakeLiteralGameplayTag(const struct FGameplayTag& InValue);
+	struct FGameplayTagQuery MakeGameplayTagQuery(const struct FGameplayTagQuery& InTagQuery);
+	struct FGameplayTagContainer MakeGameplayTagContainerFromTag(const struct FGameplayTag& InSingleTag);
+	struct FGameplayTagContainer MakeGameplayTagContainerFromArray(TArray<struct FGameplayTag>& InGameplayTags);
+	bool IsTagQueryEmpty(struct FGameplayTagQuery& InTagQuery);
+	bool IsGameplayTagValid(const struct FGameplayTag& InGameplayTag);
+	bool HasTag(struct FGameplayTagContainer& InTagContainer, const struct FGameplayTag& InTag, bool InbExactMatch);
+	bool HasAnyTags(struct FGameplayTagContainer& InTagContainer, struct FGameplayTagContainer& InOtherContainer, bool InbExactMatch);
+	bool HasAllTags(struct FGameplayTagContainer& InTagContainer, struct FGameplayTagContainer& InOtherContainer, bool InbExactMatch);
+	bool HasAllMatchingGameplayTags(TScriptInterface<class IGameplayTagAssetInterface> InTagContainerInterface, struct FGameplayTagContainer& InOtherContainer);
+	class FName GetTagName(struct FGameplayTag& InGameplayTag);
+	int32 GetNumGameplayTagsInContainer(struct FGameplayTagContainer& InTagContainer);
+	class FString GetDebugStringFromGameplayTagContainer(struct FGameplayTagContainer& InTagContainer);
+	class FString GetDebugStringFromGameplayTag(const struct FGameplayTag& InGameplayTag);
+	void GetAllActorsOfClassMatchingTagQuery(class UObject* InWorldContextObject, TSubclassOf<class AActor> InActorClass, struct FGameplayTagQuery& InGameplayTagQuery, TArray<class AActor*>* InOutActors);
+	bool EqualEqual_GameplayTagContainer(struct FGameplayTagContainer& InA, struct FGameplayTagContainer& InB);
+	bool EqualEqual_GameplayTag(const struct FGameplayTag& InA, const struct FGameplayTag& InB);
+	bool DoesTagAssetInterfaceHaveTag(TScriptInterface<class IGameplayTagAssetInterface> InTagContainerInterface, const struct FGameplayTag& InTag);
+	bool DoesContainerMatchTagQuery(struct FGameplayTagContainer& InTagContainer, struct FGameplayTagQuery& InTagQuery);
+	void BreakGameplayTagContainer(struct FGameplayTagContainer& InGameplayTagContainer, TArray<struct FGameplayTag>* InGameplayTags);
+	void AppendGameplayTagContainers(struct FGameplayTagContainer& InInOutTagContainer, struct FGameplayTagContainer& InInTagContainer);
+	void AddGameplayTag(struct FGameplayTagContainer& InTagContainer, const struct FGameplayTag& InTag);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -68,18 +64,14 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GameplayTagAssetInterface");
-
+		static class UClass* Clss = UObject::FindClassFast("GameplayTagAssetInterface");
 		return Clss;
 	}
 
-	bool HasMatchingGameplayTag(const struct FGameplayTag& TagToCheck);
-	bool HasAnyMatchingGameplayTags(struct FGameplayTagContainer& TagContainer);
-	bool HasAllMatchingGameplayTags(struct FGameplayTagContainer& TagContainer);
-	void GetOwnedGameplayTags(struct FGameplayTagContainer* TagContainer);
+	bool HasMatchingGameplayTag(const struct FGameplayTag& InTagToCheck);
+	bool HasAnyMatchingGameplayTags(struct FGameplayTagContainer& InTagContainer);
+	bool HasAllMatchingGameplayTags(struct FGameplayTagContainer& InTagContainer);
+	void GetOwnedGameplayTags(struct FGameplayTagContainer* InTagContainer);
 };
 
 // 0x70 (0x98 - 0x28)
@@ -88,17 +80,13 @@ class UEditableGameplayTagQuery : public UObject
 {
 public:
 	class FString                                UserDescription;                                   // 0x28(0x10)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26A9[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2842[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UEditableGameplayTagQueryExpression*   RootExpression;                                    // 0x48(0x8)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTagQuery                     TagQueryExportText_Helper;                         // 0x50(0x48)(NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EditableGameplayTagQuery");
-
+		static class UClass* Clss = UObject::FindClassFast("EditableGameplayTagQuery");
 		return Clss;
 	}
 
@@ -112,11 +100,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression");
-
+		static class UClass* Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression");
 		return Clss;
 	}
 
@@ -131,11 +115,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AnyTagsMatch");
-
+		static class UClass* Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AnyTagsMatch");
 		return Clss;
 	}
 
@@ -150,11 +130,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AllTagsMatch");
-
+		static class UClass* Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AllTagsMatch");
 		return Clss;
 	}
 
@@ -169,11 +145,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_NoTagsMatch");
-
+		static class UClass* Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_NoTagsMatch");
 		return Clss;
 	}
 
@@ -188,11 +160,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AnyExprMatch");
-
+		static class UClass* Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AnyExprMatch");
 		return Clss;
 	}
 
@@ -207,11 +175,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AllExprMatch");
-
+		static class UClass* Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AllExprMatch");
 		return Clss;
 	}
 
@@ -226,11 +190,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_NoExprMatch");
-
+		static class UClass* Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_NoExprMatch");
 		return Clss;
 	}
 
@@ -241,18 +201,14 @@ public:
 class UGameplayTagsManager : public UObject
 {
 public:
-	uint8                                        Pad_26B0[0x138];                                   // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2859[0x138];                                   // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<class FName, struct FGameplayTagSource> TagSources;                                        // 0x160(0x50)(NativeAccessSpecifierPrivate)
-	uint8                                        Pad_26B2[0x88];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_285A[0x88];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UDataTable*>                    GameplayTagTables;                                 // 0x238(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GameplayTagsManager");
-
+		static class UClass* Clss = UObject::FindClassFast("GameplayTagsManager");
 		return Clss;
 	}
 
@@ -268,11 +224,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GameplayTagsList");
-
+		static class UClass* Clss = UObject::FindClassFast("GameplayTagsList");
 		return Clss;
 	}
 
@@ -288,11 +240,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("RestrictedGameplayTagsList");
-
+		static class UClass* Clss = UObject::FindClassFast("RestrictedGameplayTagsList");
 		return Clss;
 	}
 
@@ -309,7 +257,7 @@ public:
 	bool                                         AllowEditorTagUnloading;                           // 0x4B(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         AllowGameTagUnloading;                             // 0x4C(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         FastReplication;                                   // 0x4D(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26B4[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2866[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                InvalidTagCharacters;                              // 0x50(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FGameplayTagCategoryRemap>     CategoryRemapping;                                 // 0x60(0x10)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 	TArray<struct FSoftObjectPath>               GameplayTagTableList;                              // 0x70(0x10)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
@@ -321,11 +269,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GameplayTagsSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("GameplayTagsSettings");
 		return Clss;
 	}
 
@@ -341,11 +285,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("GameplayTagsDeveloperSettings");
-
+		static class UClass* Clss = UObject::FindClassFast("GameplayTagsDeveloperSettings");
 		return Clss;
 	}
 

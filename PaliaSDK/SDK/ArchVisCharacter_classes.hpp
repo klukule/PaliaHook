@@ -28,11 +28,7 @@ public:
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ArchVisCharacter");
-
+		static class UClass* Clss = UObject::FindClassFast("ArchVisCharacter");
 		return Clss;
 	}
 
@@ -51,15 +47,11 @@ public:
 	float                                        WalkingFriction;                                   // 0xF48(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WalkingSpeed;                                      // 0xF4C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WalkingAcceleration;                               // 0xF50(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D7F[0x3C];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E7A[0x3C];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
-		static class UClass* Clss = nullptr;
-
-		if (!Clss)
-			Clss = UObject::FindClassFast("ArchVisCharMovementComponent");
-
+		static class UClass* Clss = UObject::FindClassFast("ArchVisCharMovementComponent");
 		return Clss;
 	}
 
