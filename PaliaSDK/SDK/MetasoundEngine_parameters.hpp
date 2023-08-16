@@ -6,7 +6,7 @@
 	#pragma pack(push, 0x01)
 #endif
 
-#include "../SDK.hpp"
+#include "SDK.hpp"
 
 namespace SDK
 {

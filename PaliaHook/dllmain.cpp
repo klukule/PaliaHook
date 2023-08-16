@@ -1,9 +1,11 @@
 #include <Windows.h>
 
+#include "../PaliaSDK/SDK.hpp"
 #include "PaliaOverlay.h"
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
+    SDK::InitGObjects();
     auto Overlay = new PaliaOverlay();
     OverlayBase::Instance = Overlay;
     
