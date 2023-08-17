@@ -32,6 +32,12 @@ namespace Offsets
 	inline int32 ProcessEvent      = 0x02AC8230;
 }
 
+#pragma warning(push)
+#pragma warning(disable: 4369) // 'enumerator' : enumerator value 'value' cannot be represented as 'type', value is 'new_value'
+#pragma warning(disable: 4309) // 'conversion' : truncation of constant value
+#pragma warning(disable: 4267) // 'var' : conversion from 'size_t' to 'type', possible loss of data
+#pragma warning(disable: 4244) // 'argument' : conversion from 'type1' to 'type2', possible loss of data
+
 #include "PropertyFixup.hpp"
 
 #include "SDK/Basic.hpp"
@@ -988,3 +994,5 @@ namespace Offsets
 #include "SDK/ButtonStyle_Primary_01_CM_parameters.hpp"
 #include "SDK/E_WindStates_parameters.hpp"
 #include "SDK/MAP_CharacterRender_LevelInstance_4_parameters.hpp"
+
+#pragma warning(pop)
