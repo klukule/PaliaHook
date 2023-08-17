@@ -200,39 +200,49 @@ void PaliaOverlay::DrawOverlay()
 			ImGui::Columns(3, nullptr, false);
 
 			// Base ESP controls
+			ImGui::BeginGroupPanel("ESP");
 			{
-				ImGui::BeginGroupPanel("ESP");
-				{
-					ImGui::Checkbox("Enable ESP", &bEnableESP);
-					ImGui::Checkbox("Culling", &bEnableESPCulling);
-					ImGui::InputInt("Culling Distance", &CullDistance);
-					ImGui::Spacing();
-				}
-				ImGui::EndGroupPanel();
+				ImGui::Checkbox("Enable ESP", &bEnableESP);
+				ImGui::Checkbox("Culling", &bEnableESPCulling);
+				ImGui::InputInt("Culling Distance", &CullDistance);
+				ImGui::Spacing();
 			}
+			ImGui::EndGroupPanel();
+
 			// Gatherables ESP controls
+			ImGui::BeginGroupPanel("Gatherables");
 			{
-				ImGui::BeginGroupPanel("Gatherables");
-				{
-					ImGui::Checkbox("Show Flow Trees", &bVisualizeCoOp);
-					ImGui::Checkbox("Show Trees", &bVisualizeTrees);
-					ImGui::Checkbox("Show Stone", &bVisualizeStone);
-					ImGui::Checkbox("Show Copper", &bVisualizeCopper);
-					ImGui::Checkbox("Show Clay", &bVisualizeClay);
-					ImGui::Checkbox("Show Iron", &bVisualizeIron);
-					ImGui::Checkbox("Show Silver", &bVisualizeSilver);
-					ImGui::Checkbox("Show Gold", &bVisualizeGold);
-					ImGui::Checkbox("Show Palium", &bVisualizePalium);
-					ImGui::Checkbox("Show Others", &bVisualizeDefault);
-					if (ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled)) ImGui::SetTooltip("Shows other gatherables that were not successfully categorized - usually means that game has added new gatherables or I missed stuff");
-					ImGui::Spacing();
-				}
-				ImGui::EndGroupPanel();
+				ImGui::Checkbox("Show Flow Trees", &bVisualizeCoOp);
+				ImGui::Checkbox("Show Trees", &bVisualizeTrees);
+				ImGui::Checkbox("Show Stone", &bVisualizeStone);
+				ImGui::Checkbox("Show Copper", &bVisualizeCopper);
+				ImGui::Checkbox("Show Clay", &bVisualizeClay);
+				ImGui::Checkbox("Show Iron", &bVisualizeIron);
+				ImGui::Checkbox("Show Silver", &bVisualizeSilver);
+				ImGui::Checkbox("Show Gold", &bVisualizeGold);
+				ImGui::Checkbox("Show Palium", &bVisualizePalium);
+				ImGui::Checkbox("Show Others", &bVisualizeDefault);
+				if (ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled)) ImGui::SetTooltip("Shows other gatherables that were not successfully categorized - usually means that game has added new gatherables or I missed stuff");
+				ImGui::Spacing();
 			}
+			ImGui::EndGroupPanel();
 
 			ImGui::NextColumn();
-			//ImGui::Text("Column 2");
-			// TODO: Color settings
+			ImGui::BeginGroupPanel("Gatherables - Colors");
+			{
+				ImGui::ColorPicker("Flow Trees", &Colors[(int)EESPColorSlot::CoOp]);
+				ImGui::ColorPicker("Trees", &Colors[(int)EESPColorSlot::Tree]);
+				ImGui::ColorPicker("Stone", &Colors[(int)EESPColorSlot::Stone]);
+				ImGui::ColorPicker("Copper", &Colors[(int)EESPColorSlot::Copper]);
+				ImGui::ColorPicker("Clay", &Colors[(int)EESPColorSlot::Clay]);
+				ImGui::ColorPicker("Iron", &Colors[(int)EESPColorSlot::Iron]);
+				ImGui::ColorPicker("Silver", &Colors[(int)EESPColorSlot::Silver]);
+				ImGui::ColorPicker("Gold", &Colors[(int)EESPColorSlot::Gold]);
+				ImGui::ColorPicker("Palium", &Colors[(int)EESPColorSlot::Palium]);
+				ImGui::ColorPicker("Others", &Colors[(int)EESPColorSlot::Default]);
+				ImGui::Spacing();
+			}
+			ImGui::EndGroupPanel();
 
 			ImGui::NextColumn();
 			//ImGui::Text("Column 3");
