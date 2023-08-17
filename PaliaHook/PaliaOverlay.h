@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <SDK.hpp>
+#include <ImGui/imgui.h>
 
 using namespace SDK;
 
@@ -37,6 +38,32 @@ enum class EGatherableFlags
 	Gold = 1 << 6,
 	Palium = 1 << 7
 };
+
+enum class EESPColorSlot
+{
+	// Default color for anything not more specific
+	Default,
+	// Specific override for CoOp trees
+	CoOp,
+	// Color used for trees
+	Tree,
+	// Color used for stone ore
+	Stone,
+	// Color used for copper ore
+	Copper,
+	// Color used for clay ore
+	Clay,
+	// Color used for iron ore
+	Iron,
+	// Color used for sliver ore
+	Silver,
+	// Color used for gold ore
+	Gold,
+	// Color used for palium ore
+	Palium,
+	MAX
+};
+
 
 struct FGatherableEntry
 {
@@ -165,8 +192,33 @@ private:
 
 	// Configuration:
 	bool bEnableESP = true;
+	
 	bool bEnableESPCulling;
 	int CullDistance = 200;
+
+	bool bVisualizeDefault = false;	// Visualizes other uncategorized gatherables
+	bool bVisualizeCoOp = true; // Visualizes co-op (flow filled trees)
+	bool bVisualizeTrees = true;
+	bool bVisualizeStone = true;
+	bool bVisualizeCopper = true;
+	bool bVisualizeClay = true;
+	bool bVisualizeIron = true;
+	bool bVisualizeSilver = true;
+	bool bVisualizeGold = true;
+	bool bVisualizePalium = true;
+
+	unsigned int Colors[(int)EESPColorSlot::MAX] = {
+		IM_COL32(0xFF, 0x00, 0x00, 0xFF), // Default
+		IM_COL32(0x00, 0x00, 0xFF, 0xFF), // CoOp
+		IM_COL32(0x00, 0xFF, 0x00, 0xFF), // Trees
+		IM_COL32(0x88, 0x8C, 0x8D, 0xFF), // Stone
+		IM_COL32(0xB8, 0x73, 0x33, 0xFF), // Copper
+		IM_COL32(0xAD, 0x50, 0x49, 0xFF), // Clay
+		IM_COL32(0xA1, 0x9D, 0x94, 0xFF), // Iron
+		IM_COL32(0xAA, 0xA9, 0xAD, 0xFF), // Silver
+		IM_COL32(0xDB, 0xAC, 0x34, 0xFF), // Gold
+		IM_COL32(0x94, 0xA0, 0xE2, 0xFF) // Palium
+	};
 
 };
 

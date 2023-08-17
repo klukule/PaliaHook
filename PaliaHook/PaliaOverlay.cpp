@@ -102,7 +102,63 @@ void PaliaOverlay::DrawHUD()
 
 			FVector2D ScreenLocation;
 			if (PlayerController->ProjectWorldLocationToScreen(Entry.WorldPosition, &ScreenLocation, true)) {
-				ImColor Color = (Entry.Flags & EGatherableFlags::CoOp) == EGatherableFlags::CoOp ? ImColor(0, 0, 255) : ImColor(255, 0, 0);
+				ImU32 Color = Colors[(int)EESPColorSlot::Default];
+
+				// NOTE: Probably overcomplicating, simplify
+				if (Entry.Type == EGatherableType::Tree)
+				{
+
+					bool bIsCoOp = (Entry.Flags & EGatherableFlags::CoOp) == EGatherableFlags::CoOp;
+
+					if (bIsCoOp)
+						Color = Colors[(int)EESPColorSlot::CoOp];
+					else
+						Color = Colors[(int)EESPColorSlot::Tree];
+
+					if (bIsCoOp && !bVisualizeCoOp) continue;
+					if (!bIsCoOp && !bVisualizeTrees) continue;
+				}
+				else if (Entry.Type == EGatherableType::Ore)
+				{
+					if ((Entry.Flags & EGatherableFlags::Stone) == EGatherableFlags::Stone)
+					{
+						Color = Colors[(int)EESPColorSlot::Stone];
+						if (!bVisualizeStone) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::Copper) == EGatherableFlags::Copper)
+					{
+						Color = Colors[(int)EESPColorSlot::Copper];
+						if (!bVisualizeCopper) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::Clay) == EGatherableFlags::Clay)
+					{
+						Color = Colors[(int)EESPColorSlot::Clay];
+						if (!bVisualizeClay) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::Iron) == EGatherableFlags::Iron)
+					{
+						Color = Colors[(int)EESPColorSlot::Iron];
+						if (!bVisualizeIron) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::Silver) == EGatherableFlags::Silver)
+					{
+						Color = Colors[(int)EESPColorSlot::Silver];
+						if (!bVisualizeSilver) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::Gold) == EGatherableFlags::Gold)
+					{
+						Color = Colors[(int)EESPColorSlot::Gold];
+						if (!bVisualizeGold) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::Palium) == EGatherableFlags::Palium)
+					{
+						Color = Colors[(int)EESPColorSlot::Palium];
+						if (!bVisualizePalium) continue;
+					}
+				}
+
+				if (Color == Colors[(int)EESPColorSlot::Default] && !bVisualizeDefault) continue;
+
 				pDrawList->AddText({ static_cast<float>(ScreenLocation.X), static_cast<float>(ScreenLocation.Y) }, Color, (Entry.DisplayName + " [" + std::to_string(Distance) + " m]").data());
 			}
 		}
@@ -120,7 +176,7 @@ void PaliaOverlay::DrawOverlay()
 	ImGui::SetNextWindowPos({ 20,20 });
 	ImGui::SetNextWindowSize({ static_cast<float>(io.DisplaySize.x - 40), static_cast<float>(io.DisplaySize.y - 40) });
 
-	ImGui::SetNextWindowBgAlpha(0.50);
+	ImGui::SetNextWindowBgAlpha(0.80);
 
 	bool show = true;
 	BaseHook* hook = RendererDetector::Instance().GetRenderer();
@@ -132,15 +188,6 @@ void PaliaOverlay::DrawOverlay()
 		// Draw tabs
 		ImGui::BeginTabBar("OverlayTabs");
 		{
-			// TODO: Switch to proper tabs
-			/*ImGui::SameLine();
-			if (ImGui::Button("ESP", { 200.0f, 25.0f })) {
-				OpenTab = 0;
-			}
-			ImGui::SameLine();
-			if (ImGui::Button("Test Tab", { 200.0f, 25.0f })) {
-				OpenTab = 1;
-			}*/
 			if (ImGui::TabItemButton("ESP"))
 				OpenTab = 0;
 			if (ImGui::TabItemButton("Test Tab"))
@@ -152,21 +199,44 @@ void PaliaOverlay::DrawOverlay()
 		if (OpenTab == 0) {
 			ImGui::Columns(3, nullptr, false);
 
-			ImGui::BeginGroupPanel("ESP");
-
-			ImGui::Checkbox("Enable ESP", &bEnableESP);
-			ImGui::Checkbox("Culling", &bEnableESPCulling);
-			ImGui::InputInt("Culling Distance", &CullDistance);
-
-			ImGui::Spacing();
-
-			ImGui::EndGroupPanel();
+			// Base ESP controls
+			{
+				ImGui::BeginGroupPanel("ESP");
+				{
+					ImGui::Checkbox("Enable ESP", &bEnableESP);
+					ImGui::Checkbox("Culling", &bEnableESPCulling);
+					ImGui::InputInt("Culling Distance", &CullDistance);
+					ImGui::Spacing();
+				}
+				ImGui::EndGroupPanel();
+			}
+			// Gatherables ESP controls
+			{
+				ImGui::BeginGroupPanel("Gatherables");
+				{
+					ImGui::Checkbox("Show Flow Trees", &bVisualizeCoOp);
+					ImGui::Checkbox("Show Trees", &bVisualizeTrees);
+					ImGui::Checkbox("Show Stone", &bVisualizeStone);
+					ImGui::Checkbox("Show Copper", &bVisualizeCopper);
+					ImGui::Checkbox("Show Clay", &bVisualizeClay);
+					ImGui::Checkbox("Show Iron", &bVisualizeIron);
+					ImGui::Checkbox("Show Silver", &bVisualizeSilver);
+					ImGui::Checkbox("Show Gold", &bVisualizeGold);
+					ImGui::Checkbox("Show Palium", &bVisualizePalium);
+					ImGui::Checkbox("Show Others", &bVisualizeDefault);
+					if (ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled)) ImGui::SetTooltip("Shows other gatherables that were not successfully categorized - usually means that game has added new gatherables or I missed stuff");
+					ImGui::Spacing();
+				}
+				ImGui::EndGroupPanel();
+			}
 
 			ImGui::NextColumn();
-			ImGui::Text("Column 2");
+			//ImGui::Text("Column 2");
+			// TODO: Color settings
 
 			ImGui::NextColumn();
-			ImGui::Text("Column 3");
+			//ImGui::Text("Column 3");
+			// TODO: Who knows what
 
 			ImGui::Columns(1);
 		}
