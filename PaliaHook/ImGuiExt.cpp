@@ -134,3 +134,15 @@ void ImGui::ColorPicker(const char* name, ImU32* color)
 		*color = ImGui::ColorConvertFloat4ToU32(c);
 	}
 }
+
+void ImGui::AddText(ImDrawList* drawList, char* text, ImU32 textColor, ImVec2 screenPosition, ImU32 backgroundColor)
+{
+	auto size = ImGui::CalcTextSize(text);
+
+	auto adjustedTextPosition = screenPosition - size * 0.5f;
+
+	size += ImGui::GetStyle().FramePadding * 2.0f;
+
+	drawList->AddRectFilled(screenPosition - size * 0.5f, screenPosition + size * 0.5f, backgroundColor);
+	drawList->AddText(adjustedTextPosition, textColor, text);
+}

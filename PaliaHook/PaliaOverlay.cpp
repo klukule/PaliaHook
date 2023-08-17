@@ -2,6 +2,7 @@
 #include <ImGui/imgui.h>
 #include <RendererDetector.h>
 #include <BaseHook.h>
+#include <format>
 
 #include "ImGuiExt.h"
 #include "SDKExt.h"
@@ -19,6 +20,27 @@ SearchType GetFlagSingle(std::string Text, std::map<SearchType, std::vector<std:
 
 		for (auto& Str : Entry.second) {
 			if (Text.find(Str) != std::string::npos) {
+				T = Entry.first;
+				bFound = true;
+				break;
+			}
+		}
+
+		if (bFound)
+			break;
+	}
+	return T;
+}
+
+template<typename SearchType>
+SearchType GetFlagSingleEnd(std::string Text, std::map<SearchType, std::vector<std::string>>& map) {
+	SearchType T = (SearchType)0;
+	for (auto& Entry : map)
+	{
+		bool bFound = false;
+
+		for (auto& Str : Entry.second) {
+			if (Text.ends_with(Str)) {
 				T = Entry.first;
 				bFound = true;
 				break;
@@ -55,13 +77,38 @@ void PaliaOverlay::CacheGatherables() {
 
 		auto ClassName = Gatherable->Class->GetName();
 
-		EGatherableType Type = GetFlagSingle(ClassName, TYPE_MAPPINGS);
-		EGatherableSize Size = GetFlagSingle(ClassName, SIZE_MAPPINGS);
-		EGatherableFlags Flags = GetFlagMulti(ClassName, FLAG_MAPPINGS);
+		EGatherableType Type = GetFlagSingle(ClassName, GATHERABLE_TYPE_MAPPINGS);
+		EGatherableSize Size = GetFlagSingle(ClassName, GATHERABLE_SIZE_MAPPINGS);
+		EGatherableFlags Flags = GetFlagMulti(ClassName, GATHERABLE_FLAG_MAPPINGS);
 
 		std::string Name = CLASS_NAME_ALIAS.contains(ClassName) ? CLASS_NAME_ALIAS[ClassName] : ClassName;
 
 		CachedGatherables.push_back({ Gatherable, ActorPosition, Name, Type, Size, Flags });
+	}
+}
+
+void PaliaOverlay::CacheCreatures()
+{
+	CachedCreatures.clear();
+	for (ACreatureCharacter* Creature : FindActorsOfType<ACreatureCharacter>(GetWorld())) {
+		auto ClassName = Creature->Class->GetName();
+		std::string Name = CLASS_NAME_ALIAS.contains(ClassName) ? CLASS_NAME_ALIAS[ClassName] : ClassName;
+
+		// Compared to gatherables we do not cache positions, as creatures can mov so we need to update their position every frame
+
+		ECreatureType Type = GetFlagSingle(ClassName, CREATURE_TYPE_MAPPINGS);
+		EBugKind BK = EBugKind::Unknown;
+		EBugQuality BQ = EBugQuality::Unknown;
+		ECreatureKind CK = ECreatureKind::Unknown;
+
+		if (Type == ECreatureType::Creature) CK = GetFlagSingle(ClassName, CREATURE_KIND_MAPPINGS);
+		if (Type == ECreatureType::Bug) {
+			BK = GetFlagSingle(ClassName, CREATURE_BUGKIND_MAPPINGS);
+			BQ = GetFlagSingleEnd(ClassName, CREATURE_BUGQUALITY_MAPPINGS);
+		}
+
+		CachedCreatures.push_back({ Creature, Name, Type, CK, BK, BQ });
+
 	}
 }
 
@@ -89,8 +136,11 @@ void PaliaOverlay::DrawHUD()
 		double WorldTime = static_cast<UGameplayStatics*>(UGameplayStatics::StaticClass()->DefaultObject)->GetTimeSeconds(World);
 		if (abs(WorldTime - LastCachedTime) > 1.0)
 		{
+			// TODO: Split to separate frames to avoid hitches
+
 			LastCachedTime = WorldTime;
 			CacheGatherables();
+			CacheCreatures();
 		}
 
 		FVector PawnLocation = PlayerController->K2_GetPawn()->K2_GetActorLocation();
@@ -159,12 +209,32 @@ void PaliaOverlay::DrawHUD()
 
 				if (Color == Colors[(int)EESPColorSlot::Default] && !bVisualizeDefault) continue;
 
-				pDrawList->AddText({ static_cast<float>(ScreenLocation.X), static_cast<float>(ScreenLocation.Y) }, Color, (Entry.DisplayName + " [" + std::to_string(Distance) + " m]").data());
+				ImGui::AddText(pDrawList, std::format("{} [{:.2f}m]", Entry.DisplayName, Distance).data(), Color, {static_cast<float>(ScreenLocation.X), static_cast<float>(ScreenLocation.Y)});
+			}
+		}
+
+		for (FCreatureEntry& Entry : CachedCreatures) {
+			if (!Entry.Actor || !Entry.Actor->IsValidLowLevel()) continue;
+
+			auto ActorPosition = Entry.Actor->K2_GetActorLocation();
+
+			// HACK: Skip actors that return [0,0,0] due to the hack I had to add to K2_GetActorLocation
+			if (ActorPosition.X == 0 && ActorPosition.Y == 0 && ActorPosition.Z == 0) continue;
+
+			double Distance = sqrt(pow(PawnLocation.X - ActorPosition.X, 2) + pow(PawnLocation.Y - ActorPosition.Y, 2) + pow(PawnLocation.Z - ActorPosition.Z, 2)) * 0.01;
+			FVector2D ScreenLocation;
+			if (PlayerController->ProjectWorldLocationToScreen(ActorPosition, &ScreenLocation, true)) {
+
+				ImU32 Color = 0xFFFFFFFF;
+
+
+				ImGui::AddText(pDrawList, std::format("{} [{:.2f}m]", Entry.DisplayName, Distance).data(), Color, { static_cast<float>(ScreenLocation.X), static_cast<float>(ScreenLocation.Y) });
 			}
 		}
 	}
 	else {
 		CachedGatherables.clear();
+		CachedCreatures.clear();
 	}
 }
 
@@ -176,7 +246,7 @@ void PaliaOverlay::DrawOverlay()
 	ImGui::SetNextWindowPos({ 20,20 });
 	ImGui::SetNextWindowSize({ static_cast<float>(io.DisplaySize.x - 40), static_cast<float>(io.DisplaySize.y - 40) });
 
-	ImGui::SetNextWindowBgAlpha(0.80);
+	ImGui::SetNextWindowBgAlpha(0.80f);
 
 	bool show = true;
 	BaseHook* hook = RendererDetector::Instance().GetRenderer();
