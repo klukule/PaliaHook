@@ -209,7 +209,7 @@ void PaliaOverlay::DrawHUD()
 
 				if (Color == Colors[(int)EESPColorSlot::Default] && !bVisualizeDefault) continue;
 
-				ImGui::AddText(pDrawList, std::format("{} [{:.2f}m]", Entry.DisplayName, Distance).data(), Color, {static_cast<float>(ScreenLocation.X), static_cast<float>(ScreenLocation.Y)});
+				ImGui::AddText(pDrawList, std::format("{} [{:.2f}m]", Entry.DisplayName, Distance).data(), Color, { static_cast<float>(ScreenLocation.X), static_cast<float>(ScreenLocation.Y) });
 			}
 		}
 
@@ -225,8 +225,47 @@ void PaliaOverlay::DrawHUD()
 			FVector2D ScreenLocation;
 			if (PlayerController->ProjectWorldLocationToScreen(ActorPosition, &ScreenLocation, true)) {
 
-				ImU32 Color = 0xFFFFFFFF;
+				ImU32 Color = Colors[(int)EESPColorSlot::Default];
 
+				bool bIsDefault = true;
+				bool bShouldDraw = false;
+				if (Entry.Type == ECreatureType::Creature) {
+					bIsDefault = Entry.CreatureKind == ECreatureKind::Unknown;
+
+					if (Entry.CreatureKind == ECreatureKind::Chapaa && bVisualizeChapaa) {
+						bShouldDraw = true;
+						Color = Colors[(int)EESPColorSlot::Chapaa];
+					}
+
+					if (Entry.CreatureKind == ECreatureKind::Cearnuk && bVisualizeCearnuk) {
+						bShouldDraw = true;
+						Color = Colors[(int)EESPColorSlot::Cearnuk];
+					}
+				}
+
+				if (Entry.Type == ECreatureType::Bug && (bVisualizeCommonBugs || bVisualizeUncommonBugs || bVisualizeRareBugs || bVisualizeEpicBugs)) {
+					bIsDefault = Entry.BugQuality == EBugQuality::Unknown;
+
+					if (Entry.BugQuality == EBugQuality::Common && bVisualizeCommonBugs) {
+						bShouldDraw = true;
+						Color = Colors[(int)EESPColorSlot::CommonGrade];
+					}
+					if (Entry.BugQuality == EBugQuality::Uncommon && bVisualizeUncommonBugs) {
+						bShouldDraw = true;
+						Color = Colors[(int)EESPColorSlot::UncommonGrade];
+					}
+					if (Entry.BugQuality == EBugQuality::Rare && bVisualizeRareBugs) {
+						bShouldDraw = true;
+						Color = Colors[(int)EESPColorSlot::RareGrade];
+					}
+					if (Entry.BugQuality == EBugQuality::Epic && bVisualizeEpicBugs) {
+						bShouldDraw = true;
+						Color = Colors[(int)EESPColorSlot::EpicGrade];
+					}
+				}
+
+				if (bIsDefault && !bVisualizeDefault) continue;
+				if (!bIsDefault && !bShouldDraw) continue;
 
 				ImGui::AddText(pDrawList, std::format("{} [{:.2f}m]", Entry.DisplayName, Distance).data(), Color, { static_cast<float>(ScreenLocation.X), static_cast<float>(ScreenLocation.Y) });
 			}
@@ -276,6 +315,9 @@ void PaliaOverlay::DrawOverlay()
 				ImGui::Checkbox("Culling", &bEnableESPCulling);
 				ImGui::InputInt("Culling Distance", &CullDistance);
 				ImGui::Spacing();
+				ImGui::Checkbox("Show Others", &bVisualizeDefault);
+				if (ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled)) ImGui::SetTooltip("Shows other gatherables or creatures that were not successfully categorized - usually means that game has added new gatherable or a creature or I just missed stuff");
+				ImGui::Spacing();
 			}
 			ImGui::EndGroupPanel();
 
@@ -291,14 +333,30 @@ void PaliaOverlay::DrawOverlay()
 				ImGui::Checkbox("Show Silver", &bVisualizeSilver);
 				ImGui::Checkbox("Show Gold", &bVisualizeGold);
 				ImGui::Checkbox("Show Palium", &bVisualizePalium);
-				ImGui::Checkbox("Show Others", &bVisualizeDefault);
-				if (ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled)) ImGui::SetTooltip("Shows other gatherables that were not successfully categorized - usually means that game has added new gatherables or I missed stuff");
+				ImGui::Spacing();
+			}
+			ImGui::EndGroupPanel();
+
+			ImGui::BeginGroupPanel("Creatures");
+			{
+				ImGui::Checkbox("Show Cearnuk", &bVisualizeCearnuk);
+				ImGui::Checkbox("Show Chapaa", &bVisualizeChapaa);
+				ImGui::Checkbox("Show Common Bugs", &bVisualizeCommonBugs);
+				ImGui::Checkbox("Show Uncommon Bugs", &bVisualizeUncommonBugs);
+				ImGui::Checkbox("Show Rare Bugs", &bVisualizeRareBugs);
+				ImGui::Checkbox("Show Epic Bugs", &bVisualizeEpicBugs);
 				ImGui::Spacing();
 			}
 			ImGui::EndGroupPanel();
 
 			ImGui::NextColumn();
-			ImGui::BeginGroupPanel("Gatherables - Colors");
+			ImGui::BeginGroupPanel("Colors - General");
+			{
+				ImGui::ColorPicker("Others", &Colors[(int)EESPColorSlot::Default]);
+				ImGui::Spacing();
+			}
+			ImGui::EndGroupPanel();
+			ImGui::BeginGroupPanel("Colors - Gatherables");
 			{
 				ImGui::ColorPicker("Flow Trees", &Colors[(int)EESPColorSlot::CoOp]);
 				ImGui::ColorPicker("Trees", &Colors[(int)EESPColorSlot::Tree]);
@@ -309,7 +367,18 @@ void PaliaOverlay::DrawOverlay()
 				ImGui::ColorPicker("Silver", &Colors[(int)EESPColorSlot::Silver]);
 				ImGui::ColorPicker("Gold", &Colors[(int)EESPColorSlot::Gold]);
 				ImGui::ColorPicker("Palium", &Colors[(int)EESPColorSlot::Palium]);
-				ImGui::ColorPicker("Others", &Colors[(int)EESPColorSlot::Default]);
+				ImGui::Spacing();
+			}
+			ImGui::EndGroupPanel();
+			ImGui::BeginGroupPanel("Colors - Creatures");
+			{
+				ImGui::ColorPicker("Cearnuk", &Colors[(int)EESPColorSlot::Cearnuk]);
+				ImGui::ColorPicker("Chapaa", &Colors[(int)EESPColorSlot::Chapaa]);
+				ImGui::Spacing();
+				ImGui::ColorPicker("Bug - Common", &Colors[(int)EESPColorSlot::CommonGrade]);
+				ImGui::ColorPicker("Bug - Uncommon", &Colors[(int)EESPColorSlot::UncommonGrade]);
+				ImGui::ColorPicker("Bug - Rare", &Colors[(int)EESPColorSlot::RareGrade]);
+				ImGui::ColorPicker("Bug - Epic", &Colors[(int)EESPColorSlot::EpicGrade]);
 				ImGui::Spacing();
 			}
 			ImGui::EndGroupPanel();

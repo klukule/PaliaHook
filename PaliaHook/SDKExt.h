@@ -17,8 +17,11 @@ namespace SDK
 				if (!Obj)
 					continue;
 
-				if (Obj->IsA(UEngine::StaticClass()) && !Obj->IsDefaultObject())
+				if (Obj->IsA(UEngine::StaticClass()) && !Obj->IsDefaultObject()) 
+				{
 					GEngine = static_cast<UEngine*>(Obj);
+					break;
+				}
 			}
 		}
 

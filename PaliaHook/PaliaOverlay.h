@@ -102,6 +102,18 @@ enum class EESPColorSlot
 	Gold,
 	// Color used for palium ore
 	Palium,
+	// Color used for the bugs of common grade
+	CommonGrade,
+	// Color used for the bugs of uncommon grade
+	UncommonGrade,
+	// Color used for the bugs of rare grade
+	RareGrade,
+	// Color used for the bugs of epic grade
+	EpicGrade,
+	// Color used for the cearnuk
+	Cearnuk,
+	// Color used for the chapaa
+	Chapaa,
 	MAX
 };
 
@@ -407,8 +419,16 @@ private:
 	bool bVisualizeGold = true;
 	bool bVisualizePalium = true;
 
+	bool bVisualizeCearnuk = true;
+	bool bVisualizeChapaa = true;
+	bool bVisualizeCommonBugs = true;
+	bool bVisualizeUncommonBugs = true;
+	bool bVisualizeRareBugs = true;
+	bool bVisualizeEpicBugs = true;
+
 	unsigned int Colors[(int)EESPColorSlot::MAX] = {
-		IM_COL32(0xFF, 0x00, 0x00, 0xFF), // Default
+		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF), // Default
+
 		IM_COL32(0x00, 0x00, 0xFF, 0xFF), // CoOp
 		IM_COL32(0x00, 0xFF, 0x00, 0xFF), // Trees
 		IM_COL32(0x88, 0x8C, 0x8D, 0xFF), // Stone
@@ -417,7 +437,15 @@ private:
 		IM_COL32(0xA1, 0x9D, 0x94, 0xFF), // Iron
 		IM_COL32(0xAA, 0xA9, 0xAD, 0xFF), // Silver
 		IM_COL32(0xDB, 0xAC, 0x34, 0xFF), // Gold
-		IM_COL32(0x94, 0xA0, 0xE2, 0xFF) // Palium
+		IM_COL32(0x94, 0xA0, 0xE2, 0xFF), // Palium
+		
+		IM_COL32(0x0B, 0x61, 0xFF, 0xFF), // Common Grade
+		IM_COL32(0x6F, 0xF4, 0x43, 0xFF), // Uncommon Grade
+		IM_COL32(0x21, 0x65, 0x71, 0xFF), // Rare Grade
+		IM_COL32(0x69, 0x4C, 0xFF, 0xFF), // Epic Grade
+
+		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF), // Cearnuk
+		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF) // Chapaa
 	};
 
 };
