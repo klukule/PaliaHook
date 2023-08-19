@@ -31,6 +31,14 @@ public:
 		return Clss;
 	}
 
+	inline bool IsValidLowLevel() {
+		if (this == nullptr)
+			return false;
+		if (!Class)
+			return false;
+
+		return GObjects->GetByIndex(Index) == this;
+	}
 
 	bool HasTypeFlag(EClassCastFlags TypeFlag) const;
 
