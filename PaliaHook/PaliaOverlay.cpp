@@ -222,6 +222,9 @@ void PaliaOverlay::DrawHUD()
 			if (ActorPosition.X == 0 && ActorPosition.Y == 0 && ActorPosition.Z == 0) continue;
 
 			double Distance = sqrt(pow(PawnLocation.X - ActorPosition.X, 2) + pow(PawnLocation.Y - ActorPosition.Y, 2) + pow(PawnLocation.Z - ActorPosition.Z, 2)) * 0.01;
+
+			if (bEnableESPCulling && Distance > CullDistance) continue;
+
 			FVector2D ScreenLocation;
 			if (PlayerController->ProjectWorldLocationToScreen(ActorPosition, &ScreenLocation, true)) {
 
