@@ -458,7 +458,7 @@ enum class EStyleColor : uint8
 struct FGeometry
 {
 public:
-	uint8                                        Pad_21BB[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F01[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -468,7 +468,7 @@ struct FSlateColor
 public:
 	struct FLinearColor                          SpecifiedColor;                                    // 0x0(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	enum class ESlateColorStylingMode            ColorUseRule;                                      // 0x10(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_21BC[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F07[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -481,7 +481,7 @@ public:
 	float                                        Width;                                             // 0x34(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESlateBrushRoundingType           RoundingType;                                      // 0x38(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUseBrushTransparency;                             // 0x39(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21BE[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F0B[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -500,24 +500,24 @@ public:
 struct FSlateBrush
 {
 public:
-	uint8                                        Pad_21C0[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F0E[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bIsDynamicallyLoaded : 1;                          // Mask: 0x1, PropSize: 0x10x10(0x1)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bHasUObject : 1;                                   // Mask: 0x2, PropSize: 0x10x10(0x1)(Deprecated, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        BitPad_164 : 6;                                    // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        BitPad_104 : 6;                                    // Fixing Bit-Field Size  [ Dumper-7 ]
 	enum class ESlateBrushDrawType               DrawAs;                                            // 0x11(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESlateBrushTileType               Tiling;                                            // 0x12(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESlateBrushMirrorType             Mirroring;                                         // 0x13(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESlateBrushImageType              ImageType;                                         // 0x14(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21C1[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F1A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             ImageSize;                                         // 0x18(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMargin                               Margin;                                            // 0x28(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSlateColor                           TintColor;                                         // 0x38(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21C3[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F1B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrushOutlineSettings            OutlineSettings;                                   // 0x50(0x40)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class UObject*                               ResourceObject;                                    // 0x90(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class FName                                  ResourceName;                                      // 0x98(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FBox2f                                UVRegion;                                          // 0xA0(0x14)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_21C5[0x1C];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F1E[0x1C];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -525,7 +525,7 @@ public:
 struct FInputEvent
 {
 public:
-	uint8                                        Pad_21C6[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F22[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x78 (0x98 - 0x20)
@@ -533,7 +533,7 @@ public:
 struct FPointerEvent : public FInputEvent
 {
 public:
-	uint8                                        Pad_21C7[0x78];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F23[0x78];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -541,7 +541,7 @@ public:
 struct FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_21CA[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F25[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xD48 (0xD50 - 0x8)
@@ -549,14 +549,14 @@ public:
 struct FTableRowStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_21CC[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F28[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           SelectorFocusedBrush;                              // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           ActiveHoveredBrush;                                // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           ActiveBrush;                                       // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           InactiveHoveredBrush;                              // 0x280(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           InactiveBrush;                                     // 0x350(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                         bUseParentRowBrush;                                // 0x420(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21CD[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F2A[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           ParentRowBackgroundBrush;                          // 0x430(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           ParentRowBackgroundHoveredBrush;                   // 0x500(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           EvenRowBackgroundHoveredBrush;                     // 0x5D0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -565,7 +565,7 @@ public:
 	struct FSlateBrush                           OddRowBackgroundBrush;                             // 0x840(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           TextColor;                                         // 0x910(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           SelectedTextColor;                                 // 0x924(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21D1[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F2F[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           DropIndicator_Above;                               // 0x940(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           DropIndicator_Onto;                                // 0xA10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           DropIndicator_Below;                               // 0xAE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -579,7 +579,7 @@ struct FSlateSound
 {
 public:
 	class UObject*                               ResourceObject;                                    // 0x0(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_21D2[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F35[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x3E8 (0x3F0 - 0x8)
@@ -587,7 +587,7 @@ public:
 struct FButtonStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_21D4[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F36[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           Normal;                                            // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           Hovered;                                           // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           Pressed;                                           // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -607,7 +607,7 @@ public:
 struct FComboButtonStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_21DB[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F3F[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FButtonStyle                          ButtonStyle;                                       // 0x10(0x3F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           DownArrowImage;                                    // 0x400(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FVector2D                             ShadowOffset;                                      // 0x4D0(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -617,7 +617,7 @@ public:
 	struct FMargin                               ContentPadding;                                    // 0x5D0(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FMargin                               DownArrowPadding;                                  // 0x5E0(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EVerticalAlignment                DownArrowAlign;                                    // 0x5F0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21DF[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F42[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x658 (0x660 - 0x8)
@@ -625,7 +625,7 @@ public:
 struct FComboBoxStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_21E2[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F43[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FComboButtonStyle                     ComboButtonStyle;                                  // 0x10(0x600)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateSound                           PressedSlateSound;                                 // 0x610(0x18)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSlateSound                           SelectionChangeSlateSound;                         // 0x628(0x18)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
@@ -641,7 +641,7 @@ public:
 	int32                                        OutlineSize;                                       // 0x0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSeparateFillAlpha;                                // 0x4(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bApplyOutlineToDropShadows;                        // 0x5(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21ED[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F45[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UObject*                               OutlineMaterial;                                   // 0x8(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          OutlineColor;                                      // 0x10(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -654,12 +654,12 @@ public:
 	class UObject*                               FontObject;                                        // 0x0(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UObject*                               FontMaterial;                                      // 0x8(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FFontOutlineSettings                  OutlineSettings;                                   // 0x10(0x20)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21F6[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F49[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  TypefaceFontName;                                  // 0x40(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Size;                                              // 0x48(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        LetterSpacing;                                     // 0x4C(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SkewAmount;                                        // 0x50(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21FA[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F4B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2E8 (0x2F0 - 0x8)
@@ -669,7 +669,7 @@ struct FEditableTextStyle : public FSlateWidgetStyle
 public:
 	struct FSlateFontInfo                        Font;                                              // 0x8(0x58)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSlateColor                           ColorAndOpacity;                                   // 0x60(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2200[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F50[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BackgroundImageSelected;                           // 0x80(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           BackgroundImageComposing;                          // 0x150(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           CaretImage;                                        // 0x220(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -680,7 +680,7 @@ public:
 struct FScrollBarStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2201[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F52[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           HorizontalBackgroundImage;                         // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           VerticalBackgroundImage;                           // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           VerticalTopSlotImage;                              // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -691,7 +691,7 @@ public:
 	struct FSlateBrush                           HoveredThumbImage;                                 // 0x5C0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           DraggedThumbImage;                                 // 0x690(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	float                                        Thickness;                                         // 0x760(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2203[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F5C[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x338 (0x340 - 0x8)
@@ -701,7 +701,7 @@ struct FTextBlockStyle : public FSlateWidgetStyle
 public:
 	struct FSlateFontInfo                        Font;                                              // 0x8(0x58)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSlateColor                           ColorAndOpacity;                                   // 0x60(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2204[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F5E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             ShadowOffset;                                      // 0x78(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          ShadowColorAndOpacity;                             // 0x88(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSlateColor                           SelectedBackgroundColor;                           // 0x98(0x14)(Edit, NativeAccessSpecifierPublic)
@@ -711,7 +711,7 @@ public:
 	struct FSlateBrush                           UnderlineBrush;                                    // 0x260(0xD0)(Edit, BlueprintVisible, AdvancedDisplay, NativeAccessSpecifierPublic)
 	enum class ETextTransformPolicy              TransformPolicy;                                   // 0x330(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETextOverflowPolicy               OverflowPolicy;                                    // 0x331(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2205[0xE];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F64[0xE];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xE78 (0xE80 - 0x8)
@@ -719,7 +719,7 @@ public:
 struct FEditableTextBoxStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2207[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F68[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BackgroundImageNormal;                             // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           BackgroundImageHovered;                            // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           BackgroundImageFocused;                            // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -740,7 +740,7 @@ public:
 struct FSpinBoxStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2212[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F75[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BackgroundBrush;                                   // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           ActiveBackgroundBrush;                             // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           HoveredBackgroundBrush;                            // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -751,7 +751,7 @@ public:
 	struct FSlateColor                           ForegroundColor;                                   // 0x5C0(0x14)(NativeAccessSpecifierPublic)
 	struct FMargin                               TextPadding;                                       // 0x5D4(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FMargin                               InsetPadding;                                      // 0x5E4(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2216[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F7A[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x28 - 0x20)
@@ -759,7 +759,7 @@ public:
 struct FCharacterEvent : public FInputEvent
 {
 public:
-	uint8                                        Pad_2217[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F7C[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x40 - 0x20)
@@ -767,7 +767,7 @@ public:
 struct FKeyEvent : public FInputEvent
 {
 public:
-	uint8                                        Pad_2219[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F7F[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x28 - 0x20)
@@ -775,7 +775,7 @@ public:
 struct FNavigationEvent : public FInputEvent
 {
 public:
-	uint8                                        Pad_221A[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F80[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x48 - 0x40)
@@ -783,7 +783,7 @@ public:
 struct FAnalogInputEvent : public FKeyEvent
 {
 public:
-	uint8                                        Pad_221B[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F82[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -791,7 +791,7 @@ public:
 struct FFocusEvent
 {
 public:
-	uint8                                        Pad_2220[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F85[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x80 - 0x20)
@@ -799,7 +799,7 @@ public:
 struct FMotionEvent : public FInputEvent
 {
 public:
-	uint8                                        Pad_2221[0x60];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F87[0x60];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xD8 (0xE0 - 0x8)
@@ -807,7 +807,7 @@ public:
 struct FTableViewStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2225[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F8A[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BackgroundBrush;                                   // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 
@@ -816,7 +816,7 @@ public:
 struct FHyperlinkStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_223B[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FA6[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FButtonStyle                          UnderlineStyle;                                    // 0x10(0x3F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FTextBlockStyle                       TextStyle;                                         // 0x400(0x340)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FMargin                               Padding;                                           // 0x740(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
@@ -827,7 +827,7 @@ public:
 struct FSliderStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_223C[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FAA[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           NormalBarImage;                                    // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           HoveredBarImage;                                   // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           DisabledBarImage;                                  // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -835,7 +835,7 @@ public:
 	struct FSlateBrush                           HoveredThumbImage;                                 // 0x350(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           DisabledThumbImage;                                // 0x420(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	float                                        BarThickness;                                      // 0x4F0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_223D[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FB1[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -844,12 +844,12 @@ struct FFontData
 {
 public:
 	class FString                                FontFilename;                                      // 0x0(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_223E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FB4[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EFontHinting                      Hinting;                                           // 0x14(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	enum class EFontLoadingPolicy                LoadingPolicy;                                     // 0x15(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_223F[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FB5[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        SubFaceIndex;                                      // 0x18(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_2240[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FB6[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UObject*                               FontFaceAsset;                                     // 0x20(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 
@@ -877,7 +877,7 @@ struct FCompositeFallbackFont
 public:
 	struct FTypeface                             Typeface;                                          // 0x0(0x10)(NativeAccessSpecifierPublic)
 	float                                        ScalingFactor;                                     // 0x10(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2247[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FBB[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x38 - 0x18)
@@ -904,7 +904,7 @@ public:
 struct FCaptureLostEvent
 {
 public:
-	uint8                                        Pad_224B[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FC3[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xAC8 (0xAD0 - 0x8)
@@ -913,7 +913,7 @@ struct FCheckBoxStyle : public FSlateWidgetStyle
 {
 public:
 	enum class ESlateCheckBoxType                CheckBoxType;                                      // 0x8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_224D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FC5[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           UncheckedImage;                                    // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           UncheckedHoveredImage;                             // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           UncheckedPressedImage;                             // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -938,7 +938,7 @@ public:
 	struct FSlateSound                           CheckedSlateSound;                                 // 0xA80(0x18)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSlateSound                           UncheckedSlateSound;                               // 0xA98(0x18)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSlateSound                           HoveredSlateSound;                                 // 0xAB0(0x18)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_225B[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FCE[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2158 (0x2160 - 0x8)
@@ -946,7 +946,7 @@ public:
 struct FSegmentedControlStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2265[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FD1[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCheckBoxStyle                        ControlStyle;                                      // 0x10(0xAD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FCheckBoxStyle                        FirstControlStyle;                                 // 0xAE0(0xAD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FCheckBoxStyle                        LastControlStyle;                                  // 0x15B0(0xAD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -959,7 +959,7 @@ public:
 struct FInlineEditableTextBlockStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_226B[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FD6[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FEditableTextBoxStyle                 EditableTextBoxStyle;                              // 0x10(0xE80)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FTextBlockStyle                       TextStyle;                                         // 0xE90(0x340)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
@@ -969,12 +969,12 @@ public:
 struct FProgressBarStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_226F[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FD8[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BackgroundImage;                                   // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           FillImage;                                         // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           MarqueeImage;                                      // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                         EnableFillAnimation;                               // 0x280(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2271[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FDD[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1B8 (0x1C0 - 0x8)
@@ -982,11 +982,11 @@ public:
 struct FExpandableAreaStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2274[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FDE[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           CollapsedImage;                                    // 0x10(0xD0)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           ExpandedImage;                                     // 0xE0(0xD0)(Edit, NativeAccessSpecifierPublic)
 	float                                        RolloutAnimationSeconds;                           // 0x1B0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2276[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FE0[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1248 (0x1250 - 0x8)
@@ -994,10 +994,10 @@ public:
 struct FSearchBoxStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2278[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FE2[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FEditableTextBoxStyle                 TextBoxStyle;                                      // 0x10(0xE80)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateFontInfo                        ActiveFontInfo;                                    // 0xE90(0x58)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_227A[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FE4[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           UpArrowImage;                                      // 0xEF0(0xD0)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           DownArrowImage;                                    // 0xFC0(0xD0)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           GlassImage;                                        // 0x1090(0xD0)(Edit, NativeAccessSpecifierPublic)
@@ -1006,7 +1006,7 @@ public:
 	bool                                         bLeftAlignButtons;                                 // 0x1240(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bLeftAlignSearchResultButtons;                     // 0x1241(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bLeftAlignGlassImageAndClearButton;                // 0x1242(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_227F[0xD];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FE7[0xD];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x918 (0x920 - 0x8)
@@ -1014,7 +1014,7 @@ public:
 struct FVolumeControlStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2280[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FE9[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSliderStyle                          SliderStyle;                                       // 0x10(0x500)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           HighVolumeImage;                                   // 0x510(0xD0)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           MidVolumeImage;                                    // 0x5E0(0xD0)(Edit, NativeAccessSpecifierPublic)
@@ -1028,10 +1028,10 @@ public:
 struct FInlineTextImageStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2284[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FEC[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           Image;                                             // 0x10(0xD0)(Edit, NativeAccessSpecifierPublic)
 	int16                                        Baseline;                                          // 0xE0(0x2)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2286[0xE];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FEE[0xE];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1A8 (0x1B0 - 0x8)
@@ -1039,7 +1039,7 @@ public:
 struct FSplitterStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2288[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FF2[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           HandleNormalBrush;                                 // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           HandleHighlightBrush;                              // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
@@ -1049,7 +1049,7 @@ public:
 struct FTableColumnHeaderStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2289[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FF6[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           SortPrimaryAscendingImage;                         // 0x10(0xD0)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           SortPrimaryDescendingImage;                        // 0xE0(0xD0)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           SortSecondaryAscendingImage;                       // 0x1B0(0xD0)(Edit, NativeAccessSpecifierPublic)
@@ -1066,18 +1066,18 @@ public:
 struct FHeaderRowStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_2293[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2000[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTableColumnHeaderStyle               ColumnStyle;                                       // 0x10(0x760)(Edit, NativeAccessSpecifierPublic)
 	struct FTableColumnHeaderStyle               LastColumnStyle;                                   // 0x770(0x760)(Edit, NativeAccessSpecifierPublic)
 	struct FSplitterStyle                        ColumnSplitterStyle;                               // 0xED0(0x1B0)(Edit, NativeAccessSpecifierPublic)
 	float                                        SplitterHandleSize;                                // 0x1080(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2297[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2004[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BackgroundBrush;                                   // 0x1090(0xD0)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateColor                           ForegroundColor;                                   // 0x1160(0x14)(Edit, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2298[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2006[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           HorizontalSeparatorBrush;                          // 0x1180(0xD0)(Edit, NativeAccessSpecifierPublic)
 	float                                        HorizontalSeparatorThickness;                      // 0x1250(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_229A[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2007[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xD78 (0xD80 - 0x8)
@@ -1085,7 +1085,7 @@ public:
 struct FDockTabStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_229C[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2008[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FButtonStyle                          CloseButtonStyle;                                  // 0x10(0x3F0)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           NormalBrush;                                       // 0x400(0xD0)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           ColorOverlayTabBrush;                              // 0x4D0(0xD0)(Edit, NativeAccessSpecifierPublic)
@@ -1104,7 +1104,7 @@ public:
 	struct FSlateColor                           ActiveForegroundColor;                             // 0xD50(0x14)(Edit, AdvancedDisplay, NativeAccessSpecifierPublic)
 	struct FSlateColor                           ForegroundForegroundColor;                         // 0xD64(0x14)(Edit, AdvancedDisplay, NativeAccessSpecifierPublic)
 	float                                        IconBorderPadding;                                 // 0xD78(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22A7[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2017[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x348 (0x350 - 0x8)
@@ -1113,7 +1113,7 @@ struct FScrollBoxStyle : public FSlateWidgetStyle
 {
 public:
 	float                                        BarThickness;                                      // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22A8[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_201C[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           TopShadowBrush;                                    // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           BottomShadowBrush;                                 // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           LeftShadowBrush;                                   // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -1125,7 +1125,7 @@ public:
 struct FScrollBorderStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_22AC[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_201E[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           TopShadowBrush;                                    // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           BottomShadowBrush;                                 // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
@@ -1135,7 +1135,7 @@ public:
 struct FWindowStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_22AE[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_201F[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FButtonStyle                          MinimizeButtonStyle;                               // 0x10(0x3F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FButtonStyle                          MaximizeButtonStyle;                               // 0x400(0x3F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FButtonStyle                          RestoreButtonStyle;                                // 0x7F0(0x3F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -1145,18 +1145,18 @@ public:
 	struct FSlateBrush                           InactiveTitleBrush;                                // 0x13E0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           FlashTitleBrush;                                   // 0x14B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           BackgroundColor;                                   // 0x1580(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22B4[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2023[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           OutlineBrush;                                      // 0x15A0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           OutlineColor;                                      // 0x1670(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22B6[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2025[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BorderBrush;                                       // 0x1690(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           BorderColor;                                       // 0x1760(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22B7[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2026[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BackgroundBrush;                                   // 0x1780(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           ChildBackgroundBrush;                              // 0x1850(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	int32                                        WindowCornerRadius;                                // 0x1920(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMargin                               BorderPadding;                                     // 0x1924(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22B8[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2027[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x988 (0x988 - 0x0)
@@ -1165,7 +1165,7 @@ struct FStyleColorList
 {
 public:
 	struct FLinearColor                          StyleColors[0x3D];                                 // 0x0(0x3D0)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22BA[0x5B8];                                   // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_202A[0x5B8];                                   // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x48 (0x48 - 0x0)
@@ -1173,7 +1173,7 @@ public:
 struct FStyleTheme
 {
 public:
-	uint8                                        Pad_22BB[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_202C[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x3E58 (0x3E60 - 0x8)
@@ -1181,7 +1181,7 @@ public:
 struct FToolBarStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_22BD[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_202D[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BackgroundBrush;                                   // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           ExpandBrush;                                       // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           SeparatorBrush;                                    // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -1203,7 +1203,7 @@ public:
 	struct FMargin                               BackgroundPadding;                                 // 0x3E30(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector2D                             IconSize;                                          // 0x3E40(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShowLabels;                                       // 0x3E50(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22C5[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_203A[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

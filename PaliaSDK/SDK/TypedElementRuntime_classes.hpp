@@ -36,10 +36,10 @@ public:
 class UTypedElementSelectionSet : public UObject
 {
 public:
-	uint8                                        Pad_273A[0x800];                                   // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_240E[0x800];                                   // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnPreSelectionChange;                              // 0x828(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnSelectionChange;                                 // 0x838(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_273C[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2411[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

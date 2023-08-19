@@ -83,7 +83,7 @@ public:
 class UTypedElementRegistry : public UObject
 {
 public:
-	uint8                                        Pad_242A[0x920];                                   // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_211C[0x920];                                   // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -146,7 +146,7 @@ public:
 class UTestTypedElementInterfaceA_ImplTyped : public UObject
 {
 public:
-	uint8                                        Pad_244E[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_215F[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -161,7 +161,7 @@ public:
 class UTestTypedElementInterfaceA_ImplUntyped : public UObject
 {
 public:
-	uint8                                        Pad_2450[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2162[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -176,7 +176,7 @@ public:
 class UTestTypedElementInterfaceBAndC_Typed : public UObject
 {
 public:
-	uint8                                        Pad_2452[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2165[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

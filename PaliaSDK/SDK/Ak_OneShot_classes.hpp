@@ -17,7 +17,7 @@ namespace SDK
 class UAk_OneShot_C : public UAk_OneShot_Base_C
 {
 public:
-	uint8                                        Pad_BFD[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_313D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Attach_Name;                                       // 0x48(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	bool                                         Follow;                                            // 0x58(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         TryCallOnOwner;                                    // 0x59(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

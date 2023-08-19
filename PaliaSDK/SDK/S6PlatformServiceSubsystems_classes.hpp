@@ -18,7 +18,7 @@ class US6PLAT_PlayerBehaviorSubsystem : public ULocalPlayerSubsystem
 {
 public:
 	FMulticastInlineDelegateProperty_            OnReportSubmited;                                  // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_14C7[0x68];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_121D[0x68];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

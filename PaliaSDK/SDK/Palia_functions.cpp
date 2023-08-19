@@ -33489,6 +33489,33 @@ void UInventoryRequestComponent::RpcServer_FulfillInventoryRequest(struct FGuid&
 }
 
 
+// Function Palia.InventoryRequestComponent.RpcServer_CreateRequest
+// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
+// Parameters:
+// struct FCreateInventoryRequest     InventoryRequest                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UInventoryRequestComponent::RpcServer_CreateRequest(struct FCreateInventoryRequest& InInventoryRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("InventoryRequestComponent", "RpcServer_CreateRequest");
+
+	Params::UInventoryRequestComponent_RpcServer_CreateRequest_Params Parms{};
+
+	Parms.InventoryRequest = InInventoryRequest;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function Palia.InventoryRequestComponent.RpcServer_ClaimInventoryRequest
 // (Final, Net, NetReliable, Native, Event, Private, NetServer, HasDefaults)
 // Parameters:
@@ -33506,6 +33533,58 @@ void UInventoryRequestComponent::RpcServer_ClaimInventoryRequest(struct FGuid& I
 
 	Parms.OperationId = InOperationId;
 	Parms.InventoryRequest = InInventoryRequest;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.InventoryRequestComponent.RpcClient_RequestCreationSucceeded
+// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+// Parameters:
+// struct FInventoryRequest           InventoryRequest                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UInventoryRequestComponent::RpcClient_RequestCreationSucceeded(struct FInventoryRequest& InInventoryRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("InventoryRequestComponent", "RpcClient_RequestCreationSucceeded");
+
+	Params::UInventoryRequestComponent_RpcClient_RequestCreationSucceeded_Params Parms{};
+
+	Parms.InventoryRequest = InInventoryRequest;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.InventoryRequestComponent.RpcClient_RequestCreationFailed
+// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+// Parameters:
+
+void UInventoryRequestComponent::RpcClient_RequestCreationFailed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("InventoryRequestComponent", "RpcClient_RequestCreationFailed");
+
+	Params::UInventoryRequestComponent_RpcClient_RequestCreationFailed_Params Parms{};
+
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -33912,6 +33991,48 @@ void UInventoryRequestManager::OnOpenRequestsChanged__DelegateSignature(class UI
 }
 
 
+// DelegateFunction Palia.InventoryRequestManager.OnCreateRequest_Succeeded__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// struct FInventoryRequest           InventoryRequest                                                 (Parm, NativeAccessSpecifierPublic)
+
+void UInventoryRequestManager::OnCreateRequest_Succeeded__DelegateSignature(const struct FInventoryRequest& InInventoryRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("InventoryRequestManager", "OnCreateRequest_Succeeded__DelegateSignature");
+
+	Params::UInventoryRequestManager_OnCreateRequest_Succeeded__DelegateSignature_Params Parms{};
+
+	Parms.InventoryRequest = InInventoryRequest;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// DelegateFunction Palia.InventoryRequestManager.OnCreateRequest_Failed__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// class FString                      ErrorMsg                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInventoryRequestManager::OnCreateRequest_Failed__DelegateSignature(const class FString& InErrorMsg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("InventoryRequestManager", "OnCreateRequest_Failed__DelegateSignature");
+
+	Params::UInventoryRequestManager_OnCreateRequest_Failed__DelegateSignature_Params Parms{};
+
+	Parms.ErrorMsg = InErrorMsg;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // DelegateFunction Palia.InventoryRequestManager.OnActiveRequestChanged__DelegateSignature
 // (MulticastDelegate, Public, Delegate)
 // Parameters:
@@ -34040,40 +34161,6 @@ bool UInventoryRequestManager::FulfillRequest(struct FInventoryRequest& InInvent
 		Func = Class->GetFunction("InventoryRequestManager", "FulfillRequest");
 
 	Params::UInventoryRequestManager_FulfillRequest_Params Parms{};
-
-	Parms.InventoryRequest = InInventoryRequest;
-	Parms.OnSuccess = InOnSuccess;
-	Parms.OnFailure = InOnFailure;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function Palia.InventoryRequestManager.CreateRequest
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FCreateInventoryRequest     InventoryRequest                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// FDelegateProperty_                 OnSuccess                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// FDelegateProperty_                 OnFailure                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryRequestManager::CreateRequest(struct FCreateInventoryRequest& InInventoryRequest, FDelegateProperty_ InOnSuccess, FDelegateProperty_ InOnFailure)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("InventoryRequestManager", "CreateRequest");
-
-	Params::UInventoryRequestManager_CreateRequest_Params Parms{};
 
 	Parms.InventoryRequest = InInventoryRequest;
 	Parms.OnSuccess = InOnSuccess;

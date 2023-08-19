@@ -22,12 +22,12 @@ public:
 	uint8                                        bAllowSpatialization : 1;                          // Mask: 0x4, PropSize: 0x10x2A0(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverrideAttenuation : 1;                          // Mask: 0x8, PropSize: 0x10x2A0(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        BitPad_0 : 4;                                      // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_2E[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_39[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bEnableBusSends : 1;                               // Mask: 0x1, PropSize: 0x10x2A4(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bEnableBaseSubmix : 1;                             // Mask: 0x2, PropSize: 0x10x2A4(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bEnableSubmixSends : 1;                            // Mask: 0x4, PropSize: 0x10x2A4(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        BitPad_1 : 5;                                      // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_33[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3B[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	class USoundAttenuation*                     AttenuationSettings;                               // 0x2A8(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSoundAttenuationSettings             AttenuationOverrides;                              // 0x2B0(0x3C8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class USoundConcurrency*                     ConcurrencySettings;                               // 0x678(0x8)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -41,15 +41,15 @@ public:
 	uint8                                        bIsUISound : 1;                                    // Mask: 0x1, PropSize: 0x10x718(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bIsPreviewSound : 1;                               // Mask: 0x2, PropSize: 0x10x718(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        BitPad_2 : 6;                                      // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_36[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_40[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        EnvelopeFollowerAttackTime;                        // 0x71C(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        EnvelopeFollowerReleaseTime;                       // 0x720(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_42[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnAudioEnvelopeValue;                              // 0x728(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38[0x20];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_44[0x20];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class USynthSound*                           Synth;                                             // 0x758(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UAudioComponent*                       AudioComponent;                                    // 0x760(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_39[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_47[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -75,7 +75,7 @@ public:
 class UAudioGenerator : public UObject
 {
 public:
-	uint8                                        Pad_3B[0x80];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4C[0x80];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -90,19 +90,19 @@ public:
 class UAudioDeviceNotificationSubsystem : public UEngineSubsystem
 {
 public:
-	uint8                                        Pad_3D[0x8];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_4D[0x8];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            DefaultCaptureDeviceChanged;                       // 0x38(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3E[0x18];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_4E[0x18];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            DefaultRenderDeviceChanged;                        // 0x60(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3F[0x18];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_4F[0x18];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            DeviceAdded;                                       // 0x88(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_40[0x18];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_50[0x18];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            DeviceRemoved;                                     // 0xB0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_41[0x18];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_51[0x18];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            DeviceStateChanged;                                // 0xD8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_42[0x18];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_52[0x18];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            DeviceSwitched;                                    // 0x100(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_43[0x18];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_53[0x18];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -170,7 +170,7 @@ class USynthSound : public USoundWaveProcedural
 {
 public:
 	TWeakObjectPtr<class USynthComponent>        OwningSynthComponent;                              // 0x4A0(0x8)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_C8[0x18];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9E[0x18];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -185,7 +185,7 @@ public:
 class USubmixEffectDynamicsProcessorPreset : public USoundEffectSubmixPreset
 {
 public:
-	uint8                                        Pad_CA[0x88];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9F[0x88];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSubmixEffectDynamicsProcessorSettings Settings;                                          // 0xF0(0x60)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
@@ -205,7 +205,7 @@ public:
 class USubmixEffectSubmixEQPreset : public USoundEffectSubmixPreset
 {
 public:
-	uint8                                        Pad_CC[0x38];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_A0[0x38];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSubmixEffectSubmixEQSettings         Settings;                                          // 0xA0(0x10)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
@@ -222,7 +222,7 @@ public:
 class USubmixEffectReverbPreset : public USoundEffectSubmixPreset
 {
 public:
-	uint8                                        Pad_CF[0x68];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_A1[0x68];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSubmixEffectReverbSettings           Settings;                                          // 0xD0(0x40)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()
@@ -240,7 +240,7 @@ public:
 class UQuartzClockHandle : public UObject
 {
 public:
-	uint8                                        Pad_EB[0x1C0];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B5[0x1C0];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -280,7 +280,7 @@ public:
 class UQuartzSubsystem : public UTickableWorldSubsystem
 {
 public:
-	uint8                                        Pad_F9[0x20];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FC[0x20];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

@@ -26,7 +26,7 @@ public:
 	struct FRotator                              Rotation_28_B34885404E6FFD445BA8169E747A1F00;      // 0x18(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                         bGetInsightsfile_11_AEEB421D4C51162084DA39A7FC72CE89; // 0x30(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         bGetUEStatsFile_13_0936D2574BC600EBA3DB7093A1DCBBF3; // 0x31(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_C98[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2F6E[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ScalabilityLevel_33_A11A7B7444072001228D04B6F1AADFD7; // 0x34(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                InsightsSaveLocation_20_430FE57D48B537EA9DF5C2A1C33DA233; // 0x38(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                UEStatsSaveLocaiton_22_41F3503047CC685C7A1D6E9FBD22A907; // 0x48(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)

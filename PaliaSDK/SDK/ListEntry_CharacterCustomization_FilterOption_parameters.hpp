@@ -22,7 +22,7 @@ struct UListEntry_CharacterCustomization_FilterOption_C_OnOptionSelected__Delega
 {
 public:
 	bool                                         IsSelected;                                        // 0x0(0x1)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_1E9C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_4218[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomization_CosmeticTagFilterStruct SelectedCosmeticTag;                               // 0x8(0x38)(BlueprintVisible, BlueprintReadOnly, Parm)
 };
 

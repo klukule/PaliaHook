@@ -18,7 +18,7 @@ class UObject
 {
 public:
 	static class TUObjectArray*                  GObjects;                                          // (0x00[0x00]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_9[0x8];                                        // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_1[0x8];                                        // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	int32                                        Flags;                                             // (0x08[0x04]) NOT AUTO-GENERATED PROPERTY
 	int32                                        Index;                                             // (0x0C[0x04]) NOT AUTO-GENERATED PROPERTY
 	class UClass*                                Class;                                             // (0x10[0x08]) NOT AUTO-GENERATED PROPERTY
@@ -39,14 +39,6 @@ public:
 		return (Flags & 0x10) == 0x10;
 	}
 
-	inline bool IsValidLowLevel() {
-		if (this == nullptr)
-			return false;
-		if (!Class)
-			return false;
-
-		return GObjects->GetByIndex(Index) == this;
-	}
 
 	std::string GetName() const;
 
@@ -108,7 +100,7 @@ public:
 
 	inline void ProcessEvent(class UFunction* Function, void* Parms) const
 	{
-		return GetVFunction<void(*)(const UObject*, class UFunction*, void*)>(this, 0x4C /*0x2AC8230*/)(this, Function, Parms);
+		return GetVFunction<void(*)(const UObject*, class UFunction*, void*)>(this, 0x4C /*0x2AC8710*/)(this, Function, Parms);
 	}
 
 	void ExecuteUbergraph(int32 InEntryPoint);
@@ -133,7 +125,7 @@ public:
 class UPackage : public UObject
 {
 public:
-	uint8                                        Pad_A[0x68];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4[0x68];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -163,12 +155,12 @@ public:
 class UStruct : public UField
 {
 public:
-	uint8                                        Pad_B[0x10];                                       // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_5[0x10];                                       // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class UStruct*                               Super;                                             // (0x40[0x08]) NOT AUTO-GENERATED PROPERTY
 	class UField*                                Children;                                          // (0x48[0x08]) NOT AUTO-GENERATED PROPERTY
 	class FField*                                ChildProperties;                                   // (0x50[0x08]) NOT AUTO-GENERATED PROPERTY
 	int32                                        Size;                                              // (0x58[0x04]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_C[0x54];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_6[0x54];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -183,11 +175,11 @@ public:
 class UClass : public UStruct
 {
 public:
-	uint8                                        Pad_D[0x28];                                       // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_7[0x28];                                       // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	enum class EClassCastFlags                   CastFlags;                                         // (0xD8[0x08]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_E[0x30];                                       // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_8[0x30];                                       // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class UObject*                               DefaultObject;                                     // (0x110[0x08]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_F[0x118];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9[0x118];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -204,7 +196,7 @@ public:
 class UGCObjectReferencer : public UObject
 {
 public:
-	uint8                                        Pad_10[0x48];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_A[0x48];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -219,7 +211,7 @@ public:
 class UTextBuffer : public UObject
 {
 public:
-	uint8                                        Pad_11[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B[0x28];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -234,7 +226,7 @@ public:
 class UScriptStruct : public UStruct
 {
 public:
-	uint8                                        Pad_12[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D[0x10];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -250,7 +242,7 @@ class UFunction : public UStruct
 {
 public:
 	uint32                                       FunctionFlags;                                     // (0xB0[0x08]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_13[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E[0x28];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -279,7 +271,7 @@ public:
 class USparseDelegateFunction : public UDelegateFunction
 {
 public:
-	uint8                                        Pad_14[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -294,7 +286,7 @@ public:
 class UDynamicClass : public UClass
 {
 public:
-	uint8                                        Pad_15[0x80];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12[0x80];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -309,7 +301,7 @@ public:
 class UPackageMap : public UObject
 {
 public:
-	uint8                                        Pad_17[0xB8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13[0xB8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -324,9 +316,9 @@ public:
 class UEnum : public UField
 {
 public:
-	uint8                                        Pad_18[0x10];                                      // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_15[0x10];                                      // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class TArray<class TPair<class FName, int64>> Names;                                             // (0x40[0x10]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_19[0x18];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_16[0x18];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -341,7 +333,7 @@ public:
 class ULinkerPlaceholderClass : public UClass
 {
 public:
-	uint8                                        Pad_1A[0x1C0];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_17[0x1C0];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -356,7 +348,7 @@ public:
 class ULinkerPlaceholderExportObject : public UObject
 {
 public:
-	uint8                                        Pad_1B[0xD0];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_19[0xD0];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -371,7 +363,7 @@ public:
 class ULinkerPlaceholderFunction : public UFunction
 {
 public:
-	uint8                                        Pad_1C[0x1C0];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A[0x1C0];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -386,7 +378,7 @@ public:
 class UMetaData : public UObject
 {
 public:
-	uint8                                        Pad_1D[0xA0];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B[0xA0];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -401,7 +393,7 @@ public:
 class UObjectRedirector : public UObject
 {
 public:
-	uint8                                        Pad_1E[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -416,7 +408,7 @@ public:
 class UProperty : public UField
 {
 public:
-	uint8                                        Pad_1F[0x40];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D[0x40];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -431,7 +423,7 @@ public:
 class UEnumProperty : public UProperty
 {
 public:
-	uint8                                        Pad_20[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -476,7 +468,7 @@ public:
 class UBoolProperty : public UProperty
 {
 public:
-	uint8                                        Pad_25[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -505,7 +497,7 @@ public:
 class UByteProperty : public UNumericProperty
 {
 public:
-	uint8                                        Pad_26[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_25[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -749,7 +741,7 @@ public:
 class USetProperty : public UProperty
 {
 public:
-	uint8                                        Pad_2F[0x20];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2C[0x20];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -778,7 +770,7 @@ public:
 class USoftClassProperty : public USoftObjectProperty
 {
 public:
-	uint8                                        Pad_32[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -807,7 +799,7 @@ public:
 class UStructProperty : public UProperty
 {
 public:
-	uint8                                        Pad_34[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -892,7 +884,7 @@ public:
 class UPropertyWrapper : public UObject
 {
 public:
-	uint8                                        Pad_35[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

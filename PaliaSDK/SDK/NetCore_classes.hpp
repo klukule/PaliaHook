@@ -32,10 +32,10 @@ public:
 class UStatePerObjectConfig : public UObject
 {
 public:
-	uint8                                        Pad_252B[0x28];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2216[0x28];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                PerObjectConfigSection;                            // 0x50(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                         bEnabled;                                          // 0x60(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_252D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2218[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -51,7 +51,7 @@ class UEscalationManagerConfig : public UStatePerObjectConfig
 {
 public:
 	TArray<class FString>                        EscalationSeverity;                                // 0x68(0x10)(ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	uint8                                        Pad_252F[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_221B[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
