@@ -230,6 +230,7 @@ void DX12Hook::PrepareForOverlay(IDXGISwapChain* pSwapChain, ID3D12CommandQueue*
 		OverlayBase::Instance->OverlayProc();
 
 		UINT bufferIndex = pSwapChain3->GetCurrentBackBufferIndex();
+		OverlayFrames[bufferIndex].pCmdAlloc->Reset();
 
 		D3D12_RESOURCE_BARRIER barrier = {};
 		barrier.Type = D3D12_RESOURCE_BARRIER_TYPE_TRANSITION;
@@ -239,7 +240,6 @@ void DX12Hook::PrepareForOverlay(IDXGISwapChain* pSwapChain, ID3D12CommandQueue*
 		barrier.Transition.StateBefore = D3D12_RESOURCE_STATE_PRESENT;
 		barrier.Transition.StateAfter = D3D12_RESOURCE_STATE_RENDER_TARGET;
 
-		//OverlayFrames[bufferIndex].pCmdAlloc->Reset();
 		pCmdList->Reset(OverlayFrames[bufferIndex].pCmdAlloc, NULL);
 		pCmdList->ResourceBarrier(1, &barrier);
 		pCmdList->OMSetRenderTargets(1, &OverlayFrames[bufferIndex].RenderTarget, FALSE, NULL);
