@@ -33,7 +33,7 @@ class UBindingKeyListenerWidget : public UUserWidget
 {
 public:
 	FMulticastInlineDelegateProperty_            OnAnyKeyTriggered;                                 // 0x278(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_726[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_6BD[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -72,7 +72,7 @@ class UIARichTextBlockImageDecorator : public URichTextBlockDecorator
 {
 public:
 	class UDataTable*                            IconTable;                                         // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_72A[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_6C6[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -88,7 +88,7 @@ class UInputActionDescriptionWidget : public UUserWidget
 {
 public:
 	enum class EPlatform                         PlatformOption;                                    // 0x278(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_733[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_6CF[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UDataTable*                            IconTable;                                         // 0x280(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
@@ -137,7 +137,7 @@ class UKeyRebindingDatasetSettings : public UDeveloperSettings
 public:
 	TMap<enum class ERedirectsPlatform, TSubclassOf<class UKeyRebindingMappingDataset>> KeyRebindingDatasetOfAllPlatform;                  // 0x38(0x50)(Edit, Config, NoClear, UObjectWrapper, NativeAccessSpecifierPublic)
 	float                                        TipDelayTime;                                      // 0x88(0x4)(Edit, ZeroConstructor, Config, NoClear, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_73A[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_6D9[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -191,7 +191,7 @@ class UUnAvailableKeysAsset : public UDataAsset
 public:
 	TSet<struct FKey>                            UnAvailableKeySet;                                 // 0x30(0x50)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	enum class EInputControlsType                InputControlsType;                                 // 0x80(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_7B2[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_761[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -254,7 +254,7 @@ public:
 	class UKeyRebindingMappingDataset*           KeyRebindingDataset;                               // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TMap<class FName, struct FKeyRebindCallBackDelegateArray> KeyRebindingCallBackMap;                           // 0x38(0x50)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	TMap<class FName, class UInputMappingContext*> KeyRebindingMap;                                   // 0x88(0x50)(UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_865[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_818[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

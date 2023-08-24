@@ -42,7 +42,7 @@ public:
 struct FUniqueNetIdWrapper
 {
 public:
-	uint8                                        Pad_264A[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2750[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

@@ -23,7 +23,7 @@ struct FFSettingsItemSlider
 {
 public:
 	bool                                         UseDefaultNotch_5_499B696445B15E699117F78FBD649CAB; // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_428E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3F26[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       DefaultNotchValue_13_B7A8AE744D54EE74D11630B336752107; // 0x8(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                       StartingSliderValue_14_B639417A49904D05345F9F916383BB6B; // 0x10(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                       MinSliderValue_15_A35A5B4D41C0C0B47D504F96FAE2474A; // 0x18(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

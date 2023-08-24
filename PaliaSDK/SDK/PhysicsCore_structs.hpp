@@ -169,7 +169,7 @@ enum class EFrictionCombineMode : uint8
 struct FBodyInstanceCore
 {
 public:
-	uint8                                        Pad_1F94[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_21BA[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bSimulatePhysics : 1;                              // Mask: 0x1, PropSize: 0x10x10(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverrideMass : 1;                                 // Mask: 0x2, PropSize: 0x10x10(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bEnableGravity : 1;                                // Mask: 0x4, PropSize: 0x10x10(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -177,7 +177,7 @@ public:
 	uint8                                        bStartAwake : 1;                                   // Mask: 0x10, PropSize: 0x10x10(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bGenerateWakeEvents : 1;                           // Mask: 0x20, PropSize: 0x10x10(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bUpdateMassWhenScaleChanges : 1;                   // Mask: 0x40, PropSize: 0x10x10(0x1)(Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F9A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21BF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

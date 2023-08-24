@@ -21,7 +21,7 @@ public:
 	TSet<class UInputAction*>                    StartFlagMap;                                      // 0x428(0x50)(Transient, Protected, NativeAccessSpecifierProtected)
 	bool                                         bIsPersistentBinding;                              // 0x478(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	enum class ECommonInputMode                  InputModeOverride;                                 // 0x479(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_AE4[0x16];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C66[0x16];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -54,7 +54,7 @@ public:
 	TSet<class UInputAction*>                    StartFlagMap;                                      // 0x2F0(0x50)(Transient, Protected, NativeAccessSpecifierProtected)
 	bool                                         bIsPersistentBinding;                              // 0x340(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	enum class ECommonInputMode                  InputModeOverride;                                 // 0x341(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_AF4[0x16];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C69[0x16];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

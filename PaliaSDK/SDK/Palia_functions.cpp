@@ -30892,6 +30892,43 @@ bool AHousingPlotActor::IsCharacterOnHousePlot(class AValeriaCharacter* InCharac
 }
 
 
+// Function Palia.HousingPlotActor.HandlePlayerReachedKillVolume
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*         OverlappedComponent                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                      OtherActor                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*         OtherComp                                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              OtherBodyIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bFromSweep                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FHitResult                  SweepResult                                                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AHousingPlotActor::HandlePlayerReachedKillVolume(class UPrimitiveComponent* InOverlappedComponent, class AActor* InOtherActor, class UPrimitiveComponent* InOtherComp, int32 InOtherBodyIndex, bool InbFromSweep, struct FHitResult& InSweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("HousingPlotActor", "HandlePlayerReachedKillVolume");
+
+	Params::AHousingPlotActor_HandlePlayerReachedKillVolume_Params Parms{};
+
+	Parms.OverlappedComponent = InOverlappedComponent;
+	Parms.OtherActor = InOtherActor;
+	Parms.OtherComp = InOtherComp;
+	Parms.OtherBodyIndex = InOtherBodyIndex;
+	Parms.bFromSweep = InbFromSweep;
+	Parms.SweepResult = InSweepResult;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function Palia.HousingPlotActor.GetWritTransform
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:

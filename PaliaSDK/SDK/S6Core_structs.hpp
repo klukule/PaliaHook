@@ -74,7 +74,7 @@ struct FSingleTagFilter
 {
 public:
 	enum class ESingleTagFilterType              Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_716[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_79F[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTagList                              GameplayTags;                                      // 0x8(0x20)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 
@@ -84,7 +84,7 @@ struct FAsyncReadPixelsRequest
 {
 public:
 	class UTextureRenderTarget2D*                RenderTarget;                                      // 0x0(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_71B[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7A2[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -93,7 +93,7 @@ struct FS6AsyncReadPixels
 {
 public:
 	TArray<struct FAsyncReadPixelsRequest>       Queued;                                            // 0x0(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_71C[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7A6[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -112,7 +112,7 @@ struct FTagFilter
 {
 public:
 	enum class ETagFilterType                    Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_71D[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7AD[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTagList                              GameplayTags;                                      // 0x8(0x20)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 

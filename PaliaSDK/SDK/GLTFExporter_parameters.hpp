@@ -27,7 +27,7 @@ public:
 	TSet<class AActor*>                          SelectedActors;                                    // 0x20(0x50)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FGLTFExportMessages                   OutMessages;                                       // 0x70(0x30)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xA0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_18A8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_19CA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)

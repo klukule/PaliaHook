@@ -17,10 +17,10 @@ namespace SDK
 class UWaveTableBank : public UObject
 {
 public:
-	uint8                                        Pad_1D25[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1EF5[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EWaveTableResolution              Resolution;                                        // 0x30(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bBipolar;                                          // 0x31(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D28[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1EF6[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FWaveTableBankEntry>           Entries;                                           // 0x38(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass()

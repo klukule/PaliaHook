@@ -49,20 +49,20 @@ public:
 	class FName                                  MappingQualifier;                                  // 0x10(0x8)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         Success;                                           // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	enum class EAttachLocation                   AttachRule;                                        // 0x19(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_30FA[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CDE[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               AttachOffset;                                      // 0x20(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                  SocketName;                                        // 0x38(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAkAudioEvent*                         AkEvent;                                           // 0x40(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FAudioMappingConfig                   CallFunc_FindAudioMapping_ReturnValue;             // 0x48(0x38)()
 	bool                                         CallFunc_IsValid_ReturnValue;                      // 0x80(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_30FD[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CE0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                CallFunc_GetOwner_ReturnValue;                     // 0x88(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                         CallFunc_AkGetComponent_ComponentCreated;          // 0x90(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_30FF[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CE1[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkComponent*                          CallFunc_AkGetComponent_AkComponent;               // 0x98(0x8)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	struct FTransform                            CallFunc_GetSocketTransform_ReturnValue;           // 0xA0(0x60)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                        CallFunc_AkEventComponent_ReturnValue;             // 0x100(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_3101[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CE2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               CallFunc_BreakTransform_Location;                  // 0x108(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                              CallFunc_BreakTransform_Rotation;                  // 0x120(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FVector                               CallFunc_BreakTransform_Scale;                     // 0x138(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -79,44 +79,44 @@ public:
 	class USkeletalMeshComponent*                MeshComp;                                          // 0x0(0x8)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                         Success;                                           // 0x8(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	enum class EAttachLocation                   AttachRule;                                        // 0x9(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_3125[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CF3[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               AttachOffset;                                      // 0x10(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                  SocketName;                                        // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAkAudioEvent*                         AkEvent;                                           // 0x30(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UAbilityAnimationComponent*            AbilityAnimComp;                                   // 0x38(0x8)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                         SuccessfulPlay;                                    // 0x40(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_3128[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CF7[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        Temp_int_Array_Index_Variable;                     // 0x44(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                CallFunc_GetOwner_ReturnValue;                     // 0x48(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class AValeriaCharacter*                     K2Node_DynamicCast_AsValeria_Character;            // 0x50(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                         K2Node_DynamicCast_bSuccess;                       // 0x58(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_312E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CF8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAbilityAnimationComponent*            CallFunc_GetAbilityAnimation_ReturnValue;          // 0x60(0x8)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                        Temp_int_Loop_Counter_Variable;                    // 0x68(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_312F[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CF9[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                CallFunc_GetOwner_ReturnValue_1;                   // 0x70(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                        CallFunc_Add_IntInt_ReturnValue;                   // 0x78(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         CallFunc_IsValid_ReturnValue;                      // 0x7C(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         CallFunc_AkGetComponent_ComponentCreated;          // 0x7D(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_3134[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CFB[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkComponent*                          CallFunc_AkGetComponent_AkComponent;               // 0x80(0x8)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                        CallFunc_AkEventComponent_ReturnValue;             // 0x88(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_3136[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CFC[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTransform                            CallFunc_GetSocketTransform_ReturnValue;           // 0x90(0x60)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         CallFunc_IsValid_ReturnValue_1;                    // 0xF0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_3138[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CFE[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               CallFunc_BreakTransform_Location;                  // 0xF8(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                              CallFunc_BreakTransform_Rotation;                  // 0x110(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FVector                               CallFunc_BreakTransform_Scale;                     // 0x128(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                               CallFunc_Add_VectorVector_ReturnValue;             // 0x140(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAkComponent*                          CallFunc_AkEventLocationWithActor_AkComponent;     // 0x158(0x8)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	int32                                        CallFunc_AkEventLocationWithActor_Playing_ID;      // 0x160(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_313B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D02[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x168(0x10)(ZeroConstructor, HasGetValueTypeHash)
 	class FName                                  CallFunc_Conv_StringToName_ReturnValue;            // 0x178(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FAudioMappingConfig                   CallFunc_GetDataTableRowFromName_OutRow;           // 0x180(0x38)()
 	bool                                         CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x1B8(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_313C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D04[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class FName>                          CallFunc_Map_Keys_Keys;                            // 0x1C0(0x10)(ReferenceParm)
 	class FName                                  CallFunc_Array_Get_Item;                           // 0x1D0(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                        CallFunc_Array_Length_ReturnValue;                 // 0x1D8(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -138,9 +138,9 @@ public:
 	class FString                                CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x50(0x10)(ZeroConstructor, HasGetValueTypeHash)
 	class UDataTable*                            CallFunc_Map_Find_Value;                           // 0x60(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                         CallFunc_Map_Find_ReturnValue;                     // 0x68(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_3148[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D13[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  CallFunc_Conv_StringToName_ReturnValue;            // 0x6C(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_3149[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D14[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAudioMappingConfig                   CallFunc_GetDataTableRowFromName_OutRow;           // 0x78(0x38)()
 	bool                                         CallFunc_GetDataTableRowFromName_ReturnValue;      // 0xB0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         CallFunc_IsValid_ReturnValue;                      // 0xB1(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

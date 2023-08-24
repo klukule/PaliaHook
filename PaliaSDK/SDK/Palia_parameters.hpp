@@ -23,7 +23,7 @@ struct UAbilityAnimationComponent_TryChangeState_Params
 public:
 	struct FAnimState                            Context;                                           // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class ERpcAction                        RpcAction;                                         // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_C74[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D56[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -33,7 +33,7 @@ struct UAbilityAnimationComponent_StopMontage_Params
 public:
 	class UAnimMontage*                          AnimMontage;                                       // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_C77[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D57[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -59,7 +59,7 @@ struct UAbilityAnimationComponent_RpcServer_TryChangeState_Params
 public:
 	struct FAnimState                            Context;                                           // 0x0(0x18)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class ERpcAction                        RpcAction;                                         // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_C86[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D61[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -85,7 +85,7 @@ struct UAbilityAnimationComponent_RpcClient_TryChangeState_Params
 public:
 	struct FAnimState                            Context;                                           // 0x0(0x18)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class ERpcAction                        RpcAction;                                         // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_C8F[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D70[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -95,7 +95,7 @@ struct UAbilityAnimationComponent_PlayMontage_Params
 public:
 	struct FMontageInfo                          MontageInfo;                                       // 0x0(0x18)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_C90[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D77[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -159,7 +159,7 @@ struct UAbilityAnimationComponent_MontageAction_Params
 {
 public:
 	enum class ERpcMontageAction                 Event;                                             // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_CBA[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_DA2[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAnimMontage*                          Montage;                                           // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -170,7 +170,7 @@ struct UAbilityAnimationComponent_IsNotifyStateActive_Params
 public:
 	class FName                                  NotifyStateName;                                   // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_CBF[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_DA9[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1E8 (0x1E8 - 0x0)
@@ -196,7 +196,7 @@ struct UAbilityAnimationComponent_HandleEquipmentVisibilityChanged_Params
 public:
 	class UEquipmentComponent*                   InEquipmentComponent;                              // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHidden;                                           // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_CCD[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_DB5[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -346,7 +346,7 @@ public:
 	class APlayerController*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                StatName;                                          // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaStatModificationType      ModificationType;                                  // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D2E[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E06[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        Value;                                             // 0x1C(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -358,7 +358,7 @@ public:
 	class APlayerController*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                StatName;                                          // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaStatModificationType      ModificationType;                                  // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D35[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E0C[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Value;                                             // 0x1C(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -370,7 +370,7 @@ public:
 	class APlayerController*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                StatName;                                          // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaStatModificationType      ModificationType;                                  // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D38[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E15[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       Value;                                             // 0x20(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -382,7 +382,7 @@ public:
 	class APlayerController*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                StatName;                                          // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         NewValue;                                          // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D3B[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E19[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -406,7 +406,7 @@ public:
 	int32                                        PersistId;                                         // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Value;                                             // 0x1C(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1D(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D3E[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E20[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -417,7 +417,7 @@ public:
 	class APlayerController*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                AchievementID;                                     // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D46[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E22[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -428,7 +428,7 @@ public:
 	class APlayerController*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                AchievementID;                                     // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D4B[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E26[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -449,7 +449,7 @@ public:
 	class FString                                StatName;                                          // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Value;                                             // 0x18(0x10)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x28(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D52[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E2E[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -470,7 +470,7 @@ public:
 	class FString                                StatName;                                          // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Value;                                             // 0x18(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D58[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E34[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -482,7 +482,7 @@ public:
 	class FString                                StatName;                                          // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Value;                                             // 0x18(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D63[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E39[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -493,7 +493,7 @@ public:
 	class APlayerController*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                GroupID;                                           // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x18(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D6C[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E3B[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -506,7 +506,7 @@ public:
 	int32                                        PersistId;                                         // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Value;                                             // 0x1C(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D7C[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E43[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -518,7 +518,7 @@ public:
 	class FString                                StatName;                                          // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Value;                                             // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x19(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D84[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E47[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -554,7 +554,7 @@ struct UValeriaAccomplishmentsManager_GetAchievementInGroupByTier_Params
 {
 public:
 	int32                                        Tier;                                              // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_D98[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E55[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                GroupID;                                           // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                ReturnValue;                                       // 0x18(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -594,7 +594,7 @@ public:
 	class APlayerController*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                AchievementID;                                     // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_DA8[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E5A[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -683,7 +683,7 @@ struct UAICombatStateComponent_SetThreat_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Threat;                                            // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_DC7[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E82[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -727,7 +727,7 @@ struct UAICombatStateComponent_IsOnThreatList_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_DD0[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E93[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -745,7 +745,7 @@ struct UAICombatStateComponent_IsAbilityActive_Params
 public:
 	int32                                        AbilityId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_DD5[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E99[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -828,7 +828,7 @@ struct UAICombatStateComponent_FindBestAbility_Params
 public:
 	class AActor*                                Target;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x8(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_DEB[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EB9[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0xC(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -855,7 +855,7 @@ struct UAICombatStateComponent_AddThreat_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Threat;                                            // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_DF4[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EC4[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -865,7 +865,7 @@ struct UAICombatStateComponent_AddCharacterToThreatList_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         SendToTopOfThreatList;                             // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_DF8[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EC8[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -875,7 +875,7 @@ struct UAICombatStateComponent_ActivateAbility_Params
 public:
 	int32                                        AbilityId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_DFA[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_ECA[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2 (0x2 - 0x0)
@@ -964,7 +964,7 @@ public:
 	struct FVector                               NoiseLocation;                                     // 0x8(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                Instigator;                                        // 0x20(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaNoiseEventVolume          Volume;                                            // 0x28(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E31[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F07[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        StealthMask;                                       // 0x2C(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  Tag;                                               // 0x30(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1043,7 +1043,7 @@ struct UAnimStateFunctions_IsIdle_Params
 public:
 	struct FAnimState                            AnimState;                                         // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E50[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F28[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1C (0x1C - 0x0)
@@ -1053,7 +1053,7 @@ struct UAnimStateFunctions_IsEmpty_Params
 public:
 	struct FAnimState                            AnimState;                                         // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E55[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F2F[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -1095,7 +1095,7 @@ struct USubgameConfig_IsSubgameValid_Params
 public:
 	class FString                                Error;                                             // 0x0(0x10)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E5E[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F49[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -1184,7 +1184,7 @@ struct AArcadeMachineBase_AddLeaderboardScore_Params
 public:
 	class AValeriaCharacter*                     InCharacter;                                       // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        InScore;                                           // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E82[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F5F[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -1252,7 +1252,7 @@ struct USubgameManagerComponent_ExitSubgame_Params
 public:
 	class AValeriaCharacter*                     ExitingCharacter;                                  // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESubgameResult                    SubgameResult;                                     // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E98[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F7D[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1307,7 +1307,7 @@ struct USubgameManagerComponent_BPIE_CharacterExitedSubgame_Params
 public:
 	class AValeriaCharacter*                     EnteringCharacter;                                 // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESubgameResult                    SubgameResult;                                     // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EAC[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F88[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1451,7 +1451,7 @@ struct UAuthManager_OnJWTTokenRefreshCompleted__DelegateSignature_Params
 {
 public:
 	bool                                         bSucceeded;                                        // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_ED3[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FC0[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ErrorCode;                                         // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1462,7 +1462,7 @@ struct UAuthManager_LoginResetHandler_Params
 public:
 	int32                                        ForLocalUserNum;                                   // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bWasSuccessful;                                    // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_ED6[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FC4[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaUserDTO                       ResultsData;                                       // 0x8(0x68)(Parm, NativeAccessSpecifierPublic)
 };
 
@@ -1488,7 +1488,7 @@ struct UAuthManager_HandleRegisterAccountSucceeded_Params
 {
 public:
 	int32                                        ForLocalUserNum;                                   // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EDB[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FC6[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaUserDTO                       NewUser;                                           // 0x8(0x68)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -1498,7 +1498,7 @@ struct UAuthManager_HandleRegisterAccountFailed_Params
 {
 public:
 	int32                                        ForLocalUserNum;                                   // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EDD[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FCB[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  ErrorMessage;                                      // 0x8(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -1509,12 +1509,12 @@ struct UAuthManager_HandleOnPlatformLoggedIn_Params
 public:
 	int32                                        ForLocalUserNum;                                   // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         WasSuccessful;                                     // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EE1[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FCD[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGuid                                 InAccountId;                                       // 0x8(0x10)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                InAccountUsername;                                 // 0x18(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                ErrorMessage;                                      // 0x28(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ErrorCode;                                         // 0x38(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EE2[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FD0[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -1587,7 +1587,7 @@ struct UAuthManager_FakeLogin_Params
 {
 public:
 	int32                                        LocalUserNum;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EF8[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FEA[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                AccountUsername;                                   // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                CharacterName;                                     // 0x18(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1610,7 +1610,7 @@ public:
 	struct FBingoBoardgameState                  OutBingoBoardgameState;                            // 0x728(0x70)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bAllowFetch;                                       // 0x798(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x799(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F02[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1001[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -1619,11 +1619,11 @@ struct UVAL_BingoBoardgamePlayerComponent_ServerMakeRequest_ContributeItems_Para
 {
 public:
 	int32                                        BingoCellIndex;                                    // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F05[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1005[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x8(0x30)(ConstParm, Parm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Quantity;                                          // 0x38(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 RequestId;                                         // 0x3C(0x10)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F07[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1008[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -1669,12 +1669,12 @@ struct UVAL_BingoBoardgamePlayerComponent_ContributeItems_Params
 {
 public:
 	int32                                        BingoCellIndex;                                    // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F14[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1017[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x8(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Quantity;                                          // 0x38(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnSuccess;                                         // 0x3C(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnFailure;                                         // 0x4C(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F15[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1019[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -1687,7 +1687,7 @@ public:
 	int32                                        BingoCellIndex;                                    // 0x40(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        UpdatedTotal;                                      // 0x44(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ContributedQuantity;                               // 0x48(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F1A[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1020[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -1706,10 +1706,10 @@ struct UVAL_BingoBoardgameBlueprintFunctionLibrary_TryGetBingoCellFromTemplateBy
 public:
 	struct FBingoBoardTemplateData               Template;                                          // 0x0(0x728)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                        Index;                                             // 0x728(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F25[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1039[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FBingoBoardGridCellTemplate           OutBingoCell;                                      // 0x730(0x48)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x778(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F26[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_103A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x780 (0x780 - 0x0)
@@ -1722,7 +1722,7 @@ public:
 	int32                                        RowIndex;                                          // 0x72C(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBingoBoardGridCellTemplate           OutBingoCell;                                      // 0x730(0x48)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x778(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F27[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_103E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -1734,7 +1734,7 @@ public:
 	int32                                        Index;                                             // 0x70(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OutProgress;                                       // 0x74(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x78(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F2A[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1047[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -1747,7 +1747,7 @@ public:
 	int32                                        RowIndex;                                          // 0x74(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OutProgress;                                       // 0x78(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x7C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F31[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_104E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -1816,7 +1816,7 @@ struct UBuffComponent_RemoveBuffInstance_Params
 public:
 	int32                                        InstanceId;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F4A[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10AB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1826,7 +1826,7 @@ struct UBuffComponent_RemoveBuffByConfig_Params
 public:
 	int32                                        BuffConfigId;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F4C[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10B3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -1843,7 +1843,7 @@ struct UBuffComponent_GetPercentUsedFromActivation_Params
 public:
 	struct FBuffActivation                       BuffActivation;                                    // 0x0(0x48)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                        ReturnValue;                                       // 0x48(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F4F[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10BD[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1870,7 +1870,7 @@ struct UBuffComponent_GetEffectQuantifier_Params
 {
 public:
 	enum class EBuffEffect                       Effect;                                            // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F57[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10CC[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1889,7 +1889,7 @@ struct UBuffComponent_BuffIsActive_Params
 public:
 	int32                                        InstanceId;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F5B[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10D6[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -1898,7 +1898,7 @@ struct UBuffComponent_ApplyEffectQuantifier_Params
 {
 public:
 	enum class EBuffEffect                       Effect;                                            // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F61[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10DA[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        Base;                                              // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1927,10 +1927,10 @@ struct UBundlesComponent_RpcServer_RemoveAndApplyBundleItems_Params
 public:
 	TSoftObjectPtr<class UBundleShrineConfig>    bundleConfigPtr;                                   // 0x0(0x30)(ConstParm, Parm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SubBundleId;                                       // 0x30(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F81[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10F3[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x38(0x30)(ConstParm, Parm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x68(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F83[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10F4[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1949,7 +1949,7 @@ struct UBundlesComponent_RpcServer_GrantSubBundleRewards_Params
 public:
 	TSoftObjectPtr<class UBundleShrineConfig>    bundleConfigPtr;                                   // 0x0(0x30)(ConstParm, Parm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SubBundleId;                                       // 0x30(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F8A[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_10FB[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -1975,7 +1975,7 @@ public:
 	int32                                        BundleID;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SubBundleId;                                       // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F8E[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_110B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -1987,7 +1987,7 @@ public:
 	int32                                        SubBundleId;                                       // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RequirementId;                                     // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F95[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1113[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -1998,7 +1998,7 @@ public:
 	int32                                        BundleID;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SubBundleId;                                       // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F97[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1116[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -2008,7 +2008,7 @@ struct UBundlesComponent_IsBundleRewardGranted_Params
 public:
 	int32                                        BundleID;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F9C[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1119[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -2018,7 +2018,7 @@ struct UBundlesComponent_IsBundleComplete_Params
 public:
 	int32                                        BundleID;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F9E[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_111B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -2049,12 +2049,12 @@ struct UBundlesComponent_Client_RemoveAndApplyBundleItems_Params
 public:
 	TSoftObjectPtr<class UBundleShrineConfig>    bundleConfigPtr;                                   // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SubBundleId;                                       // 0x30(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA5[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1123[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x38(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x68(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x6C(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x6D(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA6[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1124[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -2075,7 +2075,7 @@ public:
 	int32                                        SubBundleId;                                       // 0x30(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x34(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x35(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FAA[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1125[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -2086,7 +2086,7 @@ public:
 	TSoftObjectPtr<class UBundleShrineConfig>    bundleConfigPtr;                                   // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x30(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x31(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FAC[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1129[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -2098,7 +2098,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FB5[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1131[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -2120,7 +2120,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FB8[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1133[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -2130,10 +2130,10 @@ struct UBundleVaultComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FC0[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1139[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FC2[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_113A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -2256,7 +2256,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ACreatureCharacter*                    Creature;                                          // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FE6[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1152[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -2296,7 +2296,7 @@ struct AChapaaChaseManager_IsPlayerParticipating_Params
 public:
 	struct FChapaaChaseParticipant               Player;                                            // 0x0(0x40)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x40(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FE9[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1157[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -2323,7 +2323,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FEE[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1159[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -2336,7 +2336,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FF1[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_115A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -2372,7 +2372,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FChapaaChaseParticipant               OutParticipantInfo;                                // 0x8(0x40)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x48(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FF8[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1162[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -2382,7 +2382,7 @@ struct AChapaaChaseManager_GetParticipantCreatureHeldCount_Params
 public:
 	class AValeriaPlayerController*              InPlayer;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FFB[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1165[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -2416,7 +2416,7 @@ struct AChapaaChaseManager_GetCreatureCaptureValue_Params
 public:
 	TSubclassOf<class ACreatureCharacter>        InCreatureClass;                                   // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1001[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_116F[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -2442,7 +2442,7 @@ struct AChapaaChaseManager_CaptureCreatures_Params
 public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1006[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1177[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -2453,7 +2453,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ACreatureCharacter*                    Creature;                                          // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_100A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_117B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -2501,7 +2501,7 @@ struct UCharacterCustomManager_TryGetAllOurCharacters_Params
 public:
 	TArray<struct FVALDTOS_MetaCharacterFormat>  OutOurCharacters;                                  // 0x0(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1022[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11A6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -2519,7 +2519,7 @@ struct UCharacterCustomManager_OnRegisterCharacter_Failure__DelegateSignature_Pa
 public:
 	class FText                                  ErrorMessage;                                      // 0x0(0x18)(Parm, NativeAccessSpecifierPublic)
 	int32                                        ErrorCode;                                         // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1023[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11B0[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -2563,7 +2563,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_102D[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11CC[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -2574,7 +2574,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1030[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11D4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -2592,10 +2592,10 @@ struct UCharacterStateChangeInteraction_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1032[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_11DA[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1034[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11DC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -2605,7 +2605,7 @@ struct UCharacterStateChangeInteraction_CheckCanGather_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1035[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11E2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x3 (0x3 - 0x0)
@@ -2624,7 +2624,7 @@ struct UCharacterStateMachineComponent_ToggleState_Params
 {
 public:
 	enum class ECharacterState                   StateTypeToToggle;                                 // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_103A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_11ED[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCharacterStateChangeParams           Params;                                            // 0x8(0x1E0)(Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -2658,7 +2658,7 @@ struct UCharacterStateMachineComponent_RpcClient_ToggleState_Params
 {
 public:
 	enum class ECharacterState                   State;                                             // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_103D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_11FB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCharacterStateChangeParams           Params;                                            // 0x8(0x1E0)(Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -2675,7 +2675,7 @@ struct UCharacterStateMachineComponent_RpcClient_EndState_Params
 {
 public:
 	enum class ECharacterState                   State;                                             // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1040[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1201[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCharacterStateChangeParams           Params;                                            // 0x8(0x1E0)(Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -2685,7 +2685,7 @@ struct UCharacterStateMachineComponent_RpcClient_ChangeState_Params
 {
 public:
 	enum class ECharacterState                   State;                                             // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1041[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1209[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCharacterStateChangeParams           Params;                                            // 0x8(0x1E0)(Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -2713,7 +2713,7 @@ public:
 	struct FCharacterStateChangeParams           Params;                                            // 0x8(0x1E0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	enum class ECharacterState                   StateBeingExited;                                  // 0x1E8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECharacterState                   StateBeingEntered;                                 // 0x1E9(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1049[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_120F[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x200 (0x200 - 0x0)
@@ -2725,7 +2725,7 @@ public:
 	struct FCharacterStateChangeParams           Params;                                            // 0x8(0x1E0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	TArray<enum class ECharacterState>           StatesExited;                                      // 0x1E8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class ECharacterState                   StateEntered;                                      // 0x1F8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_104E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1213[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -2800,7 +2800,7 @@ struct UCharacterStateMachineComponent_EndState_Params
 {
 public:
 	enum class ECharacterState                   StateTypeToEnd;                                    // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_105B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1227[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCharacterStateChangeParams           Params;                                            // 0x8(0x1E0)(Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -2818,10 +2818,10 @@ struct UCharacterStateMachineComponent_ChangeState_Params
 {
 public:
 	enum class ECharacterState                   NewState;                                          // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1066[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_122B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCharacterStateChangeParams           Params;                                            // 0x8(0x1E0)(Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1E8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1067[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_122C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -2880,7 +2880,7 @@ struct UChatManager_TryGetReconnectChatErrorMsg_Params
 public:
 	class FString                                ErrorMsg;                                          // 0x0(0x10)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1076[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1243[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -2957,7 +2957,7 @@ struct UChatManager_RequestMuteUser_New_Params
 {
 public:
 	bool                                         bMute;                                             // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_108D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1253[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FUniqueNetIdRepl                      PlayerNetId;                                       // 0x8(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                CharacterName;                                     // 0x38(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -2968,7 +2968,7 @@ struct UChatManager_RequestMuteUser_Params
 {
 public:
 	bool                                         bMute;                                             // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1093[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1259[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  CharacterName;                                     // 0x4(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -3065,7 +3065,7 @@ struct UChatManager_OnPlayerMuted__DelegateSignature_Params
 public:
 	struct FUniqueNetIdRepl                      PlayerNetId;                                       // 0x0(0x30)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bMuted;                                            // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_10A9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_126C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -3083,7 +3083,7 @@ struct UChatManager_OnCharacterMuted__DelegateSignature_Params
 public:
 	class FName                                  CharacterName;                                     // 0x0(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bMuted;                                            // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_10B2[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1271[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -3109,7 +3109,7 @@ struct UChatManager_IsUserMuted_New_Params
 public:
 	struct FUniqueNetIdRepl                      PlayerNetId;                                       // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_10B7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_127E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -3119,7 +3119,7 @@ struct UChatManager_IsUserMuted_Params
 public:
 	class FName                                  CharacterName;                                     // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_10BA[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1283[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -3155,7 +3155,7 @@ public:
 	class FString                                CharacterName;                                     // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        LocalUserNum;                                      // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 CharacterId;                                       // 0x14(0x10)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_10C3[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_128D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -3282,7 +3282,7 @@ public:
 	struct FComplexRecipeRecord                  ComplexState;                                      // 0x0(0x70)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FComplexRecipeCrafter                 CrafterState;                                      // 0x70(0x18)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	int32                                        RecipeIndex;                                       // 0x88(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_10FE[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12C5[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -3307,11 +3307,11 @@ struct UCookingSubsystem_GetRecipeOption_IngredientOverrideMappingForIndex_Param
 {
 public:
 	int32                                        SimpleIngredientIndex;                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1101[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_12CE[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRecipePlayerOptionMapping            OutMapping;                                        // 0x8(0x38)(Parm, OutParm, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x40(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x41(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1102[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12CF[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -3323,7 +3323,7 @@ public:
 	struct FRecipe_RequireItem                   RequireItem;                                       // 0x8(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        IngredientIndex;                                   // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EComplexRecipeCueState            ReturnValue;                                       // 0x24(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1105[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12D3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -3332,10 +3332,10 @@ struct UCookingSubsystem_GetCookingRecipeCueStateForHUD_Params
 {
 public:
 	int32                                        CrafterPersistId;                                  // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1109[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_12D7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRecipe_RequireItem                   RequireItem;                                       // 0x8(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EComplexRecipeCueState            ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_110A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12D8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -3346,7 +3346,7 @@ public:
 	class UCrafterComponent*                     CrafterComponent;                                  // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRecipe_RequireItem                   RequireItem;                                       // 0x8(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EComplexRecipeCueState            ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_110E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12DA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -3438,7 +3438,7 @@ struct UInventoryComponent_RemoveItem_Params
 public:
 	struct FInventory_RemoveContext              RemoveContext;                                     // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1125[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12F1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -3482,7 +3482,7 @@ public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FStarQualityConstraint                StarQualityConstraint;                             // 0x30(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x38(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1134[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1302[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -3510,7 +3510,7 @@ struct UInventoryComponent_IsLocationInActiveActionBar_Params
 public:
 	struct FBagSlotLocation                      Location;                                          // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1141[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1311[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -3520,7 +3520,7 @@ struct UInventoryComponent_IsBagInActionBar_Params
 public:
 	int32                                        BagIndex;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1145[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1315[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -3600,7 +3600,7 @@ public:
 	int32                                        RowIndex;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ColumnIndex;                                       // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ColsPerRow;                                        // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1173[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_132B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaItem                          ReturnValue;                                       // 0x10(0x50)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -3660,7 +3660,7 @@ public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        TintPersistID;                                     // 0x30(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      ReturnValue;                                       // 0x34(0x8)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_118B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_133B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -3691,7 +3691,7 @@ public:
 	int32                                        Amount;                                            // 0x38(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTag                          BagType;                                           // 0x3C(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x44(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1194[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1343[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -3702,7 +3702,7 @@ public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x30(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x34(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1199[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1345[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -3712,7 +3712,7 @@ struct UInventoryComponent_ContainsItemByTag_Params
 public:
 	struct FGameplayTag                          Tag;                                               // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_119C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1347[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2 (0x2 - 0x0)
@@ -3731,7 +3731,7 @@ struct UInventoryComponent_CanAddItemTypeHere_Params
 public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11A0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_134E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -3741,7 +3741,7 @@ struct UInventoryComponent_CanAddItemsFully_Params
 public:
 	TArray<struct FValeriaItem>                  Items;                                             // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11A2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1350[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -3751,7 +3751,7 @@ struct UInventoryComponent_CanAddItemFully_Params
 public:
 	struct FValeriaItem                          Item;                                              // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x50(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11A6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1354[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -3785,7 +3785,7 @@ struct UInventoryComponent_AddItemToBag_Params
 public:
 	struct FValeriaItem                          ItemToAdd;                                         // 0x0(0x50)(Parm, NativeAccessSpecifierPublic)
 	enum class EInventoryAddItemFlags            Flags;                                             // 0x50(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11B2[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1362[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayTag                          BagType;                                           // 0x54(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x5C(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -3797,7 +3797,7 @@ struct UInventoryComponent_AddItem_Params
 public:
 	struct FValeriaItem                          ItemToAdd;                                         // 0x0(0x50)(Parm, NativeAccessSpecifierPublic)
 	enum class EInventoryAddItemFlags            Flags;                                             // 0x50(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11B5[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_136C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x54(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -3816,7 +3816,7 @@ struct UCrafterComponent_WasRequestStepStarted_Params
 public:
 	int32                                        RequestIndex;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11C7[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_138F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -3827,7 +3827,7 @@ public:
 	int64                                        StartTime;                                         // 0x0(0x8)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                        EndTime;                                           // 0x8(0x8)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11C8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1397[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -3855,10 +3855,10 @@ struct UCrafterComponent_SetIsEngaging_Params
 {
 public:
 	bool                                         bShouldEngage;                                     // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11CF[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_13AF[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AValeriaPlayerController*              Vpc;                                               // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECrafterEngageResult              ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11D1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13B1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -3868,7 +3868,7 @@ struct UCrafterComponent_Server_Collect_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11D3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13B8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -3903,7 +3903,7 @@ public:
 	class AValeriaCharacter*                     VC;                                                // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11E2[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13C4[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -3961,7 +3961,7 @@ struct UCrafterComponent_K2_GetComplexState_Params
 public:
 	struct FComplexRecipeRecord                  OutRecipeRecord;                                   // 0x0(0x70)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x70(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11F2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13EA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -3971,7 +3971,7 @@ struct UCrafterComponent_IsRequestStepExpired_Params
 public:
 	int32                                        RequestIndex;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11F6[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13F0[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -3981,7 +3981,7 @@ struct UCrafterComponent_IsRequestStepDone_Params
 public:
 	int32                                        RequestIndex;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11F9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13F8[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -3991,7 +3991,7 @@ struct UCrafterComponent_IsRequestStepActive_Params
 public:
 	int32                                        RequestIndex;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11FE[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13F9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -4001,7 +4001,7 @@ struct UCrafterComponent_IsPlateVisible_Params
 public:
 	class AActor*                                InteractingActor;                                  // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11FF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1400[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -4020,7 +4020,7 @@ public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1201[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_140B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -4030,7 +4030,7 @@ struct UCrafterComponent_IsIngredientFullyAdded_Params
 public:
 	int32                                        Index;                                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1203[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_140E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -4040,7 +4040,7 @@ struct UCrafterComponent_IsIngredientExpired_Params
 public:
 	int32                                        Index;                                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1206[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1412[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -4050,7 +4050,7 @@ struct UCrafterComponent_IsIngredientActive_Params
 public:
 	int32                                        Index;                                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1209[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1417[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -4060,7 +4060,7 @@ struct UCrafterComponent_IsComplexRecipe_Params
 public:
 	int32                                        RecipeId;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_120D[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_141F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -4085,10 +4085,10 @@ struct UCrafterComponent_HasInventorySpaceToProduceRecipe_Params
 {
 public:
 	int32                                        RecipeConfigId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1219[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1430[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UInventoryComponent*                   InventoryComponent;                                // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_121A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1431[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -4097,11 +4097,11 @@ struct UCrafterComponent_HasIngredientTypesToProduceRecipe_Params
 {
 public:
 	int32                                        RecipeConfigId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1221[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_143B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UInventoryComponent*                   InputInventory;                                    // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTag                          InputInventoryBagType;                             // 0x10(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1223[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_143D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -4110,11 +4110,11 @@ struct UCrafterComponent_HasIngredientsToProduceRecipe_Params
 {
 public:
 	int32                                        RecipeConfigId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1229[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1444[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UInventoryComponent*                   InputInventory;                                    // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTag                          InputInventoryBagType;                             // 0x10(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_122A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1446[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -4133,7 +4133,7 @@ public:
 	class UMinigameComponentBase*                Comp;                                              // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EMinigameState                    PrevState;                                         // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EMinigameState                    NewState;                                          // 0x9(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1231[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1451[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -4152,7 +4152,7 @@ public:
 	struct FVAL_InteractorLockParams             LockParams;                                        // 0x0(0x28)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	class UInteractorComponent*                  InteractorComponent;                               // 0x28(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bLocationClaimed;                                  // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1238[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1459[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -4187,10 +4187,10 @@ struct UCrafterComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1249[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1464[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_124A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1465[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -4199,7 +4199,7 @@ struct UCrafterComponent_GetStartingIngredients_Params
 {
 public:
 	int32                                        RecipeId;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1253[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1468[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FRecipe_RequireItem>           ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -4211,7 +4211,7 @@ public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRecipe_RequireItem                   RequireItem;                                       // 0x8(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         UseStarQualityItem;                                // 0x20(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1259[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_146D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x24(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -4223,7 +4223,7 @@ public:
 	int32                                        StartTime;                                         // 0x0(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        EndTime;                                           // 0x4(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_125E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1473[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -4279,10 +4279,10 @@ struct UCrafterComponent_GetRecipeNeeds_Params
 public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RecipeId;                                          // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1288[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_148B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRecipeNeeds                          RecipeNeeds;                                       // 0x10(0x320)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         bUseStarQualityItems;                              // 0x330(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1289[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_148D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -4307,7 +4307,7 @@ struct UCrafterComponent_GetRecipeConfig_Params
 {
 public:
 	int32                                        RecipeId;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1291[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1493[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRecipeConfig                         ReturnValue;                                       // 0x8(0x2A8)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -4366,7 +4366,7 @@ struct UCrafterComponent_GetManualIngredientSteps_Params
 {
 public:
 	int32                                        RecipeId;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_12B4[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_14A3[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<int32>                                ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -4429,7 +4429,7 @@ public:
 	int32                                        StartTime;                                         // 0x0(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        EndTime;                                           // 0x4(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_12D7[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14A8[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -4440,7 +4440,7 @@ public:
 	int32                                        StartTime;                                         // 0x0(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        EndTime;                                           // 0x4(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_12DB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14AC[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -4483,7 +4483,7 @@ public:
 	TArray<class UTexture2D*>                    Icons;                                             // 0x0(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                Amounts;                                           // 0x10(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                        RecipeId;                                          // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_12ED[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14B1[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -4495,7 +4495,7 @@ public:
 	int32                                        RecipeId;                                          // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUseStarQualityItems;                              // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xD(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_12F3[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14B3[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -4505,7 +4505,7 @@ struct UCrafterComponent_DoesBroadcastApply_Params
 public:
 	class UCrafterComponent*                     Crafter;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_12F5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14B6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -4555,7 +4555,7 @@ public:
 	bool                                         bUseStarQualityItems;                              // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowIntermixingRegularAndStarQualityIngredients; // 0xD(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xE(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1321[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14D0[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -4609,7 +4609,7 @@ public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RecipeConfigId;                                    // 0x30(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x34(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1362[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1513[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -4651,7 +4651,7 @@ struct UCrafterComponent_Automatic_CanIngredientBeUsedByUnlockedRecipe_Params
 public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1373[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1520[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -4661,7 +4661,7 @@ struct UCrafterComponent_Automatic_CanIngredientBeUsedByAnyRecipe_Params
 public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_137B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_152A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -4704,7 +4704,7 @@ public:
 	float                                        InPlayRate;                                        // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  StartSectionName;                                  // 0xC(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bCanHardJump;                                      // 0x14(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1395[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_156A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -4727,7 +4727,7 @@ public:
 	struct FVector                               PreviousFloorContactNormal;                        // 0x18(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               PreviousLocation;                                  // 0x30(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        TimeDelta;                                         // 0x48(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_139E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_157D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -4745,7 +4745,7 @@ public:
 	struct FVector                               LaunchVelocity;                                    // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bXYOverride;                                       // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bZOverride;                                        // 0x19(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_13A7[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1582[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xE8 (0xE8 - 0x0)
@@ -4771,7 +4771,7 @@ public:
 	struct FVector                               LaunchVelocity;                                    // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bXYOverride;                                       // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bZOverride;                                        // 0x19(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_13B8[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_158E[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -5039,7 +5039,7 @@ struct ACreatureCharacter_DoBehaviorMovement_Params
 {
 public:
 	enum class ECurrentBehavior                  NewBehavior;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_14DD[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_167C[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRootMotionSource_MoveToForce         RootMotionSource;                                  // 0x10(0x120)(Parm, NativeAccessSpecifierPublic)
 };
 
@@ -5068,7 +5068,7 @@ public:
 	float                                        Distance;                                          // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CloseEnough;                                       // 0xC(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_151B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_16D0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -5103,7 +5103,7 @@ struct UValeriaBaseMovementComponent_SetAvoidanceActor_Params
 public:
 	class AActor*                                NewAvoidanceActor;                                 // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Radius;                                            // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1528[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_16F7[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -5145,7 +5145,7 @@ struct UValeriaBaseMovementComponent_RpcClient_AddImpulse_Params
 public:
 	struct FVector                               Impulse;                                           // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bVelocityChange;                                   // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1549[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_170C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -5204,7 +5204,7 @@ public:
 	float                                        LineDistance;                                      // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SweepDistance;                                     // 0x1C(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SweepRadius;                                       // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1563[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1747[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FFloorInfo                            FloorResult;                                       // 0x28(0xF0)(Parm, OutParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -5223,7 +5223,7 @@ struct UValeriaBaseMovementComponent_IsWalkable_Params
 public:
 	struct FHitResult                            Hit;                                               // 0x0(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xE8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_157B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1767[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -5368,7 +5368,7 @@ struct UValeriaBaseMovementComponent_DeterminePrimaryAvoidanceActor_Params
 public:
 	class AActor*                                AvoidanceActor;                                    // 0x0(0x8)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Radius;                                            // 0x8(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_15FB[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_17E8[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -5378,7 +5378,7 @@ struct UValeriaBaseMovementComponent_DetermineCurrentNavMeshLocation_Params
 public:
 	struct FVector                               NavFloorLocation;                                  // 0x0(0x18)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1612[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_17F1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -5413,7 +5413,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1630[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1801[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -5425,7 +5425,7 @@ public:
 	float                                        DeltaTime;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Friction;                                          // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFluid;                                            // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1644[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1811[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        BrakingDeceleration;                               // 0xC(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -5437,7 +5437,7 @@ public:
 	struct FVector                               TeleportTarget;                                    // 0x0(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                              TeleportRotation;                                  // 0x18(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1651[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1818[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -5447,7 +5447,7 @@ struct UValeriaBaseMovementComponent_AddImpulse_Params
 public:
 	struct FVector                               Impulse;                                           // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bVelocityChange;                                   // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_165B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_181D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -5534,7 +5534,7 @@ struct UDebugInfoComponent_HasReceivedCheatSetByGuid_Params
 public:
 	struct FGuid                                 InGuid;                                            // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_171F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1917[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -5544,7 +5544,7 @@ struct UDebugInfoComponent_HasReceivedCheatSet_Params
 public:
 	class UCheatSetConfig*                       InCheatSetConfig;                                  // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1725[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_191A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -5632,7 +5632,7 @@ struct UDebugServerActorsComponent_Server_UnselectActorClass_Params
 public:
 	class UClass*                                InClass;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1769[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1965[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -5642,7 +5642,7 @@ struct UDebugServerActorsComponent_Server_TrackActor_Params
 public:
 	class AActor*                                InActor;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_176D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_196C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -5652,7 +5652,7 @@ struct UDebugServerActorsComponent_Server_SelectActorClass_Params
 public:
 	class UClass*                                InClass;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1775[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1972[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -5810,7 +5810,7 @@ struct UDebugSpawningComponent_IsTrackingSpawnManager_Params
 public:
 	class FName                                  SpawnManagerName;                                  // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_17E5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_19C8[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -5966,7 +5966,7 @@ struct UDialogueComponent_VillagerActivityStatusChanged_Params
 public:
 	class AValeriaVillagerController*            ChangedValeriaVillagerController;                  // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVillagerActivityStatus           NewActivityStatus;                                 // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_187D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A4B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -5976,7 +5976,7 @@ struct UDialogueComponent_StartNewDialogueText_Params
 public:
 	class FText                                  NewText;                                           // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         bPerformLocalSubsitutions;                         // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_188A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A50[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -6018,7 +6018,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_18A5[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A73[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -6064,7 +6064,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_18C4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A8F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -6098,10 +6098,10 @@ struct UDialogueComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_18D0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1AA5[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_18D1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1AA7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -6174,7 +6174,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1907[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1AF9[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -6187,7 +6187,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1913[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B07[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -6204,7 +6204,7 @@ struct UDynamicGiftPrefDataComponent_GetPreferenceIdsForVillager_Params
 {
 public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1920[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B23[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<int32>                                ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -6318,7 +6318,7 @@ public:
 	struct FVector                               Point;                                             // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SphereRadius;                                      // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1967[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B69[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -6398,7 +6398,7 @@ struct UEquipmentComponent_RpcServer_CHEAT_DecrementToolDurability_Params
 {
 public:
 	int32                                        Amount;                                            // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1983[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B86[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UGearSlotTypeConfig*                   GearSlot;                                          // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -6440,7 +6440,7 @@ struct UEquipmentComponent_PlayMontageOnEquippedActor_Params
 public:
 	struct FMontageInfo                          MontageInfo;                                       // 0x0(0x18)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         Multicast;                                         // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1991[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B90[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -6513,7 +6513,7 @@ public:
 	struct FUseEventParams                       EventParams;                                       // 0x0(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         bIsPrimaryAction;                                  // 0x20(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x21(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19A6[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1BA1[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -6531,7 +6531,7 @@ struct UEquipmentComponent_Client_TrySelectItemFromInventory_Params
 public:
 	struct FBagSlotLocation                      InventoryLocation;                                 // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19AD[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1BA7[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -6541,7 +6541,7 @@ struct UEquipmentComponent_Client_TryEquipItemFromInventory_Params
 public:
 	struct FBagSlotLocation                      InventoryLocation;                                 // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19B2[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1BAA[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -6583,7 +6583,7 @@ struct UEquipmentComponent_Client_HandlePlacementModeChanged_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsPlacementMode;                                  // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19C2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1BBB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -6601,7 +6601,7 @@ struct UEquipmentComponent_Client_HandleInspirationSequenceChanged_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsInInspirationSequence;                          // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19C6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1BC6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -6716,7 +6716,7 @@ public:
 	int32                                        DesiredFenceLength;                                // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHasStartPost;                                     // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHasEndPost;                                       // 0x5(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19EE[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1BFE[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -6765,7 +6765,7 @@ struct UFenceComponent_GetMinFenceLength_Params
 {
 public:
 	bool                                         bWithEndPost;                                      // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19EF[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C03[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -6775,7 +6775,7 @@ struct UFenceComponent_GetMaxFenceLength_Params
 {
 public:
 	bool                                         bWithEndPost;                                      // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19F1[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C0B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -6802,7 +6802,7 @@ struct AFishingCastIndicatorActor_OnCastIndicatorChanged_Params
 public:
 	struct FVector                               EndPoint;                                          // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EFishingCastIndicatorStatus       Status;                                            // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A01[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C17[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -6934,7 +6934,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A2A[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C3F[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -6952,7 +6952,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A2E[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C42[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -7002,7 +7002,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A37[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C59[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -7029,10 +7029,10 @@ struct UFishingComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A44[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C5C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A45[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C5D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -7058,7 +7058,7 @@ struct UFishingComponent_GetDebugInfo_Params
 public:
 	enum class EFishingState_NEW                 CurrentFishingState;                               // 0x0(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EFFishingLevelSegmentActionType   FishActionType;                                    // 0x1(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A61[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C67[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        CurrentSegmentNextIndex;                           // 0x4(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        TotalSegments;                                     // 0x8(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CurrentActionLerpPctg;                             // 0xC(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -7072,7 +7072,7 @@ public:
 	float                                        TimeInCurrentTask;                                 // 0x2C(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                FishName;                                          // 0x30(0x10)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SafeZonePosition;                                  // 0x40(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A62[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C69[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -7122,7 +7122,7 @@ struct UFishingComponent_CanStartFishing_Params
 public:
 	struct FNotification                         ErrorNotification;                                 // 0x0(0x30)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A6F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C7B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -7188,7 +7188,7 @@ struct UFishingViewComponent_RpcServer_BobberHitSomething_Params
 {
 public:
 	enum class EFishingBobberHitSomethingResult  Result;                                            // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AAB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CAD[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               ImpactPoint;                                       // 0x18(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -7201,7 +7201,7 @@ struct UFishingViewComponent_RpcNetMulticast_BobberHitSomething_Params
 {
 public:
 	enum class EFishingBobberHitSomethingResult  Result;                                            // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AAD[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CB1[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               ImpactPoint;                                       // 0x18(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -7215,7 +7215,7 @@ struct UFishingViewComponent_OnViewWasUpdatedEvent_Params
 public:
 	struct FFishingMiniGameViewState             ViewState;                                         // 0x0(0x130)(Parm, NativeAccessSpecifierPublic)
 	class UFishingComponent*                     Source;                                            // 0x130(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AAE[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CB3[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -7233,7 +7233,7 @@ struct UFishingViewComponent_OnMiniGameStateChanged_Params
 public:
 	enum class EFishingMiniGameState             PreviousState;                                     // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EFishingMiniGameState             NewState;                                          // 0x1(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AB4[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CB8[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UFishingComponent*                     Source;                                            // 0x8(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -7267,7 +7267,7 @@ struct UFishingViewComponent_OnBobberHitSomething_Params
 {
 public:
 	enum class EFishingBobberHitSomethingResult  Result;                                            // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AB8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CC3[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               ImpactPoint;                                       // 0x18(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -7380,7 +7380,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1ACB[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CE3[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -7393,7 +7393,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AD0[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CE6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -7411,7 +7411,7 @@ struct UFollowCameraManagerComponent_IsSettingActive_Params
 public:
 	class FName                                  SettingsName;                                      // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AD9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CF6[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -7422,7 +7422,7 @@ public:
 	class FName                                  SettingsName;                                      // 0x0(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UObject*                               Instigator;                                        // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Force;                                             // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AE1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CFD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -7450,7 +7450,7 @@ public:
 	struct FDebugServerActorMapping              A;                                                 // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FDebugServerActorMapping              B;                                                 // 0x30(0x30)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AE7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D0D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -7461,7 +7461,7 @@ public:
 	struct FDebugServerActorMapping              A;                                                 // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FDebugServerActorMapping              B;                                                 // 0x30(0x30)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AED[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D15[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -7472,7 +7472,7 @@ public:
 	class FText                                  OutDescription;                                    // 0x0(0x18)(Parm, OutParm, NativeAccessSpecifierPublic)
 	class UObject*                               Context;                                           // 0x18(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1AEF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D1B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -7482,7 +7482,7 @@ struct UGardenComponent_TriggerHarvest_Params
 public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PlotIndex;                                         // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B30[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D62[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -7550,7 +7550,7 @@ struct UGardenComponent_IsWatered_Params
 public:
 	int32                                        TileIndex;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B3B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D74[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -7560,7 +7560,7 @@ struct UGardenComponent_IsPlanted_Params
 public:
 	int32                                        TileIndex;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B3C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D77[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -7578,7 +7578,7 @@ struct UGardenComponent_HasOverlappingMultiTilePlants_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          OutBlockingPlantItemType;                          // 0x0(0x8)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B3F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D7F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -7596,7 +7596,7 @@ struct UGardenComponent_GetTileWorldLocation_Params
 {
 public:
 	int32                                        TileIndex;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B43[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D81[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               ReturnValue;                                       // 0x8(0x18)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -7614,7 +7614,7 @@ struct UGardenComponent_GetGardenTile_Params
 {
 public:
 	int32                                        TileIndex;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B47[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D82[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AGardenTile*                           ReturnValue;                                       // 0x8(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -7625,7 +7625,7 @@ struct UGardenComponent_CanPickupPlot_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B49[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D87[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -7774,7 +7774,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B84[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1DC2[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -7785,7 +7785,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B87[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1DC4[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x88 (0x88 - 0x0)
@@ -7797,7 +7797,7 @@ public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x50(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        AmountToUse;                                       // 0x80(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x84(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B90[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1DC7[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -7807,7 +7807,7 @@ struct UGardenPlantingComponent_GetDesiredCharacterYaw_Params
 public:
 	float                                        OutYaw;                                            // 0x0(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B91[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1DC9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -7846,7 +7846,7 @@ struct AGardenTile_TryGetReadOnlyGardenData_Params
 public:
 	struct FGardenPlot                           OutGardenData;                                     // 0x0(0x58)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x58(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1BC9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1DD7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -7893,7 +7893,7 @@ struct AGardenTile_OnReadyToHarvest_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          PlantItemType;                                     // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         RepeatHarvest;                                     // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1BD6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1DE0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -8048,7 +8048,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C06[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E0E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -8082,7 +8082,7 @@ struct AGardenTile_HasOverlappingMultiTilePlants_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          OutBlockingPlantItemType;                          // 0x0(0x8)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C0E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E1C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -8116,10 +8116,10 @@ struct AGardenTile_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C18[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E28[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C19[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E29[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -8177,7 +8177,7 @@ struct AGardenTile_GetGardenTileBuffInfo_Params
 public:
 	struct FGardenTileBuffInfo                   FertilizerInfo;                                    // 0x0(0x40)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x40(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C27[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E3B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -8296,7 +8296,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C63[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E76[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -8342,7 +8342,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C6A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E86[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -8360,10 +8360,10 @@ struct UGatherableComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C6D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E8F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C6E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E90[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -8374,7 +8374,7 @@ public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bMassMove;                                         // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x9(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C73[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E93[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -8384,7 +8384,7 @@ struct UGatherableComponent_CanBeGatheredBy_Params
 public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C75[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E96[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -8412,7 +8412,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C9A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1EC3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -8430,10 +8430,10 @@ struct UGatherableLootComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C9C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1ED3[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C9D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1ED4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC0 (0xC0 - 0x0)
@@ -8443,7 +8443,7 @@ struct UGatherableLootComponent_GetRequirement_Params
 public:
 	struct FRequirement                          Requirement;                                       // 0x0(0xB8)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xB8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CA0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1ED6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -8453,7 +8453,7 @@ struct UVitalsComponent_TryVitalChange_Params
 public:
 	struct FVitalsChange                         Change;                                            // 0x0(0x48)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x48(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CA4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1EDE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -8463,7 +8463,7 @@ struct UVitalsComponent_SubtractVital_Params
 public:
 	struct FVitalsChange                         Change;                                            // 0x0(0x48)(Parm, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x48(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CA9[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1EE1[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -8589,7 +8589,7 @@ struct UVitalsComponent_GetVitalStart_Params
 {
 public:
 	enum class EVitalType                        Type;                                              // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CCE[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F09[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -8599,7 +8599,7 @@ struct UVitalsComponent_GetVitalMax_Params
 {
 public:
 	enum class EVitalType                        Type;                                              // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CD2[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F0E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -8609,7 +8609,7 @@ struct UVitalsComponent_GetVital_Params
 {
 public:
 	enum class EVitalType                        Type;                                              // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CD4[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F0F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -8628,7 +8628,7 @@ public:
 	struct FVitalsChange                         Change;                                            // 0x0(0x48)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ShouldSurfaceErrors;                               // 0x48(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x49(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CD9[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F15[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -8638,7 +8638,7 @@ struct UVitalsComponent_ChangeVitalBy_Params
 public:
 	struct FVitalsChange                         Change;                                            // 0x0(0x48)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ShouldTestFilter;                                  // 0x48(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CDB[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F1A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4C(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -8649,7 +8649,7 @@ struct UVitalsComponent_AddVital_Params
 public:
 	struct FVitalsChange                         Change;                                            // 0x0(0x48)(Parm, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x48(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CDE[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F1E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -8684,7 +8684,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CF3[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F40[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -8695,7 +8695,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CFB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F47[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -8713,10 +8713,10 @@ struct UGatherablePiecemealComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D03[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F4D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D05[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F4F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -8726,7 +8726,7 @@ struct UGatherablePiecemealComponent_CheckCanGather_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D06[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F54[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -8738,7 +8738,7 @@ public:
 	struct FBagSlotLocation                      SourceInventorySlot;                               // 0x8(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        DestinationGearSlotIndex;                          // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ShouldSwapPin;                                     // 0x14(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D13[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F6E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -8765,7 +8765,7 @@ struct UGearComponent_HasRomancePinEquippedForVillager_Params
 public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D18[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F82[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -8784,7 +8784,7 @@ struct UGearComponent_GetGearSlotForType_Params
 public:
 	class UGearSlotTypeConfig*                   SlotTypeConfig;                                    // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D1D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F96[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -8794,7 +8794,7 @@ struct UGearComponent_GetGearBySlotType_Params
 public:
 	class UGearSlotTypeConfig*                   SlotTypeConfig;                                    // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        IndexWithinType;                                   // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D21[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FA0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaItem                          ReturnValue;                                       // 0x10(0x50)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -8814,7 +8814,7 @@ struct UGearComponent_GetAvailableGearSlotForType_Params
 public:
 	class UGearSlotTypeConfig*                   SlotTypeConfig;                                    // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D26[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FBB[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -8824,7 +8824,7 @@ struct UGearComponent_ContainsGameplayTag_Params
 public:
 	struct FGameplayTag                          GameplayTag;                                       // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D2B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FC0[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -8836,7 +8836,7 @@ public:
 	struct FBagSlotLocation                      SourceInventorySlot;                               // 0x8(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        DestinationGearSlotIndex;                          // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ShouldSwapPin;                                     // 0x14(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D34[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FCC[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -8847,7 +8847,7 @@ public:
 	class UGearSlotTypeConfig*                   SlotTypeConfig;                                    // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      DesiredSlot;                                       // 0x8(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        IndexWithinType;                                   // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D37[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FDC[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -8859,7 +8859,7 @@ public:
 	class UGearSlotTypeConfig*                   GearSlotTypeConfig;                                // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SlotIndex;                                         // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGearChangeResult                 ReturnValue;                                       // 0x14(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D3B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FE3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -8868,7 +8868,7 @@ struct UGearGlobalConfig_FindGearSlotTypeByPersistId_Params
 {
 public:
 	int32                                        GearSlotTypePersistId;                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D60[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FFA[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UGearSlotTypeConfig*                   ReturnValue;                                       // 0x8(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -8947,7 +8947,7 @@ public:
 	struct FVector2D                             ScreenPosition;                                    // 0x28(0x10)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bPlayerViewportRelative;                           // 0x38(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x39(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D89[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_202E[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -8982,7 +8982,7 @@ public:
 	struct FVector2D                             WorldHalfExtents;                                  // 0x30(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             PanelHalfExtents;                                  // 0x40(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WorldToPanel;                                      // 0x50(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D96[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2041[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -9015,7 +9015,7 @@ public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PreferenceId;                                      // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DA4[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2055[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -9026,7 +9026,7 @@ public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVillagerGiftDifficultyGrouping   Difficulty;                                        // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x5(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DAC[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2059[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -9036,7 +9036,7 @@ struct UGiftPreferenceTrackingComponent_GetItemTypesToShowForPreferenceLevel_Par
 public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVillagerGiftRewardLevel          PreferenceLevel;                                   // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DB3[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2060[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>> ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -9048,7 +9048,7 @@ public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVillagerGiftRewardLevel          PreferenceLevel;                                   // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x5(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DB8[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2061[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2C0 (0x2C0 - 0x0)
@@ -9059,10 +9059,10 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVillagerQuestRequirement             Requirement;                                       // 0x8(0x290)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                        GoalProgress;                                      // 0x298(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DCD[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2082[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  OutText;                                           // 0x2A0(0x18)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x2B8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DCE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2083[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -9079,7 +9079,7 @@ struct UGeneratedHeatmap_GetPoint_Params
 {
 public:
 	int32                                        Index;                                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DD4[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_208D[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGeneratedHeatmapPoint                ReturnValue;                                       // 0x8(0x20)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 
@@ -9091,7 +9091,7 @@ public:
 	class FString                                LogFilePath;                                       // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                SpawnClass;                                        // 0x10(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaxLines;                                          // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DD8[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2097[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UGeneratedHeatmap*                     ReturnValue;                                       // 0x28(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -9126,11 +9126,11 @@ struct UHitReactComponent_RpcNetMulticast_BeginHitReaction_Params
 {
 public:
 	bool                                         IsFromMelee;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DE0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_20B0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                Attacker;                                          // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> AmmoItemType;                                      // 0x10(0x30)(ConstParm, Parm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EHitReactionType                  Type;                                              // 0x40(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DE1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_20B6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -9142,7 +9142,7 @@ public:
 	struct FVector                               KnockBackDirection;                                // 0x8(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               FinalDestination;                                  // 0x20(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        KnockbackDuration;                                 // 0x38(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DE5[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_20BF[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -9161,7 +9161,7 @@ struct UHitReactComponent_OnMoveToPathComplete_Params
 public:
 	struct FAIRequestID                          RequestId;                                         // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EPathFollowingResult              Result;                                            // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DE8[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_20D5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -9177,7 +9177,7 @@ struct UHitReactComponent_NotifyHitByProjectile_Params
 {
 public:
 	bool                                         IncludesDispelEffect;                              // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DEB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_20E2[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                Instigator;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                Projectile;                                        // 0x10(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -9189,7 +9189,7 @@ struct UHitReactComponent_NotifyHitByMelee_Params
 public:
 	class AActor*                                Attacker;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EHitReactionType                  Type;                                              // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DEF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_20F4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -9231,7 +9231,7 @@ struct UHitReactComponent_BeginHitReaction_Params
 public:
 	class AActor*                                Attacker;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EHitReactionType                  Type;                                              // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DF9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2107[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x48 (0x48 - 0x0)
@@ -9241,12 +9241,12 @@ struct UHitReactComponent_AttemptApplyAttack_Params
 public:
 	class AActor*                                Attacker;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EHitReactionType                  Type;                                              // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E07[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_211A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAbilitySystemComponent*               AttackerGAS;                                       // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UGameplayEffect>           GameplayEffectClass;                               // 0x18(0x8)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAbilitySystemComponent*               TargetGAS;                                         // 0x20(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Level;                                             // 0x28(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E09[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_211C[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayEffectContextHandle          Context;                                           // 0x30(0x18)(Parm, NativeAccessSpecifierPublic)
 };
 
@@ -9271,7 +9271,7 @@ struct UHouseInventoryComponent_GetHouseAtInventoryIndex_Params
 {
 public:
 	int32                                        Index;                                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E29[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_214B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHouseInventoryItem                   ReturnValue;                                       // 0x8(0x38)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -9282,7 +9282,7 @@ struct UHouseInventoryComponent_ContainsInventoryIndex_Params
 public:
 	int32                                        Index;                                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E2D[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2151[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -9292,7 +9292,7 @@ struct UHouseInventoryComponent_ContainsHouse_Params
 public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E30[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2156[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -9346,7 +9346,7 @@ struct AHousingOwnershipActor_IsOnVisitorList_Params
 public:
 	struct FGuid                                 PlayerId;                                          // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E4A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2185[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -9356,7 +9356,7 @@ struct AHousingOwnershipActor_IsOnKickedList_Params
 public:
 	struct FGuid                                 PlayerId;                                          // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E4F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2189[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -9374,7 +9374,7 @@ struct AHousingOwnershipActor_IsActorVisibleOnCurrentHousingSlot_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E5A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_219F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -9399,10 +9399,10 @@ struct AHousingOwnershipActor_GetSlotById_Params
 {
 public:
 	int32                                        SlotId;                                            // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E69[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_21B3[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHousingSlot                          HousingSlot;                                       // 0x8(0x20)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x28(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E6B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21B5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -9435,7 +9435,7 @@ struct AHousingOwnershipActor_GetHousingSlotOwnershipInfo_Params
 {
 public:
 	int32                                        Slot;                                              // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E6F[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_21CB[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FHouseOwnershipTitle>          ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -9470,7 +9470,7 @@ struct AHousingOwnershipActor_GetHousingOwnershipInfoForCharacterId_Params
 public:
 	struct FGuid                                 CharacterId;                                       // 0x0(0x10)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EHousingPermissionLevel           ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E82[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_21F3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -9480,7 +9480,7 @@ struct AHousingOwnershipActor_GetHousingOwnershipInfoForCharacter_Params
 public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EHousingPermissionLevel           ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E8A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2201[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -9516,10 +9516,10 @@ struct AHousingOwnershipActor_GetCurrentBuildingClusterCostForActor_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        CurrentBuildingClusterLimitCost;                   // 0x8(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1EBB[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2244[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                IgnoreActor;                                       // 0x10(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x18(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1EBC[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2246[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -9558,7 +9558,7 @@ struct AHousingPlotActor_ToggleCamera_Params
 public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsAttached;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1EEC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2277[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -9568,7 +9568,7 @@ struct AHousingPlotActor_SetDebrisActorsHighlightState_Params
 public:
 	int32                                        PersistId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHighlight;                                        // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1EEF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_227E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -9617,7 +9617,7 @@ struct AHousingPlotActor_OnLocalPlayerPlacementStateChanged_Params
 public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         PlacementMode;                                     // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F0F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_22A3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -9659,7 +9659,21 @@ struct AHousingPlotActor_IsCharacterOnHousePlot_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F32[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_22C7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+};
+
+// 0x108 (0x108 - 0x0)
+// Function Palia.HousingPlotActor.HandlePlayerReachedKillVolume
+struct AHousingPlotActor_HandlePlayerReachedKillVolume_Params
+{
+public:
+	class UPrimitiveComponent*                   OverlappedComponent;                               // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                        Pad_22E2[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
 // 0xA0 (0xA0 - 0x0)
@@ -9742,11 +9756,11 @@ struct AHousingPlotActor_GetComplexRecipe_Params
 {
 public:
 	enum class ESkillType                        SkillType;                                         // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F7E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2341[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UCrafterComponent*                     Crafter;                                           // 0x8(0x8)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RecipeId;                                          // 0x10(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x14(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F81[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2347[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -9785,7 +9799,7 @@ struct UHousingPlotUnlocksComponent_IsPlotUnlocked_Params
 public:
 	int32                                        PersistId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1FC7[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23BE[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -9795,7 +9809,7 @@ struct UHousingPlotUnlocksComponent_IsNeighboringUnlockedPlot_Params
 public:
 	int32                                        PersistId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1FCC[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23C7[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -9806,7 +9820,7 @@ public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PersistId;                                         // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1FD2[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23DB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -9815,7 +9829,7 @@ struct UHousingPlotUnlocksComponent_GetNeighborVisualValue_Params
 {
 public:
 	int32                                        PersistId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1FDA[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_23E4[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector4                              ReturnValue;                                       // 0x10(0x20)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -9834,7 +9848,7 @@ struct AHousingPlotDebrisActor_UpdateCharacterState_Params
 public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsPlacementMode;                                   // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1FED[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_240C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -9880,7 +9894,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2020[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2445[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -9898,10 +9912,10 @@ struct UHousingUpgradeKioskComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_202F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_246B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2032[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_246C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -10049,7 +10063,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20BD[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_251A[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -10081,7 +10095,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20DD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_253B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -10099,10 +10113,10 @@ struct IInteractable_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20EE[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_254B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20F1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_254E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -10112,7 +10126,7 @@ struct IInteractablePlate_Update_Params
 public:
 	class UInteractableComponent*                Interactable;                                      // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractablePlatePayload             Payload;                                           // 0x8(0x2)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20F4[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_255B[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -10129,7 +10143,7 @@ struct UInteractableComponent_OutlineHighlight_Params
 public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Enable;                                            // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_20FD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2565[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -10155,7 +10169,7 @@ struct UInteractableComponent_IsInteractable_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2111[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_257C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -10165,7 +10179,7 @@ struct UInteractableComponent_InteractableRequirementsMet_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2116[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2584[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -10184,7 +10198,7 @@ public:
 	class UProximityChecker*                     Tracker;                                           // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                Tracked;                                           // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsWithin;                                          // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2127[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_259F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -10194,7 +10208,7 @@ struct UInteractableComponent_HandlePlacementInteractChange_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         InteractChange;                                    // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2130[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_25A9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -10205,7 +10219,7 @@ public:
 	struct FVAL_InteractorLockParams             LockParams;                                        // 0x0(0x28)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	class UInteractorComponent*                  Interactor;                                        // 0x28(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bLockEngaged;                                      // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2137[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_25B3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -10252,7 +10266,7 @@ struct UInteractableComponent_GetInteractable_Params
 {
 public:
 	enum class EInteractEventIndex               Index;                                             // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2164[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_25DB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AValeriaCharacter*                     VC;                                                // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UObject*                               ReturnValue;                                       // 0x10(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -10271,7 +10285,7 @@ struct UInteractorComponent_UnlockPlayerFromInteractable_Params
 public:
 	struct FVAL_InteractorLockParams             LockParams;                                        // 0x0(0x28)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x28(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_219D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2644[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -10353,7 +10367,7 @@ struct UInteractorComponent_LockPlayerToInteractable_Params
 public:
 	struct FVAL_InteractorLockParams             LockParams;                                        // 0x0(0x28)(Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x28(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21E1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2659[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -10363,7 +10377,7 @@ struct UInteractorComponent_K2_GetLockParams_Params
 public:
 	struct FVAL_InteractorLockParams             OutLockParams;                                     // 0x0(0x28)(Parm, OutParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x28(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21EE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_265B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -10422,7 +10436,7 @@ public:
 	struct FVAL_InteractorLockParams             LockParams;                                        // 0x0(0x28)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	class UInteractorComponent*                  InteractorComponent;                               // 0x28(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bLocationClaimed;                                  // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2229[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2672[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -10450,7 +10464,7 @@ public:
 	enum class EVAL_InteractorOperation          Operation;                                         // 0x28(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         TriggerWarnings;                                   // 0x29(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x2A(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_223C[0x5];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2686[0x5];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -10569,7 +10583,7 @@ struct UInventoryRequestManager_TryGetActiveRequests_Params
 public:
 	TArray<struct FInventoryRequest>             OutActiveRequests;                                 // 0x0(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22C1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26B7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xE0 (0xE0 - 0x0)
@@ -10580,7 +10594,7 @@ public:
 	struct FGuid                                 InventoryRequestId;                                // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInventoryRequest                     OutActiveRequest;                                  // 0x10(0xC8)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xD8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22D2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26BD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x198 (0x198 - 0x0)
@@ -10591,7 +10605,7 @@ public:
 	struct FInventoryRequest                     InventoryRequest;                                  // 0x0(0xC8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FInventoryRequest                     OutActiveRequest;                                  // 0xC8(0xC8)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x190(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22DB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26C5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -10656,10 +10670,10 @@ struct UInventoryRequestManager_HasActiveRequest_Params
 public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> Item;                                              // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOutIsReadyToClaim;                                // 0x30(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_230A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26DB[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        Amount;                                            // 0x34(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x38(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_230C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26DC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -10687,7 +10701,7 @@ public:
 	FDelegateProperty_                           OnSuccess;                                         // 0xC8(0x10)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnFailure;                                         // 0xD8(0x10)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xE8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_232D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26E5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xF0 (0xF0 - 0x0)
@@ -10699,7 +10713,7 @@ public:
 	FDelegateProperty_                           OnSuccess;                                         // 0xC8(0x10)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnFailure;                                         // 0xD8(0x10)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xE8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_234B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26E9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -10709,7 +10723,7 @@ struct UInventoryRequestManager_CanMakeAnotherRequest_Params
 public:
 	int32                                        OutNumRequestsAvailable;                           // 0x0(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2364[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26EA[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xF0 (0xF0 - 0x0)
@@ -10721,7 +10735,7 @@ public:
 	FDelegateProperty_                           OnSuccess;                                         // 0xC8(0x10)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnFailure;                                         // 0xD8(0x10)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xE8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2377[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26EC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -10731,7 +10745,7 @@ struct UInvitationManager_OnInviteFailed__DelegateSignature_Params
 public:
 	class UInvitation*                           Invitation;                                        // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInvitationFailureReason          FailureReason;                                     // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23A5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2701[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -10757,7 +10771,7 @@ struct UInvitationManager_HasPendingSentInvitation_Params
 public:
 	struct FUniqueNetIdRepl                      UserId;                                            // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23B4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2709[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -10807,7 +10821,7 @@ struct UItemTrackingComponent_GetNumberOfTimesPurchased_Params
 public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x30(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2401[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2729[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -10818,7 +10832,7 @@ public:
 	struct FBagSlotLocation                      ToolSlot;                                          // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      UpgradeKitSlot;                                    // 0x8(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2413[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_272C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -10828,7 +10842,7 @@ struct UItemUpgradeComponent_UpgradeTool_Params
 public:
 	struct FBagSlotLocation                      ToolSlot;                                          // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2419[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2730[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -10849,7 +10863,7 @@ public:
 	struct FBagSlotLocation                      ToolSlot;                                          // 0x8(0x8)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Kits;                                              // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowRepairKitsFromStorage;                       // 0x14(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2433[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_273B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -10860,7 +10874,7 @@ public:
 	class AActor*                                RepairStationActor;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      ToolSlot;                                          // 0x8(0x8)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        GoldSpent;                                         // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_243C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2744[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -10880,7 +10894,7 @@ public:
 	class AActor*                                RepairStationActor;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      ToolSlot;                                          // 0x8(0x8)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bAllowRepairKitsFromStorage;                       // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2451[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2752[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -10892,7 +10906,7 @@ public:
 	struct FBagSlotLocation                      ToolSlot;                                          // 0x8(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        RepairKits;                                        // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowRepairKitsFromStorage;                       // 0x14(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_246B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2759[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -10903,7 +10917,7 @@ public:
 	class AActor*                                RepairStationActor;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      ToolSlot;                                          // 0x8(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        GoldSpent;                                         // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_247A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2765[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -10922,7 +10936,7 @@ struct UItemUpgradeComponent_IsSlotUpgradeKit_Params
 public:
 	struct FBagSlotLocation                      ItemSlot;                                          // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2492[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_277B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -10941,7 +10955,7 @@ struct UItemUpgradeComponent_GetRepairKitsAvailable_Params
 {
 public:
 	bool                                         bAllowRepairKitsFromStorage;                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24B4[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2795[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -10963,7 +10977,7 @@ public:
 	class AActor*                                RepairStationActor;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      ToolSlot;                                          // 0x8(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bAllowRepairKitsFromStorage;                       // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24D1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27A8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -10974,7 +10988,7 @@ public:
 	struct FBagSlotLocation                      ToolSlot;                                          // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      UpgradeKitSlot;                                    // 0x8(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24DA[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27AC[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -10984,7 +10998,7 @@ struct UItemUpgradeComponent_CanUpgradeTool_Params
 public:
 	struct FBagSlotLocation                      ToolSlot;                                          // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24E7[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27B1[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -11045,7 +11059,7 @@ public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2530[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27CD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -11065,7 +11079,7 @@ public:
 	struct FValeriaItem                          Item;                                              // 0x8(0x50)(Parm, NativeAccessSpecifierPublic)
 	int32                                        TintPersistID;                                     // 0x58(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x5C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2541[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27D8[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -11075,10 +11089,10 @@ struct UItemVariantCustomizerComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_254C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_27E1[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_254E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27E3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -11106,7 +11120,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_256D[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27EC[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -11168,7 +11182,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_258C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_27FE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -11202,10 +11216,10 @@ struct ULevelerComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2593[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2805[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2594[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2806[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -11223,7 +11237,7 @@ struct ULevelerComponent_GetItemProgress_Params
 public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x30(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2598[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2807[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -11257,7 +11271,7 @@ struct ULevelerComponent_AttemptToLevelUp_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IgnoreCost;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25B5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_280D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -11267,7 +11281,7 @@ struct ULevelerComponent_AddItemToDeduct_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25BA[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2812[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -11285,7 +11299,7 @@ struct ULimitedEventActivatorComponent_HandleEventStateChanged_Params
 public:
 	class ALimitedEventManagerBase*              EventManager;                                      // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsEventActive;                                    // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25F9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_282C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -11379,7 +11393,7 @@ struct ALimitedEventManagerMajiMarket_IsPlayerInSpace_Params
 public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_261A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_284B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -11438,7 +11452,7 @@ struct ULimitedEventSubsystem_IsEventPreview_Params
 public:
 	class ULimitedEventDataAsset*                LimitedEventDataAsset;                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_263A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2853[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -11448,7 +11462,7 @@ struct ULimitedEventSubsystem_IsEventIdActive_Params
 public:
 	struct FGuid                                 EventId;                                           // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_263E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2854[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -11458,7 +11472,7 @@ struct ULimitedEventSubsystem_IsEventActive_Params
 public:
 	class ULimitedEventDataAsset*                LimitedEventDataAsset;                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2642[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2856[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -11476,7 +11490,7 @@ struct ULimitedEventSubsystem_HandleEventStateChange_Params
 public:
 	class ALimitedEventManagerBase*              EventManager;                                      // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsEventActive;                                    // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2645[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2857[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -11537,7 +11551,7 @@ struct ULootInteractorBaseComponent_Server_TriggerGather_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_266A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2868[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -11549,7 +11563,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2679[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_286A[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -11571,7 +11585,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2691[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_286C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -11589,10 +11603,10 @@ struct ULootInteractorBaseComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26A0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2871[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26A1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2872[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -11634,7 +11648,7 @@ struct UMailboxComponent_RpcServer_SetReadStatus_Params
 public:
 	class FString                                MailId;                                            // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EReadStatus                       ReadStatus;                                        // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26D8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2881[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x78 (0x78 - 0x0)
@@ -11932,7 +11946,7 @@ struct UMessageTargetManager_AddNewMessageTarget_Params
 public:
 	struct FMessageTarget                        NewTarget;                                         // 0x0(0x28)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Index;                                             // 0x28(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2724[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28B7[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2 (0x2 - 0x0)
@@ -12085,7 +12099,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2749[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28DF[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -12129,7 +12143,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2756[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_28F0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -12290,7 +12304,7 @@ struct UMusicSubsystem_NoteEvent__DelegateSignature_Params
 public:
 	class AValeriaPlayerController*              Vpc;                                               // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        NoteIdx;                                           // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_277E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_292B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -12300,7 +12314,7 @@ struct UMusicSubsystem_MatchesSong_Params
 public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_277F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_292D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -12344,7 +12358,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        NoteValue;                                         // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2787[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2932[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -12354,7 +12368,7 @@ struct AOutOfBoundsHandler_Base_TryTeleportPawn_Params
 public:
 	class AValeriaMoveablePawn*                  MoveablePawn;                                      // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_278C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_293C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -12381,7 +12395,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2799[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_294A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -12391,7 +12405,7 @@ struct AOutOfBoundsHandler_Spline_HandleSplineEndOverlap_Params
 public:
 	class AValeriaCharacter*                     CollidingCharacter;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CollisionStartTime;                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_279C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_294B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -12404,7 +12418,7 @@ public:
 	class UPrimitiveComponent*                   OtherComponent;                                    // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         FromSweep;                                         // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27A0[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_294F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -12415,7 +12429,7 @@ struct AOutOfBoundsHandler_Spline_HandleSplineBeginOverlap_Params
 public:
 	class AValeriaCharacter*                     CollidingCharacter;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CollisionStartTime;                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27A1[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2950[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -12449,7 +12463,7 @@ struct APaliaLightingGroup_ApplyComponentRestrictions_Params
 public:
 	TArray<class USceneComponent*>               Components;                                        // 0x0(0x10)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	int32                                        Quality;                                           // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27AE[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2957[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -12460,7 +12474,7 @@ public:
 	struct FGameplayTag                          ParticipationTag;                                  // 0x0(0x8)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ParticipationRange;                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27C1[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2969[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -12487,7 +12501,7 @@ public:
 	class AActor*                                ActorToAdd;                                        // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTag                          ParticipationType;                                 // 0x8(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsRedirect;                                        // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27C2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_296A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -12497,7 +12511,7 @@ struct UParticipationTrackingComponent_AddParticipant_Params
 public:
 	class AActor*                                ActorToAdd;                                        // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsRedirect;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27C3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_296B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xB8 (0xB8 - 0x0)
@@ -12535,7 +12549,7 @@ public:
 	struct FVAL_PartyMember                      A;                                                 // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVAL_PartyMember                      B;                                                 // 0x50(0x50)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xA0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27D2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2972[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xF0 (0xF0 - 0x0)
@@ -12546,7 +12560,7 @@ public:
 	struct FVAL_Party                            Party;                                             // 0x0(0xB8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FUniqueNetIdRepl                      NetId;                                             // 0xB8(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xE8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27D3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2977[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x110 (0x110 - 0x0)
@@ -12557,7 +12571,7 @@ public:
 	struct FVAL_Party                            Party;                                             // 0x0(0xB8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVAL_PartyMember                      PartyMember;                                       // 0xB8(0x50)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x108(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27D4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2978[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x70 (0x70 - 0x0)
@@ -12613,7 +12627,7 @@ struct UPersistentTagMapComponent_GetTagValuesContainingString_Params
 public:
 	class FString                                InString;                                          // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSort;                                             // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27E4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2987[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FTagEntry>                     ReturnValue;                                       // 0x18(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -12641,7 +12655,7 @@ struct UPersistentTagMapComponent_ComputeTagScore_Params
 public:
 	struct FTagScoreRubric                       Rubric;                                            // 0x0(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	float                                        ReturnValue;                                       // 0x20(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27E7[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_298D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -12659,7 +12673,7 @@ struct UPlaceableAlterationsComponent_PlacementItemChanged_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsCancelPlacement;                                 // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27EC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2997[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -12676,7 +12690,7 @@ struct UPlaceableAlterationsComponent_IsDefaultAlteration_Params
 public:
 	struct FPlaceableAlterationConfig            Config;                                            // 0x0(0x90)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x90(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27ED[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_299D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x98 (0x98 - 0x0)
@@ -12686,7 +12700,7 @@ struct UPlaceableAlterationsComponent_IsAvailibleAlteration_Params
 public:
 	struct FPlaceableAlterationConfig            Config;                                            // 0x0(0x90)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x90(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27EE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29A0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -12703,7 +12717,7 @@ struct UPlaceableAlterationsComponent_ContainsAlteration_Params
 public:
 	int32                                        PersistId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27F0[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29A5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1E8 (0x1E8 - 0x0)
@@ -12784,7 +12798,7 @@ struct UPlacementComponent_StartPlacingFromInventory_Params
 public:
 	struct FBagSlotLocation                      Location;                                          // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27FB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29B7[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -12794,7 +12808,7 @@ struct UPlacementComponent_StartPlacingFromHouseInventory_Params
 public:
 	int32                                        HouseInventoryIndex;                               // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27FC[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29B9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x100 (0x100 - 0x0)
@@ -12804,7 +12818,7 @@ struct UPlacementComponent_StartPlacing_Params
 public:
 	struct FItemToPlaceParams                    Params;                                            // 0x0(0xF8)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xF8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27FF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29BA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -12814,7 +12828,7 @@ struct UPlacementComponent_StartMoving_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2800[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29BB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -12831,7 +12845,7 @@ struct UPlacementComponent_RpcServer_UpdateLockedItemToPlace_Params
 {
 public:
 	struct FSessionActorId                       ActorId;                                           // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2803[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_29BC[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               Position;                                          // 0x8(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                              Rotation;                                          // 0x20(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
@@ -12889,7 +12903,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_280F[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29C9[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -13010,7 +13024,7 @@ struct UPlacementRegionComponent_SnapWorldPositionToNearestNeighbor_Params
 {
 public:
 	struct FVector                               WorldPosition;                                     // 0x0(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_283A[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_29EA[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuat                                 Orientation;                                       // 0x20(0x20)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x40(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               ReturnValue;                                       // 0x48(0x18)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -13022,7 +13036,7 @@ struct UPlacementRegionComponent_SnapWorldPositionToGrid_Params
 {
 public:
 	struct FVector                               WorldPosition;                                     // 0x0(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_283C[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_29EB[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuat                                 Orientation;                                       // 0x20(0x20)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Extents;                                           // 0x40(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               ReturnValue;                                       // 0x58(0x18)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -13042,7 +13056,7 @@ struct UPlacementRegionComponent_PlacementItemChanged_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          Item;                                              // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bCancelPlacement;                                  // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_283D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29EC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -13052,7 +13066,7 @@ struct UPlacementRegionComponent_PlacementChanged_Params
 public:
 	class UPlacementComponent*                   PC;                                                // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsPlacing;                                         // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_283E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29EE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -13062,7 +13076,7 @@ struct UPlacementRegionComponent_OnPlacementInteractChanged_Params
 public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Flag;                                              // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2841[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_29F1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -13122,7 +13136,7 @@ struct UPlayerCraftingHistoryComponent_HasRecipeBeenCraftedBefore_Params
 public:
 	int32                                        RecipeConfigId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2870[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2A0F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -13174,7 +13188,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2878[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2A19[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -13185,7 +13199,7 @@ public:
 	struct FBagSlotLocation                      Location;                                          // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class FText                                  OutText;                                           // 0x8(0x18)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2879[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2A1F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -13195,7 +13209,7 @@ struct UPlayerInventoryComponent_GetCurrencyAmount_Params
 public:
 	class UCurrencyConfig*                       CurrencyConfig;                                    // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_287A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2A27[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -13223,7 +13237,7 @@ struct UPlayerWorldStateComponent_HasGatheredObject_Params
 public:
 	struct FGameplayTag                          InTag;                                             // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2883[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2A33[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -13242,7 +13256,7 @@ public:
 	class FString                                CharacterName;                                     // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnSearchForCharacterResult;                        // 0x10(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2886[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2A37[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -13251,7 +13265,7 @@ struct UPresenceManager_SetPresence_Params
 {
 public:
 	enum class EVAL_PresenceStatus               Status;                                            // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2887[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2A38[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                StatusStr;                                         // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -13269,7 +13283,7 @@ struct UPresenceManager_OnSearchForCharacterResult__DelegateSignature_Params
 {
 public:
 	bool                                         bWasSuccessful;                                    // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2888[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2A42[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                OriginalSearchTerm;                                // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUniqueNetIdRepl                      OutUserId;                                         // 0x18(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVALDTOS_MetaCharacterFormat          OutCharacterInfo;                                  // 0x48(0x718)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
@@ -13391,7 +13405,7 @@ public:
 	class AValeriaCharacter*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                SublevelName;                                      // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bInShouldBeVisible;                                // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28A0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2A66[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -13409,7 +13423,7 @@ struct UPrivateSpaceManager_MarkVillagerInPrivateSpaceForSchedule_Params
 {
 public:
 	int32                                        VillagerId;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28A2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2A6B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UPrivateSpaceConfig*                   PrivateSpace;                                      // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVillagerSpawnParams                  SpawnParams;                                       // 0x10(0x28)(Parm, NativeAccessSpecifierPublic)
 };
@@ -13438,7 +13452,7 @@ struct UPrivateSpaceManager_GetCurrentPrivateSpaceForVillagerSchedule_Params
 {
 public:
 	int32                                        VillagerId;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28AE[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2A7F[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UPrivateSpaceConfig*                   ReturnValue;                                       // 0x8(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -13459,7 +13473,7 @@ public:
 	class FString                                HandleID;                                          // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrivateSpaceConfig*                   PrivateSpaceConfig;                                // 0x18(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SlotId;                                            // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28B7[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2A89[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -13477,7 +13491,7 @@ struct UPrivateSpaceManager_CharacterHasActivePrivateSpace_Params
 public:
 	class AValeriaCharacter*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28B9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2A8D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -13527,7 +13541,7 @@ struct UPrivateSpaceVillagerVisitConfig_CanStartPrivateSpaceVillagerVisit_Params
 public:
 	class AValeriaCharacter*                     InValeriaCharacter;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28CF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2AAE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -13537,7 +13551,7 @@ struct UPrivateSpaceVillagerVisitConfig_CanFinishPrivateSpaceVillagerVisit_Param
 public:
 	class AValeriaCharacter*                     InValeriaCharacter;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28D0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2AB0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -13553,7 +13567,7 @@ struct UProjectileFiringComponent_RpcServer_NotifyProjectileHit_Params
 {
 public:
 	int32                                        ProjectileId;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28DA[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2AC6[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                HitActor;                                          // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               HitLocation;                                       // 0x10(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -13568,7 +13582,7 @@ public:
 	struct FVector                               SpawnLocation;                                     // 0x10(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                              SpawnRotation;                                     // 0x28(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        ProjectileId;                                      // 0x40(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28E0[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2ACC[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -13578,7 +13592,7 @@ struct UProjectileFiringComponent_RpcServer_EquipProjectile_Params
 public:
 	struct FBagSlotLocation                      Slot;                                              // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EAmmoType                         Type;                                              // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28E3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2ACD[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x98 (0x98 - 0x0)
@@ -13591,7 +13605,7 @@ public:
 	struct FVector                               SpawnLocation;                                     // 0x60(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                              SpawnRotation;                                     // 0x78(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        ProjectileId;                                      // 0x90(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28E9[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2AD1[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -13601,7 +13615,7 @@ struct UProjectileFiringComponent_RpcClient_SetEquippedAmmo_Params
 public:
 	struct FBagSlotLocation                      AmmoSlotToEquip;                                   // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EAmmoType                         Type;                                              // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28ED[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2AD2[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -13627,7 +13641,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28F1[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2ADC[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -13638,7 +13652,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28F6[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2AE1[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -13708,7 +13722,7 @@ public:
 	enum class EAmmoType                         Type;                                              // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsServerInitiated;                                 // 0x9(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xA(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2907[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2AF6[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -13742,7 +13756,7 @@ struct UProximityChecker_IsWithinDistance_Params
 public:
 	class AActor*                                ActorToTrack;                                      // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_290F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2B06[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -13752,7 +13766,7 @@ struct UProximityChecker_IsTrackingActor_Params
 public:
 	class AActor*                                ActorToTrack;                                      // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2910[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2B09[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -13925,7 +13939,7 @@ struct UVAL_QuestDef_GetAssetsOfClass_Cast_Params
 {
 public:
 	bool                                         bIncludeDerivedClasses;                            // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2936[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2B3B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<TSoftObjectPtr<class UVAL_QuestDef>>  ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -13944,7 +13958,7 @@ struct UVAL_QuestDef_GetAssetByPersistId_Cast_Params
 {
 public:
 	int32                                        PersistIdToGet;                                    // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2941[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2B44[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_QuestDef>          ReturnValue;                                       // 0x8(0x30)(ConstParm, Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -13975,7 +13989,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_294F[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2B62[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -14022,7 +14036,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2953[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2B7C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -14048,10 +14062,10 @@ struct UQuestGiverComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2957[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2B80[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2958[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2B81[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -14061,7 +14075,7 @@ struct UQuestGiverComponent_CanCollectReward_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_295B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2B82[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -14109,7 +14123,7 @@ struct UQuestProgressComponent_IsQuestActiveByID_Params
 public:
 	int32                                        ID;                                                // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_296D[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2B98[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -14119,7 +14133,7 @@ struct UQuestProgressComponent_IsQuestActiveByDef_Params
 public:
 	TSoftObjectPtr<class UVAL_QuestDef>          InQuestDef;                                        // 0x0(0x30)(ConstParm, Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2970[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2B9B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -14208,7 +14222,7 @@ struct UQuestProgressComponent_FindInactiveQuestInfo_Params
 {
 public:
 	int32                                        ID;                                                // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2983[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2BB2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_QuestState                       ReturnValue;                                       // 0x8(0xA0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -14218,7 +14232,7 @@ struct UQuestProgressComponent_FindActiveQuestInfo_Params
 {
 public:
 	int32                                        ID;                                                // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2985[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2BC2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_QuestState                       ReturnValue;                                       // 0x8(0xA0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -14248,7 +14262,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_298C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2BD4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -14266,10 +14280,10 @@ struct UReadableBookComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2992[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2BD9[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2993[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2BDB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -14294,7 +14308,7 @@ public:
 	int32                                        RecipeConfigId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bGiveToAllPresentPlayers;                          // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bGiveStarQuality;                                  // 0x5(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_29B2[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2BE7[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -14319,7 +14333,7 @@ struct URecipeInventoryComponent_OnValeriaCharacterChanged_Params
 public:
 	class AValeriaCharacter*                     ValeriaCharacter;                                  // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaCharacterEvent            ValeriaCharacterEvent;                             // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_29BE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2BF1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -14344,7 +14358,7 @@ struct URecipeInventoryComponent_IsAvailable_Params
 public:
 	int32                                        RecipeConfigId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_29CB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2BF7[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -14364,7 +14378,7 @@ public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> InputItemType;                                     // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> OutputItemType;                                    // 0x30(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_29DB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2BF9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -14375,7 +14389,7 @@ public:
 	int32                                        RecipeConfigId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bGiveToAllPresentPlayers;                          // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bGiveStarQuality;                                  // 0x5(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_29E4[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2BFC[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -14384,11 +14398,11 @@ struct URecipeInventoryComponent_AddAvailable_Internal_Params
 {
 public:
 	int32                                        InRecipeConfigId;                                  // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_29EC[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2C01[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<int32>                                OutAdded;                                          // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FRecipeLearnedFrom                    Source;                                            // 0x18(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_29ED[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2C02[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -14397,7 +14411,7 @@ struct URecipeInventoryComponent_AddAvailable_Params
 {
 public:
 	int32                                        RecipeConfigId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_29F6[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2C08[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRecipeLearnedFrom                    Source;                                            // 0x8(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -14438,7 +14452,7 @@ struct UReplicationTrackingComponent_Server_IsTrackingVillager_Params
 public:
 	int32                                        VillagerId;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A07[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2C21[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -14456,7 +14470,7 @@ struct IRequirementFetcher_GetRequirement_Params
 public:
 	struct FRequirement                          Requirement;                                       // 0x0(0xB8)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xB8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A11[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2C25[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -14563,7 +14577,7 @@ public:
 	TSoftObjectPtr<class UWorld>                 Attachment;                                        // 0x0(0x30)(Parm, OutParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActorSocket*                          Socket;                                            // 0x30(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x38(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A2A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2C35[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -14573,7 +14587,7 @@ struct AAttachmentGenerator_ChooseFirstAttachmentData_Params
 public:
 	TSoftObjectPtr<class UWorld>                 Attachment;                                        // 0x0(0x30)(Parm, OutParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A2B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2C36[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -14598,9 +14612,9 @@ struct UVAL_SessionManager_ValSessionOnPlayersRegistered__DelegateSignature_Para
 {
 public:
 	bool                                         bRegistered;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A3D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2C43[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  SessionName;                                       // 0x4(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A3E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2C44[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FUniqueNetIdRepl>              Players;                                           // 0x10(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -14634,11 +14648,11 @@ struct UShaderBasedAnimationComponent_SetAnimationNormalizedTime_Params
 {
 public:
 	enum class EShaderBasedAnimPlaybackLayer     AnimationLayer;                                    // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A4A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2C4B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        NormalizedTime;                                    // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bTriggerAnimEvents;                                // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bPausePlayback;                                    // 0x9(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A4B[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2C4C[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -14651,7 +14665,7 @@ public:
 	bool                                         bRestartIfAlreadyPlaying;                          // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EShaderBasedAnimPlaybackLayer     AnimationLayer;                                    // 0xD(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EShaderBasedAnimPlaybackCycle     AnimationCycle;                                    // 0xE(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A51[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2C58[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -14694,7 +14708,7 @@ public:
 	class UPrimitiveComponent*                   PrimitiveComponent;                                // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaterialIndex;                                     // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  ParameterToAnimate;                                // 0xC(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A63[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2C73[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -14726,7 +14740,7 @@ struct USkillLevelsComponent_GetSkillLevel_Params
 {
 public:
 	enum class ESkillType                        SkillType;                                         // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A84[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2C90[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSkillPersist                         ReturnValue;                                       // 0x4(0xC)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 
@@ -14837,7 +14851,7 @@ struct ASlidingPuzzleBoard_IsPointAdjacentToOpenSpace_Params
 public:
 	struct FIntPoint                             InPoint;                                           // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A96[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2CA7[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -14893,7 +14907,7 @@ struct ASlidingPuzzleBoard_CanMovePiece_Params
 public:
 	class ASlidingPuzzlePiece*                   InPiece;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A9D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2CAB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -14903,7 +14917,7 @@ struct USlidingPuzzleConfig_IsPuzzleSolvable_Params
 public:
 	class FString                                SolveError;                                        // 0x0(0x10)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2AA0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2CAD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -14913,7 +14927,7 @@ struct USlidingPuzzleConfig_IsPuzzleFormattedCorrectly_Params
 public:
 	class FString                                FormattingError;                                   // 0x0(0x10)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2AA2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2CB0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -15192,7 +15206,7 @@ public:
 	class ASlidingPuzzleBoard*                   InSlidingPuzzleBoard;                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        InPieceNumber;                                     // 0x8(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FIntPoint                             InPieceLocation;                                   // 0xC(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2ADE[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2CCD[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -15257,11 +15271,11 @@ struct USpawningManager_SpawnActorAtSpawnPointAroundArea_Params
 public:
 	struct FVector                               Center;                                            // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Radius;                                            // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B02[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2CE9[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UClass*                                ClassTypesToSpawn;                                 // 0x20(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDefaultSpawnRarityConfig*             DefaultSpawns;                                     // 0x28(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EWhereToSpawnActors               WhereToSpawn;                                      // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B03[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2CEA[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UObject*                               Instigator;                                        // 0x38(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                        TelemetryUniqueId;                                 // 0x40(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                ReturnValue;                                       // 0x48(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -15282,11 +15296,11 @@ struct USpawningManager_FindAllPossibleSpawnsInArea_Params
 public:
 	struct FVector                               Center;                                            // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Radius;                                            // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B0A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2CEC[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UClass*                                ClassTypesToSpawn;                                 // 0x20(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UClass*>                        OutClassesConsidered;                              // 0x28(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x38(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B0B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2CED[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -15335,10 +15349,10 @@ struct UStorageComponent_RpcClient_SendItemsQueued_Params
 {
 public:
 	enum class EStoragePoolType                  StoragePoolType;                                   // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B41[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2CFD[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FValeriaItem>                  Data;                                              // 0x8(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         FullyLoaded;                                       // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B43[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2CFE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -15347,7 +15361,7 @@ struct UStorageComponent_RpcClient_RemoveItem_Params
 {
 public:
 	enum class EStoragePoolType                  StoragePoolType;                                   // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B46[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D00[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaItem                          Item;                                              // 0x8(0x50)(Parm, NativeAccessSpecifierPublic)
 };
 
@@ -15357,7 +15371,7 @@ struct UStorageComponent_RpcClient_AddItem_Params
 {
 public:
 	enum class EStoragePoolType                  StoragePoolType;                                   // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B4D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D01[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaItem                          Item;                                              // 0x8(0x50)(Parm, NativeAccessSpecifierPublic)
 };
 
@@ -15413,7 +15427,7 @@ public:
 	int32                                        QualityStars;                                      // 0x30(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        TintPersistID;                                     // 0x34(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x38(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B65[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D10[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaItem                          ReturnValue;                                       // 0x40(0x50)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -15425,7 +15439,7 @@ public:
 	struct FGameplayTagContainer                 IncludeTag;                                        // 0x0(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                 ExcludeTag;                                        // 0x20(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x40(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B66[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D11[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FValeriaItem>                  ReturnValue;                                       // 0x48(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -15437,7 +15451,7 @@ public:
 	struct FGameplayTagContainer                 IncludeTag;                                        // 0x0(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                 ExcludeTag;                                        // 0x20(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x40(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B6A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D14[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FValeriaItem>                  ReturnValue;                                       // 0x48(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -15448,7 +15462,7 @@ struct UStorageComponent_GetItemsOfCategory_Params
 public:
 	enum class EStoragePoolType                  PoolType;                                          // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EItemStorageCategory              Category;                                          // 0x1(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B75[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D16[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FValeriaItem>                  ReturnValue;                                       // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -15458,7 +15472,7 @@ struct UStorageComponent_GetItemMaxCapacity_Params
 {
 public:
 	enum class EStoragePoolType                  StoragePool;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B7A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D18[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -15468,7 +15482,7 @@ struct UStorageComponent_GetItemFreeSpace_Params
 {
 public:
 	enum class EStoragePoolType                  StoragePool;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B7E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D1C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -15478,7 +15492,7 @@ struct UStorageComponent_GetItemCount_Params
 {
 public:
 	enum class EStoragePoolType                  StoragePool;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B80[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D1F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -15488,7 +15502,7 @@ struct UStorageComponent_GetItemCapacity_Params
 {
 public:
 	enum class EStoragePoolType                  StoragePool;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B82[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D24[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -15500,7 +15514,7 @@ public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FStarQualityConstraint                StarQualityConstraint;                             // 0x30(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x38(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B85[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D28[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x3C(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -15512,7 +15526,7 @@ public:
 	struct FGameplayTag                          IngredientTag;                                     // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FStarQualityConstraint                StarQualityConstraint;                             // 0x8(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  PoolType;                                          // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B8B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D2D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x14(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -15524,7 +15538,7 @@ public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        QualityStars;                                      // 0x30(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x34(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B8E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D3A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaItem                          ReturnValue;                                       // 0x38(0x50)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -15535,7 +15549,7 @@ struct UStorageComponent_GetAllItemsOfType_Params
 public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2B91[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D42[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FValeriaItem>                  ReturnValue;                                       // 0x38(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -15584,7 +15598,7 @@ struct USubgameActivatorComponent_RpcNetMulticast_NotifyCharacterExitedSubgame_P
 public:
 	class AValeriaCharacter*                     PlayingCharacter;                                  // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESubgameResult                    SubgameResult;                                     // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BA4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D5B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -15602,7 +15616,7 @@ struct USubgameActivatorComponent_PostFinishExitSubgame_Params
 public:
 	class AValeriaCharacter*                     PlayingCharacter;                                  // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESubgameResult                    SubgameResult;                                     // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BA5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D5C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -15631,7 +15645,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BAA[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D5F[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -15663,7 +15677,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BAC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D6E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -15689,10 +15703,10 @@ struct USubgameActivatorComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BB2[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2D74[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BB3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D75[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -15702,7 +15716,7 @@ struct USubgameActivatorComponent_FinishExitSubgame_Params
 public:
 	class AValeriaCharacter*                     PlayingCharacter;                                  // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESubgameResult                    SubgameResult;                                     // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BB5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D78[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -15721,7 +15735,7 @@ public:
 	class USubgameManagerComponent*              ExitedSubgameManager;                              // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AValeriaCharacter*                     PlayingCharacter;                                  // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESubgameResult                    SubgameResult;                                     // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BBC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D7C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -15754,7 +15768,7 @@ struct USupportRequestLocalPlayerSubsystem_PostUserReport_Params
 public:
 	struct FUserReport                           Report;                                            // 0x0(0x48)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x48(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BD9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D87[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -15764,7 +15778,7 @@ struct USupportRequestLocalPlayerSubsystem_PostSupportRequest_Params
 public:
 	struct FSupportRequest                       Request;                                           // 0x0(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BDE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D8B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -15789,7 +15803,7 @@ struct USupportRequestLocalPlayerSubsystem_PostContentReport_Params
 public:
 	struct FContentReport                        Report;                                            // 0x0(0x58)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x58(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BE4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2D90[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -15805,7 +15819,7 @@ public:
 	class FName                                  StartSection;                                      // 0x3C(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStopWhenAbilityEnds;                              // 0x44(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHardJump;                                         // 0x45(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BEE[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2DA0[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_TaskProxy_PlayMontageAndWaitForEvent* ReturnValue;                                       // 0x48(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -15821,7 +15835,7 @@ public:
 	class FName                                  StartSection;                                      // 0x1C(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStopWhenAbilityEnds;                              // 0x24(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHardJump;                                         // 0x25(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BF7[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2DAC[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_TaskProxy_PlayMontageAndWait*     ReturnValue;                                       // 0x28(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -15859,7 +15873,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C08[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2DC0[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -15880,7 +15894,7 @@ struct ATeleporterActor_IsSecondaryTeleportOptionsEmpty_Params
 public:
 	struct FSecondaryTeleportOptions             Options;                                           // 0x0(0x38)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x38(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C0B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2DC5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -15891,7 +15905,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C0C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2DCB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -15909,7 +15923,7 @@ struct ATeleporterActor_HasSecondaryTeleportationOptions_Params
 public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C0D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2DCF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -15919,10 +15933,10 @@ struct ATeleporterActor_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C10[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2DD4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C12[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2DD5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -15941,7 +15955,7 @@ struct ATeleporterActor_DisplaySecondaryTeleportationOptions_Params
 public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C19[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2DDA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -15960,7 +15974,7 @@ struct UTeleportOriginComponent_HasValidTravelDestination_Params
 public:
 	class AValeriaCharacter*                     TeleportingCharacter;                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C20[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2DEC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -15980,7 +15994,7 @@ public:
 	class AValeriaCharacter*                     TeleportingCharacter;                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                SeamlessAnchor;                                    // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C21[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2DEF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -15991,7 +16005,7 @@ public:
 	class AValeriaCharacter*                     TeleportingCharacter;                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                SeamlessAnchor;                                    // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C26[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2DF1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -16001,7 +16015,7 @@ struct UTeleportTravelConfigAsset_IsDestinationActive_Params
 public:
 	class UObject*                               WorldContextObject;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C2E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2DFA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -16011,7 +16025,7 @@ struct UTeleportTravelConfigAsset_ArePlayerTagRequirementsMet_Params
 public:
 	class AValeriaCharacter*                     ValeriaCharacter;                                  // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C34[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E06[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -16051,7 +16065,7 @@ struct UTrackingComponent_Server_OnCharacterLocationContextChanged_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EWorldLocationContext             LocationContext;                                   // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C4A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E24[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -16115,7 +16129,7 @@ struct UTrackingComponent_RpcClient_HandleOnPartyMemberLocationContextChanged_Pa
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EWorldLocationContext             LocationContext;                                   // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C5F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E28[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -16245,7 +16259,7 @@ public:
 	struct FVector                               Center;                                            // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FTrackedItemInfo                      OutClosestItemInfo;                                // 0x18(0x160)(Parm, OutParm, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x178(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C75[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E4E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -16271,7 +16285,7 @@ struct UTrackingComponent_Client_SetFocusedItem_Params
 public:
 	int32                                        NewItemId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C7B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E4F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -16281,7 +16295,7 @@ struct UTrackingComponent_Client_IsFocusedItem_Params
 public:
 	int32                                        TrackedItemId;                                     // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C81[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E51[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -16291,7 +16305,7 @@ struct UTrackingComponent_Client_HandleOnPartyMemberLocationContextChangedAfterD
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EWorldLocationContext             LocationContext;                                   // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C84[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E52[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -16437,7 +16451,7 @@ struct UTravelManager_GetPrintableTextForStatus_Params
 {
 public:
 	enum class ETravelManagerStatus              Status;                                            // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2CCE[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2E71[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  ReturnValue;                                       // 0x8(0x18)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -16495,7 +16509,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2CF2[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E82[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -16506,7 +16520,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2CF3[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E85[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -16515,11 +16529,11 @@ struct UValeriaAkFunctionLibrary_VTrackAkEventOnActor_Params
 {
 public:
 	int32                                        PlayingID;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2CFE[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2E87[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkAudioEvent*                         AkEvent;                                           // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                Actor;                                             // 0x10(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOverrideExisting;                                 // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D00[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E88[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -16529,11 +16543,11 @@ struct UValeriaAkFunctionLibrary_VTrackAkEventAtLocation_Params
 public:
 	class UObject*                               WorldContextObject;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PlayingID;                                         // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D04[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2E8D[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkAudioEvent*                         AkEvent;                                           // 0x10(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Location;                                          // 0x18(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOverrideExisting;                                 // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D05[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E8E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -16546,7 +16560,7 @@ public:
 	struct FVector                               Location;                                          // 0x10(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PlayingID;                                         // 0x28(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOverrideExisting;                                 // 0x2C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D09[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E97[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -16558,7 +16572,7 @@ public:
 	class UAkAudioEvent*                         AkEvent;                                           // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Location;                                          // 0x10(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x28(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D0C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2E9C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -16567,11 +16581,11 @@ struct UValeriaAkFunctionLibrary_VExecuteActionOnPlayingID_Params
 {
 public:
 	enum class EAkActionOnEventType              ActionType;                                        // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D0F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2EA6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        PlayingID;                                         // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        TransitionDuration;                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAkCurveInterpolation             FadeCurve;                                         // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D11[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2EA9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -16581,13 +16595,13 @@ struct UValeriaAkFunctionLibrary_VAkGetComponent_Params
 public:
 	class USceneComponent*                       AttachToComponent;                                 // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ComponentCreated;                                  // 0x8(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D13[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2EBA[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  AttachPointName;                                   // 0xC(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D14[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2EBD[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               Location;                                          // 0x18(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAttachLocation                   LocationType;                                      // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAutoDestroy;                                      // 0x31(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D15[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2EC0[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkComponent*                          ReturnValue;                                       // 0x38(0x8)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -16602,7 +16616,7 @@ public:
 	class AActor*                                Instigator;                                        // 0x28(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAkComponent*                          OutComponent;                                      // 0x30(0x8)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x38(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D18[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2ED0[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -16613,7 +16627,7 @@ public:
 	class UAkAudioEvent*                         AkEvent;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAkComponent*                          AkComponent;                                       // 0x8(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x10(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D1B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2ED5[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -16644,7 +16658,7 @@ public:
 	class USkeletalMeshComponent*                Mesh;                                              // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAnimNotifyState*                      NotifyState;                                       // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Remove;                                            // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D20[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2EDB[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x14(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -16655,7 +16669,7 @@ struct UValeriaAkFunctionLibrary_ForceDestroyComponent_Params
 public:
 	class UActorComponent*                       Component;                                         // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bPromoteChildren;                                  // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D21[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2EDF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -16667,10 +16681,10 @@ public:
 	struct FVector                               Point;                                             // 0x8(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                Actor;                                             // 0x20(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECollisionChannel                 TraceChannel;                                      // 0x28(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D28[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2EE3[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               ClosestPointOnCollision;                           // 0x30(0x18)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ReturnValue;                                       // 0x48(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D29[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2EE4[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -16691,10 +16705,10 @@ public:
 	struct FVector                               Location;                                          // 0x18(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                              Orientation;                                       // 0x30(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         AutoPost;                                          // 0x48(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D2E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2EE6[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                EventName;                                         // 0x50(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         AutoDestroy;                                       // 0x60(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D2F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2EE7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkComponent*                          ReturnValue;                                       // 0x68(0x8)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -16706,7 +16720,7 @@ public:
 	class USkeletalMeshComponent*                Mesh;                                              // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAnimNotifyState*                      NotifyState;                                       // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D32[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2EE9[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -16740,7 +16754,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D42[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2EED[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -16753,7 +16767,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D4E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2EF0[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -16772,7 +16786,7 @@ struct UValeriaAkHomeVerbComponent_AddGatherable_Params
 public:
 	class UGatherableComponent*                  GatherableComp;                                    // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D5A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2EF5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -16798,7 +16812,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D74[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F0E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -16811,7 +16825,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D7B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2F15[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -16922,7 +16936,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Result;                                            // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         WasSuccess;                                        // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D9C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F43[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -16932,7 +16946,7 @@ struct UValeriaAutomationBpFunctionLibrary_VALTEST_IsInAutomationWorld_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2DA0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F45[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -16982,7 +16996,7 @@ public:
 	struct FVital                                Vital1;                                            // 0x0(0x18)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVital                                Vital2;                                            // 0x18(0x18)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2DB1[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F5B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -16993,7 +17007,7 @@ public:
 	class FString                                InPackageName;                                     // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                OutObjectPath;                                     // 0x10(0x10)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2DB4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F63[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -17035,7 +17049,7 @@ public:
 	TSubclassOf<class AActor>                    ActorClass;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FTransform                            SpawnTransform;                                    // 0x10(0x60)(Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESpawnActorCollisionHandlingMethod CollisionHandlingMethod;                           // 0x70(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2DC6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2F75[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        UnitsToTraceDown;                                  // 0x74(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                ReturnValue;                                       // 0x78(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -17073,7 +17087,7 @@ struct UValeriaBlueprintFunctionLibrary_SortItemTypes_Params
 public:
 	TArray<class UVAL_ItemTypeDefinitionAsset*>  Items;                                             // 0x0(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	enum class EItemSortType                     SortType;                                          // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2DD6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F80[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -17111,7 +17125,7 @@ struct UValeriaBlueprintFunctionLibrary_ShouldVillagerDisappearDuringActivity_Pa
 public:
 	struct FVillagerScheduleActivity             InVillagerScheduleActivity;                        // 0x0(0x188)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x188(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2DEB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F93[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -17121,7 +17135,7 @@ struct UValeriaBlueprintFunctionLibrary_SetMapTravelReason_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EMapTravelReason                  TravelReason;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2DF1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F99[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -17133,7 +17147,7 @@ public:
 	class FName                                  ComponentName;                                     // 0x8(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UStaticMesh*                           Mesh;                                              // 0x10(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2DFA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F9C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -17144,7 +17158,7 @@ public:
 	class FName                                  Path;                                              // 0x0(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  RowName;                                           // 0x8(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E04[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2F9E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -17164,7 +17178,7 @@ public:
 	struct FValeriaItem                          Item1;                                             // 0x0(0x50)(Parm, NativeAccessSpecifierPublic)
 	struct FValeriaItem                          Item2;                                             // 0x50(0x50)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xA0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E0E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FA0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -17191,7 +17205,7 @@ public:
 	struct FPlacementHoverInfo                   Info1;                                             // 0x0(0x88)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FPlacementHoverInfo                   Info2;                                             // 0x88(0x88)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x110(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E18[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FA3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -17254,7 +17268,7 @@ public:
 	class UAnimMontage*                          Montage;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  SectionName;                                       // 0x8(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E40[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FB1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -17264,10 +17278,10 @@ struct UValeriaBlueprintFunctionLibrary_MakePartOfTextInvisible_Params
 public:
 	class FText                                  InputText;                                         // 0x0(0x18)(Parm, NativeAccessSpecifierPublic)
 	float                                        AccumulatedTime;                                   // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E47[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2FB9[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UObject*                               Context;                                           // 0x20(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsTextFullyDisplayed;                              // 0x28(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E48[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2FBB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                ReturnValue;                                       // 0x30(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -17287,7 +17301,7 @@ struct UValeriaBlueprintFunctionLibrary_ItemIsEmpty_Params
 public:
 	struct FValeriaItem                          Item;                                              // 0x0(0x50)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x50(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E52[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FC3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xA8 (0xA8 - 0x0)
@@ -17298,7 +17312,7 @@ public:
 	struct FValeriaItem                          Item1;                                             // 0x0(0x50)(Parm, NativeAccessSpecifierPublic)
 	struct FValeriaItem                          Item2;                                             // 0x50(0x50)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xA0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E57[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FCA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -17308,7 +17322,7 @@ struct UValeriaBlueprintFunctionLibrary_ItemCanBePlaced_Params
 public:
 	struct FValeriaItem                          Item;                                              // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x50(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E58[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FD1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -17318,7 +17332,7 @@ struct UValeriaBlueprintFunctionLibrary_IsReturnHomeMapButtonVisible_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E59[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FD4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -17328,7 +17342,7 @@ struct UValeriaBlueprintFunctionLibrary_IsReturnHomeEnabled_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E5C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FDA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -17338,7 +17352,7 @@ struct UValeriaBlueprintFunctionLibrary_IsPlayInEditor_Params
 public:
 	class UObject*                               WorldContextObject;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E61[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FDE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -17348,7 +17362,7 @@ struct UValeriaBlueprintFunctionLibrary_IsOtherInventoryOpen_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E65[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FDF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -17358,7 +17372,7 @@ struct UValeriaBlueprintFunctionLibrary_IsOnHousingPlot_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E67[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FE5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -17376,7 +17390,7 @@ struct UValeriaBlueprintFunctionLibrary_IsMobilePlatform_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E70[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FED[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -17396,7 +17410,7 @@ public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EItemStorageCategory              Category;                                          // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x11(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E76[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FF7[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -17407,7 +17421,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x8(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x38(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E7E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FFA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -17417,7 +17431,7 @@ struct UValeriaBlueprintFunctionLibrary_IsFTUEMapOrExperience_Params
 public:
 	class FString                                MapOrExperienceName;                               // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E81[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2FFD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -17427,7 +17441,7 @@ struct UValeriaBlueprintFunctionLibrary_IsFTUEComplete_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E84[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3006[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2 (0x2 - 0x0)
@@ -17467,7 +17481,7 @@ public:
 	class AValeriaCharacter*                     PlayerCharacter;                                   // 0x130(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AValeriaVillagerCharacter*             VillagerCharacter;                                 // 0x138(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x140(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E9A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3011[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x140 (0x140 - 0x0)
@@ -17480,7 +17494,7 @@ public:
 	class AValeriaCharacter*                     PlayerCharacter;                                   // 0x130(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        VillagerId;                                        // 0x138(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x13C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EA1[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_301C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -17490,7 +17504,7 @@ struct UValeriaBlueprintFunctionLibrary_IsBagSlotLocationValid_Params
 public:
 	struct FBagSlotLocation                      Location;                                          // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EA5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3028[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -17501,7 +17515,7 @@ public:
 	TArray<int32>                                LevelArray;                                        // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                        Level;                                             // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x14(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EAB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_302C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -17521,7 +17535,7 @@ public:
 	struct FValeriaItem                          Item;                                              // 0x8(0x50)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                        Percent;                                           // 0x58(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x5C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EB0[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3034[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x98 (0x98 - 0x0)
@@ -17531,7 +17545,7 @@ struct UValeriaBlueprintFunctionLibrary_GetVitalConfigByType_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVitalType                        Typ;                                               // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EB4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_303E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVitalConfig                          ReturnValue;                                       // 0x10(0x88)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17542,7 +17556,7 @@ struct UValeriaBlueprintFunctionLibrary_GetVitalConfigById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EB8[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3043[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVitalConfig                          ReturnValue;                                       // 0x10(0x88)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17553,7 +17567,7 @@ struct UValeriaBlueprintFunctionLibrary_GetVisibleVillagerCoreConfigIds_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSortAlphabetically;                               // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EBE[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_304D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<int32>                                ReturnValue;                                       // 0x10(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17565,7 +17579,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        VillagerCoreId;                                    // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  ReturnValue;                                       // 0xC(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EC2[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3053[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -17576,7 +17590,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        VillagerId;                                        // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  ReturnValue;                                       // 0xC(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EC3[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_305C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -17587,12 +17601,12 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Value;                                             // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERelationshipType                 Type;                                              // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EC7[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3065[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        VillagerCoreId;                                    // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OutXpProgressForCurrentLevel;                      // 0x14(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OutXpMaxForCurrentLevel;                           // 0x18(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOutMaxLevel;                                      // 0x1C(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2ECA[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3066[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -17603,12 +17617,12 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Value;                                             // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERelationshipType                 Type;                                              // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2ECC[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3076[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        VillagerCoreId;                                    // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOutMaxLevel;                                      // 0x14(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2ECD[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3078[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ReturnValue;                                       // 0x18(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2ECE[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3079[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1B0 (0x1B0 - 0x0)
@@ -17619,7 +17633,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2ED0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_307E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerQuestConfig                  ReturnValue;                                       // 0x20(0x190)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17631,7 +17645,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EDA[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3089[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerMailMessageConfig            ReturnValue;                                       // 0x20(0xF0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17642,7 +17656,7 @@ struct UValeriaBlueprintFunctionLibrary_GetVillagerInWorldById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        InVillagerId;                                      // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EDB[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_308C[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AValeriaVillagerCharacter*             ReturnValue;                                       // 0x10(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -17653,7 +17667,7 @@ struct UValeriaBlueprintFunctionLibrary_GetVillagerIdsByVillagerCoreId_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        VillagerCoreId;                                    // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EDD[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_308D[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<int32>                                ReturnValue;                                       // 0x10(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17664,7 +17678,7 @@ struct UValeriaBlueprintFunctionLibrary_GetVillagerGiftPreferenceConfigById_Para
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EE2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3094[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerGiftPreferenceConfig         ReturnValue;                                       // 0x10(0x150)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17676,7 +17690,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EE6[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_309A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerConfig                       ReturnValue;                                       // 0x20(0x140)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17698,7 +17712,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EF4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30A1[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerCoreConfig                   ReturnValue;                                       // 0x20(0x1048)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17709,7 +17723,7 @@ struct UValeriaBlueprintFunctionLibrary_GetVillagerCoreConfigById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EFC[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30A2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerCoreConfig                   ReturnValue;                                       // 0x10(0x1048)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17720,7 +17734,7 @@ struct UValeriaBlueprintFunctionLibrary_GetVillagerConfigById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2EFF[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30A5[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerConfig                       ReturnValue;                                       // 0x10(0x140)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17743,7 +17757,7 @@ public:
 	int32                                        Y;                                                 // 0x14(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SizeX;                                             // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        ReturnValue;                                       // 0x1C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F06[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_30AB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -17753,7 +17767,7 @@ struct UValeriaBlueprintFunctionLibrary_GetValeriaTimestampSecs_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F0A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_30B2[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -17790,7 +17804,7 @@ struct UValeriaBlueprintFunctionLibrary_GetValeriaPlayerController_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x8(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F23[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30D0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AValeriaPlayerController*              ReturnValue;                                       // 0x10(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -17802,7 +17816,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FPersistGuid                          PlayerId;                                          // 0x8(0x10)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F25[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30D8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AValeriaCharacter*                     ReturnValue;                                       // 0x20(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -17813,7 +17827,7 @@ struct UValeriaBlueprintFunctionLibrary_GetValeriaCharacter_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x8(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F27[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30D9[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AValeriaCharacter*                     ReturnValue;                                       // 0x10(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -17850,7 +17864,7 @@ struct UValeriaBlueprintFunctionLibrary_GetTooltipForVital_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVitalType                        VitalType;                                         // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F2F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30E1[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  ReturnValue;                                       // 0x10(0x18)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17880,7 +17894,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EItemStorageCategory              StorageCategory;                                   // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EItemSortType                     SortType;                                          // 0x9(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F33[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30E9[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UVAL_ItemTypeDefinitionAsset*>  ReturnValue;                                       // 0x10(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17892,7 +17906,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<enum class EItemStorageCategory>      StorageCategories;                                 // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EItemSortType                     SortType;                                          // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F35[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30EB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UVAL_ItemTypeDefinitionAsset*>  ReturnValue;                                       // 0x20(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17904,7 +17918,7 @@ public:
 	class UAnimInstance*                         AnimInstance;                                      // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  SlotNodeName;                                      // 0x8(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ReturnValue;                                       // 0x10(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F3A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_30EC[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x98 (0x98 - 0x0)
@@ -17914,7 +17928,7 @@ struct UValeriaBlueprintFunctionLibrary_GetSkillLevelConfigByType_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESkillType                        Typ;                                               // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F3D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30EF[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSkillLevelConfig                     ReturnValue;                                       // 0x10(0x88)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17925,7 +17939,7 @@ struct UValeriaBlueprintFunctionLibrary_GetSkillLevelConfigById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F42[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30F0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSkillLevelConfig                     ReturnValue;                                       // 0x10(0x88)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17936,7 +17950,7 @@ struct UValeriaBlueprintFunctionLibrary_GetShopConfigById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F4D[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30F3[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FShopConfig                           ReturnValue;                                       // 0x10(0x78)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17965,7 +17979,7 @@ struct UValeriaBlueprintFunctionLibrary_GetRewardType_Params
 public:
 	struct FSingleQuestReward                    Reward;                                            // 0x0(0x60)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EQuestRewardType                  ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F54[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_30FE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -17986,7 +18000,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F61[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3103[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRecipeConfig                         ReturnValue;                                       // 0x20(0x2A8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -17997,7 +18011,7 @@ struct UValeriaBlueprintFunctionLibrary_GetRecipeConfigById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F67[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_310A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRecipeConfig                         ReturnValue;                                       // 0x10(0x2A8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18009,7 +18023,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F71[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_310F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuestSelectorConfig                  ReturnValue;                                       // 0x20(0x38)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18022,7 +18036,7 @@ public:
 	struct FVillagerQuestRequirement             Requirement;                                       // 0x8(0x290)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	class FText                                  OutText;                                           // 0x298(0x18)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x2B0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F77[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3113[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -18033,7 +18047,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F87[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3115[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuestConfig                          ReturnValue;                                       // 0x20(0x60)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18064,7 +18078,7 @@ struct UValeriaBlueprintFunctionLibrary_GetPathStepComponentAt_Params
 public:
 	class AActor*                                Owner;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        StepIndex;                                         // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F8C[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3122[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UPathStepComponent*                    ReturnValue;                                       // 0x10(0x8)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -18079,7 +18093,7 @@ public:
 	bool                                         bAllowGroupedDialogues;                            // 0x18(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EDialogueType                     OutMostNotableDialogue;                            // 0x19(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         OutIsPinned;                                       // 0x1A(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F91[0x5];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3127[0x5];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -18093,7 +18107,7 @@ public:
 	bool                                         bAllowGroupedDialogues;                            // 0x14(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EDialogueType                     OutMostNotableDialogue;                            // 0x15(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         OutIsPinned;                                       // 0x16(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F98[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3131[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -18104,7 +18118,7 @@ public:
 	class UAnimMontage*                          Montage;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  SectionName;                                       // 0x8(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ReturnValue;                                       // 0x10(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F99[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3138[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -18125,7 +18139,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F9D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_313D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FLauncherConfig                       ReturnValue;                                       // 0x20(0x60)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18137,7 +18151,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FA8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3148[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FItemSellValueConfig                  ReturnValue;                                       // 0x20(0x50)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18159,7 +18173,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FB2[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3150[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FDEPRECATED_ItemConfig                ReturnValue;                                       // 0x20(0x548)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18170,7 +18184,7 @@ struct UValeriaBlueprintFunctionLibrary_GetItemConfigById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FB5[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3154[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FDEPRECATED_ItemConfig                ReturnValue;                                       // 0x10(0x548)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18205,7 +18219,7 @@ struct UValeriaBlueprintFunctionLibrary_GetInventoryBagConfigById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FC1[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3166[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FInventoryBagConfig                   ReturnValue;                                       // 0x10(0x28)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18255,7 +18269,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FCC[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_317B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FFishConfig                           ReturnValue;                                       // 0x20(0x220)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18276,7 +18290,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FD1[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3185[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCreatureConfig                       ReturnValue;                                       // 0x20(0x48)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18289,7 +18303,7 @@ public:
 	int32                                        RecipeId;                                          // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        CrafterId;                                         // 0xC(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x10(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FD5[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3188[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -18300,7 +18314,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FD8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_318A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCrafterConfig                        ReturnValue;                                       // 0x20(0xE8)(Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -18311,7 +18325,7 @@ struct UValeriaBlueprintFunctionLibrary_GetCrafterConfigById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FDB[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_318E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCrafterConfig                        ReturnValue;                                       // 0x10(0xE8)(Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -18333,7 +18347,7 @@ public:
 	class FString                                Key;                                               // 0x10(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Output;                                            // 0x20(0x10)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FDE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3192[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xB8 (0xB8 - 0x0)
@@ -18344,7 +18358,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                   Handle;                                            // 0x8(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FE8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_319A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FBuffConfig                           ReturnValue;                                       // 0x20(0x98)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18355,7 +18369,7 @@ struct UValeriaBlueprintFunctionLibrary_GetBuffConfigById_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FE9[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31A3[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FBuffConfig                           ReturnValue;                                       // 0x10(0x98)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18418,12 +18432,12 @@ struct UValeriaBlueprintFunctionLibrary_GatherPlayerPersonalityInfo_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaPersonalityElement        OutResult;                                         // 0x8(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FF4[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31B6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        Air;                                               // 0xC(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Earth;                                             // 0x10(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Fire;                                              // 0x14(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Water;                                             // 0x18(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FF5[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_31B7[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -18432,7 +18446,7 @@ struct UValeriaBlueprintFunctionLibrary_FormatDuration_Params
 {
 public:
 	int32                                        Seconds;                                           // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FF8[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31B9[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -18443,7 +18457,7 @@ struct UValeriaBlueprintFunctionLibrary_FNameIsNone_Params
 public:
 	class FName                                  Name;                                              // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2FFB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_31BD[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -18454,7 +18468,7 @@ public:
 	struct FFloatRange                           Range;                                             // 0x0(0x10)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Value;                                             // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x14(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3003[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_31BF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -18464,7 +18478,7 @@ struct UValeriaBlueprintFunctionLibrary_FlattenScalingRewardsForLevel_Params
 public:
 	TArray<struct FScalingReward>                ScalingRewards;                                    // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                        Level;                                             // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3005[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31C4[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FSingleQuestReward>            ReturnValue;                                       // 0x18(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18476,7 +18490,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVitalType                        Typ;                                               // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x9(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_300A[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31C8[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVitalConfig                          ReturnValue;                                       // 0x10(0x88)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18488,7 +18502,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_300E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31CF[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVitalConfig                          ReturnValue;                                       // 0x10(0x88)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18500,10 +18514,10 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Level;                                             // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERelationshipType                 Type;                                              // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3015[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31D4[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        VillagerCoreId;                                    // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x14(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3017[0xB];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31D5[0xB];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerRelationshipLevelConfig      ReturnValue;                                       // 0x20(0x1C0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18515,9 +18529,9 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Value;                                             // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERelationshipType                 Type;                                              // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_301F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31DE[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        VillagerCoreId;                                    // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3020[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31E0[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerRelationshipLevelConfig      ReturnValue;                                       // 0x20(0x1C0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18529,7 +18543,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3023[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31E2[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerGiftPreferenceConfig         ReturnValue;                                       // 0x10(0x150)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18541,7 +18555,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3025[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31ED[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerCoreConfig                   ReturnValue;                                       // 0x10(0x1048)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18553,7 +18567,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_302B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_31F6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVillagerConfig                       ReturnValue;                                       // 0x10(0x140)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18575,7 +18589,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESkillType                        Typ;                                               // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x9(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3033[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3203[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSkillLevelConfig                     ReturnValue;                                       // 0x10(0x88)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18587,7 +18601,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3037[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3207[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSkillLevelConfig                     ReturnValue;                                       // 0x10(0x88)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18599,7 +18613,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3039[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_320C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FShopConfig                           ReturnValue;                                       // 0x10(0x78)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18611,7 +18625,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3040[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_320D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRecipeConfig                         ReturnValue;                                       // 0x10(0x2A8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18631,10 +18645,10 @@ struct UValeriaBlueprintFunctionLibrary_FindNeedsIndexForRecipeID_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RecipeId;                                          // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_304C[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3211[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FRecipe_RequireItem>           NeededItems;                                       // 0x10(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x20(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_304D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3212[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -18645,7 +18659,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTag                          IngredientTag;                                     // 0x8(0x8)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x10(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_304F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3215[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        OutResultsFound;                                   // 0x14(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UVAL_ItemTypeDefinitionAsset*          ReturnValue;                                       // 0x18(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -18657,7 +18671,7 @@ struct UValeriaBlueprintFunctionLibrary_FindItemTypeBySimpleDecorActor_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x8(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3051[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3217[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_ItemTypeDefinitionAsset*          ReturnValue;                                       // 0x10(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -18668,7 +18682,7 @@ struct UValeriaBlueprintFunctionLibrary_FindItemTypeByActor_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x8(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3052[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_321B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_ItemTypeDefinitionAsset*          ReturnValue;                                       // 0x10(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -18680,7 +18694,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3053[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3225[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FDEPRECATED_ItemConfig                ReturnValue;                                       // 0x10(0x548)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18692,7 +18706,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3059[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3226[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FInventoryBagConfig                   ReturnValue;                                       // 0x10(0x28)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18716,7 +18730,7 @@ public:
 	struct FErrorMessage                         Error;                                             // 0x8(0x48)(Parm, NativeAccessSpecifierPublic)
 	struct FErrorModalConfig                     OutModalConfig;                                    // 0x50(0xA0)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xF0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3062[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_322B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -18727,7 +18741,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Name;                                              // 0x8(0x10)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_306B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_322D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_DialogueAsset*                    ReturnValue;                                       // 0x20(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -18739,7 +18753,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3070[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3230[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_DialogueAsset*                    ReturnValue;                                       // 0x10(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -18761,7 +18775,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3078[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3234[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCrafterConfig                        ReturnValue;                                       // 0x10(0xE8)(Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -18783,7 +18797,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ID;                                                // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0xC(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_307F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_323E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FBuffConfig                           ReturnValue;                                       // 0x10(0x98)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18807,7 +18821,7 @@ public:
 	TSubclassOf<class UUserWidget>               WidgetToCreate;                                    // 0x10(0x8)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        NumberOfWidgets;                                   // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FAdditionalEnsureWidgetsOptions       Options;                                           // 0x1C(0x28)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3097[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3245[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x88 (0x88 - 0x0)
@@ -18817,7 +18831,7 @@ struct UValeriaBlueprintFunctionLibrary_DoesVillagerActionInfoHaveAnimationMappi
 public:
 	struct FVillagerActionInfo                   InActionInfo;                                      // 0x0(0x80)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x80(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_309F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3248[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -18828,7 +18842,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FQuestActivityPrereq                  Requirement;                                       // 0x8(0xC)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x14(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_30A9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_324D[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -18838,7 +18852,7 @@ struct UValeriaBlueprintFunctionLibrary_DisableIfServer_Params
 public:
 	class UObject*                               Obj;                                               // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_30B0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3252[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -18856,7 +18870,7 @@ struct UValeriaBlueprintFunctionLibrary_DestroyIfServer_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_30B9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3254[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -18902,7 +18916,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECharacterState                   CharacterState;                                    // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x9(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_30CE[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3258[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xA8 (0xA8 - 0x0)
@@ -18912,7 +18926,7 @@ struct UValeriaBlueprintFunctionLibrary_CreateWithAmount_Params
 public:
 	struct FValeriaItem                          ExistingItem;                                      // 0x0(0x50)(Parm, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x50(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_30D6[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_325B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaItem                          ReturnValue;                                       // 0x58(0x50)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -18936,7 +18950,7 @@ public:
 	struct FVector                               VectorA;                                           // 0x0(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               VectorB;                                           // 0x18(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ReturnValue;                                       // 0x30(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_30E4[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_325E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -18964,7 +18978,7 @@ struct UValeriaBlueprintFunctionLibrary_ConvertToSecs64_Params
 public:
 	int64                                        Timestamp;                                         // 0x0(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_30F2[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3266[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -18995,7 +19009,7 @@ public:
 	struct FTagList                              Other;                                             // 0x20(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         MatchAll;                                          // 0x40(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x41(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_30F6[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3269[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x48 (0x48 - 0x0)
@@ -19007,7 +19021,7 @@ public:
 	struct FGameplayTagContainer                 Other;                                             // 0x20(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         MatchAll;                                          // 0x40(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x41(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_30F9[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_326B[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -19018,7 +19032,7 @@ public:
 	struct FTagList                              DesiredTagList;                                    // 0x0(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FGameplayTag                          TagParam;                                          // 0x20(0x8)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x28(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3102[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_326C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -19030,7 +19044,7 @@ public:
 	struct FValeriaItem                          Item;                                              // 0x8(0x50)(Parm, NativeAccessSpecifierPublic)
 	int32                                        VitalAmountPerItem;                                // 0x58(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVitalType                        VitalType;                                         // 0x5C(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3108[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_326E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -19061,7 +19075,7 @@ struct UValeriaBlueprintFunctionLibrary_Client_GetFirstPlayerController_Params
 public:
 	class UObject*                               Context;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EValeriaFuncResult                OutResult;                                         // 0x8(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3132[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3273[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AValeriaPlayerController*              ReturnValue;                                       // 0x10(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -19150,7 +19164,7 @@ public:
 	struct FBagSlotLocation                      Lhs;                                               // 0x0(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      Rhs;                                               // 0x8(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_314F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3282[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -19161,7 +19175,7 @@ public:
 	struct FVector                               VectorA;                                           // 0x0(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               VectorB;                                           // 0x18(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ReturnValue;                                       // 0x30(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3157[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3284[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1A0 (0x1A0 - 0x0)
@@ -19342,7 +19356,7 @@ public:
 	bool                                         bIsATest;                                          // 0x38(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bNoCheck;                                          // 0x39(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x3A(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3208[0x5];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3302[0x5];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -19505,7 +19519,7 @@ struct AValeriaCharacter_RpcClient_DisplayInspirationRecipeChoices_Params
 {
 public:
 	int32                                        NumChoices;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3217[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3306[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<int32>                                RecipeIDs;                                         // 0x8(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -19605,10 +19619,10 @@ struct AValeriaCharacter_PlaceMapMarker_Params
 {
 public:
 	int32                                        SecondsToDisplayMarkers;                           // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3225[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3321[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               MarkerLocation;                                    // 0x8(0x18)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3226[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3322[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -19626,7 +19640,7 @@ struct AValeriaCharacter_OwnsItem_Params
 public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_322D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3326[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -19689,7 +19703,7 @@ struct AValeriaCharacter_OnAudioEventReplicated_Params
 public:
 	class AActor*                                ActorHit;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         WasDamaged;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3237[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3335[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> HeldItemType;                                      // 0x10(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                ExtInstigator;                                     // 0x40(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -19703,7 +19717,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_323C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_333C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -19716,7 +19730,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3242[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3343[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -19852,7 +19866,7 @@ struct AValeriaCharacter_HasEnoughWaterInCanByTimeStep_Params
 public:
 	float                                        TimeStep;                                          // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_324E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_336A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -19862,7 +19876,7 @@ struct AValeriaCharacter_HasEnoughWaterInCan_Params
 public:
 	int32                                        WaterAmount;                                       // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_324F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_336F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -19872,7 +19886,7 @@ struct AValeriaCharacter_HandlePropMontageFinish_Params
 public:
 	class UAnimMontage*                          Montage;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bInterrupted;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3253[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3373[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -20138,7 +20152,7 @@ struct AValeriaCharacter_GetOccupiedHousingOwnershipActor_Params
 {
 public:
 	enum class EHousingPermissionLevel           PermissionLevel;                                   // 0x0(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_32AF[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_33A2[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AHousingOwnershipActor*                ReturnValue;                                       // 0x8(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -20164,7 +20178,7 @@ struct AValeriaCharacter_GetMaxStorage_Params
 {
 public:
 	enum class EStoragePoolType                  StoragePool;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_32B5[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_33A3[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -20604,7 +20618,7 @@ struct AValeriaCharacter_AddScriptedReward_Params
 public:
 	struct FQuestRewardConfig                    RewardConfig;                                      // 0x0(0x198)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EQuestRewardSourceType            Source;                                            // 0x198(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3309[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_33B5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -20638,7 +20652,7 @@ struct UValeriaClientPriMovementComponent_RpcServer_RequestFollowPawn_Params
 public:
 	class AValeriaMoveablePawn*                  OtherPawn;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Distance;                                          // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_336D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_33D3[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -20663,7 +20677,7 @@ public:
 	struct FVector                               Location;                                          // 0x0(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                              Facing;                                            // 0x18(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bHold;                                             // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_337C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_33D8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -20774,7 +20788,7 @@ struct UValeriaCharacterMoveComponent_IsAtEnforcedPostion_Params
 public:
 	float                                        Tolerance;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3387[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_33DE[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -20871,7 +20885,7 @@ struct UValeriaCharacterTeleportComponent_ServerTeleportToHousePlotByPlayerId_Pa
 public:
 	struct FGuid                                 PlayerId;                                          // 0x0(0x10)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33A1[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_33F4[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x24 (0x24 - 0x0)
@@ -20882,7 +20896,7 @@ public:
 	struct FGuid                                 AccountId;                                         // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 CharacterId;                                       // 0x10(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33A9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_33F5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -20892,7 +20906,7 @@ struct UValeriaCharacterTeleportComponent_ServerTeleport_Internal_Params
 public:
 	struct FTeleportActorTo_ServerContext        TeleportContext;                                   // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33B1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_33F6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -20910,7 +20924,7 @@ struct UValeriaCharacterTeleportComponent_ServerTeleport_Params
 public:
 	struct FTeleportActorTo_ServerContext        TeleportContext;                                   // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33B8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_33F7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -20921,7 +20935,7 @@ public:
 	class UTeleportTravelConfigAsset*            TravelConfigAsset;                                 // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                SeamlessAnchor;                                    // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33BB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_33F8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -20971,7 +20985,7 @@ struct UValeriaCharacterTeleportComponent_RpcServer_TeleportToPrivateSpace_Param
 public:
 	struct FTransform                            TeleportTransform;                                 // 0x0(0x60)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrivateSpaceConfig*                   PrivateSpaceConfig;                                // 0x60(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33C1[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_33F9[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xA0 (0xA0 - 0x0)
@@ -21099,7 +21113,7 @@ public:
 	struct FRotator                              TeleportRotation;                                  // 0xB8(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bSeamless;                                         // 0xD0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bTrustServer;                                      // 0xD1(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33D3[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3401[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -21110,7 +21124,7 @@ public:
 	class UPrivateSpaceConfig*                   PrivateSpaceConfig;                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                HandleID;                                          // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SlotId;                                            // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33D5[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3404[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTransform                            LevelSpawnTransform;                               // 0x20(0x60)(Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -21178,7 +21192,7 @@ public:
 	struct FVector                               Location;                                          // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                              Rotation;                                          // 0x18(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33DA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_340A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -21189,7 +21203,7 @@ public:
 	class UTeleportActorToConfigAsset*           TeleportAsset;                                     // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USceneComponent*                       ReferenceComponent;                                // 0x8(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33DB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_340C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x24 (0x24 - 0x0)
@@ -21200,7 +21214,7 @@ public:
 	struct FGuid                                 AccountId;                                         // 0x0(0x10)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 CharacterId;                                       // 0x10(0x10)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33DD[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_340F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -21210,7 +21224,7 @@ struct UValeriaCharacterTeleportComponent_ClientTeleport_Params
 public:
 	class UTeleportActorToConfigAsset*           TeleportAsset;                                     // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33DE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3411[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -21221,7 +21235,7 @@ public:
 	class UTeleportTravelConfigAsset*            TravelConfigAsset;                                 // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                SeamlessAnchor;                                    // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33DF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3413[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -21370,7 +21384,7 @@ public:
 	class UEmoteDataAsset*                       EmoteDataAssetToPlay;                              // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FPlayEmoteOptionalParams              OptionalParams;                                    // 0x8(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33F2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_341F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -21402,7 +21416,7 @@ struct UValeriaEmoteComponent_IsEmoteEquippedById_Params
 public:
 	struct FGuid                                 EmoteId;                                           // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33F3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3421[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -21412,7 +21426,7 @@ struct UValeriaEmoteComponent_IsEmoteEquipped_Params
 public:
 	class UEmoteDataAsset*                       Emote;                                             // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_33FB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3422[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -21526,7 +21540,7 @@ struct UValeriaEmoteComponent_Client_ClearAssignedEmote_Params
 public:
 	int32                                        WheelIndex;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3409[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3423[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -21537,7 +21551,7 @@ public:
 	int32                                        WheelIndex;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 EmoteId;                                           // 0x4(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x14(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_340D[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3424[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -21547,7 +21561,7 @@ struct UValeriaEmoteComponent_CanPlayOutEmote_Params
 public:
 	class UEmoteDataAsset*                       EmoteData;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_340E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3425[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -21605,7 +21619,7 @@ struct UEmoteDataAsset_CanEmoteBeUsedOnTargets_Params
 public:
 	int32                                        TargetFlags;                                       // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_341C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_342B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2 (0x2 - 0x0)
@@ -21628,7 +21642,7 @@ public:
 	float                                        Time;                                              // 0x38(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        RiseTime;                                          // 0x3C(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SetTime;                                           // 0x40(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3424[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3431[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -21648,7 +21662,7 @@ public:
 	class FName                                  OwnerName;                                         // 0x0(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        NewBlendPercent;                                   // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3427[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3433[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -21658,7 +21672,7 @@ struct AValEnvironmentManager_UnregisterLightingState_Params
 public:
 	class FName                                  OwnerName;                                         // 0x0(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3428[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3435[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -21686,7 +21700,7 @@ public:
 	float                                        Percent;                                           // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsCompleteOverride;                               // 0x14(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x15(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_342A[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3437[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -21740,7 +21754,7 @@ struct AValEnvironmentManager_GetWindIntensityAtPos_Params
 public:
 	struct FVector                               Pos;                                               // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ReturnValue;                                       // 0x18(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_342B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3439[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -21944,7 +21958,7 @@ struct AValeriaGameMode_HandleLimitedEventStateChange_Params
 public:
 	class ALimitedEventManagerBase*              LimitedEventManager;                               // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsEventActive;                                    // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3449[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3453[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -22430,9 +22444,9 @@ public:
 	class UGameplayAbility*                      OwningAbility;                                     // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  TaskInstanceName;                                  // 0x8(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         EnableCollision;                                   // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34B0[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3474[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  ColliderTag;                                       // 0x14(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34B1[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3475[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UValeriaGASAT_ToggleCollision*         ReturnValue;                                       // 0x20(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -22457,7 +22471,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34B2[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3476[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -22476,7 +22490,7 @@ public:
 	struct FGameplayTagContainer                 GameplayTagContainer;                              // 0x0(0x20)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FGameplayEventData                    Payload;                                           // 0x20(0xB0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xD0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34B4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3479[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -22501,7 +22515,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34B5[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_347A[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -22512,7 +22526,7 @@ public:
 	class AValeriaPlayerController*              Player;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUseEventParams                       Params;                                            // 0x8(0x20)(Parm, NativeAccessSpecifierPublic)
 	struct FSelfUseEventResult                   ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34B7[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_347B[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -23029,7 +23043,7 @@ public:
 	class FString                                PendingURL;                                        // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETravelType                       TravelType;                                        // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsSeamlessTravel;                                 // 0x11(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34DD[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3487[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -23072,7 +23086,7 @@ struct AValeriaPlayerController_WasPremiumStoreEntitlementSeen_Params
 public:
 	struct FGuid                                 ID;                                                // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34E3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3491[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -23082,7 +23096,7 @@ struct AValeriaPlayerController_UseOrSelectItem_Params
 public:
 	struct FBagSlotLocation                      Location;                                          // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34E4[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3492[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -23107,7 +23121,7 @@ struct AValeriaPlayerController_UpdateAlterationOnPlaceable_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PersistId;                                         // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34E5[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3494[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -23148,7 +23162,7 @@ struct AValeriaPlayerController_TriggerFocusUpgradedEvent_Params
 {
 public:
 	enum class EVAL_ShrineType                   ShrineType;                                        // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34E6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3495[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        UpgradeAmount;                                     // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -23254,7 +23268,7 @@ struct AValeriaPlayerController_Server_VAkEventLocation_Params
 public:
 	class AActor*                                ActorHit;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         WasDamaged;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34EA[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3496[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        SearchRadius;                                      // 0xC(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> HeldItemType;                                      // 0x10(0x30)(ConstParm, Parm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Location;                                          // 0x40(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -23269,7 +23283,7 @@ struct AValeriaPlayerController_Server_HousingOwnerProgressTransitiveDecor_Param
 public:
 	class AHousingOwnershipActor*                HOA;                                               // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSessionActorId                       ID;                                                // 0x8(0x4)(ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34EC[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3497[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -23335,7 +23349,7 @@ struct AValeriaPlayerController_SelectRecipeForCrafter_Params
 public:
 	class UCrafterComponent*                     Crafter;                                           // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RecipeConfigId;                                    // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34EE[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3498[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRecipePlayerOptions                  RecipeOptions;                                     // 0x10(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -23362,7 +23376,7 @@ struct AValeriaPlayerController_RpcServer_UpdateAlterationOnPlaceable_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PersistId;                                         // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34EF[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3499[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -23372,7 +23386,7 @@ struct AValeriaPlayerController_RpcServer_UnlockHousingPlot_Params
 public:
 	class AHousingOwnershipActor*                HousingOwnershipActor;                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PersistId;                                         // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34F1[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_349A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -23469,7 +23483,7 @@ struct AValeriaPlayerController_RpcServer_SelectRecipeForCrafter_Params
 public:
 	class UCrafterComponent*                     Crafter;                                           // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RecipeConfigId;                                    // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34F7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_349F[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRecipePlayerOptions                  RecipeOptions;                                     // 0x10(0x18)(ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -23546,7 +23560,7 @@ struct AValeriaPlayerController_RpcServer_ReliableServerUpdateCamera_Params
 public:
 	struct FVector_NetQuantize                   CamLoc;                                            // 0x0(0x18)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        CamPitchAndYaw;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34FC[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34A4[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -23599,7 +23613,7 @@ struct AValeriaPlayerController_RpcServer_PerformClientAuthoritativeHit_Params
 {
 public:
 	int32                                        ProjectileId;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3502[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_34A8[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                HitActor;                                          // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class AActor*>                        AOEHitActors;                                      // 0x10(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
@@ -23619,7 +23633,7 @@ public:
 	struct FValeriaItem                          Item;                                              // 0x0(0x50)(ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  OriginalStoragePoolType;                           // 0x50(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  NewStoragePoolType;                                // 0x51(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3505[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34AB[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -23630,7 +23644,7 @@ public:
 	struct FValeriaItem                          Item;                                              // 0x0(0x50)(ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      SlotLocation;                                      // 0x50(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x58(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3507[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34AC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -23641,7 +23655,7 @@ public:
 	struct FBagSlotLocation                      SlotLocation;                                      // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_350A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34AF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -23655,7 +23669,7 @@ public:
 	struct FBagSlotLocation                      NewSlotLocation;                                   // 0x18(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x24(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_350C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34B3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -23668,7 +23682,7 @@ public:
 	class UInventoryComponent*                   NewInventory;                                      // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      NewSlotLocation;                                   // 0x18(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_350E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34B5[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -23680,7 +23694,7 @@ public:
 	class UInventoryComponent*                   NewInventory;                                      // 0x50(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      NewSlotLocation;                                   // 0x58(0x8)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x60(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3511[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34B7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -23692,7 +23706,7 @@ public:
 	struct FBagSlotLocation                      OldSlotLocation;                                   // 0x8(0x8)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x14(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3514[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34B9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -23701,7 +23715,7 @@ struct AValeriaPlayerController_RpcServer_MarkPremiumItemIdSeen_Params
 {
 public:
 	bool                                         bSeen;                                             // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3516[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_34BB[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGuid                                 PremiumItemId;                                     // 0x4(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -23721,7 +23735,7 @@ struct AValeriaPlayerController_RpcServer_InstrumentInput_Params
 public:
 	int32                                        Pitch;                                             // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bPressed;                                          // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3519[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34BF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -23739,7 +23753,7 @@ struct AValeriaPlayerController_RpcServer_HousingPlaceablesBulkDataRequest_Param
 public:
 	class AHousingOwnershipActor*                Home;                                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Index;                                             // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_351A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34C0[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -23772,10 +23786,10 @@ struct AValeriaPlayerController_RpcServer_GatherActorOrPlaceables_Params
 {
 public:
 	struct FSessionActorId                       ActorId;                                           // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_351B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_34C1[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AHousingOwnershipActor*                HousingOwner;                                      // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         GatherAllChildren;                                 // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_351C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34C2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -23826,7 +23840,7 @@ public:
 	class UItemVariantCustomizerComponent*       Customizer;                                        // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      Slot;                                              // 0x8(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        TintPersistID;                                     // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_351E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_34C7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaItem                          ItemFromStorage;                                   // 0x18(0x50)(Parm, NativeAccessSpecifierPublic)
 };
 
@@ -23852,10 +23866,10 @@ struct AValeriaPlayerController_RpcServer_CompleteDialogue_Params
 public:
 	class UDialogueComponent*                    Dialogue;                                          // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Reengage;                                          // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3521[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_34CA[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        DialogueCompleted;                                 // 0xC(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Exited;                                            // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3522[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34CB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -23866,7 +23880,7 @@ public:
 	class UInventoryComponent*                   FromInventory;                                     // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      FromSlotLocation;                                  // 0x8(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3523[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_34CC[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UInventoryComponent*                   ToInventory;                                       // 0x18(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -23902,7 +23916,7 @@ public:
 	class UInventoryComponent*                   NewInventory;                                      // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      NewSlotLocation;                                   // 0x18(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EInventoryAmount                  AmountOption;                                      // 0x20(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3524[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34CD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -23912,7 +23926,7 @@ struct AValeriaPlayerController_RpcServer_BrowsingRecipe_Params
 public:
 	class UCrafterComponent*                     Crafter;                                           // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RecipeConfigId;                                    // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3525[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34CE[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -23922,7 +23936,7 @@ struct AValeriaPlayerController_RpcServer_AttemptHousingLevelUp_Params
 public:
 	class ULevelerComponent*                     Leveler;                                           // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IgnoreCost;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3526[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_34D3[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FValeriaItem>                  Items;                                             // 0x10(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -23943,7 +23957,7 @@ public:
 	class UQuestGiverComponent*                  QuestGiver;                                        // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      Location;                                          // 0x8(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3528[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34D4[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -23952,7 +23966,7 @@ struct AValeriaPlayerController_RpcClient_TriggerFocusUpgradedEvent_Params
 {
 public:
 	enum class EVAL_ShrineType                   ShrineType;                                        // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3529[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_34D5[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        UpgradeAmount;                                     // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -24159,7 +24173,7 @@ struct AValeriaPlayerController_ReadBook_Params
 public:
 	struct FBagSlotLocation                      Location;                                          // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_352C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34DF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -24323,7 +24337,7 @@ public:
 	struct FValeriaItem                          Item;                                              // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  OriginalStoragePoolType;                           // 0x50(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  NewStoragePoolType;                                // 0x51(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3537[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34EB[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -24334,7 +24348,7 @@ public:
 	struct FValeriaItem                          Item;                                              // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      SlotLocation;                                      // 0x50(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x58(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3538[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34EC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -24345,7 +24359,7 @@ public:
 	struct FBagSlotLocation                      SlotLocation;                                      // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePoolType;                                   // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3539[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34EF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -24359,7 +24373,7 @@ public:
 	struct FBagSlotLocation                      NewSlotLocation;                                   // 0x18(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x24(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_353A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34F2[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -24372,7 +24386,7 @@ public:
 	class UInventoryComponent*                   NewInventory;                                      // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      NewSlotLocation;                                   // 0x18(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_353C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34F4[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -24384,7 +24398,7 @@ public:
 	class UInventoryComponent*                   NewInventory;                                      // 0x50(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      NewSlotLocation;                                   // 0x58(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x60(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_353D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34F5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -24396,7 +24410,7 @@ public:
 	struct FBagSlotLocation                      OldSlotLocation;                                   // 0x8(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStoragePoolType                  StoragePool;                                       // 0x14(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_353E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34F8[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -24437,7 +24451,7 @@ struct AValeriaPlayerController_MarkAchievementRedeemed_Params
 public:
 	class FString                                AchievementID;                                     // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bWasSuccessful;                                    // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_353F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_34FB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -24689,7 +24703,7 @@ struct AValeriaPlayerController_GatherPlaceableActor_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         GatherAllChildren;                                 // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_354F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3505[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -24707,7 +24721,7 @@ struct AValeriaPlayerController_GatherActorHasChildrenAnchored_Params
 public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3551[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3507[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -24774,7 +24788,7 @@ public:
 	class UItemVariantCustomizerComponent*       Customizer;                                        // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      Slot;                                              // 0x8(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        TintPersistID;                                     // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3559[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_350A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FValeriaItem                          ItemFromStorage;                                   // 0x18(0x50)(Parm, NativeAccessSpecifierPublic)
 };
 
@@ -24785,7 +24799,7 @@ struct AValeriaPlayerController_ConsumeItem_Params
 public:
 	struct FBagSlotLocation                      Location;                                          // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_355A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_350B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -24795,10 +24809,10 @@ struct AValeriaPlayerController_CompleteDialogue_Params
 public:
 	class UDialogueComponent*                    Dialogue;                                          // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Reengage;                                          // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_355C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_350D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        DialogueCompleted;                                 // 0xC(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Exited;                                            // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_355E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_350F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -24809,7 +24823,7 @@ public:
 	class UInventoryComponent*                   FromInventory;                                     // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      FromSlotLocation;                                  // 0x8(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3561[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3510[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UInventoryComponent*                   ToInventory;                                       // 0x18(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -24820,7 +24834,7 @@ struct AValeriaPlayerController_Client_RouteVAkEvent_Params
 public:
 	class AActor*                                ActorHit;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         WasDamaged;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3562[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3511[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> HeldItemType;                                      // 0x10(0x30)(ConstParm, Parm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Location;                                          // 0x40(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                ExtInstigator;                                     // 0x58(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -24833,7 +24847,7 @@ struct AValeriaPlayerController_Client_HousingOwnerProgressTransitiveDecor_Param
 public:
 	class AHousingOwnershipActor*                HOA;                                               // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSessionActorId                       ID;                                                // 0x8(0x4)(ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3564[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3512[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -24890,7 +24904,7 @@ public:
 	class UInventoryComponent*                   NewInventory;                                      // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      NewSlotLocation;                                   // 0x18(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EInventoryAmount                  AmountOption;                                      // 0x20(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3567[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3513[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -24909,7 +24923,7 @@ public:
 	class AActor*                                Actor;                                             // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FText                                  Error;                                             // 0x8(0x18)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3568[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3514[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -24919,7 +24933,7 @@ struct AValeriaPlayerController_BrowsingRecipe_Params
 public:
 	class UCrafterComponent*                     Crafter;                                           // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RecipeConfigId;                                    // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3569[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3519[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -24939,7 +24953,7 @@ public:
 	class UQuestGiverComponent*                  QuestGiver;                                        // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBagSlotLocation                      Location;                                          // 0x8(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Amount;                                            // 0x10(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_356E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_351F[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -25019,7 +25033,7 @@ struct AValeriaSpatialAudioVolume_IsPawnRelevant_Params
 public:
 	class APawn*                                 Pawn;                                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3597[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3547[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -25031,7 +25045,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3598[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3549[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -25044,7 +25058,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_359C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_354B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -25064,7 +25078,7 @@ public:
 	struct FVector                               Point;                                             // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SphereRadius;                                      // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_359E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_354C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -25089,7 +25103,7 @@ struct UValeriaSpringArmComponent_BlendToTargetOffset_Params
 public:
 	struct FVector                               NewTargetOffset;                                   // 0x0(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        BlendTime;                                         // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35A4[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3551[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -25114,7 +25128,7 @@ struct UValeriaTimeManager_IsWithinTimeOfDayFilter_Params
 public:
 	struct FTimeOfDayFilter                      Filter;                                            // 0x0(0x18)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35AC[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3557[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -25184,7 +25198,7 @@ struct UValeriaTimeManager_GetTimeOfDayLerpAt_Params
 public:
 	int64                                        CurrTimestampMs;                                   // 0x0(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35B1[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3558[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -25416,7 +25430,7 @@ struct AValeriaVillagerCharacter_HandlePropMontageFinish_Params
 public:
 	class UAnimMontage*                          Montage;                                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bInterrupted;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35B5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3562[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -25499,7 +25513,7 @@ struct AValeriaVillagerCharacter_ForceStartDialogueWithPlayer_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSkipFade;                                         // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35B8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3567[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -25549,7 +25563,7 @@ struct AValeriaVillagerController_StartNewActivity_Params
 public:
 	struct FVillagerScheduleActivity             InScheduleActivity;                                // 0x0(0x188)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x188(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35C7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3571[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -25614,7 +25628,7 @@ struct AValeriaVillagerController_GetCurrentActionAnimationMappingConfig_Params
 public:
 	struct FAnimationMappingConfig               OutAnimationMappingConfig;                         // 0x0(0xA0)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xA0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35CC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3572[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x190 (0x190 - 0x0)
@@ -25624,7 +25638,7 @@ struct AValeriaVillagerController_GetBestScheduleActivity_Params
 public:
 	struct FVillagerScheduleActivity             OutScheduleActivity;                               // 0x0(0x188)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x188(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35CD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3573[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x190 (0x190 - 0x0)
@@ -25697,7 +25711,7 @@ struct UValeriaWeather_NotifyWorldWeatherPendingChange__DelegateSignature_Params
 public:
 	struct FWeatherStateProperties               PendingState;                                      // 0x0(0x28)(ConstParm, Parm, NativeAccessSpecifierPublic)
 	int32                                        CountdownTime;                                     // 0x28(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35DA[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_357A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -25795,7 +25809,7 @@ struct UValeriaWeather_GetCurrentWorldWeatherState_Params
 {
 public:
 	bool                                         PeekPending;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35E1[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3584[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FWeatherStateProperties               ReturnValue;                                       // 0x8(0x28)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -25857,10 +25871,10 @@ struct UVAL_ApplyCustomizationsToActorProxy_ApplyCustomizationsToActor_Params
 public:
 	class UVAL_CharacterCustomizationComponent*  CharacterCustomizationComponent;                   // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ValidateLoadout;                                   // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35E7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3591[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationLoadout    NewLoadout;                                        // 0x10(0x918)(Parm, NativeAccessSpecifierPublic)
 	enum class EVAL_ApplyCustomizationToActorContext Context;                                           // 0x928(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35E8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3592[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_ApplyCustomizationsToActorProxy*  ReturnValue;                                       // 0x930(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -25879,7 +25893,7 @@ struct UVAL_AsyncActionCreateRandomLoadoutFromItems_CreateRandomLoadoutFromItems
 public:
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase>> Items;                                             // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x50(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35EC[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3596[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_AsyncActionCreateRandomLoadoutFromItems* ReturnValue;                                       // 0x58(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -25996,7 +26010,7 @@ struct UVAL_BpAsyncAction_Login_Login_Params
 public:
 	class UObject*                               InWorldContextObject;                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        InLocalUserNum;                                    // 0x8(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35F6[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35A4[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                InUsername;                                        // 0x10(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                InPassword;                                        // 0x20(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UVAL_BpAsyncAction_Login*              ReturnValue;                                       // 0x30(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -26011,7 +26025,7 @@ public:
 	float                                        PlayRate;                                          // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  PlayerBindingTag;                                  // 0xC(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHideUI;                                           // 0x14(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35FF[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35A7[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_BpAsyncAction_PlayClientLevelSequence* ReturnValue;                                       // 0x18(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -26052,7 +26066,7 @@ public:
 	struct FMovieSceneSequencePlaybackParams     LoopStartParam;                                    // 0x8(0x28)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FMovieSceneSequencePlaybackParams     LoopEndParam;                                      // 0x30(0x28)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                        PlayRate;                                          // 0x58(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3604[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35AC[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_BpAsyncAction_PlayLevelSequenceWithLoop* ReturnValue;                                       // 0x60(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -26114,11 +26128,11 @@ struct UVAL_CharacterCustomizationComponent_ShouldPlayTransition_Params
 {
 public:
 	enum class EVAL_ApplyCustomizationToActorContext Context;                                           // 0x0(0x1)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_360A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35B2[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationLoadout    OldLoadout;                                        // 0x8(0x918)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVAL_CharacterCustomizationLoadout    NewLoadout;                                        // 0x920(0x918)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1238(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_360B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35B3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -26173,7 +26187,7 @@ struct UVAL_CharacterCustomizationComponent_OnLoadoutTransitionStarted_Params
 {
 public:
 	enum class EVAL_ApplyCustomizationToActorContext Context;                                           // 0x0(0x1)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3610[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35B7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationLoadout    OldLoadout;                                        // 0x8(0x918)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVAL_CharacterCustomizationLoadout    NewLoadout;                                        // 0x920(0x918)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
@@ -26184,7 +26198,7 @@ struct UVAL_CharacterCustomizationComponent_OnLoadoutTransitionEnded_Params
 {
 public:
 	enum class EVAL_ApplyCustomizationToActorContext Context;                                           // 0x0(0x1)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3611[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35B9[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationLoadout    OldLoadout;                                        // 0x8(0x918)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVAL_CharacterCustomizationLoadout    NewLoadout;                                        // 0x920(0x918)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
@@ -26296,7 +26310,7 @@ public:
 	struct FVAL_CharacterCustomizationLoadout    NewLoadout;                                        // 0x0(0x918)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         bValidateLoadout;                                  // 0x918(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_ApplyCustomizationToActorContext Context;                                           // 0x919(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3621[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35C1[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -26312,13 +26326,13 @@ struct UVAL_CharacterCustomizationItemBase_TryGetVariantOptionById_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_362E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35CF[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  VariantChannelName;                                // 0x4(0x8)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 ID;                                                // 0xC(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_362F[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35D0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationVariantOptionBase OutVariantOption;                                  // 0x20(0xA0)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3630[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35D1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -26327,12 +26341,12 @@ struct UVAL_CharacterCustomizationItemBase_TryGetVariantChannelByName_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3631[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35D3[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  VariantChannelName;                                // 0x4(0x8)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3632[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35D4[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationVariantChannel OutVariantChannel;                                 // 0x10(0x28)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x38(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3633[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35D5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -26341,10 +26355,10 @@ struct UVAL_CharacterCustomizationItemBase_TryGetBodyTypeSpecificConfig_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3634[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35D6[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomization_PerBodyTypeConfig_Base OutBodyTypeSpecificConfig;                         // 0x8(0x70)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x78(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3636[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35D7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -26353,12 +26367,12 @@ struct UVAL_CharacterCustomizationItemBase_TryGetAllVariantOptionIds_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3637[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35D9[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  VariantChannelName;                                // 0x4(0x8)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3638[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35DA[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<struct FGuid>                           OutVariantOptionIds;                               // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3639[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35DB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -26367,10 +26381,10 @@ struct UVAL_CharacterCustomizationItemBase_TryGetAllVariantChannelNames_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_363C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35DC[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<class FName>                            OutVariantChannelNames;                            // 0x8(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x58(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_363D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35DD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -26387,7 +26401,7 @@ struct UVAL_CharacterCustomizationItemBase_GetPrerenderedThumbnailImage_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3640[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35DE[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UTexture2D>             ReturnValue;                                       // 0x8(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -26416,10 +26430,10 @@ struct UVAL_CharacterCustomizationItem_AnimSet_TryGetBodyTypeSpecificConfig_Anim
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3646[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35E2[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_AnimSet_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x130)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x138(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3647[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35E3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC8 (0xC8 - 0x0)
@@ -26428,10 +26442,10 @@ struct UVAL_CharacterCustomizationItem_Eyes_TryGetBodyTypeSpecificConfig_Eyes_Pa
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3648[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35E4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_Eyes_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0xB8)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3649[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35E5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1A0 (0x1A0 - 0x0)
@@ -26440,10 +26454,10 @@ struct UVAL_CharacterCustomizationItem_FaceMask_TryGetBodyTypeSpecificConfig_Fac
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_364A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35E6[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_FaceMask_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x190)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x198(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_364B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35E7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1A8 (0x1A8 - 0x0)
@@ -26452,10 +26466,10 @@ struct UVAL_CharacterCustomizationItem_FacialHairStyle_TryGetBodyTypeSpecificCon
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_364C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35E8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_FacialHairStyle_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x198)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1A0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_364D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35E9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xB0 (0xB0 - 0x0)
@@ -26464,10 +26478,10 @@ struct UVAL_CharacterCustomizationItem_Glider_TryGetBodyTypeSpecificConfig_Glide
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_364E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35EA[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_Glider_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0xA0)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xA8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_364F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35EB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1D8 (0x1D8 - 0x0)
@@ -26476,10 +26490,10 @@ struct UVAL_CharacterCustomizationItem_HairStyle_TryGetBodyTypeSpecificConfig_Ha
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3650[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35EC[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_HairStyle_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x1C8)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1D0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3651[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35ED[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1E8 (0x1E8 - 0x0)
@@ -26488,10 +26502,10 @@ struct UVAL_CharacterCustomizationItem_Hat_TryGetBodyTypeSpecificConfig_Hat_Para
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3652[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35EE[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_Hat_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x1D8)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1E0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3653[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35EF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2A8 (0x2A8 - 0x0)
@@ -26500,10 +26514,10 @@ struct UVAL_CharacterCustomizationItem_Head_TryGetBodyTypeSpecificConfig_Head_Pa
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3654[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35F0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_Head_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x298)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x2A0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3655[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35F1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1A8 (0x1A8 - 0x0)
@@ -26512,10 +26526,10 @@ struct UVAL_CharacterCustomizationItem_Legs_TryGetBodyTypeSpecificConfig_Legs_Pa
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3656[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35F3[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_Legs_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x198)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1A0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3657[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35F4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -26524,10 +26538,10 @@ struct UVAL_CharacterCustomizationItem_Makeup_TryGetBodyTypeSpecificConfig_Makeu
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3658[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35F6[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_Makeup_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x70)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x78(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_365A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35F7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -26536,7 +26550,7 @@ struct UVAL_CharacterCustomizationItem_Pet_TryGetPetUIDisplayIcon_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_365B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35F8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UTexture2D>             ReturnValue;                                       // 0x8(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -26546,10 +26560,10 @@ struct UVAL_CharacterCustomizationItem_Pet_TryGetBodyTypeSpecificConfig_Pet_Para
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_365D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35F9[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_Pet_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0xD0)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xD8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_365E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35FA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -26558,10 +26572,10 @@ struct UVAL_CharacterCustomizationItem_FaceComplexion_TryGetBodyTypeSpecificConf
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3661[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35FB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_FaceComplexion_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x70)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x78(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3662[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_35FC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -26570,10 +26584,10 @@ struct UVAL_CharacterCustomizationItem_BodyComplexion_TryGetBodyTypeSpecificConf
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3665[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_35FF[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_BodyComplexion_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x70)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x78(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3666[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3600[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x110 (0x110 - 0x0)
@@ -26582,10 +26596,10 @@ struct UVAL_CharacterCustomizationItem_SkinTone_TrySetBodyTypeSpecificConfig_Ski
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3667[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3603[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_SkinTone_PerBodyTypeConfig InBodyTypeSpecificConfig;                          // 0x8(0x100)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x108(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3668[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3604[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x110 (0x110 - 0x0)
@@ -26594,10 +26608,10 @@ struct UVAL_CharacterCustomizationItem_SkinTone_TryGetBodyTypeSpecificConfig_Ski
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_366A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3606[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_SkinTone_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x100)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x108(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_366B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3607[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x180 (0x180 - 0x0)
@@ -26606,10 +26620,10 @@ struct UVAL_CharacterCustomizationItem_FaceTattoo_TryGetBodyTypeSpecificConfig_F
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_366C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3609[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_FaceTattoo_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x170)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x178(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_366D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_360A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x278 (0x278 - 0x0)
@@ -26618,10 +26632,10 @@ struct UVAL_CharacterCustomizationItem_BodyTattoo_TryGetBodyTypeSpecificConfig_B
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_366E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_360C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_BodyTattoo_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x268)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x270(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_366F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_360D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1B8 (0x1B8 - 0x0)
@@ -26630,10 +26644,10 @@ struct UVAL_CharacterCustomizationItem_Torso_TryGetBodyTypeSpecificConfig_Torso_
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3670[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_360E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_Torso_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0x1A8)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1B0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3671[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_360F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xB0 (0xB0 - 0x0)
@@ -26642,10 +26656,10 @@ struct UVAL_CharacterCustomizationItem_Voice_TryGetBodyTypeSpecificConfig_Voice_
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3672[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3610[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationItem_Voice_PerBodyTypeConfig OutBodyTypeSpecificConfig;                         // 0x8(0xA0)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xA8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3673[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3611[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1288 (0x1288 - 0x0)
@@ -26656,7 +26670,7 @@ public:
 	struct FVAL_CharacterCustomizationLoadout    Loadout;                                           // 0x0(0x918)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVAL_ValidateLoadoutErrorPayload      OutErrorPayload;                                   // 0x918(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         bCheckEnabled;                                     // 0x968(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3677[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3613[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationLoadout    ReturnValue;                                       // 0x970(0x918)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -26680,7 +26694,7 @@ public:
 	class FName                                  VariantChannelName;                                // 0x920(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 OutVariantOptionId;                                // 0x928(0x10)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x938(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3678[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3616[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x48 (0x48 - 0x0)
@@ -26691,7 +26705,7 @@ public:
 	struct FGuid                                 ItemGuid;                                          // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase> OutItem;                                           // 0x10(0x30)(Parm, OutParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x40(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3679[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3618[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x930 (0x930 - 0x0)
@@ -26704,7 +26718,7 @@ public:
 	class UVAL_CharacterCustomizationItemBase*   OutItem;                                           // 0x920(0x8)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bLoadSync;                                         // 0x928(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x929(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_367B[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_361A[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -26715,7 +26729,7 @@ public:
 	struct FGuid                                 ItemGuid;                                          // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UVAL_CharacterCustomizationItemBase*   OutItem;                                           // 0x10(0x8)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_367C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_361C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -26725,7 +26739,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_SortItemsByPremium_Params
 public:
 	TSet<struct FGuid>                           CurrentEntitlements;                               // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         bDescending;                                       // 0x50(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_367D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_361D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FAssetData>                    OutItems;                                          // 0x58(0x10)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -26820,7 +26834,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_IsLoadoutEmpty_Params
 public:
 	struct FVAL_CharacterCustomizationLoadout    Loadout;                                           // 0x0(0x918)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x918(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_367F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3624[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -26831,7 +26845,7 @@ public:
 	class FName                                  LoadoutSlotName;                                   // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase> TargetAsset;                                       // 0x8(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x38(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3680[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3625[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x930 (0x930 - 0x0)
@@ -26840,7 +26854,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetRandomLoadoutFromCustomizati
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3681[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3626[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase>> Items;                                             // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
 	struct FVAL_CharacterCustomizationLoadout    ReturnValue;                                       // 0x18(0x918)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
@@ -26851,7 +26865,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetMeshComponentFromType_Params
 {
 public:
 	enum class EVAL_CharacterCustomization_MeshType MeshType;                                          // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3682[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3628[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                Actor;                                             // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USkeletalMeshComponent*                ReturnValue;                                       // 0x10(0x8)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -26864,7 +26878,7 @@ public:
 	class FName                                  LoadoutSlotName;                                   // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVAL_CharacterCustomization_LoadoutSlotSettings Settings;                                          // 0x8(0x58)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         bSuccess;                                          // 0x60(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3683[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3629[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -26884,7 +26898,7 @@ public:
 	TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase> SoftItem;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 OutId;                                             // 0x30(0x10)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x40(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3684[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_362A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x118 (0x118 - 0x0)
@@ -26912,7 +26926,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetDefaultLoadout_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3685[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_362C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationLoadout    ReturnValue;                                       // 0x8(0x918)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -26924,7 +26938,7 @@ public:
 	struct FVAL_CharacterCustomization_CosmeticTagSelector TagSelector;                                       // 0x0(0x10)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVAL_CharCustomization_CosmeticTagData OutTagData;                                        // 0x10(0x28)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x38(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3686[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_362D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -26945,7 +26959,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetCharacterCustomizationItemsF
 public:
 	TSet<struct FGuid>                           Ids;                                               // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x50(0x1)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3687[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_362F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase>> ReturnValue;                                       // 0x58(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -26957,7 +26971,7 @@ public:
 	TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase> SoftItem;                                          // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FAssetData                            OutAssetData;                                      // 0x30(0x68)(Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x98(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3688[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3630[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -26966,7 +26980,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllVoiceCharacterCustomizati
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3689[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3632[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Voice>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -26976,7 +26990,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllTorsoCharacterCustomizati
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_368A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3634[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Torso>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -26986,7 +27000,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllSkinToneCharacterCustomiz
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_368B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3635[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_SkinTone>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -26996,7 +27010,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllPetCharacterCustomization
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_368C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3637[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27015,7 +27029,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllMakeupCharacterCustomizat
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_368D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3638[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Makeup>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27043,7 +27057,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllLegsCharacterCustomizatio
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_368E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3639[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Legs>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27053,7 +27067,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllHeadCharacterCustomizatio
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_368F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_363A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Head>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27063,7 +27077,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllHatCharacterCustomization
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3690[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_363B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Hat>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27073,7 +27087,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllHairStyleCharacterCustomi
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3691[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_363C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_HairStyle>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27083,7 +27097,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllGliderCharacterCustomizat
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3692[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_363D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Glider>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27093,7 +27107,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllFacialHairStyleCharacterC
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3693[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_363E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_FacialHairStyle>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27103,7 +27117,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllFaceTattooCharacterCustom
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3694[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_363F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_FaceTattoo>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27113,7 +27127,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllFaceMaskCharacterCustomiz
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3695[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3640[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_FaceMask>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27123,7 +27137,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllFaceComplexionCharacterCu
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3696[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3641[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_FaceComplexion>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27133,7 +27147,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllEyesCharacterCustomizatio
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3697[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3642[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Eyes>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27143,7 +27157,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllCharacterCustomizationIte
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3698[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3643[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UVAL_CharacterCustomizationItemBase> ItemClass;                                         // 0x8(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FAssetData>                    ReturnValue;                                       // 0x10(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
@@ -27154,7 +27168,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllBodyTattooCharacterCustom
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3699[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3646[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_BodyTattoo>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27164,7 +27178,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllBodyComplexionCharacterCu
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_369A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3647[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_BodyComplexion>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27174,7 +27188,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_GetAllAnimSetCharacterCustomiza
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_369B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_364A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_AnimSet>> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -27220,7 +27234,7 @@ public:
 	class FName                                  LoadoutSlotName;                                   // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase>> TargetAssets;                                      // 0x8(0x50)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x58(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_369C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_364F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x128 (0x128 - 0x0)
@@ -27251,7 +27265,7 @@ public:
 	class USkeletalMeshComponent*                InMeshComponent;                                   // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  MorphTargetName;                                   // 0x8(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MorphTargetWeight;                                 // 0x10(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_369D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3650[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x920 (0x920 - 0x0)
@@ -27261,7 +27275,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_ApplyLoadoutThickness_Params
 public:
 	struct FVAL_CharacterCustomizationLoadout    Loadout;                                           // 0x0(0x918)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                        Value;                                             // 0x918(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_369E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3655[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x920 (0x920 - 0x0)
@@ -27271,7 +27285,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_ApplyLoadoutMuscularExpression_
 public:
 	struct FVAL_CharacterCustomizationLoadout    Loadout;                                           // 0x0(0x918)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                        Value;                                             // 0x918(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_369F[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3656[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x920 (0x920 - 0x0)
@@ -27281,7 +27295,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_ApplyLoadoutHeight_Params
 public:
 	struct FVAL_CharacterCustomizationLoadout    Loadout;                                           // 0x0(0x918)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                        Value;                                             // 0x918(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36A0[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3657[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x920 (0x920 - 0x0)
@@ -27291,7 +27305,7 @@ struct UVAL_CharacterCustomzationFunctionLibrary_ApplyLoadoutGenderExpression_Pa
 public:
 	struct FVAL_CharacterCustomizationLoadout    Loadout;                                           // 0x0(0x918)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                        Value;                                             // 0x918(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36A1[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3658[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x9D0 (0x9D0 - 0x0)
@@ -27304,7 +27318,7 @@ public:
 	class UVAL_CharacterCustomizationItemBase*   Item;                                              // 0x920(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVAL_CharacterCustomizationVariantOptionBase OptionChosen;                                      // 0x928(0xA0)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x9C8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36A2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3661[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xD0 (0xD0 - 0x0)
@@ -27314,13 +27328,13 @@ struct UVAL_CharacterCustomizationVariantFunctionLibrary_TryGetTypedVariantOptio
 public:
 	class UVAL_CharacterCustomizationItemBase*   Item;                                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36A3[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3663[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  VariantChannelName;                                // 0xC(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 VariantOptionId;                                   // 0x14(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36A4[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3664[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomizationVariantOptionBase OutVariantOption;                                  // 0x28(0xA0)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36A5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3665[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x48 (0x48 - 0x0)
@@ -27330,7 +27344,7 @@ struct UVAL_CharacterCustomizationVariantFunctionLibrary_GetPrerenderedThumbnail
 public:
 	class FString                                ItemId;                                            // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x10(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36A6[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3669[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UTexture2D>             ReturnValue;                                       // 0x18(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -27343,7 +27357,7 @@ public:
 	class FName                                  VariantChannelName;                                // 0x8(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 VariantOptionId;                                   // 0x10(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x20(0x1)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36A7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_366A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UMaterialInterface>     ReturnValue;                                       // 0x28(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -27451,7 +27465,7 @@ struct AVAL_CharacterPreviewer_GetRenderTorsoCameraPreviewSettings_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36A8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3672[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_RenderPreviewCameraSettings      ReturnValue;                                       // 0x8(0x18)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 
@@ -27461,7 +27475,7 @@ struct AVAL_CharacterPreviewer_GetRenderLegsCameraPreviewSettings_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36A9[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3673[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_RenderPreviewCameraSettings      ReturnValue;                                       // 0x8(0x18)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 
@@ -27471,7 +27485,7 @@ struct AVAL_CharacterPreviewer_GetRenderHeadCameraPreviewSettings_Params
 {
 public:
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36AA[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3674[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_RenderPreviewCameraSettings      ReturnValue;                                       // 0x8(0x18)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 
@@ -27641,7 +27655,7 @@ struct IVAL_CharacterRenderLevelInterface_GetCameraActorForCosmeticAsset_Params
 public:
 	class UVAL_CharacterCustomizationItemBase*   Item;                                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36B2[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3687[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                ReturnValue;                                       // 0x10(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -27685,7 +27699,7 @@ public:
 	class FName                                  LevelName;                                         // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVAL_RenderStudioLevelData            LevelData;                                         // 0x8(0xD8)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xE0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36B6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_368C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -27705,7 +27719,7 @@ struct AVAL_CharacterRenderStudio_RequestScene_Params
 public:
 	class FName                                  LevelName;                                         // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36B8[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_368D[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -27756,7 +27770,7 @@ struct AVAL_CharacterRenderStudio_PreloadScenes_Params
 public:
 	TSet<class FName>                            LevelNames;                                        // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x50(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36BA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3692[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -27766,7 +27780,7 @@ struct AVAL_CharacterRenderStudio_OnStateChanged__DelegateSignature_Params
 public:
 	class AVAL_CharacterRenderStudio*            Studio;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_CharacterRenderStudioState   State;                                             // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36BB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3693[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -27834,7 +27848,7 @@ struct AVAL_CharacterRenderStudio_GetCameraActorForCosmeticAsset_Params
 public:
 	class UVAL_CharacterCustomizationItemBase*   Item;                                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x8(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36C1[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3698[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                ReturnValue;                                       // 0x10(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -27862,7 +27876,7 @@ public:
 	struct FTransform                            NewTransform;                                      // 0x0(0x60)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  SubsceneName;                                      // 0x60(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x68(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36C4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_369B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -27881,7 +27895,7 @@ struct UVAL_ChatCommand_Block_HandleBlockErrorSent_Params
 public:
 	struct FUniqueNetIdRepl                      UserId;                                            // 0x0(0x30)(ConstParm, Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_SocialBlockError             BlockError;                                        // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36D2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36A6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -28025,7 +28039,7 @@ struct UVAL_CheatManager_Valeria_Housing_ExportHOA_Params
 public:
 	class FString                                HoaID;                                             // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ExportAsNewOwner;                                  // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36DC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36AA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -28109,7 +28123,7 @@ public:
 	class UObject*                               WorldContextObject;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        RecipePersistId;                                   // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xC(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36E5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36AB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -28120,7 +28134,7 @@ public:
 	struct FRecipe_RequireItem                   RequireItem;                                       // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> OtherItemType;                                     // 0x18(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x48(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36E6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36AD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -28131,7 +28145,7 @@ public:
 	struct FRecipe_RequireItem                   Lhs;                                               // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FRecipe_RequireItem                   Rhs;                                               // 0x18(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36E7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36AE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -28142,7 +28156,7 @@ public:
 	class AValeriaCharacter*                     VC;                                                // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTag                          ItemTag;                                           // 0x8(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         UseStarQualityIngredient;                          // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36E8[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_36AF[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>> ReturnValue;                                       // 0x18(0x50)(Parm, OutParm, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -28155,7 +28169,7 @@ public:
 	struct FRecipe_RequireItem                   Ingredient;                                        // 0x8(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FStarQualityConstraint                StarQualityConstraint;                             // 0x20(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x28(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36E9[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36B0[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x100 (0x100 - 0x0)
@@ -28167,7 +28181,7 @@ public:
 	struct FCrafterConfig                        CrafterConfig;                                     // 0x8(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  RowName;                                           // 0xF0(0x8)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xF8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36EA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36B1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -28179,7 +28193,7 @@ public:
 	struct FRecipe_RequireItem                   Ingredient;                                        // 0x8(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         UseStarQualityIngredient;                          // 0x20(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowIntermixingRegularAndStarQualityIngredients; // 0x21(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36EB[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_36B2[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x24(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -28209,7 +28223,7 @@ public:
 	class UObject*                               WorldContextObject;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UVAL_ItemTypeDefinitionAsset*          Item;                                              // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOnlySubRecipes;                                   // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36EF[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_36B3[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FRecipeConfig>                 ReturnValue;                                       // 0x18(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -28221,7 +28235,7 @@ public:
 	struct FCrafterConfig                        A;                                                 // 0x0(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FCrafterConfig                        B;                                                 // 0xE8(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1D0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36F1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36B4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -28319,7 +28333,7 @@ struct UVAL_DialogueAsset_GetAssetsOfClass_Cast_Params
 {
 public:
 	bool                                         bIncludeDerivedClasses;                            // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36FB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_36B5[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<TSoftObjectPtr<class UVAL_DialogueAsset>> ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -28455,7 +28469,7 @@ struct UVAL_EncyclopediaManagerComponent_MarkItemAsSeen_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStarQuality;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_370E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36C2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -28465,7 +28479,7 @@ struct UVAL_EncyclopediaManagerComponent_MarkItemAsPurchased_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStarQuality;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3710[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36C4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -28475,7 +28489,7 @@ struct UVAL_EncyclopediaManagerComponent_MarkItemAsConsumed_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStarQuality;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3712[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36C5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -28485,7 +28499,7 @@ struct UVAL_EncyclopediaManagerComponent_MarkInsectAsSeen_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStarQuality;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3715[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36C6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x228 (0x228 - 0x0)
@@ -28495,7 +28509,7 @@ struct UVAL_EncyclopediaManagerComponent_MarkFishAsSeen_Params
 public:
 	struct FFishConfig                           Fish;                                              // 0x0(0x220)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         bStarQuality;                                      // 0x220(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3716[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36C7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x48 (0x48 - 0x0)
@@ -28514,7 +28528,7 @@ public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStarQuality;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x9(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3718[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36C9[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -28525,7 +28539,7 @@ public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStarQuality;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x9(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_371A[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36CA[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x228 (0x228 - 0x0)
@@ -28536,7 +28550,7 @@ public:
 	struct FFishConfig                           Fish;                                              // 0x0(0x220)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         bStarQuality;                                      // 0x220(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x221(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_371B[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36CB[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -28546,7 +28560,7 @@ struct UVAL_EncyclopediaManagerComponent_HasSeenCreature_Params
 public:
 	struct FCreatureConfig                       Creature;                                          // 0x0(0x48)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x48(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_371D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36CC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -28557,7 +28571,7 @@ public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStarQuality;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x9(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_371E[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36CD[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -28568,7 +28582,7 @@ public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStarQuality;                                      // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x9(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3720[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36CE[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -28601,7 +28615,7 @@ struct UVAL_EntitlementSubsystem_HasEntitlement_Params
 public:
 	struct FGuid                                 Entitlement;                                       // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3723[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36D0[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -28642,7 +28656,7 @@ struct UVAL_FriendsManager_TryGetReciprocalFriendRequests_Params
 public:
 	TSet<struct FUniqueNetIdRepl>                OutFriendRequests;                                 // 0x0(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x50(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3729[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36D4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -28652,7 +28666,7 @@ struct UVAL_FriendsManager_TryGetOutgoingFriendRequests_Params
 public:
 	TSet<struct FUniqueNetIdRepl>                OutFriendRequests;                                 // 0x0(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x50(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_372A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36D6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -28662,7 +28676,7 @@ struct UVAL_FriendsManager_TryGetIncomingFriendRequests_Params
 public:
 	TSet<struct FUniqueNetIdRepl>                OutFriendRequests;                                 // 0x0(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x50(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_372B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36D7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -28674,7 +28688,7 @@ public:
 	FDelegateProperty_                           OnSucceeded;                                       // 0x30(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnFailed;                                          // 0x40(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x50(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_372C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36D8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -28686,7 +28700,7 @@ public:
 	FDelegateProperty_                           OnSucceeded;                                       // 0x30(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnFailed;                                          // 0x40(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x50(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_372D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36D9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -28695,10 +28709,10 @@ struct UVAL_FriendsManager_RequestBlockUser_Params
 {
 public:
 	bool                                         bBlock;                                            // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_372E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_36DA[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FUniqueNetIdRepl                      UserId;                                            // 0x8(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_SocialBlockError             ReturnValue;                                       // 0x38(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_372F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36DB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -28708,7 +28722,7 @@ struct UVAL_FriendsManager_RejectInvitation_Params
 public:
 	struct FUniqueNetIdRepl                      PlayerCharacterId;                                 // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3730[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36DC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -28791,7 +28805,7 @@ struct UVAL_FriendsManager_OnCharacterBlocked__DelegateSignature_Params
 public:
 	struct FUniqueNetIdRepl                      BlockedNetId;                                      // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bBlocked;                                          // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3733[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36E0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -28801,7 +28815,7 @@ struct UVAL_FriendsManager_IsUserBlockedWithNetIdAsString_Params
 public:
 	class FString                                UserId;                                            // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3734[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36E3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -28811,7 +28825,7 @@ struct UVAL_FriendsManager_IsUserBlocked_Params
 public:
 	struct FUniqueNetIdRepl                      UserId;                                            // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3736[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36E4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -28821,7 +28835,7 @@ struct UVAL_FriendsManager_IsFriend_Params
 public:
 	struct FUniqueNetIdRepl                      PlayerCharacterId;                                 // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3737[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36E7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -28831,7 +28845,7 @@ struct UVAL_FriendsManager_HasFriendWithCharacterName_Params
 public:
 	class FString                                PlayerCharacterName;                               // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3738[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36E9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -28951,7 +28965,7 @@ public:
 	class AActor*                                RepairStationActor;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowPurchases;                                   // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowRepairKitsFromStorage;                       // 0x9(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_373E[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36EE[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -29107,7 +29121,7 @@ struct IVAL_GameplayUIBridgeInterface_HasAnyHousingPlotsTeleportOptions_Params
 public:
 	class ATeleporterActor*                      Teleporter;                                        // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3748[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36EF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -29273,7 +29287,7 @@ struct AVAL_TeleporterBase_GetCrossMapTrackingTypes_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_375E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_36FA[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -29300,7 +29314,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x10(0x18)(Parm, NativeAccessSpecifierPublic)
 	struct FServerUseEventResult                 ReturnValue;                                       // 0x28(0x2)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3762[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3700[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -29322,7 +29336,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3764[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3705[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -29356,10 +29370,10 @@ struct AVAL_InteractionTeleporter_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3765[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_370A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3766[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_370B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -29534,7 +29548,7 @@ struct UVAL_ItemTypeDefinitionAsset_GetItemTypesOfCategory_Params
 {
 public:
 	enum class EItemCategory                     Category;                                          // 0x0(0x1)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_376D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3713[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>> ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -29561,7 +29575,7 @@ struct UVAL_ItemTypeDefinitionAsset_GetAssetsOfClass_Cast_Params
 {
 public:
 	bool                                         bIncludeDerivedClasses;                            // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_376F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3715[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>> ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -29571,7 +29585,7 @@ struct UVAL_ItemTypeDefinitionAsset_GetAssetByPersistIdSafe_Cast_Params
 {
 public:
 	int32                                        PersistIdToGet;                                    // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3770[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3717[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ReturnValue;                                       // 0x8(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -29581,7 +29595,7 @@ struct UVAL_ItemTypeDefinitionAsset_GetAssetByPersistId_Cast_Params
 {
 public:
 	int32                                        PersistIdToGet;                                    // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3771[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3719[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ReturnValue;                                       // 0x8(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -29592,7 +29606,7 @@ struct UVAL_ItemTypeDefinitionAsset_CanFireAmmoType_Params
 public:
 	class UVAL_ItemTypeDefinitionAsset*          AmmoItemType;                                      // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3773[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_371B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -29622,7 +29636,7 @@ public:
 	class FText                                  A;                                                 // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	class FText                                  B;                                                 // 0x18(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EVAL_TextComparisonLevel          TextComparisonLevel;                               // 0x30(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_378E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3742[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x34(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -29642,7 +29656,7 @@ struct UVAL_MatchmakingLibrary_IsCurrentlyJoiningServer_Params
 public:
 	class ULocalPlayer*                          LocalPlayer;                                       // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3793[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_374A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -29652,7 +29666,7 @@ struct UVAL_MatchmakingLibrary_IsCurrentlyDeletingJoin_Params
 public:
 	class ULocalPlayer*                          LocalPlayer;                                       // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3794[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_374C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -29662,7 +29676,7 @@ struct UVAL_MatchmakingLibrary_IsCurrentlyCreatingTicket_Params
 public:
 	class ULocalPlayer*                          LocalPlayer;                                       // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3796[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_374D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -29671,7 +29685,7 @@ struct UVAL_MatchmakingLibrary_GetErrorTextFromErrorType_Params
 {
 public:
 	enum class EOSSVAL_MatchmakingFailErrorType  ErrorType;                                         // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3797[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_374F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  ReturnValue;                                       // 0x8(0x18)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -29681,7 +29695,7 @@ struct UVAL_MatchmakingLibrary_CreateFailedResult_Params
 {
 public:
 	enum class EOSSVAL_MatchmakingFailErrorType  ErrorType;                                         // 0x0(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3798[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3751[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ErrorCode;                                         // 0x4(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FOSSVAL_MatchmakingErrorResult        ReturnValue;                                       // 0x8(0x20)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
@@ -29740,7 +29754,7 @@ struct UVAL_AsyncAction_MatchmakingDeleteRequest_DeleteMatchmakingRequest_Params
 public:
 	class ULocalPlayer*                          LocalPlayer;                                       // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bInternal;                                         // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_379D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_375A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_AsyncAction_MatchmakingDeleteRequest* ReturnValue;                                       // 0x10(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -29825,11 +29839,11 @@ struct UVAL_NewsInboxComponent_GetRewardByIndex_Params
 {
 public:
 	int32                                        Index;                                             // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37A2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3762[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_Reward                           OutReward;                                         // 0x8(0x40)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         Claimed;                                           // 0x48(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x49(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37A3[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3763[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -29847,7 +29861,7 @@ struct UVAL_NewsInboxComponent_GetEntitlementTexture_Params
 public:
 	struct FVAL_Reward                           Reward;                                            // 0x0(0x40)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EVAL_CharacterBodyType            BodyType;                                          // 0x40(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37A4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3765[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UTexture2D>             ReturnValue;                                       // 0x48(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -29868,7 +29882,7 @@ public:
 	FDelegateProperty_                           OnSucceeded;                                       // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnFailed;                                          // 0x18(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x28(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37A6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3769[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -29973,7 +29987,7 @@ public:
 	FDelegateProperty_                           OnSucceeded;                                       // 0x20(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnFailed;                                          // 0x30(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x40(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37B5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3779[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -29983,7 +29997,7 @@ struct UVAL_OnlinePhotoAlbumSubsystem_DeleteOnlinePhoto_Params
 public:
 	struct FGuid                                 PhotoId;                                           // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37B6[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_377A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -30138,7 +30152,7 @@ public:
 	struct FVAL_PartyMember                      Member;                                            // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVAL_PartyInvite                      OutInvite;                                         // 0x50(0xA8)(Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xF8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37C4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3785[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x100 (0x100 - 0x0)
@@ -30149,7 +30163,7 @@ public:
 	struct FVAL_PartyMember                      Member;                                            // 0x0(0x50)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVAL_PartyInvite                      OutInvite;                                         // 0x50(0xA8)(Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xF8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37C6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3788[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -30381,7 +30395,7 @@ public:
 	struct FGuid                                 QuestInstanceId;                                   // 0x0(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                CounterName;                                       // 0x10(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        AmountToContribute;                                // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37E7[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37A1[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -30398,7 +30412,7 @@ struct UVAL_PlayerGuildComponent_Server_MarkPlayerGuildQuestAsPinned_Params
 public:
 	struct FGuid                                 QuestId;                                           // 0x0(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsPinned;                                         // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37E9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37A3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -30476,7 +30490,7 @@ struct UVAL_PlayerGuildQuestGeneratorStatics_GenerateQuests_Params
 {
 public:
 	int32                                        Seed;                                              // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37F7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_37B6[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_PlayerGuildQuestGeneratorConfig*  GeneratorConfigData;                               // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVAL_PlayerGuildQuestCollection       ReturnValue;                                       // 0x10(0x40)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
@@ -30489,7 +30503,7 @@ public:
 	class UVAL_PlayerGuildComponent*             PlayerGuildComp;                                   // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 QuestId;                                           // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsPinned;                                         // 0x18(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37FA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37B7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -30500,7 +30514,7 @@ public:
 	class UVAL_PlayerGuildComponent*             PlayerGuildComp;                                   // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 QuestId;                                           // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37FB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37B8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -30520,7 +30534,7 @@ public:
 	class UVAL_PlayerGuildComponent*             PlayerGuildComp;                                   // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 QuestId;                                           // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37FD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37BB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -30530,7 +30544,7 @@ struct UVAL_PlayerGuildStatics_SortPlayerGuildActivities_Params
 public:
 	TArray<struct FVAL_PlayerGuildQuest>         GuildQuests;                                       // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVAL_PlayerGuildStatics_SortSettings  SortSettings;                                      // 0x10(0x1)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3805[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_37C2[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVAL_PlayerGuildQuest>         ReturnValue;                                       // 0x18(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -30551,10 +30565,10 @@ struct UVAL_PlayerGuildSubsystem_TryGetUserMembership_Params
 public:
 	struct FUniqueNetIdRepl                      UserId;                                            // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOutHasMembership;                                 // 0x30(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3807[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_37C5[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_PlayerGuild                      PlayerGuild;                                       // 0x38(0x118)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x150(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3808[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37C6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x150 (0x150 - 0x0)
@@ -30566,7 +30580,7 @@ public:
 	struct FUniqueNetIdRepl                      UserId;                                            // 0x118(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_PlayerGuildMemberRole        OutRole;                                           // 0x148(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x149(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3809[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37C7[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x130 (0x130 - 0x0)
@@ -30577,7 +30591,7 @@ public:
 	struct FGuid                                 PlayerGuildId;                                     // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVAL_PlayerGuild                      OutPlayerGuildInfo;                                // 0x10(0x118)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x128(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_380A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37C8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -30587,7 +30601,7 @@ struct UVAL_PlayerGuildSubsystem_TryGetOutboundInvitations_Params
 public:
 	struct FVAL_PlayerGuildInvitationList        OutInvitations;                                    // 0x0(0x10)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_380B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37CA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -30597,7 +30611,7 @@ struct UVAL_PlayerGuildSubsystem_TryGetOutboundApplications_Params
 public:
 	struct FVAL_PlayerGuildApplicationList       OutApplications;                                   // 0x0(0x10)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_380C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37CC[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -30607,7 +30621,7 @@ struct UVAL_PlayerGuildSubsystem_TryGetInboundInvitations_Params
 public:
 	struct FVAL_PlayerGuildInvitationList        OutInvitations;                                    // 0x0(0x10)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_380D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37CE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -30617,7 +30631,7 @@ struct UVAL_PlayerGuildSubsystem_TryGetInboundApplications_Params
 public:
 	struct FVAL_PlayerGuildApplicationList       OutApplications;                                   // 0x0(0x10)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_380E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37D0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -30809,7 +30823,7 @@ struct UVAL_PlayerGuildSubsystem_OnGetUsersPlayerGuild_Succeeded__DelegateSignat
 {
 public:
 	bool                                         bHasMembership;                                    // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3817[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_37D3[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_PlayerGuild                      PlayerGuild;                                       // 0x8(0x118)(Parm, NativeAccessSpecifierPublic)
 };
 
@@ -30906,7 +30920,7 @@ struct UVAL_PlayerGuildSubsystem_IsLocalPlayerInPlayerGuildWith_Params
 public:
 	class FString                                PlayerCharacterName;                               // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_381B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37E1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -30951,7 +30965,7 @@ public:
 	TArray<struct FVAL_PlayerGuildRosterEntry>   Roster;                                            // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FUniqueNetIdRepl                      UserNetId;                                         // 0x10(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x40(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_381C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37E6[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -31014,7 +31028,7 @@ public:
 	struct FUniqueNetIdRepl                      CurrentOwnerId;                                    // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUniqueNetIdRepl                      NewOwnerId;                                        // 0x30(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3822[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37ED[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x120 (0x120 - 0x0)
@@ -31025,7 +31039,7 @@ public:
 	struct FVAL_PlayerGuild                      PlayerGuild;                                       // 0x0(0x118)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EVAL_PlayerGuildMemberRole        ActingRole;                                        // 0x118(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x119(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3823[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37EE[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x3 (0x3 - 0x0)
@@ -31046,7 +31060,7 @@ public:
 	struct FVAL_PlayerGuild                      PlayerGuild;                                       // 0x0(0x118)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EVAL_PlayerGuildMemberRole        ActingRole;                                        // 0x118(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x119(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3824[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37F0[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x3 (0x3 - 0x0)
@@ -31145,7 +31159,7 @@ public:
 	int32                                        Price;                                             // 0x60(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           HandlePurchaseRequestCompleted;                    // 0x64(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x74(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3830[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3822[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x78 (0x78 - 0x0)
@@ -31158,7 +31172,7 @@ public:
 	int32                                        Price;                                             // 0x60(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           HandlePurchaseRequestCompleted;                    // 0x64(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x74(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3832[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3826[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -31168,7 +31182,7 @@ struct UVAL_PremiumStoreSubsystem_OnPurchaseRequestCompleted__DelegateSignature_
 public:
 	struct FGuid                                 VariantId;                                         // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bWasSuccessful;                                    // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3833[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3828[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -31214,7 +31228,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3836[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3837[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -31227,7 +31241,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3837[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3839[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -31240,7 +31254,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3839[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_383A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -31269,7 +31283,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_383C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_383D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -31281,7 +31295,7 @@ public:
 	class AActor*                                OtherActor;                                        // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_383D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_383F[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x108 (0x108 - 0x0)
@@ -31294,7 +31308,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_383E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3840[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -31308,7 +31322,7 @@ public:
 	class UPrimitiveComponent*                   OtherComp;                                         // 0x10(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OtherBodyIndex;                                    // 0x18(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFromSweep;                                        // 0x1C(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_383F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3841[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FHitResult                            SweepResult;                                       // 0x20(0xE8)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -31328,7 +31342,7 @@ struct UVAL_QuestFunctionLibrary_IsQuestCompleted_Params
 public:
 	struct FVAL_QuestState                       QuestState;                                        // 0x0(0xA0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xA0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3840[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3848[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xB8 (0xB8 - 0x0)
@@ -31385,7 +31399,7 @@ public:
 	struct FVAL_QuestState                       QuestState;                                        // 0x0(0xA0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVAL_QuestStepDef                     QuestStepDef;                                      // 0xA0(0xF8)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         bFoundQuestStep;                                   // 0x198(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3841[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3854[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x120 (0x120 - 0x0)
@@ -31396,7 +31410,7 @@ public:
 	struct FVAL_QuestState                       QuestState;                                        // 0x0(0xA0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVAL_QuestStepState                   QuestStepState;                                    // 0xA0(0x78)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         bFoundQuestStep;                                   // 0x118(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3842[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3856[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x100 (0x100 - 0x0)
@@ -31406,7 +31420,7 @@ struct UVAL_QuestFunctionLibrary_DoesQuestStepHaveVisibleBranchingGoals_Params
 public:
 	struct FVAL_QuestStepDef                     QuestStepDef;                                      // 0x0(0xF8)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xF8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3843[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3858[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x78 (0x78 - 0x0)
@@ -31416,7 +31430,7 @@ struct UVAL_QuestFunctionLibrary_DoesQuestGoalRequireStarQuality_Params
 public:
 	struct FVAL_QuestGoalState                   GoalState;                                         // 0x0(0x70)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x70(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3844[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_385A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -31443,7 +31457,7 @@ struct UVAL_RewardsPlayerComponent_TryGetCachedPlayerRewards_Params
 public:
 	TArray<struct FConsumableReward>             OutRewards;                                        // 0x0(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3846[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3863[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -31463,7 +31477,7 @@ public:
 	FDelegateProperty_                           OnSuccess;                                         // 0x0(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           OnFailure;                                         // 0x10(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3848[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_386C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -31549,7 +31563,7 @@ struct AVAL_ShrineInteraction_GetRelevantUpgradeLevel_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3856[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_387D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -31559,7 +31573,7 @@ struct AVAL_ShrineInteraction_DetermineShrineUpgradeCost_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVitalType                        VitalType;                                         // 0x8(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3858[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_387F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        Cost;                                              // 0xC(0x4)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -31571,7 +31585,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bCheckResources;                                   // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_ShrineReadiness              ReturnValue;                                       // 0x9(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3859[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3880[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -31581,7 +31595,7 @@ struct AVAL_ShrineInteraction_CanPlayerCommune_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_385A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3881[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x78 (0x78 - 0x0)
@@ -31591,7 +31605,7 @@ struct UVAL_SocialActivityFeedManager_TryPostPhoto_Params
 public:
 	struct FVAL_NewValeriagramPostInfo           NewPostInfo;                                       // 0x0(0x70)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x70(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3861[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3886[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -31644,7 +31658,7 @@ public:
 	class UObject*                               A;                                                 // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UObject*                               B;                                                 // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3867[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_388C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -31661,7 +31675,7 @@ struct ASpawnValidator_HandleMapOpened_Params
 public:
 	class FString                                Filename;                                          // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bLoadAsTemplate;                                   // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_386A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_388E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -31726,7 +31740,7 @@ struct UVAL_TintAsset_GetTintFromPersistID_Params
 {
 public:
 	int32                                        PersistIdToGet;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3873[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3893[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_TintAsset>         ReturnValue;                                       // 0x8(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -31753,7 +31767,7 @@ struct UVAL_TransitiveDecorAsset_GetAssetByPersistId_Cast_Params
 {
 public:
 	int32                                        PersistIdToGet;                                    // 0x0(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_387A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3898[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_TransitiveDecorAsset> ReturnValue;                                       // 0x8(0x30)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -31828,7 +31842,7 @@ struct UVAL_TutorialFlagsManager_IsFlagSet_Params
 public:
 	TSoftObjectPtr<class UVAL_TutorialFlagDefinition> Flag;                                              // 0x0(0x30)(ConstParm, Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_387F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38A8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -31869,7 +31883,7 @@ struct UVAL_TutorialFlagsManager_CanStartTutorialForFlag_Params
 public:
 	TSoftObjectPtr<class UVAL_TutorialFlagDefinition> Flag;                                              // 0x0(0x30)(ConstParm, Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3880[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38B0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -31879,7 +31893,7 @@ struct UVAL_UniqueNetIdUtils_IsValid_Params
 public:
 	struct FUniqueNetIdRepl                      NetId;                                             // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3887[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38B8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x130 (0x130 - 0x0)
@@ -31953,7 +31967,7 @@ public:
 	struct FUniqueNetIdRepl                      A;                                                 // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FUniqueNetIdRepl                      B;                                                 // 0x30(0x30)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_388D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38C1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -31976,10 +31990,10 @@ struct UVillagerGiftHistoryComponent_HasEverReceivedGift_Params
 {
 public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3892[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_38C7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x8(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x38(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3893[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38C8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x48 (0x48 - 0x0)
@@ -31988,11 +32002,11 @@ struct UVillagerGiftHistoryComponent_AlreadyGiftedItemThisReset_Params
 {
 public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3898[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_38C9[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x8(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AValeriaCharacter*                     Character;                                         // 0x38(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x40(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3899[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38CA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -32011,7 +32025,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_389C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38CF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -32029,10 +32043,10 @@ struct UVillagerGiftReceiverComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38A1[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_38D5[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38A2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38D6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -32044,7 +32058,7 @@ public:
 	TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> ItemType;                                          // 0x8(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAlreadyReceived;                                  // 0x38(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGiftPredictedResponse            ReturnValue;                                       // 0x39(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38A3[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38D7[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -32054,7 +32068,7 @@ struct UVillagerGiftReceiverComponent_CanGiftVillager_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38A4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38DB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -32063,7 +32077,7 @@ struct UVillagerMailInboxComponent_RpcServer_MarkMessageAsRead_Params
 {
 public:
 	int32                                        PersistId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38A9[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_38DE[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int64                                        SentTimestamp;                                     // 0x8(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -32073,7 +32087,7 @@ struct UVillagerMailInboxComponent_RpcServer_MarkMessageAsOpened_Params
 {
 public:
 	int32                                        PersistId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38AB[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_38DF[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int64                                        SentTimestamp;                                     // 0x8(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -32108,7 +32122,7 @@ struct UVillagerMailInboxComponent_FindMostRecentSentMailTimestamp_Params
 {
 public:
 	int32                                        PersistId;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38AD[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_38E4[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int64                                        ReturnValue;                                       // 0x8(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -32141,7 +32155,7 @@ struct UVillagerManager_VillagerAbsentStateChanged_Params
 public:
 	class AValeriaVillagerCharacter*             InVillager;                                        // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bInAbsent;                                         // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38B1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38EB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -32167,7 +32181,7 @@ struct UVillagerManager_FindNamedVillagerWithContext_Params
 public:
 	class FName                                  VillagerName;                                      // 0x0(0x8)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EWorldLocationContext             Context;                                           // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38B4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_38EC[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AValeriaVillagerCharacter*             ReturnValue;                                       // 0x10(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -32188,7 +32202,7 @@ struct UVillagerManager_DoesWorldVillagerExistOnCurrentMap_Params
 public:
 	int32                                        InVillagerId;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38B5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38F6[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -32200,7 +32214,7 @@ public:
 	class UPrivateSpaceConfig*                   InPrivateSpaceConfig;                              // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AValeriaTargetPoint*                   InTargetPoint;                                     // 0x10(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38B6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38F8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -32212,7 +32226,7 @@ public:
 	class UPrivateSpaceConfig*                   InPrivateSpaceConfig;                              // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<int32>                                InVillagerCoreIds;                                 // 0x10(0x10)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38B7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38FA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -32223,7 +32237,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UWorld>                 OutBestWorld;                                      // 0x8(0x30)(Parm, OutParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x38(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38BA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_38FE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1A8 (0x1A8 - 0x0)
@@ -32235,7 +32249,7 @@ public:
 	class FString                                LevelName;                                         // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVillagerScheduleActivity             OutBestScheduleActivity;                           // 0x18(0x188)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x1A0(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38BB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3900[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -32291,7 +32305,7 @@ struct UVillagerQuestProgressComponent_HasTrackedDialogueForWorldVillager_Params
 public:
 	class AValeriaVillagerCharacter*             Villager;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38BD[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3906[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -32301,7 +32315,7 @@ struct UVillagerQuestProgressComponent_HasTrackedDialogueForVillagerId_Params
 public:
 	int32                                        VillagerId;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38BE[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3907[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -32311,7 +32325,7 @@ struct UVillagerQuestProgressComponent_HasHintForActiveQuestsForWorldVillager_Pa
 public:
 	class AValeriaVillagerCharacter*             Villager;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38BF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3908[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -32321,7 +32335,7 @@ struct UVillagerQuestProgressComponent_HasHintForActiveQuestsForVillagerId_Param
 public:
 	int32                                        VillagerId;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38C0[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_390B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -32331,7 +32345,7 @@ struct UVillagerQuestProgressComponent_HasDailyChatDialogueForWorldVillager_Para
 public:
 	class AValeriaVillagerCharacter*             Villager;                                          // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38C1[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_390F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -32341,7 +32355,7 @@ struct UVillagerQuestProgressComponent_HasDailyChatDialogueForVillagerId_Params
 public:
 	int32                                        VillagerId;                                        // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38C2[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3910[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -32374,7 +32388,7 @@ struct UVillagerRelationshipsComponent_HasMetVillager_Params
 public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38C5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3914[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -32393,7 +32407,7 @@ struct UVillagerRelationshipsComponent_GetRelationshipValue_Params
 public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERelationshipType                 Type;                                              // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38C6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3915[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -32404,7 +32418,7 @@ struct UVillagerRelationshipsComponent_GetRelationshipLevelProgress_Params
 public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERelationshipType                 Type;                                              // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38C7[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3917[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -32415,7 +32429,7 @@ struct UVillagerRelationshipsComponent_GetRelationshipLevelName_Params
 public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERelationshipType                 Type;                                              // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38C8[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_391B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  ReturnValue;                                       // 0x8(0x18)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -32426,7 +32440,7 @@ struct UVillagerRelationshipsComponent_GetRelationshipLevel_Params
 public:
 	int32                                        VillagerCoreId;                                    // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERelationshipType                 Type;                                              // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38C9[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_391C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -32463,7 +32477,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVillagerScheduleActivity             OutBestScheduleActivity;                           // 0x8(0x188)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x190(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38CB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3922[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -32473,7 +32487,7 @@ struct UVillagerStoreComponent_StoreCanBuyItem_Params
 public:
 	struct FBagSlotLocation                      Location;                                          // 0x0(0x8)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38CC[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3923[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -32491,7 +32505,7 @@ struct UVillagerStoreComponent_RpcServer_OpenStore_Params
 {
 public:
 	int32                                        VillagerConfigId;                                  // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38CD[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3924[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVillagerStoreConfig*                  Config;                                            // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -32503,7 +32517,7 @@ public:
 	class UVAL_ItemTypeDefinitionAsset*          ItemType;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        NumToBuy;                                          // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsRecipe;                                         // 0xC(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38CE[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3929[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2 (0x2 - 0x0)
@@ -32535,10 +32549,10 @@ struct UVillagerStoreComponent_HasStore_Params
 {
 public:
 	int32                                        VillagerConfigId;                                  // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38CF[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_392A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FClientStoreInfo                      ClientStoreInfo;                                   // 0x8(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x58(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38D0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_392B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -32547,7 +32561,7 @@ struct UVillagerStoreComponent_GetStoreItemsForConfig_Params
 {
 public:
 	int32                                        VillagerConfigId;                                  // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38D1[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_392D[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVillagerStoreConfig*                  Config;                                            // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FStoreItem>                    ReturnValue;                                       // 0x10(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
@@ -32610,7 +32624,7 @@ struct UStoreInteractorComponent_IsStoreOpen_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38D3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3934[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -32621,7 +32635,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38D4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3936[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -32639,10 +32653,10 @@ struct UStoreInteractorComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38D5[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3939[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38D6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_393A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -32664,7 +32678,7 @@ public:
 	class AValeriaCharacter*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38DA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_393F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -32682,10 +32696,10 @@ struct UVillagerStoreInteractableComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Player;                                            // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38DD[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3941[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38DE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3942[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -32710,7 +32724,7 @@ public:
 	class UPrivateSpaceConfig*                   InPrivateSpaceConfig;                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrivateSpaceVillagerVisitConfig*      InVillagerVisitConfig;                             // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSkipTimeDelay;                                    // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38E2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3947[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -32787,7 +32801,7 @@ struct UVillagerVisitComponent_IsVisitActive_Params
 public:
 	class UPrivateSpaceVillagerVisitConfig*      VisitConfig;                                       // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38E4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3954[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -32797,7 +32811,7 @@ struct UVillagerVisitComponent_IsScheduledVisitActive_Params
 public:
 	int32                                        InVillagerId;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38E6[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3957[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -32815,7 +32829,7 @@ struct UVillagerVisitComponent_HasCompletedVisit_Params
 public:
 	class UPrivateSpaceVillagerVisitConfig*      VisitConfig;                                       // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38E7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_395F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -32852,7 +32866,7 @@ public:
 	class UPrivateSpaceConfig*                   InPrivateSpaceConfig;                              // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrivateSpaceVillagerVisitConfig*      InVillagerVisitConfig;                             // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSkipTimeDelay;                                    // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38E9[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3964[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -32922,7 +32936,7 @@ public:
 	class UObject*                               Context;                                           // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVillagerScheduleActivity             OutBestScheduleActivity;                           // 0x8(0x188)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x190(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38F0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3979[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -32946,7 +32960,7 @@ struct UVoiceLocalPlayerSubsystem_LeaveRoom_Params
 public:
 	class FString                                RoomName;                                          // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38F3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_397D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -32956,7 +32970,7 @@ struct UVoiceLocalPlayerSubsystem_JoinRoom_Params
 public:
 	class FString                                RoomName;                                          // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38F4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3980[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -33000,7 +33014,7 @@ public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FInteractEventParams                  EventParams;                                       // 0x8(0x18)(Parm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38F6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_398B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -33018,10 +33032,10 @@ struct UWallpaperComponent_GetText_Params
 public:
 	class AValeriaCharacter*                     Character;                                         // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInteractEventIndex               EventIndex;                                        // 0x8(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38F7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_398D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGetTextParams                        Params;                                            // 0x10(0x50)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x60(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38F8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_398E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -33078,7 +33092,7 @@ struct UWarpStoneComponent_AttemptToUseWarpStone_Params
 public:
 	struct FGuid                                 WarpStoneId;                                       // 0x0(0x10)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38FD[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3994[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -33096,7 +33110,7 @@ struct UWarpStoneComponent_AddWarpStone_Params
 public:
 	struct FGuid                                 WarpStoneId;                                       // 0x0(0x10)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38FF[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3996[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -33107,7 +33121,7 @@ public:
 	int32                                        FlowSpriteId;                                      // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 WarpStoneId;                                       // 0x4(0x10)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x14(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3902[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3998[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -33120,7 +33134,7 @@ public:
 	struct FBagSlotLocation                      CanLocation;                                       // 0x20(0x8)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        UseWaterAmount;                                    // 0x28(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x2C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_390B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_39A5[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -33161,7 +33175,7 @@ struct AWaterableObject_BPIE_UpdateWaterProgress_Params
 public:
 	float                                        WaterFillPercentage;                               // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIncreasing;                                       // 0x4(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_390C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_39AB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)

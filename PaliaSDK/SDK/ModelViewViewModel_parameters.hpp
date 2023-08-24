@@ -24,7 +24,7 @@ public:
 	int32                                        OldValue;                                          // 0x0(0x4)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        NewValue;                                          // 0x4(0x4)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2[0x3];                                        // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -89,7 +89,7 @@ public:
 	struct FMVVMBindingName                      BindingName;                                       // 0x8(0x8)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UClass*                                Accessor;                                          // 0x10(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMVVMAvailableBinding                 ReturnValue;                                       // 0x18(0xC)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34[0x4];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4F[0x4];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -100,7 +100,7 @@ public:
 	class UWidgetTree*                           WidgetTree;                                        // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UWidget*                               ViewWidget;                                        // 0x8(0x8)(ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_38[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_55[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -110,7 +110,7 @@ struct UMVVMViewModelCollectionObject_RemoveViewModel_Params
 public:
 	struct FMVVMViewModelContext                 Context;                                           // 0x0(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3D[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_5E[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -120,7 +120,7 @@ struct UMVVMViewModelCollectionObject_RemoveAllViewModelInstance_Params
 public:
 	class UMVVMViewModelBase*                    ViewModel;                                         // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ReturnValue;                                       // 0x8(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_46[0x4];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_62[0x4];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -140,7 +140,7 @@ public:
 	struct FMVVMViewModelContext                 Context;                                           // 0x0(0x10)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class UMVVMViewModelBase*                    ViewModel;                                         // 0x10(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_57[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_64[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -151,7 +151,7 @@ public:
 	class FName                                  ViewModelName;                                     // 0x0(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMVVMViewModelBase*                    ViewModel;                                         // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5E[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_68[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

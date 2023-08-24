@@ -73,7 +73,7 @@ public:
 	enum class EDynamicMeshChangeType            Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EDynamicMeshAttributeChangeFlags  Flags;                                             // 0x1(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsRevertChange;                                   // 0x2(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_15D7[0x1D];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1704[0x1D];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

@@ -48,7 +48,7 @@ public:
 	class FString                                ChannelName;                                       // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Enabled;                                           // 0x10(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x11(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DEC[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2046[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -67,7 +67,7 @@ public:
 	class FString                                Filename;                                          // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FString>                        Channels;                                          // 0x10(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DF2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_204C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -78,7 +78,7 @@ public:
 	class FString                                Target;                                            // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FString>                        Channels;                                          // 0x10(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DF4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_204F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -112,7 +112,7 @@ struct UTraceUtilLibrary_IsChannelEnabled_Params
 public:
 	class FString                                ChannelName;                                       // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1E06[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2056[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)

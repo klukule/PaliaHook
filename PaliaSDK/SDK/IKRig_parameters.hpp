@@ -30,11 +30,11 @@ struct UIKRigComponent_SetIKRigGoalTransform_Params
 {
 public:
 	class FName                                  GoalName;                                          // 0x0(0x8)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_170C[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_183D[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTransform                            Transform;                                         // 0x10(0x60)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        PositionAlpha;                                     // 0x70(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        RotationAlpha;                                     // 0x74(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_170E[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1840[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -47,7 +47,7 @@ public:
 	struct FQuat                                 Rotation;                                          // 0x20(0x20)(ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        PositionAlpha;                                     // 0x40(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        RotationAlpha;                                     // 0x44(0x4)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1717[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1848[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xA0 (0xA0 - 0x0)

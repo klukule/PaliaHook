@@ -18,7 +18,7 @@ class UListEntry_CharacterCustomization_FilterOption_C : public UObject
 {
 public:
 	int32                                        Index;                                             // 0x28(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                        Pad_4219[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_4027[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVAL_CharacterCustomization_CosmeticTagFilterStruct Tag;                                               // 0x30(0x38)(Edit, BlueprintVisible, ExposeOnSpawn)
 	FMulticastInlineDelegateProperty_            OnOptionSelected;                                  // 0x68(0x10)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 

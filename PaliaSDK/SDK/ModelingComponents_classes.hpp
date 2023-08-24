@@ -60,7 +60,7 @@ public:
 class UBaseCreateFromSelectedTool : public UMultiSelectionMeshEditingTool
 {
 public:
-	uint8                                        Pad_23A[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_146[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UTransformInputsToolProperties*        TransformProperties;                               // 0xC0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UCreateMeshObjectTypeProperties*       OutputTypeProperties;                              // 0xC8(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UBaseCreateFromSelectedHandleSourceProperties* HandleSourcesProperties;                           // 0xD0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -181,11 +181,11 @@ public:
 class UGeometrySelectionManager : public UObject
 {
 public:
-	uint8                                        Pad_243[0x28];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_14C[0x28];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UGeometrySelectionEditCommandArguments* SelectionArguments;                                // 0x50(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_244[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_14D[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UInteractiveToolsContext*              ToolsContext;                                      // 0x60(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_245[0xE0];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_14E[0xE0];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UPersistentMeshSelection*              OldSelection;                                      // 0x148(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
@@ -215,7 +215,7 @@ public:
 class UGeometrySelectionEditCommandArguments : public UInteractiveCommandArguments
 {
 public:
-	uint8                                        Pad_247[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14F[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -233,7 +233,7 @@ public:
 	int32                                        VoxelCount;                                        // 0xA8(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAutoSimplify;                                     // 0xAC(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bRemoveInternalSurfaces;                           // 0xAD(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_248[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_151[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       SimplifyMaxErrorFactor;                            // 0xB0(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                       CubeRootMinComponentVolume;                        // 0xB8(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -265,7 +265,7 @@ class UOnAcceptHandleSourcesProperties : public UOnAcceptHandleSourcesProperties
 {
 public:
 	enum class EHandleSourcesMethod              HandleInputs;                                      // 0xA8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_249[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_152[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -281,7 +281,7 @@ class UBaseCreateFromSelectedHandleSourceProperties : public UOnAcceptHandleSour
 {
 public:
 	enum class EBaseCreateFromSelectedTargetType OutputWriteTo;                                     // 0xB0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24A[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_154[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                OutputNewName;                                     // 0xB8(0x10)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                OutputExistingName;                                // 0xC8(0x10)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -299,7 +299,7 @@ class UTransformInputsToolProperties : public UInteractiveToolPropertySet
 {
 public:
 	bool                                         bShowTransformGizmo;                               // 0xA8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24B[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_155[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -328,9 +328,9 @@ public:
 class UBaseMeshProcessingTool : public USingleSelectionTool
 {
 public:
-	uint8                                        Pad_24C[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_156[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UMeshOpPreviewWithBackgroundCompute*   Preview;                                           // 0xC8(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_24D[0x330];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_157[0x330];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -346,7 +346,7 @@ class UBaseVoxelTool : public UBaseCreateFromSelectedTool
 {
 public:
 	class UVoxelProperties*                      VoxProperties;                                     // 0x100(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_24E[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_158[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -375,7 +375,7 @@ public:
 class UDynamicMeshReplacementChangeTarget : public UObject
 {
 public:
-	uint8                                        Pad_250[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_159[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -390,9 +390,9 @@ public:
 class UOctreeDynamicMeshComponent : public UBaseDynamicMeshComponent
 {
 public:
-	uint8                                        Pad_252[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_15C[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UDynamicMesh*                          MeshObject;                                        // 0x630(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_253[0xB8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15D[0xB8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -411,7 +411,7 @@ public:
 	class UMaterialInterface*                    LineMaterial;                                      // 0x570(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FBoxSphereBounds                      Bounds;                                            // 0x578(0x38)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
 	bool                                         bBoundsDirty;                                      // 0x5B0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_255[0x3F];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15F[0x3F];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -432,7 +432,7 @@ public:
 	bool                                         bShowUVSeams;                                      // 0xAB(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShowNormalSeams;                                  // 0xAC(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShowColorSeams;                                   // 0xAD(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_259[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_163[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ThicknessScale;                                    // 0xB0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FColor                                WireframeColor;                                    // 0xB4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FColor                                BoundaryEdgeColor;                                 // 0xB8(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -441,7 +441,7 @@ public:
 	struct FColor                                ColorSeamColor;                                    // 0xC4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        DepthBias;                                         // 0xC8(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAdjustDepthBiasUsingMeshSize;                     // 0xCC(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25A[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_164[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -492,7 +492,7 @@ class UMeshElementsVisualizer : public UPreviewGeometry
 public:
 	class UMeshElementsVisualizerProperties*     Settings;                                          // 0xD0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMeshWireframeComponent*               WireframeComponent;                                // 0xD8(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_288[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_18A[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -511,28 +511,28 @@ public:
 	float                                        LineDepthBiasSizeScale;                            // 0x574(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ThicknessScale;                                    // 0x578(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableWireframe;                                  // 0x57C(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28A[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_18C[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FColor                                WireframeColor;                                    // 0x580(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WireframeThickness;                                // 0x584(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableBoundaryEdges;                              // 0x588(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28C[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_18D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FColor                                BoundaryEdgeColor;                                 // 0x58C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        BoundaryEdgeThickness;                             // 0x590(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableUVSeams;                                    // 0x594(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_28F[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_18E[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FColor                                UVSeamColor;                                       // 0x598(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        UVSeamThickness;                                   // 0x59C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableNormalSeams;                                // 0x5A0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_290[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_18F[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FColor                                NormalSeamColor;                                   // 0x5A4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        NormalSeamThickness;                               // 0x5A8(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableColorSeams;                                 // 0x5AC(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_292[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_191[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FColor                                ColorSeamColor;                                    // 0x5B0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ColorSeamThickness;                                // 0x5B4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                    LineMaterial;                                      // 0x5B8(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FBoxSphereBounds                      LocalBounds;                                       // 0x5C0(0x38)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_293[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_192[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -550,7 +550,7 @@ public:
 	class UMaterialInterface*                    PointMaterial;                                     // 0x570(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FBoxSphereBounds                      Bounds;                                            // 0x578(0x38)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
 	bool                                         bBoundsDirty;                                      // 0x5B0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_295[0x3F];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_193[0x3F];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -565,11 +565,11 @@ public:
 class UPreviewMesh : public UObject
 {
 public:
-	uint8                                        Pad_296[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_194[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	bool                                         bBuildSpatialDataStructure;                        // 0x40(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_297[0xF];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_195[0xF];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UDynamicMeshComponent*                 DynamicMeshComponent;                              // 0x50(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_298[0xE8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_196[0xE8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -584,7 +584,7 @@ public:
 class UPolyEditPreviewMesh : public UPreviewMesh
 {
 public:
-	uint8                                        Pad_29A[0x410];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_197[0x410];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -615,7 +615,7 @@ class UTriangleSetComponent : public UMeshComponent
 public:
 	struct FBoxSphereBounds                      Bounds;                                            // 0x570(0x38)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
 	bool                                         bBoundsDirty;                                      // 0x5A8(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_29C[0xC7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_199[0xC7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -631,13 +631,13 @@ class UUVLayoutPreviewProperties : public UInteractiveToolPropertySet
 {
 public:
 	bool                                         bEnabled;                                          // 0xA8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_29F[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_19B[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EUVLayoutPreviewSide              Side;                                              // 0xAC(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Scale;                                             // 0xB0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A0[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_19D[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             Offset;                                            // 0xB8(0x10)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShowWireframe;                                    // 0xC8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A1[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_19E[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -656,9 +656,9 @@ public:
 	class UPreviewMesh*                          PreviewMesh;                                       // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTriangleSetComponent*                 TriangleComponent;                                 // 0x38(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShowBackingRectangle;                             // 0x40(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A4[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A0[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UMaterialInterface*                    BackingRectangleMaterial;                          // 0x48(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A5[0x110];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A1[0x110];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -673,7 +673,7 @@ public:
 class UCollectSurfacePathMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2A7[0x590];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A3[0x590];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -688,12 +688,12 @@ public:
 class UConstructionPlaneMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2A8[0x98];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A5[0x98];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UCombinedTransformGizmo*               PlaneTransformGizmo;                               // 0xC8(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTransformProxy*                       PlaneTransformProxy;                               // 0xD0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2A9[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A6[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class USingleClickInputBehavior*             ClickToSetPlaneBehavior;                           // 0xE0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2AA[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A7[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -708,19 +708,19 @@ public:
 class UCurveControlPointsMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2AB[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A9[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class USingleClickInputBehavior*             ClickBehavior;                                     // 0x40(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMouseHoverBehavior*                   HoverBehavior;                                     // 0x48(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2AC[0x498];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1AA[0x498];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class APreviewGeometryActor*                 PreviewGeometryActor;                              // 0x4E8(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UPointSetComponent*                    DrawnControlPoints;                                // 0x4F0(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class ULineSetComponent*                     DrawnControlSegments;                              // 0x4F8(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UPointSetComponent*                    PreviewPoint;                                      // 0x500(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class ULineSetComponent*                     PreviewSegment;                                    // 0x508(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2AE[0x78];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1AC[0x78];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UTransformProxy*                       PointTransformProxy;                               // 0x588(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UCombinedTransformGizmo*               PointTransformGizmo;                               // 0x590(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2AF[0xE8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1AD[0xE8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -735,7 +735,7 @@ public:
 class UDragAlignmentMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2B0[0x230];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1AF[0x230];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -750,16 +750,16 @@ public:
 class ULatticeControlPointsMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2B1[0x1F0];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B0[0x1F0];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class APreviewGeometryActor*                 PreviewGeometryActor;                              // 0x220(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UPointSetComponent*                    DrawnControlPoints;                                // 0x228(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class ULineSetComponent*                     DrawnLatticeEdges;                                 // 0x230(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2B2[0xA8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B1[0xA8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UTransformProxy*                       PointTransformProxy;                               // 0x2E0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UCombinedTransformGizmo*               PointTransformGizmo;                               // 0x2E8(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2B3[0x58];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B2[0x58];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class URectangleMarqueeMechanic*             MarqueeMechanic;                                   // 0x348(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2B4[0x1B0];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B3[0x1B0];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -774,7 +774,7 @@ public:
 class UPlaneDistanceFromHitMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2B5[0x4E0];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B4[0x4E0];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -789,17 +789,17 @@ public:
 class UPolyLassoMarqueeMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2B7[0x58];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B5[0x58];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        SpacingTolerance;                                  // 0x88(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        LineThickness;                                     // 0x8C(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          LineColor;                                         // 0x90(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          ClosedColor;                                       // 0xA0(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableFreehandPolygons;                           // 0xB0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableMultiClickPolygons;                         // 0xB1(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BA[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B6[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UClickDragInputBehavior*               ClickDragBehavior;                                 // 0xB8(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UMouseHoverBehavior*                   HoverBehavior;                                     // 0xC0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2BB[0x108];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B7[0x108];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -814,14 +814,14 @@ public:
 class URectangleMarqueeMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2BC[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B9[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	bool                                         bUseExternalClickDragBehavior;                     // 0x38(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUseExternalUpdateCameraState;                     // 0x39(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BD[0x46];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1BA[0x46];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       OnDragRectangleChangedDeferredThreshold;           // 0x80(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2BE[0x48];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1BB[0x48];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UClickDragInputBehavior*               ClickDragBehavior;                                 // 0xD0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2BF[0x148];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1BC[0x148];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -854,19 +854,19 @@ public:
 class USpaceCurveDeformationMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2C5[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1BE[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class USingleClickInputBehavior*             ClickBehavior;                                     // 0x40(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMouseHoverBehavior*                   HoverBehavior;                                     // 0x48(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C6[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1BF[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class USpaceCurveDeformationMechanicPropertySet* TransformProperties;                               // 0x68(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C7[0xF8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C0[0xF8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class APreviewGeometryActor*                 PreviewGeometryActor;                              // 0x168(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UPointSetComponent*                    RenderPoints;                                      // 0x170(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class ULineSetComponent*                     RenderSegments;                                    // 0x178(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2C8[0x38];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C2[0x38];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UTransformProxy*                       PointTransformProxy;                               // 0x1B8(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UCombinedTransformGizmo*               PointTransformGizmo;                               // 0x1C0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2C9[0x108];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C5[0x108];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -881,7 +881,7 @@ public:
 class USpatialCurveDistanceMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2CC[0x3E0];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C6[0x3E0];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -896,14 +896,14 @@ public:
 class UMeshOpPreviewWithBackgroundCompute : public UObject
 {
 public:
-	uint8                                        Pad_2CD[0x30];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C8[0x30];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UPreviewMesh*                          PreviewMesh;                                       // 0x58(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UMaterialInterface*>            StandardMaterials;                                 // 0x60(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                    OverrideMaterial;                                  // 0x70(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                    WorkingMaterial;                                   // 0x78(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                    SecondaryMaterial;                                 // 0x80(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TWeakObjectPtr<class UWorld>                 PreviewWorld;                                      // 0x88(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2CF[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CA[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -922,7 +922,7 @@ public:
 	bool                                         bEnableRayTracing;                                 // 0x39(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableCollision;                                  // 0x3A(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECollisionTraceFlag               CollisionMode;                                     // 0x3B(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D0[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CC[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -971,7 +971,7 @@ public:
 	TSubclassOf<class AVolume>                   VolumeType;                                        // 0xB8(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FString>                        OutputTypeNamesList;                               // 0xC0(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bShowVolumeList;                                   // 0xD0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2DC[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1DC[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -990,7 +990,7 @@ class UOnAcceptHandleSourcesPropertiesSingle : public UOnAcceptHandleSourcesProp
 {
 public:
 	enum class EHandleSourcesMethod              HandleInputs;                                      // 0xA8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2DD[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1DD[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -1025,7 +1025,7 @@ public:
 	class FName                                  WeightMap;                                         // 0xA8(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FString>                        WeightMapsList;                                    // 0xB0(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bInvertWeightMap;                                  // 0xC0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2E3[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E9[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -1041,7 +1041,7 @@ public:
 class UPersistentMeshSelection : public UObject
 {
 public:
-	uint8                                        Pad_2E7[0x60];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1EC[0x60];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -1084,7 +1084,7 @@ public:
 	bool                                         bPreferProjectedElement;                           // 0xB0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSelectDownRay;                                    // 0xB1(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIgnoreOcclusion;                                  // 0xB2(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F0[0xD];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F3[0xD];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -1101,18 +1101,18 @@ public:
 class UPolygonSelectionMechanic : public UInteractionMechanic
 {
 public:
-	uint8                                        Pad_2F1[0x48];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F5[0x48];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UPolygonSelectionMechanicProperties*   Properties;                                        // 0x78(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2F2[0x60];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F6[0x60];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UMouseHoverBehavior*                   HoverBehavior;                                     // 0xE0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class USingleClickOrDragInputBehavior*       ClickOrDragBehavior;                               // 0xE8(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class URectangleMarqueeMechanic*             MarqueeMechanic;                                   // 0xF0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2F4[0x5D8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F9[0x5D8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class APreviewGeometryActor*                 PreviewGeometryActor;                              // 0x6D0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UTriangleSetComponent*                 DrawnTriangleSetComponent;                         // 0x6D8(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2F5[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FB[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UMaterialInterface*                    HighlightedFaceMaterial;                           // 0x730(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2F6[0x3C8];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FC[0x3C8];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -1128,7 +1128,7 @@ class UModelingSceneSnappingManager : public USceneSnappingManager
 {
 public:
 	class UInteractiveToolsContext*              ParentContext;                                     // 0x28(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2F9[0x120];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FD[0x120];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -1143,13 +1143,13 @@ public:
 class UMultiTransformer : public UObject
 {
 public:
-	uint8                                        Pad_2FB[0x60];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1FE[0x60];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UInteractiveGizmoManager*              GizmoManager;                                      // 0x88(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2FC[0x70];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_201[0x70];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UCombinedTransformGizmo*               TransformGizmo;                                    // 0x100(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UTransformProxy*                       TransformProxy;                                    // 0x108(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UDragAlignmentMechanic*                DragAlignmentMechanic;                             // 0x110(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_2FD[0x98];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_203[0x98];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

@@ -84,7 +84,7 @@ public:
 	struct FRotator                              OriginRotation;                                    // 0x18(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bIsTransformInWorldSpace;                          // 0x30(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bMaintainUpDirection;                              // 0x31(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CDD[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E5A[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -103,7 +103,7 @@ public:
 	class FName                                  InSaveName;                                        // 0x0(0x8)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UARPin*                                InPin;                                             // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CE5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E60[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -144,7 +144,7 @@ struct UARBlueprintLibrary_PinComponentToTraceResult_Params
 {
 public:
 	class USceneComponent*                       ComponentToPin;                                    // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CF5[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E72[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FARTraceResult                        TraceResult;                                       // 0x10(0x90)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	class FName                                  DebugName;                                         // 0xA0(0x8)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UARPin*                                ReturnValue;                                       // 0xA8(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -158,7 +158,7 @@ public:
 	class USceneComponent*                       ComponentToPin;                                    // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UARPin*                                Pin;                                               // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CFF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E74[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x90 (0x90 - 0x0)
@@ -167,12 +167,12 @@ struct UARBlueprintLibrary_PinComponent_Params
 {
 public:
 	class USceneComponent*                       ComponentToPin;                                    // 0x0(0x8)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D08[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E7C[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTransform                            PinToWorldTransform;                               // 0x10(0x60)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UARTrackedGeometry*                    TrackedGeometry;                                   // 0x70(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  DebugName;                                         // 0x78(0x8)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UARPin*                                ReturnValue;                                       // 0x80(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D0B[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E7D[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -201,7 +201,7 @@ public:
 	bool                                         bTestGroundPlane;                                  // 0x31(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bTestPlaneExtents;                                 // 0x32(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bTestPlaneBoundaryPolygon;                         // 0x33(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D15[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E89[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FARTraceResult>                ReturnValue;                                       // 0x38(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -215,7 +215,7 @@ public:
 	bool                                         bTestGroundPlane;                                  // 0x11(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bTestPlaneExtents;                                 // 0x12(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bTestPlaneBoundaryPolygon;                         // 0x13(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D1B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E91[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FARTraceResult>                ReturnValue;                                       // 0x18(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -302,7 +302,7 @@ struct UARBlueprintLibrary_GetSupportedVideoFormats_Params
 {
 public:
 	enum class EARSessionType                    SessionType;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D43[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1EB4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FARVideoFormat>                ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
@@ -345,11 +345,11 @@ struct UARBlueprintLibrary_GetObjectClassificationAtLocation_Params
 public:
 	struct FVector                               InWorldLocation;                                   // 0x0(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EARObjectClassification           OutClassification;                                 // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D67[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1EDA[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               OutClassificationLocation;                         // 0x20(0x18)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxLocationDiff;                                   // 0x38(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x3C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D6A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1EDB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -375,7 +375,7 @@ struct UARBlueprintLibrary_GetCameraIntrinsics_Params
 public:
 	struct FARCameraIntrinsics                   OutCameraIntrinsics;                               // 0x0(0x28)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x28(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D79[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1EE5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -408,7 +408,7 @@ struct UARBlueprintLibrary_GetARTexture_Params
 {
 public:
 	enum class EARTextureType                    TextureType;                                       // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D80[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1EF4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UARTexture*                            ReturnValue;                                       // 0x8(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -563,7 +563,7 @@ public:
 	class FString                                PointName;                                         // 0x60(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDeletePointsWithSameName;                         // 0x70(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x71(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DB5[0xE];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F48[0xE];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -575,7 +575,7 @@ public:
 	class UTexture2D*                            CandidateTexture;                                  // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                FriendlyName;                                      // 0x10(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        PhysicalWidth;                                     // 0x20(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DC0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1F4E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UARCandidateImage*                     ReturnValue;                                       // 0x28(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -587,7 +587,7 @@ public:
 	struct FVector                               Location;                                          // 0x0(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Extent;                                            // 0x18(0x18)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DC3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F5C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xA0 (0xA0 - 0x0)
@@ -597,7 +597,7 @@ struct UARTraceResultLibrary_GetTrackedGeometry_Params
 public:
 	struct FARTraceResult                        TraceResult;                                       // 0x0(0x90)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	class UARTrackedGeometry*                    ReturnValue;                                       // 0x90(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DE2[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F7E[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xA0 (0xA0 - 0x0)
@@ -607,7 +607,7 @@ struct UARTraceResultLibrary_GetTraceChannel_Params
 public:
 	struct FARTraceResult                        TraceResult;                                       // 0x0(0x90)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	enum class EARLineTraceChannels              ReturnValue;                                       // 0x90(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DE4[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1F86[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xF0 (0xF0 - 0x0)
@@ -644,7 +644,7 @@ struct UARTraceResultLibrary_GetDistanceFromCamera_Params
 public:
 	struct FARTraceResult                        TraceResult;                                       // 0x0(0x90)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                        ReturnValue;                                       // 0x90(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1DEE[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FB0[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -1027,7 +1027,7 @@ public:
 	class UARSessionConfig*                      SessionConfig;                                     // 0x8(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLatentActionInfo                     LatentInfo;                                        // 0x10(0x18)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EARServicePermissionRequestResult OutPermissionResult;                               // 0x28(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1ED5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2050[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -1038,7 +1038,7 @@ public:
 	class UObject*                               WorldContextObject;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLatentActionInfo                     LatentInfo;                                        // 0x8(0x18)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EARServiceInstallRequestResult    OutInstallResult;                                  // 0x20(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1EDF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2053[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1057,7 +1057,7 @@ public:
 	class UObject*                               WorldContextObject;                                // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLatentActionInfo                     LatentInfo;                                        // 0x8(0x18)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EARServiceAvailability            OutAvailability;                                   // 0x20(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1EED[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_205A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1100,10 +1100,10 @@ public:
 	float                                        Longitude;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Latitude;                                          // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AltitudeMeters;                                    // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F16[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_206A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                OptionalAnchorName;                                // 0x10(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x20(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F19[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_206C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -1115,7 +1115,7 @@ public:
 	float                                        Latitude;                                          // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                OptionalAnchorName;                                // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x18(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F21[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_206D[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -1124,7 +1124,7 @@ struct UCheckGeoTrackingAvailabilityAsyncTaskBlueprintProxy_GeoTrackingAvailabil
 {
 public:
 	bool                                         bIsAvailable;                                      // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F2C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2071[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Error;                                             // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1156,7 +1156,7 @@ public:
 	float                                        Longitude;                                         // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Latitude;                                          // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Altitude;                                          // 0x8(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1F58[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2081[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Error;                                             // 0x10(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1595,7 +1595,7 @@ struct AARSharedWorldPlayerController_ClientUpdatePreviewImageData_Params
 {
 public:
 	int32                                        Offset;                                            // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_210A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_217B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<uint8>                                Buffer;                                            // 0x8(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -1605,7 +1605,7 @@ struct AARSharedWorldPlayerController_ClientUpdateARWorldData_Params
 {
 public:
 	int32                                        Offset;                                            // 0x0(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_210F[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2180[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<uint8>                                Buffer;                                            // 0x8(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -1777,7 +1777,7 @@ struct UARFaceGeometry_GetWorldSpaceEyeTransform_Params
 {
 public:
 	enum class EAREye                            Eye;                                               // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21A1[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_220D[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTransform                            ReturnValue;                                       // 0x10(0x60)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1787,7 +1787,7 @@ struct UARFaceGeometry_GetLocalSpaceEyeTransform_Params
 {
 public:
 	enum class EAREye                            Eye;                                               // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21AD[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2215[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTransform                            ReturnValue;                                       // 0x10(0x60)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1797,7 +1797,7 @@ struct UARFaceGeometry_GetBlendShapeValue_Params
 {
 public:
 	enum class EARFaceBlendShape                 BlendShape;                                        // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21C3[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_221A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ReturnValue;                                       // 0x4(0x4)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1848,11 +1848,11 @@ struct UARMeshGeometry_GetObjectClassificationAtLocation_Params
 public:
 	struct FVector                               InWorldLocation;                                   // 0x0(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EARObjectClassification           OutClassification;                                 // 0x18(0x1)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_221E[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_223A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               OutClassificationLocation;                         // 0x20(0x18)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxLocationDiff;                                   // 0x38(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x3C(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2221[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_223B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
