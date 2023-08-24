@@ -121,15 +121,11 @@ LRESULT CALLBACK WindowsHook::HookWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, L
     // Is the event is a key press
     if (uMsg == WM_KEYDOWN)
     {
-        // Tab is pressed and was not pressed before
-        if (wParam == VK_TAB && !(lParam & (1 << 30)))
+        // F12 is pressed and was not pressed before
+        if (wParam == VK_F12 && !(lParam & (1 << 30)))
         {
-            // If Left Shift is pressed
-            if (GetAsyncKeyState(VK_LSHIFT) & (1 << 15))
-            {
-                show = !overlay->ShowOverlay();
-                overlay->ShowOverlay(show);
-            }
+            show = !overlay->ShowOverlay();
+            overlay->ShowOverlay(show);
         }
     }
 

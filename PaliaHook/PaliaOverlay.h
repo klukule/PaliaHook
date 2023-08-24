@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 #include <SDK.hpp>
-#include <ImGui/imgui.h>
+#include <imgui.h>
 
 using namespace SDK;
 

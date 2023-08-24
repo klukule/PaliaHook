@@ -1,6 +1,6 @@
 #include "OverlayBase.h"
 #include "RendererDetector.h"
-#include "ImGui/imgui.h"
+#include <imgui.h>
 #include "Windows/WindowsHook.h"
 #include <cmath>
 

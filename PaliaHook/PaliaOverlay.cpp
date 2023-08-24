@@ -1,5 +1,5 @@
 #include "PaliaOverlay.h"
-#include <ImGui/imgui.h>
+#include <imgui.h>
 #include <RendererDetector.h>
 #include <BaseHook.h>
 #include <format>
