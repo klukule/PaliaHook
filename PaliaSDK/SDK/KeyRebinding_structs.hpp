@@ -25,18 +25,6 @@ enum class EKeyRebindingResultType : uint8
 	EKeyRebindingResultType__EKeyRebindingResultType_MAX = 8,
 };
 
-enum class EPlatform : uint8
-{
-	EPlatform__Default             = 0,
-	EPlatform__PC                  = 1,
-	EPlatform__PS4                 = 2,
-	EPlatform__PS5                 = 3,
-	EPlatform__Switch              = 4,
-	EPlatform__Xbox                = 5,
-	EPlatform__Mobile              = 6,
-	EPlatform__EPlatform_MAX       = 7,
-};
-
 enum class EInputControlsType : uint8
 {
 	EInputControlsType__KeyBoard_Mouse = 0,
@@ -59,13 +47,6 @@ enum class EKeyRebindingSlot : uint8
 	EKeyRebindingSlot__First       = 1,
 	EKeyRebindingSlot__Second      = 2,
 	EKeyRebindingSlot__EKeyRebindingSlot_MAX = 3,
-};
-
-enum class EEnableKeyRebind : uint8
-{
-	EEnableKeyRebind__Disable      = 0,
-	EEnableKeyRebind__Enable       = 1,
-	EEnableKeyRebind__EEnableKeyRebind_MAX = 2,
 };
 
 
@@ -91,6 +72,14 @@ public:
 	struct FKey                                  ChordKey;                                          // 0x18(0x18)(Edit, BlueprintVisible, Transient, DisableEditOnInstance, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// 0x10 (0x10 - 0x0)
+// ScriptStruct KeyRebinding.InputKeysWithMappings
+struct FInputKeysWithMappings
+{
+public:
+	TArray<struct FInputKeys>                    KeysArray;                                         // 0x0(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+};
+
 // 0x38 (0x38 - 0x0)
 // ScriptStruct KeyRebinding.KeyRebindingMappingItem
 struct FKeyRebindingMappingItem
@@ -112,7 +101,7 @@ public:
 	bool                                         bCanBeRebind;                                      // 0x14(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bCanBeUnbound;                                     // 0x15(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUnbound;                                          // 0x16(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_833[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_590[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FKeyRebindingMappingItem>      MappingItems;                                      // 0x18(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -162,11 +151,27 @@ public:
 };
 
 // 0x10 (0x10 - 0x0)
+// ScriptStruct KeyRebinding.InputKeysImages
+struct FInputKeysImages
+{
+public:
+	TArray<class UTexture2D*>                    Images;                                            // 0x0(0x10)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, NativeAccessSpecifierPublic)
+};
+
+// 0x10 (0x10 - 0x0)
+// ScriptStruct KeyRebinding.MulticastRefreshKeys
+struct FMulticastRefreshKeys
+{
+public:
+	TArray<FDelegateProperty_>                   DelegateArray;                                     // 0x0(0x10)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+
+// 0x10 (0x10 - 0x0)
 // ScriptStruct KeyRebinding.InputActionsWithSameDesc
 struct FInputActionsWithSameDesc
 {
 public:
-	uint8                                        Pad_839[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_59B[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -194,14 +199,6 @@ public:
 	struct FInputModifierTypes                   ModifierClassTypes;                                // 0x18(0x10)(Edit, NativeAccessSpecifierPublic)
 };
 
-// 0x10 (0x10 - 0x0)
-// ScriptStruct KeyRebinding.KeyRebindCallBackDelegateArray
-struct FKeyRebindCallBackDelegateArray
-{
-public:
-	TArray<FDelegateProperty_>                   KeyRebindDelegatesOfAction;                        // 0x0(0x10)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-
 // 0x80 (0x80 - 0x0)
 // ScriptStruct KeyRebinding.KeyRebindingSettingsInfo
 struct FKeyRebindingSettingsInfo
@@ -210,7 +207,7 @@ public:
 	class FName                                  InputActionName;                                   // 0x0(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FText                                  InputActionDescription;                            // 0x8(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, DisableEditOnInstance, EditConst, NativeAccessSpecifierPublic)
 	bool                                         bIsCoreAction;                                     // 0x20(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_843[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_5A7[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        GroupID;                                           // 0x24(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FText                                  GroupDescription;                                  // 0x28(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, DisableEditOnInstance, EditConst, NativeAccessSpecifierPublic)
 	TArray<struct FInputKeys>                    DefaultKeysWithAction;                             // 0x40(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, NativeAccessSpecifierPublic)

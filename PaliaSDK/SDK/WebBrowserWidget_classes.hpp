@@ -22,7 +22,7 @@ public:
 	FMulticastInlineDelegateProperty_            OnConsoleMessage;                                  // 0x170(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class FString                                InitialURL;                                        // 0x180(0x10)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bSupportsTransparency;                             // 0x190(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_143F[0x17];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7B9[0x17];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -46,7 +46,7 @@ class UWebBrowserAssetManager : public UObject
 {
 public:
 	TSoftObjectPtr<class UMaterial>              DefaultMaterial;                                   // 0x28(0x30)(Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_1442[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7BE[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

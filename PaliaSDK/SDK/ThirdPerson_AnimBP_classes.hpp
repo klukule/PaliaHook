@@ -36,7 +36,7 @@ public:
 	struct FAnimNode_StateResult                 AnimGraphNode_StateResult;                         // 0x5D8(0x20)()
 	struct FAnimNode_StateMachine                AnimGraphNode_StateMachine;                        // 0x5F8(0xC8)()
 	bool                                         IsInAir_;                                          // 0x6C0(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_4235[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_422D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       Speed;                                             // 0x6C8(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 	static class UClass* StaticClass()

@@ -1062,6 +1062,50 @@ void UVALUI_AnnouncementsMessageModalDialog::RefreshMessageFromWeb()
 }
 
 
+// DelegateFunction ValeriaUI.VALUI_AnnouncementsMessageModalDialog.OnConfirmDelegate__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+
+void UVALUI_AnnouncementsMessageModalDialog::OnConfirmDelegate__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_AnnouncementsMessageModalDialog", "OnConfirmDelegate__DelegateSignature");
+
+	Params::UVALUI_AnnouncementsMessageModalDialog_OnConfirmDelegate__DelegateSignature_Params Parms{};
+
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function ValeriaUI.VALUI_AnnouncementsMessageModalDialog.NotifyConfirmComplete
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+
+void UVALUI_AnnouncementsMessageModalDialog::NotifyConfirmComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_AnnouncementsMessageModalDialog", "NotifyConfirmComplete");
+
+	Params::UVALUI_AnnouncementsMessageModalDialog_NotifyConfirmComplete_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function ValeriaUI.VALUI_AnnouncementsMessageModalDialog.HandleRefreshedMessageFromWeb
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -2379,9 +2423,9 @@ void UVALUI_ChatInputBar::VALUIEvent_OnCommitBlankText__DelegateSignature(class 
 // (MulticastDelegate, Public, Delegate, HasOutParams)
 // Parameters:
 // class FString                      InString                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<TSubclassOf<class UVAL_ChatCommand_Base>>CommandClasses                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+// TArray<class UVAL_ChatCommand_Base*>CommandObjects                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::VALUIEvent_OnCommandSuggestionsChanged__DelegateSignature(const class FString& InInString, TArray<TSubclassOf<class UVAL_ChatCommand_Base>>& InCommandClasses)
+void UVALUI_ChatInputBar::VALUIEvent_OnCommandSuggestionsChanged__DelegateSignature(const class FString& InInString, TArray<class UVAL_ChatCommand_Base*>& InCommandObjects)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2391,7 +2435,7 @@ void UVALUI_ChatInputBar::VALUIEvent_OnCommandSuggestionsChanged__DelegateSignat
 	Params::UVALUI_ChatInputBar_VALUIEvent_OnCommandSuggestionsChanged__DelegateSignature_Params Parms{};
 
 	Parms.InString = InInString;
-	Parms.CommandClasses = InCommandClasses;
+	Parms.CommandObjects = InCommandObjects;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3303,23 +3347,21 @@ void UVALUI_ChatPanelBase::HandleOnStateChanged(enum class EVALUI_ChatPanelState
 }
 
 
-// Function ValeriaUI.VALUI_ChatPanelBase.HandleOnChatroomJoined
-// (Final, Native, Protected)
+// Function ValeriaUI.VALUI_ChatPanelBase.HandleOnPawnChanged
+// (Final, Native, Private)
 // Parameters:
-// bool                               bWasSuccess                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                      RoomId                                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APawn*                       Pawn                                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleOnChatroomJoined(bool InbWasSuccess, const class FString& InRoomId)
+void UVALUI_ChatPanelBase::HandleOnPawnChanged(class APawn* InPawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (!Func)
-		Func = Class->GetFunction("VALUI_ChatPanelBase", "HandleOnChatroomJoined");
+		Func = Class->GetFunction("VALUI_ChatPanelBase", "HandleOnPawnChanged");
 
-	Params::UVALUI_ChatPanelBase_HandleOnChatroomJoined_Params Parms{};
+	Params::UVALUI_ChatPanelBase_HandleOnPawnChanged_Params Parms{};
 
-	Parms.bWasSuccess = InbWasSuccess;
-	Parms.RoomId = InRoomId;
+	Parms.Pawn = InPawn;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4831,6 +4873,31 @@ bool UVALUI_ListView_Styled::ShouldScrollBarBeVisible()
 }
 
 
+// DelegateFunction ValeriaUI.VALUI_ListView_Styled.OnListItemSelectionChangedWithInputTypeDynamic__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// class UObject*                     Item                                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bIsSelected                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// enum class ESelectInfo             SelectType                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVALUI_ListView_Styled::OnListItemSelectionChangedWithInputTypeDynamic__DelegateSignature(class UObject* InItem, bool InbIsSelected, enum class ESelectInfo InSelectType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_ListView_Styled", "OnListItemSelectionChangedWithInputTypeDynamic__DelegateSignature");
+
+	Params::UVALUI_ListView_Styled_OnListItemSelectionChangedWithInputTypeDynamic__DelegateSignature_Params Parms{};
+
+	Parms.Item = InItem;
+	Parms.bIsSelected = InbIsSelected;
+	Parms.SelectType = InSelectType;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // DelegateFunction ValeriaUI.VALUI_ListView_Styled.OnListItemsChanged__DelegateSignature
 // (MulticastDelegate, Public, Delegate, HasOutParams)
 // Parameters:
@@ -6312,6 +6379,25 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenNewsInbox()
 }
 
 
+// Function ValeriaUI.VALUI_UIManagerWidgetBase.Implementation_OpenMenuHub
+// (BlueprintCosmetic, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+
+void UVALUI_UIManagerWidgetBase::Implementation_OpenMenuHub()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_UIManagerWidgetBase", "Implementation_OpenMenuHub");
+
+	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenMenuHub_Params Parms{};
+
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // Function ValeriaUI.VALUI_UIManagerWidgetBase.Implementation_OpenMailbox
 // (BlueprintCosmetic, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -7174,8 +7260,9 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::RequestBundleOffers()
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // struct FGuid                       BundleID                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// enum class EVALUI_PremiumCurrencyProviderProvider                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumCurrencyPurchaseWidgetBase::PurchasePremiumCurrency(struct FGuid& InBundleID)
+void UVALUI_PremiumCurrencyPurchaseWidgetBase::PurchasePremiumCurrency(struct FGuid& InBundleID, enum class EVALUI_PremiumCurrencyProvider& InProvider)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7185,6 +7272,7 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::PurchasePremiumCurrency(struct FG
 	Params::UVALUI_PremiumCurrencyPurchaseWidgetBase_PurchasePremiumCurrency_Params Parms{};
 
 	Parms.BundleID = InBundleID;
+	Parms.Provider = InProvider;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

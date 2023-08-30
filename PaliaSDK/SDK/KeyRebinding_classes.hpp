@@ -33,7 +33,7 @@ class UBindingKeyListenerWidget : public UUserWidget
 {
 public:
 	FMulticastInlineDelegateProperty_            OnAnyKeyTriggered;                                 // 0x278(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6BD[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_46F[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -66,13 +66,29 @@ public:
 
 };
 
+// 0x8 (0x748 - 0x740)
+// Class KeyRebinding.EnhancedPlayerInputWithKeyRebind
+class UEnhancedPlayerInputWithKeyRebind : public UEnhancedPlayerInput
+{
+public:
+	enum class ECommonInputType                  CurrentInputType;                                  // 0x740(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                        Pad_47E[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+
+	static class UClass* StaticClass()
+	{
+		static class UClass* Clss = UObject::FindClassFast("EnhancedPlayerInputWithKeyRebind");
+		return Clss;
+	}
+
+};
+
 // 0x58 (0x80 - 0x28)
 // Class KeyRebinding.IARichTextBlockImageDecorator
 class UIARichTextBlockImageDecorator : public URichTextBlockDecorator
 {
 public:
 	class UDataTable*                            IconTable;                                         // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_6C6[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_481[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -82,14 +98,12 @@ public:
 
 };
 
-// 0x10 (0x288 - 0x278)
+// 0x50 (0x2C8 - 0x278)
 // Class KeyRebinding.InputActionDescriptionWidget
 class UInputActionDescriptionWidget : public UUserWidget
 {
 public:
-	enum class EPlatform                         PlatformOption;                                    // 0x278(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6CF[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
-	class UDataTable*                            IconTable;                                         // 0x280(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TMap<enum class ERedirectsPlatform, class UDataTable*> AllPlatformIconTables;                             // 0x278(0x50)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
 	{
@@ -97,7 +111,6 @@ public:
 		return Clss;
 	}
 
-	struct FKeyRebindingIcons RefreshDiscription(class FName& InActionName, bool InbIsGamepadKey);
 };
 
 // 0x50 (0x80 - 0x30)
@@ -137,7 +150,7 @@ class UKeyRebindingDatasetSettings : public UDeveloperSettings
 public:
 	TMap<enum class ERedirectsPlatform, TSubclassOf<class UKeyRebindingMappingDataset>> KeyRebindingDatasetOfAllPlatform;                  // 0x38(0x50)(Edit, Config, NoClear, UObjectWrapper, NativeAccessSpecifierPublic)
 	float                                        TipDelayTime;                                      // 0x88(0x4)(Edit, ZeroConstructor, Config, NoClear, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6D9[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_489[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -177,11 +190,10 @@ public:
 
 	float GetPromptDelayTime();
 	class FString GetKeyFName(struct FKey& InInKey);
-	TArray<class UTexture2D*> GetImagesWithInputKeys(const struct FInputKeys& InInputKeys, bool InbIsGamepadKey, class UInputActionDescriptionWidget* InActionDescWidget);
-	TArray<class UTexture2D*> GetImagesWithActionNameAndSlot(class FName& InActionName, enum class EKeyRebindingSlot InSlotNum, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget);
-	TArray<class UTexture2D*> GetImagesWithAction(class UInputAction* InInputAction, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget);
-	struct FKeyRebindingIcons GetImagesArrayWithActionName(class FName& InActionName, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget);
-	void GetAllInputActionMappingInfo(TArray<struct FKeyRebindingSettingsInfo>* InOutKeyRebindingSettingsInfo, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget);
+	TArray<class UTexture2D*> GetImagesWithInputKeys(const struct FInputKeys& InInputKeys, class UInputActionDescriptionWidget* InActionDescWidget);
+	struct FKeyRebindingIcons GetImagesArrayWithActionName(class FName& InActionName, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget, bool InbIsLockedCurrentInput);
+	void GetAllInputActionMappingInfo(TArray<struct FKeyRebindingSettingsInfo>* InOutKeyRebindingSettingsInfo, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget, bool InbIsLockedCurrentInput);
+	TArray<struct FInputKeysImages> GetAllImagesWithAction(class UInputAction* InInputAction, class UEnhancedInputSubsystemWithKeyRebinding* InEnhancedInputSubsystem, class UInputActionDescriptionWidget* InActionDescWidget, bool InbIsGamepadKey, bool InbIsLockedCurrentInput);
 };
 
 // 0x58 (0x88 - 0x30)
@@ -191,7 +203,7 @@ class UUnAvailableKeysAsset : public UDataAsset
 public:
 	TSet<struct FKey>                            UnAvailableKeySet;                                 // 0x30(0x50)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	enum class EInputControlsType                InputControlsType;                                 // 0x80(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_761[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4FE[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -201,11 +213,16 @@ public:
 
 };
 
-// 0x0 (0x1E0 - 0x1E0)
+// 0x100 (0x2E8 - 0x1E8)
 // Class KeyRebinding.EnhancedInputSubsystemWithKeyRebinding
 class UEnhancedInputSubsystemWithKeyRebinding : public UEnhancedInputLocalPlayerSubsystem
 {
 public:
+	TMap<class UInputMappingContext*, class UInputMappingContext*> ContextRedirects;                                  // 0x1E8(0x50)(Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	uint8                                        Pad_525[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	TMap<class UInputAction*, struct FMulticastRefreshKeys> RefreshKeysCallBackMap;                            // 0x240(0x50)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TSet<class UInputMappingContext*>            AppliedIMC;                                        // 0x290(0x50)(NativeAccessSpecifierPrivate)
+	uint8                                        Pad_526[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -213,8 +230,11 @@ public:
 		return Clss;
 	}
 
+	void UnRegisterDelegateToRefreshKeys(class UInputAction* InInputAction, FDelegateProperty_& InRefreshKeysDelegate);
 	void RequestRebuildControlMappings(struct FModifyContextOptions& InOptions, enum class EInputMappingRebuildType InRebuildType);
 	void RemoveMappingContext(class UInputMappingContext* InMappingContext, struct FModifyContextOptions& InOptions);
+	void RegisterDelegateToRefreshKeys(class UInputAction* InInputAction, FDelegateProperty_& InRefreshKeysDelegate);
+	TArray<struct FInputKeys> GetKeysForInputAction(class UInputAction* InInputAction, bool InbIsGamepadKey, bool InbIsLockedCurrentInput);
 	void AddMappingContext(class UInputMappingContext* InMappingContext, int32 InPriority, struct FModifyContextOptions& InOptions);
 };
 
@@ -252,9 +272,9 @@ class UKeyRebindingSubsystem : public ULocalPlayerSubsystem
 {
 public:
 	class UKeyRebindingMappingDataset*           KeyRebindingDataset;                               // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TMap<class FName, struct FKeyRebindCallBackDelegateArray> KeyRebindingCallBackMap;                           // 0x38(0x50)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<class FName, FDelegateProperty_>        KeyRebindingCallBackMap;                           // 0x38(0x50)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	TMap<class FName, class UInputMappingContext*> KeyRebindingMap;                                   // 0x88(0x50)(UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_818[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_57E[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -267,12 +287,10 @@ public:
 	void SaveCustomRemappingDataset();
 	void ResetToDefaultKeyMapping();
 	void RegisterCompleteKeyRebindingEvent(class FName InActionName, FDelegateProperty_& InKeyRebindingCallBackDelegate);
-	struct FInputKeys QueryKeysOfActionAndSlot(class FName& InActionName, enum class EKeyRebindingSlot InSlotNum, bool InbIsGamepadKey);
-	TArray<struct FInputKeys> QueryCustomRemappingKeys(class FName& InActionName, bool InbIsGamepadKey);
-	struct FKeyRebindingMappingsWithAction GetMappingsWithAction(class FName InActionName);
-	TArray<struct FKey> GetAllKeysWithActionBound(bool InbIsGamepadKey);
+	struct FInputKeys QueryKeysOfActionAndSlot(class FName& InActionName, enum class EKeyRebindingSlot InSlotNum, bool InbIsGamepadKey, bool InbIsLockedCurrentInput);
+	TArray<struct FInputKeys> QueryCustomRemappingKeys(class FName& InActionName, bool InbIsGamepadKey, bool InbIsLockedCurrentInput);
+	TArray<struct FKey> GetAllKeysWithActionBound(bool InbIsGamepadKey, bool InbIsLockedCurrentInput);
 	class FName GetActionNameWithAction(class UInputAction* InInputAction);
-	bool DoesActionHaveMappingKey(class FName& InActionName, bool InbIsGamepadKey);
 	void ApplyLoadKeyRebindingSettings();
 	void ApplyCustomKeyMapping();
 };

@@ -30,19 +30,19 @@ public:
 	bool                                         BlockMovementOnOutro;                              // 0x489(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         CanLoop;                                           // 0x48A(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         LoopStartsInIntro;                                 // 0x48B(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_2C23[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A4C[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UClass*                                GatherGameplayEffect;                              // 0x490(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	double                                       CameraShakeAmount;                                 // 0x498(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         CameraShakeShouldTrigger;                          // 0x4A0(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         ButtonPressed;                                     // 0x4A1(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_2C24[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A4E[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        DamageOnHit;                                       // 0x4A4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                  AnimationName;                                     // 0x4A8(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                  MontageSection;                                    // 0x4B0(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UClass*                                StaminaEffect;                                     // 0x4B8(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	struct FBoxSphereBounds                      ProbeSphere;                                       // 0x4C0(0x38)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                         EnforceYaw;                                        // 0x4F8(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_2C26[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A52[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       EnforcedYaw;                                       // 0x500(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FActiveGameplayEffectHandle           GameplayEffect_AbilityLockedIn;                    // 0x508(0x8)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	struct FActiveGameplayEffectHandle           GameplayEffect_MovementBlocker;                    // 0x510(0x8)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
@@ -51,7 +51,7 @@ public:
 	bool                                         RetriggerAbilityFromOutroOnInputPress;             // 0x528(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         IsFinishing;                                       // 0x529(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         ReLoopIfInputWithinTimeWindow;                     // 0x52A(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_2C2B[0x5];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A54[0x5];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVAL_TaskProxy_PlayMontageAndWaitForEvent* Async_Task;                                        // 0x530(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	bool                                         LockedIn;                                          // 0x538(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         ButtonPressToTriggerNextLoop;                      // 0x539(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -64,11 +64,12 @@ public:
 		return Clss;
 	}
 
+	void LoadAbilityAssets(class AValeriaCharacter* InValeriaCharacter);
 	void ConsiderCancellingLoop(bool InCallFunc_Not_PreBool_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue_1, bool InCallFunc_IsButtonPressed_ButtonPressed, bool InCallFunc_Not_PreBool_ReturnValue_2, bool InCallFunc_IsAbilityLockedIn_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue_3, bool InCallFunc_BooleanAND_ReturnValue);
 	void IsButtonPressed(bool* InButtonPressed);
 	void Callback_InputReleased();
 	void Callback_InputPressed(bool InCallFunc_BooleanAND_ReturnValue, int64 InCallFunc_GetValeriaTimestampMs64_ReturnValue);
-	void DoGatherSFX(bool InCanDamage, class AActor* InObject, class AActor* InInstigator, int32 InNewLocalVar_0, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_HasAuthority_ReturnValue, bool InTemp_bool_Variable, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AActor* InK2Node_Select_Default, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class AValeriaPlayerController* InCallFunc_GetValeriaPlayerController_ReturnValue, const struct FValeriaItem& InCallFunc_GetEquippedItem_ReturnValue);
+	void DoGatherSFX(bool InCanDamage, class AActor* InObject, class AActor* InInstigator, int32 InNewLocalVar_0, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, bool InCallFunc_HasAuthority_ReturnValue, bool InTemp_bool_Variable, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class AValeriaPlayerController* InCallFunc_GetValeriaPlayerController_ReturnValue, const struct FValeriaItem& InCallFunc_GetEquippedItem_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class AActor* InK2Node_Select_Default);
 	bool IsAbilityLockedIn(class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class UValeriaGASComponent* InCallFunc_GetGAS_ReturnValue, TScriptInterface<class IGameplayTagAssetInterface> InCallFunc_HasMatchingGameplayTag_self_CastInput, bool InCallFunc_HasMatchingGameplayTag_ReturnValue, bool InCallFunc_IsAbilityMarkedLockedIn_ReturnValue, bool InCallFunc_BooleanOR_ReturnValue, bool InCallFunc_BooleanOR_ReturnValue_1);
 	void OnGatherServer(class AActor* InActor);
 	void OnGatherClient(class AActor* InActor);

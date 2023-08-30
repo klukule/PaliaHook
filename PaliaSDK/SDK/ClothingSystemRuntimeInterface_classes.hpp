@@ -45,7 +45,7 @@ public:
 class UClothingInteractor : public UObject
 {
 public:
-	uint8                                        Pad_1A14[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1712[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -61,7 +61,7 @@ class UClothingSimulationInteractor : public UObject
 {
 public:
 	TMap<class FName, class UClothingInteractor*> ClothingInteractors;                               // 0x28(0x50)(UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A85[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1774[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -129,7 +129,7 @@ public:
 	int32                                        NumFixedVerts;                                     // 0x78(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaxBoneWeights;                                    // 0x7C(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<uint32>                               SelfCollisionIndices;                              // 0x80(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A90[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1788[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

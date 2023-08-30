@@ -17,6 +17,34 @@ namespace SDK
 // STRUCTS
 //---------------------------------------------------------------------------------------------------------------------
 
+// 0x2B8 (0x2B8 - 0x0)
+// ScriptStruct ValeriaDTOs.VALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable
+struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable
+{
+public:
+	uint8                                        BodyType;                                          // 0x0(0x1)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                        Pad_24AF[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	float                                        Thickness;                                         // 0x4(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                        Height;                                            // 0x8(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                        GenderExpression;                                  // 0xC(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                        MuscularExpression;                                // 0x10(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                 AnimSetId;                                         // 0x14(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                        Pad_24B2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	TMap<class FString, struct FGuid>            AnimSet_VariantSelections;                         // 0x28(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
+	struct FGuid                                 SkinToneId;                                        // 0x78(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FGuid>            SkinTone_VariantSelections;                        // 0x88(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
+	struct FGuid                                 EyesId;                                            // 0xD8(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FGuid>            Eyes_VariantSelections;                            // 0xE8(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
+	struct FGuid                                 HairStyleId;                                       // 0x138(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FGuid>            HairStyle_VariantSelections;                       // 0x148(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
+	struct FGuid                                 HeadId;                                            // 0x198(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FGuid>            Head_VariantSelections;                            // 0x1A8(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
+	struct FGuid                                 FacialHairStyleId;                                 // 0x1F8(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FGuid>            FacialHairStyle_VariantSelections;                 // 0x208(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
+	struct FGuid                                 VoiceId;                                           // 0x258(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FGuid>            Voice_VariantSelections;                           // 0x268(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
+};
+
 // 0x420 (0x420 - 0x0)
 // ScriptStruct ValeriaDTOs.VALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile
 struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile
@@ -44,34 +72,6 @@ public:
 	TMap<class FString, struct FGuid>            Glider_VariantSelections;                          // 0x370(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
 	struct FGuid                                 PetId;                                             // 0x3C0(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class FString, struct FGuid>            Pet_VariantSelections;                             // 0x3D0(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
-};
-
-// 0x2B8 (0x2B8 - 0x0)
-// ScriptStruct ValeriaDTOs.VALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable
-struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable
-{
-public:
-	uint8                                        BodyType;                                          // 0x0(0x1)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26D4[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
-	float                                        Thickness;                                         // 0x4(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                        Height;                                            // 0x8(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                        GenderExpression;                                  // 0xC(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                        MuscularExpression;                                // 0x10(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                 AnimSetId;                                         // 0x14(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26D5[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
-	TMap<class FString, struct FGuid>            AnimSet_VariantSelections;                         // 0x28(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
-	struct FGuid                                 SkinToneId;                                        // 0x78(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FGuid>            SkinTone_VariantSelections;                        // 0x88(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
-	struct FGuid                                 EyesId;                                            // 0xD8(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FGuid>            Eyes_VariantSelections;                            // 0xE8(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
-	struct FGuid                                 HairStyleId;                                       // 0x138(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FGuid>            HairStyle_VariantSelections;                       // 0x148(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
-	struct FGuid                                 HeadId;                                            // 0x198(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FGuid>            Head_VariantSelections;                            // 0x1A8(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
-	struct FGuid                                 FacialHairStyleId;                                 // 0x1F8(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FGuid>            FacialHairStyle_VariantSelections;                 // 0x208(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
-	struct FGuid                                 VoiceId;                                           // 0x258(0x10)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FGuid>            Voice_VariantSelections;                           // 0x268(0x50)(BlueprintVisible, RepSkip, NativeAccessSpecifierPublic)
 };
 
 // 0x718 (0x718 - 0x0)

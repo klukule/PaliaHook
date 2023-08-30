@@ -24,7 +24,7 @@ public:
 	struct FVALDTOS_MetaCharacterFormat          A;                                                 // 0x0(0x718)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVALDTOS_MetaCharacterFormat          B;                                                 // 0x718(0x718)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xE30(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26BE[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2494[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x848 (0x848 - 0x0)
@@ -35,7 +35,7 @@ public:
 	struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile A;                                                 // 0x0(0x420)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile B;                                                 // 0x420(0x420)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x840(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26C4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_24A3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x578 (0x578 - 0x0)
@@ -46,7 +46,7 @@ public:
 	struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable A;                                                 // 0x0(0x2B8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable B;                                                 // 0x2B8(0x2B8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x570(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_26CB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_24AB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

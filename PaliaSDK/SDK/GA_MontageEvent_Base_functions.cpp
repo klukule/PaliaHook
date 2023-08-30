@@ -15,6 +15,29 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Function GA_MontageEvent_Base.GA_MontageEvent_Base_C.GetWasCancelled
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                               WasCancelled                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_MontageEvent_Base_C::GetWasCancelled(bool* InWasCancelled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("GA_MontageEvent_Base_C", "GetWasCancelled");
+
+	Params::UGA_MontageEvent_Base_C_GetWasCancelled_Params Parms{};
+
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (InWasCancelled != nullptr)
+		*InWasCancelled = Parms.WasCancelled;
+
+}
+
+
 // Function GA_MontageEvent_Base.GA_MontageEvent_Base_C.IsShuttingDown
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:

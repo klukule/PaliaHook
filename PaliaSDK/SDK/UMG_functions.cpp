@@ -4828,585 +4828,6 @@ class UUserWidgetExtension* UUserWidget::AddExtension(TSubclassOf<class UUserWid
 }
 
 
-// Function UMG.BackgroundBlur.SetVerticalAlignment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class EVerticalAlignment      InVerticalAlignment                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBackgroundBlur::SetVerticalAlignment(enum class EVerticalAlignment InInVerticalAlignment)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("BackgroundBlur", "SetVerticalAlignment");
-
-	Params::UBackgroundBlur_SetVerticalAlignment_Params Parms{};
-
-	Parms.InVerticalAlignment = InInVerticalAlignment;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.BackgroundBlur.SetPadding
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FMargin                     InPadding                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void UBackgroundBlur::SetPadding(const struct FMargin& InInPadding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("BackgroundBlur", "SetPadding");
-
-	Params::UBackgroundBlur_SetPadding_Params Parms{};
-
-	Parms.InPadding = InInPadding;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.BackgroundBlur.SetLowQualityFallbackBrush
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSlateBrush                 InBrush                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UBackgroundBlur::SetLowQualityFallbackBrush(struct FSlateBrush& InInBrush)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("BackgroundBlur", "SetLowQualityFallbackBrush");
-
-	Params::UBackgroundBlur_SetLowQualityFallbackBrush_Params Parms{};
-
-	Parms.InBrush = InInBrush;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.BackgroundBlur.SetHorizontalAlignment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class EHorizontalAlignment    InHorizontalAlignment                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBackgroundBlur::SetHorizontalAlignment(enum class EHorizontalAlignment InInHorizontalAlignment)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("BackgroundBlur", "SetHorizontalAlignment");
-
-	Params::UBackgroundBlur_SetHorizontalAlignment_Params Parms{};
-
-	Parms.InHorizontalAlignment = InInHorizontalAlignment;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.BackgroundBlur.SetCornerRadius
-// (Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector4                    InCornerRadius                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBackgroundBlur::SetCornerRadius(const struct FVector4& InInCornerRadius)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("BackgroundBlur", "SetCornerRadius");
-
-	Params::UBackgroundBlur_SetCornerRadius_Params Parms{};
-
-	Parms.InCornerRadius = InInCornerRadius;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.BackgroundBlur.SetBlurStrength
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                              InStrength                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBackgroundBlur::SetBlurStrength(float InInStrength)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("BackgroundBlur", "SetBlurStrength");
-
-	Params::UBackgroundBlur_SetBlurStrength_Params Parms{};
-
-	Parms.InStrength = InInStrength;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.BackgroundBlur.SetBlurRadius
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                              InBlurRadius                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBackgroundBlur::SetBlurRadius(int32 InInBlurRadius)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("BackgroundBlur", "SetBlurRadius");
-
-	Params::UBackgroundBlur_SetBlurRadius_Params Parms{};
-
-	Parms.InBlurRadius = InInBlurRadius;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.BackgroundBlur.SetApplyAlphaToBlur
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                               bInApplyAlphaToBlur                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBackgroundBlur::SetApplyAlphaToBlur(bool InbInApplyAlphaToBlur)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("BackgroundBlur", "SetApplyAlphaToBlur");
-
-	Params::UBackgroundBlur_SetApplyAlphaToBlur_Params Parms{};
-
-	Parms.bInApplyAlphaToBlur = InbInApplyAlphaToBlur;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.Button.SetTouchMethod
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class EButtonTouchMethod      InTouchMethod                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UButton::SetTouchMethod(enum class EButtonTouchMethod InInTouchMethod)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("Button", "SetTouchMethod");
-
-	Params::UButton_SetTouchMethod_Params Parms{};
-
-	Parms.InTouchMethod = InInTouchMethod;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.Button.SetStyle
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FButtonStyle                InStyle                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UButton::SetStyle(struct FButtonStyle& InInStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("Button", "SetStyle");
-
-	Params::UButton_SetStyle_Params Parms{};
-
-	Parms.InStyle = InInStyle;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.Button.SetPressMethod
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class EButtonPressMethod      InPressMethod                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UButton::SetPressMethod(enum class EButtonPressMethod InInPressMethod)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("Button", "SetPressMethod");
-
-	Params::UButton_SetPressMethod_Params Parms{};
-
-	Parms.InPressMethod = InInPressMethod;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.Button.SetColorAndOpacity
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FLinearColor                InColorAndOpacity                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UButton::SetColorAndOpacity(const struct FLinearColor& InInColorAndOpacity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("Button", "SetColorAndOpacity");
-
-	Params::UButton_SetColorAndOpacity_Params Parms{};
-
-	Parms.InColorAndOpacity = InInColorAndOpacity;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.Button.SetClickMethod
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class EButtonClickMethod      InClickMethod                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UButton::SetClickMethod(enum class EButtonClickMethod InInClickMethod)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("Button", "SetClickMethod");
-
-	Params::UButton_SetClickMethod_Params Parms{};
-
-	Parms.InClickMethod = InInClickMethod;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.Button.SetBackgroundColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FLinearColor                InBackgroundColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UButton::SetBackgroundColor(const struct FLinearColor& InInBackgroundColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("Button", "SetBackgroundColor");
-
-	Params::UButton_SetBackgroundColor_Params Parms{};
-
-	Parms.InBackgroundColor = InInBackgroundColor;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.Button.IsPressed
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UButton::IsPressed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("Button", "IsPressed");
-
-	Params::UButton_IsPressed_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.GridPanel.SetRowFill
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                              RowIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                              Coefficient                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGridPanel::SetRowFill(int32 InRowIndex, float InCoefficient)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("GridPanel", "SetRowFill");
-
-	Params::UGridPanel_SetRowFill_Params Parms{};
-
-	Parms.RowIndex = InRowIndex;
-	Parms.Coefficient = InCoefficient;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.GridPanel.SetColumnFill
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                              ColumnIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                              Coefficient                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGridPanel::SetColumnFill(int32 InColumnIndex, float InCoefficient)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("GridPanel", "SetColumnFill");
-
-	Params::UGridPanel_SetColumnFill_Params Parms{};
-
-	Parms.ColumnIndex = InColumnIndex;
-	Parms.Coefficient = InCoefficient;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.GridPanel.AddChildToGrid
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UWidget*                     Content                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                              InRow                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                              InColumn                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGridSlot*                   ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGridSlot* UGridPanel::AddChildToGrid(class UWidget* InContent, int32 InInRow, int32 InInColumn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("GridPanel", "AddChildToGrid");
-
-	Params::UGridPanel_AddChildToGrid_Params Parms{};
-
-	Parms.Content = InContent;
-	Parms.InRow = InInRow;
-	Parms.InColumn = InInColumn;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.OverlaySlot.SetVerticalAlignment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class EVerticalAlignment      InVerticalAlignment                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UOverlaySlot::SetVerticalAlignment(enum class EVerticalAlignment InInVerticalAlignment)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("OverlaySlot", "SetVerticalAlignment");
-
-	Params::UOverlaySlot_SetVerticalAlignment_Params Parms{};
-
-	Parms.InVerticalAlignment = InInVerticalAlignment;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.OverlaySlot.SetPadding
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FMargin                     InPadding                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void UOverlaySlot::SetPadding(const struct FMargin& InInPadding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("OverlaySlot", "SetPadding");
-
-	Params::UOverlaySlot_SetPadding_Params Parms{};
-
-	Parms.InPadding = InInPadding;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function UMG.OverlaySlot.SetHorizontalAlignment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class EHorizontalAlignment    InHorizontalAlignment                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UOverlaySlot::SetHorizontalAlignment(enum class EHorizontalAlignment InInHorizontalAlignment)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("OverlaySlot", "SetHorizontalAlignment");
-
-	Params::UOverlaySlot_SetHorizontalAlignment_Params Parms{};
-
-	Parms.InHorizontalAlignment = InInHorizontalAlignment;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
 // Function UMG.Slider.SetValue
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -6157,6 +5578,196 @@ class UMaterialInstanceDynamic* UBorder::GetDynamicMaterial()
 		Func = Class->GetFunction("Border", "GetDynamicMaterial");
 
 	Params::UBorder_GetDynamicMaterial_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.Button.SetTouchMethod
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class EButtonTouchMethod      InTouchMethod                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButton::SetTouchMethod(enum class EButtonTouchMethod InInTouchMethod)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("Button", "SetTouchMethod");
+
+	Params::UButton_SetTouchMethod_Params Parms{};
+
+	Parms.InTouchMethod = InInTouchMethod;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.Button.SetStyle
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FButtonStyle                InStyle                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UButton::SetStyle(struct FButtonStyle& InInStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("Button", "SetStyle");
+
+	Params::UButton_SetStyle_Params Parms{};
+
+	Parms.InStyle = InInStyle;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.Button.SetPressMethod
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class EButtonPressMethod      InPressMethod                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButton::SetPressMethod(enum class EButtonPressMethod InInPressMethod)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("Button", "SetPressMethod");
+
+	Params::UButton_SetPressMethod_Params Parms{};
+
+	Parms.InPressMethod = InInPressMethod;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.Button.SetColorAndOpacity
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FLinearColor                InColorAndOpacity                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButton::SetColorAndOpacity(const struct FLinearColor& InInColorAndOpacity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("Button", "SetColorAndOpacity");
+
+	Params::UButton_SetColorAndOpacity_Params Parms{};
+
+	Parms.InColorAndOpacity = InInColorAndOpacity;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.Button.SetClickMethod
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class EButtonClickMethod      InClickMethod                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButton::SetClickMethod(enum class EButtonClickMethod InInClickMethod)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("Button", "SetClickMethod");
+
+	Params::UButton_SetClickMethod_Params Parms{};
+
+	Parms.InClickMethod = InInClickMethod;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.Button.SetBackgroundColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FLinearColor                InBackgroundColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButton::SetBackgroundColor(const struct FLinearColor& InInBackgroundColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("Button", "SetBackgroundColor");
+
+	Params::UButton_SetBackgroundColor_Params Parms{};
+
+	Parms.InBackgroundColor = InInBackgroundColor;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.Button.IsPressed
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UButton::IsPressed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("Button", "IsPressed");
+
+	Params::UButton_IsPressed_Params Parms{};
 
 
 	auto Flags = Func->FunctionFlags;
@@ -9259,6 +8870,87 @@ class UOverlaySlot* UOverlay::AddChildToOverlay(class UWidget* InContent)
 }
 
 
+// Function UMG.OverlaySlot.SetVerticalAlignment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class EVerticalAlignment      InVerticalAlignment                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UOverlaySlot::SetVerticalAlignment(enum class EVerticalAlignment InInVerticalAlignment)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("OverlaySlot", "SetVerticalAlignment");
+
+	Params::UOverlaySlot_SetVerticalAlignment_Params Parms{};
+
+	Parms.InVerticalAlignment = InInVerticalAlignment;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.OverlaySlot.SetPadding
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FMargin                     InPadding                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void UOverlaySlot::SetPadding(const struct FMargin& InInPadding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("OverlaySlot", "SetPadding");
+
+	Params::UOverlaySlot_SetPadding_Params Parms{};
+
+	Parms.InPadding = InInPadding;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.OverlaySlot.SetHorizontalAlignment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class EHorizontalAlignment    InHorizontalAlignment                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UOverlaySlot::SetHorizontalAlignment(enum class EHorizontalAlignment InInHorizontalAlignment)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("OverlaySlot", "SetHorizontalAlignment");
+
+	Params::UOverlaySlot_SetHorizontalAlignment_Params Parms{};
+
+	Parms.InHorizontalAlignment = InInHorizontalAlignment;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function UMG.SizeBox.SetWidthOverride
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -9771,6 +9463,314 @@ TArray<class UUserWidget*> UDynamicEntryBoxBase::GetAllEntries()
 
 	Params::UDynamicEntryBoxBase_GetAllEntries_Params Parms{};
 
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.BackgroundBlur.SetVerticalAlignment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class EVerticalAlignment      InVerticalAlignment                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBackgroundBlur::SetVerticalAlignment(enum class EVerticalAlignment InInVerticalAlignment)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BackgroundBlur", "SetVerticalAlignment");
+
+	Params::UBackgroundBlur_SetVerticalAlignment_Params Parms{};
+
+	Parms.InVerticalAlignment = InInVerticalAlignment;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.BackgroundBlur.SetPadding
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FMargin                     InPadding                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void UBackgroundBlur::SetPadding(const struct FMargin& InInPadding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BackgroundBlur", "SetPadding");
+
+	Params::UBackgroundBlur_SetPadding_Params Parms{};
+
+	Parms.InPadding = InInPadding;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.BackgroundBlur.SetLowQualityFallbackBrush
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSlateBrush                 InBrush                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UBackgroundBlur::SetLowQualityFallbackBrush(struct FSlateBrush& InInBrush)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BackgroundBlur", "SetLowQualityFallbackBrush");
+
+	Params::UBackgroundBlur_SetLowQualityFallbackBrush_Params Parms{};
+
+	Parms.InBrush = InInBrush;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.BackgroundBlur.SetHorizontalAlignment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class EHorizontalAlignment    InHorizontalAlignment                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBackgroundBlur::SetHorizontalAlignment(enum class EHorizontalAlignment InInHorizontalAlignment)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BackgroundBlur", "SetHorizontalAlignment");
+
+	Params::UBackgroundBlur_SetHorizontalAlignment_Params Parms{};
+
+	Parms.InHorizontalAlignment = InInHorizontalAlignment;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.BackgroundBlur.SetCornerRadius
+// (Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector4                    InCornerRadius                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBackgroundBlur::SetCornerRadius(const struct FVector4& InInCornerRadius)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BackgroundBlur", "SetCornerRadius");
+
+	Params::UBackgroundBlur_SetCornerRadius_Params Parms{};
+
+	Parms.InCornerRadius = InInCornerRadius;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.BackgroundBlur.SetBlurStrength
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                              InStrength                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBackgroundBlur::SetBlurStrength(float InInStrength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BackgroundBlur", "SetBlurStrength");
+
+	Params::UBackgroundBlur_SetBlurStrength_Params Parms{};
+
+	Parms.InStrength = InInStrength;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.BackgroundBlur.SetBlurRadius
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                              InBlurRadius                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBackgroundBlur::SetBlurRadius(int32 InInBlurRadius)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BackgroundBlur", "SetBlurRadius");
+
+	Params::UBackgroundBlur_SetBlurRadius_Params Parms{};
+
+	Parms.InBlurRadius = InInBlurRadius;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.BackgroundBlur.SetApplyAlphaToBlur
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bInApplyAlphaToBlur                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBackgroundBlur::SetApplyAlphaToBlur(bool InbInApplyAlphaToBlur)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BackgroundBlur", "SetApplyAlphaToBlur");
+
+	Params::UBackgroundBlur_SetApplyAlphaToBlur_Params Parms{};
+
+	Parms.bInApplyAlphaToBlur = InbInApplyAlphaToBlur;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.GridPanel.SetRowFill
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                              RowIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                              Coefficient                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGridPanel::SetRowFill(int32 InRowIndex, float InCoefficient)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("GridPanel", "SetRowFill");
+
+	Params::UGridPanel_SetRowFill_Params Parms{};
+
+	Parms.RowIndex = InRowIndex;
+	Parms.Coefficient = InCoefficient;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.GridPanel.SetColumnFill
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                              ColumnIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                              Coefficient                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGridPanel::SetColumnFill(int32 InColumnIndex, float InCoefficient)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("GridPanel", "SetColumnFill");
+
+	Params::UGridPanel_SetColumnFill_Params Parms{};
+
+	Parms.ColumnIndex = InColumnIndex;
+	Parms.Coefficient = InCoefficient;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function UMG.GridPanel.AddChildToGrid
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UWidget*                     Content                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              InRow                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              InColumn                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGridSlot*                   ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGridSlot* UGridPanel::AddChildToGrid(class UWidget* InContent, int32 InInRow, int32 InInColumn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("GridPanel", "AddChildToGrid");
+
+	Params::UGridPanel_AddChildToGrid_Params Parms{};
+
+	Parms.Content = InContent;
+	Parms.InRow = InInRow;
+	Parms.InColumn = InInColumn;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

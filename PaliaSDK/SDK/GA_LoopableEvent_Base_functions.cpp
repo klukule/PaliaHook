@@ -15,6 +15,27 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Function GA_LoopableEvent_Base.GA_LoopableEvent_Base_C.LoadAbilityAssets
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AValeriaCharacter*           ValeriaCharacter                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UGA_LoopableEvent_Base_C::LoadAbilityAssets(class AValeriaCharacter* InValeriaCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("GA_LoopableEvent_Base_C", "LoadAbilityAssets");
+
+	Params::UGA_LoopableEvent_Base_C_LoadAbilityAssets_Params Parms{};
+
+	Parms.ValeriaCharacter = InValeriaCharacter;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // Function GA_LoopableEvent_Base.GA_LoopableEvent_Base_C.ConsiderCancellingLoop
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -121,17 +142,17 @@ void UGA_LoopableEvent_Base_C::Callback_InputPressed(bool InCallFunc_BooleanAND_
 // class AActor*                      Instigator                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                              NewLocalVar_0                                                    (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwningActorFromActorInfo_ReturnValue                 (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_HasAuthority_ReturnValue                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               Temp_bool_Variable                                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwningActorFromActorInfo_ReturnValue_1               (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AActor*                      K2Node_Select_Default                                            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AValeriaCharacter*           K2Node_DynamicCast_AsValeria_Character                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AValeriaPlayerController*    CallFunc_GetValeriaPlayerController_ReturnValue                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FValeriaItem                CallFunc_GetEquippedItem_ReturnValue                             ()
+// bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                      K2Node_Select_Default                                            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::DoGatherSFX(bool InCanDamage, class AActor* InObject, class AActor* InInstigator, int32 InNewLocalVar_0, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_HasAuthority_ReturnValue, bool InTemp_bool_Variable, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AActor* InK2Node_Select_Default, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class AValeriaPlayerController* InCallFunc_GetValeriaPlayerController_ReturnValue, const struct FValeriaItem& InCallFunc_GetEquippedItem_ReturnValue)
+void UGA_LoopableEvent_Base_C::DoGatherSFX(bool InCanDamage, class AActor* InObject, class AActor* InInstigator, int32 InNewLocalVar_0, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, bool InCallFunc_HasAuthority_ReturnValue, bool InTemp_bool_Variable, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class AValeriaPlayerController* InCallFunc_GetValeriaPlayerController_ReturnValue, const struct FValeriaItem& InCallFunc_GetEquippedItem_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class AActor* InK2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -145,15 +166,15 @@ void UGA_LoopableEvent_Base_C::DoGatherSFX(bool InCanDamage, class AActor* InObj
 	Parms.Instigator = InInstigator;
 	Parms.NewLocalVar_0 = InNewLocalVar_0;
 	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = InCallFunc_GetOwningActorFromActorInfo_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
 	Parms.CallFunc_HasAuthority_ReturnValue = InCallFunc_HasAuthority_ReturnValue;
 	Parms.Temp_bool_Variable = InTemp_bool_Variable;
 	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_1 = InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1;
-	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
 	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
 	Parms.CallFunc_GetValeriaPlayerController_ReturnValue = InCallFunc_GetValeriaPlayerController_ReturnValue;
 	Parms.CallFunc_GetEquippedItem_ReturnValue = InCallFunc_GetEquippedItem_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.K2Node_Select_Default = InK2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 

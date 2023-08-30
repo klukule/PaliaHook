@@ -781,7 +781,7 @@ void ULib_Audio_C::Broadcast_Ak_Event_Location(class AActor* InActorHit, bool In
 // bool                               AutoDestroy                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               GetRtpcFromOwner                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UAkComponent*                AK                                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UAkComponent*                Ak                                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // int32                              ID                                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              PlayingID                                                        (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAkComponent*                AkComponent                                                      (Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
@@ -804,7 +804,7 @@ void ULib_Audio_C::Broadcast_Ak_Event_Location(class AActor* InActorHit, bool In
 // int32                              CallFunc_PostAkEvent_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_SetRTPCValue_Value_ImplicitCast                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::AkEventSpawnAttached(class UAkAudioEvent* InAkEvent, class AActor* InInstigator, class USceneComponent* InOwner, class FName InSocketName, bool InAutoDestroy, bool InGetRtpcFromOwner, class UObject* In__WorldContext, class UAkComponent** InAK, int32* InID, int32 InPlayingID, class UAkComponent* InAkComponent, double InLocallyControlled, bool InCallFunc_IsDedicatedServer_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class AActor* InCallFunc_GetOwner_ReturnValue, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue, bool InCallFunc_Try_to_Propagate_Rtpcs_Success, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue_1, class APawn* InK2Node_DynamicCast_AsPawn, bool InK2Node_DynamicCast_bSuccess, bool InCallFunc_IsLocallyControlled_ReturnValue, const struct FVector& InCallFunc_GetSocketLocation_ReturnValue, bool InCallFunc_IsWithinAttenuation_Within, FDelegateProperty_ InTemp_delegate_Variable, class UAkComponent* InCallFunc_SpawnAkComponentAtLocation_ReturnValue, bool InCallFunc_K2_AttachToComponent_ReturnValue, TArray<struct FAkExternalSourceInfo>& InTemp_struct_Variable, int32 InCallFunc_PostAkEvent_ReturnValue, float InCallFunc_SetRTPCValue_Value_ImplicitCast)
+void ULib_Audio_C::AkEventSpawnAttached(class UAkAudioEvent* InAkEvent, class AActor* InInstigator, class USceneComponent* InOwner, class FName InSocketName, bool InAutoDestroy, bool InGetRtpcFromOwner, class UObject* In__WorldContext, class UAkComponent** InAk, int32* InID, int32 InPlayingID, class UAkComponent* InAkComponent, double InLocallyControlled, bool InCallFunc_IsDedicatedServer_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class AActor* InCallFunc_GetOwner_ReturnValue, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue, bool InCallFunc_Try_to_Propagate_Rtpcs_Success, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue_1, class APawn* InK2Node_DynamicCast_AsPawn, bool InK2Node_DynamicCast_bSuccess, bool InCallFunc_IsLocallyControlled_ReturnValue, const struct FVector& InCallFunc_GetSocketLocation_ReturnValue, bool InCallFunc_IsWithinAttenuation_Within, FDelegateProperty_ InTemp_delegate_Variable, class UAkComponent* InCallFunc_SpawnAkComponentAtLocation_ReturnValue, bool InCallFunc_K2_AttachToComponent_ReturnValue, TArray<struct FAkExternalSourceInfo>& InTemp_struct_Variable, int32 InCallFunc_PostAkEvent_ReturnValue, float InCallFunc_SetRTPCValue_Value_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -843,8 +843,8 @@ void ULib_Audio_C::AkEventSpawnAttached(class UAkAudioEvent* InAkEvent, class AA
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InAK != nullptr)
-		*InAK = Parms.AK;
+	if (InAk != nullptr)
+		*InAk = Parms.Ak;
 
 	if (InID != nullptr)
 		*InID = Parms.ID;
@@ -1402,7 +1402,7 @@ int32 ULib_Audio_C::AkEventGlobal(class UAkAudioEvent* InAkEvent, class UObject*
 // Function Lib_Audio.Lib_Audio_C.Ak Object Velocity
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAkComponent*                AK                                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UAkComponent*                Ak                                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // double                             VectorLengthMax                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             Delta_Time                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                     Get_Previous_Location                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1411,19 +1411,21 @@ int32 ULib_Audio_C::AkEventGlobal(class UAkAudioEvent* InAkEvent, class UObject*
 // struct FVector                     Set_Previous_Location                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             VectorLength                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             VectorLengthClamped                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                             LengthClamped                                                    (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                             Length                                                           (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                        Object_velocity                                                  (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             VectorMax                                                        (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsDedicatedServer_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                     CallFunc_K2_GetComponentLocation_ReturnValue                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                     CallFunc_K2_GetComponentLocation_ReturnValue_1                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                     CallFunc_Subtract_VectorVector_ReturnValue                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_VSize_ReturnValue                                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                             CallFunc_Divide_DoubleDouble_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_MapRangeClamped_ReturnValue                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                             CallFunc_Divide_DoubleDouble_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_SetRTPCValue_Value_ImplicitCast                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::Ak_Object_Velocity(class UAkComponent* InAK, double InVectorLengthMax, double InDelta_Time, const struct FVector& InGet_Previous_Location, int32 InInterpTimeMs, class UObject* In__WorldContext, struct FVector* InSet_Previous_Location, double* InVectorLength, double* InVectorLengthClamped, class FName InObject_velocity, double InVectorMax, bool InCallFunc_IsDedicatedServer_ReturnValue, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue_1, const struct FVector& InCallFunc_Subtract_VectorVector_ReturnValue, double InCallFunc_VSize_ReturnValue, double InCallFunc_Divide_DoubleDouble_ReturnValue, double InCallFunc_MapRangeClamped_ReturnValue, bool InCallFunc_IsValid_ReturnValue, float InCallFunc_SetRTPCValue_Value_ImplicitCast)
+void ULib_Audio_C::Ak_Object_Velocity(class UAkComponent* InAk, double InVectorLengthMax, double InDelta_Time, const struct FVector& InGet_Previous_Location, int32 InInterpTimeMs, class UObject* In__WorldContext, struct FVector* InSet_Previous_Location, double* InVectorLength, double* InVectorLengthClamped, double InLengthClamped, double InLength, class FName InObject_velocity, double InVectorMax, bool InCallFunc_IsDedicatedServer_ReturnValue, bool InCallFunc_IsValid_ReturnValue, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue_1, const struct FVector& InCallFunc_Subtract_VectorVector_ReturnValue, double InCallFunc_VSize_ReturnValue, double InCallFunc_MapRangeClamped_ReturnValue, double InCallFunc_Divide_DoubleDouble_ReturnValue, float InCallFunc_SetRTPCValue_Value_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1432,22 +1434,24 @@ void ULib_Audio_C::Ak_Object_Velocity(class UAkComponent* InAK, double InVectorL
 
 	Params::ULib_Audio_C_Ak_Object_Velocity_Params Parms{};
 
-	Parms.AK = InAK;
+	Parms.Ak = InAk;
 	Parms.VectorLengthMax = InVectorLengthMax;
 	Parms.Delta_Time = InDelta_Time;
 	Parms.Get_Previous_Location = InGet_Previous_Location;
 	Parms.InterpTimeMs = InInterpTimeMs;
 	Parms.__WorldContext = In__WorldContext;
+	Parms.LengthClamped = InLengthClamped;
+	Parms.Length = InLength;
 	Parms.Object_velocity = InObject_velocity;
 	Parms.VectorMax = InVectorMax;
 	Parms.CallFunc_IsDedicatedServer_ReturnValue = InCallFunc_IsDedicatedServer_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
 	Parms.CallFunc_K2_GetComponentLocation_ReturnValue = InCallFunc_K2_GetComponentLocation_ReturnValue;
 	Parms.CallFunc_K2_GetComponentLocation_ReturnValue_1 = InCallFunc_K2_GetComponentLocation_ReturnValue_1;
 	Parms.CallFunc_Subtract_VectorVector_ReturnValue = InCallFunc_Subtract_VectorVector_ReturnValue;
 	Parms.CallFunc_VSize_ReturnValue = InCallFunc_VSize_ReturnValue;
-	Parms.CallFunc_Divide_DoubleDouble_ReturnValue = InCallFunc_Divide_DoubleDouble_ReturnValue;
 	Parms.CallFunc_MapRangeClamped_ReturnValue = InCallFunc_MapRangeClamped_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_Divide_DoubleDouble_ReturnValue = InCallFunc_Divide_DoubleDouble_ReturnValue;
 	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = InCallFunc_SetRTPCValue_Value_ImplicitCast;
 
 	UObject::ProcessEvent(Func, &Parms);

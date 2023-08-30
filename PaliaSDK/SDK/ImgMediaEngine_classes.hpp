@@ -18,7 +18,7 @@ class UImgMediaPlaybackComponent : public UActorComponent
 {
 public:
 	float                                        LODBias;                                           // 0xA0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C12[0x24];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1959[0x24];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

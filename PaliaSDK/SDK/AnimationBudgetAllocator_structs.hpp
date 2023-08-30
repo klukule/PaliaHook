@@ -43,7 +43,7 @@ public:
 	int32                                        ReducedWorkThrottleMaxPerFrame;                    // 0x48(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        BudgetPressureBeforeEmergencyReducedWork;          // 0x4C(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AutoCalculatedSignificanceMaxDistance;             // 0x50(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1730[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_50C[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

@@ -9099,9 +9099,10 @@ bool UCharacterStateMachineComponent::AllowDashCancelling()
 // DelegateFunction Palia.ChatManager.ValChat_OnDisplayReconnectChat__DelegateSignature
 // (MulticastDelegate, Public, Delegate)
 // Parameters:
+// bool                               bReconnecting                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ErrorMsg                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChatManager::ValChat_OnDisplayReconnectChat__DelegateSignature(const class FString& InErrorMsg)
+void UChatManager::ValChat_OnDisplayReconnectChat__DelegateSignature(bool InbReconnecting, const class FString& InErrorMsg)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9110,41 +9111,10 @@ void UChatManager::ValChat_OnDisplayReconnectChat__DelegateSignature(const class
 
 	Params::UChatManager_ValChat_OnDisplayReconnectChat__DelegateSignature_Params Parms{};
 
+	Parms.bReconnecting = InbReconnecting;
 	Parms.ErrorMsg = InErrorMsg;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
-// Function Palia.ChatManager.TryGetReconnectChatErrorMsg
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                      ErrorMsg                                                         (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UChatManager::TryGetReconnectChatErrorMsg(class FString* InErrorMsg)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("ChatManager", "TryGetReconnectChatErrorMsg");
-
-	Params::UChatManager_TryGetReconnectChatErrorMsg_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	if (InErrorMsg != nullptr)
-		*InErrorMsg = Parms.ErrorMsg;
-
-	return Parms.ReturnValue;
 
 }
 
@@ -9421,60 +9391,6 @@ void UChatManager::RequestMuteUser(bool InbMute, class FName& InCharacterName)
 
 	Parms.bMute = InbMute;
 	Parms.CharacterName = InCharacterName;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.ChatManager.RequestDisplayUnreachableChat
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                      ErrorMsg                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UChatManager::RequestDisplayUnreachableChat(const class FString& InErrorMsg)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("ChatManager", "RequestDisplayUnreachableChat");
-
-	Params::UChatManager_RequestDisplayUnreachableChat_Params Parms{};
-
-	Parms.ErrorMsg = InErrorMsg;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.ChatManager.RequestDisplayRetryingLoginChat
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                      ErrorMsg                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UChatManager::RequestDisplayRetryingLoginChat(const class FString& InErrorMsg)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("ChatManager", "RequestDisplayRetryingLoginChat");
-
-	Params::UChatManager_RequestDisplayRetryingLoginChat_Params Parms{};
-
-	Parms.ErrorMsg = InErrorMsg;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -9946,6 +9862,89 @@ bool UChatManager::HasChatPermission(enum class EVAL_ChatPermissions InPermissio
 }
 
 
+// Function Palia.ChatManager.HandlePlayerGuildChanged
+// (Final, Native, Private, HasDefaults)
+// Parameters:
+// class UVAL_PlayerGuildSubsystem*   PlayerGuildSubsystem                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGuid                       NewGuildId                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatManager::HandlePlayerGuildChanged(class UVAL_PlayerGuildSubsystem* InPlayerGuildSubsystem, const struct FGuid& InNewGuildId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ChatManager", "HandlePlayerGuildChanged");
+
+	Params::UChatManager_HandlePlayerGuildChanged_Params Parms{};
+
+	Parms.PlayerGuildSubsystem = InPlayerGuildSubsystem;
+	Parms.NewGuildId = InNewGuildId;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ChatManager.HandleOnVivoxLoginFailed
+// (Final, Native, Private)
+// Parameters:
+// int32                              ErrorCode                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                      ErrorMsg                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatManager::HandleOnVivoxLoginFailed(int32 InErrorCode, const class FString& InErrorMsg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ChatManager", "HandleOnVivoxLoginFailed");
+
+	Params::UChatManager_HandleOnVivoxLoginFailed_Params Parms{};
+
+	Parms.ErrorCode = InErrorCode;
+	Parms.ErrorMsg = InErrorMsg;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ChatManager.HandleOnVivoxLoggedIn
+// (Final, Native, Private)
+// Parameters:
+
+void UChatManager::HandleOnVivoxLoggedIn()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ChatManager", "HandleOnVivoxLoggedIn");
+
+	Params::UChatManager_HandleOnVivoxLoggedIn_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function Palia.ChatManager.HandleOnSignedInAsCharacter
 // (Final, Native, Private, HasDefaults)
 // Parameters:
@@ -10004,6 +10003,114 @@ void UChatManager::HandleOnServerIdChanged(const class FString& InID)
 }
 
 
+// Function Palia.ChatManager.HandleOnPawnChanged
+// (Final, Native, Private)
+// Parameters:
+// class APawn*                       Pawn                                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatManager::HandleOnPawnChanged(class APawn* InPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ChatManager", "HandleOnPawnChanged");
+
+	Params::UChatManager_HandleOnPawnChanged_Params Parms{};
+
+	Parms.Pawn = InPawn;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ChatManager.HandleOnPartyStateChanged
+// (Final, Native, Private)
+// Parameters:
+// enum class EVAL_PartyManagerState  State                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatManager::HandleOnPartyStateChanged(enum class EVAL_PartyManagerState InState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ChatManager", "HandleOnPartyStateChanged");
+
+	Params::UChatManager_HandleOnPartyStateChanged_Params Parms{};
+
+	Parms.State = InState;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ChatManager.HandleOnDirectMsgReceived
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// struct FS6Vivox_TextMsg            Msg                                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UChatManager::HandleOnDirectMsgReceived(struct FS6Vivox_TextMsg& InMsg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ChatManager", "HandleOnDirectMsgReceived");
+
+	Params::UChatManager_HandleOnDirectMsgReceived_Params Parms{};
+
+	Parms.Msg = InMsg;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ChatManager.HandleOnChannelMsgReceived
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// struct FS6Vivox_ChannelTextMsg     Msg                                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UChatManager::HandleOnChannelMsgReceived(struct FS6Vivox_ChannelTextMsg& InMsg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ChatManager", "HandleOnChannelMsgReceived");
+
+	Params::UChatManager_HandleOnChannelMsgReceived_Params Parms{};
+
+	Parms.Msg = InMsg;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function Palia.ChatManager.GetServerName
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -10018,36 +10125,6 @@ class FString UChatManager::GetServerName()
 
 	Params::UChatManager_GetServerName_Params Parms{};
 
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function Palia.ChatManager.GetLastMessages
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FMessageTarget              MessageTarget                                                    (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FValeriaChatMessage> ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<struct FValeriaChatMessage> UChatManager::GetLastMessages(const struct FMessageTarget& InMessageTarget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("ChatManager", "GetLastMessages");
-
-	Params::UChatManager_GetLastMessages_Params Parms{};
-
-	Parms.MessageTarget = InMessageTarget;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10118,6 +10195,34 @@ enum class EVAL_ChatPermissions UChatManager::GetChatPermissionFlags()
 }
 
 
+// Function Palia.ChatManager.GetChatErrorMsg
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UChatManager::GetChatErrorMsg()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ChatManager", "GetChatErrorMsg");
+
+	Params::UChatManager_GetChatErrorMsg_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function Palia.ChatManager.EchoValeriaChatMessage
 // (Final, Native, Private)
 // Parameters:
@@ -10133,6 +10238,33 @@ void UChatManager::EchoValeriaChatMessage(const struct FValeriaChatMessage& InCh
 	Params::UChatManager_EchoValeriaChatMessage_Params Parms{};
 
 	Parms.ChatMessage = InChatMessage;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ChatManager.EchoChatNotificationToSelf
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                      Message                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatManager::EchoChatNotificationToSelf(const class FString& InMessage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ChatManager", "EchoChatNotificationToSelf");
+
+	Params::UChatManager_EchoChatNotificationToSelf_Params Parms{};
+
+	Parms.Message = InMessage;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10329,6 +10461,33 @@ void UCookingSubsystem::SetRecipeOption_UseStarQualityItems(bool InUseStarQualit
 	Params::UCookingSubsystem_SetRecipeOption_UseStarQualityItems_Params Parms{};
 
 	Parms.UseStarQuality = InUseStarQuality;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.CookingSubsystem.SetRecipeOption_CraftMultiplier
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                              Multiplier                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCookingSubsystem::SetRecipeOption_CraftMultiplier(int32 InMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("CookingSubsystem", "SetRecipeOption_CraftMultiplier");
+
+	Params::UCookingSubsystem_SetRecipeOption_CraftMultiplier_Params Parms{};
+
+	Parms.Multiplier = InMultiplier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11564,9 +11723,10 @@ TArray<struct FValeriaItem> UInventoryComponent::GetAllPlaceableItemsInBag(struc
 // Parameters:
 // TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>ItemType                                                         (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              TintPersistID                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bRequireStarQuality                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBagSlotLocation            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FBagSlotLocation UInventoryComponent::FindItemByTypeAndVariant(TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>& InItemType, int32 InTintPersistID)
+struct FBagSlotLocation UInventoryComponent::FindItemByTypeAndVariant(TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>& InItemType, int32 InTintPersistID, bool InbRequireStarQuality)
 {
 	static class UFunction* Func = nullptr;
 
@@ -11577,6 +11737,7 @@ struct FBagSlotLocation UInventoryComponent::FindItemByTypeAndVariant(TSoftObjec
 
 	Parms.ItemType = InItemType;
 	Parms.TintPersistID = InTintPersistID;
+	Parms.bRequireStarQuality = InbRequireStarQuality;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11595,9 +11756,10 @@ struct FBagSlotLocation UInventoryComponent::FindItemByTypeAndVariant(TSoftObjec
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>ItemType                                                         (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bRequireStarQuality                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBagSlotLocation            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FBagSlotLocation UInventoryComponent::FindItemByType(TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>& InItemType)
+struct FBagSlotLocation UInventoryComponent::FindItemByType(TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>& InItemType, bool InbRequireStarQuality)
 {
 	static class UFunction* Func = nullptr;
 
@@ -11607,6 +11769,7 @@ struct FBagSlotLocation UInventoryComponent::FindItemByType(TSoftObjectPtr<class
 	Params::UInventoryComponent_FindItemByType_Params Parms{};
 
 	Parms.ItemType = InItemType;
+	Parms.bRequireStarQuality = InbRequireStarQuality;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11625,9 +11788,10 @@ struct FBagSlotLocation UInventoryComponent::FindItemByType(TSoftObjectPtr<class
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FGameplayTag                ItemTag                                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bRequireStarQuality                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBagSlotLocation            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FBagSlotLocation UInventoryComponent::FindItemByTag(struct FGameplayTag& InItemTag)
+struct FBagSlotLocation UInventoryComponent::FindItemByTag(struct FGameplayTag& InItemTag, bool InbRequireStarQuality)
 {
 	static class UFunction* Func = nullptr;
 
@@ -11637,6 +11801,7 @@ struct FBagSlotLocation UInventoryComponent::FindItemByTag(struct FGameplayTag& 
 	Params::UInventoryComponent_FindItemByTag_Params Parms{};
 
 	Parms.ItemTag = InItemTag;
+	Parms.bRequireStarQuality = InbRequireStarQuality;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14271,9 +14436,10 @@ bool UCrafterComponent::DoesBroadcastApply(class UCrafterComponent* InCrafter)
 // Function Palia.CrafterComponent.ContainsAllIngredients
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
+// int32                              Multiplier                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCrafterComponent::ContainsAllIngredients()
+bool UCrafterComponent::ContainsAllIngredients(int32 InMultiplier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14282,6 +14448,7 @@ bool UCrafterComponent::ContainsAllIngredients()
 
 	Params::UCrafterComponent_ContainsAllIngredients_Params Parms{};
 
+	Parms.Multiplier = InMultiplier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14359,9 +14526,10 @@ bool UCrafterComponent::CanShowCrafterPanel()
 // bool                               bCheckPlotFilter                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bUseStarQualityItems                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bAllowIntermixingRegularAndStarQualityIngredients                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              Multiplier                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ERecipeAvailability     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class ERecipeAvailability UCrafterComponent::CanSelectRecipe(class AActor* InActor, int32 InRecipeConfigId, bool InbCheckPlotFilter, bool InbUseStarQualityItems, bool InbAllowIntermixingRegularAndStarQualityIngredients)
+enum class ERecipeAvailability UCrafterComponent::CanSelectRecipe(class AActor* InActor, int32 InRecipeConfigId, bool InbCheckPlotFilter, bool InbUseStarQualityItems, bool InbAllowIntermixingRegularAndStarQualityIngredients, int32 InMultiplier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14375,6 +14543,7 @@ enum class ERecipeAvailability UCrafterComponent::CanSelectRecipe(class AActor* 
 	Parms.bCheckPlotFilter = InbCheckPlotFilter;
 	Parms.bUseStarQualityItems = InbUseStarQualityItems;
 	Parms.bAllowIntermixingRegularAndStarQualityIngredients = InbAllowIntermixingRegularAndStarQualityIngredients;
+	Parms.Multiplier = InMultiplier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14396,9 +14565,10 @@ enum class ERecipeAvailability UCrafterComponent::CanSelectRecipe(class AActor* 
 // int32                              RecipeConfigId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bUseStarQualityItems                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bAllowIntermixingRegularAndStarQualityIngredients                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              CraftMultiplier                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UCrafterComponent::CanMakeRecipe(class AActor* InActor, int32 InRecipeConfigId, bool InbUseStarQualityItems, bool InbAllowIntermixingRegularAndStarQualityIngredients)
+bool UCrafterComponent::CanMakeRecipe(class AActor* InActor, int32 InRecipeConfigId, bool InbUseStarQualityItems, bool InbAllowIntermixingRegularAndStarQualityIngredients, int32 InCraftMultiplier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14411,6 +14581,7 @@ bool UCrafterComponent::CanMakeRecipe(class AActor* InActor, int32 InRecipeConfi
 	Parms.RecipeConfigId = InRecipeConfigId;
 	Parms.bUseStarQualityItems = InbUseStarQualityItems;
 	Parms.bAllowIntermixingRegularAndStarQualityIngredients = InbAllowIntermixingRegularAndStarQualityIngredients;
+	Parms.CraftMultiplier = InCraftMultiplier;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15952,6 +16123,38 @@ class UValeriaGASAttributeSet* ACreatureCharacter::GetAttributeSet()
 
 
 	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.CreatureCharacter.FindEscapeDestination
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// struct FVector                     OutDestination                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACreatureCharacter::FindEscapeDestination(struct FVector* InOutDestination)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("CreatureCharacter", "FindEscapeDestination");
+
+	Params::ACreatureCharacter_FindEscapeDestination_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	if (InOutDestination != nullptr)
+		*InOutDestination = Parms.OutDestination;
 
 	return Parms.ReturnValue;
 
@@ -21817,10 +22020,10 @@ class UFenceMeshComponent* UFenceComponent::GetEndPostMeshComponent()
 // Function Palia.FishingCastIndicatorActor.OnCastIndicatorChanged
 // (Event, Public, HasDefaults, BlueprintEvent)
 // Parameters:
-// struct FVector                     EndPoint                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                     Endpoint                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EFishingCastIndicatorStatusStatus                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AFishingCastIndicatorActor::OnCastIndicatorChanged(const struct FVector& InEndPoint, enum class EFishingCastIndicatorStatus InStatus)
+void AFishingCastIndicatorActor::OnCastIndicatorChanged(const struct FVector& InEndpoint, enum class EFishingCastIndicatorStatus InStatus)
 {
 	static class UFunction* Func = nullptr;
 
@@ -21829,7 +22032,7 @@ void AFishingCastIndicatorActor::OnCastIndicatorChanged(const struct FVector& In
 
 	Params::AFishingCastIndicatorActor_OnCastIndicatorChanged_Params Parms{};
 
-	Parms.EndPoint = InEndPoint;
+	Parms.Endpoint = InEndpoint;
 	Parms.Status = InStatus;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -30200,6 +30403,34 @@ TArray<struct FHouseOwnershipTitle> AHousingOwnershipActor::GetHousingSlotOwners
 }
 
 
+// Function Palia.HousingOwnershipActor.GetHousingSessionId
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FSessionActorId             ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FSessionActorId AHousingOwnershipActor::GetHousingSessionId()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("HousingOwnershipActor", "GetHousingSessionId");
+
+	Params::AHousingOwnershipActor_GetHousingSessionId_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function Palia.HousingOwnershipActor.GetHousingPlotUnlocks
 // (Final, Native, Private, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -36464,10 +36695,11 @@ void ALimitedEventManagerMajiMarket::HandlePlayerFiredProjetile(class UProjectil
 
 
 // Function Palia.LimitedEventManagerMajiMarket.HandleMarketOpenOrCloseEvent
-// (Final, Native, Private)
+// (Final, Native, Private, HasOutParams)
 // Parameters:
+// struct FVAL_TimerHandle            TimerHandle                                                      (Parm, OutParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALimitedEventManagerMajiMarket::HandleMarketOpenOrCloseEvent()
+void ALimitedEventManagerMajiMarket::HandleMarketOpenOrCloseEvent(struct FVAL_TimerHandle* InTimerHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -36485,14 +36717,18 @@ void ALimitedEventManagerMajiMarket::HandleMarketOpenOrCloseEvent()
 
 	Func->FunctionFlags = Flags;
 
+	if (InTimerHandle != nullptr)
+		*InTimerHandle = Parms.TimerHandle;
+
 }
 
 
 // Function Palia.LimitedEventManagerMajiMarket.HandleChapaaChaseStart
-// (Final, Native, Private)
+// (Final, Native, Private, HasOutParams)
 // Parameters:
+// struct FVAL_TimerHandle            TimerHandle                                                      (Parm, OutParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALimitedEventManagerMajiMarket::HandleChapaaChaseStart()
+void ALimitedEventManagerMajiMarket::HandleChapaaChaseStart(struct FVAL_TimerHandle* InTimerHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -36509,6 +36745,9 @@ void ALimitedEventManagerMajiMarket::HandleChapaaChaseStart()
 
 
 	Func->FunctionFlags = Flags;
+
+	if (InTimerHandle != nullptr)
+		*InTimerHandle = Parms.TimerHandle;
 
 }
 
@@ -39031,6 +39270,34 @@ float UMinigameComponentMasterQTE::GetTargetPosition()
 }
 
 
+// Function Palia.MinigameComponentMasterQTE.GetMinigameConfig
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FMinigameConfig             ReturnValue                                                      (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+struct FMinigameConfig UMinigameComponentMasterQTE::GetMinigameConfig()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("MinigameComponentMasterQTE", "GetMinigameConfig");
+
+	Params::UMinigameComponentMasterQTE_GetMinigameConfig_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function Palia.MinigameComponentMasterQTE.GetCursorPosition
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -40282,6 +40549,31 @@ void UPersistComponent::OnRep_SessionId()
 		Func = Class->GetFunction("PersistComponent", "OnRep_SessionId");
 
 	Params::UPersistComponent_OnRep_SessionId_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.PersistComponent.OnRep_AnchorSessionId
+// (Final, Native, Protected)
+// Parameters:
+
+void UPersistComponent::OnRep_AnchorSessionId()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("PersistComponent", "OnRep_AnchorSessionId");
+
+	Params::UPersistComponent_OnRep_AnchorSessionId_Params Parms{};
 
 
 	auto Flags = Func->FunctionFlags;
@@ -41676,6 +41968,31 @@ bool UPlacementComponent::CancelPlacement()
 }
 
 
+// Function Palia.PlacementRegionComponent.TryBindToCharacterEvents
+// (Final, Native, Private)
+// Parameters:
+
+void UPlacementRegionComponent::TryBindToCharacterEvents()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("PlacementRegionComponent", "TryBindToCharacterEvents");
+
+	Params::UPlacementRegionComponent_TryBindToCharacterEvents_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function Palia.PlacementRegionComponent.SnapWorldPositionToNearestNeighbor
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -41899,35 +42216,6 @@ void UPlacementRegionComponent::FreePlacementChanged(class UPlacementComponent* 
 	Params::UPlacementRegionComponent_FreePlacementChanged_Params Parms{};
 
 	Parms.PC = InPC;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.PlacementRegionComponent.CharacterWasSpawned
-// (Final, Native, Private)
-// Parameters:
-// class AValeriaPlayerController*    Vpc                                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AValeriaCharacter*           VC                                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlacementRegionComponent::CharacterWasSpawned(class AValeriaPlayerController* InVpc, class AValeriaCharacter* InVC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("PlacementRegionComponent", "CharacterWasSpawned");
-
-	Params::UPlacementRegionComponent_CharacterWasSpawned_Params Parms{};
-
-	Parms.Vpc = InVpc;
-	Parms.VC = InVC;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -42310,6 +42598,37 @@ void UPlayerWorldStateComponent::RpcClient_UpdateWorldPersistGatherable(struct F
 }
 
 
+// Function Palia.PlayerWorldStateComponent.RpcClient_UpdateTimedLootPile
+// (Net, NetReliable, Native, Event, Protected, NetClient)
+// Parameters:
+// struct FGameplayTag                InTag                                                            (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                        InActorName                                                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTimedLootPileData          InTimedLootPileData                                              (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UPlayerWorldStateComponent::RpcClient_UpdateTimedLootPile(struct FGameplayTag& InInTag, class FName& InInActorName, struct FTimedLootPileData& InInTimedLootPileData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("PlayerWorldStateComponent", "RpcClient_UpdateTimedLootPile");
+
+	Params::UPlayerWorldStateComponent_RpcClient_UpdateTimedLootPile_Params Parms{};
+
+	Parms.InTag = InInTag;
+	Parms.InActorName = InInActorName;
+	Parms.InTimedLootPileData = InInTimedLootPileData;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function Palia.PlayerWorldStateComponent.RpcClient_InitializeWorldPersistGatherablesGroup
 // (Net, NetReliable, Native, Event, Protected, NetClient)
 // Parameters:
@@ -42339,22 +42658,83 @@ void UPlayerWorldStateComponent::RpcClient_InitializeWorldPersistGatherablesGrou
 }
 
 
-// Function Palia.PlayerWorldStateComponent.HasGatheredObject
+// Function Palia.PlayerWorldStateComponent.RpcClient_InitializeTimedLootPilesGroup
+// (Net, NetReliable, Native, Event, Protected, NetClient)
+// Parameters:
+// TArray<struct FGameplayTag>        InTags                                                           (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FTimedLootPileData>  InTimedLootPileDatas                                             (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UPlayerWorldStateComponent::RpcClient_InitializeTimedLootPilesGroup(TArray<struct FGameplayTag>& InInTags, TArray<struct FTimedLootPileData>& InInTimedLootPileDatas)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("PlayerWorldStateComponent", "RpcClient_InitializeTimedLootPilesGroup");
+
+	Params::UPlayerWorldStateComponent_RpcClient_InitializeTimedLootPilesGroup_Params Parms{};
+
+	Parms.InTags = InInTags;
+	Parms.InTimedLootPileDatas = InInTimedLootPileDatas;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.PlayerWorldStateComponent.HasGatheredWorldPersistGatherable
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FGameplayTag                InTag                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPlayerWorldStateComponent::HasGatheredObject(struct FGameplayTag& InInTag)
+bool UPlayerWorldStateComponent::HasGatheredWorldPersistGatherable(struct FGameplayTag& InInTag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (!Func)
-		Func = Class->GetFunction("PlayerWorldStateComponent", "HasGatheredObject");
+		Func = Class->GetFunction("PlayerWorldStateComponent", "HasGatheredWorldPersistGatherable");
 
-	Params::UPlayerWorldStateComponent_HasGatheredObject_Params Parms{};
+	Params::UPlayerWorldStateComponent_HasGatheredWorldPersistGatherable_Params Parms{};
 
 	Parms.InTag = InInTag;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.PlayerWorldStateComponent.HasGatheredTimedLootPileToday
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGameplayTag                InTag                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                        InActorName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPlayerWorldStateComponent::HasGatheredTimedLootPileToday(struct FGameplayTag& InInTag, class FName& InInActorName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("PlayerWorldStateComponent", "HasGatheredTimedLootPileToday");
+
+	Params::UPlayerWorldStateComponent_HasGatheredTimedLootPileToday_Params Parms{};
+
+	Parms.InTag = InInTag;
+	Parms.InActorName = InInActorName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -45085,6 +45465,31 @@ void UQuestProgressComponent::Server_RunQuestUpdates()
 }
 
 
+// Function Palia.QuestProgressComponent.Server_RunQuestCleanups
+// (Final, Native, Public)
+// Parameters:
+
+void UQuestProgressComponent::Server_RunQuestCleanups()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("QuestProgressComponent", "Server_RunQuestCleanups");
+
+	Params::UQuestProgressComponent_Server_RunQuestCleanups_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function Palia.QuestProgressComponent.RpcServer_ToggleQuestPin
 // (Net, NetReliable, Native, Event, Public, NetServer)
 // Parameters:
@@ -45311,7 +45716,7 @@ int32 UQuestProgressComponent::GetNumPinned()
 // Function Palia.QuestProgressComponent.GetFirstActiveQuestInfo
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVAL_QuestState             ReturnValue                                                      (ConstParm, Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+// struct FVAL_QuestState             ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FVAL_QuestState UQuestProgressComponent::GetFirstActiveQuestInfo()
 {
@@ -45339,7 +45744,7 @@ struct FVAL_QuestState UQuestProgressComponent::GetFirstActiveQuestInfo()
 // Function Palia.QuestProgressComponent.GetCompletedQuests
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<struct FVAL_QuestState>     ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+// TArray<struct FVAL_QuestState>     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FVAL_QuestState> UQuestProgressComponent::GetCompletedQuests()
 {
@@ -45395,7 +45800,7 @@ TArray<struct FVAL_QuestState> UQuestProgressComponent::GetCompletedAccomplishme
 // Function Palia.QuestProgressComponent.GetAllInactiveQuests
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<struct FVAL_QuestState>     ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+// TArray<struct FVAL_QuestState>     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FVAL_QuestState> UQuestProgressComponent::GetAllInactiveQuests()
 {
@@ -45423,7 +45828,7 @@ TArray<struct FVAL_QuestState> UQuestProgressComponent::GetAllInactiveQuests()
 // Function Palia.QuestProgressComponent.GetAllActiveQuests
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<struct FVAL_QuestState>     ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+// TArray<struct FVAL_QuestState>     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FVAL_QuestState> UQuestProgressComponent::GetAllActiveQuests()
 {
@@ -45479,7 +45884,7 @@ TArray<struct FVAL_QuestState> UQuestProgressComponent::GetAllAccomplishments()
 // Function Palia.QuestProgressComponent.GetActiveAccomplishments
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<struct FVAL_QuestState>     ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+// TArray<struct FVAL_QuestState>     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FVAL_QuestState> UQuestProgressComponent::GetActiveAccomplishments()
 {
@@ -48921,6 +49326,34 @@ void USpawnerComponent::SpawnedActorWasDestroyed(class AActor* InInActorDestroye
 }
 
 
+// Function Palia.SpawnerComponent.GetSpawnedActors
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class AActor*>              ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+TArray<class AActor*> USpawnerComponent::GetSpawnedActors()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("SpawnerComponent", "GetSpawnedActors");
+
+	Params::USpawnerComponent_GetSpawnedActors_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function Palia.SpawningManager.SpawnedActorWasDestroyed
 // (Final, Native, Private)
 // Parameters:
@@ -50423,176 +50856,6 @@ void USubgameActivatorComponent::BeginSubgame(class AValeriaCharacter* InPlaying
 }
 
 
-// DelegateFunction Palia.SupportRequestLocalPlayerSubsystem.SupportRequestSuccess__DelegateSignature
-// (MulticastDelegate, Public, Delegate)
-// Parameters:
-
-void USupportRequestLocalPlayerSubsystem::SupportRequestSuccess__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("SupportRequestLocalPlayerSubsystem", "SupportRequestSuccess__DelegateSignature");
-
-	Params::USupportRequestLocalPlayerSubsystem_SupportRequestSuccess__DelegateSignature_Params Parms{};
-
-
-	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
-// DelegateFunction Palia.SupportRequestLocalPlayerSubsystem.SupportRequestFailure__DelegateSignature
-// (MulticastDelegate, Public, Delegate)
-// Parameters:
-// class FString                      Error                                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USupportRequestLocalPlayerSubsystem::SupportRequestFailure__DelegateSignature(const class FString& InError)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("SupportRequestLocalPlayerSubsystem", "SupportRequestFailure__DelegateSignature");
-
-	Params::USupportRequestLocalPlayerSubsystem_SupportRequestFailure__DelegateSignature_Params Parms{};
-
-	Parms.Error = InError;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
-// Function Palia.SupportRequestLocalPlayerSubsystem.PostUserReport
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FUserReport                 Report                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USupportRequestLocalPlayerSubsystem::PostUserReport(struct FUserReport& InReport)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("SupportRequestLocalPlayerSubsystem", "PostUserReport");
-
-	Params::USupportRequestLocalPlayerSubsystem_PostUserReport_Params Parms{};
-
-	Parms.Report = InReport;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function Palia.SupportRequestLocalPlayerSubsystem.PostSupportRequest
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSupportRequest             Request                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USupportRequestLocalPlayerSubsystem::PostSupportRequest(struct FSupportRequest& InRequest)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("SupportRequestLocalPlayerSubsystem", "PostSupportRequest");
-
-	Params::USupportRequestLocalPlayerSubsystem_PostSupportRequest_Params Parms{};
-
-	Parms.Request = InRequest;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// DelegateFunction Palia.SupportRequestLocalPlayerSubsystem.PostReportSuccess__DelegateSignature
-// (MulticastDelegate, Public, Delegate)
-// Parameters:
-
-void USupportRequestLocalPlayerSubsystem::PostReportSuccess__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("SupportRequestLocalPlayerSubsystem", "PostReportSuccess__DelegateSignature");
-
-	Params::USupportRequestLocalPlayerSubsystem_PostReportSuccess__DelegateSignature_Params Parms{};
-
-
-	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
-// DelegateFunction Palia.SupportRequestLocalPlayerSubsystem.PostReportFailure__DelegateSignature
-// (MulticastDelegate, Public, Delegate)
-// Parameters:
-// class FString                      Error                                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USupportRequestLocalPlayerSubsystem::PostReportFailure__DelegateSignature(const class FString& InError)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("SupportRequestLocalPlayerSubsystem", "PostReportFailure__DelegateSignature");
-
-	Params::USupportRequestLocalPlayerSubsystem_PostReportFailure__DelegateSignature_Params Parms{};
-
-	Parms.Error = InError;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
-// Function Palia.SupportRequestLocalPlayerSubsystem.PostContentReport
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FContentReport              Report                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USupportRequestLocalPlayerSubsystem::PostContentReport(struct FContentReport& InReport)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("SupportRequestLocalPlayerSubsystem", "PostContentReport");
-
-	Params::USupportRequestLocalPlayerSubsystem_PostContentReport_Params Parms{};
-
-	Parms.Report = InReport;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
 // Function Palia.VAL_TaskProxy_PlayMontageAndWaitForEvent.PlayMontageByMappingAndWaitForEvent
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -51330,6 +51593,361 @@ class AValeriaCharacter* UTimedDropComponent::GetCachedOwnerCharacter()
 	Func->FunctionFlags = Flags;
 
 	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.WorldGatherableBase.UpdateGatherableEnabledState
+// (Native, Protected)
+// Parameters:
+
+void AWorldGatherableBase::UpdateGatherableEnabledState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WorldGatherableBase", "UpdateGatherableEnabledState");
+
+	Params::AWorldGatherableBase_UpdateGatherableEnabledState_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.WorldGatherableBase.SetGatherableEnabled
+// (Final, Native, Protected)
+// Parameters:
+// bool                               bInEnabled                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AWorldGatherableBase::SetGatherableEnabled(bool InbInEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WorldGatherableBase", "SetGatherableEnabled");
+
+	Params::AWorldGatherableBase_SetGatherableEnabled_Params Parms{};
+
+	Parms.bInEnabled = InbInEnabled;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.WorldGatherableBase.RpcNetMulticast_RequestUpdateGatherableEnabledState
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+
+void AWorldGatherableBase::RpcNetMulticast_RequestUpdateGatherableEnabledState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WorldGatherableBase", "RpcNetMulticast_RequestUpdateGatherableEnabledState");
+
+	Params::AWorldGatherableBase_RpcNetMulticast_RequestUpdateGatherableEnabledState_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.WorldGatherableBase.Client_TryGetValeriaCharacter
+// (Final, Native, Protected)
+// Parameters:
+
+void AWorldGatherableBase::Client_TryGetValeriaCharacter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WorldGatherableBase", "Client_TryGetValeriaCharacter");
+
+	Params::AWorldGatherableBase_Client_TryGetValeriaCharacter_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.WorldGatherableBase.CharacterGatheredLoot
+// (Native, Protected)
+// Parameters:
+// class AValeriaCharacter*           GatheringCharacter                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULootInteractorBaseComponent*GatheredLootComponent                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AWorldGatherableBase::CharacterGatheredLoot(class AValeriaCharacter* InGatheringCharacter, class ULootInteractorBaseComponent* InGatheredLootComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WorldGatherableBase", "CharacterGatheredLoot");
+
+	Params::AWorldGatherableBase_CharacterGatheredLoot_Params Parms{};
+
+	Parms.GatheringCharacter = InGatheringCharacter;
+	Parms.GatheredLootComponent = InGatheredLootComponent;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.WorldGatherableBase.CanGather
+// (Native, Public, Const)
+// Parameters:
+// class AValeriaCharacter*           GatheringCharacter                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AWorldGatherableBase::CanGather(class AValeriaCharacter* InGatheringCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WorldGatherableBase", "CanGather");
+
+	Params::AWorldGatherableBase_CanGather_Params Parms{};
+
+	Parms.GatheringCharacter = InGatheringCharacter;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.WorldGatherableBase.BPIE_GatherableGathered
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class AValeriaCharacter*           GatheringCharacter                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AWorldGatherableBase::BPIE_GatherableGathered(class AValeriaCharacter* InGatheringCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WorldGatherableBase", "BPIE_GatherableGathered");
+
+	Params::AWorldGatherableBase_BPIE_GatherableGathered_Params Parms{};
+
+	Parms.GatheringCharacter = InGatheringCharacter;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function Palia.WorldGatherableBase.BPIE_GatherableEnabled
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+
+void AWorldGatherableBase::BPIE_GatherableEnabled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WorldGatherableBase", "BPIE_GatherableEnabled");
+
+	Params::AWorldGatherableBase_BPIE_GatherableEnabled_Params Parms{};
+
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function Palia.WorldGatherableBase.BPIE_GatherableDisabled
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+
+void AWorldGatherableBase::BPIE_GatherableDisabled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WorldGatherableBase", "BPIE_GatherableDisabled");
+
+	Params::AWorldGatherableBase_BPIE_GatherableDisabled_Params Parms{};
+
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function Palia.TimedLootPile.TimedLootPileAdded
+// (Final, Native, Protected)
+// Parameters:
+// struct FGameplayTag                InTag                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                        InActorName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ATimedLootPile::TimedLootPileAdded(const struct FGameplayTag& InInTag, class FName InInActorName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("TimedLootPile", "TimedLootPileAdded");
+
+	Params::ATimedLootPile_TimedLootPileAdded_Params Parms{};
+
+	Parms.InTag = InInTag;
+	Parms.InActorName = InInActorName;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.TimedLootPile.OnRep_bActivated
+// (Final, Native, Protected)
+// Parameters:
+
+void ATimedLootPile::OnRep_bActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("TimedLootPile", "OnRep_bActivated");
+
+	Params::ATimedLootPile_OnRep_bActivated_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.TimedLootPile.IsInitialized
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ATimedLootPile::IsInitialized()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("TimedLootPile", "IsInitialized");
+
+	Params::ATimedLootPile_IsInitialized_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.TimedLootPile.IsActivated
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ATimedLootPile::IsActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("TimedLootPile", "IsActivated");
+
+	Params::ATimedLootPile_IsActivated_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.TimedLootPileManager.ServerDailyReset
+// (Final, Native, Protected)
+// Parameters:
+
+void ATimedLootPileManager::ServerDailyReset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("TimedLootPileManager", "ServerDailyReset");
+
+	Params::ATimedLootPileManager_ServerDailyReset_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
 
 }
 
@@ -55515,6 +56133,36 @@ bool UValeriaBlueprintFunctionLibrary::IsMobilePlatform(class UObject* InContext
 }
 
 
+// Function Palia.ValeriaBlueprintFunctionLibrary.IsMinigameWorld
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UObject*                     Context                                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UValeriaBlueprintFunctionLibrary::IsMinigameWorld(class UObject* InContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaBlueprintFunctionLibrary", "IsMinigameWorld");
+
+	Params::UValeriaBlueprintFunctionLibrary_IsMinigameWorld_Params Parms{};
+
+	Parms.Context = InContext;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function Palia.ValeriaBlueprintFunctionLibrary.IsLoadTestClient
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -56604,6 +57252,36 @@ uint8 UValeriaBlueprintFunctionLibrary::GetValueFromFlattened2DArray(const TArra
 }
 
 
+// Function Palia.ValeriaBlueprintFunctionLibrary.GetValeriaWorldSettings
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UObject*                     Context                                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AVAL_WorldSettings*          ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AVAL_WorldSettings* UValeriaBlueprintFunctionLibrary::GetValeriaWorldSettings(class UObject* InContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaBlueprintFunctionLibrary", "GetValeriaWorldSettings");
+
+	Params::UValeriaBlueprintFunctionLibrary_GetValeriaWorldSettings_Params Parms{};
+
+	Parms.Context = InContext;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function Palia.ValeriaBlueprintFunctionLibrary.GetValeriaTimestampSecs
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -57248,6 +57926,36 @@ struct FDateTime UValeriaBlueprintFunctionLibrary::GetS6WeeklyResetTime(class UO
 		Func = Class->GetFunction("ValeriaBlueprintFunctionLibrary", "GetS6WeeklyResetTime");
 
 	Params::UValeriaBlueprintFunctionLibrary_GetS6WeeklyResetTime_Params Parms{};
+
+	Parms.Context = InContext;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.ValeriaBlueprintFunctionLibrary.GetRuntimeISMActor
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UObject*                     Context                                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSoftObjectPtr<class AActor>       ReturnValue                                                      (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSoftObjectPtr<class AActor> UValeriaBlueprintFunctionLibrary::GetRuntimeISMActor(class UObject* InContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaBlueprintFunctionLibrary", "GetRuntimeISMActor");
+
+	Params::UValeriaBlueprintFunctionLibrary_GetRuntimeISMActor_Params Parms{};
 
 	Parms.Context = InContext;
 
@@ -58408,6 +59116,40 @@ bool UValeriaBlueprintFunctionLibrary::GetConfigString_GameUserSettings(const cl
 
 	if (InOutput != nullptr)
 		*InOutput = Parms.Output;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.ValeriaBlueprintFunctionLibrary.GetConfigsManagerForBP
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UObject*                     Context                                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FConfigsManager             ConfigsManager                                                   (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UValeriaBlueprintFunctionLibrary::GetConfigsManagerForBP(class UObject* InContext, struct FConfigsManager* InConfigsManager)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaBlueprintFunctionLibrary", "GetConfigsManagerForBP");
+
+	Params::UValeriaBlueprintFunctionLibrary_GetConfigsManagerForBP_Params Parms{};
+
+	Parms.Context = InContext;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	if (InConfigsManager != nullptr)
+		*InConfigsManager = Parms.ConfigsManager;
 
 	return Parms.ReturnValue;
 
@@ -61814,33 +62556,6 @@ void AValeriaCharacter::SetFPSPhotoModeFOV(float InValue)
 }
 
 
-// Function Palia.ValeriaCharacter.SetFishingAction
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                               bIsActing                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AValeriaCharacter::SetFishingAction(bool InbIsActing)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("ValeriaCharacter", "SetFishingAction");
-
-	Params::AValeriaCharacter_SetFishingAction_Params Parms{};
-
-	Parms.bIsActing = InbIsActing;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
 // Function Palia.ValeriaCharacter.SetCharacterForInspirationSequence
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -61869,9 +62584,10 @@ void AValeriaCharacter::SetCharacterForInspirationSequence()
 // Function Palia.ValeriaCharacter.Server_Unstuck
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
+// enum class ES6UnstuckType          UnstuckType                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPop                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AValeriaCharacter::Server_Unstuck(bool InbPop)
+void AValeriaCharacter::Server_Unstuck(enum class ES6UnstuckType InUnstuckType, bool InbPop)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61880,7 +62596,58 @@ void AValeriaCharacter::Server_Unstuck(bool InbPop)
 
 	Params::AValeriaCharacter_Server_Unstuck_Params Parms{};
 
+	Parms.UnstuckType = InUnstuckType;
 	Parms.bPop = InbPop;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ValeriaCharacter.SecondaryActionReleased
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+
+void AValeriaCharacter::SecondaryActionReleased()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaCharacter", "SecondaryActionReleased");
+
+	Params::AValeriaCharacter_SecondaryActionReleased_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ValeriaCharacter.SecondaryActionPressed
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+
+void AValeriaCharacter::SecondaryActionPressed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaCharacter", "SecondaryActionPressed");
+
+	Params::AValeriaCharacter_SecondaryActionPressed_Params Parms{};
+
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -61896,9 +62663,10 @@ void AValeriaCharacter::Server_Unstuck(bool InbPop)
 // Function Palia.ValeriaCharacter.RpcServer_Unstuck
 // (Final, Net, NetReliable, Native, Event, Private, NetServer)
 // Parameters:
+// enum class ES6UnstuckType          UnstuckType                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPop                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AValeriaCharacter::RpcServer_Unstuck(bool InbPop)
+void AValeriaCharacter::RpcServer_Unstuck(enum class ES6UnstuckType InUnstuckType, bool InbPop)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61907,6 +62675,7 @@ void AValeriaCharacter::RpcServer_Unstuck(bool InbPop)
 
 	Params::AValeriaCharacter_RpcServer_Unstuck_Params Parms{};
 
+	Parms.UnstuckType = InUnstuckType;
 	Parms.bPop = InbPop;
 
 	auto Flags = Func->FunctionFlags;
@@ -62134,56 +62903,6 @@ void AValeriaCharacter::RpcClient_CloseSubgameScreen()
 }
 
 
-// Function Palia.ValeriaCharacter.RightMouseButtonReleased
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-
-void AValeriaCharacter::RightMouseButtonReleased()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("ValeriaCharacter", "RightMouseButtonReleased");
-
-	Params::AValeriaCharacter_RightMouseButtonReleased_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.ValeriaCharacter.RightMouseButtonPressed
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-
-void AValeriaCharacter::RightMouseButtonPressed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("ValeriaCharacter", "RightMouseButtonPressed");
-
-	Params::AValeriaCharacter_RightMouseButtonPressed_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
 // Function Palia.ValeriaCharacter.RevealInWorldMapMarkers
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -62228,6 +62947,56 @@ void AValeriaCharacter::RequestMontagePropHelper(TMap<enum class ECharacterAttac
 	Parms.Props = InProps;
 	Parms.RelevantMappingName = InRelevantMappingName;
 	Parms.RelevantSectionName = InRelevantSectionName;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ValeriaCharacter.PrimaryActionReleased
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+
+void AValeriaCharacter::PrimaryActionReleased()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaCharacter", "PrimaryActionReleased");
+
+	Params::AValeriaCharacter_PrimaryActionReleased_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ValeriaCharacter.PrimaryActionPressed
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+
+void AValeriaCharacter::PrimaryActionPressed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaCharacter", "PrimaryActionPressed");
+
+	Params::AValeriaCharacter_PrimaryActionPressed_Params Parms{};
+
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -62922,56 +63691,6 @@ void AValeriaCharacter::LookUp(float InRate)
 	Params::AValeriaCharacter_LookUp_Params Parms{};
 
 	Parms.Rate = InRate;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.ValeriaCharacter.LeftMouseButtonReleased
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-
-void AValeriaCharacter::LeftMouseButtonReleased()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("ValeriaCharacter", "LeftMouseButtonReleased");
-
-	Params::AValeriaCharacter_LeftMouseButtonReleased_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.ValeriaCharacter.LeftMouseButtonPressed
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-
-void AValeriaCharacter::LeftMouseButtonPressed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("ValeriaCharacter", "LeftMouseButtonPressed");
-
-	Params::AValeriaCharacter_LeftMouseButtonPressed_Params Parms{};
-
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -63794,6 +64513,34 @@ class UValeriaCharacterMoveComponent* AValeriaCharacter::GetValeriaCharacterMove
 }
 
 
+// Function Palia.ValeriaCharacter.GetTimerComponent
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVAL_TimerComponent*         ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVAL_TimerComponent* AValeriaCharacter::GetTimerComponent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaCharacter", "GetTimerComponent");
+
+	Params::AValeriaCharacter_GetTimerComponent_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function Palia.ValeriaCharacter.GetTeleportComponent
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -63913,6 +64660,34 @@ float AValeriaCharacter::GetSelfieModeDollyDistance()
 		Func = Class->GetFunction("ValeriaCharacter", "GetSelfieModeDollyDistance");
 
 	Params::AValeriaCharacter_GetSelfieModeDollyDistance_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.ValeriaCharacter.GetScoreComponent
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVAL_ScoreComponent*         ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVAL_ScoreComponent* AValeriaCharacter::GetScoreComponent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaCharacter", "GetScoreComponent");
+
+	Params::AValeriaCharacter_GetScoreComponent_Params Parms{};
 
 
 	auto Flags = Func->FunctionFlags;
@@ -65716,6 +66491,33 @@ void AValeriaCharacter::CancelAction()
 
 	Params::AValeriaCharacter_CancelAction_Params Parms{};
 
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.ValeriaCharacter.AsyncLoadMontageByName
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                        MontageName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AValeriaCharacter::AsyncLoadMontageByName(class FName& InMontageName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaCharacter", "AsyncLoadMontageByName");
+
+	Params::AValeriaCharacter_AsyncLoadMontageByName_Params Parms{};
+
+	Parms.MontageName = InMontageName;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -68106,6 +68908,62 @@ void UValeriaCreatureAnimInstance::OnMeleeHitReact(class AActor* InInstigator)
 	Parms.Instigator = InInstigator;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function Palia.ValeriaCreatureManager.GetWaterBodies
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class UValeriaWaterBodyComponent*>ReturnValue                                                      (ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class UValeriaWaterBodyComponent*> UValeriaCreatureManager::GetWaterBodies()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaCreatureManager", "GetWaterBodies");
+
+	Params::UValeriaCreatureManager_GetWaterBodies_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.ValeriaCreatureManager.GetTreeSpawners
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class USpawnerComponent*>   ReturnValue                                                      (ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+TArray<class USpawnerComponent*> UValeriaCreatureManager::GetTreeSpawners()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaCreatureManager", "GetTreeSpawners");
+
+	Params::UValeriaCreatureManager_GetTreeSpawners_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
 
 }
 
@@ -72297,6 +73155,27 @@ void UValeriaGASGameplayAbility::OnAltInputPressedCallback()
 }
 
 
+// Function Palia.ValeriaGASGameplayAbility.LoadAbilityAssets
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AValeriaCharacter*           ValeriaCharacter                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UValeriaGASGameplayAbility::LoadAbilityAssets(class AValeriaCharacter* InValeriaCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("ValeriaGASGameplayAbility", "LoadAbilityAssets");
+
+	Params::UValeriaGASGameplayAbility_LoadAbilityAssets_Params Parms{};
+
+	Parms.ValeriaCharacter = InValeriaCharacter;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // Function Palia.ValeriaGASGameplayAbility.IsInputQueued
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -72683,6 +73562,31 @@ void AVAL_PlayerControllerBase::SetExperiencePackage(class UExperiencePackageCon
 }
 
 
+// Function Palia.VAL_PlayerControllerBase.Server_InactivityHeartbeat
+// (Final, Native, Public)
+// Parameters:
+
+void AVAL_PlayerControllerBase::Server_InactivityHeartbeat()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_PlayerControllerBase", "Server_InactivityHeartbeat");
+
+	Params::AVAL_PlayerControllerBase_Server_InactivityHeartbeat_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function Palia.VAL_PlayerControllerBase.SendNotification
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -72698,33 +73602,6 @@ void AVAL_PlayerControllerBase::SendNotification(const struct FNotification& InN
 	Params::AVAL_PlayerControllerBase_SendNotification_Params Parms{};
 
 	Parms.Notification = InNotification;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.VAL_PlayerControllerBase.RpcServer_SetPartyChatChannelId
-// (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
-// Parameters:
-// struct FGuid                       ChannelId                                                        (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::RpcServer_SetPartyChatChannelId(struct FGuid& InChannelId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcServer_SetPartyChatChannelId");
-
-	Params::AVAL_PlayerControllerBase_RpcServer_SetPartyChatChannelId_Params Parms{};
-
-	Parms.ChannelId = InChannelId;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -72853,160 +73730,19 @@ void AVAL_PlayerControllerBase::RpcServer_RequestMatchmakingCreateJoinOrTravelRe
 }
 
 
-// Function Palia.VAL_PlayerControllerBase.RpcServer_RemoveMembersFromChatChannel
-// (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
+// Function Palia.VAL_PlayerControllerBase.RpcServer_NotifyInactivityInterrupted
+// (Net, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
-// struct FGuid                       ChannelId                                                        (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FGuid>               Members                                                          (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void AVAL_PlayerControllerBase::RpcServer_RemoveMembersFromChatChannel(struct FGuid& InChannelId, TArray<struct FGuid>& InMembers)
+void AVAL_PlayerControllerBase::RpcServer_NotifyInactivityInterrupted()
 {
 	static class UFunction* Func = nullptr;
 
 	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcServer_RemoveMembersFromChatChannel");
+		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcServer_NotifyInactivityInterrupted");
 
-	Params::AVAL_PlayerControllerBase_RpcServer_RemoveMembersFromChatChannel_Params Parms{};
+	Params::AVAL_PlayerControllerBase_RpcServer_NotifyInactivityInterrupted_Params Parms{};
 
-	Parms.ChannelId = InChannelId;
-	Parms.Members = InMembers;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.VAL_PlayerControllerBase.RpcServer_GetAllJoinedChatChannels
-// (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
-// Parameters:
-// struct FGuid                       AccountId                                                        (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::RpcServer_GetAllJoinedChatChannels(struct FGuid& InAccountId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcServer_GetAllJoinedChatChannels");
-
-	Params::AVAL_PlayerControllerBase_RpcServer_GetAllJoinedChatChannels_Params Parms{};
-
-	Parms.AccountId = InAccountId;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.VAL_PlayerControllerBase.RpcServer_GetAllChatChannelsByOwnerId
-// (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
-// Parameters:
-// struct FGuid                       OwnerId                                                          (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::RpcServer_GetAllChatChannelsByOwnerId(struct FGuid& InOwnerId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcServer_GetAllChatChannelsByOwnerId");
-
-	Params::AVAL_PlayerControllerBase_RpcServer_GetAllChatChannelsByOwnerId_Params Parms{};
-
-	Parms.OwnerId = InOwnerId;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.VAL_PlayerControllerBase.RpcServer_DeleteChatChannel
-// (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
-// Parameters:
-// struct FGuid                       ChannelId                                                        (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::RpcServer_DeleteChatChannel(struct FGuid& InChannelId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcServer_DeleteChatChannel");
-
-	Params::AVAL_PlayerControllerBase_RpcServer_DeleteChatChannel_Params Parms{};
-
-	Parms.ChannelId = InChannelId;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.VAL_PlayerControllerBase.RpcServer_CreateChatChannel
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// struct FOSSVAL_ChatChannelCreationSettingsChannelCreationSettings                                          (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::RpcServer_CreateChatChannel(struct FOSSVAL_ChatChannelCreationSettings& InChannelCreationSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcServer_CreateChatChannel");
-
-	Params::AVAL_PlayerControllerBase_RpcServer_CreateChatChannel_Params Parms{};
-
-	Parms.ChannelCreationSettings = InChannelCreationSettings;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.VAL_PlayerControllerBase.RpcServer_AddMembersToChatChannel
-// (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
-// Parameters:
-// struct FGuid                       ChannelId                                                        (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FGuid>               Members                                                          (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::RpcServer_AddMembersToChatChannel(struct FGuid& InChannelId, TArray<struct FGuid>& InMembers)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcServer_AddMembersToChatChannel");
-
-	Params::AVAL_PlayerControllerBase_RpcServer_AddMembersToChatChannel_Params Parms{};
-
-	Parms.ChannelId = InChannelId;
-	Parms.Members = InMembers;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -73189,33 +73925,6 @@ void AVAL_PlayerControllerBase::RpcClient_RequestMatchmakingDeleteJoin_Internal(
 }
 
 
-// Function Palia.VAL_PlayerControllerBase.RpcClient_OnPartyChatChannelIdObtained
-// (Net, NetReliable, Native, Event, Public, HasDefaults, NetClient)
-// Parameters:
-// struct FGuid                       NewPartyChatChannelId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::RpcClient_OnPartyChatChannelIdObtained(const struct FGuid& InNewPartyChatChannelId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcClient_OnPartyChatChannelIdObtained");
-
-	Params::AVAL_PlayerControllerBase_RpcClient_OnPartyChatChannelIdObtained_Params Parms{};
-
-	Parms.NewPartyChatChannelId = InNewPartyChatChannelId;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
 // Function Palia.VAL_PlayerControllerBase.RpcClient_OnMatchmakingTravelTicketRequestCompleted
 // (Net, NetReliable, Native, Event, Public, HasDefaults, NetClient)
 // Parameters:
@@ -73332,79 +74041,19 @@ void AVAL_PlayerControllerBase::RpcClient_OnMatchmakingCreateJoinOrTravelResultR
 }
 
 
-// Function Palia.VAL_PlayerControllerBase.RpcClient_OnJoinedChatChannelsObtained
+// Function Palia.VAL_PlayerControllerBase.RpcClient_Logout
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
-// TArray<struct FOSSVAL_ChatChannel> Channels                                                         (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void AVAL_PlayerControllerBase::RpcClient_OnJoinedChatChannelsObtained(TArray<struct FOSSVAL_ChatChannel>& InChannels)
+void AVAL_PlayerControllerBase::RpcClient_Logout()
 {
 	static class UFunction* Func = nullptr;
 
 	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcClient_OnJoinedChatChannelsObtained");
+		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcClient_Logout");
 
-	Params::AVAL_PlayerControllerBase_RpcClient_OnJoinedChatChannelsObtained_Params Parms{};
+	Params::AVAL_PlayerControllerBase_RpcClient_Logout_Params Parms{};
 
-	Parms.Channels = InChannels;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.VAL_PlayerControllerBase.RpcClient_OnGetAllChatChannelsByOwnerIdObtained
-// (Net, NetReliable, Native, Event, Public, HasDefaults, NetClient)
-// Parameters:
-// struct FGuid                       OwnerId                                                          (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FOSSVAL_ChatChannel> Channels                                                         (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::RpcClient_OnGetAllChatChannelsByOwnerIdObtained(struct FGuid& InOwnerId, TArray<struct FOSSVAL_ChatChannel>& InChannels)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcClient_OnGetAllChatChannelsByOwnerIdObtained");
-
-	Params::AVAL_PlayerControllerBase_RpcClient_OnGetAllChatChannelsByOwnerIdObtained_Params Parms{};
-
-	Parms.OwnerId = InOwnerId;
-	Parms.Channels = InChannels;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.VAL_PlayerControllerBase.RpcClient_OnChatChannelCreated
-// (Net, NetReliable, Native, Event, Public, HasDefaults, NetClient)
-// Parameters:
-// struct FGuid                       ChannelId                                                        (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FOSSVAL_ChatChannelCreationSettingsChannelCreationSettings                                          (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::RpcClient_OnChatChannelCreated(struct FGuid& InChannelId, struct FOSSVAL_ChatChannelCreationSettings& InChannelCreationSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "RpcClient_OnChatChannelCreated");
-
-	Params::AVAL_PlayerControllerBase_RpcClient_OnChatChannelCreated_Params Parms{};
-
-	Parms.ChannelId = InChannelId;
-	Parms.ChannelCreationSettings = InChannelCreationSettings;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -73440,6 +74089,27 @@ void AVAL_PlayerControllerBase::RpcClient_DismissNotification(const struct FNoti
 
 
 	Func->FunctionFlags = Flags;
+
+}
+
+
+// DelegateFunction Palia.VAL_PlayerControllerBase.OnServerRegionUpdated__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// class FString                      Region                                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AVAL_PlayerControllerBase::OnServerRegionUpdated__DelegateSignature(const class FString& InRegion)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_PlayerControllerBase", "OnServerRegionUpdated__DelegateSignature");
+
+	Params::AVAL_PlayerControllerBase_OnServerRegionUpdated__DelegateSignature_Params Parms{};
+
+	Parms.Region = InRegion;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 }
 
@@ -73536,18 +74206,18 @@ void AVAL_PlayerControllerBase::OnRep_PlatformEnvironment()
 }
 
 
-// Function Palia.VAL_PlayerControllerBase.OnRep_OnServerIdUpdated
+// Function Palia.VAL_PlayerControllerBase.OnRep_OnServerRegionUpdated
 // (Final, Native, Protected)
 // Parameters:
 
-void AVAL_PlayerControllerBase::OnRep_OnServerIdUpdated()
+void AVAL_PlayerControllerBase::OnRep_OnServerRegionUpdated()
 {
 	static class UFunction* Func = nullptr;
 
 	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "OnRep_OnServerIdUpdated");
+		Func = Class->GetFunction("VAL_PlayerControllerBase", "OnRep_OnServerRegionUpdated");
 
-	Params::AVAL_PlayerControllerBase_OnRep_OnServerIdUpdated_Params Parms{};
+	Params::AVAL_PlayerControllerBase_OnRep_OnServerRegionUpdated_Params Parms{};
 
 
 	auto Flags = Func->FunctionFlags;
@@ -73561,18 +74231,18 @@ void AVAL_PlayerControllerBase::OnRep_OnServerIdUpdated()
 }
 
 
-// Function Palia.VAL_PlayerControllerBase.OnRep_OnServerChatChannelIdObtained
+// Function Palia.VAL_PlayerControllerBase.OnRep_OnServerIdUpdated
 // (Final, Native, Protected)
 // Parameters:
 
-void AVAL_PlayerControllerBase::OnRep_OnServerChatChannelIdObtained()
+void AVAL_PlayerControllerBase::OnRep_OnServerIdUpdated()
 {
 	static class UFunction* Func = nullptr;
 
 	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "OnRep_OnServerChatChannelIdObtained");
+		Func = Class->GetFunction("VAL_PlayerControllerBase", "OnRep_OnServerIdUpdated");
 
-	Params::AVAL_PlayerControllerBase_OnRep_OnServerChatChannelIdObtained_Params Parms{};
+	Params::AVAL_PlayerControllerBase_OnRep_OnServerIdUpdated_Params Parms{};
 
 
 	auto Flags = Func->FunctionFlags;
@@ -73647,50 +74317,6 @@ void AVAL_PlayerControllerBase::OnMatchmakingResultObtained__DelegateSignature(s
 }
 
 
-// DelegateFunction Palia.VAL_PlayerControllerBase.OnJoinedChatChannelsObtained__DelegateSignature
-// (MulticastDelegate, Public, Delegate, HasOutParams)
-// Parameters:
-// TArray<struct FOSSVAL_ChatChannel> Channels                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::OnJoinedChatChannelsObtained__DelegateSignature(TArray<struct FOSSVAL_ChatChannel>& InChannels)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "OnJoinedChatChannelsObtained__DelegateSignature");
-
-	Params::AVAL_PlayerControllerBase_OnJoinedChatChannelsObtained__DelegateSignature_Params Parms{};
-
-	Parms.Channels = InChannels;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
-// DelegateFunction Palia.VAL_PlayerControllerBase.OnGethatChannelsByOwnerIdObtained__DelegateSignature
-// (MulticastDelegate, Public, Delegate, HasOutParams, HasDefaults)
-// Parameters:
-// struct FGuid                       OwnerId                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FOSSVAL_ChatChannel> Channels                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::OnGethatChannelsByOwnerIdObtained__DelegateSignature(struct FGuid& InOwnerId, TArray<struct FOSSVAL_ChatChannel>& InChannels)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "OnGethatChannelsByOwnerIdObtained__DelegateSignature");
-
-	Params::AVAL_PlayerControllerBase_OnGethatChannelsByOwnerIdObtained__DelegateSignature_Params Parms{};
-
-	Parms.OwnerId = InOwnerId;
-	Parms.Channels = InChannels;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
 // DelegateFunction Palia.VAL_PlayerControllerBase.OnClientPreTravel__DelegateSignature
 // (MulticastDelegate, Public, Delegate)
 // Parameters:
@@ -73710,29 +74336,6 @@ void AVAL_PlayerControllerBase::OnClientPreTravel__DelegateSignature(const class
 	Parms.PendingURL = InPendingURL;
 	Parms.TravelType = InTravelType;
 	Parms.bIsSeamlessTravel = InbIsSeamlessTravel;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
-// DelegateFunction Palia.VAL_PlayerControllerBase.OnChatChannelCreated__DelegateSignature
-// (MulticastDelegate, Public, Delegate, HasOutParams, HasDefaults)
-// Parameters:
-// struct FGuid                       ChannelId                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FOSSVAL_ChatChannelCreationSettingsChannelCreationSettings                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AVAL_PlayerControllerBase::OnChatChannelCreated__DelegateSignature(struct FGuid& InChannelId, struct FOSSVAL_ChatChannelCreationSettings& InChannelCreationSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerControllerBase", "OnChatChannelCreated__DelegateSignature");
-
-	Params::AVAL_PlayerControllerBase_OnChatChannelCreated__DelegateSignature_Params Parms{};
-
-	Parms.ChannelId = InChannelId;
-	Parms.ChannelCreationSettings = InChannelCreationSettings;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -73810,6 +74413,31 @@ void AVAL_PlayerControllerBase::DismissNotification(const struct FNotification& 
 	Params::AVAL_PlayerControllerBase_DismissNotification_Params Parms{};
 
 	Parms.Notification = InNotification;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_PlayerControllerBase.Client_InactivityHeartbeat
+// (Final, Native, Public)
+// Parameters:
+
+void AVAL_PlayerControllerBase::Client_InactivityHeartbeat()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_PlayerControllerBase", "Client_InactivityHeartbeat");
+
+	Params::AVAL_PlayerControllerBase_Client_InactivityHeartbeat_Params Parms{};
+
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -76085,31 +76713,6 @@ void AValeriaPlayerController::RpcServer_GatherActor(class AActor* InActor)
 	Params::AValeriaPlayerController_RpcServer_GatherActor_Params Parms{};
 
 	Parms.Actor = InActor;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.ValeriaPlayerController.RpcServer_ForceReturnHome
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-
-void AValeriaPlayerController::RpcServer_ForceReturnHome()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("ValeriaPlayerController", "RpcServer_ForceReturnHome");
-
-	Params::AValeriaPlayerController_RpcServer_ForceReturnHome_Params Parms{};
-
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -80380,10 +80983,11 @@ void UValeriaTimeManager::HandleServerDailyReset()
 
 
 // Function Palia.ValeriaTimeManager.HandlePreServerWeeklyReset
-// (Final, Native, Protected)
+// (Final, Native, Protected, HasOutParams)
 // Parameters:
+// struct FVAL_TimerHandle            TimerHandle                                                      (Parm, OutParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UValeriaTimeManager::HandlePreServerWeeklyReset()
+void UValeriaTimeManager::HandlePreServerWeeklyReset(struct FVAL_TimerHandle* InTimerHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -80401,14 +81005,18 @@ void UValeriaTimeManager::HandlePreServerWeeklyReset()
 
 	Func->FunctionFlags = Flags;
 
+	if (InTimerHandle != nullptr)
+		*InTimerHandle = Parms.TimerHandle;
+
 }
 
 
 // Function Palia.ValeriaTimeManager.HandlePreServerDailyReset
-// (Final, Native, Protected)
+// (Final, Native, Protected, HasOutParams)
 // Parameters:
+// struct FVAL_TimerHandle            TimerHandle                                                      (Parm, OutParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UValeriaTimeManager::HandlePreServerDailyReset()
+void UValeriaTimeManager::HandlePreServerDailyReset(struct FVAL_TimerHandle* InTimerHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -80425,6 +81033,9 @@ void UValeriaTimeManager::HandlePreServerDailyReset()
 
 
 	Func->FunctionFlags = Flags;
+
+	if (InTimerHandle != nullptr)
+		*InTimerHandle = Parms.TimerHandle;
 
 }
 
@@ -88852,90 +89463,6 @@ void UVAL_ChatCommand_Report::OpenCommandModalDialogue(class UUserWidget* InComm
 }
 
 
-// Function Palia.VAl_ChatLibrary.GetServerChatChannelCreationSettings
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FOSSVAL_ChatChannelCreationSettingsReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FOSSVAL_ChatChannelCreationSettings UVAl_ChatLibrary::GetServerChatChannelCreationSettings()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAl_ChatLibrary", "GetServerChatChannelCreationSettings");
-
-	Params::UVAl_ChatLibrary_GetServerChatChannelCreationSettings_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function Palia.VAl_ChatLibrary.GetPartyChatChannelCreationSettings
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FOSSVAL_ChatChannelCreationSettingsReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FOSSVAL_ChatChannelCreationSettings UVAl_ChatLibrary::GetPartyChatChannelCreationSettings()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAl_ChatLibrary", "GetPartyChatChannelCreationSettings");
-
-	Params::UVAl_ChatLibrary_GetPartyChatChannelCreationSettings_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function Palia.VAl_ChatLibrary.GetGuildChatChannelCreationSettings
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FOSSVAL_ChatChannelCreationSettingsReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FOSSVAL_ChatChannelCreationSettings UVAl_ChatLibrary::GetGuildChatChannelCreationSettings()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAl_ChatLibrary", "GetGuildChatChannelCreationSettings");
-
-	Params::UVAl_ChatLibrary_GetGuildChatChannelCreationSettings_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
 // Function Palia.VAL_CheatManager.Valeria_VillagerMail_Spoof
 // (Final, BlueprintAuthorityOnly, Exec, Native, Public)
 // Parameters:
@@ -90194,6 +90721,39 @@ class FName UVAL_DialogueAsset::GetVillagerName()
 	Func->FunctionFlags = Flags;
 
 	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_DialogueAsset.GetDialogueOptionButtonTooltipSettings
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               bOutShouldShowTooltip                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                        OutTooltipText                                                   (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void UVAL_DialogueAsset::GetDialogueOptionButtonTooltipSettings(bool* InbOutShouldShowTooltip, class FText* InOutTooltipText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_DialogueAsset", "GetDialogueOptionButtonTooltipSettings");
+
+	Params::UVAL_DialogueAsset_GetDialogueOptionButtonTooltipSettings_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	if (InbOutShouldShowTooltip != nullptr)
+		*InbOutShouldShowTooltip = Parms.bOutShouldShowTooltip;
+
+	if (InOutTooltipText != nullptr)
+		*InOutTooltipText = Parms.OutTooltipText;
 
 }
 
@@ -92315,6 +92875,31 @@ void IVAL_GameplayUIBridgeInterface::OpenNewsInbox()
 		Func = Class->GetFunction("VAL_GameplayUIBridgeInterface", "OpenNewsInbox");
 
 	Params::IVAL_GameplayUIBridgeInterface_OpenNewsInbox_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_GameplayUIBridgeInterface.OpenMenuHub
+// (BlueprintCosmetic, Native, Public, BlueprintCallable)
+// Parameters:
+
+void IVAL_GameplayUIBridgeInterface::OpenMenuHub()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_GameplayUIBridgeInterface", "OpenMenuHub");
+
+	Params::IVAL_GameplayUIBridgeInterface_OpenMenuHub_Params Parms{};
 
 
 	auto Flags = Func->FunctionFlags;
@@ -96047,64 +96632,6 @@ void UVAL_PartyManager::HandleOnPresenceChanged(const struct FPresence& InOldPre
 }
 
 
-// Function Palia.VAL_PartyManager.HandleOnGetChatChannelsByOwnerIdObtained
-// (Final, Native, Protected, HasOutParams, HasDefaults)
-// Parameters:
-// struct FGuid                       OwnerId                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FOSSVAL_ChatChannel> ChatChannels                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UVAL_PartyManager::HandleOnGetChatChannelsByOwnerIdObtained(struct FGuid& InOwnerId, TArray<struct FOSSVAL_ChatChannel>& InChatChannels)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PartyManager", "HandleOnGetChatChannelsByOwnerIdObtained");
-
-	Params::UVAL_PartyManager_HandleOnGetChatChannelsByOwnerIdObtained_Params Parms{};
-
-	Parms.OwnerId = InOwnerId;
-	Parms.ChatChannels = InChatChannels;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.VAL_PartyManager.HandleOnChatChannelCreated
-// (Final, Native, Private, HasOutParams, HasDefaults)
-// Parameters:
-// struct FGuid                       ChannelId                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FOSSVAL_ChatChannelCreationSettingsChannelCreationSettings                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UVAL_PartyManager::HandleOnChatChannelCreated(struct FGuid& InChannelId, struct FOSSVAL_ChatChannelCreationSettings& InChannelCreationSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PartyManager", "HandleOnChatChannelCreated");
-
-	Params::UVAL_PartyManager_HandleOnChatChannelCreated_Params Parms{};
-
-	Parms.ChannelId = InChannelId;
-	Parms.ChannelCreationSettings = InChannelCreationSettings;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
 // Function Palia.VAL_PartyManager.HandleNewControlMessage
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
@@ -96410,6 +96937,27 @@ bool AVAL_PlayerCameraManager::ShouldHidePlateWidgets()
 	Func->FunctionFlags = Flags;
 
 	return Parms.ReturnValue;
+
+}
+
+
+// DelegateFunction Palia.VAL_PlayerCameraManager.OnCameraGenericNotify__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// class AVAL_PlayerCameraManager*    CameraManager                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AVAL_PlayerCameraManager::OnCameraGenericNotify__DelegateSignature(class AVAL_PlayerCameraManager* InCameraManager)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_PlayerCameraManager", "OnCameraGenericNotify__DelegateSignature");
+
+	Params::AVAL_PlayerCameraManager_OnCameraGenericNotify__DelegateSignature_Params Parms{};
+
+	Parms.CameraManager = InCameraManager;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 }
 
@@ -98319,62 +98867,6 @@ bool UVAL_PlayerGuildSubsystem::IsLocalPlayerInPlayerGuildWith(const class FStri
 }
 
 
-// Function Palia.VAL_PlayerGuildSubsystem.HandleOnJoinedChatChannelsObtained
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// TArray<struct FOSSVAL_ChatChannel> ChatChannels                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UVAL_PlayerGuildSubsystem::HandleOnJoinedChatChannelsObtained(TArray<struct FOSSVAL_ChatChannel>& InChatChannels)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerGuildSubsystem", "HandleOnJoinedChatChannelsObtained");
-
-	Params::UVAL_PlayerGuildSubsystem_HandleOnJoinedChatChannelsObtained_Params Parms{};
-
-	Parms.ChatChannels = InChatChannels;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.VAL_PlayerGuildSubsystem.HandleOnChatChannelCreated
-// (Final, Native, Private, HasOutParams, HasDefaults)
-// Parameters:
-// struct FGuid                       ChannelId                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FOSSVAL_ChatChannelCreationSettingsChannelCreationSettings                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UVAL_PlayerGuildSubsystem::HandleOnChatChannelCreated(struct FGuid& InChannelId, struct FOSSVAL_ChatChannelCreationSettings& InChannelCreationSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("VAL_PlayerGuildSubsystem", "HandleOnChatChannelCreated");
-
-	Params::UVAL_PlayerGuildSubsystem_HandleOnChatChannelCreated_Params Parms{};
-
-	Parms.ChannelId = InChannelId;
-	Parms.ChannelCreationSettings = InChannelCreationSettings;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
 // Function Palia.VAL_PlayerGuildSubsystem.HandleNewControlMessage
 // (Final, Native, Private, HasOutParams)
 // Parameters:
@@ -100109,6 +100601,299 @@ class UObject* IVAL_RichMarkupPhotographInterface::GetPhotographImageResourceObj
 }
 
 
+// Function Palia.VAL_ScoreComponent.Server_SubtractScore
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVAL_ScoreDefinition*        ScoreDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_ScoreComponent::Server_SubtractScore(class UVAL_ScoreDefinition* InScoreDefinition, int32 InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ScoreComponent", "Server_SubtractScore");
+
+	Params::UVAL_ScoreComponent_Server_SubtractScore_Params Parms{};
+
+	Parms.ScoreDefinition = InScoreDefinition;
+	Parms.Value = InValue;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_ScoreComponent.Server_SetScoreToDisplay
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVAL_ScoreDefinition*        ScoreDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              DisplayedIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_ScoreComponent::Server_SetScoreToDisplay(class UVAL_ScoreDefinition* InScoreDefinition, int32 InDisplayedIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ScoreComponent", "Server_SetScoreToDisplay");
+
+	Params::UVAL_ScoreComponent_Server_SetScoreToDisplay_Params Parms{};
+
+	Parms.ScoreDefinition = InScoreDefinition;
+	Parms.DisplayedIndex = InDisplayedIndex;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_ScoreComponent.Server_SetScore
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVAL_ScoreDefinition*        ScoreDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_ScoreComponent::Server_SetScore(class UVAL_ScoreDefinition* InScoreDefinition, int32 InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ScoreComponent", "Server_SetScore");
+
+	Params::UVAL_ScoreComponent_Server_SetScore_Params Parms{};
+
+	Parms.ScoreDefinition = InScoreDefinition;
+	Parms.Value = InValue;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_ScoreComponent.Server_AddScore
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVAL_ScoreDefinition*        ScoreDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_ScoreComponent::Server_AddScore(class UVAL_ScoreDefinition* InScoreDefinition, int32 InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ScoreComponent", "Server_AddScore");
+
+	Params::UVAL_ScoreComponent_Server_AddScore_Params Parms{};
+
+	Parms.ScoreDefinition = InScoreDefinition;
+	Parms.Value = InValue;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_ScoreComponent.RpcClient_SetScoreToDisplay
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// class UVAL_ScoreDefinition*        ScoreDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              DisplayedIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_ScoreComponent::RpcClient_SetScoreToDisplay(class UVAL_ScoreDefinition* InScoreDefinition, int32 InDisplayedIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ScoreComponent", "RpcClient_SetScoreToDisplay");
+
+	Params::UVAL_ScoreComponent_RpcClient_SetScoreToDisplay_Params Parms{};
+
+	Parms.ScoreDefinition = InScoreDefinition;
+	Parms.DisplayedIndex = InDisplayedIndex;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_ScoreComponent.RpcClient_SetScore
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// class UVAL_ScoreDefinition*        ScoreDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_ScoreComponent::RpcClient_SetScore(class UVAL_ScoreDefinition* InScoreDefinition, int32 InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ScoreComponent", "RpcClient_SetScore");
+
+	Params::UVAL_ScoreComponent_RpcClient_SetScore_Params Parms{};
+
+	Parms.ScoreDefinition = InScoreDefinition;
+	Parms.Value = InValue;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_ScoreComponent.RpcClient_InitScores
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// TArray<int32>                      ScoreIds                                                         (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<int32>                      ScoreValues                                                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UVAL_ScoreComponent::RpcClient_InitScores(TArray<int32>& InScoreIds, TArray<int32>& InScoreValues)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ScoreComponent", "RpcClient_InitScores");
+
+	Params::UVAL_ScoreComponent_RpcClient_InitScores_Params Parms{};
+
+	Parms.ScoreIds = InScoreIds;
+	Parms.ScoreValues = InScoreValues;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_ScoreComponent.HasScore
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVAL_ScoreDefinition*        ScoreDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVAL_ScoreComponent::HasScore(class UVAL_ScoreDefinition* InScoreDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ScoreComponent", "HasScore");
+
+	Params::UVAL_ScoreComponent_HasScore_Params Parms{};
+
+	Parms.ScoreDefinition = InScoreDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_ScoreComponent.GetScoreToDisplay
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                              DisplayedIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UVAL_ScoreDefinition*        ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVAL_ScoreDefinition* UVAL_ScoreComponent::GetScoreToDisplay(int32 InDisplayedIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ScoreComponent", "GetScoreToDisplay");
+
+	Params::UVAL_ScoreComponent_GetScoreToDisplay_Params Parms{};
+
+	Parms.DisplayedIndex = InDisplayedIndex;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_ScoreComponent.GetScore
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVAL_ScoreDefinition*        ScoreDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UVAL_ScoreComponent::GetScore(class UVAL_ScoreDefinition* InScoreDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ScoreComponent", "GetScore");
+
+	Params::UVAL_ScoreComponent_GetScore_Params Parms{};
+
+	Parms.ScoreDefinition = InScoreDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function Palia.VAL_SequencerFunctionLibrary.UnBindPlayerToSequence
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -100656,6 +101441,464 @@ void UVAL_SprayStatics::TrySpawnSpray(class AActor* InActorSource, TSoftObjectPt
 
 
 	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.Server_UnpauseTimer
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_TimerComponent::Server_UnpauseTimer(class UVAL_TimerDefinition* InTimerDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "Server_UnpauseTimer");
+
+	Params::UVAL_TimerComponent_Server_UnpauseTimer_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.Server_StopTimer
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_TimerComponent::Server_StopTimer(class UVAL_TimerDefinition* InTimerDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "Server_StopTimer");
+
+	Params::UVAL_TimerComponent_Server_StopTimer_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.Server_StartTimer
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_TimerComponent::Server_StartTimer(class UVAL_TimerDefinition* InTimerDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "Server_StartTimer");
+
+	Params::UVAL_TimerComponent_Server_StartTimer_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.Server_SetTimerToDisplay
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              DisplayedIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_TimerComponent::Server_SetTimerToDisplay(class UVAL_TimerDefinition* InTimerDefinition, int32 InDisplayedIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "Server_SetTimerToDisplay");
+
+	Params::UVAL_TimerComponent_Server_SetTimerToDisplay_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+	Parms.DisplayedIndex = InDisplayedIndex;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.Server_PauseTimer
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_TimerComponent::Server_PauseTimer(class UVAL_TimerDefinition* InTimerDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "Server_PauseTimer");
+
+	Params::UVAL_TimerComponent_Server_PauseTimer_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.RpcClient_UpdateTimer
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// struct FVAL_TimerStateStruct       TimerState                                                       (ConstParm, Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UVAL_TimerComponent::RpcClient_UpdateTimer(const struct FVAL_TimerStateStruct& InTimerState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "RpcClient_UpdateTimer");
+
+	Params::UVAL_TimerComponent_RpcClient_UpdateTimer_Params Parms{};
+
+	Parms.TimerState = InTimerState;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.RpcClient_SetTimerToDisplay
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              DisplayedIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVAL_TimerComponent::RpcClient_SetTimerToDisplay(class UVAL_TimerDefinition* InTimerDefinition, int32 InDisplayedIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "RpcClient_SetTimerToDisplay");
+
+	Params::UVAL_TimerComponent_RpcClient_SetTimerToDisplay_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+	Parms.DisplayedIndex = InDisplayedIndex;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.IsTimerStopped
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVAL_TimerComponent::IsTimerStopped(class UVAL_TimerDefinition* InTimerDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "IsTimerStopped");
+
+	Params::UVAL_TimerComponent_IsTimerStopped_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.IsTimerPaused
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVAL_TimerComponent::IsTimerPaused(class UVAL_TimerDefinition* InTimerDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "IsTimerPaused");
+
+	Params::UVAL_TimerComponent_IsTimerPaused_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.HasTimerStarted
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVAL_TimerComponent::HasTimerStarted(class UVAL_TimerDefinition* InTimerDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "HasTimerStarted");
+
+	Params::UVAL_TimerComponent_HasTimerStarted_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.HandleCharacterUnstuck
+// (Final, Native, Private)
+// Parameters:
+
+void UVAL_TimerComponent::HandleCharacterUnstuck()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "HandleCharacterUnstuck");
+
+	Params::UVAL_TimerComponent_HandleCharacterUnstuck_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.GetTimerToDisplay
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                              DisplayedIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UVAL_TimerDefinition*        ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVAL_TimerDefinition* UVAL_TimerComponent::GetTimerToDisplay(int32 InDisplayedIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "GetTimerToDisplay");
+
+	Params::UVAL_TimerComponent_GetTimerToDisplay_Params Parms{};
+
+	Parms.DisplayedIndex = InDisplayedIndex;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.GetSecondsRemaining
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int64 UVAL_TimerComponent::GetSecondsRemaining(class UVAL_TimerDefinition* InTimerDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "GetSecondsRemaining");
+
+	Params::UVAL_TimerComponent_GetSecondsRemaining_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.GetSecondsOnTimerToDisplay
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                              DisplayedIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int64 UVAL_TimerComponent::GetSecondsOnTimerToDisplay(int32 InDisplayedIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "GetSecondsOnTimerToDisplay");
+
+	Params::UVAL_TimerComponent_GetSecondsOnTimerToDisplay_Params Parms{};
+
+	Parms.DisplayedIndex = InDisplayedIndex;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.GetSecondsOnTimer
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int64 UVAL_TimerComponent::GetSecondsOnTimer(class UVAL_TimerDefinition* InTimerDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "GetSecondsOnTimer");
+
+	Params::UVAL_TimerComponent_GetSecondsOnTimer_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_TimerComponent.GetSecondsElapsed
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UVAL_TimerDefinition*        TimerDefinition                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int64 UVAL_TimerComponent::GetSecondsElapsed(class UVAL_TimerDefinition* InTimerDefinition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_TimerComponent", "GetSecondsElapsed");
+
+	Params::UVAL_TimerComponent_GetSecondsElapsed_Params Parms{};
+
+	Parms.TimerDefinition = InTimerDefinition;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
 
 }
 
@@ -101526,6 +102769,90 @@ bool UVAL_UniqueNetIdUtils::EqualEqual(struct FUniqueNetIdRepl& InA, struct FUni
 
 	Parms.A = InA;
 	Parms.B = InB;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_WorldSettings.IsMinigameWorld
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AVAL_WorldSettings::IsMinigameWorld()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_WorldSettings", "IsMinigameWorld");
+
+	Params::AVAL_WorldSettings_IsMinigameWorld_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_WorldSettings.IsGliderEnabled
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AVAL_WorldSettings::IsGliderEnabled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_WorldSettings", "IsGliderEnabled");
+
+	Params::AVAL_WorldSettings_IsGliderEnabled_Params Parms{};
+
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function Palia.VAL_WorldSettings.GetUnstuckDestination
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UTeleportTravelConfigAsset*  ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTeleportTravelConfigAsset* AVAL_WorldSettings::GetUnstuckDestination()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_WorldSettings", "GetUnstuckDestination");
+
+	Params::AVAL_WorldSettings_GetUnstuckDestination_Params Parms{};
+
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -103445,6 +104772,35 @@ void UVillagerStoreComponent::Client_SetStoreByConfig(class UVillagerStoreConfig
 	Params::UVillagerStoreComponent_Client_SetStoreByConfig_Params Parms{};
 
 	Parms.Config = InConfig;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function Palia.VillagerStoreComponent.Client_SellItem_Custom
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FBagSlotLocation            SlotLocation                                                     (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                              NumToSell                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVillagerStoreComponent::Client_SellItem_Custom(const struct FBagSlotLocation& InSlotLocation, int32 InNumToSell)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VillagerStoreComponent", "Client_SellItem_Custom");
+
+	Params::UVillagerStoreComponent_Client_SellItem_Custom_Params Parms{};
+
+	Parms.SlotLocation = InSlotLocation;
+	Parms.NumToSell = InNumToSell;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -105469,171 +106825,6 @@ void AWorldPersistGatherable::WorldPersistGatherableAdded(const struct FGameplay
 
 
 	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.WorldPersistGatherable.UpdateGatherableEnabledState
-// (Final, Native, Protected)
-// Parameters:
-
-void AWorldPersistGatherable::UpdateGatherableEnabledState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WorldPersistGatherable", "UpdateGatherableEnabledState");
-
-	Params::AWorldPersistGatherable_UpdateGatherableEnabledState_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.WorldPersistGatherable.SetGatherableEnabled
-// (Final, Native, Protected)
-// Parameters:
-// bool                               bInEnabled                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AWorldPersistGatherable::SetGatherableEnabled(bool InbInEnabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WorldPersistGatherable", "SetGatherableEnabled");
-
-	Params::AWorldPersistGatherable_SetGatherableEnabled_Params Parms{};
-
-	Parms.bInEnabled = InbInEnabled;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.WorldPersistGatherable.Client_TryGetValeriaCharacter
-// (Final, Native, Protected)
-// Parameters:
-
-void AWorldPersistGatherable::Client_TryGetValeriaCharacter()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WorldPersistGatherable", "Client_TryGetValeriaCharacter");
-
-	Params::AWorldPersistGatherable_Client_TryGetValeriaCharacter_Params Parms{};
-
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.WorldPersistGatherable.CharacterGatheredLoot
-// (Final, Native, Protected)
-// Parameters:
-// class AValeriaCharacter*           GatheringCharacter                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ULootInteractorBaseComponent*GatheredLootComponent                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AWorldPersistGatherable::CharacterGatheredLoot(class AValeriaCharacter* InGatheringCharacter, class ULootInteractorBaseComponent* InGatheredLootComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WorldPersistGatherable", "CharacterGatheredLoot");
-
-	Params::AWorldPersistGatherable_CharacterGatheredLoot_Params Parms{};
-
-	Parms.GatheringCharacter = InGatheringCharacter;
-	Parms.GatheredLootComponent = InGatheredLootComponent;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-}
-
-
-// Function Palia.WorldPersistGatherable.BPIE_GatherableGathered
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class AValeriaCharacter*           GatheringCharacter                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AWorldPersistGatherable::BPIE_GatherableGathered(class AValeriaCharacter* InGatheringCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WorldPersistGatherable", "BPIE_GatherableGathered");
-
-	Params::AWorldPersistGatherable_BPIE_GatherableGathered_Params Parms{};
-
-	Parms.GatheringCharacter = InGatheringCharacter;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
-// Function Palia.WorldPersistGatherable.BPIE_GatherableEnabled
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-
-void AWorldPersistGatherable::BPIE_GatherableEnabled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WorldPersistGatherable", "BPIE_GatherableEnabled");
-
-	Params::AWorldPersistGatherable_BPIE_GatherableEnabled_Params Parms{};
-
-
-	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
-// Function Palia.WorldPersistGatherable.BPIE_GatherableDisabled
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-
-void AWorldPersistGatherable::BPIE_GatherableDisabled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WorldPersistGatherable", "BPIE_GatherableDisabled");
-
-	Params::AWorldPersistGatherable_BPIE_GatherableDisabled_Params Parms{};
-
-
-	UObject::ProcessEvent(Func, &Parms);
 
 }
 

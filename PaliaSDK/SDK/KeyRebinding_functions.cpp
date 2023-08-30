@@ -93,38 +93,6 @@ struct FInputKeys UBindingKeyListenerWidget::GetPlayerInputKey()
 }
 
 
-// Function KeyRebinding.InputActionDescriptionWidget.RefreshDiscription
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                        ActionName                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FKeyRebindingIcons          ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FKeyRebindingIcons UInputActionDescriptionWidget::RefreshDiscription(class FName& InActionName, bool InbIsGamepadKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("InputActionDescriptionWidget", "RefreshDiscription");
-
-	Params::UInputActionDescriptionWidget_RefreshDiscription_Params Parms{};
-
-	Parms.ActionName = InActionName;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
 // Function KeyRebinding.KeyRebindingToolsLibrary.GetPromptDelayTime
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -187,11 +155,10 @@ class FString UKeyRebindingToolsLibrary::GetKeyFName(struct FKey& InInKey)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // struct FInputKeys                  InputKeys                                                        (ConstParm, Parm, NativeAccessSpecifierPublic)
-// bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UInputActionDescriptionWidget*ActionDescWidget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UTexture2D*>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UTexture2D*> UKeyRebindingToolsLibrary::GetImagesWithInputKeys(const struct FInputKeys& InInputKeys, bool InbIsGamepadKey, class UInputActionDescriptionWidget* InActionDescWidget)
+TArray<class UTexture2D*> UKeyRebindingToolsLibrary::GetImagesWithInputKeys(const struct FInputKeys& InInputKeys, class UInputActionDescriptionWidget* InActionDescWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -201,81 +168,6 @@ TArray<class UTexture2D*> UKeyRebindingToolsLibrary::GetImagesWithInputKeys(cons
 	Params::UKeyRebindingToolsLibrary_GetImagesWithInputKeys_Params Parms{};
 
 	Parms.InputKeys = InInputKeys;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-	Parms.ActionDescWidget = InActionDescWidget;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function KeyRebinding.KeyRebindingToolsLibrary.GetImagesWithActionNameAndSlot
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class FName                        ActionName                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// enum class EKeyRebindingSlot       SlotNum                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UKeyRebindingSubsystem*      KeyRebindingSubsystem                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UInputActionDescriptionWidget*ActionDescWidget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UTexture2D*>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class UTexture2D*> UKeyRebindingToolsLibrary::GetImagesWithActionNameAndSlot(class FName& InActionName, enum class EKeyRebindingSlot InSlotNum, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("KeyRebindingToolsLibrary", "GetImagesWithActionNameAndSlot");
-
-	Params::UKeyRebindingToolsLibrary_GetImagesWithActionNameAndSlot_Params Parms{};
-
-	Parms.ActionName = InActionName;
-	Parms.SlotNum = InSlotNum;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-	Parms.KeyRebindingSubsystem = InKeyRebindingSubsystem;
-	Parms.ActionDescWidget = InActionDescWidget;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function KeyRebinding.KeyRebindingToolsLibrary.GetImagesWithAction
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UInputAction*                InputAction                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UKeyRebindingSubsystem*      KeyRebindingSubsystem                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UInputActionDescriptionWidget*ActionDescWidget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UTexture2D*>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class UTexture2D*> UKeyRebindingToolsLibrary::GetImagesWithAction(class UInputAction* InInputAction, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("KeyRebindingToolsLibrary", "GetImagesWithAction");
-
-	Params::UKeyRebindingToolsLibrary_GetImagesWithAction_Params Parms{};
-
-	Parms.InputAction = InInputAction;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-	Parms.KeyRebindingSubsystem = InKeyRebindingSubsystem;
 	Parms.ActionDescWidget = InActionDescWidget;
 
 	auto Flags = Func->FunctionFlags;
@@ -296,11 +188,12 @@ TArray<class UTexture2D*> UKeyRebindingToolsLibrary::GetImagesWithAction(class U
 // Parameters:
 // class FName                        ActionName                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UKeyRebindingSubsystem*      KeyRebindingSubsystem                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UKeyRebindingSubsystem*      KeyRebindingSubsystem                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UInputActionDescriptionWidget*ActionDescWidget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKeyRebindingIcons          ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FKeyRebindingIcons UKeyRebindingToolsLibrary::GetImagesArrayWithActionName(class FName& InActionName, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget)
+struct FKeyRebindingIcons UKeyRebindingToolsLibrary::GetImagesArrayWithActionName(class FName& InActionName, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget, bool InbIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -313,6 +206,7 @@ struct FKeyRebindingIcons UKeyRebindingToolsLibrary::GetImagesArrayWithActionNam
 	Parms.bIsGamepadKey = InbIsGamepadKey;
 	Parms.KeyRebindingSubsystem = InKeyRebindingSubsystem;
 	Parms.ActionDescWidget = InActionDescWidget;
+	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -334,8 +228,9 @@ struct FKeyRebindingIcons UKeyRebindingToolsLibrary::GetImagesArrayWithActionNam
 // bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UKeyRebindingSubsystem*      KeyRebindingSubsystem                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UInputActionDescriptionWidget*ActionDescWidget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKeyRebindingToolsLibrary::GetAllInputActionMappingInfo(TArray<struct FKeyRebindingSettingsInfo>* InOutKeyRebindingSettingsInfo, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget)
+void UKeyRebindingToolsLibrary::GetAllInputActionMappingInfo(TArray<struct FKeyRebindingSettingsInfo>* InOutKeyRebindingSettingsInfo, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget, bool InbIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -347,6 +242,7 @@ void UKeyRebindingToolsLibrary::GetAllInputActionMappingInfo(TArray<struct FKeyR
 	Parms.bIsGamepadKey = InbIsGamepadKey;
 	Parms.KeyRebindingSubsystem = InKeyRebindingSubsystem;
 	Parms.ActionDescWidget = InActionDescWidget;
+	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -358,6 +254,73 @@ void UKeyRebindingToolsLibrary::GetAllInputActionMappingInfo(TArray<struct FKeyR
 
 	if (InOutKeyRebindingSettingsInfo != nullptr)
 		*InOutKeyRebindingSettingsInfo = Parms.OutKeyRebindingSettingsInfo;
+
+}
+
+
+// Function KeyRebinding.KeyRebindingToolsLibrary.GetAllImagesWithAction
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UInputAction*                InputAction                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UEnhancedInputSubsystemWithKeyRebinding*EnhancedInputSubsystem                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UInputActionDescriptionWidget*ActionDescWidget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FInputKeysImages>    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FInputKeysImages> UKeyRebindingToolsLibrary::GetAllImagesWithAction(class UInputAction* InInputAction, class UEnhancedInputSubsystemWithKeyRebinding* InEnhancedInputSubsystem, class UInputActionDescriptionWidget* InActionDescWidget, bool InbIsGamepadKey, bool InbIsLockedCurrentInput)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("KeyRebindingToolsLibrary", "GetAllImagesWithAction");
+
+	Params::UKeyRebindingToolsLibrary_GetAllImagesWithAction_Params Parms{};
+
+	Parms.InputAction = InInputAction;
+	Parms.EnhancedInputSubsystem = InEnhancedInputSubsystem;
+	Parms.ActionDescWidget = InActionDescWidget;
+	Parms.bIsGamepadKey = InbIsGamepadKey;
+	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function KeyRebinding.EnhancedInputSubsystemWithKeyRebinding.UnRegisterDelegateToRefreshKeys
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UInputAction*                InputAction                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// FDelegateProperty_                 RefreshKeysDelegate                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UEnhancedInputSubsystemWithKeyRebinding::UnRegisterDelegateToRefreshKeys(class UInputAction* InInputAction, FDelegateProperty_& InRefreshKeysDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("EnhancedInputSubsystemWithKeyRebinding", "UnRegisterDelegateToRefreshKeys");
+
+	Params::UEnhancedInputSubsystemWithKeyRebinding_UnRegisterDelegateToRefreshKeys_Params Parms{};
+
+	Parms.InputAction = InInputAction;
+	Parms.RefreshKeysDelegate = InRefreshKeysDelegate;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
 
 }
 
@@ -416,6 +379,69 @@ void UEnhancedInputSubsystemWithKeyRebinding::RemoveMappingContext(class UInputM
 
 
 	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function KeyRebinding.EnhancedInputSubsystemWithKeyRebinding.RegisterDelegateToRefreshKeys
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UInputAction*                InputAction                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// FDelegateProperty_                 RefreshKeysDelegate                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UEnhancedInputSubsystemWithKeyRebinding::RegisterDelegateToRefreshKeys(class UInputAction* InInputAction, FDelegateProperty_& InRefreshKeysDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("EnhancedInputSubsystemWithKeyRebinding", "RegisterDelegateToRefreshKeys");
+
+	Params::UEnhancedInputSubsystemWithKeyRebinding_RegisterDelegateToRefreshKeys_Params Parms{};
+
+	Parms.InputAction = InInputAction;
+	Parms.RefreshKeysDelegate = InRefreshKeysDelegate;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function KeyRebinding.EnhancedInputSubsystemWithKeyRebinding.GetKeysForInputAction
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UInputAction*                InputAction                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FInputKeys>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FInputKeys> UEnhancedInputSubsystemWithKeyRebinding::GetKeysForInputAction(class UInputAction* InInputAction, bool InbIsGamepadKey, bool InbIsLockedCurrentInput)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("EnhancedInputSubsystemWithKeyRebinding", "GetKeysForInputAction");
+
+	Params::UEnhancedInputSubsystemWithKeyRebinding_GetKeysForInputAction_Params Parms{};
+
+	Parms.InputAction = InInputAction;
+	Parms.bIsGamepadKey = InbIsGamepadKey;
+	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+	return Parms.ReturnValue;
 
 }
 
@@ -603,9 +629,10 @@ void UKeyRebindingSubsystem::RegisterCompleteKeyRebindingEvent(class FName InAct
 // class FName                        ActionName                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EKeyRebindingSlot       SlotNum                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FInputKeys                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FInputKeys UKeyRebindingSubsystem::QueryKeysOfActionAndSlot(class FName& InActionName, enum class EKeyRebindingSlot InSlotNum, bool InbIsGamepadKey)
+struct FInputKeys UKeyRebindingSubsystem::QueryKeysOfActionAndSlot(class FName& InActionName, enum class EKeyRebindingSlot InSlotNum, bool InbIsGamepadKey, bool InbIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -617,6 +644,7 @@ struct FInputKeys UKeyRebindingSubsystem::QueryKeysOfActionAndSlot(class FName& 
 	Parms.ActionName = InActionName;
 	Parms.SlotNum = InSlotNum;
 	Parms.bIsGamepadKey = InbIsGamepadKey;
+	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -636,9 +664,10 @@ struct FInputKeys UKeyRebindingSubsystem::QueryKeysOfActionAndSlot(class FName& 
 // Parameters:
 // class FName                        ActionName                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FInputKeys>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FInputKeys> UKeyRebindingSubsystem::QueryCustomRemappingKeys(class FName& InActionName, bool InbIsGamepadKey)
+TArray<struct FInputKeys> UKeyRebindingSubsystem::QueryCustomRemappingKeys(class FName& InActionName, bool InbIsGamepadKey, bool InbIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -649,36 +678,7 @@ TArray<struct FInputKeys> UKeyRebindingSubsystem::QueryCustomRemappingKeys(class
 
 	Parms.ActionName = InActionName;
 	Parms.bIsGamepadKey = InbIsGamepadKey;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function KeyRebinding.KeyRebindingSubsystem.GetMappingsWithAction
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                        ActionName                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FKeyRebindingMappingsWithActionReturnValue                                                      (Parm, OutParm, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-struct FKeyRebindingMappingsWithAction UKeyRebindingSubsystem::GetMappingsWithAction(class FName InActionName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("KeyRebindingSubsystem", "GetMappingsWithAction");
-
-	Params::UKeyRebindingSubsystem_GetMappingsWithAction_Params Parms{};
-
-	Parms.ActionName = InActionName;
+	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -697,9 +697,10 @@ struct FKeyRebindingMappingsWithAction UKeyRebindingSubsystem::GetMappingsWithAc
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FKey>                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FKey> UKeyRebindingSubsystem::GetAllKeysWithActionBound(bool InbIsGamepadKey)
+TArray<struct FKey> UKeyRebindingSubsystem::GetAllKeysWithActionBound(bool InbIsGamepadKey, bool InbIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -709,6 +710,7 @@ TArray<struct FKey> UKeyRebindingSubsystem::GetAllKeysWithActionBound(bool InbIs
 	Params::UKeyRebindingSubsystem_GetAllKeysWithActionBound_Params Parms{};
 
 	Parms.bIsGamepadKey = InbIsGamepadKey;
+	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -739,38 +741,6 @@ class FName UKeyRebindingSubsystem::GetActionNameWithAction(class UInputAction* 
 	Params::UKeyRebindingSubsystem_GetActionNameWithAction_Params Parms{};
 
 	Parms.InputAction = InInputAction;
-
-	auto Flags = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flags;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function KeyRebinding.KeyRebindingSubsystem.DoesActionHaveMappingKey
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                        ActionName                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKeyRebindingSubsystem::DoesActionHaveMappingKey(class FName& InActionName, bool InbIsGamepadKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("KeyRebindingSubsystem", "DoesActionHaveMappingKey");
-
-	Params::UKeyRebindingSubsystem_DoesActionHaveMappingKey_Params Parms{};
-
-	Parms.ActionName = InActionName;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -23,7 +23,7 @@ struct US6PLAT_PlayerBehaviorSubsystem_ValidateReportForm_Params
 public:
 	struct FS6PLAT_PlayerBehaviorReportForm      ReportForm;                                        // 0x0(0xA8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0xA8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_13C0[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1340[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xB8 (0xB8 - 0x0)
@@ -34,7 +34,7 @@ public:
 	class US6PLAT_PlayerBehaviorSubsystem*       PlayerBehaviorSubsystem;                           // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FS6PLAT_PlayerBehaviorReportForm      ReportForm;                                        // 0x8(0xA8)(ConstParm, Parm, NativeAccessSpecifierPublic)
 	bool                                         bDidSucceed;                                       // 0xB0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_13C7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_134E[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xA8 (0xA8 - 0x0)
@@ -59,7 +59,7 @@ struct US6PLAT_PlayerBehaviorSubsystem_GetValidReportCategoriesByType_Params
 {
 public:
 	enum class ES6PLAT_PlayerBehaviorReportType  ReportType;                                        // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_13D7[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_135A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<class FName, struct FS6PLAT_PlayerBehaviorReportCategoryInfo> ReturnValue;                                       // 0x8(0x50)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 

@@ -450,12 +450,10 @@ void UBPFL_UiHelpers_C::Get_World_Map_by_Player_Position(class UObject* In__Worl
 // class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FConfigsManager             ConfigsManager                                                   (Parm, OutParm)
 // bool                               IsValid                                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UGameInstance*               CallFunc_GetGameInstance_ReturnValue                             (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UValeriaGameInstance*        K2Node_DynamicCast_AsValeria_Game_Instance                       (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FConfigsManager             CallFunc_GetConfigsManager_ReturnValue                           (ConstParm)
+// struct FConfigsManager             CallFunc_GetConfigsManagerForBP_ConfigsManager                   ()
+// bool                               CallFunc_GetConfigsManagerForBP_ReturnValue                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::GetConfigsManager(class UObject* In__WorldContext, struct FConfigsManager* InConfigsManager, bool* InIsValid, class UGameInstance* InCallFunc_GetGameInstance_ReturnValue, class UValeriaGameInstance* InK2Node_DynamicCast_AsValeria_Game_Instance, bool InK2Node_DynamicCast_bSuccess, const struct FConfigsManager& InCallFunc_GetConfigsManager_ReturnValue)
+void UBPFL_UiHelpers_C::GetConfigsManager(class UObject* In__WorldContext, struct FConfigsManager* InConfigsManager, bool* InIsValid, const struct FConfigsManager& InCallFunc_GetConfigsManagerForBP_ConfigsManager, bool InCallFunc_GetConfigsManagerForBP_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -465,10 +463,8 @@ void UBPFL_UiHelpers_C::GetConfigsManager(class UObject* In__WorldContext, struc
 	Params::UBPFL_UiHelpers_C_GetConfigsManager_Params Parms{};
 
 	Parms.__WorldContext = In__WorldContext;
-	Parms.CallFunc_GetGameInstance_ReturnValue = InCallFunc_GetGameInstance_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Game_Instance = InK2Node_DynamicCast_AsValeria_Game_Instance;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetConfigsManager_ReturnValue = InCallFunc_GetConfigsManager_ReturnValue;
+	Parms.CallFunc_GetConfigsManagerForBP_ConfigsManager = InCallFunc_GetConfigsManagerForBP_ConfigsManager;
+	Parms.CallFunc_GetConfigsManagerForBP_ReturnValue = InCallFunc_GetConfigsManagerForBP_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 

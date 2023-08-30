@@ -402,19 +402,21 @@ bool US6UI_ModalWidgetBase::CanClose()
 }
 
 
-// Function S6UICore.S6UI_CustomNavigationGroup.MarkNavigationDirty
+// Function S6UICore.S6UI_CustomNavigationGroup.SetAutoEdgeEscapeDirections
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
+// TArray<enum class EUINavigation>   InEdgeEscapeDirections                                           (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::MarkNavigationDirty()
+void US6UI_CustomNavigationGroup::SetAutoEdgeEscapeDirections(const TArray<enum class EUINavigation>& InInEdgeEscapeDirections)
 {
 	static class UFunction* Func = nullptr;
 
 	if (!Func)
-		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "MarkNavigationDirty");
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "SetAutoEdgeEscapeDirections");
 
-	Params::US6UI_CustomNavigationGroup_MarkNavigationDirty_Params Parms{};
+	Params::US6UI_CustomNavigationGroup_SetAutoEdgeEscapeDirections_Params Parms{};
 
+	Parms.InEdgeEscapeDirections = InInEdgeEscapeDirections;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -427,22 +429,96 @@ void US6UI_CustomNavigationGroup::MarkNavigationDirty()
 }
 
 
-// Function S6UICore.S6UI_CustomNavigationGroup.ExcuteNavigation
-// (Final, Native, Public, BlueprintCallable)
+// DelegateFunction S6UICore.S6UI_CustomNavigationGroup.OnIsWidgetValiedToNavigate__DelegateSignature
+// (Public, Delegate)
 // Parameters:
-// enum class EUINavigation           InNavigationType                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                     NavObject                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6UI_CustomNavigationGroup::ExcuteNavigation(enum class EUINavigation InInNavigationType)
+bool US6UI_CustomNavigationGroup::OnIsWidgetValiedToNavigate__DelegateSignature(class UObject* InNavObject)
 {
 	static class UFunction* Func = nullptr;
 
 	if (!Func)
-		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "ExcuteNavigation");
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "OnIsWidgetValiedToNavigate__DelegateSignature");
 
-	Params::US6UI_CustomNavigationGroup_ExcuteNavigation_Params Parms{};
+	Params::US6UI_CustomNavigationGroup_OnIsWidgetValiedToNavigate__DelegateSignature_Params Parms{};
+
+	Parms.NavObject = InNavObject;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+
+}
+
+
+// DelegateFunction S6UICore.S6UI_CustomNavigationGroup.OnCustomNavigationGroupTransitionEvent__DelegateSignature
+// (Public, Delegate)
+// Parameters:
+// enum class EUINavigation           InNavigationType                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class US6UI_CustomNavigationGroup* InOriginNavigationGroup                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              InOriginWidgetIndex                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              InTargetWidgetIndex                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool US6UI_CustomNavigationGroup::OnCustomNavigationGroupTransitionEvent__DelegateSignature(enum class EUINavigation InInNavigationType, class US6UI_CustomNavigationGroup* InInOriginNavigationGroup, int32 InInOriginWidgetIndex, int32 InInTargetWidgetIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "OnCustomNavigationGroupTransitionEvent__DelegateSignature");
+
+	Params::US6UI_CustomNavigationGroup_OnCustomNavigationGroupTransitionEvent__DelegateSignature_Params Parms{};
 
 	Parms.InNavigationType = InInNavigationType;
+	Parms.InOriginNavigationGroup = InInOriginNavigationGroup;
+	Parms.InOriginWidgetIndex = InInOriginWidgetIndex;
+	Parms.InTargetWidgetIndex = InInTargetWidgetIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+
+}
+
+
+// DelegateFunction S6UICore.S6UI_CustomNavigationGroup.OnCustomNavigationGroupInitialized__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+
+void US6UI_CustomNavigationGroup::OnCustomNavigationGroupInitialized__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "OnCustomNavigationGroupInitialized__DelegateSignature");
+
+	Params::US6UI_CustomNavigationGroup_OnCustomNavigationGroupInitialized__DelegateSignature_Params Parms{};
+
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function S6UICore.S6UI_CustomNavigationGroup.NavigateToTargetWidget
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                              InTargetWidgetIndex                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bDelayActive                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_CustomNavigationGroup::NavigateToTargetWidget(int32 InInTargetWidgetIndex, bool InbDelayActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "NavigateToTargetWidget");
+
+	Params::US6UI_CustomNavigationGroup_NavigateToTargetWidget_Params Parms{};
+
+	Parms.InTargetWidgetIndex = InInTargetWidgetIndex;
+	Parms.bDelayActive = InbDelayActive;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -452,7 +528,32 @@ bool US6UI_CustomNavigationGroup::ExcuteNavigation(enum class EUINavigation InIn
 
 	Func->FunctionFlags = Flags;
 
-	return Parms.ReturnValue;
+}
+
+
+// Function S6UICore.S6UI_CustomNavigationGroup.EnableAutoEdgeEscape
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bInAutoEdgeEscape                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_CustomNavigationGroup::EnableAutoEdgeEscape(bool InbInAutoEdgeEscape)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "EnableAutoEdgeEscape");
+
+	Params::US6UI_CustomNavigationGroup_EnableAutoEdgeEscape_Params Parms{};
+
+	Parms.bInAutoEdgeEscape = InbInAutoEdgeEscape;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
 
 }
 
@@ -472,6 +573,31 @@ void US6UI_CustomNavigationGroup::DelayExcuteNavigationFromParentGroup(struct FF
 	Params::US6UI_CustomNavigationGroup_DelayExcuteNavigationFromParentGroup_Params Parms{};
 
 	Parms.InFocusEvent = InInFocusEvent;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function S6UICore.S6UI_CustomNavigationGroup.ClearNavigationGroupTransitionDatas
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+
+void US6UI_CustomNavigationGroup::ClearNavigationGroupTransitionDatas()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "ClearNavigationGroupTransitionDatas");
+
+	Params::US6UI_CustomNavigationGroup_ClearNavigationGroupTransitionDatas_Params Parms{};
+
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -511,13 +637,40 @@ void US6UI_CustomNavigationGroup::ClearNavigationData(bool InbInClearNavWidgets)
 }
 
 
+// Function S6UICore.S6UI_CustomNavigationGroup.BuildNavigation
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bInImmediately                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_CustomNavigationGroup::BuildNavigation(bool InbInImmediately)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "BuildNavigation");
+
+	Params::US6UI_CustomNavigationGroup_BuildNavigation_Params Parms{};
+
+	Parms.bInImmediately = InbInImmediately;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
 // Function S6UICore.S6UI_CustomNavigationGroup.AddNavWidgets
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TArray<class UWidget*>             InWidgetArray                                                    (ConstParm, Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// bool                               bInMarkNavigationDirty                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bInBuildNavigationImmediately                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::AddNavWidgets(const TArray<class UWidget*>& InInWidgetArray, bool InbInMarkNavigationDirty)
+void US6UI_CustomNavigationGroup::AddNavWidgets(const TArray<class UWidget*>& InInWidgetArray, bool InbInBuildNavigationImmediately)
 {
 	static class UFunction* Func = nullptr;
 
@@ -527,7 +680,36 @@ void US6UI_CustomNavigationGroup::AddNavWidgets(const TArray<class UWidget*>& In
 	Params::US6UI_CustomNavigationGroup_AddNavWidgets_Params Parms{};
 
 	Parms.InWidgetArray = InInWidgetArray;
-	Parms.bInMarkNavigationDirty = InbInMarkNavigationDirty;
+	Parms.bInBuildNavigationImmediately = InbInBuildNavigationImmediately;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function S6UICore.S6UI_CustomNavigationGroup.AddNavigationGroupTransitionData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FS6UI_NavigationGroupTranstionDataInTransitionData                                                 (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// bool                               bInBidirectional                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_CustomNavigationGroup::AddNavigationGroupTransitionData(const struct FS6UI_NavigationGroupTranstionData& InInTransitionData, bool InbInBidirectional)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "AddNavigationGroupTransitionData");
+
+	Params::US6UI_CustomNavigationGroup_AddNavigationGroupTransitionData_Params Parms{};
+
+	Parms.InTransitionData = InInTransitionData;
+	Parms.bInBidirectional = InbInBidirectional;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -543,7 +725,7 @@ void US6UI_CustomNavigationGroup::AddNavWidgets(const TArray<class UWidget*>& In
 // Function S6UICore.S6UI_CustomNavigationGroup.AddNavExplicitData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FS6UI_NavExplicitData       InNavExplicitData                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FS6UI_NavExplicitData       InNavExplicitData                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void US6UI_CustomNavigationGroup::AddNavExplicitData(struct FS6UI_NavExplicitData& InInNavExplicitData)
 {
@@ -555,6 +737,35 @@ void US6UI_CustomNavigationGroup::AddNavExplicitData(struct FS6UI_NavExplicitDat
 	Params::US6UI_CustomNavigationGroup_AddNavExplicitData_Params Parms{};
 
 	Parms.InNavExplicitData = InInNavExplicitData;
+
+	auto Flags = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flags;
+
+}
+
+
+// Function S6UICore.S6UI_CustomNavigationGroup.ActiveNavigationGroup
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bDelayActive                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              InAutoSelectNavWidgetID                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_CustomNavigationGroup::ActiveNavigationGroup(bool InbDelayActive, int32 InInAutoSelectNavWidgetID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "ActiveNavigationGroup");
+
+	Params::US6UI_CustomNavigationGroup_ActiveNavigationGroup_Params Parms{};
+
+	Parms.bDelayActive = InbDelayActive;
+	Parms.InAutoSelectNavWidgetID = InInAutoSelectNavWidgetID;
 
 	auto Flags = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

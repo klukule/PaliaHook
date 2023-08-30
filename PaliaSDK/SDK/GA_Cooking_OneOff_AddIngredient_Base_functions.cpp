@@ -47,16 +47,22 @@ void UGA_Cooking_OneOff_AddIngredient_Base_C::SetMovementBlock(bool InbLock, boo
 // Function GA_Cooking_OneOff_AddIngredient_Base.GA_Cooking_OneOff_AddIngredient_Base_C.ConsiderTriggeringMinigame
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                               CallFunc_IsServer_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AValeriaPlayerController*    CallFunc_GetValeriaPlayerControllerFromActorInfo_ReturnValue     (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// enum class ECrafterEngageResult    CallFunc_SetIsEngaging_ReturnValue                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_GetWasCancelled_WasCancelled                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AValeriaCharacter*           CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Not_PreBool_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_HasBegunPlay_ReturnValue                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_IsServer_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AValeriaPlayerController*    CallFunc_GetValeriaPlayerControllerFromActorInfo_ReturnValue     (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_BooleanAND_ReturnValue_1                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// enum class ECrafterEngageResult    CallFunc_SetIsEngaging_ReturnValue                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_Not_PreBool_ReturnValue_1                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsInteractingMode_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_ContainsAllIngredients_ReturnValue                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_BooleanAND_ReturnValue_2                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Cooking_OneOff_AddIngredient_Base_C::ConsiderTriggeringMinigame(bool InCallFunc_IsServer_ReturnValue, class AValeriaPlayerController* InCallFunc_GetValeriaPlayerControllerFromActorInfo_ReturnValue, enum class ECrafterEngageResult InCallFunc_SetIsEngaging_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsInteractingMode_ReturnValue, bool InCallFunc_ContainsAllIngredients_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue)
+void UGA_Cooking_OneOff_AddIngredient_Base_C::ConsiderTriggeringMinigame(bool InCallFunc_GetWasCancelled_WasCancelled, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, bool InCallFunc_HasBegunPlay_ReturnValue, bool InCallFunc_IsServer_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue, class AValeriaPlayerController* InCallFunc_GetValeriaPlayerControllerFromActorInfo_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue_1, enum class ECrafterEngageResult InCallFunc_SetIsEngaging_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsInteractingMode_ReturnValue, bool InCallFunc_ContainsAllIngredients_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue_2)
 {
 	static class UFunction* Func = nullptr;
 
@@ -65,14 +71,20 @@ void UGA_Cooking_OneOff_AddIngredient_Base_C::ConsiderTriggeringMinigame(bool In
 
 	Params::UGA_Cooking_OneOff_AddIngredient_Base_C_ConsiderTriggeringMinigame_Params Parms{};
 
-	Parms.CallFunc_IsServer_ReturnValue = InCallFunc_IsServer_ReturnValue;
-	Parms.CallFunc_GetValeriaPlayerControllerFromActorInfo_ReturnValue = InCallFunc_GetValeriaPlayerControllerFromActorInfo_ReturnValue;
-	Parms.CallFunc_SetIsEngaging_ReturnValue = InCallFunc_SetIsEngaging_ReturnValue;
+	Parms.CallFunc_GetWasCancelled_WasCancelled = InCallFunc_GetWasCancelled_WasCancelled;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
 	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_HasBegunPlay_ReturnValue = InCallFunc_HasBegunPlay_ReturnValue;
+	Parms.CallFunc_IsServer_ReturnValue = InCallFunc_IsServer_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
+	Parms.CallFunc_GetValeriaPlayerControllerFromActorInfo_ReturnValue = InCallFunc_GetValeriaPlayerControllerFromActorInfo_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue_1 = InCallFunc_BooleanAND_ReturnValue_1;
+	Parms.CallFunc_SetIsEngaging_ReturnValue = InCallFunc_SetIsEngaging_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue_1 = InCallFunc_Not_PreBool_ReturnValue_1;
 	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
 	Parms.CallFunc_IsInteractingMode_ReturnValue = InCallFunc_IsInteractingMode_ReturnValue;
 	Parms.CallFunc_ContainsAllIngredients_ReturnValue = InCallFunc_ContainsAllIngredients_ReturnValue;
-	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue_2 = InCallFunc_BooleanAND_ReturnValue_2;
 
 	UObject::ProcessEvent(Func, &Parms);
 

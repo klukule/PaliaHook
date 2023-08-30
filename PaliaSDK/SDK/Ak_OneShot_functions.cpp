@@ -20,7 +20,7 @@ namespace SDK
 // Parameters:
 // class USkeletalMeshComponent*      MeshComp                                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // bool                               Success                                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UAkComponent*                AK                                                               (Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UAkComponent*                Ak                                                               (Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      Owner                                                            (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue_1                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -48,7 +48,7 @@ namespace SDK
 // class UAkComponent*                CallFunc_AkEventLocationWithActor_AkComponent_1                  (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_AkEventLocationWithActor_Playing_ID_1                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAk_OneShot_C::PlayAudio(class USkeletalMeshComponent* InMeshComp, bool* InSuccess, class UAkComponent* InAK, class AActor* InOwner, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, int32 InCallFunc_AkEventComponent_ReturnValue, int32 InCallFunc_AkEventComponent_ReturnValue_1, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue, class USceneComponent* InCallFunc_K2_GetRootComponent_ReturnValue, class UAkComponent* InCallFunc_AkEventLocationWithActor_AkComponent, int32 InCallFunc_AkEventLocationWithActor_Playing_ID, class AActor* InCallFunc_GetOwner_ReturnValue, bool InCallFunc_IsValid_ReturnValue_2, class AActor* InCallFunc_GetOwner_ReturnValue_1, class FName InCallFunc_Conv_StringToName_ReturnValue, bool InCallFunc_AkGetComponent_ComponentCreated, class UAkComponent* InCallFunc_AkGetComponent_AkComponent, class AActor* InCallFunc_GetOwner_ReturnValue_2, class AActor* InCallFunc_GetOwner_ReturnValue_3, bool InCallFunc_IsValid_ReturnValue_3, class FName InCallFunc_Conv_StringToName_ReturnValue_1, bool InCallFunc_AkGetComponent_ComponentCreated_1, class UAkComponent* InCallFunc_AkGetComponent_AkComponent_1, class FName InCallFunc_Conv_StringToName_ReturnValue_2, class AActor* InCallFunc_GetOwner_ReturnValue_4, const struct FVector& InCallFunc_GetSocketLocation_ReturnValue, class UAkComponent* InCallFunc_AkEventLocationWithActor_AkComponent_1, int32 InCallFunc_AkEventLocationWithActor_Playing_ID_1)
+void UAk_OneShot_C::PlayAudio(class USkeletalMeshComponent* InMeshComp, bool* InSuccess, class UAkComponent* InAk, class AActor* InOwner, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, int32 InCallFunc_AkEventComponent_ReturnValue, int32 InCallFunc_AkEventComponent_ReturnValue_1, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue, class USceneComponent* InCallFunc_K2_GetRootComponent_ReturnValue, class UAkComponent* InCallFunc_AkEventLocationWithActor_AkComponent, int32 InCallFunc_AkEventLocationWithActor_Playing_ID, class AActor* InCallFunc_GetOwner_ReturnValue, bool InCallFunc_IsValid_ReturnValue_2, class AActor* InCallFunc_GetOwner_ReturnValue_1, class FName InCallFunc_Conv_StringToName_ReturnValue, bool InCallFunc_AkGetComponent_ComponentCreated, class UAkComponent* InCallFunc_AkGetComponent_AkComponent, class AActor* InCallFunc_GetOwner_ReturnValue_2, class AActor* InCallFunc_GetOwner_ReturnValue_3, bool InCallFunc_IsValid_ReturnValue_3, class FName InCallFunc_Conv_StringToName_ReturnValue_1, bool InCallFunc_AkGetComponent_ComponentCreated_1, class UAkComponent* InCallFunc_AkGetComponent_AkComponent_1, class FName InCallFunc_Conv_StringToName_ReturnValue_2, class AActor* InCallFunc_GetOwner_ReturnValue_4, const struct FVector& InCallFunc_GetSocketLocation_ReturnValue, class UAkComponent* InCallFunc_AkEventLocationWithActor_AkComponent_1, int32 InCallFunc_AkEventLocationWithActor_Playing_ID_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -58,7 +58,7 @@ void UAk_OneShot_C::PlayAudio(class USkeletalMeshComponent* InMeshComp, bool* In
 	Params::UAk_OneShot_C_PlayAudio_Params Parms{};
 
 	Parms.MeshComp = InMeshComp;
-	Parms.AK = InAK;
+	Parms.Ak = InAk;
 	Parms.Owner = InOwner;
 	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
 	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;

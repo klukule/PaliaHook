@@ -17,7 +17,7 @@ namespace SDK
 class UGA_Cooking_OneOff_CollectAnim_C : public UGA_Cooking_OneOff_Base_C
 {
 public:
-	uint8                                        Pad_1A87[0x5];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_303D[0x5];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x4E8(0x8)(ZeroConstructor, Transient, DuplicateTransient)
 
 	static class UClass* StaticClass()

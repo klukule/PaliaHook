@@ -20,7 +20,7 @@ public:
 	TArray<struct FDirectoryPath>                DirectoriesToScan;                                 // 0x38(0x10)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 	bool                                         bInitializeAllLoadedRegistries;                    // 0x48(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIgnoreMissingCookedAssetRegistryData;             // 0x49(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5DB[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_427[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -42,7 +42,7 @@ public:
 	TArray<class UDataRegistrySource*>           RuntimeSources;                                    // 0x50(0x10)(Edit, ExportObject, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	float                                        TimerUpdateFrequency;                              // 0x60(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FDataRegistryCachePolicy              DefaultCachePolicy;                                // 0x64(0x14)(Edit, DisableEditOnInstance, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_5E2[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_42E[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -57,7 +57,7 @@ public:
 class UDataRegistrySource : public UObject
 {
 public:
-	uint8                                        Pad_5E3[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_42F[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UDataRegistrySource*                   ParentSource;                                      // 0x30(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass()
@@ -74,10 +74,10 @@ class UMetaDataRegistrySource : public UDataRegistrySource
 {
 public:
 	enum class EMetaDataRegistrySourceAssetUsage AssetUsage;                                        // 0x38(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5E4[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_432[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAssetManagerSearchRules              SearchRules;                                       // 0x40(0x50)(Edit, NativeAccessSpecifierPublic)
 	TMap<class FName, class UDataRegistrySource*> RuntimeChildren;                                   // 0x90(0x50)(ExportObject, Transient, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                        Pad_5E6[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_433[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -96,7 +96,7 @@ public:
 	struct FDataRegistrySource_DataTableRules    TableRules;                                        // 0x68(0x8)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	class UCurveTable*                           CachedTable;                                       // 0x70(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UCurveTable*                           PreloadTable;                                      // 0x78(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_5EA[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_436[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -131,7 +131,7 @@ public:
 	struct FDataRegistrySource_DataTableRules    TableRules;                                        // 0x68(0x8)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	class UDataTable*                            CachedTable;                                       // 0x70(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UDataTable*                            PreloadTable;                                      // 0x78(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_5ED[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_43B[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{
@@ -162,7 +162,7 @@ public:
 class UDataRegistrySubsystem : public UEngineSubsystem
 {
 public:
-	uint8                                        Pad_67A[0x98];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4D6[0x98];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass()
 	{

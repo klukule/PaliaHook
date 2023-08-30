@@ -43,7 +43,7 @@ target_link_libraries(RendererHook PUBLIC detours imgui)
 
 # PaliaSDK
 file(GLOB_RECURSE PALIASDK_SOURCES PaliaSDK/*.cpp)
-file(GLOB_RECURSE PALIASDK_HEADERS PaliaSDK/*.h)
+file(GLOB_RECURSE PALIASDK_HEADERS PaliaSDK/*.hpp)
 add_library(PaliaSDK STATIC ${PALIASDK_SOURCES} ${PALIASDK_HEADERS})
 target_include_directories(PaliaSDK PUBLIC PaliaSDK)
 target_precompile_headers(PaliaSDK PRIVATE PaliaSDK/SDK.hpp)
