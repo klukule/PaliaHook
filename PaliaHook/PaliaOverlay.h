@@ -83,6 +83,8 @@ enum class EGatherableFlags
 	RarePlants = 1 << 10,
 	EpicPlants = 1 << 11,
 	Spices = 1 << 12,
+	Oyster = 1 << 13,
+	Seashell = 1 << 14
 };
 
 enum class EESPColorSlot
@@ -107,16 +109,28 @@ enum class EESPColorSlot
 	Gold,
 	// Color used for palium ore
 	Palium,
-	// Color used for anything of common grade
-	CommonGrade,
-	// Color used for anything of uncommon grade
-	UncommonGrade,
-	// Color used for anything of rare grade
-	RareGrade,
-	// Color used for anything of epic grade
-	EpicGrade,
+	// Color used for bugs of common grade
+	CommonGradeBugs,
+	// Color used for bugs of uncommon grade
+	UncommonGradeBugs,
+	// Color used for bugs of rare grade
+	RareGradeBugs,
+	// Color used for bugs of epic grade
+	EpicGradeBugs,
+	// Color used for plants of common grade
+	CommonGradePlants,
+	// Color used for plants of uncommon grade
+	UncommonGradePlants,
+	// Color used for plants of rare grade
+	RareGradePlants,
+	// Color used for plants of epic grade
+	EpicGradePlants,
 	// Color used for spices
 	Spices,
+	// Color used for Oyster
+	Oyster,
+	// Color used for Seashell
+	Seashell,
 	// Color used for the cearnuk
 	Cearnuk,
 	// Color used for the chapaa
@@ -425,11 +439,13 @@ private:
 		{EGatherableFlags::Silver, {"_Mining_Silver_"}},
 		{EGatherableFlags::Gold, {"_Mining_Gold_"}},
 		{EGatherableFlags::Palium, {"_Mining_Palium_"}},
-		{EGatherableFlags::CommonPlants, {"Gatherable_Mushroom", "Oyster", "Seashell", "SundropLillies"}},
+		{EGatherableFlags::CommonPlants, {"Gatherable_Mushroom", "SundropLillies"}},
 		{EGatherableFlags::UncommonPlants, {"Coral", "PoisonFlower", "WaterFlower", "Moss_EmeraldCarpet", "Spiced_Sprouts", "SweetLeaves", "WildGarlic"}},
 		{EGatherableFlags::RarePlants, {"Spice_HeatRoot", "Moss_DragonsBeard", "Gatherable_MushroomBlue"}},
 		{EGatherableFlags::EpicPlants, {"HeartdropLilly", "Spice_DariCloves"}},
 		{EGatherableFlags::Spices, {"WildGarlic", "Spiced_Sprouts", "SweetLeaves", "Spice_HeatRoot", "Spice_DariCloves"}},
+		{EGatherableFlags::Oyster, {"Oyster"}},
+		{EGatherableFlags::Seashell, {"Seashell"}},
 	};
 
 	// Search gmap for assigning creature type
@@ -498,6 +514,8 @@ private:
 	bool bVisualizeRarePlants = true;
 	bool bVisualizeEpicPlants = true;
 	bool bVisualizeSpices = true;
+	bool bVisualizeOysters = true;
+	bool bVisualizeSeashells = true;
 
 	unsigned int Colors[(int)EESPColorSlot::MAX] = {
 		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF), // Default
@@ -512,12 +530,18 @@ private:
 		IM_COL32(0xDB, 0xAC, 0x34, 0xFF), // Gold
 		IM_COL32(0x94, 0xA0, 0xE2, 0xFF), // Palium
 		
-		IM_COL32(0x0B, 0x61, 0xFF, 0xFF), // Common Grade
-		IM_COL32(0x6F, 0xF4, 0x43, 0xFF), // Uncommon Grade
-		IM_COL32(0x21, 0x65, 0x71, 0xFF), // Rare Grade
-		IM_COL32(0x69, 0x4C, 0xFF, 0xFF), // Epic Grade
+		IM_COL32(0x0B, 0x61, 0xFF, 0xFF), // Common Grade Bugs
+		IM_COL32(0x6F, 0xF4, 0x43, 0xFF), // Uncommon Grade Bugs
+		IM_COL32(0x21, 0x65, 0x71, 0xFF), // Rare Grade Bugs
+		IM_COL32(0x69, 0x4C, 0xFF, 0xFF), // Epic Grade Bugs
 
+		IM_COL32(0x0B, 0x61, 0xFF, 0xFF), // Common Grade Gatherables
+		IM_COL32(0x6F, 0xF4, 0x43, 0xFF), // Uncommon Grade Gatherables
+		IM_COL32(0x21, 0x65, 0x71, 0xFF), // Rare Grade Gatherables
+		IM_COL32(0x69, 0x4C, 0xFF, 0xFF), // Epic Grade Gatherables
 		IM_COL32(0xFF, 0x00, 0x00, 0xFF), // Spices
+		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF), // Oyster
+		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF), // Seashell
 
 		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF), // Cearnuk
 		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF) // Chapaa

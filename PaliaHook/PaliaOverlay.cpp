@@ -222,20 +222,28 @@ void PaliaOverlay::DrawHUD()
 					if (!special) {
 
 						if ((Entry.Flags & EGatherableFlags::CommonPlants) == EGatherableFlags::CommonPlants) {
-							Color = Colors[(int)EESPColorSlot::CommonGrade];
+							Color = Colors[(int)EESPColorSlot::CommonGradePlants];
 							if (!bVisualizeCommonPlants) continue;
 						}
 						else if ((Entry.Flags & EGatherableFlags::UncommonPlants) == EGatherableFlags::UncommonPlants) {
-							Color = Colors[(int)EESPColorSlot::UncommonGrade];
+							Color = Colors[(int)EESPColorSlot::UncommonGradePlants];
 							if (!bVisualizeUncommonPlants) continue;
 						}
 						else if ((Entry.Flags & EGatherableFlags::RarePlants) == EGatherableFlags::RarePlants) {
-							Color = Colors[(int)EESPColorSlot::RareGrade];
+							Color = Colors[(int)EESPColorSlot::RareGradePlants];
 							if (!bVisualizeRarePlants) continue;
 						}
 						else if ((Entry.Flags & EGatherableFlags::EpicPlants) == EGatherableFlags::EpicPlants) {
-							Color = Colors[(int)EESPColorSlot::EpicGrade];
+							Color = Colors[(int)EESPColorSlot::EpicGradePlants];
 							if (!bVisualizeEpicPlants) continue;
+						}
+						else if ((Entry.Flags & EGatherableFlags::Oyster) == EGatherableFlags::Oyster) {
+							Color = Colors[(int)EESPColorSlot::Oyster];
+							if (!bVisualizeOysters) continue;
+						}
+						else if ((Entry.Flags & EGatherableFlags::Seashell) == EGatherableFlags::Seashell) {
+							Color = Colors[(int)EESPColorSlot::Seashell];
+							if (!bVisualizeSeashells) continue;
 						}
 					}
 				}
@@ -285,19 +293,19 @@ void PaliaOverlay::DrawHUD()
 
 					if (Entry.BugQuality == EBugQuality::Common && bVisualizeCommonBugs) {
 						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::CommonGrade];
+						Color = Colors[(int)EESPColorSlot::CommonGradeBugs];
 					}
 					if (Entry.BugQuality == EBugQuality::Uncommon && bVisualizeUncommonBugs) {
 						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::UncommonGrade];
+						Color = Colors[(int)EESPColorSlot::UncommonGradeBugs];
 					}
 					if (Entry.BugQuality == EBugQuality::Rare && bVisualizeRareBugs) {
 						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::RareGrade];
+						Color = Colors[(int)EESPColorSlot::RareGradeBugs];
 					}
 					if (Entry.BugQuality == EBugQuality::Epic && bVisualizeEpicBugs) {
 						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::EpicGrade];
+						Color = Colors[(int)EESPColorSlot::EpicGradeBugs];
 					}
 				}
 
@@ -386,13 +394,15 @@ void PaliaOverlay::DrawOverlay()
 			}
 			ImGui::EndGroupPanel();
 
-			ImGui::BeginGroupPanel("Plants");
+			ImGui::BeginGroupPanel("Gatherables");
 			{
+				ImGui::Checkbox("Show Oysters", &bVisualizeOysters);
+				ImGui::Checkbox("Show Seashells", &bVisualizeSeashells);
+				ImGui::Checkbox("Show Spices", &bVisualizeSpices);
 				ImGui::Checkbox("Show Common Plants", &bVisualizeCommonPlants);
 				ImGui::Checkbox("Show Uncommon Plants", &bVisualizeUncommonPlants);
 				ImGui::Checkbox("Show Rare Plants", &bVisualizeRarePlants);
 				ImGui::Checkbox("Show Epic Plants", &bVisualizeEpicPlants);
-				ImGui::Checkbox("Show Spices", &bVisualizeSpices);
 				ImGui::Spacing();
 			}
 			ImGui::EndGroupPanel();
@@ -423,11 +433,23 @@ void PaliaOverlay::DrawOverlay()
 				ImGui::ColorPicker("Cearnuk", &Colors[(int)EESPColorSlot::Cearnuk]);
 				ImGui::ColorPicker("Chapaa", &Colors[(int)EESPColorSlot::Chapaa]);
 				ImGui::Spacing();
-				ImGui::ColorPicker("Rarity - Common", &Colors[(int)EESPColorSlot::CommonGrade]);
-				ImGui::ColorPicker("Rarity - Uncommon", &Colors[(int)EESPColorSlot::UncommonGrade]);
-				ImGui::ColorPicker("Rarity - Rare", &Colors[(int)EESPColorSlot::RareGrade]);
-				ImGui::ColorPicker("Rarity - Epic", &Colors[(int)EESPColorSlot::EpicGrade]);
+				ImGui::ColorPicker("Rarity - Common", &Colors[(int)EESPColorSlot::CommonGradeBugs]);
+				ImGui::ColorPicker("Rarity - Uncommon", &Colors[(int)EESPColorSlot::UncommonGradeBugs]);
+				ImGui::ColorPicker("Rarity - Rare", &Colors[(int)EESPColorSlot::RareGradeBugs]);
+				ImGui::ColorPicker("Rarity - Epic", &Colors[(int)EESPColorSlot::EpicGradeBugs]);
+				ImGui::Spacing();
+			}
+			ImGui::EndGroupPanel();
+
+			ImGui::BeginGroupPanel("Colors - Gatherables");
+			{
+				ImGui::ColorPicker("Oysters", &Colors[(int)EESPColorSlot::Oyster]);
+				ImGui::ColorPicker("Seashells", &Colors[(int)EESPColorSlot::Seashell]);
 				ImGui::ColorPicker("Spices", &Colors[(int)EESPColorSlot::Spices]);
+				ImGui::ColorPicker("Rarity - Common", &Colors[(int)EESPColorSlot::CommonGradePlants]);
+				ImGui::ColorPicker("Rarity - Uncommon", &Colors[(int)EESPColorSlot::UncommonGradePlants]);
+				ImGui::ColorPicker("Rarity - Rare", &Colors[(int)EESPColorSlot::RareGradePlants]);
+				ImGui::ColorPicker("Rarity - Epic", &Colors[(int)EESPColorSlot::EpicGradePlants]);
 				ImGui::Spacing();
 			}
 			ImGui::EndGroupPanel();
