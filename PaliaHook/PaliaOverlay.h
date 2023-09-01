@@ -77,7 +77,12 @@ enum class EGatherableFlags
 	Iron = 1 << 4,
 	Silver = 1 << 5,
 	Gold = 1 << 6,
-	Palium = 1 << 7
+	Palium = 1 << 7,
+	CommonPlants = 1 << 8,
+	UncommonPlants = 1 << 9,
+	RarePlants = 1 << 10,
+	EpicPlants = 1 << 11,
+	Spices = 1 << 12,
 };
 
 enum class EESPColorSlot
@@ -102,14 +107,16 @@ enum class EESPColorSlot
 	Gold,
 	// Color used for palium ore
 	Palium,
-	// Color used for the bugs of common grade
+	// Color used for anything of common grade
 	CommonGrade,
-	// Color used for the bugs of uncommon grade
+	// Color used for anything of uncommon grade
 	UncommonGrade,
-	// Color used for the bugs of rare grade
+	// Color used for anything of rare grade
 	RareGrade,
-	// Color used for the bugs of epic grade
+	// Color used for anything of epic grade
 	EpicGrade,
+	// Color used for spices
+	Spices,
 	// Color used for the cearnuk
 	Cearnuk,
 	// Color used for the chapaa
@@ -120,7 +127,7 @@ enum class EESPColorSlot
 
 struct FGatherableEntry
 {
-	AGatherableActor* Actor;
+	AActor* Actor;
 	FVector WorldPosition;
 	std::string DisplayName;
 	EGatherableType Type;
@@ -338,6 +345,61 @@ private:
 		{ "BP_Bug_SnailR+_C", "Snail (R)" },
 		{ "BP_Bug_SnailU_C", "Snail (U)" },
 		{ "BP_Bug_SnailR_C", "Snail (R)" },
+
+
+		// Gatherables
+
+		// Common
+		{ "BP_Gatherable_MushroomR_C", "Moutain Morel (C)" },
+		{ "BP_Gatherable_MushroomR+_C", "Moutain Morel (R)" },
+
+		{ "BP_Oyster_C", "Oyster (C)" },
+		{ "BP_Oyster+_C", "Oyster (R)" },
+
+		{ "BP_Seashell_C", "Shell (C)" },
+		{ "BP_Seashell+_C", "Shell (R)" },
+
+		{ "BP_SundropLillies_C", "Sundrop Lilly (C)" },
+		{ "BP_SundropLillies+_C", "Sundrop Lilly (R)" },
+
+		// Uncommon
+		{ "BP_Coral_C", "Coral (C)" },
+		{ "BP_Coral+_C", "Coral (R)" },
+
+		{ "BP_PoisonFlower_C", "Briar Daisy (C)" },
+		{ "BP_PoisonFlower+_C", "Briar Daisy (R)" },
+
+		{ "BP_WaterFlower_C", "Crystal Lake Lotus (C)" },
+		{ "BP_WaterFlower+_C", "Crystal Lake Lotus (R)" },
+
+		{ "BP_Moss_EmeraldCarpet_C", "Emerald Carpet Moss (C)" },
+		{ "BP_Moss_EmeraldCarpet+_C", "Emerald Carpet Moss (R)" },
+
+		{ "BP_Spiced_Sprouts_C", "Spice Sprouts (C)" },
+		{ "BP_Spiced_Sprouts+_C", "Spice Sprouts (R)" },
+
+		{ "BP_SweetLeaves_C", "Sweet Leaf (C)" },
+		{ "BP_SweetLeaves+_C", "Sweet Leaf (R)" },
+
+		{ "BP_WildGarlic_C", "Wild Garlic (C)" },
+		{ "BP_WildGarlic+_C", "Wild Garlic (R)" },
+
+		// Rare
+		{ "BP_Gatherable_MushroomBlue_C", "Brightshroom (C)" },
+		{ "BP_Gatherable_MushroomBlue+_C", "Brightshroom (R)" },
+
+		{ "BP_Moss_DragonsBeard_C", "Dragon's Beard Peat (C)" },
+		{ "BP_Moss_DragonsBeard+_C", "Dragon's Beard Peat (R)" },
+
+		{ "BP_Spice_HeatRoot_C", "Heat Root (C)" },
+		{ "BP_Spice_HeatRoot+_C", "Heat Root (R)" },
+
+		// Epic
+		{ "BP_HeartdropLilly_C", "Heartdrop Lilly (C)" },
+		{ "BP_HeartdropLilly+_C", "Heartdrop Lilly (R)" },
+
+		{ "BP_Spice_DariCloves_C", "Dari Cloves (C)" },
+		{ "BP_Spice_DariCloves+_C", "Dari Cloves (R)" },
 	};
 
 	// Search map for assigning gatherable type
@@ -363,6 +425,11 @@ private:
 		{EGatherableFlags::Silver, {"_Mining_Silver_"}},
 		{EGatherableFlags::Gold, {"_Mining_Gold_"}},
 		{EGatherableFlags::Palium, {"_Mining_Palium_"}},
+		{EGatherableFlags::CommonPlants, {"Gatherable_Mushroom", "Oyster", "Seashell", "SundropLillies"}},
+		{EGatherableFlags::UncommonPlants, {"Coral", "PoisonFlower", "WaterFlower", "Moss_EmeraldCarpet", "Spiced_Sprouts", "SweetLeaves", "WildGarlic"}},
+		{EGatherableFlags::RarePlants, {"Spice_HeatRoot", "Moss_DragonsBeard", "Gatherable_MushroomBlue"}},
+		{EGatherableFlags::EpicPlants, {"HeartdropLilly", "Spice_DariCloves"}},
+		{EGatherableFlags::Spices, {"WildGarlic", "Spiced_Sprouts", "SweetLeaves", "Spice_HeatRoot", "Spice_DariCloves"}},
 	};
 
 	// Search gmap for assigning creature type
@@ -426,6 +493,12 @@ private:
 	bool bVisualizeRareBugs = true;
 	bool bVisualizeEpicBugs = true;
 
+	bool bVisualizeCommonPlants = true;
+	bool bVisualizeUncommonPlants = true;
+	bool bVisualizeRarePlants = true;
+	bool bVisualizeEpicPlants = true;
+	bool bVisualizeSpices = true;
+
 	unsigned int Colors[(int)EESPColorSlot::MAX] = {
 		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF), // Default
 
@@ -443,6 +516,8 @@ private:
 		IM_COL32(0x6F, 0xF4, 0x43, 0xFF), // Uncommon Grade
 		IM_COL32(0x21, 0x65, 0x71, 0xFF), // Rare Grade
 		IM_COL32(0x69, 0x4C, 0xFF, 0xFF), // Epic Grade
+
+		IM_COL32(0xFF, 0x00, 0x00, 0xFF), // Spices
 
 		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF), // Cearnuk
 		IM_COL32(0xFF, 0xFF, 0xFF, 0xFF) // Chapaa
