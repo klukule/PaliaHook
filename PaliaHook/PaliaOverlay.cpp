@@ -67,11 +67,15 @@ SearchType GetFlagMulti(std::string Text, std::map<SearchType, std::vector<std::
 	return T;
 }
 
+std::vector<std::string> debugger;
+
 void PaliaOverlay::CacheGatherables() {
 	CachedGatherables.clear();
-	for (AGatherableActor* Gatherable : FindActorsOfType<AGatherableActor>(GetWorld())) {
+	for (AActor* Gatherable : FindActorsOfType<AActor>(GetWorld())) {
+		if (Gatherable->Class->Super->GetFullName().find("Valeria_Gatherable") == std::string::npos) {
+			continue;
+		}
 		FVector ActorPosition = Gatherable->K2_GetActorLocation();
-
 		// HACK: Skip actors that return [0,0,0] due to the hack I had to add to K2_GetActorLocation
 		if (ActorPosition.X == 0 && ActorPosition.Y == 0 && ActorPosition.Z == 0) continue;
 
@@ -82,6 +86,7 @@ void PaliaOverlay::CacheGatherables() {
 		EGatherableFlags Flags = GetFlagMulti(ClassName, GATHERABLE_FLAG_MAPPINGS);
 
 		std::string Name = CLASS_NAME_ALIAS.contains(ClassName) ? CLASS_NAME_ALIAS[ClassName] : ClassName;
+
 
 		CachedGatherables.push_back({ Gatherable, ActorPosition, Name, Type, Size, Flags });
 	}
@@ -206,6 +211,43 @@ void PaliaOverlay::DrawHUD()
 						if (!bVisualizePalium) continue;
 					}
 				}
+				else 
+				{
+					bool special = false;
+					if ((Entry.Flags & EGatherableFlags::Spices) == EGatherableFlags::Spices) {
+						Color = Colors[(int)EESPColorSlot::Spices];
+						special = true;
+					}
+
+					if (!special) {
+
+						if ((Entry.Flags & EGatherableFlags::CommonPlants) == EGatherableFlags::CommonPlants) {
+							Color = Colors[(int)EESPColorSlot::CommonGradePlants];
+							if (!bVisualizeCommonPlants) continue;
+						}
+						else if ((Entry.Flags & EGatherableFlags::UncommonPlants) == EGatherableFlags::UncommonPlants) {
+							Color = Colors[(int)EESPColorSlot::UncommonGradePlants];
+							if (!bVisualizeUncommonPlants) continue;
+						}
+						else if ((Entry.Flags & EGatherableFlags::RarePlants) == EGatherableFlags::RarePlants) {
+							Color = Colors[(int)EESPColorSlot::RareGradePlants];
+							if (!bVisualizeRarePlants) continue;
+						}
+						else if ((Entry.Flags & EGatherableFlags::EpicPlants) == EGatherableFlags::EpicPlants) {
+							Color = Colors[(int)EESPColorSlot::EpicGradePlants];
+							if (!bVisualizeEpicPlants) continue;
+						}
+						else if ((Entry.Flags & EGatherableFlags::Oyster) == EGatherableFlags::Oyster) {
+							Color = Colors[(int)EESPColorSlot::Oyster];
+							if (!bVisualizeOysters) continue;
+						}
+						else if ((Entry.Flags & EGatherableFlags::Seashell) == EGatherableFlags::Seashell) {
+							Color = Colors[(int)EESPColorSlot::Seashell];
+							if (!bVisualizeSeashells) continue;
+						}
+					}
+				}
+
 
 				if (Color == Colors[(int)EESPColorSlot::Default] && !bVisualizeDefault) continue;
 
@@ -251,19 +293,19 @@ void PaliaOverlay::DrawHUD()
 
 					if (Entry.BugQuality == EBugQuality::Common && bVisualizeCommonBugs) {
 						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::CommonGrade];
+						Color = Colors[(int)EESPColorSlot::CommonGradeBugs];
 					}
 					if (Entry.BugQuality == EBugQuality::Uncommon && bVisualizeUncommonBugs) {
 						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::UncommonGrade];
+						Color = Colors[(int)EESPColorSlot::UncommonGradeBugs];
 					}
 					if (Entry.BugQuality == EBugQuality::Rare && bVisualizeRareBugs) {
 						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::RareGrade];
+						Color = Colors[(int)EESPColorSlot::RareGradeBugs];
 					}
 					if (Entry.BugQuality == EBugQuality::Epic && bVisualizeEpicBugs) {
 						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::EpicGrade];
+						Color = Colors[(int)EESPColorSlot::EpicGradeBugs];
 					}
 				}
 
@@ -352,6 +394,19 @@ void PaliaOverlay::DrawOverlay()
 			}
 			ImGui::EndGroupPanel();
 
+			ImGui::BeginGroupPanel("Gatherables");
+			{
+				ImGui::Checkbox("Show Oysters", &bVisualizeOysters);
+				ImGui::Checkbox("Show Seashells", &bVisualizeSeashells);
+				ImGui::Checkbox("Show Spices", &bVisualizeSpices);
+				ImGui::Checkbox("Show Common Plants", &bVisualizeCommonPlants);
+				ImGui::Checkbox("Show Uncommon Plants", &bVisualizeUncommonPlants);
+				ImGui::Checkbox("Show Rare Plants", &bVisualizeRarePlants);
+				ImGui::Checkbox("Show Epic Plants", &bVisualizeEpicPlants);
+				ImGui::Spacing();
+			}
+			ImGui::EndGroupPanel();
+
 			ImGui::NextColumn();
 			ImGui::BeginGroupPanel("Colors - General");
 			{
@@ -378,10 +433,23 @@ void PaliaOverlay::DrawOverlay()
 				ImGui::ColorPicker("Cearnuk", &Colors[(int)EESPColorSlot::Cearnuk]);
 				ImGui::ColorPicker("Chapaa", &Colors[(int)EESPColorSlot::Chapaa]);
 				ImGui::Spacing();
-				ImGui::ColorPicker("Bug - Common", &Colors[(int)EESPColorSlot::CommonGrade]);
-				ImGui::ColorPicker("Bug - Uncommon", &Colors[(int)EESPColorSlot::UncommonGrade]);
-				ImGui::ColorPicker("Bug - Rare", &Colors[(int)EESPColorSlot::RareGrade]);
-				ImGui::ColorPicker("Bug - Epic", &Colors[(int)EESPColorSlot::EpicGrade]);
+				ImGui::ColorPicker("Rarity - Common", &Colors[(int)EESPColorSlot::CommonGradeBugs]);
+				ImGui::ColorPicker("Rarity - Uncommon", &Colors[(int)EESPColorSlot::UncommonGradeBugs]);
+				ImGui::ColorPicker("Rarity - Rare", &Colors[(int)EESPColorSlot::RareGradeBugs]);
+				ImGui::ColorPicker("Rarity - Epic", &Colors[(int)EESPColorSlot::EpicGradeBugs]);
+				ImGui::Spacing();
+			}
+			ImGui::EndGroupPanel();
+
+			ImGui::BeginGroupPanel("Colors - Gatherables");
+			{
+				ImGui::ColorPicker("Oysters", &Colors[(int)EESPColorSlot::Oyster]);
+				ImGui::ColorPicker("Seashells", &Colors[(int)EESPColorSlot::Seashell]);
+				ImGui::ColorPicker("Spices", &Colors[(int)EESPColorSlot::Spices]);
+				ImGui::ColorPicker("Rarity - Common", &Colors[(int)EESPColorSlot::CommonGradePlants]);
+				ImGui::ColorPicker("Rarity - Uncommon", &Colors[(int)EESPColorSlot::UncommonGradePlants]);
+				ImGui::ColorPicker("Rarity - Rare", &Colors[(int)EESPColorSlot::RareGradePlants]);
+				ImGui::ColorPicker("Rarity - Epic", &Colors[(int)EESPColorSlot::EpicGradePlants]);
 				ImGui::Spacing();
 			}
 			ImGui::EndGroupPanel();
@@ -393,11 +461,13 @@ void PaliaOverlay::DrawOverlay()
 			ImGui::Columns(1);
 		}
 		else if (OpenTab == 1) {
-			ImGui::Text("Test");
+			for (auto a : debugger) {
+				ImGui::Text(a.c_str());
+			}
 		}
 	}
 	ImGui::End();
-
+	debugger.clear();
 	if (!show)
 		ShowOverlay(false);
 }
