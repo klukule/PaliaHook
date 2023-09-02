@@ -2,16 +2,43 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
+//---------------------------------------------------------------------------------------------------------------------
+// FUNCTIONS
+//---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass TextStyle_Button_Dark.TextStyle_Button_Dark_C
+// (None)
+
+class UClass* UTextStyle_Button_Dark_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TextStyle_Button_Dark_C");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// TextStyle_Button_Dark_C TextStyle_Button_Dark.Default__TextStyle_Button_Dark_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UTextStyle_Button_Dark_C* UTextStyle_Button_Dark_C::GetDefaultObj()
+{
+	static class UTextStyle_Button_Dark_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTextStyle_Button_Dark_C*>(UTextStyle_Button_Dark_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

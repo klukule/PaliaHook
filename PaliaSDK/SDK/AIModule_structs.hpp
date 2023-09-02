@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,441 +11,441 @@ namespace SDK
 
 enum class EPathFollowingResult : uint8
 {
-	EPathFollowingResult__Success  = 0,
-	EPathFollowingResult__Blocked  = 1,
-	EPathFollowingResult__OffPath  = 2,
-	EPathFollowingResult__Aborted  = 3,
-	EPathFollowingResult__Skipped_DEPRECATED = 4,
-	EPathFollowingResult__Invalid  = 5,
-	EPathFollowingResult__EPathFollowingResult_MAX = 6,
+	Success                        = 0,
+	Blocked                        = 1,
+	OffPath                        = 2,
+	Aborted                        = 3,
+	Skipped_DEPRECATED             = 4,
+	Invalid                        = 5,
+	EPathFollowingResult_MAX       = 6,
 };
 
 enum class EEnvQueryStatus : uint8
 {
-	EEnvQueryStatus__Processing    = 0,
-	EEnvQueryStatus__Success       = 1,
-	EEnvQueryStatus__Failed        = 2,
-	EEnvQueryStatus__Aborted       = 3,
-	EEnvQueryStatus__OwnerLost     = 4,
-	EEnvQueryStatus__MissingParam  = 5,
-	EEnvQueryStatus__EEnvQueryStatus_MAX = 6,
+	Processing                     = 0,
+	Success                        = 1,
+	Failed                         = 2,
+	Aborted                        = 3,
+	OwnerLost                      = 4,
+	MissingParam                   = 5,
+	EEnvQueryStatus_MAX            = 6,
 };
 
 enum class EAIOptionFlag : uint8
 {
-	EAIOptionFlag__Default         = 0,
-	EAIOptionFlag__Enable          = 1,
-	EAIOptionFlag__Disable         = 2,
-	EAIOptionFlag__MAX             = 3,
+	Default                        = 0,
+	Enable                         = 1,
+	Disable                        = 2,
+	MAX                            = 3,
 };
 
 enum class EFAIDistanceType : uint8
 {
-	FAIDistanceType__Distance3D    = 0,
-	FAIDistanceType__Distance2D    = 1,
-	FAIDistanceType__DistanceZ     = 2,
-	FAIDistanceType__MAX           = 3,
+	Distance3D                     = 0,
+	Distance2D                     = 1,
+	DistanceZ                      = 2,
+	MAX                            = 3,
 };
 
 enum class EPawnActionAbortState : uint8
 {
-	EPawnActionAbortState__NeverStarted = 0,
-	EPawnActionAbortState__NotBeingAborted = 1,
-	EPawnActionAbortState__MarkPendingAbort = 2,
-	EPawnActionAbortState__LatentAbortInProgress = 3,
-	EPawnActionAbortState__AbortDone = 4,
-	EPawnActionAbortState__MAX     = 5,
+	NeverStarted                   = 0,
+	NotBeingAborted                = 1,
+	MarkPendingAbort               = 2,
+	LatentAbortInProgress          = 3,
+	AbortDone                      = 4,
+	MAX                            = 5,
 };
 
 enum class EPawnActionResult : uint8
 {
-	EPawnActionResult__NotStarted  = 0,
-	EPawnActionResult__InProgress  = 1,
-	EPawnActionResult__Success     = 2,
-	EPawnActionResult__Failed      = 3,
-	EPawnActionResult__Aborted     = 4,
-	EPawnActionResult__EPawnActionResult_MAX = 5,
+	NotStarted                     = 0,
+	InProgress                     = 1,
+	Success                        = 2,
+	Failed                         = 3,
+	Aborted                        = 4,
+	EPawnActionResult_MAX          = 5,
 };
 
 enum class EPawnActionEventType : uint8
 {
-	EPawnActionEventType__Invalid  = 0,
-	EPawnActionEventType__FailedToStart = 1,
-	EPawnActionEventType__InstantAbort = 2,
-	EPawnActionEventType__FinishedAborting = 3,
-	EPawnActionEventType__FinishedExecution = 4,
-	EPawnActionEventType__Push     = 5,
-	EPawnActionEventType__EPawnActionEventType_MAX = 6,
+	Invalid                        = 0,
+	FailedToStart                  = 1,
+	InstantAbort                   = 2,
+	FinishedAborting               = 3,
+	FinishedExecution              = 4,
+	Push                           = 5,
+	EPawnActionEventType_MAX       = 6,
 };
 
 enum class EAIRequestPriority : uint8
 {
-	EAIRequestPriority__SoftScript = 0,
-	EAIRequestPriority__Logic      = 1,
-	EAIRequestPriority__HardScript = 2,
-	EAIRequestPriority__Reaction   = 3,
-	EAIRequestPriority__Ultimate   = 4,
-	EAIRequestPriority__MAX        = 5,
+	SoftScript                     = 0,
+	Logic                          = 1,
+	HardScript                     = 2,
+	Reaction                       = 3,
+	Ultimate                       = 4,
+	MAX                            = 5,
 };
 
 enum class EAILockSource : uint8
 {
-	EAILockSource__Animation       = 0,
-	EAILockSource__Logic           = 1,
-	EAILockSource__Script          = 2,
-	EAILockSource__Gameplay        = 3,
-	EAILockSource__MAX             = 4,
+	Animation                      = 0,
+	Logic                          = 1,
+	Script                         = 2,
+	Gameplay                       = 3,
+	MAX                            = 4,
 };
 
 enum class EGenericAICheck : uint8
 {
-	EGenericAICheck__Less          = 0,
-	EGenericAICheck__LessOrEqual   = 1,
-	EGenericAICheck__Equal         = 2,
-	EGenericAICheck__NotEqual      = 3,
-	EGenericAICheck__GreaterOrEqual = 4,
-	EGenericAICheck__Greater       = 5,
-	EGenericAICheck__IsTrue        = 6,
-	EGenericAICheck__MAX           = 7,
+	Less                           = 0,
+	LessOrEqual                    = 1,
+	Equal                          = 2,
+	NotEqual                       = 3,
+	GreaterOrEqual                 = 4,
+	Greater                        = 5,
+	IsTrue                         = 6,
+	MAX                            = 7,
 };
 
 enum class EEnvTestPurpose : uint8
 {
-	EEnvTestPurpose__Filter        = 0,
-	EEnvTestPurpose__Score         = 1,
-	EEnvTestPurpose__FilterAndScore = 2,
-	EEnvTestPurpose__EEnvTestPurpose_MAX = 3,
+	Filter                         = 0,
+	Score                          = 1,
+	FilterAndScore                 = 2,
+	EEnvTestPurpose_MAX            = 3,
 };
 
 enum class EEnvTestFilterType : uint8
 {
-	EEnvTestFilterType__Minimum    = 0,
-	EEnvTestFilterType__Maximum    = 1,
-	EEnvTestFilterType__Range      = 2,
-	EEnvTestFilterType__Match      = 3,
-	EEnvTestFilterType__EEnvTestFilterType_MAX = 4,
+	Minimum                        = 0,
+	Maximum                        = 1,
+	Range                          = 2,
+	Match                          = 3,
+	EEnvTestFilterType_MAX         = 4,
 };
 
 enum class EEnvTestScoreEquation : uint8
 {
-	EEnvTestScoreEquation__Linear  = 0,
-	EEnvTestScoreEquation__Square  = 1,
-	EEnvTestScoreEquation__InverseLinear = 2,
-	EEnvTestScoreEquation__SquareRoot = 3,
-	EEnvTestScoreEquation__Constant = 4,
-	EEnvTestScoreEquation__EEnvTestScoreEquation_MAX = 5,
+	Linear                         = 0,
+	Square                         = 1,
+	InverseLinear                  = 2,
+	SquareRoot                     = 3,
+	Constant                       = 4,
+	EEnvTestScoreEquation_MAX      = 5,
 };
 
 enum class EEnvTestWeight : uint8
 {
-	EEnvTestWeight__None           = 0,
-	EEnvTestWeight__Square         = 1,
-	EEnvTestWeight__Inverse        = 2,
-	EEnvTestWeight__Unused         = 3,
-	EEnvTestWeight__Constant       = 4,
-	EEnvTestWeight__Skip           = 5,
-	EEnvTestWeight__EEnvTestWeight_MAX = 6,
+	None                           = 0,
+	Square                         = 1,
+	Inverse                        = 2,
+	Unused                         = 3,
+	Constant                       = 4,
+	Skip                           = 5,
+	EEnvTestWeight_MAX             = 6,
 };
 
 enum class EEnvTestCost : uint8
 {
-	EEnvTestCost__Low              = 0,
-	EEnvTestCost__Medium           = 1,
-	EEnvTestCost__High             = 2,
-	EEnvTestCost__EEnvTestCost_MAX = 3,
+	Low                            = 0,
+	Medium                         = 1,
+	High                           = 2,
+	EEnvTestCost_MAX               = 3,
 };
 
 enum class EEnvTestFilterOperator : uint8
 {
-	EEnvTestFilterOperator__AllPass = 0,
-	EEnvTestFilterOperator__AnyPass = 1,
-	EEnvTestFilterOperator__EEnvTestFilterOperator_MAX = 2,
+	AllPass                        = 0,
+	AnyPass                        = 1,
+	EEnvTestFilterOperator_MAX     = 2,
 };
 
 enum class EEnvTestScoreOperator : uint8
 {
-	EEnvTestScoreOperator__AverageScore = 0,
-	EEnvTestScoreOperator__MinScore = 1,
-	EEnvTestScoreOperator__MaxScore = 2,
-	EEnvTestScoreOperator__Multiply = 3,
-	EEnvTestScoreOperator__EEnvTestScoreOperator_MAX = 4,
+	AverageScore                   = 0,
+	MinScore                       = 1,
+	MaxScore                       = 2,
+	Multiply                       = 3,
+	EEnvTestScoreOperator_MAX      = 4,
 };
 
 enum class EEnvQueryRunMode : uint8
 {
-	EEnvQueryRunMode__SingleResult = 0,
-	EEnvQueryRunMode__RandomBest5Pct = 1,
-	EEnvQueryRunMode__RandomBest25Pct = 2,
-	EEnvQueryRunMode__AllMatching  = 3,
-	EEnvQueryRunMode__EEnvQueryRunMode_MAX = 4,
+	SingleResult                   = 0,
+	RandomBest5Pct                 = 1,
+	RandomBest25Pct                = 2,
+	AllMatching                    = 3,
+	EEnvQueryRunMode_MAX           = 4,
 };
 
 enum class EEnvQueryParam : uint8
 {
-	EEnvQueryParam__Float          = 0,
-	EEnvQueryParam__Int            = 1,
-	EEnvQueryParam__Bool           = 2,
-	EEnvQueryParam__EEnvQueryParam_MAX = 3,
+	Float                          = 0,
+	Int                            = 1,
+	Bool                           = 2,
+	EEnvQueryParam_MAX             = 3,
 };
 
 enum class EAIParamType : uint8
 {
-	EAIParamType__Float            = 0,
-	EAIParamType__Int              = 1,
-	EAIParamType__Bool             = 2,
-	EAIParamType__MAX              = 3,
+	Float                          = 0,
+	Int                            = 1,
+	Bool                           = 2,
+	MAX                            = 3,
 };
 
 enum class EEnvQueryTrace : uint8
 {
-	EEnvQueryTrace__None           = 0,
-	EEnvQueryTrace__Navigation     = 1,
-	EEnvQueryTrace__GeometryByChannel = 2,
-	EEnvQueryTrace__GeometryByProfile = 3,
-	EEnvQueryTrace__NavigationOverLedges = 4,
-	EEnvQueryTrace__EEnvQueryTrace_MAX = 5,
+	None                           = 0,
+	Navigation                     = 1,
+	GeometryByChannel              = 2,
+	GeometryByProfile              = 3,
+	NavigationOverLedges           = 4,
+	EEnvQueryTrace_MAX             = 5,
 };
 
 enum class EEnvTraceShape : uint8
 {
-	EEnvTraceShape__Line           = 0,
-	EEnvTraceShape__Box            = 1,
-	EEnvTraceShape__Sphere         = 2,
-	EEnvTraceShape__Capsule        = 3,
-	EEnvTraceShape__EEnvTraceShape_MAX = 4,
+	Line                           = 0,
+	Box                            = 1,
+	Sphere                         = 2,
+	Capsule                        = 3,
+	EEnvTraceShape_MAX             = 4,
 };
 
 enum class EEnvOverlapShape : uint8
 {
-	EEnvOverlapShape__Box          = 0,
-	EEnvOverlapShape__Sphere       = 1,
-	EEnvOverlapShape__Capsule      = 2,
-	EEnvOverlapShape__EEnvOverlapShape_MAX = 3,
+	Box                            = 0,
+	Sphere                         = 1,
+	Capsule                        = 2,
+	EEnvOverlapShape_MAX           = 3,
 };
 
 enum class EEnvDirection : uint8
 {
-	EEnvDirection__TwoPoints       = 0,
-	EEnvDirection__Rotation        = 1,
-	EEnvDirection__EEnvDirection_MAX = 2,
+	TwoPoints                      = 0,
+	Rotation                       = 1,
+	EEnvDirection_MAX              = 2,
 };
 
 enum class EEnvQueryTestClamping : uint8
 {
-	EEnvQueryTestClamping__None    = 0,
-	EEnvQueryTestClamping__SpecifiedValue = 1,
-	EEnvQueryTestClamping__FilterThreshold = 2,
-	EEnvQueryTestClamping__EEnvQueryTestClamping_MAX = 3,
+	None                           = 0,
+	SpecifiedValue                 = 1,
+	FilterThreshold                = 2,
+	EEnvQueryTestClamping_MAX      = 3,
 };
 
 enum class ETeamAttitude : uint8
 {
-	ETeamAttitude__Friendly        = 0,
-	ETeamAttitude__Neutral         = 1,
-	ETeamAttitude__Hostile         = 2,
-	ETeamAttitude__ETeamAttitude_MAX = 3,
+	Friendly                       = 0,
+	Neutral                        = 1,
+	Hostile                        = 2,
+	ETeamAttitude_MAX              = 3,
 };
 
 enum class EPawnSubActionTriggeringPolicy : uint8
 {
-	EPawnSubActionTriggeringPolicy__CopyBeforeTriggering = 0,
-	EPawnSubActionTriggeringPolicy__ReuseInstances = 1,
-	EPawnSubActionTriggeringPolicy__EPawnSubActionTriggeringPolicy_MAX = 2,
+	CopyBeforeTriggering           = 0,
+	ReuseInstances                 = 1,
+	EPawnSubActionTriggeringPolicy_MAX = 2,
 };
 
 enum class EPawnActionFailHandling : uint8
 {
-	EPawnActionFailHandling__RequireSuccess = 0,
-	EPawnActionFailHandling__IgnoreFailure = 1,
-	EPawnActionFailHandling__EPawnActionFailHandling_MAX = 2,
+	RequireSuccess                 = 0,
+	IgnoreFailure                  = 1,
+	EPawnActionFailHandling_MAX    = 2,
 };
 
 enum class EPawnActionMoveMode : uint8
 {
-	EPawnActionMoveMode__UsePathfinding = 0,
-	EPawnActionMoveMode__StraightLine = 1,
-	EPawnActionMoveMode__EPawnActionMoveMode_MAX = 2,
+	UsePathfinding                 = 0,
+	StraightLine                   = 1,
+	EPawnActionMoveMode_MAX        = 2,
 };
 
 enum class EBTNodeResult : uint8
 {
-	EBTNodeResult__Succeeded       = 0,
-	EBTNodeResult__Failed          = 1,
-	EBTNodeResult__Aborted         = 2,
-	EBTNodeResult__InProgress      = 3,
-	EBTNodeResult__EBTNodeResult_MAX = 4,
+	Succeeded                      = 0,
+	Failed                         = 1,
+	Aborted                        = 2,
+	InProgress                     = 3,
+	EBTNodeResult_MAX              = 4,
 };
 
 enum class EBTFlowAbortMode : uint8
 {
-	EBTFlowAbortMode__None         = 0,
-	EBTFlowAbortMode__LowerPriority = 1,
-	EBTFlowAbortMode__Self         = 2,
-	EBTFlowAbortMode__Both         = 3,
-	EBTFlowAbortMode__EBTFlowAbortMode_MAX = 4,
+	None                           = 0,
+	LowerPriority                  = 1,
+	Self                           = 2,
+	Both                           = 3,
+	EBTFlowAbortMode_MAX           = 4,
 };
 
 enum class EBasicKeyOperation : uint8
 {
-	EBasicKeyOperation__Set        = 0,
-	EBasicKeyOperation__NotSet     = 1,
-	EBasicKeyOperation__EBasicKeyOperation_MAX = 2,
+	Set                            = 0,
+	NotSet                         = 1,
+	EBasicKeyOperation_MAX         = 2,
 };
 
 enum class EArithmeticKeyOperation : uint8
 {
-	EArithmeticKeyOperation__Equal = 0,
-	EArithmeticKeyOperation__NotEqual = 1,
-	EArithmeticKeyOperation__Less  = 2,
-	EArithmeticKeyOperation__LessOrEqual = 3,
-	EArithmeticKeyOperation__Greater = 4,
-	EArithmeticKeyOperation__GreaterOrEqual = 5,
-	EArithmeticKeyOperation__EArithmeticKeyOperation_MAX = 6,
+	Equal                          = 0,
+	NotEqual                       = 1,
+	Less                           = 2,
+	LessOrEqual                    = 3,
+	Greater                        = 4,
+	GreaterOrEqual                 = 5,
+	EArithmeticKeyOperation_MAX    = 6,
 };
 
 enum class ETextKeyOperation : uint8
 {
-	ETextKeyOperation__Equal       = 0,
-	ETextKeyOperation__NotEqual    = 1,
-	ETextKeyOperation__Contain     = 2,
-	ETextKeyOperation__NotContain  = 3,
-	ETextKeyOperation__ETextKeyOperation_MAX = 4,
+	Equal                          = 0,
+	NotEqual                       = 1,
+	Contain                        = 2,
+	NotContain                     = 3,
+	ETextKeyOperation_MAX          = 4,
 };
 
 enum class EBTChildIndex : uint8
 {
-	EBTChildIndex__FirstNode       = 0,
-	EBTChildIndex__TaskNode        = 1,
-	EBTChildIndex__EBTChildIndex_MAX = 2,
+	FirstNode                      = 0,
+	TaskNode                       = 1,
+	EBTChildIndex_MAX              = 2,
 };
 
 enum class EBTDecoratorLogic : uint8
 {
-	EBTDecoratorLogic__Invalid     = 0,
-	EBTDecoratorLogic__Test        = 1,
-	EBTDecoratorLogic__And         = 2,
-	EBTDecoratorLogic__Or          = 3,
-	EBTDecoratorLogic__Not         = 4,
-	EBTDecoratorLogic__EBTDecoratorLogic_MAX = 5,
+	Invalid                        = 0,
+	Test                           = 1,
+	And                            = 2,
+	Or                             = 3,
+	Not                            = 4,
+	EBTDecoratorLogic_MAX          = 5,
 };
 
 enum class EBTParallelMode : uint8
 {
-	EBTParallelMode__AbortBackground = 0,
-	EBTParallelMode__WaitForBackground = 1,
-	EBTParallelMode__EBTParallelMode_MAX = 2,
+	AbortBackground                = 0,
+	WaitForBackground              = 1,
+	EBTParallelMode_MAX            = 2,
 };
 
 enum class EBTBlackboardRestart : uint8
 {
-	EBTBlackboardRestart__ValueChange = 0,
-	EBTBlackboardRestart__ResultChange = 1,
-	EBTBlackboardRestart__EBTBlackboardRestart_MAX = 2,
+	ValueChange                    = 0,
+	ResultChange                   = 1,
+	EBTBlackboardRestart_MAX       = 2,
 };
 
 enum class EBlackBoardEntryComparison : uint8
 {
-	EBlackBoardEntryComparison__Equal = 0,
-	EBlackBoardEntryComparison__NotEqual = 1,
-	EBlackBoardEntryComparison__EBlackBoardEntryComparison_MAX = 2,
+	Equal                          = 0,
+	NotEqual                       = 1,
+	EBlackBoardEntryComparison_MAX = 2,
 };
 
 enum class EPathExistanceQueryType : uint8
 {
-	EPathExistanceQueryType__NavmeshRaycast2D = 0,
-	EPathExistanceQueryType__HierarchicalQuery = 1,
-	EPathExistanceQueryType__RegularPathFinding = 2,
-	EPathExistanceQueryType__EPathExistanceQueryType_MAX = 3,
+	NavmeshRaycast2D               = 0,
+	HierarchicalQuery              = 1,
+	RegularPathFinding             = 2,
+	EPathExistanceQueryType_MAX    = 3,
 };
 
 enum class EEQSNormalizationType : uint8
 {
-	EEQSNormalizationType__Absolute = 0,
-	EEQSNormalizationType__RelativeToScores = 1,
-	EEQSNormalizationType__EEQSNormalizationType_MAX = 2,
+	Absolute                       = 0,
+	RelativeToScores               = 1,
+	EEQSNormalizationType_MAX      = 2,
 };
 
 enum class EEnvQueryHightlightMode : uint8
 {
-	EEnvQueryHightlightMode__All   = 0,
-	EEnvQueryHightlightMode__Best5Pct = 1,
-	EEnvQueryHightlightMode__Best25Pct = 2,
-	EEnvQueryHightlightMode__EEnvQueryHightlightMode_MAX = 3,
+	All                            = 0,
+	Best5Pct                       = 1,
+	Best25Pct                      = 2,
+	EEnvQueryHightlightMode_MAX    = 3,
 };
 
 enum class EPointOnCircleSpacingMethod : uint8
 {
-	EPointOnCircleSpacingMethod__BySpaceBetween = 0,
-	EPointOnCircleSpacingMethod__ByNumberOfPoints = 1,
-	EPointOnCircleSpacingMethod__EPointOnCircleSpacingMethod_MAX = 2,
+	BySpaceBetween                 = 0,
+	ByNumberOfPoints               = 1,
+	EPointOnCircleSpacingMethod_MAX = 2,
 };
 
 enum class EEnvTestDistance : uint8
 {
-	EEnvTestDistance__Distance3D   = 0,
-	EEnvTestDistance__Distance2D   = 1,
-	EEnvTestDistance__DistanceZ    = 2,
-	EEnvTestDistance__DistanceAbsoluteZ = 3,
-	EEnvTestDistance__EEnvTestDistance_MAX = 4,
+	Distance3D                     = 0,
+	Distance2D                     = 1,
+	DistanceZ                      = 2,
+	DistanceAbsoluteZ              = 3,
+	EEnvTestDistance_MAX           = 4,
 };
 
 enum class EEnvTestDot : uint8
 {
-	EEnvTestDot__Dot3D             = 0,
-	EEnvTestDot__Dot2D             = 1,
-	EEnvTestDot__EEnvTestDot_MAX   = 2,
+	Dot3D                          = 0,
+	Dot2D                          = 1,
+	EEnvTestDot_MAX                = 2,
 };
 
 enum class EEnvTestPathfinding : uint8
 {
-	EEnvTestPathfinding__PathExist = 0,
-	EEnvTestPathfinding__PathCost  = 1,
-	EEnvTestPathfinding__PathLength = 2,
-	EEnvTestPathfinding__EEnvTestPathfinding_MAX = 3,
+	PathExist                      = 0,
+	PathCost                       = 1,
+	PathLength                     = 2,
+	EEnvTestPathfinding_MAX        = 3,
 };
 
 enum class EPathFollowingStatus : uint8
 {
-	EPathFollowingStatus__Idle     = 0,
-	EPathFollowingStatus__Waiting  = 1,
-	EPathFollowingStatus__Paused   = 2,
-	EPathFollowingStatus__Moving   = 3,
-	EPathFollowingStatus__EPathFollowingStatus_MAX = 4,
+	Idle                           = 0,
+	Waiting                        = 1,
+	Paused                         = 2,
+	Moving                         = 3,
+	EPathFollowingStatus_MAX       = 4,
 };
 
 enum class EPathFollowingAction : uint8
 {
-	EPathFollowingAction__Error    = 0,
-	EPathFollowingAction__NoMove   = 1,
-	EPathFollowingAction__DirectMove = 2,
-	EPathFollowingAction__PartialPath = 3,
-	EPathFollowingAction__PathToGoal = 4,
-	EPathFollowingAction__EPathFollowingAction_MAX = 5,
+	Error                          = 0,
+	NoMove                         = 1,
+	DirectMove                     = 2,
+	PartialPath                    = 3,
+	PathToGoal                     = 4,
+	EPathFollowingAction_MAX       = 5,
 };
 
 enum class EPathFollowingRequestResult : uint8
 {
-	EPathFollowingRequestResult__Failed = 0,
-	EPathFollowingRequestResult__AlreadyAtGoal = 1,
-	EPathFollowingRequestResult__RequestSuccessful = 2,
-	EPathFollowingRequestResult__EPathFollowingRequestResult_MAX = 3,
+	Failed                         = 0,
+	AlreadyAtGoal                  = 1,
+	RequestSuccessful              = 2,
+	EPathFollowingRequestResult_MAX = 3,
 };
 
 enum class EAISenseNotifyType : uint8
 {
-	EAISenseNotifyType__OnEveryPerception = 0,
-	EAISenseNotifyType__OnPerceptionChange = 1,
-	EAISenseNotifyType__EAISenseNotifyType_MAX = 2,
+	OnEveryPerception              = 0,
+	OnPerceptionChange             = 1,
+	EAISenseNotifyType_MAX         = 2,
 };
 
 enum class EAITaskPriority : uint8
 {
-	EAITaskPriority__Lowest        = 0,
-	EAITaskPriority__Low           = 64,
-	EAITaskPriority__AutonomousAI  = 127,
-	EAITaskPriority__High          = 192,
-	EAITaskPriority__Ultimate      = 254,
-	EAITaskPriority__EAITaskPriority_MAX = 255,
+	Lowest                         = 0,
+	Low                            = 64,
+	AutonomousAI                   = 127,
+	High                           = 192,
+	Ultimate                       = 254,
+	EAITaskPriority_MAX            = 255,
 };
 
 
@@ -464,14 +461,14 @@ public:
 	float                                        Age;                                               // 0x0(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        ExpirationAge;                                     // 0x4(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        Strength;                                          // 0x8(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E8C[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F34[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               StimulusLocation;                                  // 0x10(0x18)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               ReceiverLocation;                                  // 0x28(0x18)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  Tag;                                               // 0x40(0x8)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E8E[0xC];                                      // Fixing Size After Last Property  [ Dumper-7 ]
-	uint8                                        BitPad_7E : 1;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_F36[0xC];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_9E : 1;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
 	uint8                                        bSuccessfullySensed : 1;                           // Mask: 0x2, PropSize: 0x10x54(0x1)(BlueprintVisible, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E8F[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F37[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -481,7 +478,7 @@ struct FActorPerceptionUpdateInfo
 public:
 	int32                                        TargetId;                                          // 0x0(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TWeakObjectPtr<class AActor>                 Target;                                            // 0x4(0x8)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E92[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F39[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAIStimulus                           Stimulus;                                          // 0x10(0x58)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 
@@ -499,7 +496,7 @@ struct FAIMoveRequest
 {
 public:
 	TWeakObjectPtr<class AActor>                 GoalActor;                                         // 0x0(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_E9C[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F4D[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -508,7 +505,7 @@ struct FIntervalCountdown
 {
 public:
 	float                                        Interval;                                          // 0x0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_E9E[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F4E[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -518,7 +515,7 @@ struct FEnvNamedValue
 public:
 	class FName                                  ParamName;                                         // 0x0(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAIParamType                      ParamType;                                         // 0x8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EA1[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F50[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Value;                                             // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -531,7 +528,7 @@ public:
 	TSubclassOf<class UEnvQueryContext>          LineTo;                                            // 0x8(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UEnvQueryContext>          Rotation;                                          // 0x10(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvDirection                     DirMode;                                           // 0x18(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EA5[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F52[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -540,7 +537,7 @@ struct FEnvTraceData
 {
 public:
 	int32                                        VersionNum;                                        // 0x0(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EA8[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F53[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UNavigationQueryFilter>    NavigationFilter;                                  // 0x8(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ProjectDown;                                       // 0x10(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ProjectUp;                                         // 0x14(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -550,18 +547,18 @@ public:
 	float                                        PostProjectionVerticalOffset;                      // 0x24(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETraceTypeQuery                   TraceChannel;                                      // 0x28(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECollisionChannel                 SerializedChannel;                                 // 0x29(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EAD[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F57[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  TraceProfileName;                                  // 0x2C(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvTraceShape                    TraceShape;                                        // 0x34(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvQueryTrace                    TraceMode;                                         // 0x35(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EAE[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F58[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bTraceComplex : 1;                                 // Mask: 0x1, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOnlyBlockingHits : 1;                             // Mask: 0x2, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCanTraceOnNavMesh : 1;                            // Mask: 0x4, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCanTraceOnGeometry : 1;                           // Mask: 0x8, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCanDisableTrace : 1;                              // Mask: 0x10, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCanProjectDown : 1;                               // Mask: 0x20, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EB3[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F5A[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -572,15 +569,15 @@ public:
 	float                                        ExtentX;                                           // 0x0(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ExtentY;                                           // 0x4(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ExtentZ;                                           // 0x8(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EB5[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F5C[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               ShapeOffset;                                       // 0x10(0x18)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECollisionChannel                 OverlapChannel;                                    // 0x28(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvOverlapShape                  OverlapShape;                                      // 0x29(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EB7[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F5D[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bOnlyBlockingHits : 1;                             // Mask: 0x1, PropSize: 0x10x2C(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverlapComplex : 1;                               // Mask: 0x2, PropSize: 0x10x2C(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bSkipOverlapQuerier : 1;                           // Mask: 0x4, PropSize: 0x10x2C(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EB8[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F5F[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -588,12 +585,12 @@ public:
 struct FEnvQueryResult
 {
 public:
-	uint8                                        Pad_EBA[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F60[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UEnvQueryItemType>         ItemType;                                          // 0x10(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EBB[0x14];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F63[0x14];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        OptionIndex;                                       // 0x2C(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        QueryID;                                           // 0x30(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EBC[0xC];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F64[0xC];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -605,9 +602,9 @@ public:
 	class FName                                  SelectedKeyName;                                   // 0x10(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UBlackboardKeyType>        SelectedKeyType;                                   // 0x18(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        SelectedKeyID;                                     // 0x20(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_EBE[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F68[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bNoneIsAllowedValue : 1;                           // Mask: 0x1, PropSize: 0x10x24(0x1)(Edit, BlueprintVisible, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_EC0[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F69[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -617,7 +614,7 @@ struct FAIDynamicParam
 public:
 	class FName                                  ParamName;                                         // 0x0(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAIParamType                      ParamType;                                         // 0x8(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EC2[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F6A[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Value;                                             // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBlackboardKeySelector                BBKey;                                             // 0x10(0x28)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
@@ -631,9 +628,9 @@ public:
 	TArray<struct FAIDynamicParam>               QueryConfig;                                       // 0x8(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FBlackboardKeySelector                EQSQueryBlackboardKey;                             // 0x18(0x28)(Edit, NativeAccessSpecifierPublic)
 	enum class EEnvQueryRunMode                  RunMode;                                           // 0x40(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EC4[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F6D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bUseBBKeyForQueryTemplate : 1;                     // Mask: 0x1, PropSize: 0x10x44(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EC5[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F6E[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -649,7 +646,7 @@ public:
 struct FSimpleIndexedHandleBase
 {
 public:
-	uint8                                        Pad_EC6[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F70[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x8 - 0x4)
@@ -657,7 +654,7 @@ public:
 struct FIndexedHandleBase : public FSimpleIndexedHandleBase
 {
 public:
-	uint8                                        Pad_EC7[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F71[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -665,7 +662,7 @@ public:
 struct FCompactIndexedHandleBase
 {
 public:
-	uint8                                        Pad_EC8[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F72[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -682,7 +679,7 @@ struct FPawnActionEvent
 {
 public:
 	class UPawnAction*                           Action;                                            // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_ECA[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F79[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -700,7 +697,7 @@ struct FBehaviorTreeTemplateInfo
 public:
 	class UBehaviorTree*                         Asset;                                             // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UBTCompositeNode*                      Template;                                          // 0x8(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_ECC[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F7C[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -711,7 +708,7 @@ public:
 	class FName                                  EntryName;                                         // 0x0(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UBlackboardKeyType*                    KeyType;                                           // 0x8(0x8)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bInstanceSynced : 1;                               // Mask: 0x1, PropSize: 0x10x10(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_ECF[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F80[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -720,7 +717,7 @@ struct FBTDecoratorLogic
 {
 public:
 	enum class EBTDecoratorLogic                 Operation;                                         // 0x0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_ED1[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F81[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint16                                       Number;                                            // 0x2(0x2)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -740,7 +737,7 @@ public:
 struct FAIDataProviderValue
 {
 public:
-	uint8                                        Pad_ED4[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F87[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAIDataProvider*                       DataBinding;                                       // 0x10(0x8)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  DataField;                                         // 0x18(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -751,7 +748,7 @@ struct FAIDataProviderTypedValue : public FAIDataProviderValue
 {
 public:
 	TSubclassOf<class UObject>                   PropertyType;                                      // 0x20(0x8)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_ED5[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F89[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x30 - 0x20)
@@ -759,7 +756,7 @@ public:
 struct FAIDataProviderStructValue : public FAIDataProviderValue
 {
 public:
-	uint8                                        Pad_ED7[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F8D[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x38 - 0x30)
@@ -768,7 +765,7 @@ struct FAIDataProviderIntValue : public FAIDataProviderTypedValue
 {
 public:
 	int32                                        DefaultValue;                                      // 0x30(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_ED8[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F8F[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x38 - 0x30)
@@ -777,7 +774,7 @@ struct FAIDataProviderFloatValue : public FAIDataProviderTypedValue
 {
 public:
 	float                                        DefaultValue;                                      // 0x30(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_ED9[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F91[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x38 - 0x30)
@@ -786,7 +783,7 @@ struct FAIDataProviderBoolValue : public FAIDataProviderTypedValue
 {
 public:
 	bool                                         DefaultValue;                                      // 0x30(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EDA[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F94[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -796,9 +793,9 @@ struct FEnvQueryManagerConfig
 public:
 	float                                        MaxAllowedTestingTime;                             // 0x0(0x4)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bTestQueriesUsingBreadth;                          // 0x4(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EDB[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F95[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        QueryCountWarningThreshold;                        // 0x8(0x4)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EDC[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F96[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       QueryCountWarningInterval;                         // 0x10(0x8)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                       ExecutionTimeWarningSeconds;                       // 0x18(0x8)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                       HandlingResultTimeWarningSeconds;                  // 0x20(0x8)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -813,7 +810,7 @@ public:
 	class UEnvQuery*                             QueryTemplate;                                     // 0x0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UObject*                               Owner;                                             // 0x8(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UWorld*                                World;                                             // 0x10(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_EDE[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F9A[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x178 (0x178 - 0x0)
@@ -822,7 +819,7 @@ struct FEnvQueryInstanceCache
 {
 public:
 	class UEnvQuery*                             Template;                                          // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EDF[0x170];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F9B[0x170];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1C (0x1C - 0x0)
@@ -857,7 +854,7 @@ struct FRecastGraphWrapper
 {
 public:
 	class ARecastNavMesh*                        RecastNavMeshActor;                                // 0x0(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_EE5[0xA8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F9C[0xA8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -868,7 +865,7 @@ public:
 	class AActor*                                Target;                                            // 0x0(0x8)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FAIStimulus>                   LastSensedStimuli;                                 // 0x8(0x10)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	uint8                                        bIsHostile : 1;                                    // Mask: 0x1, PropSize: 0x10x18(0x1)(BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EE9[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F9E[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -879,7 +876,7 @@ public:
 	uint8                                        bDetectEnemies : 1;                                // Mask: 0x1, PropSize: 0x10x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bDetectNeutrals : 1;                               // Mask: 0x2, PropSize: 0x10x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bDetectFriendlies : 1;                             // Mask: 0x4, PropSize: 0x10x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EEA[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F9F[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -888,7 +885,7 @@ struct FAIDamageEvent
 {
 public:
 	float                                        Amount;                                            // 0x0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EEB[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FA1[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               Location;                                          // 0x8(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               HitLocation;                                       // 0x20(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                DamagedActor;                                      // 0x38(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -901,13 +898,13 @@ public:
 struct FAINoiseEvent
 {
 public:
-	uint8                                        Pad_EEE[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FA2[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               NoiseLocation;                                     // 0x8(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Loudness;                                          // 0x20(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxRange;                                          // 0x24(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                Instigator;                                        // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  Tag;                                               // 0x30(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EF2[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FA3[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -917,7 +914,7 @@ struct FAIPredictionEvent
 public:
 	class AActor*                                Requestor;                                         // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                PredictedActor;                                    // 0x8(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_EF3[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FA5[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -925,7 +922,7 @@ public:
 struct FAISightEvent
 {
 public:
-	uint8                                        Pad_EF4[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FA7[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                SeenActor;                                         // 0x8(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                Observer;                                          // 0x10(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -935,7 +932,7 @@ public:
 struct FAITeamStimulusEvent
 {
 public:
-	uint8                                        Pad_EF5[0x40];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FA8[0x40];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                Broadcaster;                                       // 0x40(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class AActor*                                Enemy;                                             // 0x48(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -945,13 +942,11 @@ public:
 struct FAITouchEvent
 {
 public:
-	uint8                                        Pad_EF6[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FA9[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                TouchReceiver;                                     // 0x18(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                OtherActor;                                        // 0x20(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

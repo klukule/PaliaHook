@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class ValeriaDTOs.VALDTOS_MetaCharacterCustomizationFuncLib
+// (None)
+
+class UClass* UVALDTOS_MetaCharacterCustomizationFuncLib::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALDTOS_MetaCharacterCustomizationFuncLib");
+
+	return Clss;
+}
+
+
+// VALDTOS_MetaCharacterCustomizationFuncLib ValeriaDTOs.Default__VALDTOS_MetaCharacterCustomizationFuncLib
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALDTOS_MetaCharacterCustomizationFuncLib* UVALDTOS_MetaCharacterCustomizationFuncLib::GetDefaultObj()
+{
+	static class UVALDTOS_MetaCharacterCustomizationFuncLib* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALDTOS_MetaCharacterCustomizationFuncLib*>(UVALDTOS_MetaCharacterCustomizationFuncLib::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function ValeriaDTOs.VALDTOS_MetaCharacterCustomizationFuncLib.MetaCharacterFormat_EqualEqual
@@ -22,7 +47,7 @@ namespace SDK
 // struct FVALDTOS_MetaCharacterFormatB                                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALDTOS_MetaCharacterCustomizationFuncLib::MetaCharacterFormat_EqualEqual(struct FVALDTOS_MetaCharacterFormat& InA, struct FVALDTOS_MetaCharacterFormat& InB)
+bool UVALDTOS_MetaCharacterCustomizationFuncLib::MetaCharacterFormat_EqualEqual(struct FVALDTOS_MetaCharacterFormat& A, struct FVALDTOS_MetaCharacterFormat& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,16 +56,16 @@ bool UVALDTOS_MetaCharacterCustomizationFuncLib::MetaCharacterFormat_EqualEqual(
 
 	Params::UVALDTOS_MetaCharacterCustomizationFuncLib_MetaCharacterFormat_EqualEqual_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -54,7 +79,7 @@ bool UVALDTOS_MetaCharacterCustomizationFuncLib::MetaCharacterFormat_EqualEqual(
 // struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_VolatileB                                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALDTOS_MetaCharacterCustomizationFuncLib::CharacterCustomizationOptions_EqualEqual(struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile& InA, struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile& InB)
+bool UVALDTOS_MetaCharacterCustomizationFuncLib::CharacterCustomizationOptions_EqualEqual(struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile& A, struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Volatile& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -63,16 +88,16 @@ bool UVALDTOS_MetaCharacterCustomizationFuncLib::CharacterCustomizationOptions_E
 
 	Params::UVALDTOS_MetaCharacterCustomizationFuncLib_CharacterCustomizationOptions_EqualEqual_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -86,7 +111,7 @@ bool UVALDTOS_MetaCharacterCustomizationFuncLib::CharacterCustomizationOptions_E
 // struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_StableB                                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALDTOS_MetaCharacterCustomizationFuncLib::CharacterCreationOptions_EqualEqual(struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable& InA, struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable& InB)
+bool UVALDTOS_MetaCharacterCustomizationFuncLib::CharacterCreationOptions_EqualEqual(struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable& A, struct FVALDTOS_CharacterCustomizationLoadout_PersistDTO_Stable& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -95,16 +120,16 @@ bool UVALDTOS_MetaCharacterCustomizationFuncLib::CharacterCreationOptions_EqualE
 
 	Params::UVALDTOS_MetaCharacterCustomizationFuncLib_CharacterCreationOptions_EqualEqual_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -112,6 +137,4 @@ bool UVALDTOS_MetaCharacterCustomizationFuncLib::CharacterCreationOptions_EqualE
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

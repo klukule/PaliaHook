@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,16 +15,11 @@ class UCamShake_Mining_hitA_C : public ULegacyCameraShake
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("CamShake_Mining_hitA_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UCamShake_Mining_hitA_C* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

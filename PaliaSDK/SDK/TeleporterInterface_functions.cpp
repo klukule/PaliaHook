@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// BlueprintGeneratedClass TeleporterInterface.TeleporterInterface_C
+// (None)
+
+class UClass* ITeleporterInterface_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TeleporterInterface_C");
+
+	return Clss;
+}
+
+
+// TeleporterInterface_C TeleporterInterface.Default__TeleporterInterface_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class ITeleporterInterface_C* ITeleporterInterface_C::GetDefaultObj()
+{
+	static class ITeleporterInterface_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ITeleporterInterface_C*>(ITeleporterInterface_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function TeleporterInterface.TeleporterInterface_C.GetTeleportEntrance
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UTeleportFromComponent*      TeleportEntrance                                                 (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ITeleporterInterface_C::GetTeleportEntrance(class UTeleportFromComponent** InTeleportEntrance)
+void ITeleporterInterface_C::GetTeleportEntrance(class UTeleportFromComponent** TeleportEntrance)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,8 +57,8 @@ void ITeleporterInterface_C::GetTeleportEntrance(class UTeleportFromComponent** 
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InTeleportEntrance != nullptr)
-		*InTeleportEntrance = Parms.TeleportEntrance;
+	if (TeleportEntrance != nullptr)
+		*TeleportEntrance = Parms.TeleportEntrance;
 
 }
 
@@ -43,7 +68,7 @@ void ITeleporterInterface_C::GetTeleportEntrance(class UTeleportFromComponent** 
 // Parameters:
 // class UTeleportToComponent*        TeleporterExitNode                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ITeleporterInterface_C::GetTeleporterExitNode(class UTeleportToComponent** InTeleporterExitNode)
+void ITeleporterInterface_C::GetTeleporterExitNode(class UTeleportToComponent** TeleporterExitNode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -55,13 +80,11 @@ void ITeleporterInterface_C::GetTeleporterExitNode(class UTeleportToComponent** 
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InTeleporterExitNode != nullptr)
-		*InTeleporterExitNode = Parms.TeleporterExitNode;
+	if (TeleporterExitNode != nullptr)
+		*TeleporterExitNode = Parms.TeleporterExitNode;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,11 +15,8 @@ class UAudioAnalyzerAssetBase : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AudioAnalyzerAssetBase");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAudioAnalyzerAssetBase* GetDefaultObj();
 
 };
 
@@ -32,11 +26,8 @@ class UAudioAnalyzerSettings : public UAudioAnalyzerAssetBase
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AudioAnalyzerSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAudioAnalyzerSettings* GetDefaultObj();
 
 };
 
@@ -46,18 +37,15 @@ class UAudioAnalyzer : public UObject
 {
 public:
 	class UAudioBus*                             AudioBus;                                          // 0x28(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1BB1[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1C89[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAudioAnalyzerSubsystem*               AudioAnalyzerSubsystem;                            // 0x38(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1BB2[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C8B[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AudioAnalyzer");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAudioAnalyzer* GetDefaultObj();
 
-	void StopAnalyzing(class UObject* InWorldContextObject);
-	void StartAnalyzing(class UObject* InWorldContextObject, class UAudioBus* InAudioBusToAnalyze);
+	void StopAnalyzing(class UObject* WorldContextObject);
+	void StartAnalyzing(class UObject* WorldContextObject, class UAudioBus* AudioBusToAnalyze);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -66,11 +54,8 @@ class UAudioAnalyzerNRTSettings : public UAudioAnalyzerAssetBase
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AudioAnalyzerNRTSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAudioAnalyzerNRTSettings* GetDefaultObj();
 
 };
 
@@ -81,13 +66,10 @@ class UAudioAnalyzerNRT : public UAudioAnalyzerAssetBase
 public:
 	class USoundWave*                            Sound;                                             // 0x28(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        DurationInSeconds;                                 // 0x30(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1BB6[0x44];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C92[0x44];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AudioAnalyzerNRT");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAudioAnalyzerNRT* GetDefaultObj();
 
 };
 
@@ -97,18 +79,13 @@ class UAudioAnalyzerSubsystem : public UEngineSubsystem
 {
 public:
 	TArray<class UAudioAnalyzer*>                AudioAnalyzers;                                    // 0x30(0x10)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1BBB[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1C95[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AudioAnalyzerSubsystem");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAudioAnalyzerSubsystem* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

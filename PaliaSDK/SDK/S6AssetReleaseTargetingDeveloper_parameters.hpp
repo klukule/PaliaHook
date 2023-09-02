@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -23,7 +20,7 @@ struct US6AssetReleaseTargetingLibrary_GetAssetReleaseTargetingInfo_SoftObject_P
 public:
 	TSoftObjectPtr<class UObject>                SoftObject;                                        // 0x0(0x30)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FS6AssetReleaseTargetingInfo          ReturnValue;                                       // 0x30(0xC)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1271[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12AD[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1C (0x1C - 0x0)
@@ -42,7 +39,7 @@ struct US6AssetReleaseTargetingLibrary_GetAssetReleaseTargetingInfo_ObjectPath_P
 public:
 	struct FSoftObjectPath                       SoftObjectPath;                                    // 0x0(0x20)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FS6AssetReleaseTargetingInfo          ReturnValue;                                       // 0x20(0xC)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_127D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12C1[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -52,7 +49,7 @@ struct US6AssetReleaseTargetingLibrary_GetAssetReleaseTargetingInfo_Object_Param
 public:
 	class UObject*                               Object;                                            // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FS6AssetReleaseTargetingInfo          ReturnValue;                                       // 0x8(0xC)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1288[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12C8[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x78 (0x78 - 0x0)
@@ -62,12 +59,10 @@ struct US6AssetReleaseTargetingLibrary_GetAssetReleaseTargetingInfo_AssetData_Pa
 public:
 	struct FAssetData                            AssetData;                                         // 0x0(0x68)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FS6AssetReleaseTargetingInfo          ReturnValue;                                       // 0x68(0xC)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_129A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_12CC[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

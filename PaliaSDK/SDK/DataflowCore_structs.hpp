@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -22,9 +19,9 @@ namespace SDK
 struct FDataflowNode
 {
 public:
-	uint8                                        Pad_2635[0xC8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26B7[0xC8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	bool                                         bActive;                                           // 0xC8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2636[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26B8[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -32,7 +29,7 @@ public:
 struct FDataflowConnection
 {
 public:
-	uint8                                        Pad_2637[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26B9[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x48 - 0x40)
@@ -40,7 +37,7 @@ public:
 struct FDataflowInput : public FDataflowConnection
 {
 public:
-	uint8                                        Pad_2639[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26BA[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x68 - 0x40)
@@ -48,11 +45,9 @@ public:
 struct FDataflowOutput : public FDataflowConnection
 {
 public:
-	uint8                                        Pad_263B[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26BC[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

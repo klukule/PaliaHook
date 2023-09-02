@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -22,22 +19,19 @@ public:
 	FMulticastInlineDelegateProperty_            OnConsoleMessage;                                  // 0x170(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class FString                                InitialURL;                                        // 0x180(0x10)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bSupportsTransparency;                             // 0x190(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_7B9[0x17];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_84E[0x17];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("WebBrowser");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UWebBrowser* GetDefaultObj();
 
-	void OnUrlChanged__DelegateSignature(class FText& InText);
-	void OnConsoleMessage__DelegateSignature(const class FString& InMessage, const class FString& InSource, int32 InLine);
-	void OnBeforePopup__DelegateSignature(const class FString& InURL, const class FString& InFrame);
-	void LoadURL(const class FString& InNewURL);
-	void LoadString(const class FString& InContents, const class FString& InDummyURL);
+	void OnUrlChanged__DelegateSignature(class FText& Text);
+	void OnConsoleMessage__DelegateSignature(const class FString& Message, const class FString& Source, int32 Line);
+	void OnBeforePopup__DelegateSignature(const class FString& URL, const class FString& Frame);
+	void LoadURL(const class FString& NewURL);
+	void LoadString(const class FString& Contents, const class FString& DummyURL);
 	class FString GetUrl();
 	class FText GetTitleText();
-	void ExecuteJavascript(const class FString& InScriptText);
+	void ExecuteJavascript(const class FString& ScriptText);
 };
 
 // 0x60 (0x88 - 0x28)
@@ -46,18 +40,13 @@ class UWebBrowserAssetManager : public UObject
 {
 public:
 	TSoftObjectPtr<class UMaterial>              DefaultMaterial;                                   // 0x28(0x30)(Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_7BE[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_858[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("WebBrowserAssetManager");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UWebBrowserAssetManager* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

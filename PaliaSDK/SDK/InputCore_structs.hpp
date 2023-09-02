@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,63 +11,63 @@ namespace SDK
 
 enum class ETouchIndex : uint8
 {
-	ETouchIndex__Touch1            = 0,
-	ETouchIndex__Touch2            = 1,
-	ETouchIndex__Touch3            = 2,
-	ETouchIndex__Touch4            = 3,
-	ETouchIndex__Touch5            = 4,
-	ETouchIndex__Touch6            = 5,
-	ETouchIndex__Touch7            = 6,
-	ETouchIndex__Touch8            = 7,
-	ETouchIndex__Touch9            = 8,
-	ETouchIndex__Touch10           = 9,
-	ETouchIndex__CursorPointerIndex = 10,
-	ETouchIndex__MAX_TOUCHES       = 11,
-	ETouchIndex__ETouchIndex_MAX   = 12,
+	Touch1                         = 0,
+	Touch2                         = 1,
+	Touch3                         = 2,
+	Touch4                         = 3,
+	Touch5                         = 4,
+	Touch6                         = 5,
+	Touch7                         = 6,
+	Touch8                         = 7,
+	Touch9                         = 8,
+	Touch10                        = 9,
+	CursorPointerIndex             = 10,
+	MAX_TOUCHES                    = 11,
+	ETouchIndex_MAX                = 12,
 };
 
 enum class EControllerHand : uint8
 {
-	EControllerHand__Left          = 0,
-	EControllerHand__Right         = 1,
-	EControllerHand__AnyHand       = 2,
-	EControllerHand__Pad           = 3,
-	EControllerHand__ExternalCamera = 4,
-	EControllerHand__Gun           = 5,
-	EControllerHand__HMD           = 6,
-	EControllerHand__Special_1     = 7,
-	EControllerHand__Special_2     = 8,
-	EControllerHand__Special_3     = 9,
-	EControllerHand__Special_4     = 10,
-	EControllerHand__Special_5     = 11,
-	EControllerHand__Special_6     = 12,
-	EControllerHand__Special_7     = 13,
-	EControllerHand__Special_8     = 14,
-	EControllerHand__Special_9     = 15,
-	EControllerHand__Special_10    = 16,
-	EControllerHand__Special_11    = 17,
-	EControllerHand__ControllerHand_Count = 18,
-	EControllerHand__EControllerHand_MAX = 19,
+	Left                           = 0,
+	Right                          = 1,
+	AnyHand                        = 2,
+	Pad                            = 3,
+	ExternalCamera                 = 4,
+	Gun                            = 5,
+	HMD                            = 6,
+	Special_1                      = 7,
+	Special_2                      = 8,
+	Special_3                      = 9,
+	Special_4                      = 10,
+	Special_5                      = 11,
+	Special_6                      = 12,
+	Special_7                      = 13,
+	Special_8                      = 14,
+	Special_9                      = 15,
+	Special_10                     = 16,
+	Special_11                     = 17,
+	ControllerHand_Count           = 18,
+	EControllerHand_MAX            = 19,
 };
 
 enum class EConsoleForGamepadLabels : uint8
 {
-	EConsoleForGamepadLabels__None = 0,
-	EConsoleForGamepadLabels__XBoxOne = 1,
-	EConsoleForGamepadLabels__PS4  = 2,
-	EConsoleForGamepadLabels__EConsoleForGamepadLabels_MAX = 3,
+	None                           = 0,
+	XBoxOne                        = 1,
+	PS4                            = 2,
+	EConsoleForGamepadLabels_MAX   = 3,
 };
 
 enum class ETouchType : uint8
 {
-	ETouchType__Began              = 0,
-	ETouchType__Moved              = 1,
-	ETouchType__Stationary         = 2,
-	ETouchType__ForceChanged       = 3,
-	ETouchType__FirstMove          = 4,
-	ETouchType__Ended              = 5,
-	ETouchType__NumTypes           = 6,
-	ETouchType__ETouchType_MAX     = 7,
+	Began                          = 0,
+	Moved                          = 1,
+	Stationary                     = 2,
+	ForceChanged                   = 3,
+	FirstMove                      = 4,
+	Ended                          = 5,
+	NumTypes                       = 6,
+	ETouchType_MAX                 = 7,
 };
 
 
@@ -84,11 +81,9 @@ struct FKey
 {
 public:
 	class FName                                  KeyName;                                           // 0x0(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_13CA[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1448[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

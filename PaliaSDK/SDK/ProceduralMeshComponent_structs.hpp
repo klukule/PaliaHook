@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,10 +11,10 @@ namespace SDK
 
 enum class EProcMeshSliceCapOption : uint8
 {
-	EProcMeshSliceCapOption__NoCap = 0,
-	EProcMeshSliceCapOption__CreateNewSectionForCap = 1,
-	EProcMeshSliceCapOption__UseLastSectionForCap = 2,
-	EProcMeshSliceCapOption__EProcMeshSliceCapOption_MAX = 3,
+	NoCap                          = 0,
+	CreateNewSectionForCap         = 1,
+	UseLastSectionForCap           = 2,
+	EProcMeshSliceCapOption_MAX    = 3,
 };
 
 
@@ -32,7 +29,7 @@ struct FProcMeshTangent
 public:
 	struct FVector                               TangentX;                                          // 0x0(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bFlipTangentY;                                     // 0x18(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_18E2[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_18E4[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x98 (0x98 - 0x0)
@@ -61,11 +58,9 @@ public:
 	struct FBox                                  SectionLocalBox;                                   // 0x20(0x38)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bEnableCollision;                                  // 0x58(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSectionVisible;                                   // 0x59(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_18EE[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_18E9[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

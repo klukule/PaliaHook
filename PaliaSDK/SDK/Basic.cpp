@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -16,23 +13,26 @@ void InitGObjects()
 	UObject::GObjects = reinterpret_cast<TUObjectArray*>(uintptr_t(GetModuleHandle(0)) + Offsets::GObjects);
 }		
 
-FName FSoftObjectPtr::GetAssetPathName()
-{
-	return ObjectID.AssetPathName;
-}
 FString FSoftObjectPtr::GetSubPathString()
 {
 	return ObjectID.SubPathString;
 }
 
-std::string FSoftObjectPtr::GetAssetPathNameStr()
-{
-	return ObjectID.AssetPathName.ToString();
-}
 std::string FSoftObjectPtr::GetSubPathStringStr()
 {
 	return ObjectID.SubPathString.ToString();
 }
+
+template<class SoftObjectPath>
+SoftObjectPath& FSoftObjectPtr::GetObjectPath()
+{
+	static_assert(std::is_same_v<SoftObjectPath, FSoftObjectPath>, "Only use this with FSoftObjectPath. This function is only templated as a workaround to C++ type-checks.");
+
+	return reinterpret_cast<FSoftObjectPath&>(ObjectID);
+}
+
+void Dummy() { FSoftObjectPtr().GetObjectPath(); }
+
 
 class UObject* FWeakObjectPtr::Get() const
 {
@@ -63,6 +63,4 @@ bool FWeakObjectPtr::operator!=(const class UObject* Other) const
 }
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

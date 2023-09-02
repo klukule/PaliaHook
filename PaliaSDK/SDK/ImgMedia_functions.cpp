@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class ImgMedia.ImgMediaSource
+// (None)
+
+class UClass* UImgMediaSource::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ImgMediaSource");
+
+	return Clss;
+}
+
+
+// ImgMediaSource ImgMedia.Default__ImgMediaSource
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UImgMediaSource* UImgMediaSource::GetDefaultObj()
+{
+	static class UImgMediaSource* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UImgMediaSource*>(UImgMediaSource::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ImgMedia.ImgMediaSource.SetTokenizedSequencePath
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FString                      Path                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::SetTokenizedSequencePath(const class FString& InPath)
+void UImgMediaSource::SetTokenizedSequencePath(const class FString& Path)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +54,15 @@ void UImgMediaSource::SetTokenizedSequencePath(const class FString& InPath)
 
 	Params::UImgMediaSource_SetTokenizedSequencePath_Params Parms{};
 
-	Parms.Path = InPath;
+	Parms.Path = Path;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -47,7 +72,7 @@ void UImgMediaSource::SetTokenizedSequencePath(const class FString& InPath)
 // Parameters:
 // class FString                      Path                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::SetSequencePath(const class FString& InPath)
+void UImgMediaSource::SetSequencePath(const class FString& Path)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,15 +81,15 @@ void UImgMediaSource::SetSequencePath(const class FString& InPath)
 
 	Params::UImgMediaSource_SetSequencePath_Params Parms{};
 
-	Parms.Path = InPath;
+	Parms.Path = Path;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -74,7 +99,7 @@ void UImgMediaSource::SetSequencePath(const class FString& InPath)
 // Parameters:
 // float                              Distance                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::SetMipLevelDistance(float InDistance)
+void UImgMediaSource::SetMipLevelDistance(float Distance)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,15 +108,15 @@ void UImgMediaSource::SetMipLevelDistance(float InDistance)
 
 	Params::UImgMediaSource_SetMipLevelDistance_Params Parms{};
 
-	Parms.Distance = InDistance;
+	Parms.Distance = Distance;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -101,7 +126,7 @@ void UImgMediaSource::SetMipLevelDistance(float InDistance)
 // Parameters:
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::RemoveTargetObject(class AActor* InInActor)
+void UImgMediaSource::RemoveTargetObject(class AActor* InActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -110,15 +135,15 @@ void UImgMediaSource::RemoveTargetObject(class AActor* InInActor)
 
 	Params::UImgMediaSource_RemoveTargetObject_Params Parms{};
 
-	Parms.InActor = InInActor;
+	Parms.InActor = InActor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -128,7 +153,7 @@ void UImgMediaSource::RemoveTargetObject(class AActor* InInActor)
 // Parameters:
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::RemoveGlobalCamera(class AActor* InInActor)
+void UImgMediaSource::RemoveGlobalCamera(class AActor* InActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -137,15 +162,15 @@ void UImgMediaSource::RemoveGlobalCamera(class AActor* InInActor)
 
 	Params::UImgMediaSource_RemoveGlobalCamera_Params Parms{};
 
-	Parms.InActor = InInActor;
+	Parms.InActor = InActor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -165,13 +190,13 @@ class FString UImgMediaSource::GetSequencePath()
 	Params::UImgMediaSource_GetSequencePath_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -183,7 +208,7 @@ class FString UImgMediaSource::GetSequencePath()
 // Parameters:
 // TArray<class FString>              OutProxies                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::GetProxies(TArray<class FString>* InOutProxies)
+void UImgMediaSource::GetProxies(TArray<class FString>* OutProxies)
 {
 	static class UFunction* Func = nullptr;
 
@@ -193,16 +218,16 @@ void UImgMediaSource::GetProxies(TArray<class FString>* InOutProxies)
 	Params::UImgMediaSource_GetProxies_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutProxies != nullptr)
-		*InOutProxies = Parms.OutProxies;
+	if (OutProxies != nullptr)
+		*OutProxies = std::move(Parms.OutProxies);
 
 }
 
@@ -212,7 +237,7 @@ void UImgMediaSource::GetProxies(TArray<class FString>* InOutProxies)
 // Parameters:
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::AddTargetObject(class AActor* InInActor)
+void UImgMediaSource::AddTargetObject(class AActor* InActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -221,15 +246,15 @@ void UImgMediaSource::AddTargetObject(class AActor* InInActor)
 
 	Params::UImgMediaSource_AddTargetObject_Params Parms{};
 
-	Parms.InActor = InInActor;
+	Parms.InActor = InActor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -239,7 +264,7 @@ void UImgMediaSource::AddTargetObject(class AActor* InInActor)
 // Parameters:
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UImgMediaSource::AddGlobalCamera(class AActor* InInActor)
+void UImgMediaSource::AddGlobalCamera(class AActor* InActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -248,20 +273,18 @@ void UImgMediaSource::AddGlobalCamera(class AActor* InInActor)
 
 	Params::UImgMediaSource_AddGlobalCamera_Params Parms{};
 
-	Parms.InActor = InInActor;
+	Parms.InActor = InActor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

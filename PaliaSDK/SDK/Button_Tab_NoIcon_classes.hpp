@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -25,19 +22,14 @@ public:
 	class UWBP_PMenuTabButton_Icon_C*            Content;                                           // 0x688(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UInputAction*                          Input_Action;                                      // 0x690(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("Button_Tab_NoIcon_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UButton_Tab_NoIcon_C* GetDefaultObj();
 
-	void PreConstruct(bool InIsDesignTime);
-	void SetIsActiveTabButton(bool InbIsActive);
-	void ExecuteUbergraph_Button_Tab_NoIcon(int32 InEntryPoint, bool InK2Node_Event_bIsActive, bool InK2Node_Event_IsDesignTime, bool InTemp_bool_Variable, class UVALUI_ButtonStyle* InK2Node_Select_Default);
+	void PreConstruct(bool IsDesignTime);
+	void SetIsActiveTabButton(bool bIsActive);
+	void ExecuteUbergraph_Button_Tab_NoIcon(int32 EntryPoint, bool K2Node_Event_bIsActive, bool K2Node_Event_IsDesignTime, bool Temp_bool_Variable, class UVALUI_ButtonStyle* K2Node_Select_Default);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

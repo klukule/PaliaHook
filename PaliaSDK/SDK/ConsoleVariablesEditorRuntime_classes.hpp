@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -20,28 +17,23 @@ public:
 	class FString                                VariableCollectionDescription;                     // 0x28(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TArray<struct FConsoleVariablesEditorAssetSaveData> SavedCommands;                                     // 0x38(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ConsoleVariablesAsset");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UConsoleVariablesAsset* GetDefaultObj();
 
-	void SetVariableCollectionDescription(const class FString& InInVariableCollectionDescription);
-	void ReplaceSavedCommands(TArray<struct FConsoleVariablesEditorAssetSaveData>& InReplacement);
-	bool RemoveConsoleVariable(const class FString& InInCommandString);
+	void SetVariableCollectionDescription(const class FString& InVariableCollectionDescription);
+	void ReplaceSavedCommands(TArray<struct FConsoleVariablesEditorAssetSaveData>& Replacement);
+	bool RemoveConsoleVariable(const class FString& InCommandString);
 	class FString GetVariableCollectionDescription();
 	int32 GetSavedCommandsCount();
-	TArray<class FString> GetSavedCommandsAsStringArray(bool InbOnlyIncludeChecked);
-	class FString GetSavedCommandsAsCommaSeparatedString(bool InbOnlyIncludeChecked);
+	TArray<class FString> GetSavedCommandsAsStringArray(bool bOnlyIncludeChecked);
+	class FString GetSavedCommandsAsCommaSeparatedString(bool bOnlyIncludeChecked);
 	TArray<struct FConsoleVariablesEditorAssetSaveData> GetSavedCommands();
-	bool FindSavedDataByCommandString(const class FString& InInCommandString, struct FConsoleVariablesEditorAssetSaveData* InOutValue, enum class ESearchCase InSearchCase);
-	void ExecuteSavedCommands(class UObject* InWorldContextObject, bool InbOnlyIncludeChecked);
-	void CopyFrom(class UConsoleVariablesAsset* InInAssetToCopy);
-	void AddOrSetConsoleObjectSavedData(struct FConsoleVariablesEditorAssetSaveData& InInData);
+	bool FindSavedDataByCommandString(const class FString& InCommandString, struct FConsoleVariablesEditorAssetSaveData* OutValue, enum class ESearchCase SearchCase);
+	void ExecuteSavedCommands(class UObject* WorldContextObject, bool bOnlyIncludeChecked);
+	void CopyFrom(class UConsoleVariablesAsset* InAssetToCopy);
+	void AddOrSetConsoleObjectSavedData(struct FConsoleVariablesEditorAssetSaveData& InData);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

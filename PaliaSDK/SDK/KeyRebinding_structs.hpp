@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,39 +11,39 @@ namespace SDK
 
 enum class EKeyRebindingResultType : uint8
 {
-	EKeyRebindingResultType__Default = 0,
-	EKeyRebindingResultType__Successed_Rebound = 1,
-	EKeyRebindingResultType__Success_ConflictResolved = 2,
-	EKeyRebindingResultType__Success_Unbound = 3,
-	EKeyRebindingResultType__Fail_UnavailableKey = 4,
-	EKeyRebindingResultType__Fail_UnboundCoreAction = 5,
-	EKeyRebindingResultType__Fail_InvalidAction = 6,
-	EKeyRebindingResultType__Fail_ConflictCannotRebind = 7,
-	EKeyRebindingResultType__EKeyRebindingResultType_MAX = 8,
+	Default                        = 0,
+	Successed_Rebound              = 1,
+	Success_ConflictResolved       = 2,
+	Success_Unbound                = 3,
+	Fail_UnavailableKey            = 4,
+	Fail_UnboundCoreAction         = 5,
+	Fail_InvalidAction             = 6,
+	Fail_ConflictCannotRebind      = 7,
+	EKeyRebindingResultType_MAX    = 8,
 };
 
 enum class EInputControlsType : uint8
 {
-	EInputControlsType__KeyBoard_Mouse = 0,
-	EInputControlsType__Gamepad    = 1,
-	EInputControlsType__EInputControlsType_MAX = 2,
+	KeyBoard_Mouse                 = 0,
+	Gamepad                        = 1,
+	EInputControlsType_MAX         = 2,
 };
 
 enum class EOverlapKeys : uint8
 {
-	EOverlapKeys__SHIFT            = 0,
-	EOverlapKeys__CTRL             = 1,
-	EOverlapKeys__ALT              = 2,
-	EOverlapKeys__OtherKey         = 3,
-	EOverlapKeys__EOverlapKeys_MAX = 4,
+	SHIFT                          = 0,
+	CTRL                           = 1,
+	ALT                            = 2,
+	OtherKey                       = 3,
+	EOverlapKeys_MAX               = 4,
 };
 
 enum class EKeyRebindingSlot : uint8
 {
-	EKeyRebindingSlot__InValid     = 0,
-	EKeyRebindingSlot__First       = 1,
-	EKeyRebindingSlot__Second      = 2,
-	EKeyRebindingSlot__EKeyRebindingSlot_MAX = 3,
+	InValid                        = 0,
+	First                          = 1,
+	Second                         = 2,
+	EKeyRebindingSlot_MAX          = 3,
 };
 
 
@@ -101,7 +98,7 @@ public:
 	bool                                         bCanBeRebind;                                      // 0x14(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bCanBeUnbound;                                     // 0x15(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUnbound;                                          // 0x16(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_590[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_6CC[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FKeyRebindingMappingItem>      MappingItems;                                      // 0x18(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -171,7 +168,7 @@ public:
 struct FInputActionsWithSameDesc
 {
 public:
-	uint8                                        Pad_59B[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_6D3[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -207,7 +204,7 @@ public:
 	class FName                                  InputActionName;                                   // 0x0(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FText                                  InputActionDescription;                            // 0x8(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, DisableEditOnInstance, EditConst, NativeAccessSpecifierPublic)
 	bool                                         bIsCoreAction;                                     // 0x20(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5A7[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_6D5[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        GroupID;                                           // 0x24(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FText                                  GroupDescription;                                  // 0x28(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, DisableEditOnInstance, EditConst, NativeAccessSpecifierPublic)
 	TArray<struct FInputKeys>                    DefaultKeysWithAction;                             // 0x40(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, NativeAccessSpecifierPublic)
@@ -218,6 +215,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class TypedElementFramework.TypedElementHandleLibrary
+// (None)
+
+class UClass* UTypedElementHandleLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TypedElementHandleLibrary");
+
+	return Clss;
+}
+
+
+// TypedElementHandleLibrary TypedElementFramework.Default__TypedElementHandleLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTypedElementHandleLibrary* UTypedElementHandleLibrary::GetDefaultObj()
+{
+	static class UTypedElementHandleLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTypedElementHandleLibrary*>(UTypedElementHandleLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function TypedElementFramework.TypedElementHandleLibrary.Release
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FScriptTypedElementHandle   ElementHandle                                                    (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UTypedElementHandleLibrary::Release(struct FScriptTypedElementHandle& InElementHandle)
+void UTypedElementHandleLibrary::Release(struct FScriptTypedElementHandle& ElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +54,15 @@ void UTypedElementHandleLibrary::Release(struct FScriptTypedElementHandle& InEle
 
 	Params::UTypedElementHandleLibrary_Release_Params Parms{};
 
-	Parms.ElementHandle = InElementHandle;
+	Parms.ElementHandle = ElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -49,7 +74,7 @@ void UTypedElementHandleLibrary::Release(struct FScriptTypedElementHandle& InEle
 // struct FScriptTypedElementHandle   Rhs                                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementHandleLibrary::NotEqual(struct FScriptTypedElementHandle& InLhs, struct FScriptTypedElementHandle& InRhs)
+bool UTypedElementHandleLibrary::NotEqual(struct FScriptTypedElementHandle& Lhs, struct FScriptTypedElementHandle& Rhs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -58,16 +83,16 @@ bool UTypedElementHandleLibrary::NotEqual(struct FScriptTypedElementHandle& InLh
 
 	Params::UTypedElementHandleLibrary_NotEqual_Params Parms{};
 
-	Parms.Lhs = InLhs;
-	Parms.Rhs = InRhs;
+	Parms.Lhs = Lhs;
+	Parms.Rhs = Rhs;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -80,7 +105,7 @@ bool UTypedElementHandleLibrary::NotEqual(struct FScriptTypedElementHandle& InLh
 // struct FScriptTypedElementHandle   ElementHandle                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementHandleLibrary::IsSet(struct FScriptTypedElementHandle& InElementHandle)
+bool UTypedElementHandleLibrary::IsSet(struct FScriptTypedElementHandle& ElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -89,15 +114,15 @@ bool UTypedElementHandleLibrary::IsSet(struct FScriptTypedElementHandle& InEleme
 
 	Params::UTypedElementHandleLibrary_IsSet_Params Parms{};
 
-	Parms.ElementHandle = InElementHandle;
+	Parms.ElementHandle = ElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -111,7 +136,7 @@ bool UTypedElementHandleLibrary::IsSet(struct FScriptTypedElementHandle& InEleme
 // struct FScriptTypedElementHandle   Rhs                                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementHandleLibrary::Equal(struct FScriptTypedElementHandle& InLhs, struct FScriptTypedElementHandle& InRhs)
+bool UTypedElementHandleLibrary::Equal(struct FScriptTypedElementHandle& Lhs, struct FScriptTypedElementHandle& Rhs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -120,19 +145,47 @@ bool UTypedElementHandleLibrary::Equal(struct FScriptTypedElementHandle& InLhs, 
 
 	Params::UTypedElementHandleLibrary_Equal_Params Parms{};
 
-	Parms.Lhs = InLhs;
-	Parms.Rhs = InRhs;
+	Parms.Lhs = Lhs;
+	Parms.Rhs = Rhs;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class TypedElementFramework.TypedElementListLibrary
+// (None)
+
+class UClass* UTypedElementListLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TypedElementListLibrary");
+
+	return Clss;
+}
+
+
+// TypedElementListLibrary TypedElementFramework.Default__TypedElementListLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTypedElementListLibrary* UTypedElementListLibrary::GetDefaultObj()
+{
+	static class UTypedElementListLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTypedElementListLibrary*>(UTypedElementListLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -141,7 +194,7 @@ bool UTypedElementHandleLibrary::Equal(struct FScriptTypedElementHandle& InLhs, 
 // Parameters:
 // struct FScriptTypedElementListProxyElementList                                                      (Parm, NativeAccessSpecifierPublic)
 
-void UTypedElementListLibrary::Shrink(const struct FScriptTypedElementListProxy& InElementList)
+void UTypedElementListLibrary::Shrink(const struct FScriptTypedElementListProxy& ElementList)
 {
 	static class UFunction* Func = nullptr;
 
@@ -150,15 +203,15 @@ void UTypedElementListLibrary::Shrink(const struct FScriptTypedElementListProxy&
 
 	Params::UTypedElementListLibrary_Shrink_Params Parms{};
 
-	Parms.ElementList = InElementList;
+	Parms.ElementList = ElementList;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -168,7 +221,7 @@ void UTypedElementListLibrary::Shrink(const struct FScriptTypedElementListProxy&
 // Parameters:
 // struct FScriptTypedElementListProxyElementList                                                      (Parm, NativeAccessSpecifierPublic)
 
-void UTypedElementListLibrary::Reset(const struct FScriptTypedElementListProxy& InElementList)
+void UTypedElementListLibrary::Reset(const struct FScriptTypedElementListProxy& ElementList)
 {
 	static class UFunction* Func = nullptr;
 
@@ -177,15 +230,15 @@ void UTypedElementListLibrary::Reset(const struct FScriptTypedElementListProxy& 
 
 	Params::UTypedElementListLibrary_Reset_Params Parms{};
 
-	Parms.ElementList = InElementList;
+	Parms.ElementList = ElementList;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -196,7 +249,7 @@ void UTypedElementListLibrary::Reset(const struct FScriptTypedElementListProxy& 
 // struct FScriptTypedElementListProxyElementList                                                      (Parm, NativeAccessSpecifierPublic)
 // int32                              Size                                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTypedElementListLibrary::Reserve(const struct FScriptTypedElementListProxy& InElementList, int32 InSize)
+void UTypedElementListLibrary::Reserve(const struct FScriptTypedElementListProxy& ElementList, int32 Size)
 {
 	static class UFunction* Func = nullptr;
 
@@ -205,16 +258,16 @@ void UTypedElementListLibrary::Reserve(const struct FScriptTypedElementListProxy
 
 	Params::UTypedElementListLibrary_Reserve_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.Size = InSize;
+	Parms.ElementList = ElementList;
+	Parms.Size = Size;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -226,7 +279,7 @@ void UTypedElementListLibrary::Reserve(const struct FScriptTypedElementListProxy
 // struct FScriptTypedElementHandle   ElementHandle                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementListLibrary::Remove(const struct FScriptTypedElementListProxy& InElementList, struct FScriptTypedElementHandle& InElementHandle)
+bool UTypedElementListLibrary::Remove(const struct FScriptTypedElementListProxy& ElementList, struct FScriptTypedElementHandle& ElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -235,16 +288,16 @@ bool UTypedElementListLibrary::Remove(const struct FScriptTypedElementListProxy&
 
 	Params::UTypedElementListLibrary_Remove_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.ElementHandle = InElementHandle;
+	Parms.ElementList = ElementList;
+	Parms.ElementHandle = ElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -257,7 +310,7 @@ bool UTypedElementListLibrary::Remove(const struct FScriptTypedElementListProxy&
 // struct FScriptTypedElementListProxyElementList                                                      (ConstParm, Parm, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UTypedElementListLibrary::Num(const struct FScriptTypedElementListProxy& InElementList)
+int32 UTypedElementListLibrary::Num(const struct FScriptTypedElementListProxy& ElementList)
 {
 	static class UFunction* Func = nullptr;
 
@@ -266,15 +319,15 @@ int32 UTypedElementListLibrary::Num(const struct FScriptTypedElementListProxy& I
 
 	Params::UTypedElementListLibrary_Num_Params Parms{};
 
-	Parms.ElementList = InElementList;
+	Parms.ElementList = ElementList;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -288,7 +341,7 @@ int32 UTypedElementListLibrary::Num(const struct FScriptTypedElementListProxy& I
 // int32                              Index                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementListLibrary::IsValidIndex(const struct FScriptTypedElementListProxy& InElementList, int32 InIndex)
+bool UTypedElementListLibrary::IsValidIndex(const struct FScriptTypedElementListProxy& ElementList, int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -297,16 +350,16 @@ bool UTypedElementListLibrary::IsValidIndex(const struct FScriptTypedElementList
 
 	Params::UTypedElementListLibrary_IsValidIndex_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.Index = InIndex;
+	Parms.ElementList = ElementList;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -320,7 +373,7 @@ bool UTypedElementListLibrary::IsValidIndex(const struct FScriptTypedElementList
 // class FName                        ElementTypeName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementListLibrary::HasElementsOfType(const struct FScriptTypedElementListProxy& InElementList, class FName InElementTypeName)
+bool UTypedElementListLibrary::HasElementsOfType(const struct FScriptTypedElementListProxy& ElementList, class FName ElementTypeName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -329,16 +382,16 @@ bool UTypedElementListLibrary::HasElementsOfType(const struct FScriptTypedElemen
 
 	Params::UTypedElementListLibrary_HasElementsOfType_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.ElementTypeName = InElementTypeName;
+	Parms.ElementList = ElementList;
+	Parms.ElementTypeName = ElementTypeName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -352,7 +405,7 @@ bool UTypedElementListLibrary::HasElementsOfType(const struct FScriptTypedElemen
 // TSubclassOf<class IInterface>      BaseInterfaceType                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementListLibrary::HasElements(const struct FScriptTypedElementListProxy& InElementList, TSubclassOf<class IInterface> InBaseInterfaceType)
+bool UTypedElementListLibrary::HasElements(const struct FScriptTypedElementListProxy& ElementList, TSubclassOf<class IInterface> BaseInterfaceType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -361,16 +414,16 @@ bool UTypedElementListLibrary::HasElements(const struct FScriptTypedElementListP
 
 	Params::UTypedElementListLibrary_HasElements_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.BaseInterfaceType = InBaseInterfaceType;
+	Parms.ElementList = ElementList;
+	Parms.BaseInterfaceType = BaseInterfaceType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -385,7 +438,7 @@ bool UTypedElementListLibrary::HasElements(const struct FScriptTypedElementListP
 // TSubclassOf<class IInterface>      BaseInterfaceType                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObject* UTypedElementListLibrary::GetElementInterface(const struct FScriptTypedElementListProxy& InElementList, struct FScriptTypedElementHandle& InElementHandle, TSubclassOf<class IInterface> InBaseInterfaceType)
+class UObject* UTypedElementListLibrary::GetElementInterface(const struct FScriptTypedElementListProxy& ElementList, struct FScriptTypedElementHandle& ElementHandle, TSubclassOf<class IInterface> BaseInterfaceType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -394,17 +447,17 @@ class UObject* UTypedElementListLibrary::GetElementInterface(const struct FScrip
 
 	Params::UTypedElementListLibrary_GetElementInterface_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.ElementHandle = InElementHandle;
-	Parms.BaseInterfaceType = InBaseInterfaceType;
+	Parms.ElementList = ElementList;
+	Parms.ElementHandle = ElementHandle;
+	Parms.BaseInterfaceType = BaseInterfaceType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -418,7 +471,7 @@ class UObject* UTypedElementListLibrary::GetElementInterface(const struct FScrip
 // TSubclassOf<class IInterface>      BaseInterfaceType                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FScriptTypedElementHandle>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FScriptTypedElementHandle> UTypedElementListLibrary::GetElementHandles(const struct FScriptTypedElementListProxy& InElementList, TSubclassOf<class IInterface> InBaseInterfaceType)
+TArray<struct FScriptTypedElementHandle> UTypedElementListLibrary::GetElementHandles(const struct FScriptTypedElementListProxy& ElementList, TSubclassOf<class IInterface> BaseInterfaceType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -427,16 +480,16 @@ TArray<struct FScriptTypedElementHandle> UTypedElementListLibrary::GetElementHan
 
 	Params::UTypedElementListLibrary_GetElementHandles_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.BaseInterfaceType = InBaseInterfaceType;
+	Parms.ElementList = ElementList;
+	Parms.BaseInterfaceType = BaseInterfaceType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -450,7 +503,7 @@ TArray<struct FScriptTypedElementHandle> UTypedElementListLibrary::GetElementHan
 // int32                              Index                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FScriptTypedElementHandle   ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FScriptTypedElementHandle UTypedElementListLibrary::GetElementHandleAt(const struct FScriptTypedElementListProxy& InElementList, int32 InIndex)
+struct FScriptTypedElementHandle UTypedElementListLibrary::GetElementHandleAt(const struct FScriptTypedElementListProxy& ElementList, int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -459,16 +512,16 @@ struct FScriptTypedElementHandle UTypedElementListLibrary::GetElementHandleAt(co
 
 	Params::UTypedElementListLibrary_GetElementHandleAt_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.Index = InIndex;
+	Parms.ElementList = ElementList;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -481,7 +534,7 @@ struct FScriptTypedElementHandle UTypedElementListLibrary::GetElementHandleAt(co
 // struct FScriptTypedElementListProxyElementList                                                      (Parm, NativeAccessSpecifierPublic)
 // int32                              Slack                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTypedElementListLibrary::Empty(const struct FScriptTypedElementListProxy& InElementList, int32 InSlack)
+void UTypedElementListLibrary::Empty(const struct FScriptTypedElementListProxy& ElementList, int32 Slack)
 {
 	static class UFunction* Func = nullptr;
 
@@ -490,16 +543,16 @@ void UTypedElementListLibrary::Empty(const struct FScriptTypedElementListProxy& 
 
 	Params::UTypedElementListLibrary_Empty_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.Slack = InSlack;
+	Parms.ElementList = ElementList;
+	Parms.Slack = Slack;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -510,7 +563,7 @@ void UTypedElementListLibrary::Empty(const struct FScriptTypedElementListProxy& 
 // class UTypedElementRegistry*       Registry                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FScriptTypedElementListProxyReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FScriptTypedElementListProxy UTypedElementListLibrary::CreateScriptElementList(class UTypedElementRegistry* InRegistry)
+struct FScriptTypedElementListProxy UTypedElementListLibrary::CreateScriptElementList(class UTypedElementRegistry* Registry)
 {
 	static class UFunction* Func = nullptr;
 
@@ -519,15 +572,15 @@ struct FScriptTypedElementListProxy UTypedElementListLibrary::CreateScriptElemen
 
 	Params::UTypedElementListLibrary_CreateScriptElementList_Params Parms{};
 
-	Parms.Registry = InRegistry;
+	Parms.Registry = Registry;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -541,7 +594,7 @@ struct FScriptTypedElementListProxy UTypedElementListLibrary::CreateScriptElemen
 // class FName                        ElementTypeName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UTypedElementListLibrary::CountElementsOfType(const struct FScriptTypedElementListProxy& InElementList, class FName InElementTypeName)
+int32 UTypedElementListLibrary::CountElementsOfType(const struct FScriptTypedElementListProxy& ElementList, class FName ElementTypeName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -550,16 +603,16 @@ int32 UTypedElementListLibrary::CountElementsOfType(const struct FScriptTypedEle
 
 	Params::UTypedElementListLibrary_CountElementsOfType_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.ElementTypeName = InElementTypeName;
+	Parms.ElementList = ElementList;
+	Parms.ElementTypeName = ElementTypeName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -573,7 +626,7 @@ int32 UTypedElementListLibrary::CountElementsOfType(const struct FScriptTypedEle
 // TSubclassOf<class IInterface>      BaseInterfaceType                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UTypedElementListLibrary::CountElements(const struct FScriptTypedElementListProxy& InElementList, TSubclassOf<class IInterface> InBaseInterfaceType)
+int32 UTypedElementListLibrary::CountElements(const struct FScriptTypedElementListProxy& ElementList, TSubclassOf<class IInterface> BaseInterfaceType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -582,16 +635,16 @@ int32 UTypedElementListLibrary::CountElements(const struct FScriptTypedElementLi
 
 	Params::UTypedElementListLibrary_CountElements_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.BaseInterfaceType = InBaseInterfaceType;
+	Parms.ElementList = ElementList;
+	Parms.BaseInterfaceType = BaseInterfaceType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -605,7 +658,7 @@ int32 UTypedElementListLibrary::CountElements(const struct FScriptTypedElementLi
 // struct FScriptTypedElementHandle   ElementHandle                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementListLibrary::Contains(const struct FScriptTypedElementListProxy& InElementList, struct FScriptTypedElementHandle& InElementHandle)
+bool UTypedElementListLibrary::Contains(const struct FScriptTypedElementListProxy& ElementList, struct FScriptTypedElementHandle& ElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -614,16 +667,16 @@ bool UTypedElementListLibrary::Contains(const struct FScriptTypedElementListProx
 
 	Params::UTypedElementListLibrary_Contains_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.ElementHandle = InElementHandle;
+	Parms.ElementList = ElementList;
+	Parms.ElementHandle = ElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -636,7 +689,7 @@ bool UTypedElementListLibrary::Contains(const struct FScriptTypedElementListProx
 // struct FScriptTypedElementListProxyElementList                                                      (ConstParm, Parm, NativeAccessSpecifierPublic)
 // struct FScriptTypedElementListProxyReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FScriptTypedElementListProxy UTypedElementListLibrary::Clone(const struct FScriptTypedElementListProxy& InElementList)
+struct FScriptTypedElementListProxy UTypedElementListLibrary::Clone(const struct FScriptTypedElementListProxy& ElementList)
 {
 	static class UFunction* Func = nullptr;
 
@@ -645,15 +698,15 @@ struct FScriptTypedElementListProxy UTypedElementListLibrary::Clone(const struct
 
 	Params::UTypedElementListLibrary_Clone_Params Parms{};
 
-	Parms.ElementList = InElementList;
+	Parms.ElementList = ElementList;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -666,7 +719,7 @@ struct FScriptTypedElementListProxy UTypedElementListLibrary::Clone(const struct
 // struct FScriptTypedElementListProxyElementList                                                      (Parm, NativeAccessSpecifierPublic)
 // struct FScriptTypedElementListProxyOtherElementList                                                 (ConstParm, Parm, NativeAccessSpecifierPublic)
 
-void UTypedElementListLibrary::AppendList(const struct FScriptTypedElementListProxy& InElementList, const struct FScriptTypedElementListProxy& InOtherElementList)
+void UTypedElementListLibrary::AppendList(const struct FScriptTypedElementListProxy& ElementList, const struct FScriptTypedElementListProxy& OtherElementList)
 {
 	static class UFunction* Func = nullptr;
 
@@ -675,16 +728,16 @@ void UTypedElementListLibrary::AppendList(const struct FScriptTypedElementListPr
 
 	Params::UTypedElementListLibrary_AppendList_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.OtherElementList = InOtherElementList;
+	Parms.ElementList = ElementList;
+	Parms.OtherElementList = OtherElementList;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -695,7 +748,7 @@ void UTypedElementListLibrary::AppendList(const struct FScriptTypedElementListPr
 // struct FScriptTypedElementListProxyElementList                                                      (Parm, NativeAccessSpecifierPublic)
 // TArray<struct FScriptTypedElementHandle>ElementHandles                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UTypedElementListLibrary::Append(const struct FScriptTypedElementListProxy& InElementList, TArray<struct FScriptTypedElementHandle>& InElementHandles)
+void UTypedElementListLibrary::Append(const struct FScriptTypedElementListProxy& ElementList, TArray<struct FScriptTypedElementHandle>& ElementHandles)
 {
 	static class UFunction* Func = nullptr;
 
@@ -704,16 +757,16 @@ void UTypedElementListLibrary::Append(const struct FScriptTypedElementListProxy&
 
 	Params::UTypedElementListLibrary_Append_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.ElementHandles = InElementHandles;
+	Parms.ElementList = ElementList;
+	Parms.ElementHandles = ElementHandles;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -725,7 +778,7 @@ void UTypedElementListLibrary::Append(const struct FScriptTypedElementListProxy&
 // struct FScriptTypedElementHandle   ElementHandle                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementListLibrary::Add(const struct FScriptTypedElementListProxy& InElementList, struct FScriptTypedElementHandle& InElementHandle)
+bool UTypedElementListLibrary::Add(const struct FScriptTypedElementListProxy& ElementList, struct FScriptTypedElementHandle& ElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -734,19 +787,75 @@ bool UTypedElementListLibrary::Add(const struct FScriptTypedElementListProxy& In
 
 	Params::UTypedElementListLibrary_Add_Params Parms{};
 
-	Parms.ElementList = InElementList;
-	Parms.ElementHandle = InElementHandle;
+	Parms.ElementList = ElementList;
+	Parms.ElementHandle = ElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class TypedElementFramework.TypedElementCounterInterface
+// (None)
+
+class UClass* ITypedElementCounterInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TypedElementCounterInterface");
+
+	return Clss;
+}
+
+
+// TypedElementCounterInterface TypedElementFramework.Default__TypedElementCounterInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ITypedElementCounterInterface* ITypedElementCounterInterface::GetDefaultObj()
+{
+	static class ITypedElementCounterInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ITypedElementCounterInterface*>(ITypedElementCounterInterface::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class TypedElementFramework.TypedElementRegistry
+// (None)
+
+class UClass* UTypedElementRegistry::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TypedElementRegistry");
+
+	return Clss;
+}
+
+
+// TypedElementRegistry TypedElementFramework.Default__TypedElementRegistry
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTypedElementRegistry* UTypedElementRegistry::GetDefaultObj()
+{
+	static class UTypedElementRegistry* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTypedElementRegistry*>(UTypedElementRegistry::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -765,13 +874,13 @@ class UTypedElementRegistry* UTypedElementRegistry::GetInstance()
 	Params::UTypedElementRegistry_GetInstance_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -785,7 +894,7 @@ class UTypedElementRegistry* UTypedElementRegistry::GetInstance()
 // TSubclassOf<class IInterface>      InBaseInterfaceType                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObject* UTypedElementRegistry::GetElementInterface(struct FScriptTypedElementHandle& InInElementHandle, TSubclassOf<class IInterface> InInBaseInterfaceType)
+class UObject* UTypedElementRegistry::GetElementInterface(struct FScriptTypedElementHandle& InElementHandle, TSubclassOf<class IInterface> InBaseInterfaceType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -794,19 +903,47 @@ class UObject* UTypedElementRegistry::GetElementInterface(struct FScriptTypedEle
 
 	Params::UTypedElementRegistry_GetElementInterface_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InBaseInterfaceType = InInBaseInterfaceType;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InBaseInterfaceType = InBaseInterfaceType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class TypedElementFramework.TestTypedElementInterfaceA
+// (None)
+
+class UClass* ITestTypedElementInterfaceA::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestTypedElementInterfaceA");
+
+	return Clss;
+}
+
+
+// TestTypedElementInterfaceA TypedElementFramework.Default__TestTypedElementInterfaceA
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ITestTypedElementInterfaceA* ITestTypedElementInterfaceA::GetDefaultObj()
+{
+	static class ITestTypedElementInterfaceA* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ITestTypedElementInterfaceA*>(ITestTypedElementInterfaceA::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -818,7 +955,7 @@ class UObject* UTypedElementRegistry::GetElementInterface(struct FScriptTypedEle
 // bool                               bNotify                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ITestTypedElementInterfaceA::SetDisplayName(struct FScriptTypedElementHandle& InInElementHandle, class FText InInNewName, bool InbNotify)
+bool ITestTypedElementInterfaceA::SetDisplayName(struct FScriptTypedElementHandle& InElementHandle, class FText InNewName, bool bNotify)
 {
 	static class UFunction* Func = nullptr;
 
@@ -827,17 +964,17 @@ bool ITestTypedElementInterfaceA::SetDisplayName(struct FScriptTypedElementHandl
 
 	Params::ITestTypedElementInterfaceA_SetDisplayName_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InNewName = InInNewName;
-	Parms.bNotify = InbNotify;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InNewName = InNewName;
+	Parms.bNotify = bNotify;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -850,7 +987,7 @@ bool ITestTypedElementInterfaceA::SetDisplayName(struct FScriptTypedElementHandl
 // struct FScriptTypedElementHandle   InElementHandle                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class FText                        ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-class FText ITestTypedElementInterfaceA::GetDisplayName(struct FScriptTypedElementHandle& InInElementHandle)
+class FText ITestTypedElementInterfaceA::GetDisplayName(struct FScriptTypedElementHandle& InElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -859,18 +996,46 @@ class FText ITestTypedElementInterfaceA::GetDisplayName(struct FScriptTypedEleme
 
 	Params::ITestTypedElementInterfaceA_GetDisplayName_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
+	Parms.InElementHandle = InElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class TypedElementFramework.TestTypedElementInterfaceB
+// (None)
+
+class UClass* ITestTypedElementInterfaceB::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestTypedElementInterfaceB");
+
+	return Clss;
+}
+
+
+// TestTypedElementInterfaceB TypedElementFramework.Default__TestTypedElementInterfaceB
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ITestTypedElementInterfaceB* ITestTypedElementInterfaceB::GetDefaultObj()
+{
+	static class ITestTypedElementInterfaceB* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ITestTypedElementInterfaceB*>(ITestTypedElementInterfaceB::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -880,7 +1045,7 @@ class FText ITestTypedElementInterfaceA::GetDisplayName(struct FScriptTypedEleme
 // struct FScriptTypedElementHandle   InElementHandle                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ITestTypedElementInterfaceB::MarkAsTested(struct FScriptTypedElementHandle& InInElementHandle)
+bool ITestTypedElementInterfaceB::MarkAsTested(struct FScriptTypedElementHandle& InElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -889,18 +1054,46 @@ bool ITestTypedElementInterfaceB::MarkAsTested(struct FScriptTypedElementHandle&
 
 	Params::ITestTypedElementInterfaceB_MarkAsTested_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
+	Parms.InElementHandle = InElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class TypedElementFramework.TestTypedElementInterfaceC
+// (None)
+
+class UClass* ITestTypedElementInterfaceC::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestTypedElementInterfaceC");
+
+	return Clss;
+}
+
+
+// TestTypedElementInterfaceC TypedElementFramework.Default__TestTypedElementInterfaceC
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ITestTypedElementInterfaceC* ITestTypedElementInterfaceC::GetDefaultObj()
+{
+	static class ITestTypedElementInterfaceC* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ITestTypedElementInterfaceC*>(ITestTypedElementInterfaceC::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -910,7 +1103,7 @@ bool ITestTypedElementInterfaceB::MarkAsTested(struct FScriptTypedElementHandle&
 // struct FScriptTypedElementHandle   InElementHandle                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ITestTypedElementInterfaceC::GetIsTested(struct FScriptTypedElementHandle& InInElementHandle)
+bool ITestTypedElementInterfaceC::GetIsTested(struct FScriptTypedElementHandle& InElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -919,22 +1112,104 @@ bool ITestTypedElementInterfaceC::GetIsTested(struct FScriptTypedElementHandle& 
 
 	Params::ITestTypedElementInterfaceC_GetIsTested_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
+	Parms.InElementHandle = InElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
 }
 
+
+// Class TypedElementFramework.TestTypedElementInterfaceA_ImplTyped
+// (None)
+
+class UClass* UTestTypedElementInterfaceA_ImplTyped::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestTypedElementInterfaceA_ImplTyped");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// TestTypedElementInterfaceA_ImplTyped TypedElementFramework.Default__TestTypedElementInterfaceA_ImplTyped
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTestTypedElementInterfaceA_ImplTyped* UTestTypedElementInterfaceA_ImplTyped::GetDefaultObj()
+{
+	static class UTestTypedElementInterfaceA_ImplTyped* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTestTypedElementInterfaceA_ImplTyped*>(UTestTypedElementInterfaceA_ImplTyped::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class TypedElementFramework.TestTypedElementInterfaceA_ImplUntyped
+// (None)
+
+class UClass* UTestTypedElementInterfaceA_ImplUntyped::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestTypedElementInterfaceA_ImplUntyped");
+
+	return Clss;
+}
+
+
+// TestTypedElementInterfaceA_ImplUntyped TypedElementFramework.Default__TestTypedElementInterfaceA_ImplUntyped
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTestTypedElementInterfaceA_ImplUntyped* UTestTypedElementInterfaceA_ImplUntyped::GetDefaultObj()
+{
+	static class UTestTypedElementInterfaceA_ImplUntyped* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTestTypedElementInterfaceA_ImplUntyped*>(UTestTypedElementInterfaceA_ImplUntyped::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class TypedElementFramework.TestTypedElementInterfaceBAndC_Typed
+// (None)
+
+class UClass* UTestTypedElementInterfaceBAndC_Typed::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestTypedElementInterfaceBAndC_Typed");
+
+	return Clss;
+}
+
+
+// TestTypedElementInterfaceBAndC_Typed TypedElementFramework.Default__TestTypedElementInterfaceBAndC_Typed
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTestTypedElementInterfaceBAndC_Typed* UTestTypedElementInterfaceBAndC_Typed::GetDefaultObj()
+{
+	static class UTestTypedElementInterfaceBAndC_Typed* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTestTypedElementInterfaceBAndC_Typed*>(UTestTypedElementInterfaceBAndC_Typed::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

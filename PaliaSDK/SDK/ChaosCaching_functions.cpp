@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,68 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class ChaosCaching.ChaosCacheCollection
+// (None)
+
+class UClass* UChaosCacheCollection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ChaosCacheCollection");
+
+	return Clss;
+}
+
+
+// ChaosCacheCollection ChaosCaching.Default__ChaosCacheCollection
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UChaosCacheCollection* UChaosCacheCollection::GetDefaultObj()
+{
+	static class UChaosCacheCollection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UChaosCacheCollection*>(UChaosCacheCollection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ChaosCaching.ChaosCacheManager
+// (Actor)
+
+class UClass* AChaosCacheManager::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ChaosCacheManager");
+
+	return Clss;
+}
+
+
+// ChaosCacheManager ChaosCaching.Default__ChaosCacheManager
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AChaosCacheManager* AChaosCacheManager::GetDefaultObj()
+{
+	static class AChaosCacheManager* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AChaosCacheManager*>(AChaosCacheManager::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ChaosCaching.ChaosCacheManager.TriggerComponentByCache
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
 // class FName                        InCacheName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AChaosCacheManager::TriggerComponentByCache(class FName InInCacheName)
+void AChaosCacheManager::TriggerComponentByCache(class FName InCacheName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +82,15 @@ void AChaosCacheManager::TriggerComponentByCache(class FName InInCacheName)
 
 	Params::AChaosCacheManager_TriggerComponentByCache_Params Parms{};
 
-	Parms.InCacheName = InInCacheName;
+	Parms.InCacheName = InCacheName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -47,7 +100,7 @@ void AChaosCacheManager::TriggerComponentByCache(class FName InInCacheName)
 // Parameters:
 // class UPrimitiveComponent*         InComponent                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AChaosCacheManager::TriggerComponent(class UPrimitiveComponent* InInComponent)
+void AChaosCacheManager::TriggerComponent(class UPrimitiveComponent* InComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,15 +109,15 @@ void AChaosCacheManager::TriggerComponent(class UPrimitiveComponent* InInCompone
 
 	Params::AChaosCacheManager_TriggerComponent_Params Parms{};
 
-	Parms.InComponent = InInComponent;
+	Parms.InComponent = InComponent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -83,13 +136,13 @@ void AChaosCacheManager::TriggerAll()
 	Params::AChaosCacheManager_TriggerAll_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -99,7 +152,7 @@ void AChaosCacheManager::TriggerAll()
 // Parameters:
 // float                              InStartTime                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AChaosCacheManager::SetStartTime(float InInStartTime)
+void AChaosCacheManager::SetStartTime(float InStartTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -108,15 +161,15 @@ void AChaosCacheManager::SetStartTime(float InInStartTime)
 
 	Params::AChaosCacheManager_SetStartTime_Params Parms{};
 
-	Parms.InStartTime = InInStartTime;
+	Parms.InStartTime = InStartTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -126,7 +179,7 @@ void AChaosCacheManager::SetStartTime(float InInStartTime)
 // Parameters:
 // int32                              InIndex                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AChaosCacheManager::ResetSingleTransform(int32 InInIndex)
+void AChaosCacheManager::ResetSingleTransform(int32 InIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -135,15 +188,15 @@ void AChaosCacheManager::ResetSingleTransform(int32 InInIndex)
 
 	Params::AChaosCacheManager_ResetSingleTransform_Params Parms{};
 
-	Parms.InIndex = InInIndex;
+	Parms.InIndex = InIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -162,18 +215,128 @@ void AChaosCacheManager::ResetAllComponentTransforms()
 	Params::AChaosCacheManager_ResetAllComponentTransforms_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ChaosCaching.ChaosCachePlayer
+// (Actor)
+
+class UClass* AChaosCachePlayer::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ChaosCachePlayer");
+
+	return Clss;
+}
+
+
+// ChaosCachePlayer ChaosCaching.Default__ChaosCachePlayer
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AChaosCachePlayer* AChaosCachePlayer::GetDefaultObj()
+{
+	static class AChaosCachePlayer* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AChaosCachePlayer*>(AChaosCachePlayer::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ChaosCaching.ChaosCache
+// (None)
+
+class UClass* UChaosCache::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ChaosCache");
+
+	return Clss;
+}
+
+
+// ChaosCache ChaosCaching.Default__ChaosCache
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UChaosCache* UChaosCache::GetDefaultObj()
+{
+	static class UChaosCache* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UChaosCache*>(UChaosCache::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ChaosCaching.MovieSceneChaosCacheSection
+// (None)
+
+class UClass* UMovieSceneChaosCacheSection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneChaosCacheSection");
+
+	return Clss;
+}
+
+
+// MovieSceneChaosCacheSection ChaosCaching.Default__MovieSceneChaosCacheSection
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneChaosCacheSection* UMovieSceneChaosCacheSection::GetDefaultObj()
+{
+	static class UMovieSceneChaosCacheSection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneChaosCacheSection*>(UMovieSceneChaosCacheSection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ChaosCaching.MovieSceneChaosCacheTrack
+// (None)
+
+class UClass* UMovieSceneChaosCacheTrack::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneChaosCacheTrack");
+
+	return Clss;
+}
+
+
+// MovieSceneChaosCacheTrack ChaosCaching.Default__MovieSceneChaosCacheTrack
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneChaosCacheTrack* UMovieSceneChaosCacheTrack::GetDefaultObj()
+{
+	static class UMovieSceneChaosCacheTrack* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneChaosCacheTrack*>(UMovieSceneChaosCacheTrack::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

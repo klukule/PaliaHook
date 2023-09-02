@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class EyeTracker.EyeTrackerFunctionLibrary
+// (None)
+
+class UClass* UEyeTrackerFunctionLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EyeTrackerFunctionLibrary");
+
+	return Clss;
+}
+
+
+// EyeTrackerFunctionLibrary EyeTracker.Default__EyeTrackerFunctionLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEyeTrackerFunctionLibrary* UEyeTrackerFunctionLibrary::GetDefaultObj()
+{
+	static class UEyeTrackerFunctionLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEyeTrackerFunctionLibrary*>(UEyeTrackerFunctionLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function EyeTracker.EyeTrackerFunctionLibrary.SetEyeTrackedPlayer
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class APlayerController*           PlayerController                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UEyeTrackerFunctionLibrary::SetEyeTrackedPlayer(class APlayerController* InPlayerController)
+void UEyeTrackerFunctionLibrary::SetEyeTrackedPlayer(class APlayerController* PlayerController)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +54,15 @@ void UEyeTrackerFunctionLibrary::SetEyeTrackedPlayer(class APlayerController* In
 
 	Params::UEyeTrackerFunctionLibrary_SetEyeTrackedPlayer_Params Parms{};
 
-	Parms.PlayerController = InPlayerController;
+	Parms.PlayerController = PlayerController;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -57,13 +82,13 @@ bool UEyeTrackerFunctionLibrary::IsStereoGazeDataAvailable()
 	Params::UEyeTrackerFunctionLibrary_IsStereoGazeDataAvailable_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -85,13 +110,13 @@ bool UEyeTrackerFunctionLibrary::IsEyeTrackerConnected()
 	Params::UEyeTrackerFunctionLibrary_IsEyeTrackerConnected_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -104,7 +129,7 @@ bool UEyeTrackerFunctionLibrary::IsEyeTrackerConnected()
 // struct FEyeTrackerStereoGazeData   OutGazeData                                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UEyeTrackerFunctionLibrary::GetStereoGazeData(struct FEyeTrackerStereoGazeData* InOutGazeData)
+bool UEyeTrackerFunctionLibrary::GetStereoGazeData(struct FEyeTrackerStereoGazeData* OutGazeData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -114,16 +139,16 @@ bool UEyeTrackerFunctionLibrary::GetStereoGazeData(struct FEyeTrackerStereoGazeD
 	Params::UEyeTrackerFunctionLibrary_GetStereoGazeData_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutGazeData != nullptr)
-		*InOutGazeData = Parms.OutGazeData;
+	if (OutGazeData != nullptr)
+		*OutGazeData = std::move(Parms.OutGazeData);
 
 	return Parms.ReturnValue;
 
@@ -136,7 +161,7 @@ bool UEyeTrackerFunctionLibrary::GetStereoGazeData(struct FEyeTrackerStereoGazeD
 // struct FEyeTrackerGazeData         OutGazeData                                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UEyeTrackerFunctionLibrary::GetGazeData(struct FEyeTrackerGazeData* InOutGazeData)
+bool UEyeTrackerFunctionLibrary::GetGazeData(struct FEyeTrackerGazeData* OutGazeData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -146,16 +171,16 @@ bool UEyeTrackerFunctionLibrary::GetGazeData(struct FEyeTrackerGazeData* InOutGa
 	Params::UEyeTrackerFunctionLibrary_GetGazeData_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutGazeData != nullptr)
-		*InOutGazeData = Parms.OutGazeData;
+	if (OutGazeData != nullptr)
+		*OutGazeData = std::move(Parms.OutGazeData);
 
 	return Parms.ReturnValue;
 
@@ -163,6 +188,4 @@ bool UEyeTrackerFunctionLibrary::GetGazeData(struct FEyeTrackerGazeData* InOutGa
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

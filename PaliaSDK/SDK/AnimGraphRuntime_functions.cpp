@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,13 +12,41 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class AnimGraphRuntime.BlendSpacePlayerLibrary
+// (None)
+
+class UClass* UBlendSpacePlayerLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BlendSpacePlayerLibrary");
+
+	return Clss;
+}
+
+
+// BlendSpacePlayerLibrary AnimGraphRuntime.Default__BlendSpacePlayerLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UBlendSpacePlayerLibrary* UBlendSpacePlayerLibrary::GetDefaultObj()
+{
+	static class UBlendSpacePlayerLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBlendSpacePlayerLibrary*>(UBlendSpacePlayerLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function AnimGraphRuntime.BlendSpacePlayerLibrary.ShouldResetPlayTimeWhenBlendSpaceChanges
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // struct FBlendSpacePlayerReference  BlendSpacePlayer                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlendSpacePlayerLibrary::ShouldResetPlayTimeWhenBlendSpaceChanges(struct FBlendSpacePlayerReference& InBlendSpacePlayer)
+bool UBlendSpacePlayerLibrary::ShouldResetPlayTimeWhenBlendSpaceChanges(struct FBlendSpacePlayerReference& BlendSpacePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,15 +55,15 @@ bool UBlendSpacePlayerLibrary::ShouldResetPlayTimeWhenBlendSpaceChanges(struct F
 
 	Params::UBlendSpacePlayerLibrary_ShouldResetPlayTimeWhenBlendSpaceChanges_Params Parms{};
 
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -52,7 +77,7 @@ bool UBlendSpacePlayerLibrary::ShouldResetPlayTimeWhenBlendSpaceChanges(struct F
 // bool                               bReset                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBlendSpacePlayerReference  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetResetPlayTimeWhenBlendSpaceChanges(struct FBlendSpacePlayerReference& InBlendSpacePlayer, bool InbReset)
+struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetResetPlayTimeWhenBlendSpaceChanges(struct FBlendSpacePlayerReference& BlendSpacePlayer, bool bReset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61,16 +86,16 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetResetPlayTimeWhen
 
 	Params::UBlendSpacePlayerLibrary_SetResetPlayTimeWhenBlendSpaceChanges_Params Parms{};
 
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
-	Parms.bReset = InbReset;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
+	Parms.bReset = bReset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -84,7 +109,7 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetResetPlayTimeWhen
 // float                              PlayRate                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBlendSpacePlayerReference  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetPlayRate(struct FBlendSpacePlayerReference& InBlendSpacePlayer, float InPlayRate)
+struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetPlayRate(struct FBlendSpacePlayerReference& BlendSpacePlayer, float PlayRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -93,16 +118,16 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetPlayRate(struct F
 
 	Params::UBlendSpacePlayerLibrary_SetPlayRate_Params Parms{};
 
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
-	Parms.PlayRate = InPlayRate;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
+	Parms.PlayRate = PlayRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -116,7 +141,7 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetPlayRate(struct F
 // bool                               bLoop                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBlendSpacePlayerReference  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetLoop(struct FBlendSpacePlayerReference& InBlendSpacePlayer, bool InbLoop)
+struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetLoop(struct FBlendSpacePlayerReference& BlendSpacePlayer, bool bLoop)
 {
 	static class UFunction* Func = nullptr;
 
@@ -125,16 +150,16 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetLoop(struct FBlen
 
 	Params::UBlendSpacePlayerLibrary_SetLoop_Params Parms{};
 
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
-	Parms.bLoop = InbLoop;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
+	Parms.bLoop = bLoop;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -150,7 +175,7 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetLoop(struct FBlen
 // float                              BlendTime                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBlendSpacePlayerReference  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetBlendSpaceWithInertialBlending(struct FAnimUpdateContext& InUpdateContext, struct FBlendSpacePlayerReference& InBlendSpacePlayer, class UBlendSpace* InBlendSpace, float InBlendTime)
+struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetBlendSpaceWithInertialBlending(struct FAnimUpdateContext& UpdateContext, struct FBlendSpacePlayerReference& BlendSpacePlayer, class UBlendSpace* BlendSpace, float BlendTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -159,18 +184,18 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetBlendSpaceWithIne
 
 	Params::UBlendSpacePlayerLibrary_SetBlendSpaceWithInertialBlending_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
-	Parms.BlendSpace = InBlendSpace;
-	Parms.BlendTime = InBlendTime;
+	Parms.UpdateContext = UpdateContext;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
+	Parms.BlendSpace = BlendSpace;
+	Parms.BlendTime = BlendTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -184,7 +209,7 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetBlendSpaceWithIne
 // class UBlendSpace*                 BlendSpace                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBlendSpacePlayerReference  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetBlendSpace(struct FBlendSpacePlayerReference& InBlendSpacePlayer, class UBlendSpace* InBlendSpace)
+struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetBlendSpace(struct FBlendSpacePlayerReference& BlendSpacePlayer, class UBlendSpace* BlendSpace)
 {
 	static class UFunction* Func = nullptr;
 
@@ -193,16 +218,16 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetBlendSpace(struct
 
 	Params::UBlendSpacePlayerLibrary_SetBlendSpace_Params Parms{};
 
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
-	Parms.BlendSpace = InBlendSpace;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
+	Parms.BlendSpace = BlendSpace;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -215,7 +240,7 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::SetBlendSpace(struct
 // struct FBlendSpacePlayerReference  BlendSpacePlayer                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UBlendSpacePlayerLibrary::GetStartPosition(struct FBlendSpacePlayerReference& InBlendSpacePlayer)
+float UBlendSpacePlayerLibrary::GetStartPosition(struct FBlendSpacePlayerReference& BlendSpacePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -224,15 +249,15 @@ float UBlendSpacePlayerLibrary::GetStartPosition(struct FBlendSpacePlayerReferen
 
 	Params::UBlendSpacePlayerLibrary_GetStartPosition_Params Parms{};
 
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -245,7 +270,7 @@ float UBlendSpacePlayerLibrary::GetStartPosition(struct FBlendSpacePlayerReferen
 // struct FBlendSpacePlayerReference  BlendSpacePlayer                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UBlendSpacePlayerLibrary::GetPosition(struct FBlendSpacePlayerReference& InBlendSpacePlayer)
+struct FVector UBlendSpacePlayerLibrary::GetPosition(struct FBlendSpacePlayerReference& BlendSpacePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -254,15 +279,15 @@ struct FVector UBlendSpacePlayerLibrary::GetPosition(struct FBlendSpacePlayerRef
 
 	Params::UBlendSpacePlayerLibrary_GetPosition_Params Parms{};
 
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -275,7 +300,7 @@ struct FVector UBlendSpacePlayerLibrary::GetPosition(struct FBlendSpacePlayerRef
 // struct FBlendSpacePlayerReference  BlendSpacePlayer                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UBlendSpacePlayerLibrary::GetPlayRate(struct FBlendSpacePlayerReference& InBlendSpacePlayer)
+float UBlendSpacePlayerLibrary::GetPlayRate(struct FBlendSpacePlayerReference& BlendSpacePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -284,15 +309,15 @@ float UBlendSpacePlayerLibrary::GetPlayRate(struct FBlendSpacePlayerReference& I
 
 	Params::UBlendSpacePlayerLibrary_GetPlayRate_Params Parms{};
 
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -305,7 +330,7 @@ float UBlendSpacePlayerLibrary::GetPlayRate(struct FBlendSpacePlayerReference& I
 // struct FBlendSpacePlayerReference  BlendSpacePlayer                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlendSpacePlayerLibrary::GetLoop(struct FBlendSpacePlayerReference& InBlendSpacePlayer)
+bool UBlendSpacePlayerLibrary::GetLoop(struct FBlendSpacePlayerReference& BlendSpacePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -314,15 +339,15 @@ bool UBlendSpacePlayerLibrary::GetLoop(struct FBlendSpacePlayerReference& InBlen
 
 	Params::UBlendSpacePlayerLibrary_GetLoop_Params Parms{};
 
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -335,7 +360,7 @@ bool UBlendSpacePlayerLibrary::GetLoop(struct FBlendSpacePlayerReference& InBlen
 // struct FBlendSpacePlayerReference  BlendSpacePlayer                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class UBlendSpace*                 ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UBlendSpace* UBlendSpacePlayerLibrary::GetBlendSpace(struct FBlendSpacePlayerReference& InBlendSpacePlayer)
+class UBlendSpace* UBlendSpacePlayerLibrary::GetBlendSpace(struct FBlendSpacePlayerReference& BlendSpacePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -344,15 +369,15 @@ class UBlendSpace* UBlendSpacePlayerLibrary::GetBlendSpace(struct FBlendSpacePla
 
 	Params::UBlendSpacePlayerLibrary_GetBlendSpace_Params Parms{};
 
-	Parms.BlendSpacePlayer = InBlendSpacePlayer;
+	Parms.BlendSpacePlayer = BlendSpacePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -366,7 +391,7 @@ class UBlendSpace* UBlendSpacePlayerLibrary::GetBlendSpace(struct FBlendSpacePla
 // struct FBlendSpacePlayerReference  BlendSpacePlayer                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               Result                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBlendSpacePlayerLibrary::ConvertToBlendSpacePlayerPure(struct FAnimNodeReference& InNode, struct FBlendSpacePlayerReference* InBlendSpacePlayer, bool* InResult)
+void UBlendSpacePlayerLibrary::ConvertToBlendSpacePlayerPure(struct FAnimNodeReference& Node, struct FBlendSpacePlayerReference* BlendSpacePlayer, bool* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -375,21 +400,21 @@ void UBlendSpacePlayerLibrary::ConvertToBlendSpacePlayerPure(struct FAnimNodeRef
 
 	Params::UBlendSpacePlayerLibrary_ConvertToBlendSpacePlayerPure_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InBlendSpacePlayer != nullptr)
-		*InBlendSpacePlayer = Parms.BlendSpacePlayer;
+	if (BlendSpacePlayer != nullptr)
+		*BlendSpacePlayer = std::move(Parms.BlendSpacePlayer);
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 }
 
@@ -401,7 +426,7 @@ void UBlendSpacePlayerLibrary::ConvertToBlendSpacePlayerPure(struct FAnimNodeRef
 // enum class EAnimNodeReferenceConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBlendSpacePlayerReference  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::ConvertToBlendSpacePlayer(struct FAnimNodeReference& InNode, enum class EAnimNodeReferenceConversionResult* InResult)
+struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::ConvertToBlendSpacePlayer(struct FAnimNodeReference& Node, enum class EAnimNodeReferenceConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -410,21 +435,49 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::ConvertToBlendSpaceP
 
 	Params::UBlendSpacePlayerLibrary_ConvertToBlendSpacePlayer_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AnimGraphRuntime.LayeredBoneBlendLibrary
+// (None)
+
+class UClass* ULayeredBoneBlendLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("LayeredBoneBlendLibrary");
+
+	return Clss;
+}
+
+
+// LayeredBoneBlendLibrary AnimGraphRuntime.Default__LayeredBoneBlendLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ULayeredBoneBlendLibrary* ULayeredBoneBlendLibrary::GetDefaultObj()
+{
+	static class ULayeredBoneBlendLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ULayeredBoneBlendLibrary*>(ULayeredBoneBlendLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -437,7 +490,7 @@ struct FBlendSpacePlayerReference UBlendSpacePlayerLibrary::ConvertToBlendSpaceP
 // class FName                        BlendMaskName                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FLayeredBoneBlendReference  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FLayeredBoneBlendReference ULayeredBoneBlendLibrary::SetBlendMask(struct FAnimUpdateContext& InUpdateContext, struct FLayeredBoneBlendReference& InLayeredBoneBlend, int32 InPoseIndex, class FName InBlendMaskName)
+struct FLayeredBoneBlendReference ULayeredBoneBlendLibrary::SetBlendMask(struct FAnimUpdateContext& UpdateContext, struct FLayeredBoneBlendReference& LayeredBoneBlend, int32 PoseIndex, class FName BlendMaskName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -446,18 +499,18 @@ struct FLayeredBoneBlendReference ULayeredBoneBlendLibrary::SetBlendMask(struct 
 
 	Params::ULayeredBoneBlendLibrary_SetBlendMask_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.LayeredBoneBlend = InLayeredBoneBlend;
-	Parms.PoseIndex = InPoseIndex;
-	Parms.BlendMaskName = InBlendMaskName;
+	Parms.UpdateContext = UpdateContext;
+	Parms.LayeredBoneBlend = LayeredBoneBlend;
+	Parms.PoseIndex = PoseIndex;
+	Parms.BlendMaskName = BlendMaskName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -470,7 +523,7 @@ struct FLayeredBoneBlendReference ULayeredBoneBlendLibrary::SetBlendMask(struct 
 // struct FLayeredBoneBlendReference  LayeredBoneBlend                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 ULayeredBoneBlendLibrary::GetNumPoses(struct FLayeredBoneBlendReference& InLayeredBoneBlend)
+int32 ULayeredBoneBlendLibrary::GetNumPoses(struct FLayeredBoneBlendReference& LayeredBoneBlend)
 {
 	static class UFunction* Func = nullptr;
 
@@ -479,15 +532,15 @@ int32 ULayeredBoneBlendLibrary::GetNumPoses(struct FLayeredBoneBlendReference& I
 
 	Params::ULayeredBoneBlendLibrary_GetNumPoses_Params Parms{};
 
-	Parms.LayeredBoneBlend = InLayeredBoneBlend;
+	Parms.LayeredBoneBlend = LayeredBoneBlend;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -501,7 +554,7 @@ int32 ULayeredBoneBlendLibrary::GetNumPoses(struct FLayeredBoneBlendReference& I
 // enum class EAnimNodeReferenceConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FLayeredBoneBlendReference  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FLayeredBoneBlendReference ULayeredBoneBlendLibrary::ConvertToLayeredBoneBlend(struct FAnimNodeReference& InNode, enum class EAnimNodeReferenceConversionResult* InResult)
+struct FLayeredBoneBlendReference ULayeredBoneBlendLibrary::ConvertToLayeredBoneBlend(struct FAnimNodeReference& Node, enum class EAnimNodeReferenceConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -510,18 +563,18 @@ struct FLayeredBoneBlendReference ULayeredBoneBlendLibrary::ConvertToLayeredBone
 
 	Params::ULayeredBoneBlendLibrary_ConvertToLayeredBoneBlend_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 	return Parms.ReturnValue;
 
@@ -535,7 +588,7 @@ struct FLayeredBoneBlendReference ULayeredBoneBlendLibrary::ConvertToLayeredBone
 // struct FLayeredBoneBlendReference  LayeredBoneBlend                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               Result                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULayeredBoneBlendLibrary::ConvertToLayeredBlendPerBonePure(struct FAnimNodeReference& InNode, struct FLayeredBoneBlendReference* InLayeredBoneBlend, bool* InResult)
+void ULayeredBoneBlendLibrary::ConvertToLayeredBlendPerBonePure(struct FAnimNodeReference& Node, struct FLayeredBoneBlendReference* LayeredBoneBlend, bool* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -544,22 +597,50 @@ void ULayeredBoneBlendLibrary::ConvertToLayeredBlendPerBonePure(struct FAnimNode
 
 	Params::ULayeredBoneBlendLibrary_ConvertToLayeredBlendPerBonePure_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InLayeredBoneBlend != nullptr)
-		*InLayeredBoneBlend = Parms.LayeredBoneBlend;
+	if (LayeredBoneBlend != nullptr)
+		*LayeredBoneBlend = std::move(Parms.LayeredBoneBlend);
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
+}
+
+
+// Class AnimGraphRuntime.AnimationStateMachineLibrary
+// (None)
+
+class UClass* UAnimationStateMachineLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AnimationStateMachineLibrary");
+
+	return Clss;
+}
+
+
+// AnimationStateMachineLibrary AnimGraphRuntime.Default__AnimationStateMachineLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAnimationStateMachineLibrary* UAnimationStateMachineLibrary::GetDefaultObj()
+{
+	static class UAnimationStateMachineLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAnimationStateMachineLibrary*>(UAnimationStateMachineLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -575,7 +656,7 @@ void ULayeredBoneBlendLibrary::ConvertToLayeredBlendPerBonePure(struct FAnimNode
 // enum class EAlphaBlendOption       AlphaBlendOption                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                 CustomBlendCurve                                                 (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAnimationStateMachineLibrary::SetState(struct FAnimUpdateContext& InUpdateContext, struct FAnimationStateMachineReference& InNode, class FName InTargetState, float InDuration, enum class ETransitionLogicType InBlendType, class UBlendProfile* InBlendProfile, enum class EAlphaBlendOption InAlphaBlendOption, class UCurveFloat* InCustomBlendCurve)
+void UAnimationStateMachineLibrary::SetState(struct FAnimUpdateContext& UpdateContext, struct FAnimationStateMachineReference& Node, class FName TargetState, float Duration, enum class ETransitionLogicType BlendType, class UBlendProfile* BlendProfile, enum class EAlphaBlendOption AlphaBlendOption, class UCurveFloat* CustomBlendCurve)
 {
 	static class UFunction* Func = nullptr;
 
@@ -584,22 +665,22 @@ void UAnimationStateMachineLibrary::SetState(struct FAnimUpdateContext& InUpdate
 
 	Params::UAnimationStateMachineLibrary_SetState_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.Node = InNode;
-	Parms.TargetState = InTargetState;
-	Parms.Duration = InDuration;
-	Parms.BlendType = InBlendType;
-	Parms.BlendProfile = InBlendProfile;
-	Parms.AlphaBlendOption = InAlphaBlendOption;
-	Parms.CustomBlendCurve = InCustomBlendCurve;
+	Parms.UpdateContext = UpdateContext;
+	Parms.Node = Node;
+	Parms.TargetState = TargetState;
+	Parms.Duration = Duration;
+	Parms.BlendType = BlendType;
+	Parms.BlendProfile = BlendProfile;
+	Parms.AlphaBlendOption = AlphaBlendOption;
+	Parms.CustomBlendCurve = CustomBlendCurve;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -611,7 +692,7 @@ void UAnimationStateMachineLibrary::SetState(struct FAnimUpdateContext& InUpdate
 // struct FAnimationStateResultReferenceNode                                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAnimationStateMachineLibrary::IsStateBlendingOut(struct FAnimUpdateContext& InUpdateContext, struct FAnimationStateResultReference& InNode)
+bool UAnimationStateMachineLibrary::IsStateBlendingOut(struct FAnimUpdateContext& UpdateContext, struct FAnimationStateResultReference& Node)
 {
 	static class UFunction* Func = nullptr;
 
@@ -620,16 +701,16 @@ bool UAnimationStateMachineLibrary::IsStateBlendingOut(struct FAnimUpdateContext
 
 	Params::UAnimationStateMachineLibrary_IsStateBlendingOut_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.Node = InNode;
+	Parms.UpdateContext = UpdateContext;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -643,7 +724,7 @@ bool UAnimationStateMachineLibrary::IsStateBlendingOut(struct FAnimUpdateContext
 // struct FAnimationStateResultReferenceNode                                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAnimationStateMachineLibrary::IsStateBlendingIn(struct FAnimUpdateContext& InUpdateContext, struct FAnimationStateResultReference& InNode)
+bool UAnimationStateMachineLibrary::IsStateBlendingIn(struct FAnimUpdateContext& UpdateContext, struct FAnimationStateResultReference& Node)
 {
 	static class UFunction* Func = nullptr;
 
@@ -652,16 +733,16 @@ bool UAnimationStateMachineLibrary::IsStateBlendingIn(struct FAnimUpdateContext&
 
 	Params::UAnimationStateMachineLibrary_IsStateBlendingIn_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.Node = InNode;
+	Parms.UpdateContext = UpdateContext;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -675,7 +756,7 @@ bool UAnimationStateMachineLibrary::IsStateBlendingIn(struct FAnimUpdateContext&
 // struct FAnimationStateMachineReferenceNode                                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName UAnimationStateMachineLibrary::GetState(struct FAnimUpdateContext& InUpdateContext, struct FAnimationStateMachineReference& InNode)
+class FName UAnimationStateMachineLibrary::GetState(struct FAnimUpdateContext& UpdateContext, struct FAnimationStateMachineReference& Node)
 {
 	static class UFunction* Func = nullptr;
 
@@ -684,16 +765,16 @@ class FName UAnimationStateMachineLibrary::GetState(struct FAnimUpdateContext& I
 
 	Params::UAnimationStateMachineLibrary_GetState_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.Node = InNode;
+	Parms.UpdateContext = UpdateContext;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -707,7 +788,7 @@ class FName UAnimationStateMachineLibrary::GetState(struct FAnimUpdateContext& I
 // struct FAnimationStateResultReferenceNode                                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAnimationStateMachineLibrary::GetRelevantAnimTimeRemainingFraction(struct FAnimUpdateContext& InUpdateContext, struct FAnimationStateResultReference& InNode)
+float UAnimationStateMachineLibrary::GetRelevantAnimTimeRemainingFraction(struct FAnimUpdateContext& UpdateContext, struct FAnimationStateResultReference& Node)
 {
 	static class UFunction* Func = nullptr;
 
@@ -716,16 +797,16 @@ float UAnimationStateMachineLibrary::GetRelevantAnimTimeRemainingFraction(struct
 
 	Params::UAnimationStateMachineLibrary_GetRelevantAnimTimeRemainingFraction_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.Node = InNode;
+	Parms.UpdateContext = UpdateContext;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -739,7 +820,7 @@ float UAnimationStateMachineLibrary::GetRelevantAnimTimeRemainingFraction(struct
 // struct FAnimationStateResultReferenceNode                                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAnimationStateMachineLibrary::GetRelevantAnimTimeRemaining(struct FAnimUpdateContext& InUpdateContext, struct FAnimationStateResultReference& InNode)
+float UAnimationStateMachineLibrary::GetRelevantAnimTimeRemaining(struct FAnimUpdateContext& UpdateContext, struct FAnimationStateResultReference& Node)
 {
 	static class UFunction* Func = nullptr;
 
@@ -748,16 +829,16 @@ float UAnimationStateMachineLibrary::GetRelevantAnimTimeRemaining(struct FAnimUp
 
 	Params::UAnimationStateMachineLibrary_GetRelevantAnimTimeRemaining_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.Node = InNode;
+	Parms.UpdateContext = UpdateContext;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -771,7 +852,7 @@ float UAnimationStateMachineLibrary::GetRelevantAnimTimeRemaining(struct FAnimUp
 // struct FAnimationStateResultReferenceAnimationState                                                   (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               Result                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAnimationStateMachineLibrary::ConvertToAnimationStateResultPure(struct FAnimNodeReference& InNode, struct FAnimationStateResultReference* InAnimationState, bool* InResult)
+void UAnimationStateMachineLibrary::ConvertToAnimationStateResultPure(struct FAnimNodeReference& Node, struct FAnimationStateResultReference* AnimationState, bool* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -780,21 +861,21 @@ void UAnimationStateMachineLibrary::ConvertToAnimationStateResultPure(struct FAn
 
 	Params::UAnimationStateMachineLibrary_ConvertToAnimationStateResultPure_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InAnimationState != nullptr)
-		*InAnimationState = Parms.AnimationState;
+	if (AnimationState != nullptr)
+		*AnimationState = std::move(Parms.AnimationState);
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 }
 
@@ -806,7 +887,7 @@ void UAnimationStateMachineLibrary::ConvertToAnimationStateResultPure(struct FAn
 // struct FAnimationStateResultReferenceAnimationState                                                   (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // enum class EAnimNodeReferenceConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAnimationStateMachineLibrary::ConvertToAnimationStateResult(struct FAnimNodeReference& InNode, struct FAnimationStateResultReference* InAnimationState, enum class EAnimNodeReferenceConversionResult* InResult)
+void UAnimationStateMachineLibrary::ConvertToAnimationStateResult(struct FAnimNodeReference& Node, struct FAnimationStateResultReference* AnimationState, enum class EAnimNodeReferenceConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -815,21 +896,21 @@ void UAnimationStateMachineLibrary::ConvertToAnimationStateResult(struct FAnimNo
 
 	Params::UAnimationStateMachineLibrary_ConvertToAnimationStateResult_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InAnimationState != nullptr)
-		*InAnimationState = Parms.AnimationState;
+	if (AnimationState != nullptr)
+		*AnimationState = std::move(Parms.AnimationState);
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 }
 
@@ -841,7 +922,7 @@ void UAnimationStateMachineLibrary::ConvertToAnimationStateResult(struct FAnimNo
 // struct FAnimationStateMachineReferenceAnimationState                                                   (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               Result                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAnimationStateMachineLibrary::ConvertToAnimationStateMachinePure(struct FAnimNodeReference& InNode, struct FAnimationStateMachineReference* InAnimationState, bool* InResult)
+void UAnimationStateMachineLibrary::ConvertToAnimationStateMachinePure(struct FAnimNodeReference& Node, struct FAnimationStateMachineReference* AnimationState, bool* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -850,21 +931,21 @@ void UAnimationStateMachineLibrary::ConvertToAnimationStateMachinePure(struct FA
 
 	Params::UAnimationStateMachineLibrary_ConvertToAnimationStateMachinePure_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InAnimationState != nullptr)
-		*InAnimationState = Parms.AnimationState;
+	if (AnimationState != nullptr)
+		*AnimationState = std::move(Parms.AnimationState);
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 }
 
@@ -876,7 +957,7 @@ void UAnimationStateMachineLibrary::ConvertToAnimationStateMachinePure(struct FA
 // struct FAnimationStateMachineReferenceAnimationState                                                   (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // enum class EAnimNodeReferenceConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAnimationStateMachineLibrary::ConvertToAnimationStateMachine(struct FAnimNodeReference& InNode, struct FAnimationStateMachineReference* InAnimationState, enum class EAnimNodeReferenceConversionResult* InResult)
+void UAnimationStateMachineLibrary::ConvertToAnimationStateMachine(struct FAnimNodeReference& Node, struct FAnimationStateMachineReference* AnimationState, enum class EAnimNodeReferenceConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -885,22 +966,50 @@ void UAnimationStateMachineLibrary::ConvertToAnimationStateMachine(struct FAnimN
 
 	Params::UAnimationStateMachineLibrary_ConvertToAnimationStateMachine_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InAnimationState != nullptr)
-		*InAnimationState = Parms.AnimationState;
+	if (AnimationState != nullptr)
+		*AnimationState = std::move(Parms.AnimationState);
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
+}
+
+
+// Class AnimGraphRuntime.AnimExecutionContextLibrary
+// (None)
+
+class UClass* UAnimExecutionContextLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AnimExecutionContextLibrary");
+
+	return Clss;
+}
+
+
+// AnimExecutionContextLibrary AnimGraphRuntime.Default__AnimExecutionContextLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAnimExecutionContextLibrary* UAnimExecutionContextLibrary::GetDefaultObj()
+{
+	static class UAnimExecutionContextLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAnimExecutionContextLibrary*>(UAnimExecutionContextLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -910,7 +1019,7 @@ void UAnimationStateMachineLibrary::ConvertToAnimationStateMachine(struct FAnimN
 // struct FAnimUpdateContext          Context                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAnimExecutionContextLibrary::GetDeltaTime(struct FAnimUpdateContext& InContext)
+float UAnimExecutionContextLibrary::GetDeltaTime(struct FAnimUpdateContext& Context)
 {
 	static class UFunction* Func = nullptr;
 
@@ -919,15 +1028,15 @@ float UAnimExecutionContextLibrary::GetDeltaTime(struct FAnimUpdateContext& InCo
 
 	Params::UAnimExecutionContextLibrary_GetDeltaTime_Params Parms{};
 
-	Parms.Context = InContext;
+	Parms.Context = Context;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -940,7 +1049,7 @@ float UAnimExecutionContextLibrary::GetDeltaTime(struct FAnimUpdateContext& InCo
 // struct FAnimUpdateContext          Context                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAnimExecutionContextLibrary::GetCurrentWeight(struct FAnimUpdateContext& InContext)
+float UAnimExecutionContextLibrary::GetCurrentWeight(struct FAnimUpdateContext& Context)
 {
 	static class UFunction* Func = nullptr;
 
@@ -949,15 +1058,15 @@ float UAnimExecutionContextLibrary::GetCurrentWeight(struct FAnimUpdateContext& 
 
 	Params::UAnimExecutionContextLibrary_GetCurrentWeight_Params Parms{};
 
-	Parms.Context = InContext;
+	Parms.Context = Context;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -971,7 +1080,7 @@ float UAnimExecutionContextLibrary::GetCurrentWeight(struct FAnimUpdateContext& 
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FAnimNodeReference          ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FAnimNodeReference UAnimExecutionContextLibrary::GetAnimNodeReference(class UAnimInstance* InInstance, int32 InIndex)
+struct FAnimNodeReference UAnimExecutionContextLibrary::GetAnimNodeReference(class UAnimInstance* Instance, int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -980,16 +1089,16 @@ struct FAnimNodeReference UAnimExecutionContextLibrary::GetAnimNodeReference(cla
 
 	Params::UAnimExecutionContextLibrary_GetAnimNodeReference_Params Parms{};
 
-	Parms.Instance = InInstance;
-	Parms.Index = InIndex;
+	Parms.Instance = Instance;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1002,7 +1111,7 @@ struct FAnimNodeReference UAnimExecutionContextLibrary::GetAnimNodeReference(cla
 // struct FAnimExecutionContext       Context                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UAnimInstance*               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAnimInstance* UAnimExecutionContextLibrary::GetAnimInstance(struct FAnimExecutionContext& InContext)
+class UAnimInstance* UAnimExecutionContextLibrary::GetAnimInstance(struct FAnimExecutionContext& Context)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1011,15 +1120,15 @@ class UAnimInstance* UAnimExecutionContextLibrary::GetAnimInstance(struct FAnimE
 
 	Params::UAnimExecutionContextLibrary_GetAnimInstance_Params Parms{};
 
-	Parms.Context = InContext;
+	Parms.Context = Context;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1033,7 +1142,7 @@ class UAnimInstance* UAnimExecutionContextLibrary::GetAnimInstance(struct FAnimE
 // enum class EAnimExecutionContextConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FAnimUpdateContext          ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FAnimUpdateContext UAnimExecutionContextLibrary::ConvertToUpdateContext(struct FAnimExecutionContext& InContext, enum class EAnimExecutionContextConversionResult* InResult)
+struct FAnimUpdateContext UAnimExecutionContextLibrary::ConvertToUpdateContext(struct FAnimExecutionContext& Context, enum class EAnimExecutionContextConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1042,18 +1151,18 @@ struct FAnimUpdateContext UAnimExecutionContextLibrary::ConvertToUpdateContext(s
 
 	Params::UAnimExecutionContextLibrary_ConvertToUpdateContext_Params Parms{};
 
-	Parms.Context = InContext;
+	Parms.Context = Context;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 	return Parms.ReturnValue;
 
@@ -1067,7 +1176,7 @@ struct FAnimUpdateContext UAnimExecutionContextLibrary::ConvertToUpdateContext(s
 // enum class EAnimExecutionContextConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FAnimPoseContext            ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FAnimPoseContext UAnimExecutionContextLibrary::ConvertToPoseContext(struct FAnimExecutionContext& InContext, enum class EAnimExecutionContextConversionResult* InResult)
+struct FAnimPoseContext UAnimExecutionContextLibrary::ConvertToPoseContext(struct FAnimExecutionContext& Context, enum class EAnimExecutionContextConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1076,18 +1185,18 @@ struct FAnimPoseContext UAnimExecutionContextLibrary::ConvertToPoseContext(struc
 
 	Params::UAnimExecutionContextLibrary_ConvertToPoseContext_Params Parms{};
 
-	Parms.Context = InContext;
+	Parms.Context = Context;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 	return Parms.ReturnValue;
 
@@ -1101,7 +1210,7 @@ struct FAnimPoseContext UAnimExecutionContextLibrary::ConvertToPoseContext(struc
 // enum class EAnimExecutionContextConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FAnimInitializationContext  ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FAnimInitializationContext UAnimExecutionContextLibrary::ConvertToInitializationContext(struct FAnimExecutionContext& InContext, enum class EAnimExecutionContextConversionResult* InResult)
+struct FAnimInitializationContext UAnimExecutionContextLibrary::ConvertToInitializationContext(struct FAnimExecutionContext& Context, enum class EAnimExecutionContextConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1110,18 +1219,18 @@ struct FAnimInitializationContext UAnimExecutionContextLibrary::ConvertToInitial
 
 	Params::UAnimExecutionContextLibrary_ConvertToInitializationContext_Params Parms{};
 
-	Parms.Context = InContext;
+	Parms.Context = Context;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 	return Parms.ReturnValue;
 
@@ -1135,7 +1244,7 @@ struct FAnimInitializationContext UAnimExecutionContextLibrary::ConvertToInitial
 // enum class EAnimExecutionContextConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FAnimComponentSpacePoseContextReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FAnimComponentSpacePoseContext UAnimExecutionContextLibrary::ConvertToComponentSpacePoseContext(struct FAnimExecutionContext& InContext, enum class EAnimExecutionContextConversionResult* InResult)
+struct FAnimComponentSpacePoseContext UAnimExecutionContextLibrary::ConvertToComponentSpacePoseContext(struct FAnimExecutionContext& Context, enum class EAnimExecutionContextConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1144,21 +1253,133 @@ struct FAnimComponentSpacePoseContext UAnimExecutionContextLibrary::ConvertToCom
 
 	Params::UAnimExecutionContextLibrary_ConvertToComponentSpacePoseContext_Params Parms{};
 
-	Parms.Context = InContext;
+	Parms.Context = Context;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AnimGraphRuntime.AnimNotify_PlayMontageNotify
+// (None)
+
+class UClass* UAnimNotify_PlayMontageNotify::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AnimNotify_PlayMontageNotify");
+
+	return Clss;
+}
+
+
+// AnimNotify_PlayMontageNotify AnimGraphRuntime.Default__AnimNotify_PlayMontageNotify
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAnimNotify_PlayMontageNotify* UAnimNotify_PlayMontageNotify::GetDefaultObj()
+{
+	static class UAnimNotify_PlayMontageNotify* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAnimNotify_PlayMontageNotify*>(UAnimNotify_PlayMontageNotify::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AnimGraphRuntime.AnimNotify_PlayMontageNotifyWindow
+// (None)
+
+class UClass* UAnimNotify_PlayMontageNotifyWindow::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AnimNotify_PlayMontageNotifyWindow");
+
+	return Clss;
+}
+
+
+// AnimNotify_PlayMontageNotifyWindow AnimGraphRuntime.Default__AnimNotify_PlayMontageNotifyWindow
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAnimNotify_PlayMontageNotifyWindow* UAnimNotify_PlayMontageNotifyWindow::GetDefaultObj()
+{
+	static class UAnimNotify_PlayMontageNotifyWindow* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAnimNotify_PlayMontageNotifyWindow*>(UAnimNotify_PlayMontageNotifyWindow::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AnimGraphRuntime.AnimSequencerInstance
+// (None)
+
+class UClass* UAnimSequencerInstance::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AnimSequencerInstance");
+
+	return Clss;
+}
+
+
+// AnimSequencerInstance AnimGraphRuntime.Default__AnimSequencerInstance
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAnimSequencerInstance* UAnimSequencerInstance::GetDefaultObj()
+{
+	static class UAnimSequencerInstance* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAnimSequencerInstance*>(UAnimSequencerInstance::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AnimGraphRuntime.KismetAnimationLibrary
+// (None)
+
+class UClass* UKismetAnimationLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("KismetAnimationLibrary");
+
+	return Clss;
+}
+
+
+// KismetAnimationLibrary AnimGraphRuntime.Default__KismetAnimationLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UKismetAnimationLibrary* UKismetAnimationLibrary::GetDefaultObj()
+{
+	static class UKismetAnimationLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UKismetAnimationLibrary*>(UKismetAnimationLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1176,7 +1397,7 @@ struct FAnimComponentSpacePoseContext UAnimExecutionContextLibrary::ConvertToCom
 // float                              StartStretchRatio                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              MaxStretchScale                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKismetAnimationLibrary::K2_TwoBoneIK(struct FVector& InRootPos, struct FVector& InJointPos, struct FVector& InEndPos, struct FVector& InJointTarget, struct FVector& InEffector, struct FVector* InOutJointPos, struct FVector* InOutEndPos, bool InbAllowStretching, float InStartStretchRatio, float InMaxStretchScale)
+void UKismetAnimationLibrary::K2_TwoBoneIK(struct FVector& RootPos, struct FVector& JointPos, struct FVector& EndPos, struct FVector& JointTarget, struct FVector& Effector, struct FVector* OutJointPos, struct FVector* OutEndPos, bool bAllowStretching, float StartStretchRatio, float MaxStretchScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1185,28 +1406,28 @@ void UKismetAnimationLibrary::K2_TwoBoneIK(struct FVector& InRootPos, struct FVe
 
 	Params::UKismetAnimationLibrary_K2_TwoBoneIK_Params Parms{};
 
-	Parms.RootPos = InRootPos;
-	Parms.JointPos = InJointPos;
-	Parms.EndPos = InEndPos;
-	Parms.JointTarget = InJointTarget;
-	Parms.Effector = InEffector;
-	Parms.bAllowStretching = InbAllowStretching;
-	Parms.StartStretchRatio = InStartStretchRatio;
-	Parms.MaxStretchScale = InMaxStretchScale;
+	Parms.RootPos = RootPos;
+	Parms.JointPos = JointPos;
+	Parms.EndPos = EndPos;
+	Parms.JointTarget = JointTarget;
+	Parms.Effector = Effector;
+	Parms.bAllowStretching = bAllowStretching;
+	Parms.StartStretchRatio = StartStretchRatio;
+	Parms.MaxStretchScale = MaxStretchScale;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutJointPos != nullptr)
-		*InOutJointPos = Parms.OutJointPos;
+	if (OutJointPos != nullptr)
+		*OutJointPos = std::move(Parms.OutJointPos);
 
-	if (InOutEndPos != nullptr)
-		*InOutEndPos = Parms.OutEndPos;
+	if (OutEndPos != nullptr)
+		*OutEndPos = std::move(Parms.OutEndPos);
 
 }
 
@@ -1225,13 +1446,13 @@ void UKismetAnimationLibrary::K2_StartProfilingTimer()
 	Params::UKismetAnimationLibrary_K2_StartProfilingTimer_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1250,7 +1471,7 @@ void UKismetAnimationLibrary::K2_StartProfilingTimer()
 // float                              RangeOutMaxZ                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UKismetAnimationLibrary::K2_MakePerlinNoiseVectorAndRemap(float InX, float InY, float InZ, float InRangeOutMinX, float InRangeOutMaxX, float InRangeOutMinY, float InRangeOutMaxY, float InRangeOutMinZ, float InRangeOutMaxZ)
+struct FVector UKismetAnimationLibrary::K2_MakePerlinNoiseVectorAndRemap(float X, float Y, float Z, float RangeOutMinX, float RangeOutMaxX, float RangeOutMinY, float RangeOutMaxY, float RangeOutMinZ, float RangeOutMaxZ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1259,23 +1480,23 @@ struct FVector UKismetAnimationLibrary::K2_MakePerlinNoiseVectorAndRemap(float I
 
 	Params::UKismetAnimationLibrary_K2_MakePerlinNoiseVectorAndRemap_Params Parms{};
 
-	Parms.X = InX;
-	Parms.Y = InY;
-	Parms.Z = InZ;
-	Parms.RangeOutMinX = InRangeOutMinX;
-	Parms.RangeOutMaxX = InRangeOutMaxX;
-	Parms.RangeOutMinY = InRangeOutMinY;
-	Parms.RangeOutMaxY = InRangeOutMaxY;
-	Parms.RangeOutMinZ = InRangeOutMinZ;
-	Parms.RangeOutMaxZ = InRangeOutMaxZ;
+	Parms.X = X;
+	Parms.Y = Y;
+	Parms.Z = Z;
+	Parms.RangeOutMinX = RangeOutMinX;
+	Parms.RangeOutMaxX = RangeOutMaxX;
+	Parms.RangeOutMinY = RangeOutMinY;
+	Parms.RangeOutMaxY = RangeOutMaxY;
+	Parms.RangeOutMinZ = RangeOutMinZ;
+	Parms.RangeOutMaxZ = RangeOutMaxZ;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1290,7 +1511,7 @@ struct FVector UKismetAnimationLibrary::K2_MakePerlinNoiseVectorAndRemap(float I
 // float                              RangeOutMax                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKismetAnimationLibrary::K2_MakePerlinNoiseAndRemap(float InValue, float InRangeOutMin, float InRangeOutMax)
+float UKismetAnimationLibrary::K2_MakePerlinNoiseAndRemap(float Value, float RangeOutMin, float RangeOutMax)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1299,17 +1520,17 @@ float UKismetAnimationLibrary::K2_MakePerlinNoiseAndRemap(float InValue, float I
 
 	Params::UKismetAnimationLibrary_K2_MakePerlinNoiseAndRemap_Params Parms{};
 
-	Parms.Value = InValue;
-	Parms.RangeOutMin = InRangeOutMin;
-	Parms.RangeOutMax = InRangeOutMax;
+	Parms.Value = Value;
+	Parms.RangeOutMin = RangeOutMin;
+	Parms.RangeOutMax = RangeOutMax;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1327,7 +1548,7 @@ float UKismetAnimationLibrary::K2_MakePerlinNoiseAndRemap(float InValue, float I
 // float                              ClampConeInDegree                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform UKismetAnimationLibrary::K2_LookAt(struct FTransform& InCurrentTransform, struct FVector& InTargetPosition, const struct FVector& InLookAtVector, bool InbUseUpVector, const struct FVector& InUpVector, float InClampConeInDegree)
+struct FTransform UKismetAnimationLibrary::K2_LookAt(struct FTransform& CurrentTransform, struct FVector& TargetPosition, const struct FVector& LookAtVector, bool bUseUpVector, const struct FVector& UpVector, float ClampConeInDegree)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1336,20 +1557,20 @@ struct FTransform UKismetAnimationLibrary::K2_LookAt(struct FTransform& InCurren
 
 	Params::UKismetAnimationLibrary_K2_LookAt_Params Parms{};
 
-	Parms.CurrentTransform = InCurrentTransform;
-	Parms.TargetPosition = InTargetPosition;
-	Parms.LookAtVector = InLookAtVector;
-	Parms.bUseUpVector = InbUseUpVector;
-	Parms.UpVector = InUpVector;
-	Parms.ClampConeInDegree = InClampConeInDegree;
+	Parms.CurrentTransform = CurrentTransform;
+	Parms.TargetPosition = TargetPosition;
+	Parms.LookAtVector = LookAtVector;
+	Parms.bUseUpVector = bUseUpVector;
+	Parms.UpVector = UpVector;
+	Parms.ClampConeInDegree = ClampConeInDegree;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1363,7 +1584,7 @@ struct FTransform UKismetAnimationLibrary::K2_LookAt(struct FTransform& InCurren
 // class FString                      LogPrefix                                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKismetAnimationLibrary::K2_EndProfilingTimer(bool InbLog, const class FString& InLogPrefix)
+float UKismetAnimationLibrary::K2_EndProfilingTimer(bool bLog, const class FString& LogPrefix)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1372,16 +1593,16 @@ float UKismetAnimationLibrary::K2_EndProfilingTimer(bool InbLog, const class FSt
 
 	Params::UKismetAnimationLibrary_K2_EndProfilingTimer_Params Parms{};
 
-	Parms.bLog = InbLog;
-	Parms.LogPrefix = InLogPrefix;
+	Parms.bLog = bLog;
+	Parms.LogPrefix = LogPrefix;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1403,7 +1624,7 @@ float UKismetAnimationLibrary::K2_EndProfilingTimer(bool InbLog, const class FSt
 // float                              OutRangeMax                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKismetAnimationLibrary::K2_DistanceBetweenTwoSocketsAndMapRange(class USkeletalMeshComponent* InComponent, class FName InSocketOrBoneNameA, enum class ERelativeTransformSpace InSocketSpaceA, class FName InSocketOrBoneNameB, enum class ERelativeTransformSpace InSocketSpaceB, bool InbRemapRange, float InInRangeMin, float InInRangeMax, float InOutRangeMin, float InOutRangeMax)
+float UKismetAnimationLibrary::K2_DistanceBetweenTwoSocketsAndMapRange(class USkeletalMeshComponent* Component, class FName SocketOrBoneNameA, enum class ERelativeTransformSpace SocketSpaceA, class FName SocketOrBoneNameB, enum class ERelativeTransformSpace SocketSpaceB, bool bRemapRange, float InRangeMin, float InRangeMax, float OutRangeMin, float OutRangeMax)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1412,24 +1633,24 @@ float UKismetAnimationLibrary::K2_DistanceBetweenTwoSocketsAndMapRange(class USk
 
 	Params::UKismetAnimationLibrary_K2_DistanceBetweenTwoSocketsAndMapRange_Params Parms{};
 
-	Parms.Component = InComponent;
-	Parms.SocketOrBoneNameA = InSocketOrBoneNameA;
-	Parms.SocketSpaceA = InSocketSpaceA;
-	Parms.SocketOrBoneNameB = InSocketOrBoneNameB;
-	Parms.SocketSpaceB = InSocketSpaceB;
-	Parms.bRemapRange = InbRemapRange;
-	Parms.InRangeMin = InInRangeMin;
-	Parms.InRangeMax = InInRangeMax;
-	Parms.OutRangeMin = InOutRangeMin;
-	Parms.OutRangeMax = InOutRangeMax;
+	Parms.Component = Component;
+	Parms.SocketOrBoneNameA = SocketOrBoneNameA;
+	Parms.SocketSpaceA = SocketSpaceA;
+	Parms.SocketOrBoneNameB = SocketOrBoneNameB;
+	Parms.SocketSpaceB = SocketSpaceB;
+	Parms.bRemapRange = bRemapRange;
+	Parms.InRangeMin = InRangeMin;
+	Parms.InRangeMax = InRangeMax;
+	Parms.OutRangeMin = OutRangeMin;
+	Parms.OutRangeMax = OutRangeMax;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1444,7 +1665,7 @@ float UKismetAnimationLibrary::K2_DistanceBetweenTwoSocketsAndMapRange(class USk
 // class FName                        SocketOrBoneNameTo                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UKismetAnimationLibrary::K2_DirectionBetweenSockets(class USkeletalMeshComponent* InComponent, class FName InSocketOrBoneNameFrom, class FName InSocketOrBoneNameTo)
+struct FVector UKismetAnimationLibrary::K2_DirectionBetweenSockets(class USkeletalMeshComponent* Component, class FName SocketOrBoneNameFrom, class FName SocketOrBoneNameTo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1453,17 +1674,17 @@ struct FVector UKismetAnimationLibrary::K2_DirectionBetweenSockets(class USkelet
 
 	Params::UKismetAnimationLibrary_K2_DirectionBetweenSockets_Params Parms{};
 
-	Parms.Component = InComponent;
-	Parms.SocketOrBoneNameFrom = InSocketOrBoneNameFrom;
-	Parms.SocketOrBoneNameTo = InSocketOrBoneNameTo;
+	Parms.Component = Component;
+	Parms.SocketOrBoneNameFrom = SocketOrBoneNameFrom;
+	Parms.SocketOrBoneNameTo = SocketOrBoneNameTo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1487,7 +1708,7 @@ struct FVector UKismetAnimationLibrary::K2_DirectionBetweenSockets(class USkelet
 // struct FRuntimeFloatCurve          CustomCurve                                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKismetAnimationLibrary::K2_CalculateVelocityFromSockets(float InDeltaSeconds, class USkeletalMeshComponent* InComponent, class FName InSocketOrBoneName, class FName InReferenceSocketOrBone, enum class ERelativeTransformSpace InSocketSpace, const struct FVector& InOffsetInBoneSpace, struct FPositionHistory& InHistory, int32 InNumberOfSamples, float InVelocityMin, float InVelocityMax, enum class EEasingFuncType InEasingType, struct FRuntimeFloatCurve& InCustomCurve)
+float UKismetAnimationLibrary::K2_CalculateVelocityFromSockets(float DeltaSeconds, class USkeletalMeshComponent* Component, class FName SocketOrBoneName, class FName ReferenceSocketOrBone, enum class ERelativeTransformSpace SocketSpace, const struct FVector& OffsetInBoneSpace, struct FPositionHistory& History, int32 NumberOfSamples, float VelocityMin, float VelocityMax, enum class EEasingFuncType EasingType, struct FRuntimeFloatCurve& CustomCurve)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1496,26 +1717,26 @@ float UKismetAnimationLibrary::K2_CalculateVelocityFromSockets(float InDeltaSeco
 
 	Params::UKismetAnimationLibrary_K2_CalculateVelocityFromSockets_Params Parms{};
 
-	Parms.DeltaSeconds = InDeltaSeconds;
-	Parms.Component = InComponent;
-	Parms.SocketOrBoneName = InSocketOrBoneName;
-	Parms.ReferenceSocketOrBone = InReferenceSocketOrBone;
-	Parms.SocketSpace = InSocketSpace;
-	Parms.OffsetInBoneSpace = InOffsetInBoneSpace;
-	Parms.History = InHistory;
-	Parms.NumberOfSamples = InNumberOfSamples;
-	Parms.VelocityMin = InVelocityMin;
-	Parms.VelocityMax = InVelocityMax;
-	Parms.EasingType = InEasingType;
-	Parms.CustomCurve = InCustomCurve;
+	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.Component = Component;
+	Parms.SocketOrBoneName = SocketOrBoneName;
+	Parms.ReferenceSocketOrBone = ReferenceSocketOrBone;
+	Parms.SocketSpace = SocketSpace;
+	Parms.OffsetInBoneSpace = OffsetInBoneSpace;
+	Parms.History = History;
+	Parms.NumberOfSamples = NumberOfSamples;
+	Parms.VelocityMin = VelocityMin;
+	Parms.VelocityMax = VelocityMax;
+	Parms.EasingType = EasingType;
+	Parms.CustomCurve = CustomCurve;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1533,7 +1754,7 @@ float UKismetAnimationLibrary::K2_CalculateVelocityFromSockets(float InDeltaSeco
 // float                              VelocityMax                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKismetAnimationLibrary::K2_CalculateVelocityFromPositionHistory(float InDeltaSeconds, const struct FVector& InPosition, struct FPositionHistory& InHistory, int32 InNumberOfSamples, float InVelocityMin, float InVelocityMax)
+float UKismetAnimationLibrary::K2_CalculateVelocityFromPositionHistory(float DeltaSeconds, const struct FVector& Position, struct FPositionHistory& History, int32 NumberOfSamples, float VelocityMin, float VelocityMax)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1542,20 +1763,20 @@ float UKismetAnimationLibrary::K2_CalculateVelocityFromPositionHistory(float InD
 
 	Params::UKismetAnimationLibrary_K2_CalculateVelocityFromPositionHistory_Params Parms{};
 
-	Parms.DeltaSeconds = InDeltaSeconds;
-	Parms.Position = InPosition;
-	Parms.History = InHistory;
-	Parms.NumberOfSamples = InNumberOfSamples;
-	Parms.VelocityMin = InVelocityMin;
-	Parms.VelocityMax = InVelocityMax;
+	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.Position = Position;
+	Parms.History = History;
+	Parms.NumberOfSamples = NumberOfSamples;
+	Parms.VelocityMin = VelocityMin;
+	Parms.VelocityMax = VelocityMax;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1569,7 +1790,7 @@ float UKismetAnimationLibrary::K2_CalculateVelocityFromPositionHistory(float InD
 // struct FRotator                    BaseRotation                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKismetAnimationLibrary::CalculateDirection(struct FVector& InVelocity, struct FRotator& InBaseRotation)
+float UKismetAnimationLibrary::CalculateDirection(struct FVector& Velocity, struct FRotator& BaseRotation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1578,19 +1799,47 @@ float UKismetAnimationLibrary::CalculateDirection(struct FVector& InVelocity, st
 
 	Params::UKismetAnimationLibrary_CalculateDirection_Params Parms{};
 
-	Parms.Velocity = InVelocity;
-	Parms.BaseRotation = InBaseRotation;
+	Parms.Velocity = Velocity;
+	Parms.BaseRotation = BaseRotation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AnimGraphRuntime.LinkedAnimGraphLibrary
+// (None)
+
+class UClass* ULinkedAnimGraphLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("LinkedAnimGraphLibrary");
+
+	return Clss;
+}
+
+
+// LinkedAnimGraphLibrary AnimGraphRuntime.Default__LinkedAnimGraphLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ULinkedAnimGraphLibrary* ULinkedAnimGraphLibrary::GetDefaultObj()
+{
+	static class ULinkedAnimGraphLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ULinkedAnimGraphLibrary*>(ULinkedAnimGraphLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1600,7 +1849,7 @@ float UKismetAnimationLibrary::CalculateDirection(struct FVector& InVelocity, st
 // struct FLinkedAnimGraphReference   Node                                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ULinkedAnimGraphLibrary::HasLinkedAnimInstance(struct FLinkedAnimGraphReference& InNode)
+bool ULinkedAnimGraphLibrary::HasLinkedAnimInstance(struct FLinkedAnimGraphReference& Node)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1609,15 +1858,15 @@ bool ULinkedAnimGraphLibrary::HasLinkedAnimInstance(struct FLinkedAnimGraphRefer
 
 	Params::ULinkedAnimGraphLibrary_HasLinkedAnimInstance_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1630,7 +1879,7 @@ bool ULinkedAnimGraphLibrary::HasLinkedAnimInstance(struct FLinkedAnimGraphRefer
 // struct FLinkedAnimGraphReference   Node                                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class UAnimInstance*               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAnimInstance* ULinkedAnimGraphLibrary::GetLinkedAnimInstance(struct FLinkedAnimGraphReference& InNode)
+class UAnimInstance* ULinkedAnimGraphLibrary::GetLinkedAnimInstance(struct FLinkedAnimGraphReference& Node)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1639,15 +1888,15 @@ class UAnimInstance* ULinkedAnimGraphLibrary::GetLinkedAnimInstance(struct FLink
 
 	Params::ULinkedAnimGraphLibrary_GetLinkedAnimInstance_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1661,7 +1910,7 @@ class UAnimInstance* ULinkedAnimGraphLibrary::GetLinkedAnimInstance(struct FLink
 // struct FLinkedAnimGraphReference   LinkedAnimGraph                                                  (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               Result                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULinkedAnimGraphLibrary::ConvertToLinkedAnimGraphPure(struct FAnimNodeReference& InNode, struct FLinkedAnimGraphReference* InLinkedAnimGraph, bool* InResult)
+void ULinkedAnimGraphLibrary::ConvertToLinkedAnimGraphPure(struct FAnimNodeReference& Node, struct FLinkedAnimGraphReference* LinkedAnimGraph, bool* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1670,21 +1919,21 @@ void ULinkedAnimGraphLibrary::ConvertToLinkedAnimGraphPure(struct FAnimNodeRefer
 
 	Params::ULinkedAnimGraphLibrary_ConvertToLinkedAnimGraphPure_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InLinkedAnimGraph != nullptr)
-		*InLinkedAnimGraph = Parms.LinkedAnimGraph;
+	if (LinkedAnimGraph != nullptr)
+		*LinkedAnimGraph = std::move(Parms.LinkedAnimGraph);
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 }
 
@@ -1696,7 +1945,7 @@ void ULinkedAnimGraphLibrary::ConvertToLinkedAnimGraphPure(struct FAnimNodeRefer
 // enum class EAnimNodeReferenceConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FLinkedAnimGraphReference   ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FLinkedAnimGraphReference ULinkedAnimGraphLibrary::ConvertToLinkedAnimGraph(struct FAnimNodeReference& InNode, enum class EAnimNodeReferenceConversionResult* InResult)
+struct FLinkedAnimGraphReference ULinkedAnimGraphLibrary::ConvertToLinkedAnimGraph(struct FAnimNodeReference& Node, enum class EAnimNodeReferenceConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1705,21 +1954,49 @@ struct FLinkedAnimGraphReference ULinkedAnimGraphLibrary::ConvertToLinkedAnimGra
 
 	Params::ULinkedAnimGraphLibrary_ConvertToLinkedAnimGraph_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AnimGraphRuntime.PlayMontageCallbackProxy
+// (None)
+
+class UClass* UPlayMontageCallbackProxy::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("PlayMontageCallbackProxy");
+
+	return Clss;
+}
+
+
+// PlayMontageCallbackProxy AnimGraphRuntime.Default__PlayMontageCallbackProxy
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UPlayMontageCallbackProxy* UPlayMontageCallbackProxy::GetDefaultObj()
+{
+	static class UPlayMontageCallbackProxy* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UPlayMontageCallbackProxy*>(UPlayMontageCallbackProxy::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1729,7 +2006,7 @@ struct FLinkedAnimGraphReference ULinkedAnimGraphLibrary::ConvertToLinkedAnimGra
 // class FName                        NotifyName                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBranchingPointNotifyPayloadBranchingPointNotifyPayload                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UPlayMontageCallbackProxy::OnNotifyEndReceived(class FName InNotifyName, struct FBranchingPointNotifyPayload& InBranchingPointNotifyPayload)
+void UPlayMontageCallbackProxy::OnNotifyEndReceived(class FName NotifyName, struct FBranchingPointNotifyPayload& BranchingPointNotifyPayload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1738,16 +2015,16 @@ void UPlayMontageCallbackProxy::OnNotifyEndReceived(class FName InNotifyName, st
 
 	Params::UPlayMontageCallbackProxy_OnNotifyEndReceived_Params Parms{};
 
-	Parms.NotifyName = InNotifyName;
-	Parms.BranchingPointNotifyPayload = InBranchingPointNotifyPayload;
+	Parms.NotifyName = NotifyName;
+	Parms.BranchingPointNotifyPayload = BranchingPointNotifyPayload;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1758,7 +2035,7 @@ void UPlayMontageCallbackProxy::OnNotifyEndReceived(class FName InNotifyName, st
 // class FName                        NotifyName                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBranchingPointNotifyPayloadBranchingPointNotifyPayload                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UPlayMontageCallbackProxy::OnNotifyBeginReceived(class FName InNotifyName, struct FBranchingPointNotifyPayload& InBranchingPointNotifyPayload)
+void UPlayMontageCallbackProxy::OnNotifyBeginReceived(class FName NotifyName, struct FBranchingPointNotifyPayload& BranchingPointNotifyPayload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1767,16 +2044,16 @@ void UPlayMontageCallbackProxy::OnNotifyBeginReceived(class FName InNotifyName, 
 
 	Params::UPlayMontageCallbackProxy_OnNotifyBeginReceived_Params Parms{};
 
-	Parms.NotifyName = InNotifyName;
-	Parms.BranchingPointNotifyPayload = InBranchingPointNotifyPayload;
+	Parms.NotifyName = NotifyName;
+	Parms.BranchingPointNotifyPayload = BranchingPointNotifyPayload;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1787,7 +2064,7 @@ void UPlayMontageCallbackProxy::OnNotifyBeginReceived(class FName InNotifyName, 
 // class UAnimMontage*                Montage                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bInterrupted                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayMontageCallbackProxy::OnMontageEnded(class UAnimMontage* InMontage, bool InbInterrupted)
+void UPlayMontageCallbackProxy::OnMontageEnded(class UAnimMontage* Montage, bool bInterrupted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1796,16 +2073,16 @@ void UPlayMontageCallbackProxy::OnMontageEnded(class UAnimMontage* InMontage, bo
 
 	Params::UPlayMontageCallbackProxy_OnMontageEnded_Params Parms{};
 
-	Parms.Montage = InMontage;
-	Parms.bInterrupted = InbInterrupted;
+	Parms.Montage = Montage;
+	Parms.bInterrupted = bInterrupted;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1816,7 +2093,7 @@ void UPlayMontageCallbackProxy::OnMontageEnded(class UAnimMontage* InMontage, bo
 // class UAnimMontage*                Montage                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bInterrupted                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayMontageCallbackProxy::OnMontageBlendingOut(class UAnimMontage* InMontage, bool InbInterrupted)
+void UPlayMontageCallbackProxy::OnMontageBlendingOut(class UAnimMontage* Montage, bool bInterrupted)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1825,16 +2102,16 @@ void UPlayMontageCallbackProxy::OnMontageBlendingOut(class UAnimMontage* InMonta
 
 	Params::UPlayMontageCallbackProxy_OnMontageBlendingOut_Params Parms{};
 
-	Parms.Montage = InMontage;
-	Parms.bInterrupted = InbInterrupted;
+	Parms.Montage = Montage;
+	Parms.bInterrupted = bInterrupted;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1849,7 +2126,7 @@ void UPlayMontageCallbackProxy::OnMontageBlendingOut(class UAnimMontage* InMonta
 // class FName                        StartingSection                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPlayMontageCallbackProxy*   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UPlayMontageCallbackProxy* UPlayMontageCallbackProxy::CreateProxyObjectForPlayMontage(class USkeletalMeshComponent* InInSkeletalMeshComponent, class UAnimMontage* InMontageToPlay, float InPlayRate, float InStartingPosition, class FName InStartingSection)
+class UPlayMontageCallbackProxy* UPlayMontageCallbackProxy::CreateProxyObjectForPlayMontage(class USkeletalMeshComponent* InSkeletalMeshComponent, class UAnimMontage* MontageToPlay, float PlayRate, float StartingPosition, class FName StartingSection)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1858,22 +2135,50 @@ class UPlayMontageCallbackProxy* UPlayMontageCallbackProxy::CreateProxyObjectFor
 
 	Params::UPlayMontageCallbackProxy_CreateProxyObjectForPlayMontage_Params Parms{};
 
-	Parms.InSkeletalMeshComponent = InInSkeletalMeshComponent;
-	Parms.MontageToPlay = InMontageToPlay;
-	Parms.PlayRate = InPlayRate;
-	Parms.StartingPosition = InStartingPosition;
-	Parms.StartingSection = InStartingSection;
+	Parms.InSkeletalMeshComponent = InSkeletalMeshComponent;
+	Parms.MontageToPlay = MontageToPlay;
+	Parms.PlayRate = PlayRate;
+	Parms.StartingPosition = StartingPosition;
+	Parms.StartingSection = StartingSection;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AnimGraphRuntime.SequenceEvaluatorLibrary
+// (None)
+
+class UClass* USequenceEvaluatorLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SequenceEvaluatorLibrary");
+
+	return Clss;
+}
+
+
+// SequenceEvaluatorLibrary AnimGraphRuntime.Default__SequenceEvaluatorLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USequenceEvaluatorLibrary* USequenceEvaluatorLibrary::GetDefaultObj()
+{
+	static class USequenceEvaluatorLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USequenceEvaluatorLibrary*>(USequenceEvaluatorLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1886,7 +2191,7 @@ class UPlayMontageCallbackProxy* UPlayMontageCallbackProxy::CreateProxyObjectFor
 // float                              BlendTime                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequenceEvaluatorReference ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetSequenceWithInertialBlending(struct FAnimUpdateContext& InUpdateContext, struct FSequenceEvaluatorReference& InSequenceEvaluator, class UAnimSequenceBase* InSequence, float InBlendTime)
+struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetSequenceWithInertialBlending(struct FAnimUpdateContext& UpdateContext, struct FSequenceEvaluatorReference& SequenceEvaluator, class UAnimSequenceBase* Sequence, float BlendTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1895,18 +2200,18 @@ struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetSequenceWithIne
 
 	Params::USequenceEvaluatorLibrary_SetSequenceWithInertialBlending_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.SequenceEvaluator = InSequenceEvaluator;
-	Parms.Sequence = InSequence;
-	Parms.BlendTime = InBlendTime;
+	Parms.UpdateContext = UpdateContext;
+	Parms.SequenceEvaluator = SequenceEvaluator;
+	Parms.Sequence = Sequence;
+	Parms.BlendTime = BlendTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1920,7 +2225,7 @@ struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetSequenceWithIne
 // class UAnimSequenceBase*           Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequenceEvaluatorReference ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetSequence(struct FSequenceEvaluatorReference& InSequenceEvaluator, class UAnimSequenceBase* InSequence)
+struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetSequence(struct FSequenceEvaluatorReference& SequenceEvaluator, class UAnimSequenceBase* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1929,16 +2234,16 @@ struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetSequence(struct
 
 	Params::USequenceEvaluatorLibrary_SetSequence_Params Parms{};
 
-	Parms.SequenceEvaluator = InSequenceEvaluator;
-	Parms.Sequence = InSequence;
+	Parms.SequenceEvaluator = SequenceEvaluator;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1952,7 +2257,7 @@ struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetSequence(struct
 // float                              Time                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequenceEvaluatorReference ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetExplicitTime(struct FSequenceEvaluatorReference& InSequenceEvaluator, float InTime)
+struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetExplicitTime(struct FSequenceEvaluatorReference& SequenceEvaluator, float Time)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1961,16 +2266,16 @@ struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetExplicitTime(st
 
 	Params::USequenceEvaluatorLibrary_SetExplicitTime_Params Parms{};
 
-	Parms.SequenceEvaluator = InSequenceEvaluator;
-	Parms.Time = InTime;
+	Parms.SequenceEvaluator = SequenceEvaluator;
+	Parms.Time = Time;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1983,7 +2288,7 @@ struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::SetExplicitTime(st
 // struct FSequenceEvaluatorReference SequenceEvaluator                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class UAnimSequenceBase*           ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAnimSequenceBase* USequenceEvaluatorLibrary::GetSequence(struct FSequenceEvaluatorReference& InSequenceEvaluator)
+class UAnimSequenceBase* USequenceEvaluatorLibrary::GetSequence(struct FSequenceEvaluatorReference& SequenceEvaluator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1992,15 +2297,15 @@ class UAnimSequenceBase* USequenceEvaluatorLibrary::GetSequence(struct FSequence
 
 	Params::USequenceEvaluatorLibrary_GetSequence_Params Parms{};
 
-	Parms.SequenceEvaluator = InSequenceEvaluator;
+	Parms.SequenceEvaluator = SequenceEvaluator;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2013,7 +2318,7 @@ class UAnimSequenceBase* USequenceEvaluatorLibrary::GetSequence(struct FSequence
 // struct FSequenceEvaluatorReference SequenceEvaluator                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USequenceEvaluatorLibrary::GetAccumulatedTime(struct FSequenceEvaluatorReference& InSequenceEvaluator)
+float USequenceEvaluatorLibrary::GetAccumulatedTime(struct FSequenceEvaluatorReference& SequenceEvaluator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2022,15 +2327,15 @@ float USequenceEvaluatorLibrary::GetAccumulatedTime(struct FSequenceEvaluatorRef
 
 	Params::USequenceEvaluatorLibrary_GetAccumulatedTime_Params Parms{};
 
-	Parms.SequenceEvaluator = InSequenceEvaluator;
+	Parms.SequenceEvaluator = SequenceEvaluator;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2044,7 +2349,7 @@ float USequenceEvaluatorLibrary::GetAccumulatedTime(struct FSequenceEvaluatorRef
 // struct FSequenceEvaluatorReference SequenceEvaluator                                                (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               Result                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USequenceEvaluatorLibrary::ConvertToSequenceEvaluatorPure(struct FAnimNodeReference& InNode, struct FSequenceEvaluatorReference* InSequenceEvaluator, bool* InResult)
+void USequenceEvaluatorLibrary::ConvertToSequenceEvaluatorPure(struct FAnimNodeReference& Node, struct FSequenceEvaluatorReference* SequenceEvaluator, bool* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2053,21 +2358,21 @@ void USequenceEvaluatorLibrary::ConvertToSequenceEvaluatorPure(struct FAnimNodeR
 
 	Params::USequenceEvaluatorLibrary_ConvertToSequenceEvaluatorPure_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InSequenceEvaluator != nullptr)
-		*InSequenceEvaluator = Parms.SequenceEvaluator;
+	if (SequenceEvaluator != nullptr)
+		*SequenceEvaluator = std::move(Parms.SequenceEvaluator);
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 }
 
@@ -2079,7 +2384,7 @@ void USequenceEvaluatorLibrary::ConvertToSequenceEvaluatorPure(struct FAnimNodeR
 // enum class EAnimNodeReferenceConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequenceEvaluatorReference ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::ConvertToSequenceEvaluator(struct FAnimNodeReference& InNode, enum class EAnimNodeReferenceConversionResult* InResult)
+struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::ConvertToSequenceEvaluator(struct FAnimNodeReference& Node, enum class EAnimNodeReferenceConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2088,18 +2393,18 @@ struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::ConvertToSequenceE
 
 	Params::USequenceEvaluatorLibrary_ConvertToSequenceEvaluator_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 	return Parms.ReturnValue;
 
@@ -2114,7 +2419,7 @@ struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::ConvertToSequenceE
 // float                              PlayRate                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequenceEvaluatorReference ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::AdvanceTime(struct FAnimUpdateContext& InUpdateContext, struct FSequenceEvaluatorReference& InSequenceEvaluator, float InPlayRate)
+struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::AdvanceTime(struct FAnimUpdateContext& UpdateContext, struct FSequenceEvaluatorReference& SequenceEvaluator, float PlayRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2123,20 +2428,48 @@ struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::AdvanceTime(struct
 
 	Params::USequenceEvaluatorLibrary_AdvanceTime_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.SequenceEvaluator = InSequenceEvaluator;
-	Parms.PlayRate = InPlayRate;
+	Parms.UpdateContext = UpdateContext;
+	Parms.SequenceEvaluator = SequenceEvaluator;
+	Parms.PlayRate = PlayRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AnimGraphRuntime.SequencePlayerLibrary
+// (None)
+
+class UClass* USequencePlayerLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SequencePlayerLibrary");
+
+	return Clss;
+}
+
+
+// SequencePlayerLibrary AnimGraphRuntime.Default__SequencePlayerLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USequencePlayerLibrary* USequencePlayerLibrary::GetDefaultObj()
+{
+	static class USequencePlayerLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USequencePlayerLibrary*>(USequencePlayerLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2147,7 +2480,7 @@ struct FSequenceEvaluatorReference USequenceEvaluatorLibrary::AdvanceTime(struct
 // float                              StartPosition                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequencePlayerReference    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequencePlayerReference USequencePlayerLibrary::SetStartPosition(struct FSequencePlayerReference& InSequencePlayer, float InStartPosition)
+struct FSequencePlayerReference USequencePlayerLibrary::SetStartPosition(struct FSequencePlayerReference& SequencePlayer, float StartPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2156,16 +2489,16 @@ struct FSequencePlayerReference USequencePlayerLibrary::SetStartPosition(struct 
 
 	Params::USequencePlayerLibrary_SetStartPosition_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
-	Parms.StartPosition = InStartPosition;
+	Parms.SequencePlayer = SequencePlayer;
+	Parms.StartPosition = StartPosition;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2181,7 +2514,7 @@ struct FSequencePlayerReference USequencePlayerLibrary::SetStartPosition(struct 
 // float                              BlendTime                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequencePlayerReference    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequencePlayerReference USequencePlayerLibrary::SetSequenceWithInertialBlending(struct FAnimUpdateContext& InUpdateContext, struct FSequencePlayerReference& InSequencePlayer, class UAnimSequenceBase* InSequence, float InBlendTime)
+struct FSequencePlayerReference USequencePlayerLibrary::SetSequenceWithInertialBlending(struct FAnimUpdateContext& UpdateContext, struct FSequencePlayerReference& SequencePlayer, class UAnimSequenceBase* Sequence, float BlendTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2190,18 +2523,18 @@ struct FSequencePlayerReference USequencePlayerLibrary::SetSequenceWithInertialB
 
 	Params::USequencePlayerLibrary_SetSequenceWithInertialBlending_Params Parms{};
 
-	Parms.UpdateContext = InUpdateContext;
-	Parms.SequencePlayer = InSequencePlayer;
-	Parms.Sequence = InSequence;
-	Parms.BlendTime = InBlendTime;
+	Parms.UpdateContext = UpdateContext;
+	Parms.SequencePlayer = SequencePlayer;
+	Parms.Sequence = Sequence;
+	Parms.BlendTime = BlendTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2215,7 +2548,7 @@ struct FSequencePlayerReference USequencePlayerLibrary::SetSequenceWithInertialB
 // class UAnimSequenceBase*           Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequencePlayerReference    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequencePlayerReference USequencePlayerLibrary::SetSequence(struct FSequencePlayerReference& InSequencePlayer, class UAnimSequenceBase* InSequence)
+struct FSequencePlayerReference USequencePlayerLibrary::SetSequence(struct FSequencePlayerReference& SequencePlayer, class UAnimSequenceBase* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2224,16 +2557,16 @@ struct FSequencePlayerReference USequencePlayerLibrary::SetSequence(struct FSequ
 
 	Params::USequencePlayerLibrary_SetSequence_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
-	Parms.Sequence = InSequence;
+	Parms.SequencePlayer = SequencePlayer;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2247,7 +2580,7 @@ struct FSequencePlayerReference USequencePlayerLibrary::SetSequence(struct FSequ
 // float                              PlayRate                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequencePlayerReference    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequencePlayerReference USequencePlayerLibrary::SetPlayRate(struct FSequencePlayerReference& InSequencePlayer, float InPlayRate)
+struct FSequencePlayerReference USequencePlayerLibrary::SetPlayRate(struct FSequencePlayerReference& SequencePlayer, float PlayRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2256,16 +2589,16 @@ struct FSequencePlayerReference USequencePlayerLibrary::SetPlayRate(struct FSequ
 
 	Params::USequencePlayerLibrary_SetPlayRate_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
-	Parms.PlayRate = InPlayRate;
+	Parms.SequencePlayer = SequencePlayer;
+	Parms.PlayRate = PlayRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2279,7 +2612,7 @@ struct FSequencePlayerReference USequencePlayerLibrary::SetPlayRate(struct FSequ
 // float                              Time                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequencePlayerReference    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequencePlayerReference USequencePlayerLibrary::SetAccumulatedTime(struct FSequencePlayerReference& InSequencePlayer, float InTime)
+struct FSequencePlayerReference USequencePlayerLibrary::SetAccumulatedTime(struct FSequencePlayerReference& SequencePlayer, float Time)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2288,16 +2621,16 @@ struct FSequencePlayerReference USequencePlayerLibrary::SetAccumulatedTime(struc
 
 	Params::USequencePlayerLibrary_SetAccumulatedTime_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
-	Parms.Time = InTime;
+	Parms.SequencePlayer = SequencePlayer;
+	Parms.Time = Time;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2310,7 +2643,7 @@ struct FSequencePlayerReference USequencePlayerLibrary::SetAccumulatedTime(struc
 // struct FSequencePlayerReference    SequencePlayer                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USequencePlayerLibrary::GetStartPosition(struct FSequencePlayerReference& InSequencePlayer)
+float USequencePlayerLibrary::GetStartPosition(struct FSequencePlayerReference& SequencePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2319,15 +2652,15 @@ float USequencePlayerLibrary::GetStartPosition(struct FSequencePlayerReference& 
 
 	Params::USequencePlayerLibrary_GetStartPosition_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
+	Parms.SequencePlayer = SequencePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2340,7 +2673,7 @@ float USequencePlayerLibrary::GetStartPosition(struct FSequencePlayerReference& 
 // struct FSequencePlayerReference    SequencePlayer                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class UAnimSequenceBase*           ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAnimSequenceBase* USequencePlayerLibrary::GetSequencePure(struct FSequencePlayerReference& InSequencePlayer)
+class UAnimSequenceBase* USequencePlayerLibrary::GetSequencePure(struct FSequencePlayerReference& SequencePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2349,15 +2682,15 @@ class UAnimSequenceBase* USequencePlayerLibrary::GetSequencePure(struct FSequenc
 
 	Params::USequencePlayerLibrary_GetSequencePure_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
+	Parms.SequencePlayer = SequencePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2371,7 +2704,7 @@ class UAnimSequenceBase* USequencePlayerLibrary::GetSequencePure(struct FSequenc
 // class UAnimSequenceBase*           SequenceBase                                                     (Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequencePlayerReference    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequencePlayerReference USequencePlayerLibrary::GetSequence(struct FSequencePlayerReference& InSequencePlayer, class UAnimSequenceBase*& InSequenceBase)
+struct FSequencePlayerReference USequencePlayerLibrary::GetSequence(struct FSequencePlayerReference& SequencePlayer, class UAnimSequenceBase*& SequenceBase)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2380,16 +2713,16 @@ struct FSequencePlayerReference USequencePlayerLibrary::GetSequence(struct FSequ
 
 	Params::USequencePlayerLibrary_GetSequence_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
-	Parms.SequenceBase = InSequenceBase;
+	Parms.SequencePlayer = SequencePlayer;
+	Parms.SequenceBase = SequenceBase;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2402,7 +2735,7 @@ struct FSequencePlayerReference USequencePlayerLibrary::GetSequence(struct FSequ
 // struct FSequencePlayerReference    SequencePlayer                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USequencePlayerLibrary::GetPlayRate(struct FSequencePlayerReference& InSequencePlayer)
+float USequencePlayerLibrary::GetPlayRate(struct FSequencePlayerReference& SequencePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2411,15 +2744,15 @@ float USequencePlayerLibrary::GetPlayRate(struct FSequencePlayerReference& InSeq
 
 	Params::USequencePlayerLibrary_GetPlayRate_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
+	Parms.SequencePlayer = SequencePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2432,7 +2765,7 @@ float USequencePlayerLibrary::GetPlayRate(struct FSequencePlayerReference& InSeq
 // struct FSequencePlayerReference    SequencePlayer                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USequencePlayerLibrary::GetLoopAnimation(struct FSequencePlayerReference& InSequencePlayer)
+bool USequencePlayerLibrary::GetLoopAnimation(struct FSequencePlayerReference& SequencePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2441,15 +2774,15 @@ bool USequencePlayerLibrary::GetLoopAnimation(struct FSequencePlayerReference& I
 
 	Params::USequencePlayerLibrary_GetLoopAnimation_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
+	Parms.SequencePlayer = SequencePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2462,7 +2795,7 @@ bool USequencePlayerLibrary::GetLoopAnimation(struct FSequencePlayerReference& I
 // struct FSequencePlayerReference    SequencePlayer                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USequencePlayerLibrary::GetAccumulatedTime(struct FSequencePlayerReference& InSequencePlayer)
+float USequencePlayerLibrary::GetAccumulatedTime(struct FSequencePlayerReference& SequencePlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2471,15 +2804,15 @@ float USequencePlayerLibrary::GetAccumulatedTime(struct FSequencePlayerReference
 
 	Params::USequencePlayerLibrary_GetAccumulatedTime_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
+	Parms.SequencePlayer = SequencePlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2493,7 +2826,7 @@ float USequencePlayerLibrary::GetAccumulatedTime(struct FSequencePlayerReference
 // struct FSequencePlayerReference    SequencePlayer                                                   (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               Result                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USequencePlayerLibrary::ConvertToSequencePlayerPure(struct FAnimNodeReference& InNode, struct FSequencePlayerReference* InSequencePlayer, bool* InResult)
+void USequencePlayerLibrary::ConvertToSequencePlayerPure(struct FAnimNodeReference& Node, struct FSequencePlayerReference* SequencePlayer, bool* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2502,21 +2835,21 @@ void USequencePlayerLibrary::ConvertToSequencePlayerPure(struct FAnimNodeReferen
 
 	Params::USequencePlayerLibrary_ConvertToSequencePlayerPure_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InSequencePlayer != nullptr)
-		*InSequencePlayer = Parms.SequencePlayer;
+	if (SequencePlayer != nullptr)
+		*SequencePlayer = std::move(Parms.SequencePlayer);
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 }
 
@@ -2528,7 +2861,7 @@ void USequencePlayerLibrary::ConvertToSequencePlayerPure(struct FAnimNodeReferen
 // enum class EAnimNodeReferenceConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequencePlayerReference    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequencePlayerReference USequencePlayerLibrary::ConvertToSequencePlayer(struct FAnimNodeReference& InNode, enum class EAnimNodeReferenceConversionResult* InResult)
+struct FSequencePlayerReference USequencePlayerLibrary::ConvertToSequencePlayer(struct FAnimNodeReference& Node, enum class EAnimNodeReferenceConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2537,18 +2870,18 @@ struct FSequencePlayerReference USequencePlayerLibrary::ConvertToSequencePlayer(
 
 	Params::USequencePlayerLibrary_ConvertToSequencePlayer_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 	return Parms.ReturnValue;
 
@@ -2562,7 +2895,7 @@ struct FSequencePlayerReference USequencePlayerLibrary::ConvertToSequencePlayer(
 // float                              Duration                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USequencePlayerLibrary::ComputePlayRateFromDuration(struct FSequencePlayerReference& InSequencePlayer, float InDuration)
+float USequencePlayerLibrary::ComputePlayRateFromDuration(struct FSequencePlayerReference& SequencePlayer, float Duration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2571,19 +2904,75 @@ float USequencePlayerLibrary::ComputePlayRateFromDuration(struct FSequencePlayer
 
 	Params::USequencePlayerLibrary_ComputePlayRateFromDuration_Params Parms{};
 
-	Parms.SequencePlayer = InSequencePlayer;
-	Parms.Duration = InDuration;
+	Parms.SequencePlayer = SequencePlayer;
+	Parms.Duration = Duration;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AnimGraphRuntime.SequencerAnimationSupport
+// (None)
+
+class UClass* ISequencerAnimationSupport::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SequencerAnimationSupport");
+
+	return Clss;
+}
+
+
+// SequencerAnimationSupport AnimGraphRuntime.Default__SequencerAnimationSupport
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ISequencerAnimationSupport* ISequencerAnimationSupport::GetDefaultObj()
+{
+	static class ISequencerAnimationSupport* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ISequencerAnimationSupport*>(ISequencerAnimationSupport::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AnimGraphRuntime.SkeletalControlLibrary
+// (None)
+
+class UClass* USkeletalControlLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SkeletalControlLibrary");
+
+	return Clss;
+}
+
+
+// SkeletalControlLibrary AnimGraphRuntime.Default__SkeletalControlLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USkeletalControlLibrary* USkeletalControlLibrary::GetDefaultObj()
+{
+	static class USkeletalControlLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USkeletalControlLibrary*>(USkeletalControlLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2594,7 +2983,7 @@ float USequencePlayerLibrary::ComputePlayRateFromDuration(struct FSequencePlayer
 // float                              Alpha                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSkeletalControlReference   ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSkeletalControlReference USkeletalControlLibrary::SetAlpha(struct FSkeletalControlReference& InSkeletalControl, float InAlpha)
+struct FSkeletalControlReference USkeletalControlLibrary::SetAlpha(struct FSkeletalControlReference& SkeletalControl, float Alpha)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2603,16 +2992,16 @@ struct FSkeletalControlReference USkeletalControlLibrary::SetAlpha(struct FSkele
 
 	Params::USkeletalControlLibrary_SetAlpha_Params Parms{};
 
-	Parms.SkeletalControl = InSkeletalControl;
-	Parms.Alpha = InAlpha;
+	Parms.SkeletalControl = SkeletalControl;
+	Parms.Alpha = Alpha;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2625,7 +3014,7 @@ struct FSkeletalControlReference USkeletalControlLibrary::SetAlpha(struct FSkele
 // struct FSkeletalControlReference   SkeletalControl                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USkeletalControlLibrary::GetAlpha(struct FSkeletalControlReference& InSkeletalControl)
+float USkeletalControlLibrary::GetAlpha(struct FSkeletalControlReference& SkeletalControl)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2634,15 +3023,15 @@ float USkeletalControlLibrary::GetAlpha(struct FSkeletalControlReference& InSkel
 
 	Params::USkeletalControlLibrary_GetAlpha_Params Parms{};
 
-	Parms.SkeletalControl = InSkeletalControl;
+	Parms.SkeletalControl = SkeletalControl;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2656,7 +3045,7 @@ float USkeletalControlLibrary::GetAlpha(struct FSkeletalControlReference& InSkel
 // struct FSkeletalControlReference   SkeletalControl                                                  (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               Result                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USkeletalControlLibrary::ConvertToSkeletalControlPure(struct FAnimNodeReference& InNode, struct FSkeletalControlReference* InSkeletalControl, bool* InResult)
+void USkeletalControlLibrary::ConvertToSkeletalControlPure(struct FAnimNodeReference& Node, struct FSkeletalControlReference* SkeletalControl, bool* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2665,21 +3054,21 @@ void USkeletalControlLibrary::ConvertToSkeletalControlPure(struct FAnimNodeRefer
 
 	Params::USkeletalControlLibrary_ConvertToSkeletalControlPure_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InSkeletalControl != nullptr)
-		*InSkeletalControl = Parms.SkeletalControl;
+	if (SkeletalControl != nullptr)
+		*SkeletalControl = std::move(Parms.SkeletalControl);
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 }
 
@@ -2691,7 +3080,7 @@ void USkeletalControlLibrary::ConvertToSkeletalControlPure(struct FAnimNodeRefer
 // enum class EAnimNodeReferenceConversionResultResult                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSkeletalControlReference   ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSkeletalControlReference USkeletalControlLibrary::ConvertToSkeletalControl(struct FAnimNodeReference& InNode, enum class EAnimNodeReferenceConversionResult* InResult)
+struct FSkeletalControlReference USkeletalControlLibrary::ConvertToSkeletalControl(struct FAnimNodeReference& Node, enum class EAnimNodeReferenceConversionResult* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2700,18 +3089,18 @@ struct FSkeletalControlReference USkeletalControlLibrary::ConvertToSkeletalContr
 
 	Params::USkeletalControlLibrary_ConvertToSkeletalControl_Params Parms{};
 
-	Parms.Node = InNode;
+	Parms.Node = Node;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InResult != nullptr)
-		*InResult = Parms.Result;
+	if (Result != nullptr)
+		*Result = Parms.Result;
 
 	return Parms.ReturnValue;
 
@@ -2719,6 +3108,4 @@ struct FSkeletalControlReference USkeletalControlLibrary::ConvertToSkeletalContr
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

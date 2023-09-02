@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,19 +15,14 @@ class UAndroidFileServerBPLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AndroidFileServerBPLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAndroidFileServerBPLibrary* GetDefaultObj();
 
-	bool StopFileServer(bool InbUSB, bool InbNetwork);
-	bool StartFileServer(bool InbUSB, bool InbNetwork, int32 InPort);
+	bool StopFileServer(bool bUSB, bool bNetwork);
+	bool StartFileServer(bool bUSB, bool bNetwork, int32 Port);
 	enum class EAFSActiveType IsFileServerRunning();
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

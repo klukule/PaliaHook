@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,16 +16,13 @@ class UAkPortalComponent : public USceneComponent
 public:
 	bool                                         bDynamic;                                          // 0x2A0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAkAcousticPortalState            InitialState;                                      // 0x2A1(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3D9[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_50E[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ObstructionRefreshInterval;                        // 0x2A4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECollisionChannel                 ObstructionCollisionChannel;                       // 0x2A8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3DB[0xD7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_510[0xD7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkPortalComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkPortalComponent* GetDefaultObj();
 
 	bool PortalPlacementValid();
 	void OpenPortal();
@@ -45,13 +39,10 @@ public:
 	class UAkPortalComponent*                    Portal;                                            // 0x2C8(0x8)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAkAcousticPortalState            InitialState;                                      // 0x2D0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                         bRequiresStateMigration;                           // 0x2D1(0x1)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_3EA[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_515[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAcousticPortal");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class AAkAcousticPortal* GetDefaultObj();
 
 	void OpenPortal();
 	enum class EAkAcousticPortalState GetCurrentState();
@@ -64,14 +55,11 @@ class UAkAudioType : public UObject
 {
 public:
 	uint32                                       ShortID;                                           // 0x28(0x4)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3EB[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_517[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UObject*>                       UserData;                                          // 0x30(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAudioType");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAudioType* GetDefaultObj();
 
 };
 
@@ -81,11 +69,8 @@ class UAkAcousticTexture : public UAkAudioType
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAcousticTexture");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAcousticTexture* GetDefaultObj();
 
 };
 
@@ -94,13 +79,10 @@ public:
 class UAkAcousticTextureSetComponent : public USceneComponent
 {
 public:
-	uint8                                        Pad_3EE[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_51A[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAcousticTextureSetComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAcousticTextureSetComponent* GetDefaultObj();
 
 };
 
@@ -113,13 +95,10 @@ public:
 	class UAkComponent*                          AkComponent;                                       // 0x298(0x8)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         StopWhenOwnerIsDestroyed;                          // 0x2A0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, SimpleDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         AutoPost;                                          // 0x2A1(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, SimpleDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3F7[0x2E];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_522[0x2E];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAmbientSound");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class AAkAmbientSound* GetDefaultObj();
 
 	void StopAmbientSound();
 	void StartAmbientSound();
@@ -130,18 +109,15 @@ public:
 class UAkAndroidInitializationSettings : public UObject
 {
 public:
-	uint8                                        Pad_402[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_528[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x30(0x68)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x98(0x28)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkAndroidAdvancedInitializationSettings AdvancedSettings;                                  // 0xC0(0x38)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAndroidInitializationSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAndroidInitializationSettings* GetDefaultObj();
 
-	void MigrateMultiCoreRendering(bool InNewValue);
+	void MigrateMultiCoreRendering(bool NewValue);
 };
 
 // 0x48 (0x70 - 0x28)
@@ -149,13 +125,10 @@ public:
 class UAkPlatformInfo : public UObject
 {
 public:
-	uint8                                        Pad_403[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_52C[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkPlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkPlatformInfo* GetDefaultObj();
 
 };
 
@@ -165,11 +138,8 @@ class UAkAndroidPlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAndroidPlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAndroidPlatformInfo* GetDefaultObj();
 
 };
 
@@ -179,13 +149,10 @@ class UAkAssetBase : public UAkAudioType
 {
 public:
 	class UAkAssetPlatformData*                  PlatformAssetData;                                 // 0x40(0x8)(Edit, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_405[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_534[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAssetBase");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAssetBase* GetDefaultObj();
 
 };
 
@@ -195,15 +162,12 @@ class UAkAssetData : public UObject
 {
 public:
 	uint32                                       CachedHash;                                        // 0x28(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_406[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_53B[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                BankLanguage;                                      // 0x30(0x10)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_407[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_53C[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAssetData");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAssetData* GetDefaultObj();
 
 };
 
@@ -214,11 +178,8 @@ class UAkAssetDataWithMedia : public UAkAssetData
 public:
 	TArray<class UAkMediaAsset*>                 MediaList;                                         // 0x70(0x10)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAssetDataWithMedia");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAssetDataWithMedia* GetDefaultObj();
 
 };
 
@@ -229,11 +190,8 @@ class UAkAssetPlatformData : public UObject
 public:
 	class UAkAssetData*                          CurrentAssetData;                                  // 0x28(0x8)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAssetPlatformData");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAssetPlatformData* GetDefaultObj();
 
 };
 
@@ -247,11 +205,8 @@ public:
 	TArray<class UAkMediaAsset*>                 MediaList;                                         // 0x60(0x10)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	TArray<class UAkAssetDataSwitchContainerData*> Children;                                          // 0x70(0x10)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAssetDataSwitchContainerData");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAssetDataSwitchContainerData* GetDefaultObj();
 
 };
 
@@ -262,13 +217,10 @@ class UAkAssetDataSwitchContainer : public UAkAssetDataWithMedia
 public:
 	TArray<class UAkAssetDataSwitchContainerData*> SwitchContainers;                                  // 0x80(0x10)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	class UAkGroupValue*                         DefaultGroupValue;                                 // 0x90(0x8)(Edit, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_40D[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_544[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAssetDataSwitchContainer");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAssetDataSwitchContainer* GetDefaultObj();
 
 };
 
@@ -279,7 +231,7 @@ class UAkAudioEventData : public UAkAssetDataSwitchContainer
 public:
 	float                                        MaxAttenuationRadius;                              // 0xE8(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsInfinite;                                        // 0xEC(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_412[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_547[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MinimumDuration;                                   // 0xF0(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaximumDuration;                                   // 0xF4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class FString, class UAkAssetDataSwitchContainer*> LocalizedMedia;                                    // 0xF8(0x50)(Deprecated, NativeAccessSpecifierPublic)
@@ -288,11 +240,8 @@ public:
 	TSet<class UAkTrigger*>                      PostedTriggers;                                    // 0x1E8(0x50)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 	TSet<class UAkGroupValue*>                   GroupValues;                                       // 0x238(0x50)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAudioEventData");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAudioEventData* GetDefaultObj();
 
 };
 
@@ -302,17 +251,14 @@ class UAkAudioBank : public UAkAssetBase
 {
 public:
 	bool                                         AutoLoad;                                          // 0x50(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_417[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_548[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<class FString, class UAkAssetPlatformData*> LocalizedPlatformAssetDataMap;                     // 0x58(0x50)(Edit, EditConst, NativeAccessSpecifierPublic)
 	TSet<TSoftObjectPtr<class UAkAudioEvent>>    LinkedAkEvents;                                    // 0xA8(0x50)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
 	class UAkAssetPlatformData*                  CurrentLocalizedPlatformAssetData;                 // 0xF8(0x8)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_419[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_549[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAudioBank");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAudioBank* GetDefaultObj();
 
 };
 
@@ -323,20 +269,17 @@ class UAkAudioEvent : public UAkAssetBase
 public:
 	TMap<class FString, class UAkAssetPlatformData*> LocalizedPlatformAssetDataMap;                     // 0x50(0x50)(Edit, EditConst, NativeAccessSpecifierPublic)
 	class UAkAudioBank*                          RequiredBank;                                      // 0xA0(0x8)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_42A[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_54C[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkAssetPlatformData*                  CurrentLocalizedPlatformData;                      // 0xB0(0x8)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                        MaxAttenuationRadius;                              // 0xB8(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                         IsInfinite;                                        // 0xBC(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_42C[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_54D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MinimumDuration;                                   // 0xC0(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                        MaximumDuration;                                   // 0xC4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_430[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_54E[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAudioEvent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAudioEvent* GetDefaultObj();
 
 	float GetMinimumDuration();
 	float GetMaximumDuration();
@@ -351,21 +294,18 @@ class UAkGameObject : public USceneComponent
 public:
 	class UAkAudioEvent*                         AkAudioEvent;                                      // 0x2A0(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                EventName;                                         // 0x2A8(0x10)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_490[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_590[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkGameObject");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkGameObject* GetDefaultObj();
 
 	void Stop();
-	void SetRTPCValue(class UAkRtpc* InRTPCValue, float InValue, int32 InInterpolationTimeMs, const class FString& InRTPC);
-	void PostAssociatedAkEventAsync(class UObject* InWorldContextObject, int32 InCallbackMask, FDelegateProperty_& InPostEventCallback, TArray<struct FAkExternalSourceInfo>& InExternalSources, const struct FLatentActionInfo& InLatentInfo, int32* InPlayingID);
-	int32 PostAssociatedAkEvent(int32 InCallbackMask, FDelegateProperty_& InPostEventCallback, TArray<struct FAkExternalSourceInfo>& InExternalSources);
-	void PostAkEventAsync(class UObject* InWorldContextObject, class UAkAudioEvent* InAkEvent, int32* InPlayingID, int32 InCallbackMask, FDelegateProperty_& InPostEventCallback, TArray<struct FAkExternalSourceInfo>& InExternalSources, const struct FLatentActionInfo& InLatentInfo);
-	int32 PostAkEvent(class UAkAudioEvent* InAkEvent, int32 InCallbackMask, FDelegateProperty_& InPostEventCallback, TArray<struct FAkExternalSourceInfo>& InExternalSources, const class FString& InIn_EventName);
-	void GetRTPCValue(class UAkRtpc* InRTPCValue, enum class ERTPCValueType InInputValueType, float* InValue, enum class ERTPCValueType* InOutputValueType, const class FString& InRTPC, int32 InPlayingID);
+	void SetRTPCValue(class UAkRtpc* RTPCValue, float Value, int32 InterpolationTimeMs, const class FString& RTPC);
+	void PostAssociatedAkEventAsync(class UObject* WorldContextObject, int32 CallbackMask, FDelegateProperty_& PostEventCallback, TArray<struct FAkExternalSourceInfo>& ExternalSources, const struct FLatentActionInfo& LatentInfo, int32* PlayingID);
+	int32 PostAssociatedAkEvent(int32 CallbackMask, FDelegateProperty_& PostEventCallback, TArray<struct FAkExternalSourceInfo>& ExternalSources);
+	void PostAkEventAsync(class UObject* WorldContextObject, class UAkAudioEvent* AkEvent, int32* PlayingID, int32 CallbackMask, FDelegateProperty_& PostEventCallback, TArray<struct FAkExternalSourceInfo>& ExternalSources, const struct FLatentActionInfo& LatentInfo);
+	int32 PostAkEvent(class UAkAudioEvent* AkEvent, int32 CallbackMask, FDelegateProperty_& PostEventCallback, TArray<struct FAkExternalSourceInfo>& ExternalSources, const class FString& In_EventName);
+	void GetRTPCValue(class UAkRtpc* RTPCValue, enum class ERTPCValueType InputValueType, float* Value, enum class ERTPCValueType* OutputValueType, const class FString& RTPC, int32 PlayingID);
 };
 
 // 0x1C8 (0x488 - 0x2C0)
@@ -374,13 +314,13 @@ class UAkComponent : public UAkGameObject
 {
 public:
 	bool                                         bUseSpatialAudio;                                  // 0x2C0(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_510[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_5EC[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class ECollisionChannel                 OcclusionCollisionChannel;                         // 0x2C8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         EnableSpotReflectors;                              // 0x2C9(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_513[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_5ED[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        OuterRadius;                                       // 0x2CC(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        InnerRadius;                                       // 0x2D0(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_514[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_5F0[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkAuxBus*                             EarlyReflectionAuxBus;                             // 0x2D8(0x8)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class FString                                EarlyReflectionAuxBusName;                         // 0x2E0(0x10)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                        EarlyReflectionOrder;                              // 0x2F0(0x4)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -395,34 +335,31 @@ public:
 	bool                                         DrawHigherOrderReflections;                        // 0x30E(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         DrawDiffraction;                                   // 0x30F(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         StopWhenOwnerDestroyed;                            // 0x310(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_51A[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_5F5[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        AttenuationScalingFactor;                          // 0x314(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        OcclusionRefreshInterval;                          // 0x318(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUseReverbVolumes;                                 // 0x31C(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_51B[0x16B];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_5F7[0x16B];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkComponent* GetDefaultObj();
 
-	void UseReverbVolumes(bool InInUseReverbVolumes);
-	void UseEarlyReflections(class UAkAuxBus* InAuxBus, int32 InOrder, float InBusSendGain, float InMaxPathLength, bool InSpotReflectors, const class FString& InAuxBusName);
-	void SetSwitch(class UAkSwitchValue* InSwitchValue, const class FString& InSwitchGroup, const class FString& InSwitchState);
-	void SetStopWhenOwnerDestroyed(bool InbStopWhenOwnerDestroyed);
-	void SetOutputBusVolume(float InBusVolume);
-	void SetListeners(TArray<class UAkComponent*>& InListeners);
-	void SetGameObjectRadius(float InIn_outerRadius, float InIn_innerRadius);
-	void SetEarlyReflectionsVolume(float InSendVolume);
-	void SetEarlyReflectionsAuxBus(const class FString& InAuxBusName);
-	void SetAttenuationScalingFactor(float InValue);
-	void PostTrigger(class UAkTrigger* InTriggerValue, const class FString& InTrigger);
-	void PostAssociatedAkEventAndWaitForEndAsync(int32* InPlayingID, TArray<struct FAkExternalSourceInfo>& InExternalSources, const struct FLatentActionInfo& InLatentInfo);
-	int32 PostAssociatedAkEventAndWaitForEnd(TArray<struct FAkExternalSourceInfo>& InExternalSources, const struct FLatentActionInfo& InLatentInfo);
-	int32 PostAkEventByName(const class FString& InIn_EventName);
-	void PostAkEventAndWaitForEndAsync(class UAkAudioEvent* InAkEvent, int32* InPlayingID, TArray<struct FAkExternalSourceInfo>& InExternalSources, const struct FLatentActionInfo& InLatentInfo);
-	int32 PostAkEventAndWaitForEnd(class UAkAudioEvent* InAkEvent, const class FString& InIn_EventName, TArray<struct FAkExternalSourceInfo>& InExternalSources, const struct FLatentActionInfo& InLatentInfo);
+	void UseReverbVolumes(bool InUseReverbVolumes);
+	void UseEarlyReflections(class UAkAuxBus* AuxBus, int32 Order, float BusSendGain, float MaxPathLength, bool SpotReflectors, const class FString& AuxBusName);
+	void SetSwitch(class UAkSwitchValue* SwitchValue, const class FString& SwitchGroup, const class FString& SwitchState);
+	void SetStopWhenOwnerDestroyed(bool bStopWhenOwnerDestroyed);
+	void SetOutputBusVolume(float BusVolume);
+	void SetListeners(TArray<class UAkComponent*>& Listeners);
+	void SetGameObjectRadius(float In_outerRadius, float In_innerRadius);
+	void SetEarlyReflectionsVolume(float SendVolume);
+	void SetEarlyReflectionsAuxBus(const class FString& AuxBusName);
+	void SetAttenuationScalingFactor(float Value);
+	void PostTrigger(class UAkTrigger* TriggerValue, const class FString& Trigger);
+	void PostAssociatedAkEventAndWaitForEndAsync(int32* PlayingID, TArray<struct FAkExternalSourceInfo>& ExternalSources, const struct FLatentActionInfo& LatentInfo);
+	int32 PostAssociatedAkEventAndWaitForEnd(TArray<struct FAkExternalSourceInfo>& ExternalSources, const struct FLatentActionInfo& LatentInfo);
+	int32 PostAkEventByName(const class FString& In_EventName);
+	void PostAkEventAndWaitForEndAsync(class UAkAudioEvent* AkEvent, int32* PlayingID, TArray<struct FAkExternalSourceInfo>& ExternalSources, const struct FLatentActionInfo& LatentInfo);
+	int32 PostAkEventAndWaitForEnd(class UAkAudioEvent* AkEvent, const class FString& In_EventName, TArray<struct FAkExternalSourceInfo>& ExternalSources, const struct FLatentActionInfo& LatentInfo);
 	bool GetAutoDestroy();
 	float GetAttenuationRadius();
 };
@@ -432,13 +369,10 @@ public:
 class UAkAudioInputComponent : public UAkComponent
 {
 public:
-	uint8                                        Pad_521[0x38];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_603[0x38];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAudioInputComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAudioInputComponent* GetDefaultObj();
 
 	int32 PostAssociatedAudioInputEvent();
 };
@@ -450,11 +384,8 @@ class UAkAuxBus : public UAkAssetBase
 public:
 	class UAkAudioBank*                          RequiredBank;                                      // 0x50(0x8)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkAuxBus");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkAuxBus* GetDefaultObj();
 
 };
 
@@ -463,32 +394,29 @@ public:
 class UAkCheckBox : public UContentWidget
 {
 public:
-	uint8                                        Pad_535[0x290];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_622[0x290];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class ECheckBoxState                    CheckedState;                                      // 0x3F8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_536[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_623[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	FDelegateProperty_                           CheckedStateDelegate;                              // 0x3FC(0x10)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_537[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_624[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCheckBoxStyle                        WidgetStyle;                                       // 0x410(0xAD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	enum class EHorizontalAlignment              HorizontalAlignment;                               // 0xEE0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsFocusable;                                       // 0xEE1(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_538[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_626[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkBoolPropertyToControl              ThePropertyToControl;                              // 0xEE8(0x10)(Edit, NativeAccessSpecifierPublic)
 	struct FAkWwiseItemToControl                 ItemToControl;                                     // 0xEF8(0x40)(Edit, Config, EditConst, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            AkOnCheckStateChanged;                             // 0xF38(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnItemDropped;                                     // 0xF48(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnPropertyDropped;                                 // 0xF58(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_53B[0x58];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_629[0x58];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkCheckBox");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkCheckBox* GetDefaultObj();
 
-	void SetIsChecked(bool InInIsChecked);
-	void SetCheckedState(enum class ECheckBoxState InInCheckedState);
-	void SetAkItemId(struct FGuid& InItemId);
-	void SetAkBoolProperty(const class FString& InItemProperty);
+	void SetIsChecked(bool InIsChecked);
+	void SetCheckedState(enum class ECheckBoxState InCheckedState);
+	void SetAkItemId(struct FGuid& ItemId);
+	void SetAkBoolProperty(const class FString& ItemProperty);
 	bool IsPressed();
 	bool IsChecked();
 	enum class ECheckBoxState GetCheckedState();
@@ -501,13 +429,10 @@ public:
 class UDrawPortalComponent : public UPrimitiveComponent
 {
 public:
-	uint8                                        Pad_53E[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_62D[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("DrawPortalComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UDrawPortalComponent* GetDefaultObj();
 
 };
 
@@ -516,13 +441,10 @@ public:
 class UDrawRoomComponent : public UPrimitiveComponent
 {
 public:
-	uint8                                        Pad_542[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_631[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("DrawRoomComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UDrawRoomComponent* GetDefaultObj();
 
 };
 
@@ -533,13 +455,10 @@ class UAkFolder : public UAkAudioType
 public:
 	class FString                                UnrealFolderPath;                                  // 0x40(0x10)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                WwiseFolderPath;                                   // 0x50(0x10)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_545[0x58];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_636[0x58];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkFolder");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkFolder* GetDefaultObj();
 
 };
 
@@ -549,77 +468,74 @@ class UAkGameplayStatics : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkGameplayStatics");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkGameplayStatics* GetDefaultObj();
 
-	void UseReverbVolumes(bool InInUseReverbVolumes, class AActor* InActor);
-	void UseEarlyReflections(class AActor* InActor, class UAkAuxBus* InAuxBus, int32 InOrder, float InBusSendGain, float InMaxPathLength, bool InSpotReflectors, const class FString& InAuxBusName);
-	void UnloadBankByName(const class FString& InBankName);
-	void UnloadBankAsync(class UAkAudioBank* InBank, FDelegateProperty_& InBankUnloadedCallback);
-	void UnloadBank(class UAkAudioBank* InBank, const class FString& InBankName, const struct FLatentActionInfo& InLatentInfo, class UObject* InWorldContextObject);
+	void UseReverbVolumes(bool InUseReverbVolumes, class AActor* Actor);
+	void UseEarlyReflections(class AActor* Actor, class UAkAuxBus* AuxBus, int32 Order, float BusSendGain, float MaxPathLength, bool SpotReflectors, const class FString& AuxBusName);
+	void UnloadBankByName(const class FString& BankName);
+	void UnloadBankAsync(class UAkAudioBank* Bank, FDelegateProperty_& BankUnloadedCallback);
+	void UnloadBank(class UAkAudioBank* Bank, const class FString& BankName, const struct FLatentActionInfo& LatentInfo, class UObject* WorldContextObject);
 	void StopProfilerCapture();
 	void StopOutputCapture();
-	void StopAllAmbientSounds(class UObject* InWorldContextObject);
+	void StopAllAmbientSounds(class UObject* WorldContextObject);
 	void StopAll();
-	void StopActor(class AActor* InActor);
-	void StartProfilerCapture(const class FString& InFilename);
-	void StartOutputCapture(const class FString& InFilename);
-	void StartAllAmbientSounds(class UObject* InWorldContextObject);
-	class UAkComponent* SpawnAkComponentAtLocation(class UObject* InWorldContextObject, class UAkAudioEvent* InAkEvent, const struct FVector& InLocation, const struct FRotator& InOrientation, bool InAutoPost, const class FString& InEventName, bool InAutoDestroy);
-	void SetSwitch(class UAkSwitchValue* InSwitchValue, class AActor* InActor, class FName InSwitchGroup, class FName InSwitchState);
-	void SetState(class UAkStateValue* InStateValue, class FName InStateGroup, class FName InState);
-	void SetSpeakerAngles(TArray<float>& InSpeakerAngles, float InHeightAngle, const class FString& InDeviceShareset);
-	void SetRTPCValue(class UAkRtpc* InRTPCValue, float InValue, int32 InInterpolationTimeMs, class AActor* InActor, class FName InRTPC);
-	void SetReflectionsOrder(int32 InOrder, bool InRefreshPaths);
-	void SetPortalToPortalObstruction(class UAkPortalComponent* InPortalComponent0, class UAkPortalComponent* InPortalComponent1, float InObstructionValue);
-	void SetPortalObstructionAndOcclusion(class UAkPortalComponent* InPortalComponent, float InObstructionValue, float InOcclusionValue);
-	void SetPanningRule(enum class EPanningRule InPanRule);
-	void SetOutputBusVolume(float InBusVolume, class AActor* InActor);
-	void SetOcclusionScalingFactor(float InScalingFactor);
-	void SetOcclusionRefreshInterval(float InRefreshInterval, class AActor* InActor);
-	void SetMultiplePositions(class UAkComponent* InGameObjectAkComponent, const TArray<struct FTransform>& InPositions, enum class EAkMultiPositionType InMultiPositionType);
-	void SetMultipleChannelMaskEmitterPositions(class UAkComponent* InGameObjectAkComponent, const TArray<struct FAkChannelMask>& InChannelMasks, const TArray<struct FTransform>& InPositions, enum class EAkMultiPositionType InMultiPositionType);
-	void SetMultipleChannelEmitterPositions(class UAkComponent* InGameObjectAkComponent, const TArray<enum class EAkChannelConfiguration>& InChannelMasks, const TArray<struct FTransform>& InPositions, enum class EAkMultiPositionType InMultiPositionType);
-	void SetGameObjectToPortalObstruction(class UAkComponent* InGameObjectAkComponent, class UAkPortalComponent* InPortalComponent, float InObstructionValue);
-	void SetCurrentAudioCultureAsync(const class FString& InAudioCulture, FDelegateProperty_& InCompleted);
-	void SetCurrentAudioCulture(const class FString& InAudioCulture, const struct FLatentActionInfo& InLatentInfo, class UObject* InWorldContextObject);
-	void SetBusConfig(const class FString& InBusName, enum class EAkChannelConfiguration InChannelConfiguration);
-	void ResetRTPCValue(class UAkRtpc* InRTPCValue, int32 InInterpolationTimeMs, class AActor* InActor, class FName InRTPC);
-	void ReplaceMainOutput(struct FAkOutputSettings& InMainOutputSettings);
-	void PostTrigger(class UAkTrigger* InTriggerValue, class AActor* InActor, class FName InTrigger);
-	void PostGlobalSwitch(class UAkSwitchValue* InSwitchValue, class FName InSwitchGroup, class FName InSwitchState);
-	int32 PostGlobalMusic(class UAkAudioEvent* InAkEvent, int32 InCallbackMask, FDelegateProperty_& InPostEventCallback);
-	int32 PostGlobalEvent(class UAkAudioEvent* InAkEvent);
-	void PostEventByName(const class FString& InEventName, class AActor* InActor, bool InbStopWhenAttachedToDestroyed);
-	int32 PostEventAttached(class UAkAudioEvent* InAkEvent, class AActor* InActor, class FName InAttachPointName, bool InbStopWhenAttachedToDestroyed, const class FString& InEventName);
-	void PostEventAtLocationByName(const class FString& InEventName, const struct FVector& InLocation, const struct FRotator& InOrientation, class UObject* InWorldContextObject);
-	int32 PostEventAtLocation(class UAkAudioEvent* InAkEvent, const struct FVector& InLocation, const struct FRotator& InOrientation, const class FString& InEventName, class UObject* InWorldContextObject);
-	int32 PostEvent(class UAkAudioEvent* InAkEvent, class AActor* InActor, int32 InCallbackMask, FDelegateProperty_& InPostEventCallback, TArray<struct FAkExternalSourceInfo>& InExternalSources, bool InbStopWhenAttachedToDestroyed, const class FString& InEventName);
-	void PostAndWaitForEndOfEventAsync(class UAkAudioEvent* InAkEvent, class AActor* InActor, int32* InPlayingID, bool InbStopWhenAttachedToDestroyed, TArray<struct FAkExternalSourceInfo>& InExternalSources, const struct FLatentActionInfo& InLatentInfo);
-	int32 PostAndWaitForEndOfEvent(class UAkAudioEvent* InAkEvent, class AActor* InActor, bool InbStopWhenAttachedToDestroyed, TArray<struct FAkExternalSourceInfo>& InExternalSources, const class FString& InEventName, const struct FLatentActionInfo& InLatentInfo);
+	void StopActor(class AActor* Actor);
+	void StartProfilerCapture(const class FString& Filename);
+	void StartOutputCapture(const class FString& Filename);
+	void StartAllAmbientSounds(class UObject* WorldContextObject);
+	class UAkComponent* SpawnAkComponentAtLocation(class UObject* WorldContextObject, class UAkAudioEvent* AkEvent, const struct FVector& Location, const struct FRotator& Orientation, bool AutoPost, const class FString& EventName, bool AutoDestroy);
+	void SetSwitch(class UAkSwitchValue* SwitchValue, class AActor* Actor, class FName SwitchGroup, class FName SwitchState);
+	void SetState(class UAkStateValue* StateValue, class FName StateGroup, class FName State);
+	void SetSpeakerAngles(TArray<float>& SpeakerAngles, float HeightAngle, const class FString& DeviceShareset);
+	void SetRTPCValue(class UAkRtpc* RTPCValue, float Value, int32 InterpolationTimeMs, class AActor* Actor, class FName RTPC);
+	void SetReflectionsOrder(int32 Order, bool RefreshPaths);
+	void SetPortalToPortalObstruction(class UAkPortalComponent* PortalComponent0, class UAkPortalComponent* PortalComponent1, float ObstructionValue);
+	void SetPortalObstructionAndOcclusion(class UAkPortalComponent* PortalComponent, float ObstructionValue, float OcclusionValue);
+	void SetPanningRule(enum class EPanningRule PanRule);
+	void SetOutputBusVolume(float BusVolume, class AActor* Actor);
+	void SetOcclusionScalingFactor(float ScalingFactor);
+	void SetOcclusionRefreshInterval(float RefreshInterval, class AActor* Actor);
+	void SetMultiplePositions(class UAkComponent* GameObjectAkComponent, const TArray<struct FTransform>& Positions, enum class EAkMultiPositionType MultiPositionType);
+	void SetMultipleChannelMaskEmitterPositions(class UAkComponent* GameObjectAkComponent, const TArray<struct FAkChannelMask>& ChannelMasks, const TArray<struct FTransform>& Positions, enum class EAkMultiPositionType MultiPositionType);
+	void SetMultipleChannelEmitterPositions(class UAkComponent* GameObjectAkComponent, const TArray<enum class EAkChannelConfiguration>& ChannelMasks, const TArray<struct FTransform>& Positions, enum class EAkMultiPositionType MultiPositionType);
+	void SetGameObjectToPortalObstruction(class UAkComponent* GameObjectAkComponent, class UAkPortalComponent* PortalComponent, float ObstructionValue);
+	void SetCurrentAudioCultureAsync(const class FString& AudioCulture, FDelegateProperty_& Completed);
+	void SetCurrentAudioCulture(const class FString& AudioCulture, const struct FLatentActionInfo& LatentInfo, class UObject* WorldContextObject);
+	void SetBusConfig(const class FString& BusName, enum class EAkChannelConfiguration ChannelConfiguration);
+	void ResetRTPCValue(class UAkRtpc* RTPCValue, int32 InterpolationTimeMs, class AActor* Actor, class FName RTPC);
+	void ReplaceMainOutput(struct FAkOutputSettings& MainOutputSettings);
+	void PostTrigger(class UAkTrigger* TriggerValue, class AActor* Actor, class FName Trigger);
+	void PostGlobalSwitch(class UAkSwitchValue* SwitchValue, class FName SwitchGroup, class FName SwitchState);
+	int32 PostGlobalMusic(class UAkAudioEvent* AkEvent, int32 CallbackMask, FDelegateProperty_& PostEventCallback);
+	int32 PostGlobalEvent(class UAkAudioEvent* AkEvent);
+	void PostEventByName(const class FString& EventName, class AActor* Actor, bool bStopWhenAttachedToDestroyed);
+	int32 PostEventAttached(class UAkAudioEvent* AkEvent, class AActor* Actor, class FName AttachPointName, bool bStopWhenAttachedToDestroyed, const class FString& EventName);
+	void PostEventAtLocationByName(const class FString& EventName, const struct FVector& Location, const struct FRotator& Orientation, class UObject* WorldContextObject);
+	int32 PostEventAtLocation(class UAkAudioEvent* AkEvent, const struct FVector& Location, const struct FRotator& Orientation, const class FString& EventName, class UObject* WorldContextObject);
+	int32 PostEvent(class UAkAudioEvent* AkEvent, class AActor* Actor, int32 CallbackMask, FDelegateProperty_& PostEventCallback, TArray<struct FAkExternalSourceInfo>& ExternalSources, bool bStopWhenAttachedToDestroyed, const class FString& EventName);
+	void PostAndWaitForEndOfEventAsync(class UAkAudioEvent* AkEvent, class AActor* Actor, int32* PlayingID, bool bStopWhenAttachedToDestroyed, TArray<struct FAkExternalSourceInfo>& ExternalSources, const struct FLatentActionInfo& LatentInfo);
+	int32 PostAndWaitForEndOfEvent(class UAkAudioEvent* AkEvent, class AActor* Actor, bool bStopWhenAttachedToDestroyed, TArray<struct FAkExternalSourceInfo>& ExternalSources, const class FString& EventName, const struct FLatentActionInfo& LatentInfo);
 	void LoadInitBank();
-	void LoadBanks(TArray<class UAkAudioBank*>& InSoundBanks, bool InSynchronizeSoundBanks);
-	void LoadBankByName(const class FString& InBankName);
-	void LoadBankAsync(class UAkAudioBank* InBank, FDelegateProperty_& InBankLoadedCallback);
-	void LoadBank(class UAkAudioBank* InBank, const class FString& InBankName, const struct FLatentActionInfo& InLatentInfo, class UObject* InWorldContextObject);
-	bool IsGame(class UObject* InWorldContextObject);
+	void LoadBanks(TArray<class UAkAudioBank*>& SoundBanks, bool SynchronizeSoundBanks);
+	void LoadBankByName(const class FString& BankName);
+	void LoadBankAsync(class UAkAudioBank* Bank, FDelegateProperty_& BankLoadedCallback);
+	void LoadBank(class UAkAudioBank* Bank, const class FString& BankName, const struct FLatentActionInfo& LatentInfo, class UObject* WorldContextObject);
+	bool IsGame(class UObject* WorldContextObject);
 	bool IsEditor();
-	void GetSpeakerAngles(TArray<float>* InSpeakerAngles, float* InHeightAngle, const class FString& InDeviceShareset);
-	void GetRTPCValue(class UAkRtpc* InRTPCValue, int32 InPlayingID, enum class ERTPCValueType InInputValueType, float* InValue, enum class ERTPCValueType* InOutputValueType, class AActor* InActor, class FName InRTPC);
+	void GetSpeakerAngles(TArray<float>* SpeakerAngles, float* HeightAngle, const class FString& DeviceShareset);
+	void GetRTPCValue(class UAkRtpc* RTPCValue, int32 PlayingID, enum class ERTPCValueType InputValueType, float* Value, enum class ERTPCValueType* OutputValueType, class AActor* Actor, class FName RTPC);
 	float GetOcclusionScalingFactor();
 	class FString GetCurrentAudioCulture();
 	TArray<class FString> GetAvailableAudioCultures();
-	class UObject* GetAkMediaAssetUserData(class UAkMediaAsset* InInstance, class UClass* InType);
-	class UAkComponent* GetAkComponent(class USceneComponent* InAttachToComponent, bool* InComponentCreated, class FName InAttachPointName, const struct FVector& InLocation, enum class EAttachLocation InLocationType);
-	class UObject* GetAkAudioTypeUserData(class UAkAudioType* InInstance, class UClass* InType);
-	void ExecuteActionOnPlayingID(enum class EAkActionOnEventType InActionType, int32 InPlayingID, int32 InTransitionDuration, enum class EAkCurveInterpolation InFadeCurve);
-	void ExecuteActionOnEvent(class UAkAudioEvent* InAkEvent, enum class EAkActionOnEventType InActionType, class AActor* InActor, int32 InTransitionDuration, enum class EAkCurveInterpolation InFadeCurve, int32 InPlayingID);
+	class UObject* GetAkMediaAssetUserData(class UAkMediaAsset* Instance, class UClass* Type);
+	class UAkComponent* GetAkComponent(class USceneComponent* AttachToComponent, bool* ComponentCreated, class FName AttachPointName, const struct FVector& Location, enum class EAttachLocation LocationType);
+	class UObject* GetAkAudioTypeUserData(class UAkAudioType* Instance, class UClass* Type);
+	void ExecuteActionOnPlayingID(enum class EAkActionOnEventType ActionType, int32 PlayingID, int32 TransitionDuration, enum class EAkCurveInterpolation FadeCurve);
+	void ExecuteActionOnEvent(class UAkAudioEvent* AkEvent, enum class EAkActionOnEventType ActionType, class AActor* Actor, int32 TransitionDuration, enum class EAkCurveInterpolation FadeCurve, int32 PlayingID);
 	void ClearBanks();
-	void CancelEventCallback(FDelegateProperty_& InPostEventCallback);
-	void AddOutputCaptureMarker(const class FString& InMarkerText);
+	void CancelEventCallback(FDelegateProperty_& PostEventCallback);
+	void AddOutputCaptureMarker(const class FString& MarkerText);
 };
 
 // 0x8 (0x30 - 0x28)
@@ -629,11 +545,8 @@ class UAkCallbackInfo : public UObject
 public:
 	class UAkComponent*                          AkComponent;                                       // 0x28(0x8)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkCallbackInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkCallbackInfo* GetDefaultObj();
 
 };
 
@@ -645,11 +558,8 @@ public:
 	int32                                        PlayingID;                                         // 0x30(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        EventId;                                           // 0x34(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkEventCallbackInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkEventCallbackInfo* GetDefaultObj();
 
 };
 
@@ -658,24 +568,21 @@ public:
 class UAkMIDIEventCallbackInfo : public UAkEventCallbackInfo
 {
 public:
-	uint8                                        Pad_8BD[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7D8[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkMIDIEventCallbackInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkMIDIEventCallbackInfo* GetDefaultObj();
 
 	enum class EAkMidiEventType GetType();
-	bool GetProgramChange(struct FAkMidiProgramChange* InAsProgramChange);
-	bool GetPitchBend(struct FAkMidiPitchBend* InAsPitchBend);
-	bool GetNoteOn(struct FAkMidiNoteOnOff* InAsNoteOn);
-	bool GetNoteOff(struct FAkMidiNoteOnOff* InAsNoteOff);
-	bool GetNoteAftertouch(struct FAkMidiNoteAftertouch* InAsNoteAftertouch);
-	bool GetGeneric(struct FAkMidiGeneric* InAsGeneric);
-	bool GetChannelAftertouch(struct FAkMidiChannelAftertouch* InAsChannelAftertouch);
+	bool GetProgramChange(struct FAkMidiProgramChange* AsProgramChange);
+	bool GetPitchBend(struct FAkMidiPitchBend* AsPitchBend);
+	bool GetNoteOn(struct FAkMidiNoteOnOff* AsNoteOn);
+	bool GetNoteOff(struct FAkMidiNoteOnOff* AsNoteOff);
+	bool GetNoteAftertouch(struct FAkMidiNoteAftertouch* AsNoteAftertouch);
+	bool GetGeneric(struct FAkMidiGeneric* AsGeneric);
+	bool GetChannelAftertouch(struct FAkMidiChannelAftertouch* AsChannelAftertouch);
 	uint8 GetChannel();
-	bool GetCc(struct FAkMidiCc* InAsCc);
+	bool GetCc(struct FAkMidiCc* AsCc);
 };
 
 // 0x18 (0x50 - 0x38)
@@ -687,11 +594,8 @@ public:
 	int32                                        Position;                                          // 0x3C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Label;                                             // 0x40(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkMarkerCallbackInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkMarkerCallbackInfo* GetDefaultObj();
 
 };
 
@@ -705,13 +609,10 @@ public:
 	int32                                        AudioNodeID;                                       // 0x40(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MediaID;                                           // 0x44(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bStreaming;                                        // 0x48(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8C8[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7E9[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkDurationCallbackInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkDurationCallbackInfo* GetDefaultObj();
 
 };
 
@@ -723,14 +624,11 @@ public:
 	int32                                        PlayingID;                                         // 0x30(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FAkSegmentInfo                        SegmentInfo;                                       // 0x34(0x24)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EAkCallbackType                   MusicSyncType;                                     // 0x58(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8CA[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7F1[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                UserCueName;                                       // 0x60(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkMusicSyncCallbackInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkMusicSyncCallbackInfo* GetDefaultObj();
 
 };
 
@@ -740,26 +638,23 @@ class UAkGeometryComponent : public UAkAcousticTextureSetComponent
 {
 public:
 	enum class EAkMeshType                       MeshType;                                          // 0x2B8(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8D7[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7FB[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        LOD;                                               // 0x2BC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WeldingThreshold;                                  // 0x2C0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8DE[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7FD[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<class UMaterialInterface*, struct FAkGeometrySurfaceOverride> StaticMeshSurfaceOverride;                         // 0x2C8(0x50)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FAkGeometrySurfaceOverride            CollisionMeshSurfaceOverride;                      // 0x318(0x18)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bEnableDiffraction;                                // 0x330(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableDiffractionOnBoundaryEdges;                 // 0x331(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8EF[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7FF[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                AssociatedRoom;                                    // 0x338(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8F2[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_800[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkGeometryData                       GeometryData;                                      // 0x350(0x50)(NativeAccessSpecifierPrivate)
 	TMap<int32, double>                          SurfaceAreas;                                      // 0x3A0(0x50)(NativeAccessSpecifierPrivate)
-	uint8                                        Pad_8F3[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_804[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkGeometryComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkGeometryComponent* GetDefaultObj();
 
 	void UpdateGeometry();
 	void SendGeometry();
@@ -774,13 +669,10 @@ class UAkGroupValue : public UAkAudioType
 public:
 	TArray<TSoftObjectPtr<class UAkMediaAsset>>  MediaDependencies;                                 // 0x40(0x10)(Edit, ZeroConstructor, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
 	uint32                                       GroupShortID;                                      // 0x50(0x4)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8FA[0x14];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_80B[0x14];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkGroupValue");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkGroupValue* GetDefaultObj();
 
 };
 
@@ -789,19 +681,16 @@ public:
 class UAkHololensInitializationSettings : public UObject
 {
 public:
-	uint8                                        Pad_8FF[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_80E[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x30(0x68)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x98(0x28)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkHololensAdvancedInitializationSettings AdvancedSettings;                                  // 0xC0(0x34)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	uint8                                        Pad_901[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_80F[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkHololensInitializationSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkHololensInitializationSettings* GetDefaultObj();
 
-	void MigrateMultiCoreRendering(bool InNewValue);
+	void MigrateMultiCoreRendering(bool NewValue);
 };
 
 // 0x0 (0x70 - 0x70)
@@ -810,11 +699,8 @@ class UAkHololensPlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkHololensPlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkHololensPlatformInfo* GetDefaultObj();
 
 };
 
@@ -825,11 +711,8 @@ class UAkInitBankAssetData : public UAkAssetDataWithMedia
 public:
 	TArray<struct FAkPluginInfo>                 PluginInfos;                                       // 0x80(0x10)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkInitBankAssetData");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkInitBankAssetData* GetDefaultObj();
 
 };
 
@@ -841,11 +724,8 @@ public:
 	TArray<class FString>                        AvailableAudioCultures;                            // 0x50(0x10)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	class FString                                DefaultLanguage;                                   // 0x60(0x10)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkInitBank");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkInitBank* GetDefaultObj();
 
 };
 
@@ -854,19 +734,16 @@ public:
 class UAkIOSInitializationSettings : public UObject
 {
 public:
-	uint8                                        Pad_90B[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_81D[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x30(0x68)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkAudioSession                       AudioSession;                                      // 0x98(0xC)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_915[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_81F[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0xA8(0x28)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkAdvancedInitializationSettings     AdvancedSettings;                                  // 0xD0(0x2C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	uint8                                        Pad_917[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_820[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkIOSInitializationSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkIOSInitializationSettings* GetDefaultObj();
 
 };
 
@@ -876,11 +753,8 @@ class UAkIOSPlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkIOSPlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkIOSPlatformInfo* GetDefaultObj();
 
 };
 
@@ -890,14 +764,11 @@ class UAkItemBoolPropertiesConv : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkItemBoolPropertiesConv");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkItemBoolPropertiesConv* GetDefaultObj();
 
-	class FText Conv_FAkBoolPropertyToControlToText(struct FAkBoolPropertyToControl& InINAkBoolPropertyToControl);
-	class FString Conv_FAkBoolPropertyToControlToString(struct FAkBoolPropertyToControl& InINAkBoolPropertyToControl);
+	class FText Conv_FAkBoolPropertyToControlToText(struct FAkBoolPropertyToControl& INAkBoolPropertyToControl);
+	class FString Conv_FAkBoolPropertyToControlToString(struct FAkBoolPropertyToControl& INAkBoolPropertyToControl);
 };
 
 // 0x40 (0x190 - 0x150)
@@ -907,15 +778,12 @@ class UAkItemBoolProperties : public UWidget
 public:
 	FMulticastInlineDelegateProperty_            OnSelectionChanged;                                // 0x150(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnPropertyDragged;                                 // 0x160(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_946[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_845[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkItemBoolProperties");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkItemBoolProperties* GetDefaultObj();
 
-	void SetSearchText(const class FString& InNewText);
+	void SetSearchText(const class FString& NewText);
 	class FString GetSelectedProperty();
 	class FString GetSearchText();
 };
@@ -926,14 +794,11 @@ class UAkItemPropertiesConv : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkItemPropertiesConv");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkItemPropertiesConv* GetDefaultObj();
 
-	class FText Conv_FAkPropertyToControlToText(struct FAkPropertyToControl& InINAkPropertyToControl);
-	class FString Conv_FAkPropertyToControlToString(struct FAkPropertyToControl& InINAkPropertyToControl);
+	class FText Conv_FAkPropertyToControlToText(struct FAkPropertyToControl& INAkPropertyToControl);
+	class FString Conv_FAkPropertyToControlToString(struct FAkPropertyToControl& INAkPropertyToControl);
 };
 
 // 0x40 (0x190 - 0x150)
@@ -943,15 +808,12 @@ class UAkItemProperties : public UWidget
 public:
 	FMulticastInlineDelegateProperty_            OnSelectionChanged;                                // 0x150(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnPropertyDragged;                                 // 0x160(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_96D[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_874[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkItemProperties");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkItemProperties* GetDefaultObj();
 
-	void SetSearchText(const class FString& InNewText);
+	void SetSearchText(const class FString& NewText);
 	class FString GetSelectedProperty();
 	class FString GetSearchText();
 };
@@ -962,25 +824,22 @@ class UAkLateReverbComponent : public USceneComponent
 {
 public:
 	bool                                         bEnable;                                           // 0x2A0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_97B[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_880[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        SendLevel;                                         // 0x2A4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        FadeRate;                                          // 0x2A8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Priority;                                          // 0x2AC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         AutoAssignAuxBus;                                  // 0x2B0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_97E[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_884[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkAuxBus*                             AuxBus;                                            // 0x2B8(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                AuxBusName;                                        // 0x2C0(0x10)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_97F[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_885[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkAuxBus*                             AuxBusManual;                                      // 0x2D8(0x8)(Edit, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_980[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_886[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkLateReverbComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkLateReverbComponent* GetDefaultObj();
 
-	void AssociateAkTextureSetComponent(class UAkAcousticTextureSetComponent* InTextureSetComponent);
+	void AssociateAkTextureSetComponent(class UAkAcousticTextureSetComponent* TextureSetComponent);
 };
 
 // 0xC8 (0xF0 - 0x28)
@@ -988,18 +847,15 @@ public:
 class UAkLinuxInitializationSettings : public UObject
 {
 public:
-	uint8                                        Pad_98A[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_892[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x30(0x68)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x98(0x28)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                                  // 0xC0(0x30)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkLinuxInitializationSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkLinuxInitializationSettings* GetDefaultObj();
 
-	void MigrateMultiCoreRendering(bool InNewValue);
+	void MigrateMultiCoreRendering(bool NewValue);
 };
 
 // 0x0 (0x70 - 0x70)
@@ -1008,11 +864,8 @@ class UAkLinuxPlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkLinuxPlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkLinuxPlatformInfo* GetDefaultObj();
 
 };
 
@@ -1021,18 +874,15 @@ public:
 class UAkMacInitializationSettings : public UObject
 {
 public:
-	uint8                                        Pad_996[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_89C[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x30(0x68)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x98(0x28)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                                  // 0xC0(0x30)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkMacInitializationSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkMacInitializationSettings* GetDefaultObj();
 
-	void MigrateMultiCoreRendering(bool InNewValue);
+	void MigrateMultiCoreRendering(bool NewValue);
 };
 
 // 0x0 (0x70 - 0x70)
@@ -1041,11 +891,8 @@ class UAkMacPlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkMacPlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkMacPlatformInfo* GetDefaultObj();
 
 };
 
@@ -1056,16 +903,13 @@ class UAkMediaAssetData : public UObject
 public:
 	bool                                         IsStreamed;                                        // 0x28(0x1)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         UseDeviceMemory;                                   // 0x29(0x1)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_99B[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8A8[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Language;                                          // 0x30(0x10)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                AssetPlatform;                                     // 0x40(0x10)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_99E[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_8AC[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkMediaAssetData");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkMediaAssetData* GetDefaultObj();
 
 };
 
@@ -1075,20 +919,17 @@ class UAkMediaAsset : public UObject
 {
 public:
 	uint32                                       ID;                                                // 0x28(0x4)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9A2[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8B0[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                MediaName;                                         // 0x30(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         AutoLoad;                                          // 0x40(0x1)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9A4[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8B2[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UObject*>                       UserData;                                          // 0x48(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	class FString                                Language;                                          // 0x58(0x10)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAkMediaAssetData*                     CurrentMediaAssetData;                             // 0x68(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_9A5[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_8B3[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkMediaAsset");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkMediaAsset* GetDefaultObj();
 
 };
 
@@ -1098,11 +939,8 @@ class UAkLocalizedMediaAsset : public UAkMediaAsset
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkLocalizedMediaAsset");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkLocalizedMediaAsset* GetDefaultObj();
 
 };
 
@@ -1111,13 +949,10 @@ public:
 class UAkExternalMediaAsset : public UAkMediaAsset
 {
 public:
-	uint8                                        Pad_9A7[0x60];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_8B9[0x60];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkExternalMediaAsset");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkExternalMediaAsset* GetDefaultObj();
 
 };
 
@@ -1127,11 +962,8 @@ class IAkPlatformInitialisationSettingsBase : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkPlatformInitialisationSettingsBase");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IAkPlatformInitialisationSettingsBase* GetDefaultObj();
 
 };
 
@@ -1140,18 +972,15 @@ public:
 class UAkPS4InitializationSettings : public UObject
 {
 public:
-	uint8                                        Pad_9AC[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8C5[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommonInitializationSettings       CommonSettings;                                    // 0x30(0x60)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x90(0x28)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkPS4AdvancedInitializationSettings  AdvancedSettings;                                  // 0xB8(0x38)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkPS4InitializationSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkPS4InitializationSettings* GetDefaultObj();
 
-	void MigrateMultiCoreRendering(bool InNewValue);
+	void MigrateMultiCoreRendering(bool NewValue);
 };
 
 // 0x0 (0x70 - 0x70)
@@ -1160,11 +989,8 @@ class UAkPS4PlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkPS4PlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkPS4PlatformInfo* GetDefaultObj();
 
 };
 
@@ -1174,20 +1000,17 @@ class AAkReverbVolume : public AVolume
 {
 public:
 	bool                                         bEnabled;                                          // 0x2C8(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9B0[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8D0[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkAuxBus*                             AuxBus;                                            // 0x2D0(0x8)(ZeroConstructor, Deprecated, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                AuxBusName;                                        // 0x2D8(0x10)(ZeroConstructor, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SendLevel;                                         // 0x2E8(0x4)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        FadeRate;                                          // 0x2EC(0x4)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Priority;                                          // 0x2F0(0x4)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9B2[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8D6[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkLateReverbComponent*                LateReverbComponent;                               // 0x2F8(0x8)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkReverbVolume");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class AAkReverbVolume* GetDefaultObj();
 
 };
 
@@ -1198,22 +1021,19 @@ class UAkRoomComponent : public UAkGameObject
 public:
 	bool                                         bEnable;                                           // 0x2C0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDynamic;                                          // 0x2C1(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9B6[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8E5[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Priority;                                          // 0x2C4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WallOcclusion;                                     // 0x2C8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AuxSendLevel;                                      // 0x2CC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         AutoPost;                                          // 0x2D0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, SimpleDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9B7[0xF];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8ED[0xF];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkAcousticTextureSetComponent*        GeometryComponent;                                 // 0x2E0(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_9B8[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_8EF[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkRoomComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkRoomComponent* GetDefaultObj();
 
-	void SetGeometryComponent(class UAkAcousticTextureSetComponent* InTextureSetComponent);
+	void SetGeometryComponent(class UAkAcousticTextureSetComponent* TextureSetComponent);
 	class UPrimitiveComponent* GetPrimitiveParent();
 };
 
@@ -1223,11 +1043,8 @@ class UAkRtpc : public UAkAudioType
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkRtpc");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkRtpc* GetDefaultObj();
 
 };
 
@@ -1237,16 +1054,16 @@ class UAkSettings : public UObject
 {
 public:
 	uint8                                        MaxSimultaneousReverbVolumes;                      // 0x28(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9BF[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8FA[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FFilePath                             WwiseProjectPath;                                  // 0x30(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDirectoryPath                        WwiseSoundDataFolder;                              // 0x40(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAutoConnectToWAAPI;                               // 0x50(0x1)(ZeroConstructor, Config, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECollisionChannel                 DefaultOcclusionCollisionChannel;                  // 0x51(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECollisionChannel                 DefaultFitToGeometryCollisionChannel;              // 0x52(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9C8[0x5];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_900[0x5];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<TSoftObjectPtr<class UPhysicalMaterial>, struct FAkGeometrySurfacePropertiesToMap> AkGeometryMap;                                     // 0x58(0x50)(Edit, EditFixedSize, Config, NativeAccessSpecifierPublic)
 	float                                        GlobalDecayAbsorption;                             // 0xA8(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9CB[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_90C[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftObjectPtr<class UAkAuxBus>              DefaultReverbAuxBus;                               // 0xB0(0x30)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<float, TSoftObjectPtr<class UAkAuxBus>> EnvironmentDecayAuxBusMap;                         // 0xE0(0x50)(Edit, Config, UObjectWrapper, NativeAccessSpecifierPublic)
 	class FString                                HFDampingName;                                     // 0x130(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1262,23 +1079,20 @@ public:
 	bool                                         UseEventBasedPackaging;                            // 0x272(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnsureSoundDataPathIsAlwaysCooked;                // 0x273(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         EnableAutomaticAssetSynchronization;               // 0x274(0x1)(ZeroConstructor, Config, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9DB[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_91C[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                CommandletCommitMessage;                           // 0x278(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class FString, class FString>           UnrealCultureToWwiseCulture;                       // 0x288(0x50)(Edit, Config, NativeAccessSpecifierPublic)
 	bool                                         AskedToUseNewAssetManagement;                      // 0x2D8(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableMultiCoreRendering;                         // 0x2D9(0x1)(ZeroConstructor, Config, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         MigratedEnableMultiCoreRendering;                  // 0x2DA(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         FixupRedirectorsDuringMigration;                   // 0x2DB(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9E0[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_921[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FDirectoryPath                        WwiseWindowsInstallationPath;                      // 0x2E0(0x10)(ZeroConstructor, Config, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FFilePath                             WwiseMacInstallationPath;                          // 0x2F0(0x10)(ZeroConstructor, Config, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9E1[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_922[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkSettings* GetDefaultObj();
 
 };
 
@@ -1290,20 +1104,17 @@ public:
 	struct FDirectoryPath                        WwiseWindowsInstallationPath;                      // 0x28(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FFilePath                             WwiseMacInstallationPath;                          // 0x38(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         EnableAutomaticAssetSynchronization;               // 0x48(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9E3[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_928[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                WaapiIPAddress;                                    // 0x50(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                       WaapiPort;                                         // 0x60(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAutoConnectToWAAPI;                               // 0x64(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         AutoSyncSelection;                                 // 0x65(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         SuppressWwiseProjectPathWarnings;                  // 0x66(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         SoundDataGenerationSkipLanguage;                   // 0x67(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9E4[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_92C[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkSettingsPerUser");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkSettingsPerUser* GetDefaultObj();
 
 };
 
@@ -1314,39 +1125,36 @@ class UAkSlider : public UWidget
 public:
 	float                                        Value;                                             // 0x150(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           ValueDelegate;                                     // 0x154(0x10)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A34[0xC];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_95D[0xC];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSliderStyle                          WidgetStyle;                                       // 0x170(0x500)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	enum class EOrientation                      Orientation;                                       // 0x670(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A37[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_95E[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FLinearColor                          SliderBarColor;                                    // 0x674(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          SliderHandleColor;                                 // 0x684(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IndentHandle;                                      // 0x694(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Locked;                                            // 0x695(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A3D[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_965[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        StepSize;                                          // 0x698(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsFocusable;                                       // 0x69C(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A3F[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_967[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkPropertyToControl                  ThePropertyToControl;                              // 0x6A0(0x10)(Edit, EditConst, NativeAccessSpecifierPublic)
 	struct FAkWwiseItemToControl                 ItemToControl;                                     // 0x6B0(0x40)(Edit, Config, EditConst, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnValueChanged;                                    // 0x6F0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnItemDropped;                                     // 0x700(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnPropertyDropped;                                 // 0x710(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A41[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_969[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkSlider");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkSlider* GetDefaultObj();
 
-	void SetValue(float InInValue);
-	void SetStepSize(float InInValue);
-	void SetSliderHandleColor(const struct FLinearColor& InInValue);
-	void SetSliderBarColor(const struct FLinearColor& InInValue);
-	void SetLocked(bool InInValue);
-	void SetIndentHandle(bool InInValue);
-	void SetAkSliderItemProperty(const class FString& InItemProperty);
-	void SetAkSliderItemId(struct FGuid& InItemId);
+	void SetValue(float InValue);
+	void SetStepSize(float InValue);
+	void SetSliderHandleColor(const struct FLinearColor& InValue);
+	void SetSliderBarColor(const struct FLinearColor& InValue);
+	void SetLocked(bool InValue);
+	void SetIndentHandle(bool InValue);
+	void SetAkSliderItemProperty(const class FString& ItemProperty);
+	void SetAkSliderItemId(struct FGuid& ItemId);
 	float GetValue();
 	class FString GetAkSliderItemProperty();
 	struct FGuid GetAkSliderItemId();
@@ -1361,11 +1169,8 @@ public:
 	class UAkLateReverbComponent*                LateReverb;                                        // 0x2D0(0x8)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAkRoomComponent*                      Room;                                              // 0x2D8(0x8)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkSpatialAudioVolume");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class AAkSpatialAudioVolume* GetDefaultObj();
 
 };
 
@@ -1380,11 +1185,8 @@ public:
 	float                                        DistanceScalingFactor;                             // 0x2B0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Level;                                             // 0x2B4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkSpotReflector");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class AAkSpotReflector* GetDefaultObj();
 
 };
 
@@ -1394,11 +1196,8 @@ class UAkStateValue : public UAkGroupValue
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkStateValue");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkStateValue* GetDefaultObj();
 
 };
 
@@ -1408,13 +1207,10 @@ class UAkSubmixInputComponent : public UAkAudioInputComponent
 {
 public:
 	class USoundSubmix*                          SubmixToRecord;                                    // 0x4C0(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A51[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_98B[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkSubmixInputComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkSubmixInputComponent* GetDefaultObj();
 
 };
 
@@ -1424,19 +1220,16 @@ class UAkSurfaceReflectorSetComponent : public UAkAcousticTextureSetComponent
 {
 public:
 	bool                                         bEnableSurfaceReflectors;                          // 0x2B8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A5D[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_997[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FAkSurfacePoly>                AcousticPolys;                                     // 0x2C0(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bEnableDiffraction;                                // 0x2D0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableDiffractionOnBoundaryEdges;                 // 0x2D1(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A61[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_99A[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                AssociatedRoom;                                    // 0x2D8(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A63[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_99B[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkSurfaceReflectorSetComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkSurfaceReflectorSetComponent* GetDefaultObj();
 
 	void UpdateSurfaceReflectorSet();
 	void SendSurfaceReflectorSet();
@@ -1448,18 +1241,15 @@ public:
 class UAkSwitchInitializationSettings : public UObject
 {
 public:
-	uint8                                        Pad_A6F[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9B2[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x30(0x68)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkCommunicationSettingsWithCommSelection CommunicationSettings;                             // 0x98(0x28)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                                  // 0xC0(0x30)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkSwitchInitializationSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkSwitchInitializationSettings* GetDefaultObj();
 
-	void MigrateMultiCoreRendering(bool InNewValue);
+	void MigrateMultiCoreRendering(bool NewValue);
 };
 
 // 0x0 (0x70 - 0x70)
@@ -1468,11 +1258,8 @@ class UAkSwitchPlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkSwitchPlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkSwitchPlatformInfo* GetDefaultObj();
 
 };
 
@@ -1482,11 +1269,8 @@ class UAkSwitchValue : public UAkGroupValue
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkSwitchValue");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkSwitchValue* GetDefaultObj();
 
 };
 
@@ -1496,11 +1280,8 @@ class UAkTrigger : public UAkAudioType
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkTrigger");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkTrigger* GetDefaultObj();
 
 };
 
@@ -1509,19 +1290,16 @@ public:
 class UAkTVOSInitializationSettings : public UObject
 {
 public:
-	uint8                                        Pad_A86[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9C2[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x30(0x68)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkAudioSession                       AudioSession;                                      // 0x98(0xC)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A8A[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9C4[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0xA8(0x28)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkAdvancedInitializationSettings     AdvancedSettings;                                  // 0xD0(0x2C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A8D[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9C5[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkTVOSInitializationSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkTVOSInitializationSettings* GetDefaultObj();
 
 };
 
@@ -1531,11 +1309,8 @@ class UAkTVOSPlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkTVOSPlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkTVOSPlatformInfo* GetDefaultObj();
 
 };
 
@@ -1545,21 +1320,18 @@ class UAkWaapiCalls : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkWaapiCalls");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkWaapiCalls* GetDefaultObj();
 
-	struct FAKWaapiJsonObject Unsubscribe(struct FAkWaapiSubscriptionId& InSubscriptionId, bool* InUnsubscriptionDone);
-	struct FAKWaapiJsonObject SubscribeToWaapi(struct FAkWaapiUri& InWaapiUri, struct FAKWaapiJsonObject& InWaapiOptions, FDelegateProperty_& InCallback, struct FAkWaapiSubscriptionId* InSubscriptionId, bool* InSubscriptionDone);
-	void SetSubscriptionID(struct FAkWaapiSubscriptionId& InSubscription, int32 InID);
-	bool RegisterWaapiProjectLoadedCallback(FDelegateProperty_& InCallback);
-	bool RegisterWaapiConnectionLostCallback(FDelegateProperty_& InCallback);
-	int32 GetSubscriptionID(struct FAkWaapiSubscriptionId& InSubscription);
-	class FText Conv_FAkWaapiSubscriptionIdToText(struct FAkWaapiSubscriptionId& InINAkWaapiSubscriptionId);
-	class FString Conv_FAkWaapiSubscriptionIdToString(struct FAkWaapiSubscriptionId& InINAkWaapiSubscriptionId);
-	struct FAKWaapiJsonObject CallWaapi(struct FAkWaapiUri& InWaapiUri, struct FAKWaapiJsonObject& InWaapiArgs, struct FAKWaapiJsonObject& InWaapiOptions);
+	struct FAKWaapiJsonObject Unsubscribe(struct FAkWaapiSubscriptionId& SubscriptionId, bool* UnsubscriptionDone);
+	struct FAKWaapiJsonObject SubscribeToWaapi(struct FAkWaapiUri& WaapiUri, struct FAKWaapiJsonObject& WaapiOptions, FDelegateProperty_& Callback, struct FAkWaapiSubscriptionId* SubscriptionId, bool* SubscriptionDone);
+	void SetSubscriptionID(struct FAkWaapiSubscriptionId& Subscription, int32 ID);
+	bool RegisterWaapiProjectLoadedCallback(FDelegateProperty_& Callback);
+	bool RegisterWaapiConnectionLostCallback(FDelegateProperty_& Callback);
+	int32 GetSubscriptionID(struct FAkWaapiSubscriptionId& Subscription);
+	class FText Conv_FAkWaapiSubscriptionIdToText(struct FAkWaapiSubscriptionId& INAkWaapiSubscriptionId);
+	class FString Conv_FAkWaapiSubscriptionIdToString(struct FAkWaapiSubscriptionId& INAkWaapiSubscriptionId);
+	struct FAKWaapiJsonObject CallWaapi(struct FAkWaapiUri& WaapiUri, struct FAKWaapiJsonObject& WaapiArgs, struct FAKWaapiJsonObject& WaapiOptions);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -1568,14 +1340,11 @@ class USAkWaapiFieldNamesConv : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SAkWaapiFieldNamesConv");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USAkWaapiFieldNamesConv* GetDefaultObj();
 
-	class FText Conv_FAkWaapiFieldNamesToText(struct FAkWaapiFieldNames& InINAkWaapiFieldNames);
-	class FString Conv_FAkWaapiFieldNamesToString(struct FAkWaapiFieldNames& InINAkWaapiFieldNames);
+	class FText Conv_FAkWaapiFieldNamesToText(struct FAkWaapiFieldNames& INAkWaapiFieldNames);
+	class FString Conv_FAkWaapiFieldNamesToString(struct FAkWaapiFieldNames& INAkWaapiFieldNames);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -1584,26 +1353,23 @@ class UAkWaapiJsonManager : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkWaapiJsonManager");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkWaapiJsonManager* GetDefaultObj();
 
-	struct FAKWaapiJsonObject SetStringField(struct FAkWaapiFieldNames& InFieldName, const class FString& InFieldValue, const struct FAKWaapiJsonObject& InTarget);
-	struct FAKWaapiJsonObject SetObjectField(struct FAkWaapiFieldNames& InFieldName, const struct FAKWaapiJsonObject& InFieldValue, const struct FAKWaapiJsonObject& InTarget);
-	struct FAKWaapiJsonObject SetNumberField(struct FAkWaapiFieldNames& InFieldName, float InFieldValue, const struct FAKWaapiJsonObject& InTarget);
-	struct FAKWaapiJsonObject SetBoolField(struct FAkWaapiFieldNames& InFieldName, bool InFieldValue, const struct FAKWaapiJsonObject& InTarget);
-	struct FAKWaapiJsonObject SetArrayStringFields(struct FAkWaapiFieldNames& InFieldName, TArray<class FString>& InFieldStringValues, const struct FAKWaapiJsonObject& InTarget);
-	struct FAKWaapiJsonObject SetArrayObjectFields(struct FAkWaapiFieldNames& InFieldName, TArray<struct FAKWaapiJsonObject>& InFieldObjectValues, const struct FAKWaapiJsonObject& InTarget);
-	class FString GetStringField(struct FAkWaapiFieldNames& InFieldName, const struct FAKWaapiJsonObject& InTarget);
-	struct FAKWaapiJsonObject GetObjectField(struct FAkWaapiFieldNames& InFieldName, const struct FAKWaapiJsonObject& InTarget);
-	float GetNumberField(struct FAkWaapiFieldNames& InFieldName, const struct FAKWaapiJsonObject& InTarget);
-	int32 GetIntegerField(struct FAkWaapiFieldNames& InFieldName, const struct FAKWaapiJsonObject& InTarget);
-	bool GetBoolField(struct FAkWaapiFieldNames& InFieldName, const struct FAKWaapiJsonObject& InTarget);
-	TArray<struct FAKWaapiJsonObject> GetArrayField(struct FAkWaapiFieldNames& InFieldName, const struct FAKWaapiJsonObject& InTarget);
-	class FText Conv_FAKWaapiJsonObjectToText(const struct FAKWaapiJsonObject& InINAKWaapiJsonObject);
-	class FString Conv_FAKWaapiJsonObjectToString(const struct FAKWaapiJsonObject& InINAKWaapiJsonObject);
+	struct FAKWaapiJsonObject SetStringField(struct FAkWaapiFieldNames& FieldName, const class FString& FieldValue, const struct FAKWaapiJsonObject& Target);
+	struct FAKWaapiJsonObject SetObjectField(struct FAkWaapiFieldNames& FieldName, const struct FAKWaapiJsonObject& FieldValue, const struct FAKWaapiJsonObject& Target);
+	struct FAKWaapiJsonObject SetNumberField(struct FAkWaapiFieldNames& FieldName, float FieldValue, const struct FAKWaapiJsonObject& Target);
+	struct FAKWaapiJsonObject SetBoolField(struct FAkWaapiFieldNames& FieldName, bool FieldValue, const struct FAKWaapiJsonObject& Target);
+	struct FAKWaapiJsonObject SetArrayStringFields(struct FAkWaapiFieldNames& FieldName, TArray<class FString>& FieldStringValues, const struct FAKWaapiJsonObject& Target);
+	struct FAKWaapiJsonObject SetArrayObjectFields(struct FAkWaapiFieldNames& FieldName, TArray<struct FAKWaapiJsonObject>& FieldObjectValues, const struct FAKWaapiJsonObject& Target);
+	class FString GetStringField(struct FAkWaapiFieldNames& FieldName, const struct FAKWaapiJsonObject& Target);
+	struct FAKWaapiJsonObject GetObjectField(struct FAkWaapiFieldNames& FieldName, const struct FAKWaapiJsonObject& Target);
+	float GetNumberField(struct FAkWaapiFieldNames& FieldName, const struct FAKWaapiJsonObject& Target);
+	int32 GetIntegerField(struct FAkWaapiFieldNames& FieldName, const struct FAKWaapiJsonObject& Target);
+	bool GetBoolField(struct FAkWaapiFieldNames& FieldName, const struct FAKWaapiJsonObject& Target);
+	TArray<struct FAKWaapiJsonObject> GetArrayField(struct FAkWaapiFieldNames& FieldName, const struct FAKWaapiJsonObject& Target);
+	class FText Conv_FAKWaapiJsonObjectToText(const struct FAKWaapiJsonObject& INAKWaapiJsonObject);
+	class FString Conv_FAKWaapiJsonObjectToString(const struct FAKWaapiJsonObject& INAKWaapiJsonObject);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -1612,14 +1378,11 @@ class UAkWaapiUriConv : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkWaapiUriConv");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkWaapiUriConv* GetDefaultObj();
 
-	class FText Conv_FAkWaapiUriToText(struct FAkWaapiUri& InINAkWaapiUri);
-	class FString Conv_FAkWaapiUriToString(struct FAkWaapiUri& InINAkWaapiUri);
+	class FText Conv_FAkWaapiUriToText(struct FAkWaapiUri& INAkWaapiUri);
+	class FString Conv_FAkWaapiUriToString(struct FAkWaapiUri& INAkWaapiUri);
 };
 
 // 0xD0 (0xF8 - 0x28)
@@ -1627,18 +1390,15 @@ public:
 class UAkWindowsInitializationSettings : public UObject
 {
 public:
-	uint8                                        Pad_B5E[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B3A[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x30(0x68)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x98(0x28)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkWindowsAdvancedInitializationSettings AdvancedSettings;                                  // 0xC0(0x38)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkWindowsInitializationSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkWindowsInitializationSettings* GetDefaultObj();
 
-	void MigrateMultiCoreRendering(bool InNewValue);
+	void MigrateMultiCoreRendering(bool NewValue);
 };
 
 // 0x0 (0x70 - 0x70)
@@ -1647,11 +1407,8 @@ class UAkWin32PlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkWin32PlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkWin32PlatformInfo* GetDefaultObj();
 
 };
 
@@ -1661,11 +1418,8 @@ class UAkWin64PlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkWin64PlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkWin64PlatformInfo* GetDefaultObj();
 
 };
 
@@ -1675,11 +1429,8 @@ class UAkWindowsPlatformInfo : public UAkWin64PlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkWindowsPlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkWindowsPlatformInfo* GetDefaultObj();
 
 };
 
@@ -1690,15 +1441,12 @@ class UAkWwiseTree : public UWidget
 public:
 	FMulticastInlineDelegateProperty_            OnSelectionChanged;                                // 0x150(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnItemDragged;                                     // 0x160(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B6C[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B60[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkWwiseTree");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkWwiseTree* GetDefaultObj();
 
-	void SetSearchText(const class FString& InNewText);
+	void SetSearchText(const class FString& NewText);
 	struct FAkWwiseObjectDetails GetSelectedItem();
 	class FString GetSearchText();
 };
@@ -1710,13 +1458,10 @@ class UAkWwiseTreeSelector : public UWidget
 public:
 	FMulticastInlineDelegateProperty_            OnSelectionChanged;                                // 0x150(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnItemDragged;                                     // 0x160(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B70[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B68[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkWwiseTreeSelector");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkWwiseTreeSelector* GetDefaultObj();
 
 };
 
@@ -1725,20 +1470,17 @@ public:
 class UAkXboxOneInitializationSettings : public UObject
 {
 public:
-	uint8                                        Pad_B72[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B70[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkCommonInitializationSettings       CommonSettings;                                    // 0x30(0x60)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkXboxOneApuHeapInitializationSettings ApuHeapSettings;                                   // 0x90(0x8)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
 	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x98(0x28)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkXboxOneAdvancedInitializationSettings AdvancedSettings;                                  // 0xC0(0x34)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B73[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B77[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkXboxOneInitializationSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkXboxOneInitializationSettings* GetDefaultObj();
 
-	void MigrateMultiCoreRendering(bool InNewValue);
+	void MigrateMultiCoreRendering(bool NewValue);
 };
 
 // 0x0 (0x70 - 0x70)
@@ -1747,11 +1489,8 @@ class UAkXboxOnePlatformInfo : public UAkPlatformInfo
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AkXboxOnePlatformInfo");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAkXboxOnePlatformInfo* GetDefaultObj();
 
 };
 
@@ -1760,25 +1499,22 @@ public:
 class UMovieSceneAkAudioEventSection : public UMovieSceneSection
 {
 public:
-	uint8                                        Pad_B76[0x40];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B80[0x40];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAkAudioEvent*                         Event;                                             // 0x130(0x8)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                         RetriggerEvent;                                    // 0x138(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_B77[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B85[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ScrubTailLengthMs;                                 // 0x13C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                         StopAtSectionEnd;                                  // 0x140(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_B79[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B88[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                EventName;                                         // 0x148(0x10)(Edit, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_B7A[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B8A[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MaxSourceDuration;                                 // 0x178(0x4)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_B7C[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B8B[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                MaxDurationSourceID;                               // 0x180(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_B7D[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B8C[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneAkAudioEventSection");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneAkAudioEventSection* GetDefaultObj();
 
 };
 
@@ -1789,13 +1525,10 @@ class UMovieSceneAkTrack : public UMovieSceneTrack
 public:
 	TArray<class UMovieSceneSection*>            Sections;                                          // 0x98(0x10)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	bool                                         bIsAMasterTrack;                                   // 0xA8(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_B7F[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B94[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneAkTrack");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneAkTrack* GetDefaultObj();
 
 };
 
@@ -1804,13 +1537,10 @@ public:
 class UMovieSceneAkAudioEventTrack : public UMovieSceneAkTrack
 {
 public:
-	uint8                                        Pad_B80[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B9F[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneAkAudioEventTrack");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneAkAudioEventTrack* GetDefaultObj();
 
 };
 
@@ -1825,11 +1555,8 @@ public:
 	struct FMovieSceneFloatChannelSerializationHelper FloatChannelSerializationHelper;                   // 0x188(0x30)(Protected, NativeAccessSpecifierProtected)
 	struct FMovieSceneFloatChannel               RTPCChannel;                                       // 0x1B8(0x110)(Protected, NativeAccessSpecifierProtected)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneAkAudioRTPCSection");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneAkAudioRTPCSection* GetDefaultObj();
 
 };
 
@@ -1838,13 +1565,10 @@ public:
 class UMovieSceneAkAudioRTPCTrack : public UMovieSceneAkTrack
 {
 public:
-	uint8                                        Pad_B82[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BAE[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneAkAudioRTPCTrack");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneAkAudioRTPCTrack* GetDefaultObj();
 
 };
 
@@ -1854,15 +1578,12 @@ class UPostEventAsync : public UBlueprintAsyncActionBase
 {
 public:
 	FMulticastInlineDelegateProperty_            Completed;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B94[0x60];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BCE[0x60];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("PostEventAsync");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UPostEventAsync* GetDefaultObj();
 
-	class UPostEventAsync* PostEventAsync(class UObject* InWorldContextObject, class UAkAudioEvent* InAkEvent, class AActor* InActor, int32 InCallbackMask, FDelegateProperty_& InPostEventCallback, TArray<struct FAkExternalSourceInfo>& InExternalSources, bool InbStopWhenAttachedToDestroyed);
+	class UPostEventAsync* PostEventAsync(class UObject* WorldContextObject, class UAkAudioEvent* AkEvent, class AActor* Actor, int32 CallbackMask, FDelegateProperty_& PostEventCallback, TArray<struct FAkExternalSourceInfo>& ExternalSources, bool bStopWhenAttachedToDestroyed);
 	void PollPostEventFuture();
 };
 
@@ -1872,20 +1593,15 @@ class UPostEventAtLocationAsync : public UBlueprintAsyncActionBase
 {
 public:
 	FMulticastInlineDelegateProperty_            Completed;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B98[0x58];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BDC[0x58];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("PostEventAtLocationAsync");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UPostEventAtLocationAsync* GetDefaultObj();
 
-	class UPostEventAtLocationAsync* PostEventAtLocationAsync(class UObject* InWorldContextObject, class UAkAudioEvent* InAkEvent, const struct FVector& InLocation, const struct FRotator& InOrientation);
+	class UPostEventAtLocationAsync* PostEventAtLocationAsync(class UObject* WorldContextObject, class UAkAudioEvent* AkEvent, const struct FVector& Location, const struct FRotator& Orientation);
 	void PollPostEventFuture();
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

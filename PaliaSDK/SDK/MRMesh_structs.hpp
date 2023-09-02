@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,10 +11,10 @@ namespace SDK
 
 enum class EMeshTrackerVertexColorMode : uint8
 {
-	EMeshTrackerVertexColorMode__None = 0,
-	EMeshTrackerVertexColorMode__Confidence = 1,
-	EMeshTrackerVertexColorMode__Block = 2,
-	EMeshTrackerVertexColorMode__EMeshTrackerVertexColorMode_MAX = 3,
+	None                           = 0,
+	Confidence                     = 1,
+	Block                          = 2,
+	EMeshTrackerVertexColorMode_MAX = 3,
 };
 
 
@@ -30,11 +27,9 @@ enum class EMeshTrackerVertexColorMode : uint8
 struct FMRMeshConfiguration
 {
 public:
-	uint8                                        Pad_1BE5[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CD0[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

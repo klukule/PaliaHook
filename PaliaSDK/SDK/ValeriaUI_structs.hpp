@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,194 +11,194 @@ namespace SDK
 
 enum class EVALUI_CharCustomization_UpdateLoadoutContext : uint8
 {
-	EVALUI_CharCustomization_UpdateLoadoutContext__InitialLoadout = 0,
-	EVALUI_CharCustomization_UpdateLoadoutContext__TileSelected = 1,
-	EVALUI_CharCustomization_UpdateLoadoutContext__BodyTypeChanged = 2,
-	EVALUI_CharCustomization_UpdateLoadoutContext__VariantChanged = 3,
-	EVALUI_CharCustomization_UpdateLoadoutContext__BodyDataChanged = 4,
-	EVALUI_CharCustomization_UpdateLoadoutContext__EVALUI_CharCustomization_MAX = 5,
+	InitialLoadout                 = 0,
+	TileSelected                   = 1,
+	BodyTypeChanged                = 2,
+	VariantChanged                 = 3,
+	BodyDataChanged                = 4,
+	EVALUI_CharCustomization_MAX   = 5,
 };
 
 enum class EVAL_CharacterNameType : uint8
 {
-	EVAL_CharacterNameType__Full   = 0,
-	EVAL_CharacterNameType__Preferred = 1,
-	EVAL_CharacterNameType__EVAL_MAX = 2,
+	Full                           = 0,
+	Preferred                      = 1,
+	EVAL_MAX                       = 2,
 };
 
 enum class EVALUI_ChatInputBarState : uint8
 {
-	EVALUI_ChatInputBarState__Inactive = 0,
-	EVALUI_ChatInputBarState__TypingCommand = 1,
-	EVALUI_ChatInputBarState__TypingMessage = 2,
-	EVALUI_ChatInputBarState__TypingEmoji = 3,
-	EVALUI_ChatInputBarState__EVALUI_MAX = 4,
+	Inactive                       = 0,
+	TypingCommand                  = 1,
+	TypingMessage                  = 2,
+	TypingEmoji                    = 3,
+	EVALUI_MAX                     = 4,
 };
 
 enum class EVALUI_PregameState : uint8
 {
-	EVALUI_PregameState__Login     = 0,
-	EVALUI_PregameState__Lobby     = 1,
-	EVALUI_PregameState__CharacterCreation = 2,
-	EVALUI_PregameState__EVALUI_MAX = 3,
+	Login                          = 0,
+	Lobby                          = 1,
+	CharacterCreation              = 2,
+	EVALUI_MAX                     = 3,
 };
 
 enum class EVALUI_CharacterCreationState : uint8
 {
-	EVALUI_CharacterCreationState__LoadingRenderStudio = 0,
-	EVALUI_CharacterCreationState__OpeningCinematic = 1,
-	EVALUI_CharacterCreationState__BodyTypeSelection = 2,
-	EVALUI_CharacterCreationState__BodyTypeTransition = 3,
-	EVALUI_CharacterCreationState__CharacterCustomization = 4,
-	EVALUI_CharacterCreationState__ClosingCinematic = 5,
-	EVALUI_CharacterCreationState__EVALUI_MAX = 6,
+	LoadingRenderStudio            = 0,
+	OpeningCinematic               = 1,
+	BodyTypeSelection              = 2,
+	BodyTypeTransition             = 3,
+	CharacterCustomization         = 4,
+	ClosingCinematic               = 5,
+	EVALUI_MAX                     = 6,
 };
 
 enum class EVALUI_LobbyState : uint8
 {
-	EVALUI_LobbyState__LoadingRenderStudio = 0,
-	EVALUI_LobbyState__CharacterSelect = 1,
-	EVALUI_LobbyState__ServerQueue = 2,
-	EVALUI_LobbyState__EVALUI_MAX  = 3,
+	LoadingRenderStudio            = 0,
+	CharacterSelect                = 1,
+	ServerQueue                    = 2,
+	EVALUI_MAX                     = 3,
 };
 
 enum class EVALUI_LoginState : uint8
 {
-	EVALUI_LoginState__Idle        = 0,
-	EVALUI_LoginState__Publishing  = 1,
-	EVALUI_LoginState__RetrievingCharacterList = 2,
-	EVALUI_LoginState__CodeOfConduct = 3,
-	EVALUI_LoginState__EVALUI_MAX  = 4,
+	Idle                           = 0,
+	Publishing                     = 1,
+	RetrievingCharacterList        = 2,
+	CodeOfConduct                  = 3,
+	EVALUI_MAX                     = 4,
 };
 
 enum class EVALUI_PremiumStoreState : uint8
 {
-	EVALUI_PremiumStoreState__Storefront = 0,
-	EVALUI_PremiumStoreState__CurrencyPurchase = 1,
-	EVALUI_PremiumStoreState__ItemSelection = 2,
-	EVALUI_PremiumStoreState__ItemPurchase = 3,
-	EVALUI_PremiumStoreState__EVALUI_MAX = 4,
+	Storefront                     = 0,
+	CurrencyPurchase               = 1,
+	ItemSelection                  = 2,
+	ItemPurchase                   = 3,
+	EVALUI_MAX                     = 4,
 };
 
 enum class EVALUI_ChatPanelState : uint8
 {
-	EVALUI_ChatPanelState__Inactive = 0,
-	EVALUI_ChatPanelState__Active  = 1,
-	EVALUI_ChatPanelState__Unavailable = 2,
-	EVALUI_ChatPanelState__RetryingLogin = 3,
-	EVALUI_ChatPanelState__InvalidJWT = 4,
-	EVALUI_ChatPanelState__EVALUI_MAX = 5,
+	Inactive                       = 0,
+	Active                         = 1,
+	Unavailable                    = 2,
+	RetryingLogin                  = 3,
+	InvalidJWT                     = 4,
+	EVALUI_MAX                     = 5,
 };
 
 enum class EVALUI_LoadingScreenFlags : uint8
 {
-	EVALUI_LoadingScreenFlags__None = 0,
-	EVALUI_LoadingScreenFlags__QueuedToDisplay = 1,
-	EVALUI_LoadingScreenFlags__DisplayedDirectViewport = 2,
-	EVALUI_LoadingScreenFlags__EVALUI_MAX = 3,
+	None                           = 0,
+	QueuedToDisplay                = 1,
+	DisplayedDirectViewport        = 2,
+	EVALUI_MAX                     = 3,
 };
 
 enum class EMailboxViewerFilter : uint8
 {
-	EMailboxViewerFilter__NewMail  = 0,
-	EMailboxViewerFilter__ReadMail = 1,
-	EMailboxViewerFilter__EMailboxViewerFilter_MAX = 2,
+	NewMail                        = 0,
+	ReadMail                       = 1,
+	EMailboxViewerFilter_MAX       = 2,
 };
 
 enum class EFocusDirection : uint8
 {
-	EFocusDirection__UpperLeftCorner = 0,
-	EFocusDirection__Left          = 1,
-	EFocusDirection__LowerLeftCorner = 2,
-	EFocusDirection__UpperRightCorner = 3,
-	EFocusDirection__Right         = 4,
-	EFocusDirection__LowerRightCorner = 5,
-	EFocusDirection__EFocusDirection_MAX = 6,
+	UpperLeftCorner                = 0,
+	Left                           = 1,
+	LowerLeftCorner                = 2,
+	UpperRightCorner               = 3,
+	Right                          = 4,
+	LowerRightCorner               = 5,
+	EFocusDirection_MAX            = 6,
 };
 
 enum class ECursorState : uint8
 {
-	ECursorState__Disable          = 0,
-	ECursorState__FocusOnBackground = 1,
-	ECursorState__FocusOnButton    = 2,
-	ECursorState__ECursorState_MAX = 3,
+	Disable                        = 0,
+	FocusOnBackground              = 1,
+	FocusOnButton                  = 2,
+	ECursorState_MAX               = 3,
 };
 
 enum class EButtonStyledWithBGState : uint8
 {
-	EButtonStyledWithBGState__Normal = 0,
-	EButtonStyledWithBGState__Hovered = 1,
-	EButtonStyledWithBGState__Pressed = 2,
-	EButtonStyledWithBGState__Disabled = 3,
-	EButtonStyledWithBGState__EButtonStyledWithBGState_MAX = 4,
+	Normal                         = 0,
+	Hovered                        = 1,
+	Pressed                        = 2,
+	Disabled                       = 3,
+	EButtonStyledWithBGState_MAX   = 4,
 };
 
 enum class EGamepadKeyHintLocation : uint8
 {
-	EGamepadKeyHintLocation__BottomLeft = 0,
-	EGamepadKeyHintLocation__BottomRight = 1,
-	EGamepadKeyHintLocation__EGamepadKeyHintLocation_MAX = 2,
+	BottomLeft                     = 0,
+	BottomRight                    = 1,
+	EGamepadKeyHintLocation_MAX    = 2,
 };
 
 enum class EItemAmountDisplayType : uint8
 {
-	EItemAmountDisplayType__None   = 0,
-	EItemAmountDisplayType__ShowAlways = 1,
-	EItemAmountDisplayType__ShowIfMoreThanOne = 2,
-	EItemAmountDisplayType__ShowAvailableVsAmount = 3,
-	EItemAmountDisplayType__ShowAmountVsTotal = 4,
-	EItemAmountDisplayType__EItemAmountDisplayType_MAX = 5,
+	None                           = 0,
+	ShowAlways                     = 1,
+	ShowIfMoreThanOne              = 2,
+	ShowAvailableVsAmount          = 3,
+	ShowAmountVsTotal              = 4,
+	EItemAmountDisplayType_MAX     = 5,
 };
 
 enum class EItemEmptyDisplayType : uint8
 {
-	EItemEmptyDisplayType__Hide    = 0,
-	EItemEmptyDisplayType__Show    = 1,
-	EItemEmptyDisplayType__Dim     = 2,
-	EItemEmptyDisplayType__EItemEmptyDisplayType_MAX = 3,
+	Hide                           = 0,
+	Show                           = 1,
+	Dim                            = 2,
+	EItemEmptyDisplayType_MAX      = 3,
 };
 
 enum class EVALUI_PhotoCameraScreenLookMode : uint8
 {
-	EVALUI_PhotoCameraScreenLookMode__None = 0,
-	EVALUI_PhotoCameraScreenLookMode__PanRotate = 1,
-	EVALUI_PhotoCameraScreenLookMode__MouseLook = 2,
-	EVALUI_PhotoCameraScreenLookMode__EVALUI_MAX = 3,
+	None                           = 0,
+	PanRotate                      = 1,
+	MouseLook                      = 2,
+	EVALUI_MAX                     = 3,
 };
 
 enum class EVALUI_PremiumCurrencyPurchaseState : uint8
 {
-	EVALUI_PremiumCurrencyPurchaseState__None = 0,
-	EVALUI_PremiumCurrencyPurchaseState__InProgress = 1,
-	EVALUI_PremiumCurrencyPurchaseState__Cancelled = 2,
-	EVALUI_PremiumCurrencyPurchaseState__Paid = 3,
-	EVALUI_PremiumCurrencyPurchaseState__Fulfilled = 4,
-	EVALUI_PremiumCurrencyPurchaseState__EVALUI_MAX = 5,
+	None                           = 0,
+	InProgress                     = 1,
+	Cancelled                      = 2,
+	Paid                           = 3,
+	Fulfilled                      = 4,
+	EVALUI_MAX                     = 5,
 };
 
 enum class EVALUI_PremiumCurrencyProvider : uint8
 {
-	EVALUI_PremiumCurrencyProvider__Stripe = 0,
-	EVALUI_PremiumCurrencyProvider__Paypal = 1,
-	EVALUI_PremiumCurrencyProvider__Count = 2,
-	EVALUI_PremiumCurrencyProvider__EVALUI_MAX = 3,
+	Stripe                         = 0,
+	Paypal                         = 1,
+	Count                          = 2,
+	EVALUI_MAX                     = 3,
 };
 
 enum class EVALUI_PremiumCurrencyWidgetState : uint8
 {
-	EVALUI_PremiumCurrencyWidgetState__BundleSelection = 0,
-	EVALUI_PremiumCurrencyWidgetState__ErrorMessaging = 1,
-	EVALUI_PremiumCurrencyWidgetState__CheckoutSession = 2,
-	EVALUI_PremiumCurrencyWidgetState__ValidationMessaging = 3,
-	EVALUI_PremiumCurrencyWidgetState__FinishMessaging = 4,
-	EVALUI_PremiumCurrencyWidgetState__EVALUI_MAX = 5,
+	BundleSelection                = 0,
+	ErrorMessaging                 = 1,
+	CheckoutSession                = 2,
+	ValidationMessaging            = 3,
+	FinishMessaging                = 4,
+	EVALUI_MAX                     = 5,
 };
 
 enum class EVALUI_TooltipType : uint8
 {
-	EVALUI_TooltipType__General    = 0,
-	EVALUI_TooltipType__Store      = 1,
-	EVALUI_TooltipType__EVALUI_MAX = 2,
+	General                        = 0,
+	Store                          = 1,
+	EVALUI_MAX                     = 2,
 };
 
 
@@ -219,7 +216,7 @@ public:
 	int32                                        DiscountedPrice;                                   // 0x20(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        BasePrice;                                         // 0x24(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Owned;                                             // 0x28(0x1)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C9A[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B6B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase>> Items;                                             // 0x30(0x50)(BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic)
 	TSet<struct FGuid>                           ItemIds;                                           // 0x80(0x50)(BlueprintVisible, NativeAccessSpecifierPublic)
 };
@@ -234,7 +231,7 @@ public:
 	int32                                        DiscountedPrice;                                   // 0x20(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        BasePrice;                                         // 0x24(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Owned;                                             // 0x28(0x1)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C9B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B6D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                AssetURL;                                          // 0x30(0x10)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FVALUI_PremiumStorefrontVariant> Variants;                                          // 0x40(0x10)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
@@ -245,7 +242,7 @@ struct FVALUI_PurchaseReward
 {
 public:
 	int32                                        CoinAmount;                                        // 0x0(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C9E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B70[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<struct FGuid>                           RewardIds;                                         // 0x8(0x50)(BlueprintVisible, NativeAccessSpecifierPublic)
 	TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase>> RewardItems;                                       // 0x58(0x50)(BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic)
 };
@@ -273,11 +270,11 @@ struct FVALUI_CharCustomization_UpdateLoadoutContextPayload
 {
 public:
 	enum class EVALUI_CharCustomization_UpdateLoadoutContext UpdateType;                                        // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CA1[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B79[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<class FName>                            LoadoutSlotsModified;                              // 0x8(0x50)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class UObject*                               TileItemSelected;                                  // 0x58(0x8)(Edit, BlueprintVisible, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EVAL_ApplyCustomizationToActorContext ApplyCustomizationContext;                         // 0x60(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CA3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B7C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -286,7 +283,7 @@ struct FVALUI_CharacterNameValidityResponse
 {
 public:
 	enum class EVAL_CharacterNameType            CharacterNameType;                                 // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CA5[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B7D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class FText>                          ErrorMessages;                                     // 0x8(0x10)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 };
 
@@ -299,7 +296,7 @@ public:
 	struct FLinearColor                          ChannelColor;                                      // 0x28(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDisabled;                                         // 0x38(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDisplayed;                                        // 0x39(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CA8[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B7F[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  ShortName;                                         // 0x40(0x18)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class FText                                  LongName;                                          // 0x58(0x18)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class FText                                  MessagePrefix;                                     // 0x70(0x18)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -320,7 +317,7 @@ struct FVALUI_RadioSliderPaginationSettings
 {
 public:
 	bool                                         bShouldPaginate;                                   // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CAC[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B88[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ExtraPreviewPadding;                               // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PageElementCount;                                  // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AnimationTime;                                     // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -360,7 +357,7 @@ struct FMailGrantedQuest
 public:
 	class FText                                  QuestName;                                         // 0x0(0x18)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	int32                                        QuestConfigId;                                     // 0x18(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CAF[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B8C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x148 (0x148 - 0x0)
@@ -375,21 +372,21 @@ public:
 	int32                                        SenderFriendshipLevel;                             // 0xA8(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SenderRomanceLevel;                                // 0xAC(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUseCustomHeader;                                  // 0xB0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CB0[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B8D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  CustomHeader;                                      // 0xB8(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	class FText                                  MessageBody;                                       // 0xD0(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	int64                                        Timestamp;                                         // 0xE8(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsVillagerMail;                                   // 0xF0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CB2[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B8E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        VillagerMailId;                                    // 0xF4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                PlayerMailId;                                      // 0xF8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EMailboxViewerFilter              MailStatus;                                        // 0x108(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CB4[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B90[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FSingleQuestReward>            Rewards;                                           // 0x110(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	TArray<bool>                                 WasRewardCollected;                                // 0x120(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	TArray<struct FMailGrantedQuest>             Quests;                                            // 0x130(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	bool                                         bIsHidden;                                         // 0x140(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CB5[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B93[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -402,7 +399,7 @@ public:
 	TArray<class UObject*>                       ItemObjects;                                       // 0x10(0x10)(Edit, BlueprintVisible, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 	TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase>> ItemBaseObjects;                                   // 0x20(0x10)(Edit, BlueprintVisible, ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic)
 	bool                                         bShouldRefreshAllTileViewsWhenVariantChanged;      // 0x30(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CBB[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B94[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -452,7 +449,7 @@ public:
 	bool                                         bToolWheelOpened;                                  // 0x2(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEmoteWheelOpened;                                 // 0x3(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDialogueOpened;                                   // 0x4(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CC5[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B9B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        NumRequestingRightElementsBeHidden;                // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -477,12 +474,10 @@ public:
 	int32                                        BundleAmount;                                      // 0x10(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        BonusAmount;                                       // 0x14(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        BundlePrice;                                       // 0x18(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1CC7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1BA0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                CurrencyCode;                                      // 0x20(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

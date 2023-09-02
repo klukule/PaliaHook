@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,49 +11,49 @@ namespace SDK
 
 enum class ECommonNumericType : uint8
 {
-	ECommonNumericType__Number     = 0,
-	ECommonNumericType__Percentage = 1,
-	ECommonNumericType__Seconds    = 2,
-	ECommonNumericType__Distance   = 3,
-	ECommonNumericType__ECommonNumericType_MAX = 4,
+	Number                         = 0,
+	Percentage                     = 1,
+	Seconds                        = 2,
+	Distance                       = 3,
+	ECommonNumericType_MAX         = 4,
 };
 
 enum class ERichTextInlineIconDisplayMode : uint8
 {
-	ERichTextInlineIconDisplayMode__IconOnly = 0,
-	ERichTextInlineIconDisplayMode__TextOnly = 1,
-	ERichTextInlineIconDisplayMode__IconAndText = 2,
-	ERichTextInlineIconDisplayMode__MAX = 3,
+	IconOnly                       = 0,
+	TextOnly                       = 1,
+	IconAndText                    = 2,
+	MAX                            = 3,
 };
 
 enum class EInputActionState : uint8
 {
-	EInputActionState__Enabled     = 0,
-	EInputActionState__Disabled    = 1,
-	EInputActionState__Hidden      = 2,
-	EInputActionState__HiddenAndDisabled = 3,
-	EInputActionState__EInputActionState_MAX = 4,
+	Enabled                        = 0,
+	Disabled                       = 1,
+	Hidden                         = 2,
+	HiddenAndDisabled              = 3,
+	EInputActionState_MAX          = 4,
 };
 
 enum class ECommonSwitcherTransition : uint8
 {
-	ECommonSwitcherTransition__FadeOnly = 0,
-	ECommonSwitcherTransition__Horizontal = 1,
-	ECommonSwitcherTransition__Vertical = 2,
-	ECommonSwitcherTransition__Zoom = 3,
-	ECommonSwitcherTransition__ECommonSwitcherTransition_MAX = 4,
+	FadeOnly                       = 0,
+	Horizontal                     = 1,
+	Vertical                       = 2,
+	Zoom                           = 3,
+	ECommonSwitcherTransition_MAX  = 4,
 };
 
 enum class ETransitionCurve : uint8
 {
-	ETransitionCurve__Linear       = 0,
-	ETransitionCurve__QuadIn       = 1,
-	ETransitionCurve__QuadOut      = 2,
-	ETransitionCurve__QuadInOut    = 3,
-	ETransitionCurve__CubicIn      = 4,
-	ETransitionCurve__CubicOut     = 5,
-	ETransitionCurve__CubicInOut   = 6,
-	ETransitionCurve__ETransitionCurve_MAX = 7,
+	Linear                         = 0,
+	QuadIn                         = 1,
+	QuadOut                        = 2,
+	QuadInOut                      = 3,
+	CubicIn                        = 4,
+	CubicOut                       = 5,
+	CubicInOut                     = 6,
+	ETransitionCurve_MAX           = 7,
 };
 
 
@@ -71,7 +68,7 @@ struct FCommonNumberFormattingOptions
 public:
 	enum class ERoundingMode                     RoundingMode;                                      // 0x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         UseGrouping;                                       // 0x1(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6CD[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_478[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        MinimumIntegralDigits;                             // 0x4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaximumIntegralDigits;                             // 0x8(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MinimumFractionalDigits;                           // 0xC(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -84,7 +81,7 @@ struct FCommonRegisteredTabInfo
 {
 public:
 	int32                                        TabIndex;                                          // 0x0(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6D0[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_47D[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UCommonButtonBase*                     TabButton;                                         // 0x8(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UWidget*                               ContentInstance;                                   // 0x10(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -110,7 +107,7 @@ struct FCommonInputActionHandlerData
 public:
 	struct FDataTableRowHandle                   InputActionRow;                                    // 0x0(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EInputActionState                 State;                                             // 0x10(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_6D4[0xF];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_489[0xF];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -119,7 +116,7 @@ struct FCommonButtonStyleOptionalSlateSound
 {
 public:
 	bool                                         bHasSound;                                         // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6D8[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_48B[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateSound                           Sound;                                             // 0x8(0x18)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 
@@ -141,7 +138,7 @@ public:
 	struct FKey                                  Key;                                               // 0x0(0x18)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	enum class EInputActionState                 OverrrideState;                                    // 0x18(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bActionRequiresHold;                               // 0x19(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6DC[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_492[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        HoldTime;                                          // 0x1C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           OverrideBrush;                                     // 0x20(0xD0)(Edit, NativeAccessSpecifierPublic)
 };
@@ -154,7 +151,7 @@ public:
 	class FText                                  DisplayName;                                       // 0x8(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	class FText                                  HoldDisplayName;                                   // 0x20(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	int32                                        NavBarPriority;                                    // 0x38(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6E0[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_495[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCommonInputTypeInfo                  KeyboardInputTypeInfo;                             // 0x40(0xF0)(Edit, Protected, NativeAccessSpecifierProtected)
 	struct FCommonInputTypeInfo                  DefaultGamepadInputTypeInfo;                       // 0x130(0xF0)(Edit, Protected, NativeAccessSpecifierProtected)
 	TMap<class FName, struct FCommonInputTypeInfo> GamepadInputOverrides;                             // 0x220(0x50)(Edit, Protected, NativeAccessSpecifierProtected)
@@ -168,7 +165,7 @@ struct FUIActionKeyMapping
 public:
 	struct FKey                                  Key;                                               // 0x0(0x18)(Edit, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        HoldTime;                                          // 0x18(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6E1[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_499[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -188,7 +185,7 @@ struct FCommonAnalogCursorSettings
 public:
 	int32                                        PreprocessorPriority;                              // 0x0(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnableCursorAcceleration;                         // 0x4(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_6E8[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_49D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        CursorAcceleration;                                // 0x8(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CursorMaxSpeed;                                    // 0xC(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CursorDeadZone;                                    // 0x10(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -200,6 +197,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

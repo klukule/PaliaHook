@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,16 +15,11 @@ class UButtonStyle_Checkbox_01_Unchecked_CM_C : public US6UI_CommonButtonStyle
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ButtonStyle_Checkbox_01_Unchecked_CM_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UButtonStyle_Checkbox_01_Unchecked_CM_C* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

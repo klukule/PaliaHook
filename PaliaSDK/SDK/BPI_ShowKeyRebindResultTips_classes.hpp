@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,17 +15,12 @@ class IBPI_ShowKeyRebindResultTips_C : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("BPI_ShowKeyRebindResultTips_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IBPI_ShowKeyRebindResultTips_C* GetDefaultObj();
 
-	void UpdateKeyRebindTips(class FText InConflictActionNameDesc, class FText InRebindActionNameDesc, TArray<class UTexture2D*>& InInputKeyIcons);
+	void UpdateKeyRebindTips(class FText ConflictActionNameDesc, class FText RebindActionNameDesc, TArray<class UTexture2D*>& InputKeyIcons);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

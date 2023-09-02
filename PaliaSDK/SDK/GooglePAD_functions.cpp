@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class GooglePAD.GooglePADFunctionLibrary
+// (None)
+
+class UClass* UGooglePADFunctionLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GooglePADFunctionLibrary");
+
+	return Clss;
+}
+
+
+// GooglePADFunctionLibrary GooglePAD.Default__GooglePADFunctionLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGooglePADFunctionLibrary* UGooglePADFunctionLibrary::GetDefaultObj()
+{
+	static class UGooglePADFunctionLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGooglePADFunctionLibrary*>(UGooglePADFunctionLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function GooglePAD.GooglePADFunctionLibrary.ShowCellularDataConfirmation
@@ -30,13 +55,13 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::ShowCellularDataConfir
 	Params::UGooglePADFunctionLibrary_ShowCellularDataConfirmation_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -49,7 +74,7 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::ShowCellularDataConfir
 // class FString                      Name                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EGooglePADErrorCode     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestRemoval(const class FString& InName)
+enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestRemoval(const class FString& Name)
 {
 	static class UFunction* Func = nullptr;
 
@@ -58,15 +83,15 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestRemoval(const c
 
 	Params::UGooglePADFunctionLibrary_RequestRemoval_Params Parms{};
 
-	Parms.Name = InName;
+	Parms.Name = Name;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -79,7 +104,7 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestRemoval(const c
 // TArray<class FString>              AssetPacks                                                       (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // enum class EGooglePADErrorCode     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestInfo(const TArray<class FString>& InAssetPacks)
+enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestInfo(const TArray<class FString>& AssetPacks)
 {
 	static class UFunction* Func = nullptr;
 
@@ -88,15 +113,15 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestInfo(const TArr
 
 	Params::UGooglePADFunctionLibrary_RequestInfo_Params Parms{};
 
-	Parms.AssetPacks = InAssetPacks;
+	Parms.AssetPacks = AssetPacks;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -109,7 +134,7 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestInfo(const TArr
 // TArray<class FString>              AssetPacks                                                       (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // enum class EGooglePADErrorCode     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestDownload(const TArray<class FString>& InAssetPacks)
+enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestDownload(const TArray<class FString>& AssetPacks)
 {
 	static class UFunction* Func = nullptr;
 
@@ -118,15 +143,15 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestDownload(const 
 
 	Params::UGooglePADFunctionLibrary_RequestDownload_Params Parms{};
 
-	Parms.AssetPacks = InAssetPacks;
+	Parms.AssetPacks = AssetPacks;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -138,7 +163,7 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::RequestDownload(const 
 // Parameters:
 // int32                              State                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGooglePADFunctionLibrary::ReleaseDownloadState(int32 InState)
+void UGooglePADFunctionLibrary::ReleaseDownloadState(int32 State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -147,15 +172,15 @@ void UGooglePADFunctionLibrary::ReleaseDownloadState(int32 InState)
 
 	Params::UGooglePADFunctionLibrary_ReleaseDownloadState_Params Parms{};
 
-	Parms.State = InState;
+	Parms.State = State;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -165,7 +190,7 @@ void UGooglePADFunctionLibrary::ReleaseDownloadState(int32 InState)
 // Parameters:
 // int32                              Location                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGooglePADFunctionLibrary::ReleaseAssetPackLocation(int32 InLocation)
+void UGooglePADFunctionLibrary::ReleaseAssetPackLocation(int32 Location)
 {
 	static class UFunction* Func = nullptr;
 
@@ -174,15 +199,15 @@ void UGooglePADFunctionLibrary::ReleaseAssetPackLocation(int32 InLocation)
 
 	Params::UGooglePADFunctionLibrary_ReleaseAssetPackLocation_Params Parms{};
 
-	Parms.Location = InLocation;
+	Parms.Location = Location;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -193,7 +218,7 @@ void UGooglePADFunctionLibrary::ReleaseAssetPackLocation(int32 InLocation)
 // int32                              State                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UGooglePADFunctionLibrary::GetTotalBytesToDownload(int32 InState)
+int32 UGooglePADFunctionLibrary::GetTotalBytesToDownload(int32 State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -202,15 +227,15 @@ int32 UGooglePADFunctionLibrary::GetTotalBytesToDownload(int32 InState)
 
 	Params::UGooglePADFunctionLibrary_GetTotalBytesToDownload_Params Parms{};
 
-	Parms.State = InState;
+	Parms.State = State;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -223,7 +248,7 @@ int32 UGooglePADFunctionLibrary::GetTotalBytesToDownload(int32 InState)
 // int32                              Location                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EGooglePADStorageMethod ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EGooglePADStorageMethod UGooglePADFunctionLibrary::GetStorageMethod(int32 InLocation)
+enum class EGooglePADStorageMethod UGooglePADFunctionLibrary::GetStorageMethod(int32 Location)
 {
 	static class UFunction* Func = nullptr;
 
@@ -232,15 +257,15 @@ enum class EGooglePADStorageMethod UGooglePADFunctionLibrary::GetStorageMethod(i
 
 	Params::UGooglePADFunctionLibrary_GetStorageMethod_Params Parms{};
 
-	Parms.Location = InLocation;
+	Parms.Location = Location;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -253,7 +278,7 @@ enum class EGooglePADStorageMethod UGooglePADFunctionLibrary::GetStorageMethod(i
 // enum class EGooglePADCellularDataConfirmStatusStatus                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EGooglePADErrorCode     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetShowCellularDataConfirmationStatus(enum class EGooglePADCellularDataConfirmStatus* InStatus)
+enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetShowCellularDataConfirmationStatus(enum class EGooglePADCellularDataConfirmStatus* Status)
 {
 	static class UFunction* Func = nullptr;
 
@@ -263,16 +288,16 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetShowCellularDataCon
 	Params::UGooglePADFunctionLibrary_GetShowCellularDataConfirmationStatus_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InStatus != nullptr)
-		*InStatus = Parms.Status;
+	if (Status != nullptr)
+		*Status = Parms.Status;
 
 	return Parms.ReturnValue;
 
@@ -285,7 +310,7 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetShowCellularDataCon
 // int32                              State                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EGooglePADDownloadStatusReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EGooglePADDownloadStatus UGooglePADFunctionLibrary::GetDownloadStatus(int32 InState)
+enum class EGooglePADDownloadStatus UGooglePADFunctionLibrary::GetDownloadStatus(int32 State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -294,15 +319,15 @@ enum class EGooglePADDownloadStatus UGooglePADFunctionLibrary::GetDownloadStatus
 
 	Params::UGooglePADFunctionLibrary_GetDownloadStatus_Params Parms{};
 
-	Parms.State = InState;
+	Parms.State = State;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -316,7 +341,7 @@ enum class EGooglePADDownloadStatus UGooglePADFunctionLibrary::GetDownloadStatus
 // int32                              State                                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EGooglePADErrorCode     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetDownloadState(const class FString& InName, int32* InState)
+enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetDownloadState(const class FString& Name, int32* State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -325,18 +350,18 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetDownloadState(const
 
 	Params::UGooglePADFunctionLibrary_GetDownloadState_Params Parms{};
 
-	Parms.Name = InName;
+	Parms.Name = Name;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InState != nullptr)
-		*InState = Parms.State;
+	if (State != nullptr)
+		*State = Parms.State;
 
 	return Parms.ReturnValue;
 
@@ -349,7 +374,7 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetDownloadState(const
 // int32                              State                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UGooglePADFunctionLibrary::GetBytesDownloaded(int32 InState)
+int32 UGooglePADFunctionLibrary::GetBytesDownloaded(int32 State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -358,15 +383,15 @@ int32 UGooglePADFunctionLibrary::GetBytesDownloaded(int32 InState)
 
 	Params::UGooglePADFunctionLibrary_GetBytesDownloaded_Params Parms{};
 
-	Parms.State = InState;
+	Parms.State = State;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -379,7 +404,7 @@ int32 UGooglePADFunctionLibrary::GetBytesDownloaded(int32 InState)
 // int32                              Location                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UGooglePADFunctionLibrary::GetAssetsPath(int32 InLocation)
+class FString UGooglePADFunctionLibrary::GetAssetsPath(int32 Location)
 {
 	static class UFunction* Func = nullptr;
 
@@ -388,15 +413,15 @@ class FString UGooglePADFunctionLibrary::GetAssetsPath(int32 InLocation)
 
 	Params::UGooglePADFunctionLibrary_GetAssetsPath_Params Parms{};
 
-	Parms.Location = InLocation;
+	Parms.Location = Location;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -410,7 +435,7 @@ class FString UGooglePADFunctionLibrary::GetAssetsPath(int32 InLocation)
 // int32                              Location                                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EGooglePADErrorCode     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetAssetPackLocation(const class FString& InName, int32* InLocation)
+enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetAssetPackLocation(const class FString& Name, int32* Location)
 {
 	static class UFunction* Func = nullptr;
 
@@ -419,18 +444,18 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetAssetPackLocation(c
 
 	Params::UGooglePADFunctionLibrary_GetAssetPackLocation_Params Parms{};
 
-	Parms.Name = InName;
+	Parms.Name = Name;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InLocation != nullptr)
-		*InLocation = Parms.Location;
+	if (Location != nullptr)
+		*Location = Parms.Location;
 
 	return Parms.ReturnValue;
 
@@ -443,7 +468,7 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::GetAssetPackLocation(c
 // TArray<class FString>              AssetPacks                                                       (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // enum class EGooglePADErrorCode     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EGooglePADErrorCode UGooglePADFunctionLibrary::CancelDownload(const TArray<class FString>& InAssetPacks)
+enum class EGooglePADErrorCode UGooglePADFunctionLibrary::CancelDownload(const TArray<class FString>& AssetPacks)
 {
 	static class UFunction* Func = nullptr;
 
@@ -452,15 +477,15 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::CancelDownload(const T
 
 	Params::UGooglePADFunctionLibrary_CancelDownload_Params Parms{};
 
-	Parms.AssetPacks = InAssetPacks;
+	Parms.AssetPacks = AssetPacks;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -468,6 +493,4 @@ enum class EGooglePADErrorCode UGooglePADFunctionLibrary::CancelDownload(const T
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

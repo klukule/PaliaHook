@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -21,23 +18,18 @@ public:
 	class ACameraActor*                          CameraActor_0_GetDefaultCameraActor_MERGED_RefProperty; // 0x2A0(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class ABP_ValeriaCharacter_C*                BP_ValeriaCharacter_2_GetCharacter_MERGED_RefProperty; // 0x2A8(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MAP_CharacterRender_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class AMAP_CharacterRender_C* GetDefaultObj();
 
 	TSet<class AActor*> GetAllTaggedActors();
 	TSet<class AActor*> GetAllCameraActors();
-	class AActor* GetCameraActorForCosmeticAsset(class UVAL_CharacterCustomizationItemBase* InItem, enum class EVAL_CharacterBodyType InBodyType);
+	class AActor* GetCameraActorForCosmeticAsset(class UVAL_CharacterCustomizationItemBase* Item, enum class EVAL_CharacterBodyType BodyType);
 	class AValeriaCharacter* GetCharacter();
 	class AActor* GetDefaultCameraActor();
 	void ReceiveBeginPlay();
-	void ExecuteUbergraph_MAP_CharacterRender(int32 InEntryPoint);
+	void ExecuteUbergraph_MAP_CharacterRender(int32 EntryPoint);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,121 +11,121 @@ namespace SDK
 
 enum class EAudioDeviceChangedRole : uint8
 {
-	EAudioDeviceChangedRole__Invalid = 0,
-	EAudioDeviceChangedRole__Console = 1,
-	EAudioDeviceChangedRole__Multimedia = 2,
-	EAudioDeviceChangedRole__Communications = 3,
-	EAudioDeviceChangedRole__Count = 4,
-	EAudioDeviceChangedRole__EAudioDeviceChangedRole_MAX = 5,
+	Invalid                        = 0,
+	Console                        = 1,
+	Multimedia                     = 2,
+	Communications                 = 3,
+	Count                          = 4,
+	EAudioDeviceChangedRole_MAX    = 5,
 };
 
 enum class EAudioDeviceChangedState : uint8
 {
-	EAudioDeviceChangedState__Invalid = 0,
-	EAudioDeviceChangedState__Active = 1,
-	EAudioDeviceChangedState__Disabled = 2,
-	EAudioDeviceChangedState__NotPresent = 3,
-	EAudioDeviceChangedState__Unplugged = 4,
-	EAudioDeviceChangedState__Count = 5,
-	EAudioDeviceChangedState__EAudioDeviceChangedState_MAX = 6,
+	Invalid                        = 0,
+	Active                         = 1,
+	Disabled                       = 2,
+	NotPresent                     = 3,
+	Unplugged                      = 4,
+	Count                          = 5,
+	EAudioDeviceChangedState_MAX   = 6,
 };
 
 enum class EAudioMixerChannelType : uint8
 {
-	EAudioMixerChannelType__FrontLeft = 0,
-	EAudioMixerChannelType__FrontRight = 1,
-	EAudioMixerChannelType__FrontCenter = 2,
-	EAudioMixerChannelType__LowFrequency = 3,
-	EAudioMixerChannelType__BackLeft = 4,
-	EAudioMixerChannelType__BackRight = 5,
-	EAudioMixerChannelType__FrontLeftOfCenter = 6,
-	EAudioMixerChannelType__FrontRightOfCenter = 7,
-	EAudioMixerChannelType__BackCenter = 8,
-	EAudioMixerChannelType__SideLeft = 9,
-	EAudioMixerChannelType__SideRight = 10,
-	EAudioMixerChannelType__TopCenter = 11,
-	EAudioMixerChannelType__TopFrontLeft = 12,
-	EAudioMixerChannelType__TopFrontCenter = 13,
-	EAudioMixerChannelType__TopFrontRight = 14,
-	EAudioMixerChannelType__TopBackLeft = 15,
-	EAudioMixerChannelType__TopBackCenter = 16,
-	EAudioMixerChannelType__TopBackRight = 17,
-	EAudioMixerChannelType__Unknown = 18,
-	EAudioMixerChannelType__ChannelTypeCount = 19,
-	EAudioMixerChannelType__DefaultChannel = 0,
-	EAudioMixerChannelType__EAudioMixerChannelType_MAX = 20,
+	FrontLeft                      = 0,
+	FrontRight                     = 1,
+	FrontCenter                    = 2,
+	LowFrequency                   = 3,
+	BackLeft                       = 4,
+	BackRight                      = 5,
+	FrontLeftOfCenter              = 6,
+	FrontRightOfCenter             = 7,
+	BackCenter                     = 8,
+	SideLeft                       = 9,
+	SideRight                      = 10,
+	TopCenter                      = 11,
+	TopFrontLeft                   = 12,
+	TopFrontCenter                 = 13,
+	TopFrontRight                  = 14,
+	TopBackLeft                    = 15,
+	TopBackCenter                  = 16,
+	TopBackRight                   = 17,
+	Unknown                        = 18,
+	ChannelTypeCount               = 19,
+	DefaultChannel                 = 0,
+	EAudioMixerChannelType_MAX     = 20,
 };
 
 enum class EAudioMixerStreamDataFormatType : uint8
 {
-	EAudioMixerStreamDataFormatType__Unknown = 0,
-	EAudioMixerStreamDataFormatType__Float = 1,
-	EAudioMixerStreamDataFormatType__Int16 = 2,
-	EAudioMixerStreamDataFormatType__Unsupported = 3,
-	EAudioMixerStreamDataFormatType__EAudioMixerStreamDataFormatType_MAX = 4,
+	Unknown                        = 0,
+	Float                          = 1,
+	Int16                          = 2,
+	Unsupported                    = 3,
+	EAudioMixerStreamDataFormatType_MAX = 4,
 };
 
 enum class ESwapAudioOutputDeviceResultState : uint8
 {
-	ESwapAudioOutputDeviceResultState__Failure = 0,
-	ESwapAudioOutputDeviceResultState__Success = 1,
-	ESwapAudioOutputDeviceResultState__None = 2,
-	ESwapAudioOutputDeviceResultState__ESwapAudioOutputDeviceResultState_MAX = 3,
+	Failure                        = 0,
+	Success                        = 1,
+	None                           = 2,
+	ESwapAudioOutputDeviceResultState_MAX = 3,
 };
 
 enum class EMusicalNoteName : uint8
 {
-	EMusicalNoteName__C            = 0,
-	EMusicalNoteName__Db           = 1,
-	EMusicalNoteName__D            = 2,
-	EMusicalNoteName__Eb           = 3,
-	EMusicalNoteName__E            = 4,
-	EMusicalNoteName__F            = 5,
-	EMusicalNoteName__Gb           = 6,
-	EMusicalNoteName__G            = 7,
-	EMusicalNoteName__Ab           = 8,
-	EMusicalNoteName__A            = 9,
-	EMusicalNoteName__Bb           = 10,
-	EMusicalNoteName__B            = 11,
-	EMusicalNoteName__EMusicalNoteName_MAX = 12,
+	C                              = 0,
+	Db                             = 1,
+	D                              = 2,
+	Eb                             = 3,
+	E                              = 4,
+	F                              = 5,
+	Gb                             = 6,
+	G                              = 7,
+	Ab                             = 8,
+	A                              = 9,
+	Bb                             = 10,
+	B                              = 11,
+	EMusicalNoteName_MAX           = 12,
 };
 
 enum class ESubmixEffectDynamicsProcessorType : uint8
 {
-	ESubmixEffectDynamicsProcessorType__Compressor = 0,
-	ESubmixEffectDynamicsProcessorType__Limiter = 1,
-	ESubmixEffectDynamicsProcessorType__Expander = 2,
-	ESubmixEffectDynamicsProcessorType__Gate = 3,
-	ESubmixEffectDynamicsProcessorType__UpwardsCompressor = 4,
-	ESubmixEffectDynamicsProcessorType__Count = 5,
-	ESubmixEffectDynamicsProcessorType__ESubmixEffectDynamicsProcessorType_MAX = 6,
+	Compressor                     = 0,
+	Limiter                        = 1,
+	Expander                       = 2,
+	Gate                           = 3,
+	UpwardsCompressor              = 4,
+	Count                          = 5,
+	ESubmixEffectDynamicsProcessorType_MAX = 6,
 };
 
 enum class ESubmixEffectDynamicsPeakMode : uint8
 {
-	ESubmixEffectDynamicsPeakMode__MeanSquared = 0,
-	ESubmixEffectDynamicsPeakMode__RootMeanSquared = 1,
-	ESubmixEffectDynamicsPeakMode__Peak = 2,
-	ESubmixEffectDynamicsPeakMode__Count = 3,
-	ESubmixEffectDynamicsPeakMode__ESubmixEffectDynamicsPeakMode_MAX = 4,
+	MeanSquared                    = 0,
+	RootMeanSquared                = 1,
+	Peak                           = 2,
+	Count                          = 3,
+	ESubmixEffectDynamicsPeakMode_MAX = 4,
 };
 
 enum class ESubmixEffectDynamicsChannelLinkMode : uint8
 {
-	ESubmixEffectDynamicsChannelLinkMode__Disabled = 0,
-	ESubmixEffectDynamicsChannelLinkMode__Average = 1,
-	ESubmixEffectDynamicsChannelLinkMode__Peak = 2,
-	ESubmixEffectDynamicsChannelLinkMode__Count = 3,
-	ESubmixEffectDynamicsChannelLinkMode__ESubmixEffectDynamicsChannelLinkMode_MAX = 4,
+	Disabled                       = 0,
+	Average                        = 1,
+	Peak                           = 2,
+	Count                          = 3,
+	ESubmixEffectDynamicsChannelLinkMode_MAX = 4,
 };
 
 enum class ESubmixEffectDynamicsKeySource : uint8
 {
-	ESubmixEffectDynamicsKeySource__Default = 0,
-	ESubmixEffectDynamicsKeySource__AudioBus = 1,
-	ESubmixEffectDynamicsKeySource__Submix = 2,
-	ESubmixEffectDynamicsKeySource__Count = 3,
-	ESubmixEffectDynamicsKeySource__ESubmixEffectDynamicsKeySource_MAX = 4,
+	Default                        = 0,
+	AudioBus                       = 1,
+	Submix                         = 2,
+	Count                          = 3,
+	ESubmixEffectDynamicsKeySource_MAX = 4,
 };
 
 
@@ -146,11 +143,11 @@ public:
 	int32                                        NumChannels;                                       // 0x20(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        SampleRate;                                        // 0x24(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAudioMixerStreamDataFormatType   Format;                                            // 0x28(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_AFA[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B99[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<enum class EAudioMixerChannelType>    OutputChannelArray;                                // 0x30(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	uint8                                        bIsSystemDefault : 1;                              // Mask: 0x1, PropSize: 0x10x40(0x1)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bIsCurrentDevice : 1;                              // Mask: 0x2, PropSize: 0x10x40(0x1)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_AFB[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B9E[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -161,7 +158,7 @@ public:
 	class FString                                CurrentDeviceId;                                   // 0x0(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                RequestedDeviceId;                                 // 0x10(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESwapAudioOutputDeviceResultState Result;                                            // 0x20(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B00[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BA7[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -170,8 +167,8 @@ struct FSubmixEffectDynamicProcessorFilterSettings
 {
 public:
 	uint8                                        bEnabled : 1;                                      // Mask: 0x1, PropSize: 0x10x0(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_68 : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_B09[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_73 : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_BB3[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Cutoff;                                            // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        GainDb;                                            // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -184,7 +181,7 @@ public:
 	enum class ESubmixEffectDynamicsProcessorType DynamicsProcessorType;                             // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESubmixEffectDynamicsPeakMode     PeakMode;                                          // 0x1(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESubmixEffectDynamicsChannelLinkMode LinkMode;                                          // 0x2(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B0B[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_BBA[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        InputGainDb;                                       // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ThresholdDb;                                       // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Ratio;                                             // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -193,20 +190,20 @@ public:
 	float                                        AttackTimeMsec;                                    // 0x18(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ReleaseTimeMsec;                                   // 0x1C(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESubmixEffectDynamicsKeySource    KeySource;                                         // 0x20(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B0C[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_BBF[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAudioBus*                             ExternalAudioBus;                                  // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USoundSubmix*                          ExternalSubmix;                                    // 0x30(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bChannelLinked : 1;                                // Mask: 0x1, PropSize: 0x10x38(0x1)(Deprecated, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bAnalogMode : 1;                                   // Mask: 0x2, PropSize: 0x10x38(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bBypass : 1;                                       // Mask: 0x4, PropSize: 0x10x38(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bKeyAudition : 1;                                  // Mask: 0x8, PropSize: 0x10x38(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_69 : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_B0F[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_76 : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_BC3[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        KeyGainDb;                                         // 0x3C(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        OutputGainDb;                                      // 0x40(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSubmixEffectDynamicProcessorFilterSettings KeyHighshelf;                                      // 0x44(0xC)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSubmixEffectDynamicProcessorFilterSettings KeyLowshelf;                                       // 0x50(0xC)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B11[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BC6[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -218,7 +215,7 @@ public:
 	float                                        Bandwidth;                                         // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        GainDb;                                            // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bEnabled : 1;                                      // Mask: 0x1, PropSize: 0x10xC(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B14[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BCC[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -235,12 +232,12 @@ struct FSubmixEffectReverbSettings
 {
 public:
 	bool                                         bBypassEarlyReflections;                           // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B16[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_BD0[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ReflectionsDelay;                                  // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        GainHF;                                            // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ReflectionsGain;                                   // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bBypassLateReflections;                            // 0x10(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B1A[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_BD1[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        LateDelay;                                         // 0x14(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        DecayTime;                                         // 0x18(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Density;                                           // 0x1C(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -252,11 +249,9 @@ public:
 	float                                        WetLevel;                                          // 0x34(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        DryLevel;                                          // 0x38(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bBypass;                                           // 0x3C(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_B1F[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BD5[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

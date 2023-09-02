@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,14 +11,14 @@ namespace SDK
 
 enum class EClusterConnectionTypeEnum : uint8
 {
-	EClusterConnectionTypeEnum__Chaos_PointImplicit = 0,
-	EClusterConnectionTypeEnum__Chaos_DelaunayTriangulation = 1,
-	EClusterConnectionTypeEnum__Chaos_MinimalSpanningSubsetDelaunayTriangulation = 2,
-	EClusterConnectionTypeEnum__Chaos_PointImplicitAugmentedWithMinimalDelaunay = 3,
-	EClusterConnectionTypeEnum__Chaos_BoundsOverlapFilteredDelaunayTriangulation = 4,
-	EClusterConnectionTypeEnum__Chaos_None = 5,
-	EClusterConnectionTypeEnum__Chaos_EClsuterCreationParameters_Max = 6,
-	EClusterConnectionTypeEnum__Chaos_MAX = 7,
+	Chaos_PointImplicit            = 0,
+	Chaos_DelaunayTriangulation    = 1,
+	Chaos_MinimalSpanningSubsetDelaunayTriangulation = 2,
+	Chaos_PointImplicitAugmentedWithMinimalDelaunay = 3,
+	Chaos_BoundsOverlapFilteredDelaunayTriangulation = 4,
+	Chaos_None                     = 5,
+	Chaos_EClsuterCreationParameters_Max = 6,
+	Chaos_MAX                      = 7,
 };
 
 
@@ -71,7 +68,7 @@ public:
 	struct FVector                               LinearVelocity;                                    // 0x40(0x18)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               AngularVelocity;                                   // 0x58(0x18)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Mass;                                              // 0x70(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2265[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_225B[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FBox                                  LocalBounds;                                       // 0x78(0x38)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                Children;                                          // 0xB0(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
@@ -84,7 +81,7 @@ public:
 	class UPrimitiveComponent*                   Component;                                         // 0x0(0x8)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Location;                                          // 0x8(0x18)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Mass;                                              // 0x20(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2269[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_225C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -92,7 +89,7 @@ public:
 struct FBreakEventCallbackWrapper
 {
 public:
-	uint8                                        Pad_226A[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_225E[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -100,7 +97,7 @@ public:
 struct FRemovalEventCallbackWrapper
 {
 public:
-	uint8                                        Pad_226D[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2260[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -108,7 +105,7 @@ public:
 struct FCrumblingEventCallbackWrapper
 {
 public:
-	uint8                                        Pad_226F[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2262[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -116,7 +113,7 @@ public:
 struct FChaosHandlerSet
 {
 public:
-	uint8                                        Pad_2270[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2263[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<class UObject*>                         ChaosHandlers;                                     // 0x8(0x50)(UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
@@ -132,6 +129,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

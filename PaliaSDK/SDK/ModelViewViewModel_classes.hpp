@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -17,18 +14,15 @@ namespace SDK
 class UMVVMViewModelBase : public UObject
 {
 public:
-	uint8                                        Pad_13A[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C6[0x40];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MVVMViewModelBase");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMVVMViewModelBase* GetDefaultObj();
 
-	bool K2_SetPropertyValue(int32& InOldValue, int32& InNewValue);
-	void K2_RemoveFieldValueChangedDelegate(const struct FFieldNotificationId& InFieldId, FDelegateProperty_ InDelegate);
-	void K2_BroadcastFieldValueChanged(const struct FFieldNotificationId& InFieldId);
-	void K2_AddFieldValueChangedDelegate(const struct FFieldNotificationId& InFieldId, FDelegateProperty_ InDelegate);
+	bool K2_SetPropertyValue(int32& OldValue, int32& NewValue);
+	void K2_RemoveFieldValueChangedDelegate(const struct FFieldNotificationId& FieldId, FDelegateProperty_ Delegate);
+	void K2_BroadcastFieldValueChanged(const struct FFieldNotificationId& FieldId);
+	void K2_AddFieldValueChangedDelegate(const struct FFieldNotificationId& FieldId, FDelegateProperty_ Delegate);
 };
 
 // 0x8 (0x38 - 0x30)
@@ -38,17 +32,14 @@ class UMVVMSubsystem : public UEngineSubsystem
 public:
 	class UMVVMViewModelCollectionObject*        GlobalViewModelCollection;                         // 0x30(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MVVMSubsystem");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMVVMSubsystem* GetDefaultObj();
 
-	class UMVVMView* GetViewFromUserWidget(class UUserWidget* InUserWidget);
+	class UMVVMView* GetViewFromUserWidget(class UUserWidget* UserWidget);
 	class UMVVMViewModelCollectionObject* GetGlobalViewModelCollection();
-	TArray<struct FMVVMAvailableBinding> GetAvailableBindings(class UClass* InClass, class UClass* InAccessor);
-	struct FMVVMAvailableBinding GetAvailableBinding(class UClass* InClass, const struct FMVVMBindingName& InBindingName, class UClass* InAccessor);
-	bool DoesWidgetTreeContainedWidget(class UWidgetTree* InWidgetTree, class UWidget* InViewWidget);
+	TArray<struct FMVVMAvailableBinding> GetAvailableBindings(class UClass* Class, class UClass* Accessor);
+	struct FMVVMAvailableBinding GetAvailableBinding(class UClass* Class, const struct FMVVMBindingName& BindingName, class UClass* Accessor);
+	bool DoesWidgetTreeContainedWidget(class UWidgetTree* WidgetTree, class UWidget* ViewWidget);
 };
 
 // 0x28 (0x50 - 0x28)
@@ -58,16 +49,13 @@ class UMVVMViewModelCollectionObject : public UObject
 public:
 	struct FMVVMViewModelCollection              ViewModelCollection;                               // 0x28(0x28)(Transient, NativeAccessSpecifierPrivate)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MVVMViewModelCollectionObject");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMVVMViewModelCollectionObject* GetDefaultObj();
 
-	bool RemoveViewModel(const struct FMVVMViewModelContext& InContext);
-	int32 RemoveAllViewModelInstance(class UMVVMViewModelBase* InViewModel);
-	class UMVVMViewModelBase* FindViewModelInstance(const struct FMVVMViewModelContext& InContext);
-	bool AddViewModelInstance(const struct FMVVMViewModelContext& InContext, class UMVVMViewModelBase* InViewModel);
+	bool RemoveViewModel(const struct FMVVMViewModelContext& Context);
+	int32 RemoveAllViewModelInstance(class UMVVMViewModelBase* ViewModel);
+	class UMVVMViewModelBase* FindViewModelInstance(const struct FMVVMViewModelContext& Context);
+	bool AddViewModelInstance(const struct FMVVMViewModelContext& Context, class UMVVMViewModelBase* ViewModel);
 };
 
 // 0x18 (0x398 - 0x380)
@@ -76,13 +64,10 @@ class UMVVMViewModelBlueprintGeneratedClass : public UBlueprintGeneratedClass
 {
 public:
 	TArray<struct FFieldNotificationId>          FieldNotifyNames;                                  // 0x380(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_147[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_DD[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MVVMViewModelBlueprintGeneratedClass");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMVVMViewModelBlueprintGeneratedClass* GetDefaultObj();
 
 };
 
@@ -92,15 +77,12 @@ class UMVVMView : public UUserWidgetExtension
 {
 public:
 	class UMVVMViewClass*                        ClassExtension;                                    // 0x28(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_14B[0x38];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E2[0x38];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MVVMView");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMVVMView* GetDefaultObj();
 
-	bool SetViewModel(class FName InViewModelName, class UMVVMViewModelBase* InViewModel);
+	bool SetViewModel(class FName ViewModelName, class UMVVMViewModelBase* ViewModel);
 };
 
 // 0x88 (0xB0 - 0x28)
@@ -111,18 +93,13 @@ public:
 	TArray<struct FMVVMViewClass_SourceCreator>  SourceCreators;                                    // 0x28(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<struct FMVVMViewClass_CompiledBinding> CompiledBindings;                                  // 0x38(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	struct FMVVMCompiledBindingLibrary           BindingLibrary;                                    // 0x48(0x60)(NativeAccessSpecifierPrivate)
-	uint8                                        Pad_14C[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E5[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MVVMViewClass");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMVVMViewClass* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class AudioLinkEngine.AudioLinkBlueprintInterface
+// (None)
+
+class UClass* IAudioLinkBlueprintInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioLinkBlueprintInterface");
+
+	return Clss;
+}
+
+
+// AudioLinkBlueprintInterface AudioLinkEngine.Default__AudioLinkBlueprintInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IAudioLinkBlueprintInterface* IAudioLinkBlueprintInterface::GetDefaultObj()
+{
+	static class IAudioLinkBlueprintInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IAudioLinkBlueprintInterface*>(IAudioLinkBlueprintInterface::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function AudioLinkEngine.AudioLinkBlueprintInterface.StopLink
@@ -29,13 +54,13 @@ void IAudioLinkBlueprintInterface::StopLink()
 	Params::IAudioLinkBlueprintInterface_StopLink_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -45,7 +70,7 @@ void IAudioLinkBlueprintInterface::StopLink()
 // Parameters:
 // class USoundBase*                  NewSound                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IAudioLinkBlueprintInterface::SetLinkSound(class USoundBase* InNewSound)
+void IAudioLinkBlueprintInterface::SetLinkSound(class USoundBase* NewSound)
 {
 	static class UFunction* Func = nullptr;
 
@@ -54,15 +79,15 @@ void IAudioLinkBlueprintInterface::SetLinkSound(class USoundBase* InNewSound)
 
 	Params::IAudioLinkBlueprintInterface_SetLinkSound_Params Parms{};
 
-	Parms.NewSound = InNewSound;
+	Parms.NewSound = NewSound;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -72,7 +97,7 @@ void IAudioLinkBlueprintInterface::SetLinkSound(class USoundBase* InNewSound)
 // Parameters:
 // float                              StartTime                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IAudioLinkBlueprintInterface::PlayLink(float InStartTime)
+void IAudioLinkBlueprintInterface::PlayLink(float StartTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -81,15 +106,15 @@ void IAudioLinkBlueprintInterface::PlayLink(float InStartTime)
 
 	Params::IAudioLinkBlueprintInterface_PlayLink_Params Parms{};
 
-	Parms.StartTime = InStartTime;
+	Parms.StartTime = StartTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -109,13 +134,13 @@ bool IAudioLinkBlueprintInterface::IsLinkPlaying()
 	Params::IAudioLinkBlueprintInterface_IsLinkPlaying_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -123,6 +148,4 @@ bool IAudioLinkBlueprintInterface::IsLinkPlaying()
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

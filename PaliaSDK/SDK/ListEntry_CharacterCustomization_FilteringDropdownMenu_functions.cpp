@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass ListEntry_CharacterCustomization_FilteringDropdownMenu.ListEntry_CharacterCustomization_FilteringDropdownMenu_C
+// (None)
+
+class UClass* UListEntry_CharacterCustomization_FilteringDropdownMenu_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ListEntry_CharacterCustomization_FilteringDropdownMenu_C");
+
+	return Clss;
+}
+
+
+// ListEntry_CharacterCustomization_FilteringDropdownMenu_C ListEntry_CharacterCustomization_FilteringDropdownMenu.Default__ListEntry_CharacterCustomization_FilteringDropdownMenu_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UListEntry_CharacterCustomization_FilteringDropdownMenu_C* UListEntry_CharacterCustomization_FilteringDropdownMenu_C::GetDefaultObj()
+{
+	static class UListEntry_CharacterCustomization_FilteringDropdownMenu_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UListEntry_CharacterCustomization_FilteringDropdownMenu_C*>(UListEntry_CharacterCustomization_FilteringDropdownMenu_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function ListEntry_CharacterCustomization_FilteringDropdownMenu.ListEntry_CharacterCustomization_FilteringDropdownMenu_C.HasTagOptions
@@ -22,7 +47,7 @@ namespace SDK
 // int32                              CallFunc_Array_Length_ReturnValue                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Greater_IntInt_ReturnValue                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UListEntry_CharacterCustomization_FilteringDropdownMenu_C::HasTagOptions(bool* InHasOptions, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Greater_IntInt_ReturnValue)
+void UListEntry_CharacterCustomization_FilteringDropdownMenu_C::HasTagOptions(bool* HasOptions, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Greater_IntInt_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,13 +56,13 @@ void UListEntry_CharacterCustomization_FilteringDropdownMenu_C::HasTagOptions(bo
 
 	Params::UListEntry_CharacterCustomization_FilteringDropdownMenu_C_HasTagOptions_Params Parms{};
 
-	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Greater_IntInt_ReturnValue = InCallFunc_Greater_IntInt_ReturnValue;
+	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Greater_IntInt_ReturnValue = CallFunc_Greater_IntInt_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InHasOptions != nullptr)
-		*InHasOptions = Parms.HasOptions;
+	if (HasOptions != nullptr)
+		*HasOptions = Parms.HasOptions;
 
 }
 
@@ -62,6 +87,4 @@ void UListEntry_CharacterCustomization_FilteringDropdownMenu_C::OnSelectionChang
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

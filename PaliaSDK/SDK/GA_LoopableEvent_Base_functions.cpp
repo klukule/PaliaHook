@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// BlueprintGeneratedClass GA_LoopableEvent_Base.GA_LoopableEvent_Base_C
+// (None)
+
+class UClass* UGA_LoopableEvent_Base_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GA_LoopableEvent_Base_C");
+
+	return Clss;
+}
+
+
+// GA_LoopableEvent_Base_C GA_LoopableEvent_Base.Default__GA_LoopableEvent_Base_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UGA_LoopableEvent_Base_C* UGA_LoopableEvent_Base_C::GetDefaultObj()
+{
+	static class UGA_LoopableEvent_Base_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGA_LoopableEvent_Base_C*>(UGA_LoopableEvent_Base_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function GA_LoopableEvent_Base.GA_LoopableEvent_Base_C.LoadAbilityAssets
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AValeriaCharacter*           ValeriaCharacter                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::LoadAbilityAssets(class AValeriaCharacter* InValeriaCharacter)
+void UGA_LoopableEvent_Base_C::LoadAbilityAssets(class AValeriaCharacter* ValeriaCharacter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +54,7 @@ void UGA_LoopableEvent_Base_C::LoadAbilityAssets(class AValeriaCharacter* InVale
 
 	Params::UGA_LoopableEvent_Base_C_LoadAbilityAssets_Params Parms{};
 
-	Parms.ValeriaCharacter = InValeriaCharacter;
+	Parms.ValeriaCharacter = ValeriaCharacter;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -47,7 +72,7 @@ void UGA_LoopableEvent_Base_C::LoadAbilityAssets(class AValeriaCharacter* InVale
 // bool                               CallFunc_Not_PreBool_ReturnValue_3                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::ConsiderCancellingLoop(bool InCallFunc_Not_PreBool_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue_1, bool InCallFunc_IsButtonPressed_ButtonPressed, bool InCallFunc_Not_PreBool_ReturnValue_2, bool InCallFunc_IsAbilityLockedIn_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue_3, bool InCallFunc_BooleanAND_ReturnValue)
+void UGA_LoopableEvent_Base_C::ConsiderCancellingLoop(bool CallFunc_Not_PreBool_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue_1, bool CallFunc_IsButtonPressed_ButtonPressed, bool CallFunc_Not_PreBool_ReturnValue_2, bool CallFunc_IsAbilityLockedIn_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue_3, bool CallFunc_BooleanAND_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,13 +81,13 @@ void UGA_LoopableEvent_Base_C::ConsiderCancellingLoop(bool InCallFunc_Not_PreBoo
 
 	Params::UGA_LoopableEvent_Base_C_ConsiderCancellingLoop_Params Parms{};
 
-	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue_1 = InCallFunc_Not_PreBool_ReturnValue_1;
-	Parms.CallFunc_IsButtonPressed_ButtonPressed = InCallFunc_IsButtonPressed_ButtonPressed;
-	Parms.CallFunc_Not_PreBool_ReturnValue_2 = InCallFunc_Not_PreBool_ReturnValue_2;
-	Parms.CallFunc_IsAbilityLockedIn_ReturnValue = InCallFunc_IsAbilityLockedIn_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue_3 = InCallFunc_Not_PreBool_ReturnValue_3;
-	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue_1 = CallFunc_Not_PreBool_ReturnValue_1;
+	Parms.CallFunc_IsButtonPressed_ButtonPressed = CallFunc_IsButtonPressed_ButtonPressed;
+	Parms.CallFunc_Not_PreBool_ReturnValue_2 = CallFunc_Not_PreBool_ReturnValue_2;
+	Parms.CallFunc_IsAbilityLockedIn_ReturnValue = CallFunc_IsAbilityLockedIn_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue_3 = CallFunc_Not_PreBool_ReturnValue_3;
+	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -74,7 +99,7 @@ void UGA_LoopableEvent_Base_C::ConsiderCancellingLoop(bool InCallFunc_Not_PreBoo
 // Parameters:
 // bool                               ButtonPressed                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::IsButtonPressed(bool* InButtonPressed)
+void UGA_LoopableEvent_Base_C::IsButtonPressed(bool* ButtonPressed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,8 +111,8 @@ void UGA_LoopableEvent_Base_C::IsButtonPressed(bool* InButtonPressed)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InButtonPressed != nullptr)
-		*InButtonPressed = Parms.ButtonPressed;
+	if (ButtonPressed != nullptr)
+		*ButtonPressed = Parms.ButtonPressed;
 
 }
 
@@ -117,7 +142,7 @@ void UGA_LoopableEvent_Base_C::Callback_InputReleased()
 // bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int64                              CallFunc_GetValeriaTimestampMs64_ReturnValue                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::Callback_InputPressed(bool InCallFunc_BooleanAND_ReturnValue, int64 InCallFunc_GetValeriaTimestampMs64_ReturnValue)
+void UGA_LoopableEvent_Base_C::Callback_InputPressed(bool CallFunc_BooleanAND_ReturnValue, int64 CallFunc_GetValeriaTimestampMs64_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -126,8 +151,8 @@ void UGA_LoopableEvent_Base_C::Callback_InputPressed(bool InCallFunc_BooleanAND_
 
 	Params::UGA_LoopableEvent_Base_C_Callback_InputPressed_Params Parms{};
 
-	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
-	Parms.CallFunc_GetValeriaTimestampMs64_ReturnValue = InCallFunc_GetValeriaTimestampMs64_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
+	Parms.CallFunc_GetValeriaTimestampMs64_ReturnValue = CallFunc_GetValeriaTimestampMs64_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -148,11 +173,11 @@ void UGA_LoopableEvent_Base_C::Callback_InputPressed(bool InCallFunc_BooleanAND_
 // class AValeriaCharacter*           K2Node_DynamicCast_AsValeria_Character                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AValeriaPlayerController*    CallFunc_GetValeriaPlayerController_ReturnValue                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FValeriaItem                CallFunc_GetEquippedItem_ReturnValue                             ()
+// struct FValeriaItem                CallFunc_GetEquippedItem_ReturnValue                             (None)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      K2Node_Select_Default                                            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::DoGatherSFX(bool InCanDamage, class AActor* InObject, class AActor* InInstigator, int32 InNewLocalVar_0, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, bool InCallFunc_HasAuthority_ReturnValue, bool InTemp_bool_Variable, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class AValeriaPlayerController* InCallFunc_GetValeriaPlayerController_ReturnValue, const struct FValeriaItem& InCallFunc_GetEquippedItem_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class AActor* InK2Node_Select_Default)
+void UGA_LoopableEvent_Base_C::DoGatherSFX(bool CanDamage, class AActor* Object, class AActor* Instigator, int32 NewLocalVar_0, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, bool CallFunc_HasAuthority_ReturnValue, bool Temp_bool_Variable, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, class AValeriaPlayerController* CallFunc_GetValeriaPlayerController_ReturnValue, const struct FValeriaItem& CallFunc_GetEquippedItem_ReturnValue, bool CallFunc_IsValid_ReturnValue, class AActor* K2Node_Select_Default)
 {
 	static class UFunction* Func = nullptr;
 
@@ -161,20 +186,20 @@ void UGA_LoopableEvent_Base_C::DoGatherSFX(bool InCanDamage, class AActor* InObj
 
 	Params::UGA_LoopableEvent_Base_C_DoGatherSFX_Params Parms{};
 
-	Parms.CanDamage = InCanDamage;
-	Parms.Object = InObject;
-	Parms.Instigator = InInstigator;
-	Parms.NewLocalVar_0 = InNewLocalVar_0;
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = InCallFunc_GetOwningActorFromActorInfo_ReturnValue;
-	Parms.CallFunc_HasAuthority_ReturnValue = InCallFunc_HasAuthority_ReturnValue;
-	Parms.Temp_bool_Variable = InTemp_bool_Variable;
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_1 = InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1;
-	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetValeriaPlayerController_ReturnValue = InCallFunc_GetValeriaPlayerController_ReturnValue;
-	Parms.CallFunc_GetEquippedItem_ReturnValue = InCallFunc_GetEquippedItem_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.K2Node_Select_Default = InK2Node_Select_Default;
+	Parms.CanDamage = CanDamage;
+	Parms.Object = Object;
+	Parms.Instigator = Instigator;
+	Parms.NewLocalVar_0 = NewLocalVar_0;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = CallFunc_GetOwningActorFromActorInfo_ReturnValue;
+	Parms.CallFunc_HasAuthority_ReturnValue = CallFunc_HasAuthority_ReturnValue;
+	Parms.Temp_bool_Variable = Temp_bool_Variable;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_1 = CallFunc_GetOwningActorFromActorInfo_ReturnValue_1;
+	Parms.K2Node_DynamicCast_AsValeria_Character = K2Node_DynamicCast_AsValeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetValeriaPlayerController_ReturnValue = CallFunc_GetValeriaPlayerController_ReturnValue;
+	Parms.CallFunc_GetEquippedItem_ReturnValue = CallFunc_GetEquippedItem_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.K2Node_Select_Default = K2Node_Select_Default;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -195,7 +220,7 @@ void UGA_LoopableEvent_Base_C::DoGatherSFX(bool InCanDamage, class AActor* InObj
 // bool                               CallFunc_BooleanOR_ReturnValue                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanOR_ReturnValue_1                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UGA_LoopableEvent_Base_C::IsAbilityLockedIn(class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class UValeriaGASComponent* InCallFunc_GetGAS_ReturnValue, TScriptInterface<class IGameplayTagAssetInterface> InCallFunc_HasMatchingGameplayTag_self_CastInput, bool InCallFunc_HasMatchingGameplayTag_ReturnValue, bool InCallFunc_IsAbilityMarkedLockedIn_ReturnValue, bool InCallFunc_BooleanOR_ReturnValue, bool InCallFunc_BooleanOR_ReturnValue_1)
+bool UGA_LoopableEvent_Base_C::IsAbilityLockedIn(class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, class UValeriaGASComponent* CallFunc_GetGAS_ReturnValue, TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput, bool CallFunc_HasMatchingGameplayTag_ReturnValue, bool CallFunc_IsAbilityMarkedLockedIn_ReturnValue, bool CallFunc_BooleanOR_ReturnValue, bool CallFunc_BooleanOR_ReturnValue_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -204,15 +229,15 @@ bool UGA_LoopableEvent_Base_C::IsAbilityLockedIn(class AActor* InCallFunc_GetOwn
 
 	Params::UGA_LoopableEvent_Base_C_IsAbilityLockedIn_Params Parms{};
 
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = InCallFunc_GetOwningActorFromActorInfo_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetGAS_ReturnValue = InCallFunc_GetGAS_ReturnValue;
-	Parms.CallFunc_HasMatchingGameplayTag_self_CastInput = InCallFunc_HasMatchingGameplayTag_self_CastInput;
-	Parms.CallFunc_HasMatchingGameplayTag_ReturnValue = InCallFunc_HasMatchingGameplayTag_ReturnValue;
-	Parms.CallFunc_IsAbilityMarkedLockedIn_ReturnValue = InCallFunc_IsAbilityMarkedLockedIn_ReturnValue;
-	Parms.CallFunc_BooleanOR_ReturnValue = InCallFunc_BooleanOR_ReturnValue;
-	Parms.CallFunc_BooleanOR_ReturnValue_1 = InCallFunc_BooleanOR_ReturnValue_1;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = CallFunc_GetOwningActorFromActorInfo_ReturnValue;
+	Parms.K2Node_DynamicCast_AsValeria_Character = K2Node_DynamicCast_AsValeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetGAS_ReturnValue = CallFunc_GetGAS_ReturnValue;
+	Parms.CallFunc_HasMatchingGameplayTag_self_CastInput = CallFunc_HasMatchingGameplayTag_self_CastInput;
+	Parms.CallFunc_HasMatchingGameplayTag_ReturnValue = CallFunc_HasMatchingGameplayTag_ReturnValue;
+	Parms.CallFunc_IsAbilityMarkedLockedIn_ReturnValue = CallFunc_IsAbilityMarkedLockedIn_ReturnValue;
+	Parms.CallFunc_BooleanOR_ReturnValue = CallFunc_BooleanOR_ReturnValue;
+	Parms.CallFunc_BooleanOR_ReturnValue_1 = CallFunc_BooleanOR_ReturnValue_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -226,7 +251,7 @@ bool UGA_LoopableEvent_Base_C::IsAbilityLockedIn(class AActor* InCallFunc_GetOwn
 // Parameters:
 // class AActor*                      Actor                                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::OnGatherServer(class AActor* InActor)
+void UGA_LoopableEvent_Base_C::OnGatherServer(class AActor* Actor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -235,7 +260,7 @@ void UGA_LoopableEvent_Base_C::OnGatherServer(class AActor* InActor)
 
 	Params::UGA_LoopableEvent_Base_C_OnGatherServer_Params Parms{};
 
-	Parms.Actor = InActor;
+	Parms.Actor = Actor;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -247,7 +272,7 @@ void UGA_LoopableEvent_Base_C::OnGatherServer(class AActor* InActor)
 // Parameters:
 // class AActor*                      Actor                                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::OnGatherClient(class AActor* InActor)
+void UGA_LoopableEvent_Base_C::OnGatherClient(class AActor* Actor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -256,7 +281,7 @@ void UGA_LoopableEvent_Base_C::OnGatherClient(class AActor* InActor)
 
 	Params::UGA_LoopableEvent_Base_C_OnGatherClient_Params Parms{};
 
-	Parms.Actor = InActor;
+	Parms.Actor = Actor;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -288,13 +313,13 @@ void UGA_LoopableEvent_Base_C::OnGatherClient(class AActor* InActor)
 // bool                               CallFunc_EqualEqual_ByteByte_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwningActorFromActorInfo_ReturnValue_1               (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwningActorFromActorInfo_ReturnValue_2               (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVitalsChangeContext        K2Node_MakeStruct_VitalsChangeContext                            ()
+// struct FVitalsChangeContext        K2Node_MakeStruct_VitalsChangeContext                            (None)
 // TSubclassOf<class UGameplayEffect> K2Node_Select_Default                                            (ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// struct FVitalsChange               K2Node_MakeStruct_VitalsChange                                   ()
+// struct FVitalsChange               K2Node_MakeStruct_VitalsChange                                   (None)
 // struct FActiveGameplayEffectHandle CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue              (NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_FilterChange_ReturnValue                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::OnGather(class AActor* InActor, bool* InDidProgressGather, bool InWasDamageDealt, bool InCallFunc_IsServer_ReturnValue, class UVitalsComponent* InCallFunc_GetComponentByClass_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, int32 InCallFunc_GetVital_ReturnValue, class UValeriaGASComponent* InCallFunc_GetComponentByClass_ReturnValue_1, bool InCallFunc_LessEqual_IntInt_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue_1, TSubclassOf<class UGameplayEffect> InTemp_class_Variable, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, bool InCallFunc_IsGodModeEnabled_ReturnValue, class UValeriaGASComponent* InCallFunc_GetGAS_ReturnValue, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, bool InTemp_bool_Variable, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue, enum class ENetRole InCallFunc_GetLocalRole_ReturnValue, bool InCallFunc_IsServer_ReturnValue_1, bool InCallFunc_EqualEqual_ByteByte_ReturnValue, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue_2, const struct FVitalsChangeContext& InK2Node_MakeStruct_VitalsChangeContext, TSubclassOf<class UGameplayEffect> InK2Node_Select_Default, const struct FVitalsChange& InK2Node_MakeStruct_VitalsChange, const struct FActiveGameplayEffectHandle& InCallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue, bool InCallFunc_FilterChange_ReturnValue)
+void UGA_LoopableEvent_Base_C::OnGather(class AActor* Actor, bool* DidProgressGather, bool WasDamageDealt, bool CallFunc_IsServer_ReturnValue, class UVitalsComponent* CallFunc_GetComponentByClass_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, int32 CallFunc_GetVital_ReturnValue, class UValeriaGASComponent* CallFunc_GetComponentByClass_ReturnValue_1, bool CallFunc_LessEqual_IntInt_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue_1, TSubclassOf<class UGameplayEffect> Temp_class_Variable, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, bool CallFunc_IsGodModeEnabled_ReturnValue, class UValeriaGASComponent* CallFunc_GetGAS_ReturnValue, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, bool Temp_bool_Variable, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, enum class ENetRole CallFunc_GetLocalRole_ReturnValue, bool CallFunc_IsServer_ReturnValue_1, bool CallFunc_EqualEqual_ByteByte_ReturnValue, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue_2, const struct FVitalsChangeContext& K2Node_MakeStruct_VitalsChangeContext, TSubclassOf<class UGameplayEffect> K2Node_Select_Default, const struct FVitalsChange& K2Node_MakeStruct_VitalsChange, const struct FActiveGameplayEffectHandle& CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue, bool CallFunc_FilterChange_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -303,37 +328,37 @@ void UGA_LoopableEvent_Base_C::OnGather(class AActor* InActor, bool* InDidProgre
 
 	Params::UGA_LoopableEvent_Base_C_OnGather_Params Parms{};
 
-	Parms.Actor = InActor;
-	Parms.WasDamageDealt = InWasDamageDealt;
-	Parms.CallFunc_IsServer_ReturnValue = InCallFunc_IsServer_ReturnValue;
-	Parms.CallFunc_GetComponentByClass_ReturnValue = InCallFunc_GetComponentByClass_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
-	Parms.CallFunc_GetVital_ReturnValue = InCallFunc_GetVital_ReturnValue;
-	Parms.CallFunc_GetComponentByClass_ReturnValue_1 = InCallFunc_GetComponentByClass_ReturnValue_1;
-	Parms.CallFunc_LessEqual_IntInt_ReturnValue = InCallFunc_LessEqual_IntInt_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue_1 = InCallFunc_Not_PreBool_ReturnValue_1;
-	Parms.Temp_class_Variable = InTemp_class_Variable;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
-	Parms.CallFunc_IsGodModeEnabled_ReturnValue = InCallFunc_IsGodModeEnabled_ReturnValue;
-	Parms.CallFunc_GetGAS_ReturnValue = InCallFunc_GetGAS_ReturnValue;
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = InCallFunc_GetOwningActorFromActorInfo_ReturnValue;
-	Parms.Temp_bool_Variable = InTemp_bool_Variable;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue = InCallFunc_K2_GetActorLocation_ReturnValue;
-	Parms.CallFunc_GetLocalRole_ReturnValue = InCallFunc_GetLocalRole_ReturnValue;
-	Parms.CallFunc_IsServer_ReturnValue_1 = InCallFunc_IsServer_ReturnValue_1;
-	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = InCallFunc_EqualEqual_ByteByte_ReturnValue;
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_1 = InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1;
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_2 = InCallFunc_GetOwningActorFromActorInfo_ReturnValue_2;
-	Parms.K2Node_MakeStruct_VitalsChangeContext = InK2Node_MakeStruct_VitalsChangeContext;
-	Parms.K2Node_Select_Default = InK2Node_Select_Default;
-	Parms.K2Node_MakeStruct_VitalsChange = InK2Node_MakeStruct_VitalsChange;
-	Parms.CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue = InCallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue;
-	Parms.CallFunc_FilterChange_ReturnValue = InCallFunc_FilterChange_ReturnValue;
+	Parms.Actor = Actor;
+	Parms.WasDamageDealt = WasDamageDealt;
+	Parms.CallFunc_IsServer_ReturnValue = CallFunc_IsServer_ReturnValue;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_GetVital_ReturnValue = CallFunc_GetVital_ReturnValue;
+	Parms.CallFunc_GetComponentByClass_ReturnValue_1 = CallFunc_GetComponentByClass_ReturnValue_1;
+	Parms.CallFunc_LessEqual_IntInt_ReturnValue = CallFunc_LessEqual_IntInt_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue_1 = CallFunc_Not_PreBool_ReturnValue_1;
+	Parms.Temp_class_Variable = Temp_class_Variable;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
+	Parms.CallFunc_IsGodModeEnabled_ReturnValue = CallFunc_IsGodModeEnabled_ReturnValue;
+	Parms.CallFunc_GetGAS_ReturnValue = CallFunc_GetGAS_ReturnValue;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = CallFunc_GetOwningActorFromActorInfo_ReturnValue;
+	Parms.Temp_bool_Variable = Temp_bool_Variable;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
+	Parms.CallFunc_GetLocalRole_ReturnValue = CallFunc_GetLocalRole_ReturnValue;
+	Parms.CallFunc_IsServer_ReturnValue_1 = CallFunc_IsServer_ReturnValue_1;
+	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = CallFunc_EqualEqual_ByteByte_ReturnValue;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_1 = CallFunc_GetOwningActorFromActorInfo_ReturnValue_1;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_2 = CallFunc_GetOwningActorFromActorInfo_ReturnValue_2;
+	Parms.K2Node_MakeStruct_VitalsChangeContext = K2Node_MakeStruct_VitalsChangeContext;
+	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.K2Node_MakeStruct_VitalsChange = K2Node_MakeStruct_VitalsChange;
+	Parms.CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue = CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue;
+	Parms.CallFunc_FilterChange_ReturnValue = CallFunc_FilterChange_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InDidProgressGather != nullptr)
-		*InDidProgressGather = Parms.DidProgressGather;
+	if (DidProgressGather != nullptr)
+		*DidProgressGather = Parms.DidProgressGather;
 
 }
 
@@ -345,7 +370,7 @@ void UGA_LoopableEvent_Base_C::OnGather(class AActor* InActor, bool* InDidProgre
 // class AActor*                      CallFunc_GetTargetActor_Actor                                    (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::TriggerGather(bool InCallFunc_K2_HasAuthority_ReturnValue, class AActor* InCallFunc_GetTargetActor_Actor, bool InCallFunc_IsValid_ReturnValue)
+void UGA_LoopableEvent_Base_C::TriggerGather(bool CallFunc_K2_HasAuthority_ReturnValue, class AActor* CallFunc_GetTargetActor_Actor, bool CallFunc_IsValid_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -354,9 +379,9 @@ void UGA_LoopableEvent_Base_C::TriggerGather(bool InCallFunc_K2_HasAuthority_Ret
 
 	Params::UGA_LoopableEvent_Base_C_TriggerGather_Params Parms{};
 
-	Parms.CallFunc_K2_HasAuthority_ReturnValue = InCallFunc_K2_HasAuthority_ReturnValue;
-	Parms.CallFunc_GetTargetActor_Actor = InCallFunc_GetTargetActor_Actor;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_K2_HasAuthority_ReturnValue = CallFunc_K2_HasAuthority_ReturnValue;
+	Parms.CallFunc_GetTargetActor_Actor = CallFunc_GetTargetActor_Actor;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -374,7 +399,7 @@ void UGA_LoopableEvent_Base_C::TriggerGather(bool InCallFunc_K2_HasAuthority_Ret
 // double                             CallFunc_FClamp_ReturnValue                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_Multiply_DoubleDouble_A_ImplicitCast                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::GetTriggerTimeFromMontage(class UAnimMontage* InNewParam, double InAlpha, double* InTimeSeconds, float InCallFunc_GetPlayLength_ReturnValue, double InCallFunc_Multiply_DoubleDouble_ReturnValue, double InCallFunc_FClamp_ReturnValue, double InCallFunc_Multiply_DoubleDouble_A_ImplicitCast)
+void UGA_LoopableEvent_Base_C::GetTriggerTimeFromMontage(class UAnimMontage* NewParam, double Alpha, double* TimeSeconds, float CallFunc_GetPlayLength_ReturnValue, double CallFunc_Multiply_DoubleDouble_ReturnValue, double CallFunc_FClamp_ReturnValue, double CallFunc_Multiply_DoubleDouble_A_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -383,17 +408,17 @@ void UGA_LoopableEvent_Base_C::GetTriggerTimeFromMontage(class UAnimMontage* InN
 
 	Params::UGA_LoopableEvent_Base_C_GetTriggerTimeFromMontage_Params Parms{};
 
-	Parms.NewParam = InNewParam;
-	Parms.Alpha = InAlpha;
-	Parms.CallFunc_GetPlayLength_ReturnValue = InCallFunc_GetPlayLength_ReturnValue;
-	Parms.CallFunc_Multiply_DoubleDouble_ReturnValue = InCallFunc_Multiply_DoubleDouble_ReturnValue;
-	Parms.CallFunc_FClamp_ReturnValue = InCallFunc_FClamp_ReturnValue;
-	Parms.CallFunc_Multiply_DoubleDouble_A_ImplicitCast = InCallFunc_Multiply_DoubleDouble_A_ImplicitCast;
+	Parms.NewParam = NewParam;
+	Parms.Alpha = Alpha;
+	Parms.CallFunc_GetPlayLength_ReturnValue = CallFunc_GetPlayLength_ReturnValue;
+	Parms.CallFunc_Multiply_DoubleDouble_ReturnValue = CallFunc_Multiply_DoubleDouble_ReturnValue;
+	Parms.CallFunc_FClamp_ReturnValue = CallFunc_FClamp_ReturnValue;
+	Parms.CallFunc_Multiply_DoubleDouble_A_ImplicitCast = CallFunc_Multiply_DoubleDouble_A_ImplicitCast;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InTimeSeconds != nullptr)
-		*InTimeSeconds = Parms.TimeSeconds;
+	if (TimeSeconds != nullptr)
+		*TimeSeconds = Parms.TimeSeconds;
 
 }
 
@@ -404,7 +429,7 @@ void UGA_LoopableEvent_Base_C::GetTriggerTimeFromMontage(class UAnimMontage* InN
 // bool                               AbilityIntroTrigger                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             Alpha                                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::GetTriggerAlpha(bool InAbilityIntroTrigger, double* InAlpha)
+void UGA_LoopableEvent_Base_C::GetTriggerAlpha(bool AbilityIntroTrigger, double* Alpha)
 {
 	static class UFunction* Func = nullptr;
 
@@ -413,12 +438,12 @@ void UGA_LoopableEvent_Base_C::GetTriggerAlpha(bool InAbilityIntroTrigger, doubl
 
 	Params::UGA_LoopableEvent_Base_C_GetTriggerAlpha_Params Parms{};
 
-	Parms.AbilityIntroTrigger = InAbilityIntroTrigger;
+	Parms.AbilityIntroTrigger = AbilityIntroTrigger;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InAlpha != nullptr)
-		*InAlpha = Parms.Alpha;
+	if (Alpha != nullptr)
+		*Alpha = Parms.Alpha;
 
 }
 
@@ -429,7 +454,7 @@ void UGA_LoopableEvent_Base_C::GetTriggerAlpha(bool InAbilityIntroTrigger, doubl
 // class AActor*                      Actor                                                            (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // TArray<class AActor*>              TmpResultingActors                                               (Edit, BlueprintVisible, DisableEditOnTemplate)
 
-void UGA_LoopableEvent_Base_C::GetTargetActor(class AActor** InActor, const TArray<class AActor*>& InTmpResultingActors)
+void UGA_LoopableEvent_Base_C::GetTargetActor(class AActor** Actor, const TArray<class AActor*>& TmpResultingActors)
 {
 	static class UFunction* Func = nullptr;
 
@@ -438,12 +463,12 @@ void UGA_LoopableEvent_Base_C::GetTargetActor(class AActor** InActor, const TArr
 
 	Params::UGA_LoopableEvent_Base_C_GetTargetActor_Params Parms{};
 
-	Parms.TmpResultingActors = InTmpResultingActors;
+	Parms.TmpResultingActors = TmpResultingActors;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InActor != nullptr)
-		*InActor = Parms.Actor;
+	if (Actor != nullptr)
+		*Actor = Parms.Actor;
 
 }
 
@@ -456,7 +481,7 @@ void UGA_LoopableEvent_Base_C::GetTargetActor(class AActor** InActor, const TArr
 // bool                               CallFunc_BooleanOR_ReturnValue                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanAND_ReturnValue_1                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::ShouldLoop(bool* InShouldLoop, bool InCallFunc_BooleanAND_ReturnValue, bool InCallFunc_BooleanOR_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue_1)
+void UGA_LoopableEvent_Base_C::ShouldLoop(bool* ShouldLoop, bool CallFunc_BooleanAND_ReturnValue, bool CallFunc_BooleanOR_ReturnValue, bool CallFunc_BooleanAND_ReturnValue_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -465,14 +490,14 @@ void UGA_LoopableEvent_Base_C::ShouldLoop(bool* InShouldLoop, bool InCallFunc_Bo
 
 	Params::UGA_LoopableEvent_Base_C_ShouldLoop_Params Parms{};
 
-	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
-	Parms.CallFunc_BooleanOR_ReturnValue = InCallFunc_BooleanOR_ReturnValue;
-	Parms.CallFunc_BooleanAND_ReturnValue_1 = InCallFunc_BooleanAND_ReturnValue_1;
+	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
+	Parms.CallFunc_BooleanOR_ReturnValue = CallFunc_BooleanOR_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue_1 = CallFunc_BooleanAND_ReturnValue_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InShouldLoop != nullptr)
-		*InShouldLoop = Parms.ShouldLoop;
+	if (ShouldLoop != nullptr)
+		*ShouldLoop = Parms.ShouldLoop;
 
 }
 
@@ -484,7 +509,7 @@ void UGA_LoopableEvent_Base_C::ShouldLoop(bool* InShouldLoop, bool InCallFunc_Bo
 // class AValeriaPlayerController*    CallFunc_GetValeriaPlayerController_ReturnValue                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_ClientStartCameraShake_Scale_ImplicitCast               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::ShakeCamera(class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, class AValeriaPlayerController* InCallFunc_GetValeriaPlayerController_ReturnValue, float InCallFunc_ClientStartCameraShake_Scale_ImplicitCast)
+void UGA_LoopableEvent_Base_C::ShakeCamera(class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, class AValeriaPlayerController* CallFunc_GetValeriaPlayerController_ReturnValue, float CallFunc_ClientStartCameraShake_Scale_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -493,9 +518,9 @@ void UGA_LoopableEvent_Base_C::ShakeCamera(class AValeriaCharacter* InCallFunc_G
 
 	Params::UGA_LoopableEvent_Base_C_ShakeCamera_Params Parms{};
 
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
-	Parms.CallFunc_GetValeriaPlayerController_ReturnValue = InCallFunc_GetValeriaPlayerController_ReturnValue;
-	Parms.CallFunc_ClientStartCameraShake_Scale_ImplicitCast = InCallFunc_ClientStartCameraShake_Scale_ImplicitCast;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
+	Parms.CallFunc_GetValeriaPlayerController_ReturnValue = CallFunc_GetValeriaPlayerController_ReturnValue;
+	Parms.CallFunc_ClientStartCameraShake_Scale_ImplicitCast = CallFunc_ClientStartCameraShake_Scale_ImplicitCast;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -510,7 +535,7 @@ void UGA_LoopableEvent_Base_C::ShakeCamera(class AValeriaCharacter* InCallFunc_G
 // class UClass*                      CallFunc_GetObjectClass_ReturnValue                              (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_ClassIsChildOf_ReturnValue                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::FilterActor(class AActor* InActor, bool* InIncludeActor, class UClass* InCallFunc_GetObjectClass_ReturnValue, bool InCallFunc_ClassIsChildOf_ReturnValue)
+void UGA_LoopableEvent_Base_C::FilterActor(class AActor* Actor, bool* IncludeActor, class UClass* CallFunc_GetObjectClass_ReturnValue, bool CallFunc_ClassIsChildOf_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -519,14 +544,14 @@ void UGA_LoopableEvent_Base_C::FilterActor(class AActor* InActor, bool* InInclud
 
 	Params::UGA_LoopableEvent_Base_C_FilterActor_Params Parms{};
 
-	Parms.Actor = InActor;
-	Parms.CallFunc_GetObjectClass_ReturnValue = InCallFunc_GetObjectClass_ReturnValue;
-	Parms.CallFunc_ClassIsChildOf_ReturnValue = InCallFunc_ClassIsChildOf_ReturnValue;
+	Parms.Actor = Actor;
+	Parms.CallFunc_GetObjectClass_ReturnValue = CallFunc_GetObjectClass_ReturnValue;
+	Parms.CallFunc_ClassIsChildOf_ReturnValue = CallFunc_ClassIsChildOf_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InIncludeActor != nullptr)
-		*InIncludeActor = Parms.IncludeActor;
+	if (IncludeActor != nullptr)
+		*IncludeActor = Parms.IncludeActor;
 
 }
 
@@ -536,7 +561,7 @@ void UGA_LoopableEvent_Base_C::FilterActor(class AActor* InActor, bool* InInclud
 // Parameters:
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::EndTaskAndClearReference(bool InCallFunc_IsValid_ReturnValue)
+void UGA_LoopableEvent_Base_C::EndTaskAndClearReference(bool CallFunc_IsValid_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -545,7 +570,7 @@ void UGA_LoopableEvent_Base_C::EndTaskAndClearReference(bool InCallFunc_IsValid_
 
 	Params::UGA_LoopableEvent_Base_C_EndTaskAndClearReference_Params Parms{};
 
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -585,7 +610,7 @@ void UGA_LoopableEvent_Base_C::ClearSetMontage()
 // int64                              CallFunc_Subtract_Int64Int64_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Less_Int64Int64_ReturnValue                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::HandleEvent(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData, bool InGameplayTagsK2Node_SwitchGameplayTag_CmpSuccess, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, int64 InCallFunc_GetValeriaTimestampMs64_ReturnValue, class UValeriaCharacterMoveComponent* InCallFunc_GetValeriaCharacterMovementComponent_ReturnValue, int64 InCallFunc_Subtract_Int64Int64_ReturnValue, bool InCallFunc_Less_Int64Int64_ReturnValue)
+void UGA_LoopableEvent_Base_C::HandleEvent(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData, bool GameplayTagsK2Node_SwitchGameplayTag_CmpSuccess, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, int64 CallFunc_GetValeriaTimestampMs64_ReturnValue, class UValeriaCharacterMoveComponent* CallFunc_GetValeriaCharacterMovementComponent_ReturnValue, int64 CallFunc_Subtract_Int64Int64_ReturnValue, bool CallFunc_Less_Int64Int64_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -594,16 +619,16 @@ void UGA_LoopableEvent_Base_C::HandleEvent(const struct FGameplayTag& InEventTag
 
 	Params::UGA_LoopableEvent_Base_C_HandleEvent_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
-	Parms.GameplayTagsK2Node_SwitchGameplayTag_CmpSuccess = InGameplayTagsK2Node_SwitchGameplayTag_CmpSuccess;
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = InCallFunc_GetOwningActorFromActorInfo_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetValeriaTimestampMs64_ReturnValue = InCallFunc_GetValeriaTimestampMs64_ReturnValue;
-	Parms.CallFunc_GetValeriaCharacterMovementComponent_ReturnValue = InCallFunc_GetValeriaCharacterMovementComponent_ReturnValue;
-	Parms.CallFunc_Subtract_Int64Int64_ReturnValue = InCallFunc_Subtract_Int64Int64_ReturnValue;
-	Parms.CallFunc_Less_Int64Int64_ReturnValue = InCallFunc_Less_Int64Int64_ReturnValue;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
+	Parms.GameplayTagsK2Node_SwitchGameplayTag_CmpSuccess = GameplayTagsK2Node_SwitchGameplayTag_CmpSuccess;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = CallFunc_GetOwningActorFromActorInfo_ReturnValue;
+	Parms.K2Node_DynamicCast_AsValeria_Character = K2Node_DynamicCast_AsValeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetValeriaTimestampMs64_ReturnValue = CallFunc_GetValeriaTimestampMs64_ReturnValue;
+	Parms.CallFunc_GetValeriaCharacterMovementComponent_ReturnValue = CallFunc_GetValeriaCharacterMovementComponent_ReturnValue;
+	Parms.CallFunc_Subtract_Int64Int64_ReturnValue = CallFunc_Subtract_Int64Int64_ReturnValue;
+	Parms.CallFunc_Less_Int64Int64_ReturnValue = CallFunc_Less_Int64Int64_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -615,7 +640,7 @@ void UGA_LoopableEvent_Base_C::HandleEvent(const struct FGameplayTag& InEventTag
 // Parameters:
 // bool                               LockedIn                                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::SetAbilityLockedIn(bool InLockedIn)
+void UGA_LoopableEvent_Base_C::SetAbilityLockedIn(bool LockedIn)
 {
 	static class UFunction* Func = nullptr;
 
@@ -624,7 +649,7 @@ void UGA_LoopableEvent_Base_C::SetAbilityLockedIn(bool InLockedIn)
 
 	Params::UGA_LoopableEvent_Base_C_SetAbilityLockedIn_Params Parms{};
 
-	Parms.LockedIn = InLockedIn;
+	Parms.LockedIn = LockedIn;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -637,7 +662,7 @@ void UGA_LoopableEvent_Base_C::SetAbilityLockedIn(bool InLockedIn)
 // bool                               bLock                                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FActiveGameplayEffectHandle CallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue               (NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::SetMovementBlock(bool InbLock, const struct FActiveGameplayEffectHandle& InCallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue)
+void UGA_LoopableEvent_Base_C::SetMovementBlock(bool bLock, const struct FActiveGameplayEffectHandle& CallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -646,8 +671,8 @@ void UGA_LoopableEvent_Base_C::SetMovementBlock(bool InbLock, const struct FActi
 
 	Params::UGA_LoopableEvent_Base_C_SetMovementBlock_Params Parms{};
 
-	Parms.bLock = InbLock;
-	Parms.CallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue = InCallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue;
+	Parms.bLock = bLock;
+	Parms.CallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue = CallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -664,7 +689,7 @@ void UGA_LoopableEvent_Base_C::SetMovementBlock(bool InbLock, const struct FActi
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_1                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::OnAbilityEnded(bool InCallFunc_FNameIsNone_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, class UAnimMontage* InCallFunc_GetCurrentMontage_ReturnValue, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate, bool InCallFunc_IsValid_ReturnValue, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_1)
+void UGA_LoopableEvent_Base_C::OnAbilityEnded(bool CallFunc_FNameIsNone_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, class UAnimMontage* CallFunc_GetCurrentMontage_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, bool CallFunc_IsValid_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -673,12 +698,12 @@ void UGA_LoopableEvent_Base_C::OnAbilityEnded(bool InCallFunc_FNameIsNone_Return
 
 	Params::UGA_LoopableEvent_Base_C_OnAbilityEnded_Params Parms{};
 
-	Parms.CallFunc_FNameIsNone_ReturnValue = InCallFunc_FNameIsNone_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
-	Parms.CallFunc_GetCurrentMontage_ReturnValue = InCallFunc_GetCurrentMontage_ReturnValue;
-	Parms.K2Node_CreateDelegate_OutputDelegate = InK2Node_CreateDelegate_OutputDelegate;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.K2Node_CreateDelegate_OutputDelegate_1 = InK2Node_CreateDelegate_OutputDelegate_1;
+	Parms.CallFunc_FNameIsNone_ReturnValue = CallFunc_FNameIsNone_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_GetCurrentMontage_ReturnValue = CallFunc_GetCurrentMontage_ReturnValue;
+	Parms.K2Node_CreateDelegate_OutputDelegate = K2Node_CreateDelegate_OutputDelegate;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.K2Node_CreateDelegate_OutputDelegate_1 = K2Node_CreateDelegate_OutputDelegate_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -693,7 +718,7 @@ void UGA_LoopableEvent_Base_C::OnAbilityEnded(bool InCallFunc_FNameIsNone_Return
 // bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UValeriaCharacterMoveComponent*CallFunc_GetValeriaCharacterMovementComponent_ReturnValue        (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::OnOutroBegin(class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class UValeriaCharacterMoveComponent* InCallFunc_GetValeriaCharacterMovementComponent_ReturnValue)
+void UGA_LoopableEvent_Base_C::OnOutroBegin(class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, class UValeriaCharacterMoveComponent* CallFunc_GetValeriaCharacterMovementComponent_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -702,10 +727,10 @@ void UGA_LoopableEvent_Base_C::OnOutroBegin(class AActor* InCallFunc_GetOwningAc
 
 	Params::UGA_LoopableEvent_Base_C_OnOutroBegin_Params Parms{};
 
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = InCallFunc_GetOwningActorFromActorInfo_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetValeriaCharacterMovementComponent_ReturnValue = InCallFunc_GetValeriaCharacterMovementComponent_ReturnValue;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = CallFunc_GetOwningActorFromActorInfo_ReturnValue;
+	Parms.K2Node_DynamicCast_AsValeria_Character = K2Node_DynamicCast_AsValeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetValeriaCharacterMovementComponent_ReturnValue = CallFunc_GetValeriaCharacterMovementComponent_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -737,7 +762,7 @@ void UGA_LoopableEvent_Base_C::OnLoopEndSuccess()
 // class FName                        AnimationName                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               IsAbilityIntroTrigger                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::OnLoopBegin(class FName InAnimationName, bool InIsAbilityIntroTrigger)
+void UGA_LoopableEvent_Base_C::OnLoopBegin(class FName AnimationName, bool IsAbilityIntroTrigger)
 {
 	static class UFunction* Func = nullptr;
 
@@ -746,8 +771,8 @@ void UGA_LoopableEvent_Base_C::OnLoopBegin(class FName InAnimationName, bool InI
 
 	Params::UGA_LoopableEvent_Base_C_OnLoopBegin_Params Parms{};
 
-	Parms.AnimationName = InAnimationName;
-	Parms.IsAbilityIntroTrigger = InIsAbilityIntroTrigger;
+	Parms.AnimationName = AnimationName;
+	Parms.IsAbilityIntroTrigger = IsAbilityIntroTrigger;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -771,7 +796,7 @@ void UGA_LoopableEvent_Base_C::OnLoopBegin(class FName InAnimationName, bool InI
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_1                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_MakeRotator_Yaw_ImplicitCast                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::OnAbilityActivated(class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, const struct FRotator& InCallFunc_K2_GetActorRotation_ReturnValue, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue, float InCallFunc_BreakRotator_Roll, float InCallFunc_BreakRotator_Pitch, float InCallFunc_BreakRotator_Yaw, class UValeriaCharacterMoveComponent* InCallFunc_GetValeriaCharacterMovementComponent_ReturnValue, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate, const struct FRotator& InCallFunc_MakeRotator_ReturnValue, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_1, float InCallFunc_MakeRotator_Yaw_ImplicitCast)
+void UGA_LoopableEvent_Base_C::OnAbilityActivated(class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, const struct FRotator& CallFunc_K2_GetActorRotation_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, float CallFunc_BreakRotator_Roll, float CallFunc_BreakRotator_Pitch, float CallFunc_BreakRotator_Yaw, class UValeriaCharacterMoveComponent* CallFunc_GetValeriaCharacterMovementComponent_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, const struct FRotator& CallFunc_MakeRotator_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_1, float CallFunc_MakeRotator_Yaw_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -780,19 +805,19 @@ void UGA_LoopableEvent_Base_C::OnAbilityActivated(class AActor* InCallFunc_GetOw
 
 	Params::UGA_LoopableEvent_Base_C_OnAbilityActivated_Params Parms{};
 
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = InCallFunc_GetOwningActorFromActorInfo_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_K2_GetActorRotation_ReturnValue = InCallFunc_K2_GetActorRotation_ReturnValue;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue = InCallFunc_K2_GetActorLocation_ReturnValue;
-	Parms.CallFunc_BreakRotator_Roll = InCallFunc_BreakRotator_Roll;
-	Parms.CallFunc_BreakRotator_Pitch = InCallFunc_BreakRotator_Pitch;
-	Parms.CallFunc_BreakRotator_Yaw = InCallFunc_BreakRotator_Yaw;
-	Parms.CallFunc_GetValeriaCharacterMovementComponent_ReturnValue = InCallFunc_GetValeriaCharacterMovementComponent_ReturnValue;
-	Parms.K2Node_CreateDelegate_OutputDelegate = InK2Node_CreateDelegate_OutputDelegate;
-	Parms.CallFunc_MakeRotator_ReturnValue = InCallFunc_MakeRotator_ReturnValue;
-	Parms.K2Node_CreateDelegate_OutputDelegate_1 = InK2Node_CreateDelegate_OutputDelegate_1;
-	Parms.CallFunc_MakeRotator_Yaw_ImplicitCast = InCallFunc_MakeRotator_Yaw_ImplicitCast;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = CallFunc_GetOwningActorFromActorInfo_ReturnValue;
+	Parms.K2Node_DynamicCast_AsValeria_Character = K2Node_DynamicCast_AsValeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_K2_GetActorRotation_ReturnValue = CallFunc_K2_GetActorRotation_ReturnValue;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
+	Parms.CallFunc_BreakRotator_Roll = CallFunc_BreakRotator_Roll;
+	Parms.CallFunc_BreakRotator_Pitch = CallFunc_BreakRotator_Pitch;
+	Parms.CallFunc_BreakRotator_Yaw = CallFunc_BreakRotator_Yaw;
+	Parms.CallFunc_GetValeriaCharacterMovementComponent_ReturnValue = CallFunc_GetValeriaCharacterMovementComponent_ReturnValue;
+	Parms.K2Node_CreateDelegate_OutputDelegate = K2Node_CreateDelegate_OutputDelegate;
+	Parms.CallFunc_MakeRotator_ReturnValue = CallFunc_MakeRotator_ReturnValue;
+	Parms.K2Node_CreateDelegate_OutputDelegate_1 = K2Node_CreateDelegate_OutputDelegate_1;
+	Parms.CallFunc_MakeRotator_Yaw_ImplicitCast = CallFunc_MakeRotator_Yaw_ImplicitCast;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -805,7 +830,7 @@ void UGA_LoopableEvent_Base_C::OnAbilityActivated(class AActor* InCallFunc_GetOw
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::EventReceived_61604B204A52FE55D07E178D4DC2F376(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::EventReceived_61604B204A52FE55D07E178D4DC2F376(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -814,8 +839,8 @@ void UGA_LoopableEvent_Base_C::EventReceived_61604B204A52FE55D07E178D4DC2F376(co
 
 	Params::UGA_LoopableEvent_Base_C_EventReceived_61604B204A52FE55D07E178D4DC2F376_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -828,7 +853,7 @@ void UGA_LoopableEvent_Base_C::EventReceived_61604B204A52FE55D07E178D4DC2F376(co
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnCancelled_61604B204A52FE55D07E178D4DC2F376(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnCancelled_61604B204A52FE55D07E178D4DC2F376(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -837,8 +862,8 @@ void UGA_LoopableEvent_Base_C::OnCancelled_61604B204A52FE55D07E178D4DC2F376(cons
 
 	Params::UGA_LoopableEvent_Base_C_OnCancelled_61604B204A52FE55D07E178D4DC2F376_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -851,7 +876,7 @@ void UGA_LoopableEvent_Base_C::OnCancelled_61604B204A52FE55D07E178D4DC2F376(cons
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnInterrupted_61604B204A52FE55D07E178D4DC2F376(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnInterrupted_61604B204A52FE55D07E178D4DC2F376(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -860,8 +885,8 @@ void UGA_LoopableEvent_Base_C::OnInterrupted_61604B204A52FE55D07E178D4DC2F376(co
 
 	Params::UGA_LoopableEvent_Base_C_OnInterrupted_61604B204A52FE55D07E178D4DC2F376_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -874,7 +899,7 @@ void UGA_LoopableEvent_Base_C::OnInterrupted_61604B204A52FE55D07E178D4DC2F376(co
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnBlendOut_61604B204A52FE55D07E178D4DC2F376(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnBlendOut_61604B204A52FE55D07E178D4DC2F376(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -883,8 +908,8 @@ void UGA_LoopableEvent_Base_C::OnBlendOut_61604B204A52FE55D07E178D4DC2F376(const
 
 	Params::UGA_LoopableEvent_Base_C_OnBlendOut_61604B204A52FE55D07E178D4DC2F376_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -897,7 +922,7 @@ void UGA_LoopableEvent_Base_C::OnBlendOut_61604B204A52FE55D07E178D4DC2F376(const
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnCompleted_61604B204A52FE55D07E178D4DC2F376(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnCompleted_61604B204A52FE55D07E178D4DC2F376(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -906,8 +931,8 @@ void UGA_LoopableEvent_Base_C::OnCompleted_61604B204A52FE55D07E178D4DC2F376(cons
 
 	Params::UGA_LoopableEvent_Base_C_OnCompleted_61604B204A52FE55D07E178D4DC2F376_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -920,7 +945,7 @@ void UGA_LoopableEvent_Base_C::OnCompleted_61604B204A52FE55D07E178D4DC2F376(cons
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::EventReceived_77447BC74D3381190AD07DB52A7C9C1E(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::EventReceived_77447BC74D3381190AD07DB52A7C9C1E(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -929,8 +954,8 @@ void UGA_LoopableEvent_Base_C::EventReceived_77447BC74D3381190AD07DB52A7C9C1E(co
 
 	Params::UGA_LoopableEvent_Base_C_EventReceived_77447BC74D3381190AD07DB52A7C9C1E_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -943,7 +968,7 @@ void UGA_LoopableEvent_Base_C::EventReceived_77447BC74D3381190AD07DB52A7C9C1E(co
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnCancelled_77447BC74D3381190AD07DB52A7C9C1E(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnCancelled_77447BC74D3381190AD07DB52A7C9C1E(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -952,8 +977,8 @@ void UGA_LoopableEvent_Base_C::OnCancelled_77447BC74D3381190AD07DB52A7C9C1E(cons
 
 	Params::UGA_LoopableEvent_Base_C_OnCancelled_77447BC74D3381190AD07DB52A7C9C1E_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -966,7 +991,7 @@ void UGA_LoopableEvent_Base_C::OnCancelled_77447BC74D3381190AD07DB52A7C9C1E(cons
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnInterrupted_77447BC74D3381190AD07DB52A7C9C1E(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnInterrupted_77447BC74D3381190AD07DB52A7C9C1E(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -975,8 +1000,8 @@ void UGA_LoopableEvent_Base_C::OnInterrupted_77447BC74D3381190AD07DB52A7C9C1E(co
 
 	Params::UGA_LoopableEvent_Base_C_OnInterrupted_77447BC74D3381190AD07DB52A7C9C1E_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -989,7 +1014,7 @@ void UGA_LoopableEvent_Base_C::OnInterrupted_77447BC74D3381190AD07DB52A7C9C1E(co
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnBlendOut_77447BC74D3381190AD07DB52A7C9C1E(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnBlendOut_77447BC74D3381190AD07DB52A7C9C1E(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -998,8 +1023,8 @@ void UGA_LoopableEvent_Base_C::OnBlendOut_77447BC74D3381190AD07DB52A7C9C1E(const
 
 	Params::UGA_LoopableEvent_Base_C_OnBlendOut_77447BC74D3381190AD07DB52A7C9C1E_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1012,7 +1037,7 @@ void UGA_LoopableEvent_Base_C::OnBlendOut_77447BC74D3381190AD07DB52A7C9C1E(const
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnCompleted_77447BC74D3381190AD07DB52A7C9C1E(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnCompleted_77447BC74D3381190AD07DB52A7C9C1E(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1021,8 +1046,8 @@ void UGA_LoopableEvent_Base_C::OnCompleted_77447BC74D3381190AD07DB52A7C9C1E(cons
 
 	Params::UGA_LoopableEvent_Base_C_OnCompleted_77447BC74D3381190AD07DB52A7C9C1E_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1035,7 +1060,7 @@ void UGA_LoopableEvent_Base_C::OnCompleted_77447BC74D3381190AD07DB52A7C9C1E(cons
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::EventReceived_87B0B7C040C0EF4C9F67D9AD4E32ED36(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::EventReceived_87B0B7C040C0EF4C9F67D9AD4E32ED36(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1044,8 +1069,8 @@ void UGA_LoopableEvent_Base_C::EventReceived_87B0B7C040C0EF4C9F67D9AD4E32ED36(co
 
 	Params::UGA_LoopableEvent_Base_C_EventReceived_87B0B7C040C0EF4C9F67D9AD4E32ED36_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1058,7 +1083,7 @@ void UGA_LoopableEvent_Base_C::EventReceived_87B0B7C040C0EF4C9F67D9AD4E32ED36(co
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnCancelled_87B0B7C040C0EF4C9F67D9AD4E32ED36(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnCancelled_87B0B7C040C0EF4C9F67D9AD4E32ED36(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1067,8 +1092,8 @@ void UGA_LoopableEvent_Base_C::OnCancelled_87B0B7C040C0EF4C9F67D9AD4E32ED36(cons
 
 	Params::UGA_LoopableEvent_Base_C_OnCancelled_87B0B7C040C0EF4C9F67D9AD4E32ED36_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1081,7 +1106,7 @@ void UGA_LoopableEvent_Base_C::OnCancelled_87B0B7C040C0EF4C9F67D9AD4E32ED36(cons
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnInterrupted_87B0B7C040C0EF4C9F67D9AD4E32ED36(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnInterrupted_87B0B7C040C0EF4C9F67D9AD4E32ED36(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1090,8 +1115,8 @@ void UGA_LoopableEvent_Base_C::OnInterrupted_87B0B7C040C0EF4C9F67D9AD4E32ED36(co
 
 	Params::UGA_LoopableEvent_Base_C_OnInterrupted_87B0B7C040C0EF4C9F67D9AD4E32ED36_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1104,7 +1129,7 @@ void UGA_LoopableEvent_Base_C::OnInterrupted_87B0B7C040C0EF4C9F67D9AD4E32ED36(co
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnBlendOut_87B0B7C040C0EF4C9F67D9AD4E32ED36(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnBlendOut_87B0B7C040C0EF4C9F67D9AD4E32ED36(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1113,8 +1138,8 @@ void UGA_LoopableEvent_Base_C::OnBlendOut_87B0B7C040C0EF4C9F67D9AD4E32ED36(const
 
 	Params::UGA_LoopableEvent_Base_C_OnBlendOut_87B0B7C040C0EF4C9F67D9AD4E32ED36_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1127,7 +1152,7 @@ void UGA_LoopableEvent_Base_C::OnBlendOut_87B0B7C040C0EF4C9F67D9AD4E32ED36(const
 // struct FGameplayTag                EventTag                                                         (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayEventData          EventData                                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UGA_LoopableEvent_Base_C::OnCompleted_87B0B7C040C0EF4C9F67D9AD4E32ED36(const struct FGameplayTag& InEventTag, const struct FGameplayEventData& InEventData)
+void UGA_LoopableEvent_Base_C::OnCompleted_87B0B7C040C0EF4C9F67D9AD4E32ED36(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1136,8 +1161,8 @@ void UGA_LoopableEvent_Base_C::OnCompleted_87B0B7C040C0EF4C9F67D9AD4E32ED36(cons
 
 	Params::UGA_LoopableEvent_Base_C_OnCompleted_87B0B7C040C0EF4C9F67D9AD4E32ED36_Params Parms{};
 
-	Parms.EventTag = InEventTag;
-	Parms.EventData = InEventData;
+	Parms.EventTag = EventTag;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1226,7 +1251,7 @@ void UGA_LoopableEvent_Base_C::Event_OnActivateAbility()
 // class FName                        AnimationName                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                        MontageSection                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::DoLoopWithMontage(class FName InAnimationName, class FName InMontageSection)
+void UGA_LoopableEvent_Base_C::DoLoopWithMontage(class FName AnimationName, class FName MontageSection)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1235,8 +1260,8 @@ void UGA_LoopableEvent_Base_C::DoLoopWithMontage(class FName InAnimationName, cl
 
 	Params::UGA_LoopableEvent_Base_C_DoLoopWithMontage_Params Parms{};
 
-	Parms.AnimationName = InAnimationName;
-	Parms.MontageSection = InMontageSection;
+	Parms.AnimationName = AnimationName;
+	Parms.MontageSection = MontageSection;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1250,7 +1275,7 @@ void UGA_LoopableEvent_Base_C::DoLoopWithMontage(class FName InAnimationName, cl
 // struct FVector                     OldLocation                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                     OldVelocity                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::OnCharacterMoved(float InDeltaSeconds, const struct FVector& InOldLocation, const struct FVector& InOldVelocity)
+void UGA_LoopableEvent_Base_C::OnCharacterMoved(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1259,9 +1284,9 @@ void UGA_LoopableEvent_Base_C::OnCharacterMoved(float InDeltaSeconds, const stru
 
 	Params::UGA_LoopableEvent_Base_C_OnCharacterMoved_Params Parms{};
 
-	Parms.DeltaSeconds = InDeltaSeconds;
-	Parms.OldLocation = InOldLocation;
-	Parms.OldVelocity = InOldVelocity;
+	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.OldLocation = OldLocation;
+	Parms.OldVelocity = OldVelocity;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1273,7 +1298,7 @@ void UGA_LoopableEvent_Base_C::OnCharacterMoved(float InDeltaSeconds, const stru
 // Parameters:
 // bool                               bWasCancelled                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::K2_OnEndAbility(bool InbWasCancelled)
+void UGA_LoopableEvent_Base_C::K2_OnEndAbility(bool bWasCancelled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1282,7 +1307,7 @@ void UGA_LoopableEvent_Base_C::K2_OnEndAbility(bool InbWasCancelled)
 
 	Params::UGA_LoopableEvent_Base_C_K2_OnEndAbility_Params Parms{};
 
-	Parms.bWasCancelled = InbWasCancelled;
+	Parms.bWasCancelled = bWasCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1294,42 +1319,42 @@ void UGA_LoopableEvent_Base_C::K2_OnEndAbility(bool InbWasCancelled)
 // Parameters:
 // int32                              EntryPoint                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_10                                   (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_10                                  ()
-// struct FGameplayEventData          Temp_struct_Variable                                             ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_10                                  (None)
+// struct FGameplayEventData          Temp_struct_Variable                                             (None)
 // struct FGameplayTag                Temp_struct_Variable_1                                           (NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_9                                    (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_9                                   ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_9                                   (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate                             (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_8                                    (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_8                                   ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_8                                   (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_1                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_7                                    (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_7                                   ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_7                                   (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_2                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_6                                    (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_6                                   ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_6                                   (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_3                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_5                                    (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_5                                   ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_5                                   (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_4                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          Temp_struct_Variable_2                                           ()
+// struct FGameplayEventData          Temp_struct_Variable_2                                           (None)
 // struct FGameplayTag                Temp_struct_Variable_3                                           (NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_4                                    (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_4                                   ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_4                                   (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_5                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_3                                    (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_3                                   ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_3                                   (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_6                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_2                                    (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_2                                   ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_2                                   (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_7                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_1                                    (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_1                                   ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_1                                   (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_8                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag                                      (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData                                     ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData                                     (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_9                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          Temp_struct_Variable_4                                           ()
+// struct FGameplayEventData          Temp_struct_Variable_4                                           (None)
 // struct FGameplayTag                Temp_struct_Variable_5                                           (NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_FNameIsNone_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_10                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -1338,17 +1363,17 @@ void UGA_LoopableEvent_Base_C::K2_OnEndAbility(bool InbWasCancelled)
 // bool                               CallFunc_ShouldLoop_ShouldLoop                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_ShouldLoop_ShouldLoop_1                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_11                                   (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_11                                  ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_11                                  (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_12                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_12                                   (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_12                                  ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_12                                  (None)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_13                                   (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_13                                  ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_13                                  (None)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_13                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_14                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_ShouldLoop_ShouldLoop_2                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FGameplayTag                K2Node_CustomEvent_EventTag_14                                   (NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData          K2Node_CustomEvent_EventData_14                                  ()
+// struct FGameplayEventData          K2Node_CustomEvent_EventData_14                                  (None)
 // bool                               CallFunc_K2_CommitAbility_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UVAL_TaskProxy_PlayMontageAndWaitForEvent*CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue         (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1382,7 +1407,7 @@ void UGA_LoopableEvent_Base_C::K2_OnEndAbility(bool InbWasCancelled)
 // class AValeriaCharacter*           K2Node_DynamicCast_AsValeria_Character_1                         (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_DynamicCast_bSuccess_1                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::ExecuteUbergraph_GA_LoopableEvent_Base(int32 InEntryPoint, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_10, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_10, const struct FGameplayEventData& InTemp_struct_Variable, const struct FGameplayTag& InTemp_struct_Variable_1, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_9, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_9, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_8, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_8, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_1, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_7, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_7, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_2, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_6, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_6, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_3, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_5, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_5, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_4, const struct FGameplayEventData& InTemp_struct_Variable_2, const struct FGameplayTag& InTemp_struct_Variable_3, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_4, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_4, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_5, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_3, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_3, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_6, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_2, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_2, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_7, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_1, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_1, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_8, const struct FGameplayTag& InK2Node_CustomEvent_EventTag, const struct FGameplayEventData& InK2Node_CustomEvent_EventData, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_9, const struct FGameplayEventData& InTemp_struct_Variable_4, const struct FGameplayTag& InTemp_struct_Variable_5, bool InCallFunc_FNameIsNone_ReturnValue, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_10, bool InCallFunc_Not_PreBool_ReturnValue, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_11, bool InCallFunc_ShouldLoop_ShouldLoop, bool InCallFunc_ShouldLoop_ShouldLoop_1, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_11, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_11, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_12, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_12, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_12, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_13, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_13, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_13, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_14, bool InCallFunc_ShouldLoop_ShouldLoop_2, const struct FGameplayTag& InK2Node_CustomEvent_EventTag_14, const struct FGameplayEventData& InK2Node_CustomEvent_EventData_14, bool InCallFunc_K2_CommitAbility_ReturnValue, class UVAL_TaskProxy_PlayMontageAndWaitForEvent* InCallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class UVAL_TaskProxy_PlayMontageAndWaitForEvent* InCallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue_1, bool InCallFunc_FNameIsNone_ReturnValue_1, class UVAL_TaskProxy_PlayMontageAndWaitForEvent* InCallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_2, bool InCallFunc_Not_PreBool_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue_2, bool InCallFunc_FNameIsNone_ReturnValue_2, bool InCallFunc_Not_PreBool_ReturnValue_2, bool InCallFunc_FNameIsNone_ReturnValue_3, bool InCallFunc_BooleanOR_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue_3, class FName InK2Node_CustomEvent_AnimationName, class FName InK2Node_CustomEvent_MontageSection, bool InCallFunc_FNameIsNone_ReturnValue_4, bool InCallFunc_Not_PreBool_ReturnValue_4, bool InCallFunc_BooleanOR_ReturnValue_1, float InK2Node_CustomEvent_DeltaSeconds, const struct FVector& InK2Node_CustomEvent_OldLocation, const struct FVector& InK2Node_CustomEvent_OldVelocity, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_15, double InCallFunc_VSizeSquared_ReturnValue, bool InCallFunc_Greater_DoubleDouble_ReturnValue, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, bool InK2Node_Event_bWasCancelled, class AActor* InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character_1, bool InK2Node_DynamicCast_bSuccess_1)
+void UGA_LoopableEvent_Base_C::ExecuteUbergraph_GA_LoopableEvent_Base(int32 EntryPoint, const struct FGameplayTag& K2Node_CustomEvent_EventTag_10, const struct FGameplayEventData& K2Node_CustomEvent_EventData_10, const struct FGameplayEventData& Temp_struct_Variable, const struct FGameplayTag& Temp_struct_Variable_1, const struct FGameplayTag& K2Node_CustomEvent_EventTag_9, const struct FGameplayEventData& K2Node_CustomEvent_EventData_9, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, const struct FGameplayTag& K2Node_CustomEvent_EventTag_8, const struct FGameplayEventData& K2Node_CustomEvent_EventData_8, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_1, const struct FGameplayTag& K2Node_CustomEvent_EventTag_7, const struct FGameplayEventData& K2Node_CustomEvent_EventData_7, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_2, const struct FGameplayTag& K2Node_CustomEvent_EventTag_6, const struct FGameplayEventData& K2Node_CustomEvent_EventData_6, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_3, const struct FGameplayTag& K2Node_CustomEvent_EventTag_5, const struct FGameplayEventData& K2Node_CustomEvent_EventData_5, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_4, const struct FGameplayEventData& Temp_struct_Variable_2, const struct FGameplayTag& Temp_struct_Variable_3, const struct FGameplayTag& K2Node_CustomEvent_EventTag_4, const struct FGameplayEventData& K2Node_CustomEvent_EventData_4, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_5, const struct FGameplayTag& K2Node_CustomEvent_EventTag_3, const struct FGameplayEventData& K2Node_CustomEvent_EventData_3, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_6, const struct FGameplayTag& K2Node_CustomEvent_EventTag_2, const struct FGameplayEventData& K2Node_CustomEvent_EventData_2, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_7, const struct FGameplayTag& K2Node_CustomEvent_EventTag_1, const struct FGameplayEventData& K2Node_CustomEvent_EventData_1, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_8, const struct FGameplayTag& K2Node_CustomEvent_EventTag, const struct FGameplayEventData& K2Node_CustomEvent_EventData, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_9, const struct FGameplayEventData& Temp_struct_Variable_4, const struct FGameplayTag& Temp_struct_Variable_5, bool CallFunc_FNameIsNone_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_10, bool CallFunc_Not_PreBool_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_11, bool CallFunc_ShouldLoop_ShouldLoop, bool CallFunc_ShouldLoop_ShouldLoop_1, const struct FGameplayTag& K2Node_CustomEvent_EventTag_11, const struct FGameplayEventData& K2Node_CustomEvent_EventData_11, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_12, const struct FGameplayTag& K2Node_CustomEvent_EventTag_12, const struct FGameplayEventData& K2Node_CustomEvent_EventData_12, const struct FGameplayTag& K2Node_CustomEvent_EventTag_13, const struct FGameplayEventData& K2Node_CustomEvent_EventData_13, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_13, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_14, bool CallFunc_ShouldLoop_ShouldLoop_2, const struct FGameplayTag& K2Node_CustomEvent_EventTag_14, const struct FGameplayEventData& K2Node_CustomEvent_EventData_14, bool CallFunc_K2_CommitAbility_ReturnValue, class UVAL_TaskProxy_PlayMontageAndWaitForEvent* CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue, bool CallFunc_IsValid_ReturnValue, class UVAL_TaskProxy_PlayMontageAndWaitForEvent* CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_1, bool CallFunc_FNameIsNone_ReturnValue_1, class UVAL_TaskProxy_PlayMontageAndWaitForEvent* CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_2, bool CallFunc_Not_PreBool_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_2, bool CallFunc_FNameIsNone_ReturnValue_2, bool CallFunc_Not_PreBool_ReturnValue_2, bool CallFunc_FNameIsNone_ReturnValue_3, bool CallFunc_BooleanOR_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue_3, class FName K2Node_CustomEvent_AnimationName, class FName K2Node_CustomEvent_MontageSection, bool CallFunc_FNameIsNone_ReturnValue_4, bool CallFunc_Not_PreBool_ReturnValue_4, bool CallFunc_BooleanOR_ReturnValue_1, float K2Node_CustomEvent_DeltaSeconds, const struct FVector& K2Node_CustomEvent_OldLocation, const struct FVector& K2Node_CustomEvent_OldVelocity, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_15, double CallFunc_VSizeSquared_ReturnValue, bool CallFunc_Greater_DoubleDouble_ReturnValue, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, bool K2Node_Event_bWasCancelled, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character_1, bool K2Node_DynamicCast_bSuccess_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1391,95 +1416,95 @@ void UGA_LoopableEvent_Base_C::ExecuteUbergraph_GA_LoopableEvent_Base(int32 InEn
 
 	Params::UGA_LoopableEvent_Base_C_ExecuteUbergraph_GA_LoopableEvent_Base_Params Parms{};
 
-	Parms.EntryPoint = InEntryPoint;
-	Parms.K2Node_CustomEvent_EventTag_10 = InK2Node_CustomEvent_EventTag_10;
-	Parms.K2Node_CustomEvent_EventData_10 = InK2Node_CustomEvent_EventData_10;
-	Parms.Temp_struct_Variable = InTemp_struct_Variable;
-	Parms.Temp_struct_Variable_1 = InTemp_struct_Variable_1;
-	Parms.K2Node_CustomEvent_EventTag_9 = InK2Node_CustomEvent_EventTag_9;
-	Parms.K2Node_CustomEvent_EventData_9 = InK2Node_CustomEvent_EventData_9;
-	Parms.K2Node_CreateDelegate_OutputDelegate = InK2Node_CreateDelegate_OutputDelegate;
-	Parms.K2Node_CustomEvent_EventTag_8 = InK2Node_CustomEvent_EventTag_8;
-	Parms.K2Node_CustomEvent_EventData_8 = InK2Node_CustomEvent_EventData_8;
-	Parms.K2Node_CreateDelegate_OutputDelegate_1 = InK2Node_CreateDelegate_OutputDelegate_1;
-	Parms.K2Node_CustomEvent_EventTag_7 = InK2Node_CustomEvent_EventTag_7;
-	Parms.K2Node_CustomEvent_EventData_7 = InK2Node_CustomEvent_EventData_7;
-	Parms.K2Node_CreateDelegate_OutputDelegate_2 = InK2Node_CreateDelegate_OutputDelegate_2;
-	Parms.K2Node_CustomEvent_EventTag_6 = InK2Node_CustomEvent_EventTag_6;
-	Parms.K2Node_CustomEvent_EventData_6 = InK2Node_CustomEvent_EventData_6;
-	Parms.K2Node_CreateDelegate_OutputDelegate_3 = InK2Node_CreateDelegate_OutputDelegate_3;
-	Parms.K2Node_CustomEvent_EventTag_5 = InK2Node_CustomEvent_EventTag_5;
-	Parms.K2Node_CustomEvent_EventData_5 = InK2Node_CustomEvent_EventData_5;
-	Parms.K2Node_CreateDelegate_OutputDelegate_4 = InK2Node_CreateDelegate_OutputDelegate_4;
-	Parms.Temp_struct_Variable_2 = InTemp_struct_Variable_2;
-	Parms.Temp_struct_Variable_3 = InTemp_struct_Variable_3;
-	Parms.K2Node_CustomEvent_EventTag_4 = InK2Node_CustomEvent_EventTag_4;
-	Parms.K2Node_CustomEvent_EventData_4 = InK2Node_CustomEvent_EventData_4;
-	Parms.K2Node_CreateDelegate_OutputDelegate_5 = InK2Node_CreateDelegate_OutputDelegate_5;
-	Parms.K2Node_CustomEvent_EventTag_3 = InK2Node_CustomEvent_EventTag_3;
-	Parms.K2Node_CustomEvent_EventData_3 = InK2Node_CustomEvent_EventData_3;
-	Parms.K2Node_CreateDelegate_OutputDelegate_6 = InK2Node_CreateDelegate_OutputDelegate_6;
-	Parms.K2Node_CustomEvent_EventTag_2 = InK2Node_CustomEvent_EventTag_2;
-	Parms.K2Node_CustomEvent_EventData_2 = InK2Node_CustomEvent_EventData_2;
-	Parms.K2Node_CreateDelegate_OutputDelegate_7 = InK2Node_CreateDelegate_OutputDelegate_7;
-	Parms.K2Node_CustomEvent_EventTag_1 = InK2Node_CustomEvent_EventTag_1;
-	Parms.K2Node_CustomEvent_EventData_1 = InK2Node_CustomEvent_EventData_1;
-	Parms.K2Node_CreateDelegate_OutputDelegate_8 = InK2Node_CreateDelegate_OutputDelegate_8;
-	Parms.K2Node_CustomEvent_EventTag = InK2Node_CustomEvent_EventTag;
-	Parms.K2Node_CustomEvent_EventData = InK2Node_CustomEvent_EventData;
-	Parms.K2Node_CreateDelegate_OutputDelegate_9 = InK2Node_CreateDelegate_OutputDelegate_9;
-	Parms.Temp_struct_Variable_4 = InTemp_struct_Variable_4;
-	Parms.Temp_struct_Variable_5 = InTemp_struct_Variable_5;
-	Parms.CallFunc_FNameIsNone_ReturnValue = InCallFunc_FNameIsNone_ReturnValue;
-	Parms.K2Node_CreateDelegate_OutputDelegate_10 = InK2Node_CreateDelegate_OutputDelegate_10;
-	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
-	Parms.K2Node_CreateDelegate_OutputDelegate_11 = InK2Node_CreateDelegate_OutputDelegate_11;
-	Parms.CallFunc_ShouldLoop_ShouldLoop = InCallFunc_ShouldLoop_ShouldLoop;
-	Parms.CallFunc_ShouldLoop_ShouldLoop_1 = InCallFunc_ShouldLoop_ShouldLoop_1;
-	Parms.K2Node_CustomEvent_EventTag_11 = InK2Node_CustomEvent_EventTag_11;
-	Parms.K2Node_CustomEvent_EventData_11 = InK2Node_CustomEvent_EventData_11;
-	Parms.K2Node_CreateDelegate_OutputDelegate_12 = InK2Node_CreateDelegate_OutputDelegate_12;
-	Parms.K2Node_CustomEvent_EventTag_12 = InK2Node_CustomEvent_EventTag_12;
-	Parms.K2Node_CustomEvent_EventData_12 = InK2Node_CustomEvent_EventData_12;
-	Parms.K2Node_CustomEvent_EventTag_13 = InK2Node_CustomEvent_EventTag_13;
-	Parms.K2Node_CustomEvent_EventData_13 = InK2Node_CustomEvent_EventData_13;
-	Parms.K2Node_CreateDelegate_OutputDelegate_13 = InK2Node_CreateDelegate_OutputDelegate_13;
-	Parms.K2Node_CreateDelegate_OutputDelegate_14 = InK2Node_CreateDelegate_OutputDelegate_14;
-	Parms.CallFunc_ShouldLoop_ShouldLoop_2 = InCallFunc_ShouldLoop_ShouldLoop_2;
-	Parms.K2Node_CustomEvent_EventTag_14 = InK2Node_CustomEvent_EventTag_14;
-	Parms.K2Node_CustomEvent_EventData_14 = InK2Node_CustomEvent_EventData_14;
-	Parms.CallFunc_K2_CommitAbility_ReturnValue = InCallFunc_K2_CommitAbility_ReturnValue;
-	Parms.CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue = InCallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_1 = InCallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_1;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_FNameIsNone_ReturnValue_1 = InCallFunc_FNameIsNone_ReturnValue_1;
-	Parms.CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_2 = InCallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_2;
-	Parms.CallFunc_Not_PreBool_ReturnValue_1 = InCallFunc_Not_PreBool_ReturnValue_1;
-	Parms.CallFunc_IsValid_ReturnValue_2 = InCallFunc_IsValid_ReturnValue_2;
-	Parms.CallFunc_FNameIsNone_ReturnValue_2 = InCallFunc_FNameIsNone_ReturnValue_2;
-	Parms.CallFunc_Not_PreBool_ReturnValue_2 = InCallFunc_Not_PreBool_ReturnValue_2;
-	Parms.CallFunc_FNameIsNone_ReturnValue_3 = InCallFunc_FNameIsNone_ReturnValue_3;
-	Parms.CallFunc_BooleanOR_ReturnValue = InCallFunc_BooleanOR_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue_3 = InCallFunc_Not_PreBool_ReturnValue_3;
-	Parms.K2Node_CustomEvent_AnimationName = InK2Node_CustomEvent_AnimationName;
-	Parms.K2Node_CustomEvent_MontageSection = InK2Node_CustomEvent_MontageSection;
-	Parms.CallFunc_FNameIsNone_ReturnValue_4 = InCallFunc_FNameIsNone_ReturnValue_4;
-	Parms.CallFunc_Not_PreBool_ReturnValue_4 = InCallFunc_Not_PreBool_ReturnValue_4;
-	Parms.CallFunc_BooleanOR_ReturnValue_1 = InCallFunc_BooleanOR_ReturnValue_1;
-	Parms.K2Node_CustomEvent_DeltaSeconds = InK2Node_CustomEvent_DeltaSeconds;
-	Parms.K2Node_CustomEvent_OldLocation = InK2Node_CustomEvent_OldLocation;
-	Parms.K2Node_CustomEvent_OldVelocity = InK2Node_CustomEvent_OldVelocity;
-	Parms.K2Node_CreateDelegate_OutputDelegate_15 = InK2Node_CreateDelegate_OutputDelegate_15;
-	Parms.CallFunc_VSizeSquared_ReturnValue = InCallFunc_VSizeSquared_ReturnValue;
-	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = InCallFunc_Greater_DoubleDouble_ReturnValue;
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = InCallFunc_GetOwningActorFromActorInfo_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.K2Node_Event_bWasCancelled = InK2Node_Event_bWasCancelled;
-	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_1 = InCallFunc_GetOwningActorFromActorInfo_ReturnValue_1;
-	Parms.K2Node_DynamicCast_AsValeria_Character_1 = InK2Node_DynamicCast_AsValeria_Character_1;
-	Parms.K2Node_DynamicCast_bSuccess_1 = InK2Node_DynamicCast_bSuccess_1;
+	Parms.EntryPoint = EntryPoint;
+	Parms.K2Node_CustomEvent_EventTag_10 = K2Node_CustomEvent_EventTag_10;
+	Parms.K2Node_CustomEvent_EventData_10 = K2Node_CustomEvent_EventData_10;
+	Parms.Temp_struct_Variable = Temp_struct_Variable;
+	Parms.Temp_struct_Variable_1 = Temp_struct_Variable_1;
+	Parms.K2Node_CustomEvent_EventTag_9 = K2Node_CustomEvent_EventTag_9;
+	Parms.K2Node_CustomEvent_EventData_9 = K2Node_CustomEvent_EventData_9;
+	Parms.K2Node_CreateDelegate_OutputDelegate = K2Node_CreateDelegate_OutputDelegate;
+	Parms.K2Node_CustomEvent_EventTag_8 = K2Node_CustomEvent_EventTag_8;
+	Parms.K2Node_CustomEvent_EventData_8 = K2Node_CustomEvent_EventData_8;
+	Parms.K2Node_CreateDelegate_OutputDelegate_1 = K2Node_CreateDelegate_OutputDelegate_1;
+	Parms.K2Node_CustomEvent_EventTag_7 = K2Node_CustomEvent_EventTag_7;
+	Parms.K2Node_CustomEvent_EventData_7 = K2Node_CustomEvent_EventData_7;
+	Parms.K2Node_CreateDelegate_OutputDelegate_2 = K2Node_CreateDelegate_OutputDelegate_2;
+	Parms.K2Node_CustomEvent_EventTag_6 = K2Node_CustomEvent_EventTag_6;
+	Parms.K2Node_CustomEvent_EventData_6 = K2Node_CustomEvent_EventData_6;
+	Parms.K2Node_CreateDelegate_OutputDelegate_3 = K2Node_CreateDelegate_OutputDelegate_3;
+	Parms.K2Node_CustomEvent_EventTag_5 = K2Node_CustomEvent_EventTag_5;
+	Parms.K2Node_CustomEvent_EventData_5 = K2Node_CustomEvent_EventData_5;
+	Parms.K2Node_CreateDelegate_OutputDelegate_4 = K2Node_CreateDelegate_OutputDelegate_4;
+	Parms.Temp_struct_Variable_2 = Temp_struct_Variable_2;
+	Parms.Temp_struct_Variable_3 = Temp_struct_Variable_3;
+	Parms.K2Node_CustomEvent_EventTag_4 = K2Node_CustomEvent_EventTag_4;
+	Parms.K2Node_CustomEvent_EventData_4 = K2Node_CustomEvent_EventData_4;
+	Parms.K2Node_CreateDelegate_OutputDelegate_5 = K2Node_CreateDelegate_OutputDelegate_5;
+	Parms.K2Node_CustomEvent_EventTag_3 = K2Node_CustomEvent_EventTag_3;
+	Parms.K2Node_CustomEvent_EventData_3 = K2Node_CustomEvent_EventData_3;
+	Parms.K2Node_CreateDelegate_OutputDelegate_6 = K2Node_CreateDelegate_OutputDelegate_6;
+	Parms.K2Node_CustomEvent_EventTag_2 = K2Node_CustomEvent_EventTag_2;
+	Parms.K2Node_CustomEvent_EventData_2 = K2Node_CustomEvent_EventData_2;
+	Parms.K2Node_CreateDelegate_OutputDelegate_7 = K2Node_CreateDelegate_OutputDelegate_7;
+	Parms.K2Node_CustomEvent_EventTag_1 = K2Node_CustomEvent_EventTag_1;
+	Parms.K2Node_CustomEvent_EventData_1 = K2Node_CustomEvent_EventData_1;
+	Parms.K2Node_CreateDelegate_OutputDelegate_8 = K2Node_CreateDelegate_OutputDelegate_8;
+	Parms.K2Node_CustomEvent_EventTag = K2Node_CustomEvent_EventTag;
+	Parms.K2Node_CustomEvent_EventData = K2Node_CustomEvent_EventData;
+	Parms.K2Node_CreateDelegate_OutputDelegate_9 = K2Node_CreateDelegate_OutputDelegate_9;
+	Parms.Temp_struct_Variable_4 = Temp_struct_Variable_4;
+	Parms.Temp_struct_Variable_5 = Temp_struct_Variable_5;
+	Parms.CallFunc_FNameIsNone_ReturnValue = CallFunc_FNameIsNone_ReturnValue;
+	Parms.K2Node_CreateDelegate_OutputDelegate_10 = K2Node_CreateDelegate_OutputDelegate_10;
+	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
+	Parms.K2Node_CreateDelegate_OutputDelegate_11 = K2Node_CreateDelegate_OutputDelegate_11;
+	Parms.CallFunc_ShouldLoop_ShouldLoop = CallFunc_ShouldLoop_ShouldLoop;
+	Parms.CallFunc_ShouldLoop_ShouldLoop_1 = CallFunc_ShouldLoop_ShouldLoop_1;
+	Parms.K2Node_CustomEvent_EventTag_11 = K2Node_CustomEvent_EventTag_11;
+	Parms.K2Node_CustomEvent_EventData_11 = K2Node_CustomEvent_EventData_11;
+	Parms.K2Node_CreateDelegate_OutputDelegate_12 = K2Node_CreateDelegate_OutputDelegate_12;
+	Parms.K2Node_CustomEvent_EventTag_12 = K2Node_CustomEvent_EventTag_12;
+	Parms.K2Node_CustomEvent_EventData_12 = K2Node_CustomEvent_EventData_12;
+	Parms.K2Node_CustomEvent_EventTag_13 = K2Node_CustomEvent_EventTag_13;
+	Parms.K2Node_CustomEvent_EventData_13 = K2Node_CustomEvent_EventData_13;
+	Parms.K2Node_CreateDelegate_OutputDelegate_13 = K2Node_CreateDelegate_OutputDelegate_13;
+	Parms.K2Node_CreateDelegate_OutputDelegate_14 = K2Node_CreateDelegate_OutputDelegate_14;
+	Parms.CallFunc_ShouldLoop_ShouldLoop_2 = CallFunc_ShouldLoop_ShouldLoop_2;
+	Parms.K2Node_CustomEvent_EventTag_14 = K2Node_CustomEvent_EventTag_14;
+	Parms.K2Node_CustomEvent_EventData_14 = K2Node_CustomEvent_EventData_14;
+	Parms.CallFunc_K2_CommitAbility_ReturnValue = CallFunc_K2_CommitAbility_ReturnValue;
+	Parms.CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue = CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_1 = CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_1;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_FNameIsNone_ReturnValue_1 = CallFunc_FNameIsNone_ReturnValue_1;
+	Parms.CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_2 = CallFunc_PlayMontageByMappingAndWaitForEvent_ReturnValue_2;
+	Parms.CallFunc_Not_PreBool_ReturnValue_1 = CallFunc_Not_PreBool_ReturnValue_1;
+	Parms.CallFunc_IsValid_ReturnValue_2 = CallFunc_IsValid_ReturnValue_2;
+	Parms.CallFunc_FNameIsNone_ReturnValue_2 = CallFunc_FNameIsNone_ReturnValue_2;
+	Parms.CallFunc_Not_PreBool_ReturnValue_2 = CallFunc_Not_PreBool_ReturnValue_2;
+	Parms.CallFunc_FNameIsNone_ReturnValue_3 = CallFunc_FNameIsNone_ReturnValue_3;
+	Parms.CallFunc_BooleanOR_ReturnValue = CallFunc_BooleanOR_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue_3 = CallFunc_Not_PreBool_ReturnValue_3;
+	Parms.K2Node_CustomEvent_AnimationName = K2Node_CustomEvent_AnimationName;
+	Parms.K2Node_CustomEvent_MontageSection = K2Node_CustomEvent_MontageSection;
+	Parms.CallFunc_FNameIsNone_ReturnValue_4 = CallFunc_FNameIsNone_ReturnValue_4;
+	Parms.CallFunc_Not_PreBool_ReturnValue_4 = CallFunc_Not_PreBool_ReturnValue_4;
+	Parms.CallFunc_BooleanOR_ReturnValue_1 = CallFunc_BooleanOR_ReturnValue_1;
+	Parms.K2Node_CustomEvent_DeltaSeconds = K2Node_CustomEvent_DeltaSeconds;
+	Parms.K2Node_CustomEvent_OldLocation = K2Node_CustomEvent_OldLocation;
+	Parms.K2Node_CustomEvent_OldVelocity = K2Node_CustomEvent_OldVelocity;
+	Parms.K2Node_CreateDelegate_OutputDelegate_15 = K2Node_CreateDelegate_OutputDelegate_15;
+	Parms.CallFunc_VSizeSquared_ReturnValue = CallFunc_VSizeSquared_ReturnValue;
+	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = CallFunc_Greater_DoubleDouble_ReturnValue;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = CallFunc_GetOwningActorFromActorInfo_ReturnValue;
+	Parms.K2Node_DynamicCast_AsValeria_Character = K2Node_DynamicCast_AsValeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.K2Node_Event_bWasCancelled = K2Node_Event_bWasCancelled;
+	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_1 = CallFunc_GetOwningActorFromActorInfo_ReturnValue_1;
+	Parms.K2Node_DynamicCast_AsValeria_Character_1 = K2Node_DynamicCast_AsValeria_Character_1;
+	Parms.K2Node_DynamicCast_bSuccess_1 = K2Node_DynamicCast_bSuccess_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1487,6 +1512,4 @@ void UGA_LoopableEvent_Base_C::ExecuteUbergraph_GA_LoopableEvent_Base(int32 InEn
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

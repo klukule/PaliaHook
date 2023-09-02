@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -175,120 +172,120 @@ enum class EFieldPhysicsDefaultFields : uint8
 
 enum class EConvexOverlapRemoval : uint8
 {
-	EConvexOverlapRemoval__None    = 0,
-	EConvexOverlapRemoval__All     = 1,
-	EConvexOverlapRemoval__OnlyClusters = 2,
-	EConvexOverlapRemoval__OnlyClustersVsClusters = 3,
-	EConvexOverlapRemoval__EConvexOverlapRemoval_MAX = 4,
+	None                           = 0,
+	All                            = 1,
+	OnlyClusters                   = 2,
+	OnlyClustersVsClusters         = 3,
+	EConvexOverlapRemoval_MAX      = 4,
 };
 
 enum class ECollisionTypeEnum : uint8
 {
-	ECollisionTypeEnum__Chaos_Volumetric = 0,
-	ECollisionTypeEnum__Chaos_Surface_Volumetric = 1,
-	ECollisionTypeEnum__Chaos_Max  = 2,
+	Chaos_Volumetric               = 0,
+	Chaos_Surface_Volumetric       = 1,
+	Chaos_Max                      = 2,
 };
 
 enum class EImplicitTypeEnum : uint8
 {
-	EImplicitTypeEnum__Chaos_Implicit_Box = 0,
-	EImplicitTypeEnum__Chaos_Implicit_Sphere = 1,
-	EImplicitTypeEnum__Chaos_Implicit_Capsule = 2,
-	EImplicitTypeEnum__Chaos_Implicit_LevelSet = 3,
-	EImplicitTypeEnum__Chaos_Implicit_None = 4,
-	EImplicitTypeEnum__Chaos_Implicit_Convex = 5,
-	EImplicitTypeEnum__Chaos_Max   = 6,
+	Chaos_Implicit_Box             = 0,
+	Chaos_Implicit_Sphere          = 1,
+	Chaos_Implicit_Capsule         = 2,
+	Chaos_Implicit_LevelSet        = 3,
+	Chaos_Implicit_None            = 4,
+	Chaos_Implicit_Convex          = 5,
+	Chaos_Max                      = 6,
 };
 
 enum class EObjectStateTypeEnum : uint8
 {
-	EObjectStateTypeEnum__Chaos_NONE = 0,
-	EObjectStateTypeEnum__Chaos_Object_Sleeping = 1,
-	EObjectStateTypeEnum__Chaos_Object_Kinematic = 2,
-	EObjectStateTypeEnum__Chaos_Object_Static = 3,
-	EObjectStateTypeEnum__Chaos_Object_Dynamic = 4,
-	EObjectStateTypeEnum__Chaos_Object_UserDefined = 100,
-	EObjectStateTypeEnum__Chaos_Max = 101,
+	Chaos_NONE                     = 0,
+	Chaos_Object_Sleeping          = 1,
+	Chaos_Object_Kinematic         = 2,
+	Chaos_Object_Static            = 3,
+	Chaos_Object_Dynamic           = 4,
+	Chaos_Object_UserDefined       = 100,
+	Chaos_Max                      = 101,
 };
 
 enum class EGeometryCollectionPhysicsTypeEnum : uint8
 {
-	EGeometryCollectionPhysicsTypeEnum__Chaos_AngularVelocity = 0,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_DynamicState = 1,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_LinearVelocity = 2,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_InitialAngularVelocity = 3,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_InitialLinearVelocity = 4,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_CollisionGroup = 5,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_LinearForce = 6,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_AngularTorque = 7,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_DisableThreshold = 8,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_SleepingThreshold = 9,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_ExternalClusterStrain = 10,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_InternalClusterStrain = 11,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_LinearImpulse = 12,
-	EGeometryCollectionPhysicsTypeEnum__Chaos_Max = 13,
+	Chaos_AngularVelocity          = 0,
+	Chaos_DynamicState             = 1,
+	Chaos_LinearVelocity           = 2,
+	Chaos_InitialAngularVelocity   = 3,
+	Chaos_InitialLinearVelocity    = 4,
+	Chaos_CollisionGroup           = 5,
+	Chaos_LinearForce              = 6,
+	Chaos_AngularTorque            = 7,
+	Chaos_DisableThreshold         = 8,
+	Chaos_SleepingThreshold        = 9,
+	Chaos_ExternalClusterStrain    = 10,
+	Chaos_InternalClusterStrain    = 11,
+	Chaos_LinearImpulse            = 12,
+	Chaos_Max                      = 13,
 };
 
 enum class EInitialVelocityTypeEnum : uint8
 {
-	EInitialVelocityTypeEnum__Chaos_Initial_Velocity_User_Defined = 0,
-	EInitialVelocityTypeEnum__Chaos_Initial_Velocity_None = 1,
-	EInitialVelocityTypeEnum__Chaos_Max = 2,
+	Chaos_Initial_Velocity_User_Defined = 0,
+	Chaos_Initial_Velocity_None    = 1,
+	Chaos_Max                      = 2,
 };
 
 enum class EEmissionPatternTypeEnum : uint8
 {
-	EEmissionPatternTypeEnum__Chaos_Emission_Pattern_First_Frame = 0,
-	EEmissionPatternTypeEnum__Chaos_Emission_Pattern_On_Demand = 1,
-	EEmissionPatternTypeEnum__Chaos_Max = 2,
+	Chaos_Emission_Pattern_First_Frame = 0,
+	Chaos_Emission_Pattern_On_Demand = 1,
+	Chaos_Max                      = 2,
 };
 
 enum class EChaosSolverTickMode : uint8
 {
-	EChaosSolverTickMode__Fixed    = 0,
-	EChaosSolverTickMode__Variable = 1,
-	EChaosSolverTickMode__VariableCapped = 2,
-	EChaosSolverTickMode__VariableCappedWithTarget = 3,
-	EChaosSolverTickMode__EChaosSolverTickMode_MAX = 4,
+	Fixed                          = 0,
+	Variable                       = 1,
+	VariableCapped                 = 2,
+	VariableCappedWithTarget       = 3,
+	EChaosSolverTickMode_MAX       = 4,
 };
 
 enum class EChaosThreadingMode : uint8
 {
-	EChaosThreadingMode__DedicatedThread = 0,
-	EChaosThreadingMode__TaskGraph = 1,
-	EChaosThreadingMode__SingleThread = 2,
-	EChaosThreadingMode__Num       = 3,
-	EChaosThreadingMode__Invalid   = 4,
-	EChaosThreadingMode__EChaosThreadingMode_MAX = 5,
+	DedicatedThread                = 0,
+	TaskGraph                      = 1,
+	SingleThread                   = 2,
+	Num                            = 3,
+	Invalid                        = 4,
+	EChaosThreadingMode_MAX        = 5,
 };
 
 enum class EChaosBufferMode : uint8
 {
-	EChaosBufferMode__Double       = 0,
-	EChaosBufferMode__Triple       = 1,
-	EChaosBufferMode__Num          = 2,
-	EChaosBufferMode__Invalid      = 3,
-	EChaosBufferMode__EChaosBufferMode_MAX = 4,
+	Double                         = 0,
+	Triple                         = 1,
+	Num                            = 2,
+	Invalid                        = 3,
+	EChaosBufferMode_MAX           = 4,
 };
 
 enum class EClusterUnionMethod : uint8
 {
-	EClusterUnionMethod__PointImplicit = 0,
-	EClusterUnionMethod__DelaunayTriangulation = 1,
-	EClusterUnionMethod__MinimalSpanningSubsetDelaunayTriangulation = 2,
-	EClusterUnionMethod__PointImplicitAugmentedWithMinimalDelaunay = 3,
-	EClusterUnionMethod__BoundsOverlapFilteredDelaunayTriangulation = 4,
-	EClusterUnionMethod__None      = 5,
-	EClusterUnionMethod__EClusterUnionMethod_MAX = 6,
+	PointImplicit                  = 0,
+	DelaunayTriangulation          = 1,
+	MinimalSpanningSubsetDelaunayTriangulation = 2,
+	PointImplicitAugmentedWithMinimalDelaunay = 3,
+	BoundsOverlapFilteredDelaunayTriangulation = 4,
+	None                           = 5,
+	EClusterUnionMethod_MAX        = 6,
 };
 
 enum class EGeometryCollectionCacheType : uint8
 {
-	EGeometryCollectionCacheType__None = 0,
-	EGeometryCollectionCacheType__Record = 1,
-	EGeometryCollectionCacheType__Play = 2,
-	EGeometryCollectionCacheType__RecordAndPlay = 3,
-	EGeometryCollectionCacheType__EGeometryCollectionCacheType_MAX = 4,
+	None                           = 0,
+	Record                         = 1,
+	Play                           = 2,
+	RecordAndPlay                  = 3,
+	EGeometryCollectionCacheType_MAX = 4,
 };
 
 
@@ -301,7 +298,7 @@ enum class EGeometryCollectionCacheType : uint8
 struct FManagedArrayCollection
 {
 public:
-	uint8                                        Pad_2614[0xB0];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_267D[0xB0];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -310,7 +307,7 @@ struct FSolverCollisionFilterSettings
 {
 public:
 	bool                                         FilterEnabled;                                     // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_261A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_267E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MinMass;                                           // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MinSpeed;                                          // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MinImpulse;                                        // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -322,7 +319,7 @@ struct FSolverBreakingFilterSettings
 {
 public:
 	bool                                         FilterEnabled;                                     // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_261B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2681[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MinMass;                                           // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MinSpeed;                                          // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MinVolume;                                         // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -334,7 +331,7 @@ struct FSolverTrailingFilterSettings
 {
 public:
 	bool                                         FilterEnabled;                                     // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_261C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2685[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MinMass;                                           // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MinSpeed;                                          // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MinVolume;                                         // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -355,18 +352,18 @@ public:
 	float                                        ClusterConnectionFactor;                           // 0x1C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EClusterUnionMethod               ClusterUnionConnectionType;                        // 0x20(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bGenerateCollisionData;                            // 0x21(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2621[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2689[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSolverCollisionFilterSettings        CollisionFilterSettings;                           // 0x24(0x10)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bGenerateBreakData;                                // 0x34(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2623[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_268A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSolverBreakingFilterSettings         BreakingFilterSettings;                            // 0x38(0x10)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bGenerateTrailingData;                             // 0x48(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2624[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_268B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSolverTrailingFilterSettings         TrailingFilterSettings;                            // 0x4C(0x10)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                        Iterations;                                        // 0x5C(0x4)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                        PushOutIterations;                                 // 0x60(0x4)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                         bGenerateContactGraph;                             // 0x64(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_2626[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_268D[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC0 (0xC0 - 0x0)
@@ -400,7 +397,7 @@ public:
 	float                                        Mass;                                              // 0x48(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ParticleIndex;                                     // 0x4C(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ParticleIndexMesh;                                 // 0x50(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_262B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2691[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -414,7 +411,7 @@ public:
 	float                                        Mass;                                              // 0x48(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ParticleIndex;                                     // 0x4C(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ParticleIndexMesh;                                 // 0x50(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_262D[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2692[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xB8 (0xB8 - 0x0)
@@ -430,7 +427,7 @@ public:
 	TArray<struct FSolverBreakingData>           Breakings;                                         // 0x50(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TSet<struct FSolverTrailingData>             Trailings;                                         // 0x60(0x50)(NativeAccessSpecifierPublic)
 	float                                        Timestamp;                                         // 0xB0(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_262F[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2693[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -447,13 +444,11 @@ struct FSolverRemovalFilterSettings
 {
 public:
 	bool                                         FilterEnabled;                                     // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2632[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2694[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MinMass;                                           // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MinVolume;                                         // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

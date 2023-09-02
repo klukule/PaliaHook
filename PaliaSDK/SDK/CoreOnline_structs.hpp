@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,8 +11,8 @@ namespace SDK
 
 enum class ECoreOnlineDummy : uint8
 {
-	ECoreOnlineDummy__Dummy        = 0,
-	ECoreOnlineDummy__ECoreOnlineDummy_MAX = 1,
+	Dummy                          = 0,
+	ECoreOnlineDummy_MAX           = 1,
 };
 
 
@@ -42,11 +39,9 @@ public:
 struct FUniqueNetIdWrapper
 {
 public:
-	uint8                                        Pad_25E1[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_266B[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

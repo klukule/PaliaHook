@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,7 +15,7 @@ class UClothConfigNv : public UClothConfigCommon
 {
 public:
 	enum class EClothingWindMethodNv             ClothingWindMethod;                                // 0x28(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_244D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2506[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FClothConstraintSetupNv               VerticalConstraint;                                // 0x2C(0x10)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetupNv               HorizontalConstraint;                              // 0x3C(0x10)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetupNv               BendConstraint;                                    // 0x4C(0x10)(Edit, NoDestructor, NativeAccessSpecifierPublic)
@@ -30,7 +27,7 @@ public:
 	float                                        Friction;                                          // 0x90(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WindDragCoefficient;                               // 0x94(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WindLiftCoefficient;                               // 0x98(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_244E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2510[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               LinearDrag;                                        // 0xA0(0x18)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               AngularDrag;                                       // 0xB8(0x18)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               LinearInertiaScale;                                // 0xD0(0x18)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -39,28 +36,25 @@ public:
 	float                                        SolverFrequency;                                   // 0x118(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        StiffnessFrequency;                                // 0x11C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        GravityScale;                                      // 0x120(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2452[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2519[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               GravityOverride;                                   // 0x128(0x18)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUseGravityOverride;                               // 0x140(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2453[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_251B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        TetherStiffness;                                   // 0x144(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        TetherLimit;                                       // 0x148(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CollisionThickness;                                // 0x14C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AnimDriveSpringStiffness;                          // 0x150(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AnimDriveDamperStiffness;                          // 0x154(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EClothingWindMethod_Legacy        WindMethod;                                        // 0x158(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2457[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_251F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FClothConstraintSetup_Legacy          VerticalConstraintConfig;                          // 0x15C(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetup_Legacy          HorizontalConstraintConfig;                        // 0x16C(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetup_Legacy          BendConstraintConfig;                              // 0x17C(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetup_Legacy          ShearConstraintConfig;                             // 0x18C(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_245B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2520[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ClothConfigNv");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UClothConfigNv* GetDefaultObj();
 
 };
 
@@ -70,11 +64,8 @@ class UClothingSimulationFactoryNv : public UClothingSimulationFactory
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ClothingSimulationFactoryNv");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UClothingSimulationFactoryNv* GetDefaultObj();
 
 };
 
@@ -84,13 +75,10 @@ class UClothingSimulationInteractorNv : public UClothingSimulationInteractor
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ClothingSimulationInteractorNv");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UClothingSimulationInteractorNv* GetDefaultObj();
 
-	void SetAnimDriveDamperStiffness(float InInStiffness);
+	void SetAnimDriveDamperStiffness(float InStiffness);
 };
 
 // 0x40 (0x120 - 0xE0)
@@ -103,16 +91,11 @@ public:
 	TArray<float>                                BackstopRadiuses;                                  // 0x100(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<float>                                AnimDriveMultipliers;                              // 0x110(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ClothPhysicalMeshDataNv_Legacy");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UClothPhysicalMeshDataNv_Legacy* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

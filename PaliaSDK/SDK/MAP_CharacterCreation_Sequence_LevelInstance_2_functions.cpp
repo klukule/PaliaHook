@@ -2,16 +2,43 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
+//---------------------------------------------------------------------------------------------------------------------
+// FUNCTIONS
+//---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass MAP_CharacterCreation_Sequence_LevelInstance_2.MAP_CharacterCreation_Sequence_C
+// (Actor)
+
+class UClass* AMAP_CharacterCreation_Sequence_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MAP_CharacterCreation_Sequence_C");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// MAP_CharacterCreation_Sequence_C MAP_CharacterCreation_Sequence_LevelInstance_2.Default__MAP_CharacterCreation_Sequence_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class AMAP_CharacterCreation_Sequence_C* AMAP_CharacterCreation_Sequence_C::GetDefaultObj()
+{
+	static class AMAP_CharacterCreation_Sequence_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AMAP_CharacterCreation_Sequence_C*>(AMAP_CharacterCreation_Sequence_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

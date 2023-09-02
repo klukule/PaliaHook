@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass Comp_CV_Overlaps.Comp_CV_Overlaps_C
+// (None)
+
+class UClass* UComp_CV_Overlaps_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("Comp_CV_Overlaps_C");
+
+	return Clss;
+}
+
+
+// Comp_CV_Overlaps_C Comp_CV_Overlaps.Default__Comp_CV_Overlaps_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UComp_CV_Overlaps_C* UComp_CV_Overlaps_C::GetDefaultObj()
+{
+	static class UComp_CV_Overlaps_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UComp_CV_Overlaps_C*>(UComp_CV_Overlaps_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function Comp_CV_Overlaps.Comp_CV_Overlaps_C.ReceiveBeginPlay
@@ -40,7 +65,7 @@ void UComp_CV_Overlaps_C::ReceiveBeginPlay()
 // class AActor*                      OverlappedActor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      OtherActor                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UComp_CV_Overlaps_C::BeginOverlap(class AActor* InOverlappedActor, class AActor* InOtherActor)
+void UComp_CV_Overlaps_C::BeginOverlap(class AActor* OverlappedActor, class AActor* OtherActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -49,8 +74,8 @@ void UComp_CV_Overlaps_C::BeginOverlap(class AActor* InOverlappedActor, class AA
 
 	Params::UComp_CV_Overlaps_C_BeginOverlap_Params Parms{};
 
-	Parms.OverlappedActor = InOverlappedActor;
-	Parms.OtherActor = InOtherActor;
+	Parms.OverlappedActor = OverlappedActor;
+	Parms.OtherActor = OtherActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -63,7 +88,7 @@ void UComp_CV_Overlaps_C::BeginOverlap(class AActor* InOverlappedActor, class AA
 // class AActor*                      OverlappedActor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      OtherActor                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UComp_CV_Overlaps_C::EndOverlap(class AActor* InOverlappedActor, class AActor* InOtherActor)
+void UComp_CV_Overlaps_C::EndOverlap(class AActor* OverlappedActor, class AActor* OtherActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -72,8 +97,8 @@ void UComp_CV_Overlaps_C::EndOverlap(class AActor* InOverlappedActor, class AAct
 
 	Params::UComp_CV_Overlaps_C_EndOverlap_Params Parms{};
 
-	Parms.OverlappedActor = InOverlappedActor;
-	Parms.OtherActor = InOtherActor;
+	Parms.OverlappedActor = OverlappedActor;
+	Parms.OtherActor = OtherActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -85,7 +110,7 @@ void UComp_CV_Overlaps_C::EndOverlap(class AActor* InOverlappedActor, class AAct
 // Parameters:
 // enum class EEndPlayReason          EndPlayReason                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_CV_Overlaps_C::ReceiveEndPlay(enum class EEndPlayReason InEndPlayReason)
+void UComp_CV_Overlaps_C::ReceiveEndPlay(enum class EEndPlayReason EndPlayReason)
 {
 	static class UFunction* Func = nullptr;
 
@@ -94,7 +119,7 @@ void UComp_CV_Overlaps_C::ReceiveEndPlay(enum class EEndPlayReason InEndPlayReas
 
 	Params::UComp_CV_Overlaps_C_ReceiveEndPlay_Params Parms{};
 
-	Parms.EndPlayReason = InEndPlayReason;
+	Parms.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -121,7 +146,7 @@ void UComp_CV_Overlaps_C::ReceiveEndPlay(enum class EEndPlayReason InEndPlayReas
 // bool                               CallFunc_Less_IntInt_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_Add_IntInt_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_CV_Overlaps_C::ExecuteUbergraph_Comp_CV_Overlaps(int32 InEntryPoint, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate, int32 InTemp_int_Array_Index_Variable, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_1, class AActor* InCallFunc_GetOwner_ReturnValue, class AActor* InK2Node_CustomEvent_OverlappedActor_1, class AActor* InK2Node_CustomEvent_OtherActor_1, class AActor* InK2Node_CustomEvent_OverlappedActor, class AActor* InK2Node_CustomEvent_OtherActor, enum class EEndPlayReason InK2Node_Event_EndPlayReason, int32 InTemp_int_Loop_Counter_Variable, TArray<class AActor*>& InCallFunc_GetOverlappingActors_OverlappingActors, class AActor* InCallFunc_Array_Get_Item, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue)
+void UComp_CV_Overlaps_C::ExecuteUbergraph_Comp_CV_Overlaps(int32 EntryPoint, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, int32 Temp_int_Array_Index_Variable, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_1, class AActor* CallFunc_GetOwner_ReturnValue, class AActor* K2Node_CustomEvent_OverlappedActor_1, class AActor* K2Node_CustomEvent_OtherActor_1, class AActor* K2Node_CustomEvent_OverlappedActor, class AActor* K2Node_CustomEvent_OtherActor, enum class EEndPlayReason K2Node_Event_EndPlayReason, int32 Temp_int_Loop_Counter_Variable, TArray<class AActor*>& CallFunc_GetOverlappingActors_OverlappingActors, class AActor* CallFunc_Array_Get_Item, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -130,22 +155,22 @@ void UComp_CV_Overlaps_C::ExecuteUbergraph_Comp_CV_Overlaps(int32 InEntryPoint, 
 
 	Params::UComp_CV_Overlaps_C_ExecuteUbergraph_Comp_CV_Overlaps_Params Parms{};
 
-	Parms.EntryPoint = InEntryPoint;
-	Parms.K2Node_CreateDelegate_OutputDelegate = InK2Node_CreateDelegate_OutputDelegate;
-	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
-	Parms.K2Node_CreateDelegate_OutputDelegate_1 = InK2Node_CreateDelegate_OutputDelegate_1;
-	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
-	Parms.K2Node_CustomEvent_OverlappedActor_1 = InK2Node_CustomEvent_OverlappedActor_1;
-	Parms.K2Node_CustomEvent_OtherActor_1 = InK2Node_CustomEvent_OtherActor_1;
-	Parms.K2Node_CustomEvent_OverlappedActor = InK2Node_CustomEvent_OverlappedActor;
-	Parms.K2Node_CustomEvent_OtherActor = InK2Node_CustomEvent_OtherActor;
-	Parms.K2Node_Event_EndPlayReason = InK2Node_Event_EndPlayReason;
-	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
-	Parms.CallFunc_GetOverlappingActors_OverlappingActors = InCallFunc_GetOverlappingActors_OverlappingActors;
-	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
-	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
+	Parms.EntryPoint = EntryPoint;
+	Parms.K2Node_CreateDelegate_OutputDelegate = K2Node_CreateDelegate_OutputDelegate;
+	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
+	Parms.K2Node_CreateDelegate_OutputDelegate_1 = K2Node_CreateDelegate_OutputDelegate_1;
+	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
+	Parms.K2Node_CustomEvent_OverlappedActor_1 = K2Node_CustomEvent_OverlappedActor_1;
+	Parms.K2Node_CustomEvent_OtherActor_1 = K2Node_CustomEvent_OtherActor_1;
+	Parms.K2Node_CustomEvent_OverlappedActor = K2Node_CustomEvent_OverlappedActor;
+	Parms.K2Node_CustomEvent_OtherActor = K2Node_CustomEvent_OtherActor;
+	Parms.K2Node_Event_EndPlayReason = K2Node_Event_EndPlayReason;
+	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
+	Parms.CallFunc_GetOverlappingActors_OverlappingActors = CallFunc_GetOverlappingActors_OverlappingActors;
+	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
+	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -153,6 +178,4 @@ void UComp_CV_Overlaps_C::ExecuteUbergraph_Comp_CV_Overlaps(int32 InEntryPoint, 
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

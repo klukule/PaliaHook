@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass BPI_LoginScreen.BPI_LoginScreen_C
+// (None)
+
+class UClass* IBPI_LoginScreen_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BPI_LoginScreen_C");
+
+	return Clss;
+}
+
+
+// BPI_LoginScreen_C BPI_LoginScreen.Default__BPI_LoginScreen_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class IBPI_LoginScreen_C* IBPI_LoginScreen_C::GetDefaultObj()
+{
+	static class IBPI_LoginScreen_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IBPI_LoginScreen_C*>(IBPI_LoginScreen_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function BPI_LoginScreen.BPI_LoginScreen_C.HandleOnEnterLoginLobbyState
@@ -35,6 +60,4 @@ void IBPI_LoginScreen_C::HandleOnEnterLoginLobbyState()
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

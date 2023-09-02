@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,11 +15,8 @@ class UAudioSynesthesiaSettings : public UAudioAnalyzerSettings
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AudioSynesthesiaSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAudioSynesthesiaSettings* GetDefaultObj();
 
 };
 
@@ -37,11 +31,8 @@ public:
 	enum class EFFTWindowType                    WindowType;                                        // 0x2E(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDownmixToMono;                                    // 0x2F(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SynesthesiaSpectrumAnalysisSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USynesthesiaSpectrumAnalysisSettings* GetDefaultObj();
 
 };
 
@@ -52,18 +43,15 @@ class USynesthesiaSpectrumAnalyzer : public UAudioAnalyzer
 public:
 	class USynesthesiaSpectrumAnalysisSettings*  Settings;                                          // 0x90(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnSpectrumResults;                                 // 0x98(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1BD1[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CCB[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnLatestSpectrumResults;                           // 0xC0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1BD2[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CCC[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SynesthesiaSpectrumAnalyzer");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USynesthesiaSpectrumAnalyzer* GetDefaultObj();
 
 	int32 GetNumCenterFrequencies();
-	void GetCenterFrequencies(float InInSampleRate, TArray<float>* InOutCenterFrequencies);
+	void GetCenterFrequencies(float InSampleRate, TArray<float>* OutCenterFrequencies);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -72,11 +60,8 @@ class UAudioSynesthesiaNRTSettings : public UAudioAnalyzerNRTSettings
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AudioSynesthesiaNRTSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAudioSynesthesiaNRTSettings* GetDefaultObj();
 
 };
 
@@ -86,11 +71,8 @@ class UAudioSynesthesiaNRT : public UAudioAnalyzerNRT
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AudioSynesthesiaNRT");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAudioSynesthesiaNRT* GetDefaultObj();
 
 };
 
@@ -109,14 +91,11 @@ public:
 	enum class EAudioSpectrumType                SpectrumType;                                      // 0x3B(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        BandWidthStretch;                                  // 0x3C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EConstantQNormalizationEnum       CQTNormalization;                                  // 0x40(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1BDB[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CD6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        NoiseFloorDb;                                      // 0x44(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ConstantQNRTSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UConstantQNRTSettings* GetDefaultObj();
 
 };
 
@@ -127,14 +106,11 @@ class UConstantQNRT : public UAudioSynesthesiaNRT
 public:
 	class UConstantQNRTSettings*                 Settings;                                          // 0x78(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ConstantQNRT");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UConstantQNRT* GetDefaultObj();
 
-	void GetNormalizedChannelConstantQAtTime(float InInSeconds, int32 InInChannel, TArray<float>* InOutConstantQ);
-	void GetChannelConstantQAtTime(float InInSeconds, int32 InInChannel, TArray<float>* InOutConstantQ);
+	void GetNormalizedChannelConstantQAtTime(float InSeconds, int32 InChannel, TArray<float>* OutConstantQ);
+	void GetChannelConstantQAtTime(float InSeconds, int32 InChannel, TArray<float>* OutConstantQ);
 };
 
 // 0x18 (0x40 - 0x28)
@@ -146,15 +122,12 @@ public:
 	float                                        MinimumFrequency;                                  // 0x2C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaximumFrequency;                                  // 0x30(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ELoudnessCurveTypeEnum            CurveType;                                         // 0x34(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1BE4[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CF1[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        NoiseFloorDb;                                      // 0x38(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ExpectedMaxLoudness;                               // 0x3C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LoudnessSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULoudnessSettings* GetDefaultObj();
 
 };
 
@@ -169,11 +142,8 @@ public:
 	FMulticastInlineDelegateProperty_            OnLatestOverallLoudnessResults;                    // 0xB8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnLatestPerChannelLoudnessResults;                 // 0xC8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LoudnessAnalyzer");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULoudnessAnalyzer* GetDefaultObj();
 
 };
 
@@ -186,15 +156,12 @@ public:
 	float                                        MinimumFrequency;                                  // 0x2C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaximumFrequency;                                  // 0x30(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ELoudnessNRTCurveTypeEnum         CurveType;                                         // 0x34(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1BEF[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CFB[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        NoiseFloorDb;                                      // 0x38(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1BF0[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CFC[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LoudnessNRTSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULoudnessNRTSettings* GetDefaultObj();
 
 };
 
@@ -205,16 +172,13 @@ class ULoudnessNRT : public UAudioSynesthesiaNRT
 public:
 	class ULoudnessNRTSettings*                  Settings;                                          // 0x78(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LoudnessNRT");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULoudnessNRT* GetDefaultObj();
 
-	void GetNormalizedLoudnessAtTime(float InInSeconds, float* InOutLoudness);
-	void GetNormalizedChannelLoudnessAtTime(float InInSeconds, int32 InInChannel, float* InOutLoudness);
-	void GetLoudnessAtTime(float InInSeconds, float* InOutLoudness);
-	void GetChannelLoudnessAtTime(float InInSeconds, int32 InInChannel, float* InOutLoudness);
+	void GetNormalizedLoudnessAtTime(float InSeconds, float* OutLoudness);
+	void GetNormalizedChannelLoudnessAtTime(float InSeconds, int32 InChannel, float* OutLoudness);
+	void GetLoudnessAtTime(float InSeconds, float* OutLoudness);
+	void GetChannelLoudnessAtTime(float InSeconds, int32 InChannel, float* OutLoudness);
 };
 
 // 0x18 (0x40 - 0x28)
@@ -224,17 +188,14 @@ class UMeterSettings : public UAudioSynesthesiaSettings
 public:
 	float                                        AnalysisPeriod;                                    // 0x28(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EMeterPeakType                    PeakMode;                                          // 0x2C(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C03[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D13[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        MeterAttackTime;                                   // 0x30(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MeterReleaseTime;                                  // 0x34(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        PeakHoldTime;                                      // 0x38(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ClippingThreshold;                                 // 0x3C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MeterSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMeterSettings* GetDefaultObj();
 
 };
 
@@ -245,19 +206,16 @@ class UMeterAnalyzer : public UAudioAnalyzer
 public:
 	class UMeterSettings*                        Settings;                                          // 0x90(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnOverallMeterResults;                             // 0x98(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C07[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D19[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnPerChannelMeterResults;                          // 0xC0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C08[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D1A[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnLatestOverallMeterResults;                       // 0xE8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C0B[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D1C[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnLatestPerChannelMeterResults;                    // 0x110(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C0C[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D1D[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MeterAnalyzer");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMeterAnalyzer* GetDefaultObj();
 
 };
 
@@ -267,18 +225,15 @@ class UOnsetNRTSettings : public UAudioSynesthesiaNRTSettings
 {
 public:
 	bool                                         bDownmixToMono;                                    // 0x28(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C0D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D25[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        GranularityInSeconds;                              // 0x2C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Sensitivity;                                       // 0x30(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MinimumFrequency;                                  // 0x34(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaximumFrequency;                                  // 0x38(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C0E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D29[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("OnsetNRTSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UOnsetNRTSettings* GetDefaultObj();
 
 };
 
@@ -289,18 +244,13 @@ class UOnsetNRT : public UAudioSynesthesiaNRT
 public:
 	class UOnsetNRTSettings*                     Settings;                                          // 0x78(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("OnsetNRT");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UOnsetNRT* GetDefaultObj();
 
-	void GetNormalizedChannelOnsetsBetweenTimes(float InInStartSeconds, float InInEndSeconds, int32 InInChannel, TArray<float>* InOutOnsetTimestamps, TArray<float>* InOutOnsetStrengths);
-	void GetChannelOnsetsBetweenTimes(float InInStartSeconds, float InInEndSeconds, int32 InInChannel, TArray<float>* InOutOnsetTimestamps, TArray<float>* InOutOnsetStrengths);
+	void GetNormalizedChannelOnsetsBetweenTimes(float InStartSeconds, float InEndSeconds, int32 InChannel, TArray<float>* OutOnsetTimestamps, TArray<float>* OutOnsetStrengths);
+	void GetChannelOnsetsBetweenTimes(float InStartSeconds, float InEndSeconds, int32 InChannel, TArray<float>* OutOnsetTimestamps, TArray<float>* OutOnsetStrengths);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

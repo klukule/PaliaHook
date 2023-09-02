@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class IKRig.IKGoalCreatorInterface
+// (None)
+
+class UClass* IIKGoalCreatorInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKGoalCreatorInterface");
+
+	return Clss;
+}
+
+
+// IKGoalCreatorInterface IKRig.Default__IKGoalCreatorInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IIKGoalCreatorInterface* IIKGoalCreatorInterface::GetDefaultObj()
+{
+	static class IIKGoalCreatorInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IIKGoalCreatorInterface*>(IIKGoalCreatorInterface::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function IKRig.IKGoalCreatorInterface.AddIKGoals
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // TMap<class FName, struct FIKRigGoal>OutGoals                                                         (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void IIKGoalCreatorInterface::AddIKGoals(TMap<class FName, struct FIKRigGoal>* InOutGoals)
+void IIKGoalCreatorInterface::AddIKGoals(TMap<class FName, struct FIKRigGoal>* OutGoals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,17 +55,45 @@ void IIKGoalCreatorInterface::AddIKGoals(TMap<class FName, struct FIKRigGoal>* I
 	Params::IIKGoalCreatorInterface_AddIKGoals_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutGoals != nullptr)
-		*InOutGoals = Parms.OutGoals;
+	if (OutGoals != nullptr)
+		*OutGoals = Parms.OutGoals;
 
+}
+
+
+// Class IKRig.IKRigComponent
+// (None)
+
+class UClass* UIKRigComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRigComponent");
+
+	return Clss;
+}
+
+
+// IKRigComponent IKRig.Default__IKRigComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UIKRigComponent* UIKRigComponent::GetDefaultObj()
+{
+	static class UIKRigComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRigComponent*>(UIKRigComponent::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -52,7 +105,7 @@ void IIKGoalCreatorInterface::AddIKGoals(TMap<class FName, struct FIKRigGoal>* I
 // float                              PositionAlpha                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              RotationAlpha                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRigComponent::SetIKRigGoalTransform(class FName InGoalName, const struct FTransform& InTransform, float InPositionAlpha, float InRotationAlpha)
+void UIKRigComponent::SetIKRigGoalTransform(class FName GoalName, const struct FTransform& Transform, float PositionAlpha, float RotationAlpha)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61,18 +114,18 @@ void UIKRigComponent::SetIKRigGoalTransform(class FName InGoalName, const struct
 
 	Params::UIKRigComponent_SetIKRigGoalTransform_Params Parms{};
 
-	Parms.GoalName = InGoalName;
-	Parms.Transform = InTransform;
-	Parms.PositionAlpha = InPositionAlpha;
-	Parms.RotationAlpha = InRotationAlpha;
+	Parms.GoalName = GoalName;
+	Parms.Transform = Transform;
+	Parms.PositionAlpha = PositionAlpha;
+	Parms.RotationAlpha = RotationAlpha;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -86,7 +139,7 @@ void UIKRigComponent::SetIKRigGoalTransform(class FName InGoalName, const struct
 // float                              PositionAlpha                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              RotationAlpha                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRigComponent::SetIKRigGoalPositionAndRotation(class FName InGoalName, const struct FVector& InPosition, const struct FQuat& InRotation, float InPositionAlpha, float InRotationAlpha)
+void UIKRigComponent::SetIKRigGoalPositionAndRotation(class FName GoalName, const struct FVector& Position, const struct FQuat& Rotation, float PositionAlpha, float RotationAlpha)
 {
 	static class UFunction* Func = nullptr;
 
@@ -95,19 +148,19 @@ void UIKRigComponent::SetIKRigGoalPositionAndRotation(class FName InGoalName, co
 
 	Params::UIKRigComponent_SetIKRigGoalPositionAndRotation_Params Parms{};
 
-	Parms.GoalName = InGoalName;
-	Parms.Position = InPosition;
-	Parms.Rotation = InRotation;
-	Parms.PositionAlpha = InPositionAlpha;
-	Parms.RotationAlpha = InRotationAlpha;
+	Parms.GoalName = GoalName;
+	Parms.Position = Position;
+	Parms.Rotation = Rotation;
+	Parms.PositionAlpha = PositionAlpha;
+	Parms.RotationAlpha = RotationAlpha;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -117,7 +170,7 @@ void UIKRigComponent::SetIKRigGoalPositionAndRotation(class FName InGoalName, co
 // Parameters:
 // struct FIKRigGoal                  Goal                                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRigComponent::SetIKRigGoal(struct FIKRigGoal& InGoal)
+void UIKRigComponent::SetIKRigGoal(struct FIKRigGoal& Goal)
 {
 	static class UFunction* Func = nullptr;
 
@@ -126,15 +179,15 @@ void UIKRigComponent::SetIKRigGoal(struct FIKRigGoal& InGoal)
 
 	Params::UIKRigComponent_SetIKRigGoal_Params Parms{};
 
-	Parms.Goal = InGoal;
+	Parms.Goal = Goal;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -153,14 +206,238 @@ void UIKRigComponent::ClearAllGoals()
 	Params::UIKRigComponent_ClearAllGoals_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class IKRig.IKRigEffectorGoal
+// (None)
+
+class UClass* UIKRigEffectorGoal::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRigEffectorGoal");
+
+	return Clss;
+}
+
+
+// IKRigEffectorGoal IKRig.Default__IKRigEffectorGoal
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UIKRigEffectorGoal* UIKRigEffectorGoal::GetDefaultObj()
+{
+	static class UIKRigEffectorGoal* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRigEffectorGoal*>(UIKRigEffectorGoal::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRigDefinition
+// (None)
+
+class UClass* UIKRigDefinition::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRigDefinition");
+
+	return Clss;
+}
+
+
+// IKRigDefinition IKRig.Default__IKRigDefinition
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UIKRigDefinition* UIKRigDefinition::GetDefaultObj()
+{
+	static class UIKRigDefinition* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRigDefinition*>(UIKRigDefinition::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRigProcessor
+// (None)
+
+class UClass* UIKRigProcessor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRigProcessor");
+
+	return Clss;
+}
+
+
+// IKRigProcessor IKRig.Default__IKRigProcessor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UIKRigProcessor* UIKRigProcessor::GetDefaultObj()
+{
+	static class UIKRigProcessor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRigProcessor*>(UIKRigProcessor::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRigSolver
+// (None)
+
+class UClass* UIKRigSolver::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRigSolver");
+
+	return Clss;
+}
+
+
+// IKRigSolver IKRig.Default__IKRigSolver
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRigSolver* UIKRigSolver::GetDefaultObj()
+{
+	static class UIKRigSolver* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRigSolver*>(UIKRigSolver::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.RetargetChainSettings
+// (None)
+
+class UClass* URetargetChainSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("RetargetChainSettings");
+
+	return Clss;
+}
+
+
+// RetargetChainSettings IKRig.Default__RetargetChainSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class URetargetChainSettings* URetargetChainSettings::GetDefaultObj()
+{
+	static class URetargetChainSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<URetargetChainSettings*>(URetargetChainSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.RetargetRootSettings
+// (None)
+
+class UClass* URetargetRootSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("RetargetRootSettings");
+
+	return Clss;
+}
+
+
+// RetargetRootSettings IKRig.Default__RetargetRootSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class URetargetRootSettings* URetargetRootSettings::GetDefaultObj()
+{
+	static class URetargetRootSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<URetargetRootSettings*>(URetargetRootSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRetargetGlobalSettings
+// (None)
+
+class UClass* UIKRetargetGlobalSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRetargetGlobalSettings");
+
+	return Clss;
+}
+
+
+// IKRetargetGlobalSettings IKRig.Default__IKRetargetGlobalSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UIKRetargetGlobalSettings* UIKRetargetGlobalSettings::GetDefaultObj()
+{
+	static class UIKRetargetGlobalSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRetargetGlobalSettings*>(UIKRetargetGlobalSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRetargeter
+// (None)
+
+class UClass* UIKRetargeter::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRetargeter");
+
+	return Clss;
+}
+
+
+// IKRetargeter IKRig.Default__IKRetargeter
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UIKRetargeter* UIKRetargeter::GetDefaultObj()
+{
+	static class UIKRetargeter* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRetargeter*>(UIKRetargeter::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -170,7 +447,7 @@ void UIKRigComponent::ClearAllGoals()
 // struct FRetargetProfile            RetargetProfile                                                  (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FTargetRootSettings         RootSettings                                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetRootSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FTargetRootSettings& InRootSettings)
+void UIKRetargeter::SetRootSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FTargetRootSettings& RootSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -179,16 +456,16 @@ void UIKRetargeter::SetRootSettingsInRetargetProfile(struct FRetargetProfile& In
 
 	Params::UIKRetargeter_SetRootSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = InRetargetProfile;
-	Parms.RootSettings = InRootSettings;
+	Parms.RetargetProfile = RetargetProfile;
+	Parms.RootSettings = RootSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -199,7 +476,7 @@ void UIKRetargeter::SetRootSettingsInRetargetProfile(struct FRetargetProfile& In
 // struct FRetargetProfile            RetargetProfile                                                  (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FRetargetGlobalSettings     GlobalSettings                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetGlobalSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FRetargetGlobalSettings& InGlobalSettings)
+void UIKRetargeter::SetGlobalSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FRetargetGlobalSettings& GlobalSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -208,16 +485,16 @@ void UIKRetargeter::SetGlobalSettingsInRetargetProfile(struct FRetargetProfile& 
 
 	Params::UIKRetargeter_SetGlobalSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = InRetargetProfile;
-	Parms.GlobalSettings = InGlobalSettings;
+	Parms.RetargetProfile = RetargetProfile;
+	Parms.GlobalSettings = GlobalSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -229,7 +506,7 @@ void UIKRetargeter::SetGlobalSettingsInRetargetProfile(struct FRetargetProfile& 
 // struct FTargetChainSpeedPlantSettingsSpeedPlantSettings                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                        TargetChainName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetChainSpeedPlantSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FTargetChainSpeedPlantSettings& InSpeedPlantSettings, class FName InTargetChainName)
+void UIKRetargeter::SetChainSpeedPlantSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FTargetChainSpeedPlantSettings& SpeedPlantSettings, class FName TargetChainName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -238,17 +515,17 @@ void UIKRetargeter::SetChainSpeedPlantSettingsInRetargetProfile(struct FRetarget
 
 	Params::UIKRetargeter_SetChainSpeedPlantSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = InRetargetProfile;
-	Parms.SpeedPlantSettings = InSpeedPlantSettings;
-	Parms.TargetChainName = InTargetChainName;
+	Parms.RetargetProfile = RetargetProfile;
+	Parms.SpeedPlantSettings = SpeedPlantSettings;
+	Parms.TargetChainName = TargetChainName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -260,7 +537,7 @@ void UIKRetargeter::SetChainSpeedPlantSettingsInRetargetProfile(struct FRetarget
 // struct FTargetChainSettings        ChainSettings                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                        TargetChainName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetChainSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FTargetChainSettings& InChainSettings, class FName InTargetChainName)
+void UIKRetargeter::SetChainSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FTargetChainSettings& ChainSettings, class FName TargetChainName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -269,17 +546,17 @@ void UIKRetargeter::SetChainSettingsInRetargetProfile(struct FRetargetProfile& I
 
 	Params::UIKRetargeter_SetChainSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = InRetargetProfile;
-	Parms.ChainSettings = InChainSettings;
-	Parms.TargetChainName = InTargetChainName;
+	Parms.RetargetProfile = RetargetProfile;
+	Parms.ChainSettings = ChainSettings;
+	Parms.TargetChainName = TargetChainName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -291,7 +568,7 @@ void UIKRetargeter::SetChainSettingsInRetargetProfile(struct FRetargetProfile& I
 // struct FTargetChainIKSettings      IKSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                        TargetChainName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetChainIKSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FTargetChainIKSettings& InIKSettings, class FName InTargetChainName)
+void UIKRetargeter::SetChainIKSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FTargetChainIKSettings& IKSettings, class FName TargetChainName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -300,17 +577,17 @@ void UIKRetargeter::SetChainIKSettingsInRetargetProfile(struct FRetargetProfile&
 
 	Params::UIKRetargeter_SetChainIKSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = InRetargetProfile;
-	Parms.IKSettings = InIKSettings;
-	Parms.TargetChainName = InTargetChainName;
+	Parms.RetargetProfile = RetargetProfile;
+	Parms.IKSettings = IKSettings;
+	Parms.TargetChainName = TargetChainName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -322,7 +599,7 @@ void UIKRetargeter::SetChainIKSettingsInRetargetProfile(struct FRetargetProfile&
 // struct FTargetChainFKSettings      FKSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                        TargetChainName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::SetChainFKSettingsInRetargetProfile(struct FRetargetProfile& InRetargetProfile, struct FTargetChainFKSettings& InFKSettings, class FName InTargetChainName)
+void UIKRetargeter::SetChainFKSettingsInRetargetProfile(struct FRetargetProfile& RetargetProfile, struct FTargetChainFKSettings& FKSettings, class FName TargetChainName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -331,17 +608,17 @@ void UIKRetargeter::SetChainFKSettingsInRetargetProfile(struct FRetargetProfile&
 
 	Params::UIKRetargeter_SetChainFKSettingsInRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = InRetargetProfile;
-	Parms.FKSettings = InFKSettings;
-	Parms.TargetChainName = InTargetChainName;
+	Parms.RetargetProfile = RetargetProfile;
+	Parms.FKSettings = FKSettings;
+	Parms.TargetChainName = TargetChainName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -352,7 +629,7 @@ void UIKRetargeter::SetChainFKSettingsInRetargetProfile(struct FRetargetProfile&
 // struct FRetargetProfile            RetargetProfile                                                  (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FTargetRootSettings         ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FTargetRootSettings UIKRetargeter::GetRootSettingsFromRetargetProfile(struct FRetargetProfile& InRetargetProfile)
+struct FTargetRootSettings UIKRetargeter::GetRootSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile)
 {
 	static class UFunction* Func = nullptr;
 
@@ -361,15 +638,15 @@ struct FTargetRootSettings UIKRetargeter::GetRootSettingsFromRetargetProfile(str
 
 	Params::UIKRetargeter_GetRootSettingsFromRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = InRetargetProfile;
+	Parms.RetargetProfile = RetargetProfile;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -383,7 +660,7 @@ struct FTargetRootSettings UIKRetargeter::GetRootSettingsFromRetargetProfile(str
 // class FName                        OptionalProfileName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTargetRootSettings         OutSettings                                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::GetRootSettingsFromRetargetAsset(class UIKRetargeter* InRetargetAsset, class FName InOptionalProfileName, struct FTargetRootSettings* InOutSettings)
+void UIKRetargeter::GetRootSettingsFromRetargetAsset(class UIKRetargeter* RetargetAsset, class FName OptionalProfileName, struct FTargetRootSettings* OutSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -392,19 +669,19 @@ void UIKRetargeter::GetRootSettingsFromRetargetAsset(class UIKRetargeter* InReta
 
 	Params::UIKRetargeter_GetRootSettingsFromRetargetAsset_Params Parms{};
 
-	Parms.RetargetAsset = InRetargetAsset;
-	Parms.OptionalProfileName = InOptionalProfileName;
+	Parms.RetargetAsset = RetargetAsset;
+	Parms.OptionalProfileName = OptionalProfileName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutSettings != nullptr)
-		*InOutSettings = Parms.OutSettings;
+	if (OutSettings != nullptr)
+		*OutSettings = std::move(Parms.OutSettings);
 
 }
 
@@ -415,7 +692,7 @@ void UIKRetargeter::GetRootSettingsFromRetargetAsset(class UIKRetargeter* InReta
 // struct FRetargetProfile            RetargetProfile                                                  (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FRetargetGlobalSettings     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRetargetGlobalSettings UIKRetargeter::GetGlobalSettingsFromRetargetProfile(struct FRetargetProfile& InRetargetProfile)
+struct FRetargetGlobalSettings UIKRetargeter::GetGlobalSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile)
 {
 	static class UFunction* Func = nullptr;
 
@@ -424,15 +701,15 @@ struct FRetargetGlobalSettings UIKRetargeter::GetGlobalSettingsFromRetargetProfi
 
 	Params::UIKRetargeter_GetGlobalSettingsFromRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = InRetargetProfile;
+	Parms.RetargetProfile = RetargetProfile;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -446,7 +723,7 @@ struct FRetargetGlobalSettings UIKRetargeter::GetGlobalSettingsFromRetargetProfi
 // class FName                        OptionalProfileName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRetargetGlobalSettings     OutSettings                                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UIKRetargeter::GetGlobalSettingsFromRetargetAsset(class UIKRetargeter* InRetargetAsset, class FName InOptionalProfileName, struct FRetargetGlobalSettings* InOutSettings)
+void UIKRetargeter::GetGlobalSettingsFromRetargetAsset(class UIKRetargeter* RetargetAsset, class FName OptionalProfileName, struct FRetargetGlobalSettings* OutSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -455,19 +732,19 @@ void UIKRetargeter::GetGlobalSettingsFromRetargetAsset(class UIKRetargeter* InRe
 
 	Params::UIKRetargeter_GetGlobalSettingsFromRetargetAsset_Params Parms{};
 
-	Parms.RetargetAsset = InRetargetAsset;
-	Parms.OptionalProfileName = InOptionalProfileName;
+	Parms.RetargetAsset = RetargetAsset;
+	Parms.OptionalProfileName = OptionalProfileName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutSettings != nullptr)
-		*InOutSettings = Parms.OutSettings;
+	if (OutSettings != nullptr)
+		*OutSettings = std::move(Parms.OutSettings);
 
 }
 
@@ -479,7 +756,7 @@ void UIKRetargeter::GetGlobalSettingsFromRetargetAsset(class UIKRetargeter* InRe
 // class FName                        IKGoalName                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTargetChainSettings        ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FTargetChainSettings UIKRetargeter::GetChainUsingGoalFromRetargetAsset(class UIKRetargeter* InRetargetAsset, class FName InIKGoalName)
+struct FTargetChainSettings UIKRetargeter::GetChainUsingGoalFromRetargetAsset(class UIKRetargeter* RetargetAsset, class FName IKGoalName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -488,16 +765,16 @@ struct FTargetChainSettings UIKRetargeter::GetChainUsingGoalFromRetargetAsset(cl
 
 	Params::UIKRetargeter_GetChainUsingGoalFromRetargetAsset_Params Parms{};
 
-	Parms.RetargetAsset = InRetargetAsset;
-	Parms.IKGoalName = InIKGoalName;
+	Parms.RetargetAsset = RetargetAsset;
+	Parms.IKGoalName = IKGoalName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -511,7 +788,7 @@ struct FTargetChainSettings UIKRetargeter::GetChainUsingGoalFromRetargetAsset(cl
 // class FName                        TargetChainName                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTargetChainSettings        ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetProfile(struct FRetargetProfile& InRetargetProfile, class FName InTargetChainName)
+struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetProfile(struct FRetargetProfile& RetargetProfile, class FName TargetChainName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -520,16 +797,16 @@ struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetProfile(s
 
 	Params::UIKRetargeter_GetChainSettingsFromRetargetProfile_Params Parms{};
 
-	Parms.RetargetProfile = InRetargetProfile;
-	Parms.TargetChainName = InTargetChainName;
+	Parms.RetargetProfile = RetargetProfile;
+	Parms.TargetChainName = TargetChainName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -544,7 +821,7 @@ struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetProfile(s
 // class FName                        OptionalProfileName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTargetChainSettings        ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetAsset(class UIKRetargeter* InRetargetAsset, class FName InTargetChainName, class FName InOptionalProfileName)
+struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetAsset(class UIKRetargeter* RetargetAsset, class FName TargetChainName, class FName OptionalProfileName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -553,24 +830,358 @@ struct FTargetChainSettings UIKRetargeter::GetChainSettingsFromRetargetAsset(cla
 
 	Params::UIKRetargeter_GetChainSettingsFromRetargetAsset_Params Parms{};
 
-	Parms.RetargetAsset = InRetargetAsset;
-	Parms.TargetChainName = InTargetChainName;
-	Parms.OptionalProfileName = InOptionalProfileName;
+	Parms.RetargetAsset = RetargetAsset;
+	Parms.TargetChainName = TargetChainName;
+	Parms.OptionalProfileName = OptionalProfileName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
 }
 
+
+// Class IKRig.IKRetargetProcessor
+// (None)
+
+class UClass* UIKRetargetProcessor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRetargetProcessor");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// IKRetargetProcessor IKRig.Default__IKRetargetProcessor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UIKRetargetProcessor* UIKRetargetProcessor::GetDefaultObj()
+{
+	static class UIKRetargetProcessor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRetargetProcessor*>(UIKRetargetProcessor::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRig_BodyMoverEffector
+// (None)
+
+class UClass* UIKRig_BodyMoverEffector::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRig_BodyMoverEffector");
+
+	return Clss;
+}
+
+
+// IKRig_BodyMoverEffector IKRig.Default__IKRig_BodyMoverEffector
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRig_BodyMoverEffector* UIKRig_BodyMoverEffector::GetDefaultObj()
+{
+	static class UIKRig_BodyMoverEffector* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRig_BodyMoverEffector*>(UIKRig_BodyMoverEffector::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRig_BodyMover
+// (None)
+
+class UClass* UIKRig_BodyMover::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRig_BodyMover");
+
+	return Clss;
+}
+
+
+// IKRig_BodyMover IKRig.Default__IKRig_BodyMover
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRig_BodyMover* UIKRig_BodyMover::GetDefaultObj()
+{
+	static class UIKRig_BodyMover* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRig_BodyMover*>(UIKRig_BodyMover::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRig_LimbEffector
+// (None)
+
+class UClass* UIKRig_LimbEffector::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRig_LimbEffector");
+
+	return Clss;
+}
+
+
+// IKRig_LimbEffector IKRig.Default__IKRig_LimbEffector
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRig_LimbEffector* UIKRig_LimbEffector::GetDefaultObj()
+{
+	static class UIKRig_LimbEffector* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRig_LimbEffector*>(UIKRig_LimbEffector::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRig_LimbSolver
+// (None)
+
+class UClass* UIKRig_LimbSolver::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRig_LimbSolver");
+
+	return Clss;
+}
+
+
+// IKRig_LimbSolver IKRig.Default__IKRig_LimbSolver
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRig_LimbSolver* UIKRig_LimbSolver::GetDefaultObj()
+{
+	static class UIKRig_LimbSolver* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRig_LimbSolver*>(UIKRig_LimbSolver::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRig_FBIKEffector
+// (None)
+
+class UClass* UIKRig_FBIKEffector::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRig_FBIKEffector");
+
+	return Clss;
+}
+
+
+// IKRig_FBIKEffector IKRig.Default__IKRig_FBIKEffector
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRig_FBIKEffector* UIKRig_FBIKEffector::GetDefaultObj()
+{
+	static class UIKRig_FBIKEffector* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRig_FBIKEffector*>(UIKRig_FBIKEffector::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRig_PBIKBoneSettings
+// (None)
+
+class UClass* UIKRig_PBIKBoneSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRig_PBIKBoneSettings");
+
+	return Clss;
+}
+
+
+// IKRig_PBIKBoneSettings IKRig.Default__IKRig_PBIKBoneSettings
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRig_PBIKBoneSettings* UIKRig_PBIKBoneSettings::GetDefaultObj()
+{
+	static class UIKRig_PBIKBoneSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRig_PBIKBoneSettings*>(UIKRig_PBIKBoneSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRigPBIKSolver
+// (None)
+
+class UClass* UIKRigPBIKSolver::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRigPBIKSolver");
+
+	return Clss;
+}
+
+
+// IKRigPBIKSolver IKRig.Default__IKRigPBIKSolver
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRigPBIKSolver* UIKRigPBIKSolver::GetDefaultObj()
+{
+	static class UIKRigPBIKSolver* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRigPBIKSolver*>(UIKRigPBIKSolver::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRig_PoleSolverEffector
+// (None)
+
+class UClass* UIKRig_PoleSolverEffector::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRig_PoleSolverEffector");
+
+	return Clss;
+}
+
+
+// IKRig_PoleSolverEffector IKRig.Default__IKRig_PoleSolverEffector
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRig_PoleSolverEffector* UIKRig_PoleSolverEffector::GetDefaultObj()
+{
+	static class UIKRig_PoleSolverEffector* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRig_PoleSolverEffector*>(UIKRig_PoleSolverEffector::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRig_PoleSolver
+// (None)
+
+class UClass* UIKRig_PoleSolver::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRig_PoleSolver");
+
+	return Clss;
+}
+
+
+// IKRig_PoleSolver IKRig.Default__IKRig_PoleSolver
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRig_PoleSolver* UIKRig_PoleSolver::GetDefaultObj()
+{
+	static class UIKRig_PoleSolver* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRig_PoleSolver*>(UIKRig_PoleSolver::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRig_SetTransformEffector
+// (None)
+
+class UClass* UIKRig_SetTransformEffector::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRig_SetTransformEffector");
+
+	return Clss;
+}
+
+
+// IKRig_SetTransformEffector IKRig.Default__IKRig_SetTransformEffector
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UIKRig_SetTransformEffector* UIKRig_SetTransformEffector::GetDefaultObj()
+{
+	static class UIKRig_SetTransformEffector* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRig_SetTransformEffector*>(UIKRig_SetTransformEffector::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class IKRig.IKRig_SetTransform
+// (None)
+
+class UClass* UIKRig_SetTransform::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IKRig_SetTransform");
+
+	return Clss;
+}
+
+
+// IKRig_SetTransform IKRig.Default__IKRig_SetTransform
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UIKRig_SetTransform* UIKRig_SetTransform::GetDefaultObj()
+{
+	static class UIKRig_SetTransform* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIKRig_SetTransform*>(UIKRig_SetTransform::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

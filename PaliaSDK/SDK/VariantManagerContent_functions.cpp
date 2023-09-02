@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,13 +12,41 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class VariantManagerContent.LevelVariantSets
+// (None)
+
+class UClass* ULevelVariantSets::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("LevelVariantSets");
+
+	return Clss;
+}
+
+
+// LevelVariantSets VariantManagerContent.Default__LevelVariantSets
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ULevelVariantSets* ULevelVariantSets::GetDefaultObj()
+{
+	static class ULevelVariantSets* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ULevelVariantSets*>(ULevelVariantSets::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function VariantManagerContent.LevelVariantSets.GetVariantSetByName
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class FString                      VariantSetName                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UVariantSet*                 ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UVariantSet* ULevelVariantSets::GetVariantSetByName(const class FString& InVariantSetName)
+class UVariantSet* ULevelVariantSets::GetVariantSetByName(const class FString& VariantSetName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,15 +55,15 @@ class UVariantSet* ULevelVariantSets::GetVariantSetByName(const class FString& I
 
 	Params::ULevelVariantSets_GetVariantSetByName_Params Parms{};
 
-	Parms.VariantSetName = InVariantSetName;
+	Parms.VariantSetName = VariantSetName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -51,7 +76,7 @@ class UVariantSet* ULevelVariantSets::GetVariantSetByName(const class FString& I
 // int32                              VariantSetIndex                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UVariantSet*                 ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UVariantSet* ULevelVariantSets::GetVariantSet(int32 InVariantSetIndex)
+class UVariantSet* ULevelVariantSets::GetVariantSet(int32 VariantSetIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,15 +85,15 @@ class UVariantSet* ULevelVariantSets::GetVariantSet(int32 InVariantSetIndex)
 
 	Params::ULevelVariantSets_GetVariantSet_Params Parms{};
 
-	Parms.VariantSetIndex = InVariantSetIndex;
+	Parms.VariantSetIndex = VariantSetIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -90,16 +115,44 @@ int32 ULevelVariantSets::GetNumVariantSets()
 	Params::ULevelVariantSets_GetNumVariantSets_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class VariantManagerContent.LevelVariantSetsActor
+// (Actor)
+
+class UClass* ALevelVariantSetsActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("LevelVariantSetsActor");
+
+	return Clss;
+}
+
+
+// LevelVariantSetsActor VariantManagerContent.Default__LevelVariantSetsActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ALevelVariantSetsActor* ALevelVariantSetsActor::GetDefaultObj()
+{
+	static class ALevelVariantSetsActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ALevelVariantSetsActor*>(ALevelVariantSetsActor::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -110,7 +163,7 @@ int32 ULevelVariantSets::GetNumVariantSets()
 // class FString                      VariantName                                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ALevelVariantSetsActor::SwitchOnVariantByName(const class FString& InVariantSetName, const class FString& InVariantName)
+bool ALevelVariantSetsActor::SwitchOnVariantByName(const class FString& VariantSetName, const class FString& VariantName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -119,16 +172,16 @@ bool ALevelVariantSetsActor::SwitchOnVariantByName(const class FString& InVarian
 
 	Params::ALevelVariantSetsActor_SwitchOnVariantByName_Params Parms{};
 
-	Parms.VariantSetName = InVariantSetName;
-	Parms.VariantName = InVariantName;
+	Parms.VariantSetName = VariantSetName;
+	Parms.VariantName = VariantName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -142,7 +195,7 @@ bool ALevelVariantSetsActor::SwitchOnVariantByName(const class FString& InVarian
 // int32                              VariantIndex                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ALevelVariantSetsActor::SwitchOnVariantByIndex(int32 InVariantSetIndex, int32 InVariantIndex)
+bool ALevelVariantSetsActor::SwitchOnVariantByIndex(int32 VariantSetIndex, int32 VariantIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -151,16 +204,16 @@ bool ALevelVariantSetsActor::SwitchOnVariantByIndex(int32 InVariantSetIndex, int
 
 	Params::ALevelVariantSetsActor_SwitchOnVariantByIndex_Params Parms{};
 
-	Parms.VariantSetIndex = InVariantSetIndex;
-	Parms.VariantIndex = InVariantIndex;
+	Parms.VariantSetIndex = VariantSetIndex;
+	Parms.VariantIndex = VariantIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -172,7 +225,7 @@ bool ALevelVariantSetsActor::SwitchOnVariantByIndex(int32 InVariantSetIndex, int
 // Parameters:
 // class ULevelVariantSets*           InVariantSets                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ALevelVariantSetsActor::SetLevelVariantSets(class ULevelVariantSets* InInVariantSets)
+void ALevelVariantSetsActor::SetLevelVariantSets(class ULevelVariantSets* InVariantSets)
 {
 	static class UFunction* Func = nullptr;
 
@@ -181,15 +234,15 @@ void ALevelVariantSetsActor::SetLevelVariantSets(class ULevelVariantSets* InInVa
 
 	Params::ALevelVariantSetsActor_SetLevelVariantSets_Params Parms{};
 
-	Parms.InVariantSets = InInVariantSets;
+	Parms.InVariantSets = InVariantSets;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -200,7 +253,7 @@ void ALevelVariantSetsActor::SetLevelVariantSets(class ULevelVariantSets* InInVa
 // bool                               bLoad                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULevelVariantSets*           ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULevelVariantSets* ALevelVariantSetsActor::GetLevelVariantSets(bool InbLoad)
+class ULevelVariantSets* ALevelVariantSetsActor::GetLevelVariantSets(bool bLoad)
 {
 	static class UFunction* Func = nullptr;
 
@@ -209,18 +262,74 @@ class ULevelVariantSets* ALevelVariantSetsActor::GetLevelVariantSets(bool InbLoa
 
 	Params::ALevelVariantSetsActor_GetLevelVariantSets_Params Parms{};
 
-	Parms.bLoad = InbLoad;
+	Parms.bLoad = bLoad;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class VariantManagerContent.LevelVariantSetsFunctionDirector
+// (None)
+
+class UClass* ULevelVariantSetsFunctionDirector::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("LevelVariantSetsFunctionDirector");
+
+	return Clss;
+}
+
+
+// LevelVariantSetsFunctionDirector VariantManagerContent.Default__LevelVariantSetsFunctionDirector
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ULevelVariantSetsFunctionDirector* ULevelVariantSetsFunctionDirector::GetDefaultObj()
+{
+	static class ULevelVariantSetsFunctionDirector* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ULevelVariantSetsFunctionDirector*>(ULevelVariantSetsFunctionDirector::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class VariantManagerContent.PropertyValue
+// (None)
+
+class UClass* UPropertyValue::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("PropertyValue");
+
+	return Clss;
+}
+
+
+// PropertyValue VariantManagerContent.Default__PropertyValue
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UPropertyValue* UPropertyValue::GetDefaultObj()
+{
+	static class UPropertyValue* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UPropertyValue*>(UPropertyValue::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -239,13 +348,13 @@ bool UPropertyValue::HasRecordedData()
 	Params::UPropertyValue_HasRecordedData_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -267,13 +376,13 @@ class FText UPropertyValue::GetPropertyTooltip()
 	Params::UPropertyValue_GetPropertyTooltip_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -295,16 +404,212 @@ class FString UPropertyValue::GetFullDisplayString()
 	Params::UPropertyValue_GetFullDisplayString_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class VariantManagerContent.PropertyValueTransform
+// (None)
+
+class UClass* UPropertyValueTransform::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("PropertyValueTransform");
+
+	return Clss;
+}
+
+
+// PropertyValueTransform VariantManagerContent.Default__PropertyValueTransform
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UPropertyValueTransform* UPropertyValueTransform::GetDefaultObj()
+{
+	static class UPropertyValueTransform* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UPropertyValueTransform*>(UPropertyValueTransform::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class VariantManagerContent.PropertyValueVisibility
+// (None)
+
+class UClass* UPropertyValueVisibility::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("PropertyValueVisibility");
+
+	return Clss;
+}
+
+
+// PropertyValueVisibility VariantManagerContent.Default__PropertyValueVisibility
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UPropertyValueVisibility* UPropertyValueVisibility::GetDefaultObj()
+{
+	static class UPropertyValueVisibility* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UPropertyValueVisibility*>(UPropertyValueVisibility::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class VariantManagerContent.PropertyValueColor
+// (None)
+
+class UClass* UPropertyValueColor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("PropertyValueColor");
+
+	return Clss;
+}
+
+
+// PropertyValueColor VariantManagerContent.Default__PropertyValueColor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UPropertyValueColor* UPropertyValueColor::GetDefaultObj()
+{
+	static class UPropertyValueColor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UPropertyValueColor*>(UPropertyValueColor::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class VariantManagerContent.PropertyValueMaterial
+// (None)
+
+class UClass* UPropertyValueMaterial::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("PropertyValueMaterial");
+
+	return Clss;
+}
+
+
+// PropertyValueMaterial VariantManagerContent.Default__PropertyValueMaterial
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UPropertyValueMaterial* UPropertyValueMaterial::GetDefaultObj()
+{
+	static class UPropertyValueMaterial* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UPropertyValueMaterial*>(UPropertyValueMaterial::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class VariantManagerContent.PropertyValueOption
+// (None)
+
+class UClass* UPropertyValueOption::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("PropertyValueOption");
+
+	return Clss;
+}
+
+
+// PropertyValueOption VariantManagerContent.Default__PropertyValueOption
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UPropertyValueOption* UPropertyValueOption::GetDefaultObj()
+{
+	static class UPropertyValueOption* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UPropertyValueOption*>(UPropertyValueOption::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class VariantManagerContent.PropertyValueSoftObject
+// (None)
+
+class UClass* UPropertyValueSoftObject::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("PropertyValueSoftObject");
+
+	return Clss;
+}
+
+
+// PropertyValueSoftObject VariantManagerContent.Default__PropertyValueSoftObject
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UPropertyValueSoftObject* UPropertyValueSoftObject::GetDefaultObj()
+{
+	static class UPropertyValueSoftObject* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UPropertyValueSoftObject*>(UPropertyValueSoftObject::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class VariantManagerContent.SwitchActor
+// (Actor)
+
+class UClass* ASwitchActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SwitchActor");
+
+	return Clss;
+}
+
+
+// SwitchActor VariantManagerContent.Default__SwitchActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ASwitchActor* ASwitchActor::GetDefaultObj()
+{
+	static class ASwitchActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ASwitchActor*>(ASwitchActor::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -313,7 +618,7 @@ class FString UPropertyValue::GetFullDisplayString()
 // Parameters:
 // int32                              OptionIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ASwitchActor::SelectOption(int32 InOptionIndex)
+void ASwitchActor::SelectOption(int32 OptionIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -322,15 +627,15 @@ void ASwitchActor::SelectOption(int32 InOptionIndex)
 
 	Params::ASwitchActor_SelectOption_Params Parms{};
 
-	Parms.OptionIndex = InOptionIndex;
+	Parms.OptionIndex = OptionIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -350,13 +655,13 @@ int32 ASwitchActor::GetSelectedOption()
 	Params::ASwitchActor_GetSelectedOption_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -378,16 +683,44 @@ TArray<class AActor*> ASwitchActor::GetOptions()
 	Params::ASwitchActor_GetOptions_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class VariantManagerContent.Variant
+// (None)
+
+class UClass* UVariant::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("Variant");
+
+	return Clss;
+}
+
+
+// Variant VariantManagerContent.Default__Variant
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVariant* UVariant::GetDefaultObj()
+{
+	static class UVariant* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVariant*>(UVariant::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -405,13 +738,13 @@ void UVariant::SwitchOn()
 	Params::UVariant_SwitchOn_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -421,7 +754,7 @@ void UVariant::SwitchOn()
 // Parameters:
 // class UTexture2D*                  NewThumbnail                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVariant::SetThumbnailFromTexture(class UTexture2D* InNewThumbnail)
+void UVariant::SetThumbnailFromTexture(class UTexture2D* NewThumbnail)
 {
 	static class UFunction* Func = nullptr;
 
@@ -430,15 +763,15 @@ void UVariant::SetThumbnailFromTexture(class UTexture2D* InNewThumbnail)
 
 	Params::UVariant_SetThumbnailFromTexture_Params Parms{};
 
-	Parms.NewThumbnail = InNewThumbnail;
+	Parms.NewThumbnail = NewThumbnail;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -448,7 +781,7 @@ void UVariant::SetThumbnailFromTexture(class UTexture2D* InNewThumbnail)
 // Parameters:
 // class FString                      FilePath                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVariant::SetThumbnailFromFile(const class FString& InFilePath)
+void UVariant::SetThumbnailFromFile(const class FString& FilePath)
 {
 	static class UFunction* Func = nullptr;
 
@@ -457,15 +790,15 @@ void UVariant::SetThumbnailFromFile(const class FString& InFilePath)
 
 	Params::UVariant_SetThumbnailFromFile_Params Parms{};
 
-	Parms.FilePath = InFilePath;
+	Parms.FilePath = FilePath;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -484,13 +817,13 @@ void UVariant::SetThumbnailFromEditorViewport()
 	Params::UVariant_SetThumbnailFromEditorViewport_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -504,7 +837,7 @@ void UVariant::SetThumbnailFromEditorViewport()
 // float                              MinZ                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Gamma                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVariant::SetThumbnailFromCamera(class UObject* InWorldContextObject, struct FTransform& InCameraTransform, float InFOVDegrees, float InMinZ, float InGamma)
+void UVariant::SetThumbnailFromCamera(class UObject* WorldContextObject, struct FTransform& CameraTransform, float FOVDegrees, float MinZ, float Gamma)
 {
 	static class UFunction* Func = nullptr;
 
@@ -513,19 +846,19 @@ void UVariant::SetThumbnailFromCamera(class UObject* InWorldContextObject, struc
 
 	Params::UVariant_SetThumbnailFromCamera_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.CameraTransform = InCameraTransform;
-	Parms.FOVDegrees = InFOVDegrees;
-	Parms.MinZ = InMinZ;
-	Parms.Gamma = InGamma;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.CameraTransform = CameraTransform;
+	Parms.FOVDegrees = FOVDegrees;
+	Parms.MinZ = MinZ;
+	Parms.Gamma = Gamma;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -535,7 +868,7 @@ void UVariant::SetThumbnailFromCamera(class UObject* InWorldContextObject, struc
 // Parameters:
 // class FText                        NewDisplayText                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVariant::SetDisplayText(class FText& InNewDisplayText)
+void UVariant::SetDisplayText(class FText& NewDisplayText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -544,15 +877,15 @@ void UVariant::SetDisplayText(class FText& InNewDisplayText)
 
 	Params::UVariant_SetDisplayText_Params Parms{};
 
-	Parms.NewDisplayText = InNewDisplayText;
+	Parms.NewDisplayText = NewDisplayText;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -563,7 +896,7 @@ void UVariant::SetDisplayText(class FText& InNewDisplayText)
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVariantDependency          Dependency                                                       (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void UVariant::SetDependency(int32 InIndex, struct FVariantDependency* InDependency)
+void UVariant::SetDependency(int32 Index, struct FVariantDependency* Dependency)
 {
 	static class UFunction* Func = nullptr;
 
@@ -572,18 +905,18 @@ void UVariant::SetDependency(int32 InIndex, struct FVariantDependency* InDepende
 
 	Params::UVariant_SetDependency_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InDependency != nullptr)
-		*InDependency = Parms.Dependency;
+	if (Dependency != nullptr)
+		*Dependency = std::move(Parms.Dependency);
 
 }
 
@@ -603,13 +936,13 @@ bool UVariant::IsActive()
 	Params::UVariant_IsActive_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -631,13 +964,13 @@ class UTexture2D* UVariant::GetThumbnail()
 	Params::UVariant_GetThumbnail_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -659,13 +992,13 @@ class UVariantSet* UVariant::GetParent()
 	Params::UVariant_GetParent_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -687,13 +1020,13 @@ int32 UVariant::GetNumDependencies()
 	Params::UVariant_GetNumDependencies_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -715,13 +1048,13 @@ int32 UVariant::GetNumActors()
 	Params::UVariant_GetNumActors_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -743,13 +1076,13 @@ class FText UVariant::GetDisplayText()
 	Params::UVariant_GetDisplayText_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -763,7 +1096,7 @@ class FText UVariant::GetDisplayText()
 // bool                               bOnlyEnabledDependencies                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UVariant*>            ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UVariant*> UVariant::GetDependents(class ULevelVariantSets* InLevelVariantSets, bool InbOnlyEnabledDependencies)
+TArray<class UVariant*> UVariant::GetDependents(class ULevelVariantSets* LevelVariantSets, bool bOnlyEnabledDependencies)
 {
 	static class UFunction* Func = nullptr;
 
@@ -772,16 +1105,16 @@ TArray<class UVariant*> UVariant::GetDependents(class ULevelVariantSets* InLevel
 
 	Params::UVariant_GetDependents_Params Parms{};
 
-	Parms.LevelVariantSets = InLevelVariantSets;
-	Parms.bOnlyEnabledDependencies = InbOnlyEnabledDependencies;
+	Parms.LevelVariantSets = LevelVariantSets;
+	Parms.bOnlyEnabledDependencies = bOnlyEnabledDependencies;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -794,7 +1127,7 @@ TArray<class UVariant*> UVariant::GetDependents(class ULevelVariantSets* InLevel
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVariantDependency          ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FVariantDependency UVariant::GetDependency(int32 InIndex)
+struct FVariantDependency UVariant::GetDependency(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -803,15 +1136,15 @@ struct FVariantDependency UVariant::GetDependency(int32 InIndex)
 
 	Params::UVariant_GetDependency_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -824,7 +1157,7 @@ struct FVariantDependency UVariant::GetDependency(int32 InIndex)
 // int32                              ActorIndex                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class AActor* UVariant::GetActor(int32 InActorIndex)
+class AActor* UVariant::GetActor(int32 ActorIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -833,15 +1166,15 @@ class AActor* UVariant::GetActor(int32 InActorIndex)
 
 	Params::UVariant_GetActor_Params Parms{};
 
-	Parms.ActorIndex = InActorIndex;
+	Parms.ActorIndex = ActorIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -853,7 +1186,7 @@ class AActor* UVariant::GetActor(int32 InActorIndex)
 // Parameters:
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVariant::DeleteDependency(int32 InIndex)
+void UVariant::DeleteDependency(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -862,15 +1195,15 @@ void UVariant::DeleteDependency(int32 InIndex)
 
 	Params::UVariant_DeleteDependency_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -881,7 +1214,7 @@ void UVariant::DeleteDependency(int32 InIndex)
 // struct FVariantDependency          Dependency                                                       (Parm, OutParm, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UVariant::AddDependency(struct FVariantDependency* InDependency)
+int32 UVariant::AddDependency(struct FVariantDependency* Dependency)
 {
 	static class UFunction* Func = nullptr;
 
@@ -891,19 +1224,75 @@ int32 UVariant::AddDependency(struct FVariantDependency* InDependency)
 	Params::UVariant_AddDependency_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InDependency != nullptr)
-		*InDependency = Parms.Dependency;
+	if (Dependency != nullptr)
+		*Dependency = std::move(Parms.Dependency);
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class VariantManagerContent.VariantObjectBinding
+// (None)
+
+class UClass* UVariantObjectBinding::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VariantObjectBinding");
+
+	return Clss;
+}
+
+
+// VariantObjectBinding VariantManagerContent.Default__VariantObjectBinding
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVariantObjectBinding* UVariantObjectBinding::GetDefaultObj()
+{
+	static class UVariantObjectBinding* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVariantObjectBinding*>(UVariantObjectBinding::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class VariantManagerContent.VariantSet
+// (None)
+
+class UClass* UVariantSet::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VariantSet");
+
+	return Clss;
+}
+
+
+// VariantSet VariantManagerContent.Default__VariantSet
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVariantSet* UVariantSet::GetDefaultObj()
+{
+	static class UVariantSet* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVariantSet*>(UVariantSet::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -912,7 +1301,7 @@ int32 UVariant::AddDependency(struct FVariantDependency* InDependency)
 // Parameters:
 // class UTexture2D*                  NewThumbnail                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVariantSet::SetThumbnailFromTexture(class UTexture2D* InNewThumbnail)
+void UVariantSet::SetThumbnailFromTexture(class UTexture2D* NewThumbnail)
 {
 	static class UFunction* Func = nullptr;
 
@@ -921,15 +1310,15 @@ void UVariantSet::SetThumbnailFromTexture(class UTexture2D* InNewThumbnail)
 
 	Params::UVariantSet_SetThumbnailFromTexture_Params Parms{};
 
-	Parms.NewThumbnail = InNewThumbnail;
+	Parms.NewThumbnail = NewThumbnail;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -939,7 +1328,7 @@ void UVariantSet::SetThumbnailFromTexture(class UTexture2D* InNewThumbnail)
 // Parameters:
 // class FString                      FilePath                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVariantSet::SetThumbnailFromFile(const class FString& InFilePath)
+void UVariantSet::SetThumbnailFromFile(const class FString& FilePath)
 {
 	static class UFunction* Func = nullptr;
 
@@ -948,15 +1337,15 @@ void UVariantSet::SetThumbnailFromFile(const class FString& InFilePath)
 
 	Params::UVariantSet_SetThumbnailFromFile_Params Parms{};
 
-	Parms.FilePath = InFilePath;
+	Parms.FilePath = FilePath;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -975,13 +1364,13 @@ void UVariantSet::SetThumbnailFromEditorViewport()
 	Params::UVariantSet_SetThumbnailFromEditorViewport_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -995,7 +1384,7 @@ void UVariantSet::SetThumbnailFromEditorViewport()
 // float                              MinZ                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Gamma                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVariantSet::SetThumbnailFromCamera(class UObject* InWorldContextObject, struct FTransform& InCameraTransform, float InFOVDegrees, float InMinZ, float InGamma)
+void UVariantSet::SetThumbnailFromCamera(class UObject* WorldContextObject, struct FTransform& CameraTransform, float FOVDegrees, float MinZ, float Gamma)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1004,19 +1393,19 @@ void UVariantSet::SetThumbnailFromCamera(class UObject* InWorldContextObject, st
 
 	Params::UVariantSet_SetThumbnailFromCamera_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.CameraTransform = InCameraTransform;
-	Parms.FOVDegrees = InFOVDegrees;
-	Parms.MinZ = InMinZ;
-	Parms.Gamma = InGamma;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.CameraTransform = CameraTransform;
+	Parms.FOVDegrees = FOVDegrees;
+	Parms.MinZ = MinZ;
+	Parms.Gamma = Gamma;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1026,7 +1415,7 @@ void UVariantSet::SetThumbnailFromCamera(class UObject* InWorldContextObject, st
 // Parameters:
 // class FText                        NewDisplayText                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVariantSet::SetDisplayText(class FText& InNewDisplayText)
+void UVariantSet::SetDisplayText(class FText& NewDisplayText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1035,15 +1424,15 @@ void UVariantSet::SetDisplayText(class FText& InNewDisplayText)
 
 	Params::UVariantSet_SetDisplayText_Params Parms{};
 
-	Parms.NewDisplayText = InNewDisplayText;
+	Parms.NewDisplayText = NewDisplayText;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1054,7 +1443,7 @@ void UVariantSet::SetDisplayText(class FText& InNewDisplayText)
 // class FString                      VariantName                                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UVariant*                    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UVariant* UVariantSet::GetVariantByName(const class FString& InVariantName)
+class UVariant* UVariantSet::GetVariantByName(const class FString& VariantName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1063,15 +1452,15 @@ class UVariant* UVariantSet::GetVariantByName(const class FString& InVariantName
 
 	Params::UVariantSet_GetVariantByName_Params Parms{};
 
-	Parms.VariantName = InVariantName;
+	Parms.VariantName = VariantName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1084,7 +1473,7 @@ class UVariant* UVariantSet::GetVariantByName(const class FString& InVariantName
 // int32                              VariantIndex                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UVariant*                    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UVariant* UVariantSet::GetVariant(int32 InVariantIndex)
+class UVariant* UVariantSet::GetVariant(int32 VariantIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1093,15 +1482,15 @@ class UVariant* UVariantSet::GetVariant(int32 InVariantIndex)
 
 	Params::UVariantSet_GetVariant_Params Parms{};
 
-	Parms.VariantIndex = InVariantIndex;
+	Parms.VariantIndex = VariantIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1123,13 +1512,13 @@ class UTexture2D* UVariantSet::GetThumbnail()
 	Params::UVariantSet_GetThumbnail_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1151,13 +1540,13 @@ class ULevelVariantSets* UVariantSet::GetParent()
 	Params::UVariantSet_GetParent_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1179,13 +1568,13 @@ int32 UVariantSet::GetNumVariants()
 	Params::UVariantSet_GetNumVariants_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1207,13 +1596,13 @@ class FText UVariantSet::GetDisplayText()
 	Params::UVariantSet_GetDisplayText_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1221,6 +1610,4 @@ class FText UVariantSet::GetDisplayText()
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

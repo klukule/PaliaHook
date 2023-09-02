@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -17,19 +14,14 @@ namespace SDK
 class USignificanceManager : public UObject
 {
 public:
-	uint8                                        Pad_1352[0xF8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1364[0xF8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSoftClassPath                        SignificanceManagerClassName;                      // 0x120(0x20)(Edit, ZeroConstructor, Config, GlobalConfig, NoClear, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SignificanceManager");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USignificanceManager* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

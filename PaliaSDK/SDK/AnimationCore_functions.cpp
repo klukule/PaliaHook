@@ -2,16 +2,43 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
+//---------------------------------------------------------------------------------------------------------------------
+// FUNCTIONS
+//---------------------------------------------------------------------------------------------------------------------
+
+
+// Class AnimationCore.AnimationDataSourceRegistry
+// (None)
+
+class UClass* UAnimationDataSourceRegistry::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AnimationDataSourceRegistry");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// AnimationDataSourceRegistry AnimationCore.Default__AnimationDataSourceRegistry
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAnimationDataSourceRegistry* UAnimationDataSourceRegistry::GetDefaultObj()
+{
+	static class UAnimationDataSourceRegistry* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAnimationDataSourceRegistry*>(UAnimationDataSourceRegistry::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

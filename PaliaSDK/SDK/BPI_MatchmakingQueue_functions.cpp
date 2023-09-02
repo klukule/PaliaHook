@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass BPI_MatchmakingQueue.BPI_MatchmakingQueue_C
+// (None)
+
+class UClass* IBPI_MatchmakingQueue_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BPI_MatchmakingQueue_C");
+
+	return Clss;
+}
+
+
+// BPI_MatchmakingQueue_C BPI_MatchmakingQueue.Default__BPI_MatchmakingQueue_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class IBPI_MatchmakingQueue_C* IBPI_MatchmakingQueue_C::GetDefaultObj()
+{
+	static class IBPI_MatchmakingQueue_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IBPI_MatchmakingQueue_C*>(IBPI_MatchmakingQueue_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function BPI_MatchmakingQueue.BPI_MatchmakingQueue_C.ResetQueue
@@ -39,7 +64,7 @@ void IBPI_MatchmakingQueue_C::ResetQueue()
 // Parameters:
 // int32                              Number                                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_MatchmakingQueue_C::UpdateNumber(int32 InNumber)
+void IBPI_MatchmakingQueue_C::UpdateNumber(int32 Number)
 {
 	static class UFunction* Func = nullptr;
 
@@ -48,7 +73,7 @@ void IBPI_MatchmakingQueue_C::UpdateNumber(int32 InNumber)
 
 	Params::IBPI_MatchmakingQueue_C_UpdateNumber_Params Parms{};
 
-	Parms.Number = InNumber;
+	Parms.Number = Number;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -56,6 +81,4 @@ void IBPI_MatchmakingQueue_C::UpdateNumber(int32 InNumber)
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

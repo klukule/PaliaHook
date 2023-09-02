@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -17,13 +14,10 @@ namespace SDK
 class UDeveloperSettings : public UObject
 {
 public:
-	uint8                                        Pad_2ED[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4B8[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("DeveloperSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UDeveloperSettings* GetDefaultObj();
 
 };
 
@@ -33,11 +27,8 @@ class UDeveloperSettingsBackedByCVars : public UDeveloperSettings
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("DeveloperSettingsBackedByCVars");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UDeveloperSettingsBackedByCVars* GetDefaultObj();
 
 };
 
@@ -46,13 +37,10 @@ public:
 class UPlatformSettings : public UObject
 {
 public:
-	uint8                                        Pad_2F2[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4C1[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("PlatformSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UPlatformSettings* GetDefaultObj();
 
 };
 
@@ -62,18 +50,13 @@ class UPlatformSettingsManager : public UObject
 {
 public:
 	TMap<TSubclassOf<class UPlatformSettings>, struct FPlatformSettingsInstances> SettingsMap;                                       // 0x28(0x50)(Transient, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_2F3[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4C4[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("PlatformSettingsManager");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UPlatformSettingsManager* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

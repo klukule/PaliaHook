@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass EquippedAudioSet.EquippedAudioSet_C
+// (None)
+
+class UClass* UEquippedAudioSet_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EquippedAudioSet_C");
+
+	return Clss;
+}
+
+
+// EquippedAudioSet_C EquippedAudioSet.Default__EquippedAudioSet_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UEquippedAudioSet_C* UEquippedAudioSet_C::GetDefaultObj()
+{
+	static class UEquippedAudioSet_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEquippedAudioSet_C*>(UEquippedAudioSet_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function EquippedAudioSet.EquippedAudioSet_C.Get Audio Event
@@ -24,7 +49,7 @@ namespace SDK
 // class UAkAudioEvent*               CallFunc_Map_Find_Value                                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Map_Find_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UEquippedAudioSet_C::Get_Audio_Event(enum class E_EquippedEvents InEvent, class UAkAudioEvent** InAudioEvent, bool* InFound, class UAkAudioEvent* InCallFunc_Map_Find_Value, bool InCallFunc_Map_Find_ReturnValue)
+void UEquippedAudioSet_C::Get_Audio_Event(enum class E_EquippedEvents Event, class UAkAudioEvent** AudioEvent, bool* Found, class UAkAudioEvent* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -33,22 +58,20 @@ void UEquippedAudioSet_C::Get_Audio_Event(enum class E_EquippedEvents InEvent, c
 
 	Params::UEquippedAudioSet_C_Get_Audio_Event_Params Parms{};
 
-	Parms.Event = InEvent;
-	Parms.CallFunc_Map_Find_Value = InCallFunc_Map_Find_Value;
-	Parms.CallFunc_Map_Find_ReturnValue = InCallFunc_Map_Find_ReturnValue;
+	Parms.Event = Event;
+	Parms.CallFunc_Map_Find_Value = CallFunc_Map_Find_Value;
+	Parms.CallFunc_Map_Find_ReturnValue = CallFunc_Map_Find_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InAudioEvent != nullptr)
-		*InAudioEvent = Parms.AudioEvent;
+	if (AudioEvent != nullptr)
+		*AudioEvent = Parms.AudioEvent;
 
-	if (InFound != nullptr)
-		*InFound = Parms.Found;
-
-}
+	if (Found != nullptr)
+		*Found = Parms.Found;
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+}
+
+

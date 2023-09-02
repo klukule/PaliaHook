@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,16 +16,11 @@ class UListItem_Request_C : public UObject
 public:
 	struct FInventoryRequest                     InventoryRequest;                                  // 0x28(0xC8)(Edit, BlueprintVisible, BlueprintReadOnly, ExposeOnSpawn)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ListItem_Request_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UListItem_Request_C* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -22,18 +19,13 @@ public:
 	FMulticastInlineDelegateProperty_            OnSelectionChanged;                                // 0x50(0x10)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TArray<struct FVAL_CharacterCustomization_CosmeticTagFilterStruct> SelectedOptions;                                   // 0x60(0x10)(Edit, BlueprintVisible, DisableEditOnInstance)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ListEntry_CharacterCustomization_FilteringDropdownMenu_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UListEntry_CharacterCustomization_FilteringDropdownMenu_C* GetDefaultObj();
 
-	void HasTagOptions(bool* InHasOptions, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Greater_IntInt_ReturnValue);
+	void HasTagOptions(bool* HasOptions, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Greater_IntInt_ReturnValue);
 	void OnSelectionChanged__DelegateSignature();
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

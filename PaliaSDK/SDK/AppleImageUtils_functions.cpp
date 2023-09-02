@@ -2,17 +2,70 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class AppleImageUtils.AppleImageInterface
+// (None)
+
+class UClass* IAppleImageInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AppleImageInterface");
+
+	return Clss;
+}
+
+
+// AppleImageInterface AppleImageUtils.Default__AppleImageInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IAppleImageInterface* IAppleImageInterface::GetDefaultObj()
+{
+	static class IAppleImageInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IAppleImageInterface*>(IAppleImageInterface::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AppleImageUtils.AppleImageUtilsBaseAsyncTaskBlueprintProxy
+// (None)
+
+class UClass* UAppleImageUtilsBaseAsyncTaskBlueprintProxy::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AppleImageUtilsBaseAsyncTaskBlueprintProxy");
+
+	return Clss;
+}
+
+
+// AppleImageUtilsBaseAsyncTaskBlueprintProxy AppleImageUtils.Default__AppleImageUtilsBaseAsyncTaskBlueprintProxy
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTaskBlueprintProxy::GetDefaultObj()
+{
+	static class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAppleImageUtilsBaseAsyncTaskBlueprintProxy*>(UAppleImageUtilsBaseAsyncTaskBlueprintProxy::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function AppleImageUtils.AppleImageUtilsBaseAsyncTaskBlueprintProxy.CreateProxyObjectForConvertToTIFF
@@ -25,7 +78,7 @@ namespace SDK
 // enum class ETextureRotationDirectionRotate                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAppleImageUtilsBaseAsyncTaskBlueprintProxy*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTaskBlueprintProxy::CreateProxyObjectForConvertToTIFF(class UTexture* InSourceImage, bool InbWantColor, bool InbUseGpu, float InScale, enum class ETextureRotationDirection InRotate)
+class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTaskBlueprintProxy::CreateProxyObjectForConvertToTIFF(class UTexture* SourceImage, bool bWantColor, bool bUseGpu, float Scale, enum class ETextureRotationDirection Rotate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -34,19 +87,19 @@ class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTask
 
 	Params::UAppleImageUtilsBaseAsyncTaskBlueprintProxy_CreateProxyObjectForConvertToTIFF_Params Parms{};
 
-	Parms.SourceImage = InSourceImage;
-	Parms.bWantColor = InbWantColor;
-	Parms.bUseGpu = InbUseGpu;
-	Parms.Scale = InScale;
-	Parms.Rotate = InRotate;
+	Parms.SourceImage = SourceImage;
+	Parms.bWantColor = bWantColor;
+	Parms.bUseGpu = bUseGpu;
+	Parms.Scale = Scale;
+	Parms.Rotate = Rotate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -63,7 +116,7 @@ class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTask
 // enum class ETextureRotationDirectionRotate                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAppleImageUtilsBaseAsyncTaskBlueprintProxy*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTaskBlueprintProxy::CreateProxyObjectForConvertToPNG(class UTexture* InSourceImage, bool InbWantColor, bool InbUseGpu, float InScale, enum class ETextureRotationDirection InRotate)
+class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTaskBlueprintProxy::CreateProxyObjectForConvertToPNG(class UTexture* SourceImage, bool bWantColor, bool bUseGpu, float Scale, enum class ETextureRotationDirection Rotate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -72,19 +125,19 @@ class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTask
 
 	Params::UAppleImageUtilsBaseAsyncTaskBlueprintProxy_CreateProxyObjectForConvertToPNG_Params Parms{};
 
-	Parms.SourceImage = InSourceImage;
-	Parms.bWantColor = InbWantColor;
-	Parms.bUseGpu = InbUseGpu;
-	Parms.Scale = InScale;
-	Parms.Rotate = InRotate;
+	Parms.SourceImage = SourceImage;
+	Parms.bWantColor = bWantColor;
+	Parms.bUseGpu = bUseGpu;
+	Parms.Scale = Scale;
+	Parms.Rotate = Rotate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -102,7 +155,7 @@ class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTask
 // enum class ETextureRotationDirectionRotate                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAppleImageUtilsBaseAsyncTaskBlueprintProxy*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTaskBlueprintProxy::CreateProxyObjectForConvertToJPEG(class UTexture* InSourceImage, int32 InQuality, bool InbWantColor, bool InbUseGpu, float InScale, enum class ETextureRotationDirection InRotate)
+class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTaskBlueprintProxy::CreateProxyObjectForConvertToJPEG(class UTexture* SourceImage, int32 Quality, bool bWantColor, bool bUseGpu, float Scale, enum class ETextureRotationDirection Rotate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -111,20 +164,20 @@ class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTask
 
 	Params::UAppleImageUtilsBaseAsyncTaskBlueprintProxy_CreateProxyObjectForConvertToJPEG_Params Parms{};
 
-	Parms.SourceImage = InSourceImage;
-	Parms.Quality = InQuality;
-	Parms.bWantColor = InbWantColor;
-	Parms.bUseGpu = InbUseGpu;
-	Parms.Scale = InScale;
-	Parms.Rotate = InRotate;
+	Parms.SourceImage = SourceImage;
+	Parms.Quality = Quality;
+	Parms.bWantColor = bWantColor;
+	Parms.bUseGpu = bUseGpu;
+	Parms.Scale = Scale;
+	Parms.Rotate = Rotate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -142,7 +195,7 @@ class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTask
 // enum class ETextureRotationDirectionRotate                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAppleImageUtilsBaseAsyncTaskBlueprintProxy*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTaskBlueprintProxy::CreateProxyObjectForConvertToHEIF(class UTexture* InSourceImage, int32 InQuality, bool InbWantColor, bool InbUseGpu, float InScale, enum class ETextureRotationDirection InRotate)
+class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTaskBlueprintProxy::CreateProxyObjectForConvertToHEIF(class UTexture* SourceImage, int32 Quality, bool bWantColor, bool bUseGpu, float Scale, enum class ETextureRotationDirection Rotate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -151,20 +204,20 @@ class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTask
 
 	Params::UAppleImageUtilsBaseAsyncTaskBlueprintProxy_CreateProxyObjectForConvertToHEIF_Params Parms{};
 
-	Parms.SourceImage = InSourceImage;
-	Parms.Quality = InQuality;
-	Parms.bWantColor = InbWantColor;
-	Parms.bUseGpu = InbUseGpu;
-	Parms.Scale = InScale;
-	Parms.Rotate = InRotate;
+	Parms.SourceImage = SourceImage;
+	Parms.Quality = Quality;
+	Parms.bWantColor = bWantColor;
+	Parms.bUseGpu = bUseGpu;
+	Parms.Scale = Scale;
+	Parms.Rotate = Rotate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -172,6 +225,4 @@ class UAppleImageUtilsBaseAsyncTaskBlueprintProxy* UAppleImageUtilsBaseAsyncTask
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

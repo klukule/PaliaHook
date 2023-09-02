@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class AndroidFileServer.AndroidFileServerBPLibrary
+// (None)
+
+class UClass* UAndroidFileServerBPLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AndroidFileServerBPLibrary");
+
+	return Clss;
+}
+
+
+// AndroidFileServerBPLibrary AndroidFileServer.Default__AndroidFileServerBPLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAndroidFileServerBPLibrary* UAndroidFileServerBPLibrary::GetDefaultObj()
+{
+	static class UAndroidFileServerBPLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAndroidFileServerBPLibrary*>(UAndroidFileServerBPLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function AndroidFileServer.AndroidFileServerBPLibrary.StopFileServer
@@ -22,7 +47,7 @@ namespace SDK
 // bool                               bNetwork                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAndroidFileServerBPLibrary::StopFileServer(bool InbUSB, bool InbNetwork)
+bool UAndroidFileServerBPLibrary::StopFileServer(bool bUSB, bool bNetwork)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,16 +56,16 @@ bool UAndroidFileServerBPLibrary::StopFileServer(bool InbUSB, bool InbNetwork)
 
 	Params::UAndroidFileServerBPLibrary_StopFileServer_Params Parms{};
 
-	Parms.bUSB = InbUSB;
-	Parms.bNetwork = InbNetwork;
+	Parms.bUSB = bUSB;
+	Parms.bNetwork = bNetwork;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -55,7 +80,7 @@ bool UAndroidFileServerBPLibrary::StopFileServer(bool InbUSB, bool InbNetwork)
 // int32                              Port                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAndroidFileServerBPLibrary::StartFileServer(bool InbUSB, bool InbNetwork, int32 InPort)
+bool UAndroidFileServerBPLibrary::StartFileServer(bool bUSB, bool bNetwork, int32 Port)
 {
 	static class UFunction* Func = nullptr;
 
@@ -64,17 +89,17 @@ bool UAndroidFileServerBPLibrary::StartFileServer(bool InbUSB, bool InbNetwork, 
 
 	Params::UAndroidFileServerBPLibrary_StartFileServer_Params Parms{};
 
-	Parms.bUSB = InbUSB;
-	Parms.bNetwork = InbNetwork;
-	Parms.Port = InPort;
+	Parms.bUSB = bUSB;
+	Parms.bNetwork = bNetwork;
+	Parms.Port = Port;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -96,13 +121,13 @@ enum class EAFSActiveType UAndroidFileServerBPLibrary::IsFileServerRunning()
 	Params::UAndroidFileServerBPLibrary_IsFileServerRunning_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -110,6 +135,4 @@ enum class EAFSActiveType UAndroidFileServerBPLibrary::IsFileServerRunning()
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

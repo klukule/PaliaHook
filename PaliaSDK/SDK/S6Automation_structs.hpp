@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,9 +11,9 @@ namespace SDK
 
 enum class ES6Auto_SuiteSearchType : uint8
 {
-	ES6Auto_SuiteSearchType__SuiteId = 0,
-	ES6Auto_SuiteSearchType__AssetName = 1,
-	ES6Auto_SuiteSearchType__ES6Auto_MAX = 2,
+	SuiteId                        = 0,
+	AssetName                      = 1,
+	ES6Auto_MAX                    = 2,
 };
 
 
@@ -44,6 +41,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

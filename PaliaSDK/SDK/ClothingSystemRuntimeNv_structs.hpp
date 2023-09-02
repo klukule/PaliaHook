@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,9 +11,9 @@ namespace SDK
 
 enum class EClothingWindMethodNv : uint8
 {
-	EClothingWindMethodNv__Legacy  = 0,
-	EClothingWindMethodNv__Accurate = 1,
-	EClothingWindMethodNv__EClothingWindMethodNv_MAX = 2,
+	Legacy                         = 0,
+	Accurate                       = 1,
+	EClothingWindMethodNv_MAX      = 2,
 };
 
 
@@ -37,6 +34,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class Epic_Game.AbilityTask_AnimInstancePlayMontageAndWait
+// (None)
+
+class UClass* UAbilityTask_AnimInstancePlayMontageAndWait::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AbilityTask_AnimInstancePlayMontageAndWait");
+
+	return Clss;
+}
+
+
+// AbilityTask_AnimInstancePlayMontageAndWait Epic_Game.Default__AbilityTask_AnimInstancePlayMontageAndWait
+// (Public, ClassDefaultObject, ArchetypeObject, StrongRefOnFrame)
+
+class UAbilityTask_AnimInstancePlayMontageAndWait* UAbilityTask_AnimInstancePlayMontageAndWait::GetDefaultObj()
+{
+	static class UAbilityTask_AnimInstancePlayMontageAndWait* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAbilityTask_AnimInstancePlayMontageAndWait*>(UAbilityTask_AnimInstancePlayMontageAndWait::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function Epic_Game.AbilityTask_AnimInstancePlayMontageAndWait.AnimInstancePlayMontageAndWaitForEvent
@@ -28,7 +53,7 @@ namespace SDK
 // bool                               bStopWhenAbilityEnds                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_AnimInstancePlayMontageAndWait*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAbilityTask_AnimInstancePlayMontageAndWait* UAbilityTask_AnimInstancePlayMontageAndWait::AnimInstancePlayMontageAndWaitForEvent(class UGameplayAbility* InOwningAbility, class FName InTaskInstanceName, class UAnimInstance* InInAnimInstance, class UAnimMontage* InMontageToPlay, const struct FGameplayTagContainer& InEventTags, float InRate, class FName InStartSection, bool InbStopWhenAbilityEnds)
+class UAbilityTask_AnimInstancePlayMontageAndWait* UAbilityTask_AnimInstancePlayMontageAndWait::AnimInstancePlayMontageAndWaitForEvent(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, class UAnimInstance* InAnimInstance, class UAnimMontage* MontageToPlay, const struct FGameplayTagContainer& EventTags, float Rate, class FName StartSection, bool bStopWhenAbilityEnds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -37,25 +62,53 @@ class UAbilityTask_AnimInstancePlayMontageAndWait* UAbilityTask_AnimInstancePlay
 
 	Params::UAbilityTask_AnimInstancePlayMontageAndWait_AnimInstancePlayMontageAndWaitForEvent_Params Parms{};
 
-	Parms.OwningAbility = InOwningAbility;
-	Parms.TaskInstanceName = InTaskInstanceName;
-	Parms.InAnimInstance = InInAnimInstance;
-	Parms.MontageToPlay = InMontageToPlay;
-	Parms.EventTags = InEventTags;
-	Parms.Rate = InRate;
-	Parms.StartSection = InStartSection;
-	Parms.bStopWhenAbilityEnds = InbStopWhenAbilityEnds;
+	Parms.OwningAbility = OwningAbility;
+	Parms.TaskInstanceName = TaskInstanceName;
+	Parms.InAnimInstance = InAnimInstance;
+	Parms.MontageToPlay = MontageToPlay;
+	Parms.EventTags = EventTags;
+	Parms.Rate = Rate;
+	Parms.StartSection = StartSection;
+	Parms.bStopWhenAbilityEnds = bStopWhenAbilityEnds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class Epic_Game.RPGAbilityTask_PlayMontageAndWaitForEvent
+// (None)
+
+class UClass* URPGAbilityTask_PlayMontageAndWaitForEvent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("RPGAbilityTask_PlayMontageAndWaitForEvent");
+
+	return Clss;
+}
+
+
+// RPGAbilityTask_PlayMontageAndWaitForEvent Epic_Game.Default__RPGAbilityTask_PlayMontageAndWaitForEvent
+// (Public, ClassDefaultObject, ArchetypeObject, StrongRefOnFrame)
+
+class URPGAbilityTask_PlayMontageAndWaitForEvent* URPGAbilityTask_PlayMontageAndWaitForEvent::GetDefaultObj()
+{
+	static class URPGAbilityTask_PlayMontageAndWaitForEvent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<URPGAbilityTask_PlayMontageAndWaitForEvent*>(URPGAbilityTask_PlayMontageAndWaitForEvent::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -72,7 +125,7 @@ class UAbilityTask_AnimInstancePlayMontageAndWait* UAbilityTask_AnimInstancePlay
 // float                              AnimRootMotionTranslationScale                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class URPGAbilityTask_PlayMontageAndWaitForEvent*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class URPGAbilityTask_PlayMontageAndWaitForEvent* URPGAbilityTask_PlayMontageAndWaitForEvent::PlayMontageAndWaitForEvent(class UGameplayAbility* InOwningAbility, class FName InTaskInstanceName, class UAnimMontage* InMontageToPlay, const struct FGameplayTagContainer& InEventTags, float InRate, class FName InStartSection, bool InbStopWhenAbilityEnds, float InAnimRootMotionTranslationScale)
+class URPGAbilityTask_PlayMontageAndWaitForEvent* URPGAbilityTask_PlayMontageAndWaitForEvent::PlayMontageAndWaitForEvent(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, class UAnimMontage* MontageToPlay, const struct FGameplayTagContainer& EventTags, float Rate, class FName StartSection, bool bStopWhenAbilityEnds, float AnimRootMotionTranslationScale)
 {
 	static class UFunction* Func = nullptr;
 
@@ -81,22 +134,22 @@ class URPGAbilityTask_PlayMontageAndWaitForEvent* URPGAbilityTask_PlayMontageAnd
 
 	Params::URPGAbilityTask_PlayMontageAndWaitForEvent_PlayMontageAndWaitForEvent_Params Parms{};
 
-	Parms.OwningAbility = InOwningAbility;
-	Parms.TaskInstanceName = InTaskInstanceName;
-	Parms.MontageToPlay = InMontageToPlay;
-	Parms.EventTags = InEventTags;
-	Parms.Rate = InRate;
-	Parms.StartSection = InStartSection;
-	Parms.bStopWhenAbilityEnds = InbStopWhenAbilityEnds;
-	Parms.AnimRootMotionTranslationScale = InAnimRootMotionTranslationScale;
+	Parms.OwningAbility = OwningAbility;
+	Parms.TaskInstanceName = TaskInstanceName;
+	Parms.MontageToPlay = MontageToPlay;
+	Parms.EventTags = EventTags;
+	Parms.Rate = Rate;
+	Parms.StartSection = StartSection;
+	Parms.bStopWhenAbilityEnds = bStopWhenAbilityEnds;
+	Parms.AnimRootMotionTranslationScale = AnimRootMotionTranslationScale;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -104,6 +157,4 @@ class URPGAbilityTask_PlayMontageAndWaitForEvent* URPGAbilityTask_PlayMontageAnd
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,10 +11,10 @@ namespace SDK
 
 enum class EHandleEvent : uint8
 {
-	EHandleEvent__LocalTransformUpdated = 0,
-	EHandleEvent__GlobalTransformUpdated = 1,
-	EHandleEvent__ComponentUpdated = 2,
-	EHandleEvent__Max              = 3,
+	LocalTransformUpdated          = 0,
+	GlobalTransformUpdated         = 1,
+	ComponentUpdated               = 2,
+	Max                            = 3,
 };
 
 
@@ -47,11 +44,9 @@ public:
 struct FConstraintTickFunction : public FTickFunction
 {
 public:
-	uint8                                        Pad_10E7[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11A2[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

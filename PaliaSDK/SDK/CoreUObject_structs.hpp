@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,18 +11,18 @@ namespace SDK
 
 enum class EAutomationEventType : uint8
 {
-	EAutomationEventType__Info     = 0,
-	EAutomationEventType__Warning  = 1,
-	EAutomationEventType__Error    = 2,
-	EAutomationEventType__EAutomationEventType_MAX = 3,
+	Info                           = 0,
+	Warning                        = 1,
+	Error                          = 2,
+	EAutomationEventType_MAX       = 3,
 };
 
 enum class ERangeBoundTypes : uint8
 {
-	ERangeBoundTypes__Exclusive    = 0,
-	ERangeBoundTypes__Inclusive    = 1,
-	ERangeBoundTypes__Open         = 2,
-	ERangeBoundTypes__ERangeBoundTypes_MAX = 3,
+	Exclusive                      = 0,
+	Inclusive                      = 1,
+	Open                           = 2,
+	ERangeBoundTypes_MAX           = 3,
 };
 
 enum class EInterpCurveMode : uint8
@@ -41,38 +38,38 @@ enum class EInterpCurveMode : uint8
 
 enum class EInputDeviceConnectionState : uint8
 {
-	EInputDeviceConnectionState__Invalid = 0,
-	EInputDeviceConnectionState__Unknown = 1,
-	EInputDeviceConnectionState__Disconnected = 2,
-	EInputDeviceConnectionState__Connected = 3,
-	EInputDeviceConnectionState__EInputDeviceConnectionState_MAX = 4,
+	Invalid                        = 0,
+	Unknown                        = 1,
+	Disconnected                   = 2,
+	Connected                      = 3,
+	EInputDeviceConnectionState_MAX = 4,
 };
 
 enum class ELocalizedTextSourceCategory : uint8
 {
-	ELocalizedTextSourceCategory__Game = 0,
-	ELocalizedTextSourceCategory__Engine = 1,
-	ELocalizedTextSourceCategory__Editor = 2,
-	ELocalizedTextSourceCategory__ELocalizedTextSourceCategory_MAX = 3,
+	Game                           = 0,
+	Engine                         = 1,
+	Editor                         = 2,
+	ELocalizedTextSourceCategory_MAX = 3,
 };
 
 enum class EMouseCursor : uint8
 {
-	EMouseCursor__None             = 0,
-	EMouseCursor__Default          = 1,
-	EMouseCursor__TextEditBeam     = 2,
-	EMouseCursor__ResizeLeftRight  = 3,
-	EMouseCursor__ResizeUpDown     = 4,
-	EMouseCursor__ResizeSouthEast  = 5,
-	EMouseCursor__ResizeSouthWest  = 6,
-	EMouseCursor__CardinalCross    = 7,
-	EMouseCursor__Crosshairs       = 8,
-	EMouseCursor__Hand             = 9,
-	EMouseCursor__GrabHand         = 10,
-	EMouseCursor__GrabHandClosed   = 11,
-	EMouseCursor__SlashedCircle    = 12,
-	EMouseCursor__EyeDropper       = 13,
-	EMouseCursor__EMouseCursor_MAX = 14,
+	None                           = 0,
+	Default                        = 1,
+	TextEditBeam                   = 2,
+	ResizeLeftRight                = 3,
+	ResizeUpDown                   = 4,
+	ResizeSouthEast                = 5,
+	ResizeSouthWest                = 6,
+	CardinalCross                  = 7,
+	Crosshairs                     = 8,
+	Hand                           = 9,
+	GrabHand                       = 10,
+	GrabHandClosed                 = 11,
+	SlashedCircle                  = 12,
+	EyeDropper                     = 13,
+	EMouseCursor_MAX               = 14,
 };
 
 enum class ELifetimeCondition : uint8
@@ -98,51 +95,51 @@ enum class ELifetimeCondition : uint8
 
 enum class ESearchCase : uint8
 {
-	ESearchCase__CaseSensitive     = 0,
-	ESearchCase__IgnoreCase        = 1,
-	ESearchCase__ESearchCase_MAX   = 2,
+	CaseSensitive                  = 0,
+	IgnoreCase                     = 1,
+	ESearchCase_MAX                = 2,
 };
 
 enum class ESearchDir : uint8
 {
-	ESearchDir__FromStart          = 0,
-	ESearchDir__FromEnd            = 1,
-	ESearchDir__ESearchDir_MAX     = 2,
+	FromStart                      = 0,
+	FromEnd                        = 1,
+	ESearchDir_MAX                 = 2,
 };
 
 enum class ELogTimes : uint8
 {
-	ELogTimes__None                = 0,
-	ELogTimes__UTC                 = 1,
-	ELogTimes__SinceGStartTime     = 2,
-	ELogTimes__Local               = 3,
-	ELogTimes__ELogTimes_MAX       = 4,
+	None                           = 0,
+	UTC                            = 1,
+	SinceGStartTime                = 2,
+	Local                          = 3,
+	ELogTimes_MAX                  = 4,
 };
 
 enum class EAxis : uint8
 {
-	EAxis__None                    = 0,
-	EAxis__X                       = 1,
-	EAxis__Y                       = 2,
-	EAxis__Z                       = 3,
-	EAxis__EAxis_MAX               = 4,
+	None                           = 0,
+	X                              = 1,
+	Y                              = 2,
+	Z                              = 3,
+	EAxis_MAX                      = 4,
 };
 
 enum class EAxisList : uint8
 {
-	EAxisList__None                = 0,
-	EAxisList__X                   = 1,
-	EAxisList__Y                   = 2,
-	EAxisList__Z                   = 4,
-	EAxisList__Screen              = 8,
-	EAxisList__XY                  = 3,
-	EAxisList__XZ                  = 5,
-	EAxisList__YZ                  = 6,
-	EAxisList__XYZ                 = 7,
-	EAxisList__All                 = 15,
-	EAxisList__ZRotation           = 6,
-	EAxisList__Rotate2D            = 8,
-	EAxisList__EAxisList_MAX       = 16,
+	None                           = 0,
+	X                              = 1,
+	Y                              = 2,
+	Z                              = 4,
+	Screen                         = 8,
+	XY                             = 3,
+	XZ                             = 5,
+	YZ                             = 6,
+	XYZ                            = 7,
+	All                            = 15,
+	ZRotation                      = 6,
+	Rotate2D                       = 8,
+	EAxisList_MAX                  = 16,
 };
 
 enum class EPixelFormat : uint8
@@ -233,100 +230,100 @@ enum class EPixelFormat : uint8
 
 enum class EUnit : uint8
 {
-	EUnit__Micrometers             = 0,
-	EUnit__Millimeters             = 1,
-	EUnit__Centimeters             = 2,
-	EUnit__Meters                  = 3,
-	EUnit__Kilometers              = 4,
-	EUnit__Inches                  = 5,
-	EUnit__Feet                    = 6,
-	EUnit__Yards                   = 7,
-	EUnit__Miles                   = 8,
-	EUnit__Lightyears              = 9,
-	EUnit__Degrees                 = 10,
-	EUnit__Radians                 = 11,
-	EUnit__CentimetersPerSecond    = 12,
-	EUnit__MetersPerSecond         = 13,
-	EUnit__KilometersPerHour       = 14,
-	EUnit__MilesPerHour            = 15,
-	EUnit__Celsius                 = 16,
-	EUnit__Farenheit               = 17,
-	EUnit__Kelvin                  = 18,
-	EUnit__Micrograms              = 19,
-	EUnit__Milligrams              = 20,
-	EUnit__Grams                   = 21,
-	EUnit__Kilograms               = 22,
-	EUnit__MetricTons              = 23,
-	EUnit__Ounces                  = 24,
-	EUnit__Pounds                  = 25,
-	EUnit__Stones                  = 26,
-	EUnit__Newtons                 = 27,
-	EUnit__PoundsForce             = 28,
-	EUnit__KilogramsForce          = 29,
-	EUnit__Hertz                   = 30,
-	EUnit__Kilohertz               = 31,
-	EUnit__Megahertz               = 32,
-	EUnit__Gigahertz               = 33,
-	EUnit__RevolutionsPerMinute    = 34,
-	EUnit__Bytes                   = 35,
-	EUnit__Kilobytes               = 36,
-	EUnit__Megabytes               = 37,
-	EUnit__Gigabytes               = 38,
-	EUnit__Terabytes               = 39,
-	EUnit__Lumens                  = 40,
-	EUnit__Milliseconds            = 46,
-	EUnit__Seconds                 = 47,
-	EUnit__Minutes                 = 48,
-	EUnit__Hours                   = 49,
-	EUnit__Days                    = 50,
-	EUnit__Months                  = 51,
-	EUnit__Years                   = 52,
-	EUnit__Multiplier              = 55,
-	EUnit__Percentage              = 54,
-	EUnit__Unspecified             = 56,
-	EUnit__EUnit_MAX               = 57,
+	Micrometers                    = 0,
+	Millimeters                    = 1,
+	Centimeters                    = 2,
+	Meters                         = 3,
+	Kilometers                     = 4,
+	Inches                         = 5,
+	Feet                           = 6,
+	Yards                          = 7,
+	Miles                          = 8,
+	Lightyears                     = 9,
+	Degrees                        = 10,
+	Radians                        = 11,
+	CentimetersPerSecond           = 12,
+	MetersPerSecond                = 13,
+	KilometersPerHour              = 14,
+	MilesPerHour                   = 15,
+	Celsius                        = 16,
+	Farenheit                      = 17,
+	Kelvin                         = 18,
+	Micrograms                     = 19,
+	Milligrams                     = 20,
+	Grams                          = 21,
+	Kilograms                      = 22,
+	MetricTons                     = 23,
+	Ounces                         = 24,
+	Pounds                         = 25,
+	Stones                         = 26,
+	Newtons                        = 27,
+	PoundsForce                    = 28,
+	KilogramsForce                 = 29,
+	Hertz                          = 30,
+	Kilohertz                      = 31,
+	Megahertz                      = 32,
+	Gigahertz                      = 33,
+	RevolutionsPerMinute           = 34,
+	Bytes                          = 35,
+	Kilobytes                      = 36,
+	Megabytes                      = 37,
+	Gigabytes                      = 38,
+	Terabytes                      = 39,
+	Lumens                         = 40,
+	Milliseconds                   = 46,
+	Seconds                        = 47,
+	Minutes                        = 48,
+	Hours                          = 49,
+	Days                           = 50,
+	Months                         = 51,
+	Years                          = 52,
+	Multiplier                     = 55,
+	Percentage                     = 54,
+	Unspecified                    = 56,
+	EUnit_MAX                      = 57,
 };
 
 enum class EPropertyAccessChangeNotifyMode : uint8
 {
-	EPropertyAccessChangeNotifyMode__Default = 0,
-	EPropertyAccessChangeNotifyMode__Never = 1,
-	EPropertyAccessChangeNotifyMode__Always = 2,
-	EPropertyAccessChangeNotifyMode__EPropertyAccessChangeNotifyMode_MAX = 3,
+	Default                        = 0,
+	Never                          = 1,
+	Always                         = 2,
+	EPropertyAccessChangeNotifyMode_MAX = 3,
 };
 
 enum class EAppReturnType : uint8
 {
-	EAppReturnType__No             = 0,
-	EAppReturnType__Yes            = 1,
-	EAppReturnType__YesAll         = 2,
-	EAppReturnType__NoAll          = 3,
-	EAppReturnType__Cancel         = 4,
-	EAppReturnType__Ok             = 5,
-	EAppReturnType__Retry          = 6,
-	EAppReturnType__Continue       = 7,
-	EAppReturnType__EAppReturnType_MAX = 8,
+	No                             = 0,
+	Yes                            = 1,
+	YesAll                         = 2,
+	NoAll                          = 3,
+	Cancel                         = 4,
+	Ok                             = 5,
+	Retry                          = 6,
+	Continue                       = 7,
+	EAppReturnType_MAX             = 8,
 };
 
 enum class EAppMsgType : uint8
 {
-	EAppMsgType__Ok                = 0,
-	EAppMsgType__YesNo             = 1,
-	EAppMsgType__OkCancel          = 2,
-	EAppMsgType__YesNoCancel       = 3,
-	EAppMsgType__CancelRetryContinue = 4,
-	EAppMsgType__YesNoYesAllNoAll  = 5,
-	EAppMsgType__YesNoYesAllNoAllCancel = 6,
-	EAppMsgType__YesNoYesAll       = 7,
-	EAppMsgType__EAppMsgType_MAX   = 8,
+	Ok                             = 0,
+	YesNo                          = 1,
+	OkCancel                       = 2,
+	YesNoCancel                    = 3,
+	CancelRetryContinue            = 4,
+	YesNoYesAllNoAll               = 5,
+	YesNoYesAllNoAllCancel         = 6,
+	YesNoYesAll                    = 7,
+	EAppMsgType_MAX                = 8,
 };
 
 enum class EDataValidationResult : uint8
 {
-	EDataValidationResult__Invalid = 0,
-	EDataValidationResult__Valid   = 1,
-	EDataValidationResult__NotValidated = 2,
-	EDataValidationResult__EDataValidationResult_MAX = 3,
+	Invalid                        = 0,
+	Valid                          = 1,
+	NotValidated                   = 2,
+	EDataValidationResult_MAX      = 3,
 };
 
 
@@ -362,13 +359,13 @@ public:
 	TArray<struct FSoftObjectPath>               SoftObjectPaths;                                   // 0x20(0x10)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	TArray<class FName>                          ClassNames;                                        // 0x30(0x10)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FTopLevelAssetPath>            ClassPaths;                                        // 0x40(0x10)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	uint8                                        Pad_34[0x50];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_48[0x50];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<class FName>                            RecursiveClassesExclusionSet;                      // 0xA0(0x50)(BlueprintVisible, NativeAccessSpecifierPublic)
 	TSet<struct FTopLevelAssetPath>              RecursiveClassPathsExclusionSet;                   // 0xF0(0x50)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	bool                                         bRecursivePaths;                                   // 0x140(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bRecursiveClasses;                                 // 0x141(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIncludeOnlyOnDiskAssets;                          // 0x142(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35[0xD];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_49[0xD];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -398,7 +395,7 @@ public:
 	class FName                                  AssetName;                                         // 0x10(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  AssetClass;                                        // 0x18(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FTopLevelAssetPath                    AssetClassPath;                                    // 0x20(0x10)(BlueprintVisible, BlueprintReadOnly, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_36[0x38];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4B[0x38];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -429,7 +426,7 @@ struct FAutomationEvent
 {
 public:
 	enum class EAutomationEventType              Type;                                              // 0x0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_37[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_4C[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Message;                                           // 0x8(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Context;                                           // 0x18(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 Artifact;                                          // 0x28(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -440,7 +437,7 @@ public:
 struct FDateTime
 {
 public:
-	uint8                                        Pad_38[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_4E[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -451,7 +448,7 @@ public:
 	struct FAutomationEvent                      Event;                                             // 0x0(0x38)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Filename;                                          // 0x38(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        LineNumber;                                        // 0x48(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3A[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_4F[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FDateTime                             Timestamp;                                         // 0x50(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -464,6 +461,21 @@ public:
 	double                                       Y;                                                 // 0x8(0x8)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                       Z;                                                 // 0x10(0x8)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
+	inline FVector()
+		: X(0.0), Y(0.0), Z(0.0)
+	{
+	}
+
+	inline FVector(decltype(X) Value)
+		: X(Value), Y(Value), Z(Value)
+	{
+	}
+
+	inline FVector(decltype(X) x, decltype(Y) y, decltype(Z) z)
+		: X(x), Y(y), Z(z)
+	{
+	}
+
 	inline bool operator==(const FVector& Other) const
 	{
 		return X == Other.X && Y == Other.Y && Z == Other.Z;
@@ -474,6 +486,13 @@ public:
 		return X != Other.X || Y != Other.Y || Z != Other.Z;
 	}
 
+	FVector operator+(const FVector& Other) const;
+
+	FVector operator-(const FVector& Other) const;
+
+	FVector operator*(decltype(X) Scalar) const;
+
+	FVector operator/(decltype(X) Scalar) const;
 };
 
 // 0x38 (0x38 - 0x0)
@@ -484,7 +503,7 @@ public:
 	struct FVector                               Min;                                               // 0x0(0x18)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Max;                                               // 0x18(0x18)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        IsValid;                                           // 0x30(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3F[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_50[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -504,7 +523,7 @@ public:
 	struct FVector2D                             Min;                                               // 0x0(0x10)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             Max;                                               // 0x10(0x10)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bIsValid;                                          // 0x20(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_42[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_55[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -524,7 +543,7 @@ public:
 	struct FVector2f                             Min;                                               // 0x0(0x8)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2f                             Max;                                               // 0x8(0x8)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bIsValid;                                          // 0x10(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_43[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_59[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -545,7 +564,7 @@ public:
 	struct FVector3d                             Min;                                               // 0x0(0x18)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector3d                             Max;                                               // 0x18(0x18)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        IsValid;                                           // 0x30(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_44[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_60[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -566,7 +585,7 @@ public:
 	struct FVector3f                             Min;                                               // 0x0(0xC)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector3f                             Max;                                               // 0xC(0xC)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        IsValid;                                           // 0x18(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_45[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_63[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -624,7 +643,7 @@ struct FDoubleRangeBound
 {
 public:
 	enum class ERangeBoundTypes                  Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_46[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_6D[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       Value;                                             // 0x8(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 
@@ -642,7 +661,7 @@ public:
 struct FFallbackStruct
 {
 public:
-	uint8                                        Pad_47[0x1];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_6E[0x1];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -668,7 +687,7 @@ struct FFloatRangeBound
 {
 public:
 	enum class ERangeBoundTypes                  Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_48[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_71[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Value;                                             // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 
@@ -695,7 +714,7 @@ struct FFrameNumberRangeBound
 {
 public:
 	enum class ERangeBoundTypes                  Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_49[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_73[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FFrameNumber                          Value;                                             // 0x4(0x4)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 
@@ -758,7 +777,7 @@ struct FInt32RangeBound
 {
 public:
 	enum class ERangeBoundTypes                  Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_4A[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_76[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        Value;                                             // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 
@@ -850,7 +869,7 @@ public:
 	float                                        ArriveTangent;                                     // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        LeaveTangent;                                      // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInterpCurveMode                  InterpMode;                                        // 0x10(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_4B[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_78[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -860,7 +879,7 @@ struct FInterpCurveFloat
 public:
 	TArray<struct FInterpCurvePointFloat>        Points;                                            // 0x0(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bIsLooped;                                         // 0x10(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_4C[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7A[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        LoopKeyOffset;                                     // 0x14(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -885,7 +904,7 @@ public:
 	struct FLinearColor                          ArriveTangent;                                     // 0x14(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          LeaveTangent;                                      // 0x24(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInterpCurveMode                  InterpMode;                                        // 0x34(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_4D[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7D[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -895,7 +914,7 @@ struct FInterpCurveLinearColor
 public:
 	TArray<struct FInterpCurvePointLinearColor>  Points;                                            // 0x0(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bIsLooped;                                         // 0x10(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_4E[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7E[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        LoopKeyOffset;                                     // 0x14(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -916,12 +935,12 @@ struct FInterpCurvePointQuat
 {
 public:
 	float                                        InVal;                                             // 0x0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_4F[0xC];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7F[0xC];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuat                                 OutVal;                                            // 0x10(0x20)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FQuat                                 ArriveTangent;                                     // 0x30(0x20)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FQuat                                 LeaveTangent;                                      // 0x50(0x20)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInterpCurveMode                  InterpMode;                                        // 0x70(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_50[0xF];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_80[0xF];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -939,12 +958,12 @@ struct FInterpCurvePointTwoVectors
 {
 public:
 	float                                        InVal;                                             // 0x0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_51[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_81[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTwoVectors                           OutVal;                                            // 0x8(0x30)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FTwoVectors                           ArriveTangent;                                     // 0x38(0x30)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FTwoVectors                           LeaveTangent;                                      // 0x68(0x30)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	enum class EInterpCurveMode                  InterpMode;                                        // 0x98(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_52[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_82[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -953,12 +972,12 @@ struct FInterpCurvePointVector
 {
 public:
 	float                                        InVal;                                             // 0x0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_53[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_83[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               OutVal;                                            // 0x8(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               ArriveTangent;                                     // 0x20(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               LeaveTangent;                                      // 0x38(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInterpCurveMode                  InterpMode;                                        // 0x50(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_54[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_84[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -967,12 +986,12 @@ struct FInterpCurvePointVector2D
 {
 public:
 	float                                        InVal;                                             // 0x0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_55[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_86[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             OutVal;                                            // 0x8(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             ArriveTangent;                                     // 0x18(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             LeaveTangent;                                      // 0x28(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInterpCurveMode                  InterpMode;                                        // 0x38(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_56[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_87[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -982,7 +1001,7 @@ struct FInterpCurveQuat
 public:
 	TArray<struct FInterpCurvePointQuat>         Points;                                            // 0x0(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bIsLooped;                                         // 0x10(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_57[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_88[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        LoopKeyOffset;                                     // 0x14(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -993,7 +1012,7 @@ struct FInterpCurveTwoVectors
 public:
 	TArray<struct FInterpCurvePointTwoVectors>   Points;                                            // 0x0(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bIsLooped;                                         // 0x10(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_58[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_89[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        LoopKeyOffset;                                     // 0x14(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1004,7 +1023,7 @@ struct FInterpCurveVector
 public:
 	TArray<struct FInterpCurvePointVector>       Points;                                            // 0x0(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bIsLooped;                                         // 0x10(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_59[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8A[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        LoopKeyOffset;                                     // 0x14(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1015,7 +1034,7 @@ struct FInterpCurveVector2D
 public:
 	TArray<struct FInterpCurvePointVector2D>     Points;                                            // 0x0(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bIsLooped;                                         // 0x10(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5A[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8B[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        LoopKeyOffset;                                     // 0x14(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -1172,7 +1191,7 @@ struct FPlatformInputDeviceState
 public:
 	struct FPlatformUserId                       OwningPlatformUser;                                // 0x0(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInputDeviceConnectionState       ConnectionState;                                   // 0x4(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5B[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_92[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xB8 (0xB8 - 0x0)
@@ -1181,14 +1200,14 @@ struct FPolyglotTextData
 {
 public:
 	enum class ELocalizedTextSourceCategory      Category;                                          // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5C[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_93[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                NativeCulture;                                     // 0x8(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Namespace;                                         // 0x18(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Key;                                               // 0x28(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                NativeString;                                      // 0x38(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class FString, class FString>           LocalizedStrings;                                  // 0x48(0x50)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                         bIsMinimalPatch;                                   // 0x98(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5D[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_96[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  CachedText;                                        // 0xA0(0x18)(Transient, NativeAccessSpecifierPublic)
 };
 
@@ -1302,7 +1321,7 @@ public:
 	class UObject*                               UninitializedObjectReference;                      // 0x0(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UObject*                               InitializedObjectReference;                        // 0x8(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        UnusedValue;                                       // 0x10(0x4)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5E[0x4];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_98[0x4];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x14 (0x14 - 0x0)
@@ -1315,7 +1334,7 @@ public:
 	int32                                        Seconds;                                           // 0x8(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Frames;                                            // 0xC(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDropFrameFormat;                                  // 0x10(0x1)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_5F[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_99[0x3];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1323,7 +1342,7 @@ public:
 struct FTimespan
 {
 public:
-	uint8                                        Pad_60[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9A[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -1333,9 +1352,9 @@ struct FTransform
 public:
 	struct FQuat                                 Rotation;                                          // 0x0(0x20)(Edit, BlueprintVisible, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Translation;                                       // 0x20(0x18)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_61[0x8];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9B[0x8];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               Scale3D;                                           // 0x40(0x18)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_62[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9C[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -1345,9 +1364,9 @@ struct FTransform3d
 public:
 	struct FQuat4d                               Rotation;                                          // 0x0(0x20)(Edit, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector3d                             Translation;                                       // 0x20(0x18)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_63[0x8];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9D[0x8];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector3d                             Scale3D;                                           // 0x40(0x18)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_64[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9E[0x8];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -1357,9 +1376,9 @@ struct FTransform3f
 public:
 	struct FQuat4f                               Rotation;                                          // 0x0(0x10)(Edit, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector3f                             Translation;                                       // 0x10(0xC)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_65[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_A0[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector3f                             Scale3D;                                           // 0x20(0xC)(Edit, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_66[0x4];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_A1[0x4];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1514,6 +1533,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

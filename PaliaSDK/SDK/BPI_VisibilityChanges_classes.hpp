@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,17 +15,12 @@ class IBPI_VisibilityChanges_C : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("BPI_VisibilityChanges_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IBPI_VisibilityChanges_C* GetDefaultObj();
 
-	void S6OnVisibilityChanged(bool InIsVisible);
+	void S6OnVisibilityChanged(bool IsVisible);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

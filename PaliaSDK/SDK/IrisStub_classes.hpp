@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,11 +15,8 @@ class UDataStream : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("DataStream");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UDataStream* GetDefaultObj();
 
 };
 
@@ -32,11 +26,8 @@ class UIrisObjectReferencePackageMap : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("IrisObjectReferencePackageMap");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UIrisObjectReferencePackageMap* GetDefaultObj();
 
 };
 
@@ -46,11 +37,8 @@ class UNetBlobHandler : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("NetBlobHandler");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UNetBlobHandler* GetDefaultObj();
 
 };
 
@@ -60,11 +48,8 @@ class UNetObjectPrioritizerConfig : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("NetObjectPrioritizerConfig");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UNetObjectPrioritizerConfig* GetDefaultObj();
 
 };
 
@@ -74,11 +59,8 @@ class UNetObjectCountLimiterConfig : public UNetObjectPrioritizerConfig
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("NetObjectCountLimiterConfig");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UNetObjectCountLimiterConfig* GetDefaultObj();
 
 };
 
@@ -88,11 +70,8 @@ class UNetObjectFilterConfig : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("NetObjectFilterConfig");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UNetObjectFilterConfig* GetDefaultObj();
 
 };
 
@@ -102,11 +81,8 @@ class UNetObjectFilter : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("NetObjectFilter");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UNetObjectFilter* GetDefaultObj();
 
 };
 
@@ -116,11 +92,8 @@ class UNetObjectPrioritizer : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("NetObjectPrioritizer");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UNetObjectPrioritizer* GetDefaultObj();
 
 };
 
@@ -130,11 +103,8 @@ class UReplicationBridge : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ReplicationBridge");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UReplicationBridge* GetDefaultObj();
 
 };
 
@@ -144,11 +114,8 @@ class UObjectReplicationBridge : public UReplicationBridge
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ObjectReplicationBridge");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UObjectReplicationBridge* GetDefaultObj();
 
 };
 
@@ -158,11 +125,8 @@ class USequentialPartialNetBlobHandlerConfig : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SequentialPartialNetBlobHandlerConfig");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USequentialPartialNetBlobHandlerConfig* GetDefaultObj();
 
 };
 
@@ -172,11 +136,8 @@ class USequentialPartialNetBlobHandler : public UNetBlobHandler
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SequentialPartialNetBlobHandler");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USequentialPartialNetBlobHandler* GetDefaultObj();
 
 };
 
@@ -186,16 +147,11 @@ class USphereWithOwnerBoostNetObjectPrioritizerConfig : public UNetObjectPriorit
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SphereWithOwnerBoostNetObjectPrioritizerConfig");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USphereWithOwnerBoostNetObjectPrioritizerConfig* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

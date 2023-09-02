@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,10 +11,10 @@ namespace SDK
 
 enum class EActorSequenceObjectReferenceType : uint8
 {
-	EActorSequenceObjectReferenceType__ContextActor = 0,
-	EActorSequenceObjectReferenceType__ExternalActor = 1,
-	EActorSequenceObjectReferenceType__Component = 2,
-	EActorSequenceObjectReferenceType__EActorSequenceObjectReferenceType_MAX = 3,
+	ContextActor                   = 0,
+	ExternalActor                  = 1,
+	Component                      = 2,
+	EActorSequenceObjectReferenceType_MAX = 3,
 };
 
 
@@ -31,9 +28,9 @@ struct FActorSequenceObjectReference
 {
 public:
 	enum class EActorSequenceObjectReferenceType Type;                                              // 0x0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1A09[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1ABD[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGuid                                 ActorId;                                           // 0x4(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1A0A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1ABF[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                PathToComponent;                                   // 0x18(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 
@@ -56,6 +53,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

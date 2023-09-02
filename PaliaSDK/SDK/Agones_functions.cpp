@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class Agones.AgonesComponent
+// (None)
+
+class UClass* UAgonesComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AgonesComponent");
+
+	return Clss;
+}
+
+
+// AgonesComponent Agones.Default__AgonesComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAgonesComponent* UAgonesComponent::GetDefaultObj()
+{
+	static class UAgonesComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAgonesComponent*>(UAgonesComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function Agones.AgonesComponent.WatchGameServer
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // FDelegateProperty_                 WatchDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::WatchGameServer(FDelegateProperty_ InWatchDelegate)
+void UAgonesComponent::WatchGameServer(FDelegateProperty_ WatchDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +54,15 @@ void UAgonesComponent::WatchGameServer(FDelegateProperty_ InWatchDelegate)
 
 	Params::UAgonesComponent_WatchGameServer_Params Parms{};
 
-	Parms.WatchDelegate = InWatchDelegate;
+	Parms.WatchDelegate = WatchDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -48,7 +73,7 @@ void UAgonesComponent::WatchGameServer(FDelegateProperty_ InWatchDelegate)
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::Shutdown(FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::Shutdown(FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -57,16 +82,16 @@ void UAgonesComponent::Shutdown(FDelegateProperty_ InSuccessDelegate, FDelegateP
 
 	Params::UAgonesComponent_Shutdown_Params Parms{};
 
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -78,7 +103,7 @@ void UAgonesComponent::Shutdown(FDelegateProperty_ InSuccessDelegate, FDelegateP
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::SetPlayerCapacity(int64 InCount, FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::SetPlayerCapacity(int64 Count, FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -87,17 +112,17 @@ void UAgonesComponent::SetPlayerCapacity(int64 InCount, FDelegateProperty_ InSuc
 
 	Params::UAgonesComponent_SetPlayerCapacity_Params Parms{};
 
-	Parms.Count = InCount;
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.Count = Count;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -110,7 +135,7 @@ void UAgonesComponent::SetPlayerCapacity(int64 InCount, FDelegateProperty_ InSuc
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::SetLabel(const class FString& InKey, const class FString& InValue, FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::SetLabel(const class FString& Key, const class FString& Value, FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -119,18 +144,18 @@ void UAgonesComponent::SetLabel(const class FString& InKey, const class FString&
 
 	Params::UAgonesComponent_SetLabel_Params Parms{};
 
-	Parms.Key = InKey;
-	Parms.Value = InValue;
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.Key = Key;
+	Parms.Value = Value;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -143,7 +168,7 @@ void UAgonesComponent::SetLabel(const class FString& InKey, const class FString&
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::SetAnnotation(const class FString& InKey, const class FString& InValue, FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::SetAnnotation(const class FString& Key, const class FString& Value, FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -152,18 +177,18 @@ void UAgonesComponent::SetAnnotation(const class FString& InKey, const class FSt
 
 	Params::UAgonesComponent_SetAnnotation_Params Parms{};
 
-	Parms.Key = InKey;
-	Parms.Value = InValue;
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.Key = Key;
+	Parms.Value = Value;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -175,7 +200,7 @@ void UAgonesComponent::SetAnnotation(const class FString& InKey, const class FSt
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::Reserve(int64 InSeconds, FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::Reserve(int64 Seconds, FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -184,17 +209,17 @@ void UAgonesComponent::Reserve(int64 InSeconds, FDelegateProperty_ InSuccessDele
 
 	Params::UAgonesComponent_Reserve_Params Parms{};
 
-	Parms.Seconds = InSeconds;
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.Seconds = Seconds;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -205,7 +230,7 @@ void UAgonesComponent::Reserve(int64 InSeconds, FDelegateProperty_ InSuccessDele
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::Ready(FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::Ready(FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -214,16 +239,16 @@ void UAgonesComponent::Ready(FDelegateProperty_ InSuccessDelegate, FDelegateProp
 
 	Params::UAgonesComponent_Ready_Params Parms{};
 
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -235,7 +260,7 @@ void UAgonesComponent::Ready(FDelegateProperty_ InSuccessDelegate, FDelegateProp
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::PlayerDisconnect(const class FString& InPlayerId, FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::PlayerDisconnect(const class FString& PlayerId, FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -244,17 +269,17 @@ void UAgonesComponent::PlayerDisconnect(const class FString& InPlayerId, FDelega
 
 	Params::UAgonesComponent_PlayerDisconnect_Params Parms{};
 
-	Parms.PlayerId = InPlayerId;
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.PlayerId = PlayerId;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -266,7 +291,7 @@ void UAgonesComponent::PlayerDisconnect(const class FString& InPlayerId, FDelega
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::PlayerConnect(const class FString& InPlayerId, FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::PlayerConnect(const class FString& PlayerId, FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -275,17 +300,17 @@ void UAgonesComponent::PlayerConnect(const class FString& InPlayerId, FDelegateP
 
 	Params::UAgonesComponent_PlayerConnect_Params Parms{};
 
-	Parms.PlayerId = InPlayerId;
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.PlayerId = PlayerId;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -297,7 +322,7 @@ void UAgonesComponent::PlayerConnect(const class FString& InPlayerId, FDelegateP
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::IsPlayerConnected(const class FString& InPlayerId, FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::IsPlayerConnected(const class FString& PlayerId, FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -306,17 +331,17 @@ void UAgonesComponent::IsPlayerConnected(const class FString& InPlayerId, FDeleg
 
 	Params::UAgonesComponent_IsPlayerConnected_Params Parms{};
 
-	Parms.PlayerId = InPlayerId;
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.PlayerId = PlayerId;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -326,7 +351,7 @@ void UAgonesComponent::IsPlayerConnected(const class FString& InPlayerId, FDeleg
 // Parameters:
 // float                              RateSeconds                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::HealthPing(float InRateSeconds)
+void UAgonesComponent::HealthPing(float RateSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -335,15 +360,15 @@ void UAgonesComponent::HealthPing(float InRateSeconds)
 
 	Params::UAgonesComponent_HealthPing_Params Parms{};
 
-	Parms.RateSeconds = InRateSeconds;
+	Parms.RateSeconds = RateSeconds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -354,7 +379,7 @@ void UAgonesComponent::HealthPing(float InRateSeconds)
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::Health(FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::Health(FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -363,16 +388,16 @@ void UAgonesComponent::Health(FDelegateProperty_ InSuccessDelegate, FDelegatePro
 
 	Params::UAgonesComponent_Health_Params Parms{};
 
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -383,7 +408,7 @@ void UAgonesComponent::Health(FDelegateProperty_ InSuccessDelegate, FDelegatePro
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::GetPlayerCount(FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::GetPlayerCount(FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -392,16 +417,16 @@ void UAgonesComponent::GetPlayerCount(FDelegateProperty_ InSuccessDelegate, FDel
 
 	Params::UAgonesComponent_GetPlayerCount_Params Parms{};
 
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -412,7 +437,7 @@ void UAgonesComponent::GetPlayerCount(FDelegateProperty_ InSuccessDelegate, FDel
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::GetPlayerCapacity(FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::GetPlayerCapacity(FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -421,16 +446,16 @@ void UAgonesComponent::GetPlayerCapacity(FDelegateProperty_ InSuccessDelegate, F
 
 	Params::UAgonesComponent_GetPlayerCapacity_Params Parms{};
 
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -441,7 +466,7 @@ void UAgonesComponent::GetPlayerCapacity(FDelegateProperty_ InSuccessDelegate, F
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::GetConnectedPlayers(FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::GetConnectedPlayers(FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -450,16 +475,16 @@ void UAgonesComponent::GetConnectedPlayers(FDelegateProperty_ InSuccessDelegate,
 
 	Params::UAgonesComponent_GetConnectedPlayers_Params Parms{};
 
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -470,7 +495,7 @@ void UAgonesComponent::GetConnectedPlayers(FDelegateProperty_ InSuccessDelegate,
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::GameServer(FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::GameServer(FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -479,16 +504,16 @@ void UAgonesComponent::GameServer(FDelegateProperty_ InSuccessDelegate, FDelegat
 
 	Params::UAgonesComponent_GameServer_Params Parms{};
 
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -498,7 +523,7 @@ void UAgonesComponent::GameServer(FDelegateProperty_ InSuccessDelegate, FDelegat
 // Parameters:
 // struct FGameServerResponse         GameServerResponse                                               (Parm, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::ConnectSuccess(const struct FGameServerResponse& InGameServerResponse)
+void UAgonesComponent::ConnectSuccess(const struct FGameServerResponse& GameServerResponse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -507,15 +532,15 @@ void UAgonesComponent::ConnectSuccess(const struct FGameServerResponse& InGameSe
 
 	Params::UAgonesComponent_ConnectSuccess_Params Parms{};
 
-	Parms.GameServerResponse = InGameServerResponse;
+	Parms.GameServerResponse = GameServerResponse;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -525,7 +550,7 @@ void UAgonesComponent::ConnectSuccess(const struct FGameServerResponse& InGameSe
 // Parameters:
 // struct FAgonesError                Error                                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::ConnectFail(struct FAgonesError& InError)
+void UAgonesComponent::ConnectFail(struct FAgonesError& Error)
 {
 	static class UFunction* Func = nullptr;
 
@@ -534,15 +559,15 @@ void UAgonesComponent::ConnectFail(struct FAgonesError& InError)
 
 	Params::UAgonesComponent_ConnectFail_Params Parms{};
 
-	Parms.Error = InError;
+	Parms.Error = Error;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -561,13 +586,13 @@ void UAgonesComponent::Connect()
 	Params::UAgonesComponent_Connect_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -578,7 +603,7 @@ void UAgonesComponent::Connect()
 // FDelegateProperty_                 SuccessDelegate                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 ErrorDelegate                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAgonesComponent::Allocate(FDelegateProperty_ InSuccessDelegate, FDelegateProperty_ InErrorDelegate)
+void UAgonesComponent::Allocate(FDelegateProperty_ SuccessDelegate, FDelegateProperty_ ErrorDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -587,21 +612,19 @@ void UAgonesComponent::Allocate(FDelegateProperty_ InSuccessDelegate, FDelegateP
 
 	Params::UAgonesComponent_Allocate_Params Parms{};
 
-	Parms.SuccessDelegate = InSuccessDelegate;
-	Parms.ErrorDelegate = InErrorDelegate;
+	Parms.SuccessDelegate = SuccessDelegate;
+	Parms.ErrorDelegate = ErrorDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

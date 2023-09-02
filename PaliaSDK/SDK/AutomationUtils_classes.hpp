@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,17 +15,12 @@ class UAutomationUtilsBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AutomationUtilsBlueprintLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAutomationUtilsBlueprintLibrary* GetDefaultObj();
 
-	void TakeGameplayAutomationScreenshot(const class FString& InScreenshotName, float InMaxGlobalError, float InMaxLocalError, const class FString& InMapNameOverride);
+	void TakeGameplayAutomationScreenshot(const class FString& ScreenshotName, float MaxGlobalError, float MaxLocalError, const class FString& MapNameOverride);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

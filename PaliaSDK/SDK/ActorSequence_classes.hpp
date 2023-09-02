@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -20,11 +17,8 @@ public:
 	class UMovieScene*                           MovieScene;                                        // 0x68(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FActorSequenceObjectReferenceMap      ObjectReferences;                                  // 0x70(0x20)(NativeAccessSpecifierPrivate)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ActorSequence");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UActorSequence* GetDefaultObj();
 
 };
 
@@ -37,11 +31,8 @@ public:
 	class UActorSequence*                        Sequence;                                          // 0xC0(0x8)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UActorSequencePlayer*                  SequencePlayer;                                    // 0xC8(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ActorSequenceComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UActorSequenceComponent* GetDefaultObj();
 
 	void StopSequence();
 	void PlaySequence();
@@ -54,16 +45,11 @@ class UActorSequencePlayer : public UMovieSceneSequencePlayer
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ActorSequencePlayer");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UActorSequencePlayer* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

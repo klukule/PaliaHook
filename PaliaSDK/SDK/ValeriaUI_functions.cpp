@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,68 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class ValeriaUI.VALUI_ModalWidgetBase
+// (None)
+
+class UClass* UVALUI_ModalWidgetBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ModalWidgetBase");
+
+	return Clss;
+}
+
+
+// VALUI_ModalWidgetBase ValeriaUI.Default__VALUI_ModalWidgetBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ModalWidgetBase* UVALUI_ModalWidgetBase::GetDefaultObj()
+{
+	static class UVALUI_ModalWidgetBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ModalWidgetBase*>(UVALUI_ModalWidgetBase::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.BaitUserWidget
+// (None)
+
+class UClass* UBaitUserWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BaitUserWidget");
+
+	return Clss;
+}
+
+
+// BaitUserWidget ValeriaUI.Default__BaitUserWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UBaitUserWidget* UBaitUserWidget::GetDefaultObj()
+{
+	static class UBaitUserWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBaitUserWidget*>(UBaitUserWidget::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ValeriaUI.BaitUserWidget.ShowAmmoType
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // enum class EAmmoType               AmmoType                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaitUserWidget::ShowAmmoType(enum class EAmmoType InAmmoType)
+void UBaitUserWidget::ShowAmmoType(enum class EAmmoType AmmoType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +82,15 @@ void UBaitUserWidget::ShowAmmoType(enum class EAmmoType InAmmoType)
 
 	Params::UBaitUserWidget_ShowAmmoType_Params Parms{};
 
-	Parms.AmmoType = InAmmoType;
+	Parms.AmmoType = AmmoType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -47,7 +100,7 @@ void UBaitUserWidget::ShowAmmoType(enum class EAmmoType InAmmoType)
 // Parameters:
 // enum class EAmmoType               AmmoType                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaitUserWidget::OnShown(enum class EAmmoType InAmmoType)
+void UBaitUserWidget::OnShown(enum class EAmmoType AmmoType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,15 +109,15 @@ void UBaitUserWidget::OnShown(enum class EAmmoType InAmmoType)
 
 	Params::UBaitUserWidget_OnShown_Params Parms{};
 
-	Parms.AmmoType = InAmmoType;
+	Parms.AmmoType = AmmoType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -83,13 +136,13 @@ void UBaitUserWidget::OnRightMouseReleased()
 	Params::UBaitUserWidget_OnRightMouseReleased_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -108,13 +161,13 @@ void UBaitUserWidget::OnHidden()
 	Params::UBaitUserWidget_OnHidden_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -124,7 +177,7 @@ void UBaitUserWidget::OnHidden()
 // Parameters:
 // struct FValeriaItem                baitItem                                                         (Parm, NativeAccessSpecifierPublic)
 
-void UBaitUserWidget::OnBaitSelected(const struct FValeriaItem& InbaitItem)
+void UBaitUserWidget::OnBaitSelected(const struct FValeriaItem& baitItem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -133,15 +186,15 @@ void UBaitUserWidget::OnBaitSelected(const struct FValeriaItem& InbaitItem)
 
 	Params::UBaitUserWidget_OnBaitSelected_Params Parms{};
 
-	Parms.baitItem = InbaitItem;
+	Parms.baitItem = baitItem;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -165,12 +218,40 @@ void UBaitUserWidget::EndBaitSelection()
 }
 
 
+// Class ValeriaUI.BookViewerWidget
+// (None)
+
+class UClass* UBookViewerWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BookViewerWidget");
+
+	return Clss;
+}
+
+
+// BookViewerWidget ValeriaUI.Default__BookViewerWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UBookViewerWidget* UBookViewerWidget::GetDefaultObj()
+{
+	static class UBookViewerWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBookViewerWidget*>(UBookViewerWidget::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ValeriaUI.BookViewerWidget.MarkPageAsRead
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBookViewerWidget::MarkPageAsRead(int32 InIndex)
+void UBookViewerWidget::MarkPageAsRead(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -179,15 +260,15 @@ void UBookViewerWidget::MarkPageAsRead(int32 InIndex)
 
 	Params::UBookViewerWidget_MarkPageAsRead_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -207,13 +288,13 @@ class FText UBookViewerWidget::GetTitle()
 	Params::UBookViewerWidget_GetTitle_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -235,13 +316,13 @@ class FText UBookViewerWidget::GetSubTitle()
 	Params::UBookViewerWidget_GetSubTitle_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -263,13 +344,13 @@ int32 UBookViewerWidget::GetNumberOfPages()
 	Params::UBookViewerWidget_GetNumberOfPages_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -282,7 +363,7 @@ int32 UBookViewerWidget::GetNumberOfPages()
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FText                        ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-class FText UBookViewerWidget::GetContentForPage(int32 InIndex)
+class FText UBookViewerWidget::GetContentForPage(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -291,18 +372,46 @@ class FText UBookViewerWidget::GetContentForPage(int32 InIndex)
 
 	Params::UBookViewerWidget_GetContentForPage_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.DetailUserWidget
+// (None)
+
+class UClass* UDetailUserWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("DetailUserWidget");
+
+	return Clss;
+}
+
+
+// DetailUserWidget ValeriaUI.Default__DetailUserWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UDetailUserWidget* UDetailUserWidget::GetDefaultObj()
+{
+	static class UDetailUserWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UDetailUserWidget*>(UDetailUserWidget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -312,7 +421,7 @@ class FText UBookViewerWidget::GetContentForPage(int32 InIndex)
 // TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>ItemType                                                         (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDetailUserWidget::UpdateDetail(TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>& InItemType)
+bool UDetailUserWidget::UpdateDetail(TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset>& ItemType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -321,18 +430,46 @@ bool UDetailUserWidget::UpdateDetail(TSoftObjectPtr<class UVAL_ItemTypeDefinitio
 
 	Params::UDetailUserWidget_UpdateDetail_Params Parms{};
 
-	Parms.ItemType = InItemType;
+	Parms.ItemType = ItemType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_LoadingScreenUserWidget
+// (None)
+
+class UClass* UVALUI_LoadingScreenUserWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_LoadingScreenUserWidget");
+
+	return Clss;
+}
+
+
+// VALUI_LoadingScreenUserWidget ValeriaUI.Default__VALUI_LoadingScreenUserWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_LoadingScreenUserWidget* UVALUI_LoadingScreenUserWidget::GetDefaultObj()
+{
+	static class UVALUI_LoadingScreenUserWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_LoadingScreenUserWidget*>(UVALUI_LoadingScreenUserWidget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -379,7 +516,7 @@ void UVALUI_LoadingScreenUserWidget::ShowFadeToBlack()
 // Parameters:
 // struct FPaliaLoadingScreenTip      Tip                                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_LoadingScreenUserWidget::HandleSetLoadingScreenTip(struct FPaliaLoadingScreenTip& InTip)
+void UVALUI_LoadingScreenUserWidget::HandleSetLoadingScreenTip(struct FPaliaLoadingScreenTip& Tip)
 {
 	static class UFunction* Func = nullptr;
 
@@ -388,7 +525,7 @@ void UVALUI_LoadingScreenUserWidget::HandleSetLoadingScreenTip(struct FPaliaLoad
 
 	Params::UVALUI_LoadingScreenUserWidget_HandleSetLoadingScreenTip_Params Parms{};
 
-	Parms.Tip = InTip;
+	Parms.Tip = Tip;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -400,7 +537,7 @@ void UVALUI_LoadingScreenUserWidget::HandleSetLoadingScreenTip(struct FPaliaLoad
 // Parameters:
 // class UTexture2D*                  Texture                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_LoadingScreenUserWidget::HandleSetBackgroundImage(class UTexture2D* InTexture)
+void UVALUI_LoadingScreenUserWidget::HandleSetBackgroundImage(class UTexture2D* Texture)
 {
 	static class UFunction* Func = nullptr;
 
@@ -409,7 +546,7 @@ void UVALUI_LoadingScreenUserWidget::HandleSetBackgroundImage(class UTexture2D* 
 
 	Params::UVALUI_LoadingScreenUserWidget_HandleSetBackgroundImage_Params Parms{};
 
-	Parms.Texture = InTexture;
+	Parms.Texture = Texture;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -421,7 +558,7 @@ void UVALUI_LoadingScreenUserWidget::HandleSetBackgroundImage(class UTexture2D* 
 // Parameters:
 // class APawn*                       Pawn                                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_LoadingScreenUserWidget::HandleOnPawnChanged(class APawn* InPawn)
+void UVALUI_LoadingScreenUserWidget::HandleOnPawnChanged(class APawn* Pawn)
 {
 	static class UFunction* Func = nullptr;
 
@@ -430,16 +567,44 @@ void UVALUI_LoadingScreenUserWidget::HandleOnPawnChanged(class APawn* InPawn)
 
 	Params::UVALUI_LoadingScreenUserWidget_HandleOnPawnChanged_Params Parms{};
 
-	Parms.Pawn = InPawn;
+	Parms.Pawn = Pawn;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.MailboxViewerUserWidget
+// (None)
+
+class UClass* UMailboxViewerUserWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MailboxViewerUserWidget");
+
+	return Clss;
+}
+
+
+// MailboxViewerUserWidget ValeriaUI.Default__MailboxViewerUserWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMailboxViewerUserWidget* UMailboxViewerUserWidget::GetDefaultObj()
+{
+	static class UMailboxViewerUserWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMailboxViewerUserWidget*>(UMailboxViewerUserWidget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -448,7 +613,7 @@ void UVALUI_LoadingScreenUserWidget::HandleOnPawnChanged(class APawn* InPawn)
 // Parameters:
 // enum class EMailboxViewerFilter    Filter                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMailboxViewerUserWidget::UpdateMailFilter(enum class EMailboxViewerFilter InFilter)
+void UMailboxViewerUserWidget::UpdateMailFilter(enum class EMailboxViewerFilter Filter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -457,15 +622,15 @@ void UMailboxViewerUserWidget::UpdateMailFilter(enum class EMailboxViewerFilter 
 
 	Params::UMailboxViewerUserWidget_UpdateMailFilter_Params Parms{};
 
-	Parms.Filter = InFilter;
+	Parms.Filter = Filter;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -477,7 +642,7 @@ void UMailboxViewerUserWidget::UpdateMailFilter(enum class EMailboxViewerFilter 
 // int32                              RewardIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMailboxViewerUserWidget::TryCollectReward(int32 InIndex, int32 InRewardIndex)
+bool UMailboxViewerUserWidget::TryCollectReward(int32 Index, int32 RewardIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -486,16 +651,16 @@ bool UMailboxViewerUserWidget::TryCollectReward(int32 InIndex, int32 InRewardInd
 
 	Params::UMailboxViewerUserWidget_TryCollectReward_Params Parms{};
 
-	Parms.Index = InIndex;
-	Parms.RewardIndex = InRewardIndex;
+	Parms.Index = Index;
+	Parms.RewardIndex = RewardIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -507,7 +672,7 @@ bool UMailboxViewerUserWidget::TryCollectReward(int32 InIndex, int32 InRewardInd
 // Parameters:
 // bool                               AllowRemoval                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMailboxViewerUserWidget::RefreshMailMessages(bool InAllowRemoval)
+void UMailboxViewerUserWidget::RefreshMailMessages(bool AllowRemoval)
 {
 	static class UFunction* Func = nullptr;
 
@@ -516,15 +681,15 @@ void UMailboxViewerUserWidget::RefreshMailMessages(bool InAllowRemoval)
 
 	Params::UMailboxViewerUserWidget_RefreshMailMessages_Params Parms{};
 
-	Parms.AllowRemoval = InAllowRemoval;
+	Parms.AllowRemoval = AllowRemoval;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -534,7 +699,7 @@ void UMailboxViewerUserWidget::RefreshMailMessages(bool InAllowRemoval)
 // Parameters:
 // class UVillagerMailInboxComponent* VillagerMail                                                     (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMailboxViewerUserWidget::OnVillagerMailChanged(class UVillagerMailInboxComponent* InVillagerMail)
+void UMailboxViewerUserWidget::OnVillagerMailChanged(class UVillagerMailInboxComponent* VillagerMail)
 {
 	static class UFunction* Func = nullptr;
 
@@ -543,15 +708,15 @@ void UMailboxViewerUserWidget::OnVillagerMailChanged(class UVillagerMailInboxCom
 
 	Params::UMailboxViewerUserWidget_OnVillagerMailChanged_Params Parms{};
 
-	Parms.VillagerMail = InVillagerMail;
+	Parms.VillagerMail = VillagerMail;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -561,7 +726,7 @@ void UMailboxViewerUserWidget::OnVillagerMailChanged(class UVillagerMailInboxCom
 // Parameters:
 // struct FMailbox                    Mailbox                                                          (ConstParm, Parm, NativeAccessSpecifierPublic)
 
-void UMailboxViewerUserWidget::OnPlayerToPlayerMailSuccess(const struct FMailbox& InMailbox)
+void UMailboxViewerUserWidget::OnPlayerToPlayerMailSuccess(const struct FMailbox& Mailbox)
 {
 	static class UFunction* Func = nullptr;
 
@@ -570,15 +735,15 @@ void UMailboxViewerUserWidget::OnPlayerToPlayerMailSuccess(const struct FMailbox
 
 	Params::UMailboxViewerUserWidget_OnPlayerToPlayerMailSuccess_Params Parms{};
 
-	Parms.Mailbox = InMailbox;
+	Parms.Mailbox = Mailbox;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -588,7 +753,7 @@ void UMailboxViewerUserWidget::OnPlayerToPlayerMailSuccess(const struct FMailbox
 // Parameters:
 // class FString                      Error                                                            (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMailboxViewerUserWidget::OnPlayerToPlayerMailFailed(const class FString& InError)
+void UMailboxViewerUserWidget::OnPlayerToPlayerMailFailed(const class FString& Error)
 {
 	static class UFunction* Func = nullptr;
 
@@ -597,15 +762,15 @@ void UMailboxViewerUserWidget::OnPlayerToPlayerMailFailed(const class FString& I
 
 	Params::UMailboxViewerUserWidget_OnPlayerToPlayerMailFailed_Params Parms{};
 
-	Parms.Error = InError;
+	Parms.Error = Error;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -653,7 +818,7 @@ void UMailboxViewerUserWidget::OnMailChanged()
 // Parameters:
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMailboxViewerUserWidget::MarkAsRead(int32 InIndex)
+void UMailboxViewerUserWidget::MarkAsRead(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -662,15 +827,15 @@ void UMailboxViewerUserWidget::MarkAsRead(int32 InIndex)
 
 	Params::UMailboxViewerUserWidget_MarkAsRead_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -689,13 +854,13 @@ void UMailboxViewerUserWidget::LoadMail()
 	Params::UMailboxViewerUserWidget_LoadMail_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -705,7 +870,7 @@ void UMailboxViewerUserWidget::LoadMail()
 // Parameters:
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMailboxViewerUserWidget::HideMessage(int32 InIndex)
+void UMailboxViewerUserWidget::HideMessage(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -714,15 +879,15 @@ void UMailboxViewerUserWidget::HideMessage(int32 InIndex)
 
 	Params::UMailboxViewerUserWidget_HideMessage_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -742,13 +907,13 @@ int32 UMailboxViewerUserWidget::GetNumberOfNonHiddenMessages()
 	Params::UMailboxViewerUserWidget_GetNumberOfNonHiddenMessages_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -761,7 +926,7 @@ int32 UMailboxViewerUserWidget::GetNumberOfNonHiddenMessages()
 // enum class EMailboxViewerFilter    Filter                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMailboxViewerUserWidget::GetNumberOfMessagesForFilter(enum class EMailboxViewerFilter InFilter)
+int32 UMailboxViewerUserWidget::GetNumberOfMessagesForFilter(enum class EMailboxViewerFilter Filter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -770,15 +935,15 @@ int32 UMailboxViewerUserWidget::GetNumberOfMessagesForFilter(enum class EMailbox
 
 	Params::UMailboxViewerUserWidget_GetNumberOfMessagesForFilter_Params Parms{};
 
-	Parms.Filter = InFilter;
+	Parms.Filter = Filter;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -800,13 +965,13 @@ int32 UMailboxViewerUserWidget::GetNumberOfMessages()
 	Params::UMailboxViewerUserWidget_GetNumberOfMessages_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -819,7 +984,7 @@ int32 UMailboxViewerUserWidget::GetNumberOfMessages()
 // int32                              StartIndex                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMailboxViewerUserWidget::GetNextNonHiddenMessage(int32 InStartIndex)
+int32 UMailboxViewerUserWidget::GetNextNonHiddenMessage(int32 StartIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -828,15 +993,15 @@ int32 UMailboxViewerUserWidget::GetNextNonHiddenMessage(int32 InStartIndex)
 
 	Params::UMailboxViewerUserWidget_GetNextNonHiddenMessage_Params Parms{};
 
-	Parms.StartIndex = InStartIndex;
+	Parms.StartIndex = StartIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -849,7 +1014,7 @@ int32 UMailboxViewerUserWidget::GetNextNonHiddenMessage(int32 InStartIndex)
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMailMessageWidgetData      ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FMailMessageWidgetData UMailboxViewerUserWidget::GetMailMessage(int32 InIndex)
+struct FMailMessageWidgetData UMailboxViewerUserWidget::GetMailMessage(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -858,15 +1023,15 @@ struct FMailMessageWidgetData UMailboxViewerUserWidget::GetMailMessage(int32 InI
 
 	Params::UMailboxViewerUserWidget_GetMailMessage_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -879,7 +1044,7 @@ struct FMailMessageWidgetData UMailboxViewerUserWidget::GetMailMessage(int32 InI
 // struct FMailMessageWidgetData      Data                                                             (Parm, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMailboxViewerUserWidget::GetIndexOfMailMessage(const struct FMailMessageWidgetData& InData)
+int32 UMailboxViewerUserWidget::GetIndexOfMailMessage(const struct FMailMessageWidgetData& Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -888,15 +1053,15 @@ int32 UMailboxViewerUserWidget::GetIndexOfMailMessage(const struct FMailMessageW
 
 	Params::UMailboxViewerUserWidget_GetIndexOfMailMessage_Params Parms{};
 
-	Parms.Data = InData;
+	Parms.Data = Data;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -918,16 +1083,44 @@ enum class EMailboxViewerFilter UMailboxViewerUserWidget::GetCurrentFilter()
 	Params::UMailboxViewerUserWidget_GetCurrentFilter_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.ValeriaViewportClient
+// (None)
+
+class UClass* UValeriaViewportClient::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ValeriaViewportClient");
+
+	return Clss;
+}
+
+
+// ValeriaViewportClient ValeriaUI.Default__ValeriaViewportClient
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UValeriaViewportClient* UValeriaViewportClient::GetDefaultObj()
+{
+	static class UValeriaViewportClient* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UValeriaViewportClient*>(UValeriaViewportClient::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -945,13 +1138,13 @@ void UValeriaViewportClient::ReceiveOnFadeOutBlack()
 	Params::UValeriaViewportClient_ReceiveOnFadeOutBlack_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -961,7 +1154,7 @@ void UValeriaViewportClient::ReceiveOnFadeOutBlack()
 // Parameters:
 // float                              DurationSeconds                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UValeriaViewportClient::HandleOnFadeOutBlack(float InDurationSeconds)
+void UValeriaViewportClient::HandleOnFadeOutBlack(float DurationSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -970,15 +1163,15 @@ void UValeriaViewportClient::HandleOnFadeOutBlack(float InDurationSeconds)
 
 	Params::UValeriaViewportClient_HandleOnFadeOutBlack_Params Parms{};
 
-	Parms.DurationSeconds = InDurationSeconds;
+	Parms.DurationSeconds = DurationSeconds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -988,7 +1181,7 @@ void UValeriaViewportClient::HandleOnFadeOutBlack(float InDurationSeconds)
 // Parameters:
 // float                              DurationSeconds                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UValeriaViewportClient::HandleOnFadeInBlack(float InDurationSeconds)
+void UValeriaViewportClient::HandleOnFadeInBlack(float DurationSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -997,16 +1190,44 @@ void UValeriaViewportClient::HandleOnFadeInBlack(float InDurationSeconds)
 
 	Params::UValeriaViewportClient_HandleOnFadeInBlack_Params Parms{};
 
-	Parms.DurationSeconds = InDurationSeconds;
+	Parms.DurationSeconds = DurationSeconds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_AnnouncementsMessageModalDialog
+// (None)
+
+class UClass* UVALUI_AnnouncementsMessageModalDialog::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_AnnouncementsMessageModalDialog");
+
+	return Clss;
+}
+
+
+// VALUI_AnnouncementsMessageModalDialog ValeriaUI.Default__VALUI_AnnouncementsMessageModalDialog
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_AnnouncementsMessageModalDialog* UVALUI_AnnouncementsMessageModalDialog::GetDefaultObj()
+{
+	static class UVALUI_AnnouncementsMessageModalDialog* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_AnnouncementsMessageModalDialog*>(UVALUI_AnnouncementsMessageModalDialog::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1015,7 +1236,7 @@ void UValeriaViewportClient::HandleOnFadeInBlack(float InDurationSeconds)
 // Parameters:
 // class FString                      NewURL                                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_AnnouncementsMessageModalDialog::SetURL(const class FString& InNewURL)
+void UVALUI_AnnouncementsMessageModalDialog::SetURL(const class FString& NewURL)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1024,15 +1245,15 @@ void UVALUI_AnnouncementsMessageModalDialog::SetURL(const class FString& InNewUR
 
 	Params::UVALUI_AnnouncementsMessageModalDialog_SetURL_Params Parms{};
 
-	Parms.NewURL = InNewURL;
+	Parms.NewURL = NewURL;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1051,13 +1272,13 @@ void UVALUI_AnnouncementsMessageModalDialog::RefreshMessageFromWeb()
 	Params::UVALUI_AnnouncementsMessageModalDialog_RefreshMessageFromWeb_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1095,13 +1316,13 @@ void UVALUI_AnnouncementsMessageModalDialog::NotifyConfirmComplete()
 	Params::UVALUI_AnnouncementsMessageModalDialog_NotifyConfirmComplete_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1111,7 +1332,7 @@ void UVALUI_AnnouncementsMessageModalDialog::NotifyConfirmComplete()
 // Parameters:
 // class FString                      Message                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_AnnouncementsMessageModalDialog::HandleRefreshedMessageFromWeb(const class FString& InMessage)
+void UVALUI_AnnouncementsMessageModalDialog::HandleRefreshedMessageFromWeb(const class FString& Message)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1120,10 +1341,38 @@ void UVALUI_AnnouncementsMessageModalDialog::HandleRefreshedMessageFromWeb(const
 
 	Params::UVALUI_AnnouncementsMessageModalDialog_HandleRefreshedMessageFromWeb_Params Parms{};
 
-	Parms.Message = InMessage;
+	Parms.Message = Message;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VAL_AsyncActionRequestStorefront
+// (None)
+
+class UClass* UVAL_AsyncActionRequestStorefront::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VAL_AsyncActionRequestStorefront");
+
+	return Clss;
+}
+
+
+// VAL_AsyncActionRequestStorefront ValeriaUI.Default__VAL_AsyncActionRequestStorefront
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVAL_AsyncActionRequestStorefront* UVAL_AsyncActionRequestStorefront::GetDefaultObj()
+{
+	static class UVAL_AsyncActionRequestStorefront* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVAL_AsyncActionRequestStorefront*>(UVAL_AsyncActionRequestStorefront::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1133,7 +1382,7 @@ void UVALUI_AnnouncementsMessageModalDialog::HandleRefreshedMessageFromWeb(const
 // class ULocalPlayer*                LP                                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UVAL_AsyncActionRequestStorefront*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UVAL_AsyncActionRequestStorefront* UVAL_AsyncActionRequestStorefront::RequestStorefront(class ULocalPlayer* InLP)
+class UVAL_AsyncActionRequestStorefront* UVAL_AsyncActionRequestStorefront::RequestStorefront(class ULocalPlayer* LP)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1142,15 +1391,15 @@ class UVAL_AsyncActionRequestStorefront* UVAL_AsyncActionRequestStorefront::Requ
 
 	Params::UVAL_AsyncActionRequestStorefront_RequestStorefront_Params Parms{};
 
-	Parms.LP = InLP;
+	Parms.LP = LP;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1162,7 +1411,7 @@ class UVAL_AsyncActionRequestStorefront* UVAL_AsyncActionRequestStorefront::Requ
 // Parameters:
 // struct FVALUI_PremiumStorefrontResponseResponse                                                         (Parm, NativeAccessSpecifierPublic)
 
-void UVAL_AsyncActionRequestStorefront::OnRequestStorefrontSuccess__DelegateSignature(const struct FVALUI_PremiumStorefrontResponse& InResponse)
+void UVAL_AsyncActionRequestStorefront::OnRequestStorefrontSuccess__DelegateSignature(const struct FVALUI_PremiumStorefrontResponse& Response)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1171,7 +1420,7 @@ void UVAL_AsyncActionRequestStorefront::OnRequestStorefrontSuccess__DelegateSign
 
 	Params::UVAL_AsyncActionRequestStorefront_OnRequestStorefrontSuccess__DelegateSignature_Params Parms{};
 
-	Parms.Response = InResponse;
+	Parms.Response = Response;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1197,6 +1446,34 @@ void UVAL_AsyncActionRequestStorefront::OnRequestStorefrontFailure__DelegateSign
 }
 
 
+// Class ValeriaUI.VALUI_AsyncUpdateLoadout
+// (None)
+
+class UClass* UVALUI_AsyncUpdateLoadout::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_AsyncUpdateLoadout");
+
+	return Clss;
+}
+
+
+// VALUI_AsyncUpdateLoadout ValeriaUI.Default__VALUI_AsyncUpdateLoadout
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_AsyncUpdateLoadout* UVALUI_AsyncUpdateLoadout::GetDefaultObj()
+{
+	static class UVALUI_AsyncUpdateLoadout* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_AsyncUpdateLoadout*>(UVALUI_AsyncUpdateLoadout::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ValeriaUI.VALUI_AsyncUpdateLoadout.UpdateLoadout
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -1205,7 +1482,7 @@ void UVAL_AsyncActionRequestStorefront::OnRequestStorefrontFailure__DelegateSign
 // struct FVALUI_CharCustomization_UpdateLoadoutContextPayloadContextPayload                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UVALUI_AsyncUpdateLoadout*   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UVALUI_AsyncUpdateLoadout* UVALUI_AsyncUpdateLoadout::UpdateLoadout(class UVALUI_CharacterCustomizationPanelBase* InCustPanel, struct FVAL_CharacterCustomizationLoadout& InNewLoadout, struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& InContextPayload)
+class UVALUI_AsyncUpdateLoadout* UVALUI_AsyncUpdateLoadout::UpdateLoadout(class UVALUI_CharacterCustomizationPanelBase* CustPanel, struct FVAL_CharacterCustomizationLoadout& NewLoadout, struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& ContextPayload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1214,17 +1491,17 @@ class UVALUI_AsyncUpdateLoadout* UVALUI_AsyncUpdateLoadout::UpdateLoadout(class 
 
 	Params::UVALUI_AsyncUpdateLoadout_UpdateLoadout_Params Parms{};
 
-	Parms.CustPanel = InCustPanel;
-	Parms.NewLoadout = InNewLoadout;
-	Parms.ContextPayload = InContextPayload;
+	Parms.CustPanel = CustPanel;
+	Parms.NewLoadout = NewLoadout;
+	Parms.ContextPayload = ContextPayload;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1236,7 +1513,7 @@ class UVALUI_AsyncUpdateLoadout* UVALUI_AsyncUpdateLoadout::UpdateLoadout(class 
 // Parameters:
 // struct FVALUI_CharCustomization_UpdateLoadoutContextPayloadContextPayload                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_AsyncUpdateLoadout::OnUpdateLoadoutFailed__DelegateSignature(struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& InContextPayload)
+void UVALUI_AsyncUpdateLoadout::OnUpdateLoadoutFailed__DelegateSignature(struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& ContextPayload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1245,7 +1522,7 @@ void UVALUI_AsyncUpdateLoadout::OnUpdateLoadoutFailed__DelegateSignature(struct 
 
 	Params::UVALUI_AsyncUpdateLoadout_OnUpdateLoadoutFailed__DelegateSignature_Params Parms{};
 
-	Parms.ContextPayload = InContextPayload;
+	Parms.ContextPayload = ContextPayload;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1258,7 +1535,7 @@ void UVALUI_AsyncUpdateLoadout::OnUpdateLoadoutFailed__DelegateSignature(struct 
 // class UVALUI_CharacterCustomizationPanelBase*CharacterCustomizationPanel                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVALUI_CharCustomization_UpdateLoadoutContextPayloadContextPayload                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_AsyncUpdateLoadout::OnUpdateLoadoutCompleted__DelegateSignature(class UVALUI_CharacterCustomizationPanelBase* InCharacterCustomizationPanel, struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& InContextPayload)
+void UVALUI_AsyncUpdateLoadout::OnUpdateLoadoutCompleted__DelegateSignature(class UVALUI_CharacterCustomizationPanelBase* CharacterCustomizationPanel, struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& ContextPayload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1267,11 +1544,67 @@ void UVALUI_AsyncUpdateLoadout::OnUpdateLoadoutCompleted__DelegateSignature(clas
 
 	Params::UVALUI_AsyncUpdateLoadout_OnUpdateLoadoutCompleted__DelegateSignature_Params Parms{};
 
-	Parms.CharacterCustomizationPanel = InCharacterCustomizationPanel;
-	Parms.ContextPayload = InContextPayload;
+	Parms.CharacterCustomizationPanel = CharacterCustomizationPanel;
+	Parms.ContextPayload = ContextPayload;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VALUI_WidgetStyleBase
+// (None)
+
+class UClass* UVALUI_WidgetStyleBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_WidgetStyleBase");
+
+	return Clss;
+}
+
+
+// VALUI_WidgetStyleBase ValeriaUI.Default__VALUI_WidgetStyleBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_WidgetStyleBase* UVALUI_WidgetStyleBase::GetDefaultObj()
+{
+	static class UVALUI_WidgetStyleBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_WidgetStyleBase*>(UVALUI_WidgetStyleBase::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_BorderStyle
+// (None)
+
+class UClass* UVALUI_BorderStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_BorderStyle");
+
+	return Clss;
+}
+
+
+// VALUI_BorderStyle ValeriaUI.Default__VALUI_BorderStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_BorderStyle* UVALUI_BorderStyle::GetDefaultObj()
+{
+	static class UVALUI_BorderStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_BorderStyle*>(UVALUI_BorderStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1280,7 +1613,7 @@ void UVALUI_AsyncUpdateLoadout::OnUpdateLoadoutCompleted__DelegateSignature(clas
 // Parameters:
 // class UBorder*                     Border                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_BorderStyle::Apply(class UBorder* InBorder)
+void UVALUI_BorderStyle::Apply(class UBorder* Border)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1289,16 +1622,44 @@ void UVALUI_BorderStyle::Apply(class UBorder* InBorder)
 
 	Params::UVALUI_BorderStyle_Apply_Params Parms{};
 
-	Parms.Border = InBorder;
+	Parms.Border = Border;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_Border_Styled
+// (None)
+
+class UClass* UVALUI_Border_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_Border_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_Border_Styled ValeriaUI.Default__VALUI_Border_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_Border_Styled* UVALUI_Border_Styled::GetDefaultObj()
+{
+	static class UVALUI_Border_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_Border_Styled*>(UVALUI_Border_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1307,7 +1668,7 @@ void UVALUI_BorderStyle::Apply(class UBorder* InBorder)
 // Parameters:
 // class UVALUI_BorderStyle*          NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_Border_Styled::SetBorderStyle(class UVALUI_BorderStyle* InNewStyle)
+void UVALUI_Border_Styled::SetBorderStyle(class UVALUI_BorderStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1316,16 +1677,44 @@ void UVALUI_Border_Styled::SetBorderStyle(class UVALUI_BorderStyle* InNewStyle)
 
 	Params::UVALUI_Border_Styled_SetBorderStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_BoundInputActionStateWidget
+// (None)
+
+class UClass* UVALUI_BoundInputActionStateWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_BoundInputActionStateWidget");
+
+	return Clss;
+}
+
+
+// VALUI_BoundInputActionStateWidget ValeriaUI.Default__VALUI_BoundInputActionStateWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_BoundInputActionStateWidget* UVALUI_BoundInputActionStateWidget::GetDefaultObj()
+{
+	static class UVALUI_BoundInputActionStateWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_BoundInputActionStateWidget*>(UVALUI_BoundInputActionStateWidget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1337,7 +1726,7 @@ void UVALUI_Border_Styled::SetBorderStyle(class UVALUI_BorderStyle* InNewStyle)
 // float                              OngoingDuration                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              HoldTimeThreshold                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_BoundInputActionStateWidget::UpdateInputActionState_Implementation(struct FKey& InKey, enum class ETriggerEvent InLatestTriggerEvent, float InOngoingDuration, float InHoldTimeThreshold)
+void UVALUI_BoundInputActionStateWidget::UpdateInputActionState_Implementation(struct FKey& Key, enum class ETriggerEvent LatestTriggerEvent, float OngoingDuration, float HoldTimeThreshold)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1346,10 +1735,10 @@ void UVALUI_BoundInputActionStateWidget::UpdateInputActionState_Implementation(s
 
 	Params::UVALUI_BoundInputActionStateWidget_UpdateInputActionState_Implementation_Params Parms{};
 
-	Parms.Key = InKey;
-	Parms.LatestTriggerEvent = InLatestTriggerEvent;
-	Parms.OngoingDuration = InOngoingDuration;
-	Parms.HoldTimeThreshold = InHoldTimeThreshold;
+	Parms.Key = Key;
+	Parms.LatestTriggerEvent = LatestTriggerEvent;
+	Parms.OngoingDuration = OngoingDuration;
+	Parms.HoldTimeThreshold = HoldTimeThreshold;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1361,7 +1750,7 @@ void UVALUI_BoundInputActionStateWidget::UpdateInputActionState_Implementation(s
 // Parameters:
 // class UInputAction*                InInputAction                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_BoundInputActionStateWidget::SetInputAction(class UInputAction* InInInputAction)
+void UVALUI_BoundInputActionStateWidget::SetInputAction(class UInputAction* InInputAction)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1370,16 +1759,72 @@ void UVALUI_BoundInputActionStateWidget::SetInputAction(class UInputAction* InIn
 
 	Params::UVALUI_BoundInputActionStateWidget_SetInputAction_Params Parms{};
 
-	Parms.InInputAction = InInInputAction;
+	Parms.InInputAction = InInputAction;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_BoxDropShadow
+// (None)
+
+class UClass* UVALUI_BoxDropShadow::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_BoxDropShadow");
+
+	return Clss;
+}
+
+
+// VALUI_BoxDropShadow ValeriaUI.Default__VALUI_BoxDropShadow
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_BoxDropShadow* UVALUI_BoxDropShadow::GetDefaultObj()
+{
+	static class UVALUI_BoxDropShadow* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_BoxDropShadow*>(UVALUI_BoxDropShadow::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_ButtonStyle
+// (None)
+
+class UClass* UVALUI_ButtonStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ButtonStyle");
+
+	return Clss;
+}
+
+
+// VALUI_ButtonStyle ValeriaUI.Default__VALUI_ButtonStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ButtonStyle* UVALUI_ButtonStyle::GetDefaultObj()
+{
+	static class UVALUI_ButtonStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ButtonStyle*>(UVALUI_ButtonStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1388,7 +1833,7 @@ void UVALUI_BoundInputActionStateWidget::SetInputAction(class UInputAction* InIn
 // Parameters:
 // class UVALUI_Button_Styled*        Button                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ButtonStyle::Apply(class UVALUI_Button_Styled* InButton)
+void UVALUI_ButtonStyle::Apply(class UVALUI_Button_Styled* Button)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1397,16 +1842,72 @@ void UVALUI_ButtonStyle::Apply(class UVALUI_Button_Styled* InButton)
 
 	Params::UVALUI_ButtonStyle_Apply_Params Parms{};
 
-	Parms.Button = InButton;
+	Parms.Button = Button;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_ButtonStyle_WithBG
+// (None)
+
+class UClass* UVALUI_ButtonStyle_WithBG::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ButtonStyle_WithBG");
+
+	return Clss;
+}
+
+
+// VALUI_ButtonStyle_WithBG ValeriaUI.Default__VALUI_ButtonStyle_WithBG
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ButtonStyle_WithBG* UVALUI_ButtonStyle_WithBG::GetDefaultObj()
+{
+	static class UVALUI_ButtonStyle_WithBG* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ButtonStyle_WithBG*>(UVALUI_ButtonStyle_WithBG::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_Button_Styled
+// (None)
+
+class UClass* UVALUI_Button_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_Button_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_Button_Styled ValeriaUI.Default__VALUI_Button_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_Button_Styled* UVALUI_Button_Styled::GetDefaultObj()
+{
+	static class UVALUI_Button_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_Button_Styled*>(UVALUI_Button_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1416,7 +1917,7 @@ void UVALUI_ButtonStyle::Apply(class UVALUI_Button_Styled* InButton)
 // class UWidget*                     InCursor                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_Button_Styled::ShowCursor(class UWidget* InInCursor)
+bool UVALUI_Button_Styled::ShowCursor(class UWidget* InCursor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1425,15 +1926,15 @@ bool UVALUI_Button_Styled::ShowCursor(class UWidget* InInCursor)
 
 	Params::UVALUI_Button_Styled_ShowCursor_Params Parms{};
 
-	Parms.InCursor = InInCursor;
+	Parms.InCursor = InCursor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1445,7 +1946,7 @@ bool UVALUI_Button_Styled::ShowCursor(class UWidget* InInCursor)
 // Parameters:
 // class UVALUI_ButtonStyle*          NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_Button_Styled::SetButtonStyle(class UVALUI_ButtonStyle* InNewStyle)
+void UVALUI_Button_Styled::SetButtonStyle(class UVALUI_ButtonStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1454,15 +1955,15 @@ void UVALUI_Button_Styled::SetButtonStyle(class UVALUI_ButtonStyle* InNewStyle)
 
 	Params::UVALUI_Button_Styled_SetButtonStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1481,13 +1982,13 @@ void UVALUI_Button_Styled::SetButtonFocus()
 	Params::UVALUI_Button_Styled_SetButtonFocus_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1497,7 +1998,7 @@ void UVALUI_Button_Styled::SetButtonFocus()
 // Parameters:
 // class UWidget*                     InCursor                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_Button_Styled::RemoveCursor(class UWidget* InInCursor)
+void UVALUI_Button_Styled::RemoveCursor(class UWidget* InCursor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1506,15 +2007,15 @@ void UVALUI_Button_Styled::RemoveCursor(class UWidget* InInCursor)
 
 	Params::UVALUI_Button_Styled_RemoveCursor_Params Parms{};
 
-	Parms.InCursor = InInCursor;
+	Parms.InCursor = InCursor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1524,7 +2025,7 @@ void UVALUI_Button_Styled::RemoveCursor(class UWidget* InInCursor)
 // Parameters:
 // bool                               IsDesignTime                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_Button_Styled::PreConstruct(bool InIsDesignTime)
+void UVALUI_Button_Styled::PreConstruct(bool IsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1533,7 +2034,7 @@ void UVALUI_Button_Styled::PreConstruct(bool InIsDesignTime)
 
 	Params::UVALUI_Button_Styled_PreConstruct_Params Parms{};
 
-	Parms.IsDesignTime = InIsDesignTime;
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1574,13 +2075,13 @@ bool UVALUI_Button_Styled::HasFocus()
 	Params::UVALUI_Button_Styled_HasFocus_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1601,13 +2102,13 @@ void UVALUI_Button_Styled::HandleReleased()
 	Params::UVALUI_Button_Styled_HandleReleased_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1626,13 +2127,13 @@ void UVALUI_Button_Styled::HandlePressed()
 	Params::UVALUI_Button_Styled_HandlePressed_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1675,6 +2176,34 @@ void UVALUI_Button_Styled::Construct()
 }
 
 
+// Class ValeriaUI.VALUI_Button_Styled_WithBG
+// (None)
+
+class UClass* UVALUI_Button_Styled_WithBG::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_Button_Styled_WithBG");
+
+	return Clss;
+}
+
+
+// VALUI_Button_Styled_WithBG ValeriaUI.Default__VALUI_Button_Styled_WithBG
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_Button_Styled_WithBG* UVALUI_Button_Styled_WithBG::GetDefaultObj()
+{
+	static class UVALUI_Button_Styled_WithBG* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_Button_Styled_WithBG*>(UVALUI_Button_Styled_WithBG::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ValeriaUI.VALUI_Button_Styled_WithBG.HandleUnhovered
 // (Native, Protected)
 // Parameters:
@@ -1689,13 +2218,13 @@ void UVALUI_Button_Styled_WithBG::HandleUnhovered()
 	Params::UVALUI_Button_Styled_WithBG_HandleUnhovered_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1714,14 +2243,70 @@ void UVALUI_Button_Styled_WithBG::HandleHovered()
 	Params::UVALUI_Button_Styled_WithBG_HandleHovered_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_CameraVirtualMoveHooker_Mobile
+// (None)
+
+class UClass* UVALUI_CameraVirtualMoveHooker_Mobile::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_CameraVirtualMoveHooker_Mobile");
+
+	return Clss;
+}
+
+
+// VALUI_CameraVirtualMoveHooker_Mobile ValeriaUI.Default__VALUI_CameraVirtualMoveHooker_Mobile
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_CameraVirtualMoveHooker_Mobile* UVALUI_CameraVirtualMoveHooker_Mobile::GetDefaultObj()
+{
+	static class UVALUI_CameraVirtualMoveHooker_Mobile* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_CameraVirtualMoveHooker_Mobile*>(UVALUI_CameraVirtualMoveHooker_Mobile::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_NameValidator
+// (None)
+
+class UClass* UVALUI_NameValidator::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_NameValidator");
+
+	return Clss;
+}
+
+
+// VALUI_NameValidator ValeriaUI.Default__VALUI_NameValidator
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_NameValidator* UVALUI_NameValidator::GetDefaultObj()
+{
+	static class UVALUI_NameValidator* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_NameValidator*>(UVALUI_NameValidator::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1731,7 +2316,7 @@ void UVALUI_Button_Styled_WithBG::HandleHovered()
 // class FString                      InCharacterName                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_NameValidator::IsNameValid(const class FString& InInCharacterName)
+bool UVALUI_NameValidator::IsNameValid(const class FString& InCharacterName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1740,18 +2325,130 @@ bool UVALUI_NameValidator::IsNameValid(const class FString& InInCharacterName)
 
 	Params::UVALUI_NameValidator_IsNameValid_Params Parms{};
 
-	Parms.InCharacterName = InInCharacterName;
+	Parms.InCharacterName = InCharacterName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_NameValidator_Regex
+// (None)
+
+class UClass* UVALUI_NameValidator_Regex::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_NameValidator_Regex");
+
+	return Clss;
+}
+
+
+// VALUI_NameValidator_Regex ValeriaUI.Default__VALUI_NameValidator_Regex
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_NameValidator_Regex* UVALUI_NameValidator_Regex::GetDefaultObj()
+{
+	static class UVALUI_NameValidator_Regex* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_NameValidator_Regex*>(UVALUI_NameValidator_Regex::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_NameValidator_Regex_PerWord
+// (None)
+
+class UClass* UVALUI_NameValidator_Regex_PerWord::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_NameValidator_Regex_PerWord");
+
+	return Clss;
+}
+
+
+// VALUI_NameValidator_Regex_PerWord ValeriaUI.Default__VALUI_NameValidator_Regex_PerWord
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_NameValidator_Regex_PerWord* UVALUI_NameValidator_Regex_PerWord::GetDefaultObj()
+{
+	static class UVALUI_NameValidator_Regex_PerWord* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_NameValidator_Regex_PerWord*>(UVALUI_NameValidator_Regex_PerWord::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_NameValidatorDataAsset
+// (None)
+
+class UClass* UVALUI_NameValidatorDataAsset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_NameValidatorDataAsset");
+
+	return Clss;
+}
+
+
+// VALUI_NameValidatorDataAsset ValeriaUI.Default__VALUI_NameValidatorDataAsset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_NameValidatorDataAsset* UVALUI_NameValidatorDataAsset::GetDefaultObj()
+{
+	static class UVALUI_NameValidatorDataAsset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_NameValidatorDataAsset*>(UVALUI_NameValidatorDataAsset::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_CharacterCreationScreenBase
+// (None)
+
+class UClass* UVALUI_CharacterCreationScreenBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_CharacterCreationScreenBase");
+
+	return Clss;
+}
+
+
+// VALUI_CharacterCreationScreenBase ValeriaUI.Default__VALUI_CharacterCreationScreenBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_CharacterCreationScreenBase* UVALUI_CharacterCreationScreenBase::GetDefaultObj()
+{
+	static class UVALUI_CharacterCreationScreenBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_CharacterCreationScreenBase*>(UVALUI_CharacterCreationScreenBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1760,7 +2457,7 @@ bool UVALUI_NameValidator::IsNameValid(const class FString& InInCharacterName)
 // Parameters:
 // bool                               bEnable                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterCreationScreenBase::SetEnableContinueButton(bool InbEnable)
+void UVALUI_CharacterCreationScreenBase::SetEnableContinueButton(bool bEnable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1769,7 +2466,7 @@ void UVALUI_CharacterCreationScreenBase::SetEnableContinueButton(bool InbEnable)
 
 	Params::UVALUI_CharacterCreationScreenBase_SetEnableContinueButton_Params Parms{};
 
-	Parms.bEnable = InbEnable;
+	Parms.bEnable = bEnable;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1781,7 +2478,7 @@ void UVALUI_CharacterCreationScreenBase::SetEnableContinueButton(bool InbEnable)
 // Parameters:
 // bool                               bEnable                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterCreationScreenBase::SetEnableAllButtons(bool InbEnable)
+void UVALUI_CharacterCreationScreenBase::SetEnableAllButtons(bool bEnable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1790,7 +2487,7 @@ void UVALUI_CharacterCreationScreenBase::SetEnableAllButtons(bool InbEnable)
 
 	Params::UVALUI_CharacterCreationScreenBase_SetEnableAllButtons_Params Parms{};
 
-	Parms.bEnable = InbEnable;
+	Parms.bEnable = bEnable;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1802,7 +2499,7 @@ void UVALUI_CharacterCreationScreenBase::SetEnableAllButtons(bool InbEnable)
 // Parameters:
 // struct FVALDTOS_MetaCharacterFormatCommitedCharacter                                                (Parm, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterCreationScreenBase::OnCommitCharacter__DelegateSignature(const struct FVALDTOS_MetaCharacterFormat& InCommitedCharacter)
+void UVALUI_CharacterCreationScreenBase::OnCommitCharacter__DelegateSignature(const struct FVALDTOS_MetaCharacterFormat& CommitedCharacter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1811,7 +2508,7 @@ void UVALUI_CharacterCreationScreenBase::OnCommitCharacter__DelegateSignature(co
 
 	Params::UVALUI_CharacterCreationScreenBase_OnCommitCharacter__DelegateSignature_Params Parms{};
 
-	Parms.CommitedCharacter = InCommitedCharacter;
+	Parms.CommitedCharacter = CommitedCharacter;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1842,7 +2539,7 @@ void UVALUI_CharacterCreationScreenBase::OnBodyTypeSelectionConfirm__DelegateSig
 // Parameters:
 // bool                               bFirstSelection                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterCreationScreenBase::OnBodyTypeSelectionChange__DelegateSignature(bool InbFirstSelection)
+void UVALUI_CharacterCreationScreenBase::OnBodyTypeSelectionChange__DelegateSignature(bool bFirstSelection)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1851,7 +2548,7 @@ void UVALUI_CharacterCreationScreenBase::OnBodyTypeSelectionChange__DelegateSign
 
 	Params::UVALUI_CharacterCreationScreenBase_OnBodyTypeSelectionChange__DelegateSignature_Params Parms{};
 
-	Parms.bFirstSelection = InbFirstSelection;
+	Parms.bFirstSelection = bFirstSelection;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1863,7 +2560,7 @@ void UVALUI_CharacterCreationScreenBase::OnBodyTypeSelectionChange__DelegateSign
 // Parameters:
 // struct FVALUI_CharacterNameValidityResponseResponse                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterCreationScreenBase::HandleCharacterNameValidityResponse(struct FVALUI_CharacterNameValidityResponse& InResponse)
+void UVALUI_CharacterCreationScreenBase::HandleCharacterNameValidityResponse(struct FVALUI_CharacterNameValidityResponse& Response)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1872,7 +2569,7 @@ void UVALUI_CharacterCreationScreenBase::HandleCharacterNameValidityResponse(str
 
 	Params::UVALUI_CharacterCreationScreenBase_HandleCharacterNameValidityResponse_Params Parms{};
 
-	Parms.Response = InResponse;
+	Parms.Response = Response;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1885,7 +2582,7 @@ void UVALUI_CharacterCreationScreenBase::HandleCharacterNameValidityResponse(str
 // class FText                        InCharacterName                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // enum class EVAL_CharacterNameType  InCharacterNameType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterCreationScreenBase::HandleCharacterNameChanged(class FText& InInCharacterName, enum class EVAL_CharacterNameType InInCharacterNameType)
+void UVALUI_CharacterCreationScreenBase::HandleCharacterNameChanged(class FText& InCharacterName, enum class EVAL_CharacterNameType InCharacterNameType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1894,16 +2591,16 @@ void UVALUI_CharacterCreationScreenBase::HandleCharacterNameChanged(class FText&
 
 	Params::UVALUI_CharacterCreationScreenBase_HandleCharacterNameChanged_Params Parms{};
 
-	Parms.InCharacterName = InInCharacterName;
-	Parms.InCharacterNameType = InInCharacterNameType;
+	Parms.InCharacterName = InCharacterName;
+	Parms.InCharacterNameType = InCharacterNameType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1923,16 +2620,44 @@ TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase>> UVALUI_Character
 	Params::UVALUI_CharacterCreationScreenBase_GetAllowedCustomizationItems_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_CharacterCreationStatics
+// (None)
+
+class UClass* UVALUI_CharacterCreationStatics::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_CharacterCreationStatics");
+
+	return Clss;
+}
+
+
+// VALUI_CharacterCreationStatics ValeriaUI.Default__VALUI_CharacterCreationStatics
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_CharacterCreationStatics* UVALUI_CharacterCreationStatics::GetDefaultObj()
+{
+	static class UVALUI_CharacterCreationStatics* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_CharacterCreationStatics*>(UVALUI_CharacterCreationStatics::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1942,7 +2667,7 @@ TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItemBase>> UVALUI_Character
 // struct FVALUI_CharacterNameValidityResponseResponse                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_CharacterCreationStatics::IsCharacterNameValidityResponseValid(struct FVALUI_CharacterNameValidityResponse& InResponse)
+bool UVALUI_CharacterCreationStatics::IsCharacterNameValidityResponseValid(struct FVALUI_CharacterNameValidityResponse& Response)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1951,18 +2676,46 @@ bool UVALUI_CharacterCreationStatics::IsCharacterNameValidityResponseValid(struc
 
 	Params::UVALUI_CharacterCreationStatics_IsCharacterNameValidityResponseValid_Params Parms{};
 
-	Parms.Response = InResponse;
+	Parms.Response = Response;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_CharacterCustomizationPanelBase
+// (None)
+
+class UClass* UVALUI_CharacterCustomizationPanelBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_CharacterCustomizationPanelBase");
+
+	return Clss;
+}
+
+
+// VALUI_CharacterCustomizationPanelBase ValeriaUI.Default__VALUI_CharacterCustomizationPanelBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_CharacterCustomizationPanelBase* UVALUI_CharacterCustomizationPanelBase::GetDefaultObj()
+{
+	static class UVALUI_CharacterCustomizationPanelBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_CharacterCustomizationPanelBase*>(UVALUI_CharacterCustomizationPanelBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1971,7 +2724,7 @@ bool UVALUI_CharacterCreationStatics::IsCharacterNameValidityResponseValid(struc
 // Parameters:
 // class AActor*                      Actor                                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterCustomizationPanelBase::SetPreviewCharacterActor(class AActor* InActor)
+void UVALUI_CharacterCustomizationPanelBase::SetPreviewCharacterActor(class AActor* Actor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1980,15 +2733,15 @@ void UVALUI_CharacterCustomizationPanelBase::SetPreviewCharacterActor(class AAct
 
 	Params::UVALUI_CharacterCustomizationPanelBase_SetPreviewCharacterActor_Params Parms{};
 
-	Parms.Actor = InActor;
+	Parms.Actor = Actor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2036,7 +2789,7 @@ void UVALUI_CharacterCustomizationPanelBase::HandleOnAllLoadoutSlotItemsGenerate
 // Parameters:
 // struct FVALUI_CharCustomization_UpdateLoadoutContextPayloadContextPayload                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterCustomizationPanelBase::HandleLoadoutUpdated(struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& InContextPayload)
+void UVALUI_CharacterCustomizationPanelBase::HandleLoadoutUpdated(struct FVALUI_CharCustomization_UpdateLoadoutContextPayload& ContextPayload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2045,7 +2798,7 @@ void UVALUI_CharacterCustomizationPanelBase::HandleLoadoutUpdated(struct FVALUI_
 
 	Params::UVALUI_CharacterCustomizationPanelBase_HandleLoadoutUpdated_Params Parms{};
 
-	Parms.ContextPayload = InContextPayload;
+	Parms.ContextPayload = ContextPayload;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2058,7 +2811,7 @@ void UVALUI_CharacterCustomizationPanelBase::HandleLoadoutUpdated(struct FVALUI_
 // class FName                        LoadoutSlotName                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVALUI_CharCustomization_LoadoutSlotDataLoadoutSlotData                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterCustomizationPanelBase::HandleLoadoutSlotItemsGenerated(class FName& InLoadoutSlotName, struct FVALUI_CharCustomization_LoadoutSlotData& InLoadoutSlotData)
+void UVALUI_CharacterCustomizationPanelBase::HandleLoadoutSlotItemsGenerated(class FName& LoadoutSlotName, struct FVALUI_CharCustomization_LoadoutSlotData& LoadoutSlotData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2067,8 +2820,8 @@ void UVALUI_CharacterCustomizationPanelBase::HandleLoadoutSlotItemsGenerated(cla
 
 	Params::UVALUI_CharacterCustomizationPanelBase_HandleLoadoutSlotItemsGenerated_Params Parms{};
 
-	Parms.LoadoutSlotName = InLoadoutSlotName;
-	Parms.LoadoutSlotData = InLoadoutSlotData;
+	Parms.LoadoutSlotName = LoadoutSlotName;
+	Parms.LoadoutSlotData = LoadoutSlotData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2083,7 +2836,7 @@ void UVALUI_CharacterCustomizationPanelBase::HandleLoadoutSlotItemsGenerated(cla
 // struct FVALUI_CharCustomization_LoadoutSlotDataLoadoutSlotData                                                  (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                               bSuccess                                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterCustomizationPanelBase::GetLoadoutSlotDataFromItemObject(class UObject* InItemObject, class FName* InLoadoutSlotName, struct FVALUI_CharCustomization_LoadoutSlotData* InLoadoutSlotData, bool* InbSuccess)
+void UVALUI_CharacterCustomizationPanelBase::GetLoadoutSlotDataFromItemObject(class UObject* ItemObject, class FName* LoadoutSlotName, struct FVALUI_CharCustomization_LoadoutSlotData* LoadoutSlotData, bool* bSuccess)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2092,24 +2845,24 @@ void UVALUI_CharacterCustomizationPanelBase::GetLoadoutSlotDataFromItemObject(cl
 
 	Params::UVALUI_CharacterCustomizationPanelBase_GetLoadoutSlotDataFromItemObject_Params Parms{};
 
-	Parms.ItemObject = InItemObject;
+	Parms.ItemObject = ItemObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InLoadoutSlotName != nullptr)
-		*InLoadoutSlotName = Parms.LoadoutSlotName;
+	if (LoadoutSlotName != nullptr)
+		*LoadoutSlotName = Parms.LoadoutSlotName;
 
-	if (InLoadoutSlotData != nullptr)
-		*InLoadoutSlotData = Parms.LoadoutSlotData;
+	if (LoadoutSlotData != nullptr)
+		*LoadoutSlotData = std::move(Parms.LoadoutSlotData);
 
-	if (InbSuccess != nullptr)
-		*InbSuccess = Parms.bSuccess;
+	if (bSuccess != nullptr)
+		*bSuccess = Parms.bSuccess;
 
 }
 
@@ -2129,13 +2882,13 @@ struct FVAL_CharacterCustomizationLoadout UVALUI_CharacterCustomizationPanelBase
 	Params::UVALUI_CharacterCustomizationPanelBase_GetCurrentLoadout_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2156,13 +2909,13 @@ void UVALUI_CharacterCustomizationPanelBase::GenerateLoadoutSlotItems()
 	Params::UVALUI_CharacterCustomizationPanelBase_GenerateLoadoutSlotItems_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2173,7 +2926,7 @@ void UVALUI_CharacterCustomizationPanelBase::GenerateLoadoutSlotItems()
 // struct FVAL_CharCustomization_AssetDataAssetData                                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UObject*                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObject* UVALUI_CharacterCustomizationPanelBase::GenerateItemObject(struct FVAL_CharCustomization_AssetData& InAssetData)
+class UObject* UVALUI_CharacterCustomizationPanelBase::GenerateItemObject(struct FVAL_CharCustomization_AssetData& AssetData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2182,7 +2935,7 @@ class UObject* UVALUI_CharacterCustomizationPanelBase::GenerateItemObject(struct
 
 	Params::UVALUI_CharacterCustomizationPanelBase_GenerateItemObject_Params Parms{};
 
-	Parms.AssetData = InAssetData;
+	Parms.AssetData = AssetData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2191,12 +2944,40 @@ class UObject* UVALUI_CharacterCustomizationPanelBase::GenerateItemObject(struct
 }
 
 
+// Class ValeriaUI.VALUI_CharacterMovementStick_Mobile
+// (None)
+
+class UClass* UVALUI_CharacterMovementStick_Mobile::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_CharacterMovementStick_Mobile");
+
+	return Clss;
+}
+
+
+// VALUI_CharacterMovementStick_Mobile ValeriaUI.Default__VALUI_CharacterMovementStick_Mobile
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_CharacterMovementStick_Mobile* UVALUI_CharacterMovementStick_Mobile::GetDefaultObj()
+{
+	static class UVALUI_CharacterMovementStick_Mobile* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_CharacterMovementStick_Mobile*>(UVALUI_CharacterMovementStick_Mobile::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ValeriaUI.VALUI_CharacterMovementStick_Mobile.SetHooker
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class UVALUI_CameraVirtualMoveHooker_Mobile*VirtualMoveHooker                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterMovementStick_Mobile::SetHooker(class UVALUI_CameraVirtualMoveHooker_Mobile* InVirtualMoveHooker)
+void UVALUI_CharacterMovementStick_Mobile::SetHooker(class UVALUI_CameraVirtualMoveHooker_Mobile* VirtualMoveHooker)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2205,15 +2986,15 @@ void UVALUI_CharacterMovementStick_Mobile::SetHooker(class UVALUI_CameraVirtualM
 
 	Params::UVALUI_CharacterMovementStick_Mobile_SetHooker_Params Parms{};
 
-	Parms.VirtualMoveHooker = InVirtualMoveHooker;
+	Parms.VirtualMoveHooker = VirtualMoveHooker;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2225,7 +3006,7 @@ void UVALUI_CharacterMovementStick_Mobile::SetHooker(class UVALUI_CameraVirtualM
 // struct FVector2D                   Pos                                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   ControlVector                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterMovementStick_Mobile::OnUpdateMovmentVirtualStick(bool InTouchControlFlag, struct FVector2D& InPos, struct FVector2D& InControlVector)
+void UVALUI_CharacterMovementStick_Mobile::OnUpdateMovmentVirtualStick(bool TouchControlFlag, struct FVector2D& Pos, struct FVector2D& ControlVector)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2234,9 +3015,9 @@ void UVALUI_CharacterMovementStick_Mobile::OnUpdateMovmentVirtualStick(bool InTo
 
 	Params::UVALUI_CharacterMovementStick_Mobile_OnUpdateMovmentVirtualStick_Params Parms{};
 
-	Parms.TouchControlFlag = InTouchControlFlag;
-	Parms.Pos = InPos;
-	Parms.ControlVector = InControlVector;
+	Parms.TouchControlFlag = TouchControlFlag;
+	Parms.Pos = Pos;
+	Parms.ControlVector = ControlVector;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2270,7 +3051,7 @@ void UVALUI_CharacterMovementStick_Mobile::OnFirstTouch()
 // float                              MovementValidDistanceTemp                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              WalkBoundaryDistanceTemp                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CharacterMovementStick_Mobile::InitMovementVirtualStack(const struct FVector2D& InDefaultPosition, float InValidTouchRadius, float InMovementValidDistanceTemp, float InWalkBoundaryDistanceTemp)
+void UVALUI_CharacterMovementStick_Mobile::InitMovementVirtualStack(const struct FVector2D& DefaultPosition, float ValidTouchRadius, float MovementValidDistanceTemp, float WalkBoundaryDistanceTemp)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2279,19 +3060,47 @@ void UVALUI_CharacterMovementStick_Mobile::InitMovementVirtualStack(const struct
 
 	Params::UVALUI_CharacterMovementStick_Mobile_InitMovementVirtualStack_Params Parms{};
 
-	Parms.DefaultPosition = InDefaultPosition;
-	Parms.ValidTouchRadius = InValidTouchRadius;
-	Parms.MovementValidDistanceTemp = InMovementValidDistanceTemp;
-	Parms.WalkBoundaryDistanceTemp = InWalkBoundaryDistanceTemp;
+	Parms.DefaultPosition = DefaultPosition;
+	Parms.ValidTouchRadius = ValidTouchRadius;
+	Parms.MovementValidDistanceTemp = MovementValidDistanceTemp;
+	Parms.WalkBoundaryDistanceTemp = WalkBoundaryDistanceTemp;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_ChatEmojiPanel
+// (None)
+
+class UClass* UVALUI_ChatEmojiPanel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ChatEmojiPanel");
+
+	return Clss;
+}
+
+
+// VALUI_ChatEmojiPanel ValeriaUI.Default__VALUI_ChatEmojiPanel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ChatEmojiPanel* UVALUI_ChatEmojiPanel::GetDefaultObj()
+{
+	static class UVALUI_ChatEmojiPanel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ChatEmojiPanel*>(UVALUI_ChatEmojiPanel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2301,7 +3110,7 @@ void UVALUI_CharacterMovementStick_Mobile::InitMovementVirtualStack(const struct
 // struct FS6UI_FRichImageRow_Soft    ImageRow                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // TSoftObjectPtr<class UTexture2D>   ReturnValue                                                      (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TSoftObjectPtr<class UTexture2D> UVALUI_ChatEmojiPanel::GetTexture(struct FS6UI_FRichImageRow_Soft& InImageRow)
+TSoftObjectPtr<class UTexture2D> UVALUI_ChatEmojiPanel::GetTexture(struct FS6UI_FRichImageRow_Soft& ImageRow)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2310,18 +3119,46 @@ TSoftObjectPtr<class UTexture2D> UVALUI_ChatEmojiPanel::GetTexture(struct FS6UI_
 
 	Params::UVALUI_ChatEmojiPanel_GetTexture_Params Parms{};
 
-	Parms.ImageRow = InImageRow;
+	Parms.ImageRow = ImageRow;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_ChatInputBar
+// (None)
+
+class UClass* UVALUI_ChatInputBar::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ChatInputBar");
+
+	return Clss;
+}
+
+
+// VALUI_ChatInputBar ValeriaUI.Default__VALUI_ChatInputBar
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ChatInputBar* UVALUI_ChatInputBar::GetDefaultObj()
+{
+	static class UVALUI_ChatInputBar* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ChatInputBar*>(UVALUI_ChatInputBar::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2332,7 +3169,7 @@ TSoftObjectPtr<class UTexture2D> UVALUI_ChatEmojiPanel::GetTexture(struct FS6UI_
 // class FText                        PreviousText                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class FText                        NewText                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::VALUIEvent_OnTextChanged__DelegateSignature(class UVALUI_ChatInputBar* InInputBar, class FText& InPreviousText, class FText& InNewText)
+void UVALUI_ChatInputBar::VALUIEvent_OnTextChanged__DelegateSignature(class UVALUI_ChatInputBar* InputBar, class FText& PreviousText, class FText& NewText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2341,9 +3178,9 @@ void UVALUI_ChatInputBar::VALUIEvent_OnTextChanged__DelegateSignature(class UVAL
 
 	Params::UVALUI_ChatInputBar_VALUIEvent_OnTextChanged__DelegateSignature_Params Parms{};
 
-	Parms.InputBar = InInputBar;
-	Parms.PreviousText = InPreviousText;
-	Parms.NewText = InNewText;
+	Parms.InputBar = InputBar;
+	Parms.PreviousText = PreviousText;
+	Parms.NewText = NewText;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2356,7 +3193,7 @@ void UVALUI_ChatInputBar::VALUIEvent_OnTextChanged__DelegateSignature(class UVAL
 // class UVALUI_ChatInputBar*         InputBar                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMessageTarget              MessageTarget                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::VALUIEvent_OnMessageTargetCycled__DelegateSignature(class UVALUI_ChatInputBar* InInputBar, struct FMessageTarget& InMessageTarget)
+void UVALUI_ChatInputBar::VALUIEvent_OnMessageTargetCycled__DelegateSignature(class UVALUI_ChatInputBar* InputBar, struct FMessageTarget& MessageTarget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2365,8 +3202,8 @@ void UVALUI_ChatInputBar::VALUIEvent_OnMessageTargetCycled__DelegateSignature(cl
 
 	Params::UVALUI_ChatInputBar_VALUIEvent_OnMessageTargetCycled__DelegateSignature_Params Parms{};
 
-	Parms.InputBar = InInputBar;
-	Parms.MessageTarget = InMessageTarget;
+	Parms.InputBar = InputBar;
+	Parms.MessageTarget = MessageTarget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2380,7 +3217,7 @@ void UVALUI_ChatInputBar::VALUIEvent_OnMessageTargetCycled__DelegateSignature(cl
 // struct FMessageTarget              MessageTarget                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FText                        Message                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::VALUIEvent_OnMessageSubmitted__DelegateSignature(class UVALUI_ChatInputBar* InInputBar, struct FMessageTarget& InMessageTarget, class FText& InMessage)
+void UVALUI_ChatInputBar::VALUIEvent_OnMessageSubmitted__DelegateSignature(class UVALUI_ChatInputBar* InputBar, struct FMessageTarget& MessageTarget, class FText& Message)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2389,9 +3226,9 @@ void UVALUI_ChatInputBar::VALUIEvent_OnMessageSubmitted__DelegateSignature(class
 
 	Params::UVALUI_ChatInputBar_VALUIEvent_OnMessageSubmitted__DelegateSignature_Params Parms{};
 
-	Parms.InputBar = InInputBar;
-	Parms.MessageTarget = InMessageTarget;
-	Parms.Message = InMessage;
+	Parms.InputBar = InputBar;
+	Parms.MessageTarget = MessageTarget;
+	Parms.Message = Message;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2403,7 +3240,7 @@ void UVALUI_ChatInputBar::VALUIEvent_OnMessageSubmitted__DelegateSignature(class
 // Parameters:
 // class UVALUI_ChatInputBar*         InputBar                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::VALUIEvent_OnCommitBlankText__DelegateSignature(class UVALUI_ChatInputBar* InInputBar)
+void UVALUI_ChatInputBar::VALUIEvent_OnCommitBlankText__DelegateSignature(class UVALUI_ChatInputBar* InputBar)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2412,7 +3249,7 @@ void UVALUI_ChatInputBar::VALUIEvent_OnCommitBlankText__DelegateSignature(class 
 
 	Params::UVALUI_ChatInputBar_VALUIEvent_OnCommitBlankText__DelegateSignature_Params Parms{};
 
-	Parms.InputBar = InInputBar;
+	Parms.InputBar = InputBar;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2425,7 +3262,7 @@ void UVALUI_ChatInputBar::VALUIEvent_OnCommitBlankText__DelegateSignature(class 
 // class FString                      InString                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UVAL_ChatCommand_Base*>CommandObjects                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::VALUIEvent_OnCommandSuggestionsChanged__DelegateSignature(const class FString& InInString, TArray<class UVAL_ChatCommand_Base*>& InCommandObjects)
+void UVALUI_ChatInputBar::VALUIEvent_OnCommandSuggestionsChanged__DelegateSignature(const class FString& InString, TArray<class UVAL_ChatCommand_Base*>& CommandObjects)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2434,8 +3271,8 @@ void UVALUI_ChatInputBar::VALUIEvent_OnCommandSuggestionsChanged__DelegateSignat
 
 	Params::UVALUI_ChatInputBar_VALUIEvent_OnCommandSuggestionsChanged__DelegateSignature_Params Parms{};
 
-	Parms.InString = InInString;
-	Parms.CommandObjects = InCommandObjects;
+	Parms.InString = InString;
+	Parms.CommandObjects = CommandObjects;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2456,13 +3293,13 @@ void UVALUI_ChatInputBar::TryUpdateChatChannel()
 	Params::UVALUI_ChatInputBar_TryUpdateChatChannel_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2472,7 +3309,7 @@ void UVALUI_ChatInputBar::TryUpdateChatChannel()
 // Parameters:
 // class FText                        InErrorText                                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::PushErrorNotification(class FText& InInErrorText)
+void UVALUI_ChatInputBar::PushErrorNotification(class FText& InErrorText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2481,7 +3318,7 @@ void UVALUI_ChatInputBar::PushErrorNotification(class FText& InInErrorText)
 
 	Params::UVALUI_ChatInputBar_PushErrorNotification_Params Parms{};
 
-	Parms.InErrorText = InInErrorText;
+	Parms.InErrorText = InErrorText;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2494,7 +3331,7 @@ void UVALUI_ChatInputBar::PushErrorNotification(class FText& InInErrorText)
 // class FText                        InText                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // enum class ETextCommit             InCommitMethod                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::HandleOnTextCommitted(class FText& InInText, enum class ETextCommit InInCommitMethod)
+void UVALUI_ChatInputBar::HandleOnTextCommitted(class FText& InText, enum class ETextCommit InCommitMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2503,16 +3340,16 @@ void UVALUI_ChatInputBar::HandleOnTextCommitted(class FText& InInText, enum clas
 
 	Params::UVALUI_ChatInputBar_HandleOnTextCommitted_Params Parms{};
 
-	Parms.InText = InInText;
-	Parms.InCommitMethod = InInCommitMethod;
+	Parms.InText = InText;
+	Parms.InCommitMethod = InCommitMethod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2522,7 +3359,7 @@ void UVALUI_ChatInputBar::HandleOnTextCommitted(class FText& InInText, enum clas
 // Parameters:
 // class FText                        InText                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::HandleOnTextChanged(class FText& InInText)
+void UVALUI_ChatInputBar::HandleOnTextChanged(class FText& InText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2531,15 +3368,15 @@ void UVALUI_ChatInputBar::HandleOnTextChanged(class FText& InInText)
 
 	Params::UVALUI_ChatInputBar_HandleOnTextChanged_Params Parms{};
 
-	Parms.InText = InInText;
+	Parms.InText = InText;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2549,7 +3386,7 @@ void UVALUI_ChatInputBar::HandleOnTextChanged(class FText& InInText)
 // Parameters:
 // enum class EVALUI_ChatInputBarStateNewStateId                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::HandleOnStateChanged(enum class EVALUI_ChatInputBarState InNewStateId)
+void UVALUI_ChatInputBar::HandleOnStateChanged(enum class EVALUI_ChatInputBarState NewStateId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2558,7 +3395,7 @@ void UVALUI_ChatInputBar::HandleOnStateChanged(enum class EVALUI_ChatInputBarSta
 
 	Params::UVALUI_ChatInputBar_HandleOnStateChanged_Params Parms{};
 
-	Parms.NewStateId = InNewStateId;
+	Parms.NewStateId = NewStateId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2579,13 +3416,13 @@ void UVALUI_ChatInputBar::HandleOnHideSuggestions()
 	Params::UVALUI_ChatInputBar_HandleOnHideSuggestions_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2596,7 +3433,7 @@ void UVALUI_ChatInputBar::HandleOnHideSuggestions()
 // class FString                      CharacterNameSubstr                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              MaxSuggestionsNum                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::HandleOnDisplayCharacterNameSuggestions(const class FString& InCharacterNameSubstr, int32 InMaxSuggestionsNum)
+void UVALUI_ChatInputBar::HandleOnDisplayCharacterNameSuggestions(const class FString& CharacterNameSubstr, int32 MaxSuggestionsNum)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2605,16 +3442,16 @@ void UVALUI_ChatInputBar::HandleOnDisplayCharacterNameSuggestions(const class FS
 
 	Params::UVALUI_ChatInputBar_HandleOnDisplayCharacterNameSuggestions_Params Parms{};
 
-	Parms.CharacterNameSubstr = InCharacterNameSubstr;
-	Parms.MaxSuggestionsNum = InMaxSuggestionsNum;
+	Parms.CharacterNameSubstr = CharacterNameSubstr;
+	Parms.MaxSuggestionsNum = MaxSuggestionsNum;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2624,7 +3461,7 @@ void UVALUI_ChatInputBar::HandleOnDisplayCharacterNameSuggestions(const class FS
 // Parameters:
 // struct FVALUI_ChatChannel          Channel                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::HandleOnChatChannelSet(struct FVALUI_ChatChannel& InChannel)
+void UVALUI_ChatInputBar::HandleOnChatChannelSet(struct FVALUI_ChatChannel& Channel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2633,7 +3470,7 @@ void UVALUI_ChatInputBar::HandleOnChatChannelSet(struct FVALUI_ChatChannel& InCh
 
 	Params::UVALUI_ChatInputBar_HandleOnChatChannelSet_Params Parms{};
 
-	Parms.Channel = InChannel;
+	Parms.Channel = Channel;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2655,13 +3492,13 @@ class FString UVALUI_ChatInputBar::GetCharacterName()
 	Params::UVALUI_ChatInputBar_GetCharacterName_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2674,7 +3511,7 @@ class FString UVALUI_ChatInputBar::GetCharacterName()
 // class FString                      InString                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>              Suggestions                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::DisplayStringsSuggestions(const class FString& InInString, TArray<class FString>& InSuggestions)
+void UVALUI_ChatInputBar::DisplayStringsSuggestions(const class FString& InString, TArray<class FString>& Suggestions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2683,8 +3520,8 @@ void UVALUI_ChatInputBar::DisplayStringsSuggestions(const class FString& InInStr
 
 	Params::UVALUI_ChatInputBar_DisplayStringsSuggestions_Params Parms{};
 
-	Parms.InString = InInString;
-	Parms.Suggestions = InSuggestions;
+	Parms.InString = InString;
+	Parms.Suggestions = Suggestions;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2696,7 +3533,7 @@ void UVALUI_ChatInputBar::DisplayStringsSuggestions(const class FString& InInStr
 // Parameters:
 // bool                               bInDisplay                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::DisplayCommandSuggestions(bool InbInDisplay)
+void UVALUI_ChatInputBar::DisplayCommandSuggestions(bool bInDisplay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2705,7 +3542,7 @@ void UVALUI_ChatInputBar::DisplayCommandSuggestions(bool InbInDisplay)
 
 	Params::UVALUI_ChatInputBar_DisplayCommandSuggestions_Params Parms{};
 
-	Parms.bInDisplay = InbInDisplay;
+	Parms.bInDisplay = bInDisplay;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2718,7 +3555,7 @@ void UVALUI_ChatInputBar::DisplayCommandSuggestions(bool InbInDisplay)
 // class UVAL_ChatCommand_Base*       Command                                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bDisplay                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputBar::DisplayActiveCommandHint(class UVAL_ChatCommand_Base* InCommand, bool InbDisplay)
+void UVALUI_ChatInputBar::DisplayActiveCommandHint(class UVAL_ChatCommand_Base* Command, bool bDisplay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2727,8 +3564,8 @@ void UVALUI_ChatInputBar::DisplayActiveCommandHint(class UVAL_ChatCommand_Base* 
 
 	Params::UVALUI_ChatInputBar_DisplayActiveCommandHint_Params Parms{};
 
-	Parms.Command = InCommand;
-	Parms.bDisplay = InbDisplay;
+	Parms.Command = Command;
+	Parms.bDisplay = bDisplay;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2798,7 +3635,7 @@ void UVALUI_ChatInputBar::CompleteSuggestion()
 // struct FMessageTarget              MessageTarget                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_ChatInputBar::ChangeMessageTarget(struct FMessageTarget& InMessageTarget)
+bool UVALUI_ChatInputBar::ChangeMessageTarget(struct FMessageTarget& MessageTarget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2807,18 +3644,74 @@ bool UVALUI_ChatInputBar::ChangeMessageTarget(struct FMessageTarget& InMessageTa
 
 	Params::UVALUI_ChatInputBar_ChangeMessageTarget_Params Parms{};
 
-	Parms.MessageTarget = InMessageTarget;
+	Parms.MessageTarget = MessageTarget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_EditableRichText_Styled
+// (None)
+
+class UClass* UVALUI_EditableRichText_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_EditableRichText_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_EditableRichText_Styled ValeriaUI.Default__VALUI_EditableRichText_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_EditableRichText_Styled* UVALUI_EditableRichText_Styled::GetDefaultObj()
+{
+	static class UVALUI_EditableRichText_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_EditableRichText_Styled*>(UVALUI_EditableRichText_Styled::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_ChatInputEditableText
+// (None)
+
+class UClass* UVALUI_ChatInputEditableText::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ChatInputEditableText");
+
+	return Clss;
+}
+
+
+// VALUI_ChatInputEditableText ValeriaUI.Default__VALUI_ChatInputEditableText
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ChatInputEditableText* UVALUI_ChatInputEditableText::GetDefaultObj()
+{
+	static class UVALUI_ChatInputEditableText* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ChatInputEditableText*>(UVALUI_ChatInputEditableText::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2828,7 +3721,7 @@ bool UVALUI_ChatInputBar::ChangeMessageTarget(struct FMessageTarget& InMessageTa
 // struct FGeometry                   Geometry                                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // struct FPointerEvent               MouseEvent                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputEditableText::VALUI_OnSummonContextMenu__DelegateSignature(struct FGeometry& InGeometry, struct FPointerEvent& InMouseEvent)
+void UVALUI_ChatInputEditableText::VALUI_OnSummonContextMenu__DelegateSignature(struct FGeometry& Geometry, struct FPointerEvent& MouseEvent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2837,8 +3730,8 @@ void UVALUI_ChatInputEditableText::VALUI_OnSummonContextMenu__DelegateSignature(
 
 	Params::UVALUI_ChatInputEditableText_VALUI_OnSummonContextMenu__DelegateSignature_Params Parms{};
 
-	Parms.Geometry = InGeometry;
-	Parms.MouseEvent = InMouseEvent;
+	Parms.Geometry = Geometry;
+	Parms.MouseEvent = MouseEvent;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2850,7 +3743,7 @@ void UVALUI_ChatInputEditableText::VALUI_OnSummonContextMenu__DelegateSignature(
 // Parameters:
 // class FString                      StyleTagString                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputEditableText::StyleSelectedText(const class FString& InStyleTagString)
+void UVALUI_ChatInputEditableText::StyleSelectedText(const class FString& StyleTagString)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2859,15 +3752,15 @@ void UVALUI_ChatInputEditableText::StyleSelectedText(const class FString& InStyl
 
 	Params::UVALUI_ChatInputEditableText_StyleSelectedText_Params Parms{};
 
-	Parms.StyleTagString = InStyleTagString;
+	Parms.StyleTagString = StyleTagString;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2886,13 +3779,13 @@ void UVALUI_ChatInputEditableText::PasteTextFromClipboardChecked()
 	Params::UVALUI_ChatInputEditableText_PasteTextFromClipboardChecked_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2911,13 +3804,13 @@ void UVALUI_ChatInputEditableText::MakeSelectedTextPlain()
 	Params::UVALUI_ChatInputEditableText_MakeSelectedTextPlain_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2936,13 +3829,13 @@ void UVALUI_ChatInputEditableText::MakeSelectedTextItalic()
 	Params::UVALUI_ChatInputEditableText_MakeSelectedTextItalic_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2961,13 +3854,13 @@ void UVALUI_ChatInputEditableText::MakeSelectedTextBold()
 	Params::UVALUI_ChatInputEditableText_MakeSelectedTextBold_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2977,7 +3870,7 @@ void UVALUI_ChatInputEditableText::MakeSelectedTextBold()
 // Parameters:
 // class FText                        InText                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatInputEditableText::InsertTextAtCursorChecked(class FText& InInText)
+void UVALUI_ChatInputEditableText::InsertTextAtCursorChecked(class FText& InText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2986,16 +3879,44 @@ void UVALUI_ChatInputEditableText::InsertTextAtCursorChecked(class FText& InInTe
 
 	Params::UVALUI_ChatInputEditableText_InsertTextAtCursorChecked_Params Parms{};
 
-	Parms.InText = InInText;
+	Parms.InText = InText;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_ChatMessage
+// (None)
+
+class UClass* UVALUI_ChatMessage::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ChatMessage");
+
+	return Clss;
+}
+
+
+// VALUI_ChatMessage ValeriaUI.Default__VALUI_ChatMessage
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ChatMessage* UVALUI_ChatMessage::GetDefaultObj()
+{
+	static class UVALUI_ChatMessage* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ChatMessage*>(UVALUI_ChatMessage::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3014,13 +3935,13 @@ class FString UVALUI_ChatMessage::GetTimeZone()
 	Params::UVALUI_ChatMessage_GetTimeZone_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3033,7 +3954,7 @@ class FString UVALUI_ChatMessage::GetTimeZone()
 // struct FLinearColor                Color                                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UVALUI_ChatMessage::ColorToHexString(struct FLinearColor& InColor)
+class FString UVALUI_ChatMessage::ColorToHexString(struct FLinearColor& Color)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3042,18 +3963,46 @@ class FString UVALUI_ChatMessage::ColorToHexString(struct FLinearColor& InColor)
 
 	Params::UVALUI_ChatMessage_ColorToHexString_Params Parms{};
 
-	Parms.Color = InColor;
+	Parms.Color = Color;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_ChatPanelBase
+// (None)
+
+class UClass* UVALUI_ChatPanelBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ChatPanelBase");
+
+	return Clss;
+}
+
+
+// VALUI_ChatPanelBase ValeriaUI.Default__VALUI_ChatPanelBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ChatPanelBase* UVALUI_ChatPanelBase::GetDefaultObj()
+{
+	static class UVALUI_ChatPanelBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ChatPanelBase*>(UVALUI_ChatPanelBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3065,7 +4014,7 @@ class FString UVALUI_ChatMessage::ColorToHexString(struct FLinearColor& InColor)
 // struct FVALUI_ChatChannel          OutChannel                                                       (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_ChatPanelBase::TryGetTabAndChannelFromMessageConfig(struct FVALUI_ChatMessageConfig& InConfig, struct FVALUI_ChatTab* InOutTab, struct FVALUI_ChatChannel* InOutChannel)
+bool UVALUI_ChatPanelBase::TryGetTabAndChannelFromMessageConfig(struct FVALUI_ChatMessageConfig& Config, struct FVALUI_ChatTab* OutTab, struct FVALUI_ChatChannel* OutChannel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3074,21 +4023,21 @@ bool UVALUI_ChatPanelBase::TryGetTabAndChannelFromMessageConfig(struct FVALUI_Ch
 
 	Params::UVALUI_ChatPanelBase_TryGetTabAndChannelFromMessageConfig_Params Parms{};
 
-	Parms.Config = InConfig;
+	Parms.Config = Config;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutTab != nullptr)
-		*InOutTab = Parms.OutTab;
+	if (OutTab != nullptr)
+		*OutTab = std::move(Parms.OutTab);
 
-	if (InOutChannel != nullptr)
-		*InOutChannel = Parms.OutChannel;
+	if (OutChannel != nullptr)
+		*OutChannel = std::move(Parms.OutChannel);
 
 	return Parms.ReturnValue;
 
@@ -3100,7 +4049,7 @@ bool UVALUI_ChatPanelBase::TryGetTabAndChannelFromMessageConfig(struct FVALUI_Ch
 // Parameters:
 // struct FVALUI_ChatMessageConfig    MessageConfig                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::ToggleChatChannel(struct FVALUI_ChatMessageConfig& InMessageConfig)
+void UVALUI_ChatPanelBase::ToggleChatChannel(struct FVALUI_ChatMessageConfig& MessageConfig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3109,15 +4058,15 @@ void UVALUI_ChatPanelBase::ToggleChatChannel(struct FVALUI_ChatMessageConfig& In
 
 	Params::UVALUI_ChatPanelBase_ToggleChatChannel_Params Parms{};
 
-	Parms.MessageConfig = InMessageConfig;
+	Parms.MessageConfig = MessageConfig;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3128,7 +4077,7 @@ void UVALUI_ChatPanelBase::ToggleChatChannel(struct FVALUI_ChatMessageConfig& In
 // bool                               bEnabled                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EMessageTargetType      Type                                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::ToggleChannelsByType(bool InbEnabled, enum class EMessageTargetType InType)
+void UVALUI_ChatPanelBase::ToggleChannelsByType(bool bEnabled, enum class EMessageTargetType Type)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3137,16 +4086,16 @@ void UVALUI_ChatPanelBase::ToggleChannelsByType(bool InbEnabled, enum class EMes
 
 	Params::UVALUI_ChatPanelBase_ToggleChannelsByType_Params Parms{};
 
-	Parms.bEnabled = InbEnabled;
-	Parms.Type = InType;
+	Parms.bEnabled = bEnabled;
+	Parms.Type = Type;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3156,7 +4105,7 @@ void UVALUI_ChatPanelBase::ToggleChannelsByType(bool InbEnabled, enum class EMes
 // Parameters:
 // bool                               bEnabled                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::ToggleAllChannels(bool InbEnabled)
+void UVALUI_ChatPanelBase::ToggleAllChannels(bool bEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3165,15 +4114,15 @@ void UVALUI_ChatPanelBase::ToggleAllChannels(bool InbEnabled)
 
 	Params::UVALUI_ChatPanelBase_ToggleAllChannels_Params Parms{};
 
-	Parms.bEnabled = InbEnabled;
+	Parms.bEnabled = bEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3183,7 +4132,7 @@ void UVALUI_ChatPanelBase::ToggleAllChannels(bool InbEnabled)
 // Parameters:
 // class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::SwitchTab(class FName& InTabName)
+void UVALUI_ChatPanelBase::SwitchTab(class FName& TabName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3192,15 +4141,15 @@ void UVALUI_ChatPanelBase::SwitchTab(class FName& InTabName)
 
 	Params::UVALUI_ChatPanelBase_SwitchTab_Params Parms{};
 
-	Parms.TabName = InTabName;
+	Parms.TabName = TabName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3211,7 +4160,7 @@ void UVALUI_ChatPanelBase::SwitchTab(class FName& InTabName)
 // struct FVALUI_ChatTab              Tab                                                              (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // int32                              ChannelIndex                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::RemoveTabChannel(struct FVALUI_ChatTab* InTab, int32 InChannelIndex)
+void UVALUI_ChatPanelBase::RemoveTabChannel(struct FVALUI_ChatTab* Tab, int32 ChannelIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3220,18 +4169,18 @@ void UVALUI_ChatPanelBase::RemoveTabChannel(struct FVALUI_ChatTab* InTab, int32 
 
 	Params::UVALUI_ChatPanelBase_RemoveTabChannel_Params Parms{};
 
-	Parms.ChannelIndex = InChannelIndex;
+	Parms.ChannelIndex = ChannelIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InTab != nullptr)
-		*InTab = Parms.Tab;
+	if (Tab != nullptr)
+		*Tab = std::move(Parms.Tab);
 
 }
 
@@ -3241,7 +4190,7 @@ void UVALUI_ChatPanelBase::RemoveTabChannel(struct FVALUI_ChatTab* InTab, int32 
 // Parameters:
 // struct FValeriaChatMessage         ChatMessage                                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::OnNewChatMessageAdded(struct FValeriaChatMessage& InChatMessage)
+void UVALUI_ChatPanelBase::OnNewChatMessageAdded(struct FValeriaChatMessage& ChatMessage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3250,7 +4199,7 @@ void UVALUI_ChatPanelBase::OnNewChatMessageAdded(struct FValeriaChatMessage& InC
 
 	Params::UVALUI_ChatPanelBase_OnNewChatMessageAdded_Params Parms{};
 
-	Parms.ChatMessage = InChatMessage;
+	Parms.ChatMessage = ChatMessage;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3262,7 +4211,7 @@ void UVALUI_ChatPanelBase::OnNewChatMessageAdded(struct FValeriaChatMessage& InC
 // Parameters:
 // bool                               bEnabled                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleToggleTabHost(bool InbEnabled)
+void UVALUI_ChatPanelBase::HandleToggleTabHost(bool bEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3271,7 +4220,7 @@ void UVALUI_ChatPanelBase::HandleToggleTabHost(bool InbEnabled)
 
 	Params::UVALUI_ChatPanelBase_HandleToggleTabHost_Params Parms{};
 
-	Parms.bEnabled = InbEnabled;
+	Parms.bEnabled = bEnabled;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3285,7 +4234,7 @@ void UVALUI_ChatPanelBase::HandleToggleTabHost(bool InbEnabled)
 // struct FVALUI_ChatChannel          Channel                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FVALUI_ChatMessageConfig    Config                                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleTabChannelEnabled(struct FVALUI_ChatTab& InTab, struct FVALUI_ChatChannel& InChannel, struct FVALUI_ChatMessageConfig& InConfig)
+void UVALUI_ChatPanelBase::HandleTabChannelEnabled(struct FVALUI_ChatTab& Tab, struct FVALUI_ChatChannel& Channel, struct FVALUI_ChatMessageConfig& Config)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3294,9 +4243,9 @@ void UVALUI_ChatPanelBase::HandleTabChannelEnabled(struct FVALUI_ChatTab& InTab,
 
 	Params::UVALUI_ChatPanelBase_HandleTabChannelEnabled_Params Parms{};
 
-	Parms.Tab = InTab;
-	Parms.Channel = InChannel;
-	Parms.Config = InConfig;
+	Parms.Tab = Tab;
+	Parms.Channel = Channel;
+	Parms.Config = Config;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3309,7 +4258,7 @@ void UVALUI_ChatPanelBase::HandleTabChannelEnabled(struct FVALUI_ChatTab& InTab,
 // class UWidget*                     SidePanel                                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ChannelIndex                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleRemoveSidePanelChannel(class UWidget* InSidePanel, int32 InChannelIndex)
+void UVALUI_ChatPanelBase::HandleRemoveSidePanelChannel(class UWidget* SidePanel, int32 ChannelIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3318,8 +4267,8 @@ void UVALUI_ChatPanelBase::HandleRemoveSidePanelChannel(class UWidget* InSidePan
 
 	Params::UVALUI_ChatPanelBase_HandleRemoveSidePanelChannel_Params Parms{};
 
-	Parms.SidePanel = InSidePanel;
-	Parms.ChannelIndex = InChannelIndex;
+	Parms.SidePanel = SidePanel;
+	Parms.ChannelIndex = ChannelIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3331,7 +4280,7 @@ void UVALUI_ChatPanelBase::HandleRemoveSidePanelChannel(class UWidget* InSidePan
 // Parameters:
 // enum class EVALUI_ChatPanelState   State                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleOnStateChanged(enum class EVALUI_ChatPanelState InState)
+void UVALUI_ChatPanelBase::HandleOnStateChanged(enum class EVALUI_ChatPanelState State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3340,7 +4289,7 @@ void UVALUI_ChatPanelBase::HandleOnStateChanged(enum class EVALUI_ChatPanelState
 
 	Params::UVALUI_ChatPanelBase_HandleOnStateChanged_Params Parms{};
 
-	Parms.State = InState;
+	Parms.State = State;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3352,7 +4301,7 @@ void UVALUI_ChatPanelBase::HandleOnStateChanged(enum class EVALUI_ChatPanelState
 // Parameters:
 // class APawn*                       Pawn                                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleOnPawnChanged(class APawn* InPawn)
+void UVALUI_ChatPanelBase::HandleOnPawnChanged(class APawn* Pawn)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3361,15 +4310,15 @@ void UVALUI_ChatPanelBase::HandleOnPawnChanged(class APawn* InPawn)
 
 	Params::UVALUI_ChatPanelBase_HandleOnPawnChanged_Params Parms{};
 
-	Parms.Pawn = InPawn;
+	Parms.Pawn = Pawn;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3379,7 +4328,7 @@ void UVALUI_ChatPanelBase::HandleOnPawnChanged(class APawn* InPawn)
 // Parameters:
 // struct FMessageTarget              MessageTarget                                                    (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleNewMessageTarget(const struct FMessageTarget& InMessageTarget)
+void UVALUI_ChatPanelBase::HandleNewMessageTarget(const struct FMessageTarget& MessageTarget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3388,15 +4337,15 @@ void UVALUI_ChatPanelBase::HandleNewMessageTarget(const struct FMessageTarget& I
 
 	Params::UVALUI_ChatPanelBase_HandleNewMessageTarget_Params Parms{};
 
-	Parms.MessageTarget = InMessageTarget;
+	Parms.MessageTarget = MessageTarget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3406,7 +4355,7 @@ void UVALUI_ChatPanelBase::HandleNewMessageTarget(const struct FMessageTarget& I
 // Parameters:
 // struct FControlMessage             ControlMessage                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleNewControlMessage(struct FControlMessage& InControlMessage)
+void UVALUI_ChatPanelBase::HandleNewControlMessage(struct FControlMessage& ControlMessage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3415,7 +4364,7 @@ void UVALUI_ChatPanelBase::HandleNewControlMessage(struct FControlMessage& InCon
 
 	Params::UVALUI_ChatPanelBase_HandleNewControlMessage_Params Parms{};
 
-	Parms.ControlMessage = InControlMessage;
+	Parms.ControlMessage = ControlMessage;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3427,7 +4376,7 @@ void UVALUI_ChatPanelBase::HandleNewControlMessage(struct FControlMessage& InCon
 // Parameters:
 // struct FValeriaChatMessage         ChatMessage                                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleNewChatMessage(struct FValeriaChatMessage& InChatMessage)
+void UVALUI_ChatPanelBase::HandleNewChatMessage(struct FValeriaChatMessage& ChatMessage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3436,15 +4385,15 @@ void UVALUI_ChatPanelBase::HandleNewChatMessage(struct FValeriaChatMessage& InCh
 
 	Params::UVALUI_ChatPanelBase_HandleNewChatMessage_Params Parms{};
 
-	Parms.ChatMessage = InChatMessage;
+	Parms.ChatMessage = ChatMessage;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3454,7 +4403,7 @@ void UVALUI_ChatPanelBase::HandleNewChatMessage(struct FValeriaChatMessage& InCh
 // Parameters:
 // struct FMessageTarget              MessageTarget                                                    (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleMessageTargetRemoved(const struct FMessageTarget& InMessageTarget)
+void UVALUI_ChatPanelBase::HandleMessageTargetRemoved(const struct FMessageTarget& MessageTarget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3463,15 +4412,15 @@ void UVALUI_ChatPanelBase::HandleMessageTargetRemoved(const struct FMessageTarge
 
 	Params::UVALUI_ChatPanelBase_HandleMessageTargetRemoved_Params Parms{};
 
-	Parms.MessageTarget = InMessageTarget;
+	Parms.MessageTarget = MessageTarget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3481,7 +4430,7 @@ void UVALUI_ChatPanelBase::HandleMessageTargetRemoved(const struct FMessageTarge
 // Parameters:
 // class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleDisplayTab(class FName& InTabName)
+void UVALUI_ChatPanelBase::HandleDisplayTab(class FName& TabName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3490,7 +4439,7 @@ void UVALUI_ChatPanelBase::HandleDisplayTab(class FName& InTabName)
 
 	Params::UVALUI_ChatPanelBase_HandleDisplayTab_Params Parms{};
 
-	Parms.TabName = InTabName;
+	Parms.TabName = TabName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3504,7 +4453,7 @@ void UVALUI_ChatPanelBase::HandleDisplayTab(class FName& InTabName)
 // struct FVALUI_ChatChannel          Channel                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                              ChannelIndex                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleDisplayChannelGlow(class UWidget* InSidePanel, struct FVALUI_ChatChannel& InChannel, int32 InChannelIndex)
+void UVALUI_ChatPanelBase::HandleDisplayChannelGlow(class UWidget* SidePanel, struct FVALUI_ChatChannel& Channel, int32 ChannelIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3513,9 +4462,9 @@ void UVALUI_ChatPanelBase::HandleDisplayChannelGlow(class UWidget* InSidePanel, 
 
 	Params::UVALUI_ChatPanelBase_HandleDisplayChannelGlow_Params Parms{};
 
-	Parms.SidePanel = InSidePanel;
-	Parms.Channel = InChannel;
-	Parms.ChannelIndex = InChannelIndex;
+	Parms.SidePanel = SidePanel;
+	Parms.Channel = Channel;
+	Parms.ChannelIndex = ChannelIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3546,7 +4495,7 @@ void UVALUI_ChatPanelBase::HandleClearTabHost()
 // Parameters:
 // class UWidget*                     MessagePanel                                                     (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleClearMessagePanel(class UWidget* InMessagePanel)
+void UVALUI_ChatPanelBase::HandleClearMessagePanel(class UWidget* MessagePanel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3555,7 +4504,7 @@ void UVALUI_ChatPanelBase::HandleClearMessagePanel(class UWidget* InMessagePanel
 
 	Params::UVALUI_ChatPanelBase_HandleClearMessagePanel_Params Parms{};
 
-	Parms.MessagePanel = InMessagePanel;
+	Parms.MessagePanel = MessagePanel;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3568,7 +4517,7 @@ void UVALUI_ChatPanelBase::HandleClearMessagePanel(class UWidget* InMessagePanel
 // class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FText                        TabDisplayName                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleAddTabToTabHost(class FName& InTabName, class FText& InTabDisplayName)
+void UVALUI_ChatPanelBase::HandleAddTabToTabHost(class FName& TabName, class FText& TabDisplayName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3577,8 +4526,8 @@ void UVALUI_ChatPanelBase::HandleAddTabToTabHost(class FName& InTabName, class F
 
 	Params::UVALUI_ChatPanelBase_HandleAddTabToTabHost_Params Parms{};
 
-	Parms.TabName = InTabName;
-	Parms.TabDisplayName = InTabDisplayName;
+	Parms.TabName = TabName;
+	Parms.TabDisplayName = TabDisplayName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3590,7 +4539,7 @@ void UVALUI_ChatPanelBase::HandleAddTabToTabHost(class FName& InTabName, class F
 // Parameters:
 // struct FVALUI_ChatMessageConfig    MessageConfig                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleAddTabChannel(struct FVALUI_ChatMessageConfig& InMessageConfig)
+void UVALUI_ChatPanelBase::HandleAddTabChannel(struct FVALUI_ChatMessageConfig& MessageConfig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3599,7 +4548,7 @@ void UVALUI_ChatPanelBase::HandleAddTabChannel(struct FVALUI_ChatMessageConfig& 
 
 	Params::UVALUI_ChatPanelBase_HandleAddTabChannel_Params Parms{};
 
-	Parms.MessageConfig = InMessageConfig;
+	Parms.MessageConfig = MessageConfig;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3613,7 +4562,7 @@ void UVALUI_ChatPanelBase::HandleAddTabChannel(struct FVALUI_ChatMessageConfig& 
 // struct FValeriaChatMessage         ChatMessage                                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FVALUI_ChatMessageConfig    MessageConfig                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::HandleAddMessageToPanel(class UWidget* InMessagePanel, struct FValeriaChatMessage& InChatMessage, struct FVALUI_ChatMessageConfig& InMessageConfig)
+void UVALUI_ChatPanelBase::HandleAddMessageToPanel(class UWidget* MessagePanel, struct FValeriaChatMessage& ChatMessage, struct FVALUI_ChatMessageConfig& MessageConfig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3622,9 +4571,9 @@ void UVALUI_ChatPanelBase::HandleAddMessageToPanel(class UWidget* InMessagePanel
 
 	Params::UVALUI_ChatPanelBase_HandleAddMessageToPanel_Params Parms{};
 
-	Parms.MessagePanel = InMessagePanel;
-	Parms.ChatMessage = InChatMessage;
-	Parms.MessageConfig = InMessageConfig;
+	Parms.MessagePanel = MessagePanel;
+	Parms.ChatMessage = ChatMessage;
+	Parms.MessageConfig = MessageConfig;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3636,7 +4585,7 @@ void UVALUI_ChatPanelBase::HandleAddMessageToPanel(class UWidget* InMessagePanel
 // Parameters:
 // enum class EVALUI_ChatPanelState   State                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::GotoChatState(enum class EVALUI_ChatPanelState InState)
+void UVALUI_ChatPanelBase::GotoChatState(enum class EVALUI_ChatPanelState State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3645,15 +4594,15 @@ void UVALUI_ChatPanelBase::GotoChatState(enum class EVALUI_ChatPanelState InStat
 
 	Params::UVALUI_ChatPanelBase_GotoChatState_Params Parms{};
 
-	Parms.State = InState;
+	Parms.State = State;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3665,7 +4614,7 @@ void UVALUI_ChatPanelBase::GotoChatState(enum class EVALUI_ChatPanelState InStat
 // class UWidget*                     OutSidePanelWidget                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWidget*                     OutMessagePanelWidget                                            (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::GetTabWidgetReferences(class FName& InTabName, class UWidget** InOutSidePanelWidget, class UWidget** InOutMessagePanelWidget)
+void UVALUI_ChatPanelBase::GetTabWidgetReferences(class FName& TabName, class UWidget** OutSidePanelWidget, class UWidget** OutMessagePanelWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3674,15 +4623,15 @@ void UVALUI_ChatPanelBase::GetTabWidgetReferences(class FName& InTabName, class 
 
 	Params::UVALUI_ChatPanelBase_GetTabWidgetReferences_Params Parms{};
 
-	Parms.TabName = InTabName;
+	Parms.TabName = TabName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InOutSidePanelWidget != nullptr)
-		*InOutSidePanelWidget = Parms.OutSidePanelWidget;
+	if (OutSidePanelWidget != nullptr)
+		*OutSidePanelWidget = Parms.OutSidePanelWidget;
 
-	if (InOutMessagePanelWidget != nullptr)
-		*InOutMessagePanelWidget = Parms.OutMessagePanelWidget;
+	if (OutMessagePanelWidget != nullptr)
+		*OutMessagePanelWidget = Parms.OutMessagePanelWidget;
 
 }
 
@@ -3702,13 +4651,13 @@ enum class EVALUI_ChatPanelState UVALUI_ChatPanelBase::GetCurrentChatState()
 	Params::UVALUI_ChatPanelBase_GetCurrentChatState_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3721,7 +4670,7 @@ enum class EVALUI_ChatPanelState UVALUI_ChatPanelBase::GetCurrentChatState()
 // struct FValeriaChatMessage         Message                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FVALUI_ChatMessageConfig>OutMessageConfigs                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::GetChatMessageConfigs(struct FValeriaChatMessage& InMessage, TArray<struct FVALUI_ChatMessageConfig>* InOutMessageConfigs)
+void UVALUI_ChatPanelBase::GetChatMessageConfigs(struct FValeriaChatMessage& Message, TArray<struct FVALUI_ChatMessageConfig>* OutMessageConfigs)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3730,18 +4679,18 @@ void UVALUI_ChatPanelBase::GetChatMessageConfigs(struct FValeriaChatMessage& InM
 
 	Params::UVALUI_ChatPanelBase_GetChatMessageConfigs_Params Parms{};
 
-	Parms.Message = InMessage;
+	Parms.Message = Message;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutMessageConfigs != nullptr)
-		*InOutMessageConfigs = Parms.OutMessageConfigs;
+	if (OutMessageConfigs != nullptr)
+		*OutMessageConfigs = std::move(Parms.OutMessageConfigs);
 
 }
 
@@ -3751,7 +4700,7 @@ void UVALUI_ChatPanelBase::GetChatMessageConfigs(struct FValeriaChatMessage& InM
 // Parameters:
 // class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::DisplayTab(class FName& InTabName)
+void UVALUI_ChatPanelBase::DisplayTab(class FName& TabName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3760,15 +4709,15 @@ void UVALUI_ChatPanelBase::DisplayTab(class FName& InTabName)
 
 	Params::UVALUI_ChatPanelBase_DisplayTab_Params Parms{};
 
-	Parms.TabName = InTabName;
+	Parms.TabName = TabName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3778,7 +4727,7 @@ void UVALUI_ChatPanelBase::DisplayTab(class FName& InTabName)
 // Parameters:
 // struct FVALUI_ChatTab              Tab                                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UVALUI_ChatPanelBase::ClearTabSidePanel(struct FVALUI_ChatTab& InTab)
+void UVALUI_ChatPanelBase::ClearTabSidePanel(struct FVALUI_ChatTab& Tab)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3787,10 +4736,38 @@ void UVALUI_ChatPanelBase::ClearTabSidePanel(struct FVALUI_ChatTab& InTab)
 
 	Params::UVALUI_ChatPanelBase_ClearTabSidePanel_Params Parms{};
 
-	Parms.Tab = InTab;
+	Parms.Tab = Tab;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VALUI_ChatStatics
+// (None)
+
+class UClass* UVALUI_ChatStatics::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ChatStatics");
+
+	return Clss;
+}
+
+
+// VALUI_ChatStatics ValeriaUI.Default__VALUI_ChatStatics
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ChatStatics* UVALUI_ChatStatics::GetDefaultObj()
+{
+	static class UVALUI_ChatStatics* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ChatStatics*>(UVALUI_ChatStatics::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3801,7 +4778,7 @@ void UVALUI_ChatPanelBase::ClearTabSidePanel(struct FVALUI_ChatTab& InTab)
 // struct FVALUI_ChatChannel          InChannel                                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FMessageTarget>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FMessageTarget> UVALUI_ChatStatics::GetMessageTargetsOfChannel(class UWorld* InWorldContext, struct FVALUI_ChatChannel& InInChannel)
+TArray<struct FMessageTarget> UVALUI_ChatStatics::GetMessageTargetsOfChannel(class UWorld* WorldContext, struct FVALUI_ChatChannel& InChannel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3810,16 +4787,16 @@ TArray<struct FMessageTarget> UVALUI_ChatStatics::GetMessageTargetsOfChannel(cla
 
 	Params::UVALUI_ChatStatics_GetMessageTargetsOfChannel_Params Parms{};
 
-	Parms.WorldContext = InWorldContext;
-	Parms.InChannel = InInChannel;
+	Parms.WorldContext = WorldContext;
+	Parms.InChannel = InChannel;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3833,7 +4810,7 @@ TArray<struct FMessageTarget> UVALUI_ChatStatics::GetMessageTargetsOfChannel(cla
 // struct FMessageTarget              InMessageTarget                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_ChatStatics::DoesChannelMatchMessageTarget(struct FVALUI_ChatChannel& InInChannel, struct FMessageTarget& InInMessageTarget)
+bool UVALUI_ChatStatics::DoesChannelMatchMessageTarget(struct FVALUI_ChatChannel& InChannel, struct FMessageTarget& InMessageTarget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3842,16 +4819,16 @@ bool UVALUI_ChatStatics::DoesChannelMatchMessageTarget(struct FVALUI_ChatChannel
 
 	Params::UVALUI_ChatStatics_DoesChannelMatchMessageTarget_Params Parms{};
 
-	Parms.InChannel = InInChannel;
-	Parms.InMessageTarget = InInMessageTarget;
+	Parms.InChannel = InChannel;
+	Parms.InMessageTarget = InMessageTarget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3864,7 +4841,7 @@ bool UVALUI_ChatStatics::DoesChannelMatchMessageTarget(struct FVALUI_ChatChannel
 // struct FValeriaChatMessage         ChatMessages                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FS6PLAT_ChatMessage         ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FS6PLAT_ChatMessage UVALUI_ChatStatics::ConvertValeriaChatMessageToPlatformChatMessage(struct FValeriaChatMessage& InChatMessages)
+struct FS6PLAT_ChatMessage UVALUI_ChatStatics::ConvertValeriaChatMessageToPlatformChatMessage(struct FValeriaChatMessage& ChatMessages)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3873,15 +4850,15 @@ struct FS6PLAT_ChatMessage UVALUI_ChatStatics::ConvertValeriaChatMessageToPlatfo
 
 	Params::UVALUI_ChatStatics_ConvertValeriaChatMessageToPlatformChatMessage_Params Parms{};
 
-	Parms.ChatMessages = InChatMessages;
+	Parms.ChatMessages = ChatMessages;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3894,7 +4871,7 @@ struct FS6PLAT_ChatMessage UVALUI_ChatStatics::ConvertValeriaChatMessageToPlatfo
 // TArray<struct FValeriaChatMessage> ChatMessages                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FS6PLAT_ChatMessage> ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FS6PLAT_ChatMessage> UVALUI_ChatStatics::ConvertValeriaChatMessagesArrayToPlatformChatMessagesArray(TArray<struct FValeriaChatMessage>& InChatMessages)
+TArray<struct FS6PLAT_ChatMessage> UVALUI_ChatStatics::ConvertValeriaChatMessagesArrayToPlatformChatMessagesArray(TArray<struct FValeriaChatMessage>& ChatMessages)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3903,18 +4880,46 @@ TArray<struct FS6PLAT_ChatMessage> UVALUI_ChatStatics::ConvertValeriaChatMessage
 
 	Params::UVALUI_ChatStatics_ConvertValeriaChatMessagesArrayToPlatformChatMessagesArray_Params Parms{};
 
-	Parms.ChatMessages = InChatMessages;
+	Parms.ChatMessages = ChatMessages;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_CheckBoxStyle
+// (None)
+
+class UClass* UVALUI_CheckBoxStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_CheckBoxStyle");
+
+	return Clss;
+}
+
+
+// VALUI_CheckBoxStyle ValeriaUI.Default__VALUI_CheckBoxStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_CheckBoxStyle* UVALUI_CheckBoxStyle::GetDefaultObj()
+{
+	static class UVALUI_CheckBoxStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_CheckBoxStyle*>(UVALUI_CheckBoxStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3923,7 +4928,7 @@ TArray<struct FS6PLAT_ChatMessage> UVALUI_ChatStatics::ConvertValeriaChatMessage
 // Parameters:
 // class UCheckBox*                   CheckBox                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CheckBoxStyle::Apply(class UCheckBox* InCheckBox)
+void UVALUI_CheckBoxStyle::Apply(class UCheckBox* CheckBox)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3932,16 +4937,44 @@ void UVALUI_CheckBoxStyle::Apply(class UCheckBox* InCheckBox)
 
 	Params::UVALUI_CheckBoxStyle_Apply_Params Parms{};
 
-	Parms.CheckBox = InCheckBox;
+	Parms.CheckBox = CheckBox;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_CheckBox_Styled
+// (None)
+
+class UClass* UVALUI_CheckBox_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_CheckBox_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_CheckBox_Styled ValeriaUI.Default__VALUI_CheckBox_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_CheckBox_Styled* UVALUI_CheckBox_Styled::GetDefaultObj()
+{
+	static class UVALUI_CheckBox_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_CheckBox_Styled*>(UVALUI_CheckBox_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3950,7 +4983,7 @@ void UVALUI_CheckBoxStyle::Apply(class UCheckBox* InCheckBox)
 // Parameters:
 // class UVALUI_CheckBoxStyle*        NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_CheckBox_Styled::SetCheckBoxStyle(class UVALUI_CheckBoxStyle* InNewStyle)
+void UVALUI_CheckBox_Styled::SetCheckBoxStyle(class UVALUI_CheckBoxStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3959,16 +4992,44 @@ void UVALUI_CheckBox_Styled::SetCheckBoxStyle(class UVALUI_CheckBoxStyle* InNewS
 
 	Params::UVALUI_CheckBox_Styled_SetCheckBoxStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_CrafterContentWidget
+// (None)
+
+class UClass* UVALUI_CrafterContentWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_CrafterContentWidget");
+
+	return Clss;
+}
+
+
+// VALUI_CrafterContentWidget ValeriaUI.Default__VALUI_CrafterContentWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_CrafterContentWidget* UVALUI_CrafterContentWidget::GetDefaultObj()
+{
+	static class UVALUI_CrafterContentWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_CrafterContentWidget*>(UVALUI_CrafterContentWidget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3978,7 +5039,7 @@ void UVALUI_CheckBox_Styled::SetCheckBoxStyle(class UVALUI_CheckBoxStyle* InNewS
 // struct FCrafterConfig              CrafterConfig                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName UVALUI_CrafterContentWidget::GetCrafterRowName(struct FCrafterConfig& InCrafterConfig)
+class FName UVALUI_CrafterContentWidget::GetCrafterRowName(struct FCrafterConfig& CrafterConfig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3987,15 +5048,15 @@ class FName UVALUI_CrafterContentWidget::GetCrafterRowName(struct FCrafterConfig
 
 	Params::UVALUI_CrafterContentWidget_GetCrafterRowName_Params Parms{};
 
-	Parms.CrafterConfig = InCrafterConfig;
+	Parms.CrafterConfig = CrafterConfig;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4009,7 +5070,7 @@ class FName UVALUI_CrafterContentWidget::GetCrafterRowName(struct FCrafterConfig
 // struct FVALUI_Crafter              CrafterData                                                      (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_CrafterContentWidget::GetCrafterData(struct FCrafterConfig& InCrafterConfig, struct FVALUI_Crafter* InCrafterData)
+bool UVALUI_CrafterContentWidget::GetCrafterData(struct FCrafterConfig& CrafterConfig, struct FVALUI_Crafter* CrafterData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4018,21 +5079,49 @@ bool UVALUI_CrafterContentWidget::GetCrafterData(struct FCrafterConfig& InCrafte
 
 	Params::UVALUI_CrafterContentWidget_GetCrafterData_Params Parms{};
 
-	Parms.CrafterConfig = InCrafterConfig;
+	Parms.CrafterConfig = CrafterConfig;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InCrafterData != nullptr)
-		*InCrafterData = Parms.CrafterData;
+	if (CrafterData != nullptr)
+		*CrafterData = std::move(Parms.CrafterData);
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_CrafterStationsViewWidget
+// (None)
+
+class UClass* UVALUI_CrafterStationsViewWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_CrafterStationsViewWidget");
+
+	return Clss;
+}
+
+
+// VALUI_CrafterStationsViewWidget ValeriaUI.Default__VALUI_CrafterStationsViewWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_CrafterStationsViewWidget* UVALUI_CrafterStationsViewWidget::GetDefaultObj()
+{
+	static class UVALUI_CrafterStationsViewWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_CrafterStationsViewWidget*>(UVALUI_CrafterStationsViewWidget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4041,7 +5130,7 @@ bool UVALUI_CrafterContentWidget::GetCrafterData(struct FCrafterConfig& InCrafte
 // Parameters:
 // struct FRecipeNeeds                RecipeNeeds                                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_CrafterStationsViewWidget::DisplayCrafterStations(struct FRecipeNeeds& InRecipeNeeds)
+void UVALUI_CrafterStationsViewWidget::DisplayCrafterStations(struct FRecipeNeeds& RecipeNeeds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4050,10 +5139,66 @@ void UVALUI_CrafterStationsViewWidget::DisplayCrafterStations(struct FRecipeNeed
 
 	Params::UVALUI_CrafterStationsViewWidget_DisplayCrafterStations_Params Parms{};
 
-	Parms.RecipeNeeds = InRecipeNeeds;
+	Parms.RecipeNeeds = RecipeNeeds;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VALUI_DebugOnly
+// (None)
+
+class UClass* UVALUI_DebugOnly::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_DebugOnly");
+
+	return Clss;
+}
+
+
+// VALUI_DebugOnly ValeriaUI.Default__VALUI_DebugOnly
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_DebugOnly* UVALUI_DebugOnly::GetDefaultObj()
+{
+	static class UVALUI_DebugOnly* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_DebugOnly*>(UVALUI_DebugOnly::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_DepthSortedHorizontalBox
+// (None)
+
+class UClass* UVALUI_DepthSortedHorizontalBox::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_DepthSortedHorizontalBox");
+
+	return Clss;
+}
+
+
+// VALUI_DepthSortedHorizontalBox ValeriaUI.Default__VALUI_DepthSortedHorizontalBox
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_DepthSortedHorizontalBox* UVALUI_DepthSortedHorizontalBox::GetDefaultObj()
+{
+	static class UVALUI_DepthSortedHorizontalBox* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_DepthSortedHorizontalBox*>(UVALUI_DepthSortedHorizontalBox::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4062,7 +5207,7 @@ void UVALUI_CrafterStationsViewWidget::DisplayCrafterStations(struct FRecipeNeed
 // Parameters:
 // int32                              Index                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_DepthSortedHorizontalBox::SetForemostWidgetIndex(int32 InIndex)
+void UVALUI_DepthSortedHorizontalBox::SetForemostWidgetIndex(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4071,16 +5216,44 @@ void UVALUI_DepthSortedHorizontalBox::SetForemostWidgetIndex(int32 InIndex)
 
 	Params::UVALUI_DepthSortedHorizontalBox_SetForemostWidgetIndex_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_DragDropOperation
+// (None)
+
+class UClass* UVALUI_DragDropOperation::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_DragDropOperation");
+
+	return Clss;
+}
+
+
+// VALUI_DragDropOperation ValeriaUI.Default__VALUI_DragDropOperation
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_DragDropOperation* UVALUI_DragDropOperation::GetDefaultObj()
+{
+	static class UVALUI_DragDropOperation* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_DragDropOperation*>(UVALUI_DragDropOperation::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4089,7 +5262,7 @@ void UVALUI_DepthSortedHorizontalBox::SetForemostWidgetIndex(int32 InIndex)
 // Parameters:
 // struct FPointerEvent               PointerEvent                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_DragDropOperation::DragStarted(struct FPointerEvent& InPointerEvent)
+void UVALUI_DragDropOperation::DragStarted(struct FPointerEvent& PointerEvent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4098,16 +5271,44 @@ void UVALUI_DragDropOperation::DragStarted(struct FPointerEvent& InPointerEvent)
 
 	Params::UVALUI_DragDropOperation_DragStarted_Params Parms{};
 
-	Parms.PointerEvent = InPointerEvent;
+	Parms.PointerEvent = PointerEvent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_Functor_Button_OnClicked
+// (None)
+
+class UClass* UVALUI_Functor_Button_OnClicked::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_Functor_Button_OnClicked");
+
+	return Clss;
+}
+
+
+// VALUI_Functor_Button_OnClicked ValeriaUI.Default__VALUI_Functor_Button_OnClicked
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_Functor_Button_OnClicked* UVALUI_Functor_Button_OnClicked::GetDefaultObj()
+{
+	static class UVALUI_Functor_Button_OnClicked* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_Functor_Button_OnClicked*>(UVALUI_Functor_Button_OnClicked::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4125,14 +5326,42 @@ void UVALUI_Functor_Button_OnClicked::OnClicked()
 	Params::UVALUI_Functor_Button_OnClicked_OnClicked_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_DynamicExtensionBase
+// (None)
+
+class UClass* UVALUI_DynamicExtensionBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_DynamicExtensionBase");
+
+	return Clss;
+}
+
+
+// VALUI_DynamicExtensionBase ValeriaUI.Default__VALUI_DynamicExtensionBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_DynamicExtensionBase* UVALUI_DynamicExtensionBase::GetDefaultObj()
+{
+	static class UVALUI_DynamicExtensionBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_DynamicExtensionBase*>(UVALUI_DynamicExtensionBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4155,12 +5384,40 @@ void UVALUI_DynamicExtensionBase::AttachedToWidget()
 }
 
 
+// Class ValeriaUI.VALUI_EditableRichTextStyle
+// (None)
+
+class UClass* UVALUI_EditableRichTextStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_EditableRichTextStyle");
+
+	return Clss;
+}
+
+
+// VALUI_EditableRichTextStyle ValeriaUI.Default__VALUI_EditableRichTextStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_EditableRichTextStyle* UVALUI_EditableRichTextStyle::GetDefaultObj()
+{
+	static class UVALUI_EditableRichTextStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_EditableRichTextStyle*>(UVALUI_EditableRichTextStyle::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ValeriaUI.VALUI_EditableRichTextStyle.ApplyToTextBlock
 // (Final, Native, Public, BlueprintCallable, Const)
 // Parameters:
 // class US6UI_EditableRichText*      TextWidget                                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_EditableRichTextStyle::ApplyToTextBlock(class US6UI_EditableRichText* InTextWidget)
+void UVALUI_EditableRichTextStyle::ApplyToTextBlock(class US6UI_EditableRichText* TextWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4169,16 +5426,44 @@ void UVALUI_EditableRichTextStyle::ApplyToTextBlock(class US6UI_EditableRichText
 
 	Params::UVALUI_EditableRichTextStyle_ApplyToTextBlock_Params Parms{};
 
-	Parms.TextWidget = InTextWidget;
+	Parms.TextWidget = TextWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_EditableTextBoxStyle
+// (None)
+
+class UClass* UVALUI_EditableTextBoxStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_EditableTextBoxStyle");
+
+	return Clss;
+}
+
+
+// VALUI_EditableTextBoxStyle ValeriaUI.Default__VALUI_EditableTextBoxStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_EditableTextBoxStyle* UVALUI_EditableTextBoxStyle::GetDefaultObj()
+{
+	static class UVALUI_EditableTextBoxStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_EditableTextBoxStyle*>(UVALUI_EditableTextBoxStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4187,7 +5472,7 @@ void UVALUI_EditableRichTextStyle::ApplyToTextBlock(class US6UI_EditableRichText
 // Parameters:
 // class UEditableTextBox*            TextWidget                                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_EditableTextBoxStyle::ApplyToTextBox(class UEditableTextBox* InTextWidget)
+void UVALUI_EditableTextBoxStyle::ApplyToTextBox(class UEditableTextBox* TextWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4196,16 +5481,44 @@ void UVALUI_EditableTextBoxStyle::ApplyToTextBox(class UEditableTextBox* InTextW
 
 	Params::UVALUI_EditableTextBoxStyle_ApplyToTextBox_Params Parms{};
 
-	Parms.TextWidget = InTextWidget;
+	Parms.TextWidget = TextWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_EditableTextBox_Styled
+// (None)
+
+class UClass* UVALUI_EditableTextBox_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_EditableTextBox_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_EditableTextBox_Styled ValeriaUI.Default__VALUI_EditableTextBox_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_EditableTextBox_Styled* UVALUI_EditableTextBox_Styled::GetDefaultObj()
+{
+	static class UVALUI_EditableTextBox_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_EditableTextBox_Styled*>(UVALUI_EditableTextBox_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4214,7 +5527,7 @@ void UVALUI_EditableTextBoxStyle::ApplyToTextBox(class UEditableTextBox* InTextW
 // Parameters:
 // class UVALUI_EditableTextBoxStyle* NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_EditableTextBox_Styled::SetTextStyle(class UVALUI_EditableTextBoxStyle* InNewStyle)
+void UVALUI_EditableTextBox_Styled::SetTextStyle(class UVALUI_EditableTextBoxStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4223,16 +5536,44 @@ void UVALUI_EditableTextBox_Styled::SetTextStyle(class UVALUI_EditableTextBoxSty
 
 	Params::UVALUI_EditableTextBox_Styled_SetTextStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_EditableTextStyle
+// (None)
+
+class UClass* UVALUI_EditableTextStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_EditableTextStyle");
+
+	return Clss;
+}
+
+
+// VALUI_EditableTextStyle ValeriaUI.Default__VALUI_EditableTextStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_EditableTextStyle* UVALUI_EditableTextStyle::GetDefaultObj()
+{
+	static class UVALUI_EditableTextStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_EditableTextStyle*>(UVALUI_EditableTextStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4241,7 +5582,7 @@ void UVALUI_EditableTextBox_Styled::SetTextStyle(class UVALUI_EditableTextBoxSty
 // Parameters:
 // class UEditableText*               TextWidget                                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_EditableTextStyle::ApplyToTextBlock(class UEditableText* InTextWidget)
+void UVALUI_EditableTextStyle::ApplyToTextBlock(class UEditableText* TextWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4250,16 +5591,44 @@ void UVALUI_EditableTextStyle::ApplyToTextBlock(class UEditableText* InTextWidge
 
 	Params::UVALUI_EditableTextStyle_ApplyToTextBlock_Params Parms{};
 
-	Parms.TextWidget = InTextWidget;
+	Parms.TextWidget = TextWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_EditableText_Styled
+// (None)
+
+class UClass* UVALUI_EditableText_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_EditableText_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_EditableText_Styled ValeriaUI.Default__VALUI_EditableText_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_EditableText_Styled* UVALUI_EditableText_Styled::GetDefaultObj()
+{
+	static class UVALUI_EditableText_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_EditableText_Styled*>(UVALUI_EditableText_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4269,7 +5638,7 @@ void UVALUI_EditableTextStyle::ApplyToTextBlock(class UEditableText* InTextWidge
 // int32                              LineIndex                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              Offset                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_EditableText_Styled::VALUIEvent_UMGEditableTextOnCursorMoved__DelegateSignature(int32 InLineIndex, int32 InOffset)
+void UVALUI_EditableText_Styled::VALUIEvent_UMGEditableTextOnCursorMoved__DelegateSignature(int32 LineIndex, int32 Offset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4278,8 +5647,8 @@ void UVALUI_EditableText_Styled::VALUIEvent_UMGEditableTextOnCursorMoved__Delega
 
 	Params::UVALUI_EditableText_Styled_VALUIEvent_UMGEditableTextOnCursorMoved__DelegateSignature_Params Parms{};
 
-	Parms.LineIndex = InLineIndex;
-	Parms.Offset = InOffset;
+	Parms.LineIndex = LineIndex;
+	Parms.Offset = Offset;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -4291,7 +5660,7 @@ void UVALUI_EditableText_Styled::VALUIEvent_UMGEditableTextOnCursorMoved__Delega
 // Parameters:
 // class UVALUI_EditableTextStyle*    NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_EditableText_Styled::SetTextStyle(class UVALUI_EditableTextStyle* InNewStyle)
+void UVALUI_EditableText_Styled::SetTextStyle(class UVALUI_EditableTextStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4300,15 +5669,15 @@ void UVALUI_EditableText_Styled::SetTextStyle(class UVALUI_EditableTextStyle* In
 
 	Params::UVALUI_EditableText_Styled_SetTextStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4319,7 +5688,7 @@ void UVALUI_EditableText_Styled::SetTextStyle(class UVALUI_EditableTextStyle* In
 // int32                              LineIndex                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              Offset                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_EditableText_Styled::CaretGoTo(int32 InLineIndex, int32 InOffset)
+void UVALUI_EditableText_Styled::CaretGoTo(int32 LineIndex, int32 Offset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4328,17 +5697,73 @@ void UVALUI_EditableText_Styled::CaretGoTo(int32 InLineIndex, int32 InOffset)
 
 	Params::UVALUI_EditableText_Styled_CaretGoTo_Params Parms{};
 
-	Parms.LineIndex = InLineIndex;
-	Parms.Offset = InOffset;
+	Parms.LineIndex = LineIndex;
+	Parms.Offset = Offset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_EmoteButton
+// (None)
+
+class UClass* UVALUI_EmoteButton::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_EmoteButton");
+
+	return Clss;
+}
+
+
+// VALUI_EmoteButton ValeriaUI.Default__VALUI_EmoteButton
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_EmoteButton* UVALUI_EmoteButton::GetDefaultObj()
+{
+	static class UVALUI_EmoteButton* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_EmoteButton*>(UVALUI_EmoteButton::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_EmoteButtonContainer
+// (None)
+
+class UClass* UVALUI_EmoteButtonContainer::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_EmoteButtonContainer");
+
+	return Clss;
+}
+
+
+// VALUI_EmoteButtonContainer ValeriaUI.Default__VALUI_EmoteButtonContainer
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_EmoteButtonContainer* UVALUI_EmoteButtonContainer::GetDefaultObj()
+{
+	static class UVALUI_EmoteButtonContainer* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_EmoteButtonContainer*>(UVALUI_EmoteButtonContainer::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4349,7 +5774,7 @@ void UVALUI_EditableText_Styled::CaretGoTo(int32 InLineIndex, int32 InOffset)
 // class UVALUI_EmoteButton*          ButtonClicked                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UEmoteDataAsset*             EmoteDataAsset                                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_EmoteButtonContainer::OnEmoteContainerButtonClicked__DelegateSignature(class UVALUI_EmoteButtonContainer* InContainer, class UVALUI_EmoteButton* InButtonClicked, class UEmoteDataAsset* InEmoteDataAsset)
+void UVALUI_EmoteButtonContainer::OnEmoteContainerButtonClicked__DelegateSignature(class UVALUI_EmoteButtonContainer* Container, class UVALUI_EmoteButton* ButtonClicked, class UEmoteDataAsset* EmoteDataAsset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4358,9 +5783,9 @@ void UVALUI_EmoteButtonContainer::OnEmoteContainerButtonClicked__DelegateSignatu
 
 	Params::UVALUI_EmoteButtonContainer_OnEmoteContainerButtonClicked__DelegateSignature_Params Parms{};
 
-	Parms.Container = InContainer;
-	Parms.ButtonClicked = InButtonClicked;
-	Parms.EmoteDataAsset = InEmoteDataAsset;
+	Parms.Container = Container;
+	Parms.ButtonClicked = ButtonClicked;
+	Parms.EmoteDataAsset = EmoteDataAsset;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -4373,7 +5798,7 @@ void UVALUI_EmoteButtonContainer::OnEmoteContainerButtonClicked__DelegateSignatu
 // class UVALUI_EmoteButton*          InButtonClicked                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UEmoteDataAsset*             InEmoteDataAsset                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_EmoteButtonContainer::OnEmoteButtonClicked(class UVALUI_EmoteButton* InInButtonClicked, class UEmoteDataAsset* InInEmoteDataAsset)
+void UVALUI_EmoteButtonContainer::OnEmoteButtonClicked(class UVALUI_EmoteButton* InButtonClicked, class UEmoteDataAsset* InEmoteDataAsset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4382,16 +5807,16 @@ void UVALUI_EmoteButtonContainer::OnEmoteButtonClicked(class UVALUI_EmoteButton*
 
 	Params::UVALUI_EmoteButtonContainer_OnEmoteButtonClicked_Params Parms{};
 
-	Parms.InButtonClicked = InInButtonClicked;
-	Parms.InEmoteDataAsset = InInEmoteDataAsset;
+	Parms.InButtonClicked = InButtonClicked;
+	Parms.InEmoteDataAsset = InEmoteDataAsset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4420,7 +5845,7 @@ void UVALUI_EmoteButtonContainer::HandleClearContainer()
 // Parameters:
 // class UVALUI_EmoteButton*          Button                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_EmoteButtonContainer::HandleAddButtonToContainer(class UVALUI_EmoteButton* InButton)
+void UVALUI_EmoteButtonContainer::HandleAddButtonToContainer(class UVALUI_EmoteButton* Button)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4429,10 +5854,38 @@ void UVALUI_EmoteButtonContainer::HandleAddButtonToContainer(class UVALUI_EmoteB
 
 	Params::UVALUI_EmoteButtonContainer_HandleAddButtonToContainer_Params Parms{};
 
-	Parms.Button = InButton;
+	Parms.Button = Button;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VALUI_ErrorDisplayHandlerInterface
+// (None)
+
+class UClass* IVALUI_ErrorDisplayHandlerInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ErrorDisplayHandlerInterface");
+
+	return Clss;
+}
+
+
+// VALUI_ErrorDisplayHandlerInterface ValeriaUI.Default__VALUI_ErrorDisplayHandlerInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IVALUI_ErrorDisplayHandlerInterface* IVALUI_ErrorDisplayHandlerInterface::GetDefaultObj()
+{
+	static class IVALUI_ErrorDisplayHandlerInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IVALUI_ErrorDisplayHandlerInterface*>(IVALUI_ErrorDisplayHandlerInterface::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4441,7 +5894,7 @@ void UVALUI_EmoteButtonContainer::HandleAddButtonToContainer(class UVALUI_EmoteB
 // Parameters:
 // struct FVALUI_ErrorDisplayPayload  ErrorDisplayPayload                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void IVALUI_ErrorDisplayHandlerInterface::HandleErrorDisplay(struct FVALUI_ErrorDisplayPayload& InErrorDisplayPayload)
+void IVALUI_ErrorDisplayHandlerInterface::HandleErrorDisplay(struct FVALUI_ErrorDisplayPayload& ErrorDisplayPayload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4450,16 +5903,44 @@ void IVALUI_ErrorDisplayHandlerInterface::HandleErrorDisplay(struct FVALUI_Error
 
 	Params::IVALUI_ErrorDisplayHandlerInterface_HandleErrorDisplay_Params Parms{};
 
-	Parms.ErrorDisplayPayload = InErrorDisplayPayload;
+	Parms.ErrorDisplayPayload = ErrorDisplayPayload;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_ErrorDisplayHandling
+// (None)
+
+class UClass* UVALUI_ErrorDisplayHandling::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ErrorDisplayHandling");
+
+	return Clss;
+}
+
+
+// VALUI_ErrorDisplayHandling ValeriaUI.Default__VALUI_ErrorDisplayHandling
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ErrorDisplayHandling* UVALUI_ErrorDisplayHandling::GetDefaultObj()
+{
+	static class UVALUI_ErrorDisplayHandling* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ErrorDisplayHandling*>(UVALUI_ErrorDisplayHandling::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4470,7 +5951,7 @@ void IVALUI_ErrorDisplayHandlerInterface::HandleErrorDisplay(struct FVALUI_Error
 // struct FVALUI_ErrorDisplayPayload  ErrorDisplayPayload                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_ErrorDisplayHandling::TryRaiseErrorForDisplay(class UWidget* InInstigatingWidget, struct FVALUI_ErrorDisplayPayload& InErrorDisplayPayload)
+bool UVALUI_ErrorDisplayHandling::TryRaiseErrorForDisplay(class UWidget* InstigatingWidget, struct FVALUI_ErrorDisplayPayload& ErrorDisplayPayload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4479,19 +5960,47 @@ bool UVALUI_ErrorDisplayHandling::TryRaiseErrorForDisplay(class UWidget* InInsti
 
 	Params::UVALUI_ErrorDisplayHandling_TryRaiseErrorForDisplay_Params Parms{};
 
-	Parms.InstigatingWidget = InInstigatingWidget;
-	Parms.ErrorDisplayPayload = InErrorDisplayPayload;
+	Parms.InstigatingWidget = InstigatingWidget;
+	Parms.ErrorDisplayPayload = ErrorDisplayPayload;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_ExpandableAreaStyle
+// (None)
+
+class UClass* UVALUI_ExpandableAreaStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ExpandableAreaStyle");
+
+	return Clss;
+}
+
+
+// VALUI_ExpandableAreaStyle ValeriaUI.Default__VALUI_ExpandableAreaStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ExpandableAreaStyle* UVALUI_ExpandableAreaStyle::GetDefaultObj()
+{
+	static class UVALUI_ExpandableAreaStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ExpandableAreaStyle*>(UVALUI_ExpandableAreaStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4500,7 +6009,7 @@ bool UVALUI_ErrorDisplayHandling::TryRaiseErrorForDisplay(class UWidget* InInsti
 // Parameters:
 // class UExpandableArea*             ExpandableArea                                                   (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ExpandableAreaStyle::Apply(class UExpandableArea* InExpandableArea)
+void UVALUI_ExpandableAreaStyle::Apply(class UExpandableArea* ExpandableArea)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4509,16 +6018,44 @@ void UVALUI_ExpandableAreaStyle::Apply(class UExpandableArea* InExpandableArea)
 
 	Params::UVALUI_ExpandableAreaStyle_Apply_Params Parms{};
 
-	Parms.ExpandableArea = InExpandableArea;
+	Parms.ExpandableArea = ExpandableArea;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_ExpandableArea_Styled
+// (None)
+
+class UClass* UVALUI_ExpandableArea_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ExpandableArea_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_ExpandableArea_Styled ValeriaUI.Default__VALUI_ExpandableArea_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ExpandableArea_Styled* UVALUI_ExpandableArea_Styled::GetDefaultObj()
+{
+	static class UVALUI_ExpandableArea_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ExpandableArea_Styled*>(UVALUI_ExpandableArea_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4527,7 +6064,7 @@ void UVALUI_ExpandableAreaStyle::Apply(class UExpandableArea* InExpandableArea)
 // Parameters:
 // class UVALUI_ExpandableAreaStyle*  NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ExpandableArea_Styled::SetExpandableAreaStyle(class UVALUI_ExpandableAreaStyle* InNewStyle)
+void UVALUI_ExpandableArea_Styled::SetExpandableAreaStyle(class UVALUI_ExpandableAreaStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4536,16 +6073,44 @@ void UVALUI_ExpandableArea_Styled::SetExpandableAreaStyle(class UVALUI_Expandabl
 
 	Params::UVALUI_ExpandableArea_Styled_SetExpandableAreaStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_ExtensionPointContainerBase
+// (None)
+
+class UClass* UVALUI_ExtensionPointContainerBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ExtensionPointContainerBase");
+
+	return Clss;
+}
+
+
+// VALUI_ExtensionPointContainerBase ValeriaUI.Default__VALUI_ExtensionPointContainerBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ExtensionPointContainerBase* UVALUI_ExtensionPointContainerBase::GetDefaultObj()
+{
+	static class UVALUI_ExtensionPointContainerBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ExtensionPointContainerBase*>(UVALUI_ExtensionPointContainerBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4554,7 +6119,7 @@ void UVALUI_ExpandableArea_Styled::SetExpandableAreaStyle(class UVALUI_Expandabl
 // Parameters:
 // TSoftClassPtr<class UUserWidget>   WidgetReference                                                  (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ExtensionPointContainerBase::AddExtensibleWidget(TSoftClassPtr<class UUserWidget>& InWidgetReference)
+void UVALUI_ExtensionPointContainerBase::AddExtensibleWidget(TSoftClassPtr<class UUserWidget>& WidgetReference)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4563,10 +6128,38 @@ void UVALUI_ExtensionPointContainerBase::AddExtensibleWidget(TSoftClassPtr<class
 
 	Params::UVALUI_ExtensionPointContainerBase_AddExtensibleWidget_Params Parms{};
 
-	Parms.WidgetReference = InWidgetReference;
+	Parms.WidgetReference = WidgetReference;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VALUI_InputValidationFunctionLibrary
+// (None)
+
+class UClass* UVALUI_InputValidationFunctionLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_InputValidationFunctionLibrary");
+
+	return Clss;
+}
+
+
+// VALUI_InputValidationFunctionLibrary ValeriaUI.Default__VALUI_InputValidationFunctionLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_InputValidationFunctionLibrary* UVALUI_InputValidationFunctionLibrary::GetDefaultObj()
+{
+	static class UVALUI_InputValidationFunctionLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_InputValidationFunctionLibrary*>(UVALUI_InputValidationFunctionLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4577,7 +6170,7 @@ void UVALUI_ExtensionPointContainerBase::AddExtensibleWidget(TSoftClassPtr<class
 // TArray<class FText>                OutErrors                                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_InputValidationFunctionLibrary::ValidateUserName(const class FString& InUserNameInput, TArray<class FText>* InOutErrors)
+bool UVALUI_InputValidationFunctionLibrary::ValidateUserName(const class FString& UserNameInput, TArray<class FText>* OutErrors)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4586,21 +6179,49 @@ bool UVALUI_InputValidationFunctionLibrary::ValidateUserName(const class FString
 
 	Params::UVALUI_InputValidationFunctionLibrary_ValidateUserName_Params Parms{};
 
-	Parms.UserNameInput = InUserNameInput;
+	Parms.UserNameInput = UserNameInput;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutErrors != nullptr)
-		*InOutErrors = Parms.OutErrors;
+	if (OutErrors != nullptr)
+		*OutErrors = std::move(Parms.OutErrors);
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_ItemAcquisitionNotificationInterface
+// (None)
+
+class UClass* IVALUI_ItemAcquisitionNotificationInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ItemAcquisitionNotificationInterface");
+
+	return Clss;
+}
+
+
+// VALUI_ItemAcquisitionNotificationInterface ValeriaUI.Default__VALUI_ItemAcquisitionNotificationInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IVALUI_ItemAcquisitionNotificationInterface* IVALUI_ItemAcquisitionNotificationInterface::GetDefaultObj()
+{
+	static class IVALUI_ItemAcquisitionNotificationInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IVALUI_ItemAcquisitionNotificationInterface*>(IVALUI_ItemAcquisitionNotificationInterface::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4609,7 +6230,7 @@ bool UVALUI_InputValidationFunctionLibrary::ValidateUserName(const class FString
 // Parameters:
 // struct FValeriaItem                Item                                                             (Parm, NativeAccessSpecifierPublic)
 
-void IVALUI_ItemAcquisitionNotificationInterface::SetInitialData(const struct FValeriaItem& InItem)
+void IVALUI_ItemAcquisitionNotificationInterface::SetInitialData(const struct FValeriaItem& Item)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4618,7 +6239,7 @@ void IVALUI_ItemAcquisitionNotificationInterface::SetInitialData(const struct FV
 
 	Params::IVALUI_ItemAcquisitionNotificationInterface_SetInitialData_Params Parms{};
 
-	Parms.Item = InItem;
+	Parms.Item = Item;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -4652,7 +6273,7 @@ bool IVALUI_ItemAcquisitionNotificationInterface::CanAppendAdditionalData()
 // Parameters:
 // struct FValeriaItem                Item                                                             (Parm, NativeAccessSpecifierPublic)
 
-void IVALUI_ItemAcquisitionNotificationInterface::AppendAdditionalData(const struct FValeriaItem& InItem)
+void IVALUI_ItemAcquisitionNotificationInterface::AppendAdditionalData(const struct FValeriaItem& Item)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4661,10 +6282,38 @@ void IVALUI_ItemAcquisitionNotificationInterface::AppendAdditionalData(const str
 
 	Params::IVALUI_ItemAcquisitionNotificationInterface_AppendAdditionalData_Params Parms{};
 
-	Parms.Item = InItem;
+	Parms.Item = Item;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VALUI_ItemAcquisitionNotifier
+// (None)
+
+class UClass* UVALUI_ItemAcquisitionNotifier::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ItemAcquisitionNotifier");
+
+	return Clss;
+}
+
+
+// VALUI_ItemAcquisitionNotifier ValeriaUI.Default__VALUI_ItemAcquisitionNotifier
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ItemAcquisitionNotifier* UVALUI_ItemAcquisitionNotifier::GetDefaultObj()
+{
+	static class UVALUI_ItemAcquisitionNotifier* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ItemAcquisitionNotifier*>(UVALUI_ItemAcquisitionNotifier::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4675,7 +6324,7 @@ void IVALUI_ItemAcquisitionNotificationInterface::AppendAdditionalData(const str
 // class UVALUI_NotificationQueue*    TargetNotificationQueue                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSoftClassPtr<class UUserWidget>   InWidgetClass                                                    (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ItemAcquisitionNotifier::Setup(class UInventoryComponent* InSourceInventoryComponent, class UVALUI_NotificationQueue* InTargetNotificationQueue, TSoftClassPtr<class UUserWidget>& InInWidgetClass)
+void UVALUI_ItemAcquisitionNotifier::Setup(class UInventoryComponent* SourceInventoryComponent, class UVALUI_NotificationQueue* TargetNotificationQueue, TSoftClassPtr<class UUserWidget>& InWidgetClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4684,17 +6333,17 @@ void UVALUI_ItemAcquisitionNotifier::Setup(class UInventoryComponent* InSourceIn
 
 	Params::UVALUI_ItemAcquisitionNotifier_Setup_Params Parms{};
 
-	Parms.SourceInventoryComponent = InSourceInventoryComponent;
-	Parms.TargetNotificationQueue = InTargetNotificationQueue;
-	Parms.InWidgetClass = InInWidgetClass;
+	Parms.SourceInventoryComponent = SourceInventoryComponent;
+	Parms.TargetNotificationQueue = TargetNotificationQueue;
+	Parms.InWidgetClass = InWidgetClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4705,7 +6354,7 @@ void UVALUI_ItemAcquisitionNotifier::Setup(class UInventoryComponent* InSourceIn
 // class UVALUI_ItemAcquisitionNotifier*Notifier                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWidget*                     ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UWidget* UVALUI_ItemAcquisitionNotifier::OnCreateItemAcquisitionNotification__DelegateSignature(class UVALUI_ItemAcquisitionNotifier* InNotifier)
+class UWidget* UVALUI_ItemAcquisitionNotifier::OnCreateItemAcquisitionNotification__DelegateSignature(class UVALUI_ItemAcquisitionNotifier* Notifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4714,7 +6363,7 @@ class UWidget* UVALUI_ItemAcquisitionNotifier::OnCreateItemAcquisitionNotificati
 
 	Params::UVALUI_ItemAcquisitionNotifier_OnCreateItemAcquisitionNotification__DelegateSignature_Params Parms{};
 
-	Parms.Notifier = InNotifier;
+	Parms.Notifier = Notifier;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -4730,7 +6379,7 @@ class UWidget* UVALUI_ItemAcquisitionNotifier::OnCreateItemAcquisitionNotificati
 // struct FGuid                       AffectedNotificationId                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWidget*                     NotificationWidget                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ItemAcquisitionNotifier::HandleNotificationDismissed(class UVALUI_NotificationQueue* InNotificationQueue, struct FGuid& InAffectedNotificationId, class UWidget* InNotificationWidget)
+void UVALUI_ItemAcquisitionNotifier::HandleNotificationDismissed(class UVALUI_NotificationQueue* NotificationQueue, struct FGuid& AffectedNotificationId, class UWidget* NotificationWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4739,17 +6388,17 @@ void UVALUI_ItemAcquisitionNotifier::HandleNotificationDismissed(class UVALUI_No
 
 	Params::UVALUI_ItemAcquisitionNotifier_HandleNotificationDismissed_Params Parms{};
 
-	Parms.NotificationQueue = InNotificationQueue;
-	Parms.AffectedNotificationId = InAffectedNotificationId;
-	Parms.NotificationWidget = InNotificationWidget;
+	Parms.NotificationQueue = NotificationQueue;
+	Parms.AffectedNotificationId = AffectedNotificationId;
+	Parms.NotificationWidget = NotificationWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4759,7 +6408,7 @@ void UVALUI_ItemAcquisitionNotifier::HandleNotificationDismissed(class UVALUI_No
 // Parameters:
 // struct FValeriaItem                Item                                                             (Parm, NativeAccessSpecifierPublic)
 
-void UVALUI_ItemAcquisitionNotifier::HandleItemAcquired(const struct FValeriaItem& InItem)
+void UVALUI_ItemAcquisitionNotifier::HandleItemAcquired(const struct FValeriaItem& Item)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4768,16 +6417,44 @@ void UVALUI_ItemAcquisitionNotifier::HandleItemAcquired(const struct FValeriaIte
 
 	Params::UVALUI_ItemAcquisitionNotifier_HandleItemAcquired_Params Parms{};
 
-	Parms.Item = InItem;
+	Parms.Item = Item;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_ItemDragDrop
+// (None)
+
+class UClass* UVALUI_ItemDragDrop::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ItemDragDrop");
+
+	return Clss;
+}
+
+
+// VALUI_ItemDragDrop ValeriaUI.Default__VALUI_ItemDragDrop
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ItemDragDrop* UVALUI_ItemDragDrop::GetDefaultObj()
+{
+	static class UVALUI_ItemDragDrop* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ItemDragDrop*>(UVALUI_ItemDragDrop::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4803,12 +6480,124 @@ struct FValeriaItem UVALUI_ItemDragDrop::GetItem()
 }
 
 
+// Class ValeriaUI.VALUI_ItemSlotStyle
+// (None)
+
+class UClass* UVALUI_ItemSlotStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ItemSlotStyle");
+
+	return Clss;
+}
+
+
+// VALUI_ItemSlotStyle ValeriaUI.Default__VALUI_ItemSlotStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ItemSlotStyle* UVALUI_ItemSlotStyle::GetDefaultObj()
+{
+	static class UVALUI_ItemSlotStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ItemSlotStyle*>(UVALUI_ItemSlotStyle::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_ItemStyle
+// (None)
+
+class UClass* UVALUI_ItemStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ItemStyle");
+
+	return Clss;
+}
+
+
+// VALUI_ItemStyle ValeriaUI.Default__VALUI_ItemStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ItemStyle* UVALUI_ItemStyle::GetDefaultObj()
+{
+	static class UVALUI_ItemStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ItemStyle*>(UVALUI_ItemStyle::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_ListViewStyle
+// (None)
+
+class UClass* UVALUI_ListViewStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ListViewStyle");
+
+	return Clss;
+}
+
+
+// VALUI_ListViewStyle ValeriaUI.Default__VALUI_ListViewStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ListViewStyle* UVALUI_ListViewStyle::GetDefaultObj()
+{
+	static class UVALUI_ListViewStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ListViewStyle*>(UVALUI_ListViewStyle::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_ListView_Styled
+// (None)
+
+class UClass* UVALUI_ListView_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ListView_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_ListView_Styled ValeriaUI.Default__VALUI_ListView_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ListView_Styled* UVALUI_ListView_Styled::GetDefaultObj()
+{
+	static class UVALUI_ListView_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ListView_Styled*>(UVALUI_ListView_Styled::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // DelegateFunction ValeriaUI.VALUI_ListView_Styled.VALUI_OnListViewUserScrolled__DelegateSignature
 // (MulticastDelegate, Public, Delegate)
 // Parameters:
 // float                              ScrollFraction                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ListView_Styled::VALUI_OnListViewUserScrolled__DelegateSignature(float InScrollFraction)
+void UVALUI_ListView_Styled::VALUI_OnListViewUserScrolled__DelegateSignature(float ScrollFraction)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4817,7 +6606,7 @@ void UVALUI_ListView_Styled::VALUI_OnListViewUserScrolled__DelegateSignature(flo
 
 	Params::UVALUI_ListView_Styled_VALUI_OnListViewUserScrolled__DelegateSignature_Params Parms{};
 
-	Parms.ScrollFraction = InScrollFraction;
+	Parms.ScrollFraction = ScrollFraction;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -4829,7 +6618,7 @@ void UVALUI_ListView_Styled::VALUI_OnListViewUserScrolled__DelegateSignature(flo
 // Parameters:
 // float                              DesiredOffset                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ListView_Styled::VALUI_OnListViewUserMouseWheelScrolled__DelegateSignature(float InDesiredOffset)
+void UVALUI_ListView_Styled::VALUI_OnListViewUserMouseWheelScrolled__DelegateSignature(float DesiredOffset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4838,7 +6627,7 @@ void UVALUI_ListView_Styled::VALUI_OnListViewUserMouseWheelScrolled__DelegateSig
 
 	Params::UVALUI_ListView_Styled_VALUI_OnListViewUserMouseWheelScrolled__DelegateSignature_Params Parms{};
 
-	Parms.DesiredOffset = InDesiredOffset;
+	Parms.DesiredOffset = DesiredOffset;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -4860,13 +6649,13 @@ bool UVALUI_ListView_Styled::ShouldScrollBarBeVisible()
 	Params::UVALUI_ListView_Styled_ShouldScrollBarBeVisible_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4880,7 +6669,7 @@ bool UVALUI_ListView_Styled::ShouldScrollBarBeVisible()
 // bool                               bIsSelected                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESelectInfo             SelectType                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ListView_Styled::OnListItemSelectionChangedWithInputTypeDynamic__DelegateSignature(class UObject* InItem, bool InbIsSelected, enum class ESelectInfo InSelectType)
+void UVALUI_ListView_Styled::OnListItemSelectionChangedWithInputTypeDynamic__DelegateSignature(class UObject* Item, bool bIsSelected, enum class ESelectInfo SelectType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4889,9 +6678,9 @@ void UVALUI_ListView_Styled::OnListItemSelectionChangedWithInputTypeDynamic__Del
 
 	Params::UVALUI_ListView_Styled_OnListItemSelectionChangedWithInputTypeDynamic__DelegateSignature_Params Parms{};
 
-	Parms.Item = InItem;
-	Parms.bIsSelected = InbIsSelected;
-	Parms.SelectType = InSelectType;
+	Parms.Item = Item;
+	Parms.bIsSelected = bIsSelected;
+	Parms.SelectType = SelectType;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -4904,7 +6693,7 @@ void UVALUI_ListView_Styled::OnListItemSelectionChangedWithInputTypeDynamic__Del
 // TArray<class UObject*>             AddedItems                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<class UObject*>             RemovedItems                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_ListView_Styled::OnListItemsChanged__DelegateSignature(TArray<class UObject*>& InAddedItems, TArray<class UObject*>& InRemovedItems)
+void UVALUI_ListView_Styled::OnListItemsChanged__DelegateSignature(TArray<class UObject*>& AddedItems, TArray<class UObject*>& RemovedItems)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4913,8 +6702,8 @@ void UVALUI_ListView_Styled::OnListItemsChanged__DelegateSignature(TArray<class 
 
 	Params::UVALUI_ListView_Styled_OnListItemsChanged__DelegateSignature_Params Parms{};
 
-	Parms.AddedItems = InAddedItems;
-	Parms.RemovedItems = InRemovedItems;
+	Parms.AddedItems = AddedItems;
+	Parms.RemovedItems = RemovedItems;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -4936,13 +6725,13 @@ float UVALUI_ListView_Styled::GetScrollbarDistanceFromBottom()
 	Params::UVALUI_ListView_Styled_GetScrollbarDistanceFromBottom_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4956,7 +6745,7 @@ float UVALUI_ListView_Styled::GetScrollbarDistanceFromBottom()
 // int32                              Range                                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UObject*>             ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UObject*> UVALUI_ListView_Styled::GetItemsWithinRange(int32& InStartingIndex, int32& InRange)
+TArray<class UObject*> UVALUI_ListView_Styled::GetItemsWithinRange(int32& StartingIndex, int32& Range)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4965,19 +6754,47 @@ TArray<class UObject*> UVALUI_ListView_Styled::GetItemsWithinRange(int32& InStar
 
 	Params::UVALUI_ListView_Styled_GetItemsWithinRange_Params Parms{};
 
-	Parms.StartingIndex = InStartingIndex;
-	Parms.Range = InRange;
+	Parms.StartingIndex = StartingIndex;
+	Parms.Range = Range;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_LoadingScreenBlackWidget
+// (None)
+
+class UClass* UVALUI_LoadingScreenBlackWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_LoadingScreenBlackWidget");
+
+	return Clss;
+}
+
+
+// VALUI_LoadingScreenBlackWidget ValeriaUI.Default__VALUI_LoadingScreenBlackWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_LoadingScreenBlackWidget* UVALUI_LoadingScreenBlackWidget::GetDefaultObj()
+{
+	static class UVALUI_LoadingScreenBlackWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_LoadingScreenBlackWidget*>(UVALUI_LoadingScreenBlackWidget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5008,7 +6825,7 @@ class UWidgetAnimation* UVALUI_LoadingScreenBlackWidget::GetFadeFromBlackAnimati
 // Parameters:
 // float                              FadeTimeInSeconds                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_LoadingScreenBlackWidget::FadeFromNoneToBlack(float InFadeTimeInSeconds)
+void UVALUI_LoadingScreenBlackWidget::FadeFromNoneToBlack(float FadeTimeInSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5017,7 +6834,7 @@ void UVALUI_LoadingScreenBlackWidget::FadeFromNoneToBlack(float InFadeTimeInSeco
 
 	Params::UVALUI_LoadingScreenBlackWidget_FadeFromNoneToBlack_Params Parms{};
 
-	Parms.FadeTimeInSeconds = InFadeTimeInSeconds;
+	Parms.FadeTimeInSeconds = FadeTimeInSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -5029,7 +6846,7 @@ void UVALUI_LoadingScreenBlackWidget::FadeFromNoneToBlack(float InFadeTimeInSeco
 // Parameters:
 // float                              FadeTimeInSeconds                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_LoadingScreenBlackWidget::FadeFromBlackToNone(float InFadeTimeInSeconds)
+void UVALUI_LoadingScreenBlackWidget::FadeFromBlackToNone(float FadeTimeInSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5038,10 +6855,38 @@ void UVALUI_LoadingScreenBlackWidget::FadeFromBlackToNone(float InFadeTimeInSeco
 
 	Params::UVALUI_LoadingScreenBlackWidget_FadeFromBlackToNone_Params Parms{};
 
-	Parms.FadeTimeInSeconds = InFadeTimeInSeconds;
+	Parms.FadeTimeInSeconds = FadeTimeInSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VALUI_MainHUDViewModel
+// (None)
+
+class UClass* UVALUI_MainHUDViewModel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_MainHUDViewModel");
+
+	return Clss;
+}
+
+
+// VALUI_MainHUDViewModel ValeriaUI.Default__VALUI_MainHUDViewModel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_MainHUDViewModel* UVALUI_MainHUDViewModel::GetDefaultObj()
+{
+	static class UVALUI_MainHUDViewModel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_MainHUDViewModel*>(UVALUI_MainHUDViewModel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5059,13 +6904,13 @@ void UVALUI_MainHUDViewModel::ShowRightHudElements()
 	Params::UVALUI_MainHUDViewModel_ShowRightHudElements_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5084,14 +6929,42 @@ void UVALUI_MainHUDViewModel::HideRightHudElements()
 	Params::UVALUI_MainHUDViewModel_HideRightHudElements_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_MainHUDWidget
+// (None)
+
+class UClass* UVALUI_MainHUDWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_MainHUDWidget");
+
+	return Clss;
+}
+
+
+// VALUI_MainHUDWidget ValeriaUI.Default__VALUI_MainHUDWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_MainHUDWidget* UVALUI_MainHUDWidget::GetDefaultObj()
+{
+	static class UVALUI_MainHUDWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_MainHUDWidget*>(UVALUI_MainHUDWidget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5101,7 +6974,7 @@ void UVALUI_MainHUDViewModel::HideRightHudElements()
 // class UObject*                     Object                                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFieldNotificationId        Field                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_MainHUDWidget::HandleOnViewModelSocialTrackingDataChanged(class UObject* InObject, const struct FFieldNotificationId& InField)
+void UVALUI_MainHUDWidget::HandleOnViewModelSocialTrackingDataChanged(class UObject* Object, const struct FFieldNotificationId& Field)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5110,16 +6983,16 @@ void UVALUI_MainHUDWidget::HandleOnViewModelSocialTrackingDataChanged(class UObj
 
 	Params::UVALUI_MainHUDWidget_HandleOnViewModelSocialTrackingDataChanged_Params Parms{};
 
-	Parms.Object = InObject;
-	Parms.Field = InField;
+	Parms.Object = Object;
+	Parms.Field = Field;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5130,7 +7003,7 @@ void UVALUI_MainHUDWidget::HandleOnViewModelSocialTrackingDataChanged(class UObj
 // class UObject*                     Object                                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFieldNotificationId        Field                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_MainHUDWidget::HandleOnViewModelHUDStateChanged(class UObject* InObject, const struct FFieldNotificationId& InField)
+void UVALUI_MainHUDWidget::HandleOnViewModelHUDStateChanged(class UObject* Object, const struct FFieldNotificationId& Field)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5139,16 +7012,16 @@ void UVALUI_MainHUDWidget::HandleOnViewModelHUDStateChanged(class UObject* InObj
 
 	Params::UVALUI_MainHUDWidget_HandleOnViewModelHUDStateChanged_Params Parms{};
 
-	Parms.Object = InObject;
-	Parms.Field = InField;
+	Parms.Object = Object;
+	Parms.Field = Field;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5158,7 +7031,7 @@ void UVALUI_MainHUDWidget::HandleOnViewModelHUDStateChanged(class UObject* InObj
 // Parameters:
 // struct FVALUI_SocialTrackingData   SocialData                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UVALUI_MainHUDWidget::HandleOnSocialTrackingDataChanged(struct FVALUI_SocialTrackingData& InSocialData)
+void UVALUI_MainHUDWidget::HandleOnSocialTrackingDataChanged(struct FVALUI_SocialTrackingData& SocialData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5167,7 +7040,7 @@ void UVALUI_MainHUDWidget::HandleOnSocialTrackingDataChanged(struct FVALUI_Socia
 
 	Params::UVALUI_MainHUDWidget_HandleOnSocialTrackingDataChanged_Params Parms{};
 
-	Parms.SocialData = InSocialData;
+	Parms.SocialData = SocialData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -5179,7 +7052,7 @@ void UVALUI_MainHUDWidget::HandleOnSocialTrackingDataChanged(struct FVALUI_Socia
 // Parameters:
 // struct FVALUI_MainHUDState         State                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UVALUI_MainHUDWidget::HandleOnHUDStateChanged(struct FVALUI_MainHUDState& InState)
+void UVALUI_MainHUDWidget::HandleOnHUDStateChanged(struct FVALUI_MainHUDState& State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5188,10 +7061,38 @@ void UVALUI_MainHUDWidget::HandleOnHUDStateChanged(struct FVALUI_MainHUDState& I
 
 	Params::UVALUI_MainHUDWidget_HandleOnHUDStateChanged_Params Parms{};
 
-	Parms.State = InState;
+	Parms.State = State;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VALUI_MultiLineEditableTextBoxStyle
+// (None)
+
+class UClass* UVALUI_MultiLineEditableTextBoxStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_MultiLineEditableTextBoxStyle");
+
+	return Clss;
+}
+
+
+// VALUI_MultiLineEditableTextBoxStyle ValeriaUI.Default__VALUI_MultiLineEditableTextBoxStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_MultiLineEditableTextBoxStyle* UVALUI_MultiLineEditableTextBoxStyle::GetDefaultObj()
+{
+	static class UVALUI_MultiLineEditableTextBoxStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_MultiLineEditableTextBoxStyle*>(UVALUI_MultiLineEditableTextBoxStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5200,7 +7101,7 @@ void UVALUI_MainHUDWidget::HandleOnHUDStateChanged(struct FVALUI_MainHUDState& I
 // Parameters:
 // class UMultiLineEditableTextBox*   TextWidget                                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_MultiLineEditableTextBoxStyle::ApplyToTextBox(class UMultiLineEditableTextBox* InTextWidget)
+void UVALUI_MultiLineEditableTextBoxStyle::ApplyToTextBox(class UMultiLineEditableTextBox* TextWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5209,16 +7110,44 @@ void UVALUI_MultiLineEditableTextBoxStyle::ApplyToTextBox(class UMultiLineEditab
 
 	Params::UVALUI_MultiLineEditableTextBoxStyle_ApplyToTextBox_Params Parms{};
 
-	Parms.TextWidget = InTextWidget;
+	Parms.TextWidget = TextWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_MultiLineEditableTextBox_Styled
+// (None)
+
+class UClass* UVALUI_MultiLineEditableTextBox_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_MultiLineEditableTextBox_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_MultiLineEditableTextBox_Styled ValeriaUI.Default__VALUI_MultiLineEditableTextBox_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_MultiLineEditableTextBox_Styled* UVALUI_MultiLineEditableTextBox_Styled::GetDefaultObj()
+{
+	static class UVALUI_MultiLineEditableTextBox_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_MultiLineEditableTextBox_Styled*>(UVALUI_MultiLineEditableTextBox_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5227,7 +7156,7 @@ void UVALUI_MultiLineEditableTextBoxStyle::ApplyToTextBox(class UMultiLineEditab
 // Parameters:
 // class UVALUI_MultiLineEditableTextBoxStyle*NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_MultiLineEditableTextBox_Styled::SetTextBoxStyle(class UVALUI_MultiLineEditableTextBoxStyle* InNewStyle)
+void UVALUI_MultiLineEditableTextBox_Styled::SetTextBoxStyle(class UVALUI_MultiLineEditableTextBoxStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5236,16 +7165,44 @@ void UVALUI_MultiLineEditableTextBox_Styled::SetTextBoxStyle(class UVALUI_MultiL
 
 	Params::UVALUI_MultiLineEditableTextBox_Styled_SetTextBoxStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_MultiLineEditableTextStyle
+// (None)
+
+class UClass* UVALUI_MultiLineEditableTextStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_MultiLineEditableTextStyle");
+
+	return Clss;
+}
+
+
+// VALUI_MultiLineEditableTextStyle ValeriaUI.Default__VALUI_MultiLineEditableTextStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_MultiLineEditableTextStyle* UVALUI_MultiLineEditableTextStyle::GetDefaultObj()
+{
+	static class UVALUI_MultiLineEditableTextStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_MultiLineEditableTextStyle*>(UVALUI_MultiLineEditableTextStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5254,7 +7211,7 @@ void UVALUI_MultiLineEditableTextBox_Styled::SetTextBoxStyle(class UVALUI_MultiL
 // Parameters:
 // class UMultiLineEditableText*      TextWidget                                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_MultiLineEditableTextStyle::ApplyToTextBlock(class UMultiLineEditableText* InTextWidget)
+void UVALUI_MultiLineEditableTextStyle::ApplyToTextBlock(class UMultiLineEditableText* TextWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5263,16 +7220,44 @@ void UVALUI_MultiLineEditableTextStyle::ApplyToTextBlock(class UMultiLineEditabl
 
 	Params::UVALUI_MultiLineEditableTextStyle_ApplyToTextBlock_Params Parms{};
 
-	Parms.TextWidget = InTextWidget;
+	Parms.TextWidget = TextWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_MultiLineEditableText_Styled
+// (None)
+
+class UClass* UVALUI_MultiLineEditableText_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_MultiLineEditableText_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_MultiLineEditableText_Styled ValeriaUI.Default__VALUI_MultiLineEditableText_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_MultiLineEditableText_Styled* UVALUI_MultiLineEditableText_Styled::GetDefaultObj()
+{
+	static class UVALUI_MultiLineEditableText_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_MultiLineEditableText_Styled*>(UVALUI_MultiLineEditableText_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5281,7 +7266,7 @@ void UVALUI_MultiLineEditableTextStyle::ApplyToTextBlock(class UMultiLineEditabl
 // Parameters:
 // class UVALUI_MultiLineEditableTextStyle*NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_MultiLineEditableText_Styled::SetTextStyle(class UVALUI_MultiLineEditableTextStyle* InNewStyle)
+void UVALUI_MultiLineEditableText_Styled::SetTextStyle(class UVALUI_MultiLineEditableTextStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5290,16 +7275,72 @@ void UVALUI_MultiLineEditableText_Styled::SetTextStyle(class UVALUI_MultiLineEdi
 
 	Params::UVALUI_MultiLineEditableText_Styled_SetTextStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_NewsInboxMessageDataAsset
+// (None)
+
+class UClass* UVALUI_NewsInboxMessageDataAsset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_NewsInboxMessageDataAsset");
+
+	return Clss;
+}
+
+
+// VALUI_NewsInboxMessageDataAsset ValeriaUI.Default__VALUI_NewsInboxMessageDataAsset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_NewsInboxMessageDataAsset* UVALUI_NewsInboxMessageDataAsset::GetDefaultObj()
+{
+	static class UVALUI_NewsInboxMessageDataAsset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_NewsInboxMessageDataAsset*>(UVALUI_NewsInboxMessageDataAsset::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_NewsInbox_Widget
+// (None)
+
+class UClass* UVALUI_NewsInbox_Widget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_NewsInbox_Widget");
+
+	return Clss;
+}
+
+
+// VALUI_NewsInbox_Widget ValeriaUI.Default__VALUI_NewsInbox_Widget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_NewsInbox_Widget* UVALUI_NewsInbox_Widget::GetDefaultObj()
+{
+	static class UVALUI_NewsInbox_Widget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_NewsInbox_Widget*>(UVALUI_NewsInbox_Widget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5317,13 +7358,13 @@ void UVALUI_NewsInbox_Widget::OnLoadSuccess()
 	Params::UVALUI_NewsInbox_Widget_OnLoadSuccess_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5342,13 +7383,13 @@ void UVALUI_NewsInbox_Widget::LoadNewsInboxMessageDefinitions()
 	Params::UVALUI_NewsInbox_Widget_LoadNewsInboxMessageDefinitions_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5368,13 +7409,13 @@ class AValeriaPlayerController* UVALUI_NewsInbox_Widget::GetValeriaPlayer()
 	Params::UVALUI_NewsInbox_Widget_GetValeriaPlayer_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5388,7 +7429,7 @@ class AValeriaPlayerController* UVALUI_NewsInbox_Widget::GetValeriaPlayer()
 // bool                               Claimed                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UVALUI_NewsInboxMessageDataAsset*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UVALUI_NewsInboxMessageDataAsset* UVALUI_NewsInbox_Widget::GetNewsInboxMessageDefinitionFromRewardIndex(int32 InIndex, bool InClaimed)
+class UVALUI_NewsInboxMessageDataAsset* UVALUI_NewsInbox_Widget::GetNewsInboxMessageDefinitionFromRewardIndex(int32 Index, bool Claimed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5397,16 +7438,16 @@ class UVALUI_NewsInboxMessageDataAsset* UVALUI_NewsInbox_Widget::GetNewsInboxMes
 
 	Params::UVALUI_NewsInbox_Widget_GetNewsInboxMessageDefinitionFromRewardIndex_Params Parms{};
 
-	Parms.Index = InIndex;
-	Parms.Claimed = InClaimed;
+	Parms.Index = Index;
+	Parms.Claimed = Claimed;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5419,7 +7460,7 @@ class UVALUI_NewsInboxMessageDataAsset* UVALUI_NewsInbox_Widget::GetNewsInboxMes
 // enum class EVAL_NewsInboxMessageTypeEMessageType                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UVALUI_NewsInboxMessageDataAsset*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UVALUI_NewsInboxMessageDataAsset* UVALUI_NewsInbox_Widget::GetNewsInboxMessageDefinitionByType(enum class EVAL_NewsInboxMessageType InEMessageType)
+class UVALUI_NewsInboxMessageDataAsset* UVALUI_NewsInbox_Widget::GetNewsInboxMessageDefinitionByType(enum class EVAL_NewsInboxMessageType EMessageType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5428,15 +7469,15 @@ class UVALUI_NewsInboxMessageDataAsset* UVALUI_NewsInbox_Widget::GetNewsInboxMes
 
 	Params::UVALUI_NewsInbox_Widget_GetNewsInboxMessageDefinitionByType_Params Parms{};
 
-	Parms.EMessageType = InEMessageType;
+	Parms.EMessageType = EMessageType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5519,6 +7560,62 @@ void UVALUI_NewsInbox_Widget::BP_OnLoadSuccess()
 }
 
 
+// Class ValeriaUI.VALUI_NotificationFactory
+// (None)
+
+class UClass* UVALUI_NotificationFactory::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_NotificationFactory");
+
+	return Clss;
+}
+
+
+// VALUI_NotificationFactory ValeriaUI.Default__VALUI_NotificationFactory
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_NotificationFactory* UVALUI_NotificationFactory::GetDefaultObj()
+{
+	static class UVALUI_NotificationFactory* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_NotificationFactory*>(UVALUI_NotificationFactory::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_NotificationWidgetInterface
+// (None)
+
+class UClass* IVALUI_NotificationWidgetInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_NotificationWidgetInterface");
+
+	return Clss;
+}
+
+
+// VALUI_NotificationWidgetInterface ValeriaUI.Default__VALUI_NotificationWidgetInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IVALUI_NotificationWidgetInterface* IVALUI_NotificationWidgetInterface::GetDefaultObj()
+{
+	static class IVALUI_NotificationWidgetInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IVALUI_NotificationWidgetInterface*>(IVALUI_NotificationWidgetInterface::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ValeriaUI.VALUI_NotificationWidgetInterface.MatchesNotification
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -5526,7 +7623,7 @@ void UVALUI_NewsInbox_Widget::BP_OnLoadSuccess()
 // TSoftObjectPtr<class UTexture2D>   NotificationIcon                                                 (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool IVALUI_NotificationWidgetInterface::MatchesNotification(class FText& InNotificationText, TSoftObjectPtr<class UTexture2D>& InNotificationIcon)
+bool IVALUI_NotificationWidgetInterface::MatchesNotification(class FText& NotificationText, TSoftObjectPtr<class UTexture2D>& NotificationIcon)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5535,8 +7632,8 @@ bool IVALUI_NotificationWidgetInterface::MatchesNotification(class FText& InNoti
 
 	Params::IVALUI_NotificationWidgetInterface_MatchesNotification_Params Parms{};
 
-	Parms.NotificationText = InNotificationText;
-	Parms.NotificationIcon = InNotificationIcon;
+	Parms.NotificationText = NotificationText;
+	Parms.NotificationIcon = NotificationIcon;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -5551,7 +7648,7 @@ bool IVALUI_NotificationWidgetInterface::MatchesNotification(class FText& InNoti
 // class UVALUI_NotificationQueue*    NotificationQueue                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGuid                       NotificationId                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IVALUI_NotificationWidgetInterface::HandleNotificationShown(class UVALUI_NotificationQueue* InNotificationQueue, struct FGuid& InNotificationId)
+void IVALUI_NotificationWidgetInterface::HandleNotificationShown(class UVALUI_NotificationQueue* NotificationQueue, struct FGuid& NotificationId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5560,8 +7657,8 @@ void IVALUI_NotificationWidgetInterface::HandleNotificationShown(class UVALUI_No
 
 	Params::IVALUI_NotificationWidgetInterface_HandleNotificationShown_Params Parms{};
 
-	Parms.NotificationQueue = InNotificationQueue;
-	Parms.NotificationId = InNotificationId;
+	Parms.NotificationQueue = NotificationQueue;
+	Parms.NotificationId = NotificationId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -5574,7 +7671,7 @@ void IVALUI_NotificationWidgetInterface::HandleNotificationShown(class UVALUI_No
 // class UVALUI_NotificationQueue*    NotificationQueue                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGuid                       NotificationId                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IVALUI_NotificationWidgetInterface::HandleNotificationDismissed(class UVALUI_NotificationQueue* InNotificationQueue, struct FGuid& InNotificationId)
+void IVALUI_NotificationWidgetInterface::HandleNotificationDismissed(class UVALUI_NotificationQueue* NotificationQueue, struct FGuid& NotificationId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5583,11 +7680,39 @@ void IVALUI_NotificationWidgetInterface::HandleNotificationDismissed(class UVALU
 
 	Params::IVALUI_NotificationWidgetInterface_HandleNotificationDismissed_Params Parms{};
 
-	Parms.NotificationQueue = InNotificationQueue;
-	Parms.NotificationId = InNotificationId;
+	Parms.NotificationQueue = NotificationQueue;
+	Parms.NotificationId = NotificationId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VALUI_NotificationQueue
+// (None)
+
+class UClass* UVALUI_NotificationQueue::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_NotificationQueue");
+
+	return Clss;
+}
+
+
+// VALUI_NotificationQueue ValeriaUI.Default__VALUI_NotificationQueue
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_NotificationQueue* UVALUI_NotificationQueue::GetDefaultObj()
+{
+	static class UVALUI_NotificationQueue* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_NotificationQueue*>(UVALUI_NotificationQueue::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5597,7 +7722,7 @@ void IVALUI_NotificationWidgetInterface::HandleNotificationDismissed(class UVALU
 // struct FGuid                       NotificationId                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_NotificationQueue::TryDismissNotification(struct FGuid& InNotificationId)
+bool UVALUI_NotificationQueue::TryDismissNotification(struct FGuid& NotificationId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5606,15 +7731,15 @@ bool UVALUI_NotificationQueue::TryDismissNotification(struct FGuid& InNotificati
 
 	Params::UVALUI_NotificationQueue_TryDismissNotification_Params Parms{};
 
-	Parms.NotificationId = InNotificationId;
+	Parms.NotificationId = NotificationId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5627,7 +7752,7 @@ bool UVALUI_NotificationQueue::TryDismissNotification(struct FGuid& InNotificati
 // class UWidget*                     NotificationWidget                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGuid                       ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FGuid UVALUI_NotificationQueue::PushNotification(class UWidget* InNotificationWidget)
+struct FGuid UVALUI_NotificationQueue::PushNotification(class UWidget* NotificationWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5636,15 +7761,15 @@ struct FGuid UVALUI_NotificationQueue::PushNotification(class UWidget* InNotific
 
 	Params::UVALUI_NotificationQueue_PushNotification_Params Parms{};
 
-	Parms.NotificationWidget = InNotificationWidget;
+	Parms.NotificationWidget = NotificationWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5656,7 +7781,7 @@ struct FGuid UVALUI_NotificationQueue::PushNotification(class UWidget* InNotific
 // Parameters:
 // struct FGuid                       NotificationId                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_NotificationQueue::OnNotificationShown(struct FGuid& InNotificationId)
+void UVALUI_NotificationQueue::OnNotificationShown(struct FGuid& NotificationId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5665,15 +7790,15 @@ void UVALUI_NotificationQueue::OnNotificationShown(struct FGuid& InNotificationI
 
 	Params::UVALUI_NotificationQueue_OnNotificationShown_Params Parms{};
 
-	Parms.NotificationId = InNotificationId;
+	Parms.NotificationId = NotificationId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5684,7 +7809,7 @@ void UVALUI_NotificationQueue::OnNotificationShown(struct FGuid& InNotificationI
 // class UVALUI_NotificationQueue*    NotificationQueue                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGuid                       AffectedNotificationId                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_NotificationQueue::OnNotificationPushed__DelegateSignature(class UVALUI_NotificationQueue* InNotificationQueue, struct FGuid& InAffectedNotificationId)
+void UVALUI_NotificationQueue::OnNotificationPushed__DelegateSignature(class UVALUI_NotificationQueue* NotificationQueue, struct FGuid& AffectedNotificationId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5693,8 +7818,8 @@ void UVALUI_NotificationQueue::OnNotificationPushed__DelegateSignature(class UVA
 
 	Params::UVALUI_NotificationQueue_OnNotificationPushed__DelegateSignature_Params Parms{};
 
-	Parms.NotificationQueue = InNotificationQueue;
-	Parms.AffectedNotificationId = InAffectedNotificationId;
+	Parms.NotificationQueue = NotificationQueue;
+	Parms.AffectedNotificationId = AffectedNotificationId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -5708,7 +7833,7 @@ void UVALUI_NotificationQueue::OnNotificationPushed__DelegateSignature(class UVA
 // struct FGuid                       AffectedNotificationId                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWidget*                     NotificationWidget                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_NotificationQueue::OnNotificationDismissed__DelegateSignature(class UVALUI_NotificationQueue* InNotificationQueue, struct FGuid& InAffectedNotificationId, class UWidget* InNotificationWidget)
+void UVALUI_NotificationQueue::OnNotificationDismissed__DelegateSignature(class UVALUI_NotificationQueue* NotificationQueue, struct FGuid& AffectedNotificationId, class UWidget* NotificationWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5717,9 +7842,9 @@ void UVALUI_NotificationQueue::OnNotificationDismissed__DelegateSignature(class 
 
 	Params::UVALUI_NotificationQueue_OnNotificationDismissed__DelegateSignature_Params Parms{};
 
-	Parms.NotificationQueue = InNotificationQueue;
-	Parms.AffectedNotificationId = InAffectedNotificationId;
-	Parms.NotificationWidget = InNotificationWidget;
+	Parms.NotificationQueue = NotificationQueue;
+	Parms.AffectedNotificationId = AffectedNotificationId;
+	Parms.NotificationWidget = NotificationWidget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -5732,7 +7857,7 @@ void UVALUI_NotificationQueue::OnNotificationDismissed__DelegateSignature(class 
 // struct FGuid                       NotificationId                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWidget*                     ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UWidget* UVALUI_NotificationQueue::GetNotificationById(struct FGuid& InNotificationId)
+class UWidget* UVALUI_NotificationQueue::GetNotificationById(struct FGuid& NotificationId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5741,15 +7866,15 @@ class UWidget* UVALUI_NotificationQueue::GetNotificationById(struct FGuid& InNot
 
 	Params::UVALUI_NotificationQueue_GetNotificationById_Params Parms{};
 
-	Parms.NotificationId = InNotificationId;
+	Parms.NotificationId = NotificationId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5771,13 +7896,13 @@ class UWidget* UVALUI_NotificationQueue::GetLastNotificationOnStack()
 	Params::UVALUI_NotificationQueue_GetLastNotificationOnStack_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5790,7 +7915,7 @@ class UWidget* UVALUI_NotificationQueue::GetLastNotificationOnStack()
 // class UWidget*                     NotificationWidget                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGuid                       ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FGuid UVALUI_NotificationQueue::GetIdForNotification(class UWidget* InNotificationWidget)
+struct FGuid UVALUI_NotificationQueue::GetIdForNotification(class UWidget* NotificationWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5799,15 +7924,15 @@ struct FGuid UVALUI_NotificationQueue::GetIdForNotification(class UWidget* InNot
 
 	Params::UVALUI_NotificationQueue_GetIdForNotification_Params Parms{};
 
-	Parms.NotificationWidget = InNotificationWidget;
+	Parms.NotificationWidget = NotificationWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5829,16 +7954,44 @@ TArray<struct FGuid> UVALUI_NotificationQueue::GetAlllNotificationIds()
 	Params::UVALUI_NotificationQueue_GetAlllNotificationIds_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_PhotoCameraScreenBase
+// (None)
+
+class UClass* UVALUI_PhotoCameraScreenBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_PhotoCameraScreenBase");
+
+	return Clss;
+}
+
+
+// VALUI_PhotoCameraScreenBase ValeriaUI.Default__VALUI_PhotoCameraScreenBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_PhotoCameraScreenBase* UVALUI_PhotoCameraScreenBase::GetDefaultObj()
+{
+	static class UVALUI_PhotoCameraScreenBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_PhotoCameraScreenBase*>(UVALUI_PhotoCameraScreenBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5847,7 +8000,7 @@ TArray<struct FGuid> UVALUI_NotificationQueue::GetAlllNotificationIds()
 // Parameters:
 // enum class EVALUI_PhotoCameraScreenLookModeValue                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PhotoCameraScreenBase::SetLookMode(enum class EVALUI_PhotoCameraScreenLookMode InValue)
+void UVALUI_PhotoCameraScreenBase::SetLookMode(enum class EVALUI_PhotoCameraScreenLookMode Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5856,15 +8009,15 @@ void UVALUI_PhotoCameraScreenBase::SetLookMode(enum class EVALUI_PhotoCameraScre
 
 	Params::UVALUI_PhotoCameraScreenBase_SetLookMode_Params Parms{};
 
-	Parms.Value = InValue;
+	Parms.Value = Value;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5876,7 +8029,7 @@ void UVALUI_PhotoCameraScreenBase::SetLookMode(enum class EVALUI_PhotoCameraScre
 // struct FPointerEvent               InMouseEvent                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               bInvertYAxis                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PhotoCameraScreenBase::AccumulateLookModeInput(struct FGeometry& InInGeometry, struct FPointerEvent& InInMouseEvent, bool InbInvertYAxis)
+void UVALUI_PhotoCameraScreenBase::AccumulateLookModeInput(struct FGeometry& InGeometry, struct FPointerEvent& InMouseEvent, bool bInvertYAxis)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5885,18 +8038,46 @@ void UVALUI_PhotoCameraScreenBase::AccumulateLookModeInput(struct FGeometry& InI
 
 	Params::UVALUI_PhotoCameraScreenBase_AccumulateLookModeInput_Params Parms{};
 
-	Parms.InGeometry = InInGeometry;
-	Parms.InMouseEvent = InInMouseEvent;
-	Parms.bInvertYAxis = InbInvertYAxis;
+	Parms.InGeometry = InGeometry;
+	Parms.InMouseEvent = InMouseEvent;
+	Parms.bInvertYAxis = bInvertYAxis;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_UIManagerWidgetBase
+// (None)
+
+class UClass* UVALUI_UIManagerWidgetBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_UIManagerWidgetBase");
+
+	return Clss;
+}
+
+
+// VALUI_UIManagerWidgetBase ValeriaUI.Default__VALUI_UIManagerWidgetBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_UIManagerWidgetBase* UVALUI_UIManagerWidgetBase::GetDefaultObj()
+{
+	static class UVALUI_UIManagerWidgetBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_UIManagerWidgetBase*>(UVALUI_UIManagerWidgetBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5905,7 +8086,7 @@ void UVALUI_PhotoCameraScreenBase::AccumulateLookModeInput(struct FGeometry& InI
 // Parameters:
 // class UVALUI_ItemDragDrop*         ItemDragDrop                                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::RegisterCallbacksAndBroadcastNewDragDrop(class UVALUI_ItemDragDrop* InItemDragDrop)
+void UVALUI_UIManagerWidgetBase::RegisterCallbacksAndBroadcastNewDragDrop(class UVALUI_ItemDragDrop* ItemDragDrop)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5914,15 +8095,15 @@ void UVALUI_UIManagerWidgetBase::RegisterCallbacksAndBroadcastNewDragDrop(class 
 
 	Params::UVALUI_UIManagerWidgetBase_RegisterCallbacksAndBroadcastNewDragDrop_Params Parms{};
 
-	Parms.ItemDragDrop = InItemDragDrop;
+	Parms.ItemDragDrop = ItemDragDrop;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5932,7 +8113,7 @@ void UVALUI_UIManagerWidgetBase::RegisterCallbacksAndBroadcastNewDragDrop(class 
 // Parameters:
 // int32                              VillagerConfigId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::OpenVillagerStore(int32 InVillagerConfigId)
+void UVALUI_UIManagerWidgetBase::OpenVillagerStore(int32 VillagerConfigId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5941,15 +8122,15 @@ void UVALUI_UIManagerWidgetBase::OpenVillagerStore(int32 InVillagerConfigId)
 
 	Params::UVALUI_UIManagerWidgetBase_OpenVillagerStore_Params Parms{};
 
-	Parms.VillagerConfigId = InVillagerConfigId;
+	Parms.VillagerConfigId = VillagerConfigId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5959,7 +8140,7 @@ void UVALUI_UIManagerWidgetBase::OpenVillagerStore(int32 InVillagerConfigId)
 // Parameters:
 // int32                              BookId                                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::OpenBook(int32 InBookId)
+void UVALUI_UIManagerWidgetBase::OpenBook(int32 BookId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5968,15 +8149,15 @@ void UVALUI_UIManagerWidgetBase::OpenBook(int32 InBookId)
 
 	Params::UVALUI_UIManagerWidgetBase_OpenBook_Params Parms{};
 
-	Parms.BookId = InBookId;
+	Parms.BookId = BookId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5986,7 +8167,7 @@ void UVALUI_UIManagerWidgetBase::OpenBook(int32 InBookId)
 // Parameters:
 // class UDragDropOperation*          Operation                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::OnItemDragDropped(class UDragDropOperation* InOperation)
+void UVALUI_UIManagerWidgetBase::OnItemDragDropped(class UDragDropOperation* Operation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5995,15 +8176,15 @@ void UVALUI_UIManagerWidgetBase::OnItemDragDropped(class UDragDropOperation* InO
 
 	Params::UVALUI_UIManagerWidgetBase_OnItemDragDropped_Params Parms{};
 
-	Parms.Operation = InOperation;
+	Parms.Operation = Operation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6014,7 +8195,7 @@ void UVALUI_UIManagerWidgetBase::OnItemDragDropped(class UDragDropOperation* InO
 // struct FGuid                       IdOfPhotoToNavigateTo                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bShouldSelectPhoto                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::NavigateToRecentPhotos(struct FGuid& InIdOfPhotoToNavigateTo, bool InbShouldSelectPhoto)
+void UVALUI_UIManagerWidgetBase::NavigateToRecentPhotos(struct FGuid& IdOfPhotoToNavigateTo, bool bShouldSelectPhoto)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6023,16 +8204,16 @@ void UVALUI_UIManagerWidgetBase::NavigateToRecentPhotos(struct FGuid& InIdOfPhot
 
 	Params::UVALUI_UIManagerWidgetBase_NavigateToRecentPhotos_Params Parms{};
 
-	Parms.IdOfPhotoToNavigateTo = InIdOfPhotoToNavigateTo;
-	Parms.bShouldSelectPhoto = InbShouldSelectPhoto;
+	Parms.IdOfPhotoToNavigateTo = IdOfPhotoToNavigateTo;
+	Parms.bShouldSelectPhoto = bShouldSelectPhoto;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6043,7 +8224,7 @@ void UVALUI_UIManagerWidgetBase::NavigateToRecentPhotos(struct FGuid& InIdOfPhot
 // struct FGuid                       IdOfPhotoToNavigateTo                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bShouldSelectPhoto                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::NavigateToOnlinePhotoAlbum(struct FGuid& InIdOfPhotoToNavigateTo, bool InbShouldSelectPhoto)
+void UVALUI_UIManagerWidgetBase::NavigateToOnlinePhotoAlbum(struct FGuid& IdOfPhotoToNavigateTo, bool bShouldSelectPhoto)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6052,16 +8233,16 @@ void UVALUI_UIManagerWidgetBase::NavigateToOnlinePhotoAlbum(struct FGuid& InIdOf
 
 	Params::UVALUI_UIManagerWidgetBase_NavigateToOnlinePhotoAlbum_Params Parms{};
 
-	Parms.IdOfPhotoToNavigateTo = InIdOfPhotoToNavigateTo;
-	Parms.bShouldSelectPhoto = InbShouldSelectPhoto;
+	Parms.IdOfPhotoToNavigateTo = IdOfPhotoToNavigateTo;
+	Parms.bShouldSelectPhoto = bShouldSelectPhoto;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6071,7 +8252,7 @@ void UVALUI_UIManagerWidgetBase::NavigateToOnlinePhotoAlbum(struct FGuid& InIdOf
 // Parameters:
 // enum class EVAL_GameplayMenuMode   Mode                                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_ToggleGameplayMenuMode(enum class EVAL_GameplayMenuMode InMode)
+void UVALUI_UIManagerWidgetBase::Implementation_ToggleGameplayMenuMode(enum class EVAL_GameplayMenuMode Mode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6080,7 +8261,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_ToggleGameplayMenuMode(enum clas
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_ToggleGameplayMenuMode_Params Parms{};
 
-	Parms.Mode = InMode;
+	Parms.Mode = Mode;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6092,7 +8273,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_ToggleGameplayMenuMode(enum clas
 // Parameters:
 // enum class EVAL_CollectionsTabStateTabState                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_ToggleCollectionsMenu(enum class EVAL_CollectionsTabState& InTabState)
+void UVALUI_UIManagerWidgetBase::Implementation_ToggleCollectionsMenu(enum class EVAL_CollectionsTabState& TabState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6101,7 +8282,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_ToggleCollectionsMenu(enum class
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_ToggleCollectionsMenu_Params Parms{};
 
-	Parms.TabState = InTabState;
+	Parms.TabState = TabState;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6113,7 +8294,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_ToggleCollectionsMenu(enum class
 // Parameters:
 // int32                              VillagerConfigId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenVillagerStore(int32 InVillagerConfigId)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenVillagerStore(int32 VillagerConfigId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6122,7 +8303,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenVillagerStore(int32 InVillag
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenVillagerStore_Params Parms{};
 
-	Parms.VillagerConfigId = InVillagerConfigId;
+	Parms.VillagerConfigId = VillagerConfigId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6134,7 +8315,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenVillagerStore(int32 InVillag
 // Parameters:
 // class USubgameConfig*              InSubgameConfig                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenSubgameScreen(class USubgameConfig* InInSubgameConfig)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenSubgameScreen(class USubgameConfig* InSubgameConfig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6143,7 +8324,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenSubgameScreen(class USubgame
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenSubgameScreen_Params Parms{};
 
-	Parms.InSubgameConfig = InInSubgameConfig;
+	Parms.InSubgameConfig = InSubgameConfig;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6155,7 +8336,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenSubgameScreen(class USubgame
 // Parameters:
 // class UVillagerStoreConfig*        StoreConfig                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenStore(class UVillagerStoreConfig* InStoreConfig)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenStore(class UVillagerStoreConfig* StoreConfig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6164,7 +8345,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenStore(class UVillagerStoreCo
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenStore_Params Parms{};
 
-	Parms.StoreConfig = InStoreConfig;
+	Parms.StoreConfig = StoreConfig;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6176,7 +8357,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenStore(class UVillagerStoreCo
 // Parameters:
 // class AActor*                      StablesActor                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenStables(class AActor* InStablesActor)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenStables(class AActor* StablesActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6185,7 +8366,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenStables(class AActor* InStab
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenStables_Params Parms{};
 
-	Parms.StablesActor = InStablesActor;
+	Parms.StablesActor = StablesActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6197,7 +8378,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenStables(class AActor* InStab
 // Parameters:
 // class AActor*                      TeleporterActor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenSignTeleporter(class AActor* InTeleporterActor)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenSignTeleporter(class AActor* TeleporterActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6206,7 +8387,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenSignTeleporter(class AActor*
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenSignTeleporter_Params Parms{};
 
-	Parms.TeleporterActor = InTeleporterActor;
+	Parms.TeleporterActor = TeleporterActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6218,7 +8399,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenSignTeleporter(class AActor*
 // Parameters:
 // class UShippingBinComponent*       ShippingBinComponent                                             (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenShippingBin(class UShippingBinComponent* InShippingBinComponent)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenShippingBin(class UShippingBinComponent* ShippingBinComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6227,7 +8408,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenShippingBin(class UShippingB
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenShippingBin_Params Parms{};
 
-	Parms.ShippingBinComponent = InShippingBinComponent;
+	Parms.ShippingBinComponent = ShippingBinComponent;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6239,7 +8420,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenShippingBin(class UShippingB
 // Parameters:
 // class FName                        Tag                                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenRequestItem(class FName InTag)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenRequestItem(class FName Tag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6248,7 +8429,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenRequestItem(class FName InTa
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenRequestItem_Params Parms{};
 
-	Parms.Tag = InTag;
+	Parms.Tag = Tag;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6262,7 +8443,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenRequestItem(class FName InTa
 // bool                               bAllowPurchases                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bAllowRepairKitsFromStorage                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenRepairStation(class AActor* InRepairStationActor, bool InbAllowPurchases, bool InbAllowRepairKitsFromStorage)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenRepairStation(class AActor* RepairStationActor, bool bAllowPurchases, bool bAllowRepairKitsFromStorage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6271,9 +8452,9 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenRepairStation(class AActor* 
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenRepairStation_Params Parms{};
 
-	Parms.RepairStationActor = InRepairStationActor;
-	Parms.bAllowPurchases = InbAllowPurchases;
-	Parms.bAllowRepairKitsFromStorage = InbAllowRepairKitsFromStorage;
+	Parms.RepairStationActor = RepairStationActor;
+	Parms.bAllowPurchases = bAllowPurchases;
+	Parms.bAllowRepairKitsFromStorage = bAllowRepairKitsFromStorage;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6304,7 +8485,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenRecipeInspiration()
 // Parameters:
 // struct FVAL_OpenStorePayload       Payload                                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenPremiumStore(struct FVAL_OpenStorePayload& InPayload)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenPremiumStore(struct FVAL_OpenStorePayload& Payload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6313,7 +8494,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenPremiumStore(struct FVAL_Ope
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenPremiumStore_Params Parms{};
 
-	Parms.Payload = InPayload;
+	Parms.Payload = Payload;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6344,7 +8525,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenPlayerStorage()
 // Parameters:
 // TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>Items                                                            (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenPetBonus(TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>& InItems)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenPetBonus(TSet<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>& Items)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6353,7 +8534,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenPetBonus(TSet<TSoftObjectPtr
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenPetBonus_Params Parms{};
 
-	Parms.Items = InItems;
+	Parms.Items = Items;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6422,7 +8603,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenMailbox()
 // Parameters:
 // class UItemVariantCustomizerComponent*Customizer                                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenItemVariantCustomizer(class UItemVariantCustomizerComponent* InCustomizer)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenItemVariantCustomizer(class UItemVariantCustomizerComponent* Customizer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6431,7 +8612,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenItemVariantCustomizer(class 
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenItemVariantCustomizer_Params Parms{};
 
-	Parms.Customizer = InCustomizer;
+	Parms.Customizer = Customizer;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6443,7 +8624,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenItemVariantCustomizer(class 
 // Parameters:
 // class AHousingPlotActor*           HousingPlot                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenHousingEdit(class AHousingPlotActor* InHousingPlot)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenHousingEdit(class AHousingPlotActor* HousingPlot)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6452,7 +8633,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenHousingEdit(class AHousingPl
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenHousingEdit_Params Parms{};
 
-	Parms.HousingPlot = InHousingPlot;
+	Parms.HousingPlot = HousingPlot;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6464,7 +8645,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenHousingEdit(class AHousingPl
 // Parameters:
 // class ULevelerComponent*           LevelerComponent                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenHouseUpgrade(class ULevelerComponent* InLevelerComponent)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenHouseUpgrade(class ULevelerComponent* LevelerComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6473,7 +8654,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenHouseUpgrade(class ULevelerC
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenHouseUpgrade_Params Parms{};
 
-	Parms.LevelerComponent = InLevelerComponent;
+	Parms.LevelerComponent = LevelerComponent;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6485,7 +8666,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenHouseUpgrade(class ULevelerC
 // Parameters:
 // class ATeleporterActor*            Teleporter                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenHomeTeleporter(class ATeleporterActor* InTeleporter)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenHomeTeleporter(class ATeleporterActor* Teleporter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6494,7 +8675,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenHomeTeleporter(class ATelepo
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenHomeTeleporter_Params Parms{};
 
-	Parms.Teleporter = InTeleporter;
+	Parms.Teleporter = Teleporter;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6525,7 +8706,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenCVarMenu()
 // Parameters:
 // class UCrafterComponent*           CrafterComponent                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenCrafter(class UCrafterComponent* InCrafterComponent)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenCrafter(class UCrafterComponent* CrafterComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6534,7 +8715,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenCrafter(class UCrafterCompon
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenCrafter_Params Parms{};
 
-	Parms.CrafterComponent = InCrafterComponent;
+	Parms.CrafterComponent = CrafterComponent;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6565,7 +8746,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenCommunityActivities()
 // Parameters:
 // class UBundleShrineConfig*         BundleConfig                                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenBundleDropOffMenu(class UBundleShrineConfig* InBundleConfig)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenBundleDropOffMenu(class UBundleShrineConfig* BundleConfig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6574,7 +8755,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenBundleDropOffMenu(class UBun
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenBundleDropOffMenu_Params Parms{};
 
-	Parms.BundleConfig = InBundleConfig;
+	Parms.BundleConfig = BundleConfig;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6586,7 +8767,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenBundleDropOffMenu(class UBun
 // Parameters:
 // int32                              BookId                                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenBook(int32 InBookId)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenBook(int32 BookId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6595,7 +8776,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenBook(int32 InBookId)
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenBook_Params Parms{};
 
-	Parms.BookId = InBookId;
+	Parms.BookId = BookId;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6607,7 +8788,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenBook(int32 InBookId)
 // Parameters:
 // enum class EAmmoType               AmmoType                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenAmmoMenu(enum class EAmmoType InAmmoType)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenAmmoMenu(enum class EAmmoType AmmoType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6616,7 +8797,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenAmmoMenu(enum class EAmmoTyp
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenAmmoMenu_Params Parms{};
 
-	Parms.AmmoType = InAmmoType;
+	Parms.AmmoType = AmmoType;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6629,7 +8810,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenAmmoMenu(enum class EAmmoTyp
 // struct FGuid                       IdOfPhotoToNavigateTo                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bShouldSelectPhoto                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_NavigateToRecentPhotos(struct FGuid& InIdOfPhotoToNavigateTo, bool InbShouldSelectPhoto)
+void UVALUI_UIManagerWidgetBase::Implementation_NavigateToRecentPhotos(struct FGuid& IdOfPhotoToNavigateTo, bool bShouldSelectPhoto)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6638,8 +8819,8 @@ void UVALUI_UIManagerWidgetBase::Implementation_NavigateToRecentPhotos(struct FG
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_NavigateToRecentPhotos_Params Parms{};
 
-	Parms.IdOfPhotoToNavigateTo = InIdOfPhotoToNavigateTo;
-	Parms.bShouldSelectPhoto = InbShouldSelectPhoto;
+	Parms.IdOfPhotoToNavigateTo = IdOfPhotoToNavigateTo;
+	Parms.bShouldSelectPhoto = bShouldSelectPhoto;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6652,7 +8833,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_NavigateToRecentPhotos(struct FG
 // struct FGuid                       IdOfPhotoToNavigateTo                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bShouldSelectPhoto                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_NavigateToOnlinePhotoAlbum(struct FGuid& InIdOfPhotoToNavigateTo, bool InbShouldSelectPhoto)
+void UVALUI_UIManagerWidgetBase::Implementation_NavigateToOnlinePhotoAlbum(struct FGuid& IdOfPhotoToNavigateTo, bool bShouldSelectPhoto)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6661,8 +8842,8 @@ void UVALUI_UIManagerWidgetBase::Implementation_NavigateToOnlinePhotoAlbum(struc
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_NavigateToOnlinePhotoAlbum_Params Parms{};
 
-	Parms.IdOfPhotoToNavigateTo = InIdOfPhotoToNavigateTo;
-	Parms.bShouldSelectPhoto = InbShouldSelectPhoto;
+	Parms.IdOfPhotoToNavigateTo = IdOfPhotoToNavigateTo;
+	Parms.bShouldSelectPhoto = bShouldSelectPhoto;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6674,7 +8855,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_NavigateToOnlinePhotoAlbum(struc
 // Parameters:
 // struct FVAL_CharacterCustomizationModeConfigConfig                                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_NavigateToCharacterCustomization(struct FVAL_CharacterCustomizationModeConfig& InConfig)
+void UVALUI_UIManagerWidgetBase::Implementation_NavigateToCharacterCustomization(struct FVAL_CharacterCustomizationModeConfig& Config)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6683,7 +8864,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_NavigateToCharacterCustomization
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_NavigateToCharacterCustomization_Params Parms{};
 
-	Parms.Config = InConfig;
+	Parms.Config = Config;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6696,7 +8877,7 @@ void UVALUI_UIManagerWidgetBase::Implementation_NavigateToCharacterCustomization
 // class ATeleporterActor*            Teleporter                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_UIManagerWidgetBase::Implementation_HasAnyHousingPlotsTeleportOptions(class ATeleporterActor* InTeleporter)
+bool UVALUI_UIManagerWidgetBase::Implementation_HasAnyHousingPlotsTeleportOptions(class ATeleporterActor* Teleporter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6705,7 +8886,7 @@ bool UVALUI_UIManagerWidgetBase::Implementation_HasAnyHousingPlotsTeleportOption
 
 	Params::UVALUI_UIManagerWidgetBase_Implementation_HasAnyHousingPlotsTeleportOptions_Params Parms{};
 
-	Parms.Teleporter = InTeleporter;
+	Parms.Teleporter = Teleporter;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6733,12 +8914,40 @@ void UVALUI_UIManagerWidgetBase::Implementation_CloseSubgameScreen()
 }
 
 
+// Class ValeriaUI.VALUI_PregameUIManager
+// (None)
+
+class UClass* UVALUI_PregameUIManager::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_PregameUIManager");
+
+	return Clss;
+}
+
+
+// VALUI_PregameUIManager ValeriaUI.Default__VALUI_PregameUIManager
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_PregameUIManager* UVALUI_PregameUIManager::GetDefaultObj()
+{
+	static class UVALUI_PregameUIManager* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_PregameUIManager*>(UVALUI_PregameUIManager::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ValeriaUI.VALUI_PregameUIManager.TryGetCachedCharacters_Checked
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TArray<struct FVALDTOS_MetaCharacterFormat>OutOurCharacters                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::TryGetCachedCharacters_Checked(TArray<struct FVALDTOS_MetaCharacterFormat>* InOutOurCharacters)
+void UVALUI_PregameUIManager::TryGetCachedCharacters_Checked(TArray<struct FVALDTOS_MetaCharacterFormat>* OutOurCharacters)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6748,16 +8957,16 @@ void UVALUI_PregameUIManager::TryGetCachedCharacters_Checked(TArray<struct FVALD
 	Params::UVALUI_PregameUIManager_TryGetCachedCharacters_Checked_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutOurCharacters != nullptr)
-		*InOutOurCharacters = Parms.OutOurCharacters;
+	if (OutOurCharacters != nullptr)
+		*OutOurCharacters = std::move(Parms.OutOurCharacters);
 
 }
 
@@ -6768,7 +8977,7 @@ void UVALUI_PregameUIManager::TryGetCachedCharacters_Checked(TArray<struct FVALD
 // TArray<struct FVALDTOS_MetaCharacterFormat>OutOurCharacters                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_PregameUIManager::TryGetCachedCharacters(TArray<struct FVALDTOS_MetaCharacterFormat>* InOutOurCharacters)
+bool UVALUI_PregameUIManager::TryGetCachedCharacters(TArray<struct FVALDTOS_MetaCharacterFormat>* OutOurCharacters)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6778,16 +8987,16 @@ bool UVALUI_PregameUIManager::TryGetCachedCharacters(TArray<struct FVALDTOS_Meta
 	Params::UVALUI_PregameUIManager_TryGetCachedCharacters_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutOurCharacters != nullptr)
-		*InOutOurCharacters = Parms.OutOurCharacters;
+	if (OutOurCharacters != nullptr)
+		*OutOurCharacters = std::move(Parms.OutOurCharacters);
 
 	return Parms.ReturnValue;
 
@@ -6799,7 +9008,7 @@ bool UVALUI_PregameUIManager::TryGetCachedCharacters(TArray<struct FVALDTOS_Meta
 // Parameters:
 // class FString                      URL                                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::SetAnnouncementURL(const class FString& InURL)
+void UVALUI_PregameUIManager::SetAnnouncementURL(const class FString& URL)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6808,15 +9017,15 @@ void UVALUI_PregameUIManager::SetAnnouncementURL(const class FString& InURL)
 
 	Params::UVALUI_PregameUIManager_SetAnnouncementURL_Params Parms{};
 
-	Parms.URL = InURL;
+	Parms.URL = URL;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6826,7 +9035,7 @@ void UVALUI_PregameUIManager::SetAnnouncementURL(const class FString& InURL)
 // Parameters:
 // enum class EVALUI_PregameState     State                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::OnPregameStateChange__DelegateSignature(enum class EVALUI_PregameState InState)
+void UVALUI_PregameUIManager::OnPregameStateChange__DelegateSignature(enum class EVALUI_PregameState State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6835,7 +9044,7 @@ void UVALUI_PregameUIManager::OnPregameStateChange__DelegateSignature(enum class
 
 	Params::UVALUI_PregameUIManager_OnPregameStateChange__DelegateSignature_Params Parms{};
 
-	Parms.State = InState;
+	Parms.State = State;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6847,7 +9056,7 @@ void UVALUI_PregameUIManager::OnPregameStateChange__DelegateSignature(enum class
 // Parameters:
 // enum class EVALUI_LobbyState       State                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::OnLobbyStateChange__DelegateSignature(enum class EVALUI_LobbyState InState)
+void UVALUI_PregameUIManager::OnLobbyStateChange__DelegateSignature(enum class EVALUI_LobbyState State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6856,7 +9065,7 @@ void UVALUI_PregameUIManager::OnLobbyStateChange__DelegateSignature(enum class E
 
 	Params::UVALUI_PregameUIManager_OnLobbyStateChange__DelegateSignature_Params Parms{};
 
-	Parms.State = InState;
+	Parms.State = State;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6868,7 +9077,7 @@ void UVALUI_PregameUIManager::OnLobbyStateChange__DelegateSignature(enum class E
 // Parameters:
 // int32                              ErrorCode                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::HandleOnRetrievingCharacterListFailed(int32 InErrorCode)
+void UVALUI_PregameUIManager::HandleOnRetrievingCharacterListFailed(int32 ErrorCode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6877,7 +9086,7 @@ void UVALUI_PregameUIManager::HandleOnRetrievingCharacterListFailed(int32 InErro
 
 	Params::UVALUI_PregameUIManager_HandleOnRetrievingCharacterListFailed_Params Parms{};
 
-	Parms.ErrorCode = InErrorCode;
+	Parms.ErrorCode = ErrorCode;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6889,7 +9098,7 @@ void UVALUI_PregameUIManager::HandleOnRetrievingCharacterListFailed(int32 InErro
 // Parameters:
 // enum class EVALUI_PregameState     NewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::HandleOnPregameStateChanged(enum class EVALUI_PregameState InNewState)
+void UVALUI_PregameUIManager::HandleOnPregameStateChanged(enum class EVALUI_PregameState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6898,7 +9107,7 @@ void UVALUI_PregameUIManager::HandleOnPregameStateChanged(enum class EVALUI_Preg
 
 	Params::UVALUI_PregameUIManager_HandleOnPregameStateChanged_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6910,7 +9119,7 @@ void UVALUI_PregameUIManager::HandleOnPregameStateChanged(enum class EVALUI_Preg
 // Parameters:
 // enum class EVALUI_LoginState       NewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::HandleOnLoginStateChanged(enum class EVALUI_LoginState InNewState)
+void UVALUI_PregameUIManager::HandleOnLoginStateChanged(enum class EVALUI_LoginState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6919,7 +9128,7 @@ void UVALUI_PregameUIManager::HandleOnLoginStateChanged(enum class EVALUI_LoginS
 
 	Params::UVALUI_PregameUIManager_HandleOnLoginStateChanged_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6931,7 +9140,7 @@ void UVALUI_PregameUIManager::HandleOnLoginStateChanged(enum class EVALUI_LoginS
 // Parameters:
 // enum class EVALUI_LobbyState       NewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::HandleOnLobbyStateChanged(enum class EVALUI_LobbyState InNewState)
+void UVALUI_PregameUIManager::HandleOnLobbyStateChanged(enum class EVALUI_LobbyState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6940,7 +9149,7 @@ void UVALUI_PregameUIManager::HandleOnLobbyStateChanged(enum class EVALUI_LobbyS
 
 	Params::UVALUI_PregameUIManager_HandleOnLobbyStateChanged_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -6971,7 +9180,7 @@ void UVALUI_PregameUIManager::HandleOnFetchedServerStatus()
 // Parameters:
 // TArray<struct FVALDTOS_MetaCharacterFormat>InCachedCharacters                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::HandleOnCharacterListObtained(TArray<struct FVALDTOS_MetaCharacterFormat>& InInCachedCharacters)
+void UVALUI_PregameUIManager::HandleOnCharacterListObtained(TArray<struct FVALDTOS_MetaCharacterFormat>& InCachedCharacters)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6980,15 +9189,15 @@ void UVALUI_PregameUIManager::HandleOnCharacterListObtained(TArray<struct FVALDT
 
 	Params::UVALUI_PregameUIManager_HandleOnCharacterListObtained_Params Parms{};
 
-	Parms.InCachedCharacters = InInCachedCharacters;
+	Parms.InCachedCharacters = InCachedCharacters;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6998,7 +9207,7 @@ void UVALUI_PregameUIManager::HandleOnCharacterListObtained(TArray<struct FVALDT
 // Parameters:
 // enum class EVALUI_CharacterCreationStateNewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::HandleOnCharacterCreationStateChanged(enum class EVALUI_CharacterCreationState InNewState)
+void UVALUI_PregameUIManager::HandleOnCharacterCreationStateChanged(enum class EVALUI_CharacterCreationState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7007,7 +9216,7 @@ void UVALUI_PregameUIManager::HandleOnCharacterCreationStateChanged(enum class E
 
 	Params::UVALUI_PregameUIManager_HandleOnCharacterCreationStateChanged_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7019,7 +9228,7 @@ void UVALUI_PregameUIManager::HandleOnCharacterCreationStateChanged(enum class E
 // Parameters:
 // enum class EVALUI_PregameState     NewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::GoToPregameState(enum class EVALUI_PregameState InNewState)
+void UVALUI_PregameUIManager::GoToPregameState(enum class EVALUI_PregameState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7028,15 +9237,15 @@ void UVALUI_PregameUIManager::GoToPregameState(enum class EVALUI_PregameState In
 
 	Params::UVALUI_PregameUIManager_GoToPregameState_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7046,7 +9255,7 @@ void UVALUI_PregameUIManager::GoToPregameState(enum class EVALUI_PregameState In
 // Parameters:
 // enum class EVALUI_LoginState       NewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::GoToLoginState(enum class EVALUI_LoginState InNewState)
+void UVALUI_PregameUIManager::GoToLoginState(enum class EVALUI_LoginState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7055,15 +9264,15 @@ void UVALUI_PregameUIManager::GoToLoginState(enum class EVALUI_LoginState InNewS
 
 	Params::UVALUI_PregameUIManager_GoToLoginState_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7073,7 +9282,7 @@ void UVALUI_PregameUIManager::GoToLoginState(enum class EVALUI_LoginState InNewS
 // Parameters:
 // enum class EVALUI_LobbyState       NewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::GoToLobbyState(enum class EVALUI_LobbyState InNewState)
+void UVALUI_PregameUIManager::GoToLobbyState(enum class EVALUI_LobbyState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7082,15 +9291,15 @@ void UVALUI_PregameUIManager::GoToLobbyState(enum class EVALUI_LobbyState InNewS
 
 	Params::UVALUI_PregameUIManager_GoToLobbyState_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7100,7 +9309,7 @@ void UVALUI_PregameUIManager::GoToLobbyState(enum class EVALUI_LobbyState InNewS
 // Parameters:
 // enum class EVALUI_CharacterCreationStateNewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::GoToCharacterCreationState(enum class EVALUI_CharacterCreationState InNewState)
+void UVALUI_PregameUIManager::GoToCharacterCreationState(enum class EVALUI_CharacterCreationState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7109,15 +9318,15 @@ void UVALUI_PregameUIManager::GoToCharacterCreationState(enum class EVALUI_Chara
 
 	Params::UVALUI_PregameUIManager_GoToCharacterCreationState_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7137,13 +9346,13 @@ enum class EVALUI_PregameState UVALUI_PregameUIManager::GetCurrentPregameStateId
 	Params::UVALUI_PregameUIManager_GetCurrentPregameStateId_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7156,7 +9365,7 @@ enum class EVALUI_PregameState UVALUI_PregameUIManager::GetCurrentPregameStateId
 // int32                              Index                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVALDTOS_MetaCharacterFormatOutCharacter                                                     (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void UVALUI_PregameUIManager::GetCachedCharacterAtIndex_Checked(int32 InIndex, struct FVALDTOS_MetaCharacterFormat* InOutCharacter)
+void UVALUI_PregameUIManager::GetCachedCharacterAtIndex_Checked(int32 Index, struct FVALDTOS_MetaCharacterFormat* OutCharacter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7165,18 +9374,18 @@ void UVALUI_PregameUIManager::GetCachedCharacterAtIndex_Checked(int32 InIndex, s
 
 	Params::UVALUI_PregameUIManager_GetCachedCharacterAtIndex_Checked_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutCharacter != nullptr)
-		*InOutCharacter = Parms.OutCharacter;
+	if (OutCharacter != nullptr)
+		*OutCharacter = std::move(Parms.OutCharacter);
 
 }
 
@@ -7195,13 +9404,13 @@ void UVALUI_PregameUIManager::FetchServerStatus()
 	Params::UVALUI_PregameUIManager_FetchServerStatus_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7220,14 +9429,42 @@ void UVALUI_PregameUIManager::FetchAnnouncements()
 	Params::UVALUI_PregameUIManager_FetchAnnouncements_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_PremiumCurrencyPurchaseWidgetBase
+// (None)
+
+class UClass* UVALUI_PremiumCurrencyPurchaseWidgetBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_PremiumCurrencyPurchaseWidgetBase");
+
+	return Clss;
+}
+
+
+// VALUI_PremiumCurrencyPurchaseWidgetBase ValeriaUI.Default__VALUI_PremiumCurrencyPurchaseWidgetBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_PremiumCurrencyPurchaseWidgetBase* UVALUI_PremiumCurrencyPurchaseWidgetBase::GetDefaultObj()
+{
+	static class UVALUI_PremiumCurrencyPurchaseWidgetBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_PremiumCurrencyPurchaseWidgetBase*>(UVALUI_PremiumCurrencyPurchaseWidgetBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -7245,13 +9482,13 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::RequestBundleOffers()
 	Params::UVALUI_PremiumCurrencyPurchaseWidgetBase_RequestBundleOffers_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7262,7 +9499,7 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::RequestBundleOffers()
 // struct FGuid                       BundleID                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EVALUI_PremiumCurrencyProviderProvider                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumCurrencyPurchaseWidgetBase::PurchasePremiumCurrency(struct FGuid& InBundleID, enum class EVALUI_PremiumCurrencyProvider& InProvider)
+void UVALUI_PremiumCurrencyPurchaseWidgetBase::PurchasePremiumCurrency(struct FGuid& BundleID, enum class EVALUI_PremiumCurrencyProvider& Provider)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7271,16 +9508,16 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::PurchasePremiumCurrency(struct FG
 
 	Params::UVALUI_PremiumCurrencyPurchaseWidgetBase_PurchasePremiumCurrency_Params Parms{};
 
-	Parms.BundleID = InBundleID;
-	Parms.Provider = InProvider;
+	Parms.BundleID = BundleID;
+	Parms.Provider = Provider;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7290,7 +9527,7 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::PurchasePremiumCurrency(struct FG
 // Parameters:
 // struct FGuid                       PaymentID                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleValidatePaymentFulfillmentTick(struct FGuid& InPaymentID)
+void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleValidatePaymentFulfillmentTick(struct FGuid& PaymentID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7299,15 +9536,15 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleValidatePaymentFulfillmentT
 
 	Params::UVALUI_PremiumCurrencyPurchaseWidgetBase_HandleValidatePaymentFulfillmentTick_Params Parms{};
 
-	Parms.PaymentID = InPaymentID;
+	Parms.PaymentID = PaymentID;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7317,7 +9554,7 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleValidatePaymentFulfillmentT
 // Parameters:
 // class FText                        Text                                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleUrlChanged(class FText& InText)
+void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleUrlChanged(class FText& Text)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7326,15 +9563,15 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleUrlChanged(class FText& InT
 
 	Params::UVALUI_PremiumCurrencyPurchaseWidgetBase_HandleUrlChanged_Params Parms{};
 
-	Parms.Text = InText;
+	Parms.Text = Text;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7401,7 +9638,7 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandlePaymentCancelled()
 // Parameters:
 // class FString                      URL                                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleCheckoutSessionCreated(const class FString& InURL)
+void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleCheckoutSessionCreated(const class FString& URL)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7410,7 +9647,7 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleCheckoutSessionCreated(cons
 
 	Params::UVALUI_PremiumCurrencyPurchaseWidgetBase_HandleCheckoutSessionCreated_Params Parms{};
 
-	Parms.URL = InURL;
+	Parms.URL = URL;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7441,7 +9678,7 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleBundleOffersFailed()
 // Parameters:
 // TArray<struct FVALUI_PremiumCurrencyBundle>Bundles                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleBundleOffersAvailable(TArray<struct FVALUI_PremiumCurrencyBundle>& InBundles)
+void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleBundleOffersAvailable(TArray<struct FVALUI_PremiumCurrencyBundle>& Bundles)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7450,7 +9687,7 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::HandleBundleOffersAvailable(TArra
 
 	Params::UVALUI_PremiumCurrencyPurchaseWidgetBase_HandleBundleOffersAvailable_Params Parms{};
 
-	Parms.Bundles = InBundles;
+	Parms.Bundles = Bundles;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7471,14 +9708,42 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::CancelValidatePaymentPolling()
 	Params::UVALUI_PremiumCurrencyPurchaseWidgetBase_CancelValidatePaymentPolling_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_PremiumItemPurchaseWidgetBase
+// (None)
+
+class UClass* UVALUI_PremiumItemPurchaseWidgetBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_PremiumItemPurchaseWidgetBase");
+
+	return Clss;
+}
+
+
+// VALUI_PremiumItemPurchaseWidgetBase ValeriaUI.Default__VALUI_PremiumItemPurchaseWidgetBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_PremiumItemPurchaseWidgetBase* UVALUI_PremiumItemPurchaseWidgetBase::GetDefaultObj()
+{
+	static class UVALUI_PremiumItemPurchaseWidgetBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_PremiumItemPurchaseWidgetBase*>(UVALUI_PremiumItemPurchaseWidgetBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -7488,7 +9753,7 @@ void UVALUI_PremiumCurrencyPurchaseWidgetBase::CancelValidatePaymentPolling()
 // TArray<class UVAL_CharacterCustomizationItemBase*>Items                                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TMap<class FName, class UVAL_CharacterCustomizationItemBase*>ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-TMap<class FName, class UVAL_CharacterCustomizationItemBase*> UVALUI_PremiumItemPurchaseWidgetBase::GetLoadoutOverridesForCatalogItems(TArray<class UVAL_CharacterCustomizationItemBase*>& InItems)
+TMap<class FName, class UVAL_CharacterCustomizationItemBase*> UVALUI_PremiumItemPurchaseWidgetBase::GetLoadoutOverridesForCatalogItems(TArray<class UVAL_CharacterCustomizationItemBase*>& Items)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7497,15 +9762,15 @@ TMap<class FName, class UVAL_CharacterCustomizationItemBase*> UVALUI_PremiumItem
 
 	Params::UVALUI_PremiumItemPurchaseWidgetBase_GetLoadoutOverridesForCatalogItems_Params Parms{};
 
-	Parms.Items = InItems;
+	Parms.Items = Items;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7518,7 +9783,7 @@ TMap<class FName, class UVAL_CharacterCustomizationItemBase*> UVALUI_PremiumItem
 // TArray<struct FGuid>               ItemIds                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<class UVAL_CharacterCustomizationItemBase*>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UVAL_CharacterCustomizationItemBase*> UVALUI_PremiumItemPurchaseWidgetBase::GetCustomizationItemsForGuids(TArray<struct FGuid>& InItemIds)
+TArray<class UVAL_CharacterCustomizationItemBase*> UVALUI_PremiumItemPurchaseWidgetBase::GetCustomizationItemsForGuids(TArray<struct FGuid>& ItemIds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7527,18 +9792,46 @@ TArray<class UVAL_CharacterCustomizationItemBase*> UVALUI_PremiumItemPurchaseWid
 
 	Params::UVALUI_PremiumItemPurchaseWidgetBase_GetCustomizationItemsForGuids_Params Parms{};
 
-	Parms.ItemIds = InItemIds;
+	Parms.ItemIds = ItemIds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_PremiumStorefrontTileWidgetBase
+// (None)
+
+class UClass* UVALUI_PremiumStorefrontTileWidgetBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_PremiumStorefrontTileWidgetBase");
+
+	return Clss;
+}
+
+
+// VALUI_PremiumStorefrontTileWidgetBase ValeriaUI.Default__VALUI_PremiumStorefrontTileWidgetBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_PremiumStorefrontTileWidgetBase* UVALUI_PremiumStorefrontTileWidgetBase::GetDefaultObj()
+{
+	static class UVALUI_PremiumStorefrontTileWidgetBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_PremiumStorefrontTileWidgetBase*>(UVALUI_PremiumStorefrontTileWidgetBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -7547,7 +9840,7 @@ TArray<class UVAL_CharacterCustomizationItemBase*> UVALUI_PremiumItemPurchaseWid
 // Parameters:
 // struct FVALUI_PremiumStorefrontWidgetModelNewModel                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStorefrontTileWidgetBase::SetModel(struct FVALUI_PremiumStorefrontWidgetModel& InNewModel)
+void UVALUI_PremiumStorefrontTileWidgetBase::SetModel(struct FVALUI_PremiumStorefrontWidgetModel& NewModel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7556,15 +9849,15 @@ void UVALUI_PremiumStorefrontTileWidgetBase::SetModel(struct FVALUI_PremiumStore
 
 	Params::UVALUI_PremiumStorefrontTileWidgetBase_SetModel_Params Parms{};
 
-	Parms.NewModel = InNewModel;
+	Parms.NewModel = NewModel;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7574,7 +9867,7 @@ void UVALUI_PremiumStorefrontTileWidgetBase::SetModel(struct FVALUI_PremiumStore
 // Parameters:
 // class UVALUI_PremiumStorefrontTileWidgetBase*Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStorefrontTileWidgetBase::OnSelected__DelegateSignature(class UVALUI_PremiumStorefrontTileWidgetBase* InWidget)
+void UVALUI_PremiumStorefrontTileWidgetBase::OnSelected__DelegateSignature(class UVALUI_PremiumStorefrontTileWidgetBase* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7583,7 +9876,7 @@ void UVALUI_PremiumStorefrontTileWidgetBase::OnSelected__DelegateSignature(class
 
 	Params::UVALUI_PremiumStorefrontTileWidgetBase_OnSelected__DelegateSignature_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7595,7 +9888,7 @@ void UVALUI_PremiumStorefrontTileWidgetBase::OnSelected__DelegateSignature(class
 // Parameters:
 // struct FVALUI_PremiumStorefrontWidgetModelNewModel                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStorefrontTileWidgetBase::HandleModelUpdate(struct FVALUI_PremiumStorefrontWidgetModel& InNewModel)
+void UVALUI_PremiumStorefrontTileWidgetBase::HandleModelUpdate(struct FVALUI_PremiumStorefrontWidgetModel& NewModel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7604,7 +9897,7 @@ void UVALUI_PremiumStorefrontTileWidgetBase::HandleModelUpdate(struct FVALUI_Pre
 
 	Params::UVALUI_PremiumStorefrontTileWidgetBase_HandleModelUpdate_Params Parms{};
 
-	Parms.NewModel = InNewModel;
+	Parms.NewModel = NewModel;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7626,16 +9919,44 @@ struct FVALUI_PremiumStorefrontWidgetModel UVALUI_PremiumStorefrontTileWidgetBas
 	Params::UVALUI_PremiumStorefrontTileWidgetBase_GetModel_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_PremiumStorefrontWidgetBase
+// (None)
+
+class UClass* UVALUI_PremiumStorefrontWidgetBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_PremiumStorefrontWidgetBase");
+
+	return Clss;
+}
+
+
+// VALUI_PremiumStorefrontWidgetBase ValeriaUI.Default__VALUI_PremiumStorefrontWidgetBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_PremiumStorefrontWidgetBase* UVALUI_PremiumStorefrontWidgetBase::GetDefaultObj()
+{
+	static class UVALUI_PremiumStorefrontWidgetBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_PremiumStorefrontWidgetBase*>(UVALUI_PremiumStorefrontWidgetBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -7644,7 +9965,7 @@ struct FVALUI_PremiumStorefrontWidgetModel UVALUI_PremiumStorefrontTileWidgetBas
 // Parameters:
 // class UVALUI_PremiumStorefrontTileWidgetBase*Tile                                                             (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStorefrontWidgetBase::HandleTileWidgetSelected(class UVALUI_PremiumStorefrontTileWidgetBase* InTile)
+void UVALUI_PremiumStorefrontWidgetBase::HandleTileWidgetSelected(class UVALUI_PremiumStorefrontTileWidgetBase* Tile)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7653,15 +9974,15 @@ void UVALUI_PremiumStorefrontWidgetBase::HandleTileWidgetSelected(class UVALUI_P
 
 	Params::UVALUI_PremiumStorefrontWidgetBase_HandleTileWidgetSelected_Params Parms{};
 
-	Parms.Tile = InTile;
+	Parms.Tile = Tile;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7671,7 +9992,7 @@ void UVALUI_PremiumStorefrontWidgetBase::HandleTileWidgetSelected(class UVALUI_P
 // Parameters:
 // struct FVALUI_PremiumStorefrontWidgetModelModel                                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStorefrontWidgetBase::HandleTileSelected(struct FVALUI_PremiumStorefrontWidgetModel& InModel)
+void UVALUI_PremiumStorefrontWidgetBase::HandleTileSelected(struct FVALUI_PremiumStorefrontWidgetModel& Model)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7680,7 +10001,7 @@ void UVALUI_PremiumStorefrontWidgetBase::HandleTileSelected(struct FVALUI_Premiu
 
 	Params::UVALUI_PremiumStorefrontWidgetBase_HandleTileSelected_Params Parms{};
 
-	Parms.Model = InModel;
+	Parms.Model = Model;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7711,7 +10032,7 @@ void UVALUI_PremiumStorefrontWidgetBase::HandleStorefrontError()
 // Parameters:
 // struct FVALUI_PremiumStorefrontResponseResponse                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStorefrontWidgetBase::HandleStorefrontAvailable(struct FVALUI_PremiumStorefrontResponse& InResponse)
+void UVALUI_PremiumStorefrontWidgetBase::HandleStorefrontAvailable(struct FVALUI_PremiumStorefrontResponse& Response)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7720,7 +10041,7 @@ void UVALUI_PremiumStorefrontWidgetBase::HandleStorefrontAvailable(struct FVALUI
 
 	Params::UVALUI_PremiumStorefrontWidgetBase_HandleStorefrontAvailable_Params Parms{};
 
-	Parms.Response = InResponse;
+	Parms.Response = Response;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7742,13 +10063,13 @@ bool UVALUI_PremiumStorefrontWidgetBase::FetchStorefront()
 	Params::UVALUI_PremiumStorefrontWidgetBase_FetchStorefront_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7761,7 +10082,7 @@ bool UVALUI_PremiumStorefrontWidgetBase::FetchStorefront()
 // int32                              WidgetsPerRow                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVALUI_PremiumStorefrontWidgetModel>Models                                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStorefrontWidgetBase::CreateStorefrontGrid(int32 InWidgetsPerRow, TArray<struct FVALUI_PremiumStorefrontWidgetModel>& InModels)
+void UVALUI_PremiumStorefrontWidgetBase::CreateStorefrontGrid(int32 WidgetsPerRow, TArray<struct FVALUI_PremiumStorefrontWidgetModel>& Models)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7770,17 +10091,45 @@ void UVALUI_PremiumStorefrontWidgetBase::CreateStorefrontGrid(int32 InWidgetsPer
 
 	Params::UVALUI_PremiumStorefrontWidgetBase_CreateStorefrontGrid_Params Parms{};
 
-	Parms.WidgetsPerRow = InWidgetsPerRow;
-	Parms.Models = InModels;
+	Parms.WidgetsPerRow = WidgetsPerRow;
+	Parms.Models = Models;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_PremiumStoreScreenWidgetBase
+// (None)
+
+class UClass* UVALUI_PremiumStoreScreenWidgetBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_PremiumStoreScreenWidgetBase");
+
+	return Clss;
+}
+
+
+// VALUI_PremiumStoreScreenWidgetBase ValeriaUI.Default__VALUI_PremiumStoreScreenWidgetBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_PremiumStoreScreenWidgetBase* UVALUI_PremiumStoreScreenWidgetBase::GetDefaultObj()
+{
+	static class UVALUI_PremiumStoreScreenWidgetBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_PremiumStoreScreenWidgetBase*>(UVALUI_PremiumStoreScreenWidgetBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -7790,7 +10139,7 @@ void UVALUI_PremiumStorefrontWidgetBase::CreateStorefrontGrid(int32 InWidgetsPer
 // class UVALUI_PremiumStoreScreenWidgetBase*StoreWidget                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EVALUI_PremiumStoreStateState                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStoreScreenWidgetBase::OnStateChanged__DelegateSignature(class UVALUI_PremiumStoreScreenWidgetBase* InStoreWidget, enum class EVALUI_PremiumStoreState InState)
+void UVALUI_PremiumStoreScreenWidgetBase::OnStateChanged__DelegateSignature(class UVALUI_PremiumStoreScreenWidgetBase* StoreWidget, enum class EVALUI_PremiumStoreState State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7799,8 +10148,8 @@ void UVALUI_PremiumStoreScreenWidgetBase::OnStateChanged__DelegateSignature(clas
 
 	Params::UVALUI_PremiumStoreScreenWidgetBase_OnStateChanged__DelegateSignature_Params Parms{};
 
-	Parms.StoreWidget = InStoreWidget;
-	Parms.State = InState;
+	Parms.StoreWidget = StoreWidget;
+	Parms.State = State;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7812,7 +10161,7 @@ void UVALUI_PremiumStoreScreenWidgetBase::OnStateChanged__DelegateSignature(clas
 // Parameters:
 // enum class EVALUI_PremiumStoreStateState                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStoreScreenWidgetBase::HandleOnStateChanged(enum class EVALUI_PremiumStoreState InState)
+void UVALUI_PremiumStoreScreenWidgetBase::HandleOnStateChanged(enum class EVALUI_PremiumStoreState State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7821,7 +10170,7 @@ void UVALUI_PremiumStoreScreenWidgetBase::HandleOnStateChanged(enum class EVALUI
 
 	Params::UVALUI_PremiumStoreScreenWidgetBase_HandleOnStateChanged_Params Parms{};
 
-	Parms.State = InState;
+	Parms.State = State;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7835,7 +10184,7 @@ void UVALUI_PremiumStoreScreenWidgetBase::HandleOnStateChanged(enum class EVALUI
 // float                              ElapsedTime                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              TriggeredTime                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStoreScreenWidgetBase::HandleBackAction(const struct FInputActionValue& InActionValue, float InElapsedTime, float InTriggeredTime)
+void UVALUI_PremiumStoreScreenWidgetBase::HandleBackAction(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7844,9 +10193,9 @@ void UVALUI_PremiumStoreScreenWidgetBase::HandleBackAction(const struct FInputAc
 
 	Params::UVALUI_PremiumStoreScreenWidgetBase_HandleBackAction_Params Parms{};
 
-	Parms.ActionValue = InActionValue;
-	Parms.ElapsedTime = InElapsedTime;
-	Parms.TriggeredTime = InTriggeredTime;
+	Parms.ActionValue = ActionValue;
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7858,7 +10207,7 @@ void UVALUI_PremiumStoreScreenWidgetBase::HandleBackAction(const struct FInputAc
 // Parameters:
 // enum class EVALUI_PremiumStoreStateNewState                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_PremiumStoreScreenWidgetBase::GoToPremiumStoreState(enum class EVALUI_PremiumStoreState InNewState)
+void UVALUI_PremiumStoreScreenWidgetBase::GoToPremiumStoreState(enum class EVALUI_PremiumStoreState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7867,15 +10216,15 @@ void UVALUI_PremiumStoreScreenWidgetBase::GoToPremiumStoreState(enum class EVALU
 
 	Params::UVALUI_PremiumStoreScreenWidgetBase_GoToPremiumStoreState_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7895,16 +10244,44 @@ enum class EVALUI_PremiumStoreState UVALUI_PremiumStoreScreenWidgetBase::GetPrem
 	Params::UVALUI_PremiumStoreScreenWidgetBase_GetPremiumStoreState_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_PremiumStoreFunctionLibrary
+// (None)
+
+class UClass* UVALUI_PremiumStoreFunctionLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_PremiumStoreFunctionLibrary");
+
+	return Clss;
+}
+
+
+// VALUI_PremiumStoreFunctionLibrary ValeriaUI.Default__VALUI_PremiumStoreFunctionLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_PremiumStoreFunctionLibrary* UVALUI_PremiumStoreFunctionLibrary::GetDefaultObj()
+{
+	static class UVALUI_PremiumStoreFunctionLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_PremiumStoreFunctionLibrary*>(UVALUI_PremiumStoreFunctionLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -7914,7 +10291,7 @@ enum class EVALUI_PremiumStoreState UVALUI_PremiumStoreScreenWidgetBase::GetPrem
 // struct FVALUI_PremiumStorefrontPurchaseRewardsPurchaseRewards                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FVAL_CharacterCustomization_PetPurchaseBonusReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FVAL_CharacterCustomization_PetPurchaseBonus UVALUI_PremiumStoreFunctionLibrary::GetPetPurchaseBonusFromPurchaseRewards(struct FVALUI_PremiumStorefrontPurchaseRewards& InPurchaseRewards)
+struct FVAL_CharacterCustomization_PetPurchaseBonus UVALUI_PremiumStoreFunctionLibrary::GetPetPurchaseBonusFromPurchaseRewards(struct FVALUI_PremiumStorefrontPurchaseRewards& PurchaseRewards)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7923,15 +10300,15 @@ struct FVAL_CharacterCustomization_PetPurchaseBonus UVALUI_PremiumStoreFunctionL
 
 	Params::UVALUI_PremiumStoreFunctionLibrary_GetPetPurchaseBonusFromPurchaseRewards_Params Parms{};
 
-	Parms.PurchaseRewards = InPurchaseRewards;
+	Parms.PurchaseRewards = PurchaseRewards;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7945,7 +10322,7 @@ struct FVAL_CharacterCustomization_PetPurchaseBonus UVALUI_PremiumStoreFunctionL
 // TSet<struct FGuid>                 NewEntitlements                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 
-TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>> UVALUI_PremiumStoreFunctionLibrary::GetNewPetsForBonusReceivedModal(struct FVAL_CharacterCustomization_PetPurchaseBonus& InPetPurchaseBonus, TSet<struct FGuid>& InNewEntitlements)
+TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>> UVALUI_PremiumStoreFunctionLibrary::GetNewPetsForBonusReceivedModal(struct FVAL_CharacterCustomization_PetPurchaseBonus& PetPurchaseBonus, TSet<struct FGuid>& NewEntitlements)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7954,19 +10331,75 @@ TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>> UVALUI_Premium
 
 	Params::UVALUI_PremiumStoreFunctionLibrary_GetNewPetsForBonusReceivedModal_Params Parms{};
 
-	Parms.PetPurchaseBonus = InPetPurchaseBonus;
-	Parms.NewEntitlements = InNewEntitlements;
+	Parms.PetPurchaseBonus = PetPurchaseBonus;
+	Parms.NewEntitlements = NewEntitlements;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_PremiumStoreWebBrowser
+// (None)
+
+class UClass* UVALUI_PremiumStoreWebBrowser::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_PremiumStoreWebBrowser");
+
+	return Clss;
+}
+
+
+// VALUI_PremiumStoreWebBrowser ValeriaUI.Default__VALUI_PremiumStoreWebBrowser
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_PremiumStoreWebBrowser* UVALUI_PremiumStoreWebBrowser::GetDefaultObj()
+{
+	static class UVALUI_PremiumStoreWebBrowser* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_PremiumStoreWebBrowser*>(UVALUI_PremiumStoreWebBrowser::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_ProgressBarStyle
+// (None)
+
+class UClass* UVALUI_ProgressBarStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ProgressBarStyle");
+
+	return Clss;
+}
+
+
+// VALUI_ProgressBarStyle ValeriaUI.Default__VALUI_ProgressBarStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ProgressBarStyle* UVALUI_ProgressBarStyle::GetDefaultObj()
+{
+	static class UVALUI_ProgressBarStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ProgressBarStyle*>(UVALUI_ProgressBarStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -7975,7 +10408,7 @@ TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>> UVALUI_Premium
 // Parameters:
 // class UProgressBar*                ProgressBar                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ProgressBarStyle::Apply(class UProgressBar* InProgressBar)
+void UVALUI_ProgressBarStyle::Apply(class UProgressBar* ProgressBar)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7984,16 +10417,44 @@ void UVALUI_ProgressBarStyle::Apply(class UProgressBar* InProgressBar)
 
 	Params::UVALUI_ProgressBarStyle_Apply_Params Parms{};
 
-	Parms.ProgressBar = InProgressBar;
+	Parms.ProgressBar = ProgressBar;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_ProgressBar_Styled
+// (None)
+
+class UClass* UVALUI_ProgressBar_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ProgressBar_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_ProgressBar_Styled ValeriaUI.Default__VALUI_ProgressBar_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ProgressBar_Styled* UVALUI_ProgressBar_Styled::GetDefaultObj()
+{
+	static class UVALUI_ProgressBar_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ProgressBar_Styled*>(UVALUI_ProgressBar_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8002,7 +10463,7 @@ void UVALUI_ProgressBarStyle::Apply(class UProgressBar* InProgressBar)
 // Parameters:
 // class UVALUI_ProgressBarStyle*     NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ProgressBar_Styled::SetProgressBarStyle(class UVALUI_ProgressBarStyle* InNewStyle)
+void UVALUI_ProgressBar_Styled::SetProgressBarStyle(class UVALUI_ProgressBarStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8011,16 +10472,44 @@ void UVALUI_ProgressBar_Styled::SetProgressBarStyle(class UVALUI_ProgressBarStyl
 
 	Params::UVALUI_ProgressBar_Styled_SetProgressBarStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_RadioSlider
+// (None)
+
+class UClass* UVALUI_RadioSlider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_RadioSlider");
+
+	return Clss;
+}
+
+
+// VALUI_RadioSlider ValeriaUI.Default__VALUI_RadioSlider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_RadioSlider* UVALUI_RadioSlider::GetDefaultObj()
+{
+	static class UVALUI_RadioSlider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_RadioSlider*>(UVALUI_RadioSlider::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8038,13 +10527,13 @@ void UVALUI_RadioSlider::TryIncrementPage()
 	Params::UVALUI_RadioSlider_TryIncrementPage_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8063,13 +10552,13 @@ void UVALUI_RadioSlider::TryDecrementPage()
 	Params::UVALUI_RadioSlider_TryDecrementPage_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8080,7 +10569,7 @@ void UVALUI_RadioSlider::TryDecrementPage()
 // int32                              Index                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bSkipSliderAnimation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_RadioSlider::SetIndex(int32 InIndex, bool InbSkipSliderAnimation)
+void UVALUI_RadioSlider::SetIndex(int32 Index, bool bSkipSliderAnimation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8089,16 +10578,16 @@ void UVALUI_RadioSlider::SetIndex(int32 InIndex, bool InbSkipSliderAnimation)
 
 	Params::UVALUI_RadioSlider_SetIndex_Params Parms{};
 
-	Parms.Index = InIndex;
-	Parms.bSkipSliderAnimation = InbSkipSliderAnimation;
+	Parms.Index = Index;
+	Parms.bSkipSliderAnimation = bSkipSliderAnimation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8108,7 +10597,7 @@ void UVALUI_RadioSlider::SetIndex(int32 InIndex, bool InbSkipSliderAnimation)
 // Parameters:
 // class UUserWidget*                 SliderWidget                                                     (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_RadioSlider::OnSliderWidgetCreated__DelegateSignature(class UUserWidget* InSliderWidget)
+void UVALUI_RadioSlider::OnSliderWidgetCreated__DelegateSignature(class UUserWidget* SliderWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8117,7 +10606,7 @@ void UVALUI_RadioSlider::OnSliderWidgetCreated__DelegateSignature(class UUserWid
 
 	Params::UVALUI_RadioSlider_OnSliderWidgetCreated__DelegateSignature_Params Parms{};
 
-	Parms.SliderWidget = InSliderWidget;
+	Parms.SliderWidget = SliderWidget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8132,7 +10621,7 @@ void UVALUI_RadioSlider::OnSliderWidgetCreated__DelegateSignature(class UUserWid
 // class UUserWidget*                 NewElementWidget                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              NewElementIndex                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_RadioSlider::OnSliderChanged__DelegateSignature(class UUserWidget* InPreviousElementWidget, int32 InPreviousElementIndex, class UUserWidget* InNewElementWidget, int32 InNewElementIndex)
+void UVALUI_RadioSlider::OnSliderChanged__DelegateSignature(class UUserWidget* PreviousElementWidget, int32 PreviousElementIndex, class UUserWidget* NewElementWidget, int32 NewElementIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8141,10 +10630,10 @@ void UVALUI_RadioSlider::OnSliderChanged__DelegateSignature(class UUserWidget* I
 
 	Params::UVALUI_RadioSlider_OnSliderChanged__DelegateSignature_Params Parms{};
 
-	Parms.PreviousElementWidget = InPreviousElementWidget;
-	Parms.PreviousElementIndex = InPreviousElementIndex;
-	Parms.NewElementWidget = InNewElementWidget;
-	Parms.NewElementIndex = InNewElementIndex;
+	Parms.PreviousElementWidget = PreviousElementWidget;
+	Parms.PreviousElementIndex = PreviousElementIndex;
+	Parms.NewElementWidget = NewElementWidget;
+	Parms.NewElementIndex = NewElementIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8157,7 +10646,7 @@ void UVALUI_RadioSlider::OnSliderChanged__DelegateSignature(class UUserWidget* I
 // int32                              PageIndex                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              TotalNumPages                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_RadioSlider::OnPageChanged__DelegateSignature(int32 InPageIndex, int32 InTotalNumPages)
+void UVALUI_RadioSlider::OnPageChanged__DelegateSignature(int32 PageIndex, int32 TotalNumPages)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8166,8 +10655,8 @@ void UVALUI_RadioSlider::OnPageChanged__DelegateSignature(int32 InPageIndex, int
 
 	Params::UVALUI_RadioSlider_OnPageChanged__DelegateSignature_Params Parms{};
 
-	Parms.PageIndex = InPageIndex;
-	Parms.TotalNumPages = InTotalNumPages;
+	Parms.PageIndex = PageIndex;
+	Parms.TotalNumPages = TotalNumPages;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8180,7 +10669,7 @@ void UVALUI_RadioSlider::OnPageChanged__DelegateSignature(int32 InPageIndex, int
 // class UUserWidget*                 ElementWidget                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ElementIndex                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_RadioSlider::OnElementWidgetCreated__DelegateSignature(class UUserWidget* InElementWidget, int32 InElementIndex)
+void UVALUI_RadioSlider::OnElementWidgetCreated__DelegateSignature(class UUserWidget* ElementWidget, int32 ElementIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8189,8 +10678,8 @@ void UVALUI_RadioSlider::OnElementWidgetCreated__DelegateSignature(class UUserWi
 
 	Params::UVALUI_RadioSlider_OnElementWidgetCreated__DelegateSignature_Params Parms{};
 
-	Parms.ElementWidget = InElementWidget;
-	Parms.ElementIndex = InElementIndex;
+	Parms.ElementWidget = ElementWidget;
+	Parms.ElementIndex = ElementIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8203,7 +10692,7 @@ void UVALUI_RadioSlider::OnElementWidgetCreated__DelegateSignature(class UUserWi
 // int32                              Index                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UUserWidget*                 ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UUserWidget* UVALUI_RadioSlider::GetWidgetAtIndex(int32 InIndex)
+class UUserWidget* UVALUI_RadioSlider::GetWidgetAtIndex(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8212,15 +10701,15 @@ class UUserWidget* UVALUI_RadioSlider::GetWidgetAtIndex(int32 InIndex)
 
 	Params::UVALUI_RadioSlider_GetWidgetAtIndex_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8242,13 +10731,13 @@ int32 UVALUI_RadioSlider::GetTotalNumPages()
 	Params::UVALUI_RadioSlider_GetTotalNumPages_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8270,13 +10759,13 @@ class UUserWidget* UVALUI_RadioSlider::GetSliderWidget()
 	Params::UVALUI_RadioSlider_GetSliderWidget_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8290,7 +10779,7 @@ class UUserWidget* UVALUI_RadioSlider::GetSliderWidget()
 // int32                              Index                                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_RadioSlider::GetIndexFromWidget(class UUserWidget* InWidget, int32* InIndex)
+bool UVALUI_RadioSlider::GetIndexFromWidget(class UUserWidget* Widget, int32* Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8299,18 +10788,18 @@ bool UVALUI_RadioSlider::GetIndexFromWidget(class UUserWidget* InWidget, int32* 
 
 	Params::UVALUI_RadioSlider_GetIndexFromWidget_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InIndex != nullptr)
-		*InIndex = Parms.Index;
+	if (Index != nullptr)
+		*Index = Parms.Index;
 
 	return Parms.ReturnValue;
 
@@ -8332,13 +10821,13 @@ TMap<int32, class UUserWidget*> UVALUI_RadioSlider::GetElementWidgetsTable()
 	Params::UVALUI_RadioSlider_GetElementWidgetsTable_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8360,13 +10849,13 @@ int32 UVALUI_RadioSlider::GetCurrentPageIndex()
 	Params::UVALUI_RadioSlider_GetCurrentPageIndex_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8388,13 +10877,13 @@ int32 UVALUI_RadioSlider::GetCurrentIndex()
 	Params::UVALUI_RadioSlider_GetCurrentIndex_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8415,14 +10904,42 @@ void UVALUI_RadioSlider::BuildElementsAndSlider()
 	Params::UVALUI_RadioSlider_BuildElementsAndSlider_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_RichTextBlockStyle
+// (None)
+
+class UClass* UVALUI_RichTextBlockStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_RichTextBlockStyle");
+
+	return Clss;
+}
+
+
+// VALUI_RichTextBlockStyle ValeriaUI.Default__VALUI_RichTextBlockStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_RichTextBlockStyle* UVALUI_RichTextBlockStyle::GetDefaultObj()
+{
+	static class UVALUI_RichTextBlockStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_RichTextBlockStyle*>(UVALUI_RichTextBlockStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8431,7 +10948,7 @@ void UVALUI_RadioSlider::BuildElementsAndSlider()
 // Parameters:
 // class URichTextBlock*              TextWidget                                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_RichTextBlockStyle::ApplyToTextBlock(class URichTextBlock* InTextWidget)
+void UVALUI_RichTextBlockStyle::ApplyToTextBlock(class URichTextBlock* TextWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8440,16 +10957,44 @@ void UVALUI_RichTextBlockStyle::ApplyToTextBlock(class URichTextBlock* InTextWid
 
 	Params::UVALUI_RichTextBlockStyle_ApplyToTextBlock_Params Parms{};
 
-	Parms.TextWidget = InTextWidget;
+	Parms.TextWidget = TextWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_RichTextBlock_Styled
+// (None)
+
+class UClass* UVALUI_RichTextBlock_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_RichTextBlock_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_RichTextBlock_Styled ValeriaUI.Default__VALUI_RichTextBlock_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_RichTextBlock_Styled* UVALUI_RichTextBlock_Styled::GetDefaultObj()
+{
+	static class UVALUI_RichTextBlock_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_RichTextBlock_Styled*>(UVALUI_RichTextBlock_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8458,7 +11003,7 @@ void UVALUI_RichTextBlockStyle::ApplyToTextBlock(class URichTextBlock* InTextWid
 // Parameters:
 // class UVALUI_RichTextBlockStyle*   NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_RichTextBlock_Styled::SetTextBlockStyle(class UVALUI_RichTextBlockStyle* InNewStyle)
+void UVALUI_RichTextBlock_Styled::SetTextBlockStyle(class UVALUI_RichTextBlockStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8467,16 +11012,44 @@ void UVALUI_RichTextBlock_Styled::SetTextBlockStyle(class UVALUI_RichTextBlockSt
 
 	Params::UVALUI_RichTextBlock_Styled_SetTextBlockStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_ScrollBoxStyle
+// (None)
+
+class UClass* UVALUI_ScrollBoxStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ScrollBoxStyle");
+
+	return Clss;
+}
+
+
+// VALUI_ScrollBoxStyle ValeriaUI.Default__VALUI_ScrollBoxStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ScrollBoxStyle* UVALUI_ScrollBoxStyle::GetDefaultObj()
+{
+	static class UVALUI_ScrollBoxStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ScrollBoxStyle*>(UVALUI_ScrollBoxStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8485,7 +11058,7 @@ void UVALUI_RichTextBlock_Styled::SetTextBlockStyle(class UVALUI_RichTextBlockSt
 // Parameters:
 // class UScrollBox*                  ScrollBox                                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ScrollBoxStyle::ApplyToScrollBox(class UScrollBox* InScrollBox)
+void UVALUI_ScrollBoxStyle::ApplyToScrollBox(class UScrollBox* ScrollBox)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8494,16 +11067,44 @@ void UVALUI_ScrollBoxStyle::ApplyToScrollBox(class UScrollBox* InScrollBox)
 
 	Params::UVALUI_ScrollBoxStyle_ApplyToScrollBox_Params Parms{};
 
-	Parms.ScrollBox = InScrollBox;
+	Parms.ScrollBox = ScrollBox;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_ScrollBox_Styled
+// (None)
+
+class UClass* UVALUI_ScrollBox_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ScrollBox_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_ScrollBox_Styled ValeriaUI.Default__VALUI_ScrollBox_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ScrollBox_Styled* UVALUI_ScrollBox_Styled::GetDefaultObj()
+{
+	static class UVALUI_ScrollBox_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ScrollBox_Styled*>(UVALUI_ScrollBox_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8512,7 +11113,7 @@ void UVALUI_ScrollBoxStyle::ApplyToScrollBox(class UScrollBox* InScrollBox)
 // Parameters:
 // class UVALUI_ScrollBoxStyle*       NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_ScrollBox_Styled::SetScrollBoxStyle(class UVALUI_ScrollBoxStyle* InNewStyle)
+void UVALUI_ScrollBox_Styled::SetScrollBoxStyle(class UVALUI_ScrollBoxStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8521,16 +11122,72 @@ void UVALUI_ScrollBox_Styled::SetScrollBoxStyle(class UVALUI_ScrollBoxStyle* InN
 
 	Params::UVALUI_ScrollBox_Styled_SetScrollBoxStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_Settings
+// (None)
+
+class UClass* UVALUI_Settings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_Settings");
+
+	return Clss;
+}
+
+
+// VALUI_Settings ValeriaUI.Default__VALUI_Settings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_Settings* UVALUI_Settings::GetDefaultObj()
+{
+	static class UVALUI_Settings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_Settings*>(UVALUI_Settings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_SliderStyle
+// (None)
+
+class UClass* UVALUI_SliderStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_SliderStyle");
+
+	return Clss;
+}
+
+
+// VALUI_SliderStyle ValeriaUI.Default__VALUI_SliderStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_SliderStyle* UVALUI_SliderStyle::GetDefaultObj()
+{
+	static class UVALUI_SliderStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_SliderStyle*>(UVALUI_SliderStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8539,7 +11196,7 @@ void UVALUI_ScrollBox_Styled::SetScrollBoxStyle(class UVALUI_ScrollBoxStyle* InN
 // Parameters:
 // class USlider*                     Slider                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_SliderStyle::Apply(class USlider* InSlider)
+void UVALUI_SliderStyle::Apply(class USlider* Slider)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8548,16 +11205,44 @@ void UVALUI_SliderStyle::Apply(class USlider* InSlider)
 
 	Params::UVALUI_SliderStyle_Apply_Params Parms{};
 
-	Parms.Slider = InSlider;
+	Parms.Slider = Slider;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_Slider_Styled
+// (None)
+
+class UClass* UVALUI_Slider_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_Slider_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_Slider_Styled ValeriaUI.Default__VALUI_Slider_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_Slider_Styled* UVALUI_Slider_Styled::GetDefaultObj()
+{
+	static class UVALUI_Slider_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_Slider_Styled*>(UVALUI_Slider_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8566,7 +11251,7 @@ void UVALUI_SliderStyle::Apply(class USlider* InSlider)
 // Parameters:
 // class UVALUI_SliderStyle*          NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_Slider_Styled::SetSliderStyle(class UVALUI_SliderStyle* InNewStyle)
+void UVALUI_Slider_Styled::SetSliderStyle(class UVALUI_SliderStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8575,16 +11260,44 @@ void UVALUI_Slider_Styled::SetSliderStyle(class UVALUI_SliderStyle* InNewStyle)
 
 	Params::UVALUI_Slider_Styled_SetSliderStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_SocialPanelBase
+// (None)
+
+class UClass* UVALUI_SocialPanelBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_SocialPanelBase");
+
+	return Clss;
+}
+
+
+// VALUI_SocialPanelBase ValeriaUI.Default__VALUI_SocialPanelBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_SocialPanelBase* UVALUI_SocialPanelBase::GetDefaultObj()
+{
+	static class UVALUI_SocialPanelBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_SocialPanelBase*>(UVALUI_SocialPanelBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8593,7 +11306,7 @@ void UVALUI_Slider_Styled::SetSliderStyle(class UVALUI_SliderStyle* InNewStyle)
 // Parameters:
 // bool                               bDisplay                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_SocialPanelBase::ToggleDebugSimulation__DelegateSignature(bool InbDisplay)
+void UVALUI_SocialPanelBase::ToggleDebugSimulation__DelegateSignature(bool bDisplay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8602,7 +11315,7 @@ void UVALUI_SocialPanelBase::ToggleDebugSimulation__DelegateSignature(bool InbDi
 
 	Params::UVALUI_SocialPanelBase_ToggleDebugSimulation__DelegateSignature_Params Parms{};
 
-	Parms.bDisplay = InbDisplay;
+	Parms.bDisplay = bDisplay;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8624,16 +11337,72 @@ class FString UVALUI_SocialPanelBase::GetDebugSimulationFlag()
 	Params::UVALUI_SocialPanelBase_GetDebugSimulationFlag_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_LobbyScreenUserWidget
+// (None)
+
+class UClass* UVALUI_LobbyScreenUserWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_LobbyScreenUserWidget");
+
+	return Clss;
+}
+
+
+// VALUI_LobbyScreenUserWidget ValeriaUI.Default__VALUI_LobbyScreenUserWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_LobbyScreenUserWidget* UVALUI_LobbyScreenUserWidget::GetDefaultObj()
+{
+	static class UVALUI_LobbyScreenUserWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_LobbyScreenUserWidget*>(UVALUI_LobbyScreenUserWidget::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_StateUserWidget_PregameHUD
+// (None)
+
+class UClass* UVALUI_StateUserWidget_PregameHUD::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_StateUserWidget_PregameHUD");
+
+	return Clss;
+}
+
+
+// VALUI_StateUserWidget_PregameHUD ValeriaUI.Default__VALUI_StateUserWidget_PregameHUD
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_StateUserWidget_PregameHUD* UVALUI_StateUserWidget_PregameHUD::GetDefaultObj()
+{
+	static class UVALUI_StateUserWidget_PregameHUD* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_StateUserWidget_PregameHUD*>(UVALUI_StateUserWidget_PregameHUD::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8642,7 +11411,7 @@ class FString UVALUI_SocialPanelBase::GetDebugSimulationFlag()
 // Parameters:
 // class UVALUI_PregameUIManager*     Owner                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_StateUserWidget_PregameHUD::SetOwner(class UVALUI_PregameUIManager* InOwner)
+void UVALUI_StateUserWidget_PregameHUD::SetOwner(class UVALUI_PregameUIManager* Owner)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8651,7 +11420,7 @@ void UVALUI_StateUserWidget_PregameHUD::SetOwner(class UVALUI_PregameUIManager* 
 
 	Params::UVALUI_StateUserWidget_PregameHUD_SetOwner_Params Parms{};
 
-	Parms.Owner = InOwner;
+	Parms.Owner = Owner;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8663,7 +11432,7 @@ void UVALUI_StateUserWidget_PregameHUD::SetOwner(class UVALUI_PregameUIManager* 
 // Parameters:
 // enum class EVALUI_LoginState       NewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_StateUserWidget_PregameHUD::HandleOnLoginStateChanged(enum class EVALUI_LoginState InNewState)
+void UVALUI_StateUserWidget_PregameHUD::HandleOnLoginStateChanged(enum class EVALUI_LoginState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8672,7 +11441,7 @@ void UVALUI_StateUserWidget_PregameHUD::HandleOnLoginStateChanged(enum class EVA
 
 	Params::UVALUI_StateUserWidget_PregameHUD_HandleOnLoginStateChanged_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8684,7 +11453,7 @@ void UVALUI_StateUserWidget_PregameHUD::HandleOnLoginStateChanged(enum class EVA
 // Parameters:
 // enum class EVALUI_LobbyState       NewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_StateUserWidget_PregameHUD::HandleOnLobbyStateChanged(enum class EVALUI_LobbyState InNewState)
+void UVALUI_StateUserWidget_PregameHUD::HandleOnLobbyStateChanged(enum class EVALUI_LobbyState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8693,7 +11462,7 @@ void UVALUI_StateUserWidget_PregameHUD::HandleOnLobbyStateChanged(enum class EVA
 
 	Params::UVALUI_StateUserWidget_PregameHUD_HandleOnLobbyStateChanged_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8724,7 +11493,7 @@ void UVALUI_StateUserWidget_PregameHUD::HandleOnFetchedServerStatus()
 // Parameters:
 // enum class EVALUI_CharacterCreationStateNewState                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_StateUserWidget_PregameHUD::HandleOnCharacterCreationStateChanged(enum class EVALUI_CharacterCreationState InNewState)
+void UVALUI_StateUserWidget_PregameHUD::HandleOnCharacterCreationStateChanged(enum class EVALUI_CharacterCreationState NewState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8733,7 +11502,7 @@ void UVALUI_StateUserWidget_PregameHUD::HandleOnCharacterCreationStateChanged(en
 
 	Params::UVALUI_StateUserWidget_PregameHUD_HandleOnCharacterCreationStateChanged_Params Parms{};
 
-	Parms.NewState = InNewState;
+	Parms.NewState = NewState;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8789,7 +11558,7 @@ class UVALUI_CharacterCreationScreenBase* UVALUI_StateUserWidget_PregameHUD::Get
 // Parameters:
 // int32                              Number                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_StateUserWidget_PregameHUD::DisplayMatchmakingQueueNumber(int32 InNumber)
+void UVALUI_StateUserWidget_PregameHUD::DisplayMatchmakingQueueNumber(int32 Number)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8798,7 +11567,7 @@ void UVALUI_StateUserWidget_PregameHUD::DisplayMatchmakingQueueNumber(int32 InNu
 
 	Params::UVALUI_StateUserWidget_PregameHUD_DisplayMatchmakingQueueNumber_Params Parms{};
 
-	Parms.Number = InNumber;
+	Parms.Number = Number;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8810,7 +11579,7 @@ void UVALUI_StateUserWidget_PregameHUD::DisplayMatchmakingQueueNumber(int32 InNu
 // Parameters:
 // bool                               bActive                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_StateUserWidget_PregameHUD::DisplayMatchmakingQueueActive(bool InbActive)
+void UVALUI_StateUserWidget_PregameHUD::DisplayMatchmakingQueueActive(bool bActive)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8819,7 +11588,7 @@ void UVALUI_StateUserWidget_PregameHUD::DisplayMatchmakingQueueActive(bool InbAc
 
 	Params::UVALUI_StateUserWidget_PregameHUD_DisplayMatchmakingQueueActive_Params Parms{};
 
-	Parms.bActive = InbActive;
+	Parms.bActive = bActive;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -8845,12 +11614,40 @@ void UVALUI_StateUserWidget_PregameHUD::DisplayCharacterCreationMatchmaking()
 }
 
 
+// Class ValeriaUI.VALUI_TabButtonHostBase
+// (None)
+
+class UClass* UVALUI_TabButtonHostBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_TabButtonHostBase");
+
+	return Clss;
+}
+
+
+// VALUI_TabButtonHostBase ValeriaUI.Default__VALUI_TabButtonHostBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_TabButtonHostBase* UVALUI_TabButtonHostBase::GetDefaultObj()
+{
+	static class UVALUI_TabButtonHostBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_TabButtonHostBase*>(UVALUI_TabButtonHostBase::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ValeriaUI.VALUI_TabButtonHostBase.UnregisterTab
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_TabButtonHostBase::UnregisterTab(class FName& InTabName)
+void UVALUI_TabButtonHostBase::UnregisterTab(class FName& TabName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8859,15 +11656,15 @@ void UVALUI_TabButtonHostBase::UnregisterTab(class FName& InTabName)
 
 	Params::UVALUI_TabButtonHostBase_UnregisterTab_Params Parms{};
 
-	Parms.TabName = InTabName;
+	Parms.TabName = TabName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8879,7 +11676,7 @@ void UVALUI_TabButtonHostBase::UnregisterTab(class FName& InTabName)
 // bool                               bForceSet                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_TabButtonHostBase::TrySetActiveTabName(class FName InTabName, bool InbForceSet)
+bool UVALUI_TabButtonHostBase::TrySetActiveTabName(class FName TabName, bool bForceSet)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8888,16 +11685,16 @@ bool UVALUI_TabButtonHostBase::TrySetActiveTabName(class FName InTabName, bool I
 
 	Params::UVALUI_TabButtonHostBase_TrySetActiveTabName_Params Parms{};
 
-	Parms.TabName = InTabName;
-	Parms.bForceSet = InbForceSet;
+	Parms.TabName = TabName;
+	Parms.bForceSet = bForceSet;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8911,7 +11708,7 @@ bool UVALUI_TabButtonHostBase::TrySetActiveTabName(class FName InTabName, bool I
 // struct FVALUI_InstantiatedTabButtonInfoOutInfo                                                          (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_TabButtonHostBase::TryGetTabInfo(class FName& InTabName, struct FVALUI_InstantiatedTabButtonInfo* InOutInfo)
+bool UVALUI_TabButtonHostBase::TryGetTabInfo(class FName& TabName, struct FVALUI_InstantiatedTabButtonInfo* OutInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8920,18 +11717,18 @@ bool UVALUI_TabButtonHostBase::TryGetTabInfo(class FName& InTabName, struct FVAL
 
 	Params::UVALUI_TabButtonHostBase_TryGetTabInfo_Params Parms{};
 
-	Parms.TabName = InTabName;
+	Parms.TabName = TabName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutInfo != nullptr)
-		*InOutInfo = Parms.OutInfo;
+	if (OutInfo != nullptr)
+		*OutInfo = std::move(Parms.OutInfo);
 
 	return Parms.ReturnValue;
 
@@ -8944,7 +11741,7 @@ bool UVALUI_TabButtonHostBase::TryGetTabInfo(class FName& InTabName, struct FVAL
 // class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESlateVisibility        NewVisibility                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_TabButtonHostBase::SetTabButtonVisibility(class FName& InTabName, enum class ESlateVisibility InNewVisibility)
+void UVALUI_TabButtonHostBase::SetTabButtonVisibility(class FName& TabName, enum class ESlateVisibility NewVisibility)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8953,16 +11750,16 @@ void UVALUI_TabButtonHostBase::SetTabButtonVisibility(class FName& InTabName, en
 
 	Params::UVALUI_TabButtonHostBase_SetTabButtonVisibility_Params Parms{};
 
-	Parms.TabName = InTabName;
-	Parms.NewVisibility = InNewVisibility;
+	Parms.TabName = TabName;
+	Parms.NewVisibility = NewVisibility;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8973,7 +11770,7 @@ void UVALUI_TabButtonHostBase::SetTabButtonVisibility(class FName& InTabName, en
 // class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVALUI_InstantiatedTabButtonInfoInfo                                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UVALUI_TabButtonHostBase::RemoveTabButton(class FName& InTabName, struct FVALUI_InstantiatedTabButtonInfo& InInfo)
+void UVALUI_TabButtonHostBase::RemoveTabButton(class FName& TabName, struct FVALUI_InstantiatedTabButtonInfo& Info)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8982,8 +11779,8 @@ void UVALUI_TabButtonHostBase::RemoveTabButton(class FName& InTabName, struct FV
 
 	Params::UVALUI_TabButtonHostBase_RemoveTabButton_Params Parms{};
 
-	Parms.TabName = InTabName;
-	Parms.Info = InInfo;
+	Parms.TabName = TabName;
+	Parms.Info = Info;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -9000,7 +11797,7 @@ void UVALUI_TabButtonHostBase::RemoveTabButton(class FName& InTabName, struct FV
 // TSoftObjectPtr<class UTexture2D>   IconTexture                                                      (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   IconSize                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_TabButtonHostBase::RegisterNewTab(class FName& InTabName, class FText& InTabDisplayName, class UButton* InButton, class UWidget* InAssociatedContent, TSoftObjectPtr<class UTexture2D> InIconTexture, struct FVector2D& InIconSize)
+void UVALUI_TabButtonHostBase::RegisterNewTab(class FName& TabName, class FText& TabDisplayName, class UButton* Button, class UWidget* AssociatedContent, TSoftObjectPtr<class UTexture2D> IconTexture, struct FVector2D& IconSize)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9009,20 +11806,20 @@ void UVALUI_TabButtonHostBase::RegisterNewTab(class FName& InTabName, class FTex
 
 	Params::UVALUI_TabButtonHostBase_RegisterNewTab_Params Parms{};
 
-	Parms.TabName = InTabName;
-	Parms.TabDisplayName = InTabDisplayName;
-	Parms.Button = InButton;
-	Parms.AssociatedContent = InAssociatedContent;
-	Parms.IconTexture = InIconTexture;
-	Parms.IconSize = InIconSize;
+	Parms.TabName = TabName;
+	Parms.TabDisplayName = TabDisplayName;
+	Parms.Button = Button;
+	Parms.AssociatedContent = AssociatedContent;
+	Parms.IconTexture = IconTexture;
+	Parms.IconSize = IconSize;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9032,7 +11829,7 @@ void UVALUI_TabButtonHostBase::RegisterNewTab(class FName& InTabName, class FTex
 // Parameters:
 // class UVALUI_TabButtonHostBase*    TabButtonHost                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_TabButtonHostBase::OnDifferentActiveTabSet__DelegateSignature(class UVALUI_TabButtonHostBase* InTabButtonHost)
+void UVALUI_TabButtonHostBase::OnDifferentActiveTabSet__DelegateSignature(class UVALUI_TabButtonHostBase* TabButtonHost)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9041,7 +11838,7 @@ void UVALUI_TabButtonHostBase::OnDifferentActiveTabSet__DelegateSignature(class 
 
 	Params::UVALUI_TabButtonHostBase_OnDifferentActiveTabSet__DelegateSignature_Params Parms{};
 
-	Parms.TabButtonHost = InTabButtonHost;
+	Parms.TabButtonHost = TabButtonHost;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -9053,7 +11850,7 @@ void UVALUI_TabButtonHostBase::OnDifferentActiveTabSet__DelegateSignature(class 
 // Parameters:
 // class FName                        TabName                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_TabButtonHostBase::HandleDifferentActiveTabSet(class FName InTabName)
+void UVALUI_TabButtonHostBase::HandleDifferentActiveTabSet(class FName TabName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9062,7 +11859,7 @@ void UVALUI_TabButtonHostBase::HandleDifferentActiveTabSet(class FName InTabName
 
 	Params::UVALUI_TabButtonHostBase_HandleDifferentActiveTabSet_Params Parms{};
 
-	Parms.TabName = InTabName;
+	Parms.TabName = TabName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -9084,13 +11881,13 @@ TArray<class FName> UVALUI_TabButtonHostBase::GetTabNames()
 	Params::UVALUI_TabButtonHostBase_GetTabNames_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -9112,13 +11909,13 @@ class FName UVALUI_TabButtonHostBase::GetActiveTabName()
 	Params::UVALUI_TabButtonHostBase_GetActiveTabName_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -9131,7 +11928,7 @@ class FName UVALUI_TabButtonHostBase::GetActiveTabName()
 // class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVALUI_InstantiatedTabButtonInfoInfo                                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UVALUI_TabButtonHostBase::AddTabButton(class FName& InTabName, struct FVALUI_InstantiatedTabButtonInfo& InInfo)
+void UVALUI_TabButtonHostBase::AddTabButton(class FName& TabName, struct FVALUI_InstantiatedTabButtonInfo& Info)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9140,11 +11937,39 @@ void UVALUI_TabButtonHostBase::AddTabButton(class FName& InTabName, struct FVALU
 
 	Params::UVALUI_TabButtonHostBase_AddTabButton_Params Parms{};
 
-	Parms.TabName = InTabName;
-	Parms.Info = InInfo;
+	Parms.TabName = TabName;
+	Parms.Info = Info;
 
 	UObject::ProcessEvent(Func, &Parms);
 
+}
+
+
+// Class ValeriaUI.VALUI_TabButtonInterface
+// (None)
+
+class UClass* IVALUI_TabButtonInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_TabButtonInterface");
+
+	return Clss;
+}
+
+
+// VALUI_TabButtonInterface ValeriaUI.Default__VALUI_TabButtonInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IVALUI_TabButtonInterface* IVALUI_TabButtonInterface::GetDefaultObj()
+{
+	static class IVALUI_TabButtonInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IVALUI_TabButtonInterface*>(IVALUI_TabButtonInterface::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -9153,7 +11978,7 @@ void UVALUI_TabButtonHostBase::AddTabButton(class FName& InTabName, struct FVALU
 // Parameters:
 // bool                               bIsActive                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IVALUI_TabButtonInterface::SetIsActiveTabButton(bool InbIsActive)
+void IVALUI_TabButtonInterface::SetIsActiveTabButton(bool bIsActive)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9162,16 +11987,44 @@ void IVALUI_TabButtonInterface::SetIsActiveTabButton(bool InbIsActive)
 
 	Params::IVALUI_TabButtonInterface_SetIsActiveTabButton_Params Parms{};
 
-	Parms.bIsActive = InbIsActive;
+	Parms.bIsActive = bIsActive;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_TextBlockStyle
+// (None)
+
+class UClass* UVALUI_TextBlockStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_TextBlockStyle");
+
+	return Clss;
+}
+
+
+// VALUI_TextBlockStyle ValeriaUI.Default__VALUI_TextBlockStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_TextBlockStyle* UVALUI_TextBlockStyle::GetDefaultObj()
+{
+	static class UVALUI_TextBlockStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_TextBlockStyle*>(UVALUI_TextBlockStyle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -9180,7 +12033,7 @@ void IVALUI_TabButtonInterface::SetIsActiveTabButton(bool InbIsActive)
 // Parameters:
 // class UTextBlock*                  TextWidget                                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_TextBlockStyle::ApplyToTextBlock(class UTextBlock* InTextWidget)
+void UVALUI_TextBlockStyle::ApplyToTextBlock(class UTextBlock* TextWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9189,16 +12042,44 @@ void UVALUI_TextBlockStyle::ApplyToTextBlock(class UTextBlock* InTextWidget)
 
 	Params::UVALUI_TextBlockStyle_ApplyToTextBlock_Params Parms{};
 
-	Parms.TextWidget = InTextWidget;
+	Parms.TextWidget = TextWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_TextBlock_Styled
+// (None)
+
+class UClass* UVALUI_TextBlock_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_TextBlock_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_TextBlock_Styled ValeriaUI.Default__VALUI_TextBlock_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_TextBlock_Styled* UVALUI_TextBlock_Styled::GetDefaultObj()
+{
+	static class UVALUI_TextBlock_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_TextBlock_Styled*>(UVALUI_TextBlock_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -9207,7 +12088,7 @@ void UVALUI_TextBlockStyle::ApplyToTextBlock(class UTextBlock* InTextWidget)
 // Parameters:
 // class UVALUI_TextBlockStyle*       NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_TextBlock_Styled::SetTextBlockStyle(class UVALUI_TextBlockStyle* InNewStyle)
+void UVALUI_TextBlock_Styled::SetTextBlockStyle(class UVALUI_TextBlockStyle* NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9216,16 +12097,44 @@ void UVALUI_TextBlock_Styled::SetTextBlockStyle(class UVALUI_TextBlockStyle* InN
 
 	Params::UVALUI_TextBlock_Styled_SetTextBlockStyle_Params Parms{};
 
-	Parms.NewStyle = InNewStyle;
+	Parms.NewStyle = NewStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_TileView_Styled
+// (None)
+
+class UClass* UVALUI_TileView_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_TileView_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_TileView_Styled ValeriaUI.Default__VALUI_TileView_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_TileView_Styled* UVALUI_TileView_Styled::GetDefaultObj()
+{
+	static class UVALUI_TileView_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_TileView_Styled*>(UVALUI_TileView_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -9234,7 +12143,7 @@ void UVALUI_TextBlock_Styled::SetTextBlockStyle(class UVALUI_TextBlockStyle* InN
 // Parameters:
 // float                              NewWidth                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_TileView_Styled::SetEntryWidth(float InNewWidth)
+void UVALUI_TileView_Styled::SetEntryWidth(float NewWidth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9243,15 +12152,15 @@ void UVALUI_TileView_Styled::SetEntryWidth(float InNewWidth)
 
 	Params::UVALUI_TileView_Styled_SetEntryWidth_Params Parms{};
 
-	Parms.NewWidth = InNewWidth;
+	Parms.NewWidth = NewWidth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9261,7 +12170,7 @@ void UVALUI_TileView_Styled::SetEntryWidth(float InNewWidth)
 // Parameters:
 // float                              NewHeight                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_TileView_Styled::SetEntryHeight(float InNewHeight)
+void UVALUI_TileView_Styled::SetEntryHeight(float NewHeight)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9270,15 +12179,15 @@ void UVALUI_TileView_Styled::SetEntryHeight(float InNewHeight)
 
 	Params::UVALUI_TileView_Styled_SetEntryHeight_Params Parms{};
 
-	Parms.NewHeight = InNewHeight;
+	Parms.NewHeight = NewHeight;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9298,13 +12207,13 @@ float UVALUI_TileView_Styled::GetEntryWidth()
 	Params::UVALUI_TileView_Styled_GetEntryWidth_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -9326,16 +12235,44 @@ float UVALUI_TileView_Styled::GetEntryHeight()
 	Params::UVALUI_TileView_Styled_GetEntryHeight_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_UButtonSlot
+// (None)
+
+class UClass* UVALUI_UButtonSlot::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_UButtonSlot");
+
+	return Clss;
+}
+
+
+// VALUI_UButtonSlot ValeriaUI.Default__VALUI_UButtonSlot
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_UButtonSlot* UVALUI_UButtonSlot::GetDefaultObj()
+{
+	static class UVALUI_UButtonSlot* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_UButtonSlot*>(UVALUI_UButtonSlot::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -9344,7 +12281,7 @@ float UVALUI_TileView_Styled::GetEntryHeight()
 // Parameters:
 // enum class EVerticalAlignment      InVerticalAlignment                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UButtonSlot::SetVerticalAlignment(enum class EVerticalAlignment InInVerticalAlignment)
+void UVALUI_UButtonSlot::SetVerticalAlignment(enum class EVerticalAlignment InVerticalAlignment)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9353,15 +12290,15 @@ void UVALUI_UButtonSlot::SetVerticalAlignment(enum class EVerticalAlignment InIn
 
 	Params::UVALUI_UButtonSlot_SetVerticalAlignment_Params Parms{};
 
-	Parms.InVerticalAlignment = InInVerticalAlignment;
+	Parms.InVerticalAlignment = InVerticalAlignment;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9371,7 +12308,7 @@ void UVALUI_UButtonSlot::SetVerticalAlignment(enum class EVerticalAlignment InIn
 // Parameters:
 // struct FMargin                     InPadding                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-void UVALUI_UButtonSlot::SetPadding(const struct FMargin& InInPadding)
+void UVALUI_UButtonSlot::SetPadding(const struct FMargin& InPadding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9380,15 +12317,15 @@ void UVALUI_UButtonSlot::SetPadding(const struct FMargin& InInPadding)
 
 	Params::UVALUI_UButtonSlot_SetPadding_Params Parms{};
 
-	Parms.InPadding = InInPadding;
+	Parms.InPadding = InPadding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9398,7 +12335,7 @@ void UVALUI_UButtonSlot::SetPadding(const struct FMargin& InInPadding)
 // Parameters:
 // enum class EHorizontalAlignment    InHorizontalAlignment                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UButtonSlot::SetHorizontalAlignment(enum class EHorizontalAlignment InInHorizontalAlignment)
+void UVALUI_UButtonSlot::SetHorizontalAlignment(enum class EHorizontalAlignment InHorizontalAlignment)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9407,16 +12344,44 @@ void UVALUI_UButtonSlot::SetHorizontalAlignment(enum class EHorizontalAlignment 
 
 	Params::UVALUI_UButtonSlot_SetHorizontalAlignment_Params Parms{};
 
-	Parms.InHorizontalAlignment = InInHorizontalAlignment;
+	Parms.InHorizontalAlignment = InHorizontalAlignment;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_UButton_Styled
+// (None)
+
+class UClass* UVALUI_UButton_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_UButton_Styled");
+
+	return Clss;
+}
+
+
+// VALUI_UButton_Styled ValeriaUI.Default__VALUI_UButton_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_UButton_Styled* UVALUI_UButton_Styled::GetDefaultObj()
+{
+	static class UVALUI_UButton_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_UButton_Styled*>(UVALUI_UButton_Styled::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -9434,13 +12399,13 @@ void UVALUI_UButton_Styled::VisualRelease()
 	Params::UVALUI_UButton_Styled_VisualRelease_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9459,13 +12424,13 @@ void UVALUI_UButton_Styled::VisualPress()
 	Params::UVALUI_UButton_Styled_VisualPress_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9475,7 +12440,7 @@ void UVALUI_UButton_Styled::VisualPress()
 // Parameters:
 // enum class EButtonTouchMethod      InTouchMethod                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UButton_Styled::SetTouchMethod(enum class EButtonTouchMethod InInTouchMethod)
+void UVALUI_UButton_Styled::SetTouchMethod(enum class EButtonTouchMethod InTouchMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9484,15 +12449,15 @@ void UVALUI_UButton_Styled::SetTouchMethod(enum class EButtonTouchMethod InInTou
 
 	Params::UVALUI_UButton_Styled_SetTouchMethod_Params Parms{};
 
-	Parms.InTouchMethod = InInTouchMethod;
+	Parms.InTouchMethod = InTouchMethod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9502,7 +12467,7 @@ void UVALUI_UButton_Styled::SetTouchMethod(enum class EButtonTouchMethod InInTou
 // Parameters:
 // enum class EButtonPressMethod      InPressMethod                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UButton_Styled::SetPressMethod(enum class EButtonPressMethod InInPressMethod)
+void UVALUI_UButton_Styled::SetPressMethod(enum class EButtonPressMethod InPressMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9511,15 +12476,15 @@ void UVALUI_UButton_Styled::SetPressMethod(enum class EButtonPressMethod InInPre
 
 	Params::UVALUI_UButton_Styled_SetPressMethod_Params Parms{};
 
-	Parms.InPressMethod = InInPressMethod;
+	Parms.InPressMethod = InPressMethod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9529,7 +12494,7 @@ void UVALUI_UButton_Styled::SetPressMethod(enum class EButtonPressMethod InInPre
 // Parameters:
 // enum class EButtonClickMethod      InClickMethod                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UButton_Styled::SetClickMethod(enum class EButtonClickMethod InInClickMethod)
+void UVALUI_UButton_Styled::SetClickMethod(enum class EButtonClickMethod InClickMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9538,15 +12503,15 @@ void UVALUI_UButton_Styled::SetClickMethod(enum class EButtonClickMethod InInCli
 
 	Params::UVALUI_UButton_Styled_SetClickMethod_Params Parms{};
 
-	Parms.InClickMethod = InInClickMethod;
+	Parms.InClickMethod = InClickMethod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9556,7 +12521,7 @@ void UVALUI_UButton_Styled::SetClickMethod(enum class EButtonClickMethod InInCli
 // Parameters:
 // struct FButtonStyle                WidgetStyle                                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UVALUI_UButton_Styled::SetButtonStyle(struct FButtonStyle& InWidgetStyle)
+void UVALUI_UButton_Styled::SetButtonStyle(struct FButtonStyle& WidgetStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9565,15 +12530,15 @@ void UVALUI_UButton_Styled::SetButtonStyle(struct FButtonStyle& InWidgetStyle)
 
 	Params::UVALUI_UButton_Styled_SetButtonStyle_Params Parms{};
 
-	Parms.WidgetStyle = InWidgetStyle;
+	Parms.WidgetStyle = WidgetStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9583,7 +12548,7 @@ void UVALUI_UButton_Styled::SetButtonStyle(struct FButtonStyle& InWidgetStyle)
 // Parameters:
 // class UVALUI_ButtonStyle*          NewButtonStyle                                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UButton_Styled::SetButtonConfig(class UVALUI_ButtonStyle* InNewButtonStyle)
+void UVALUI_UButton_Styled::SetButtonConfig(class UVALUI_ButtonStyle* NewButtonStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9592,15 +12557,15 @@ void UVALUI_UButton_Styled::SetButtonConfig(class UVALUI_ButtonStyle* InNewButto
 
 	Params::UVALUI_UButton_Styled_SetButtonConfig_Params Parms{};
 
-	Parms.NewButtonStyle = InNewButtonStyle;
+	Parms.NewButtonStyle = NewButtonStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9612,7 +12577,7 @@ void UVALUI_UButton_Styled::SetButtonConfig(class UVALUI_ButtonStyle* InNewButto
 // struct FPointerEvent               InMouseEvent                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FEventReply                 ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FEventReply UVALUI_UButton_Styled::OnMouseButtonClicked(const struct FGeometry& InMyGeometry, struct FPointerEvent& InInMouseEvent)
+struct FEventReply UVALUI_UButton_Styled::OnMouseButtonClicked(const struct FGeometry& MyGeometry, struct FPointerEvent& InMouseEvent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9621,13 +12586,69 @@ struct FEventReply UVALUI_UButton_Styled::OnMouseButtonClicked(const struct FGeo
 
 	Params::UVALUI_UButton_Styled_OnMouseButtonClicked_Params Parms{};
 
-	Parms.MyGeometry = InMyGeometry;
-	Parms.InMouseEvent = InInMouseEvent;
+	Parms.MyGeometry = MyGeometry;
+	Parms.InMouseEvent = InMouseEvent;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VALUI_UIManagerHUDBase
+// (Actor)
+
+class UClass* AVALUI_UIManagerHUDBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_UIManagerHUDBase");
+
+	return Clss;
+}
+
+
+// VALUI_UIManagerHUDBase ValeriaUI.Default__VALUI_UIManagerHUDBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AVALUI_UIManagerHUDBase* AVALUI_UIManagerHUDBase::GetDefaultObj()
+{
+	static class AVALUI_UIManagerHUDBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AVALUI_UIManagerHUDBase*>(AVALUI_UIManagerHUDBase::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ValeriaUI.VALUI_WidgetBlueprintLibrary
+// (None)
+
+class UClass* UVALUI_WidgetBlueprintLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_WidgetBlueprintLibrary");
+
+	return Clss;
+}
+
+
+// VALUI_WidgetBlueprintLibrary ValeriaUI.Default__VALUI_WidgetBlueprintLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_WidgetBlueprintLibrary* UVALUI_WidgetBlueprintLibrary::GetDefaultObj()
+{
+	static class UVALUI_WidgetBlueprintLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_WidgetBlueprintLibrary*>(UVALUI_WidgetBlueprintLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -9637,7 +12658,7 @@ struct FEventReply UVALUI_UButton_Styled::OnMouseButtonClicked(const struct FGeo
 // class UListViewBase*               ListView                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class UUserWidget>     EntryWidgetType                                                  (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_WidgetBlueprintLibrary::UpdateEntryWidgetTypeOnListView(class UListViewBase* InListView, TSubclassOf<class UUserWidget> InEntryWidgetType)
+void UVALUI_WidgetBlueprintLibrary::UpdateEntryWidgetTypeOnListView(class UListViewBase* ListView, TSubclassOf<class UUserWidget> EntryWidgetType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9646,16 +12667,16 @@ void UVALUI_WidgetBlueprintLibrary::UpdateEntryWidgetTypeOnListView(class UListV
 
 	Params::UVALUI_WidgetBlueprintLibrary_UpdateEntryWidgetTypeOnListView_Params Parms{};
 
-	Parms.ListView = InListView;
-	Parms.EntryWidgetType = InEntryWidgetType;
+	Parms.ListView = ListView;
+	Parms.EntryWidgetType = EntryWidgetType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -9666,7 +12687,7 @@ void UVALUI_WidgetBlueprintLibrary::UpdateEntryWidgetTypeOnListView(class UListV
 // class UUserWidget*                 HostUserWidget                                                   (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObject* UVALUI_WidgetBlueprintLibrary::GetOuterForConstructingNativeWidget(class UUserWidget* InHostUserWidget)
+class UObject* UVALUI_WidgetBlueprintLibrary::GetOuterForConstructingNativeWidget(class UUserWidget* HostUserWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9675,15 +12696,15 @@ class UObject* UVALUI_WidgetBlueprintLibrary::GetOuterForConstructingNativeWidge
 
 	Params::UVALUI_WidgetBlueprintLibrary_GetOuterForConstructingNativeWidget_Params Parms{};
 
-	Parms.HostUserWidget = InHostUserWidget;
+	Parms.HostUserWidget = HostUserWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -9696,7 +12717,7 @@ class UObject* UVALUI_WidgetBlueprintLibrary::GetOuterForConstructingNativeWidge
 // class UWidget*                     BaseWidget                                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWidget*                     ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UWidget* UVALUI_WidgetBlueprintLibrary::FindOuterMostWidget(class UWidget* InBaseWidget)
+class UWidget* UVALUI_WidgetBlueprintLibrary::FindOuterMostWidget(class UWidget* BaseWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9705,15 +12726,15 @@ class UWidget* UVALUI_WidgetBlueprintLibrary::FindOuterMostWidget(class UWidget*
 
 	Params::UVALUI_WidgetBlueprintLibrary_FindOuterMostWidget_Params Parms{};
 
-	Parms.BaseWidget = InBaseWidget;
+	Parms.BaseWidget = BaseWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -9727,7 +12748,7 @@ class UWidget* UVALUI_WidgetBlueprintLibrary::FindOuterMostWidget(class UWidget*
 // class UWidget*                     CapturingWidget                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FEventReply                 ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FEventReply UVALUI_WidgetBlueprintLibrary::CaptureMouseWithHighPrecision(struct FEventReply& InReply, class UWidget* InCapturingWidget)
+struct FEventReply UVALUI_WidgetBlueprintLibrary::CaptureMouseWithHighPrecision(struct FEventReply& Reply, class UWidget* CapturingWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -9736,16 +12757,16 @@ struct FEventReply UVALUI_WidgetBlueprintLibrary::CaptureMouseWithHighPrecision(
 
 	Params::UVALUI_WidgetBlueprintLibrary_CaptureMouseWithHighPrecision_Params Parms{};
 
-	Parms.Reply = InReply;
-	Parms.CapturingWidget = InCapturingWidget;
+	Parms.Reply = Reply;
+	Parms.CapturingWidget = CapturingWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -9753,6 +12774,4 @@ struct FEventReply UVALUI_WidgetBlueprintLibrary::CaptureMouseWithHighPrecision(
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

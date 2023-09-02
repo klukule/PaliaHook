@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,7 +16,7 @@ class UBuildPatchManifest : public UObject
 public:
 	uint8                                        ManifestFileVersion;                               // 0x28(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsFileData;                                       // 0x29(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2129[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_20CF[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint32                                       AppID;                                             // 0x2C(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                AppName;                                           // 0x30(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                BuildVersion;                                      // 0x40(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -33,16 +30,11 @@ public:
 	TArray<struct FChunkInfoData>                ChunkList;                                         // 0x100(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FCustomFieldData>              CustomFields;                                      // 0x110(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("BuildPatchManifest");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UBuildPatchManifest* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

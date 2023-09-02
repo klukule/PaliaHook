@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,13 +15,10 @@ class UGLTFExporter : public UExporter
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFExporter");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFExporter* GetDefaultObj();
 
-	bool ExportToGLTF(class UObject* InObject, const class FString& InFilePath, class UGLTFExportOptions* InOptions, TSet<class AActor*>& InSelectedActors, struct FGLTFExportMessages* InOutMessages);
+	bool ExportToGLTF(class UObject* Object, const class FString& FilePath, class UGLTFExportOptions* Options, TSet<class AActor*>& SelectedActors, struct FGLTFExportMessages* OutMessages);
 };
 
 // 0x0 (0x78 - 0x78)
@@ -33,11 +27,8 @@ class UGLTFAnimSequenceExporter : public UGLTFExporter
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFAnimSequenceExporter");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFAnimSequenceExporter* GetDefaultObj();
 
 };
 
@@ -68,7 +59,7 @@ public:
 	bool                                         bExportAnimationSequences;                         // 0x90(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bExportPlaybackSettings;                           // 0x91(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGLTFTextureImageFormat           TextureImageFormat;                                // 0x92(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_162D[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1677[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        TextureImageQuality;                               // 0x94(0x4)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        NoLossyImageFormatFor;                             // 0x98(0x4)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bExportTextureTransforms;                          // 0x9C(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -76,7 +67,7 @@ public:
 	enum class EGLTFTextureHDREncoding           TextureHDREncoding;                                // 0x9E(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAdjustNormalmaps;                                 // 0x9F(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bExportHiddenInGame;                               // 0xA0(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1632[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1679[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ExportLights;                                      // 0xA4(0x4)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bExportCameras;                                    // 0xA8(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bExportHDRIBackdrops;                              // 0xA9(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -85,13 +76,10 @@ public:
 	enum class EGLTFMaterialVariantMode          ExportMaterialVariants;                            // 0xAC(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bExportMeshVariants;                               // 0xAD(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bExportVisibilityVariants;                         // 0xAE(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_163B[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1687[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFExportOptions");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFExportOptions* GetDefaultObj();
 
 	void ResetToDefault();
 };
@@ -102,11 +90,8 @@ class UGLTFLevelExporter : public UGLTFExporter
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFLevelExporter");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFLevelExporter* GetDefaultObj();
 
 };
 
@@ -116,11 +101,8 @@ class UGLTFLevelSequenceExporter : public UGLTFExporter
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFLevelSequenceExporter");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFLevelSequenceExporter* GetDefaultObj();
 
 };
 
@@ -130,11 +112,8 @@ class UGLTFLevelVariantSetsExporter : public UGLTFExporter
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFLevelVariantSetsExporter");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFLevelVariantSetsExporter* GetDefaultObj();
 
 };
 
@@ -145,11 +124,8 @@ class UGLTFMaterialExporter : public UGLTFExporter
 public:
 	class UStaticMesh*                           DefaultPreviewMesh;                                // 0x78(0x8)(ZeroConstructor, Transient, DuplicateTransient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFMaterialExporter");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFMaterialExporter* GetDefaultObj();
 
 };
 
@@ -160,14 +136,11 @@ class UGLTFMaterialExportOptions : public UAssetUserData
 public:
 	class UMaterialInterface*                    Proxy;                                             // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGLTFOverrideMaterialBakeSettings     Default;                                           // 0x30(0x6)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1648[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_16AA[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<enum class EGLTFMaterialPropertyGroup, struct FGLTFOverrideMaterialBakeSettings> Inputs;                                            // 0x38(0x50)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFMaterialExportOptions");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFMaterialExportOptions* GetDefaultObj();
 
 };
 
@@ -180,14 +153,11 @@ public:
 	enum class EGLTFMaterialBakeSizePOT          DefaultMaterialBakeSize;                           // 0x29(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETextureFilter                    DefaultMaterialBakeFilter;                         // 0x2A(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETextureAddress                   DefaultMaterialBakeTiling;                         // 0x2B(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1654[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_16AE[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<enum class EGLTFMaterialPropertyGroup, struct FGLTFOverrideMaterialBakeSettings> DefaultInputBakeSettings;                          // 0x30(0x50)(Edit, BlueprintVisible, Config, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFProxyOptions");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFProxyOptions* GetDefaultObj();
 
 	void ResetToDefault();
 };
@@ -198,11 +168,8 @@ class UGLTFSkeletalMeshExporter : public UGLTFExporter
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFSkeletalMeshExporter");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFSkeletalMeshExporter* GetDefaultObj();
 
 };
 
@@ -212,16 +179,11 @@ class UGLTFStaticMeshExporter : public UGLTFExporter
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GLTFStaticMeshExporter");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGLTFStaticMeshExporter* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -17,15 +14,12 @@ namespace SDK
 class UMobileInstalledContent : public UObject
 {
 public:
-	uint8                                        Pad_1BFA[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CE8[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MobileInstalledContent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMobileInstalledContent* GetDefaultObj();
 
-	bool Mount(int32 InPakOrder, const class FString& InMountPoint);
+	bool Mount(int32 PakOrder, const class FString& MountPoint);
 	float GetInstalledContentSize();
 	float GetDiskFreeSpace();
 };
@@ -35,15 +29,12 @@ public:
 class UMobilePendingContent : public UMobileInstalledContent
 {
 public:
-	uint8                                        Pad_1C13[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D02[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MobilePendingContent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMobilePendingContent* GetDefaultObj();
 
-	void StartInstall(FDelegateProperty_ InOnSucceeded, FDelegateProperty_ InOnFailed);
+	void StartInstall(FDelegateProperty_ OnSucceeded, FDelegateProperty_ OnFailed);
 	float GetTotalDownloadedSize();
 	float GetRequiredDiskSpace();
 	float GetInstallProgress();
@@ -58,21 +49,16 @@ class UMobilePatchingLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MobilePatchingLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMobilePatchingLibrary* GetDefaultObj();
 
-	void RequestContent(const class FString& InRemoteManifestURL, const class FString& InCloudURL, const class FString& InInstallDirectory, FDelegateProperty_ InOnSucceeded, FDelegateProperty_ InOnFailed);
+	void RequestContent(const class FString& RemoteManifestURL, const class FString& CloudURL, const class FString& InstallDirectory, FDelegateProperty_ OnSucceeded, FDelegateProperty_ OnFailed);
 	bool HasActiveWiFiConnection();
 	TArray<class FString> GetSupportedPlatformNames();
-	class UMobileInstalledContent* GetInstalledContent(const class FString& InInstallDirectory);
+	class UMobileInstalledContent* GetInstalledContent(const class FString& InstallDirectory);
 	class FString GetActiveDeviceProfileName();
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

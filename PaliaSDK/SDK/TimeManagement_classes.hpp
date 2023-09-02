@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,11 +15,8 @@ class UFixedFrameRateCustomTimeStep : public UEngineCustomTimeStep
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("FixedFrameRateCustomTimeStep");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UFixedFrameRateCustomTimeStep* GetDefaultObj();
 
 };
 
@@ -32,13 +26,10 @@ class UGenlockedCustomTimeStep : public UFixedFrameRateCustomTimeStep
 {
 public:
 	bool                                         bAutoDetectFormat;                                 // 0x28(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21A3[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2170[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GenlockedCustomTimeStep");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGenlockedCustomTimeStep* GetDefaultObj();
 
 };
 
@@ -50,13 +41,10 @@ public:
 	struct FFrameRate                            FrameRate;                                         // 0x30(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShouldBlock;                                      // 0x38(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bForceSingleFrameDeltaTime;                        // 0x39(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21A5[0x16];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2173[0x16];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GenlockedFixedRateCustomTimeStep");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGenlockedFixedRateCustomTimeStep* GetDefaultObj();
 
 };
 
@@ -66,13 +54,10 @@ class UGenlockedTimecodeProvider : public UTimecodeProvider
 {
 public:
 	bool                                         bUseGenlockToCount;                                // 0x30(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21A6[0x27];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2176[0x27];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GenlockedTimecodeProvider");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGenlockedTimecodeProvider* GetDefaultObj();
 
 };
 
@@ -82,29 +67,26 @@ class UTimeManagementBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TimeManagementBlueprintLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UTimeManagementBlueprintLibrary* GetDefaultObj();
 
-	struct FFrameTime TransformTime(struct FFrameTime& InSourceTime, struct FFrameRate& InSourceRate, struct FFrameRate& InDestinationRate);
-	struct FFrameNumber Subtract_FrameNumberInteger(const struct FFrameNumber& InA, int32 InB);
-	struct FFrameNumber Subtract_FrameNumberFrameNumber(const struct FFrameNumber& InA, const struct FFrameNumber& InB);
-	struct FFrameTime SnapFrameTimeToRate(struct FFrameTime& InSourceTime, struct FFrameRate& InSourceRate, struct FFrameRate& InSnapToRate);
-	struct FFrameTime Multiply_SecondsFrameRate(float InTimeInSeconds, struct FFrameRate& InFrameRate);
-	struct FFrameNumber Multiply_FrameNumberInteger(const struct FFrameNumber& InA, int32 InB);
-	bool IsValid_MultipleOf(struct FFrameRate& InInFrameRate, struct FFrameRate& InOtherFramerate);
-	bool IsValid_Framerate(struct FFrameRate& InInFrameRate);
+	struct FFrameTime TransformTime(struct FFrameTime& SourceTime, struct FFrameRate& SourceRate, struct FFrameRate& DestinationRate);
+	struct FFrameNumber Subtract_FrameNumberInteger(const struct FFrameNumber& A, int32 B);
+	struct FFrameNumber Subtract_FrameNumberFrameNumber(const struct FFrameNumber& A, const struct FFrameNumber& B);
+	struct FFrameTime SnapFrameTimeToRate(struct FFrameTime& SourceTime, struct FFrameRate& SourceRate, struct FFrameRate& SnapToRate);
+	struct FFrameTime Multiply_SecondsFrameRate(float TimeInSeconds, struct FFrameRate& FrameRate);
+	struct FFrameNumber Multiply_FrameNumberInteger(const struct FFrameNumber& A, int32 B);
+	bool IsValid_MultipleOf(struct FFrameRate& InFrameRate, struct FFrameRate& OtherFramerate);
+	bool IsValid_Framerate(struct FFrameRate& InFrameRate);
 	struct FFrameRate GetTimecodeFrameRate();
 	struct FTimecode GetTimecode();
-	struct FFrameNumber Divide_FrameNumberInteger(const struct FFrameNumber& InA, int32 InB);
-	class FString Conv_TimecodeToString(struct FTimecode& InInTimecode, bool InbForceSignDisplay);
-	float Conv_QualifiedFrameTimeToSeconds(struct FQualifiedFrameTime& InInFrameTime);
-	float Conv_FrameRateToSeconds(struct FFrameRate& InInFrameRate);
-	int32 Conv_FrameNumberToInteger(struct FFrameNumber& InInFrameNumber);
-	struct FFrameNumber Add_FrameNumberInteger(const struct FFrameNumber& InA, int32 InB);
-	struct FFrameNumber Add_FrameNumberFrameNumber(const struct FFrameNumber& InA, const struct FFrameNumber& InB);
+	struct FFrameNumber Divide_FrameNumberInteger(const struct FFrameNumber& A, int32 B);
+	class FString Conv_TimecodeToString(struct FTimecode& InTimecode, bool bForceSignDisplay);
+	float Conv_QualifiedFrameTimeToSeconds(struct FQualifiedFrameTime& InFrameTime);
+	float Conv_FrameRateToSeconds(struct FFrameRate& InFrameRate);
+	int32 Conv_FrameNumberToInteger(struct FFrameNumber& InFrameNumber);
+	struct FFrameNumber Add_FrameNumberInteger(const struct FFrameNumber& A, int32 B);
+	struct FFrameNumber Add_FrameNumberFrameNumber(const struct FFrameNumber& A, const struct FFrameNumber& B);
 };
 
 // 0x8 (0x30 - 0x28)
@@ -113,19 +95,14 @@ class UTimeSynchronizationSource : public UObject
 {
 public:
 	bool                                         bUseForSynchronization;                            // 0x28(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2206[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_21D6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        FrameOffset;                                       // 0x2C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TimeSynchronizationSource");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UTimeSynchronizationSource* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

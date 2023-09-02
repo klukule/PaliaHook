@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -17,24 +14,19 @@ namespace SDK
 class UGA_Cooking_OneOff_AddIngredient_Base_C : public UGA_Cooking_OneOff_Base_C
 {
 public:
-	uint8                                        Pad_2FFB[0x5];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_309E[0x5];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x4E8(0x8)(ZeroConstructor, Transient, DuplicateTransient)
 	bool                                         TriggeredEndingInteract;                           // 0x4F0(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GA_Cooking_OneOff_AddIngredient_Base_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGA_Cooking_OneOff_AddIngredient_Base_C* GetDefaultObj();
 
-	void SetMovementBlock(bool InbLock, bool* InChanged, bool InCallFunc_SetMovementBlock_Changed, bool InCallFunc_Not_PreBool_ReturnValue);
-	void ConsiderTriggeringMinigame(bool InCallFunc_GetWasCancelled_WasCancelled, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, bool InCallFunc_HasBegunPlay_ReturnValue, bool InCallFunc_IsServer_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue, class AValeriaPlayerController* InCallFunc_GetValeriaPlayerControllerFromActorInfo_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue_1, enum class ECrafterEngageResult InCallFunc_SetIsEngaging_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsInteractingMode_ReturnValue, bool InCallFunc_ContainsAllIngredients_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue_2);
-	void K2_OnEndAbility(bool InbWasCancelled);
-	void ExecuteUbergraph_GA_Cooking_OneOff_AddIngredient_Base(int32 InEntryPoint, bool InK2Node_Event_bWasCancelled);
+	void SetMovementBlock(bool bLock, bool* Changed, bool CallFunc_SetMovementBlock_Changed, bool CallFunc_Not_PreBool_ReturnValue);
+	void ConsiderTriggeringMinigame(bool CallFunc_GetWasCancelled_WasCancelled, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, bool CallFunc_HasBegunPlay_ReturnValue, bool CallFunc_IsServer_ReturnValue, bool CallFunc_BooleanAND_ReturnValue, class AValeriaPlayerController* CallFunc_GetValeriaPlayerControllerFromActorInfo_ReturnValue, bool CallFunc_BooleanAND_ReturnValue_1, enum class ECrafterEngageResult CallFunc_SetIsEngaging_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue_1, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsInteractingMode_ReturnValue, bool CallFunc_ContainsAllIngredients_ReturnValue, bool CallFunc_BooleanAND_ReturnValue_2);
+	void K2_OnEndAbility(bool bWasCancelled);
+	void ExecuteUbergraph_GA_Cooking_OneOff_AddIngredient_Base(int32 EntryPoint, bool K2Node_Event_bWasCancelled);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

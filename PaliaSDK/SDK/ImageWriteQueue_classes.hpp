@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,17 +15,12 @@ class UImageWriteBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ImageWriteBlueprintLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UImageWriteBlueprintLibrary* GetDefaultObj();
 
-	void ExportToDisk(class UTexture* InTexture, const class FString& InFilename, struct FImageWriteOptions& InOptions);
+	void ExportToDisk(class UTexture* Texture, const class FString& Filename, struct FImageWriteOptions& Options);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,11 +11,11 @@ namespace SDK
 
 enum class EAFSActiveType : uint8
 {
-	EAFSActiveType__None           = 0,
-	EAFSActiveType__USBOnly        = 1,
-	EAFSActiveType__NetworkOnly    = 2,
-	EAFSActiveType__Combined       = 3,
-	EAFSActiveType__EAFSActiveType_MAX = 4,
+	None                           = 0,
+	USBOnly                        = 1,
+	NetworkOnly                    = 2,
+	Combined                       = 3,
+	EAFSActiveType_MAX             = 4,
 };
 
 
@@ -28,6 +25,4 @@ enum class EAFSActiveType : uint8
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class MobilePatchingUtils.MobileInstalledContent
+// (None)
+
+class UClass* UMobileInstalledContent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MobileInstalledContent");
+
+	return Clss;
+}
+
+
+// MobileInstalledContent MobilePatchingUtils.Default__MobileInstalledContent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMobileInstalledContent* UMobileInstalledContent::GetDefaultObj()
+{
+	static class UMobileInstalledContent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMobileInstalledContent*>(UMobileInstalledContent::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function MobilePatchingUtils.MobileInstalledContent.Mount
@@ -22,7 +47,7 @@ namespace SDK
 // class FString                      MountPoint                                                       (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMobileInstalledContent::Mount(int32 InPakOrder, const class FString& InMountPoint)
+bool UMobileInstalledContent::Mount(int32 PakOrder, const class FString& MountPoint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,16 +56,16 @@ bool UMobileInstalledContent::Mount(int32 InPakOrder, const class FString& InMou
 
 	Params::UMobileInstalledContent_Mount_Params Parms{};
 
-	Parms.PakOrder = InPakOrder;
-	Parms.MountPoint = InMountPoint;
+	Parms.PakOrder = PakOrder;
+	Parms.MountPoint = MountPoint;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -62,13 +87,13 @@ float UMobileInstalledContent::GetInstalledContentSize()
 	Params::UMobileInstalledContent_GetInstalledContentSize_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -90,16 +115,44 @@ float UMobileInstalledContent::GetDiskFreeSpace()
 	Params::UMobileInstalledContent_GetDiskFreeSpace_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class MobilePatchingUtils.MobilePendingContent
+// (None)
+
+class UClass* UMobilePendingContent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MobilePendingContent");
+
+	return Clss;
+}
+
+
+// MobilePendingContent MobilePatchingUtils.Default__MobilePendingContent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMobilePendingContent* UMobilePendingContent::GetDefaultObj()
+{
+	static class UMobilePendingContent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMobilePendingContent*>(UMobilePendingContent::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -109,7 +162,7 @@ float UMobileInstalledContent::GetDiskFreeSpace()
 // FDelegateProperty_                 OnSucceeded                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 OnFailed                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMobilePendingContent::StartInstall(FDelegateProperty_ InOnSucceeded, FDelegateProperty_ InOnFailed)
+void UMobilePendingContent::StartInstall(FDelegateProperty_ OnSucceeded, FDelegateProperty_ OnFailed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -118,16 +171,16 @@ void UMobilePendingContent::StartInstall(FDelegateProperty_ InOnSucceeded, FDele
 
 	Params::UMobilePendingContent_StartInstall_Params Parms{};
 
-	Parms.OnSucceeded = InOnSucceeded;
-	Parms.OnFailed = InOnFailed;
+	Parms.OnSucceeded = OnSucceeded;
+	Parms.OnFailed = OnFailed;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -147,13 +200,13 @@ float UMobilePendingContent::GetTotalDownloadedSize()
 	Params::UMobilePendingContent_GetTotalDownloadedSize_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -175,13 +228,13 @@ float UMobilePendingContent::GetRequiredDiskSpace()
 	Params::UMobilePendingContent_GetRequiredDiskSpace_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -203,13 +256,13 @@ float UMobilePendingContent::GetInstallProgress()
 	Params::UMobilePendingContent_GetInstallProgress_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -231,13 +284,13 @@ class FText UMobilePendingContent::GetDownloadStatusText()
 	Params::UMobilePendingContent_GetDownloadStatusText_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -259,13 +312,13 @@ float UMobilePendingContent::GetDownloadSpeed()
 	Params::UMobilePendingContent_GetDownloadSpeed_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -287,16 +340,44 @@ float UMobilePendingContent::GetDownloadSize()
 	Params::UMobilePendingContent_GetDownloadSize_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class MobilePatchingUtils.MobilePatchingLibrary
+// (None)
+
+class UClass* UMobilePatchingLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MobilePatchingLibrary");
+
+	return Clss;
+}
+
+
+// MobilePatchingLibrary MobilePatchingUtils.Default__MobilePatchingLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMobilePatchingLibrary* UMobilePatchingLibrary::GetDefaultObj()
+{
+	static class UMobilePatchingLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMobilePatchingLibrary*>(UMobilePatchingLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -309,7 +390,7 @@ float UMobilePendingContent::GetDownloadSize()
 // FDelegateProperty_                 OnSucceeded                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 OnFailed                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMobilePatchingLibrary::RequestContent(const class FString& InRemoteManifestURL, const class FString& InCloudURL, const class FString& InInstallDirectory, FDelegateProperty_ InOnSucceeded, FDelegateProperty_ InOnFailed)
+void UMobilePatchingLibrary::RequestContent(const class FString& RemoteManifestURL, const class FString& CloudURL, const class FString& InstallDirectory, FDelegateProperty_ OnSucceeded, FDelegateProperty_ OnFailed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -318,19 +399,19 @@ void UMobilePatchingLibrary::RequestContent(const class FString& InRemoteManifes
 
 	Params::UMobilePatchingLibrary_RequestContent_Params Parms{};
 
-	Parms.RemoteManifestURL = InRemoteManifestURL;
-	Parms.CloudURL = InCloudURL;
-	Parms.InstallDirectory = InInstallDirectory;
-	Parms.OnSucceeded = InOnSucceeded;
-	Parms.OnFailed = InOnFailed;
+	Parms.RemoteManifestURL = RemoteManifestURL;
+	Parms.CloudURL = CloudURL;
+	Parms.InstallDirectory = InstallDirectory;
+	Parms.OnSucceeded = OnSucceeded;
+	Parms.OnFailed = OnFailed;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -350,13 +431,13 @@ bool UMobilePatchingLibrary::HasActiveWiFiConnection()
 	Params::UMobilePatchingLibrary_HasActiveWiFiConnection_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -378,13 +459,13 @@ TArray<class FString> UMobilePatchingLibrary::GetSupportedPlatformNames()
 	Params::UMobilePatchingLibrary_GetSupportedPlatformNames_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -397,7 +478,7 @@ TArray<class FString> UMobilePatchingLibrary::GetSupportedPlatformNames()
 // class FString                      InstallDirectory                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMobileInstalledContent*     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMobileInstalledContent* UMobilePatchingLibrary::GetInstalledContent(const class FString& InInstallDirectory)
+class UMobileInstalledContent* UMobilePatchingLibrary::GetInstalledContent(const class FString& InstallDirectory)
 {
 	static class UFunction* Func = nullptr;
 
@@ -406,15 +487,15 @@ class UMobileInstalledContent* UMobilePatchingLibrary::GetInstalledContent(const
 
 	Params::UMobilePatchingLibrary_GetInstalledContent_Params Parms{};
 
-	Parms.InstallDirectory = InInstallDirectory;
+	Parms.InstallDirectory = InstallDirectory;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -436,13 +517,13 @@ class FString UMobilePatchingLibrary::GetActiveDeviceProfileName()
 	Params::UMobilePatchingLibrary_GetActiveDeviceProfileName_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -450,6 +531,4 @@ class FString UMobilePatchingLibrary::GetActiveDeviceProfileName()
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

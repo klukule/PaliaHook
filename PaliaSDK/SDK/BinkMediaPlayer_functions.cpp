@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class BinkMediaPlayer.BinkFunctionLibrary
+// (None)
+
+class UClass* UBinkFunctionLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BinkFunctionLibrary");
+
+	return Clss;
+}
+
+
+// BinkFunctionLibrary BinkMediaPlayer.Default__BinkFunctionLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UBinkFunctionLibrary* UBinkFunctionLibrary::GetDefaultObj()
+{
+	static class UBinkFunctionLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBinkFunctionLibrary*>(UBinkFunctionLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function BinkMediaPlayer.BinkFunctionLibrary.BinkLoadingMovie_GetTime
@@ -30,13 +55,13 @@ struct FTimespan UBinkFunctionLibrary::BinkLoadingMovie_GetTime()
 	Params::UBinkFunctionLibrary_BinkLoadingMovie_GetTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -58,13 +83,13 @@ struct FTimespan UBinkFunctionLibrary::BinkLoadingMovie_GetDuration()
 	Params::UBinkFunctionLibrary_BinkLoadingMovie_GetDuration_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -85,14 +110,42 @@ void UBinkFunctionLibrary::Bink_DrawOverlays()
 	Params::UBinkFunctionLibrary_Bink_DrawOverlays_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class BinkMediaPlayer.BinkMediaPlayer
+// (None)
+
+class UClass* UBinkMediaPlayer::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BinkMediaPlayer");
+
+	return Clss;
+}
+
+
+// BinkMediaPlayer BinkMediaPlayer.Default__BinkMediaPlayer
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UBinkMediaPlayer* UBinkMediaPlayer::GetDefaultObj()
+{
+	static class UBinkMediaPlayer* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBinkMediaPlayer*>(UBinkMediaPlayer::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -111,13 +164,13 @@ bool UBinkMediaPlayer::SupportsSeeking()
 	Params::UBinkMediaPlayer_SupportsSeeking_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -139,13 +192,13 @@ bool UBinkMediaPlayer::SupportsScrubbing()
 	Params::UBinkMediaPlayer_SupportsScrubbing_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -159,7 +212,7 @@ bool UBinkMediaPlayer::SupportsScrubbing()
 // bool                               Unthinned                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBinkMediaPlayer::SupportsRate(float InRate, bool InUnthinned)
+bool UBinkMediaPlayer::SupportsRate(float Rate, bool Unthinned)
 {
 	static class UFunction* Func = nullptr;
 
@@ -168,16 +221,16 @@ bool UBinkMediaPlayer::SupportsRate(float InRate, bool InUnthinned)
 
 	Params::UBinkMediaPlayer_SupportsRate_Params Parms{};
 
-	Parms.Rate = InRate;
-	Parms.Unthinned = InUnthinned;
+	Parms.Rate = Rate;
+	Parms.Unthinned = Unthinned;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -198,13 +251,13 @@ void UBinkMediaPlayer::Stop()
 	Params::UBinkMediaPlayer_Stop_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -214,7 +267,7 @@ void UBinkMediaPlayer::Stop()
 // Parameters:
 // float                              Rate                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBinkMediaPlayer::SetVolume(float InRate)
+void UBinkMediaPlayer::SetVolume(float Rate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -223,15 +276,15 @@ void UBinkMediaPlayer::SetVolume(float InRate)
 
 	Params::UBinkMediaPlayer_SetVolume_Params Parms{};
 
-	Parms.Rate = InRate;
+	Parms.Rate = Rate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -242,7 +295,7 @@ void UBinkMediaPlayer::SetVolume(float InRate)
 // float                              Rate                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBinkMediaPlayer::SetRate(float InRate)
+bool UBinkMediaPlayer::SetRate(float Rate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -251,15 +304,15 @@ bool UBinkMediaPlayer::SetRate(float InRate)
 
 	Params::UBinkMediaPlayer_SetRate_Params Parms{};
 
-	Parms.Rate = InRate;
+	Parms.Rate = Rate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -272,7 +325,7 @@ bool UBinkMediaPlayer::SetRate(float InRate)
 // bool                               InLooping                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBinkMediaPlayer::SetLooping(bool InInLooping)
+bool UBinkMediaPlayer::SetLooping(bool InLooping)
 {
 	static class UFunction* Func = nullptr;
 
@@ -281,15 +334,15 @@ bool UBinkMediaPlayer::SetLooping(bool InInLooping)
 
 	Params::UBinkMediaPlayer_SetLooping_Params Parms{};
 
-	Parms.InLooping = InInLooping;
+	Parms.InLooping = InLooping;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -302,7 +355,7 @@ bool UBinkMediaPlayer::SetLooping(bool InInLooping)
 // struct FTimespan                   InTime                                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBinkMediaPlayer::Seek(struct FTimespan& InInTime)
+bool UBinkMediaPlayer::Seek(struct FTimespan& InTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -311,15 +364,15 @@ bool UBinkMediaPlayer::Seek(struct FTimespan& InInTime)
 
 	Params::UBinkMediaPlayer_Seek_Params Parms{};
 
-	Parms.InTime = InInTime;
+	Parms.InTime = InTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -341,13 +394,13 @@ bool UBinkMediaPlayer::Rewind()
 	Params::UBinkMediaPlayer_Rewind_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -369,13 +422,13 @@ bool UBinkMediaPlayer::Play()
 	Params::UBinkMediaPlayer_Play_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -397,13 +450,13 @@ bool UBinkMediaPlayer::Pause()
 	Params::UBinkMediaPlayer_Pause_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -416,7 +469,7 @@ bool UBinkMediaPlayer::Pause()
 // class FString                      NewURL                                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBinkMediaPlayer::OpenUrl(const class FString& InNewURL)
+bool UBinkMediaPlayer::OpenUrl(const class FString& NewURL)
 {
 	static class UFunction* Func = nullptr;
 
@@ -425,15 +478,15 @@ bool UBinkMediaPlayer::OpenUrl(const class FString& InNewURL)
 
 	Params::UBinkMediaPlayer_OpenUrl_Params Parms{};
 
-	Parms.NewURL = InNewURL;
+	Parms.NewURL = NewURL;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -455,13 +508,13 @@ bool UBinkMediaPlayer::IsStopped()
 	Params::UBinkMediaPlayer_IsStopped_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -483,13 +536,13 @@ bool UBinkMediaPlayer::IsPlaying()
 	Params::UBinkMediaPlayer_IsPlaying_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -511,13 +564,13 @@ bool UBinkMediaPlayer::IsPaused()
 	Params::UBinkMediaPlayer_IsPaused_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -539,13 +592,13 @@ bool UBinkMediaPlayer::IsLooping()
 	Params::UBinkMediaPlayer_IsLooping_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -567,13 +620,13 @@ bool UBinkMediaPlayer::IsInitialized()
 	Params::UBinkMediaPlayer_IsInitialized_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -595,13 +648,13 @@ class FString UBinkMediaPlayer::GetUrl()
 	Params::UBinkMediaPlayer_GetUrl_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -623,13 +676,13 @@ struct FTimespan UBinkMediaPlayer::GetTime()
 	Params::UBinkMediaPlayer_GetTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -651,13 +704,13 @@ float UBinkMediaPlayer::GetRate()
 	Params::UBinkMediaPlayer_GetRate_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -679,13 +732,13 @@ struct FTimespan UBinkMediaPlayer::GetDuration()
 	Params::UBinkMediaPlayer_GetDuration_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -702,7 +755,7 @@ struct FTimespan UBinkMediaPlayer::GetDuration()
 // bool                               Srgb_decode                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               Hdr                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBinkMediaPlayer::Draw(class UTexture* InTexture, bool InTonemap, int32 InOut_nits, float InAlpha, bool InSrgb_decode, bool InHdr)
+void UBinkMediaPlayer::Draw(class UTexture* Texture, bool Tonemap, int32 Out_nits, float Alpha, bool Srgb_decode, bool Hdr)
 {
 	static class UFunction* Func = nullptr;
 
@@ -711,20 +764,20 @@ void UBinkMediaPlayer::Draw(class UTexture* InTexture, bool InTonemap, int32 InO
 
 	Params::UBinkMediaPlayer_Draw_Params Parms{};
 
-	Parms.Texture = InTexture;
-	Parms.Tonemap = InTonemap;
-	Parms.Out_nits = InOut_nits;
-	Parms.Alpha = InAlpha;
-	Parms.Srgb_decode = InSrgb_decode;
-	Parms.Hdr = InHdr;
+	Parms.Texture = Texture;
+	Parms.Tonemap = Tonemap;
+	Parms.Out_nits = Out_nits;
+	Parms.Alpha = Alpha;
+	Parms.Srgb_decode = Srgb_decode;
+	Parms.Hdr = Hdr;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -743,13 +796,13 @@ void UBinkMediaPlayer::CloseUrl()
 	Params::UBinkMediaPlayer_CloseUrl_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -769,13 +822,13 @@ bool UBinkMediaPlayer::CanPlay()
 	Params::UBinkMediaPlayer_CanPlay_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -797,16 +850,44 @@ bool UBinkMediaPlayer::CanPause()
 	Params::UBinkMediaPlayer_CanPause_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class BinkMediaPlayer.BinkMediaTexture
+// (None)
+
+class UClass* UBinkMediaTexture::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BinkMediaTexture");
+
+	return Clss;
+}
+
+
+// BinkMediaTexture BinkMediaPlayer.Default__BinkMediaTexture
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UBinkMediaTexture* UBinkMediaTexture::GetDefaultObj()
+{
+	static class UBinkMediaTexture* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBinkMediaTexture*>(UBinkMediaTexture::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -815,7 +896,7 @@ bool UBinkMediaPlayer::CanPause()
 // Parameters:
 // class UBinkMediaPlayer*            InMediaPlayer                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBinkMediaTexture::SetMediaPlayer(class UBinkMediaPlayer* InInMediaPlayer)
+void UBinkMediaTexture::SetMediaPlayer(class UBinkMediaPlayer* InMediaPlayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -824,15 +905,15 @@ void UBinkMediaTexture::SetMediaPlayer(class UBinkMediaPlayer* InInMediaPlayer)
 
 	Params::UBinkMediaTexture_SetMediaPlayer_Params Parms{};
 
-	Parms.InMediaPlayer = InInMediaPlayer;
+	Parms.InMediaPlayer = InMediaPlayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -851,18 +932,44 @@ void UBinkMediaTexture::Clear()
 	Params::UBinkMediaTexture_Clear_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class BinkMediaPlayer.BinkMoviePlayerSettings
+// (None)
+
+class UClass* UBinkMoviePlayerSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BinkMoviePlayerSettings");
+
+	return Clss;
+}
+
+
+// BinkMoviePlayerSettings BinkMediaPlayer.Default__BinkMoviePlayerSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UBinkMoviePlayerSettings* UBinkMoviePlayerSettings::GetDefaultObj()
+{
+	static class UBinkMoviePlayerSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBinkMoviePlayerSettings*>(UBinkMoviePlayerSettings::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

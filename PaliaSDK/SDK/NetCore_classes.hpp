@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,11 +16,8 @@ class UNetAnalyticsAggregatorConfig : public UObject
 public:
 	TArray<struct FNetAnalyticsDataConfig>       NetAnalyticsData;                                  // 0x28(0x10)(ZeroConstructor, Config, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("NetAnalyticsAggregatorConfig");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UNetAnalyticsAggregatorConfig* GetDefaultObj();
 
 };
 
@@ -32,16 +26,13 @@ public:
 class UStatePerObjectConfig : public UObject
 {
 public:
-	uint8                                        Pad_3CA[0x28];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_516[0x28];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                PerObjectConfigSection;                            // 0x50(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                         bEnabled;                                          // 0x60(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3CB[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_519[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("StatePerObjectConfig");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UStatePerObjectConfig* GetDefaultObj();
 
 };
 
@@ -51,18 +42,13 @@ class UEscalationManagerConfig : public UStatePerObjectConfig
 {
 public:
 	TArray<class FString>                        EscalationSeverity;                                // 0x68(0x10)(ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3CD[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_51D[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("EscalationManagerConfig");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UEscalationManagerConfig* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

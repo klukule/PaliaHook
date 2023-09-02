@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,20 +15,15 @@ class IAudioLinkBlueprintInterface : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AudioLinkBlueprintInterface");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IAudioLinkBlueprintInterface* GetDefaultObj();
 
 	void StopLink();
-	void SetLinkSound(class USoundBase* InNewSound);
-	void PlayLink(float InStartTime);
+	void SetLinkSound(class USoundBase* NewSound);
+	void PlayLink(float StartTime);
 	bool IsLinkPlaying();
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

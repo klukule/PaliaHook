@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,17 +15,12 @@ class IBPI_LoginScreen_C : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("BPI_LoginScreen_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IBPI_LoginScreen_C* GetDefaultObj();
 
 	void HandleOnEnterLoginLobbyState();
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

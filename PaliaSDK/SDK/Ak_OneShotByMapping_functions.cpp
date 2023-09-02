@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass Ak_OneShotByMapping.Ak_OneShotByMapping_C
+// (None)
+
+class UClass* UAk_OneShotByMapping_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("Ak_OneShotByMapping_C");
+
+	return Clss;
+}
+
+
+// Ak_OneShotByMapping_C Ak_OneShotByMapping.Default__Ak_OneShotByMapping_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UAk_OneShotByMapping_C* UAk_OneShotByMapping_C::GetDefaultObj()
+{
+	static class UAk_OneShotByMapping_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAk_OneShotByMapping_C*>(UAk_OneShotByMapping_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function Ak_OneShotByMapping.Ak_OneShotByMapping_C.Received_Notify
@@ -25,7 +50,7 @@ namespace SDK
 // bool                               CallFunc_IsDedicatedServer_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_PlayAudio_Success                                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UAk_OneShotByMapping_C::Received_Notify(class USkeletalMeshComponent* InMeshComp, class UAnimSequenceBase* InAnimation, struct FAnimNotifyEventReference& InEventReference, bool InCallFunc_IsDedicatedServer_ReturnValue, bool InCallFunc_PlayAudio_Success)
+bool UAk_OneShotByMapping_C::Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, struct FAnimNotifyEventReference& EventReference, bool CallFunc_IsDedicatedServer_ReturnValue, bool CallFunc_PlayAudio_Success)
 {
 	static class UFunction* Func = nullptr;
 
@@ -34,11 +59,11 @@ bool UAk_OneShotByMapping_C::Received_Notify(class USkeletalMeshComponent* InMes
 
 	Params::UAk_OneShotByMapping_C_Received_Notify_Params Parms{};
 
-	Parms.MeshComp = InMeshComp;
-	Parms.Animation = InAnimation;
-	Parms.EventReference = InEventReference;
-	Parms.CallFunc_IsDedicatedServer_ReturnValue = InCallFunc_IsDedicatedServer_ReturnValue;
-	Parms.CallFunc_PlayAudio_Success = InCallFunc_PlayAudio_Success;
+	Parms.MeshComp = MeshComp;
+	Parms.Animation = Animation;
+	Parms.EventReference = EventReference;
+	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
+	Parms.CallFunc_PlayAudio_Success = CallFunc_PlayAudio_Success;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -54,7 +79,7 @@ bool UAk_OneShotByMapping_C::Received_Notify(class USkeletalMeshComponent* InMes
 // class FString                      CallFunc_GetEnumeratorUserFriendlyName_ReturnValue               (ZeroConstructor, HasGetValueTypeHash)
 // class FString                      CallFunc_Concat_StrStr_ReturnValue                               (ZeroConstructor, HasGetValueTypeHash)
 
-class FString UAk_OneShotByMapping_C::GetNotifyName(const class FString& InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue, const class FString& InCallFunc_Concat_StrStr_ReturnValue)
+class FString UAk_OneShotByMapping_C::GetNotifyName(const class FString& CallFunc_GetEnumeratorUserFriendlyName_ReturnValue, const class FString& CallFunc_Concat_StrStr_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -63,8 +88,8 @@ class FString UAk_OneShotByMapping_C::GetNotifyName(const class FString& InCallF
 
 	Params::UAk_OneShotByMapping_C_GetNotifyName_Params Parms{};
 
-	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
-	Parms.CallFunc_Concat_StrStr_ReturnValue = InCallFunc_Concat_StrStr_ReturnValue;
+	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = CallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
+	Parms.CallFunc_Concat_StrStr_ReturnValue = CallFunc_Concat_StrStr_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -84,7 +109,7 @@ class FString UAk_OneShotByMapping_C::GetNotifyName(const class FString& InCallF
 // struct FVector                     AttachOffset                                                     (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                        SocketName                                                       (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAkAudioEvent*               AkEvent                                                          (Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAudioMappingConfig         CallFunc_FindAudioMapping_ReturnValue                            ()
+// struct FAudioMappingConfig         CallFunc_FindAudioMapping_ReturnValue                            (None)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwner_ReturnValue                                    (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_AkGetComponent_ComponentCreated                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -98,7 +123,7 @@ class FString UAk_OneShotByMapping_C::GetNotifyName(const class FString& InCallF
 // class UAkComponent*                CallFunc_AkEventLocationWithActor_AkComponent                    (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_AkEventLocationWithActor_Playing_ID                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAk_OneShotByMapping_C::PlayAudioMappingHelper(class UAbilityAnimationComponent* InAbilityAnimComp, class USceneComponent* InAttachToComponent, class FName InMappingQualifier, bool* InSuccess, enum class EAttachLocation InAttachRule, const struct FVector& InAttachOffset, class FName InSocketName, class UAkAudioEvent* InAkEvent, const struct FAudioMappingConfig& InCallFunc_FindAudioMapping_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class AActor* InCallFunc_GetOwner_ReturnValue, bool InCallFunc_AkGetComponent_ComponentCreated, class UAkComponent* InCallFunc_AkGetComponent_AkComponent, const struct FTransform& InCallFunc_GetSocketTransform_ReturnValue, int32 InCallFunc_AkEventComponent_ReturnValue, const struct FVector& InCallFunc_BreakTransform_Location, const struct FRotator& InCallFunc_BreakTransform_Rotation, const struct FVector& InCallFunc_BreakTransform_Scale, const struct FVector& InCallFunc_Add_VectorVector_ReturnValue, class UAkComponent* InCallFunc_AkEventLocationWithActor_AkComponent, int32 InCallFunc_AkEventLocationWithActor_Playing_ID)
+void UAk_OneShotByMapping_C::PlayAudioMappingHelper(class UAbilityAnimationComponent* AbilityAnimComp, class USceneComponent* AttachToComponent, class FName MappingQualifier, bool* Success, enum class EAttachLocation AttachRule, const struct FVector& AttachOffset, class FName SocketName, class UAkAudioEvent* AkEvent, const struct FAudioMappingConfig& CallFunc_FindAudioMapping_ReturnValue, bool CallFunc_IsValid_ReturnValue, class AActor* CallFunc_GetOwner_ReturnValue, bool CallFunc_AkGetComponent_ComponentCreated, class UAkComponent* CallFunc_AkGetComponent_AkComponent, const struct FTransform& CallFunc_GetSocketTransform_ReturnValue, int32 CallFunc_AkEventComponent_ReturnValue, const struct FVector& CallFunc_BreakTransform_Location, const struct FRotator& CallFunc_BreakTransform_Rotation, const struct FVector& CallFunc_BreakTransform_Scale, const struct FVector& CallFunc_Add_VectorVector_ReturnValue, class UAkComponent* CallFunc_AkEventLocationWithActor_AkComponent, int32 CallFunc_AkEventLocationWithActor_Playing_ID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -107,31 +132,31 @@ void UAk_OneShotByMapping_C::PlayAudioMappingHelper(class UAbilityAnimationCompo
 
 	Params::UAk_OneShotByMapping_C_PlayAudioMappingHelper_Params Parms{};
 
-	Parms.AbilityAnimComp = InAbilityAnimComp;
-	Parms.AttachToComponent = InAttachToComponent;
-	Parms.MappingQualifier = InMappingQualifier;
-	Parms.AttachRule = InAttachRule;
-	Parms.AttachOffset = InAttachOffset;
-	Parms.SocketName = InSocketName;
-	Parms.AkEvent = InAkEvent;
-	Parms.CallFunc_FindAudioMapping_ReturnValue = InCallFunc_FindAudioMapping_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
-	Parms.CallFunc_AkGetComponent_ComponentCreated = InCallFunc_AkGetComponent_ComponentCreated;
-	Parms.CallFunc_AkGetComponent_AkComponent = InCallFunc_AkGetComponent_AkComponent;
-	Parms.CallFunc_GetSocketTransform_ReturnValue = InCallFunc_GetSocketTransform_ReturnValue;
-	Parms.CallFunc_AkEventComponent_ReturnValue = InCallFunc_AkEventComponent_ReturnValue;
-	Parms.CallFunc_BreakTransform_Location = InCallFunc_BreakTransform_Location;
-	Parms.CallFunc_BreakTransform_Rotation = InCallFunc_BreakTransform_Rotation;
-	Parms.CallFunc_BreakTransform_Scale = InCallFunc_BreakTransform_Scale;
-	Parms.CallFunc_Add_VectorVector_ReturnValue = InCallFunc_Add_VectorVector_ReturnValue;
-	Parms.CallFunc_AkEventLocationWithActor_AkComponent = InCallFunc_AkEventLocationWithActor_AkComponent;
-	Parms.CallFunc_AkEventLocationWithActor_Playing_ID = InCallFunc_AkEventLocationWithActor_Playing_ID;
+	Parms.AbilityAnimComp = AbilityAnimComp;
+	Parms.AttachToComponent = AttachToComponent;
+	Parms.MappingQualifier = MappingQualifier;
+	Parms.AttachRule = AttachRule;
+	Parms.AttachOffset = AttachOffset;
+	Parms.SocketName = SocketName;
+	Parms.AkEvent = AkEvent;
+	Parms.CallFunc_FindAudioMapping_ReturnValue = CallFunc_FindAudioMapping_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
+	Parms.CallFunc_AkGetComponent_ComponentCreated = CallFunc_AkGetComponent_ComponentCreated;
+	Parms.CallFunc_AkGetComponent_AkComponent = CallFunc_AkGetComponent_AkComponent;
+	Parms.CallFunc_GetSocketTransform_ReturnValue = CallFunc_GetSocketTransform_ReturnValue;
+	Parms.CallFunc_AkEventComponent_ReturnValue = CallFunc_AkEventComponent_ReturnValue;
+	Parms.CallFunc_BreakTransform_Location = CallFunc_BreakTransform_Location;
+	Parms.CallFunc_BreakTransform_Rotation = CallFunc_BreakTransform_Rotation;
+	Parms.CallFunc_BreakTransform_Scale = CallFunc_BreakTransform_Scale;
+	Parms.CallFunc_Add_VectorVector_ReturnValue = CallFunc_Add_VectorVector_ReturnValue;
+	Parms.CallFunc_AkEventLocationWithActor_AkComponent = CallFunc_AkEventLocationWithActor_AkComponent;
+	Parms.CallFunc_AkEventLocationWithActor_Playing_ID = CallFunc_AkEventLocationWithActor_Playing_ID;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InSuccess != nullptr)
-		*InSuccess = Parms.Success;
+	if (Success != nullptr)
+		*Success = Parms.Success;
 
 }
 
@@ -169,7 +194,7 @@ void UAk_OneShotByMapping_C::PlayAudioMappingHelper(class UAbilityAnimationCompo
 // int32                              CallFunc_AkEventLocationWithActor_Playing_ID                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FString                      CallFunc_GetEnumeratorUserFriendlyName_ReturnValue               (ZeroConstructor, HasGetValueTypeHash)
 // class FName                        CallFunc_Conv_StringToName_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FAudioMappingConfig         CallFunc_GetDataTableRowFromName_OutRow                          ()
+// struct FAudioMappingConfig         CallFunc_GetDataTableRowFromName_OutRow                          (None)
 // bool                               CallFunc_GetDataTableRowFromName_ReturnValue                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // TArray<class FName>                CallFunc_Map_Keys_Keys                                           (ReferenceParm)
 // class FName                        CallFunc_Array_Get_Item                                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -179,7 +204,7 @@ void UAk_OneShotByMapping_C::PlayAudioMappingHelper(class UAbilityAnimationCompo
 // bool                               CallFunc_PlayAudioMappingHelper_Success_1                        (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_NotEqual_NameName_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAk_OneShotByMapping_C::PlayAudio(class USkeletalMeshComponent* InMeshComp, bool* InSuccess, enum class EAttachLocation InAttachRule, const struct FVector& InAttachOffset, class FName InSocketName, class UAkAudioEvent* InAkEvent, class UAbilityAnimationComponent* InAbilityAnimComp, bool InSuccessfulPlay, int32 InTemp_int_Array_Index_Variable, class AActor* InCallFunc_GetOwner_ReturnValue, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class UAbilityAnimationComponent* InCallFunc_GetAbilityAnimation_ReturnValue, int32 InTemp_int_Loop_Counter_Variable, class AActor* InCallFunc_GetOwner_ReturnValue_1, int32 InCallFunc_Add_IntInt_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_AkGetComponent_ComponentCreated, class UAkComponent* InCallFunc_AkGetComponent_AkComponent, int32 InCallFunc_AkEventComponent_ReturnValue, const struct FTransform& InCallFunc_GetSocketTransform_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, const struct FVector& InCallFunc_BreakTransform_Location, const struct FRotator& InCallFunc_BreakTransform_Rotation, const struct FVector& InCallFunc_BreakTransform_Scale, const struct FVector& InCallFunc_Add_VectorVector_ReturnValue, class UAkComponent* InCallFunc_AkEventLocationWithActor_AkComponent, int32 InCallFunc_AkEventLocationWithActor_Playing_ID, const class FString& InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue, class FName InCallFunc_Conv_StringToName_ReturnValue, const struct FAudioMappingConfig& InCallFunc_GetDataTableRowFromName_OutRow, bool InCallFunc_GetDataTableRowFromName_ReturnValue, TArray<class FName>& InCallFunc_Map_Keys_Keys, class FName InCallFunc_Array_Get_Item, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue, bool InCallFunc_PlayAudioMappingHelper_Success, bool InCallFunc_PlayAudioMappingHelper_Success_1, bool InCallFunc_NotEqual_NameName_ReturnValue)
+void UAk_OneShotByMapping_C::PlayAudio(class USkeletalMeshComponent* MeshComp, bool* Success, enum class EAttachLocation AttachRule, const struct FVector& AttachOffset, class FName SocketName, class UAkAudioEvent* AkEvent, class UAbilityAnimationComponent* AbilityAnimComp, bool SuccessfulPlay, int32 Temp_int_Array_Index_Variable, class AActor* CallFunc_GetOwner_ReturnValue, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, class UAbilityAnimationComponent* CallFunc_GetAbilityAnimation_ReturnValue, int32 Temp_int_Loop_Counter_Variable, class AActor* CallFunc_GetOwner_ReturnValue_1, int32 CallFunc_Add_IntInt_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool CallFunc_AkGetComponent_ComponentCreated, class UAkComponent* CallFunc_AkGetComponent_AkComponent, int32 CallFunc_AkEventComponent_ReturnValue, const struct FTransform& CallFunc_GetSocketTransform_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, const struct FVector& CallFunc_BreakTransform_Location, const struct FRotator& CallFunc_BreakTransform_Rotation, const struct FVector& CallFunc_BreakTransform_Scale, const struct FVector& CallFunc_Add_VectorVector_ReturnValue, class UAkComponent* CallFunc_AkEventLocationWithActor_AkComponent, int32 CallFunc_AkEventLocationWithActor_Playing_ID, const class FString& CallFunc_GetEnumeratorUserFriendlyName_ReturnValue, class FName CallFunc_Conv_StringToName_ReturnValue, const struct FAudioMappingConfig& CallFunc_GetDataTableRowFromName_OutRow, bool CallFunc_GetDataTableRowFromName_ReturnValue, TArray<class FName>& CallFunc_Map_Keys_Keys, class FName CallFunc_Array_Get_Item, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, bool CallFunc_PlayAudioMappingHelper_Success, bool CallFunc_PlayAudioMappingHelper_Success_1, bool CallFunc_NotEqual_NameName_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -188,49 +213,49 @@ void UAk_OneShotByMapping_C::PlayAudio(class USkeletalMeshComponent* InMeshComp,
 
 	Params::UAk_OneShotByMapping_C_PlayAudio_Params Parms{};
 
-	Parms.MeshComp = InMeshComp;
-	Parms.AttachRule = InAttachRule;
-	Parms.AttachOffset = InAttachOffset;
-	Parms.SocketName = InSocketName;
-	Parms.AkEvent = InAkEvent;
-	Parms.AbilityAnimComp = InAbilityAnimComp;
-	Parms.SuccessfulPlay = InSuccessfulPlay;
-	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
-	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetAbilityAnimation_ReturnValue = InCallFunc_GetAbilityAnimation_ReturnValue;
-	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
-	Parms.CallFunc_GetOwner_ReturnValue_1 = InCallFunc_GetOwner_ReturnValue_1;
-	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_AkGetComponent_ComponentCreated = InCallFunc_AkGetComponent_ComponentCreated;
-	Parms.CallFunc_AkGetComponent_AkComponent = InCallFunc_AkGetComponent_AkComponent;
-	Parms.CallFunc_AkEventComponent_ReturnValue = InCallFunc_AkEventComponent_ReturnValue;
-	Parms.CallFunc_GetSocketTransform_ReturnValue = InCallFunc_GetSocketTransform_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_BreakTransform_Location = InCallFunc_BreakTransform_Location;
-	Parms.CallFunc_BreakTransform_Rotation = InCallFunc_BreakTransform_Rotation;
-	Parms.CallFunc_BreakTransform_Scale = InCallFunc_BreakTransform_Scale;
-	Parms.CallFunc_Add_VectorVector_ReturnValue = InCallFunc_Add_VectorVector_ReturnValue;
-	Parms.CallFunc_AkEventLocationWithActor_AkComponent = InCallFunc_AkEventLocationWithActor_AkComponent;
-	Parms.CallFunc_AkEventLocationWithActor_Playing_ID = InCallFunc_AkEventLocationWithActor_Playing_ID;
-	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
-	Parms.CallFunc_Conv_StringToName_ReturnValue = InCallFunc_Conv_StringToName_ReturnValue;
-	Parms.CallFunc_GetDataTableRowFromName_OutRow = InCallFunc_GetDataTableRowFromName_OutRow;
-	Parms.CallFunc_GetDataTableRowFromName_ReturnValue = InCallFunc_GetDataTableRowFromName_ReturnValue;
-	Parms.CallFunc_Map_Keys_Keys = InCallFunc_Map_Keys_Keys;
-	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
-	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_PlayAudioMappingHelper_Success = InCallFunc_PlayAudioMappingHelper_Success;
-	Parms.CallFunc_PlayAudioMappingHelper_Success_1 = InCallFunc_PlayAudioMappingHelper_Success_1;
-	Parms.CallFunc_NotEqual_NameName_ReturnValue = InCallFunc_NotEqual_NameName_ReturnValue;
+	Parms.MeshComp = MeshComp;
+	Parms.AttachRule = AttachRule;
+	Parms.AttachOffset = AttachOffset;
+	Parms.SocketName = SocketName;
+	Parms.AkEvent = AkEvent;
+	Parms.AbilityAnimComp = AbilityAnimComp;
+	Parms.SuccessfulPlay = SuccessfulPlay;
+	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
+	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
+	Parms.K2Node_DynamicCast_AsValeria_Character = K2Node_DynamicCast_AsValeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetAbilityAnimation_ReturnValue = CallFunc_GetAbilityAnimation_ReturnValue;
+	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
+	Parms.CallFunc_GetOwner_ReturnValue_1 = CallFunc_GetOwner_ReturnValue_1;
+	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_AkGetComponent_ComponentCreated = CallFunc_AkGetComponent_ComponentCreated;
+	Parms.CallFunc_AkGetComponent_AkComponent = CallFunc_AkGetComponent_AkComponent;
+	Parms.CallFunc_AkEventComponent_ReturnValue = CallFunc_AkEventComponent_ReturnValue;
+	Parms.CallFunc_GetSocketTransform_ReturnValue = CallFunc_GetSocketTransform_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_BreakTransform_Location = CallFunc_BreakTransform_Location;
+	Parms.CallFunc_BreakTransform_Rotation = CallFunc_BreakTransform_Rotation;
+	Parms.CallFunc_BreakTransform_Scale = CallFunc_BreakTransform_Scale;
+	Parms.CallFunc_Add_VectorVector_ReturnValue = CallFunc_Add_VectorVector_ReturnValue;
+	Parms.CallFunc_AkEventLocationWithActor_AkComponent = CallFunc_AkEventLocationWithActor_AkComponent;
+	Parms.CallFunc_AkEventLocationWithActor_Playing_ID = CallFunc_AkEventLocationWithActor_Playing_ID;
+	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = CallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
+	Parms.CallFunc_Conv_StringToName_ReturnValue = CallFunc_Conv_StringToName_ReturnValue;
+	Parms.CallFunc_GetDataTableRowFromName_OutRow = CallFunc_GetDataTableRowFromName_OutRow;
+	Parms.CallFunc_GetDataTableRowFromName_ReturnValue = CallFunc_GetDataTableRowFromName_ReturnValue;
+	Parms.CallFunc_Map_Keys_Keys = CallFunc_Map_Keys_Keys;
+	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
+	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_PlayAudioMappingHelper_Success = CallFunc_PlayAudioMappingHelper_Success;
+	Parms.CallFunc_PlayAudioMappingHelper_Success_1 = CallFunc_PlayAudioMappingHelper_Success_1;
+	Parms.CallFunc_NotEqual_NameName_ReturnValue = CallFunc_NotEqual_NameName_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InSuccess != nullptr)
-		*InSuccess = Parms.Success;
+	if (Success != nullptr)
+		*Success = Parms.Success;
 
 }
 
@@ -246,11 +271,11 @@ void UAk_OneShotByMapping_C::PlayAudio(class USkeletalMeshComponent* InMeshComp,
 // class UDataTable*                  CallFunc_Map_Find_Value                                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Map_Find_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                        CallFunc_Conv_StringToName_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FAudioMappingConfig         CallFunc_GetDataTableRowFromName_OutRow                          ()
+// struct FAudioMappingConfig         CallFunc_GetDataTableRowFromName_OutRow                          (None)
 // bool                               CallFunc_GetDataTableRowFromName_ReturnValue                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-struct FAudioMappingConfig UAk_OneShotByMapping_C::FindAudioMapping(class UAbilityAnimationComponent* InAbilityAnimComp, class FName InMappingQualifier, class UDataTable* InMappingTable, const class FString& InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue, class UDataTable* InCallFunc_Map_Find_Value, bool InCallFunc_Map_Find_ReturnValue, class FName InCallFunc_Conv_StringToName_ReturnValue, const struct FAudioMappingConfig& InCallFunc_GetDataTableRowFromName_OutRow, bool InCallFunc_GetDataTableRowFromName_ReturnValue, bool InCallFunc_IsValid_ReturnValue)
+struct FAudioMappingConfig UAk_OneShotByMapping_C::FindAudioMapping(class UAbilityAnimationComponent* AbilityAnimComp, class FName MappingQualifier, class UDataTable* MappingTable, const class FString& CallFunc_GetEnumeratorUserFriendlyName_ReturnValue, class UDataTable* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, class FName CallFunc_Conv_StringToName_ReturnValue, const struct FAudioMappingConfig& CallFunc_GetDataTableRowFromName_OutRow, bool CallFunc_GetDataTableRowFromName_ReturnValue, bool CallFunc_IsValid_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -259,16 +284,16 @@ struct FAudioMappingConfig UAk_OneShotByMapping_C::FindAudioMapping(class UAbili
 
 	Params::UAk_OneShotByMapping_C_FindAudioMapping_Params Parms{};
 
-	Parms.AbilityAnimComp = InAbilityAnimComp;
-	Parms.MappingQualifier = InMappingQualifier;
-	Parms.MappingTable = InMappingTable;
-	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
-	Parms.CallFunc_Map_Find_Value = InCallFunc_Map_Find_Value;
-	Parms.CallFunc_Map_Find_ReturnValue = InCallFunc_Map_Find_ReturnValue;
-	Parms.CallFunc_Conv_StringToName_ReturnValue = InCallFunc_Conv_StringToName_ReturnValue;
-	Parms.CallFunc_GetDataTableRowFromName_OutRow = InCallFunc_GetDataTableRowFromName_OutRow;
-	Parms.CallFunc_GetDataTableRowFromName_ReturnValue = InCallFunc_GetDataTableRowFromName_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.AbilityAnimComp = AbilityAnimComp;
+	Parms.MappingQualifier = MappingQualifier;
+	Parms.MappingTable = MappingTable;
+	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = CallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
+	Parms.CallFunc_Map_Find_Value = CallFunc_Map_Find_Value;
+	Parms.CallFunc_Map_Find_ReturnValue = CallFunc_Map_Find_ReturnValue;
+	Parms.CallFunc_Conv_StringToName_ReturnValue = CallFunc_Conv_StringToName_ReturnValue;
+	Parms.CallFunc_GetDataTableRowFromName_OutRow = CallFunc_GetDataTableRowFromName_OutRow;
+	Parms.CallFunc_GetDataTableRowFromName_ReturnValue = CallFunc_GetDataTableRowFromName_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -278,6 +303,4 @@ struct FAudioMappingConfig UAk_OneShotByMapping_C::FindAudioMapping(class UAbili
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

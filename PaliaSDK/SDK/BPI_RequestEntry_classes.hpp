@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,17 +15,12 @@ class IBPI_RequestEntry_C : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("BPI_RequestEntry_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IBPI_RequestEntry_C* GetDefaultObj();
 
-	void SetupBinds(class UWBP_RequestsPanel_C* InRequestPanel);
+	void SetupBinds(class UWBP_RequestsPanel_C* RequestPanel);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

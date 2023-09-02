@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,17 +16,12 @@ class UEquippedAudioSet_C : public UPrimaryDataAsset
 public:
 	TMap<enum class E_EquippedEvents, class UAkAudioEvent*> EquippedAudioEvents;                               // 0x30(0x50)(Edit, BlueprintVisible)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("EquippedAudioSet_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UEquippedAudioSet_C* GetDefaultObj();
 
-	void Get_Audio_Event(enum class E_EquippedEvents InEvent, class UAkAudioEvent** InAudioEvent, bool* InFound, class UAkAudioEvent* InCallFunc_Map_Find_Value, bool InCallFunc_Map_Find_ReturnValue);
+	void Get_Audio_Event(enum class E_EquippedEvents Event, class UAkAudioEvent** AudioEvent, bool* Found, class UAkAudioEvent* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

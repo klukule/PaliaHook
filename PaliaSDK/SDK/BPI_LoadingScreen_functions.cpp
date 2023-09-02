@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// BlueprintGeneratedClass BPI_LoadingScreen.BPI_LoadingScreen_C
+// (None)
+
+class UClass* IBPI_LoadingScreen_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BPI_LoadingScreen_C");
+
+	return Clss;
+}
+
+
+// BPI_LoadingScreen_C BPI_LoadingScreen.Default__BPI_LoadingScreen_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class IBPI_LoadingScreen_C* IBPI_LoadingScreen_C::GetDefaultObj()
+{
+	static class IBPI_LoadingScreen_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IBPI_LoadingScreen_C*>(IBPI_LoadingScreen_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function BPI_LoadingScreen.BPI_LoadingScreen_C.AddLoadingExtension
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UUserWidget*                 Widget                                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_LoadingScreen_C::AddLoadingExtension(class UUserWidget* InWidget)
+void IBPI_LoadingScreen_C::AddLoadingExtension(class UUserWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,7 +54,7 @@ void IBPI_LoadingScreen_C::AddLoadingExtension(class UUserWidget* InWidget)
 
 	Params::IBPI_LoadingScreen_C_AddLoadingExtension_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -41,7 +66,7 @@ void IBPI_LoadingScreen_C::AddLoadingExtension(class UUserWidget* InWidget)
 // Parameters:
 // bool                               Display                                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_LoadingScreen_C::DisplayLoadingExtension(bool InDisplay)
+void IBPI_LoadingScreen_C::DisplayLoadingExtension(bool Display)
 {
 	static class UFunction* Func = nullptr;
 
@@ -50,7 +75,7 @@ void IBPI_LoadingScreen_C::DisplayLoadingExtension(bool InDisplay)
 
 	Params::IBPI_LoadingScreen_C_DisplayLoadingExtension_Params Parms{};
 
-	Parms.Display = InDisplay;
+	Parms.Display = Display;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -58,6 +83,4 @@ void IBPI_LoadingScreen_C::DisplayLoadingExtension(bool InDisplay)
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

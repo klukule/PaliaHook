@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,9 +11,9 @@ namespace SDK
 
 enum class Eenum_vfx_lightType : uint8
 {
-	Enum_vfx_lightType__NewEnumerator0 = 0,
-	Enum_vfx_lightType__NewEnumerator5 = 1,
-	Enum_vfx_lightType__enum_vfx_MAX = 2,
+	NewEnumerator0                 = 0,
+	NewEnumerator5                 = 1,
+	Enum_vfx_MAX                   = 2,
 };
 
 
@@ -26,6 +23,4 @@ enum class Eenum_vfx_lightType : uint8
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

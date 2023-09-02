@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,16 +15,11 @@ class USeq_CharSelect_Outro_Master__Director_BP__C : public ULevelSequenceDirect
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("Seq_CharSelect_Outro_Master (Director BP)_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USeq_CharSelect_Outro_Master__Director_BP__C* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

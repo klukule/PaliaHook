@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,16 +15,13 @@ class UTypedElementHandleLibrary : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TypedElementHandleLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UTypedElementHandleLibrary* GetDefaultObj();
 
-	void Release(struct FScriptTypedElementHandle& InElementHandle);
-	bool NotEqual(struct FScriptTypedElementHandle& InLhs, struct FScriptTypedElementHandle& InRhs);
-	bool IsSet(struct FScriptTypedElementHandle& InElementHandle);
-	bool Equal(struct FScriptTypedElementHandle& InLhs, struct FScriptTypedElementHandle& InRhs);
+	void Release(struct FScriptTypedElementHandle& ElementHandle);
+	bool NotEqual(struct FScriptTypedElementHandle& Lhs, struct FScriptTypedElementHandle& Rhs);
+	bool IsSet(struct FScriptTypedElementHandle& ElementHandle);
+	bool Equal(struct FScriptTypedElementHandle& Lhs, struct FScriptTypedElementHandle& Rhs);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -36,32 +30,29 @@ class UTypedElementListLibrary : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TypedElementListLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UTypedElementListLibrary* GetDefaultObj();
 
-	void Shrink(const struct FScriptTypedElementListProxy& InElementList);
-	void Reset(const struct FScriptTypedElementListProxy& InElementList);
-	void Reserve(const struct FScriptTypedElementListProxy& InElementList, int32 InSize);
-	bool Remove(const struct FScriptTypedElementListProxy& InElementList, struct FScriptTypedElementHandle& InElementHandle);
-	int32 Num(const struct FScriptTypedElementListProxy& InElementList);
-	bool IsValidIndex(const struct FScriptTypedElementListProxy& InElementList, int32 InIndex);
-	bool HasElementsOfType(const struct FScriptTypedElementListProxy& InElementList, class FName InElementTypeName);
-	bool HasElements(const struct FScriptTypedElementListProxy& InElementList, TSubclassOf<class IInterface> InBaseInterfaceType);
-	class UObject* GetElementInterface(const struct FScriptTypedElementListProxy& InElementList, struct FScriptTypedElementHandle& InElementHandle, TSubclassOf<class IInterface> InBaseInterfaceType);
-	TArray<struct FScriptTypedElementHandle> GetElementHandles(const struct FScriptTypedElementListProxy& InElementList, TSubclassOf<class IInterface> InBaseInterfaceType);
-	struct FScriptTypedElementHandle GetElementHandleAt(const struct FScriptTypedElementListProxy& InElementList, int32 InIndex);
-	void Empty(const struct FScriptTypedElementListProxy& InElementList, int32 InSlack);
-	struct FScriptTypedElementListProxy CreateScriptElementList(class UTypedElementRegistry* InRegistry);
-	int32 CountElementsOfType(const struct FScriptTypedElementListProxy& InElementList, class FName InElementTypeName);
-	int32 CountElements(const struct FScriptTypedElementListProxy& InElementList, TSubclassOf<class IInterface> InBaseInterfaceType);
-	bool Contains(const struct FScriptTypedElementListProxy& InElementList, struct FScriptTypedElementHandle& InElementHandle);
-	struct FScriptTypedElementListProxy Clone(const struct FScriptTypedElementListProxy& InElementList);
-	void AppendList(const struct FScriptTypedElementListProxy& InElementList, const struct FScriptTypedElementListProxy& InOtherElementList);
-	void Append(const struct FScriptTypedElementListProxy& InElementList, TArray<struct FScriptTypedElementHandle>& InElementHandles);
-	bool Add(const struct FScriptTypedElementListProxy& InElementList, struct FScriptTypedElementHandle& InElementHandle);
+	void Shrink(const struct FScriptTypedElementListProxy& ElementList);
+	void Reset(const struct FScriptTypedElementListProxy& ElementList);
+	void Reserve(const struct FScriptTypedElementListProxy& ElementList, int32 Size);
+	bool Remove(const struct FScriptTypedElementListProxy& ElementList, struct FScriptTypedElementHandle& ElementHandle);
+	int32 Num(const struct FScriptTypedElementListProxy& ElementList);
+	bool IsValidIndex(const struct FScriptTypedElementListProxy& ElementList, int32 Index);
+	bool HasElementsOfType(const struct FScriptTypedElementListProxy& ElementList, class FName ElementTypeName);
+	bool HasElements(const struct FScriptTypedElementListProxy& ElementList, TSubclassOf<class IInterface> BaseInterfaceType);
+	class UObject* GetElementInterface(const struct FScriptTypedElementListProxy& ElementList, struct FScriptTypedElementHandle& ElementHandle, TSubclassOf<class IInterface> BaseInterfaceType);
+	TArray<struct FScriptTypedElementHandle> GetElementHandles(const struct FScriptTypedElementListProxy& ElementList, TSubclassOf<class IInterface> BaseInterfaceType);
+	struct FScriptTypedElementHandle GetElementHandleAt(const struct FScriptTypedElementListProxy& ElementList, int32 Index);
+	void Empty(const struct FScriptTypedElementListProxy& ElementList, int32 Slack);
+	struct FScriptTypedElementListProxy CreateScriptElementList(class UTypedElementRegistry* Registry);
+	int32 CountElementsOfType(const struct FScriptTypedElementListProxy& ElementList, class FName ElementTypeName);
+	int32 CountElements(const struct FScriptTypedElementListProxy& ElementList, TSubclassOf<class IInterface> BaseInterfaceType);
+	bool Contains(const struct FScriptTypedElementListProxy& ElementList, struct FScriptTypedElementHandle& ElementHandle);
+	struct FScriptTypedElementListProxy Clone(const struct FScriptTypedElementListProxy& ElementList);
+	void AppendList(const struct FScriptTypedElementListProxy& ElementList, const struct FScriptTypedElementListProxy& OtherElementList);
+	void Append(const struct FScriptTypedElementListProxy& ElementList, TArray<struct FScriptTypedElementHandle>& ElementHandles);
+	bool Add(const struct FScriptTypedElementListProxy& ElementList, struct FScriptTypedElementHandle& ElementHandle);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -70,11 +61,8 @@ class ITypedElementCounterInterface : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TypedElementCounterInterface");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ITypedElementCounterInterface* GetDefaultObj();
 
 };
 
@@ -83,16 +71,13 @@ public:
 class UTypedElementRegistry : public UObject
 {
 public:
-	uint8                                        Pad_21E6[0x920];                                   // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2188[0x920];                                   // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TypedElementRegistry");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UTypedElementRegistry* GetDefaultObj();
 
 	class UTypedElementRegistry* GetInstance();
-	class UObject* GetElementInterface(struct FScriptTypedElementHandle& InInElementHandle, TSubclassOf<class IInterface> InInBaseInterfaceType);
+	class UObject* GetElementInterface(struct FScriptTypedElementHandle& InElementHandle, TSubclassOf<class IInterface> InBaseInterfaceType);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -101,14 +86,11 @@ class ITestTypedElementInterfaceA : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TestTypedElementInterfaceA");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ITestTypedElementInterfaceA* GetDefaultObj();
 
-	bool SetDisplayName(struct FScriptTypedElementHandle& InInElementHandle, class FText InInNewName, bool InbNotify);
-	class FText GetDisplayName(struct FScriptTypedElementHandle& InInElementHandle);
+	bool SetDisplayName(struct FScriptTypedElementHandle& InElementHandle, class FText InNewName, bool bNotify);
+	class FText GetDisplayName(struct FScriptTypedElementHandle& InElementHandle);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -117,13 +99,10 @@ class ITestTypedElementInterfaceB : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TestTypedElementInterfaceB");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ITestTypedElementInterfaceB* GetDefaultObj();
 
-	bool MarkAsTested(struct FScriptTypedElementHandle& InInElementHandle);
+	bool MarkAsTested(struct FScriptTypedElementHandle& InElementHandle);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -132,13 +111,10 @@ class ITestTypedElementInterfaceC : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TestTypedElementInterfaceC");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ITestTypedElementInterfaceC* GetDefaultObj();
 
-	bool GetIsTested(struct FScriptTypedElementHandle& InInElementHandle);
+	bool GetIsTested(struct FScriptTypedElementHandle& InElementHandle);
 };
 
 // 0x8 (0x30 - 0x28)
@@ -146,13 +122,10 @@ public:
 class UTestTypedElementInterfaceA_ImplTyped : public UObject
 {
 public:
-	uint8                                        Pad_2202[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2195[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TestTypedElementInterfaceA_ImplTyped");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UTestTypedElementInterfaceA_ImplTyped* GetDefaultObj();
 
 };
 
@@ -161,13 +134,10 @@ public:
 class UTestTypedElementInterfaceA_ImplUntyped : public UObject
 {
 public:
-	uint8                                        Pad_2203[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2197[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TestTypedElementInterfaceA_ImplUntyped");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UTestTypedElementInterfaceA_ImplUntyped* GetDefaultObj();
 
 };
 
@@ -176,18 +146,13 @@ public:
 class UTestTypedElementInterfaceBAndC_Typed : public UObject
 {
 public:
-	uint8                                        Pad_2204[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2199[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TestTypedElementInterfaceBAndC_Typed");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UTestTypedElementInterfaceBAndC_Typed* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

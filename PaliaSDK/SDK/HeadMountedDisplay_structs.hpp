@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,125 +11,125 @@ namespace SDK
 
 enum class EOrientPositionSelector : uint8
 {
-	EOrientPositionSelector__Orientation = 0,
-	EOrientPositionSelector__Position = 1,
-	EOrientPositionSelector__OrientationAndPosition = 2,
-	EOrientPositionSelector__EOrientPositionSelector_MAX = 3,
+	Orientation                    = 0,
+	Position                       = 1,
+	OrientationAndPosition         = 2,
+	EOrientPositionSelector_MAX    = 3,
 };
 
 enum class EHMDTrackingOrigin : uint8
 {
-	EHMDTrackingOrigin__Floor      = 0,
-	EHMDTrackingOrigin__Eye        = 1,
-	EHMDTrackingOrigin__Stage      = 2,
-	EHMDTrackingOrigin__EHMDTrackingOrigin_MAX = 3,
+	Floor                          = 0,
+	Eye                            = 1,
+	Stage                          = 2,
+	EHMDTrackingOrigin_MAX         = 3,
 };
 
 enum class EHMDWornState : uint8
 {
-	EHMDWornState__Unknown         = 0,
-	EHMDWornState__Worn            = 1,
-	EHMDWornState__NotWorn         = 2,
-	EHMDWornState__EHMDWornState_MAX = 3,
+	Unknown                        = 0,
+	Worn                           = 1,
+	NotWorn                        = 2,
+	EHMDWornState_MAX              = 3,
 };
 
 enum class EXRDeviceConnectionResult : uint8
 {
-	EXRDeviceConnectionResult__NoTrackingSystem = 0,
-	EXRDeviceConnectionResult__FeatureNotSupported = 1,
-	EXRDeviceConnectionResult__NoValidViewport = 2,
-	EXRDeviceConnectionResult__MiscFailure = 3,
-	EXRDeviceConnectionResult__Success = 4,
-	EXRDeviceConnectionResult__EXRDeviceConnectionResult_MAX = 5,
+	NoTrackingSystem               = 0,
+	FeatureNotSupported            = 1,
+	NoValidViewport                = 2,
+	MiscFailure                    = 3,
+	Success                        = 4,
+	EXRDeviceConnectionResult_MAX  = 5,
 };
 
 enum class EXRSystemFlags : uint8
 {
-	EXRSystemFlags__NoFlags        = 0,
-	EXRSystemFlags__IsAR           = 1,
-	EXRSystemFlags__IsTablet       = 2,
-	EXRSystemFlags__IsHeadMounted  = 4,
-	EXRSystemFlags__SupportsHandTracking = 8,
-	EXRSystemFlags__EXRSystemFlags_MAX = 9,
+	NoFlags                        = 0,
+	IsAR                           = 1,
+	IsTablet                       = 2,
+	IsHeadMounted                  = 4,
+	SupportsHandTracking           = 8,
+	EXRSystemFlags_MAX             = 9,
 };
 
 enum class ESpectatorScreenMode : uint8
 {
-	ESpectatorScreenMode__Disabled = 0,
-	ESpectatorScreenMode__SingleEyeLetterboxed = 1,
-	ESpectatorScreenMode__Undistorted = 2,
-	ESpectatorScreenMode__Distorted = 3,
-	ESpectatorScreenMode__SingleEye = 4,
-	ESpectatorScreenMode__SingleEyeCroppedToFill = 5,
-	ESpectatorScreenMode__Texture  = 6,
-	ESpectatorScreenMode__TexturePlusEye = 7,
-	ESpectatorScreenMode__ESpectatorScreenMode_MAX = 8,
+	Disabled                       = 0,
+	SingleEyeLetterboxed           = 1,
+	Undistorted                    = 2,
+	Distorted                      = 3,
+	SingleEye                      = 4,
+	SingleEyeCroppedToFill         = 5,
+	Texture                        = 6,
+	TexturePlusEye                 = 7,
+	ESpectatorScreenMode_MAX       = 8,
 };
 
 enum class EXRTrackedDeviceType : uint8
 {
-	EXRTrackedDeviceType__HeadMountedDisplay = 0,
-	EXRTrackedDeviceType__Controller = 1,
-	EXRTrackedDeviceType__TrackingReference = 2,
-	EXRTrackedDeviceType__Other    = 3,
-	EXRTrackedDeviceType__Invalid  = 254,
-	EXRTrackedDeviceType__Any      = 255,
-	EXRTrackedDeviceType__EXRTrackedDeviceType_MAX = 256,
+	HeadMountedDisplay             = 0,
+	Controller                     = 1,
+	TrackingReference              = 2,
+	Other                          = 3,
+	Invalid                        = 254,
+	Any                            = 255,
+	EXRTrackedDeviceType_MAX       = 256,
 };
 
 enum class EHandKeypoint : uint8
 {
-	EHandKeypoint__Palm            = 0,
-	EHandKeypoint__Wrist           = 1,
-	EHandKeypoint__ThumbMetacarpal = 2,
-	EHandKeypoint__ThumbProximal   = 3,
-	EHandKeypoint__ThumbDistal     = 4,
-	EHandKeypoint__ThumbTip        = 5,
-	EHandKeypoint__IndexMetacarpal = 6,
-	EHandKeypoint__IndexProximal   = 7,
-	EHandKeypoint__IndexIntermediate = 8,
-	EHandKeypoint__IndexDistal     = 9,
-	EHandKeypoint__IndexTip        = 10,
-	EHandKeypoint__MiddleMetacarpal = 11,
-	EHandKeypoint__MiddleProximal  = 12,
-	EHandKeypoint__MiddleIntermediate = 13,
-	EHandKeypoint__MiddleDistal    = 14,
-	EHandKeypoint__MiddleTip       = 15,
-	EHandKeypoint__RingMetacarpal  = 16,
-	EHandKeypoint__RingProximal    = 17,
-	EHandKeypoint__RingIntermediate = 18,
-	EHandKeypoint__RingDistal      = 19,
-	EHandKeypoint__RingTip         = 20,
-	EHandKeypoint__LittleMetacarpal = 21,
-	EHandKeypoint__LittleProximal  = 22,
-	EHandKeypoint__LittleIntermediate = 23,
-	EHandKeypoint__LittleDistal    = 24,
-	EHandKeypoint__LittleTip       = 25,
-	EHandKeypoint__EHandKeypoint_MAX = 26,
+	Palm                           = 0,
+	Wrist                          = 1,
+	ThumbMetacarpal                = 2,
+	ThumbProximal                  = 3,
+	ThumbDistal                    = 4,
+	ThumbTip                       = 5,
+	IndexMetacarpal                = 6,
+	IndexProximal                  = 7,
+	IndexIntermediate              = 8,
+	IndexDistal                    = 9,
+	IndexTip                       = 10,
+	MiddleMetacarpal               = 11,
+	MiddleProximal                 = 12,
+	MiddleIntermediate             = 13,
+	MiddleDistal                   = 14,
+	MiddleTip                      = 15,
+	RingMetacarpal                 = 16,
+	RingProximal                   = 17,
+	RingIntermediate               = 18,
+	RingDistal                     = 19,
+	RingTip                        = 20,
+	LittleMetacarpal               = 21,
+	LittleProximal                 = 22,
+	LittleIntermediate             = 23,
+	LittleDistal                   = 24,
+	LittleTip                      = 25,
+	EHandKeypoint_MAX              = 26,
 };
 
 enum class EXRVisualType : uint8
 {
-	EXRVisualType__Controller      = 0,
-	EXRVisualType__Hand            = 1,
-	EXRVisualType__EXRVisualType_MAX = 2,
+	Controller                     = 0,
+	Hand                           = 1,
+	EXRVisualType_MAX              = 2,
 };
 
 enum class ETrackingStatus : uint8
 {
-	ETrackingStatus__NotTracked    = 0,
-	ETrackingStatus__InertialOnly  = 1,
-	ETrackingStatus__Tracked       = 2,
-	ETrackingStatus__ETrackingStatus_MAX = 3,
+	NotTracked                     = 0,
+	InertialOnly                   = 1,
+	Tracked                        = 2,
+	ETrackingStatus_MAX            = 3,
 };
 
 enum class ESpatialInputGestureAxis : uint8
 {
-	ESpatialInputGestureAxis__None = 0,
-	ESpatialInputGestureAxis__Manipulation = 1,
-	ESpatialInputGestureAxis__Navigation = 2,
-	ESpatialInputGestureAxis__NavigationRails = 3,
-	ESpatialInputGestureAxis__ESpatialInputGestureAxis_MAX = 4,
+	None                           = 0,
+	Manipulation                   = 1,
+	Navigation                     = 2,
+	NavigationRails                = 3,
+	ESpatialInputGestureAxis_MAX   = 4,
 };
 
 
@@ -146,13 +143,13 @@ struct FXRHMDData
 {
 public:
 	bool                                         bValid;                                            // 0x0(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23AF[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2288[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  DeviceName;                                        // 0x4(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 ApplicationInstanceID;                             // 0xC(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETrackingStatus                   TrackingStatus;                                    // 0x1C(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23B0[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_228A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               Position;                                          // 0x20(0x18)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23B2[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_228B[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuat                                 Rotation;                                          // 0x40(0x20)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -162,24 +159,24 @@ struct FXRMotionControllerData
 {
 public:
 	bool                                         bValid;                                            // 0x0(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23B4[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_228C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  DeviceName;                                        // 0x4(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 ApplicationInstanceID;                             // 0xC(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EXRVisualType                     DeviceVisualType;                                  // 0x1C(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EControllerHand                   HandIndex;                                         // 0x1D(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETrackingStatus                   TrackingStatus;                                    // 0x1E(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23B6[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_228D[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               GripPosition;                                      // 0x20(0x18)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23B7[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_228E[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuat                                 GripRotation;                                      // 0x40(0x20)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               AimPosition;                                       // 0x60(0x18)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23B9[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_228F[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuat                                 AimRotation;                                       // 0x80(0x20)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FVector>                       HandKeyPositions;                                  // 0xA0(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FQuat>                         HandKeyRotations;                                  // 0xB0(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<float>                                HandKeyRadii;                                      // 0xC0(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bIsGrasped;                                        // 0xD0(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23BC[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2290[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x6 (0x6 - 0x0)
@@ -206,6 +203,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

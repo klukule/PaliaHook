@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class TypedElementRuntime.TypedElementSelectionSetLibrary
+// (None)
+
+class UClass* UTypedElementSelectionSetLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TypedElementSelectionSetLibrary");
+
+	return Clss;
+}
+
+
+// TypedElementSelectionSetLibrary TypedElementRuntime.Default__TypedElementSelectionSetLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTypedElementSelectionSetLibrary* UTypedElementSelectionSetLibrary::GetDefaultObj()
+{
+	static class UTypedElementSelectionSetLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTypedElementSelectionSetLibrary*>(UTypedElementSelectionSetLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function TypedElementRuntime.TypedElementSelectionSetLibrary.SetSelectionFromList
@@ -23,7 +48,7 @@ namespace SDK
 // struct FTypedElementSelectionOptionsSelectionOptions                                                 (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSetLibrary::SetSelectionFromList(class UTypedElementSelectionSet* InSelectionSet, const struct FScriptTypedElementListProxy& InElementList, const struct FTypedElementSelectionOptions& InSelectionOptions)
+bool UTypedElementSelectionSetLibrary::SetSelectionFromList(class UTypedElementSelectionSet* SelectionSet, const struct FScriptTypedElementListProxy& ElementList, const struct FTypedElementSelectionOptions& SelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,17 +57,17 @@ bool UTypedElementSelectionSetLibrary::SetSelectionFromList(class UTypedElementS
 
 	Params::UTypedElementSelectionSetLibrary_SetSelectionFromList_Params Parms{};
 
-	Parms.SelectionSet = InSelectionSet;
-	Parms.ElementList = InElementList;
-	Parms.SelectionOptions = InSelectionOptions;
+	Parms.SelectionSet = SelectionSet;
+	Parms.ElementList = ElementList;
+	Parms.SelectionOptions = SelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -57,7 +82,7 @@ bool UTypedElementSelectionSetLibrary::SetSelectionFromList(class UTypedElementS
 // struct FTypedElementSelectionOptionsSelectionOptions                                                 (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSetLibrary::SelectElementsFromList(class UTypedElementSelectionSet* InSelectionSet, const struct FScriptTypedElementListProxy& InElementList, const struct FTypedElementSelectionOptions& InSelectionOptions)
+bool UTypedElementSelectionSetLibrary::SelectElementsFromList(class UTypedElementSelectionSet* SelectionSet, const struct FScriptTypedElementListProxy& ElementList, const struct FTypedElementSelectionOptions& SelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -66,17 +91,17 @@ bool UTypedElementSelectionSetLibrary::SelectElementsFromList(class UTypedElemen
 
 	Params::UTypedElementSelectionSetLibrary_SelectElementsFromList_Params Parms{};
 
-	Parms.SelectionSet = InSelectionSet;
-	Parms.ElementList = InElementList;
-	Parms.SelectionOptions = InSelectionOptions;
+	Parms.SelectionSet = SelectionSet;
+	Parms.ElementList = ElementList;
+	Parms.SelectionOptions = SelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -90,7 +115,7 @@ bool UTypedElementSelectionSetLibrary::SelectElementsFromList(class UTypedElemen
 // struct FTypedElementSelectionNormalizationOptionsNormalizationOptions                                             (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FScriptTypedElementListProxyReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FScriptTypedElementListProxy UTypedElementSelectionSetLibrary::GetNormalizedSelection(class UTypedElementSelectionSet* InSelectionSet, const struct FTypedElementSelectionNormalizationOptions& InNormalizationOptions)
+struct FScriptTypedElementListProxy UTypedElementSelectionSetLibrary::GetNormalizedSelection(class UTypedElementSelectionSet* SelectionSet, const struct FTypedElementSelectionNormalizationOptions& NormalizationOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -99,16 +124,16 @@ struct FScriptTypedElementListProxy UTypedElementSelectionSetLibrary::GetNormali
 
 	Params::UTypedElementSelectionSetLibrary_GetNormalizedSelection_Params Parms{};
 
-	Parms.SelectionSet = InSelectionSet;
-	Parms.NormalizationOptions = InNormalizationOptions;
+	Parms.SelectionSet = SelectionSet;
+	Parms.NormalizationOptions = NormalizationOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -123,7 +148,7 @@ struct FScriptTypedElementListProxy UTypedElementSelectionSetLibrary::GetNormali
 // struct FTypedElementSelectionNormalizationOptionsNormalizationOptions                                             (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FScriptTypedElementListProxyReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FScriptTypedElementListProxy UTypedElementSelectionSetLibrary::GetNormalizedElementList(class UTypedElementSelectionSet* InSelectionSet, const struct FScriptTypedElementListProxy& InElementList, const struct FTypedElementSelectionNormalizationOptions& InNormalizationOptions)
+struct FScriptTypedElementListProxy UTypedElementSelectionSetLibrary::GetNormalizedElementList(class UTypedElementSelectionSet* SelectionSet, const struct FScriptTypedElementListProxy& ElementList, const struct FTypedElementSelectionNormalizationOptions& NormalizationOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -132,17 +157,17 @@ struct FScriptTypedElementListProxy UTypedElementSelectionSetLibrary::GetNormali
 
 	Params::UTypedElementSelectionSetLibrary_GetNormalizedElementList_Params Parms{};
 
-	Parms.SelectionSet = InSelectionSet;
-	Parms.ElementList = InElementList;
-	Parms.NormalizationOptions = InNormalizationOptions;
+	Parms.SelectionSet = SelectionSet;
+	Parms.ElementList = ElementList;
+	Parms.NormalizationOptions = NormalizationOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -157,7 +182,7 @@ struct FScriptTypedElementListProxy UTypedElementSelectionSetLibrary::GetNormali
 // struct FTypedElementSelectionOptionsSelectionOptions                                                 (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSetLibrary::DeselectElementsFromList(class UTypedElementSelectionSet* InSelectionSet, const struct FScriptTypedElementListProxy& InElementList, const struct FTypedElementSelectionOptions& InSelectionOptions)
+bool UTypedElementSelectionSetLibrary::DeselectElementsFromList(class UTypedElementSelectionSet* SelectionSet, const struct FScriptTypedElementListProxy& ElementList, const struct FTypedElementSelectionOptions& SelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -166,20 +191,48 @@ bool UTypedElementSelectionSetLibrary::DeselectElementsFromList(class UTypedElem
 
 	Params::UTypedElementSelectionSetLibrary_DeselectElementsFromList_Params Parms{};
 
-	Parms.SelectionSet = InSelectionSet;
-	Parms.ElementList = InElementList;
-	Parms.SelectionOptions = InSelectionOptions;
+	Parms.SelectionSet = SelectionSet;
+	Parms.ElementList = ElementList;
+	Parms.SelectionOptions = SelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class TypedElementRuntime.TypedElementSelectionSet
+// (None)
+
+class UClass* UTypedElementSelectionSet::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TypedElementSelectionSet");
+
+	return Clss;
+}
+
+
+// TypedElementSelectionSet TypedElementRuntime.Default__TypedElementSelectionSet
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTypedElementSelectionSet* UTypedElementSelectionSet::GetDefaultObj()
+{
+	static class UTypedElementSelectionSet* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTypedElementSelectionSet*>(UTypedElementSelectionSet::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -190,7 +243,7 @@ bool UTypedElementSelectionSetLibrary::DeselectElementsFromList(class UTypedElem
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::SetSelection(TArray<struct FScriptTypedElementHandle>& InInElementHandles, const struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool UTypedElementSelectionSet::SetSelection(TArray<struct FScriptTypedElementHandle>& InElementHandles, const struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -199,16 +252,16 @@ bool UTypedElementSelectionSet::SetSelection(TArray<struct FScriptTypedElementHa
 
 	Params::UTypedElementSelectionSet_SetSelection_Params Parms{};
 
-	Parms.InElementHandles = InInElementHandles;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandles = InElementHandles;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -222,7 +275,7 @@ bool UTypedElementSelectionSet::SetSelection(TArray<struct FScriptTypedElementHa
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::SelectElements(TArray<struct FScriptTypedElementHandle>& InInElementHandles, const struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool UTypedElementSelectionSet::SelectElements(TArray<struct FScriptTypedElementHandle>& InElementHandles, const struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -231,16 +284,16 @@ bool UTypedElementSelectionSet::SelectElements(TArray<struct FScriptTypedElement
 
 	Params::UTypedElementSelectionSet_SelectElements_Params Parms{};
 
-	Parms.InElementHandles = InInElementHandles;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandles = InElementHandles;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -254,7 +307,7 @@ bool UTypedElementSelectionSet::SelectElements(TArray<struct FScriptTypedElement
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::SelectElement(struct FScriptTypedElementHandle& InInElementHandle, const struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool UTypedElementSelectionSet::SelectElement(struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -263,16 +316,16 @@ bool UTypedElementSelectionSet::SelectElement(struct FScriptTypedElementHandle& 
 
 	Params::UTypedElementSelectionSet_SelectElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -284,7 +337,7 @@ bool UTypedElementSelectionSet::SelectElement(struct FScriptTypedElementHandle& 
 // Parameters:
 // struct FTypedElementSelectionSetStateInSelectionState                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UTypedElementSelectionSet::RestoreSelectionState(struct FTypedElementSelectionSetState& InInSelectionState)
+void UTypedElementSelectionSet::RestoreSelectionState(struct FTypedElementSelectionSetState& InSelectionState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -293,15 +346,15 @@ void UTypedElementSelectionSet::RestoreSelectionState(struct FTypedElementSelect
 
 	Params::UTypedElementSelectionSet_RestoreSelectionState_Params Parms{};
 
-	Parms.InSelectionState = InInSelectionState;
+	Parms.InSelectionState = InSelectionState;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -311,7 +364,7 @@ void UTypedElementSelectionSet::RestoreSelectionState(struct FTypedElementSelect
 // Parameters:
 // class UTypedElementSelectionSet*   SelectionSet                                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTypedElementSelectionSet::OnPreChangeDynamic__DelegateSignature(class UTypedElementSelectionSet* InSelectionSet)
+void UTypedElementSelectionSet::OnPreChangeDynamic__DelegateSignature(class UTypedElementSelectionSet* SelectionSet)
 {
 	static class UFunction* Func = nullptr;
 
@@ -320,7 +373,7 @@ void UTypedElementSelectionSet::OnPreChangeDynamic__DelegateSignature(class UTyp
 
 	Params::UTypedElementSelectionSet_OnPreChangeDynamic__DelegateSignature_Params Parms{};
 
-	Parms.SelectionSet = InSelectionSet;
+	Parms.SelectionSet = SelectionSet;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -332,7 +385,7 @@ void UTypedElementSelectionSet::OnPreChangeDynamic__DelegateSignature(class UTyp
 // Parameters:
 // class UTypedElementSelectionSet*   SelectionSet                                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTypedElementSelectionSet::OnChangeDynamic__DelegateSignature(class UTypedElementSelectionSet* InSelectionSet)
+void UTypedElementSelectionSet::OnChangeDynamic__DelegateSignature(class UTypedElementSelectionSet* SelectionSet)
 {
 	static class UFunction* Func = nullptr;
 
@@ -341,7 +394,7 @@ void UTypedElementSelectionSet::OnChangeDynamic__DelegateSignature(class UTypedE
 
 	Params::UTypedElementSelectionSet_OnChangeDynamic__DelegateSignature_Params Parms{};
 
-	Parms.SelectionSet = InSelectionSet;
+	Parms.SelectionSet = SelectionSet;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -354,7 +407,7 @@ void UTypedElementSelectionSet::OnChangeDynamic__DelegateSignature(class UTypedE
 // TSubclassOf<class IInterface>      InBaseInterfaceType                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FScriptTypedElementHandle>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FScriptTypedElementHandle> UTypedElementSelectionSet::K2_GetSelectedElementHandles(TSubclassOf<class IInterface> InInBaseInterfaceType)
+TArray<struct FScriptTypedElementHandle> UTypedElementSelectionSet::K2_GetSelectedElementHandles(TSubclassOf<class IInterface> InBaseInterfaceType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -363,15 +416,15 @@ TArray<struct FScriptTypedElementHandle> UTypedElementSelectionSet::K2_GetSelect
 
 	Params::UTypedElementSelectionSet_K2_GetSelectedElementHandles_Params Parms{};
 
-	Parms.InBaseInterfaceType = InInBaseInterfaceType;
+	Parms.InBaseInterfaceType = InBaseInterfaceType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -385,7 +438,7 @@ TArray<struct FScriptTypedElementHandle> UTypedElementSelectionSet::K2_GetSelect
 // struct FTypedElementIsSelectedOptionsInSelectionOptions                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::IsElementSelected(struct FScriptTypedElementHandle& InInElementHandle, const struct FTypedElementIsSelectedOptions& InInSelectionOptions)
+bool UTypedElementSelectionSet::IsElementSelected(struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementIsSelectedOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -394,16 +447,16 @@ bool UTypedElementSelectionSet::IsElementSelected(struct FScriptTypedElementHand
 
 	Params::UTypedElementSelectionSet_IsElementSelected_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -416,7 +469,7 @@ bool UTypedElementSelectionSet::IsElementSelected(struct FScriptTypedElementHand
 // class UClass*                      InRequiredClass                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::HasSelectedObjects(class UClass* InInRequiredClass)
+bool UTypedElementSelectionSet::HasSelectedObjects(class UClass* InRequiredClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -425,15 +478,15 @@ bool UTypedElementSelectionSet::HasSelectedObjects(class UClass* InInRequiredCla
 
 	Params::UTypedElementSelectionSet_HasSelectedObjects_Params Parms{};
 
-	Parms.InRequiredClass = InInRequiredClass;
+	Parms.InRequiredClass = InRequiredClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -446,7 +499,7 @@ bool UTypedElementSelectionSet::HasSelectedObjects(class UClass* InInRequiredCla
 // TSubclassOf<class IInterface>      InBaseInterfaceType                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::HasSelectedElements(TSubclassOf<class IInterface> InInBaseInterfaceType)
+bool UTypedElementSelectionSet::HasSelectedElements(TSubclassOf<class IInterface> InBaseInterfaceType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -455,15 +508,15 @@ bool UTypedElementSelectionSet::HasSelectedElements(TSubclassOf<class IInterface
 
 	Params::UTypedElementSelectionSet_HasSelectedElements_Params Parms{};
 
-	Parms.InBaseInterfaceType = InInBaseInterfaceType;
+	Parms.InBaseInterfaceType = InBaseInterfaceType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -476,7 +529,7 @@ bool UTypedElementSelectionSet::HasSelectedElements(TSubclassOf<class IInterface
 // class UClass*                      InRequiredClass                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObject* UTypedElementSelectionSet::GetTopSelectedObject(class UClass* InInRequiredClass)
+class UObject* UTypedElementSelectionSet::GetTopSelectedObject(class UClass* InRequiredClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -485,15 +538,15 @@ class UObject* UTypedElementSelectionSet::GetTopSelectedObject(class UClass* InI
 
 	Params::UTypedElementSelectionSet_GetTopSelectedObject_Params Parms{};
 
-	Parms.InRequiredClass = InInRequiredClass;
+	Parms.InRequiredClass = InRequiredClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -507,7 +560,7 @@ class UObject* UTypedElementSelectionSet::GetTopSelectedObject(class UClass* InI
 // enum class ETypedElementSelectionMethodInSelectionMethod                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FScriptTypedElementHandle   ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FScriptTypedElementHandle UTypedElementSelectionSet::GetSelectionElement(struct FScriptTypedElementHandle& InInElementHandle, enum class ETypedElementSelectionMethod InInSelectionMethod)
+struct FScriptTypedElementHandle UTypedElementSelectionSet::GetSelectionElement(struct FScriptTypedElementHandle& InElementHandle, enum class ETypedElementSelectionMethod InSelectionMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -516,16 +569,16 @@ struct FScriptTypedElementHandle UTypedElementSelectionSet::GetSelectionElement(
 
 	Params::UTypedElementSelectionSet_GetSelectionElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionMethod = InInSelectionMethod;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionMethod = InSelectionMethod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -538,7 +591,7 @@ struct FScriptTypedElementHandle UTypedElementSelectionSet::GetSelectionElement(
 // class UClass*                      InRequiredClass                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UObject*>             ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UObject*> UTypedElementSelectionSet::GetSelectedObjects(class UClass* InInRequiredClass)
+TArray<class UObject*> UTypedElementSelectionSet::GetSelectedObjects(class UClass* InRequiredClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -547,15 +600,15 @@ TArray<class UObject*> UTypedElementSelectionSet::GetSelectedObjects(class UClas
 
 	Params::UTypedElementSelectionSet_GetSelectedObjects_Params Parms{};
 
-	Parms.InRequiredClass = InInRequiredClass;
+	Parms.InRequiredClass = InRequiredClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -577,13 +630,13 @@ int32 UTypedElementSelectionSet::GetNumSelectedElements()
 	Params::UTypedElementSelectionSet_GetNumSelectedElements_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -605,13 +658,13 @@ struct FTypedElementSelectionSetState UTypedElementSelectionSet::GetCurrentSelec
 	Params::UTypedElementSelectionSet_GetCurrentSelectionState_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -624,7 +677,7 @@ struct FTypedElementSelectionSetState UTypedElementSelectionSet::GetCurrentSelec
 // class UClass*                      InRequiredClass                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObject* UTypedElementSelectionSet::GetBottomSelectedObject(class UClass* InInRequiredClass)
+class UObject* UTypedElementSelectionSet::GetBottomSelectedObject(class UClass* InRequiredClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -633,15 +686,15 @@ class UObject* UTypedElementSelectionSet::GetBottomSelectedObject(class UClass* 
 
 	Params::UTypedElementSelectionSet_GetBottomSelectedObject_Params Parms{};
 
-	Parms.InRequiredClass = InInRequiredClass;
+	Parms.InRequiredClass = InRequiredClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -655,7 +708,7 @@ class UObject* UTypedElementSelectionSet::GetBottomSelectedObject(class UClass* 
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::DeselectElements(TArray<struct FScriptTypedElementHandle>& InInElementHandles, const struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool UTypedElementSelectionSet::DeselectElements(TArray<struct FScriptTypedElementHandle>& InElementHandles, const struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -664,16 +717,16 @@ bool UTypedElementSelectionSet::DeselectElements(TArray<struct FScriptTypedEleme
 
 	Params::UTypedElementSelectionSet_DeselectElements_Params Parms{};
 
-	Parms.InElementHandles = InInElementHandles;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandles = InElementHandles;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -687,7 +740,7 @@ bool UTypedElementSelectionSet::DeselectElements(TArray<struct FScriptTypedEleme
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::DeselectElement(struct FScriptTypedElementHandle& InInElementHandle, const struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool UTypedElementSelectionSet::DeselectElement(struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -696,16 +749,16 @@ bool UTypedElementSelectionSet::DeselectElement(struct FScriptTypedElementHandle
 
 	Params::UTypedElementSelectionSet_DeselectElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -718,7 +771,7 @@ bool UTypedElementSelectionSet::DeselectElement(struct FScriptTypedElementHandle
 // class UClass*                      InRequiredClass                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UTypedElementSelectionSet::CountSelectedObjects(class UClass* InInRequiredClass)
+int32 UTypedElementSelectionSet::CountSelectedObjects(class UClass* InRequiredClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -727,15 +780,15 @@ int32 UTypedElementSelectionSet::CountSelectedObjects(class UClass* InInRequired
 
 	Params::UTypedElementSelectionSet_CountSelectedObjects_Params Parms{};
 
-	Parms.InRequiredClass = InInRequiredClass;
+	Parms.InRequiredClass = InRequiredClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -748,7 +801,7 @@ int32 UTypedElementSelectionSet::CountSelectedObjects(class UClass* InInRequired
 // TSubclassOf<class IInterface>      InBaseInterfaceType                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UTypedElementSelectionSet::CountSelectedElements(TSubclassOf<class IInterface> InInBaseInterfaceType)
+int32 UTypedElementSelectionSet::CountSelectedElements(TSubclassOf<class IInterface> InBaseInterfaceType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -757,15 +810,15 @@ int32 UTypedElementSelectionSet::CountSelectedElements(TSubclassOf<class IInterf
 
 	Params::UTypedElementSelectionSet_CountSelectedElements_Params Parms{};
 
-	Parms.InBaseInterfaceType = InInBaseInterfaceType;
+	Parms.InBaseInterfaceType = InBaseInterfaceType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -778,7 +831,7 @@ int32 UTypedElementSelectionSet::CountSelectedElements(TSubclassOf<class IInterf
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::ClearSelection(const struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool UTypedElementSelectionSet::ClearSelection(const struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -787,15 +840,15 @@ bool UTypedElementSelectionSet::ClearSelection(const struct FTypedElementSelecti
 
 	Params::UTypedElementSelectionSet_ClearSelection_Params Parms{};
 
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -809,7 +862,7 @@ bool UTypedElementSelectionSet::ClearSelection(const struct FTypedElementSelecti
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::CanSelectElement(struct FScriptTypedElementHandle& InInElementHandle, const struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool UTypedElementSelectionSet::CanSelectElement(struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -818,16 +871,16 @@ bool UTypedElementSelectionSet::CanSelectElement(struct FScriptTypedElementHandl
 
 	Params::UTypedElementSelectionSet_CanSelectElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -841,7 +894,7 @@ bool UTypedElementSelectionSet::CanSelectElement(struct FScriptTypedElementHandl
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::CanDeselectElement(struct FScriptTypedElementHandle& InInElementHandle, const struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool UTypedElementSelectionSet::CanDeselectElement(struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -850,16 +903,16 @@ bool UTypedElementSelectionSet::CanDeselectElement(struct FScriptTypedElementHan
 
 	Params::UTypedElementSelectionSet_CanDeselectElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -872,7 +925,7 @@ bool UTypedElementSelectionSet::CanDeselectElement(struct FScriptTypedElementHan
 // struct FScriptTypedElementHandle   InElementHandle                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTypedElementSelectionSet::AllowSelectionModifiers(struct FScriptTypedElementHandle& InInElementHandle)
+bool UTypedElementSelectionSet::AllowSelectionModifiers(struct FScriptTypedElementHandle& InElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -881,18 +934,46 @@ bool UTypedElementSelectionSet::AllowSelectionModifiers(struct FScriptTypedEleme
 
 	Params::UTypedElementSelectionSet_AllowSelectionModifiers_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
+	Parms.InElementHandle = InElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class TypedElementRuntime.TypedElementAssetDataInterface
+// (None)
+
+class UClass* ITypedElementAssetDataInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TypedElementAssetDataInterface");
+
+	return Clss;
+}
+
+
+// TypedElementAssetDataInterface TypedElementRuntime.Default__TypedElementAssetDataInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ITypedElementAssetDataInterface* ITypedElementAssetDataInterface::GetDefaultObj()
+{
+	static class ITypedElementAssetDataInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ITypedElementAssetDataInterface*>(ITypedElementAssetDataInterface::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -902,7 +983,7 @@ bool UTypedElementSelectionSet::AllowSelectionModifiers(struct FScriptTypedEleme
 // struct FScriptTypedElementHandle   InElementHandle                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FAssetData                  ReturnValue                                                      (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FAssetData ITypedElementAssetDataInterface::GetAssetData(struct FScriptTypedElementHandle& InInElementHandle)
+struct FAssetData ITypedElementAssetDataInterface::GetAssetData(struct FScriptTypedElementHandle& InElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -911,15 +992,15 @@ struct FAssetData ITypedElementAssetDataInterface::GetAssetData(struct FScriptTy
 
 	Params::ITypedElementAssetDataInterface_GetAssetData_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
+	Parms.InElementHandle = InElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -932,7 +1013,7 @@ struct FAssetData ITypedElementAssetDataInterface::GetAssetData(struct FScriptTy
 // struct FScriptTypedElementHandle   InElementHandle                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FAssetData>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FAssetData> ITypedElementAssetDataInterface::GetAllReferencedAssetDatas(struct FScriptTypedElementHandle& InInElementHandle)
+TArray<struct FAssetData> ITypedElementAssetDataInterface::GetAllReferencedAssetDatas(struct FScriptTypedElementHandle& InElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -941,18 +1022,46 @@ TArray<struct FAssetData> ITypedElementAssetDataInterface::GetAllReferencedAsset
 
 	Params::ITypedElementAssetDataInterface_GetAllReferencedAssetDatas_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
+	Parms.InElementHandle = InElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class TypedElementRuntime.TypedElementHierarchyInterface
+// (None)
+
+class UClass* ITypedElementHierarchyInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TypedElementHierarchyInterface");
+
+	return Clss;
+}
+
+
+// TypedElementHierarchyInterface TypedElementRuntime.Default__TypedElementHierarchyInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ITypedElementHierarchyInterface* ITypedElementHierarchyInterface::GetDefaultObj()
+{
+	static class ITypedElementHierarchyInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ITypedElementHierarchyInterface*>(ITypedElementHierarchyInterface::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -963,7 +1072,7 @@ TArray<struct FAssetData> ITypedElementAssetDataInterface::GetAllReferencedAsset
 // bool                               bAllowCreate                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FScriptTypedElementHandle   ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FScriptTypedElementHandle ITypedElementHierarchyInterface::GetParentElement(struct FScriptTypedElementHandle& InInElementHandle, bool InbAllowCreate)
+struct FScriptTypedElementHandle ITypedElementHierarchyInterface::GetParentElement(struct FScriptTypedElementHandle& InElementHandle, bool bAllowCreate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -972,16 +1081,16 @@ struct FScriptTypedElementHandle ITypedElementHierarchyInterface::GetParentEleme
 
 	Params::ITypedElementHierarchyInterface_GetParentElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.bAllowCreate = InbAllowCreate;
+	Parms.InElementHandle = InElementHandle;
+	Parms.bAllowCreate = bAllowCreate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -995,7 +1104,7 @@ struct FScriptTypedElementHandle ITypedElementHierarchyInterface::GetParentEleme
 // TArray<struct FScriptTypedElementHandle>OutElementHandles                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               bAllowCreate                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ITypedElementHierarchyInterface::GetChildElements(struct FScriptTypedElementHandle& InInElementHandle, TArray<struct FScriptTypedElementHandle>* InOutElementHandles, bool InbAllowCreate)
+void ITypedElementHierarchyInterface::GetChildElements(struct FScriptTypedElementHandle& InElementHandle, TArray<struct FScriptTypedElementHandle>* OutElementHandles, bool bAllowCreate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1004,20 +1113,48 @@ void ITypedElementHierarchyInterface::GetChildElements(struct FScriptTypedElemen
 
 	Params::ITypedElementHierarchyInterface_GetChildElements_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.bAllowCreate = InbAllowCreate;
+	Parms.InElementHandle = InElementHandle;
+	Parms.bAllowCreate = bAllowCreate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutElementHandles != nullptr)
-		*InOutElementHandles = Parms.OutElementHandles;
+	if (OutElementHandles != nullptr)
+		*OutElementHandles = std::move(Parms.OutElementHandles);
 
+}
+
+
+// Class TypedElementRuntime.TypedElementObjectInterface
+// (None)
+
+class UClass* ITypedElementObjectInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TypedElementObjectInterface");
+
+	return Clss;
+}
+
+
+// TypedElementObjectInterface TypedElementRuntime.Default__TypedElementObjectInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ITypedElementObjectInterface* ITypedElementObjectInterface::GetDefaultObj()
+{
+	static class ITypedElementObjectInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ITypedElementObjectInterface*>(ITypedElementObjectInterface::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1027,7 +1164,7 @@ void ITypedElementHierarchyInterface::GetChildElements(struct FScriptTypedElemen
 // struct FScriptTypedElementHandle   InElementHandle                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UClass*                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UClass* ITypedElementObjectInterface::GetObjectClass(struct FScriptTypedElementHandle& InInElementHandle)
+class UClass* ITypedElementObjectInterface::GetObjectClass(struct FScriptTypedElementHandle& InElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1036,15 +1173,15 @@ class UClass* ITypedElementObjectInterface::GetObjectClass(struct FScriptTypedEl
 
 	Params::ITypedElementObjectInterface_GetObjectClass_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
+	Parms.InElementHandle = InElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1057,7 +1194,7 @@ class UClass* ITypedElementObjectInterface::GetObjectClass(struct FScriptTypedEl
 // struct FScriptTypedElementHandle   InElementHandle                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UObject*                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObject* ITypedElementObjectInterface::GetObject(struct FScriptTypedElementHandle& InInElementHandle)
+class UObject* ITypedElementObjectInterface::GetObject(struct FScriptTypedElementHandle& InElementHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1066,18 +1203,46 @@ class UObject* ITypedElementObjectInterface::GetObject(struct FScriptTypedElemen
 
 	Params::ITypedElementObjectInterface_GetObject_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
+	Parms.InElementHandle = InElementHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class TypedElementRuntime.TypedElementSelectionInterface
+// (None)
+
+class UClass* ITypedElementSelectionInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TypedElementSelectionInterface");
+
+	return Clss;
+}
+
+
+// TypedElementSelectionInterface TypedElementRuntime.Default__TypedElementSelectionInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ITypedElementSelectionInterface* ITypedElementSelectionInterface::GetDefaultObj()
+{
+	static class ITypedElementSelectionInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ITypedElementSelectionInterface*>(ITypedElementSelectionInterface::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1089,7 +1254,7 @@ class UObject* ITypedElementObjectInterface::GetObject(struct FScriptTypedElemen
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ITypedElementSelectionInterface::SelectElement(struct FScriptTypedElementHandle& InInElementHandle, const struct FScriptTypedElementListProxy& InInSelectionSet, struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool ITypedElementSelectionInterface::SelectElement(struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1098,17 +1263,17 @@ bool ITypedElementSelectionInterface::SelectElement(struct FScriptTypedElementHa
 
 	Params::ITypedElementSelectionInterface_SelectElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionSet = InInSelectionSet;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionSet = InSelectionSet;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1123,7 +1288,7 @@ bool ITypedElementSelectionInterface::SelectElement(struct FScriptTypedElementHa
 // struct FTypedElementIsSelectedOptionsInSelectionOptions                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ITypedElementSelectionInterface::IsElementSelected(struct FScriptTypedElementHandle& InInElementHandle, const struct FScriptTypedElementListProxy& InInSelectionSet, struct FTypedElementIsSelectedOptions& InInSelectionOptions)
+bool ITypedElementSelectionInterface::IsElementSelected(struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, struct FTypedElementIsSelectedOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1132,17 +1297,17 @@ bool ITypedElementSelectionInterface::IsElementSelected(struct FScriptTypedEleme
 
 	Params::ITypedElementSelectionInterface_IsElementSelected_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionSet = InInSelectionSet;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionSet = InSelectionSet;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1157,7 +1322,7 @@ bool ITypedElementSelectionInterface::IsElementSelected(struct FScriptTypedEleme
 // enum class ETypedElementSelectionMethodInSelectionMethod                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FScriptTypedElementHandle   ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FScriptTypedElementHandle ITypedElementSelectionInterface::GetSelectionElement(struct FScriptTypedElementHandle& InInElementHandle, const struct FScriptTypedElementListProxy& InInCurrentSelection, enum class ETypedElementSelectionMethod InInSelectionMethod)
+struct FScriptTypedElementHandle ITypedElementSelectionInterface::GetSelectionElement(struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InCurrentSelection, enum class ETypedElementSelectionMethod InSelectionMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1166,17 +1331,17 @@ struct FScriptTypedElementHandle ITypedElementSelectionInterface::GetSelectionEl
 
 	Params::ITypedElementSelectionInterface_GetSelectionElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InCurrentSelection = InInCurrentSelection;
-	Parms.InSelectionMethod = InInSelectionMethod;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InCurrentSelection = InCurrentSelection;
+	Parms.InSelectionMethod = InSelectionMethod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1191,7 +1356,7 @@ struct FScriptTypedElementHandle ITypedElementSelectionInterface::GetSelectionEl
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ITypedElementSelectionInterface::DeselectElement(struct FScriptTypedElementHandle& InInElementHandle, const struct FScriptTypedElementListProxy& InInSelectionSet, struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool ITypedElementSelectionInterface::DeselectElement(struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1200,17 +1365,17 @@ bool ITypedElementSelectionInterface::DeselectElement(struct FScriptTypedElement
 
 	Params::ITypedElementSelectionInterface_DeselectElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionSet = InInSelectionSet;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionSet = InSelectionSet;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1224,7 +1389,7 @@ bool ITypedElementSelectionInterface::DeselectElement(struct FScriptTypedElement
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ITypedElementSelectionInterface::CanSelectElement(struct FScriptTypedElementHandle& InInElementHandle, struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool ITypedElementSelectionInterface::CanSelectElement(struct FScriptTypedElementHandle& InElementHandle, struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1233,16 +1398,16 @@ bool ITypedElementSelectionInterface::CanSelectElement(struct FScriptTypedElemen
 
 	Params::ITypedElementSelectionInterface_CanSelectElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1256,7 +1421,7 @@ bool ITypedElementSelectionInterface::CanSelectElement(struct FScriptTypedElemen
 // struct FTypedElementSelectionOptionsInSelectionOptions                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ITypedElementSelectionInterface::CanDeselectElement(struct FScriptTypedElementHandle& InInElementHandle, struct FTypedElementSelectionOptions& InInSelectionOptions)
+bool ITypedElementSelectionInterface::CanDeselectElement(struct FScriptTypedElementHandle& InElementHandle, struct FTypedElementSelectionOptions& InSelectionOptions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1265,16 +1430,16 @@ bool ITypedElementSelectionInterface::CanDeselectElement(struct FScriptTypedElem
 
 	Params::ITypedElementSelectionInterface_CanDeselectElement_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionOptions = InInSelectionOptions;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionOptions = InSelectionOptions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1288,7 +1453,7 @@ bool ITypedElementSelectionInterface::CanDeselectElement(struct FScriptTypedElem
 // struct FScriptTypedElementListProxyInSelectionSet                                                   (ConstParm, Parm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ITypedElementSelectionInterface::AllowSelectionModifiers(struct FScriptTypedElementHandle& InInElementHandle, const struct FScriptTypedElementListProxy& InInSelectionSet)
+bool ITypedElementSelectionInterface::AllowSelectionModifiers(struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1297,16 +1462,16 @@ bool ITypedElementSelectionInterface::AllowSelectionModifiers(struct FScriptType
 
 	Params::ITypedElementSelectionInterface_AllowSelectionModifiers_Params Parms{};
 
-	Parms.InElementHandle = InInElementHandle;
-	Parms.InSelectionSet = InInSelectionSet;
+	Parms.InElementHandle = InElementHandle;
+	Parms.InSelectionSet = InSelectionSet;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1314,6 +1479,4 @@ bool ITypedElementSelectionInterface::AllowSelectionModifiers(struct FScriptType
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

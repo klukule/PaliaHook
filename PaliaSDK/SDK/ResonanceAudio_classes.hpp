@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,13 +15,10 @@ class UResonanceAudioSoundfieldSettings : public USoundfieldEncodingSettingsBase
 {
 public:
 	enum class EResonanceRenderMode              RenderMode;                                        // 0x28(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C1A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D06[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ResonanceAudioSoundfieldSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UResonanceAudioSoundfieldSettings* GetDefaultObj();
 
 };
 
@@ -34,13 +28,10 @@ class UResonanceAudioBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ResonanceAudioBlueprintFunctionLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UResonanceAudioBlueprintFunctionLibrary* GetDefaultObj();
 
-	void SetGlobalReverbPreset(class UResonanceAudioReverbPluginPreset* InInPreset);
+	void SetGlobalReverbPreset(class UResonanceAudioReverbPluginPreset* InPreset);
 	class UResonanceAudioReverbPluginPreset* GetGlobalReverbPreset();
 };
 
@@ -49,15 +40,12 @@ public:
 class AResonanceAudioDirectivityVisualizer : public AActor
 {
 public:
-	uint8                                        Pad_1C29[0x70];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D0A[0x70];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UMaterial*                             Material;                                          // 0x300(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UResonanceAudioSpatializationSourceSettings* Settings;                                          // 0x308(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ResonanceAudioDirectivityVisualizer");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class AResonanceAudioDirectivityVisualizer* GetDefaultObj();
 
 };
 
@@ -66,24 +54,21 @@ public:
 class UResonanceAudioReverbPluginPreset : public USoundEffectSubmixPreset
 {
 public:
-	uint8                                        Pad_1C59[0x98];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D2D[0x98];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FResonanceAudioReverbPluginSettings   Settings;                                          // 0x100(0x70)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ResonanceAudioReverbPluginPreset");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UResonanceAudioReverbPluginPreset* GetDefaultObj();
 
-	void SetRoomRotation(struct FQuat& InInRotation);
-	void SetRoomPosition(struct FVector& InInPosition);
-	void SetRoomMaterials(TArray<enum class ERaMaterialName>& InInMaterials);
-	void SetRoomDimensions(struct FVector& InInDimensions);
-	void SetReverbTimeModifier(float InInReverbTimeModifier);
-	void SetReverbGain(float InInReverbGain);
-	void SetReverbBrightness(float InInReverbBrightness);
-	void SetReflectionScalar(float InInReflectionScalar);
-	void SetEnableRoomEffects(bool InbInEnableRoomEffects);
+	void SetRoomRotation(struct FQuat& InRotation);
+	void SetRoomPosition(struct FVector& InPosition);
+	void SetRoomMaterials(TArray<enum class ERaMaterialName>& InMaterials);
+	void SetRoomDimensions(struct FVector& InDimensions);
+	void SetReverbTimeModifier(float InReverbTimeModifier);
+	void SetReverbGain(float InReverbGain);
+	void SetReverbBrightness(float InReverbBrightness);
+	void SetReflectionScalar(float InReflectionScalar);
+	void SetEnableRoomEffects(bool bInEnableRoomEffects);
 };
 
 // 0x68 (0x90 - 0x28)
@@ -93,15 +78,12 @@ class UResonanceAudioSettings : public UObject
 public:
 	struct FSoftObjectPath                       OutputSubmix;                                      // 0x28(0x20)(Edit, ZeroConstructor, Config, GlobalConfig, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERaQualityMode                    QualityMode;                                       // 0x48(0x1)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C60[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D30[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSoftObjectPath                       GlobalReverbPreset;                                // 0x50(0x20)(Edit, ZeroConstructor, Config, GlobalConfig, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSoftObjectPath                       GlobalSourcePreset;                                // 0x70(0x20)(Edit, ZeroConstructor, Config, GlobalConfig, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ResonanceAudioSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UResonanceAudioSettings* GetDefaultObj();
 
 };
 
@@ -111,31 +93,26 @@ class UResonanceAudioSpatializationSourceSettings : public USpatializationPlugin
 {
 public:
 	enum class ERaSpatializationMethod           SpatializationMethod;                              // 0x28(0x1)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C6A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D36[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Pattern;                                           // 0x2C(0x4)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Sharpness;                                         // 0x30(0x4)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bToggleVisualization;                              // 0x34(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C6C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D3A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Scale;                                             // 0x38(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Spread;                                            // 0x3C(0x4)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERaDistanceRolloffModel           Rolloff;                                           // 0x40(0x1)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C6D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D3B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MinDistance;                                       // 0x44(0x4)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxDistance;                                       // 0x48(0x4)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1C6E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D3C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ResonanceAudioSpatializationSourceSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UResonanceAudioSpatializationSourceSettings* GetDefaultObj();
 
-	void SetSoundSourceSpread(float InInSpread);
-	void SetSoundSourceDirectivity(float InInPattern, float InInSharpness);
+	void SetSoundSourceSpread(float InSpread);
+	void SetSoundSourceDirectivity(float InPattern, float InSharpness);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

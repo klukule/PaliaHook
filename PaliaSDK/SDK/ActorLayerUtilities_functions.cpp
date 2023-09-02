@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,13 +12,41 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class ActorLayerUtilities.LayersBlueprintLibrary
+// (None)
+
+class UClass* ULayersBlueprintLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("LayersBlueprintLibrary");
+
+	return Clss;
+}
+
+
+// LayersBlueprintLibrary ActorLayerUtilities.Default__LayersBlueprintLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ULayersBlueprintLibrary* ULayersBlueprintLibrary::GetDefaultObj()
+{
+	static class ULayersBlueprintLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ULayersBlueprintLibrary*>(ULayersBlueprintLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ActorLayerUtilities.LayersBlueprintLibrary.RemoveActorFromLayer
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FActorLayer                 Layer                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void ULayersBlueprintLibrary::RemoveActorFromLayer(class AActor* InInActor, struct FActorLayer& InLayer)
+void ULayersBlueprintLibrary::RemoveActorFromLayer(class AActor* InActor, struct FActorLayer& Layer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,16 +55,16 @@ void ULayersBlueprintLibrary::RemoveActorFromLayer(class AActor* InInActor, stru
 
 	Params::ULayersBlueprintLibrary_RemoveActorFromLayer_Params Parms{};
 
-	Parms.InActor = InInActor;
-	Parms.Layer = InLayer;
+	Parms.InActor = InActor;
+	Parms.Layer = Layer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -51,7 +76,7 @@ void ULayersBlueprintLibrary::RemoveActorFromLayer(class AActor* InInActor, stru
 // struct FActorLayer                 ActorLayer                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // TArray<class AActor*>              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class AActor*> ULayersBlueprintLibrary::GetActors(class UObject* InWorldContextObject, struct FActorLayer& InActorLayer)
+TArray<class AActor*> ULayersBlueprintLibrary::GetActors(class UObject* WorldContextObject, struct FActorLayer& ActorLayer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,16 +85,16 @@ TArray<class AActor*> ULayersBlueprintLibrary::GetActors(class UObject* InWorldC
 
 	Params::ULayersBlueprintLibrary_GetActors_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ActorLayer = InActorLayer;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ActorLayer = ActorLayer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -82,7 +107,7 @@ TArray<class AActor*> ULayersBlueprintLibrary::GetActors(class UObject* InWorldC
 // class AActor*                      InActor                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FActorLayer                 Layer                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void ULayersBlueprintLibrary::AddActorToLayer(class AActor* InInActor, struct FActorLayer& InLayer)
+void ULayersBlueprintLibrary::AddActorToLayer(class AActor* InActor, struct FActorLayer& Layer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -91,21 +116,19 @@ void ULayersBlueprintLibrary::AddActorToLayer(class AActor* InInActor, struct FA
 
 	Params::ULayersBlueprintLibrary_AddActorToLayer_Params Parms{};
 
-	Parms.InActor = InInActor;
-	Parms.Layer = InLayer;
+	Parms.InActor = InActor;
+	Parms.Layer = Layer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

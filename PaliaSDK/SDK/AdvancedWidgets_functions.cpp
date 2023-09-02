@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class AdvancedWidgets.RadialSlider
+// (None)
+
+class UClass* URadialSlider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("RadialSlider");
+
+	return Clss;
+}
+
+
+// RadialSlider AdvancedWidgets.Default__RadialSlider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class URadialSlider* URadialSlider::GetDefaultObj()
+{
+	static class URadialSlider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<URadialSlider*>(URadialSlider::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function AdvancedWidgets.RadialSlider.SetValueTags
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TArray<float>                      InValueTags                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetValueTags(TArray<float>& InInValueTags)
+void URadialSlider::SetValueTags(TArray<float>& InValueTags)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +54,15 @@ void URadialSlider::SetValueTags(TArray<float>& InInValueTags)
 
 	Params::URadialSlider_SetValueTags_Params Parms{};
 
-	Parms.InValueTags = InInValueTags;
+	Parms.InValueTags = InValueTags;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -47,7 +72,7 @@ void URadialSlider::SetValueTags(TArray<float>& InInValueTags)
 // Parameters:
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetValue(float InInValue)
+void URadialSlider::SetValue(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,15 +81,15 @@ void URadialSlider::SetValue(float InInValue)
 
 	Params::URadialSlider_SetValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -74,7 +99,7 @@ void URadialSlider::SetValue(float InInValue)
 // Parameters:
 // bool                               InUseVerticalDrag                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetUseVerticalDrag(bool InInUseVerticalDrag)
+void URadialSlider::SetUseVerticalDrag(bool InUseVerticalDrag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,15 +108,15 @@ void URadialSlider::SetUseVerticalDrag(bool InInUseVerticalDrag)
 
 	Params::URadialSlider_SetUseVerticalDrag_Params Parms{};
 
-	Parms.InUseVerticalDrag = InInUseVerticalDrag;
+	Parms.InUseVerticalDrag = InUseVerticalDrag;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -101,7 +126,7 @@ void URadialSlider::SetUseVerticalDrag(bool InInUseVerticalDrag)
 // Parameters:
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetStepSize(float InInValue)
+void URadialSlider::SetStepSize(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -110,15 +135,15 @@ void URadialSlider::SetStepSize(float InInValue)
 
 	Params::URadialSlider_SetStepSize_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -128,7 +153,7 @@ void URadialSlider::SetStepSize(float InInValue)
 // Parameters:
 // struct FRuntimeFloatCurve          InSliderRange                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetSliderRange(struct FRuntimeFloatCurve& InInSliderRange)
+void URadialSlider::SetSliderRange(struct FRuntimeFloatCurve& InSliderRange)
 {
 	static class UFunction* Func = nullptr;
 
@@ -137,15 +162,15 @@ void URadialSlider::SetSliderRange(struct FRuntimeFloatCurve& InInSliderRange)
 
 	Params::URadialSlider_SetSliderRange_Params Parms{};
 
-	Parms.InSliderRange = InInSliderRange;
+	Parms.InSliderRange = InSliderRange;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -155,7 +180,7 @@ void URadialSlider::SetSliderRange(struct FRuntimeFloatCurve& InInSliderRange)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetSliderProgressColor(const struct FLinearColor& InInValue)
+void URadialSlider::SetSliderProgressColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -164,15 +189,15 @@ void URadialSlider::SetSliderProgressColor(const struct FLinearColor& InInValue)
 
 	Params::URadialSlider_SetSliderProgressColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -182,7 +207,7 @@ void URadialSlider::SetSliderProgressColor(const struct FLinearColor& InInValue)
 // Parameters:
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetSliderHandleStartAngle(float InInValue)
+void URadialSlider::SetSliderHandleStartAngle(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -191,15 +216,15 @@ void URadialSlider::SetSliderHandleStartAngle(float InInValue)
 
 	Params::URadialSlider_SetSliderHandleStartAngle_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -209,7 +234,7 @@ void URadialSlider::SetSliderHandleStartAngle(float InInValue)
 // Parameters:
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetSliderHandleEndAngle(float InInValue)
+void URadialSlider::SetSliderHandleEndAngle(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -218,15 +243,15 @@ void URadialSlider::SetSliderHandleEndAngle(float InInValue)
 
 	Params::URadialSlider_SetSliderHandleEndAngle_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -236,7 +261,7 @@ void URadialSlider::SetSliderHandleEndAngle(float InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetSliderHandleColor(const struct FLinearColor& InInValue)
+void URadialSlider::SetSliderHandleColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -245,15 +270,15 @@ void URadialSlider::SetSliderHandleColor(const struct FLinearColor& InInValue)
 
 	Params::URadialSlider_SetSliderHandleColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -263,7 +288,7 @@ void URadialSlider::SetSliderHandleColor(const struct FLinearColor& InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetSliderBarColor(const struct FLinearColor& InInValue)
+void URadialSlider::SetSliderBarColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -272,15 +297,15 @@ void URadialSlider::SetSliderBarColor(const struct FLinearColor& InInValue)
 
 	Params::URadialSlider_SetSliderBarColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -290,7 +315,7 @@ void URadialSlider::SetSliderBarColor(const struct FLinearColor& InInValue)
 // Parameters:
 // bool                               InShowSliderHandle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetShowSliderHandle(bool InInShowSliderHandle)
+void URadialSlider::SetShowSliderHandle(bool InShowSliderHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -299,15 +324,15 @@ void URadialSlider::SetShowSliderHandle(bool InInShowSliderHandle)
 
 	Params::URadialSlider_SetShowSliderHandle_Params Parms{};
 
-	Parms.InShowSliderHandle = InInShowSliderHandle;
+	Parms.InShowSliderHandle = InShowSliderHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -317,7 +342,7 @@ void URadialSlider::SetShowSliderHandle(bool InInShowSliderHandle)
 // Parameters:
 // bool                               InShowSliderHand                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetShowSliderHand(bool InInShowSliderHand)
+void URadialSlider::SetShowSliderHand(bool InShowSliderHand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -326,15 +351,15 @@ void URadialSlider::SetShowSliderHand(bool InInShowSliderHand)
 
 	Params::URadialSlider_SetShowSliderHand_Params Parms{};
 
-	Parms.InShowSliderHand = InInShowSliderHand;
+	Parms.InShowSliderHand = InShowSliderHand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -344,7 +369,7 @@ void URadialSlider::SetShowSliderHand(bool InInShowSliderHand)
 // Parameters:
 // bool                               InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetLocked(bool InInValue)
+void URadialSlider::SetLocked(bool InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -353,15 +378,15 @@ void URadialSlider::SetLocked(bool InInValue)
 
 	Params::URadialSlider_SetLocked_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -371,7 +396,7 @@ void URadialSlider::SetLocked(bool InInValue)
 // Parameters:
 // struct FVector2D                   InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetHandStartEndRatio(const struct FVector2D& InInValue)
+void URadialSlider::SetHandStartEndRatio(const struct FVector2D& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -380,15 +405,15 @@ void URadialSlider::SetHandStartEndRatio(const struct FVector2D& InInValue)
 
 	Params::URadialSlider_SetHandStartEndRatio_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -398,7 +423,7 @@ void URadialSlider::SetHandStartEndRatio(const struct FVector2D& InInValue)
 // Parameters:
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetCustomDefaultValue(float InInValue)
+void URadialSlider::SetCustomDefaultValue(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -407,15 +432,15 @@ void URadialSlider::SetCustomDefaultValue(float InInValue)
 
 	Params::URadialSlider_SetCustomDefaultValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -425,7 +450,7 @@ void URadialSlider::SetCustomDefaultValue(float InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetCenterBackgroundColor(const struct FLinearColor& InInValue)
+void URadialSlider::SetCenterBackgroundColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -434,15 +459,15 @@ void URadialSlider::SetCenterBackgroundColor(const struct FLinearColor& InInValu
 
 	Params::URadialSlider_SetCenterBackgroundColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -452,7 +477,7 @@ void URadialSlider::SetCenterBackgroundColor(const struct FLinearColor& InInValu
 // Parameters:
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URadialSlider::SetAngularOffset(float InInValue)
+void URadialSlider::SetAngularOffset(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -461,15 +486,15 @@ void URadialSlider::SetAngularOffset(float InInValue)
 
 	Params::URadialSlider_SetAngularOffset_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -489,13 +514,13 @@ float URadialSlider::GetValue()
 	Params::URadialSlider_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -517,13 +542,13 @@ float URadialSlider::GetNormalizedSliderHandlePosition()
 	Params::URadialSlider_GetNormalizedSliderHandlePosition_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -545,13 +570,13 @@ float URadialSlider::GetCustomDefaultValue()
 	Params::URadialSlider_GetCustomDefaultValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -559,6 +584,4 @@ float URadialSlider::GetCustomDefaultValue()
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

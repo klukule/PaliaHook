@@ -2,17 +2,70 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class ActorSequence.ActorSequence
+// (None)
+
+class UClass* UActorSequence::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ActorSequence");
+
+	return Clss;
+}
+
+
+// ActorSequence ActorSequence.Default__ActorSequence
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UActorSequence* UActorSequence::GetDefaultObj()
+{
+	static class UActorSequence* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UActorSequence*>(UActorSequence::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ActorSequence.ActorSequenceComponent
+// (None)
+
+class UClass* UActorSequenceComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ActorSequenceComponent");
+
+	return Clss;
+}
+
+
+// ActorSequenceComponent ActorSequence.Default__ActorSequenceComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UActorSequenceComponent* UActorSequenceComponent::GetDefaultObj()
+{
+	static class UActorSequenceComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UActorSequenceComponent*>(UActorSequenceComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function ActorSequence.ActorSequenceComponent.StopSequence
@@ -29,13 +82,13 @@ void UActorSequenceComponent::StopSequence()
 	Params::UActorSequenceComponent_StopSequence_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -54,13 +107,13 @@ void UActorSequenceComponent::PlaySequence()
 	Params::UActorSequenceComponent_PlaySequence_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -79,18 +132,44 @@ void UActorSequenceComponent::PauseSequence()
 	Params::UActorSequenceComponent_PauseSequence_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ActorSequence.ActorSequencePlayer
+// (None)
+
+class UClass* UActorSequencePlayer::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ActorSequencePlayer");
+
+	return Clss;
+}
+
+
+// ActorSequencePlayer ActorSequence.Default__ActorSequencePlayer
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UActorSequencePlayer* UActorSequencePlayer::GetDefaultObj()
+{
+	static class UActorSequencePlayer* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UActorSequencePlayer*>(UActorSequencePlayer::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

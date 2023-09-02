@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -22,7 +19,7 @@ namespace SDK
 struct FWebJSCallbackBase
 {
 public:
-	uint8                                        Pad_2662[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26FE[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x20 - 0x20)
@@ -41,6 +38,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

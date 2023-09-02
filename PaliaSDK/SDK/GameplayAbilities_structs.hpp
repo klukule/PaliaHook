@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,330 +11,330 @@ namespace SDK
 
 enum class EGameplayEffectGrantedAbilityRemovePolicy : uint8
 {
-	EGameplayEffectGrantedAbilityRemovePolicy__CancelAbilityImmediately = 0,
-	EGameplayEffectGrantedAbilityRemovePolicy__RemoveAbilityOnEnd = 1,
-	EGameplayEffectGrantedAbilityRemovePolicy__DoNothing = 2,
-	EGameplayEffectGrantedAbilityRemovePolicy__EGameplayEffectGrantedAbilityRemovePolicy_MAX = 3,
+	CancelAbilityImmediately       = 0,
+	RemoveAbilityOnEnd             = 1,
+	DoNothing                      = 2,
+	EGameplayEffectGrantedAbilityRemovePolicy_MAX = 3,
 };
 
 enum class EGameplayEffectAttributeCaptureSource : uint8
 {
-	EGameplayEffectAttributeCaptureSource__Source = 0,
-	EGameplayEffectAttributeCaptureSource__Target = 1,
-	EGameplayEffectAttributeCaptureSource__EGameplayEffectAttributeCaptureSource_MAX = 2,
+	Source                         = 0,
+	Target                         = 1,
+	EGameplayEffectAttributeCaptureSource_MAX = 2,
 };
 
 enum class EGameplayCueEvent : uint8
 {
-	EGameplayCueEvent__OnActive    = 0,
-	EGameplayCueEvent__WhileActive = 1,
-	EGameplayCueEvent__Executed    = 2,
-	EGameplayCueEvent__Removed     = 3,
-	EGameplayCueEvent__EGameplayCueEvent_MAX = 4,
+	OnActive                       = 0,
+	WhileActive                    = 1,
+	Executed                       = 2,
+	Removed                        = 3,
+	EGameplayCueEvent_MAX          = 4,
 };
 
 enum class EGameplayAbilityActivationMode : uint8
 {
-	EGameplayAbilityActivationMode__Authority = 0,
-	EGameplayAbilityActivationMode__NonAuthority = 1,
-	EGameplayAbilityActivationMode__Predicting = 2,
-	EGameplayAbilityActivationMode__Confirmed = 3,
-	EGameplayAbilityActivationMode__Rejected = 4,
-	EGameplayAbilityActivationMode__EGameplayAbilityActivationMode_MAX = 5,
+	Authority                      = 0,
+	NonAuthority                   = 1,
+	Predicting                     = 2,
+	Confirmed                      = 3,
+	Rejected                       = 4,
+	EGameplayAbilityActivationMode_MAX = 5,
 };
 
 enum class EAbilityGenericReplicatedEvent : uint8
 {
-	EAbilityGenericReplicatedEvent__GenericConfirm = 0,
-	EAbilityGenericReplicatedEvent__GenericCancel = 1,
-	EAbilityGenericReplicatedEvent__InputPressed = 2,
-	EAbilityGenericReplicatedEvent__InputReleased = 3,
-	EAbilityGenericReplicatedEvent__GenericSignalFromClient = 4,
-	EAbilityGenericReplicatedEvent__GenericSignalFromServer = 5,
-	EAbilityGenericReplicatedEvent__GameCustom1 = 6,
-	EAbilityGenericReplicatedEvent__GameCustom2 = 7,
-	EAbilityGenericReplicatedEvent__GameCustom3 = 8,
-	EAbilityGenericReplicatedEvent__GameCustom4 = 9,
-	EAbilityGenericReplicatedEvent__GameCustom5 = 10,
-	EAbilityGenericReplicatedEvent__GameCustom6 = 11,
-	EAbilityGenericReplicatedEvent__MAX = 12,
+	GenericConfirm                 = 0,
+	GenericCancel                  = 1,
+	InputPressed                   = 2,
+	InputReleased                  = 3,
+	GenericSignalFromClient        = 4,
+	GenericSignalFromServer        = 5,
+	GameCustom1                    = 6,
+	GameCustom2                    = 7,
+	GameCustom3                    = 8,
+	GameCustom4                    = 9,
+	GameCustom5                    = 10,
+	GameCustom6                    = 11,
+	MAX                            = 12,
 };
 
 enum class EGameplayCuePayloadType : uint8
 {
-	EGameplayCuePayloadType__CueParameters = 0,
-	EGameplayCuePayloadType__FromSpec = 1,
-	EGameplayCuePayloadType__EGameplayCuePayloadType_MAX = 2,
+	CueParameters                  = 0,
+	FromSpec                       = 1,
+	EGameplayCuePayloadType_MAX    = 2,
 };
 
 enum class EGameplayAbilityInputBinds : uint8
 {
-	EGameplayAbilityInputBinds__Ability1 = 0,
-	EGameplayAbilityInputBinds__Ability2 = 1,
-	EGameplayAbilityInputBinds__Ability3 = 2,
-	EGameplayAbilityInputBinds__Ability4 = 3,
-	EGameplayAbilityInputBinds__Ability5 = 4,
-	EGameplayAbilityInputBinds__Ability6 = 5,
-	EGameplayAbilityInputBinds__Ability7 = 6,
-	EGameplayAbilityInputBinds__Ability8 = 7,
-	EGameplayAbilityInputBinds__Ability9 = 8,
-	EGameplayAbilityInputBinds__EGameplayAbilityInputBinds_MAX = 9,
+	Ability1                       = 0,
+	Ability2                       = 1,
+	Ability3                       = 2,
+	Ability4                       = 3,
+	Ability5                       = 4,
+	Ability6                       = 5,
+	Ability7                       = 6,
+	Ability8                       = 7,
+	Ability9                       = 8,
+	EGameplayAbilityInputBinds_MAX = 9,
 };
 
 enum class ETargetDataFilterSelf : uint8
 {
-	ETargetDataFilterSelf__TDFS_Any = 0,
-	ETargetDataFilterSelf__TDFS_NoSelf = 1,
-	ETargetDataFilterSelf__TDFS_NoOthers = 2,
-	ETargetDataFilterSelf__TDFS_MAX = 3,
+	TDFS_Any                       = 0,
+	TDFS_NoSelf                    = 1,
+	TDFS_NoOthers                  = 2,
+	TDFS_MAX                       = 3,
 };
 
 enum class EAbilityTaskWaitState : uint8
 {
-	EAbilityTaskWaitState__WaitingOnGame = 1,
-	EAbilityTaskWaitState__WaitingOnUser = 2,
-	EAbilityTaskWaitState__WaitingOnAvatar = 4,
-	EAbilityTaskWaitState__EAbilityTaskWaitState_MAX = 5,
+	WaitingOnGame                  = 1,
+	WaitingOnUser                  = 2,
+	WaitingOnAvatar                = 4,
+	EAbilityTaskWaitState_MAX      = 5,
 };
 
 enum class ERootMotionMoveToActorTargetOffsetType : uint8
 {
-	ERootMotionMoveToActorTargetOffsetType__AlignFromTargetToSource = 0,
-	ERootMotionMoveToActorTargetOffsetType__AlignToTargetForward = 1,
-	ERootMotionMoveToActorTargetOffsetType__AlignToWorldSpace = 2,
-	ERootMotionMoveToActorTargetOffsetType__ERootMotionMoveToActorTargetOffsetType_MAX = 3,
+	AlignFromTargetToSource        = 0,
+	AlignToTargetForward           = 1,
+	AlignToWorldSpace              = 2,
+	ERootMotionMoveToActorTargetOffsetType_MAX = 3,
 };
 
 enum class EAbilityTaskNetSyncType : uint8
 {
-	EAbilityTaskNetSyncType__BothWait = 0,
-	EAbilityTaskNetSyncType__OnlyServerWait = 1,
-	EAbilityTaskNetSyncType__OnlyClientWait = 2,
-	EAbilityTaskNetSyncType__EAbilityTaskNetSyncType_MAX = 3,
+	BothWait                       = 0,
+	OnlyServerWait                 = 1,
+	OnlyClientWait                 = 2,
+	EAbilityTaskNetSyncType_MAX    = 3,
 };
 
 enum class EWaitAttributeChangeComparison : uint8
 {
-	EWaitAttributeChangeComparison__None = 0,
-	EWaitAttributeChangeComparison__GreaterThan = 1,
-	EWaitAttributeChangeComparison__LessThan = 2,
-	EWaitAttributeChangeComparison__GreaterThanOrEqualTo = 3,
-	EWaitAttributeChangeComparison__LessThanOrEqualTo = 4,
-	EWaitAttributeChangeComparison__NotEqualTo = 5,
-	EWaitAttributeChangeComparison__ExactlyEqualTo = 6,
-	EWaitAttributeChangeComparison__MAX = 7,
+	None                           = 0,
+	GreaterThan                    = 1,
+	LessThan                       = 2,
+	GreaterThanOrEqualTo           = 3,
+	LessThanOrEqualTo              = 4,
+	NotEqualTo                     = 5,
+	ExactlyEqualTo                 = 6,
+	MAX                            = 7,
 };
 
 enum class EWaitGameplayTagQueryTriggerCondition : uint8
 {
-	EWaitGameplayTagQueryTriggerCondition__WhenTrue = 0,
-	EWaitGameplayTagQueryTriggerCondition__WhenFalse = 1,
-	EWaitGameplayTagQueryTriggerCondition__EWaitGameplayTagQueryTriggerCondition_MAX = 2,
+	WhenTrue                       = 0,
+	WhenFalse                      = 1,
+	EWaitGameplayTagQueryTriggerCondition_MAX = 2,
 };
 
 enum class EGameplayEffectReplicationMode : uint8
 {
-	EGameplayEffectReplicationMode__Minimal = 0,
-	EGameplayEffectReplicationMode__Mixed = 1,
-	EGameplayEffectReplicationMode__Full = 2,
-	EGameplayEffectReplicationMode__EGameplayEffectReplicationMode_MAX = 3,
+	Minimal                        = 0,
+	Mixed                          = 1,
+	Full                           = 2,
+	EGameplayEffectReplicationMode_MAX = 3,
 };
 
 enum class EGameplayTargetingConfirmation : uint8
 {
-	EGameplayTargetingConfirmation__Instant = 0,
-	EGameplayTargetingConfirmation__UserConfirmed = 1,
-	EGameplayTargetingConfirmation__Custom = 2,
-	EGameplayTargetingConfirmation__CustomMulti = 3,
-	EGameplayTargetingConfirmation__EGameplayTargetingConfirmation_MAX = 4,
+	Instant                        = 0,
+	UserConfirmed                  = 1,
+	Custom                         = 2,
+	CustomMulti                    = 3,
+	EGameplayTargetingConfirmation_MAX = 4,
 };
 
 enum class EGameplayAbilityTargetingLocationType : uint8
 {
-	EGameplayAbilityTargetingLocationType__LiteralTransform = 0,
-	EGameplayAbilityTargetingLocationType__ActorTransform = 1,
-	EGameplayAbilityTargetingLocationType__SocketTransform = 2,
-	EGameplayAbilityTargetingLocationType__EGameplayAbilityTargetingLocationType_MAX = 3,
+	LiteralTransform               = 0,
+	ActorTransform                 = 1,
+	SocketTransform                = 2,
+	EGameplayAbilityTargetingLocationType_MAX = 3,
 };
 
 enum class EGameplayAbilityInstancingPolicy : uint8
 {
-	EGameplayAbilityInstancingPolicy__NonInstanced = 0,
-	EGameplayAbilityInstancingPolicy__InstancedPerActor = 1,
-	EGameplayAbilityInstancingPolicy__InstancedPerExecution = 2,
-	EGameplayAbilityInstancingPolicy__EGameplayAbilityInstancingPolicy_MAX = 3,
+	NonInstanced                   = 0,
+	InstancedPerActor              = 1,
+	InstancedPerExecution          = 2,
+	EGameplayAbilityInstancingPolicy_MAX = 3,
 };
 
 enum class EGameplayAbilityNetExecutionPolicy : uint8
 {
-	EGameplayAbilityNetExecutionPolicy__LocalPredicted = 0,
-	EGameplayAbilityNetExecutionPolicy__LocalOnly = 1,
-	EGameplayAbilityNetExecutionPolicy__ServerInitiated = 2,
-	EGameplayAbilityNetExecutionPolicy__ServerOnly = 3,
-	EGameplayAbilityNetExecutionPolicy__EGameplayAbilityNetExecutionPolicy_MAX = 4,
+	LocalPredicted                 = 0,
+	LocalOnly                      = 1,
+	ServerInitiated                = 2,
+	ServerOnly                     = 3,
+	EGameplayAbilityNetExecutionPolicy_MAX = 4,
 };
 
 enum class EGameplayAbilityNetSecurityPolicy : uint8
 {
-	EGameplayAbilityNetSecurityPolicy__ClientOrServer = 0,
-	EGameplayAbilityNetSecurityPolicy__ServerOnlyExecution = 1,
-	EGameplayAbilityNetSecurityPolicy__ServerOnlyTermination = 2,
-	EGameplayAbilityNetSecurityPolicy__ServerOnly = 3,
-	EGameplayAbilityNetSecurityPolicy__EGameplayAbilityNetSecurityPolicy_MAX = 4,
+	ClientOrServer                 = 0,
+	ServerOnlyExecution            = 1,
+	ServerOnlyTermination          = 2,
+	ServerOnly                     = 3,
+	EGameplayAbilityNetSecurityPolicy_MAX = 4,
 };
 
 enum class EGameplayAbilityReplicationPolicy : uint8
 {
-	EGameplayAbilityReplicationPolicy__ReplicateNo = 0,
-	EGameplayAbilityReplicationPolicy__ReplicateYes = 1,
-	EGameplayAbilityReplicationPolicy__EGameplayAbilityReplicationPolicy_MAX = 2,
+	ReplicateNo                    = 0,
+	ReplicateYes                   = 1,
+	EGameplayAbilityReplicationPolicy_MAX = 2,
 };
 
 enum class EGameplayAbilityTriggerSource : uint8
 {
-	EGameplayAbilityTriggerSource__GameplayEvent = 0,
-	EGameplayAbilityTriggerSource__OwnedTagAdded = 1,
-	EGameplayAbilityTriggerSource__OwnedTagPresent = 2,
-	EGameplayAbilityTriggerSource__EGameplayAbilityTriggerSource_MAX = 3,
+	GameplayEvent                  = 0,
+	OwnedTagAdded                  = 1,
+	OwnedTagPresent                = 2,
+	EGameplayAbilityTriggerSource_MAX = 3,
 };
 
 enum class ERepAnimPositionMethod : uint8
 {
-	ERepAnimPositionMethod__Position = 0,
-	ERepAnimPositionMethod__CurrentSectionId = 1,
-	ERepAnimPositionMethod__ERepAnimPositionMethod_MAX = 2,
+	Position                       = 0,
+	CurrentSectionId               = 1,
+	ERepAnimPositionMethod_MAX     = 2,
 };
 
 enum class EGameplayCueNotify_EffectPlaySpace : uint8
 {
-	EGameplayCueNotify_EffectPlaySpace__WorldSpace = 0,
-	EGameplayCueNotify_EffectPlaySpace__CameraSpace = 1,
-	EGameplayCueNotify_EffectPlaySpace__EGameplayCueNotify_MAX = 2,
+	WorldSpace                     = 0,
+	CameraSpace                    = 1,
+	EGameplayCueNotify_MAX         = 2,
 };
 
 enum class EGameplayCueNotify_LocallyControlledSource : uint8
 {
-	EGameplayCueNotify_LocallyControlledSource__InstigatorActor = 0,
-	EGameplayCueNotify_LocallyControlledSource__TargetActor = 1,
-	EGameplayCueNotify_LocallyControlledSource__EGameplayCueNotify_MAX = 2,
+	InstigatorActor                = 0,
+	TargetActor                    = 1,
+	EGameplayCueNotify_MAX         = 2,
 };
 
 enum class EGameplayCueNotify_LocallyControlledPolicy : uint8
 {
-	EGameplayCueNotify_LocallyControlledPolicy__Always = 0,
-	EGameplayCueNotify_LocallyControlledPolicy__LocalOnly = 1,
-	EGameplayCueNotify_LocallyControlledPolicy__NotLocal = 2,
-	EGameplayCueNotify_LocallyControlledPolicy__EGameplayCueNotify_MAX = 3,
+	Always                         = 0,
+	LocalOnly                      = 1,
+	NotLocal                       = 2,
+	EGameplayCueNotify_MAX         = 3,
 };
 
 enum class EGameplayCueNotify_AttachPolicy : uint8
 {
-	EGameplayCueNotify_AttachPolicy__DoNotAttach = 0,
-	EGameplayCueNotify_AttachPolicy__AttachToTarget = 1,
-	EGameplayCueNotify_AttachPolicy__EGameplayCueNotify_MAX = 2,
+	DoNotAttach                    = 0,
+	AttachToTarget                 = 1,
+	EGameplayCueNotify_MAX         = 2,
 };
 
 enum class EGameplayEffectMagnitudeCalculation : uint8
 {
-	EGameplayEffectMagnitudeCalculation__ScalableFloat = 0,
-	EGameplayEffectMagnitudeCalculation__AttributeBased = 1,
-	EGameplayEffectMagnitudeCalculation__CustomCalculationClass = 2,
-	EGameplayEffectMagnitudeCalculation__SetByCaller = 3,
-	EGameplayEffectMagnitudeCalculation__EGameplayEffectMagnitudeCalculation_MAX = 4,
+	ScalableFloat                  = 0,
+	AttributeBased                 = 1,
+	CustomCalculationClass         = 2,
+	SetByCaller                    = 3,
+	EGameplayEffectMagnitudeCalculation_MAX = 4,
 };
 
 enum class EAttributeBasedFloatCalculationType : uint8
 {
-	EAttributeBasedFloatCalculationType__AttributeMagnitude = 0,
-	EAttributeBasedFloatCalculationType__AttributeBaseValue = 1,
-	EAttributeBasedFloatCalculationType__AttributeBonusMagnitude = 2,
-	EAttributeBasedFloatCalculationType__AttributeMagnitudeEvaluatedUpToChannel = 3,
-	EAttributeBasedFloatCalculationType__EAttributeBasedFloatCalculationType_MAX = 4,
+	AttributeMagnitude             = 0,
+	AttributeBaseValue             = 1,
+	AttributeBonusMagnitude        = 2,
+	AttributeMagnitudeEvaluatedUpToChannel = 3,
+	EAttributeBasedFloatCalculationType_MAX = 4,
 };
 
 enum class EGameplayEffectScopedModifierAggregatorType : uint8
 {
-	EGameplayEffectScopedModifierAggregatorType__CapturedAttributeBacked = 0,
-	EGameplayEffectScopedModifierAggregatorType__Transient = 1,
-	EGameplayEffectScopedModifierAggregatorType__EGameplayEffectScopedModifierAggregatorType_MAX = 2,
+	CapturedAttributeBacked        = 0,
+	Transient                      = 1,
+	EGameplayEffectScopedModifierAggregatorType_MAX = 2,
 };
 
 enum class EGameplayEffectDurationType : uint8
 {
-	EGameplayEffectDurationType__Instant = 0,
-	EGameplayEffectDurationType__Infinite = 1,
-	EGameplayEffectDurationType__HasDuration = 2,
-	EGameplayEffectDurationType__EGameplayEffectDurationType_MAX = 3,
+	Instant                        = 0,
+	Infinite                       = 1,
+	HasDuration                    = 2,
+	EGameplayEffectDurationType_MAX = 3,
 };
 
 enum class EGameplayEffectStackingDurationPolicy : uint8
 {
-	EGameplayEffectStackingDurationPolicy__RefreshOnSuccessfulApplication = 0,
-	EGameplayEffectStackingDurationPolicy__NeverRefresh = 1,
-	EGameplayEffectStackingDurationPolicy__EGameplayEffectStackingDurationPolicy_MAX = 2,
+	RefreshOnSuccessfulApplication = 0,
+	NeverRefresh                   = 1,
+	EGameplayEffectStackingDurationPolicy_MAX = 2,
 };
 
 enum class EGameplayEffectStackingPeriodPolicy : uint8
 {
-	EGameplayEffectStackingPeriodPolicy__ResetOnSuccessfulApplication = 0,
-	EGameplayEffectStackingPeriodPolicy__NeverReset = 1,
-	EGameplayEffectStackingPeriodPolicy__EGameplayEffectStackingPeriodPolicy_MAX = 2,
+	ResetOnSuccessfulApplication   = 0,
+	NeverReset                     = 1,
+	EGameplayEffectStackingPeriodPolicy_MAX = 2,
 };
 
 enum class EGameplayEffectStackingExpirationPolicy : uint8
 {
-	EGameplayEffectStackingExpirationPolicy__ClearEntireStack = 0,
-	EGameplayEffectStackingExpirationPolicy__RemoveSingleStackAndRefreshDuration = 1,
-	EGameplayEffectStackingExpirationPolicy__RefreshDuration = 2,
-	EGameplayEffectStackingExpirationPolicy__EGameplayEffectStackingExpirationPolicy_MAX = 3,
+	ClearEntireStack               = 0,
+	RemoveSingleStackAndRefreshDuration = 1,
+	RefreshDuration                = 2,
+	EGameplayEffectStackingExpirationPolicy_MAX = 3,
 };
 
 enum class EGameplayEffectPeriodInhibitionRemovedPolicy : uint8
 {
-	EGameplayEffectPeriodInhibitionRemovedPolicy__NeverReset = 0,
-	EGameplayEffectPeriodInhibitionRemovedPolicy__ResetPeriod = 1,
-	EGameplayEffectPeriodInhibitionRemovedPolicy__ExecuteAndResetPeriod = 2,
-	EGameplayEffectPeriodInhibitionRemovedPolicy__EGameplayEffectPeriodInhibitionRemovedPolicy_MAX = 3,
+	NeverReset                     = 0,
+	ResetPeriod                    = 1,
+	ExecuteAndResetPeriod          = 2,
+	EGameplayEffectPeriodInhibitionRemovedPolicy_MAX = 3,
 };
 
 enum class EGameplayModEvaluationChannel : uint8
 {
-	EGameplayModEvaluationChannel__Channel0 = 0,
-	EGameplayModEvaluationChannel__Channel1 = 1,
-	EGameplayModEvaluationChannel__Channel2 = 2,
-	EGameplayModEvaluationChannel__Channel3 = 3,
-	EGameplayModEvaluationChannel__Channel4 = 4,
-	EGameplayModEvaluationChannel__Channel5 = 5,
-	EGameplayModEvaluationChannel__Channel6 = 6,
-	EGameplayModEvaluationChannel__Channel7 = 7,
-	EGameplayModEvaluationChannel__Channel8 = 8,
-	EGameplayModEvaluationChannel__Channel9 = 9,
-	EGameplayModEvaluationChannel__Channel_MAX = 10,
-	EGameplayModEvaluationChannel__EGameplayModEvaluationChannel_MAX = 11,
+	Channel0                       = 0,
+	Channel1                       = 1,
+	Channel2                       = 2,
+	Channel3                       = 3,
+	Channel4                       = 4,
+	Channel5                       = 5,
+	Channel6                       = 6,
+	Channel7                       = 7,
+	Channel8                       = 8,
+	Channel9                       = 9,
+	Channel_MAX                    = 10,
+	EGameplayModEvaluationChannel_MAX = 11,
 };
 
 enum class EGameplayModOp : uint8
 {
-	EGameplayModOp__Additive       = 0,
-	EGameplayModOp__Multiplicitive = 1,
-	EGameplayModOp__Division       = 2,
-	EGameplayModOp__Override       = 3,
-	EGameplayModOp__Max            = 4,
+	Additive                       = 0,
+	Multiplicitive                 = 1,
+	Division                       = 2,
+	Override                       = 3,
+	Max                            = 4,
 };
 
 enum class EGameplayEffectStackingType : uint8
 {
-	EGameplayEffectStackingType__None = 0,
-	EGameplayEffectStackingType__AggregateBySource = 1,
-	EGameplayEffectStackingType__AggregateByTarget = 2,
-	EGameplayEffectStackingType__EGameplayEffectStackingType_MAX = 3,
+	None                           = 0,
+	AggregateBySource              = 1,
+	AggregateByTarget              = 2,
+	EGameplayEffectStackingType_MAX = 3,
 };
 
 enum class EGameplayTagEventType : uint8
 {
-	EGameplayTagEventType__NewOrRemoved = 0,
-	EGameplayTagEventType__AnyCountChange = 1,
-	EGameplayTagEventType__EGameplayTagEventType_MAX = 2,
+	NewOrRemoved                   = 0,
+	AnyCountChange                 = 1,
+	EGameplayTagEventType_MAX      = 2,
 };
 
 
@@ -362,7 +359,7 @@ struct FGameplayEffectModifiedAttribute
 public:
 	struct FGameplayAttribute                    Attribute;                                         // 0x0(0x38)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        TotalMagnitude;                                    // 0x38(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F98[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E88[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -373,7 +370,7 @@ public:
 	struct FGameplayAttribute                    AttributeToCapture;                                // 0x0(0x38)(Edit, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayEffectAttributeCaptureSource AttributeSource;                                   // 0x38(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSnapshot;                                         // 0x39(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F99[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E8B[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -382,7 +379,7 @@ struct FGameplayEffectAttributeCaptureSpec
 {
 public:
 	struct FGameplayEffectAttributeCaptureDefinition BackingDefinition;                                 // 0x0(0x40)(HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_F9A[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E8D[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -393,7 +390,7 @@ public:
 	TArray<struct FGameplayEffectAttributeCaptureSpec> SourceAttributes;                                  // 0x0(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<struct FGameplayEffectAttributeCaptureSpec> TargetAttributes;                                  // 0x10(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	bool                                         bHasNonSnapshottedAttributes;                      // 0x20(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_F9B[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E8E[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x88 (0x88 - 0x0)
@@ -404,7 +401,7 @@ public:
 	struct FGameplayTagContainer                 CapturedActorTags;                                 // 0x0(0x20)(NativeAccessSpecifierPrivate)
 	struct FGameplayTagContainer                 CapturedSpecTags;                                  // 0x20(0x20)(NativeAccessSpecifierPrivate)
 	struct FGameplayTagContainer                 ScopedTags;                                        // 0x40(0x20)(NativeAccessSpecifierPrivate)
-	uint8                                        Pad_F9C[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E8F[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -413,10 +410,10 @@ struct FScalableFloat
 {
 public:
 	float                                        Value;                                             // 0x0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F9D[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E92[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FCurveTableRowHandle                  Curve;                                             // 0x8(0x10)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataRegistryType                     RegistryType;                                      // 0x18(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F9E[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E93[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -436,11 +433,11 @@ public:
 	struct FScalableFloat                        LevelScalableFloat;                                // 0x8(0x28)(Edit, DisableEditOnInstance, RepSkip, NativeAccessSpecifierPublic)
 	int32                                        InputID;                                           // 0x30(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayEffectGrantedAbilityRemovePolicy RemovalPolicy;                                     // 0x34(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F9F[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E95[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TWeakObjectPtr<class UObject>                SourceObject;                                      // 0x38(0x8)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA0[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E96[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayAbilitySpecHandle            AssignedHandle;                                    // 0x90(0x4)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA1[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E97[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -456,7 +453,7 @@ public:
 struct FGameplayEffectContextHandle
 {
 public:
-	uint8                                        Pad_FA4[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_E99[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x298 (0x298 - 0x0)
@@ -467,11 +464,11 @@ public:
 	class UGameplayEffect*                       Def;                                               // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FGameplayEffectModifiedAttribute> ModifiedAttributes;                                // 0x8(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FGameplayEffectAttributeCaptureSpecContainer CapturedRelevantAttributes;                        // 0x18(0x28)(RepSkip, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA5[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E9C[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Duration;                                          // 0x50(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Period;                                            // 0x54(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ChanceToApplyToTarget;                             // 0x58(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA6[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E9D[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTagContainerAggregator               CapturedSourceTags;                                // 0x60(0x88)(RepSkip, NativeAccessSpecifierPublic)
 	struct FTagContainerAggregator               CapturedTargetTags;                                // 0xE8(0x88)(RepSkip, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                 DynamicGrantedTags;                                // 0x170(0x20)(NativeAccessSpecifierPublic)
@@ -481,13 +478,13 @@ public:
 	uint8                                        bCompletedSourceAttributeCapture : 1;              // Mask: 0x1, PropSize: 0x10x1C4(0x1)(RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCompletedTargetAttributeCapture : 1;              // Mask: 0x2, PropSize: 0x10x1C4(0x1)(RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bDurationLocked : 1;                               // Mask: 0x4, PropSize: 0x10x1C4(0x1)(RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_8E : 5;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_FAA[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_92 : 5;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_E9E[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FGameplayAbilitySpecDef>       GrantedAbilitySpecs;                               // 0x1C8(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FAB[0xA0];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_E9F[0xA0];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayEffectContextHandle          EffectContext;                                     // 0x278(0x18)(NativeAccessSpecifierPrivate)
 	float                                        Level;                                             // 0x290(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_FAC[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EA0[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -500,7 +497,7 @@ public:
 	int16                                        Base;                                              // 0xA(0x2)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsStale;                                          // 0xC(0x1)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsServerInitiated;                                // 0xD(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FB1[0xA];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EA2[0xA];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x34C (0x358 - 0xC)
@@ -508,14 +505,14 @@ public:
 struct FActiveGameplayEffect : public FFastArraySerializerItem
 {
 public:
-	uint8                                        Pad_FB2[0xC];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EA3[0xC];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayEffectSpec                   Spec;                                              // 0x18(0x298)(NativeAccessSpecifierPublic)
 	struct FPredictionKey                        PredictionKey;                                     // 0x2B0(0x18)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        StartServerWorldTime;                              // 0x2C8(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        CachedStartServerWorldTime;                        // 0x2CC(0x4)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        StartWorldTime;                                    // 0x2D0(0x4)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsInhibited;                                      // 0x2D4(0x1)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FB5[0x83];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EA4[0x83];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -525,7 +522,7 @@ struct FActiveGameplayEffectHandle
 public:
 	int32                                        Handle;                                            // 0x0(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                         bPassedFiltersAndWasExecuted;                      // 0x4(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_FBA[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EA8[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -533,7 +530,7 @@ public:
 struct FGameplayEffectSpecHandle
 {
 public:
-	uint8                                        Pad_FBB[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EA9[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xD8 (0xD8 - 0x0)
@@ -558,7 +555,7 @@ public:
 	int32                                        AbilityLevel;                                      // 0xC4(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TWeakObjectPtr<class USceneComponent>        TargetAttachComponent;                             // 0xC8(0x8)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bReplicateLocationWhenUsingMinimalRepProxy;        // 0xD0(0x1)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FC5[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EAC[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -567,7 +564,7 @@ struct FGameplayEffectRemovalInfo
 {
 public:
 	bool                                         bPrematureRemoval;                                 // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FC6[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EAF[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        StackCount;                                        // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayEffectContextHandle          EffectContext;                                     // 0x8(0x18)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
@@ -577,7 +574,7 @@ public:
 struct FGameplayAbilityTargetDataHandle
 {
 public:
-	uint8                                        Pad_FC7[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EB1[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xB0 (0xB0 - 0x0)
@@ -594,7 +591,7 @@ public:
 	struct FGameplayTagContainer                 InstigatorTags;                                    // 0x40(0x20)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                 TargetTags;                                        // 0x60(0x20)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	float                                        EventMagnitude;                                    // 0x80(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FC9[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EB7[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayAbilityTargetDataHandle      TargetData;                                        // 0x88(0x28)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 
@@ -612,7 +609,7 @@ public:
 struct FGameplayTargetDataFilterHandle
 {
 public:
-	uint8                                        Pad_FCE[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EBA[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -622,8 +619,8 @@ struct FGameplayAbilityActivationInfo
 public:
 	enum class EGameplayAbilityActivationMode    ActivationMode;                                    // 0x0(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCanBeEndedByOtherInstance : 1;                    // Mask: 0x1, PropSize: 0x10x1(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_96 : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_FD0[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_95 : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_EBB[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPredictionKey                        PredictionKeyWhenActivated;                        // 0x8(0x18)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 
@@ -632,7 +629,7 @@ public:
 struct FGameplayEffectQuery
 {
 public:
-	uint8                                        Pad_FD1[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EBF[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	FDelegateProperty_                           CustomMatchDelegate_BP;                            // 0x10(0x10)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTagQuery                     OwningTagQuery;                                    // 0x20(0x48)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FGameplayTagQuery                     EffectTagQuery;                                    // 0x68(0x48)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -640,7 +637,7 @@ public:
 	struct FGameplayAttribute                    ModifyingAttribute;                                // 0xF8(0x38)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UObject*                               EffectSource;                                      // 0x130(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UGameplayEffect>           EffectDefinition;                                  // 0x138(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FD4[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EC0[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x78 (0x78 - 0x0)
@@ -663,13 +660,13 @@ struct FServerAbilityRPCBatch
 {
 public:
 	struct FGameplayAbilitySpecHandle            AbilitySpecHandle;                                 // 0x0(0x4)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FD8[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EC2[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPredictionKey                        PredictionKey;                                     // 0x8(0x18)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayAbilityTargetDataHandle      TargetData;                                        // 0x20(0x28)(NativeAccessSpecifierPublic)
 	bool                                         InputPressed;                                      // 0x48(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Ended;                                             // 0x49(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         Started;                                           // 0x4A(0x1)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FD9[0x5];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EC3[0x5];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1C (0x28 - 0xC)
@@ -677,7 +674,7 @@ public:
 struct FReplicatedPredictionKeyItem : public FFastArraySerializerItem
 {
 public:
-	uint8                                        Pad_FDA[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EC6[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPredictionKey                        PredictionKey;                                     // 0x10(0x18)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -694,9 +691,9 @@ public:
 struct FMinimalReplicationTagCountMap
 {
 public:
-	uint8                                        Pad_FDB[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EC9[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAbilitySystemComponent*               Owner;                                             // 0x50(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FDC[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_ECA[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x104 (0x110 - 0xC)
@@ -705,11 +702,11 @@ struct FActiveGameplayCue : public FFastArraySerializerItem
 {
 public:
 	struct FGameplayTag                          GameplayCueTag;                                    // 0xC(0x8)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FDD[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_ECD[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPredictionKey                        PredictionKey;                                     // 0x18(0x18)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayCueParameters                Parameters;                                        // 0x30(0xD8)(ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         bPredictivelyRemoved;                              // 0x108(0x1)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FDE[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_ED0[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x128 - 0x108)
@@ -718,7 +715,7 @@ struct FActiveGameplayCueContainer : public FFastArraySerializer
 {
 public:
 	TArray<struct FActiveGameplayCue>            GameplayCues;                                      // 0x108(0x10)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FDF[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_ED3[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAbilitySystemComponent*               Owner;                                             // 0x120(0x8)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 
@@ -727,11 +724,11 @@ public:
 struct FActiveGameplayEffectsContainer : public FFastArraySerializer
 {
 public:
-	uint8                                        Pad_FE0[0x28];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_ED4[0x28];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FActiveGameplayEffect>         GameplayEffects_Internal;                          // 0x130(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_FE2[0x310];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_ED5[0x310];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UGameplayEffect*>               ApplicationImmunityQueryEffects;                   // 0x450(0x10)(ZeroConstructor, RepSkip, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_FE3[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_ED6[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -741,7 +738,7 @@ struct FGameplayAbilityLocalAnimMontage
 public:
 	class UAnimMontage*                          AnimMontage;                                       // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        PlayInstanceId;                                    // 0x8(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FE4[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_ED7[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPredictionKey                        PredictionKey;                                     // 0x10(0x18)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UGameplayAbility*                      AnimatingAbility;                                  // 0x28(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -761,11 +758,11 @@ public:
 	uint8                                        IsStopped : 1;                                     // Mask: 0x2, PropSize: 0x10x16(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        SkipPositionCorrection : 1;                        // Mask: 0x4, PropSize: 0x10x16(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bSkipPlayRate : 1;                                 // Mask: 0x8, PropSize: 0x10x16(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_97 : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_FE5[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_9A : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_EDA[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPredictionKey                        PredictionKey;                                     // 0x18(0x18)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        SectionIdToPlay;                                   // 0x30(0x1)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FE6[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EDC[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xDC (0xE8 - 0xC)
@@ -783,14 +780,14 @@ public:
 	uint8                                        RemoveAfterActivation : 1;                         // Mask: 0x2, PropSize: 0x10x29(0x1)(RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        PendingRemove : 1;                                 // Mask: 0x4, PropSize: 0x10x29(0x1)(RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bActivateOnce : 1;                                 // Mask: 0x8, PropSize: 0x10x29(0x1)(RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_98 : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_FE8[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_9B : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_EDD[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayAbilityActivationInfo        ActivationInfo;                                    // 0x30(0x20)(RepSkip, NoDestructor, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                 DynamicAbilityTags;                                // 0x50(0x20)(NativeAccessSpecifierPublic)
 	TArray<class UGameplayAbility*>              NonReplicatedInstances;                            // 0x70(0x10)(ZeroConstructor, RepSkip, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class UGameplayAbility*>              ReplicatedInstances;                               // 0x80(0x10)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	struct FActiveGameplayEffectHandle           GameplayEffectHandle;                              // 0x90(0x8)(RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FEA[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EDE[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x120 - 0x108)
@@ -816,7 +813,7 @@ public:
 struct FGameplayAbilityRepAnimMontageNetSerializerConfig : public FNetSerializerConfig
 {
 public:
-	uint8                                        Pad_FF3[0x1];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EEB[0x1];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x190 (0x190 - 0x0)
@@ -824,10 +821,10 @@ public:
 struct FGameplayCuePendingExecute
 {
 public:
-	uint8                                        Pad_FF4[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EEC[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPredictionKey                        PredictionKey;                                     // 0x18(0x18)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayCuePayloadType           PayloadType;                                       // 0x30(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FF5[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EED[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAbilitySystemComponent*               OwningComponent;                                   // 0x38(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayEffectSpecForRPC             FromSpec;                                          // 0x40(0x78)(NativeAccessSpecifierPublic)
 	struct FGameplayCueParameters                CueParameters;                                     // 0xB8(0xD8)(ContainsInstancedReference, NativeAccessSpecifierPublic)
@@ -848,7 +845,7 @@ struct FPreallocationInfo
 public:
 	TMap<TSubclassOf<class UObject>, struct FGameplayCueNotifyActorArray> PreallocatedInstances;                             // 0x0(0x50)(Transient, NativeAccessSpecifierPublic)
 	TArray<TSubclassOf<class AGameplayCueNotify_Actor>> ClassesNeedingPreallocation;                       // 0x50(0x10)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FF8[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EEE[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x1 - 0x1)
@@ -863,7 +860,7 @@ public:
 struct FGameplayEffectContextNetSerializerConfig : public FNetSerializerConfig
 {
 public:
-	uint8                                        Pad_FFB[0x1];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EEF[0x1];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -871,7 +868,7 @@ public:
 struct FPredictionKeyNetSerializerConfig : public FNetSerializerConfig
 {
 public:
-	uint8                                        Pad_FFC[0x1];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EF0[0x1];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -881,7 +878,7 @@ struct FAbilityTriggerData
 public:
 	struct FGameplayTag                          TriggerTag;                                        // 0x0(0x8)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayAbilityTriggerSource     TriggerSource;                                     // 0x8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FFD[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EF1[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -890,7 +887,7 @@ struct FGameplayAbilityBindInfo
 {
 public:
 	enum class EGameplayAbilityInputBinds        Command;                                           // 0x0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FFF[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EF2[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UGameplayAbility>          GameplayAbilityClass;                              // 0x8(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -899,12 +896,12 @@ public:
 struct FGameplayTargetDataFilter
 {
 public:
-	uint8                                        Pad_1001[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EF3[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                SelfActor;                                         // 0x8(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class AActor>                    RequiredActorClass;                                // 0x10(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETargetDataFilterSelf             SelfFilter;                                        // 0x18(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bReverseFilter;                                    // 0x19(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1002[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EF4[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -928,7 +925,7 @@ public:
 struct FGameplayAttributeData
 {
 public:
-	uint8                                        Pad_1003[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EF6[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        BaseValue;                                         // 0x8(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        CurrentValue;                                      // 0xC(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
@@ -941,10 +938,10 @@ public:
 	float                                        BaseValue;                                         // 0x8(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MinValue;                                          // 0xC(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxValue;                                          // 0x10(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1005[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EFA[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                DerivedAttributeInfo;                              // 0x18(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bCanStack;                                         // 0x28(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1006[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EFC[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -952,7 +949,7 @@ public:
 struct FGameplayAbilityTargetData
 {
 public:
-	uint8                                        Pad_1007[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_EFD[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xA0 (0xA0 - 0x0)
@@ -960,9 +957,9 @@ public:
 struct FGameplayAbilityTargetingLocationInfo
 {
 public:
-	uint8                                        Pad_100A[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EFE[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EGameplayAbilityTargetingLocationType LocationType;                                      // 0x10(0x1)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_100B[0xF];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_EFF[0xF];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTransform                            LiteralTransform;                                  // 0x20(0x60)(BlueprintVisible, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                SourceActor;                                       // 0x80(0x8)(BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMeshComponent*                        SourceComponent;                                   // 0x88(0x8)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -975,7 +972,7 @@ public:
 struct FGameplayAbilityTargetData_LocationInfo : public FGameplayAbilityTargetData
 {
 public:
-	uint8                                        Pad_100D[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F00[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayAbilityTargetingLocationInfo SourceLocation;                                    // 0x10(0xA0)(Edit, BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FGameplayAbilityTargetingLocationInfo TargetLocation;                                    // 0xB0(0xA0)(Edit, BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
@@ -985,7 +982,7 @@ public:
 struct FGameplayAbilityTargetData_ActorArray : public FGameplayAbilityTargetData
 {
 public:
-	uint8                                        Pad_1010[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F05[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayAbilityTargetingLocationInfo SourceLocation;                                    // 0x10(0xA0)(Edit, BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	TArray<TWeakObjectPtr<class AActor>>         TargetActorArray;                                  // 0xB0(0x10)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 };
@@ -997,7 +994,7 @@ struct FGameplayAbilityTargetData_SingleTargetHit : public FGameplayAbilityTarge
 public:
 	struct FHitResult                            HitResult;                                         // 0x8(0xE8)(IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         bHitReplaced;                                      // 0xF0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1011[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F08[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x48 (0x48 - 0x0)
@@ -1005,7 +1002,7 @@ public:
 struct FGameplayAbilityActorInfo
 {
 public:
-	uint8                                        Pad_1012[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F09[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TWeakObjectPtr<class AActor>                 OwnerActor;                                        // 0x8(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TWeakObjectPtr<class AActor>                 AvatarActor;                                       // 0x10(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TWeakObjectPtr<class APlayerController>      PlayerController;                                  // 0x18(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1025,7 +1022,7 @@ public:
 	struct FGameplayAbilitySpecHandle            AbilitySpecHandle;                                 // 0x8(0x4)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bReplicateEndAbility;                              // 0xC(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bWasCancelled;                                     // 0xD(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1013[0x2];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F0B[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -1059,9 +1056,9 @@ public:
 struct FMinimalGameplayCueReplicationProxy
 {
 public:
-	uint8                                        Pad_1015[0x340];                                   // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F11[0x340];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAbilitySystemComponent*               Owner;                                             // 0x340(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1016[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F12[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -1070,11 +1067,11 @@ struct FGameplayCueObjectLibrary
 {
 public:
 	TArray<class FString>                        Paths;                                             // 0x0(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1018[0x20];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F13[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UObjectLibrary*                        ActorObjectLibrary;                                // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UObjectLibrary*                        StaticObjectLibrary;                               // 0x38(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UGameplayCueSet*                       CueSet;                                            // 0x40(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1019[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F14[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	bool                                         bShouldSyncScan;                                   // 0x4C(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShouldAsyncLoad;                                  // 0x4D(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShouldSyncLoad;                                   // 0x4E(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1088,12 +1085,12 @@ struct FGameplayCueNotify_SpawnCondition
 public:
 	enum class EGameplayCueNotify_LocallyControlledSource LocallyControlledSource;                           // 0x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayCueNotify_LocallyControlledPolicy LocallyControlledPolicy;                           // 0x1(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_101D[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F15[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ChanceToPlay;                                      // 0x4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<enum class EPhysicalSurface>          AllowedSurfaceTypes;                               // 0x8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	uint8                                        Pad_101E[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F17[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<enum class EPhysicalSurface>          RejectedSurfaceTypes;                              // 0x20(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	uint8                                        Pad_101F[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F18[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -1104,11 +1101,11 @@ public:
 	class FName                                  SocketName;                                        // 0x0(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayCueNotify_AttachPolicy   AttachPolicy;                                      // 0x8(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAttachmentRule                   AttachmentRule;                                    // 0x9(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1020[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F1D[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bOverrideRotation : 1;                             // Mask: 0x1, PropSize: 0x10xC(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverrideScale : 1;                                // Mask: 0x2, PropSize: 0x10xC(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_99 : 6;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_1021[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_9D : 6;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_F1F[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRotator                              RotationOverride;                                  // 0x10(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector                               ScaleOverride;                                     // 0x28(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1138,7 +1135,7 @@ public:
 	uint8                                        bOverrideSpawnCondition : 1;                       // Mask: 0x1, PropSize: 0x10x80(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverridePlacementInfo : 1;                        // Mask: 0x2, PropSize: 0x10x80(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCastShadow : 1;                                   // Mask: 0x4, PropSize: 0x10x80(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1024[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F28[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -1164,7 +1161,7 @@ public:
 	uint8                                        bOverrideSpawnCondition : 1;                       // Mask: 0x1, PropSize: 0x10x98(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverridePlacementInfo : 1;                        // Mask: 0x2, PropSize: 0x10x98(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bUseSoundParameterInterface : 1;                   // Mask: 0x4, PropSize: 0x10x98(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1029[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F30[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x98 (0x98 - 0x0)
@@ -1177,12 +1174,12 @@ public:
 	TSubclassOf<class UCameraShakeBase>          CameraShake;                                       // 0x78(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ShakeScale;                                        // 0x80(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayCueNotify_EffectPlaySpace PlaySpace;                                         // 0x84(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_102C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F35[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bOverrideSpawnCondition : 1;                       // Mask: 0x1, PropSize: 0x10x88(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverridePlacementInfo : 1;                        // Mask: 0x2, PropSize: 0x10x88(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bPlayInWorld : 1;                                  // Mask: 0x4, PropSize: 0x10x88(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_9A : 5;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_102D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_9F : 5;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_F38[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        WorldInnerRadius;                                  // 0x8C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WorldOuterRadius;                                  // 0x90(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WorldFalloffExponent;                              // 0x94(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1199,11 +1196,11 @@ public:
 	uint8                                        bOverrideSpawnCondition : 1;                       // Mask: 0x1, PropSize: 0x10x80(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverridePlacementInfo : 1;                        // Mask: 0x2, PropSize: 0x10x80(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bPlayInWorld : 1;                                  // Mask: 0x4, PropSize: 0x10x80(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_9B : 5;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_1031[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_A0 : 5;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_F3A[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        WorldInnerRadius;                                  // 0x84(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        WorldOuterRadius;                                  // 0x88(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1032[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F3C[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x98 (0x98 - 0x0)
@@ -1219,8 +1216,8 @@ public:
 	uint8                                        bOverrideSpawnCondition : 1;                       // Mask: 0x2, PropSize: 0x10x88(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverridePlacementInfo : 1;                        // Mask: 0x4, PropSize: 0x10x88(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bPlayInWorld : 1;                                  // Mask: 0x8, PropSize: 0x10x88(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_9C : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_1034[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_A1 : 4;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_F42[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        WorldIntensity;                                    // 0x8C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UForceFeedbackAttenuation*             WorldAttenuation;                                  // 0x90(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1237,11 +1234,11 @@ public:
 	uint8                                        bOverrideSpawnCondition : 1;                       // Mask: 0x1, PropSize: 0x10x98(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverridePlacementInfo : 1;                        // Mask: 0x2, PropSize: 0x10x98(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverrideFadeOut : 1;                              // Mask: 0x4, PropSize: 0x10x98(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_9D : 5;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_1036[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_A2 : 5;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_F45[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        FadeOutStartDelay;                                 // 0x9C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        FadeOutDuration;                                   // 0xA0(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1037[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F46[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x288 (0x288 - 0x0)
@@ -1277,7 +1274,7 @@ public:
 	struct FGameplayTag                          GameplayCueTag;                                    // 0x0(0x8)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSoftObjectPath                       GameplayCueNotifyObj;                              // 0x8(0x20)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UObject>                   LoadedGameplayCueClass;                            // 0x28(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_103D[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F49[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -1294,7 +1291,7 @@ struct FGameplayCueTranslationLink
 {
 public:
 	class UGameplayCueTranslator*                RulesCDO;                                          // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_103E[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F4B[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x78 (0x78 - 0x0)
@@ -1306,7 +1303,7 @@ public:
 	struct FGameplayCueTranslatorNodeIndex       CachedIndex;                                       // 0x10(0x4)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTag                          CachedGameplayTag;                                 // 0x14(0x8)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  CachedGameplayTagName;                             // 0x1C(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1040[0x54];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F51[0x54];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -1317,7 +1314,7 @@ public:
 	TArray<struct FGameplayCueTranslatorNode>    TranslationLUT;                                    // 0x0(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TMap<class FName, struct FGameplayCueTranslatorNodeIndex> TranslationNameToIndexMap;                         // 0x10(0x50)(NativeAccessSpecifierPrivate)
 	class UGameplayTagsManager*                  TagManager;                                        // 0x60(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1041[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F56[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x110 (0x110 - 0x0)
@@ -1332,7 +1329,7 @@ public:
 	struct FCurveTableRowHandle                  AttributeCurve;                                    // 0xB8(0x10)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAttributeBasedFloatCalculationType AttributeCalculationType;                          // 0xC8(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayModEvaluationChannel     FinalChannel;                                      // 0xC9(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1043[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F59[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayTagContainer                 SourceTagFilter;                                   // 0xD0(0x20)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                 TargetTagFilter;                                   // 0xF0(0x20)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
@@ -1364,7 +1361,7 @@ struct FGameplayEffectModifierMagnitude
 {
 public:
 	enum class EGameplayEffectMagnitudeCalculation MagnitudeCalculationType;                          // 0x0(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_1047[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F5E[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FScalableFloat                        ScalableFloatMagnitude;                            // 0x8(0x28)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
 	struct FAttributeBasedFloat                  AttributeBasedMagnitude;                           // 0x30(0x110)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
 	struct FCustomCalculationBasedFloat          CustomMagnitude;                                   // 0x140(0x90)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
@@ -1388,10 +1385,10 @@ public:
 	struct FGameplayTag                          TransientAggregatorIdentifier;                     // 0x40(0x8)(Edit, DisableEditOnInstance, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayEffectScopedModifierAggregatorType AggregatorType;                                    // 0x48(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayModOp                    ModifierOp;                                        // 0x49(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_104A[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F65[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayEffectModifierMagnitude      ModifierMagnitude;                                 // 0x50(0x1E0)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	struct FGameplayModEvaluationChannelSettings EvaluationChannelSettings;                         // 0x230(0x1)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_104B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F66[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayTagRequirements              SourceTags;                                        // 0x238(0x40)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	struct FGameplayTagRequirements              TargetTags;                                        // 0x278(0x40)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
@@ -1424,11 +1421,11 @@ struct FGameplayModifierInfo
 public:
 	struct FGameplayAttribute                    Attribute;                                         // 0x0(0x38)(Edit, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayModOp                    ModifierOp;                                        // 0x38(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_104F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F6B[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FScalableFloat                        Magnitude;                                         // 0x40(0x28)(NativeAccessSpecifierPublic)
 	struct FGameplayEffectModifierMagnitude      ModifierMagnitude;                                 // 0x68(0x1E0)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	struct FGameplayModEvaluationChannelSettings EvaluationChannelSettings;                         // 0x248(0x1)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1050[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F6C[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGameplayTagRequirements              SourceTags;                                        // 0x250(0x40)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	struct FGameplayTagRequirements              TargetTags;                                        // 0x290(0x40)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
@@ -1459,7 +1456,7 @@ public:
 struct FActiveGameplayEffectQuery
 {
 public:
-	uint8                                        Pad_1052[0x88];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F75[0x88];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xF8 (0xF8 - 0x0)
@@ -1467,7 +1464,7 @@ public:
 struct FGameplayEffectCustomExecutionParameters
 {
 public:
-	uint8                                        Pad_1054[0xF8];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F76[0xF8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -1477,11 +1474,11 @@ struct FGameplayModifierEvaluatedData
 public:
 	struct FGameplayAttribute                    Attribute;                                         // 0x0(0x38)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EGameplayModOp                    ModifierOp;                                        // 0x38(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1057[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F77[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Magnitude;                                         // 0x3C(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FActiveGameplayEffectHandle           Handle;                                            // 0x40(0x8)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsValid;                                           // 0x48(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1059[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F78[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -1493,7 +1490,7 @@ public:
 	uint8                                        bTriggerConditionalGameplayEffects : 1;            // Mask: 0x1, PropSize: 0x10x10(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                        bHandledStackCountManually : 1;                    // Mask: 0x2, PropSize: 0x10x10(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                        bHandledGameplayCuesManually : 1;                  // Mask: 0x4, PropSize: 0x10x10(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_105B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F7A[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -1501,7 +1498,7 @@ public:
 struct FGameplayEffectContext
 {
 public:
-	uint8                                        Pad_105E[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F7B[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TWeakObjectPtr<class AActor>                 Instigator;                                        // 0x8(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TWeakObjectPtr<class AActor>                 EffectCauser;                                      // 0x10(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TWeakObjectPtr<class UGameplayAbility>       AbilityCDO;                                        // 0x18(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -1509,13 +1506,13 @@ public:
 	int32                                        AbilityLevel;                                      // 0x28(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TWeakObjectPtr<class UObject>                SourceObject;                                      // 0x2C(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TWeakObjectPtr<class UAbilitySystemComponent> InstigatorAbilitySystemComponent;                  // 0x34(0x8)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_1060[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F7D[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<TWeakObjectPtr<class AActor>>         Actors;                                            // 0x40(0x10)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                        Pad_1061[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F7E[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               WorldOrigin;                                       // 0x60(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bHasWorldOrigin : 1;                               // Mask: 0x1, PropSize: 0x10x78(0x1)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                        bReplicateSourceObject : 1;                        // Mask: 0x2, PropSize: 0x10x78(0x1)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_1063[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F7F[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x48 (0x48 - 0x0)
@@ -1527,7 +1524,7 @@ public:
 	FFieldPathProperty_                          PropertyToEdit;                                    // 0x8(0x20)(Edit, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  PropertyName;                                      // 0x28(0x8)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 PropertyGuid;                                      // 0x30(0x10)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1066[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F83[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -1535,7 +1532,7 @@ public:
 struct FGameplayTagBlueprintPropertyMap
 {
 public:
-	uint8                                        Pad_1069[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F84[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FGameplayTagBlueprintPropertyMapping> PropertyMappings;                                  // 0x10(0x10)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 };
 
@@ -1548,7 +1545,7 @@ public:
 	TSubclassOf<class UGameplayEffect>           ResponseGameplayEffect;                            // 0x8(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<TSubclassOf<class UGameplayEffect>>   ResponseGameplayEffects;                           // 0x10(0x10)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	int32                                        SoftCountCap;                                      // 0x20(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_106C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F85[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -1572,12 +1569,12 @@ public:
 	float                                        NormalizedMagnitude;                               // 0x40(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMovieSceneObjectBindingID            Instigator;                                        // 0x44(0x18)(Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMovieSceneObjectBindingID            EffectCauser;                                      // 0x5C(0x18)(Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_106E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F8C[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UPhysicalMaterial*                     PhysicalMaterial;                                  // 0x78(0x8)(Edit, ZeroConstructor, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        GameplayEffectLevel;                               // 0x80(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        AbilityLevel;                                      // 0x84(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAttachToBinding;                                  // 0x88(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_106F[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F90[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xA8 (0xF8 - 0x50)
@@ -1587,11 +1584,9 @@ struct FMovieSceneGameplayCueChannel : public FMovieSceneChannel
 public:
 	TArray<struct FFrameNumber>                  KeyTimes;                                          // 0x50(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<struct FMovieSceneGameplayCueKey>     KeyValues;                                         // 0x60(0x10)(ZeroConstructor, AssetRegistrySearchable, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1070[0x88];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F93[0x88];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

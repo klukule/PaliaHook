@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,13 +12,41 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class NiagaraAnimNotifies.AnimNotifyState_TimedNiagaraEffect
+// (None)
+
+class UClass* UAnimNotifyState_TimedNiagaraEffect::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AnimNotifyState_TimedNiagaraEffect");
+
+	return Clss;
+}
+
+
+// AnimNotifyState_TimedNiagaraEffect NiagaraAnimNotifies.Default__AnimNotifyState_TimedNiagaraEffect
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAnimNotifyState_TimedNiagaraEffect* UAnimNotifyState_TimedNiagaraEffect::GetDefaultObj()
+{
+	static class UAnimNotifyState_TimedNiagaraEffect* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAnimNotifyState_TimedNiagaraEffect*>(UAnimNotifyState_TimedNiagaraEffect::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function NiagaraAnimNotifies.AnimNotifyState_TimedNiagaraEffect.GetSpawnedEffect
 // (Final, Native, Public, BlueprintCallable, Const)
 // Parameters:
 // class UMeshComponent*              MeshComp                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UFXSystemComponent*          ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UFXSystemComponent* UAnimNotifyState_TimedNiagaraEffect::GetSpawnedEffect(class UMeshComponent* InMeshComp)
+class UFXSystemComponent* UAnimNotifyState_TimedNiagaraEffect::GetSpawnedEffect(class UMeshComponent* MeshComp)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,18 +55,46 @@ class UFXSystemComponent* UAnimNotifyState_TimedNiagaraEffect::GetSpawnedEffect(
 
 	Params::UAnimNotifyState_TimedNiagaraEffect_GetSpawnedEffect_Params Parms{};
 
-	Parms.MeshComp = InMeshComp;
+	Parms.MeshComp = MeshComp;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class NiagaraAnimNotifies.AnimNotifyState_TimedNiagaraEffectAdvanced
+// (None)
+
+class UClass* UAnimNotifyState_TimedNiagaraEffectAdvanced::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AnimNotifyState_TimedNiagaraEffectAdvanced");
+
+	return Clss;
+}
+
+
+// AnimNotifyState_TimedNiagaraEffectAdvanced NiagaraAnimNotifies.Default__AnimNotifyState_TimedNiagaraEffectAdvanced
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAnimNotifyState_TimedNiagaraEffectAdvanced* UAnimNotifyState_TimedNiagaraEffectAdvanced::GetDefaultObj()
+{
+	static class UAnimNotifyState_TimedNiagaraEffectAdvanced* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAnimNotifyState_TimedNiagaraEffectAdvanced*>(UAnimNotifyState_TimedNiagaraEffectAdvanced::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -51,7 +104,7 @@ class UFXSystemComponent* UAnimNotifyState_TimedNiagaraEffect::GetSpawnedEffect(
 // class UMeshComponent*              MeshComp                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAnimNotifyState_TimedNiagaraEffectAdvanced::GetNotifyProgress(class UMeshComponent* InMeshComp)
+float UAnimNotifyState_TimedNiagaraEffectAdvanced::GetNotifyProgress(class UMeshComponent* MeshComp)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,18 +113,46 @@ float UAnimNotifyState_TimedNiagaraEffectAdvanced::GetNotifyProgress(class UMesh
 
 	Params::UAnimNotifyState_TimedNiagaraEffectAdvanced_GetNotifyProgress_Params Parms{};
 
-	Parms.MeshComp = InMeshComp;
+	Parms.MeshComp = MeshComp;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class NiagaraAnimNotifies.AnimNotify_PlayNiagaraEffect
+// (None)
+
+class UClass* UAnimNotify_PlayNiagaraEffect::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AnimNotify_PlayNiagaraEffect");
+
+	return Clss;
+}
+
+
+// AnimNotify_PlayNiagaraEffect NiagaraAnimNotifies.Default__AnimNotify_PlayNiagaraEffect
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAnimNotify_PlayNiagaraEffect* UAnimNotify_PlayNiagaraEffect::GetDefaultObj()
+{
+	static class UAnimNotify_PlayNiagaraEffect* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAnimNotify_PlayNiagaraEffect*>(UAnimNotify_PlayNiagaraEffect::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -90,13 +171,13 @@ class UFXSystemComponent* UAnimNotify_PlayNiagaraEffect::GetSpawnedEffect()
 	Params::UAnimNotify_PlayNiagaraEffect_GetSpawnedEffect_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -104,6 +185,4 @@ class UFXSystemComponent* UAnimNotify_PlayNiagaraEffect::GetSpawnedEffect()
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

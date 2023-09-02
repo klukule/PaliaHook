@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass Comp_CV_Parent.Comp_CV_Parent_C
+// (SceneComponent)
+
+class UClass* UComp_CV_Parent_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("Comp_CV_Parent_C");
+
+	return Clss;
+}
+
+
+// Comp_CV_Parent_C Comp_CV_Parent.Default__Comp_CV_Parent_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UComp_CV_Parent_C* UComp_CV_Parent_C::GetDefaultObj()
+{
+	static class UComp_CV_Parent_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UComp_CV_Parent_C*>(UComp_CV_Parent_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function Comp_CV_Parent.Comp_CV_Parent_C.OverlapBegin
@@ -25,7 +50,7 @@ namespace SDK
 // bool                               bFromSweep                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FHitResult                  SweepResult                                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 
-void UComp_CV_Parent_C::OverlapBegin(class UPrimitiveComponent* InOverlappedComponent, class AActor* InOtherActor, class UPrimitiveComponent* InOtherComp, int32 InOtherBodyIndex, bool InbFromSweep, struct FHitResult& InSweepResult)
+void UComp_CV_Parent_C::OverlapBegin(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, struct FHitResult& SweepResult)
 {
 	static class UFunction* Func = nullptr;
 
@@ -34,12 +59,12 @@ void UComp_CV_Parent_C::OverlapBegin(class UPrimitiveComponent* InOverlappedComp
 
 	Params::UComp_CV_Parent_C_OverlapBegin_Params Parms{};
 
-	Parms.OverlappedComponent = InOverlappedComponent;
-	Parms.OtherActor = InOtherActor;
-	Parms.OtherComp = InOtherComp;
-	Parms.OtherBodyIndex = InOtherBodyIndex;
-	Parms.bFromSweep = InbFromSweep;
-	Parms.SweepResult = InSweepResult;
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = SweepResult;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -54,7 +79,7 @@ void UComp_CV_Parent_C::OverlapBegin(class UPrimitiveComponent* InOverlappedComp
 // class UPrimitiveComponent*         OtherComp                                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // int32                              OtherBodyIndex                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_CV_Parent_C::OverlapEnd(class UPrimitiveComponent* InOverlappedComponent, class AActor* InOtherActor, class UPrimitiveComponent* InOtherComp, int32 InOtherBodyIndex)
+void UComp_CV_Parent_C::OverlapEnd(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -63,10 +88,10 @@ void UComp_CV_Parent_C::OverlapEnd(class UPrimitiveComponent* InOverlappedCompon
 
 	Params::UComp_CV_Parent_C_OverlapEnd_Params Parms{};
 
-	Parms.OverlappedComponent = InOverlappedComponent;
-	Parms.OtherActor = InOtherActor;
-	Parms.OtherComp = InOtherComp;
-	Parms.OtherBodyIndex = InOtherBodyIndex;
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -97,7 +122,7 @@ void UComp_CV_Parent_C::ReceiveBeginPlay()
 // Parameters:
 // enum class EEndPlayReason          EndPlayReason                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_CV_Parent_C::ReceiveEndPlay(enum class EEndPlayReason InEndPlayReason)
+void UComp_CV_Parent_C::ReceiveEndPlay(enum class EEndPlayReason EndPlayReason)
 {
 	static class UFunction* Func = nullptr;
 
@@ -106,7 +131,7 @@ void UComp_CV_Parent_C::ReceiveEndPlay(enum class EEndPlayReason InEndPlayReason
 
 	Params::UComp_CV_Parent_C_ReceiveEndPlay_Params Parms{};
 
-	Parms.EndPlayReason = InEndPlayReason;
+	Parms.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -137,7 +162,7 @@ void UComp_CV_Parent_C::ReceiveEndPlay(enum class EEndPlayReason InEndPlayReason
 // bool                               K2Node_DynamicCast_bSuccess_1                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_1                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UComp_CV_Parent_C::ExecuteUbergraph_Comp_CV_Parent(int32 InEntryPoint, class USceneComponent* InCallFunc_GetAttachParent_ReturnValue, class UPrimitiveComponent* InK2Node_CustomEvent_OverlappedComponent_1, class AActor* InK2Node_CustomEvent_OtherActor_1, class UPrimitiveComponent* InK2Node_CustomEvent_OtherComp_1, int32 InK2Node_CustomEvent_OtherBodyIndex_1, bool InK2Node_CustomEvent_bFromSweep, const struct FHitResult& InK2Node_CustomEvent_SweepResult, class UPrimitiveComponent* InK2Node_DynamicCast_AsPrimitive_Component, bool InK2Node_DynamicCast_bSuccess, class UPrimitiveComponent* InK2Node_CustomEvent_OverlappedComponent, class AActor* InK2Node_CustomEvent_OtherActor, class UPrimitiveComponent* InK2Node_CustomEvent_OtherComp, int32 InK2Node_CustomEvent_OtherBodyIndex, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate, enum class EEndPlayReason InK2Node_Event_EndPlayReason, class USceneComponent* InCallFunc_GetAttachParent_ReturnValue_1, class UPrimitiveComponent* InK2Node_DynamicCast_AsPrimitive_Component_1, bool InK2Node_DynamicCast_bSuccess_1, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_1)
+void UComp_CV_Parent_C::ExecuteUbergraph_Comp_CV_Parent(int32 EntryPoint, class USceneComponent* CallFunc_GetAttachParent_ReturnValue, class UPrimitiveComponent* K2Node_CustomEvent_OverlappedComponent_1, class AActor* K2Node_CustomEvent_OtherActor_1, class UPrimitiveComponent* K2Node_CustomEvent_OtherComp_1, int32 K2Node_CustomEvent_OtherBodyIndex_1, bool K2Node_CustomEvent_bFromSweep, const struct FHitResult& K2Node_CustomEvent_SweepResult, class UPrimitiveComponent* K2Node_DynamicCast_AsPrimitive_Component, bool K2Node_DynamicCast_bSuccess, class UPrimitiveComponent* K2Node_CustomEvent_OverlappedComponent, class AActor* K2Node_CustomEvent_OtherActor, class UPrimitiveComponent* K2Node_CustomEvent_OtherComp, int32 K2Node_CustomEvent_OtherBodyIndex, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, enum class EEndPlayReason K2Node_Event_EndPlayReason, class USceneComponent* CallFunc_GetAttachParent_ReturnValue_1, class UPrimitiveComponent* K2Node_DynamicCast_AsPrimitive_Component_1, bool K2Node_DynamicCast_bSuccess_1, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -146,26 +171,26 @@ void UComp_CV_Parent_C::ExecuteUbergraph_Comp_CV_Parent(int32 InEntryPoint, clas
 
 	Params::UComp_CV_Parent_C_ExecuteUbergraph_Comp_CV_Parent_Params Parms{};
 
-	Parms.EntryPoint = InEntryPoint;
-	Parms.CallFunc_GetAttachParent_ReturnValue = InCallFunc_GetAttachParent_ReturnValue;
-	Parms.K2Node_CustomEvent_OverlappedComponent_1 = InK2Node_CustomEvent_OverlappedComponent_1;
-	Parms.K2Node_CustomEvent_OtherActor_1 = InK2Node_CustomEvent_OtherActor_1;
-	Parms.K2Node_CustomEvent_OtherComp_1 = InK2Node_CustomEvent_OtherComp_1;
-	Parms.K2Node_CustomEvent_OtherBodyIndex_1 = InK2Node_CustomEvent_OtherBodyIndex_1;
-	Parms.K2Node_CustomEvent_bFromSweep = InK2Node_CustomEvent_bFromSweep;
-	Parms.K2Node_CustomEvent_SweepResult = InK2Node_CustomEvent_SweepResult;
-	Parms.K2Node_DynamicCast_AsPrimitive_Component = InK2Node_DynamicCast_AsPrimitive_Component;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.K2Node_CustomEvent_OverlappedComponent = InK2Node_CustomEvent_OverlappedComponent;
-	Parms.K2Node_CustomEvent_OtherActor = InK2Node_CustomEvent_OtherActor;
-	Parms.K2Node_CustomEvent_OtherComp = InK2Node_CustomEvent_OtherComp;
-	Parms.K2Node_CustomEvent_OtherBodyIndex = InK2Node_CustomEvent_OtherBodyIndex;
-	Parms.K2Node_CreateDelegate_OutputDelegate = InK2Node_CreateDelegate_OutputDelegate;
-	Parms.K2Node_Event_EndPlayReason = InK2Node_Event_EndPlayReason;
-	Parms.CallFunc_GetAttachParent_ReturnValue_1 = InCallFunc_GetAttachParent_ReturnValue_1;
-	Parms.K2Node_DynamicCast_AsPrimitive_Component_1 = InK2Node_DynamicCast_AsPrimitive_Component_1;
-	Parms.K2Node_DynamicCast_bSuccess_1 = InK2Node_DynamicCast_bSuccess_1;
-	Parms.K2Node_CreateDelegate_OutputDelegate_1 = InK2Node_CreateDelegate_OutputDelegate_1;
+	Parms.EntryPoint = EntryPoint;
+	Parms.CallFunc_GetAttachParent_ReturnValue = CallFunc_GetAttachParent_ReturnValue;
+	Parms.K2Node_CustomEvent_OverlappedComponent_1 = K2Node_CustomEvent_OverlappedComponent_1;
+	Parms.K2Node_CustomEvent_OtherActor_1 = K2Node_CustomEvent_OtherActor_1;
+	Parms.K2Node_CustomEvent_OtherComp_1 = K2Node_CustomEvent_OtherComp_1;
+	Parms.K2Node_CustomEvent_OtherBodyIndex_1 = K2Node_CustomEvent_OtherBodyIndex_1;
+	Parms.K2Node_CustomEvent_bFromSweep = K2Node_CustomEvent_bFromSweep;
+	Parms.K2Node_CustomEvent_SweepResult = K2Node_CustomEvent_SweepResult;
+	Parms.K2Node_DynamicCast_AsPrimitive_Component = K2Node_DynamicCast_AsPrimitive_Component;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.K2Node_CustomEvent_OverlappedComponent = K2Node_CustomEvent_OverlappedComponent;
+	Parms.K2Node_CustomEvent_OtherActor = K2Node_CustomEvent_OtherActor;
+	Parms.K2Node_CustomEvent_OtherComp = K2Node_CustomEvent_OtherComp;
+	Parms.K2Node_CustomEvent_OtherBodyIndex = K2Node_CustomEvent_OtherBodyIndex;
+	Parms.K2Node_CreateDelegate_OutputDelegate = K2Node_CreateDelegate_OutputDelegate;
+	Parms.K2Node_Event_EndPlayReason = K2Node_Event_EndPlayReason;
+	Parms.CallFunc_GetAttachParent_ReturnValue_1 = CallFunc_GetAttachParent_ReturnValue_1;
+	Parms.K2Node_DynamicCast_AsPrimitive_Component_1 = K2Node_DynamicCast_AsPrimitive_Component_1;
+	Parms.K2Node_DynamicCast_bSuccess_1 = K2Node_DynamicCast_bSuccess_1;
+	Parms.K2Node_CreateDelegate_OutputDelegate_1 = K2Node_CreateDelegate_OutputDelegate_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -173,6 +198,4 @@ void UComp_CV_Parent_C::ExecuteUbergraph_Comp_CV_Parent(int32 InEntryPoint, clas
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

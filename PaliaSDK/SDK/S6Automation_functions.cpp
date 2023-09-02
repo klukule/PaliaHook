@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,68 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class S6Automation.S6Auto_Suite
+// (None)
+
+class UClass* US6Auto_Suite::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6Auto_Suite");
+
+	return Clss;
+}
+
+
+// S6Auto_Suite S6Automation.Default__S6Auto_Suite
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6Auto_Suite* US6Auto_Suite::GetDefaultObj()
+{
+	static class US6Auto_Suite* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6Auto_Suite*>(US6Auto_Suite::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6Automation.S6Auto_SuiteSubsystem
+// (None)
+
+class UClass* US6Auto_SuiteSubsystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6Auto_SuiteSubsystem");
+
+	return Clss;
+}
+
+
+// S6Auto_SuiteSubsystem S6Automation.Default__S6Auto_SuiteSubsystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6Auto_SuiteSubsystem* US6Auto_SuiteSubsystem::GetDefaultObj()
+{
+	static class US6Auto_SuiteSubsystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6Auto_SuiteSubsystem*>(US6Auto_SuiteSubsystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function S6Automation.S6Auto_SuiteSubsystem.RunSuites
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TArray<class US6Auto_Suite*>       Suites                                                           (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void US6Auto_SuiteSubsystem::RunSuites(const TArray<class US6Auto_Suite*>& InSuites)
+void US6Auto_SuiteSubsystem::RunSuites(const TArray<class US6Auto_Suite*>& Suites)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,16 +82,100 @@ void US6Auto_SuiteSubsystem::RunSuites(const TArray<class US6Auto_Suite*>& InSui
 
 	Params::US6Auto_SuiteSubsystem_RunSuites_Params Parms{};
 
-	Parms.Suites = InSuites;
+	Parms.Suites = Suites;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class S6Automation.S6Auto_SuiteBlackboard
+// (None)
+
+class UClass* US6Auto_SuiteBlackboard::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6Auto_SuiteBlackboard");
+
+	return Clss;
+}
+
+
+// S6Auto_SuiteBlackboard S6Automation.Default__S6Auto_SuiteBlackboard
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6Auto_SuiteBlackboard* US6Auto_SuiteBlackboard::GetDefaultObj()
+{
+	static class US6Auto_SuiteBlackboard* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6Auto_SuiteBlackboard*>(US6Auto_SuiteBlackboard::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6Automation.S6Auto_SuiteStepPayload
+// (None)
+
+class UClass* US6Auto_SuiteStepPayload::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6Auto_SuiteStepPayload");
+
+	return Clss;
+}
+
+
+// S6Auto_SuiteStepPayload S6Automation.Default__S6Auto_SuiteStepPayload
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6Auto_SuiteStepPayload* US6Auto_SuiteStepPayload::GetDefaultObj()
+{
+	static class US6Auto_SuiteStepPayload* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6Auto_SuiteStepPayload*>(US6Auto_SuiteStepPayload::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6Automation.S6Auto_SuiteStepScript
+// (None)
+
+class UClass* US6Auto_SuiteStepScript::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6Auto_SuiteStepScript");
+
+	return Clss;
+}
+
+
+// S6Auto_SuiteStepScript S6Automation.Default__S6Auto_SuiteStepScript
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6Auto_SuiteStepScript* US6Auto_SuiteStepScript::GetDefaultObj()
+{
+	static class US6Auto_SuiteStepScript* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6Auto_SuiteStepScript*>(US6Auto_SuiteStepScript::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -66,7 +203,7 @@ void US6Auto_SuiteStepScript::StartStep()
 // Parameters:
 // class FString                      ErrorMessage                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6Auto_SuiteStepScript::MarkStepFailed(const class FString& InErrorMessage)
+void US6Auto_SuiteStepScript::MarkStepFailed(const class FString& ErrorMessage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -75,15 +212,15 @@ void US6Auto_SuiteStepScript::MarkStepFailed(const class FString& InErrorMessage
 
 	Params::US6Auto_SuiteStepScript_MarkStepFailed_Params Parms{};
 
-	Parms.ErrorMessage = InErrorMessage;
+	Parms.ErrorMessage = ErrorMessage;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -102,13 +239,13 @@ void US6Auto_SuiteStepScript::MarkStepCompleted()
 	Params::US6Auto_SuiteStepScript_MarkStepCompleted_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -119,7 +256,7 @@ void US6Auto_SuiteStepScript::MarkStepCompleted()
 // class US6Auto_SuiteStepPayload*    ScriptPayload                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString US6Auto_SuiteStepScript::GetScriptDisplayName(class US6Auto_SuiteStepPayload* InScriptPayload)
+class FString US6Auto_SuiteStepScript::GetScriptDisplayName(class US6Auto_SuiteStepPayload* ScriptPayload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -128,12 +265,40 @@ class FString US6Auto_SuiteStepScript::GetScriptDisplayName(class US6Auto_SuiteS
 
 	Params::US6Auto_SuiteStepScript_GetScriptDisplayName_Params Parms{};
 
-	Parms.ScriptPayload = InScriptPayload;
+	Parms.ScriptPayload = ScriptPayload;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class S6Automation.S6AutoStatics
+// (None)
+
+class UClass* US6AutoStatics::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6AutoStatics");
+
+	return Clss;
+}
+
+
+// S6AutoStatics S6Automation.Default__S6AutoStatics
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6AutoStatics* US6AutoStatics::GetDefaultObj()
+{
+	static class US6AutoStatics* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6AutoStatics*>(US6AutoStatics::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -143,7 +308,7 @@ class FString US6Auto_SuiteStepScript::GetScriptDisplayName(class US6Auto_SuiteS
 // class FString                      SuiteId                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<TSoftObjectPtr<class US6Auto_Suite>>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 
-TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromId(const class FString& InSuiteId)
+TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromId(const class FString& SuiteId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -152,15 +317,15 @@ TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromId(cons
 
 	Params::US6AutoStatics_GetSuitesFromId_Params Parms{};
 
-	Parms.SuiteId = InSuiteId;
+	Parms.SuiteId = SuiteId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -173,7 +338,7 @@ TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromId(cons
 // class FName                        SuiteAssetName                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<TSoftObjectPtr<class US6Auto_Suite>>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 
-TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromAssetName(class FName& InSuiteAssetName)
+TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromAssetName(class FName& SuiteAssetName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -182,15 +347,15 @@ TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetSuitesFromAssetNa
 
 	Params::US6AutoStatics_GetSuitesFromAssetName_Params Parms{};
 
-	Parms.SuiteAssetName = InSuiteAssetName;
+	Parms.SuiteAssetName = SuiteAssetName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -212,13 +377,13 @@ TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetAllSuites()
 	Params::US6AutoStatics_GetAllSuites_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -226,6 +391,4 @@ TArray<TSoftObjectPtr<class US6Auto_Suite>> US6AutoStatics::GetAllSuites()
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

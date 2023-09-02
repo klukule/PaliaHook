@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class ConsoleVariablesEditorRuntime.ConsoleVariablesAsset
+// (None)
+
+class UClass* UConsoleVariablesAsset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ConsoleVariablesAsset");
+
+	return Clss;
+}
+
+
+// ConsoleVariablesAsset ConsoleVariablesEditorRuntime.Default__ConsoleVariablesAsset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UConsoleVariablesAsset* UConsoleVariablesAsset::GetDefaultObj()
+{
+	static class UConsoleVariablesAsset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UConsoleVariablesAsset*>(UConsoleVariablesAsset::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ConsoleVariablesEditorRuntime.ConsoleVariablesAsset.SetVariableCollectionDescription
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FString                      InVariableCollectionDescription                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UConsoleVariablesAsset::SetVariableCollectionDescription(const class FString& InInVariableCollectionDescription)
+void UConsoleVariablesAsset::SetVariableCollectionDescription(const class FString& InVariableCollectionDescription)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +54,15 @@ void UConsoleVariablesAsset::SetVariableCollectionDescription(const class FStrin
 
 	Params::UConsoleVariablesAsset_SetVariableCollectionDescription_Params Parms{};
 
-	Parms.InVariableCollectionDescription = InInVariableCollectionDescription;
+	Parms.InVariableCollectionDescription = InVariableCollectionDescription;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -47,7 +72,7 @@ void UConsoleVariablesAsset::SetVariableCollectionDescription(const class FStrin
 // Parameters:
 // TArray<struct FConsoleVariablesEditorAssetSaveData>Replacement                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UConsoleVariablesAsset::ReplaceSavedCommands(TArray<struct FConsoleVariablesEditorAssetSaveData>& InReplacement)
+void UConsoleVariablesAsset::ReplaceSavedCommands(TArray<struct FConsoleVariablesEditorAssetSaveData>& Replacement)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,15 +81,15 @@ void UConsoleVariablesAsset::ReplaceSavedCommands(TArray<struct FConsoleVariable
 
 	Params::UConsoleVariablesAsset_ReplaceSavedCommands_Params Parms{};
 
-	Parms.Replacement = InReplacement;
+	Parms.Replacement = Replacement;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -75,7 +100,7 @@ void UConsoleVariablesAsset::ReplaceSavedCommands(TArray<struct FConsoleVariable
 // class FString                      InCommandString                                                  (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UConsoleVariablesAsset::RemoveConsoleVariable(const class FString& InInCommandString)
+bool UConsoleVariablesAsset::RemoveConsoleVariable(const class FString& InCommandString)
 {
 	static class UFunction* Func = nullptr;
 
@@ -84,15 +109,15 @@ bool UConsoleVariablesAsset::RemoveConsoleVariable(const class FString& InInComm
 
 	Params::UConsoleVariablesAsset_RemoveConsoleVariable_Params Parms{};
 
-	Parms.InCommandString = InInCommandString;
+	Parms.InCommandString = InCommandString;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -114,13 +139,13 @@ class FString UConsoleVariablesAsset::GetVariableCollectionDescription()
 	Params::UConsoleVariablesAsset_GetVariableCollectionDescription_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -142,13 +167,13 @@ int32 UConsoleVariablesAsset::GetSavedCommandsCount()
 	Params::UConsoleVariablesAsset_GetSavedCommandsCount_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -161,7 +186,7 @@ int32 UConsoleVariablesAsset::GetSavedCommandsCount()
 // bool                               bOnlyIncludeChecked                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class FString> UConsoleVariablesAsset::GetSavedCommandsAsStringArray(bool InbOnlyIncludeChecked)
+TArray<class FString> UConsoleVariablesAsset::GetSavedCommandsAsStringArray(bool bOnlyIncludeChecked)
 {
 	static class UFunction* Func = nullptr;
 
@@ -170,15 +195,15 @@ TArray<class FString> UConsoleVariablesAsset::GetSavedCommandsAsStringArray(bool
 
 	Params::UConsoleVariablesAsset_GetSavedCommandsAsStringArray_Params Parms{};
 
-	Parms.bOnlyIncludeChecked = InbOnlyIncludeChecked;
+	Parms.bOnlyIncludeChecked = bOnlyIncludeChecked;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -191,7 +216,7 @@ TArray<class FString> UConsoleVariablesAsset::GetSavedCommandsAsStringArray(bool
 // bool                               bOnlyIncludeChecked                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UConsoleVariablesAsset::GetSavedCommandsAsCommaSeparatedString(bool InbOnlyIncludeChecked)
+class FString UConsoleVariablesAsset::GetSavedCommandsAsCommaSeparatedString(bool bOnlyIncludeChecked)
 {
 	static class UFunction* Func = nullptr;
 
@@ -200,15 +225,15 @@ class FString UConsoleVariablesAsset::GetSavedCommandsAsCommaSeparatedString(boo
 
 	Params::UConsoleVariablesAsset_GetSavedCommandsAsCommaSeparatedString_Params Parms{};
 
-	Parms.bOnlyIncludeChecked = InbOnlyIncludeChecked;
+	Parms.bOnlyIncludeChecked = bOnlyIncludeChecked;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -230,13 +255,13 @@ TArray<struct FConsoleVariablesEditorAssetSaveData> UConsoleVariablesAsset::GetS
 	Params::UConsoleVariablesAsset_GetSavedCommands_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -251,7 +276,7 @@ TArray<struct FConsoleVariablesEditorAssetSaveData> UConsoleVariablesAsset::GetS
 // enum class ESearchCase             SearchCase                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UConsoleVariablesAsset::FindSavedDataByCommandString(const class FString& InInCommandString, struct FConsoleVariablesEditorAssetSaveData* InOutValue, enum class ESearchCase InSearchCase)
+bool UConsoleVariablesAsset::FindSavedDataByCommandString(const class FString& InCommandString, struct FConsoleVariablesEditorAssetSaveData* OutValue, enum class ESearchCase SearchCase)
 {
 	static class UFunction* Func = nullptr;
 
@@ -260,19 +285,19 @@ bool UConsoleVariablesAsset::FindSavedDataByCommandString(const class FString& I
 
 	Params::UConsoleVariablesAsset_FindSavedDataByCommandString_Params Parms{};
 
-	Parms.InCommandString = InInCommandString;
-	Parms.SearchCase = InSearchCase;
+	Parms.InCommandString = InCommandString;
+	Parms.SearchCase = SearchCase;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutValue != nullptr)
-		*InOutValue = Parms.OutValue;
+	if (OutValue != nullptr)
+		*OutValue = std::move(Parms.OutValue);
 
 	return Parms.ReturnValue;
 
@@ -285,7 +310,7 @@ bool UConsoleVariablesAsset::FindSavedDataByCommandString(const class FString& I
 // class UObject*                     WorldContextObject                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bOnlyIncludeChecked                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UConsoleVariablesAsset::ExecuteSavedCommands(class UObject* InWorldContextObject, bool InbOnlyIncludeChecked)
+void UConsoleVariablesAsset::ExecuteSavedCommands(class UObject* WorldContextObject, bool bOnlyIncludeChecked)
 {
 	static class UFunction* Func = nullptr;
 
@@ -294,16 +319,16 @@ void UConsoleVariablesAsset::ExecuteSavedCommands(class UObject* InWorldContextO
 
 	Params::UConsoleVariablesAsset_ExecuteSavedCommands_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.bOnlyIncludeChecked = InbOnlyIncludeChecked;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.bOnlyIncludeChecked = bOnlyIncludeChecked;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -313,7 +338,7 @@ void UConsoleVariablesAsset::ExecuteSavedCommands(class UObject* InWorldContextO
 // Parameters:
 // class UConsoleVariablesAsset*      InAssetToCopy                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UConsoleVariablesAsset::CopyFrom(class UConsoleVariablesAsset* InInAssetToCopy)
+void UConsoleVariablesAsset::CopyFrom(class UConsoleVariablesAsset* InAssetToCopy)
 {
 	static class UFunction* Func = nullptr;
 
@@ -322,15 +347,15 @@ void UConsoleVariablesAsset::CopyFrom(class UConsoleVariablesAsset* InInAssetToC
 
 	Params::UConsoleVariablesAsset_CopyFrom_Params Parms{};
 
-	Parms.InAssetToCopy = InInAssetToCopy;
+	Parms.InAssetToCopy = InAssetToCopy;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -340,7 +365,7 @@ void UConsoleVariablesAsset::CopyFrom(class UConsoleVariablesAsset* InInAssetToC
 // Parameters:
 // struct FConsoleVariablesEditorAssetSaveDataInData                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UConsoleVariablesAsset::AddOrSetConsoleObjectSavedData(struct FConsoleVariablesEditorAssetSaveData& InInData)
+void UConsoleVariablesAsset::AddOrSetConsoleObjectSavedData(struct FConsoleVariablesEditorAssetSaveData& InData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -349,20 +374,18 @@ void UConsoleVariablesAsset::AddOrSetConsoleObjectSavedData(struct FConsoleVaria
 
 	Params::UConsoleVariablesAsset_AddOrSetConsoleObjectSavedData_Params Parms{};
 
-	Parms.InData = InInData;
+	Parms.InData = InData;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

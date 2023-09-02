@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class AudioWidgets.AudioMeter
+// (None)
+
+class UClass* UAudioMeter::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioMeter");
+
+	return Clss;
+}
+
+
+// AudioMeter AudioWidgets.Default__AudioMeter
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioMeter* UAudioMeter::GetDefaultObj()
+{
+	static class UAudioMeter* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioMeter*>(UAudioMeter::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function AudioWidgets.AudioMeter.SetMeterValueColor
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMeter::SetMeterValueColor(const struct FLinearColor& InInValue)
+void UAudioMeter::SetMeterValueColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +54,15 @@ void UAudioMeter::SetMeterValueColor(const struct FLinearColor& InInValue)
 
 	Params::UAudioMeter_SetMeterValueColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -47,7 +72,7 @@ void UAudioMeter::SetMeterValueColor(const struct FLinearColor& InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMeter::SetMeterScaleLabelColor(const struct FLinearColor& InInValue)
+void UAudioMeter::SetMeterScaleLabelColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,15 +81,15 @@ void UAudioMeter::SetMeterScaleLabelColor(const struct FLinearColor& InInValue)
 
 	Params::UAudioMeter_SetMeterScaleLabelColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -74,7 +99,7 @@ void UAudioMeter::SetMeterScaleLabelColor(const struct FLinearColor& InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMeter::SetMeterScaleColor(const struct FLinearColor& InInValue)
+void UAudioMeter::SetMeterScaleColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,15 +108,15 @@ void UAudioMeter::SetMeterScaleColor(const struct FLinearColor& InInValue)
 
 	Params::UAudioMeter_SetMeterScaleColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -101,7 +126,7 @@ void UAudioMeter::SetMeterScaleColor(const struct FLinearColor& InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMeter::SetMeterPeakColor(const struct FLinearColor& InInValue)
+void UAudioMeter::SetMeterPeakColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -110,15 +135,15 @@ void UAudioMeter::SetMeterPeakColor(const struct FLinearColor& InInValue)
 
 	Params::UAudioMeter_SetMeterPeakColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -128,7 +153,7 @@ void UAudioMeter::SetMeterPeakColor(const struct FLinearColor& InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMeter::SetMeterClippingColor(const struct FLinearColor& InInValue)
+void UAudioMeter::SetMeterClippingColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -137,15 +162,15 @@ void UAudioMeter::SetMeterClippingColor(const struct FLinearColor& InInValue)
 
 	Params::UAudioMeter_SetMeterClippingColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -155,7 +180,7 @@ void UAudioMeter::SetMeterClippingColor(const struct FLinearColor& InInValue)
 // Parameters:
 // TArray<struct FMeterChannelInfo>   InMeterChannelInfo                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UAudioMeter::SetMeterChannelInfo(TArray<struct FMeterChannelInfo>& InInMeterChannelInfo)
+void UAudioMeter::SetMeterChannelInfo(TArray<struct FMeterChannelInfo>& InMeterChannelInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -164,15 +189,15 @@ void UAudioMeter::SetMeterChannelInfo(TArray<struct FMeterChannelInfo>& InInMete
 
 	Params::UAudioMeter_SetMeterChannelInfo_Params Parms{};
 
-	Parms.InMeterChannelInfo = InInMeterChannelInfo;
+	Parms.InMeterChannelInfo = InMeterChannelInfo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -182,7 +207,7 @@ void UAudioMeter::SetMeterChannelInfo(TArray<struct FMeterChannelInfo>& InInMete
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMeter::SetMeterBackgroundColor(const struct FLinearColor& InInValue)
+void UAudioMeter::SetMeterBackgroundColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -191,15 +216,15 @@ void UAudioMeter::SetMeterBackgroundColor(const struct FLinearColor& InInValue)
 
 	Params::UAudioMeter_SetMeterBackgroundColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -209,7 +234,7 @@ void UAudioMeter::SetMeterBackgroundColor(const struct FLinearColor& InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMeter::SetBackgroundColor(const struct FLinearColor& InInValue)
+void UAudioMeter::SetBackgroundColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -218,15 +243,15 @@ void UAudioMeter::SetBackgroundColor(const struct FLinearColor& InInValue)
 
 	Params::UAudioMeter_SetBackgroundColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -268,16 +293,44 @@ TArray<struct FMeterChannelInfo> UAudioMeter::GetMeterChannelInfo()
 	Params::UAudioMeter_GetMeterChannelInfo_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AudioWidgets.AudioRadialSlider
+// (None)
+
+class UClass* UAudioRadialSlider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioRadialSlider");
+
+	return Clss;
+}
+
+
+// AudioRadialSlider AudioWidgets.Default__AudioRadialSlider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioRadialSlider* UAudioRadialSlider::GetDefaultObj()
+{
+	static class UAudioRadialSlider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioRadialSlider*>(UAudioRadialSlider::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -286,7 +339,7 @@ TArray<struct FMeterChannelInfo> UAudioMeter::GetMeterChannelInfo()
 // Parameters:
 // enum class EAudioRadialSliderLayoutInLayout                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetWidgetLayout(enum class EAudioRadialSliderLayout InInLayout)
+void UAudioRadialSlider::SetWidgetLayout(enum class EAudioRadialSliderLayout InLayout)
 {
 	static class UFunction* Func = nullptr;
 
@@ -295,15 +348,15 @@ void UAudioRadialSlider::SetWidgetLayout(enum class EAudioRadialSliderLayout InI
 
 	Params::UAudioRadialSlider_SetWidgetLayout_Params Parms{};
 
-	Parms.InLayout = InInLayout;
+	Parms.InLayout = InLayout;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -313,7 +366,7 @@ void UAudioRadialSlider::SetWidgetLayout(enum class EAudioRadialSliderLayout InI
 // Parameters:
 // bool                               bIsReadOnly                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetValueTextReadOnly(bool InbIsReadOnly)
+void UAudioRadialSlider::SetValueTextReadOnly(bool bIsReadOnly)
 {
 	static class UFunction* Func = nullptr;
 
@@ -322,15 +375,15 @@ void UAudioRadialSlider::SetValueTextReadOnly(bool InbIsReadOnly)
 
 	Params::UAudioRadialSlider_SetValueTextReadOnly_Params Parms{};
 
-	Parms.bIsReadOnly = InbIsReadOnly;
+	Parms.bIsReadOnly = bIsReadOnly;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -340,7 +393,7 @@ void UAudioRadialSlider::SetValueTextReadOnly(bool InbIsReadOnly)
 // Parameters:
 // bool                               bIsReadOnly                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetUnitsTextReadOnly(bool InbIsReadOnly)
+void UAudioRadialSlider::SetUnitsTextReadOnly(bool bIsReadOnly)
 {
 	static class UFunction* Func = nullptr;
 
@@ -349,15 +402,15 @@ void UAudioRadialSlider::SetUnitsTextReadOnly(bool InbIsReadOnly)
 
 	Params::UAudioRadialSlider_SetUnitsTextReadOnly_Params Parms{};
 
-	Parms.bIsReadOnly = InbIsReadOnly;
+	Parms.bIsReadOnly = bIsReadOnly;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -367,7 +420,7 @@ void UAudioRadialSlider::SetUnitsTextReadOnly(bool InbIsReadOnly)
 // Parameters:
 // class FText                        Units                                                            (ConstParm, Parm, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetUnitsText(class FText InUnits)
+void UAudioRadialSlider::SetUnitsText(class FText Units)
 {
 	static class UFunction* Func = nullptr;
 
@@ -376,15 +429,15 @@ void UAudioRadialSlider::SetUnitsText(class FText InUnits)
 
 	Params::UAudioRadialSlider_SetUnitsText_Params Parms{};
 
-	Parms.Units = InUnits;
+	Parms.Units = Units;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -394,7 +447,7 @@ void UAudioRadialSlider::SetUnitsText(class FText InUnits)
 // Parameters:
 // struct FSlateColor                 InColor                                                          (Parm, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetTextLabelBackgroundColor(const struct FSlateColor& InInColor)
+void UAudioRadialSlider::SetTextLabelBackgroundColor(const struct FSlateColor& InColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -403,15 +456,15 @@ void UAudioRadialSlider::SetTextLabelBackgroundColor(const struct FSlateColor& I
 
 	Params::UAudioRadialSlider_SetTextLabelBackgroundColor_Params Parms{};
 
-	Parms.InColor = InInColor;
+	Parms.InColor = InColor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -421,7 +474,7 @@ void UAudioRadialSlider::SetTextLabelBackgroundColor(const struct FSlateColor& I
 // Parameters:
 // float                              InThickness                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetSliderThickness(float InInThickness)
+void UAudioRadialSlider::SetSliderThickness(float InThickness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -430,15 +483,15 @@ void UAudioRadialSlider::SetSliderThickness(float InInThickness)
 
 	Params::UAudioRadialSlider_SetSliderThickness_Params Parms{};
 
-	Parms.InThickness = InInThickness;
+	Parms.InThickness = InThickness;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -448,7 +501,7 @@ void UAudioRadialSlider::SetSliderThickness(float InInThickness)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetSliderProgressColor(const struct FLinearColor& InInValue)
+void UAudioRadialSlider::SetSliderProgressColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -457,15 +510,15 @@ void UAudioRadialSlider::SetSliderProgressColor(const struct FLinearColor& InInV
 
 	Params::UAudioRadialSlider_SetSliderProgressColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -475,7 +528,7 @@ void UAudioRadialSlider::SetSliderProgressColor(const struct FLinearColor& InInV
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetSliderBarColor(const struct FLinearColor& InInValue)
+void UAudioRadialSlider::SetSliderBarColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -484,15 +537,15 @@ void UAudioRadialSlider::SetSliderBarColor(const struct FLinearColor& InInValue)
 
 	Params::UAudioRadialSlider_SetSliderBarColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -502,7 +555,7 @@ void UAudioRadialSlider::SetSliderBarColor(const struct FLinearColor& InInValue)
 // Parameters:
 // bool                               bShowUnitsText                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetShowUnitsText(bool InbShowUnitsText)
+void UAudioRadialSlider::SetShowUnitsText(bool bShowUnitsText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -511,15 +564,15 @@ void UAudioRadialSlider::SetShowUnitsText(bool InbShowUnitsText)
 
 	Params::UAudioRadialSlider_SetShowUnitsText_Params Parms{};
 
-	Parms.bShowUnitsText = InbShowUnitsText;
+	Parms.bShowUnitsText = bShowUnitsText;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -529,7 +582,7 @@ void UAudioRadialSlider::SetShowUnitsText(bool InbShowUnitsText)
 // Parameters:
 // bool                               bShowLabelOnlyOnHover                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetShowLabelOnlyOnHover(bool InbShowLabelOnlyOnHover)
+void UAudioRadialSlider::SetShowLabelOnlyOnHover(bool bShowLabelOnlyOnHover)
 {
 	static class UFunction* Func = nullptr;
 
@@ -538,15 +591,15 @@ void UAudioRadialSlider::SetShowLabelOnlyOnHover(bool InbShowLabelOnlyOnHover)
 
 	Params::UAudioRadialSlider_SetShowLabelOnlyOnHover_Params Parms{};
 
-	Parms.bShowLabelOnlyOnHover = InbShowLabelOnlyOnHover;
+	Parms.bShowLabelOnlyOnHover = bShowLabelOnlyOnHover;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -556,7 +609,7 @@ void UAudioRadialSlider::SetShowLabelOnlyOnHover(bool InbShowLabelOnlyOnHover)
 // Parameters:
 // struct FVector2D                   InOutputRange                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetOutputRange(const struct FVector2D& InInOutputRange)
+void UAudioRadialSlider::SetOutputRange(const struct FVector2D& InOutputRange)
 {
 	static class UFunction* Func = nullptr;
 
@@ -565,15 +618,15 @@ void UAudioRadialSlider::SetOutputRange(const struct FVector2D& InInOutputRange)
 
 	Params::UAudioRadialSlider_SetOutputRange_Params Parms{};
 
-	Parms.InOutputRange = InInOutputRange;
+	Parms.InOutputRange = InOutputRange;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -583,7 +636,7 @@ void UAudioRadialSlider::SetOutputRange(const struct FVector2D& InInOutputRange)
 // Parameters:
 // struct FVector2D                   InHandStartEndRatio                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetHandStartEndRatio(const struct FVector2D& InInHandStartEndRatio)
+void UAudioRadialSlider::SetHandStartEndRatio(const struct FVector2D& InHandStartEndRatio)
 {
 	static class UFunction* Func = nullptr;
 
@@ -592,15 +645,15 @@ void UAudioRadialSlider::SetHandStartEndRatio(const struct FVector2D& InInHandSt
 
 	Params::UAudioRadialSlider_SetHandStartEndRatio_Params Parms{};
 
-	Parms.InHandStartEndRatio = InInHandStartEndRatio;
+	Parms.InHandStartEndRatio = InHandStartEndRatio;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -610,7 +663,7 @@ void UAudioRadialSlider::SetHandStartEndRatio(const struct FVector2D& InInHandSt
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioRadialSlider::SetCenterBackgroundColor(const struct FLinearColor& InInValue)
+void UAudioRadialSlider::SetCenterBackgroundColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -619,15 +672,15 @@ void UAudioRadialSlider::SetCenterBackgroundColor(const struct FLinearColor& InI
 
 	Params::UAudioRadialSlider_SetCenterBackgroundColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -638,7 +691,7 @@ void UAudioRadialSlider::SetCenterBackgroundColor(const struct FLinearColor& InI
 // float                              OutputValue                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAudioRadialSlider::GetSliderValue(float InOutputValue)
+float UAudioRadialSlider::GetSliderValue(float OutputValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -647,15 +700,15 @@ float UAudioRadialSlider::GetSliderValue(float InOutputValue)
 
 	Params::UAudioRadialSlider_GetSliderValue_Params Parms{};
 
-	Parms.OutputValue = InOutputValue;
+	Parms.OutputValue = OutputValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -668,7 +721,7 @@ float UAudioRadialSlider::GetSliderValue(float InOutputValue)
 // float                              InSliderValue                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAudioRadialSlider::GetOutputValue(float InInSliderValue)
+float UAudioRadialSlider::GetOutputValue(float InSliderValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -677,18 +730,102 @@ float UAudioRadialSlider::GetOutputValue(float InInSliderValue)
 
 	Params::UAudioRadialSlider_GetOutputValue_Params Parms{};
 
-	Parms.InSliderValue = InInSliderValue;
+	Parms.InSliderValue = InSliderValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AudioWidgets.AudioVolumeRadialSlider
+// (None)
+
+class UClass* UAudioVolumeRadialSlider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioVolumeRadialSlider");
+
+	return Clss;
+}
+
+
+// AudioVolumeRadialSlider AudioWidgets.Default__AudioVolumeRadialSlider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioVolumeRadialSlider* UAudioVolumeRadialSlider::GetDefaultObj()
+{
+	static class UAudioVolumeRadialSlider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioVolumeRadialSlider*>(UAudioVolumeRadialSlider::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AudioWidgets.AudioFrequencyRadialSlider
+// (None)
+
+class UClass* UAudioFrequencyRadialSlider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioFrequencyRadialSlider");
+
+	return Clss;
+}
+
+
+// AudioFrequencyRadialSlider AudioWidgets.Default__AudioFrequencyRadialSlider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioFrequencyRadialSlider* UAudioFrequencyRadialSlider::GetDefaultObj()
+{
+	static class UAudioFrequencyRadialSlider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioFrequencyRadialSlider*>(UAudioFrequencyRadialSlider::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AudioWidgets.AudioSliderBase
+// (None)
+
+class UClass* UAudioSliderBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioSliderBase");
+
+	return Clss;
+}
+
+
+// AudioSliderBase AudioWidgets.Default__AudioSliderBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioSliderBase* UAudioSliderBase::GetDefaultObj()
+{
+	static class UAudioSliderBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioSliderBase*>(UAudioSliderBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -697,7 +834,7 @@ float UAudioRadialSlider::GetOutputValue(float InInSliderValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioSliderBase::SetWidgetBackgroundColor(const struct FLinearColor& InInValue)
+void UAudioSliderBase::SetWidgetBackgroundColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -706,15 +843,15 @@ void UAudioSliderBase::SetWidgetBackgroundColor(const struct FLinearColor& InInV
 
 	Params::UAudioSliderBase_SetWidgetBackgroundColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -724,7 +861,7 @@ void UAudioSliderBase::SetWidgetBackgroundColor(const struct FLinearColor& InInV
 // Parameters:
 // bool                               bIsReadOnly                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioSliderBase::SetValueTextReadOnly(bool InbIsReadOnly)
+void UAudioSliderBase::SetValueTextReadOnly(bool bIsReadOnly)
 {
 	static class UFunction* Func = nullptr;
 
@@ -733,15 +870,15 @@ void UAudioSliderBase::SetValueTextReadOnly(bool InbIsReadOnly)
 
 	Params::UAudioSliderBase_SetValueTextReadOnly_Params Parms{};
 
-	Parms.bIsReadOnly = InbIsReadOnly;
+	Parms.bIsReadOnly = bIsReadOnly;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -751,7 +888,7 @@ void UAudioSliderBase::SetValueTextReadOnly(bool InbIsReadOnly)
 // Parameters:
 // bool                               bIsReadOnly                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioSliderBase::SetUnitsTextReadOnly(bool InbIsReadOnly)
+void UAudioSliderBase::SetUnitsTextReadOnly(bool bIsReadOnly)
 {
 	static class UFunction* Func = nullptr;
 
@@ -760,15 +897,15 @@ void UAudioSliderBase::SetUnitsTextReadOnly(bool InbIsReadOnly)
 
 	Params::UAudioSliderBase_SetUnitsTextReadOnly_Params Parms{};
 
-	Parms.bIsReadOnly = InbIsReadOnly;
+	Parms.bIsReadOnly = bIsReadOnly;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -778,7 +915,7 @@ void UAudioSliderBase::SetUnitsTextReadOnly(bool InbIsReadOnly)
 // Parameters:
 // class FText                        Units                                                            (ConstParm, Parm, NativeAccessSpecifierPublic)
 
-void UAudioSliderBase::SetUnitsText(class FText InUnits)
+void UAudioSliderBase::SetUnitsText(class FText Units)
 {
 	static class UFunction* Func = nullptr;
 
@@ -787,15 +924,15 @@ void UAudioSliderBase::SetUnitsText(class FText InUnits)
 
 	Params::UAudioSliderBase_SetUnitsText_Params Parms{};
 
-	Parms.Units = InUnits;
+	Parms.Units = Units;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -805,7 +942,7 @@ void UAudioSliderBase::SetUnitsText(class FText InUnits)
 // Parameters:
 // struct FSlateColor                 InColor                                                          (Parm, NativeAccessSpecifierPublic)
 
-void UAudioSliderBase::SetTextLabelBackgroundColor(const struct FSlateColor& InInColor)
+void UAudioSliderBase::SetTextLabelBackgroundColor(const struct FSlateColor& InColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -814,15 +951,15 @@ void UAudioSliderBase::SetTextLabelBackgroundColor(const struct FSlateColor& InI
 
 	Params::UAudioSliderBase_SetTextLabelBackgroundColor_Params Parms{};
 
-	Parms.InColor = InInColor;
+	Parms.InColor = InColor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -832,7 +969,7 @@ void UAudioSliderBase::SetTextLabelBackgroundColor(const struct FSlateColor& InI
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioSliderBase::SetSliderThumbColor(const struct FLinearColor& InInValue)
+void UAudioSliderBase::SetSliderThumbColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -841,15 +978,15 @@ void UAudioSliderBase::SetSliderThumbColor(const struct FLinearColor& InInValue)
 
 	Params::UAudioSliderBase_SetSliderThumbColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -859,7 +996,7 @@ void UAudioSliderBase::SetSliderThumbColor(const struct FLinearColor& InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioSliderBase::SetSliderBarColor(const struct FLinearColor& InInValue)
+void UAudioSliderBase::SetSliderBarColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -868,15 +1005,15 @@ void UAudioSliderBase::SetSliderBarColor(const struct FLinearColor& InInValue)
 
 	Params::UAudioSliderBase_SetSliderBarColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -886,7 +1023,7 @@ void UAudioSliderBase::SetSliderBarColor(const struct FLinearColor& InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioSliderBase::SetSliderBackgroundColor(const struct FLinearColor& InInValue)
+void UAudioSliderBase::SetSliderBackgroundColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -895,15 +1032,15 @@ void UAudioSliderBase::SetSliderBackgroundColor(const struct FLinearColor& InInV
 
 	Params::UAudioSliderBase_SetSliderBackgroundColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -913,7 +1050,7 @@ void UAudioSliderBase::SetSliderBackgroundColor(const struct FLinearColor& InInV
 // Parameters:
 // bool                               bShowUnitsText                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioSliderBase::SetShowUnitsText(bool InbShowUnitsText)
+void UAudioSliderBase::SetShowUnitsText(bool bShowUnitsText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -922,15 +1059,15 @@ void UAudioSliderBase::SetShowUnitsText(bool InbShowUnitsText)
 
 	Params::UAudioSliderBase_SetShowUnitsText_Params Parms{};
 
-	Parms.bShowUnitsText = InbShowUnitsText;
+	Parms.bShowUnitsText = bShowUnitsText;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -940,7 +1077,7 @@ void UAudioSliderBase::SetShowUnitsText(bool InbShowUnitsText)
 // Parameters:
 // bool                               bShowLabelOnlyOnHover                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioSliderBase::SetShowLabelOnlyOnHover(bool InbShowLabelOnlyOnHover)
+void UAudioSliderBase::SetShowLabelOnlyOnHover(bool bShowLabelOnlyOnHover)
 {
 	static class UFunction* Func = nullptr;
 
@@ -949,15 +1086,15 @@ void UAudioSliderBase::SetShowLabelOnlyOnHover(bool InbShowLabelOnlyOnHover)
 
 	Params::UAudioSliderBase_SetShowLabelOnlyOnHover_Params Parms{};
 
-	Parms.bShowLabelOnlyOnHover = InbShowLabelOnlyOnHover;
+	Parms.bShowLabelOnlyOnHover = bShowLabelOnlyOnHover;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -968,7 +1105,7 @@ void UAudioSliderBase::SetShowLabelOnlyOnHover(bool InbShowLabelOnlyOnHover)
 // float                              OutputValue                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAudioSliderBase::GetSliderValue(float InOutputValue)
+float UAudioSliderBase::GetSliderValue(float OutputValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -977,15 +1114,15 @@ float UAudioSliderBase::GetSliderValue(float InOutputValue)
 
 	Params::UAudioSliderBase_GetSliderValue_Params Parms{};
 
-	Parms.OutputValue = InOutputValue;
+	Parms.OutputValue = OutputValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -998,7 +1135,7 @@ float UAudioSliderBase::GetSliderValue(float InOutputValue)
 // float                              InSliderValue                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAudioSliderBase::GetOutputValue(float InInSliderValue)
+float UAudioSliderBase::GetOutputValue(float InSliderValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1007,15 +1144,15 @@ float UAudioSliderBase::GetOutputValue(float InInSliderValue)
 
 	Params::UAudioSliderBase_GetOutputValue_Params Parms{};
 
-	Parms.InSliderValue = InInSliderValue;
+	Parms.InSliderValue = InSliderValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1028,7 +1165,7 @@ float UAudioSliderBase::GetOutputValue(float InInSliderValue)
 // float                              OutputValue                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAudioSliderBase::GetLinValue(float InOutputValue)
+float UAudioSliderBase::GetLinValue(float OutputValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1037,22 +1174,104 @@ float UAudioSliderBase::GetLinValue(float InOutputValue)
 
 	Params::UAudioSliderBase_GetLinValue_Params Parms{};
 
-	Parms.OutputValue = InOutputValue;
+	Parms.OutputValue = OutputValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
 }
 
+
+// Class AudioWidgets.AudioSlider
+// (None)
+
+class UClass* UAudioSlider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioSlider");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// AudioSlider AudioWidgets.Default__AudioSlider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioSlider* UAudioSlider::GetDefaultObj()
+{
+	static class UAudioSlider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioSlider*>(UAudioSlider::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AudioWidgets.AudioVolumeSlider
+// (None)
+
+class UClass* UAudioVolumeSlider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioVolumeSlider");
+
+	return Clss;
+}
+
+
+// AudioVolumeSlider AudioWidgets.Default__AudioVolumeSlider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioVolumeSlider* UAudioVolumeSlider::GetDefaultObj()
+{
+	static class UAudioVolumeSlider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioVolumeSlider*>(UAudioVolumeSlider::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AudioWidgets.AudioFrequencySlider
+// (None)
+
+class UClass* UAudioFrequencySlider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioFrequencySlider");
+
+	return Clss;
+}
+
+
+// AudioFrequencySlider AudioWidgets.Default__AudioFrequencySlider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioFrequencySlider* UAudioFrequencySlider::GetDefaultObj()
+{
+	static class UAudioFrequencySlider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioFrequencySlider*>(UAudioFrequencySlider::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

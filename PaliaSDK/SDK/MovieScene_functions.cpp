@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,68 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class MovieScene.MovieSceneSignedObject
+// (None)
+
+class UClass* UMovieSceneSignedObject::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSignedObject");
+
+	return Clss;
+}
+
+
+// MovieSceneSignedObject MovieScene.Default__MovieSceneSignedObject
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSignedObject* UMovieSceneSignedObject::GetDefaultObj()
+{
+	static class UMovieSceneSignedObject* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSignedObject*>(UMovieSceneSignedObject::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneSection
+// (None)
+
+class UClass* UMovieSceneSection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSection");
+
+	return Clss;
+}
+
+
+// MovieSceneSection MovieScene.Default__MovieSceneSection
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSection* UMovieSceneSection::GetDefaultObj()
+{
+	static class UMovieSceneSection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSection*>(UMovieSceneSection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function MovieScene.MovieSceneSection.SetRowIndex
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                              NewRowIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSection::SetRowIndex(int32 InNewRowIndex)
+void UMovieSceneSection::SetRowIndex(int32 NewRowIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +82,15 @@ void UMovieSceneSection::SetRowIndex(int32 InNewRowIndex)
 
 	Params::UMovieSceneSection_SetRowIndex_Params Parms{};
 
-	Parms.NewRowIndex = InNewRowIndex;
+	Parms.NewRowIndex = NewRowIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -47,7 +100,7 @@ void UMovieSceneSection::SetRowIndex(int32 InNewRowIndex)
 // Parameters:
 // int32                              InPreRollFrames                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSection::SetPreRollFrames(int32 InInPreRollFrames)
+void UMovieSceneSection::SetPreRollFrames(int32 InPreRollFrames)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,15 +109,15 @@ void UMovieSceneSection::SetPreRollFrames(int32 InInPreRollFrames)
 
 	Params::UMovieSceneSection_SetPreRollFrames_Params Parms{};
 
-	Parms.InPreRollFrames = InInPreRollFrames;
+	Parms.InPreRollFrames = InPreRollFrames;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -74,7 +127,7 @@ void UMovieSceneSection::SetPreRollFrames(int32 InInPreRollFrames)
 // Parameters:
 // int32                              InPostRollFrames                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSection::SetPostRollFrames(int32 InInPostRollFrames)
+void UMovieSceneSection::SetPostRollFrames(int32 InPostRollFrames)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,15 +136,15 @@ void UMovieSceneSection::SetPostRollFrames(int32 InInPostRollFrames)
 
 	Params::UMovieSceneSection_SetPostRollFrames_Params Parms{};
 
-	Parms.InPostRollFrames = InInPostRollFrames;
+	Parms.InPostRollFrames = InPostRollFrames;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -101,7 +154,7 @@ void UMovieSceneSection::SetPostRollFrames(int32 InInPostRollFrames)
 // Parameters:
 // int32                              NewPriority                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSection::SetOverlapPriority(int32 InNewPriority)
+void UMovieSceneSection::SetOverlapPriority(int32 NewPriority)
 {
 	static class UFunction* Func = nullptr;
 
@@ -110,15 +163,15 @@ void UMovieSceneSection::SetOverlapPriority(int32 InNewPriority)
 
 	Params::UMovieSceneSection_SetOverlapPriority_Params Parms{};
 
-	Parms.NewPriority = InNewPriority;
+	Parms.NewPriority = NewPriority;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -128,7 +181,7 @@ void UMovieSceneSection::SetOverlapPriority(int32 InNewPriority)
 // Parameters:
 // bool                               bInIsLocked                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSection::SetIsLocked(bool InbInIsLocked)
+void UMovieSceneSection::SetIsLocked(bool bInIsLocked)
 {
 	static class UFunction* Func = nullptr;
 
@@ -137,15 +190,15 @@ void UMovieSceneSection::SetIsLocked(bool InbInIsLocked)
 
 	Params::UMovieSceneSection_SetIsLocked_Params Parms{};
 
-	Parms.bInIsLocked = InbInIsLocked;
+	Parms.bInIsLocked = bInIsLocked;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -155,7 +208,7 @@ void UMovieSceneSection::SetIsLocked(bool InbInIsLocked)
 // Parameters:
 // bool                               bInIsActive                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSection::SetIsActive(bool InbInIsActive)
+void UMovieSceneSection::SetIsActive(bool bInIsActive)
 {
 	static class UFunction* Func = nullptr;
 
@@ -164,15 +217,15 @@ void UMovieSceneSection::SetIsActive(bool InbInIsActive)
 
 	Params::UMovieSceneSection_SetIsActive_Params Parms{};
 
-	Parms.bInIsActive = InbInIsActive;
+	Parms.bInIsActive = bInIsActive;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -182,7 +235,7 @@ void UMovieSceneSection::SetIsActive(bool InbInIsActive)
 // Parameters:
 // enum class EMovieSceneCompletionModeInCompletionMode                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSection::SetCompletionMode(enum class EMovieSceneCompletionMode InInCompletionMode)
+void UMovieSceneSection::SetCompletionMode(enum class EMovieSceneCompletionMode InCompletionMode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -191,15 +244,15 @@ void UMovieSceneSection::SetCompletionMode(enum class EMovieSceneCompletionMode 
 
 	Params::UMovieSceneSection_SetCompletionMode_Params Parms{};
 
-	Parms.InCompletionMode = InInCompletionMode;
+	Parms.InCompletionMode = InCompletionMode;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -209,7 +262,7 @@ void UMovieSceneSection::SetCompletionMode(enum class EMovieSceneCompletionMode 
 // Parameters:
 // enum class EMovieSceneBlendType    InBlendType                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSection::SetBlendType(enum class EMovieSceneBlendType InInBlendType)
+void UMovieSceneSection::SetBlendType(enum class EMovieSceneBlendType InBlendType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -218,15 +271,15 @@ void UMovieSceneSection::SetBlendType(enum class EMovieSceneBlendType InInBlendT
 
 	Params::UMovieSceneSection_SetBlendType_Params Parms{};
 
-	Parms.InBlendType = InInBlendType;
+	Parms.InBlendType = InBlendType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -246,13 +299,13 @@ bool UMovieSceneSection::IsLocked()
 	Params::UMovieSceneSection_IsLocked_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -274,13 +327,13 @@ bool UMovieSceneSection::IsActive()
 	Params::UMovieSceneSection_IsActive_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -302,13 +355,13 @@ int32 UMovieSceneSection::GetRowIndex()
 	Params::UMovieSceneSection_GetRowIndex_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -330,13 +383,13 @@ int32 UMovieSceneSection::GetPreRollFrames()
 	Params::UMovieSceneSection_GetPreRollFrames_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -358,13 +411,13 @@ int32 UMovieSceneSection::GetPostRollFrames()
 	Params::UMovieSceneSection_GetPostRollFrames_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -386,13 +439,13 @@ int32 UMovieSceneSection::GetOverlapPriority()
 	Params::UMovieSceneSection_GetOverlapPriority_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -414,13 +467,13 @@ enum class EMovieSceneCompletionMode UMovieSceneSection::GetCompletionMode()
 	Params::UMovieSceneSection_GetCompletionMode_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -442,16 +495,128 @@ struct FOptionalMovieSceneBlendType UMovieSceneSection::GetBlendType()
 	Params::UMovieSceneSection_GetBlendType_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class MovieScene.MovieSceneHookSection
+// (None)
+
+class UClass* UMovieSceneHookSection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneHookSection");
+
+	return Clss;
+}
+
+
+// MovieSceneHookSection MovieScene.Default__MovieSceneHookSection
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneHookSection* UMovieSceneHookSection::GetDefaultObj()
+{
+	static class UMovieSceneHookSection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneHookSection*>(UMovieSceneHookSection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneTrack
+// (None)
+
+class UClass* UMovieSceneTrack::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneTrack");
+
+	return Clss;
+}
+
+
+// MovieSceneTrack MovieScene.Default__MovieSceneTrack
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneTrack* UMovieSceneTrack::GetDefaultObj()
+{
+	static class UMovieSceneTrack* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneTrack*>(UMovieSceneTrack::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneNameableTrack
+// (None)
+
+class UClass* UMovieSceneNameableTrack::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneNameableTrack");
+
+	return Clss;
+}
+
+
+// MovieSceneNameableTrack MovieScene.Default__MovieSceneNameableTrack
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneNameableTrack* UMovieSceneNameableTrack::GetDefaultObj()
+{
+	static class UMovieSceneNameableTrack* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneNameableTrack*>(UMovieSceneNameableTrack::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneSequence
+// (None)
+
+class UClass* UMovieSceneSequence::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSequence");
+
+	return Clss;
+}
+
+
+// MovieSceneSequence MovieScene.Default__MovieSceneSequence
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSequence* UMovieSceneSequence::GetDefaultObj()
+{
+	static class UMovieSceneSequence* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSequence*>(UMovieSceneSequence::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -470,13 +635,13 @@ struct FMovieSceneTimecodeSource UMovieSceneSequence::GetEarliestTimecodeSource(
 	Params::UMovieSceneSequence_GetEarliestTimecodeSource_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -489,7 +654,7 @@ struct FMovieSceneTimecodeSource UMovieSceneSequence::GetEarliestTimecodeSource(
 // class FName                        InBindingName                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FMovieSceneObjectBindingID>ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-TArray<struct FMovieSceneObjectBindingID> UMovieSceneSequence::FindBindingsByTag(class FName InInBindingName)
+TArray<struct FMovieSceneObjectBindingID> UMovieSceneSequence::FindBindingsByTag(class FName InBindingName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -498,15 +663,15 @@ TArray<struct FMovieSceneObjectBindingID> UMovieSceneSequence::FindBindingsByTag
 
 	Params::UMovieSceneSequence_FindBindingsByTag_Params Parms{};
 
-	Parms.InBindingName = InInBindingName;
+	Parms.InBindingName = InBindingName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -519,7 +684,7 @@ TArray<struct FMovieSceneObjectBindingID> UMovieSceneSequence::FindBindingsByTag
 // class FName                        InBindingName                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMovieSceneObjectBindingID  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FMovieSceneObjectBindingID UMovieSceneSequence::FindBindingByTag(class FName InInBindingName)
+struct FMovieSceneObjectBindingID UMovieSceneSequence::FindBindingByTag(class FName InBindingName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -528,18 +693,130 @@ struct FMovieSceneObjectBindingID UMovieSceneSequence::FindBindingByTag(class FN
 
 	Params::UMovieSceneSequence_FindBindingByTag_Params Parms{};
 
-	Parms.InBindingName = InInBindingName;
+	Parms.InBindingName = InBindingName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class MovieScene.MovieSceneEntitySystem
+// (None)
+
+class UClass* UMovieSceneEntitySystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneEntitySystem");
+
+	return Clss;
+}
+
+
+// MovieSceneEntitySystem MovieScene.Default__MovieSceneEntitySystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneEntitySystem* UMovieSceneEntitySystem::GetDefaultObj()
+{
+	static class UMovieSceneEntitySystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneEntitySystem*>(UMovieSceneEntitySystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneEntityInstantiatorSystem
+// (None)
+
+class UClass* UMovieSceneEntityInstantiatorSystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneEntityInstantiatorSystem");
+
+	return Clss;
+}
+
+
+// MovieSceneEntityInstantiatorSystem MovieScene.Default__MovieSceneEntityInstantiatorSystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneEntityInstantiatorSystem* UMovieSceneEntityInstantiatorSystem::GetDefaultObj()
+{
+	static class UMovieSceneEntityInstantiatorSystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneEntityInstantiatorSystem*>(UMovieSceneEntityInstantiatorSystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneEntitySystemLinker
+// (None)
+
+class UClass* UMovieSceneEntitySystemLinker::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneEntitySystemLinker");
+
+	return Clss;
+}
+
+
+// MovieSceneEntitySystemLinker MovieScene.Default__MovieSceneEntitySystemLinker
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneEntitySystemLinker* UMovieSceneEntitySystemLinker::GetDefaultObj()
+{
+	static class UMovieSceneEntitySystemLinker* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneEntitySystemLinker*>(UMovieSceneEntitySystemLinker::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneSubSection
+// (None)
+
+class UClass* UMovieSceneSubSection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSubSection");
+
+	return Clss;
+}
+
+
+// MovieSceneSubSection MovieScene.Default__MovieSceneSubSection
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSubSection* UMovieSceneSubSection::GetDefaultObj()
+{
+	static class UMovieSceneSubSection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSubSection*>(UMovieSceneSubSection::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -548,7 +825,7 @@ struct FMovieSceneObjectBindingID UMovieSceneSequence::FindBindingByTag(class FN
 // Parameters:
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSubSection::SetSequence(class UMovieSceneSequence* InSequence)
+void UMovieSceneSubSection::SetSequence(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -557,15 +834,15 @@ void UMovieSceneSubSection::SetSequence(class UMovieSceneSequence* InSequence)
 
 	Params::UMovieSceneSubSection_SetSequence_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -585,16 +862,44 @@ class UMovieSceneSequence* UMovieSceneSubSection::GetSequence()
 	Params::UMovieSceneSubSection_GetSequence_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class MovieScene.MovieSceneSequencePlayer
+// (None)
+
+class UClass* UMovieSceneSequencePlayer::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSequencePlayer");
+
+	return Clss;
+}
+
+
+// MovieSceneSequencePlayer MovieScene.Default__MovieSceneSequencePlayer
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSequencePlayer* UMovieSceneSequencePlayer::GetDefaultObj()
+{
+	static class UMovieSceneSequencePlayer* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSequencePlayer*>(UMovieSceneSequencePlayer::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -612,13 +917,13 @@ void UMovieSceneSequencePlayer::StopAtCurrentTime()
 	Params::UMovieSceneSequencePlayer_StopAtCurrentTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -637,13 +942,13 @@ void UMovieSceneSequencePlayer::Stop()
 	Params::UMovieSceneSequencePlayer_Stop_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -654,7 +959,7 @@ void UMovieSceneSequencePlayer::Stop()
 // float                              StartTime                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Duration                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::SetTimeRange(float InStartTime, float InDuration)
+void UMovieSceneSequencePlayer::SetTimeRange(float StartTime, float Duration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -663,16 +968,16 @@ void UMovieSceneSequencePlayer::SetTimeRange(float InStartTime, float InDuration
 
 	Params::UMovieSceneSequencePlayer_SetTimeRange_Params Parms{};
 
-	Parms.StartTime = InStartTime;
-	Parms.Duration = InDuration;
+	Parms.StartTime = StartTime;
+	Parms.Duration = Duration;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -682,7 +987,7 @@ void UMovieSceneSequencePlayer::SetTimeRange(float InStartTime, float InDuration
 // Parameters:
 // float                              PlayRate                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::SetPlayRate(float InPlayRate)
+void UMovieSceneSequencePlayer::SetPlayRate(float PlayRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -691,15 +996,15 @@ void UMovieSceneSequencePlayer::SetPlayRate(float InPlayRate)
 
 	Params::UMovieSceneSequencePlayer_SetPlayRate_Params Parms{};
 
-	Parms.PlayRate = InPlayRate;
+	Parms.PlayRate = PlayRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -709,7 +1014,7 @@ void UMovieSceneSequencePlayer::SetPlayRate(float InPlayRate)
 // Parameters:
 // struct FMovieSceneSequencePlaybackParamsPlaybackParams                                                   (Parm, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::SetPlaybackPosition(const struct FMovieSceneSequencePlaybackParams& InPlaybackParams)
+void UMovieSceneSequencePlayer::SetPlaybackPosition(const struct FMovieSceneSequencePlaybackParams& PlaybackParams)
 {
 	static class UFunction* Func = nullptr;
 
@@ -718,15 +1023,15 @@ void UMovieSceneSequencePlayer::SetPlaybackPosition(const struct FMovieSceneSequ
 
 	Params::UMovieSceneSequencePlayer_SetPlaybackPosition_Params Parms{};
 
-	Parms.PlaybackParams = InPlaybackParams;
+	Parms.PlaybackParams = PlaybackParams;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -736,7 +1041,7 @@ void UMovieSceneSequencePlayer::SetPlaybackPosition(const struct FMovieSceneSequ
 // Parameters:
 // struct FFrameRate                  FrameRate                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::SetFrameRate(const struct FFrameRate& InFrameRate)
+void UMovieSceneSequencePlayer::SetFrameRate(const struct FFrameRate& FrameRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -745,15 +1050,15 @@ void UMovieSceneSequencePlayer::SetFrameRate(const struct FFrameRate& InFrameRat
 
 	Params::UMovieSceneSequencePlayer_SetFrameRate_Params Parms{};
 
-	Parms.FrameRate = InFrameRate;
+	Parms.FrameRate = FrameRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -765,7 +1070,7 @@ void UMovieSceneSequencePlayer::SetFrameRate(const struct FFrameRate& InFrameRat
 // int32                              Duration                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              SubFrames                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::SetFrameRange(int32 InStartFrame, int32 InDuration, float InSubFrames)
+void UMovieSceneSequencePlayer::SetFrameRange(int32 StartFrame, int32 Duration, float SubFrames)
 {
 	static class UFunction* Func = nullptr;
 
@@ -774,17 +1079,17 @@ void UMovieSceneSequencePlayer::SetFrameRange(int32 InStartFrame, int32 InDurati
 
 	Params::UMovieSceneSequencePlayer_SetFrameRange_Params Parms{};
 
-	Parms.StartFrame = InStartFrame;
-	Parms.Duration = InDuration;
-	Parms.SubFrames = InSubFrames;
+	Parms.StartFrame = StartFrame;
+	Parms.Duration = Duration;
+	Parms.SubFrames = SubFrames;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -794,7 +1099,7 @@ void UMovieSceneSequencePlayer::SetFrameRange(int32 InStartFrame, int32 InDurati
 // Parameters:
 // bool                               bInDisableCameraCuts                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::SetDisableCameraCuts(bool InbInDisableCameraCuts)
+void UMovieSceneSequencePlayer::SetDisableCameraCuts(bool bInDisableCameraCuts)
 {
 	static class UFunction* Func = nullptr;
 
@@ -803,15 +1108,15 @@ void UMovieSceneSequencePlayer::SetDisableCameraCuts(bool InbInDisableCameraCuts
 
 	Params::UMovieSceneSequencePlayer_SetDisableCameraCuts_Params Parms{};
 
-	Parms.bInDisableCameraCuts = InbInDisableCameraCuts;
+	Parms.bInDisableCameraCuts = bInDisableCameraCuts;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -821,7 +1126,7 @@ void UMovieSceneSequencePlayer::SetDisableCameraCuts(bool InbInDisableCameraCuts
 // Parameters:
 // float                              TimeInSeconds                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::ScrubToSeconds(float InTimeInSeconds)
+void UMovieSceneSequencePlayer::ScrubToSeconds(float TimeInSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -830,15 +1135,15 @@ void UMovieSceneSequencePlayer::ScrubToSeconds(float InTimeInSeconds)
 
 	Params::UMovieSceneSequencePlayer_ScrubToSeconds_Params Parms{};
 
-	Parms.TimeInSeconds = InTimeInSeconds;
+	Parms.TimeInSeconds = TimeInSeconds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -849,7 +1154,7 @@ void UMovieSceneSequencePlayer::ScrubToSeconds(float InTimeInSeconds)
 // class FString                      InLabel                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneSequencePlayer::ScrubToMarkedFrame(const class FString& InInLabel)
+bool UMovieSceneSequencePlayer::ScrubToMarkedFrame(const class FString& InLabel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -858,15 +1163,15 @@ bool UMovieSceneSequencePlayer::ScrubToMarkedFrame(const class FString& InInLabe
 
 	Params::UMovieSceneSequencePlayer_ScrubToMarkedFrame_Params Parms{};
 
-	Parms.InLabel = InInLabel;
+	Parms.InLabel = InLabel;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -878,7 +1183,7 @@ bool UMovieSceneSequencePlayer::ScrubToMarkedFrame(const class FString& InInLabe
 // Parameters:
 // struct FFrameTime                  NewPosition                                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::ScrubToFrame(const struct FFrameTime& InNewPosition)
+void UMovieSceneSequencePlayer::ScrubToFrame(const struct FFrameTime& NewPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -887,15 +1192,15 @@ void UMovieSceneSequencePlayer::ScrubToFrame(const struct FFrameTime& InNewPosit
 
 	Params::UMovieSceneSequencePlayer_ScrubToFrame_Params Parms{};
 
-	Parms.NewPosition = InNewPosition;
+	Parms.NewPosition = NewPosition;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -914,13 +1219,13 @@ void UMovieSceneSequencePlayer::Scrub()
 	Params::UMovieSceneSequencePlayer_Scrub_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -930,7 +1235,7 @@ void UMovieSceneSequencePlayer::Scrub()
 // Parameters:
 // struct FFrameTime                  StoppedTime                                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::RPC_OnStopEvent(const struct FFrameTime& InStoppedTime)
+void UMovieSceneSequencePlayer::RPC_OnStopEvent(const struct FFrameTime& StoppedTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -939,15 +1244,15 @@ void UMovieSceneSequencePlayer::RPC_OnStopEvent(const struct FFrameTime& InStopp
 
 	Params::UMovieSceneSequencePlayer_RPC_OnStopEvent_Params Parms{};
 
-	Parms.StoppedTime = InStoppedTime;
+	Parms.StoppedTime = StoppedTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -957,7 +1262,7 @@ void UMovieSceneSequencePlayer::RPC_OnStopEvent(const struct FFrameTime& InStopp
 // Parameters:
 // struct FFrameTime                  StoppedTime                                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::RPC_OnFinishPlaybackEvent(const struct FFrameTime& InStoppedTime)
+void UMovieSceneSequencePlayer::RPC_OnFinishPlaybackEvent(const struct FFrameTime& StoppedTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -966,15 +1271,15 @@ void UMovieSceneSequencePlayer::RPC_OnFinishPlaybackEvent(const struct FFrameTim
 
 	Params::UMovieSceneSequencePlayer_RPC_OnFinishPlaybackEvent_Params Parms{};
 
-	Parms.StoppedTime = InStoppedTime;
+	Parms.StoppedTime = StoppedTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -985,7 +1290,7 @@ void UMovieSceneSequencePlayer::RPC_OnFinishPlaybackEvent(const struct FFrameTim
 // enum class EUpdatePositionMethod   Method                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  RelevantTime                                                     (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::RPC_ExplicitServerUpdateEvent(enum class EUpdatePositionMethod InMethod, const struct FFrameTime& InRelevantTime)
+void UMovieSceneSequencePlayer::RPC_ExplicitServerUpdateEvent(enum class EUpdatePositionMethod Method, const struct FFrameTime& RelevantTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -994,16 +1299,16 @@ void UMovieSceneSequencePlayer::RPC_ExplicitServerUpdateEvent(enum class EUpdate
 
 	Params::UMovieSceneSequencePlayer_RPC_ExplicitServerUpdateEvent_Params Parms{};
 
-	Parms.Method = InMethod;
-	Parms.RelevantTime = InRelevantTime;
+	Parms.Method = Method;
+	Parms.RelevantTime = RelevantTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1022,13 +1327,13 @@ void UMovieSceneSequencePlayer::RestoreState()
 	Params::UMovieSceneSequencePlayer_RestoreState_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1038,7 +1343,7 @@ void UMovieSceneSequencePlayer::RestoreState()
 // Parameters:
 // float                              TimeInSeconds                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::PlayToSeconds(float InTimeInSeconds)
+void UMovieSceneSequencePlayer::PlayToSeconds(float TimeInSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1047,15 +1352,15 @@ void UMovieSceneSequencePlayer::PlayToSeconds(float InTimeInSeconds)
 
 	Params::UMovieSceneSequencePlayer_PlayToSeconds_Params Parms{};
 
-	Parms.TimeInSeconds = InTimeInSeconds;
+	Parms.TimeInSeconds = TimeInSeconds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1066,7 +1371,7 @@ void UMovieSceneSequencePlayer::PlayToSeconds(float InTimeInSeconds)
 // class FString                      InLabel                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneSequencePlayer::PlayToMarkedFrame(const class FString& InInLabel)
+bool UMovieSceneSequencePlayer::PlayToMarkedFrame(const class FString& InLabel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1075,15 +1380,15 @@ bool UMovieSceneSequencePlayer::PlayToMarkedFrame(const class FString& InInLabel
 
 	Params::UMovieSceneSequencePlayer_PlayToMarkedFrame_Params Parms{};
 
-	Parms.InLabel = InInLabel;
+	Parms.InLabel = InLabel;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1095,7 +1400,7 @@ bool UMovieSceneSequencePlayer::PlayToMarkedFrame(const class FString& InInLabel
 // Parameters:
 // struct FFrameTime                  NewPosition                                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::PlayToFrame(const struct FFrameTime& InNewPosition)
+void UMovieSceneSequencePlayer::PlayToFrame(const struct FFrameTime& NewPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1104,15 +1409,15 @@ void UMovieSceneSequencePlayer::PlayToFrame(const struct FFrameTime& InNewPositi
 
 	Params::UMovieSceneSequencePlayer_PlayToFrame_Params Parms{};
 
-	Parms.NewPosition = InNewPosition;
+	Parms.NewPosition = NewPosition;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1123,7 +1428,7 @@ void UMovieSceneSequencePlayer::PlayToFrame(const struct FFrameTime& InNewPositi
 // struct FMovieSceneSequencePlaybackParamsPlaybackParams                                                   (Parm, NativeAccessSpecifierPublic)
 // struct FMovieSceneSequencePlayToParamsPlayToParams                                                     (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::PlayTo(const struct FMovieSceneSequencePlaybackParams& InPlaybackParams, const struct FMovieSceneSequencePlayToParams& InPlayToParams)
+void UMovieSceneSequencePlayer::PlayTo(const struct FMovieSceneSequencePlaybackParams& PlaybackParams, const struct FMovieSceneSequencePlayToParams& PlayToParams)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1132,16 +1437,16 @@ void UMovieSceneSequencePlayer::PlayTo(const struct FMovieSceneSequencePlaybackP
 
 	Params::UMovieSceneSequencePlayer_PlayTo_Params Parms{};
 
-	Parms.PlaybackParams = InPlaybackParams;
-	Parms.PlayToParams = InPlayToParams;
+	Parms.PlaybackParams = PlaybackParams;
+	Parms.PlayToParams = PlayToParams;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1160,13 +1465,13 @@ void UMovieSceneSequencePlayer::PlayReverse()
 	Params::UMovieSceneSequencePlayer_PlayReverse_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1176,7 +1481,7 @@ void UMovieSceneSequencePlayer::PlayReverse()
 // Parameters:
 // int32                              NumLoops                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::PlayLooping(int32 InNumLoops)
+void UMovieSceneSequencePlayer::PlayLooping(int32 NumLoops)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1185,15 +1490,15 @@ void UMovieSceneSequencePlayer::PlayLooping(int32 InNumLoops)
 
 	Params::UMovieSceneSequencePlayer_PlayLooping_Params Parms{};
 
-	Parms.NumLoops = InNumLoops;
+	Parms.NumLoops = NumLoops;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1212,13 +1517,13 @@ void UMovieSceneSequencePlayer::Play()
 	Params::UMovieSceneSequencePlayer_Play_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1237,13 +1542,13 @@ void UMovieSceneSequencePlayer::Pause()
 	Params::UMovieSceneSequencePlayer_Pause_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1253,7 +1558,7 @@ void UMovieSceneSequencePlayer::Pause()
 // Parameters:
 // float                              TimeInSeconds                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::JumpToSeconds(float InTimeInSeconds)
+void UMovieSceneSequencePlayer::JumpToSeconds(float TimeInSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1262,15 +1567,15 @@ void UMovieSceneSequencePlayer::JumpToSeconds(float InTimeInSeconds)
 
 	Params::UMovieSceneSequencePlayer_JumpToSeconds_Params Parms{};
 
-	Parms.TimeInSeconds = InTimeInSeconds;
+	Parms.TimeInSeconds = TimeInSeconds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1281,7 +1586,7 @@ void UMovieSceneSequencePlayer::JumpToSeconds(float InTimeInSeconds)
 // class FString                      InLabel                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneSequencePlayer::JumpToMarkedFrame(const class FString& InInLabel)
+bool UMovieSceneSequencePlayer::JumpToMarkedFrame(const class FString& InLabel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1290,15 +1595,15 @@ bool UMovieSceneSequencePlayer::JumpToMarkedFrame(const class FString& InInLabel
 
 	Params::UMovieSceneSequencePlayer_JumpToMarkedFrame_Params Parms{};
 
-	Parms.InLabel = InInLabel;
+	Parms.InLabel = InLabel;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1310,7 +1615,7 @@ bool UMovieSceneSequencePlayer::JumpToMarkedFrame(const class FString& InInLabel
 // Parameters:
 // struct FFrameTime                  NewPosition                                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequencePlayer::JumpToFrame(const struct FFrameTime& InNewPosition)
+void UMovieSceneSequencePlayer::JumpToFrame(const struct FFrameTime& NewPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1319,15 +1624,15 @@ void UMovieSceneSequencePlayer::JumpToFrame(const struct FFrameTime& InNewPositi
 
 	Params::UMovieSceneSequencePlayer_JumpToFrame_Params Parms{};
 
-	Parms.NewPosition = InNewPosition;
+	Parms.NewPosition = NewPosition;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1347,13 +1652,13 @@ bool UMovieSceneSequencePlayer::IsReversed()
 	Params::UMovieSceneSequencePlayer_IsReversed_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1375,13 +1680,13 @@ bool UMovieSceneSequencePlayer::IsPlaying()
 	Params::UMovieSceneSequencePlayer_IsPlaying_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1403,13 +1708,13 @@ bool UMovieSceneSequencePlayer::IsPaused()
 	Params::UMovieSceneSequencePlayer_IsPaused_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1430,13 +1735,13 @@ void UMovieSceneSequencePlayer::GoToEndAndStop()
 	Params::UMovieSceneSequencePlayer_GoToEndAndStop_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1456,13 +1761,13 @@ struct FQualifiedFrameTime UMovieSceneSequencePlayer::GetStartTime()
 	Params::UMovieSceneSequencePlayer_GetStartTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1475,7 +1780,7 @@ struct FQualifiedFrameTime UMovieSceneSequencePlayer::GetStartTime()
 // bool                               bAddClientInfo                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UMovieSceneSequencePlayer::GetSequenceName(bool InbAddClientInfo)
+class FString UMovieSceneSequencePlayer::GetSequenceName(bool bAddClientInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1484,15 +1789,15 @@ class FString UMovieSceneSequencePlayer::GetSequenceName(bool InbAddClientInfo)
 
 	Params::UMovieSceneSequencePlayer_GetSequenceName_Params Parms{};
 
-	Parms.bAddClientInfo = InbAddClientInfo;
+	Parms.bAddClientInfo = bAddClientInfo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1514,13 +1819,13 @@ class UMovieSceneSequence* UMovieSceneSequencePlayer::GetSequence()
 	Params::UMovieSceneSequencePlayer_GetSequence_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1542,13 +1847,13 @@ float UMovieSceneSequencePlayer::GetPlayRate()
 	Params::UMovieSceneSequencePlayer_GetPlayRate_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1561,7 +1866,7 @@ float UMovieSceneSequencePlayer::GetPlayRate()
 // class UObject*                     InObject                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FMovieSceneObjectBindingID>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FMovieSceneObjectBindingID> UMovieSceneSequencePlayer::GetObjectBindings(class UObject* InInObject)
+TArray<struct FMovieSceneObjectBindingID> UMovieSceneSequencePlayer::GetObjectBindings(class UObject* InObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1570,15 +1875,15 @@ TArray<struct FMovieSceneObjectBindingID> UMovieSceneSequencePlayer::GetObjectBi
 
 	Params::UMovieSceneSequencePlayer_GetObjectBindings_Params Parms{};
 
-	Parms.InObject = InInObject;
+	Parms.InObject = InObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1600,13 +1905,13 @@ struct FFrameRate UMovieSceneSequencePlayer::GetFrameRate()
 	Params::UMovieSceneSequencePlayer_GetFrameRate_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1628,13 +1933,13 @@ int32 UMovieSceneSequencePlayer::GetFrameDuration()
 	Params::UMovieSceneSequencePlayer_GetFrameDuration_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1656,13 +1961,13 @@ struct FQualifiedFrameTime UMovieSceneSequencePlayer::GetEndTime()
 	Params::UMovieSceneSequencePlayer_GetEndTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1684,13 +1989,13 @@ struct FQualifiedFrameTime UMovieSceneSequencePlayer::GetDuration()
 	Params::UMovieSceneSequencePlayer_GetDuration_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1712,13 +2017,13 @@ bool UMovieSceneSequencePlayer::GetDisableCameraCuts()
 	Params::UMovieSceneSequencePlayer_GetDisableCameraCuts_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1740,13 +2045,13 @@ struct FQualifiedFrameTime UMovieSceneSequencePlayer::GetCurrentTime()
 	Params::UMovieSceneSequencePlayer_GetCurrentTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1759,7 +2064,7 @@ struct FQualifiedFrameTime UMovieSceneSequencePlayer::GetCurrentTime()
 // struct FMovieSceneObjectBindingID  ObjectBinding                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UObject*>             ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UObject*> UMovieSceneSequencePlayer::GetBoundObjects(const struct FMovieSceneObjectBindingID& InObjectBinding)
+TArray<class UObject*> UMovieSceneSequencePlayer::GetBoundObjects(const struct FMovieSceneObjectBindingID& ObjectBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1768,15 +2073,15 @@ TArray<class UObject*> UMovieSceneSequencePlayer::GetBoundObjects(const struct F
 
 	Params::UMovieSceneSequencePlayer_GetBoundObjects_Params Parms{};
 
-	Parms.ObjectBinding = InObjectBinding;
+	Parms.ObjectBinding = ObjectBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1797,14 +2102,266 @@ void UMovieSceneSequencePlayer::ChangePlaybackDirection()
 	Params::UMovieSceneSequencePlayer_ChangePlaybackDirection_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class MovieScene.MovieSceneSubTrack
+// (None)
+
+class UClass* UMovieSceneSubTrack::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSubTrack");
+
+	return Clss;
+}
+
+
+// MovieSceneSubTrack MovieScene.Default__MovieSceneSubTrack
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSubTrack* UMovieSceneSubTrack::GetDefaultObj()
+{
+	static class UMovieSceneSubTrack* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSubTrack*>(UMovieSceneSubTrack::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneChannelOverrideProvider
+// (None)
+
+class UClass* IMovieSceneChannelOverrideProvider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneChannelOverrideProvider");
+
+	return Clss;
+}
+
+
+// MovieSceneChannelOverrideProvider MovieScene.Default__MovieSceneChannelOverrideProvider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneChannelOverrideProvider* IMovieSceneChannelOverrideProvider::GetDefaultObj()
+{
+	static class IMovieSceneChannelOverrideProvider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneChannelOverrideProvider*>(IMovieSceneChannelOverrideProvider::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneDeterminismSource
+// (None)
+
+class UClass* IMovieSceneDeterminismSource::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneDeterminismSource");
+
+	return Clss;
+}
+
+
+// MovieSceneDeterminismSource MovieScene.Default__MovieSceneDeterminismSource
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneDeterminismSource* IMovieSceneDeterminismSource::GetDefaultObj()
+{
+	static class IMovieSceneDeterminismSource* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneDeterminismSource*>(IMovieSceneDeterminismSource::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneEvaluationHook
+// (None)
+
+class UClass* IMovieSceneEvaluationHook::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneEvaluationHook");
+
+	return Clss;
+}
+
+
+// MovieSceneEvaluationHook MovieScene.Default__MovieSceneEvaluationHook
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneEvaluationHook* IMovieSceneEvaluationHook::GetDefaultObj()
+{
+	static class IMovieSceneEvaluationHook* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneEvaluationHook*>(IMovieSceneEvaluationHook::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieScenePlaybackClient
+// (None)
+
+class UClass* IMovieScenePlaybackClient::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieScenePlaybackClient");
+
+	return Clss;
+}
+
+
+// MovieScenePlaybackClient MovieScene.Default__MovieScenePlaybackClient
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieScenePlaybackClient* IMovieScenePlaybackClient::GetDefaultObj()
+{
+	static class IMovieScenePlaybackClient* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieScenePlaybackClient*>(IMovieScenePlaybackClient::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneSequencePlayerObserver
+// (None)
+
+class UClass* IMovieSceneSequencePlayerObserver::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSequencePlayerObserver");
+
+	return Clss;
+}
+
+
+// MovieSceneSequencePlayerObserver MovieScene.Default__MovieSceneSequencePlayerObserver
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneSequencePlayerObserver* IMovieSceneSequencePlayerObserver::GetDefaultObj()
+{
+	static class IMovieSceneSequencePlayerObserver* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneSequencePlayerObserver*>(IMovieSceneSequencePlayerObserver::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneBindingOwnerInterface
+// (None)
+
+class UClass* IMovieSceneBindingOwnerInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneBindingOwnerInterface");
+
+	return Clss;
+}
+
+
+// MovieSceneBindingOwnerInterface MovieScene.Default__MovieSceneBindingOwnerInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneBindingOwnerInterface* IMovieSceneBindingOwnerInterface::GetDefaultObj()
+{
+	static class IMovieSceneBindingOwnerInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneBindingOwnerInterface*>(IMovieSceneBindingOwnerInterface::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneChannelOverrideContainer
+// (None)
+
+class UClass* UMovieSceneChannelOverrideContainer::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneChannelOverrideContainer");
+
+	return Clss;
+}
+
+
+// MovieSceneChannelOverrideContainer MovieScene.Default__MovieSceneChannelOverrideContainer
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneChannelOverrideContainer* UMovieSceneChannelOverrideContainer::GetDefaultObj()
+{
+	static class UMovieSceneChannelOverrideContainer* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneChannelOverrideContainer*>(UMovieSceneChannelOverrideContainer::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneEasingFunction
+// (None)
+
+class UClass* IMovieSceneEasingFunction::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneEasingFunction");
+
+	return Clss;
+}
+
+
+// MovieSceneEasingFunction MovieScene.Default__MovieSceneEasingFunction
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneEasingFunction* IMovieSceneEasingFunction::GetDefaultObj()
+{
+	static class IMovieSceneEasingFunction* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneEasingFunction*>(IMovieSceneEasingFunction::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1814,7 +2371,7 @@ void UMovieSceneSequencePlayer::ChangePlaybackDirection()
 // float                              Interp                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float IMovieSceneEasingFunction::OnEvaluate(float InInterp)
+float IMovieSceneEasingFunction::OnEvaluate(float Interp)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1823,12 +2380,628 @@ float IMovieSceneEasingFunction::OnEvaluate(float InInterp)
 
 	Params::IMovieSceneEasingFunction_OnEvaluate_Params Parms{};
 
-	Parms.Interp = InInterp;
+	Parms.Interp = Interp;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class MovieScene.MovieSceneKeyProxy
+// (None)
+
+class UClass* IMovieSceneKeyProxy::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneKeyProxy");
+
+	return Clss;
+}
+
+
+// MovieSceneKeyProxy MovieScene.Default__MovieSceneKeyProxy
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneKeyProxy* IMovieSceneKeyProxy::GetDefaultObj()
+{
+	static class IMovieSceneKeyProxy* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneKeyProxy*>(IMovieSceneKeyProxy::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneSequenceTickManagerClient
+// (None)
+
+class UClass* IMovieSceneSequenceTickManagerClient::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSequenceTickManagerClient");
+
+	return Clss;
+}
+
+
+// MovieSceneSequenceTickManagerClient MovieScene.Default__MovieSceneSequenceTickManagerClient
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneSequenceTickManagerClient* IMovieSceneSequenceTickManagerClient::GetDefaultObj()
+{
+	static class IMovieSceneSequenceTickManagerClient* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneSequenceTickManagerClient*>(IMovieSceneSequenceTickManagerClient::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneSectionChannelOverrideRegistry
+// (None)
+
+class UClass* UMovieSceneSectionChannelOverrideRegistry::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSectionChannelOverrideRegistry");
+
+	return Clss;
+}
+
+
+// MovieSceneSectionChannelOverrideRegistry MovieScene.Default__MovieSceneSectionChannelOverrideRegistry
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSectionChannelOverrideRegistry* UMovieSceneSectionChannelOverrideRegistry::GetDefaultObj()
+{
+	static class UMovieSceneSectionChannelOverrideRegistry* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSectionChannelOverrideRegistry*>(UMovieSceneSectionChannelOverrideRegistry::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneTrackTemplateProducer
+// (None)
+
+class UClass* IMovieSceneTrackTemplateProducer::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneTrackTemplateProducer");
+
+	return Clss;
+}
+
+
+// MovieSceneTrackTemplateProducer MovieScene.Default__MovieSceneTrackTemplateProducer
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneTrackTemplateProducer* IMovieSceneTrackTemplateProducer::GetDefaultObj()
+{
+	static class IMovieSceneTrackTemplateProducer* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneTrackTemplateProducer*>(IMovieSceneTrackTemplateProducer::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneCompiledData
+// (None)
+
+class UClass* UMovieSceneCompiledData::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneCompiledData");
+
+	return Clss;
+}
+
+
+// MovieSceneCompiledData MovieScene.Default__MovieSceneCompiledData
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneCompiledData* UMovieSceneCompiledData::GetDefaultObj()
+{
+	static class UMovieSceneCompiledData* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneCompiledData*>(UMovieSceneCompiledData::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneCompiledDataManager
+// (None)
+
+class UClass* UMovieSceneCompiledDataManager::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneCompiledDataManager");
+
+	return Clss;
+}
+
+
+// MovieSceneCompiledDataManager MovieScene.Default__MovieSceneCompiledDataManager
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneCompiledDataManager* UMovieSceneCompiledDataManager::GetDefaultObj()
+{
+	static class UMovieSceneCompiledDataManager* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneCompiledDataManager*>(UMovieSceneCompiledDataManager::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneEntityProvider
+// (None)
+
+class UClass* IMovieSceneEntityProvider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneEntityProvider");
+
+	return Clss;
+}
+
+
+// MovieSceneEntityProvider MovieScene.Default__MovieSceneEntityProvider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneEntityProvider* IMovieSceneEntityProvider::GetDefaultObj()
+{
+	static class IMovieSceneEntityProvider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneEntityProvider*>(IMovieSceneEntityProvider::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneBlenderSystem
+// (None)
+
+class UClass* UMovieSceneBlenderSystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneBlenderSystem");
+
+	return Clss;
+}
+
+
+// MovieSceneBlenderSystem MovieScene.Default__MovieSceneBlenderSystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneBlenderSystem* UMovieSceneBlenderSystem::GetDefaultObj()
+{
+	static class UMovieSceneBlenderSystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneBlenderSystem*>(UMovieSceneBlenderSystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneGenericBoundObjectInstantiator
+// (None)
+
+class UClass* UMovieSceneGenericBoundObjectInstantiator::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneGenericBoundObjectInstantiator");
+
+	return Clss;
+}
+
+
+// MovieSceneGenericBoundObjectInstantiator MovieScene.Default__MovieSceneGenericBoundObjectInstantiator
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneGenericBoundObjectInstantiator* UMovieSceneGenericBoundObjectInstantiator::GetDefaultObj()
+{
+	static class UMovieSceneGenericBoundObjectInstantiator* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneGenericBoundObjectInstantiator*>(UMovieSceneGenericBoundObjectInstantiator::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneBoundSceneComponentInstantiator
+// (None)
+
+class UClass* UMovieSceneBoundSceneComponentInstantiator::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneBoundSceneComponentInstantiator");
+
+	return Clss;
+}
+
+
+// MovieSceneBoundSceneComponentInstantiator MovieScene.Default__MovieSceneBoundSceneComponentInstantiator
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneBoundSceneComponentInstantiator* UMovieSceneBoundSceneComponentInstantiator::GetDefaultObj()
+{
+	static class UMovieSceneBoundSceneComponentInstantiator* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneBoundSceneComponentInstantiator*>(UMovieSceneBoundSceneComponentInstantiator::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneValueDecomposer
+// (None)
+
+class UClass* IMovieSceneValueDecomposer::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneValueDecomposer");
+
+	return Clss;
+}
+
+
+// MovieSceneValueDecomposer MovieScene.Default__MovieSceneValueDecomposer
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneValueDecomposer* IMovieSceneValueDecomposer::GetDefaultObj()
+{
+	static class IMovieSceneValueDecomposer* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneValueDecomposer*>(IMovieSceneValueDecomposer::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneEvalTimeSystem
+// (None)
+
+class UClass* UMovieSceneEvalTimeSystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneEvalTimeSystem");
+
+	return Clss;
+}
+
+
+// MovieSceneEvalTimeSystem MovieScene.Default__MovieSceneEvalTimeSystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneEvalTimeSystem* UMovieSceneEvalTimeSystem::GetDefaultObj()
+{
+	static class UMovieSceneEvalTimeSystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneEvalTimeSystem*>(UMovieSceneEvalTimeSystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneEvaluationHookSystem
+// (None)
+
+class UClass* UMovieSceneEvaluationHookSystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneEvaluationHookSystem");
+
+	return Clss;
+}
+
+
+// MovieSceneEvaluationHookSystem MovieScene.Default__MovieSceneEvaluationHookSystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneEvaluationHookSystem* UMovieSceneEvaluationHookSystem::GetDefaultObj()
+{
+	static class UMovieSceneEvaluationHookSystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneEvaluationHookSystem*>(UMovieSceneEvaluationHookSystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneMasterInstantiatorSystem
+// (None)
+
+class UClass* UMovieSceneMasterInstantiatorSystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneMasterInstantiatorSystem");
+
+	return Clss;
+}
+
+
+// MovieSceneMasterInstantiatorSystem MovieScene.Default__MovieSceneMasterInstantiatorSystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneMasterInstantiatorSystem* UMovieSceneMasterInstantiatorSystem::GetDefaultObj()
+{
+	static class UMovieSceneMasterInstantiatorSystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneMasterInstantiatorSystem*>(UMovieSceneMasterInstantiatorSystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieScenePreAnimatedStateSystemInterface
+// (None)
+
+class UClass* IMovieScenePreAnimatedStateSystemInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieScenePreAnimatedStateSystemInterface");
+
+	return Clss;
+}
+
+
+// MovieScenePreAnimatedStateSystemInterface MovieScene.Default__MovieScenePreAnimatedStateSystemInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieScenePreAnimatedStateSystemInterface* IMovieScenePreAnimatedStateSystemInterface::GetDefaultObj()
+{
+	static class IMovieScenePreAnimatedStateSystemInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieScenePreAnimatedStateSystemInterface*>(IMovieScenePreAnimatedStateSystemInterface::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneCachePreAnimatedStateSystem
+// (None)
+
+class UClass* UMovieSceneCachePreAnimatedStateSystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneCachePreAnimatedStateSystem");
+
+	return Clss;
+}
+
+
+// MovieSceneCachePreAnimatedStateSystem MovieScene.Default__MovieSceneCachePreAnimatedStateSystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneCachePreAnimatedStateSystem* UMovieSceneCachePreAnimatedStateSystem::GetDefaultObj()
+{
+	static class UMovieSceneCachePreAnimatedStateSystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneCachePreAnimatedStateSystem*>(UMovieSceneCachePreAnimatedStateSystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneRestorePreAnimatedStateSystem
+// (None)
+
+class UClass* UMovieSceneRestorePreAnimatedStateSystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneRestorePreAnimatedStateSystem");
+
+	return Clss;
+}
+
+
+// MovieSceneRestorePreAnimatedStateSystem MovieScene.Default__MovieSceneRestorePreAnimatedStateSystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneRestorePreAnimatedStateSystem* UMovieSceneRestorePreAnimatedStateSystem::GetDefaultObj()
+{
+	static class UMovieSceneRestorePreAnimatedStateSystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneRestorePreAnimatedStateSystem*>(UMovieSceneRestorePreAnimatedStateSystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneSpawnablesSystem
+// (None)
+
+class UClass* UMovieSceneSpawnablesSystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSpawnablesSystem");
+
+	return Clss;
+}
+
+
+// MovieSceneSpawnablesSystem MovieScene.Default__MovieSceneSpawnablesSystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSpawnablesSystem* UMovieSceneSpawnablesSystem::GetDefaultObj()
+{
+	static class UMovieSceneSpawnablesSystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSpawnablesSystem*>(UMovieSceneSpawnablesSystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneTrackInstance
+// (None)
+
+class UClass* UMovieSceneTrackInstance::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneTrackInstance");
+
+	return Clss;
+}
+
+
+// MovieSceneTrackInstance MovieScene.Default__MovieSceneTrackInstance
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneTrackInstance* UMovieSceneTrackInstance::GetDefaultObj()
+{
+	static class UMovieSceneTrackInstance* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneTrackInstance*>(UMovieSceneTrackInstance::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneTrackInstanceInstantiator
+// (None)
+
+class UClass* UMovieSceneTrackInstanceInstantiator::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneTrackInstanceInstantiator");
+
+	return Clss;
+}
+
+
+// MovieSceneTrackInstanceInstantiator MovieScene.Default__MovieSceneTrackInstanceInstantiator
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneTrackInstanceInstantiator* UMovieSceneTrackInstanceInstantiator::GetDefaultObj()
+{
+	static class UMovieSceneTrackInstanceInstantiator* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneTrackInstanceInstantiator*>(UMovieSceneTrackInstanceInstantiator::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneTrackInstanceSystem
+// (None)
+
+class UClass* UMovieSceneTrackInstanceSystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneTrackInstanceSystem");
+
+	return Clss;
+}
+
+
+// MovieSceneTrackInstanceSystem MovieScene.Default__MovieSceneTrackInstanceSystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneTrackInstanceSystem* UMovieSceneTrackInstanceSystem::GetDefaultObj()
+{
+	static class UMovieSceneTrackInstanceSystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneTrackInstanceSystem*>(UMovieSceneTrackInstanceSystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneCustomClockSource
+// (None)
+
+class UClass* IMovieSceneCustomClockSource::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneCustomClockSource");
+
+	return Clss;
+}
+
+
+// MovieSceneCustomClockSource MovieScene.Default__MovieSceneCustomClockSource
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMovieSceneCustomClockSource* IMovieSceneCustomClockSource::GetDefaultObj()
+{
+	static class IMovieSceneCustomClockSource* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMovieSceneCustomClockSource*>(IMovieSceneCustomClockSource::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1838,7 +3011,7 @@ float IMovieSceneEasingFunction::OnEvaluate(float InInterp)
 // float                              DeltaSeconds                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              InPlayRate                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IMovieSceneCustomClockSource::OnTick(float InDeltaSeconds, float InInPlayRate)
+void IMovieSceneCustomClockSource::OnTick(float DeltaSeconds, float InPlayRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1847,16 +3020,16 @@ void IMovieSceneCustomClockSource::OnTick(float InDeltaSeconds, float InInPlayRa
 
 	Params::IMovieSceneCustomClockSource_OnTick_Params Parms{};
 
-	Parms.DeltaSeconds = InDeltaSeconds;
-	Parms.InPlayRate = InInPlayRate;
+	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.InPlayRate = InPlayRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1866,7 +3039,7 @@ void IMovieSceneCustomClockSource::OnTick(float InDeltaSeconds, float InInPlayRa
 // Parameters:
 // struct FQualifiedFrameTime         InStopTime                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IMovieSceneCustomClockSource::OnStopPlaying(struct FQualifiedFrameTime& InInStopTime)
+void IMovieSceneCustomClockSource::OnStopPlaying(struct FQualifiedFrameTime& InStopTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1875,15 +3048,15 @@ void IMovieSceneCustomClockSource::OnStopPlaying(struct FQualifiedFrameTime& InI
 
 	Params::IMovieSceneCustomClockSource_OnStopPlaying_Params Parms{};
 
-	Parms.InStopTime = InInStopTime;
+	Parms.InStopTime = InStopTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1893,7 +3066,7 @@ void IMovieSceneCustomClockSource::OnStopPlaying(struct FQualifiedFrameTime& InI
 // Parameters:
 // struct FQualifiedFrameTime         InStartTime                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IMovieSceneCustomClockSource::OnStartPlaying(struct FQualifiedFrameTime& InInStartTime)
+void IMovieSceneCustomClockSource::OnStartPlaying(struct FQualifiedFrameTime& InStartTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1902,15 +3075,15 @@ void IMovieSceneCustomClockSource::OnStartPlaying(struct FQualifiedFrameTime& In
 
 	Params::IMovieSceneCustomClockSource_OnStartPlaying_Params Parms{};
 
-	Parms.InStartTime = InInStartTime;
+	Parms.InStartTime = InStartTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1922,7 +3095,7 @@ void IMovieSceneCustomClockSource::OnStartPlaying(struct FQualifiedFrameTime& In
 // float                              InPlayRate                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime IMovieSceneCustomClockSource::OnRequestCurrentTime(struct FQualifiedFrameTime& InInCurrentTime, float InInPlayRate)
+struct FFrameTime IMovieSceneCustomClockSource::OnRequestCurrentTime(struct FQualifiedFrameTime& InCurrentTime, float InPlayRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1931,23 +3104,553 @@ struct FFrameTime IMovieSceneCustomClockSource::OnRequestCurrentTime(struct FQua
 
 	Params::IMovieSceneCustomClockSource_OnRequestCurrentTime_Params Parms{};
 
-	Parms.InCurrentTime = InInCurrentTime;
-	Parms.InPlayRate = InInPlayRate;
+	Parms.InCurrentTime = InCurrentTime;
+	Parms.InPlayRate = InPlayRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
 }
 
+
+// Class MovieScene.MovieSceneBuiltInEasingFunction
+// (None)
+
+class UClass* UMovieSceneBuiltInEasingFunction::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneBuiltInEasingFunction");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// MovieSceneBuiltInEasingFunction MovieScene.Default__MovieSceneBuiltInEasingFunction
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneBuiltInEasingFunction* UMovieSceneBuiltInEasingFunction::GetDefaultObj()
+{
+	static class UMovieSceneBuiltInEasingFunction* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneBuiltInEasingFunction*>(UMovieSceneBuiltInEasingFunction::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneEasingExternalCurve
+// (None)
+
+class UClass* UMovieSceneEasingExternalCurve::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneEasingExternalCurve");
+
+	return Clss;
+}
+
+
+// MovieSceneEasingExternalCurve MovieScene.Default__MovieSceneEasingExternalCurve
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneEasingExternalCurve* UMovieSceneEasingExternalCurve::GetDefaultObj()
+{
+	static class UMovieSceneEasingExternalCurve* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneEasingExternalCurve*>(UMovieSceneEasingExternalCurve::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.NodeAndChannelMappings
+// (None)
+
+class UClass* INodeAndChannelMappings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("NodeAndChannelMappings");
+
+	return Clss;
+}
+
+
+// NodeAndChannelMappings MovieScene.Default__NodeAndChannelMappings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class INodeAndChannelMappings* INodeAndChannelMappings::GetDefaultObj()
+{
+	static class INodeAndChannelMappings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<INodeAndChannelMappings*>(INodeAndChannelMappings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneNodeGroup
+// (None)
+
+class UClass* UMovieSceneNodeGroup::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneNodeGroup");
+
+	return Clss;
+}
+
+
+// MovieSceneNodeGroup MovieScene.Default__MovieSceneNodeGroup
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneNodeGroup* UMovieSceneNodeGroup::GetDefaultObj()
+{
+	static class UMovieSceneNodeGroup* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneNodeGroup*>(UMovieSceneNodeGroup::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneNodeGroupCollection
+// (None)
+
+class UClass* UMovieSceneNodeGroupCollection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneNodeGroupCollection");
+
+	return Clss;
+}
+
+
+// MovieSceneNodeGroupCollection MovieScene.Default__MovieSceneNodeGroupCollection
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneNodeGroupCollection* UMovieSceneNodeGroupCollection::GetDefaultObj()
+{
+	static class UMovieSceneNodeGroupCollection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneNodeGroupCollection*>(UMovieSceneNodeGroupCollection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieScene
+// (None)
+
+class UClass* UMovieScene::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieScene");
+
+	return Clss;
+}
+
+
+// MovieScene MovieScene.Default__MovieScene
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieScene* UMovieScene::GetDefaultObj()
+{
+	static class UMovieScene* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieScene*>(UMovieScene::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneBindingOverrides
+// (None)
+
+class UClass* UMovieSceneBindingOverrides::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneBindingOverrides");
+
+	return Clss;
+}
+
+
+// MovieSceneBindingOverrides MovieScene.Default__MovieSceneBindingOverrides
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneBindingOverrides* UMovieSceneBindingOverrides::GetDefaultObj()
+{
+	static class UMovieSceneBindingOverrides* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneBindingOverrides*>(UMovieSceneBindingOverrides::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneFolder
+// (None)
+
+class UClass* UMovieSceneFolder::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneFolder");
+
+	return Clss;
+}
+
+
+// MovieSceneFolder MovieScene.Default__MovieSceneFolder
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneFolder* UMovieSceneFolder::GetDefaultObj()
+{
+	static class UMovieSceneFolder* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneFolder*>(UMovieSceneFolder::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneSequenceTickManager
+// (None)
+
+class UClass* UMovieSceneSequenceTickManager::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSequenceTickManager");
+
+	return Clss;
+}
+
+
+// MovieSceneSequenceTickManager MovieScene.Default__MovieSceneSequenceTickManager
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSequenceTickManager* UMovieSceneSequenceTickManager::GetDefaultObj()
+{
+	static class UMovieSceneSequenceTickManager* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSequenceTickManager*>(UMovieSceneSequenceTickManager::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneBoolSection
+// (None)
+
+class UClass* UMovieSceneBoolSection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneBoolSection");
+
+	return Clss;
+}
+
+
+// MovieSceneBoolSection MovieScene.Default__MovieSceneBoolSection
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneBoolSection* UMovieSceneBoolSection::GetDefaultObj()
+{
+	static class UMovieSceneBoolSection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneBoolSection*>(UMovieSceneBoolSection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneSpawnSection
+// (None)
+
+class UClass* UMovieSceneSpawnSection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSpawnSection");
+
+	return Clss;
+}
+
+
+// MovieSceneSpawnSection MovieScene.Default__MovieSceneSpawnSection
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSpawnSection* UMovieSceneSpawnSection::GetDefaultObj()
+{
+	static class UMovieSceneSpawnSection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSpawnSection*>(UMovieSceneSpawnSection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.TestMovieSceneTrack
+// (None)
+
+class UClass* UTestMovieSceneTrack::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestMovieSceneTrack");
+
+	return Clss;
+}
+
+
+// TestMovieSceneTrack MovieScene.Default__TestMovieSceneTrack
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UTestMovieSceneTrack* UTestMovieSceneTrack::GetDefaultObj()
+{
+	static class UTestMovieSceneTrack* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTestMovieSceneTrack*>(UTestMovieSceneTrack::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.TestMovieSceneSection
+// (None)
+
+class UClass* UTestMovieSceneSection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestMovieSceneSection");
+
+	return Clss;
+}
+
+
+// TestMovieSceneSection MovieScene.Default__TestMovieSceneSection
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UTestMovieSceneSection* UTestMovieSceneSection::GetDefaultObj()
+{
+	static class UTestMovieSceneSection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTestMovieSceneSection*>(UTestMovieSceneSection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.TestMovieSceneSequence
+// (None)
+
+class UClass* UTestMovieSceneSequence::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestMovieSceneSequence");
+
+	return Clss;
+}
+
+
+// TestMovieSceneSequence MovieScene.Default__TestMovieSceneSequence
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTestMovieSceneSequence* UTestMovieSceneSequence::GetDefaultObj()
+{
+	static class UTestMovieSceneSequence* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTestMovieSceneSequence*>(UTestMovieSceneSequence::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.TestMovieSceneSubTrack
+// (None)
+
+class UClass* UTestMovieSceneSubTrack::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestMovieSceneSubTrack");
+
+	return Clss;
+}
+
+
+// TestMovieSceneSubTrack MovieScene.Default__TestMovieSceneSubTrack
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UTestMovieSceneSubTrack* UTestMovieSceneSubTrack::GetDefaultObj()
+{
+	static class UTestMovieSceneSubTrack* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTestMovieSceneSubTrack*>(UTestMovieSceneSubTrack::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.TestMovieSceneSubSection
+// (None)
+
+class UClass* UTestMovieSceneSubSection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestMovieSceneSubSection");
+
+	return Clss;
+}
+
+
+// TestMovieSceneSubSection MovieScene.Default__TestMovieSceneSubSection
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UTestMovieSceneSubSection* UTestMovieSceneSubSection::GetDefaultObj()
+{
+	static class UTestMovieSceneSubSection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTestMovieSceneSubSection*>(UTestMovieSceneSubSection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.TestMovieSceneEvalHookTrack
+// (None)
+
+class UClass* UTestMovieSceneEvalHookTrack::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestMovieSceneEvalHookTrack");
+
+	return Clss;
+}
+
+
+// TestMovieSceneEvalHookTrack MovieScene.Default__TestMovieSceneEvalHookTrack
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UTestMovieSceneEvalHookTrack* UTestMovieSceneEvalHookTrack::GetDefaultObj()
+{
+	static class UTestMovieSceneEvalHookTrack* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTestMovieSceneEvalHookTrack*>(UTestMovieSceneEvalHookTrack::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.TestMovieSceneEvalHookSection
+// (None)
+
+class UClass* UTestMovieSceneEvalHookSection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TestMovieSceneEvalHookSection");
+
+	return Clss;
+}
+
+
+// TestMovieSceneEvalHookSection MovieScene.Default__TestMovieSceneEvalHookSection
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UTestMovieSceneEvalHookSection* UTestMovieSceneEvalHookSection::GetDefaultObj()
+{
+	static class UTestMovieSceneEvalHookSection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTestMovieSceneEvalHookSection*>(UTestMovieSceneEvalHookSection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class MovieScene.MovieSceneSpawnTrack
+// (None)
+
+class UClass* UMovieSceneSpawnTrack::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSpawnTrack");
+
+	return Clss;
+}
+
+
+// MovieSceneSpawnTrack MovieScene.Default__MovieSceneSpawnTrack
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSpawnTrack* UMovieSceneSpawnTrack::GetDefaultObj()
+{
+	static class UMovieSceneSpawnTrack* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSpawnTrack*>(UMovieSceneSpawnTrack::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

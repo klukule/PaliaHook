@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,66 +11,66 @@ namespace SDK
 
 enum class ECollectionAttributeEnum : uint8
 {
-	ECollectionAttributeEnum__Chaos_Active = 0,
-	ECollectionAttributeEnum__Chaos_DynamicState = 1,
-	ECollectionAttributeEnum__Chaos_CollisionGroup = 2,
-	ECollectionAttributeEnum__Chaos_Max = 3,
+	Chaos_Active                   = 0,
+	Chaos_DynamicState             = 1,
+	Chaos_CollisionGroup           = 2,
+	Chaos_Max                      = 3,
 };
 
 enum class ECollectionGroupEnum : uint8
 {
-	ECollectionGroupEnum__Chaos_Traansform = 0,
-	ECollectionGroupEnum__Chaos_Max = 1,
+	Chaos_Traansform               = 0,
+	Chaos_Max                      = 1,
 };
 
 enum class EChaosBreakingSortMethod : uint8
 {
-	EChaosBreakingSortMethod__SortNone = 0,
-	EChaosBreakingSortMethod__SortByHighestMass = 1,
-	EChaosBreakingSortMethod__SortByHighestSpeed = 2,
-	EChaosBreakingSortMethod__SortByNearestFirst = 3,
-	EChaosBreakingSortMethod__Count = 4,
-	EChaosBreakingSortMethod__EChaosBreakingSortMethod_MAX = 5,
+	SortNone                       = 0,
+	SortByHighestMass              = 1,
+	SortByHighestSpeed             = 2,
+	SortByNearestFirst             = 3,
+	Count                          = 4,
+	EChaosBreakingSortMethod_MAX   = 5,
 };
 
 enum class EChaosCollisionSortMethod : uint8
 {
-	EChaosCollisionSortMethod__SortNone = 0,
-	EChaosCollisionSortMethod__SortByHighestMass = 1,
-	EChaosCollisionSortMethod__SortByHighestSpeed = 2,
-	EChaosCollisionSortMethod__SortByHighestImpulse = 3,
-	EChaosCollisionSortMethod__SortByNearestFirst = 4,
-	EChaosCollisionSortMethod__Count = 5,
-	EChaosCollisionSortMethod__EChaosCollisionSortMethod_MAX = 6,
+	SortNone                       = 0,
+	SortByHighestMass              = 1,
+	SortByHighestSpeed             = 2,
+	SortByHighestImpulse           = 3,
+	SortByNearestFirst             = 4,
+	Count                          = 5,
+	EChaosCollisionSortMethod_MAX  = 6,
 };
 
 enum class EChaosRemovalSortMethod : uint8
 {
-	EChaosRemovalSortMethod__SortNone = 0,
-	EChaosRemovalSortMethod__SortByHighestMass = 1,
-	EChaosRemovalSortMethod__SortByNearestFirst = 2,
-	EChaosRemovalSortMethod__Count = 3,
-	EChaosRemovalSortMethod__EChaosRemovalSortMethod_MAX = 4,
+	SortNone                       = 0,
+	SortByHighestMass              = 1,
+	SortByNearestFirst             = 2,
+	Count                          = 3,
+	EChaosRemovalSortMethod_MAX    = 4,
 };
 
 enum class EChaosTrailingSortMethod : uint8
 {
-	EChaosTrailingSortMethod__SortNone = 0,
-	EChaosTrailingSortMethod__SortByHighestMass = 1,
-	EChaosTrailingSortMethod__SortByHighestSpeed = 2,
-	EChaosTrailingSortMethod__SortByNearestFirst = 3,
-	EChaosTrailingSortMethod__Count = 4,
-	EChaosTrailingSortMethod__EChaosTrailingSortMethod_MAX = 5,
+	SortNone                       = 0,
+	SortByHighestMass              = 1,
+	SortByHighestSpeed             = 2,
+	SortByNearestFirst             = 3,
+	Count                          = 4,
+	EChaosTrailingSortMethod_MAX   = 5,
 };
 
 enum class EGeometryCollectionDebugDrawActorHideGeometry : uint8
 {
-	EGeometryCollectionDebugDrawActorHideGeometry__HideNone = 0,
-	EGeometryCollectionDebugDrawActorHideGeometry__HideWithCollision = 1,
-	EGeometryCollectionDebugDrawActorHideGeometry__HideSelected = 2,
-	EGeometryCollectionDebugDrawActorHideGeometry__HideWholeCollection = 3,
-	EGeometryCollectionDebugDrawActorHideGeometry__HideAll = 4,
-	EGeometryCollectionDebugDrawActorHideGeometry__EGeometryCollectionDebugDrawActorHideGeometry_MAX = 5,
+	HideNone                       = 0,
+	HideWithCollision              = 1,
+	HideSelected                   = 2,
+	HideWholeCollection            = 3,
+	HideAll                        = 4,
+	EGeometryCollectionDebugDrawActorHideGeometry_MAX = 5,
 };
 
 
@@ -89,7 +86,7 @@ public:
 	struct FVector                               Location;                                          // 0x0(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Velocity;                                          // 0x18(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Mass;                                              // 0x30(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23DF[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_246C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x80 (0x80 - 0x0)
@@ -133,7 +130,7 @@ public:
 struct FGeometryCollectionRepData
 {
 public:
-	uint8                                        Pad_23E9[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2472[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -142,32 +139,32 @@ struct FGeomComponentCacheParameters
 {
 public:
 	enum class EGeometryCollectionCacheType      CacheMode;                                         // 0x0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23EC[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2474[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UGeometryCollectionCache*              TargetCache;                                       // 0x8(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ReverseCacheBeginTime;                             // 0x10(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         SaveCollisionData;                                 // 0x14(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         DoGenerateCollisionData;                           // 0x15(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23EF[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2476[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        CollisionDataSizeMax;                              // 0x18(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         DoCollisionDataSpatialHash;                        // 0x1C(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23F0[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2478[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        CollisionDataSpatialHashRadius;                    // 0x20(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaxCollisionPerCell;                               // 0x24(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         SaveBreakingData;                                  // 0x28(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         DoGenerateBreakingData;                            // 0x29(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23F3[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2479[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        BreakingDataSizeMax;                               // 0x2C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         DoBreakingDataSpatialHash;                         // 0x30(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23F5[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_247A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        BreakingDataSpatialHashRadius;                     // 0x34(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaxBreakingPerCell;                                // 0x38(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         SaveTrailingData;                                  // 0x3C(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         DoGenerateTrailingData;                            // 0x3D(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23F7[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_247B[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        TrailingDataSizeMax;                               // 0x40(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        TrailingMinSpeedThreshold;                         // 0x44(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        TrailingMinVolumeThreshold;                        // 0x48(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23F9[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_247E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -176,7 +173,7 @@ struct FGeometryCollectionDamagePropagationData
 {
 public:
 	bool                                         bEnabled;                                          // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2400[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_247F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        BreakDamagePropagationFactor;                      // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ShockDamagePropagationFactor;                      // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -192,7 +189,7 @@ public:
 	float                                        MinMass;                                           // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxDistance;                                       // 0x10(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EChaosBreakingSortMethod          SortMethod;                                        // 0x14(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_240F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2485[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -206,7 +203,7 @@ public:
 	float                                        MinImpulse;                                        // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxDistance;                                       // 0x10(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EChaosCollisionSortMethod         SortMethod;                                        // 0x14(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2411[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2488[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -218,7 +215,7 @@ public:
 	float                                        MinMass;                                           // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxDistance;                                       // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EChaosRemovalSortMethod           SortMethod;                                        // 0xC(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2413[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_248C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -232,7 +229,7 @@ public:
 	float                                        MinAngularSpeed;                                   // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxDistance;                                       // 0x10(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EChaosTrailingSortMethod          SortMethod;                                        // 0x14(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2417[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2490[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -240,7 +237,7 @@ public:
 struct FGeometryCollectionDebugDrawWarningMessage
 {
 public:
-	uint8                                        Pad_2418[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2491[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -249,7 +246,7 @@ struct FGeometryCollectionDebugDrawActorSelectedRigidBody
 {
 public:
 	int32                                        ID;                                                // 0x0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_241C[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2492[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AChaosSolverActor*                     Solver;                                            // 0x8(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AGeometryCollectionActor*              GeometryCollection;                                // 0x10(0x8)(Edit, ZeroConstructor, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -264,7 +261,7 @@ public:
 	TArray<class UMaterialInterface*>            SourceMaterial;                                    // 0x80(0x10)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	bool                                         bAddInternalMaterials;                             // 0x90(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bSplitComponents;                                  // 0x91(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2424[0xE];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2494[0xE];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -285,7 +282,7 @@ public:
 	float                                        StartCullDistance;                                 // 0x20(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        EndCullDistance;                                   // 0x24(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        InstanceCount;                                     // 0x28(0x4)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_242A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2498[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -315,7 +312,7 @@ struct FGeometryCollectionCollisionTypeData
 public:
 	enum class ECollisionTypeEnum                CollisionType;                                     // 0x0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EImplicitTypeEnum                 ImplicitType;                                      // 0x1(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_242F[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_249F[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGeometryCollectionLevelSetData       LevelSet;                                          // 0x4(0x10)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FGeometryCollectionCollisionParticleData CollisionParticles;                                // 0x14(0x8)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	float                                        CollisionObjectReductionPercentage;                // 0x1C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -328,14 +325,12 @@ struct FGeometryCollectionSizeSpecificData
 {
 public:
 	float                                        MaxSize;                                           // 0x0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2435[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_24A1[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FGeometryCollectionCollisionTypeData> CollisionShapes;                                   // 0x8(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                        DamageThreshold;                                   // 0x18(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2437[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_24A3[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

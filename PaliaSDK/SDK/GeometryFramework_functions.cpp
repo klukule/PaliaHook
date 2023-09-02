@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,40 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class GeometryFramework.BaseDynamicMeshComponent
+// (SceneComponent, PrimitiveComponent)
+
+class UClass* UBaseDynamicMeshComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BaseDynamicMeshComponent");
+
+	return Clss;
+}
+
+
+// BaseDynamicMeshComponent GeometryFramework.Default__BaseDynamicMeshComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UBaseDynamicMeshComponent* UBaseDynamicMeshComponent::GetDefaultObj()
+{
+	static class UBaseDynamicMeshComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBaseDynamicMeshComponent*>(UBaseDynamicMeshComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function GeometryFramework.BaseDynamicMeshComponent.SetViewModeOverridesEnabled
 // (Native, Public, BlueprintCallable)
 // Parameters:
 // bool                               bEnabled                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaseDynamicMeshComponent::SetViewModeOverridesEnabled(bool InbEnabled)
+void UBaseDynamicMeshComponent::SetViewModeOverridesEnabled(bool bEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +54,15 @@ void UBaseDynamicMeshComponent::SetViewModeOverridesEnabled(bool InbEnabled)
 
 	Params::UBaseDynamicMeshComponent_SetViewModeOverridesEnabled_Params Parms{};
 
-	Parms.bEnabled = InbEnabled;
+	Parms.bEnabled = bEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -47,7 +72,7 @@ void UBaseDynamicMeshComponent::SetViewModeOverridesEnabled(bool InbEnabled)
 // Parameters:
 // bool                               bEnabled                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaseDynamicMeshComponent::SetShadowsEnabled(bool InbEnabled)
+void UBaseDynamicMeshComponent::SetShadowsEnabled(bool bEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,15 +81,15 @@ void UBaseDynamicMeshComponent::SetShadowsEnabled(bool InbEnabled)
 
 	Params::UBaseDynamicMeshComponent_SetShadowsEnabled_Params Parms{};
 
-	Parms.bEnabled = InbEnabled;
+	Parms.bEnabled = bEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -74,7 +99,7 @@ void UBaseDynamicMeshComponent::SetShadowsEnabled(bool InbEnabled)
 // Parameters:
 // class UMaterialInterface*          Material                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaseDynamicMeshComponent::SetSecondaryRenderMaterial(class UMaterialInterface* InMaterial)
+void UBaseDynamicMeshComponent::SetSecondaryRenderMaterial(class UMaterialInterface* Material)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,15 +108,15 @@ void UBaseDynamicMeshComponent::SetSecondaryRenderMaterial(class UMaterialInterf
 
 	Params::UBaseDynamicMeshComponent_SetSecondaryRenderMaterial_Params Parms{};
 
-	Parms.Material = InMaterial;
+	Parms.Material = Material;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -101,7 +126,7 @@ void UBaseDynamicMeshComponent::SetSecondaryRenderMaterial(class UMaterialInterf
 // Parameters:
 // bool                               bSetVisible                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaseDynamicMeshComponent::SetSecondaryBuffersVisibility(bool InbSetVisible)
+void UBaseDynamicMeshComponent::SetSecondaryBuffersVisibility(bool bSetVisible)
 {
 	static class UFunction* Func = nullptr;
 
@@ -110,15 +135,15 @@ void UBaseDynamicMeshComponent::SetSecondaryBuffersVisibility(bool InbSetVisible
 
 	Params::UBaseDynamicMeshComponent_SetSecondaryBuffersVisibility_Params Parms{};
 
-	Parms.bSetVisible = InbSetVisible;
+	Parms.bSetVisible = bSetVisible;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -128,7 +153,7 @@ void UBaseDynamicMeshComponent::SetSecondaryBuffersVisibility(bool InbSetVisible
 // Parameters:
 // class UMaterialInterface*          Material                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaseDynamicMeshComponent::SetOverrideRenderMaterial(class UMaterialInterface* InMaterial)
+void UBaseDynamicMeshComponent::SetOverrideRenderMaterial(class UMaterialInterface* Material)
 {
 	static class UFunction* Func = nullptr;
 
@@ -137,15 +162,15 @@ void UBaseDynamicMeshComponent::SetOverrideRenderMaterial(class UMaterialInterfa
 
 	Params::UBaseDynamicMeshComponent_SetOverrideRenderMaterial_Params Parms{};
 
-	Parms.Material = InMaterial;
+	Parms.Material = Material;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -155,7 +180,7 @@ void UBaseDynamicMeshComponent::SetOverrideRenderMaterial(class UMaterialInterfa
 // Parameters:
 // bool                               bEnable                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaseDynamicMeshComponent::SetEnableWireframeRenderPass(bool InbEnable)
+void UBaseDynamicMeshComponent::SetEnableWireframeRenderPass(bool bEnable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -164,15 +189,15 @@ void UBaseDynamicMeshComponent::SetEnableWireframeRenderPass(bool InbEnable)
 
 	Params::UBaseDynamicMeshComponent_SetEnableWireframeRenderPass_Params Parms{};
 
-	Parms.bEnable = InbEnable;
+	Parms.bEnable = bEnable;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -182,7 +207,7 @@ void UBaseDynamicMeshComponent::SetEnableWireframeRenderPass(bool InbEnable)
 // Parameters:
 // bool                               bSetEnabled                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaseDynamicMeshComponent::SetEnableRaytracing(bool InbSetEnabled)
+void UBaseDynamicMeshComponent::SetEnableRaytracing(bool bSetEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -191,15 +216,15 @@ void UBaseDynamicMeshComponent::SetEnableRaytracing(bool InbSetEnabled)
 
 	Params::UBaseDynamicMeshComponent_SetEnableRaytracing_Params Parms{};
 
-	Parms.bSetEnabled = InbSetEnabled;
+	Parms.bSetEnabled = bSetEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -209,7 +234,7 @@ void UBaseDynamicMeshComponent::SetEnableRaytracing(bool InbSetEnabled)
 // Parameters:
 // bool                               bEnable                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaseDynamicMeshComponent::SetEnableFlatShading(bool InbEnable)
+void UBaseDynamicMeshComponent::SetEnableFlatShading(bool bEnable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -218,15 +243,15 @@ void UBaseDynamicMeshComponent::SetEnableFlatShading(bool InbEnable)
 
 	Params::UBaseDynamicMeshComponent_SetEnableFlatShading_Params Parms{};
 
-	Parms.bEnable = InbEnable;
+	Parms.bEnable = bEnable;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -236,7 +261,7 @@ void UBaseDynamicMeshComponent::SetEnableFlatShading(bool InbEnable)
 // Parameters:
 // struct FColor                      NewColor                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaseDynamicMeshComponent::SetConstantOverrideColor(const struct FColor& InNewColor)
+void UBaseDynamicMeshComponent::SetConstantOverrideColor(const struct FColor& NewColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -245,15 +270,15 @@ void UBaseDynamicMeshComponent::SetConstantOverrideColor(const struct FColor& In
 
 	Params::UBaseDynamicMeshComponent_SetConstantOverrideColor_Params Parms{};
 
-	Parms.NewColor = InNewColor;
+	Parms.NewColor = NewColor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -263,7 +288,7 @@ void UBaseDynamicMeshComponent::SetConstantOverrideColor(const struct FColor& In
 // Parameters:
 // enum class EDynamicMeshComponentColorOverrideModeNewMode                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBaseDynamicMeshComponent::SetColorOverrideMode(enum class EDynamicMeshComponentColorOverrideMode InNewMode)
+void UBaseDynamicMeshComponent::SetColorOverrideMode(enum class EDynamicMeshComponentColorOverrideMode NewMode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -272,15 +297,15 @@ void UBaseDynamicMeshComponent::SetColorOverrideMode(enum class EDynamicMeshComp
 
 	Params::UBaseDynamicMeshComponent_SetColorOverrideMode_Params Parms{};
 
-	Parms.NewMode = InNewMode;
+	Parms.NewMode = NewMode;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -291,7 +316,7 @@ void UBaseDynamicMeshComponent::SetColorOverrideMode(enum class EDynamicMeshComp
 // int32                              K                                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBaseDynamicMeshComponent::HasOverrideRenderMaterial(int32 InK)
+bool UBaseDynamicMeshComponent::HasOverrideRenderMaterial(int32 K)
 {
 	static class UFunction* Func = nullptr;
 
@@ -300,15 +325,15 @@ bool UBaseDynamicMeshComponent::HasOverrideRenderMaterial(int32 InK)
 
 	Params::UBaseDynamicMeshComponent_HasOverrideRenderMaterial_Params Parms{};
 
-	Parms.K = InK;
+	Parms.K = K;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -330,13 +355,13 @@ bool UBaseDynamicMeshComponent::GetViewModeOverridesEnabled()
 	Params::UBaseDynamicMeshComponent_GetViewModeOverridesEnabled_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -358,13 +383,13 @@ bool UBaseDynamicMeshComponent::GetShadowsEnabled()
 	Params::UBaseDynamicMeshComponent_GetShadowsEnabled_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -386,13 +411,13 @@ class UMaterialInterface* UBaseDynamicMeshComponent::GetSecondaryRenderMaterial(
 	Params::UBaseDynamicMeshComponent_GetSecondaryRenderMaterial_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -414,13 +439,13 @@ bool UBaseDynamicMeshComponent::GetSecondaryBuffersVisibility()
 	Params::UBaseDynamicMeshComponent_GetSecondaryBuffersVisibility_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -433,7 +458,7 @@ bool UBaseDynamicMeshComponent::GetSecondaryBuffersVisibility()
 // int32                              MaterialIndex                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMaterialInterface*          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMaterialInterface* UBaseDynamicMeshComponent::GetOverrideRenderMaterial(int32 InMaterialIndex)
+class UMaterialInterface* UBaseDynamicMeshComponent::GetOverrideRenderMaterial(int32 MaterialIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -442,15 +467,15 @@ class UMaterialInterface* UBaseDynamicMeshComponent::GetOverrideRenderMaterial(i
 
 	Params::UBaseDynamicMeshComponent_GetOverrideRenderMaterial_Params Parms{};
 
-	Parms.MaterialIndex = InMaterialIndex;
+	Parms.MaterialIndex = MaterialIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -472,13 +497,13 @@ bool UBaseDynamicMeshComponent::GetFlatShadingEnabled()
 	Params::UBaseDynamicMeshComponent_GetFlatShadingEnabled_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -500,13 +525,13 @@ bool UBaseDynamicMeshComponent::GetEnableWireframeRenderPass()
 	Params::UBaseDynamicMeshComponent_GetEnableWireframeRenderPass_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -528,13 +553,13 @@ bool UBaseDynamicMeshComponent::GetEnableRaytracing()
 	Params::UBaseDynamicMeshComponent_GetEnableRaytracing_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -556,13 +581,13 @@ class UDynamicMesh* UBaseDynamicMeshComponent::GetDynamicMesh()
 	Params::UBaseDynamicMeshComponent_GetDynamicMesh_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -584,13 +609,13 @@ struct FColor UBaseDynamicMeshComponent::GetConstantOverrideColor()
 	Params::UBaseDynamicMeshComponent_GetConstantOverrideColor_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -612,13 +637,13 @@ enum class EDynamicMeshComponentColorOverrideMode UBaseDynamicMeshComponent::Get
 	Params::UBaseDynamicMeshComponent_GetColorOverrideMode_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -639,13 +664,13 @@ void UBaseDynamicMeshComponent::ClearSecondaryRenderMaterial()
 	Params::UBaseDynamicMeshComponent_ClearSecondaryRenderMaterial_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -664,14 +689,126 @@ void UBaseDynamicMeshComponent::ClearOverrideRenderMaterial()
 	Params::UBaseDynamicMeshComponent_ClearOverrideRenderMaterial_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class GeometryFramework.MeshCommandChangeTarget
+// (None)
+
+class UClass* IMeshCommandChangeTarget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MeshCommandChangeTarget");
+
+	return Clss;
+}
+
+
+// MeshCommandChangeTarget GeometryFramework.Default__MeshCommandChangeTarget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMeshCommandChangeTarget* IMeshCommandChangeTarget::GetDefaultObj()
+{
+	static class IMeshCommandChangeTarget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMeshCommandChangeTarget*>(IMeshCommandChangeTarget::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GeometryFramework.MeshReplacementCommandChangeTarget
+// (None)
+
+class UClass* IMeshReplacementCommandChangeTarget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MeshReplacementCommandChangeTarget");
+
+	return Clss;
+}
+
+
+// MeshReplacementCommandChangeTarget GeometryFramework.Default__MeshReplacementCommandChangeTarget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMeshReplacementCommandChangeTarget* IMeshReplacementCommandChangeTarget::GetDefaultObj()
+{
+	static class IMeshReplacementCommandChangeTarget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMeshReplacementCommandChangeTarget*>(IMeshReplacementCommandChangeTarget::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GeometryFramework.MeshVertexCommandChangeTarget
+// (None)
+
+class UClass* IMeshVertexCommandChangeTarget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MeshVertexCommandChangeTarget");
+
+	return Clss;
+}
+
+
+// MeshVertexCommandChangeTarget GeometryFramework.Default__MeshVertexCommandChangeTarget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IMeshVertexCommandChangeTarget* IMeshVertexCommandChangeTarget::GetDefaultObj()
+{
+	static class IMeshVertexCommandChangeTarget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IMeshVertexCommandChangeTarget*>(IMeshVertexCommandChangeTarget::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GeometryFramework.DynamicMeshComponent
+// (SceneComponent, PrimitiveComponent)
+
+class UClass* UDynamicMeshComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("DynamicMeshComponent");
+
+	return Clss;
+}
+
+
+// DynamicMeshComponent GeometryFramework.Default__DynamicMeshComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UDynamicMeshComponent* UDynamicMeshComponent::GetDefaultObj()
+{
+	static class UDynamicMeshComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UDynamicMeshComponent*>(UDynamicMeshComponent::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -682,7 +819,7 @@ void UBaseDynamicMeshComponent::ClearOverrideRenderMaterial()
 // bool                               bDeleteExtraSlots                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDynamicMeshComponent::ValidateMaterialSlots(bool InbCreateIfMissing, bool InbDeleteExtraSlots)
+bool UDynamicMeshComponent::ValidateMaterialSlots(bool bCreateIfMissing, bool bDeleteExtraSlots)
 {
 	static class UFunction* Func = nullptr;
 
@@ -691,16 +828,16 @@ bool UDynamicMeshComponent::ValidateMaterialSlots(bool InbCreateIfMissing, bool 
 
 	Params::UDynamicMeshComponent_ValidateMaterialSlots_Params Parms{};
 
-	Parms.bCreateIfMissing = InbCreateIfMissing;
-	Parms.bDeleteExtraSlots = InbDeleteExtraSlots;
+	Parms.bCreateIfMissing = bCreateIfMissing;
+	Parms.bDeleteExtraSlots = bDeleteExtraSlots;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -712,7 +849,7 @@ bool UDynamicMeshComponent::ValidateMaterialSlots(bool InbCreateIfMissing, bool 
 // Parameters:
 // bool                               bOnlyIfPending                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDynamicMeshComponent::UpdateCollision(bool InbOnlyIfPending)
+void UDynamicMeshComponent::UpdateCollision(bool bOnlyIfPending)
 {
 	static class UFunction* Func = nullptr;
 
@@ -721,15 +858,15 @@ void UDynamicMeshComponent::UpdateCollision(bool InbOnlyIfPending)
 
 	Params::UDynamicMeshComponent_UpdateCollision_Params Parms{};
 
-	Parms.bOnlyIfPending = InbOnlyIfPending;
+	Parms.bOnlyIfPending = bOnlyIfPending;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -739,7 +876,7 @@ void UDynamicMeshComponent::UpdateCollision(bool InbOnlyIfPending)
 // Parameters:
 // enum class EDynamicMeshComponentTangentsModeNewTangentsType                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDynamicMeshComponent::SetTangentsType(enum class EDynamicMeshComponentTangentsMode InNewTangentsType)
+void UDynamicMeshComponent::SetTangentsType(enum class EDynamicMeshComponentTangentsMode NewTangentsType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -748,15 +885,15 @@ void UDynamicMeshComponent::SetTangentsType(enum class EDynamicMeshComponentTang
 
 	Params::UDynamicMeshComponent_SetTangentsType_Params Parms{};
 
-	Parms.NewTangentsType = InNewTangentsType;
+	Parms.NewTangentsType = NewTangentsType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -766,7 +903,7 @@ void UDynamicMeshComponent::SetTangentsType(enum class EDynamicMeshComponentTang
 // Parameters:
 // class UDynamicMesh*                NewMesh                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDynamicMeshComponent::SetDynamicMesh(class UDynamicMesh* InNewMesh)
+void UDynamicMeshComponent::SetDynamicMesh(class UDynamicMesh* NewMesh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -775,15 +912,15 @@ void UDynamicMeshComponent::SetDynamicMesh(class UDynamicMesh* InNewMesh)
 
 	Params::UDynamicMeshComponent_SetDynamicMesh_Params Parms{};
 
-	Parms.NewMesh = InNewMesh;
+	Parms.NewMesh = NewMesh;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -794,7 +931,7 @@ void UDynamicMeshComponent::SetDynamicMesh(class UDynamicMesh* InNewMesh)
 // bool                               bEnabled                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bImmediateUpdate                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDynamicMeshComponent::SetDeferredCollisionUpdatesEnabled(bool InbEnabled, bool InbImmediateUpdate)
+void UDynamicMeshComponent::SetDeferredCollisionUpdatesEnabled(bool bEnabled, bool bImmediateUpdate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -803,16 +940,16 @@ void UDynamicMeshComponent::SetDeferredCollisionUpdatesEnabled(bool InbEnabled, 
 
 	Params::UDynamicMeshComponent_SetDeferredCollisionUpdatesEnabled_Params Parms{};
 
-	Parms.bEnabled = InbEnabled;
-	Parms.bImmediateUpdate = InbImmediateUpdate;
+	Parms.bEnabled = bEnabled;
+	Parms.bImmediateUpdate = bImmediateUpdate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -823,7 +960,7 @@ void UDynamicMeshComponent::SetDeferredCollisionUpdatesEnabled(bool InbEnabled, 
 // bool                               bEnabled                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bImmediateUpdate                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDynamicMeshComponent::SetComplexAsSimpleCollisionEnabled(bool InbEnabled, bool InbImmediateUpdate)
+void UDynamicMeshComponent::SetComplexAsSimpleCollisionEnabled(bool bEnabled, bool bImmediateUpdate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -832,16 +969,16 @@ void UDynamicMeshComponent::SetComplexAsSimpleCollisionEnabled(bool InbEnabled, 
 
 	Params::UDynamicMeshComponent_SetComplexAsSimpleCollisionEnabled_Params Parms{};
 
-	Parms.bEnabled = InbEnabled;
-	Parms.bImmediateUpdate = InbImmediateUpdate;
+	Parms.bEnabled = bEnabled;
+	Parms.bImmediateUpdate = bImmediateUpdate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -861,13 +998,13 @@ enum class EDynamicMeshComponentTangentsMode UDynamicMeshComponent::GetTangentsT
 	Params::UDynamicMeshComponent_GetTangentsType_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -888,13 +1025,13 @@ void UDynamicMeshComponent::EnableComplexAsSimpleCollision()
 	Params::UDynamicMeshComponent_EnableComplexAsSimpleCollision_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -904,7 +1041,7 @@ void UDynamicMeshComponent::EnableComplexAsSimpleCollision()
 // Parameters:
 // TArray<class UMaterialInterface*>  NewMaterialSet                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UDynamicMeshComponent::ConfigureMaterialSet(TArray<class UMaterialInterface*>& InNewMaterialSet)
+void UDynamicMeshComponent::ConfigureMaterialSet(TArray<class UMaterialInterface*>& NewMaterialSet)
 {
 	static class UFunction* Func = nullptr;
 
@@ -913,16 +1050,44 @@ void UDynamicMeshComponent::ConfigureMaterialSet(TArray<class UMaterialInterface
 
 	Params::UDynamicMeshComponent_ConfigureMaterialSet_Params Parms{};
 
-	Parms.NewMaterialSet = InNewMaterialSet;
+	Parms.NewMaterialSet = NewMaterialSet;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class GeometryFramework.DynamicMeshActor
+// (Actor)
+
+class UClass* ADynamicMeshActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("DynamicMeshActor");
+
+	return Clss;
+}
+
+
+// DynamicMeshActor GeometryFramework.Default__DynamicMeshActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ADynamicMeshActor* ADynamicMeshActor::GetDefaultObj()
+{
+	static class ADynamicMeshActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ADynamicMeshActor*>(ADynamicMeshActor::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -932,7 +1097,7 @@ void UDynamicMeshComponent::ConfigureMaterialSet(TArray<class UMaterialInterface
 // class UDynamicMesh*                Mesh                                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADynamicMeshActor::ReleaseComputeMesh(class UDynamicMesh* InMesh)
+bool ADynamicMeshActor::ReleaseComputeMesh(class UDynamicMesh* Mesh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -941,15 +1106,15 @@ bool ADynamicMeshActor::ReleaseComputeMesh(class UDynamicMesh* InMesh)
 
 	Params::ADynamicMeshActor_ReleaseComputeMesh_Params Parms{};
 
-	Parms.Mesh = InMesh;
+	Parms.Mesh = Mesh;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -970,13 +1135,13 @@ void ADynamicMeshActor::ReleaseAllComputeMeshes()
 	Params::ADynamicMeshActor_ReleaseAllComputeMeshes_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -996,13 +1161,13 @@ class UDynamicMeshComponent* ADynamicMeshActor::GetDynamicMeshComponent()
 	Params::ADynamicMeshActor_GetDynamicMeshComponent_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1024,13 +1189,13 @@ class UDynamicMeshPool* ADynamicMeshActor::GetComputeMeshPool()
 	Params::ADynamicMeshActor_GetComputeMeshPool_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1051,13 +1216,13 @@ void ADynamicMeshActor::FreeAllComputeMeshes()
 	Params::ADynamicMeshActor_FreeAllComputeMeshes_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1077,16 +1242,72 @@ class UDynamicMesh* ADynamicMeshActor::AllocateComputeMesh()
 	Params::ADynamicMeshActor_AllocateComputeMesh_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class GeometryFramework.DynamicMeshGenerator
+// (None)
+
+class UClass* UDynamicMeshGenerator::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("DynamicMeshGenerator");
+
+	return Clss;
+}
+
+
+// DynamicMeshGenerator GeometryFramework.Default__DynamicMeshGenerator
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UDynamicMeshGenerator* UDynamicMeshGenerator::GetDefaultObj()
+{
+	static class UDynamicMeshGenerator* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UDynamicMeshGenerator*>(UDynamicMeshGenerator::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GeometryFramework.DynamicMesh
+// (None)
+
+class UClass* UDynamicMesh::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("DynamicMesh");
+
+	return Clss;
+}
+
+
+// DynamicMesh GeometryFramework.Default__DynamicMesh
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UDynamicMesh* UDynamicMesh::GetDefaultObj()
+{
+	static class UDynamicMesh* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UDynamicMesh*>(UDynamicMesh::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1105,13 +1326,13 @@ class UDynamicMesh* UDynamicMesh::ResetToCube()
 	Params::UDynamicMesh_ResetToCube_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1133,13 +1354,13 @@ class UDynamicMesh* UDynamicMesh::Reset()
 	Params::UDynamicMesh_Reset_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1161,13 +1382,13 @@ bool UDynamicMesh::IsEmpty()
 	Params::UDynamicMesh_IsEmpty_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1189,16 +1410,44 @@ int32 UDynamicMesh::GetTriangleCount()
 	Params::UDynamicMesh_GetTriangleCount_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class GeometryFramework.DynamicMeshPool
+// (None)
+
+class UClass* UDynamicMeshPool::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("DynamicMeshPool");
+
+	return Clss;
+}
+
+
+// DynamicMeshPool GeometryFramework.Default__DynamicMeshPool
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UDynamicMeshPool* UDynamicMeshPool::GetDefaultObj()
+{
+	static class UDynamicMeshPool* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UDynamicMeshPool*>(UDynamicMeshPool::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1207,7 +1456,7 @@ int32 UDynamicMesh::GetTriangleCount()
 // Parameters:
 // class UDynamicMesh*                Mesh                                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDynamicMeshPool::ReturnMesh(class UDynamicMesh* InMesh)
+void UDynamicMeshPool::ReturnMesh(class UDynamicMesh* Mesh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1216,15 +1465,15 @@ void UDynamicMeshPool::ReturnMesh(class UDynamicMesh* InMesh)
 
 	Params::UDynamicMeshPool_ReturnMesh_Params Parms{};
 
-	Parms.Mesh = InMesh;
+	Parms.Mesh = Mesh;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1243,13 +1492,13 @@ void UDynamicMeshPool::ReturnAllMeshes()
 	Params::UDynamicMeshPool_ReturnAllMeshes_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1269,13 +1518,13 @@ class UDynamicMesh* UDynamicMeshPool::RequestMesh()
 	Params::UDynamicMeshPool_RequestMesh_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1296,18 +1545,16 @@ void UDynamicMeshPool::FreeAllMeshes()
 	Params::UDynamicMeshPool_FreeAllMeshes_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

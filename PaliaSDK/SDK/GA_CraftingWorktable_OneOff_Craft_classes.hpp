@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,16 +15,11 @@ class UGA_CraftingWorktable_OneOff_Craft_C : public UGA_Cooking_OneOff_Base_C
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GA_CraftingWorktable_OneOff_Craft_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGA_CraftingWorktable_OneOff_Craft_C* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

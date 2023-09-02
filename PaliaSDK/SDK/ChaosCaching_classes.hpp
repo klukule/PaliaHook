@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,11 +16,8 @@ class UChaosCacheCollection : public UObject
 public:
 	TArray<class UChaosCache*>                   Caches;                                            // 0x28(0x10)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosCacheCollection");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UChaosCacheCollection* GetDefaultObj();
 
 };
 
@@ -35,23 +29,20 @@ public:
 	class UChaosCacheCollection*                 CacheCollection;                                   // 0x290(0x8)(Edit, ZeroConstructor, DisableEditOnTemplate, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECacheMode                        CacheMode;                                         // 0x298(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStartMode                        StartMode;                                         // 0x299(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_17C1[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1819[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        StartTime;                                         // 0x29C(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_17C2[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_181A[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FObservedComponent>            ObservedComponents;                                // 0x2A8(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_17C4[0x80];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_181B[0x80];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosCacheManager");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class AChaosCacheManager* GetDefaultObj();
 
-	void TriggerComponentByCache(class FName InInCacheName);
-	void TriggerComponent(class UPrimitiveComponent* InInComponent);
+	void TriggerComponentByCache(class FName InCacheName);
+	void TriggerComponent(class UPrimitiveComponent* InComponent);
 	void TriggerAll();
-	void SetStartTime(float InInStartTime);
-	void ResetSingleTransform(int32 InInIndex);
+	void SetStartTime(float InStartTime);
+	void ResetSingleTransform(int32 InIndex);
 	void ResetAllComponentTransforms();
 };
 
@@ -61,11 +52,8 @@ class AChaosCachePlayer : public AChaosCacheManager
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosCachePlayer");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class AChaosCachePlayer* GetDefaultObj();
 
 };
 
@@ -84,13 +72,10 @@ public:
 	struct FCacheSpawnableTemplate               Spawnable;                                         // 0x140(0xD0)(Edit, EditConst, NoDestructor, NativeAccessSpecifierPrivate)
 	struct FGuid                                 AdapterGuid;                                       // 0x210(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                        Version;                                           // 0x220(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_17CB[0x2C];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1821[0x2C];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosCache");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UChaosCache* GetDefaultObj();
 
 };
 
@@ -101,11 +86,8 @@ class UMovieSceneChaosCacheSection : public UMovieSceneBaseCacheSection
 public:
 	struct FMovieSceneChaosCacheParams           Params;                                            // 0xF8(0x28)(Edit, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneChaosCacheSection");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneChaosCacheSection* GetDefaultObj();
 
 };
 
@@ -114,19 +96,14 @@ public:
 class UMovieSceneChaosCacheTrack : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                        Pad_17CF[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1828[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UMovieSceneSection*>            AnimationSections;                                 // 0xA0(0x10)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneChaosCacheTrack");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneChaosCacheTrack* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,15 +11,15 @@ namespace SDK
 
 enum class ELocalFileReplayResult : uint8
 {
-	ELocalFileReplayResult__Success = 0,
-	ELocalFileReplayResult__InvalidReplayInfo = 1,
-	ELocalFileReplayResult__StreamChunkIndexMismatch = 2,
-	ELocalFileReplayResult__DecompressBuffer = 3,
-	ELocalFileReplayResult__CompressionNotSupported = 4,
-	ELocalFileReplayResult__DecryptBuffer = 5,
-	ELocalFileReplayResult__EncryptionNotSupported = 6,
-	ELocalFileReplayResult__Unknown = 7,
-	ELocalFileReplayResult__ELocalFileReplayResult_MAX = 8,
+	Success                        = 0,
+	InvalidReplayInfo              = 1,
+	StreamChunkIndexMismatch       = 2,
+	DecompressBuffer               = 3,
+	CompressionNotSupported        = 4,
+	DecryptBuffer                  = 5,
+	EncryptionNotSupported         = 6,
+	Unknown                        = 7,
+	ELocalFileReplayResult_MAX     = 8,
 };
 
 
@@ -32,6 +29,4 @@ enum class ELocalFileReplayResult : uint8
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

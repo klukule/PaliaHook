@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,157 +11,157 @@ namespace SDK
 
 enum class ESlateVisibility : uint8
 {
-	ESlateVisibility__Visible      = 0,
-	ESlateVisibility__Collapsed    = 1,
-	ESlateVisibility__Hidden       = 2,
-	ESlateVisibility__HitTestInvisible = 3,
-	ESlateVisibility__SelfHitTestInvisible = 4,
-	ESlateVisibility__ESlateVisibility_MAX = 5,
+	Visible                        = 0,
+	Collapsed                      = 1,
+	Hidden                         = 2,
+	HitTestInvisible               = 3,
+	SelfHitTestInvisible           = 4,
+	ESlateVisibility_MAX           = 5,
 };
 
 enum class EVirtualKeyboardType : uint8
 {
-	EVirtualKeyboardType__Default  = 0,
-	EVirtualKeyboardType__Number   = 1,
-	EVirtualKeyboardType__Web      = 2,
-	EVirtualKeyboardType__Email    = 3,
-	EVirtualKeyboardType__Password = 4,
-	EVirtualKeyboardType__AlphaNumeric = 5,
-	EVirtualKeyboardType__EVirtualKeyboardType_MAX = 6,
+	Default                        = 0,
+	Number                         = 1,
+	Web                            = 2,
+	Email                          = 3,
+	Password                       = 4,
+	AlphaNumeric                   = 5,
+	EVirtualKeyboardType_MAX       = 6,
 };
 
 enum class ESlateAccessibleBehavior : uint8
 {
-	ESlateAccessibleBehavior__NotAccessible = 0,
-	ESlateAccessibleBehavior__Auto = 1,
-	ESlateAccessibleBehavior__Summary = 2,
-	ESlateAccessibleBehavior__Custom = 3,
-	ESlateAccessibleBehavior__ToolTip = 4,
-	ESlateAccessibleBehavior__ESlateAccessibleBehavior_MAX = 5,
+	NotAccessible                  = 0,
+	Auto                           = 1,
+	Summary                        = 2,
+	Custom                         = 3,
+	ToolTip                        = 4,
+	ESlateAccessibleBehavior_MAX   = 5,
 };
 
 enum class EWidgetAnimationEvent : uint8
 {
-	EWidgetAnimationEvent__Started = 0,
-	EWidgetAnimationEvent__Finished = 1,
-	EWidgetAnimationEvent__EWidgetAnimationEvent_MAX = 2,
+	Started                        = 0,
+	Finished                       = 1,
+	EWidgetAnimationEvent_MAX      = 2,
 };
 
 enum class EUMGSequencePlayMode : uint8
 {
-	EUMGSequencePlayMode__Forward  = 0,
-	EUMGSequencePlayMode__Reverse  = 1,
-	EUMGSequencePlayMode__PingPong = 2,
-	EUMGSequencePlayMode__EUMGSequencePlayMode_MAX = 3,
+	Forward                        = 0,
+	Reverse                        = 1,
+	PingPong                       = 2,
+	EUMGSequencePlayMode_MAX       = 3,
 };
 
 enum class EWidgetTickFrequency : uint8
 {
-	EWidgetTickFrequency__Never    = 0,
-	EWidgetTickFrequency__Auto     = 1,
-	EWidgetTickFrequency__EWidgetTickFrequency_MAX = 2,
+	Never                          = 0,
+	Auto                           = 1,
+	EWidgetTickFrequency_MAX       = 2,
 };
 
 enum class ESlateSizeRule : uint8
 {
-	ESlateSizeRule__Automatic      = 0,
-	ESlateSizeRule__Fill           = 1,
-	ESlateSizeRule__ESlateSizeRule_MAX = 2,
+	Automatic                      = 0,
+	Fill                           = 1,
+	ESlateSizeRule_MAX             = 2,
 };
 
 enum class EDynamicBoxType : uint8
 {
-	EDynamicBoxType__Horizontal    = 0,
-	EDynamicBoxType__Vertical      = 1,
-	EDynamicBoxType__Wrap          = 2,
-	EDynamicBoxType__VerticalWrap  = 3,
-	EDynamicBoxType__Radial        = 4,
-	EDynamicBoxType__Overlay       = 5,
-	EDynamicBoxType__EDynamicBoxType_MAX = 6,
+	Horizontal                     = 0,
+	Vertical                       = 1,
+	Wrap                           = 2,
+	VerticalWrap                   = 3,
+	Radial                         = 4,
+	Overlay                        = 5,
+	EDynamicBoxType_MAX            = 6,
 };
 
 enum class EWidgetDesignFlags : uint8
 {
-	EWidgetDesignFlags__None       = 0,
-	EWidgetDesignFlags__Designing  = 1,
-	EWidgetDesignFlags__ShowOutline = 2,
-	EWidgetDesignFlags__ExecutePreConstruct = 4,
-	EWidgetDesignFlags__EWidgetDesignFlags_MAX = 5,
+	None                           = 0,
+	Designing                      = 1,
+	ShowOutline                    = 2,
+	ExecutePreConstruct            = 4,
+	EWidgetDesignFlags_MAX         = 5,
 };
 
 enum class EWidgetSpace : uint8
 {
-	EWidgetSpace__World            = 0,
-	EWidgetSpace__Screen           = 1,
-	EWidgetSpace__EWidgetSpace_MAX = 2,
+	World                          = 0,
+	Screen                         = 1,
+	EWidgetSpace_MAX               = 2,
 };
 
 enum class EWidgetTimingPolicy : uint8
 {
-	EWidgetTimingPolicy__RealTime  = 0,
-	EWidgetTimingPolicy__GameTime  = 1,
-	EWidgetTimingPolicy__EWidgetTimingPolicy_MAX = 2,
+	RealTime                       = 0,
+	GameTime                       = 1,
+	EWidgetTimingPolicy_MAX        = 2,
 };
 
 enum class EWidgetBlendMode : uint8
 {
-	EWidgetBlendMode__Opaque       = 0,
-	EWidgetBlendMode__Masked       = 1,
-	EWidgetBlendMode__Transparent  = 2,
-	EWidgetBlendMode__EWidgetBlendMode_MAX = 3,
+	Opaque                         = 0,
+	Masked                         = 1,
+	Transparent                    = 2,
+	EWidgetBlendMode_MAX           = 3,
 };
 
 enum class EWidgetGeometryMode : uint8
 {
-	EWidgetGeometryMode__Plane     = 0,
-	EWidgetGeometryMode__Cylinder  = 1,
-	EWidgetGeometryMode__EWidgetGeometryMode_MAX = 2,
+	Plane                          = 0,
+	Cylinder                       = 1,
+	EWidgetGeometryMode_MAX        = 2,
 };
 
 enum class EWindowVisibility : uint8
 {
-	EWindowVisibility__Visible     = 0,
-	EWindowVisibility__SelfHitTestInvisible = 1,
-	EWindowVisibility__EWindowVisibility_MAX = 2,
+	Visible                        = 0,
+	SelfHitTestInvisible           = 1,
+	EWindowVisibility_MAX          = 2,
 };
 
 enum class ETickMode : uint8
 {
-	ETickMode__Disabled            = 0,
-	ETickMode__Enabled             = 1,
-	ETickMode__Automatic           = 2,
-	ETickMode__ETickMode_MAX       = 3,
+	Disabled                       = 0,
+	Enabled                        = 1,
+	Automatic                      = 2,
+	ETickMode_MAX                  = 3,
 };
 
 enum class EWidgetInteractionSource : uint8
 {
-	EWidgetInteractionSource__World = 0,
-	EWidgetInteractionSource__Mouse = 1,
-	EWidgetInteractionSource__CenterScreen = 2,
-	EWidgetInteractionSource__Custom = 3,
-	EWidgetInteractionSource__EWidgetInteractionSource_MAX = 4,
+	World                          = 0,
+	Mouse                          = 1,
+	CenterScreen                   = 2,
+	Custom                         = 3,
+	EWidgetInteractionSource_MAX   = 4,
 };
 
 enum class EDragPivot : uint8
 {
-	EDragPivot__MouseDown          = 0,
-	EDragPivot__TopLeft            = 1,
-	EDragPivot__TopCenter          = 2,
-	EDragPivot__TopRight           = 3,
-	EDragPivot__CenterLeft         = 4,
-	EDragPivot__CenterCenter       = 5,
-	EDragPivot__CenterRight        = 6,
-	EDragPivot__BottomLeft         = 7,
-	EDragPivot__BottomCenter       = 8,
-	EDragPivot__BottomRight        = 9,
-	EDragPivot__EDragPivot_MAX     = 10,
+	MouseDown                      = 0,
+	TopLeft                        = 1,
+	TopCenter                      = 2,
+	TopRight                       = 3,
+	CenterLeft                     = 4,
+	CenterCenter                   = 5,
+	CenterRight                    = 6,
+	BottomLeft                     = 7,
+	BottomCenter                   = 8,
+	BottomRight                    = 9,
+	EDragPivot_MAX                 = 10,
 };
 
 enum class EBindingKind : uint8
 {
-	EBindingKind__Function         = 0,
-	EBindingKind__Property         = 1,
-	EBindingKind__EBindingKind_MAX = 2,
+	Function                       = 0,
+	Property                       = 1,
+	EBindingKind_MAX               = 2,
 };
 
 
@@ -185,7 +182,7 @@ public:
 struct FEventReply
 {
 public:
-	uint8                                        Pad_131F[0xB8];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11D0[0xB8];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -197,7 +194,7 @@ public:
 	struct FVector2D                             Scale;                                             // 0x10(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             Shear;                                             // 0x20(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Angle;                                             // 0x30(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1323[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11D4[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x3 (0x3 - 0x0)
@@ -207,7 +204,7 @@ struct FShapedTextOptions
 public:
 	uint8                                        bOverride_TextShapingMethod : 1;                   // Mask: 0x1, PropSize: 0x10x0(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverride_TextFlowDirection : 1;                   // Mask: 0x2, PropSize: 0x10x0(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_AB : 6;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        BitPad_AF : 6;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
 	enum class ETextShapingMethod                TextShapingMethod;                                 // 0x1(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETextFlowDirection                TextFlowDirection;                                 // 0x2(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -217,7 +214,7 @@ public:
 struct FPaintContext
 {
 public:
-	uint8                                        Pad_132B[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11D7[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -228,9 +225,9 @@ public:
 	class UWidgetAnimation*                      Animation;                                         // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           Delegate;                                          // 0x8(0x10)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EWidgetAnimationEvent             AnimationEvent;                                    // 0x18(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1332[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_11E2[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  UserTag;                                           // 0x1C(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1333[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11E3[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -249,7 +246,7 @@ struct FSlateChildSize
 public:
 	float                                        Value;                                             // 0x0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ESlateSizeRule                    SizeRule;                                          // 0x4(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_133C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11E8[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x88 (0x88 - 0x0)
@@ -259,7 +256,7 @@ struct FUserWidgetPool
 public:
 	TArray<class UUserWidget*>                   ActiveWidgets;                                     // 0x0(0x10)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 	TArray<class UUserWidget*>                   InactiveWidgets;                                   // 0x10(0x10)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1341[0x68];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11EA[0x68];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -269,7 +266,7 @@ struct FRadialBoxSettings
 public:
 	float                                        StartingAngle;                                     // 0x0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDistributeItemsEvenly;                            // 0x4(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_134D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_11F4[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        AngleBetweenItems;                                 // 0x8(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SectorCentralAngle;                                // 0xC(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -280,7 +277,7 @@ struct FWidgetNavigationData
 {
 public:
 	enum class EUINavigationRule                 Rule;                                              // 0x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1356[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_11F7[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  WidgetToFocus;                                     // 0x4(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TWeakObjectPtr<class UWidget>                Widget;                                            // 0xC(0x8)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           CustomDelegate;                                    // 0x14(0x10)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -299,7 +296,7 @@ public:
 struct FSequenceTickManagerWidgetData
 {
 public:
-	uint8                                        Pad_135C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11FB[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x24 (0x24 - 0x0)
@@ -311,7 +308,7 @@ public:
 	class FName                                  SlotWidgetName;                                    // 0x8(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 AnimationGuid;                                     // 0x10(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsRootWidget;                                     // 0x20(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1360[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11FE[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1C (0x1C - 0x0)
@@ -320,7 +317,7 @@ struct FBlueprintWidgetAnimationDelegateBinding
 {
 public:
 	enum class EWidgetAnimationEvent             Action;                                            // 0x0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1361[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1200[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  AnimationToBind;                                   // 0x4(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  FunctionNameToBind;                                // 0xC(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  UserTag;                                           // 0x14(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -342,7 +339,7 @@ public:
 	struct FMargin                               Offsets;                                           // 0x20(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector2D                             Alignment;                                         // 0x30(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ZOrder;                                            // 0x40(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1367[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1203[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -360,7 +357,7 @@ public:
 struct FRichTextStyleRow : public FTableRowBase
 {
 public:
-	uint8                                        Pad_136D[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1207[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTextBlockStyle                       TextStyle;                                         // 0x10(0x340)(Edit, NativeAccessSpecifierPublic)
 };
 
@@ -369,7 +366,7 @@ public:
 struct FRichImageRow : public FTableRowBase
 {
 public:
-	uint8                                        Pad_136F[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_120A[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           Brush;                                             // 0x10(0xD0)(Edit, NativeAccessSpecifierPublic)
 };
 
@@ -378,7 +375,7 @@ public:
 struct FWidgetComponentInstanceData : public FSceneComponentInstanceData
 {
 public:
-	uint8                                        Pad_1371[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_120B[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x3C (0x3C - 0x0)
@@ -406,11 +403,9 @@ public:
 	class FName                                  FunctionName;                                      // 0x18(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDynamicPropertyPath                  SourcePath;                                        // 0x20(0x28)(NativeAccessSpecifierPublic)
 	enum class EBindingKind                      Kind;                                              // 0x48(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1379[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1211[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

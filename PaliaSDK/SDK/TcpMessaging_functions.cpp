@@ -2,16 +2,43 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
+//---------------------------------------------------------------------------------------------------------------------
+// FUNCTIONS
+//---------------------------------------------------------------------------------------------------------------------
+
+
+// Class TcpMessaging.TcpMessagingSettings
+// (None)
+
+class UClass* UTcpMessagingSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TcpMessagingSettings");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// TcpMessagingSettings TcpMessaging.Default__TcpMessagingSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTcpMessagingSettings* UTcpMessagingSettings::GetDefaultObj()
+{
+	static class UTcpMessagingSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTcpMessagingSettings*>(UTcpMessagingSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

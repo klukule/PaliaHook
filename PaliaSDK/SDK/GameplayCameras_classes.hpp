@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -28,28 +25,25 @@ public:
 	float                                        AnimBlendInTime;                                   // 0x150(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        AnimBlendOutTime;                                  // 0x154(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        RandomAnimSegmentDuration;                         // 0x158(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_152E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_14F2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UCameraAnimationSequence*              AnimSequence;                                      // 0x160(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bRandomAnimSegment : 1;                            // Mask: 0x1, PropSize: 0x10x168(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_AF : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_152F[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_C2 : 7;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_14F6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        OscillatorTimeRemaining;                           // 0x16C(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1532[0x70];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_14F9[0x70];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class USequenceCameraShakePattern*           SequenceShakePattern;                              // 0x1E0(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_1533[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14FB[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LegacyCameraShake");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULegacyCameraShake* GetDefaultObj();
 
-	class ULegacyCameraShake* StartLegacyCameraShakeFromSource(class APlayerCameraManager* InPlayerCameraManager, TSubclassOf<class ULegacyCameraShake> InShakeClass, class UCameraShakeSourceComponent* InSourceComponent, float InScale, enum class ECameraShakePlaySpace InPlaySpace, const struct FRotator& InUserPlaySpaceRot);
-	class ULegacyCameraShake* StartLegacyCameraShake(class APlayerCameraManager* InPlayerCameraManager, TSubclassOf<class ULegacyCameraShake> InShakeClass, float InScale, enum class ECameraShakePlaySpace InPlaySpace, const struct FRotator& InUserPlaySpaceRot);
-	void ReceiveStopShake(bool InbImmediately);
-	void ReceivePlayShake(float InScale);
+	class ULegacyCameraShake* StartLegacyCameraShakeFromSource(class APlayerCameraManager* PlayerCameraManager, TSubclassOf<class ULegacyCameraShake> ShakeClass, class UCameraShakeSourceComponent* SourceComponent, float Scale, enum class ECameraShakePlaySpace PlaySpace, const struct FRotator& UserPlaySpaceRot);
+	class ULegacyCameraShake* StartLegacyCameraShake(class APlayerCameraManager* PlayerCameraManager, TSubclassOf<class ULegacyCameraShake> ShakeClass, float Scale, enum class ECameraShakePlaySpace PlaySpace, const struct FRotator& UserPlaySpaceRot);
+	void ReceiveStopShake(bool bImmediately);
+	void ReceivePlayShake(float Scale);
 	bool ReceiveIsFinished();
-	void BlueprintUpdateCameraShake(float InDeltaTime, float InAlpha, struct FMinimalViewInfo& InPOV, struct FMinimalViewInfo* InModifiedPOV);
+	void BlueprintUpdateCameraShake(float DeltaTime, float Alpha, struct FMinimalViewInfo& POV, struct FMinimalViewInfo* ModifiedPOV);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -58,11 +52,8 @@ class ULegacyCameraShakePattern : public UCameraShakePattern
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LegacyCameraShakePattern");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULegacyCameraShakePattern* GetDefaultObj();
 
 };
 
@@ -72,13 +63,10 @@ class ULegacyCameraShakeFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LegacyCameraShakeFunctionLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULegacyCameraShakeFunctionLibrary* GetDefaultObj();
 
-	class ULegacyCameraShake* Conv_LegacyCameraShake(class UCameraShakeBase* InCameraShake);
+	class ULegacyCameraShake* Conv_LegacyCameraShake(class UCameraShakeBase* CameraShake);
 };
 
 // 0x18 (0x60 - 0x48)
@@ -88,22 +76,19 @@ class UCameraAnimationCameraModifier : public UCameraModifier
 public:
 	TArray<struct FActiveCameraAnimationInfo>    ActiveAnimations;                                  // 0x48(0x10)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	uint16                                       NextInstanceSerialNumber;                          // 0x58(0x2)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_15DA[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1570[0x6];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("CameraAnimationCameraModifier");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UCameraAnimationCameraModifier* GetDefaultObj();
 
-	void StopCameraAnimation(struct FCameraAnimationHandle& InHandle, bool InbImmediate);
-	void StopAllCameraAnimationsOf(class UCameraAnimationSequence* InSequence, bool InbImmediate);
-	void StopAllCameraAnimations(bool InbImmediate);
-	struct FCameraAnimationHandle PlayCameraAnimation(class UCameraAnimationSequence* InSequence, const struct FCameraAnimationParams& InParams);
-	bool IsCameraAnimationActive(struct FCameraAnimationHandle& InHandle);
-	class UCameraAnimationCameraModifier* GetCameraAnimationCameraModifierFromPlayerController(class APlayerController* InPlayerController);
-	class UCameraAnimationCameraModifier* GetCameraAnimationCameraModifierFromID(class UObject* InWorldContextObject, int32 InControllerId);
-	class UCameraAnimationCameraModifier* GetCameraAnimationCameraModifier(class UObject* InWorldContextObject, int32 InPlayerIndex);
+	void StopCameraAnimation(struct FCameraAnimationHandle& Handle, bool bImmediate);
+	void StopAllCameraAnimationsOf(class UCameraAnimationSequence* Sequence, bool bImmediate);
+	void StopAllCameraAnimations(bool bImmediate);
+	struct FCameraAnimationHandle PlayCameraAnimation(class UCameraAnimationSequence* Sequence, const struct FCameraAnimationParams& Params);
+	bool IsCameraAnimationActive(struct FCameraAnimationHandle& Handle);
+	class UCameraAnimationCameraModifier* GetCameraAnimationCameraModifierFromPlayerController(class APlayerController* PlayerController);
+	class UCameraAnimationCameraModifier* GetCameraAnimationCameraModifierFromID(class UObject* WorldContextObject, int32 ControllerId);
+	class UCameraAnimationCameraModifier* GetCameraAnimationCameraModifier(class UObject* WorldContextObject, int32 PlayerIndex);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -112,15 +97,12 @@ class UGameplayCamerasFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GameplayCamerasFunctionLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGameplayCamerasFunctionLibrary* GetDefaultObj();
 
-	enum class ECameraShakePlaySpace Conv_CameraShakePlaySpace(enum class ECameraAnimationPlaySpace InCameraAnimationPlaySpace);
-	enum class ECameraAnimationPlaySpace Conv_CameraAnimationPlaySpace(enum class ECameraShakePlaySpace InCameraShakePlaySpace);
-	class UCameraAnimationCameraModifier* Conv_CameraAnimationCameraModifier(class APlayerCameraManager* InPlayerCameraManager);
+	enum class ECameraShakePlaySpace Conv_CameraShakePlaySpace(enum class ECameraAnimationPlaySpace CameraAnimationPlaySpace);
+	enum class ECameraAnimationPlaySpace Conv_CameraAnimationPlaySpace(enum class ECameraShakePlaySpace CameraShakePlaySpace);
+	class UCameraAnimationCameraModifier* Conv_CameraAnimationCameraModifier(class APlayerCameraManager* PlayerCameraManager);
 };
 
 // 0x20 (0x48 - 0x28)
@@ -129,13 +111,10 @@ class UCompositeCameraShakePattern : public UCameraShakePattern
 {
 public:
 	TArray<class UCameraShakePattern*>           ChildPatterns;                                     // 0x28(0x10)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1611[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_158F[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("CompositeCameraShakePattern");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UCompositeCameraShakePattern* GetDefaultObj();
 
 };
 
@@ -144,13 +123,10 @@ public:
 class UDefaultCameraShakeBase : public UCameraShakeBase
 {
 public:
-	uint8                                        Pad_1612[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1592[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("DefaultCameraShakeBase");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UDefaultCameraShakeBase* GetDefaultObj();
 
 };
 
@@ -160,17 +136,14 @@ class UGameplayCamerasSubsystem : public UWorldSubsystem
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GameplayCamerasSubsystem");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGameplayCamerasSubsystem* GetDefaultObj();
 
-	void StopCameraAnimation(class APlayerController* InPlayerController, struct FCameraAnimationHandle& InHandle, bool InbImmediate);
-	void StopAllCameraAnimationsOf(class APlayerController* InPlayerController, class UCameraAnimationSequence* InSequence, bool InbImmediate);
-	void StopAllCameraAnimations(class APlayerController* InPlayerController, bool InbImmediate);
-	struct FCameraAnimationHandle PlayCameraAnimation(class APlayerController* InPlayerController, class UCameraAnimationSequence* InSequence, const struct FCameraAnimationParams& InParams);
-	bool IsCameraAnimationActive(class APlayerController* InPlayerController, struct FCameraAnimationHandle& InHandle);
+	void StopCameraAnimation(class APlayerController* PlayerController, struct FCameraAnimationHandle& Handle, bool bImmediate);
+	void StopAllCameraAnimationsOf(class APlayerController* PlayerController, class UCameraAnimationSequence* Sequence, bool bImmediate);
+	void StopAllCameraAnimations(class APlayerController* PlayerController, bool bImmediate);
+	struct FCameraAnimationHandle PlayCameraAnimation(class APlayerController* PlayerController, class UCameraAnimationSequence* Sequence, const struct FCameraAnimationParams& Params);
+	bool IsCameraAnimationActive(class APlayerController* PlayerController, struct FCameraAnimationHandle& Handle);
 };
 
 // 0x10 (0x38 - 0x28)
@@ -181,13 +154,10 @@ public:
 	float                                        Duration;                                          // 0x28(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        BlendInTime;                                       // 0x2C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        BlendOutTime;                                      // 0x30(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1678[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15E7[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SimpleCameraShakePattern");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USimpleCameraShakePattern* GetDefaultObj();
 
 };
 
@@ -207,13 +177,10 @@ public:
 	struct FPerlinNoiseShaker                    Yaw;                                               // 0x68(0x8)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FPerlinNoiseShaker                    Roll;                                              // 0x70(0x8)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FPerlinNoiseShaker                    FOV;                                               // 0x78(0x8)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_167E[0x38];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15F6[0x38];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("PerlinNoiseCameraShakePattern");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UPerlinNoiseCameraShakePattern* GetDefaultObj();
 
 };
 
@@ -222,13 +189,10 @@ public:
 class UTestCameraShake : public UCameraShakeBase
 {
 public:
-	uint8                                        Pad_1688[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15FC[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TestCameraShake");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UTestCameraShake* GetDefaultObj();
 
 };
 
@@ -240,11 +204,8 @@ public:
 	struct FVector                               LocationOffset;                                    // 0x38(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                              RotationOffset;                                    // 0x50(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ConstantCameraShakePattern");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UConstantCameraShakePattern* GetDefaultObj();
 
 };
 
@@ -264,18 +225,13 @@ public:
 	struct FWaveOscillator                       Yaw;                                               // 0x78(0xC)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FWaveOscillator                       Roll;                                              // 0x84(0xC)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FWaveOscillator                       FOV;                                               // 0x90(0xC)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1694[0x3C];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1614[0x3C];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("WaveOscillatorCameraShakePattern");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UWaveOscillatorCameraShakePattern* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

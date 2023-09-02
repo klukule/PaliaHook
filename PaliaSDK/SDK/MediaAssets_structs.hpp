@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,19 +11,19 @@ namespace SDK
 
 enum class EMediaSoundChannels : int32
 {
-	EMediaSoundChannels__Mono      = 0,
-	EMediaSoundChannels__Stereo    = 1,
-	EMediaSoundChannels__Surround  = 2,
-	EMediaSoundChannels__EMediaSoundChannels_MAX = 3,
+	Mono                           = 0,
+	Stereo                         = 1,
+	Surround                       = 2,
+	EMediaSoundChannels_MAX        = 3,
 };
 
 enum class EMediaSoundComponentFFTSize : uint8
 {
-	EMediaSoundComponentFFTSize__Min_64 = 0,
-	EMediaSoundComponentFFTSize__Small_256 = 1,
-	EMediaSoundComponentFFTSize__Medium_512 = 2,
-	EMediaSoundComponentFFTSize__Large_1024 = 3,
-	EMediaSoundComponentFFTSize__EMediaSoundComponentFFTSize_MAX = 4,
+	Min_64                         = 0,
+	Small_256                      = 1,
+	Medium_512                     = 2,
+	Large_1024                     = 3,
+	EMediaSoundComponentFFTSize_MAX = 4,
 };
 
 enum class EMediaTextureOutputFormat : uint8
@@ -47,52 +44,52 @@ enum class EMediaTextureOrientation : uint8
 
 enum class EMediaPlayerTrack : uint8
 {
-	EMediaPlayerTrack__Audio       = 0,
-	EMediaPlayerTrack__Caption     = 1,
-	EMediaPlayerTrack__Metadata    = 2,
-	EMediaPlayerTrack__Script      = 3,
-	EMediaPlayerTrack__Subtitle    = 4,
-	EMediaPlayerTrack__Text        = 5,
-	EMediaPlayerTrack__Video       = 6,
-	EMediaPlayerTrack__EMediaPlayerTrack_MAX = 7,
+	Audio                          = 0,
+	Caption                        = 1,
+	Metadata                       = 2,
+	Script                         = 3,
+	Subtitle                       = 4,
+	Text                           = 5,
+	Video                          = 6,
+	EMediaPlayerTrack_MAX          = 7,
 };
 
 enum class EMediaTextureVisibleMipsTiles : uint8
 {
-	EMediaTextureVisibleMipsTiles__None = 0,
-	EMediaTextureVisibleMipsTiles__Plane = 1,
-	EMediaTextureVisibleMipsTiles__Sphere = 2,
-	EMediaTextureVisibleMipsTiles__EMediaTextureVisibleMipsTiles_MAX = 3,
+	None                           = 0,
+	Plane                          = 1,
+	Sphere                         = 2,
+	EMediaTextureVisibleMipsTiles_MAX = 3,
 };
 
 enum class EMediaAudioCaptureDeviceFilter : uint8
 {
-	EMediaAudioCaptureDeviceFilter__None = 0,
-	EMediaAudioCaptureDeviceFilter__Card = 1,
-	EMediaAudioCaptureDeviceFilter__Microphone = 2,
-	EMediaAudioCaptureDeviceFilter__Software = 4,
-	EMediaAudioCaptureDeviceFilter__Unknown = 8,
-	EMediaAudioCaptureDeviceFilter__EMediaAudioCaptureDeviceFilter_MAX = 9,
+	None                           = 0,
+	Card                           = 1,
+	Microphone                     = 2,
+	Software                       = 4,
+	Unknown                        = 8,
+	EMediaAudioCaptureDeviceFilter_MAX = 9,
 };
 
 enum class EMediaVideoCaptureDeviceFilter : uint8
 {
-	EMediaVideoCaptureDeviceFilter__None = 0,
-	EMediaVideoCaptureDeviceFilter__Card = 1,
-	EMediaVideoCaptureDeviceFilter__Software = 2,
-	EMediaVideoCaptureDeviceFilter__Unknown = 4,
-	EMediaVideoCaptureDeviceFilter__Webcam = 8,
-	EMediaVideoCaptureDeviceFilter__EMediaVideoCaptureDeviceFilter_MAX = 9,
+	None                           = 0,
+	Card                           = 1,
+	Software                       = 2,
+	Unknown                        = 4,
+	Webcam                         = 8,
+	EMediaVideoCaptureDeviceFilter_MAX = 9,
 };
 
 enum class EMediaWebcamCaptureDeviceFilter : uint8
 {
-	EMediaWebcamCaptureDeviceFilter__None = 0,
-	EMediaWebcamCaptureDeviceFilter__DepthSensor = 1,
-	EMediaWebcamCaptureDeviceFilter__Front = 2,
-	EMediaWebcamCaptureDeviceFilter__Rear = 4,
-	EMediaWebcamCaptureDeviceFilter__Unknown = 8,
-	EMediaWebcamCaptureDeviceFilter__EMediaWebcamCaptureDeviceFilter_MAX = 9,
+	None                           = 0,
+	DepthSensor                    = 1,
+	Front                          = 2,
+	Rear                           = 4,
+	Unknown                        = 8,
+	EMediaWebcamCaptureDeviceFilter_MAX = 9,
 };
 
 
@@ -115,7 +112,7 @@ struct FMediaSourceCacheSettings
 {
 public:
 	bool                                         bOverride;                                         // 0x0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A65[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B09[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        TimeToLookAhead;                                   // 0x4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -130,6 +127,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

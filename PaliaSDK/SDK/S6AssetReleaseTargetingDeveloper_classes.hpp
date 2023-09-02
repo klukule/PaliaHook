@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,21 +15,16 @@ class US6AssetReleaseTargetingLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6AssetReleaseTargetingLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6AssetReleaseTargetingLibrary* GetDefaultObj();
 
-	struct FS6AssetReleaseTargetingInfo GetAssetReleaseTargetingInfo_SoftObject(TSoftObjectPtr<class UObject>& InSoftObject);
-	struct FS6AssetReleaseTargetingInfo GetAssetReleaseTargetingInfo_PrimaryAssetId(struct FPrimaryAssetId& InAssetId);
-	struct FS6AssetReleaseTargetingInfo GetAssetReleaseTargetingInfo_ObjectPath(struct FSoftObjectPath& InSoftObjectPath);
-	struct FS6AssetReleaseTargetingInfo GetAssetReleaseTargetingInfo_Object(class UObject* InObject);
-	struct FS6AssetReleaseTargetingInfo GetAssetReleaseTargetingInfo_AssetData(struct FAssetData& InAssetData);
+	struct FS6AssetReleaseTargetingInfo GetAssetReleaseTargetingInfo_SoftObject(TSoftObjectPtr<class UObject>& SoftObject);
+	struct FS6AssetReleaseTargetingInfo GetAssetReleaseTargetingInfo_PrimaryAssetId(struct FPrimaryAssetId& AssetId);
+	struct FS6AssetReleaseTargetingInfo GetAssetReleaseTargetingInfo_ObjectPath(struct FSoftObjectPath& SoftObjectPath);
+	struct FS6AssetReleaseTargetingInfo GetAssetReleaseTargetingInfo_Object(class UObject* Object);
+	struct FS6AssetReleaseTargetingInfo GetAssetReleaseTargetingInfo_AssetData(struct FAssetData& AssetData);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,13 +15,10 @@ class UAndroidPermissionCallbackProxy : public UObject
 {
 public:
 	FMulticastInlineDelegateProperty_            OnPermissionsGrantedDynamicDelegate;               // 0x28(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A62[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B0E[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AndroidPermissionCallbackProxy");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAndroidPermissionCallbackProxy* GetDefaultObj();
 
 };
 
@@ -34,18 +28,13 @@ class UAndroidPermissionFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AndroidPermissionFunctionLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAndroidPermissionFunctionLibrary* GetDefaultObj();
 
-	bool CheckPermission(const class FString& InPermission);
-	class UAndroidPermissionCallbackProxy* AcquirePermissions(TArray<class FString>& InPermissions);
+	bool CheckPermission(const class FString& Permission);
+	class UAndroidPermissionCallbackProxy* AcquirePermissions(TArray<class FString>& Permissions);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,23 +15,18 @@ class UAssetTagsSubsystem : public UEngineSubsystem
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("AssetTagsSubsystem");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UAssetTagsSubsystem* GetDefaultObj();
 
-	TArray<class FName> K2_GetCollectionsContainingAsset(struct FSoftObjectPath& InAssetPath);
-	TArray<class FName> GetCollectionsContainingAssetPtr(class UObject* InAssetPtr);
-	TArray<class FName> GetCollectionsContainingAssetData(struct FAssetData& InAssetData);
-	TArray<class FName> GetCollectionsContainingAsset(class FName InAssetPathName);
+	TArray<class FName> K2_GetCollectionsContainingAsset(struct FSoftObjectPath& AssetPath);
+	TArray<class FName> GetCollectionsContainingAssetPtr(class UObject* AssetPtr);
+	TArray<class FName> GetCollectionsContainingAssetData(struct FAssetData& AssetData);
+	TArray<class FName> GetCollectionsContainingAsset(class FName AssetPathName);
 	TArray<class FName> GetCollections();
-	TArray<struct FAssetData> GetAssetsInCollection(class FName InName);
-	bool CollectionExists(class FName InName);
+	TArray<struct FAssetData> GetAssetsInCollection(class FName Name);
+	bool CollectionExists(class FName Name);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

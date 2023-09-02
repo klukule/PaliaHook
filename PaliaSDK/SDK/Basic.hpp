@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -195,8 +192,11 @@ public:
 	// GetRawString - returns an unedited string as the engine uses it
 	inline std::string GetRawString() const
 	{
-		static FString TempString(1024);
-		static auto AppendString = reinterpret_cast<void(*)(const FName*, FString&)>(uintptr_t(GetModuleHandle(0)) + Offsets::AppendString);
+		thread_local FString TempString(1024);
+		static void(*AppendString)(const FName*, FString&) = nullptr;
+
+		if (!AppendString)
+			AppendString = reinterpret_cast<void(*)(const FName*, FString&)>(uintptr_t(GetModuleHandle(0)) + Offsets::AppendString);
 
 		AppendString(this, TempString);
 
@@ -226,12 +226,12 @@ public:
 
 	inline bool operator==(const FName& Other) const
 	{
-		return ComparisonIndex == Other.ComparisonIndex;
+		return ComparisonIndex == Other.ComparisonIndex && Number == Other.Number;
 	}
 
 	inline bool operator!=(const FName& Other) const
 	{
-		return ComparisonIndex != Other.ComparisonIndex;
+		return ComparisonIndex != Other.ComparisonIndex || Number != Other.Number;
 	}
 };
 
@@ -249,6 +249,17 @@ public:
 	}
 
 	inline UClass* Get()
+	{
+		return ClassPtr;
+	}
+
+	inline operator UClass*() const
+	{
+		return ClassPtr;
+	}
+
+	template<typename Target, typename = std::enable_if<std::is_base_of_v<Target, ClassType>, bool>::type>
+	inline operator TSubclassOf<Target>() const
 	{
 		return ClassPtr;
 	}
@@ -294,11 +305,38 @@ public:
 	KeyType Second;
 };
 
-class FText
+class FTextData 
 {
 public:
-	FString TextData;
-	uint8 IdkTheRest[0x8];
+	uint8 Pad[0x28];
+	wchar_t* Name;
+	int32 Length;
+};
+
+class FText 
+{
+public:
+	FTextData* Data;
+	uint8 Pad[0x10];
+
+	wchar_t* Get() const 
+	{
+		if (Data) 
+			return Data->Name;
+
+		return nullptr;
+	}
+
+	std::string ToString()
+	{
+		if (Data)
+		{
+			std::wstring Temp(Data->Name);
+			return std::string(Temp.begin(), Temp.end());
+		}
+
+		return "";
+	}
 };
 
 template<typename ElementType>
@@ -389,23 +427,36 @@ public:
 		return static_cast<UEType*>(TPersistentObjectPtr::Get());
 	}
 };
-
-class FSoftObjectPath_
+namespace SoftObjPathWrapper
+{
+// 0x10 (0x10 - 0x0)
+// ScriptStruct CoreUObject.TopLevelAssetPath
+struct FTopLevelAssetPath
 {
 public:
-	FName AssetPathName;
-	FString SubPathString;
+	class FName                                  PackageName;                                       // 0x0(0x8)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                  AssetName;                                         // 0x8(0x8)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 
-class alignas(8) FSoftObjectPtr : public TPersistentObjectPtr<FSoftObjectPath_>
+// 0x20 (0x20 - 0x0)
+// ScriptStruct CoreUObject.SoftObjectPath
+struct FSoftObjectPath
 {
 public:
+	struct FTopLevelAssetPath                    AssetPath;                                         // 0x0(0x10)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                SubPathString;                                     // 0x10(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
 
-	FName GetAssetPathName();
+}
+
+class FSoftObjectPtr : public TPersistentObjectPtr<SoftObjPathWrapper::FSoftObjectPath>
+{
+public:
 	FString GetSubPathString();
-
-	std::string GetAssetPathNameStr();
 	std::string GetSubPathStringStr();
+
+	template<class SoftObjectPath = FSoftObjectPath>
+	SoftObjectPath& GetObjectPath();
 };
 
 template<typename UEType>
@@ -509,7 +560,7 @@ inline bool operator&(EClassCastFlags Left, EClassCastFlags Right)
 }
 
 
-enum EClassFlags
+enum class EClassFlags : int32
 {
 	CLASS_None					= 0x00000000u,
 	Abstract					= 0x00000001u,
@@ -584,7 +635,7 @@ public:
 	uint64                                       Id;                                                // (0x08[0x08]) NOT AUTO-GENERATED PROPERTY
 	uint64                                       CastFlags;                                         // (0x10[0x08]) NOT AUTO-GENERATED PROPERTY
 	EClassFlags                                  ClassFlags;                                        // (0x18[0x04]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_4528[0x4];                                     // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_4535[0x4];                                     // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	FFieldClass*                                 SuperClass;                                        // (0x20[0x08]) NOT AUTO-GENERATED PROPERTY
 };
 
@@ -592,6 +643,7 @@ class FFieldVariant
 {
 public:
 	union { class FField* Field; class UObject* Object; } Container;                                         // (0x00[0x08]) NOT AUTO-GENERATED PROPERTY
+	bool                                         bIsUObject;                                        // (0x08[0x01]) NOT AUTO-GENERATED PROPERTY
 };
 
 class FField
@@ -608,24 +660,24 @@ public:
 class FProperty : public FField
 {
 public:
-	uint8                                        Pad_4529[0x8];                                     // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_4536[0x8];                                     // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	int32                                        ElementSize;                                       // (0x3C[0x04]) NOT AUTO-GENERATED PROPERTY
 	uint64                                       PropertyFlags;                                     // (0x40[0x08]) NOT AUTO-GENERATED PROPERTY
-	uint8                                        Pad_452A[0x4];                                     // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_4537[0x4];                                     // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	int32                                        Offset;                                            // (0x4C[0x04]) NOT AUTO-GENERATED PROPERTY
 };
 
 class FByteProperty : public FProperty
 {
 public:
-	uint8                                        Pad_452B[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_4538[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class UEnum*                                 Enum;                                              // (0x78[0x08]) NOT AUTO-GENERATED PROPERTY
 };
 
 class FBoolProperty : public FProperty
 {
 public:
-	uint8                                        Pad_452C[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_4539[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	uint8                                        FieldSize;                                         // (0x78[0x01]) NOT AUTO-GENERATED PROPERTY
 	uint8                                        ByteOffset;                                        // (0x79[0x01]) NOT AUTO-GENERATED PROPERTY
 	uint8                                        ByteMask;                                          // (0x7A[0x01]) NOT AUTO-GENERATED PROPERTY
@@ -635,7 +687,7 @@ public:
 class FObjectProperty : public FProperty
 {
 public:
-	uint8                                        Pad_452D[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_453A[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class UClass*                                PropertyClass;                                     // (0x78[0x08]) NOT AUTO-GENERATED PROPERTY
 };
 
@@ -648,21 +700,21 @@ public:
 class FStructProperty : public FProperty
 {
 public:
-	uint8                                        Pad_452E[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_453B[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class UStruct*                               Struct;                                            // (0x78[0x08]) NOT AUTO-GENERATED PROPERTY
 };
 
 class FArrayProperty : public FProperty
 {
 public:
-	uint8                                        Pad_452F[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_453C[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class FProperty*                             InnerProperty;                                     // (0x78[0x08]) NOT AUTO-GENERATED PROPERTY
 };
 
 class FMapProperty : public FProperty
 {
 public:
-	uint8                                        Pad_4530[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_453D[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class FProperty*                             KeyProperty;                                       // (0x78[0x08]) NOT AUTO-GENERATED PROPERTY
 	class FProperty*                             ValueProperty;                                     // (0x80[0x08]) NOT AUTO-GENERATED PROPERTY
 };
@@ -670,20 +722,18 @@ public:
 class FSetProperty : public FProperty
 {
 public:
-	uint8                                        Pad_4531[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_453E[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class FProperty*                             ElementProperty;                                   // (0x78[0x08]) NOT AUTO-GENERATED PROPERTY
 };
 
 class FEnumProperty : public FProperty
 {
 public:
-	uint8                                        Pad_4532[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
+	uint8                                        Pad_453F[0x28];                                    // Fixing Size After Last (Predefined) Property  [ Dumper-7 ]
 	class FProperty*                             UnderlayingProperty;                               // (0x78[0x08]) NOT AUTO-GENERATED PROPERTY
 	class UEnum*                                 Enum;                                              // (0x80[0x08]) NOT AUTO-GENERATED PROPERTY
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

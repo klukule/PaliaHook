@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -23,18 +20,13 @@ public:
 	double                                       RTPC_Value;                                        // 0x2D0(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                        Interpolation;                                     // 0x2D8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("Comp_CV_Local_RTPC_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UComp_CV_Local_RTPC_C* GetDefaultObj();
 
 	void SetParameters();
-	void ExecuteUbergraph_Comp_CV_Local_RTPC(int32 InEntryPoint);
+	void ExecuteUbergraph_Comp_CV_Local_RTPC(int32 EntryPoint);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

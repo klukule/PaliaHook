@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,18 +15,13 @@ class IBPI_MatchmakingQueue_C : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("BPI_MatchmakingQueue_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IBPI_MatchmakingQueue_C* GetDefaultObj();
 
 	void ResetQueue();
-	void UpdateNumber(int32 InNumber);
+	void UpdateNumber(int32 Number);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

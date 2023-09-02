@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,11 +15,8 @@ class UNiagaraMergeable : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("NiagaraMergeable");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UNiagaraMergeable* GetDefaultObj();
 
 };
 
@@ -32,16 +26,11 @@ class UNiagaraDataInterfaceBase : public UNiagaraMergeable
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("NiagaraDataInterfaceBase");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UNiagaraDataInterfaceBase* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

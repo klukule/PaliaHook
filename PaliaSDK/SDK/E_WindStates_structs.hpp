@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,11 +11,11 @@ namespace SDK
 
 enum class E_WindStates : uint8
 {
-	E_WindStates__NewEnumerator0   = 0,
-	E_WindStates__NewEnumerator1   = 1,
-	E_WindStates__NewEnumerator2   = 2,
-	E_WindStates__NewEnumerator3   = 3,
-	E_WindStates__E_MAX            = 4,
+	NewEnumerator0                 = 0,
+	NewEnumerator1                 = 1,
+	NewEnumerator2                 = 2,
+	NewEnumerator3                 = 3,
+	E_MAX                          = 4,
 };
 
 
@@ -28,6 +25,4 @@ enum class E_WindStates : uint8
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

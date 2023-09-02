@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,11 +11,11 @@ namespace SDK
 
 enum class EComputeNTBsOptions : uint8
 {
-	EComputeNTBsOptions__None      = 0,
-	EComputeNTBsOptions__Normals   = 1,
-	EComputeNTBsOptions__Tangents  = 2,
-	EComputeNTBsOptions__WeightedNTBs = 4,
-	EComputeNTBsOptions__EComputeNTBsOptions_MAX = 5,
+	None                           = 0,
+	Normals                        = 1,
+	Tangents                       = 2,
+	WeightedNTBs                   = 4,
+	EComputeNTBsOptions_MAX        = 5,
 };
 
 
@@ -85,6 +82,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

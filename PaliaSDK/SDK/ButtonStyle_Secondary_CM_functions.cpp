@@ -2,16 +2,43 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
+//---------------------------------------------------------------------------------------------------------------------
+// FUNCTIONS
+//---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass ButtonStyle_Secondary_CM.ButtonStyle_Secondary_CM_C
+// (None)
+
+class UClass* UButtonStyle_Secondary_CM_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ButtonStyle_Secondary_CM_C");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// ButtonStyle_Secondary_CM_C ButtonStyle_Secondary_CM.Default__ButtonStyle_Secondary_CM_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UButtonStyle_Secondary_CM_C* UButtonStyle_Secondary_CM_C::GetDefaultObj()
+{
+	static class UButtonStyle_Secondary_CM_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UButtonStyle_Secondary_CM_C*>(UButtonStyle_Secondary_CM_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

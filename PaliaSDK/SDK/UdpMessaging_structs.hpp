@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,12 +11,12 @@ namespace SDK
 
 enum class EUdpMessageFormat : uint8
 {
-	EUdpMessageFormat__None        = 0,
-	EUdpMessageFormat__Json        = 1,
-	EUdpMessageFormat__TaggedProperty = 2,
-	EUdpMessageFormat__CborPlatformEndianness = 3,
-	EUdpMessageFormat__CborStandardEndianness = 4,
-	EUdpMessageFormat__EUdpMessageFormat_MAX = 5,
+	None                           = 0,
+	Json                           = 1,
+	TaggedProperty                 = 2,
+	CborPlatformEndianness         = 3,
+	CborStandardEndianness         = 4,
+	EUdpMessageFormat_MAX          = 5,
 };
 
 
@@ -37,6 +34,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

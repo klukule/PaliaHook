@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,16 +15,13 @@ class ULocationServices : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LocationServices");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULocationServices* GetDefaultObj();
 
 	bool StopLocationServices();
 	bool StartLocationServices();
-	bool IsLocationAccuracyAvailable(enum class ELocationAccuracy InAccuracy);
-	bool InitLocationServices(enum class ELocationAccuracy InAccuracy, float InUpdateFrequency, float InMinDistanceFilter);
+	bool IsLocationAccuracyAvailable(enum class ELocationAccuracy Accuracy);
+	bool InitLocationServices(enum class ELocationAccuracy Accuracy, float UpdateFrequency, float MinDistanceFilter);
 	class ULocationServicesImpl* GetLocationServicesImpl();
 	struct FLocationServicesData GetLastKnownLocation();
 	bool AreLocationServicesEnabled();
@@ -40,16 +34,11 @@ class ULocationServicesImpl : public UObject
 public:
 	FMulticastInlineDelegateProperty_            OnLocationChanged;                                 // 0x28(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LocationServicesImpl");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULocationServicesImpl* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

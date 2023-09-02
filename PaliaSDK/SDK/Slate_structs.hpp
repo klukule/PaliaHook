@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,180 +11,180 @@ namespace SDK
 
 enum class ETextJustify : uint8
 {
-	ETextJustify__Left             = 0,
-	ETextJustify__Center           = 1,
-	ETextJustify__Right            = 2,
-	ETextJustify__ETextJustify_MAX = 3,
+	Left                           = 0,
+	Center                         = 1,
+	Right                          = 2,
+	ETextJustify_MAX               = 3,
 };
 
 enum class ETextFlowDirection : uint8
 {
-	ETextFlowDirection__Auto       = 0,
-	ETextFlowDirection__LeftToRight = 1,
-	ETextFlowDirection__RightToLeft = 2,
-	ETextFlowDirection__ETextFlowDirection_MAX = 3,
+	Auto                           = 0,
+	LeftToRight                    = 1,
+	RightToLeft                    = 2,
+	ETextFlowDirection_MAX         = 3,
 };
 
 enum class EVirtualKeyboardDismissAction : uint8
 {
-	EVirtualKeyboardDismissAction__TextChangeOnDismiss = 0,
-	EVirtualKeyboardDismissAction__TextCommitOnAccept = 1,
-	EVirtualKeyboardDismissAction__TextCommitOnDismiss = 2,
-	EVirtualKeyboardDismissAction__EVirtualKeyboardDismissAction_MAX = 3,
+	TextChangeOnDismiss            = 0,
+	TextCommitOnAccept             = 1,
+	TextCommitOnDismiss            = 2,
+	EVirtualKeyboardDismissAction_MAX = 3,
 };
 
 enum class EVirtualKeyboardTrigger : uint8
 {
-	EVirtualKeyboardTrigger__OnFocusByPointer = 0,
-	EVirtualKeyboardTrigger__OnAllFocusEvents = 1,
-	EVirtualKeyboardTrigger__EVirtualKeyboardTrigger_MAX = 2,
+	OnFocusByPointer               = 0,
+	OnAllFocusEvents               = 1,
+	EVirtualKeyboardTrigger_MAX    = 2,
 };
 
 enum class ETextWrappingPolicy : uint8
 {
-	ETextWrappingPolicy__DefaultWrapping = 0,
-	ETextWrappingPolicy__AllowPerCharacterWrapping = 1,
-	ETextWrappingPolicy__ETextWrappingPolicy_MAX = 2,
+	DefaultWrapping                = 0,
+	AllowPerCharacterWrapping      = 1,
+	ETextWrappingPolicy_MAX        = 2,
 };
 
 enum class ESelectionMode : uint8
 {
-	ESelectionMode__None           = 0,
-	ESelectionMode__Single         = 1,
-	ESelectionMode__SingleToggle   = 2,
-	ESelectionMode__Multi          = 3,
-	ESelectionMode__ESelectionMode_MAX = 4,
+	None                           = 0,
+	Single                         = 1,
+	SingleToggle                   = 2,
+	Multi                          = 3,
+	ESelectionMode_MAX             = 4,
 };
 
 enum class ETableViewMode : uint8
 {
-	ETableViewMode__List           = 0,
-	ETableViewMode__Tile           = 1,
-	ETableViewMode__Tree           = 2,
-	ETableViewMode__ETableViewMode_MAX = 3,
+	List                           = 0,
+	Tile                           = 1,
+	Tree                           = 2,
+	ETableViewMode_MAX             = 3,
 };
 
 enum class EMultiBoxType : uint8
 {
-	EMultiBoxType__MenuBar         = 0,
-	EMultiBoxType__ToolBar         = 1,
-	EMultiBoxType__VerticalToolBar = 2,
-	EMultiBoxType__SlimHorizontalToolBar = 3,
-	EMultiBoxType__UniformToolBar  = 4,
-	EMultiBoxType__Menu            = 5,
-	EMultiBoxType__ButtonRow       = 6,
-	EMultiBoxType__EMultiBoxType_MAX = 7,
+	MenuBar                        = 0,
+	ToolBar                        = 1,
+	VerticalToolBar                = 2,
+	SlimHorizontalToolBar          = 3,
+	UniformToolBar                 = 4,
+	Menu                           = 5,
+	ButtonRow                      = 6,
+	EMultiBoxType_MAX              = 7,
 };
 
 enum class EMultiBlockType : uint8
 {
-	EMultiBlockType__None          = 0,
-	EMultiBlockType__ButtonRow     = 1,
-	EMultiBlockType__EditableText  = 2,
-	EMultiBlockType__Heading       = 3,
-	EMultiBlockType__MenuEntry     = 4,
-	EMultiBlockType__Separator     = 5,
-	EMultiBlockType__ToolBarButton = 6,
-	EMultiBlockType__ToolBarComboButton = 7,
-	EMultiBlockType__Widget        = 8,
-	EMultiBlockType__EMultiBlockType_MAX = 9,
+	None                           = 0,
+	ButtonRow                      = 1,
+	EditableText                   = 2,
+	Heading                        = 3,
+	MenuEntry                      = 4,
+	Separator                      = 5,
+	ToolBarButton                  = 6,
+	ToolBarComboButton             = 7,
+	Widget                         = 8,
+	EMultiBlockType_MAX            = 9,
 };
 
 enum class EDescendantScrollDestination : uint8
 {
-	EDescendantScrollDestination__IntoView = 0,
-	EDescendantScrollDestination__TopOrLeft = 1,
-	EDescendantScrollDestination__Center = 2,
-	EDescendantScrollDestination__BottomOrRight = 3,
-	EDescendantScrollDestination__EDescendantScrollDestination_MAX = 4,
+	IntoView                       = 0,
+	TopOrLeft                      = 1,
+	Center                         = 2,
+	BottomOrRight                  = 3,
+	EDescendantScrollDestination_MAX = 4,
 };
 
 enum class EScrollWhenFocusChanges : uint8
 {
-	EScrollWhenFocusChanges__NoScroll = 0,
-	EScrollWhenFocusChanges__InstantScroll = 1,
-	EScrollWhenFocusChanges__AnimatedScroll = 2,
-	EScrollWhenFocusChanges__EScrollWhenFocusChanges_MAX = 3,
+	NoScroll                       = 0,
+	InstantScroll                  = 1,
+	AnimatedScroll                 = 2,
+	EScrollWhenFocusChanges_MAX    = 3,
 };
 
 enum class ECustomizedToolMenuVisibility : int32
 {
-	ECustomizedToolMenuVisibility__None = 0,
-	ECustomizedToolMenuVisibility__Visible = 1,
-	ECustomizedToolMenuVisibility__Hidden = 2,
-	ECustomizedToolMenuVisibility__ECustomizedToolMenuVisibility_MAX = 3,
+	None                           = 0,
+	Visible                        = 1,
+	Hidden                         = 2,
+	ECustomizedToolMenuVisibility_MAX = 3,
 };
 
 enum class EUserInterfaceActionType : uint8
 {
-	EUserInterfaceActionType__None = 0,
-	EUserInterfaceActionType__Button = 1,
-	EUserInterfaceActionType__ToggleButton = 2,
-	EUserInterfaceActionType__RadioButton = 3,
-	EUserInterfaceActionType__Check = 4,
-	EUserInterfaceActionType__CollapsedButton = 5,
-	EUserInterfaceActionType__EUserInterfaceActionType_MAX = 6,
+	None                           = 0,
+	Button                         = 1,
+	ToggleButton                   = 2,
+	RadioButton                    = 3,
+	Check                          = 4,
+	CollapsedButton                = 5,
+	EUserInterfaceActionType_MAX   = 6,
 };
 
 enum class EMultipleKeyBindingIndex : uint8
 {
-	EMultipleKeyBindingIndex__Primary = 0,
-	EMultipleKeyBindingIndex__Secondary = 1,
-	EMultipleKeyBindingIndex__NumChords = 2,
-	EMultipleKeyBindingIndex__EMultipleKeyBindingIndex_MAX = 3,
+	Primary                        = 0,
+	Secondary                      = 1,
+	NumChords                      = 2,
+	EMultipleKeyBindingIndex_MAX   = 3,
 };
 
 enum class EStretchDirection : uint8
 {
-	EStretchDirection__Both        = 0,
-	EStretchDirection__DownOnly    = 1,
-	EStretchDirection__UpOnly      = 2,
-	EStretchDirection__EStretchDirection_MAX = 3,
+	Both                           = 0,
+	DownOnly                       = 1,
+	UpOnly                         = 2,
+	EStretchDirection_MAX          = 3,
 };
 
 enum class EStretch : uint8
 {
-	EStretch__None                 = 0,
-	EStretch__Fill                 = 1,
-	EStretch__ScaleToFit           = 2,
-	EStretch__ScaleToFitX          = 3,
-	EStretch__ScaleToFitY          = 4,
-	EStretch__ScaleToFill          = 5,
-	EStretch__ScaleBySafeZone      = 6,
-	EStretch__UserSpecified        = 7,
-	EStretch__UserSpecifiedWithClipping = 8,
-	EStretch__EStretch_MAX         = 9,
+	None                           = 0,
+	Fill                           = 1,
+	ScaleToFit                     = 2,
+	ScaleToFitX                    = 3,
+	ScaleToFitY                    = 4,
+	ScaleToFill                    = 5,
+	ScaleBySafeZone                = 6,
+	UserSpecified                  = 7,
+	UserSpecifiedWithClipping      = 8,
+	EStretch_MAX                   = 9,
 };
 
 enum class EProgressBarFillType : uint8
 {
-	EProgressBarFillType__LeftToRight = 0,
-	EProgressBarFillType__RightToLeft = 1,
-	EProgressBarFillType__FillFromCenter = 2,
-	EProgressBarFillType__FillFromCenterHorizontal = 3,
-	EProgressBarFillType__FillFromCenterVertical = 4,
-	EProgressBarFillType__TopToBottom = 5,
-	EProgressBarFillType__BottomToTop = 6,
-	EProgressBarFillType__EProgressBarFillType_MAX = 7,
+	LeftToRight                    = 0,
+	RightToLeft                    = 1,
+	FillFromCenter                 = 2,
+	FillFromCenterHorizontal       = 3,
+	FillFromCenterVertical         = 4,
+	TopToBottom                    = 5,
+	BottomToTop                    = 6,
+	EProgressBarFillType_MAX       = 7,
 };
 
 enum class EProgressBarFillStyle : uint8
 {
-	EProgressBarFillStyle__Mask    = 0,
-	EProgressBarFillStyle__Scale   = 1,
-	EProgressBarFillStyle__EProgressBarFillStyle_MAX = 2,
+	Mask                           = 0,
+	Scale                          = 1,
+	EProgressBarFillStyle_MAX      = 2,
 };
 
 enum class EListItemAlignment : uint8
 {
-	EListItemAlignment__EvenlyDistributed = 0,
-	EListItemAlignment__EvenlySize = 1,
-	EListItemAlignment__EvenlyWide = 2,
-	EListItemAlignment__LeftAligned = 3,
-	EListItemAlignment__RightAligned = 4,
-	EListItemAlignment__CenterAligned = 5,
-	EListItemAlignment__Fill       = 6,
-	EListItemAlignment__EListItemAlignment_MAX = 7,
+	EvenlyDistributed              = 0,
+	EvenlySize                     = 1,
+	EvenlyWide                     = 2,
+	LeftAligned                    = 3,
+	RightAligned                   = 4,
+	CenterAligned                  = 5,
+	Fill                           = 6,
+	EListItemAlignment_MAX         = 7,
 };
 
 
@@ -213,7 +210,7 @@ public:
 	uint8                                        bCtrl : 1;                                         // Mask: 0x2, PropSize: 0x10x18(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bAlt : 1;                                          // Mask: 0x4, PropSize: 0x10x18(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCmd : 1;                                          // Mask: 0x8, PropSize: 0x10x18(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_159C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1576[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -259,11 +256,9 @@ public:
 	TMap<class FName, struct FCustomizedToolMenuSection> Sections;                                          // 0x58(0x50)(NativeAccessSpecifierPublic)
 	TMap<class FName, struct FCustomizedToolMenuNameArray> EntryOrder;                                        // 0xA8(0x50)(NativeAccessSpecifierPublic)
 	TArray<class FName>                          SectionOrder;                                      // 0xF8(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_15CC[0xE8];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1587[0xE8];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

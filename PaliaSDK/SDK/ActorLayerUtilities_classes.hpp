@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,19 +15,14 @@ class ULayersBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LayersBlueprintLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULayersBlueprintLibrary* GetDefaultObj();
 
-	void RemoveActorFromLayer(class AActor* InInActor, struct FActorLayer& InLayer);
-	TArray<class AActor*> GetActors(class UObject* InWorldContextObject, struct FActorLayer& InActorLayer);
-	void AddActorToLayer(class AActor* InInActor, struct FActorLayer& InLayer);
+	void RemoveActorFromLayer(class AActor* InActor, struct FActorLayer& Layer);
+	TArray<class AActor*> GetActors(class UObject* WorldContextObject, struct FActorLayer& ActorLayer);
+	void AddActorToLayer(class AActor* InActor, struct FActorLayer& Layer);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

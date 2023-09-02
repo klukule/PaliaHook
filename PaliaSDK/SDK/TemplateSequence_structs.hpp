@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,10 +11,10 @@ namespace SDK
 
 enum class ETemplateSectionPropertyScaleType : int32
 {
-	ETemplateSectionPropertyScaleType__FloatProperty = 0,
-	ETemplateSectionPropertyScaleType__TransformPropertyLocationOnly = 1,
-	ETemplateSectionPropertyScaleType__TransformPropertyRotationOnly = 2,
-	ETemplateSectionPropertyScaleType__ETemplateSectionPropertyScaleType_MAX = 3,
+	FloatProperty                  = 0,
+	TransformPropertyLocationOnly  = 1,
+	TransformPropertyRotationOnly  = 2,
+	ETemplateSectionPropertyScaleType_MAX = 3,
 };
 
 
@@ -43,11 +40,9 @@ struct FTemplateSequenceBindingOverrideData
 public:
 	TWeakObjectPtr<class UObject>                Object;                                            // 0x0(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOverridesDefault;                                 // 0x8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1600[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_157E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

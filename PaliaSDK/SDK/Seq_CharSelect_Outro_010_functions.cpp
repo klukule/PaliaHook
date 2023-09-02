@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass Seq_CharSelect_Outro_010.Seq_CharSelect_Outro_010 (Director BP)_C
+// (None)
+
+class UClass* USeq_CharSelect_Outro_010__Director_BP__C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("Seq_CharSelect_Outro_010 (Director BP)_C");
+
+	return Clss;
+}
+
+
+// Seq_CharSelect_Outro_010 (Director BP)_C Seq_CharSelect_Outro_010.Default__Seq_CharSelect_Outro_010 (Director BP)_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class USeq_CharSelect_Outro_010__Director_BP__C* USeq_CharSelect_Outro_010__Director_BP__C::GetDefaultObj()
+{
+	static class USeq_CharSelect_Outro_010__Director_BP__C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USeq_CharSelect_Outro_010__Director_BP__C*>(USeq_CharSelect_Outro_010__Director_BP__C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function Seq_CharSelect_Outro_010.Seq_CharSelect_Outro_010 (Director BP)_C.SequenceEvent__ENTRYPOINTSeq_CharSelect_Outro_010 (Director BP)
@@ -59,7 +84,7 @@ void USeq_CharSelect_Outro_010__Director_BP__C::StopFlowAudio()
 // int32                              EntryPoint                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_AkEventGlobal_ReturnValue                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void USeq_CharSelect_Outro_010__Director_BP__C::ExecuteUbergraph_Seq_CharSelect_Outro_010__Director_BP_(int32 InEntryPoint, int32 InCallFunc_AkEventGlobal_ReturnValue)
+void USeq_CharSelect_Outro_010__Director_BP__C::ExecuteUbergraph_Seq_CharSelect_Outro_010__Director_BP_(int32 EntryPoint, int32 CallFunc_AkEventGlobal_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -68,8 +93,8 @@ void USeq_CharSelect_Outro_010__Director_BP__C::ExecuteUbergraph_Seq_CharSelect_
 
 	Params::USeq_CharSelect_Outro_010__Director_BP__C_ExecuteUbergraph_Seq_CharSelect_Outro_010__Director_BP__Params Parms{};
 
-	Parms.EntryPoint = InEntryPoint;
-	Parms.CallFunc_AkEventGlobal_ReturnValue = InCallFunc_AkEventGlobal_ReturnValue;
+	Parms.EntryPoint = EntryPoint;
+	Parms.CallFunc_AkEventGlobal_ReturnValue = CallFunc_AkEventGlobal_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -77,6 +102,4 @@ void USeq_CharSelect_Outro_010__Director_BP__C::ExecuteUbergraph_Seq_CharSelect_
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

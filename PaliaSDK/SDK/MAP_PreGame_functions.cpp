@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass MAP_PreGame.MAP_PreGame_C
+// (Actor)
+
+class UClass* AMAP_PreGame_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MAP_PreGame_C");
+
+	return Clss;
+}
+
+
+// MAP_PreGame_C MAP_PreGame.Default__MAP_PreGame_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class AMAP_PreGame_C* AMAP_PreGame_C::GetDefaultObj()
+{
+	static class AMAP_PreGame_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AMAP_PreGame_C*>(AMAP_PreGame_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function MAP_PreGame.MAP_PreGame_C.GetRenderStudioSpawnLocation
@@ -68,7 +93,7 @@ class AVAL_CharacterPreviewer* AMAP_PreGame_C::GetCharacterInventoryPreviewer()
 // class AActor*                      CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class ABP_CharacterPreview_C*      CallFunc_FinishSpawningActor_ReturnValue                         (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-class AVAL_CharacterPreviewer* AMAP_PreGame_C::GetCharacterPreviewer(bool InCallFunc_IsValid_ReturnValue, const struct FTransform& InCallFunc_MakeTransform_ReturnValue, class AActor* InCallFunc_BeginDeferredActorSpawnFromClass_ReturnValue, class ABP_CharacterPreview_C* InCallFunc_FinishSpawningActor_ReturnValue)
+class AVAL_CharacterPreviewer* AMAP_PreGame_C::GetCharacterPreviewer(bool CallFunc_IsValid_ReturnValue, const struct FTransform& CallFunc_MakeTransform_ReturnValue, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue, class ABP_CharacterPreview_C* CallFunc_FinishSpawningActor_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -77,10 +102,10 @@ class AVAL_CharacterPreviewer* AMAP_PreGame_C::GetCharacterPreviewer(bool InCall
 
 	Params::AMAP_PreGame_C_GetCharacterPreviewer_Params Parms{};
 
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_MakeTransform_ReturnValue = InCallFunc_MakeTransform_ReturnValue;
-	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue = InCallFunc_BeginDeferredActorSpawnFromClass_ReturnValue;
-	Parms.CallFunc_FinishSpawningActor_ReturnValue = InCallFunc_FinishSpawningActor_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_MakeTransform_ReturnValue = CallFunc_MakeTransform_ReturnValue;
+	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue = CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue;
+	Parms.CallFunc_FinishSpawningActor_ReturnValue = CallFunc_FinishSpawningActor_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -156,6 +181,4 @@ class AValeriaCharacter* AMAP_PreGame_C::GetLobbyCharacter()
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

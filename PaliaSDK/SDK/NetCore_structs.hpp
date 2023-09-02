@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,141 +11,141 @@ namespace SDK
 
 enum class ENetworkFailure : uint8
 {
-	ENetworkFailure__NetDriverAlreadyExists = 0,
-	ENetworkFailure__NetDriverCreateFailure = 1,
-	ENetworkFailure__NetDriverListenFailure = 2,
-	ENetworkFailure__ConnectionLost = 3,
-	ENetworkFailure__ConnectionTimeout = 4,
-	ENetworkFailure__FailureReceived = 5,
-	ENetworkFailure__OutdatedClient = 6,
-	ENetworkFailure__OutdatedServer = 7,
-	ENetworkFailure__PendingConnectionFailure = 8,
-	ENetworkFailure__NetGuidMismatch = 9,
-	ENetworkFailure__NetChecksumMismatch = 10,
-	ENetworkFailure__ENetworkFailure_MAX = 11,
+	NetDriverAlreadyExists         = 0,
+	NetDriverCreateFailure         = 1,
+	NetDriverListenFailure         = 2,
+	ConnectionLost                 = 3,
+	ConnectionTimeout              = 4,
+	FailureReceived                = 5,
+	OutdatedClient                 = 6,
+	OutdatedServer                 = 7,
+	PendingConnectionFailure       = 8,
+	NetGuidMismatch                = 9,
+	NetChecksumMismatch            = 10,
+	ENetworkFailure_MAX            = 11,
 };
 
 enum class EFastArraySerializerDeltaFlags : uint8
 {
-	EFastArraySerializerDeltaFlags__None = 0,
-	EFastArraySerializerDeltaFlags__HasBeenSerialized = 1,
-	EFastArraySerializerDeltaFlags__HasDeltaBeenRequested = 2,
-	EFastArraySerializerDeltaFlags__IsUsingDeltaSerialization = 4,
-	EFastArraySerializerDeltaFlags__EFastArraySerializerDeltaFlags_MAX = 5,
+	None                           = 0,
+	HasBeenSerialized              = 1,
+	HasDeltaBeenRequested          = 2,
+	IsUsingDeltaSerialization      = 4,
+	EFastArraySerializerDeltaFlags_MAX = 5,
 };
 
 enum class ENetCloseResult : uint8
 {
-	ENetCloseResult__NetDriverAlreadyExists = 0,
-	ENetCloseResult__NetDriverCreateFailure = 1,
-	ENetCloseResult__NetDriverListenFailure = 2,
-	ENetCloseResult__ConnectionLost = 3,
-	ENetCloseResult__ConnectionTimeout = 4,
-	ENetCloseResult__FailureReceived = 5,
-	ENetCloseResult__OutdatedClient = 6,
-	ENetCloseResult__OutdatedServer = 7,
-	ENetCloseResult__PendingConnectionFailure = 8,
-	ENetCloseResult__NetGuidMismatch = 9,
-	ENetCloseResult__NetChecksumMismatch = 10,
-	ENetCloseResult__SecurityMalformedPacket = 11,
-	ENetCloseResult__SecurityInvalidData = 12,
-	ENetCloseResult__SecurityClosed = 13,
-	ENetCloseResult__Unknown       = 14,
-	ENetCloseResult__Success       = 15,
-	ENetCloseResult__Extended      = 16,
-	ENetCloseResult__HostClosedConnection = 17,
-	ENetCloseResult__Disconnect    = 18,
-	ENetCloseResult__Upgrade       = 19,
-	ENetCloseResult__PreLoginFailure = 20,
-	ENetCloseResult__JoinFailure   = 21,
-	ENetCloseResult__JoinSplitFailure = 22,
-	ENetCloseResult__AddressResolutionFailed = 23,
-	ENetCloseResult__RPCDoS        = 24,
-	ENetCloseResult__Cleanup       = 25,
-	ENetCloseResult__MissingLevelPackage = 26,
-	ENetCloseResult__PacketHandlerIncomingError = 27,
-	ENetCloseResult__ZeroLastByte  = 28,
-	ENetCloseResult__ZeroSize      = 29,
-	ENetCloseResult__ReadHeaderFail = 30,
-	ENetCloseResult__ReadHeaderExtraFail = 31,
-	ENetCloseResult__AckSequenceMismatch = 32,
-	ENetCloseResult__BunchBadChannelIndex = 33,
-	ENetCloseResult__BunchChannelNameFail = 34,
-	ENetCloseResult__BunchWrongChannelType = 35,
-	ENetCloseResult__BunchHeaderOverflow = 36,
-	ENetCloseResult__BunchDataOverflow = 37,
-	ENetCloseResult__BunchServerPackageMapExports = 38,
-	ENetCloseResult__BunchPrematureControlChannel = 39,
-	ENetCloseResult__BunchPrematureChannel = 40,
-	ENetCloseResult__BunchPrematureControlClose = 41,
-	ENetCloseResult__UnknownChannelType = 42,
-	ENetCloseResult__PrematureSend = 43,
-	ENetCloseResult__CorruptData   = 44,
-	ENetCloseResult__SocketSendFailure = 45,
-	ENetCloseResult__BadChildConnectionIndex = 46,
-	ENetCloseResult__LogLimitInstant = 47,
-	ENetCloseResult__LogLimitSustained = 48,
-	ENetCloseResult__EncryptionFailure = 49,
-	ENetCloseResult__EncryptionTokenMissing = 50,
-	ENetCloseResult__ReceivedNetGUIDBunchFail = 51,
-	ENetCloseResult__MaxReliableExceeded = 52,
-	ENetCloseResult__ReceivedNextBunchFail = 53,
-	ENetCloseResult__ReceivedNextBunchQueueFail = 54,
-	ENetCloseResult__PartialInitialReliableDestroy = 55,
-	ENetCloseResult__PartialMergeReliableDestroy = 56,
-	ENetCloseResult__PartialInitialNonByteAligned = 57,
-	ENetCloseResult__PartialNonByteAligned = 58,
-	ENetCloseResult__PartialFinalPackageMapExports = 59,
-	ENetCloseResult__PartialTooLarge = 60,
-	ENetCloseResult__AlreadyOpen   = 61,
-	ENetCloseResult__ReliableBeforeOpen = 62,
-	ENetCloseResult__ReliableBufferOverflow = 63,
-	ENetCloseResult__RPCReliableBufferOverflow = 64,
-	ENetCloseResult__ControlChannelClose = 65,
-	ENetCloseResult__ControlChannelEndianCheck = 66,
-	ENetCloseResult__ControlChannelPlayerChannelFail = 67,
-	ENetCloseResult__ControlChannelMessageUnknown = 68,
-	ENetCloseResult__ControlChannelMessageFail = 69,
-	ENetCloseResult__ControlChannelMessagePayloadFail = 70,
-	ENetCloseResult__ControlChannelBunchOverflowed = 71,
-	ENetCloseResult__ControlChannelQueueBunchOverflowed = 72,
-	ENetCloseResult__ClientHasMustBeMappedGUIDs = 73,
-	ENetCloseResult__ClientSentDestructionInfo = 74,
-	ENetCloseResult__UnregisteredMustBeMappedGUID = 75,
-	ENetCloseResult__ObjectReplicatorReceivedBunchFail = 76,
-	ENetCloseResult__ContentBlockFail = 77,
-	ENetCloseResult__ContentBlockHeaderRepLayoutFail = 78,
-	ENetCloseResult__ContentBlockHeaderIsActorFail = 79,
-	ENetCloseResult__ContentBlockHeaderObjFail = 80,
-	ENetCloseResult__ContentBlockHeaderPrematureEnd = 81,
-	ENetCloseResult__ContentBlockHeaderSubObjectActor = 82,
-	ENetCloseResult__ContentBlockHeaderBadParent = 83,
-	ENetCloseResult__ContentBlockHeaderInvalidCreate = 84,
-	ENetCloseResult__ContentBlockHeaderStablyNamedFail = 85,
-	ENetCloseResult__ContentBlockHeaderNoSubObjectClass = 86,
-	ENetCloseResult__ContentBlockHeaderUObjectSubObject = 87,
-	ENetCloseResult__ContentBlockHeaderAActorSubObject = 88,
-	ENetCloseResult__ContentBlockHeaderFail = 89,
-	ENetCloseResult__ContentBlockPayloadBitsFail = 90,
-	ENetCloseResult__FieldHeaderRepIndex = 91,
-	ENetCloseResult__FieldHeaderBadRepIndex = 92,
-	ENetCloseResult__FieldHeaderPayloadBitsFail = 93,
-	ENetCloseResult__FieldPayloadFail = 94,
-	ENetCloseResult__BeaconControlFlowError = 95,
-	ENetCloseResult__BeaconUnableToParsePacket = 96,
-	ENetCloseResult__BeaconAuthenticationFailure = 97,
-	ENetCloseResult__BeaconLoginInvalidIdError = 98,
-	ENetCloseResult__BeaconLoginInvalidAuthHandlerError = 99,
-	ENetCloseResult__BeaconAuthError = 100,
-	ENetCloseResult__BeaconSpawnClientWorldPackageNameError = 101,
-	ENetCloseResult__BeaconSpawnExistingActorError = 102,
-	ENetCloseResult__BeaconSpawnFailureError = 103,
-	ENetCloseResult__BeaconSpawnNetGUIDAckNoActor = 104,
-	ENetCloseResult__BeaconSpawnNetGUIDAckNoHost = 105,
-	ENetCloseResult__BeaconSpawnUnexpectedError = 106,
-	ENetCloseResult__FaultDisconnect = 107,
-	ENetCloseResult__NotRecoverable = 108,
-	ENetCloseResult__ENetCloseResult_MAX = 109,
+	NetDriverAlreadyExists         = 0,
+	NetDriverCreateFailure         = 1,
+	NetDriverListenFailure         = 2,
+	ConnectionLost                 = 3,
+	ConnectionTimeout              = 4,
+	FailureReceived                = 5,
+	OutdatedClient                 = 6,
+	OutdatedServer                 = 7,
+	PendingConnectionFailure       = 8,
+	NetGuidMismatch                = 9,
+	NetChecksumMismatch            = 10,
+	SecurityMalformedPacket        = 11,
+	SecurityInvalidData            = 12,
+	SecurityClosed                 = 13,
+	Unknown                        = 14,
+	Success                        = 15,
+	Extended                       = 16,
+	HostClosedConnection           = 17,
+	Disconnect                     = 18,
+	Upgrade                        = 19,
+	PreLoginFailure                = 20,
+	JoinFailure                    = 21,
+	JoinSplitFailure               = 22,
+	AddressResolutionFailed        = 23,
+	RPCDoS                         = 24,
+	Cleanup                        = 25,
+	MissingLevelPackage            = 26,
+	PacketHandlerIncomingError     = 27,
+	ZeroLastByte                   = 28,
+	ZeroSize                       = 29,
+	ReadHeaderFail                 = 30,
+	ReadHeaderExtraFail            = 31,
+	AckSequenceMismatch            = 32,
+	BunchBadChannelIndex           = 33,
+	BunchChannelNameFail           = 34,
+	BunchWrongChannelType          = 35,
+	BunchHeaderOverflow            = 36,
+	BunchDataOverflow              = 37,
+	BunchServerPackageMapExports   = 38,
+	BunchPrematureControlChannel   = 39,
+	BunchPrematureChannel          = 40,
+	BunchPrematureControlClose     = 41,
+	UnknownChannelType             = 42,
+	PrematureSend                  = 43,
+	CorruptData                    = 44,
+	SocketSendFailure              = 45,
+	BadChildConnectionIndex        = 46,
+	LogLimitInstant                = 47,
+	LogLimitSustained              = 48,
+	EncryptionFailure              = 49,
+	EncryptionTokenMissing         = 50,
+	ReceivedNetGUIDBunchFail       = 51,
+	MaxReliableExceeded            = 52,
+	ReceivedNextBunchFail          = 53,
+	ReceivedNextBunchQueueFail     = 54,
+	PartialInitialReliableDestroy  = 55,
+	PartialMergeReliableDestroy    = 56,
+	PartialInitialNonByteAligned   = 57,
+	PartialNonByteAligned          = 58,
+	PartialFinalPackageMapExports  = 59,
+	PartialTooLarge                = 60,
+	AlreadyOpen                    = 61,
+	ReliableBeforeOpen             = 62,
+	ReliableBufferOverflow         = 63,
+	RPCReliableBufferOverflow      = 64,
+	ControlChannelClose            = 65,
+	ControlChannelEndianCheck      = 66,
+	ControlChannelPlayerChannelFail = 67,
+	ControlChannelMessageUnknown   = 68,
+	ControlChannelMessageFail      = 69,
+	ControlChannelMessagePayloadFail = 70,
+	ControlChannelBunchOverflowed  = 71,
+	ControlChannelQueueBunchOverflowed = 72,
+	ClientHasMustBeMappedGUIDs     = 73,
+	ClientSentDestructionInfo      = 74,
+	UnregisteredMustBeMappedGUID   = 75,
+	ObjectReplicatorReceivedBunchFail = 76,
+	ContentBlockFail               = 77,
+	ContentBlockHeaderRepLayoutFail = 78,
+	ContentBlockHeaderIsActorFail  = 79,
+	ContentBlockHeaderObjFail      = 80,
+	ContentBlockHeaderPrematureEnd = 81,
+	ContentBlockHeaderSubObjectActor = 82,
+	ContentBlockHeaderBadParent    = 83,
+	ContentBlockHeaderInvalidCreate = 84,
+	ContentBlockHeaderStablyNamedFail = 85,
+	ContentBlockHeaderNoSubObjectClass = 86,
+	ContentBlockHeaderUObjectSubObject = 87,
+	ContentBlockHeaderAActorSubObject = 88,
+	ContentBlockHeaderFail         = 89,
+	ContentBlockPayloadBitsFail    = 90,
+	FieldHeaderRepIndex            = 91,
+	FieldHeaderBadRepIndex         = 92,
+	FieldHeaderPayloadBitsFail     = 93,
+	FieldPayloadFail               = 94,
+	BeaconControlFlowError         = 95,
+	BeaconUnableToParsePacket      = 96,
+	BeaconAuthenticationFailure    = 97,
+	BeaconLoginInvalidIdError      = 98,
+	BeaconLoginInvalidAuthHandlerError = 99,
+	BeaconAuthError                = 100,
+	BeaconSpawnClientWorldPackageNameError = 101,
+	BeaconSpawnExistingActorError  = 102,
+	BeaconSpawnFailureError        = 103,
+	BeaconSpawnNetGUIDAckNoActor   = 104,
+	BeaconSpawnNetGUIDAckNoHost    = 105,
+	BeaconSpawnUnexpectedError     = 106,
+	FaultDisconnect                = 107,
+	NotRecoverable                 = 108,
+	ENetCloseResult_MAX            = 109,
 };
 
 
@@ -171,11 +168,11 @@ public:
 struct FFastArraySerializer
 {
 public:
-	uint8                                        Pad_3DA[0x54];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_51F[0x54];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ArrayReplicationKey;                               // 0x54(0x4)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3DD[0xA8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_520[0xA8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class EFastArraySerializerDeltaFlags    DeltaFlags;                                        // 0x100(0x1)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_3DE[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_521[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -185,7 +182,7 @@ struct FNetAnalyticsDataConfig
 public:
 	class FName                                  DataName;                                          // 0x0(0x8)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bEnabled;                                          // 0x8(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3ED[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_52A[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -193,7 +190,7 @@ public:
 struct FStateStruct
 {
 public:
-	uint8                                        Pad_3EF[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_52F[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                StateName;                                         // 0x8(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 
@@ -207,7 +204,7 @@ public:
 	int16                                        CooloffTime;                                       // 0x1A(0x2)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int16                                        AutoEscalateTime;                                  // 0x1C(0x2)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int8                                         HighestTimePeriod;                                 // 0x1E(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_3F1[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_536[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<int8>                                 AllTimePeriods;                                    // 0x20(0x10)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 };
 
@@ -217,18 +214,16 @@ struct FNetFaultState : public FEscalationState
 {
 public:
 	bool                                         bCloseConnection;                                  // 0x30(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3F5[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_53A[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int16                                        EscalateQuotaFaultsPerPeriod;                      // 0x32(0x2)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int8                                         EscalateQuotaFaultPercentPerPeriod;                // 0x34(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3F8[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_53D[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int16                                        DescalateQuotaFaultsPerPeriod;                     // 0x36(0x2)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int8                                         DescalateQuotaFaultPercentPerPeriod;               // 0x38(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int8                                         EscalateQuotaTimePeriod;                           // 0x39(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_3FA[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_540[0x6];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

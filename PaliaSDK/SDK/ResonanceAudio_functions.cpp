@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,68 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class ResonanceAudio.ResonanceAudioSoundfieldSettings
+// (None)
+
+class UClass* UResonanceAudioSoundfieldSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ResonanceAudioSoundfieldSettings");
+
+	return Clss;
+}
+
+
+// ResonanceAudioSoundfieldSettings ResonanceAudio.Default__ResonanceAudioSoundfieldSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UResonanceAudioSoundfieldSettings* UResonanceAudioSoundfieldSettings::GetDefaultObj()
+{
+	static class UResonanceAudioSoundfieldSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UResonanceAudioSoundfieldSettings*>(UResonanceAudioSoundfieldSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ResonanceAudio.ResonanceAudioBlueprintFunctionLibrary
+// (None)
+
+class UClass* UResonanceAudioBlueprintFunctionLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ResonanceAudioBlueprintFunctionLibrary");
+
+	return Clss;
+}
+
+
+// ResonanceAudioBlueprintFunctionLibrary ResonanceAudio.Default__ResonanceAudioBlueprintFunctionLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UResonanceAudioBlueprintFunctionLibrary* UResonanceAudioBlueprintFunctionLibrary::GetDefaultObj()
+{
+	static class UResonanceAudioBlueprintFunctionLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UResonanceAudioBlueprintFunctionLibrary*>(UResonanceAudioBlueprintFunctionLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ResonanceAudio.ResonanceAudioBlueprintFunctionLibrary.SetGlobalReverbPreset
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UResonanceAudioReverbPluginPreset*InPreset                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioBlueprintFunctionLibrary::SetGlobalReverbPreset(class UResonanceAudioReverbPluginPreset* InInPreset)
+void UResonanceAudioBlueprintFunctionLibrary::SetGlobalReverbPreset(class UResonanceAudioReverbPluginPreset* InPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +82,15 @@ void UResonanceAudioBlueprintFunctionLibrary::SetGlobalReverbPreset(class UReson
 
 	Params::UResonanceAudioBlueprintFunctionLibrary_SetGlobalReverbPreset_Params Parms{};
 
-	Parms.InPreset = InInPreset;
+	Parms.InPreset = InPreset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -57,16 +110,72 @@ class UResonanceAudioReverbPluginPreset* UResonanceAudioBlueprintFunctionLibrary
 	Params::UResonanceAudioBlueprintFunctionLibrary_GetGlobalReverbPreset_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ResonanceAudio.ResonanceAudioDirectivityVisualizer
+// (Actor)
+
+class UClass* AResonanceAudioDirectivityVisualizer::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ResonanceAudioDirectivityVisualizer");
+
+	return Clss;
+}
+
+
+// ResonanceAudioDirectivityVisualizer ResonanceAudio.Default__ResonanceAudioDirectivityVisualizer
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AResonanceAudioDirectivityVisualizer* AResonanceAudioDirectivityVisualizer::GetDefaultObj()
+{
+	static class AResonanceAudioDirectivityVisualizer* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AResonanceAudioDirectivityVisualizer*>(AResonanceAudioDirectivityVisualizer::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ResonanceAudio.ResonanceAudioReverbPluginPreset
+// (None)
+
+class UClass* UResonanceAudioReverbPluginPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ResonanceAudioReverbPluginPreset");
+
+	return Clss;
+}
+
+
+// ResonanceAudioReverbPluginPreset ResonanceAudio.Default__ResonanceAudioReverbPluginPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UResonanceAudioReverbPluginPreset* UResonanceAudioReverbPluginPreset::GetDefaultObj()
+{
+	static class UResonanceAudioReverbPluginPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UResonanceAudioReverbPluginPreset*>(UResonanceAudioReverbPluginPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -75,7 +184,7 @@ class UResonanceAudioReverbPluginPreset* UResonanceAudioBlueprintFunctionLibrary
 // Parameters:
 // struct FQuat                       InRotation                                                       (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetRoomRotation(struct FQuat& InInRotation)
+void UResonanceAudioReverbPluginPreset::SetRoomRotation(struct FQuat& InRotation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -84,15 +193,15 @@ void UResonanceAudioReverbPluginPreset::SetRoomRotation(struct FQuat& InInRotati
 
 	Params::UResonanceAudioReverbPluginPreset_SetRoomRotation_Params Parms{};
 
-	Parms.InRotation = InInRotation;
+	Parms.InRotation = InRotation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -102,7 +211,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomRotation(struct FQuat& InInRotati
 // Parameters:
 // struct FVector                     InPosition                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetRoomPosition(struct FVector& InInPosition)
+void UResonanceAudioReverbPluginPreset::SetRoomPosition(struct FVector& InPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -111,15 +220,15 @@ void UResonanceAudioReverbPluginPreset::SetRoomPosition(struct FVector& InInPosi
 
 	Params::UResonanceAudioReverbPluginPreset_SetRoomPosition_Params Parms{};
 
-	Parms.InPosition = InInPosition;
+	Parms.InPosition = InPosition;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -129,7 +238,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomPosition(struct FVector& InInPosi
 // Parameters:
 // TArray<enum class ERaMaterialName> InMaterials                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetRoomMaterials(TArray<enum class ERaMaterialName>& InInMaterials)
+void UResonanceAudioReverbPluginPreset::SetRoomMaterials(TArray<enum class ERaMaterialName>& InMaterials)
 {
 	static class UFunction* Func = nullptr;
 
@@ -138,15 +247,15 @@ void UResonanceAudioReverbPluginPreset::SetRoomMaterials(TArray<enum class ERaMa
 
 	Params::UResonanceAudioReverbPluginPreset_SetRoomMaterials_Params Parms{};
 
-	Parms.InMaterials = InInMaterials;
+	Parms.InMaterials = InMaterials;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -156,7 +265,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomMaterials(TArray<enum class ERaMa
 // Parameters:
 // struct FVector                     InDimensions                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetRoomDimensions(struct FVector& InInDimensions)
+void UResonanceAudioReverbPluginPreset::SetRoomDimensions(struct FVector& InDimensions)
 {
 	static class UFunction* Func = nullptr;
 
@@ -165,15 +274,15 @@ void UResonanceAudioReverbPluginPreset::SetRoomDimensions(struct FVector& InInDi
 
 	Params::UResonanceAudioReverbPluginPreset_SetRoomDimensions_Params Parms{};
 
-	Parms.InDimensions = InInDimensions;
+	Parms.InDimensions = InDimensions;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -183,7 +292,7 @@ void UResonanceAudioReverbPluginPreset::SetRoomDimensions(struct FVector& InInDi
 // Parameters:
 // float                              InReverbTimeModifier                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetReverbTimeModifier(float InInReverbTimeModifier)
+void UResonanceAudioReverbPluginPreset::SetReverbTimeModifier(float InReverbTimeModifier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -192,15 +301,15 @@ void UResonanceAudioReverbPluginPreset::SetReverbTimeModifier(float InInReverbTi
 
 	Params::UResonanceAudioReverbPluginPreset_SetReverbTimeModifier_Params Parms{};
 
-	Parms.InReverbTimeModifier = InInReverbTimeModifier;
+	Parms.InReverbTimeModifier = InReverbTimeModifier;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -210,7 +319,7 @@ void UResonanceAudioReverbPluginPreset::SetReverbTimeModifier(float InInReverbTi
 // Parameters:
 // float                              InReverbGain                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetReverbGain(float InInReverbGain)
+void UResonanceAudioReverbPluginPreset::SetReverbGain(float InReverbGain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -219,15 +328,15 @@ void UResonanceAudioReverbPluginPreset::SetReverbGain(float InInReverbGain)
 
 	Params::UResonanceAudioReverbPluginPreset_SetReverbGain_Params Parms{};
 
-	Parms.InReverbGain = InInReverbGain;
+	Parms.InReverbGain = InReverbGain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -237,7 +346,7 @@ void UResonanceAudioReverbPluginPreset::SetReverbGain(float InInReverbGain)
 // Parameters:
 // float                              InReverbBrightness                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetReverbBrightness(float InInReverbBrightness)
+void UResonanceAudioReverbPluginPreset::SetReverbBrightness(float InReverbBrightness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -246,15 +355,15 @@ void UResonanceAudioReverbPluginPreset::SetReverbBrightness(float InInReverbBrig
 
 	Params::UResonanceAudioReverbPluginPreset_SetReverbBrightness_Params Parms{};
 
-	Parms.InReverbBrightness = InInReverbBrightness;
+	Parms.InReverbBrightness = InReverbBrightness;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -264,7 +373,7 @@ void UResonanceAudioReverbPluginPreset::SetReverbBrightness(float InInReverbBrig
 // Parameters:
 // float                              InReflectionScalar                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetReflectionScalar(float InInReflectionScalar)
+void UResonanceAudioReverbPluginPreset::SetReflectionScalar(float InReflectionScalar)
 {
 	static class UFunction* Func = nullptr;
 
@@ -273,15 +382,15 @@ void UResonanceAudioReverbPluginPreset::SetReflectionScalar(float InInReflection
 
 	Params::UResonanceAudioReverbPluginPreset_SetReflectionScalar_Params Parms{};
 
-	Parms.InReflectionScalar = InInReflectionScalar;
+	Parms.InReflectionScalar = InReflectionScalar;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -291,7 +400,7 @@ void UResonanceAudioReverbPluginPreset::SetReflectionScalar(float InInReflection
 // Parameters:
 // bool                               bInEnableRoomEffects                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioReverbPluginPreset::SetEnableRoomEffects(bool InbInEnableRoomEffects)
+void UResonanceAudioReverbPluginPreset::SetEnableRoomEffects(bool bInEnableRoomEffects)
 {
 	static class UFunction* Func = nullptr;
 
@@ -300,16 +409,72 @@ void UResonanceAudioReverbPluginPreset::SetEnableRoomEffects(bool InbInEnableRoo
 
 	Params::UResonanceAudioReverbPluginPreset_SetEnableRoomEffects_Params Parms{};
 
-	Parms.bInEnableRoomEffects = InbInEnableRoomEffects;
+	Parms.bInEnableRoomEffects = bInEnableRoomEffects;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ResonanceAudio.ResonanceAudioSettings
+// (None)
+
+class UClass* UResonanceAudioSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ResonanceAudioSettings");
+
+	return Clss;
+}
+
+
+// ResonanceAudioSettings ResonanceAudio.Default__ResonanceAudioSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UResonanceAudioSettings* UResonanceAudioSettings::GetDefaultObj()
+{
+	static class UResonanceAudioSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UResonanceAudioSettings*>(UResonanceAudioSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ResonanceAudio.ResonanceAudioSpatializationSourceSettings
+// (None)
+
+class UClass* UResonanceAudioSpatializationSourceSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ResonanceAudioSpatializationSourceSettings");
+
+	return Clss;
+}
+
+
+// ResonanceAudioSpatializationSourceSettings ResonanceAudio.Default__ResonanceAudioSpatializationSourceSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UResonanceAudioSpatializationSourceSettings* UResonanceAudioSpatializationSourceSettings::GetDefaultObj()
+{
+	static class UResonanceAudioSpatializationSourceSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UResonanceAudioSpatializationSourceSettings*>(UResonanceAudioSpatializationSourceSettings::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -318,7 +483,7 @@ void UResonanceAudioReverbPluginPreset::SetEnableRoomEffects(bool InbInEnableRoo
 // Parameters:
 // float                              InSpread                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioSpatializationSourceSettings::SetSoundSourceSpread(float InInSpread)
+void UResonanceAudioSpatializationSourceSettings::SetSoundSourceSpread(float InSpread)
 {
 	static class UFunction* Func = nullptr;
 
@@ -327,15 +492,15 @@ void UResonanceAudioSpatializationSourceSettings::SetSoundSourceSpread(float InI
 
 	Params::UResonanceAudioSpatializationSourceSettings_SetSoundSourceSpread_Params Parms{};
 
-	Parms.InSpread = InInSpread;
+	Parms.InSpread = InSpread;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -346,7 +511,7 @@ void UResonanceAudioSpatializationSourceSettings::SetSoundSourceSpread(float InI
 // float                              InPattern                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              InSharpness                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UResonanceAudioSpatializationSourceSettings::SetSoundSourceDirectivity(float InInPattern, float InInSharpness)
+void UResonanceAudioSpatializationSourceSettings::SetSoundSourceDirectivity(float InPattern, float InSharpness)
 {
 	static class UFunction* Func = nullptr;
 
@@ -355,21 +520,19 @@ void UResonanceAudioSpatializationSourceSettings::SetSoundSourceDirectivity(floa
 
 	Params::UResonanceAudioSpatializationSourceSettings_SetSoundSourceDirectivity_Params Parms{};
 
-	Parms.InPattern = InInPattern;
-	Parms.InSharpness = InInSharpness;
+	Parms.InPattern = InPattern;
+	Parms.InSharpness = InSharpness;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

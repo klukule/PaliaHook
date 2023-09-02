@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -22,7 +19,7 @@ namespace SDK
 struct FWidgetCarouselNavigationButtonStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_265D[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26EB[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FButtonStyle                          InnerButtonStyle;                                  // 0x10(0x3F0)(NativeAccessSpecifierPublic)
 	struct FSlateBrush                           NavigationButtonLeftImage;                         // 0x400(0xD0)(NativeAccessSpecifierPublic)
 	struct FSlateBrush                           NavigationButtonRightImage;                        // 0x4D0(0xD0)(NativeAccessSpecifierPublic)
@@ -33,7 +30,7 @@ public:
 struct FWidgetCarouselNavigationBarStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_265F[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26EE[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           HighlightBrush;                                    // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FButtonStyle                          LeftButtonStyle;                                   // 0xE0(0x3F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FButtonStyle                          CenterButtonStyle;                                 // 0x4D0(0x3F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -42,6 +39,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

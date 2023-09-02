@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,21 +16,16 @@ class UComp_CV_Parent_C : public UValeriaAkTriggerComponent
 public:
 	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x2B0(0x8)(ZeroConstructor, Transient, DuplicateTransient)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("Comp_CV_Parent_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UComp_CV_Parent_C* GetDefaultObj();
 
-	void OverlapBegin(class UPrimitiveComponent* InOverlappedComponent, class AActor* InOtherActor, class UPrimitiveComponent* InOtherComp, int32 InOtherBodyIndex, bool InbFromSweep, struct FHitResult& InSweepResult);
-	void OverlapEnd(class UPrimitiveComponent* InOverlappedComponent, class AActor* InOtherActor, class UPrimitiveComponent* InOtherComp, int32 InOtherBodyIndex);
+	void OverlapBegin(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, struct FHitResult& SweepResult);
+	void OverlapEnd(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	void ReceiveBeginPlay();
-	void ReceiveEndPlay(enum class EEndPlayReason InEndPlayReason);
-	void ExecuteUbergraph_Comp_CV_Parent(int32 InEntryPoint, class USceneComponent* InCallFunc_GetAttachParent_ReturnValue, class UPrimitiveComponent* InK2Node_CustomEvent_OverlappedComponent_1, class AActor* InK2Node_CustomEvent_OtherActor_1, class UPrimitiveComponent* InK2Node_CustomEvent_OtherComp_1, int32 InK2Node_CustomEvent_OtherBodyIndex_1, bool InK2Node_CustomEvent_bFromSweep, const struct FHitResult& InK2Node_CustomEvent_SweepResult, class UPrimitiveComponent* InK2Node_DynamicCast_AsPrimitive_Component, bool InK2Node_DynamicCast_bSuccess, class UPrimitiveComponent* InK2Node_CustomEvent_OverlappedComponent, class AActor* InK2Node_CustomEvent_OtherActor, class UPrimitiveComponent* InK2Node_CustomEvent_OtherComp, int32 InK2Node_CustomEvent_OtherBodyIndex, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate, enum class EEndPlayReason InK2Node_Event_EndPlayReason, class USceneComponent* InCallFunc_GetAttachParent_ReturnValue_1, class UPrimitiveComponent* InK2Node_DynamicCast_AsPrimitive_Component_1, bool InK2Node_DynamicCast_bSuccess_1, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_1);
+	void ReceiveEndPlay(enum class EEndPlayReason EndPlayReason);
+	void ExecuteUbergraph_Comp_CV_Parent(int32 EntryPoint, class USceneComponent* CallFunc_GetAttachParent_ReturnValue, class UPrimitiveComponent* K2Node_CustomEvent_OverlappedComponent_1, class AActor* K2Node_CustomEvent_OtherActor_1, class UPrimitiveComponent* K2Node_CustomEvent_OtherComp_1, int32 K2Node_CustomEvent_OtherBodyIndex_1, bool K2Node_CustomEvent_bFromSweep, const struct FHitResult& K2Node_CustomEvent_SweepResult, class UPrimitiveComponent* K2Node_DynamicCast_AsPrimitive_Component, bool K2Node_DynamicCast_bSuccess, class UPrimitiveComponent* K2Node_CustomEvent_OverlappedComponent, class AActor* K2Node_CustomEvent_OtherActor, class UPrimitiveComponent* K2Node_CustomEvent_OtherComp, int32 K2Node_CustomEvent_OtherBodyIndex, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, enum class EEndPlayReason K2Node_Event_EndPlayReason, class USceneComponent* CallFunc_GetAttachParent_ReturnValue_1, class UPrimitiveComponent* K2Node_DynamicCast_AsPrimitive_Component_1, bool K2Node_DynamicCast_bSuccess_1, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_1);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,37 +11,37 @@ namespace SDK
 
 enum class EWaveTableResolution : uint8
 {
-	EWaveTableResolution__None     = 0,
-	EWaveTableResolution__Res_8    = 3,
-	EWaveTableResolution__Res_16   = 4,
-	EWaveTableResolution__Res_32   = 5,
-	EWaveTableResolution__Res_64   = 6,
-	EWaveTableResolution__Res_128  = 7,
-	EWaveTableResolution__Res_256  = 8,
-	EWaveTableResolution__Res_512  = 9,
-	EWaveTableResolution__Res_1024 = 10,
-	EWaveTableResolution__Res_2048 = 11,
-	EWaveTableResolution__Res_4096 = 12,
-	EWaveTableResolution__Res_Max  = 12,
-	EWaveTableResolution__Maximum  = 13,
-	EWaveTableResolution__EWaveTableResolution_MAX = 14,
+	None                           = 0,
+	Res_8                          = 3,
+	Res_16                         = 4,
+	Res_32                         = 5,
+	Res_64                         = 6,
+	Res_128                        = 7,
+	Res_256                        = 8,
+	Res_512                        = 9,
+	Res_1024                       = 10,
+	Res_2048                       = 11,
+	Res_4096                       = 12,
+	Res_Max                        = 12,
+	Maximum                        = 13,
+	EWaveTableResolution_MAX       = 14,
 };
 
 enum class EWaveTableCurve : uint8
 {
-	EWaveTableCurve__Linear        = 0,
-	EWaveTableCurve__Linear_Inv    = 1,
-	EWaveTableCurve__Exp           = 2,
-	EWaveTableCurve__Exp_Inverse   = 3,
-	EWaveTableCurve__Log           = 4,
-	EWaveTableCurve__Sin           = 5,
-	EWaveTableCurve__Sin_Full      = 6,
-	EWaveTableCurve__SCurve        = 7,
-	EWaveTableCurve__Shared        = 8,
-	EWaveTableCurve__Custom        = 9,
-	EWaveTableCurve__File          = 10,
-	EWaveTableCurve__Count         = 11,
-	EWaveTableCurve__EWaveTableCurve_MAX = 12,
+	Linear                         = 0,
+	Linear_Inv                     = 1,
+	Exp                            = 2,
+	Exp_Inverse                    = 3,
+	Log                            = 4,
+	Sin                            = 5,
+	Sin_Full                       = 6,
+	SCurve                         = 7,
+	Shared                         = 8,
+	Custom                         = 9,
+	File                           = 10,
+	Count                          = 11,
+	EWaveTableCurve_MAX            = 12,
 };
 
 
@@ -58,7 +55,7 @@ struct FWaveTableTransform
 {
 public:
 	enum class EWaveTableCurve                   Curve;                                             // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_689[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_747[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Scalar;                                            // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRichCurve                            CurveCustom;                                       // 0x8(0x80)(NativeAccessSpecifierPublic)
 	class UCurveFloat*                           CurveShared;                                       // 0x88(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -87,12 +84,10 @@ public:
 	float                                        FadeOut;                                           // 0x24(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bNormalize;                                        // 0x28(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bRemoveOffset;                                     // 0x29(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_695[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_750[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<float>                                SourcePCMData;                                     // 0x30(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

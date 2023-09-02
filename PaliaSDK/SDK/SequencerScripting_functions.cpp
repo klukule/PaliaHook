@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,68 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class SequencerScripting.MovieSceneScriptingKey
+// (None)
+
+class UClass* UMovieSceneScriptingKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingKey SequencerScripting.Default__MovieSceneScriptingKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingKey* UMovieSceneScriptingKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingKey*>(UMovieSceneScriptingKey::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingActorReferenceKey
+// (None)
+
+class UClass* UMovieSceneScriptingActorReferenceKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingActorReferenceKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingActorReferenceKey SequencerScripting.Default__MovieSceneScriptingActorReferenceKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingActorReferenceKey* UMovieSceneScriptingActorReferenceKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingActorReferenceKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingActorReferenceKey*>(UMovieSceneScriptingActorReferenceKey::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function SequencerScripting.MovieSceneScriptingActorReferenceKey.SetValue
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // struct FMovieSceneObjectBindingID  InNewValue                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingActorReferenceKey::SetValue(struct FMovieSceneObjectBindingID& InInNewValue)
+void UMovieSceneScriptingActorReferenceKey::SetValue(struct FMovieSceneObjectBindingID& InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +82,15 @@ void UMovieSceneScriptingActorReferenceKey::SetValue(struct FMovieSceneObjectBin
 
 	Params::UMovieSceneScriptingActorReferenceKey_SetValue_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -49,7 +102,7 @@ void UMovieSceneScriptingActorReferenceKey::SetValue(struct FMovieSceneObjectBin
 // float                              SubFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingActorReferenceKey::SetTime(struct FFrameNumber& InNewFrameNumber, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+void UMovieSceneScriptingActorReferenceKey::SetTime(struct FFrameNumber& NewFrameNumber, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -58,17 +111,17 @@ void UMovieSceneScriptingActorReferenceKey::SetTime(struct FFrameNumber& InNewFr
 
 	Params::UMovieSceneScriptingActorReferenceKey_SetTime_Params Parms{};
 
-	Parms.NewFrameNumber = InNewFrameNumber;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.NewFrameNumber = NewFrameNumber;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -88,13 +141,13 @@ struct FMovieSceneObjectBindingID UMovieSceneScriptingActorReferenceKey::GetValu
 	Params::UMovieSceneScriptingActorReferenceKey_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -107,7 +160,7 @@ struct FMovieSceneObjectBindingID UMovieSceneScriptingActorReferenceKey::GetValu
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UMovieSceneScriptingActorReferenceKey::GetTime(enum class ESequenceTimeUnit InTimeUnit)
+struct FFrameTime UMovieSceneScriptingActorReferenceKey::GetTime(enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -116,18 +169,74 @@ struct FFrameTime UMovieSceneScriptingActorReferenceKey::GetTime(enum class ESeq
 
 	Params::UMovieSceneScriptingActorReferenceKey_GetTime_Params Parms{};
 
-	Parms.TimeUnit = InTimeUnit;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingChannel
+// (None)
+
+class UClass* UMovieSceneScriptingChannel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingChannel");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingChannel SequencerScripting.Default__MovieSceneScriptingChannel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingChannel* UMovieSceneScriptingChannel::GetDefaultObj()
+{
+	static class UMovieSceneScriptingChannel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingChannel*>(UMovieSceneScriptingChannel::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingActorReferenceChannel
+// (None)
+
+class UClass* UMovieSceneScriptingActorReferenceChannel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingActorReferenceChannel");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingActorReferenceChannel SequencerScripting.Default__MovieSceneScriptingActorReferenceChannel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingActorReferenceChannel* UMovieSceneScriptingActorReferenceChannel::GetDefaultObj()
+{
+	static class UMovieSceneScriptingActorReferenceChannel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingActorReferenceChannel*>(UMovieSceneScriptingActorReferenceChannel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -136,7 +245,7 @@ struct FFrameTime UMovieSceneScriptingActorReferenceKey::GetTime(enum class ESeq
 // Parameters:
 // struct FMovieSceneObjectBindingID  InDefaultValue                                                   (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingActorReferenceChannel::SetDefault(const struct FMovieSceneObjectBindingID& InInDefaultValue)
+void UMovieSceneScriptingActorReferenceChannel::SetDefault(const struct FMovieSceneObjectBindingID& InDefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -145,15 +254,15 @@ void UMovieSceneScriptingActorReferenceChannel::SetDefault(const struct FMovieSc
 
 	Params::UMovieSceneScriptingActorReferenceChannel_SetDefault_Params Parms{};
 
-	Parms.InDefaultValue = InInDefaultValue;
+	Parms.InDefaultValue = InDefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -163,7 +272,7 @@ void UMovieSceneScriptingActorReferenceChannel::SetDefault(const struct FMovieSc
 // Parameters:
 // class UMovieSceneScriptingKey*     Key                                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingActorReferenceChannel::RemoveKey(class UMovieSceneScriptingKey* InKey)
+void UMovieSceneScriptingActorReferenceChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
 {
 	static class UFunction* Func = nullptr;
 
@@ -172,15 +281,15 @@ void UMovieSceneScriptingActorReferenceChannel::RemoveKey(class UMovieSceneScrip
 
 	Params::UMovieSceneScriptingActorReferenceChannel_RemoveKey_Params Parms{};
 
-	Parms.Key = InKey;
+	Parms.Key = Key;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -199,13 +308,13 @@ void UMovieSceneScriptingActorReferenceChannel::RemoveDefault()
 	Params::UMovieSceneScriptingActorReferenceChannel_RemoveDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -225,13 +334,13 @@ bool UMovieSceneScriptingActorReferenceChannel::HasDefault()
 	Params::UMovieSceneScriptingActorReferenceChannel_HasDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -253,13 +362,13 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingActorReferenceChannel
 	Params::UMovieSceneScriptingActorReferenceChannel_GetKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -281,13 +390,13 @@ struct FMovieSceneObjectBindingID UMovieSceneScriptingActorReferenceChannel::Get
 	Params::UMovieSceneScriptingActorReferenceChannel_GetDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -303,7 +412,7 @@ struct FMovieSceneObjectBindingID UMovieSceneScriptingActorReferenceChannel::Get
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneScriptingActorReferenceKey*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneScriptingActorReferenceKey* UMovieSceneScriptingActorReferenceChannel::AddKey(const struct FFrameNumber& InInTime, const struct FMovieSceneObjectBindingID& InNewValue, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+class UMovieSceneScriptingActorReferenceKey* UMovieSceneScriptingActorReferenceChannel::AddKey(const struct FFrameNumber& InTime, const struct FMovieSceneObjectBindingID& NewValue, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -312,21 +421,49 @@ class UMovieSceneScriptingActorReferenceKey* UMovieSceneScriptingActorReferenceC
 
 	Params::UMovieSceneScriptingActorReferenceChannel_AddKey_Params Parms{};
 
-	Parms.InTime = InInTime;
-	Parms.NewValue = InNewValue;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.InTime = InTime;
+	Parms.NewValue = NewValue;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingBoolKey
+// (None)
+
+class UClass* UMovieSceneScriptingBoolKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingBoolKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingBoolKey SequencerScripting.Default__MovieSceneScriptingBoolKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingBoolKey* UMovieSceneScriptingBoolKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingBoolKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingBoolKey*>(UMovieSceneScriptingBoolKey::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -335,7 +472,7 @@ class UMovieSceneScriptingActorReferenceKey* UMovieSceneScriptingActorReferenceC
 // Parameters:
 // bool                               InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingBoolKey::SetValue(bool InInNewValue)
+void UMovieSceneScriptingBoolKey::SetValue(bool InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -344,15 +481,15 @@ void UMovieSceneScriptingBoolKey::SetValue(bool InInNewValue)
 
 	Params::UMovieSceneScriptingBoolKey_SetValue_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -364,7 +501,7 @@ void UMovieSceneScriptingBoolKey::SetValue(bool InInNewValue)
 // float                              SubFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingBoolKey::SetTime(struct FFrameNumber& InNewFrameNumber, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+void UMovieSceneScriptingBoolKey::SetTime(struct FFrameNumber& NewFrameNumber, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -373,17 +510,17 @@ void UMovieSceneScriptingBoolKey::SetTime(struct FFrameNumber& InNewFrameNumber,
 
 	Params::UMovieSceneScriptingBoolKey_SetTime_Params Parms{};
 
-	Parms.NewFrameNumber = InNewFrameNumber;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.NewFrameNumber = NewFrameNumber;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -403,13 +540,13 @@ bool UMovieSceneScriptingBoolKey::GetValue()
 	Params::UMovieSceneScriptingBoolKey_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -422,7 +559,7 @@ bool UMovieSceneScriptingBoolKey::GetValue()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UMovieSceneScriptingBoolKey::GetTime(enum class ESequenceTimeUnit InTimeUnit)
+struct FFrameTime UMovieSceneScriptingBoolKey::GetTime(enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -431,18 +568,46 @@ struct FFrameTime UMovieSceneScriptingBoolKey::GetTime(enum class ESequenceTimeU
 
 	Params::UMovieSceneScriptingBoolKey_GetTime_Params Parms{};
 
-	Parms.TimeUnit = InTimeUnit;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingBoolChannel
+// (None)
+
+class UClass* UMovieSceneScriptingBoolChannel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingBoolChannel");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingBoolChannel SequencerScripting.Default__MovieSceneScriptingBoolChannel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingBoolChannel* UMovieSceneScriptingBoolChannel::GetDefaultObj()
+{
+	static class UMovieSceneScriptingBoolChannel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingBoolChannel*>(UMovieSceneScriptingBoolChannel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -451,7 +616,7 @@ struct FFrameTime UMovieSceneScriptingBoolKey::GetTime(enum class ESequenceTimeU
 // Parameters:
 // bool                               InDefaultValue                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingBoolChannel::SetDefault(bool InInDefaultValue)
+void UMovieSceneScriptingBoolChannel::SetDefault(bool InDefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -460,15 +625,15 @@ void UMovieSceneScriptingBoolChannel::SetDefault(bool InInDefaultValue)
 
 	Params::UMovieSceneScriptingBoolChannel_SetDefault_Params Parms{};
 
-	Parms.InDefaultValue = InInDefaultValue;
+	Parms.InDefaultValue = InDefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -478,7 +643,7 @@ void UMovieSceneScriptingBoolChannel::SetDefault(bool InInDefaultValue)
 // Parameters:
 // class UMovieSceneScriptingKey*     Key                                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingBoolChannel::RemoveKey(class UMovieSceneScriptingKey* InKey)
+void UMovieSceneScriptingBoolChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
 {
 	static class UFunction* Func = nullptr;
 
@@ -487,15 +652,15 @@ void UMovieSceneScriptingBoolChannel::RemoveKey(class UMovieSceneScriptingKey* I
 
 	Params::UMovieSceneScriptingBoolChannel_RemoveKey_Params Parms{};
 
-	Parms.Key = InKey;
+	Parms.Key = Key;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -514,13 +679,13 @@ void UMovieSceneScriptingBoolChannel::RemoveDefault()
 	Params::UMovieSceneScriptingBoolChannel_RemoveDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -540,13 +705,13 @@ bool UMovieSceneScriptingBoolChannel::HasDefault()
 	Params::UMovieSceneScriptingBoolChannel_HasDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -568,13 +733,13 @@ int32 UMovieSceneScriptingBoolChannel::GetNumKeys()
 	Params::UMovieSceneScriptingBoolChannel_GetNumKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -596,13 +761,13 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingBoolChannel::GetKeys(
 	Params::UMovieSceneScriptingBoolChannel_GetKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -624,13 +789,13 @@ bool UMovieSceneScriptingBoolChannel::GetDefault()
 	Params::UMovieSceneScriptingBoolChannel_GetDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -644,7 +809,7 @@ bool UMovieSceneScriptingBoolChannel::GetDefault()
 // struct FFrameRate                  FrameRate                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<bool>                       ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<bool> UMovieSceneScriptingBoolChannel::EvaluateKeys(const struct FSequencerScriptingRange& InRange, const struct FFrameRate& InFrameRate)
+TArray<bool> UMovieSceneScriptingBoolChannel::EvaluateKeys(const struct FSequencerScriptingRange& Range, const struct FFrameRate& FrameRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -653,16 +818,16 @@ TArray<bool> UMovieSceneScriptingBoolChannel::EvaluateKeys(const struct FSequenc
 
 	Params::UMovieSceneScriptingBoolChannel_EvaluateKeys_Params Parms{};
 
-	Parms.Range = InRange;
-	Parms.FrameRate = InFrameRate;
+	Parms.Range = Range;
+	Parms.FrameRate = FrameRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -684,13 +849,13 @@ struct FSequencerScriptingRange UMovieSceneScriptingBoolChannel::ComputeEffectiv
 	Params::UMovieSceneScriptingBoolChannel_ComputeEffectiveRange_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -706,7 +871,7 @@ struct FSequencerScriptingRange UMovieSceneScriptingBoolChannel::ComputeEffectiv
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneScriptingBoolKey* ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneScriptingBoolKey* UMovieSceneScriptingBoolChannel::AddKey(struct FFrameNumber& InInTime, bool InNewValue, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+class UMovieSceneScriptingBoolKey* UMovieSceneScriptingBoolChannel::AddKey(struct FFrameNumber& InTime, bool NewValue, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -715,21 +880,49 @@ class UMovieSceneScriptingBoolKey* UMovieSceneScriptingBoolChannel::AddKey(struc
 
 	Params::UMovieSceneScriptingBoolChannel_AddKey_Params Parms{};
 
-	Parms.InTime = InInTime;
-	Parms.NewValue = InNewValue;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.InTime = InTime;
+	Parms.NewValue = NewValue;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingByteKey
+// (None)
+
+class UClass* UMovieSceneScriptingByteKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingByteKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingByteKey SequencerScripting.Default__MovieSceneScriptingByteKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingByteKey* UMovieSceneScriptingByteKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingByteKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingByteKey*>(UMovieSceneScriptingByteKey::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -738,7 +931,7 @@ class UMovieSceneScriptingBoolKey* UMovieSceneScriptingBoolChannel::AddKey(struc
 // Parameters:
 // uint8                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingByteKey::SetValue(uint8 InInNewValue)
+void UMovieSceneScriptingByteKey::SetValue(uint8 InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -747,15 +940,15 @@ void UMovieSceneScriptingByteKey::SetValue(uint8 InInNewValue)
 
 	Params::UMovieSceneScriptingByteKey_SetValue_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -767,7 +960,7 @@ void UMovieSceneScriptingByteKey::SetValue(uint8 InInNewValue)
 // float                              SubFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingByteKey::SetTime(struct FFrameNumber& InNewFrameNumber, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+void UMovieSceneScriptingByteKey::SetTime(struct FFrameNumber& NewFrameNumber, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -776,17 +969,17 @@ void UMovieSceneScriptingByteKey::SetTime(struct FFrameNumber& InNewFrameNumber,
 
 	Params::UMovieSceneScriptingByteKey_SetTime_Params Parms{};
 
-	Parms.NewFrameNumber = InNewFrameNumber;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.NewFrameNumber = NewFrameNumber;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -806,13 +999,13 @@ uint8 UMovieSceneScriptingByteKey::GetValue()
 	Params::UMovieSceneScriptingByteKey_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -825,7 +1018,7 @@ uint8 UMovieSceneScriptingByteKey::GetValue()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UMovieSceneScriptingByteKey::GetTime(enum class ESequenceTimeUnit InTimeUnit)
+struct FFrameTime UMovieSceneScriptingByteKey::GetTime(enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -834,18 +1027,46 @@ struct FFrameTime UMovieSceneScriptingByteKey::GetTime(enum class ESequenceTimeU
 
 	Params::UMovieSceneScriptingByteKey_GetTime_Params Parms{};
 
-	Parms.TimeUnit = InTimeUnit;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingByteChannel
+// (None)
+
+class UClass* UMovieSceneScriptingByteChannel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingByteChannel");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingByteChannel SequencerScripting.Default__MovieSceneScriptingByteChannel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingByteChannel* UMovieSceneScriptingByteChannel::GetDefaultObj()
+{
+	static class UMovieSceneScriptingByteChannel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingByteChannel*>(UMovieSceneScriptingByteChannel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -854,7 +1075,7 @@ struct FFrameTime UMovieSceneScriptingByteKey::GetTime(enum class ESequenceTimeU
 // Parameters:
 // uint8                              InDefaultValue                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingByteChannel::SetDefault(uint8 InInDefaultValue)
+void UMovieSceneScriptingByteChannel::SetDefault(uint8 InDefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -863,15 +1084,15 @@ void UMovieSceneScriptingByteChannel::SetDefault(uint8 InInDefaultValue)
 
 	Params::UMovieSceneScriptingByteChannel_SetDefault_Params Parms{};
 
-	Parms.InDefaultValue = InInDefaultValue;
+	Parms.InDefaultValue = InDefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -881,7 +1102,7 @@ void UMovieSceneScriptingByteChannel::SetDefault(uint8 InInDefaultValue)
 // Parameters:
 // class UMovieSceneScriptingKey*     Key                                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingByteChannel::RemoveKey(class UMovieSceneScriptingKey* InKey)
+void UMovieSceneScriptingByteChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
 {
 	static class UFunction* Func = nullptr;
 
@@ -890,15 +1111,15 @@ void UMovieSceneScriptingByteChannel::RemoveKey(class UMovieSceneScriptingKey* I
 
 	Params::UMovieSceneScriptingByteChannel_RemoveKey_Params Parms{};
 
-	Parms.Key = InKey;
+	Parms.Key = Key;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -917,13 +1138,13 @@ void UMovieSceneScriptingByteChannel::RemoveDefault()
 	Params::UMovieSceneScriptingByteChannel_RemoveDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -943,13 +1164,13 @@ bool UMovieSceneScriptingByteChannel::HasDefault()
 	Params::UMovieSceneScriptingByteChannel_HasDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -971,13 +1192,13 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingByteChannel::GetKeys(
 	Params::UMovieSceneScriptingByteChannel_GetKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -999,13 +1220,13 @@ uint8 UMovieSceneScriptingByteChannel::GetDefault()
 	Params::UMovieSceneScriptingByteChannel_GetDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1022,7 +1243,7 @@ uint8 UMovieSceneScriptingByteChannel::GetDefault()
 // enum class EMovieSceneKeyInterpolationInInterpolation                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneScriptingByteKey* ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneScriptingByteKey* UMovieSceneScriptingByteChannel::AddKey(struct FFrameNumber& InInTime, uint8 InNewValue, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit, enum class EMovieSceneKeyInterpolation InInInterpolation)
+class UMovieSceneScriptingByteKey* UMovieSceneScriptingByteChannel::AddKey(struct FFrameNumber& InTime, uint8 NewValue, float SubFrame, enum class ESequenceTimeUnit TimeUnit, enum class EMovieSceneKeyInterpolation InInterpolation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1031,22 +1252,50 @@ class UMovieSceneScriptingByteKey* UMovieSceneScriptingByteChannel::AddKey(struc
 
 	Params::UMovieSceneScriptingByteChannel_AddKey_Params Parms{};
 
-	Parms.InTime = InInTime;
-	Parms.NewValue = InNewValue;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
-	Parms.InInterpolation = InInInterpolation;
+	Parms.InTime = InTime;
+	Parms.NewValue = NewValue;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
+	Parms.InInterpolation = InInterpolation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingDoubleKey
+// (None)
+
+class UClass* UMovieSceneScriptingDoubleKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingDoubleKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingDoubleKey SequencerScripting.Default__MovieSceneScriptingDoubleKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingDoubleKey* UMovieSceneScriptingDoubleKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingDoubleKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingDoubleKey*>(UMovieSceneScriptingDoubleKey::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1055,7 +1304,7 @@ class UMovieSceneScriptingByteKey* UMovieSceneScriptingByteChannel::AddKey(struc
 // Parameters:
 // double                             InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleKey::SetValue(double InInNewValue)
+void UMovieSceneScriptingDoubleKey::SetValue(double InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1064,15 +1313,15 @@ void UMovieSceneScriptingDoubleKey::SetValue(double InInNewValue)
 
 	Params::UMovieSceneScriptingDoubleKey_SetValue_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1084,7 +1333,7 @@ void UMovieSceneScriptingDoubleKey::SetValue(double InInNewValue)
 // float                              SubFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleKey::SetTime(struct FFrameNumber& InNewFrameNumber, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+void UMovieSceneScriptingDoubleKey::SetTime(struct FFrameNumber& NewFrameNumber, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1093,17 +1342,17 @@ void UMovieSceneScriptingDoubleKey::SetTime(struct FFrameNumber& InNewFrameNumbe
 
 	Params::UMovieSceneScriptingDoubleKey_SetTime_Params Parms{};
 
-	Parms.NewFrameNumber = InNewFrameNumber;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.NewFrameNumber = NewFrameNumber;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1113,7 +1362,7 @@ void UMovieSceneScriptingDoubleKey::SetTime(struct FFrameNumber& InNewFrameNumbe
 // Parameters:
 // enum class ERichCurveTangentWeightModeInNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleKey::SetTangentWeightMode(enum class ERichCurveTangentWeightMode InInNewValue)
+void UMovieSceneScriptingDoubleKey::SetTangentWeightMode(enum class ERichCurveTangentWeightMode InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1122,15 +1371,15 @@ void UMovieSceneScriptingDoubleKey::SetTangentWeightMode(enum class ERichCurveTa
 
 	Params::UMovieSceneScriptingDoubleKey_SetTangentWeightMode_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1140,7 +1389,7 @@ void UMovieSceneScriptingDoubleKey::SetTangentWeightMode(enum class ERichCurveTa
 // Parameters:
 // enum class ERichCurveTangentMode   InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleKey::SetTangentMode(enum class ERichCurveTangentMode InInNewValue)
+void UMovieSceneScriptingDoubleKey::SetTangentMode(enum class ERichCurveTangentMode InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1149,15 +1398,15 @@ void UMovieSceneScriptingDoubleKey::SetTangentMode(enum class ERichCurveTangentM
 
 	Params::UMovieSceneScriptingDoubleKey_SetTangentMode_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1167,7 +1416,7 @@ void UMovieSceneScriptingDoubleKey::SetTangentMode(enum class ERichCurveTangentM
 // Parameters:
 // float                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleKey::SetLeaveTangentWeight(float InInNewValue)
+void UMovieSceneScriptingDoubleKey::SetLeaveTangentWeight(float InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1176,15 +1425,15 @@ void UMovieSceneScriptingDoubleKey::SetLeaveTangentWeight(float InInNewValue)
 
 	Params::UMovieSceneScriptingDoubleKey_SetLeaveTangentWeight_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1194,7 +1443,7 @@ void UMovieSceneScriptingDoubleKey::SetLeaveTangentWeight(float InInNewValue)
 // Parameters:
 // float                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleKey::SetLeaveTangent(float InInNewValue)
+void UMovieSceneScriptingDoubleKey::SetLeaveTangent(float InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1203,15 +1452,15 @@ void UMovieSceneScriptingDoubleKey::SetLeaveTangent(float InInNewValue)
 
 	Params::UMovieSceneScriptingDoubleKey_SetLeaveTangent_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1221,7 +1470,7 @@ void UMovieSceneScriptingDoubleKey::SetLeaveTangent(float InInNewValue)
 // Parameters:
 // enum class ERichCurveInterpMode    InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleKey::SetInterpolationMode(enum class ERichCurveInterpMode InInNewValue)
+void UMovieSceneScriptingDoubleKey::SetInterpolationMode(enum class ERichCurveInterpMode InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1230,15 +1479,15 @@ void UMovieSceneScriptingDoubleKey::SetInterpolationMode(enum class ERichCurveIn
 
 	Params::UMovieSceneScriptingDoubleKey_SetInterpolationMode_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1248,7 +1497,7 @@ void UMovieSceneScriptingDoubleKey::SetInterpolationMode(enum class ERichCurveIn
 // Parameters:
 // float                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleKey::SetArriveTangentWeight(float InInNewValue)
+void UMovieSceneScriptingDoubleKey::SetArriveTangentWeight(float InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1257,15 +1506,15 @@ void UMovieSceneScriptingDoubleKey::SetArriveTangentWeight(float InInNewValue)
 
 	Params::UMovieSceneScriptingDoubleKey_SetArriveTangentWeight_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1275,7 +1524,7 @@ void UMovieSceneScriptingDoubleKey::SetArriveTangentWeight(float InInNewValue)
 // Parameters:
 // float                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleKey::SetArriveTangent(float InInNewValue)
+void UMovieSceneScriptingDoubleKey::SetArriveTangent(float InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1284,15 +1533,15 @@ void UMovieSceneScriptingDoubleKey::SetArriveTangent(float InInNewValue)
 
 	Params::UMovieSceneScriptingDoubleKey_SetArriveTangent_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1312,13 +1561,13 @@ double UMovieSceneScriptingDoubleKey::GetValue()
 	Params::UMovieSceneScriptingDoubleKey_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1331,7 +1580,7 @@ double UMovieSceneScriptingDoubleKey::GetValue()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UMovieSceneScriptingDoubleKey::GetTime(enum class ESequenceTimeUnit InTimeUnit)
+struct FFrameTime UMovieSceneScriptingDoubleKey::GetTime(enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1340,15 +1589,15 @@ struct FFrameTime UMovieSceneScriptingDoubleKey::GetTime(enum class ESequenceTim
 
 	Params::UMovieSceneScriptingDoubleKey_GetTime_Params Parms{};
 
-	Parms.TimeUnit = InTimeUnit;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1370,13 +1619,13 @@ enum class ERichCurveTangentWeightMode UMovieSceneScriptingDoubleKey::GetTangent
 	Params::UMovieSceneScriptingDoubleKey_GetTangentWeightMode_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1398,13 +1647,13 @@ enum class ERichCurveTangentMode UMovieSceneScriptingDoubleKey::GetTangentMode()
 	Params::UMovieSceneScriptingDoubleKey_GetTangentMode_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1426,13 +1675,13 @@ float UMovieSceneScriptingDoubleKey::GetLeaveTangentWeight()
 	Params::UMovieSceneScriptingDoubleKey_GetLeaveTangentWeight_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1454,13 +1703,13 @@ float UMovieSceneScriptingDoubleKey::GetLeaveTangent()
 	Params::UMovieSceneScriptingDoubleKey_GetLeaveTangent_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1482,13 +1731,13 @@ enum class ERichCurveInterpMode UMovieSceneScriptingDoubleKey::GetInterpolationM
 	Params::UMovieSceneScriptingDoubleKey_GetInterpolationMode_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1510,13 +1759,13 @@ float UMovieSceneScriptingDoubleKey::GetArriveTangentWeight()
 	Params::UMovieSceneScriptingDoubleKey_GetArriveTangentWeight_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1538,16 +1787,44 @@ float UMovieSceneScriptingDoubleKey::GetArriveTangent()
 	Params::UMovieSceneScriptingDoubleKey_GetArriveTangent_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingDoubleChannel
+// (None)
+
+class UClass* UMovieSceneScriptingDoubleChannel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingDoubleChannel");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingDoubleChannel SequencerScripting.Default__MovieSceneScriptingDoubleChannel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingDoubleChannel* UMovieSceneScriptingDoubleChannel::GetDefaultObj()
+{
+	static class UMovieSceneScriptingDoubleChannel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingDoubleChannel*>(UMovieSceneScriptingDoubleChannel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1556,7 +1833,7 @@ float UMovieSceneScriptingDoubleKey::GetArriveTangent()
 // Parameters:
 // enum class ERichCurveExtrapolation InExtrapolation                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleChannel::SetPreInfinityExtrapolation(enum class ERichCurveExtrapolation InInExtrapolation)
+void UMovieSceneScriptingDoubleChannel::SetPreInfinityExtrapolation(enum class ERichCurveExtrapolation InExtrapolation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1565,15 +1842,15 @@ void UMovieSceneScriptingDoubleChannel::SetPreInfinityExtrapolation(enum class E
 
 	Params::UMovieSceneScriptingDoubleChannel_SetPreInfinityExtrapolation_Params Parms{};
 
-	Parms.InExtrapolation = InInExtrapolation;
+	Parms.InExtrapolation = InExtrapolation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1583,7 +1860,7 @@ void UMovieSceneScriptingDoubleChannel::SetPreInfinityExtrapolation(enum class E
 // Parameters:
 // enum class ERichCurveExtrapolation InExtrapolation                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleChannel::SetPostInfinityExtrapolation(enum class ERichCurveExtrapolation InInExtrapolation)
+void UMovieSceneScriptingDoubleChannel::SetPostInfinityExtrapolation(enum class ERichCurveExtrapolation InExtrapolation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1592,15 +1869,15 @@ void UMovieSceneScriptingDoubleChannel::SetPostInfinityExtrapolation(enum class 
 
 	Params::UMovieSceneScriptingDoubleChannel_SetPostInfinityExtrapolation_Params Parms{};
 
-	Parms.InExtrapolation = InInExtrapolation;
+	Parms.InExtrapolation = InExtrapolation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1610,7 +1887,7 @@ void UMovieSceneScriptingDoubleChannel::SetPostInfinityExtrapolation(enum class 
 // Parameters:
 // double                             InDefaultValue                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleChannel::SetDefault(double InInDefaultValue)
+void UMovieSceneScriptingDoubleChannel::SetDefault(double InDefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1619,15 +1896,15 @@ void UMovieSceneScriptingDoubleChannel::SetDefault(double InInDefaultValue)
 
 	Params::UMovieSceneScriptingDoubleChannel_SetDefault_Params Parms{};
 
-	Parms.InDefaultValue = InInDefaultValue;
+	Parms.InDefaultValue = InDefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1637,7 +1914,7 @@ void UMovieSceneScriptingDoubleChannel::SetDefault(double InInDefaultValue)
 // Parameters:
 // class UMovieSceneScriptingKey*     Key                                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingDoubleChannel::RemoveKey(class UMovieSceneScriptingKey* InKey)
+void UMovieSceneScriptingDoubleChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1646,15 +1923,15 @@ void UMovieSceneScriptingDoubleChannel::RemoveKey(class UMovieSceneScriptingKey*
 
 	Params::UMovieSceneScriptingDoubleChannel_RemoveKey_Params Parms{};
 
-	Parms.Key = InKey;
+	Parms.Key = Key;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1673,13 +1950,13 @@ void UMovieSceneScriptingDoubleChannel::RemoveDefault()
 	Params::UMovieSceneScriptingDoubleChannel_RemoveDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1699,13 +1976,13 @@ bool UMovieSceneScriptingDoubleChannel::HasDefault()
 	Params::UMovieSceneScriptingDoubleChannel_HasDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1727,13 +2004,13 @@ enum class ERichCurveExtrapolation UMovieSceneScriptingDoubleChannel::GetPreInfi
 	Params::UMovieSceneScriptingDoubleChannel_GetPreInfinityExtrapolation_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1755,13 +2032,13 @@ enum class ERichCurveExtrapolation UMovieSceneScriptingDoubleChannel::GetPostInf
 	Params::UMovieSceneScriptingDoubleChannel_GetPostInfinityExtrapolation_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1783,13 +2060,13 @@ int32 UMovieSceneScriptingDoubleChannel::GetNumKeys()
 	Params::UMovieSceneScriptingDoubleChannel_GetNumKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1811,13 +2088,13 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingDoubleChannel::GetKey
 	Params::UMovieSceneScriptingDoubleChannel_GetKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1839,13 +2116,13 @@ double UMovieSceneScriptingDoubleChannel::GetDefault()
 	Params::UMovieSceneScriptingDoubleChannel_GetDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1859,7 +2136,7 @@ double UMovieSceneScriptingDoubleChannel::GetDefault()
 // struct FFrameRate                  FrameRate                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<double>                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<double> UMovieSceneScriptingDoubleChannel::EvaluateKeys(const struct FSequencerScriptingRange& InRange, const struct FFrameRate& InFrameRate)
+TArray<double> UMovieSceneScriptingDoubleChannel::EvaluateKeys(const struct FSequencerScriptingRange& Range, const struct FFrameRate& FrameRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1868,16 +2145,16 @@ TArray<double> UMovieSceneScriptingDoubleChannel::EvaluateKeys(const struct FSeq
 
 	Params::UMovieSceneScriptingDoubleChannel_EvaluateKeys_Params Parms{};
 
-	Parms.Range = InRange;
-	Parms.FrameRate = InFrameRate;
+	Parms.Range = Range;
+	Parms.FrameRate = FrameRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1899,13 +2176,13 @@ struct FSequencerScriptingRange UMovieSceneScriptingDoubleChannel::ComputeEffect
 	Params::UMovieSceneScriptingDoubleChannel_ComputeEffectiveRange_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1922,7 +2199,7 @@ struct FSequencerScriptingRange UMovieSceneScriptingDoubleChannel::ComputeEffect
 // enum class EMovieSceneKeyInterpolationInInterpolation                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneScriptingDoubleKey*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneScriptingDoubleKey* UMovieSceneScriptingDoubleChannel::AddKey(struct FFrameNumber& InInTime, double InNewValue, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit, enum class EMovieSceneKeyInterpolation InInInterpolation)
+class UMovieSceneScriptingDoubleKey* UMovieSceneScriptingDoubleChannel::AddKey(struct FFrameNumber& InTime, double NewValue, float SubFrame, enum class ESequenceTimeUnit TimeUnit, enum class EMovieSceneKeyInterpolation InInterpolation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1931,22 +2208,50 @@ class UMovieSceneScriptingDoubleKey* UMovieSceneScriptingDoubleChannel::AddKey(s
 
 	Params::UMovieSceneScriptingDoubleChannel_AddKey_Params Parms{};
 
-	Parms.InTime = InInTime;
-	Parms.NewValue = InNewValue;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
-	Parms.InInterpolation = InInInterpolation;
+	Parms.InTime = InTime;
+	Parms.NewValue = NewValue;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
+	Parms.InInterpolation = InInterpolation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingEventKey
+// (None)
+
+class UClass* UMovieSceneScriptingEventKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingEventKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingEventKey SequencerScripting.Default__MovieSceneScriptingEventKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingEventKey* UMovieSceneScriptingEventKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingEventKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingEventKey*>(UMovieSceneScriptingEventKey::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1955,7 +2260,7 @@ class UMovieSceneScriptingDoubleKey* UMovieSceneScriptingDoubleChannel::AddKey(s
 // Parameters:
 // struct FMovieSceneEvent            InNewValue                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingEventKey::SetValue(struct FMovieSceneEvent& InInNewValue)
+void UMovieSceneScriptingEventKey::SetValue(struct FMovieSceneEvent& InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1964,15 +2269,15 @@ void UMovieSceneScriptingEventKey::SetValue(struct FMovieSceneEvent& InInNewValu
 
 	Params::UMovieSceneScriptingEventKey_SetValue_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1984,7 +2289,7 @@ void UMovieSceneScriptingEventKey::SetValue(struct FMovieSceneEvent& InInNewValu
 // float                              SubFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingEventKey::SetTime(struct FFrameNumber& InNewFrameNumber, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+void UMovieSceneScriptingEventKey::SetTime(struct FFrameNumber& NewFrameNumber, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1993,17 +2298,17 @@ void UMovieSceneScriptingEventKey::SetTime(struct FFrameNumber& InNewFrameNumber
 
 	Params::UMovieSceneScriptingEventKey_SetTime_Params Parms{};
 
-	Parms.NewFrameNumber = InNewFrameNumber;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.NewFrameNumber = NewFrameNumber;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2023,13 +2328,13 @@ struct FMovieSceneEvent UMovieSceneScriptingEventKey::GetValue()
 	Params::UMovieSceneScriptingEventKey_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2042,7 +2347,7 @@ struct FMovieSceneEvent UMovieSceneScriptingEventKey::GetValue()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UMovieSceneScriptingEventKey::GetTime(enum class ESequenceTimeUnit InTimeUnit)
+struct FFrameTime UMovieSceneScriptingEventKey::GetTime(enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2051,18 +2356,46 @@ struct FFrameTime UMovieSceneScriptingEventKey::GetTime(enum class ESequenceTime
 
 	Params::UMovieSceneScriptingEventKey_GetTime_Params Parms{};
 
-	Parms.TimeUnit = InTimeUnit;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingEventChannel
+// (None)
+
+class UClass* UMovieSceneScriptingEventChannel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingEventChannel");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingEventChannel SequencerScripting.Default__MovieSceneScriptingEventChannel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingEventChannel* UMovieSceneScriptingEventChannel::GetDefaultObj()
+{
+	static class UMovieSceneScriptingEventChannel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingEventChannel*>(UMovieSceneScriptingEventChannel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2071,7 +2404,7 @@ struct FFrameTime UMovieSceneScriptingEventKey::GetTime(enum class ESequenceTime
 // Parameters:
 // class UMovieSceneScriptingKey*     Key                                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingEventChannel::RemoveKey(class UMovieSceneScriptingKey* InKey)
+void UMovieSceneScriptingEventChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2080,15 +2413,15 @@ void UMovieSceneScriptingEventChannel::RemoveKey(class UMovieSceneScriptingKey* 
 
 	Params::UMovieSceneScriptingEventChannel_RemoveKey_Params Parms{};
 
-	Parms.Key = InKey;
+	Parms.Key = Key;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2108,13 +2441,13 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingEventChannel::GetKeys
 	Params::UMovieSceneScriptingEventChannel_GetKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2130,7 +2463,7 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingEventChannel::GetKeys
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneScriptingEventKey*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneScriptingEventKey* UMovieSceneScriptingEventChannel::AddKey(struct FFrameNumber& InInTime, const struct FMovieSceneEvent& InNewValue, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+class UMovieSceneScriptingEventKey* UMovieSceneScriptingEventChannel::AddKey(struct FFrameNumber& InTime, const struct FMovieSceneEvent& NewValue, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2139,21 +2472,49 @@ class UMovieSceneScriptingEventKey* UMovieSceneScriptingEventChannel::AddKey(str
 
 	Params::UMovieSceneScriptingEventChannel_AddKey_Params Parms{};
 
-	Parms.InTime = InInTime;
-	Parms.NewValue = InNewValue;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.InTime = InTime;
+	Parms.NewValue = NewValue;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingFloatKey
+// (None)
+
+class UClass* UMovieSceneScriptingFloatKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingFloatKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingFloatKey SequencerScripting.Default__MovieSceneScriptingFloatKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingFloatKey* UMovieSceneScriptingFloatKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingFloatKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingFloatKey*>(UMovieSceneScriptingFloatKey::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2162,7 +2523,7 @@ class UMovieSceneScriptingEventKey* UMovieSceneScriptingEventChannel::AddKey(str
 // Parameters:
 // float                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatKey::SetValue(float InInNewValue)
+void UMovieSceneScriptingFloatKey::SetValue(float InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2171,15 +2532,15 @@ void UMovieSceneScriptingFloatKey::SetValue(float InInNewValue)
 
 	Params::UMovieSceneScriptingFloatKey_SetValue_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2191,7 +2552,7 @@ void UMovieSceneScriptingFloatKey::SetValue(float InInNewValue)
 // float                              SubFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatKey::SetTime(struct FFrameNumber& InNewFrameNumber, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+void UMovieSceneScriptingFloatKey::SetTime(struct FFrameNumber& NewFrameNumber, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2200,17 +2561,17 @@ void UMovieSceneScriptingFloatKey::SetTime(struct FFrameNumber& InNewFrameNumber
 
 	Params::UMovieSceneScriptingFloatKey_SetTime_Params Parms{};
 
-	Parms.NewFrameNumber = InNewFrameNumber;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.NewFrameNumber = NewFrameNumber;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2220,7 +2581,7 @@ void UMovieSceneScriptingFloatKey::SetTime(struct FFrameNumber& InNewFrameNumber
 // Parameters:
 // enum class ERichCurveTangentWeightModeInNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatKey::SetTangentWeightMode(enum class ERichCurveTangentWeightMode InInNewValue)
+void UMovieSceneScriptingFloatKey::SetTangentWeightMode(enum class ERichCurveTangentWeightMode InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2229,15 +2590,15 @@ void UMovieSceneScriptingFloatKey::SetTangentWeightMode(enum class ERichCurveTan
 
 	Params::UMovieSceneScriptingFloatKey_SetTangentWeightMode_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2247,7 +2608,7 @@ void UMovieSceneScriptingFloatKey::SetTangentWeightMode(enum class ERichCurveTan
 // Parameters:
 // enum class ERichCurveTangentMode   InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatKey::SetTangentMode(enum class ERichCurveTangentMode InInNewValue)
+void UMovieSceneScriptingFloatKey::SetTangentMode(enum class ERichCurveTangentMode InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2256,15 +2617,15 @@ void UMovieSceneScriptingFloatKey::SetTangentMode(enum class ERichCurveTangentMo
 
 	Params::UMovieSceneScriptingFloatKey_SetTangentMode_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2274,7 +2635,7 @@ void UMovieSceneScriptingFloatKey::SetTangentMode(enum class ERichCurveTangentMo
 // Parameters:
 // float                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatKey::SetLeaveTangentWeight(float InInNewValue)
+void UMovieSceneScriptingFloatKey::SetLeaveTangentWeight(float InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2283,15 +2644,15 @@ void UMovieSceneScriptingFloatKey::SetLeaveTangentWeight(float InInNewValue)
 
 	Params::UMovieSceneScriptingFloatKey_SetLeaveTangentWeight_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2301,7 +2662,7 @@ void UMovieSceneScriptingFloatKey::SetLeaveTangentWeight(float InInNewValue)
 // Parameters:
 // float                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatKey::SetLeaveTangent(float InInNewValue)
+void UMovieSceneScriptingFloatKey::SetLeaveTangent(float InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2310,15 +2671,15 @@ void UMovieSceneScriptingFloatKey::SetLeaveTangent(float InInNewValue)
 
 	Params::UMovieSceneScriptingFloatKey_SetLeaveTangent_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2328,7 +2689,7 @@ void UMovieSceneScriptingFloatKey::SetLeaveTangent(float InInNewValue)
 // Parameters:
 // enum class ERichCurveInterpMode    InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatKey::SetInterpolationMode(enum class ERichCurveInterpMode InInNewValue)
+void UMovieSceneScriptingFloatKey::SetInterpolationMode(enum class ERichCurveInterpMode InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2337,15 +2698,15 @@ void UMovieSceneScriptingFloatKey::SetInterpolationMode(enum class ERichCurveInt
 
 	Params::UMovieSceneScriptingFloatKey_SetInterpolationMode_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2355,7 +2716,7 @@ void UMovieSceneScriptingFloatKey::SetInterpolationMode(enum class ERichCurveInt
 // Parameters:
 // float                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatKey::SetArriveTangentWeight(float InInNewValue)
+void UMovieSceneScriptingFloatKey::SetArriveTangentWeight(float InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2364,15 +2725,15 @@ void UMovieSceneScriptingFloatKey::SetArriveTangentWeight(float InInNewValue)
 
 	Params::UMovieSceneScriptingFloatKey_SetArriveTangentWeight_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2382,7 +2743,7 @@ void UMovieSceneScriptingFloatKey::SetArriveTangentWeight(float InInNewValue)
 // Parameters:
 // float                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatKey::SetArriveTangent(float InInNewValue)
+void UMovieSceneScriptingFloatKey::SetArriveTangent(float InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2391,15 +2752,15 @@ void UMovieSceneScriptingFloatKey::SetArriveTangent(float InInNewValue)
 
 	Params::UMovieSceneScriptingFloatKey_SetArriveTangent_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2419,13 +2780,13 @@ float UMovieSceneScriptingFloatKey::GetValue()
 	Params::UMovieSceneScriptingFloatKey_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2438,7 +2799,7 @@ float UMovieSceneScriptingFloatKey::GetValue()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UMovieSceneScriptingFloatKey::GetTime(enum class ESequenceTimeUnit InTimeUnit)
+struct FFrameTime UMovieSceneScriptingFloatKey::GetTime(enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2447,15 +2808,15 @@ struct FFrameTime UMovieSceneScriptingFloatKey::GetTime(enum class ESequenceTime
 
 	Params::UMovieSceneScriptingFloatKey_GetTime_Params Parms{};
 
-	Parms.TimeUnit = InTimeUnit;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2477,13 +2838,13 @@ enum class ERichCurveTangentWeightMode UMovieSceneScriptingFloatKey::GetTangentW
 	Params::UMovieSceneScriptingFloatKey_GetTangentWeightMode_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2505,13 +2866,13 @@ enum class ERichCurveTangentMode UMovieSceneScriptingFloatKey::GetTangentMode()
 	Params::UMovieSceneScriptingFloatKey_GetTangentMode_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2533,13 +2894,13 @@ float UMovieSceneScriptingFloatKey::GetLeaveTangentWeight()
 	Params::UMovieSceneScriptingFloatKey_GetLeaveTangentWeight_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2561,13 +2922,13 @@ float UMovieSceneScriptingFloatKey::GetLeaveTangent()
 	Params::UMovieSceneScriptingFloatKey_GetLeaveTangent_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2589,13 +2950,13 @@ enum class ERichCurveInterpMode UMovieSceneScriptingFloatKey::GetInterpolationMo
 	Params::UMovieSceneScriptingFloatKey_GetInterpolationMode_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2617,13 +2978,13 @@ float UMovieSceneScriptingFloatKey::GetArriveTangentWeight()
 	Params::UMovieSceneScriptingFloatKey_GetArriveTangentWeight_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2645,16 +3006,100 @@ float UMovieSceneScriptingFloatKey::GetArriveTangent()
 	Params::UMovieSceneScriptingFloatKey_GetArriveTangent_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingActualFloatKey
+// (None)
+
+class UClass* UMovieSceneScriptingActualFloatKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingActualFloatKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingActualFloatKey SequencerScripting.Default__MovieSceneScriptingActualFloatKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingActualFloatKey* UMovieSceneScriptingActualFloatKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingActualFloatKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingActualFloatKey*>(UMovieSceneScriptingActualFloatKey::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingDoubleAsFloatKey
+// (None)
+
+class UClass* UMovieSceneScriptingDoubleAsFloatKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingDoubleAsFloatKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingDoubleAsFloatKey SequencerScripting.Default__MovieSceneScriptingDoubleAsFloatKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingDoubleAsFloatKey* UMovieSceneScriptingDoubleAsFloatKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingDoubleAsFloatKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingDoubleAsFloatKey*>(UMovieSceneScriptingDoubleAsFloatKey::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingFloatChannel
+// (None)
+
+class UClass* UMovieSceneScriptingFloatChannel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingFloatChannel");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingFloatChannel SequencerScripting.Default__MovieSceneScriptingFloatChannel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingFloatChannel* UMovieSceneScriptingFloatChannel::GetDefaultObj()
+{
+	static class UMovieSceneScriptingFloatChannel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingFloatChannel*>(UMovieSceneScriptingFloatChannel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2663,7 +3108,7 @@ float UMovieSceneScriptingFloatKey::GetArriveTangent()
 // Parameters:
 // enum class ERichCurveExtrapolation InExtrapolation                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatChannel::SetPreInfinityExtrapolation(enum class ERichCurveExtrapolation InInExtrapolation)
+void UMovieSceneScriptingFloatChannel::SetPreInfinityExtrapolation(enum class ERichCurveExtrapolation InExtrapolation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2672,15 +3117,15 @@ void UMovieSceneScriptingFloatChannel::SetPreInfinityExtrapolation(enum class ER
 
 	Params::UMovieSceneScriptingFloatChannel_SetPreInfinityExtrapolation_Params Parms{};
 
-	Parms.InExtrapolation = InInExtrapolation;
+	Parms.InExtrapolation = InExtrapolation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2690,7 +3135,7 @@ void UMovieSceneScriptingFloatChannel::SetPreInfinityExtrapolation(enum class ER
 // Parameters:
 // enum class ERichCurveExtrapolation InExtrapolation                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatChannel::SetPostInfinityExtrapolation(enum class ERichCurveExtrapolation InInExtrapolation)
+void UMovieSceneScriptingFloatChannel::SetPostInfinityExtrapolation(enum class ERichCurveExtrapolation InExtrapolation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2699,15 +3144,15 @@ void UMovieSceneScriptingFloatChannel::SetPostInfinityExtrapolation(enum class E
 
 	Params::UMovieSceneScriptingFloatChannel_SetPostInfinityExtrapolation_Params Parms{};
 
-	Parms.InExtrapolation = InInExtrapolation;
+	Parms.InExtrapolation = InExtrapolation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2717,7 +3162,7 @@ void UMovieSceneScriptingFloatChannel::SetPostInfinityExtrapolation(enum class E
 // Parameters:
 // float                              InDefaultValue                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatChannel::SetDefault(float InInDefaultValue)
+void UMovieSceneScriptingFloatChannel::SetDefault(float InDefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2726,15 +3171,15 @@ void UMovieSceneScriptingFloatChannel::SetDefault(float InInDefaultValue)
 
 	Params::UMovieSceneScriptingFloatChannel_SetDefault_Params Parms{};
 
-	Parms.InDefaultValue = InInDefaultValue;
+	Parms.InDefaultValue = InDefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2744,7 +3189,7 @@ void UMovieSceneScriptingFloatChannel::SetDefault(float InInDefaultValue)
 // Parameters:
 // class UMovieSceneScriptingKey*     Key                                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingFloatChannel::RemoveKey(class UMovieSceneScriptingKey* InKey)
+void UMovieSceneScriptingFloatChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2753,15 +3198,15 @@ void UMovieSceneScriptingFloatChannel::RemoveKey(class UMovieSceneScriptingKey* 
 
 	Params::UMovieSceneScriptingFloatChannel_RemoveKey_Params Parms{};
 
-	Parms.Key = InKey;
+	Parms.Key = Key;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2780,13 +3225,13 @@ void UMovieSceneScriptingFloatChannel::RemoveDefault()
 	Params::UMovieSceneScriptingFloatChannel_RemoveDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2806,13 +3251,13 @@ bool UMovieSceneScriptingFloatChannel::HasDefault()
 	Params::UMovieSceneScriptingFloatChannel_HasDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2834,13 +3279,13 @@ enum class ERichCurveExtrapolation UMovieSceneScriptingFloatChannel::GetPreInfin
 	Params::UMovieSceneScriptingFloatChannel_GetPreInfinityExtrapolation_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2862,13 +3307,13 @@ enum class ERichCurveExtrapolation UMovieSceneScriptingFloatChannel::GetPostInfi
 	Params::UMovieSceneScriptingFloatChannel_GetPostInfinityExtrapolation_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2890,13 +3335,13 @@ int32 UMovieSceneScriptingFloatChannel::GetNumKeys()
 	Params::UMovieSceneScriptingFloatChannel_GetNumKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2918,13 +3363,13 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingFloatChannel::GetKeys
 	Params::UMovieSceneScriptingFloatChannel_GetKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2946,13 +3391,13 @@ float UMovieSceneScriptingFloatChannel::GetDefault()
 	Params::UMovieSceneScriptingFloatChannel_GetDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2966,7 +3411,7 @@ float UMovieSceneScriptingFloatChannel::GetDefault()
 // struct FFrameRate                  FrameRate                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<float>                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<float> UMovieSceneScriptingFloatChannel::EvaluateKeys(const struct FSequencerScriptingRange& InRange, const struct FFrameRate& InFrameRate)
+TArray<float> UMovieSceneScriptingFloatChannel::EvaluateKeys(const struct FSequencerScriptingRange& Range, const struct FFrameRate& FrameRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2975,16 +3420,16 @@ TArray<float> UMovieSceneScriptingFloatChannel::EvaluateKeys(const struct FSeque
 
 	Params::UMovieSceneScriptingFloatChannel_EvaluateKeys_Params Parms{};
 
-	Parms.Range = InRange;
-	Parms.FrameRate = InFrameRate;
+	Parms.Range = Range;
+	Parms.FrameRate = FrameRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3006,13 +3451,13 @@ struct FSequencerScriptingRange UMovieSceneScriptingFloatChannel::ComputeEffecti
 	Params::UMovieSceneScriptingFloatChannel_ComputeEffectiveRange_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3029,7 +3474,7 @@ struct FSequencerScriptingRange UMovieSceneScriptingFloatChannel::ComputeEffecti
 // enum class EMovieSceneKeyInterpolationInInterpolation                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneScriptingFloatKey*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneScriptingFloatKey* UMovieSceneScriptingFloatChannel::AddKey(struct FFrameNumber& InInTime, float InNewValue, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit, enum class EMovieSceneKeyInterpolation InInInterpolation)
+class UMovieSceneScriptingFloatKey* UMovieSceneScriptingFloatChannel::AddKey(struct FFrameNumber& InTime, float NewValue, float SubFrame, enum class ESequenceTimeUnit TimeUnit, enum class EMovieSceneKeyInterpolation InInterpolation)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3038,22 +3483,50 @@ class UMovieSceneScriptingFloatKey* UMovieSceneScriptingFloatChannel::AddKey(str
 
 	Params::UMovieSceneScriptingFloatChannel_AddKey_Params Parms{};
 
-	Parms.InTime = InInTime;
-	Parms.NewValue = InNewValue;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
-	Parms.InInterpolation = InInInterpolation;
+	Parms.InTime = InTime;
+	Parms.NewValue = NewValue;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
+	Parms.InInterpolation = InInterpolation;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingIntegerKey
+// (None)
+
+class UClass* UMovieSceneScriptingIntegerKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingIntegerKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingIntegerKey SequencerScripting.Default__MovieSceneScriptingIntegerKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingIntegerKey* UMovieSceneScriptingIntegerKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingIntegerKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingIntegerKey*>(UMovieSceneScriptingIntegerKey::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3062,7 +3535,7 @@ class UMovieSceneScriptingFloatKey* UMovieSceneScriptingFloatChannel::AddKey(str
 // Parameters:
 // int32                              InNewValue                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingIntegerKey::SetValue(int32 InInNewValue)
+void UMovieSceneScriptingIntegerKey::SetValue(int32 InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3071,15 +3544,15 @@ void UMovieSceneScriptingIntegerKey::SetValue(int32 InInNewValue)
 
 	Params::UMovieSceneScriptingIntegerKey_SetValue_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3091,7 +3564,7 @@ void UMovieSceneScriptingIntegerKey::SetValue(int32 InInNewValue)
 // float                              SubFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingIntegerKey::SetTime(struct FFrameNumber& InNewFrameNumber, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+void UMovieSceneScriptingIntegerKey::SetTime(struct FFrameNumber& NewFrameNumber, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3100,17 +3573,17 @@ void UMovieSceneScriptingIntegerKey::SetTime(struct FFrameNumber& InNewFrameNumb
 
 	Params::UMovieSceneScriptingIntegerKey_SetTime_Params Parms{};
 
-	Parms.NewFrameNumber = InNewFrameNumber;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.NewFrameNumber = NewFrameNumber;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3130,13 +3603,13 @@ int32 UMovieSceneScriptingIntegerKey::GetValue()
 	Params::UMovieSceneScriptingIntegerKey_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3149,7 +3622,7 @@ int32 UMovieSceneScriptingIntegerKey::GetValue()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UMovieSceneScriptingIntegerKey::GetTime(enum class ESequenceTimeUnit InTimeUnit)
+struct FFrameTime UMovieSceneScriptingIntegerKey::GetTime(enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3158,18 +3631,46 @@ struct FFrameTime UMovieSceneScriptingIntegerKey::GetTime(enum class ESequenceTi
 
 	Params::UMovieSceneScriptingIntegerKey_GetTime_Params Parms{};
 
-	Parms.TimeUnit = InTimeUnit;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingIntegerChannel
+// (None)
+
+class UClass* UMovieSceneScriptingIntegerChannel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingIntegerChannel");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingIntegerChannel SequencerScripting.Default__MovieSceneScriptingIntegerChannel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingIntegerChannel* UMovieSceneScriptingIntegerChannel::GetDefaultObj()
+{
+	static class UMovieSceneScriptingIntegerChannel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingIntegerChannel*>(UMovieSceneScriptingIntegerChannel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3178,7 +3679,7 @@ struct FFrameTime UMovieSceneScriptingIntegerKey::GetTime(enum class ESequenceTi
 // Parameters:
 // int32                              InDefaultValue                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingIntegerChannel::SetDefault(int32 InInDefaultValue)
+void UMovieSceneScriptingIntegerChannel::SetDefault(int32 InDefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3187,15 +3688,15 @@ void UMovieSceneScriptingIntegerChannel::SetDefault(int32 InInDefaultValue)
 
 	Params::UMovieSceneScriptingIntegerChannel_SetDefault_Params Parms{};
 
-	Parms.InDefaultValue = InInDefaultValue;
+	Parms.InDefaultValue = InDefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3205,7 +3706,7 @@ void UMovieSceneScriptingIntegerChannel::SetDefault(int32 InInDefaultValue)
 // Parameters:
 // class UMovieSceneScriptingKey*     Key                                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingIntegerChannel::RemoveKey(class UMovieSceneScriptingKey* InKey)
+void UMovieSceneScriptingIntegerChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3214,15 +3715,15 @@ void UMovieSceneScriptingIntegerChannel::RemoveKey(class UMovieSceneScriptingKey
 
 	Params::UMovieSceneScriptingIntegerChannel_RemoveKey_Params Parms{};
 
-	Parms.Key = InKey;
+	Parms.Key = Key;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3241,13 +3742,13 @@ void UMovieSceneScriptingIntegerChannel::RemoveDefault()
 	Params::UMovieSceneScriptingIntegerChannel_RemoveDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3267,13 +3768,13 @@ bool UMovieSceneScriptingIntegerChannel::HasDefault()
 	Params::UMovieSceneScriptingIntegerChannel_HasDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3295,13 +3796,13 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingIntegerChannel::GetKe
 	Params::UMovieSceneScriptingIntegerChannel_GetKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3323,13 +3824,13 @@ int32 UMovieSceneScriptingIntegerChannel::GetDefault()
 	Params::UMovieSceneScriptingIntegerChannel_GetDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3345,7 +3846,7 @@ int32 UMovieSceneScriptingIntegerChannel::GetDefault()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneScriptingIntegerKey*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneScriptingIntegerKey* UMovieSceneScriptingIntegerChannel::AddKey(struct FFrameNumber& InInTime, int32 InNewValue, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+class UMovieSceneScriptingIntegerKey* UMovieSceneScriptingIntegerChannel::AddKey(struct FFrameNumber& InTime, int32 NewValue, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3354,21 +3855,49 @@ class UMovieSceneScriptingIntegerKey* UMovieSceneScriptingIntegerChannel::AddKey
 
 	Params::UMovieSceneScriptingIntegerChannel_AddKey_Params Parms{};
 
-	Parms.InTime = InInTime;
-	Parms.NewValue = InNewValue;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.InTime = InTime;
+	Parms.NewValue = NewValue;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingObjectPathKey
+// (None)
+
+class UClass* UMovieSceneScriptingObjectPathKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingObjectPathKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingObjectPathKey SequencerScripting.Default__MovieSceneScriptingObjectPathKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingObjectPathKey* UMovieSceneScriptingObjectPathKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingObjectPathKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingObjectPathKey*>(UMovieSceneScriptingObjectPathKey::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3377,7 +3906,7 @@ class UMovieSceneScriptingIntegerKey* UMovieSceneScriptingIntegerChannel::AddKey
 // Parameters:
 // class UObject*                     InNewValue                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingObjectPathKey::SetValue(class UObject* InInNewValue)
+void UMovieSceneScriptingObjectPathKey::SetValue(class UObject* InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3386,15 +3915,15 @@ void UMovieSceneScriptingObjectPathKey::SetValue(class UObject* InInNewValue)
 
 	Params::UMovieSceneScriptingObjectPathKey_SetValue_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3406,7 +3935,7 @@ void UMovieSceneScriptingObjectPathKey::SetValue(class UObject* InInNewValue)
 // float                              SubFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingObjectPathKey::SetTime(struct FFrameNumber& InNewFrameNumber, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+void UMovieSceneScriptingObjectPathKey::SetTime(struct FFrameNumber& NewFrameNumber, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3415,17 +3944,17 @@ void UMovieSceneScriptingObjectPathKey::SetTime(struct FFrameNumber& InNewFrameN
 
 	Params::UMovieSceneScriptingObjectPathKey_SetTime_Params Parms{};
 
-	Parms.NewFrameNumber = InNewFrameNumber;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.NewFrameNumber = NewFrameNumber;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3445,13 +3974,13 @@ class UObject* UMovieSceneScriptingObjectPathKey::GetValue()
 	Params::UMovieSceneScriptingObjectPathKey_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3464,7 +3993,7 @@ class UObject* UMovieSceneScriptingObjectPathKey::GetValue()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UMovieSceneScriptingObjectPathKey::GetTime(enum class ESequenceTimeUnit InTimeUnit)
+struct FFrameTime UMovieSceneScriptingObjectPathKey::GetTime(enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3473,18 +4002,46 @@ struct FFrameTime UMovieSceneScriptingObjectPathKey::GetTime(enum class ESequenc
 
 	Params::UMovieSceneScriptingObjectPathKey_GetTime_Params Parms{};
 
-	Parms.TimeUnit = InTimeUnit;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingObjectPathChannel
+// (None)
+
+class UClass* UMovieSceneScriptingObjectPathChannel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingObjectPathChannel");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingObjectPathChannel SequencerScripting.Default__MovieSceneScriptingObjectPathChannel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingObjectPathChannel* UMovieSceneScriptingObjectPathChannel::GetDefaultObj()
+{
+	static class UMovieSceneScriptingObjectPathChannel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingObjectPathChannel*>(UMovieSceneScriptingObjectPathChannel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3493,7 +4050,7 @@ struct FFrameTime UMovieSceneScriptingObjectPathKey::GetTime(enum class ESequenc
 // Parameters:
 // class UObject*                     InDefaultValue                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingObjectPathChannel::SetDefault(class UObject* InInDefaultValue)
+void UMovieSceneScriptingObjectPathChannel::SetDefault(class UObject* InDefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3502,15 +4059,15 @@ void UMovieSceneScriptingObjectPathChannel::SetDefault(class UObject* InInDefaul
 
 	Params::UMovieSceneScriptingObjectPathChannel_SetDefault_Params Parms{};
 
-	Parms.InDefaultValue = InInDefaultValue;
+	Parms.InDefaultValue = InDefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3520,7 +4077,7 @@ void UMovieSceneScriptingObjectPathChannel::SetDefault(class UObject* InInDefaul
 // Parameters:
 // class UMovieSceneScriptingKey*     Key                                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingObjectPathChannel::RemoveKey(class UMovieSceneScriptingKey* InKey)
+void UMovieSceneScriptingObjectPathChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3529,15 +4086,15 @@ void UMovieSceneScriptingObjectPathChannel::RemoveKey(class UMovieSceneScripting
 
 	Params::UMovieSceneScriptingObjectPathChannel_RemoveKey_Params Parms{};
 
-	Parms.Key = InKey;
+	Parms.Key = Key;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3556,13 +4113,13 @@ void UMovieSceneScriptingObjectPathChannel::RemoveDefault()
 	Params::UMovieSceneScriptingObjectPathChannel_RemoveDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3582,13 +4139,13 @@ bool UMovieSceneScriptingObjectPathChannel::HasDefault()
 	Params::UMovieSceneScriptingObjectPathChannel_HasDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3610,13 +4167,13 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingObjectPathChannel::Ge
 	Params::UMovieSceneScriptingObjectPathChannel_GetKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3638,13 +4195,13 @@ class UObject* UMovieSceneScriptingObjectPathChannel::GetDefault()
 	Params::UMovieSceneScriptingObjectPathChannel_GetDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3660,7 +4217,7 @@ class UObject* UMovieSceneScriptingObjectPathChannel::GetDefault()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneScriptingObjectPathKey*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneScriptingObjectPathKey* UMovieSceneScriptingObjectPathChannel::AddKey(const struct FFrameNumber& InInTime, class UObject* InNewValue, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+class UMovieSceneScriptingObjectPathKey* UMovieSceneScriptingObjectPathChannel::AddKey(const struct FFrameNumber& InTime, class UObject* NewValue, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3669,21 +4226,49 @@ class UMovieSceneScriptingObjectPathKey* UMovieSceneScriptingObjectPathChannel::
 
 	Params::UMovieSceneScriptingObjectPathChannel_AddKey_Params Parms{};
 
-	Parms.InTime = InInTime;
-	Parms.NewValue = InNewValue;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.InTime = InTime;
+	Parms.NewValue = NewValue;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingStringKey
+// (None)
+
+class UClass* UMovieSceneScriptingStringKey::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingStringKey");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingStringKey SequencerScripting.Default__MovieSceneScriptingStringKey
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingStringKey* UMovieSceneScriptingStringKey::GetDefaultObj()
+{
+	static class UMovieSceneScriptingStringKey* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingStringKey*>(UMovieSceneScriptingStringKey::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3692,7 +4277,7 @@ class UMovieSceneScriptingObjectPathKey* UMovieSceneScriptingObjectPathChannel::
 // Parameters:
 // class FString                      InNewValue                                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingStringKey::SetValue(const class FString& InInNewValue)
+void UMovieSceneScriptingStringKey::SetValue(const class FString& InNewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3701,15 +4286,15 @@ void UMovieSceneScriptingStringKey::SetValue(const class FString& InInNewValue)
 
 	Params::UMovieSceneScriptingStringKey_SetValue_Params Parms{};
 
-	Parms.InNewValue = InInNewValue;
+	Parms.InNewValue = InNewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3721,7 +4306,7 @@ void UMovieSceneScriptingStringKey::SetValue(const class FString& InInNewValue)
 // float                              SubFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingStringKey::SetTime(struct FFrameNumber& InNewFrameNumber, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+void UMovieSceneScriptingStringKey::SetTime(struct FFrameNumber& NewFrameNumber, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3730,17 +4315,17 @@ void UMovieSceneScriptingStringKey::SetTime(struct FFrameNumber& InNewFrameNumbe
 
 	Params::UMovieSceneScriptingStringKey_SetTime_Params Parms{};
 
-	Parms.NewFrameNumber = InNewFrameNumber;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.NewFrameNumber = NewFrameNumber;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3760,13 +4345,13 @@ class FString UMovieSceneScriptingStringKey::GetValue()
 	Params::UMovieSceneScriptingStringKey_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3779,7 +4364,7 @@ class FString UMovieSceneScriptingStringKey::GetValue()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UMovieSceneScriptingStringKey::GetTime(enum class ESequenceTimeUnit InTimeUnit)
+struct FFrameTime UMovieSceneScriptingStringKey::GetTime(enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3788,18 +4373,46 @@ struct FFrameTime UMovieSceneScriptingStringKey::GetTime(enum class ESequenceTim
 
 	Params::UMovieSceneScriptingStringKey_GetTime_Params Parms{};
 
-	Parms.TimeUnit = InTimeUnit;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneScriptingStringChannel
+// (None)
+
+class UClass* UMovieSceneScriptingStringChannel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneScriptingStringChannel");
+
+	return Clss;
+}
+
+
+// MovieSceneScriptingStringChannel SequencerScripting.Default__MovieSceneScriptingStringChannel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneScriptingStringChannel* UMovieSceneScriptingStringChannel::GetDefaultObj()
+{
+	static class UMovieSceneScriptingStringChannel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneScriptingStringChannel*>(UMovieSceneScriptingStringChannel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3808,7 +4421,7 @@ struct FFrameTime UMovieSceneScriptingStringKey::GetTime(enum class ESequenceTim
 // Parameters:
 // class FString                      InDefaultValue                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingStringChannel::SetDefault(const class FString& InInDefaultValue)
+void UMovieSceneScriptingStringChannel::SetDefault(const class FString& InDefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3817,15 +4430,15 @@ void UMovieSceneScriptingStringChannel::SetDefault(const class FString& InInDefa
 
 	Params::UMovieSceneScriptingStringChannel_SetDefault_Params Parms{};
 
-	Parms.InDefaultValue = InInDefaultValue;
+	Parms.InDefaultValue = InDefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3835,7 +4448,7 @@ void UMovieSceneScriptingStringChannel::SetDefault(const class FString& InInDefa
 // Parameters:
 // class UMovieSceneScriptingKey*     Key                                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneScriptingStringChannel::RemoveKey(class UMovieSceneScriptingKey* InKey)
+void UMovieSceneScriptingStringChannel::RemoveKey(class UMovieSceneScriptingKey* Key)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3844,15 +4457,15 @@ void UMovieSceneScriptingStringChannel::RemoveKey(class UMovieSceneScriptingKey*
 
 	Params::UMovieSceneScriptingStringChannel_RemoveKey_Params Parms{};
 
-	Parms.Key = InKey;
+	Parms.Key = Key;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3871,13 +4484,13 @@ void UMovieSceneScriptingStringChannel::RemoveDefault()
 	Params::UMovieSceneScriptingStringChannel_RemoveDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3897,13 +4510,13 @@ bool UMovieSceneScriptingStringChannel::HasDefault()
 	Params::UMovieSceneScriptingStringChannel_HasDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3925,13 +4538,13 @@ TArray<class UMovieSceneScriptingKey*> UMovieSceneScriptingStringChannel::GetKey
 	Params::UMovieSceneScriptingStringChannel_GetKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3953,13 +4566,13 @@ class FString UMovieSceneScriptingStringChannel::GetDefault()
 	Params::UMovieSceneScriptingStringChannel_GetDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3975,7 +4588,7 @@ class FString UMovieSceneScriptingStringChannel::GetDefault()
 // enum class ESequenceTimeUnit       TimeUnit                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneScriptingStringKey*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneScriptingStringKey* UMovieSceneScriptingStringChannel::AddKey(struct FFrameNumber& InInTime, const class FString& InNewValue, float InSubFrame, enum class ESequenceTimeUnit InTimeUnit)
+class UMovieSceneScriptingStringKey* UMovieSceneScriptingStringChannel::AddKey(struct FFrameNumber& InTime, const class FString& NewValue, float SubFrame, enum class ESequenceTimeUnit TimeUnit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3984,21 +4597,49 @@ class UMovieSceneScriptingStringKey* UMovieSceneScriptingStringChannel::AddKey(s
 
 	Params::UMovieSceneScriptingStringChannel_AddKey_Params Parms{};
 
-	Parms.InTime = InInTime;
-	Parms.NewValue = InNewValue;
-	Parms.SubFrame = InSubFrame;
-	Parms.TimeUnit = InTimeUnit;
+	Parms.InTime = InTime;
+	Parms.NewValue = NewValue;
+	Parms.SubFrame = SubFrame;
+	Parms.TimeUnit = TimeUnit;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneBindingExtensions
+// (None)
+
+class UClass* UMovieSceneBindingExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneBindingExtensions");
+
+	return Clss;
+}
+
+
+// MovieSceneBindingExtensions SequencerScripting.Default__MovieSceneBindingExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneBindingExtensions* UMovieSceneBindingExtensions::GetDefaultObj()
+{
+	static class UMovieSceneBindingExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneBindingExtensions*>(UMovieSceneBindingExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4008,7 +4649,7 @@ class UMovieSceneScriptingStringKey* UMovieSceneScriptingStringChannel::AddKey(s
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FMovieSceneBindingProxy     InParentBinding                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UMovieSceneBindingExtensions::SetParent(struct FMovieSceneBindingProxy& InInBinding, struct FMovieSceneBindingProxy& InInParentBinding)
+void UMovieSceneBindingExtensions::SetParent(struct FMovieSceneBindingProxy& InBinding, struct FMovieSceneBindingProxy& InParentBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4017,16 +4658,16 @@ void UMovieSceneBindingExtensions::SetParent(struct FMovieSceneBindingProxy& InI
 
 	Params::UMovieSceneBindingExtensions_SetParent_Params Parms{};
 
-	Parms.InBinding = InInBinding;
-	Parms.InParentBinding = InInParentBinding;
+	Parms.InBinding = InBinding;
+	Parms.InParentBinding = InParentBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4037,7 +4678,7 @@ void UMovieSceneBindingExtensions::SetParent(struct FMovieSceneBindingProxy& InI
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FString                      InName                                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneBindingExtensions::SetName(struct FMovieSceneBindingProxy& InInBinding, const class FString& InInName)
+void UMovieSceneBindingExtensions::SetName(struct FMovieSceneBindingProxy& InBinding, const class FString& InName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4046,16 +4687,16 @@ void UMovieSceneBindingExtensions::SetName(struct FMovieSceneBindingProxy& InInB
 
 	Params::UMovieSceneBindingExtensions_SetName_Params Parms{};
 
-	Parms.InBinding = InInBinding;
-	Parms.InName = InInName;
+	Parms.InBinding = InBinding;
+	Parms.InName = InName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4066,7 +4707,7 @@ void UMovieSceneBindingExtensions::SetName(struct FMovieSceneBindingProxy& InInB
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FText                        InDisplayName                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UMovieSceneBindingExtensions::SetDisplayName(struct FMovieSceneBindingProxy& InInBinding, class FText& InInDisplayName)
+void UMovieSceneBindingExtensions::SetDisplayName(struct FMovieSceneBindingProxy& InBinding, class FText& InDisplayName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4075,16 +4716,16 @@ void UMovieSceneBindingExtensions::SetDisplayName(struct FMovieSceneBindingProxy
 
 	Params::UMovieSceneBindingExtensions_SetDisplayName_Params Parms{};
 
-	Parms.InBinding = InInBinding;
-	Parms.InDisplayName = InInDisplayName;
+	Parms.InBinding = InBinding;
+	Parms.InDisplayName = InDisplayName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4095,7 +4736,7 @@ void UMovieSceneBindingExtensions::SetDisplayName(struct FMovieSceneBindingProxy
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class UMovieSceneTrack*            TrackToRemove                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneBindingExtensions::RemoveTrack(struct FMovieSceneBindingProxy& InInBinding, class UMovieSceneTrack* InTrackToRemove)
+void UMovieSceneBindingExtensions::RemoveTrack(struct FMovieSceneBindingProxy& InBinding, class UMovieSceneTrack* TrackToRemove)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4104,16 +4745,16 @@ void UMovieSceneBindingExtensions::RemoveTrack(struct FMovieSceneBindingProxy& I
 
 	Params::UMovieSceneBindingExtensions_RemoveTrack_Params Parms{};
 
-	Parms.InBinding = InInBinding;
-	Parms.TrackToRemove = InTrackToRemove;
+	Parms.InBinding = InBinding;
+	Parms.TrackToRemove = TrackToRemove;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4123,7 +4764,7 @@ void UMovieSceneBindingExtensions::RemoveTrack(struct FMovieSceneBindingProxy& I
 // Parameters:
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UMovieSceneBindingExtensions::Remove(struct FMovieSceneBindingProxy& InInBinding)
+void UMovieSceneBindingExtensions::Remove(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4132,15 +4773,15 @@ void UMovieSceneBindingExtensions::Remove(struct FMovieSceneBindingProxy& InInBi
 
 	Params::UMovieSceneBindingExtensions_Remove_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4151,7 +4792,7 @@ void UMovieSceneBindingExtensions::Remove(struct FMovieSceneBindingProxy& InInBi
 // struct FMovieSceneBindingProxy     SourceBindingId                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FMovieSceneBindingProxy     DestinationBindingId                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UMovieSceneBindingExtensions::MoveBindingContents(struct FMovieSceneBindingProxy& InSourceBindingId, struct FMovieSceneBindingProxy& InDestinationBindingId)
+void UMovieSceneBindingExtensions::MoveBindingContents(struct FMovieSceneBindingProxy& SourceBindingId, struct FMovieSceneBindingProxy& DestinationBindingId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4160,16 +4801,16 @@ void UMovieSceneBindingExtensions::MoveBindingContents(struct FMovieSceneBinding
 
 	Params::UMovieSceneBindingExtensions_MoveBindingContents_Params Parms{};
 
-	Parms.SourceBindingId = InSourceBindingId;
-	Parms.DestinationBindingId = InDestinationBindingId;
+	Parms.SourceBindingId = SourceBindingId;
+	Parms.DestinationBindingId = DestinationBindingId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4180,7 +4821,7 @@ void UMovieSceneBindingExtensions::MoveBindingContents(struct FMovieSceneBinding
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneBindingExtensions::IsValid(struct FMovieSceneBindingProxy& InInBinding)
+bool UMovieSceneBindingExtensions::IsValid(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4189,15 +4830,15 @@ bool UMovieSceneBindingExtensions::IsValid(struct FMovieSceneBindingProxy& InInB
 
 	Params::UMovieSceneBindingExtensions_IsValid_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4210,7 +4851,7 @@ bool UMovieSceneBindingExtensions::IsValid(struct FMovieSceneBindingProxy& InInB
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneTrack*>    ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::GetTracks(struct FMovieSceneBindingProxy& InInBinding)
+TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::GetTracks(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4219,15 +4860,15 @@ TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::GetTracks(struct F
 
 	Params::UMovieSceneBindingExtensions_GetTracks_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4240,7 +4881,7 @@ TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::GetTracks(struct F
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class UClass*                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UClass* UMovieSceneBindingExtensions::GetPossessedObjectClass(struct FMovieSceneBindingProxy& InInBinding)
+class UClass* UMovieSceneBindingExtensions::GetPossessedObjectClass(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4249,15 +4890,15 @@ class UClass* UMovieSceneBindingExtensions::GetPossessedObjectClass(struct FMovi
 
 	Params::UMovieSceneBindingExtensions_GetPossessedObjectClass_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4270,7 +4911,7 @@ class UClass* UMovieSceneBindingExtensions::GetPossessedObjectClass(struct FMovi
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FMovieSceneBindingProxy     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FMovieSceneBindingProxy UMovieSceneBindingExtensions::GetParent(struct FMovieSceneBindingProxy& InInBinding)
+struct FMovieSceneBindingProxy UMovieSceneBindingExtensions::GetParent(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4279,15 +4920,15 @@ struct FMovieSceneBindingProxy UMovieSceneBindingExtensions::GetParent(struct FM
 
 	Params::UMovieSceneBindingExtensions_GetParent_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4300,7 +4941,7 @@ struct FMovieSceneBindingProxy UMovieSceneBindingExtensions::GetParent(struct FM
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class UObject*                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObject* UMovieSceneBindingExtensions::GetObjectTemplate(struct FMovieSceneBindingProxy& InInBinding)
+class UObject* UMovieSceneBindingExtensions::GetObjectTemplate(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4309,15 +4950,15 @@ class UObject* UMovieSceneBindingExtensions::GetObjectTemplate(struct FMovieScen
 
 	Params::UMovieSceneBindingExtensions_GetObjectTemplate_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4330,7 +4971,7 @@ class UObject* UMovieSceneBindingExtensions::GetObjectTemplate(struct FMovieScen
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UMovieSceneBindingExtensions::GetName(struct FMovieSceneBindingProxy& InInBinding)
+class FString UMovieSceneBindingExtensions::GetName(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4339,15 +4980,15 @@ class FString UMovieSceneBindingExtensions::GetName(struct FMovieSceneBindingPro
 
 	Params::UMovieSceneBindingExtensions_GetName_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4360,7 +5001,7 @@ class FString UMovieSceneBindingExtensions::GetName(struct FMovieSceneBindingPro
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FGuid                       ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FGuid UMovieSceneBindingExtensions::GetId(struct FMovieSceneBindingProxy& InInBinding)
+struct FGuid UMovieSceneBindingExtensions::GetId(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4369,15 +5010,15 @@ struct FGuid UMovieSceneBindingExtensions::GetId(struct FMovieSceneBindingProxy&
 
 	Params::UMovieSceneBindingExtensions_GetId_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4390,7 +5031,7 @@ struct FGuid UMovieSceneBindingExtensions::GetId(struct FMovieSceneBindingProxy&
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class FText                        ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-class FText UMovieSceneBindingExtensions::GetDisplayName(struct FMovieSceneBindingProxy& InInBinding)
+class FText UMovieSceneBindingExtensions::GetDisplayName(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4399,15 +5040,15 @@ class FText UMovieSceneBindingExtensions::GetDisplayName(struct FMovieSceneBindi
 
 	Params::UMovieSceneBindingExtensions_GetDisplayName_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4420,7 +5061,7 @@ class FText UMovieSceneBindingExtensions::GetDisplayName(struct FMovieSceneBindi
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // TArray<struct FMovieSceneBindingProxy>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FMovieSceneBindingProxy> UMovieSceneBindingExtensions::GetChildPossessables(struct FMovieSceneBindingProxy& InInBinding)
+TArray<struct FMovieSceneBindingProxy> UMovieSceneBindingExtensions::GetChildPossessables(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4429,15 +5070,15 @@ TArray<struct FMovieSceneBindingProxy> UMovieSceneBindingExtensions::GetChildPos
 
 	Params::UMovieSceneBindingExtensions_GetChildPossessables_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4451,7 +5092,7 @@ TArray<struct FMovieSceneBindingProxy> UMovieSceneBindingExtensions::GetChildPos
 // TSubclassOf<class UMovieSceneTrack>TrackType                                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneTrack*>    ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByType(struct FMovieSceneBindingProxy& InInBinding, TSubclassOf<class UMovieSceneTrack> InTrackType)
+TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByType(struct FMovieSceneBindingProxy& InBinding, TSubclassOf<class UMovieSceneTrack> TrackType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4460,16 +5101,16 @@ TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByType(s
 
 	Params::UMovieSceneBindingExtensions_FindTracksByType_Params Parms{};
 
-	Parms.InBinding = InInBinding;
-	Parms.TrackType = InTrackType;
+	Parms.InBinding = InBinding;
+	Parms.TrackType = TrackType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4483,7 +5124,7 @@ TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByType(s
 // TSubclassOf<class UMovieSceneTrack>TrackType                                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneTrack*>    ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByExactType(struct FMovieSceneBindingProxy& InInBinding, TSubclassOf<class UMovieSceneTrack> InTrackType)
+TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByExactType(struct FMovieSceneBindingProxy& InBinding, TSubclassOf<class UMovieSceneTrack> TrackType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4492,16 +5133,16 @@ TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByExactT
 
 	Params::UMovieSceneBindingExtensions_FindTracksByExactType_Params Parms{};
 
-	Parms.InBinding = InInBinding;
-	Parms.TrackType = InTrackType;
+	Parms.InBinding = InBinding;
+	Parms.TrackType = TrackType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4515,7 +5156,7 @@ TArray<class UMovieSceneTrack*> UMovieSceneBindingExtensions::FindTracksByExactT
 // TSubclassOf<class UMovieSceneTrack>TrackType                                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneTrack*            ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneTrack* UMovieSceneBindingExtensions::AddTrack(struct FMovieSceneBindingProxy& InInBinding, TSubclassOf<class UMovieSceneTrack> InTrackType)
+class UMovieSceneTrack* UMovieSceneBindingExtensions::AddTrack(struct FMovieSceneBindingProxy& InBinding, TSubclassOf<class UMovieSceneTrack> TrackType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4524,19 +5165,47 @@ class UMovieSceneTrack* UMovieSceneBindingExtensions::AddTrack(struct FMovieScen
 
 	Params::UMovieSceneBindingExtensions_AddTrack_Params Parms{};
 
-	Parms.InBinding = InInBinding;
-	Parms.TrackType = InTrackType;
+	Parms.InBinding = InBinding;
+	Parms.TrackType = TrackType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneEventTrackExtensions
+// (None)
+
+class UClass* UMovieSceneEventTrackExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneEventTrackExtensions");
+
+	return Clss;
+}
+
+
+// MovieSceneEventTrackExtensions SequencerScripting.Default__MovieSceneEventTrackExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneEventTrackExtensions* UMovieSceneEventTrackExtensions::GetDefaultObj()
+{
+	static class UMovieSceneEventTrackExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneEventTrackExtensions*>(UMovieSceneEventTrackExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4546,7 +5215,7 @@ class UMovieSceneTrack* UMovieSceneBindingExtensions::AddTrack(struct FMovieScen
 // struct FMovieSceneEvent            EventKey                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UClass*                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UClass* UMovieSceneEventTrackExtensions::GetBoundObjectPropertyClass(struct FMovieSceneEvent& InEventKey)
+class UClass* UMovieSceneEventTrackExtensions::GetBoundObjectPropertyClass(struct FMovieSceneEvent& EventKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4555,15 +5224,15 @@ class UClass* UMovieSceneEventTrackExtensions::GetBoundObjectPropertyClass(struc
 
 	Params::UMovieSceneEventTrackExtensions_GetBoundObjectPropertyClass_Params Parms{};
 
-	Parms.EventKey = InEventKey;
+	Parms.EventKey = EventKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4576,7 +5245,7 @@ class UClass* UMovieSceneEventTrackExtensions::GetBoundObjectPropertyClass(struc
 // class UMovieSceneEventTrack*       InTrack                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneEventTriggerSection*ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneEventTriggerSection* UMovieSceneEventTrackExtensions::AddEventTriggerSection(class UMovieSceneEventTrack* InInTrack)
+class UMovieSceneEventTriggerSection* UMovieSceneEventTrackExtensions::AddEventTriggerSection(class UMovieSceneEventTrack* InTrack)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4585,15 +5254,15 @@ class UMovieSceneEventTriggerSection* UMovieSceneEventTrackExtensions::AddEventT
 
 	Params::UMovieSceneEventTrackExtensions_AddEventTriggerSection_Params Parms{};
 
-	Parms.InTrack = InInTrack;
+	Parms.InTrack = InTrack;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4606,7 +5275,7 @@ class UMovieSceneEventTriggerSection* UMovieSceneEventTrackExtensions::AddEventT
 // class UMovieSceneEventTrack*       InTrack                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneEventRepeaterSection*ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneEventRepeaterSection* UMovieSceneEventTrackExtensions::AddEventRepeaterSection(class UMovieSceneEventTrack* InInTrack)
+class UMovieSceneEventRepeaterSection* UMovieSceneEventTrackExtensions::AddEventRepeaterSection(class UMovieSceneEventTrack* InTrack)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4615,18 +5284,46 @@ class UMovieSceneEventRepeaterSection* UMovieSceneEventTrackExtensions::AddEvent
 
 	Params::UMovieSceneEventTrackExtensions_AddEventRepeaterSection_Params Parms{};
 
-	Parms.InTrack = InInTrack;
+	Parms.InTrack = InTrack;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneFolderExtensions
+// (None)
+
+class UClass* UMovieSceneFolderExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneFolderExtensions");
+
+	return Clss;
+}
+
+
+// MovieSceneFolderExtensions SequencerScripting.Default__MovieSceneFolderExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneFolderExtensions* UMovieSceneFolderExtensions::GetDefaultObj()
+{
+	static class UMovieSceneFolderExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneFolderExtensions*>(UMovieSceneFolderExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4637,7 +5334,7 @@ class UMovieSceneEventRepeaterSection* UMovieSceneEventTrackExtensions::AddEvent
 // class FName                        InFolderName                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneFolderExtensions::SetFolderName(class UMovieSceneFolder* InFolder, class FName InInFolderName)
+bool UMovieSceneFolderExtensions::SetFolderName(class UMovieSceneFolder* Folder, class FName InFolderName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4646,16 +5343,16 @@ bool UMovieSceneFolderExtensions::SetFolderName(class UMovieSceneFolder* InFolde
 
 	Params::UMovieSceneFolderExtensions_SetFolderName_Params Parms{};
 
-	Parms.Folder = InFolder;
-	Parms.InFolderName = InInFolderName;
+	Parms.Folder = Folder;
+	Parms.InFolderName = InFolderName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4669,7 +5366,7 @@ bool UMovieSceneFolderExtensions::SetFolderName(class UMovieSceneFolder* InFolde
 // struct FColor                      InFolderColor                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneFolderExtensions::SetFolderColor(class UMovieSceneFolder* InFolder, const struct FColor& InInFolderColor)
+bool UMovieSceneFolderExtensions::SetFolderColor(class UMovieSceneFolder* Folder, const struct FColor& InFolderColor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4678,16 +5375,16 @@ bool UMovieSceneFolderExtensions::SetFolderColor(class UMovieSceneFolder* InFold
 
 	Params::UMovieSceneFolderExtensions_SetFolderColor_Params Parms{};
 
-	Parms.Folder = InFolder;
-	Parms.InFolderColor = InInFolderColor;
+	Parms.Folder = Folder;
+	Parms.InFolderColor = InFolderColor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4701,7 +5398,7 @@ bool UMovieSceneFolderExtensions::SetFolderColor(class UMovieSceneFolder* InFold
 // struct FMovieSceneBindingProxy     InObjectBinding                                                  (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneFolderExtensions::RemoveChildObjectBinding(class UMovieSceneFolder* InFolder, const struct FMovieSceneBindingProxy& InInObjectBinding)
+bool UMovieSceneFolderExtensions::RemoveChildObjectBinding(class UMovieSceneFolder* Folder, const struct FMovieSceneBindingProxy& InObjectBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4710,16 +5407,16 @@ bool UMovieSceneFolderExtensions::RemoveChildObjectBinding(class UMovieSceneFold
 
 	Params::UMovieSceneFolderExtensions_RemoveChildObjectBinding_Params Parms{};
 
-	Parms.Folder = InFolder;
-	Parms.InObjectBinding = InInObjectBinding;
+	Parms.Folder = Folder;
+	Parms.InObjectBinding = InObjectBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4733,7 +5430,7 @@ bool UMovieSceneFolderExtensions::RemoveChildObjectBinding(class UMovieSceneFold
 // class UMovieSceneTrack*            InMasterTrack                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneFolderExtensions::RemoveChildMasterTrack(class UMovieSceneFolder* InFolder, class UMovieSceneTrack* InInMasterTrack)
+bool UMovieSceneFolderExtensions::RemoveChildMasterTrack(class UMovieSceneFolder* Folder, class UMovieSceneTrack* InMasterTrack)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4742,16 +5439,16 @@ bool UMovieSceneFolderExtensions::RemoveChildMasterTrack(class UMovieSceneFolder
 
 	Params::UMovieSceneFolderExtensions_RemoveChildMasterTrack_Params Parms{};
 
-	Parms.Folder = InFolder;
-	Parms.InMasterTrack = InInMasterTrack;
+	Parms.Folder = Folder;
+	Parms.InMasterTrack = InMasterTrack;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4765,7 +5462,7 @@ bool UMovieSceneFolderExtensions::RemoveChildMasterTrack(class UMovieSceneFolder
 // class UMovieSceneFolder*           FolderToRemove                                                   (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneFolderExtensions::RemoveChildFolder(class UMovieSceneFolder* InTargetFolder, class UMovieSceneFolder* InFolderToRemove)
+bool UMovieSceneFolderExtensions::RemoveChildFolder(class UMovieSceneFolder* TargetFolder, class UMovieSceneFolder* FolderToRemove)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4774,16 +5471,16 @@ bool UMovieSceneFolderExtensions::RemoveChildFolder(class UMovieSceneFolder* InT
 
 	Params::UMovieSceneFolderExtensions_RemoveChildFolder_Params Parms{};
 
-	Parms.TargetFolder = InTargetFolder;
-	Parms.FolderToRemove = InFolderToRemove;
+	Parms.TargetFolder = TargetFolder;
+	Parms.FolderToRemove = FolderToRemove;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4796,7 +5493,7 @@ bool UMovieSceneFolderExtensions::RemoveChildFolder(class UMovieSceneFolder* InT
 // class UMovieSceneFolder*           Folder                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName UMovieSceneFolderExtensions::GetFolderName(class UMovieSceneFolder* InFolder)
+class FName UMovieSceneFolderExtensions::GetFolderName(class UMovieSceneFolder* Folder)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4805,15 +5502,15 @@ class FName UMovieSceneFolderExtensions::GetFolderName(class UMovieSceneFolder* 
 
 	Params::UMovieSceneFolderExtensions_GetFolderName_Params Parms{};
 
-	Parms.Folder = InFolder;
+	Parms.Folder = Folder;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4826,7 +5523,7 @@ class FName UMovieSceneFolderExtensions::GetFolderName(class UMovieSceneFolder* 
 // class UMovieSceneFolder*           Folder                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FColor                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FColor UMovieSceneFolderExtensions::GetFolderColor(class UMovieSceneFolder* InFolder)
+struct FColor UMovieSceneFolderExtensions::GetFolderColor(class UMovieSceneFolder* Folder)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4835,15 +5532,15 @@ struct FColor UMovieSceneFolderExtensions::GetFolderColor(class UMovieSceneFolde
 
 	Params::UMovieSceneFolderExtensions_GetFolderColor_Params Parms{};
 
-	Parms.Folder = InFolder;
+	Parms.Folder = Folder;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4856,7 +5553,7 @@ struct FColor UMovieSceneFolderExtensions::GetFolderColor(class UMovieSceneFolde
 // class UMovieSceneFolder*           Folder                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FMovieSceneBindingProxy>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FMovieSceneBindingProxy> UMovieSceneFolderExtensions::GetChildObjectBindings(class UMovieSceneFolder* InFolder)
+TArray<struct FMovieSceneBindingProxy> UMovieSceneFolderExtensions::GetChildObjectBindings(class UMovieSceneFolder* Folder)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4865,15 +5562,15 @@ TArray<struct FMovieSceneBindingProxy> UMovieSceneFolderExtensions::GetChildObje
 
 	Params::UMovieSceneFolderExtensions_GetChildObjectBindings_Params Parms{};
 
-	Parms.Folder = InFolder;
+	Parms.Folder = Folder;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4886,7 +5583,7 @@ TArray<struct FMovieSceneBindingProxy> UMovieSceneFolderExtensions::GetChildObje
 // class UMovieSceneFolder*           Folder                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneTrack*>    ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneTrack*> UMovieSceneFolderExtensions::GetChildMasterTracks(class UMovieSceneFolder* InFolder)
+TArray<class UMovieSceneTrack*> UMovieSceneFolderExtensions::GetChildMasterTracks(class UMovieSceneFolder* Folder)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4895,15 +5592,15 @@ TArray<class UMovieSceneTrack*> UMovieSceneFolderExtensions::GetChildMasterTrack
 
 	Params::UMovieSceneFolderExtensions_GetChildMasterTracks_Params Parms{};
 
-	Parms.Folder = InFolder;
+	Parms.Folder = Folder;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4916,7 +5613,7 @@ TArray<class UMovieSceneTrack*> UMovieSceneFolderExtensions::GetChildMasterTrack
 // class UMovieSceneFolder*           Folder                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneFolder*>   ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneFolder*> UMovieSceneFolderExtensions::GetChildFolders(class UMovieSceneFolder* InFolder)
+TArray<class UMovieSceneFolder*> UMovieSceneFolderExtensions::GetChildFolders(class UMovieSceneFolder* Folder)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4925,15 +5622,15 @@ TArray<class UMovieSceneFolder*> UMovieSceneFolderExtensions::GetChildFolders(cl
 
 	Params::UMovieSceneFolderExtensions_GetChildFolders_Params Parms{};
 
-	Parms.Folder = InFolder;
+	Parms.Folder = Folder;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4947,7 +5644,7 @@ TArray<class UMovieSceneFolder*> UMovieSceneFolderExtensions::GetChildFolders(cl
 // struct FMovieSceneBindingProxy     InObjectBinding                                                  (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneFolderExtensions::AddChildObjectBinding(class UMovieSceneFolder* InFolder, const struct FMovieSceneBindingProxy& InInObjectBinding)
+bool UMovieSceneFolderExtensions::AddChildObjectBinding(class UMovieSceneFolder* Folder, const struct FMovieSceneBindingProxy& InObjectBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4956,16 +5653,16 @@ bool UMovieSceneFolderExtensions::AddChildObjectBinding(class UMovieSceneFolder*
 
 	Params::UMovieSceneFolderExtensions_AddChildObjectBinding_Params Parms{};
 
-	Parms.Folder = InFolder;
-	Parms.InObjectBinding = InInObjectBinding;
+	Parms.Folder = Folder;
+	Parms.InObjectBinding = InObjectBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4979,7 +5676,7 @@ bool UMovieSceneFolderExtensions::AddChildObjectBinding(class UMovieSceneFolder*
 // class UMovieSceneTrack*            InMasterTrack                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneFolderExtensions::AddChildMasterTrack(class UMovieSceneFolder* InFolder, class UMovieSceneTrack* InInMasterTrack)
+bool UMovieSceneFolderExtensions::AddChildMasterTrack(class UMovieSceneFolder* Folder, class UMovieSceneTrack* InMasterTrack)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4988,16 +5685,16 @@ bool UMovieSceneFolderExtensions::AddChildMasterTrack(class UMovieSceneFolder* I
 
 	Params::UMovieSceneFolderExtensions_AddChildMasterTrack_Params Parms{};
 
-	Parms.Folder = InFolder;
-	Parms.InMasterTrack = InInMasterTrack;
+	Parms.Folder = Folder;
+	Parms.InMasterTrack = InMasterTrack;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5011,7 +5708,7 @@ bool UMovieSceneFolderExtensions::AddChildMasterTrack(class UMovieSceneFolder* I
 // class UMovieSceneFolder*           FolderToAdd                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneFolderExtensions::AddChildFolder(class UMovieSceneFolder* InTargetFolder, class UMovieSceneFolder* InFolderToAdd)
+bool UMovieSceneFolderExtensions::AddChildFolder(class UMovieSceneFolder* TargetFolder, class UMovieSceneFolder* FolderToAdd)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5020,19 +5717,47 @@ bool UMovieSceneFolderExtensions::AddChildFolder(class UMovieSceneFolder* InTarg
 
 	Params::UMovieSceneFolderExtensions_AddChildFolder_Params Parms{};
 
-	Parms.TargetFolder = InTargetFolder;
-	Parms.FolderToAdd = InFolderToAdd;
+	Parms.TargetFolder = TargetFolder;
+	Parms.FolderToAdd = FolderToAdd;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneMaterialTrackExtensions
+// (None)
+
+class UClass* UMovieSceneMaterialTrackExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneMaterialTrackExtensions");
+
+	return Clss;
+}
+
+
+// MovieSceneMaterialTrackExtensions SequencerScripting.Default__MovieSceneMaterialTrackExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneMaterialTrackExtensions* UMovieSceneMaterialTrackExtensions::GetDefaultObj()
+{
+	static class UMovieSceneMaterialTrackExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneMaterialTrackExtensions*>(UMovieSceneMaterialTrackExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5042,7 +5767,7 @@ bool UMovieSceneFolderExtensions::AddChildFolder(class UMovieSceneFolder* InTarg
 // class UMovieSceneComponentMaterialTrack*Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              MaterialIndex                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneMaterialTrackExtensions::SetMaterialIndex(class UMovieSceneComponentMaterialTrack* InTrack, int32 InMaterialIndex)
+void UMovieSceneMaterialTrackExtensions::SetMaterialIndex(class UMovieSceneComponentMaterialTrack* Track, int32 MaterialIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5051,16 +5776,16 @@ void UMovieSceneMaterialTrackExtensions::SetMaterialIndex(class UMovieSceneCompo
 
 	Params::UMovieSceneMaterialTrackExtensions_SetMaterialIndex_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.MaterialIndex = InMaterialIndex;
+	Parms.Track = Track;
+	Parms.MaterialIndex = MaterialIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5071,7 +5796,7 @@ void UMovieSceneMaterialTrackExtensions::SetMaterialIndex(class UMovieSceneCompo
 // class UMovieSceneComponentMaterialTrack*Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneMaterialTrackExtensions::GetMaterialIndex(class UMovieSceneComponentMaterialTrack* InTrack)
+int32 UMovieSceneMaterialTrackExtensions::GetMaterialIndex(class UMovieSceneComponentMaterialTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5080,18 +5805,46 @@ int32 UMovieSceneMaterialTrackExtensions::GetMaterialIndex(class UMovieSceneComp
 
 	Params::UMovieSceneMaterialTrackExtensions_GetMaterialIndex_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieScenePrimitiveMaterialTrackExtensions
+// (None)
+
+class UClass* UMovieScenePrimitiveMaterialTrackExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieScenePrimitiveMaterialTrackExtensions");
+
+	return Clss;
+}
+
+
+// MovieScenePrimitiveMaterialTrackExtensions SequencerScripting.Default__MovieScenePrimitiveMaterialTrackExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieScenePrimitiveMaterialTrackExtensions* UMovieScenePrimitiveMaterialTrackExtensions::GetDefaultObj()
+{
+	static class UMovieScenePrimitiveMaterialTrackExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieScenePrimitiveMaterialTrackExtensions*>(UMovieScenePrimitiveMaterialTrackExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5101,7 +5854,7 @@ int32 UMovieSceneMaterialTrackExtensions::GetMaterialIndex(class UMovieSceneComp
 // class UMovieScenePrimitiveMaterialTrack*Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              MaterialIndex                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieScenePrimitiveMaterialTrackExtensions::SetMaterialIndex(class UMovieScenePrimitiveMaterialTrack* InTrack, int32 InMaterialIndex)
+void UMovieScenePrimitiveMaterialTrackExtensions::SetMaterialIndex(class UMovieScenePrimitiveMaterialTrack* Track, int32 MaterialIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5110,16 +5863,16 @@ void UMovieScenePrimitiveMaterialTrackExtensions::SetMaterialIndex(class UMovieS
 
 	Params::UMovieScenePrimitiveMaterialTrackExtensions_SetMaterialIndex_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.MaterialIndex = InMaterialIndex;
+	Parms.Track = Track;
+	Parms.MaterialIndex = MaterialIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5130,7 +5883,7 @@ void UMovieScenePrimitiveMaterialTrackExtensions::SetMaterialIndex(class UMovieS
 // class UMovieScenePrimitiveMaterialTrack*Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieScenePrimitiveMaterialTrackExtensions::GetMaterialIndex(class UMovieScenePrimitiveMaterialTrack* InTrack)
+int32 UMovieScenePrimitiveMaterialTrackExtensions::GetMaterialIndex(class UMovieScenePrimitiveMaterialTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5139,18 +5892,46 @@ int32 UMovieScenePrimitiveMaterialTrackExtensions::GetMaterialIndex(class UMovie
 
 	Params::UMovieScenePrimitiveMaterialTrackExtensions_GetMaterialIndex_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieScenePropertyTrackExtensions
+// (None)
+
+class UClass* UMovieScenePropertyTrackExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieScenePropertyTrackExtensions");
+
+	return Clss;
+}
+
+
+// MovieScenePropertyTrackExtensions SequencerScripting.Default__MovieScenePropertyTrackExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieScenePropertyTrackExtensions* UMovieScenePropertyTrackExtensions::GetDefaultObj()
+{
+	static class UMovieScenePropertyTrackExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieScenePropertyTrackExtensions*>(UMovieScenePropertyTrackExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5161,7 +5942,7 @@ int32 UMovieScenePrimitiveMaterialTrackExtensions::GetMaterialIndex(class UMovie
 // class FName                        InPropertyName                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      InPropertyPath                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieScenePropertyTrackExtensions::SetPropertyNameAndPath(class UMovieScenePropertyTrack* InTrack, class FName& InInPropertyName, const class FString& InInPropertyPath)
+void UMovieScenePropertyTrackExtensions::SetPropertyNameAndPath(class UMovieScenePropertyTrack* Track, class FName& InPropertyName, const class FString& InPropertyPath)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5170,17 +5951,17 @@ void UMovieScenePropertyTrackExtensions::SetPropertyNameAndPath(class UMovieScen
 
 	Params::UMovieScenePropertyTrackExtensions_SetPropertyNameAndPath_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.InPropertyName = InInPropertyName;
-	Parms.InPropertyPath = InInPropertyPath;
+	Parms.Track = Track;
+	Parms.InPropertyName = InPropertyName;
+	Parms.InPropertyPath = InPropertyPath;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5191,7 +5972,7 @@ void UMovieScenePropertyTrackExtensions::SetPropertyNameAndPath(class UMovieScen
 // class UMovieSceneObjectPropertyTrack*Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UClass*                      PropertyClass                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieScenePropertyTrackExtensions::SetObjectPropertyClass(class UMovieSceneObjectPropertyTrack* InTrack, class UClass* InPropertyClass)
+void UMovieScenePropertyTrackExtensions::SetObjectPropertyClass(class UMovieSceneObjectPropertyTrack* Track, class UClass* PropertyClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5200,16 +5981,16 @@ void UMovieScenePropertyTrackExtensions::SetObjectPropertyClass(class UMovieScen
 
 	Params::UMovieScenePropertyTrackExtensions_SetObjectPropertyClass_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.PropertyClass = InPropertyClass;
+	Parms.Track = Track;
+	Parms.PropertyClass = PropertyClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5220,7 +6001,7 @@ void UMovieScenePropertyTrackExtensions::SetObjectPropertyClass(class UMovieScen
 // class UMovieSceneByteTrack*        Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UEnum*                       InEnum                                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieScenePropertyTrackExtensions::SetByteTrackEnum(class UMovieSceneByteTrack* InTrack, class UEnum* InInEnum)
+void UMovieScenePropertyTrackExtensions::SetByteTrackEnum(class UMovieSceneByteTrack* Track, class UEnum* InEnum)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5229,16 +6010,16 @@ void UMovieScenePropertyTrackExtensions::SetByteTrackEnum(class UMovieSceneByteT
 
 	Params::UMovieScenePropertyTrackExtensions_SetByteTrackEnum_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.InEnum = InInEnum;
+	Parms.Track = Track;
+	Parms.InEnum = InEnum;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5249,7 +6030,7 @@ void UMovieScenePropertyTrackExtensions::SetByteTrackEnum(class UMovieSceneByteT
 // class UMovieScenePropertyTrack*    Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName UMovieScenePropertyTrackExtensions::GetUniqueTrackName(class UMovieScenePropertyTrack* InTrack)
+class FName UMovieScenePropertyTrackExtensions::GetUniqueTrackName(class UMovieScenePropertyTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5258,15 +6039,15 @@ class FName UMovieScenePropertyTrackExtensions::GetUniqueTrackName(class UMovieS
 
 	Params::UMovieScenePropertyTrackExtensions_GetUniqueTrackName_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5279,7 +6060,7 @@ class FName UMovieScenePropertyTrackExtensions::GetUniqueTrackName(class UMovieS
 // class UMovieScenePropertyTrack*    Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UMovieScenePropertyTrackExtensions::GetPropertyPath(class UMovieScenePropertyTrack* InTrack)
+class FString UMovieScenePropertyTrackExtensions::GetPropertyPath(class UMovieScenePropertyTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5288,15 +6069,15 @@ class FString UMovieScenePropertyTrackExtensions::GetPropertyPath(class UMovieSc
 
 	Params::UMovieScenePropertyTrackExtensions_GetPropertyPath_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5309,7 +6090,7 @@ class FString UMovieScenePropertyTrackExtensions::GetPropertyPath(class UMovieSc
 // class UMovieScenePropertyTrack*    Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName UMovieScenePropertyTrackExtensions::GetPropertyName(class UMovieScenePropertyTrack* InTrack)
+class FName UMovieScenePropertyTrackExtensions::GetPropertyName(class UMovieScenePropertyTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5318,15 +6099,15 @@ class FName UMovieScenePropertyTrackExtensions::GetPropertyName(class UMovieScen
 
 	Params::UMovieScenePropertyTrackExtensions_GetPropertyName_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5339,7 +6120,7 @@ class FName UMovieScenePropertyTrackExtensions::GetPropertyName(class UMovieScen
 // class UMovieSceneObjectPropertyTrack*Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UClass*                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UClass* UMovieScenePropertyTrackExtensions::GetObjectPropertyClass(class UMovieSceneObjectPropertyTrack* InTrack)
+class UClass* UMovieScenePropertyTrackExtensions::GetObjectPropertyClass(class UMovieSceneObjectPropertyTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5348,15 +6129,15 @@ class UClass* UMovieScenePropertyTrackExtensions::GetObjectPropertyClass(class U
 
 	Params::UMovieScenePropertyTrackExtensions_GetObjectPropertyClass_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5369,7 +6150,7 @@ class UClass* UMovieScenePropertyTrackExtensions::GetObjectPropertyClass(class U
 // class UMovieSceneByteTrack*        Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UEnum*                       ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UEnum* UMovieScenePropertyTrackExtensions::GetByteTrackEnum(class UMovieSceneByteTrack* InTrack)
+class UEnum* UMovieScenePropertyTrackExtensions::GetByteTrackEnum(class UMovieSceneByteTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5378,18 +6159,46 @@ class UEnum* UMovieScenePropertyTrackExtensions::GetByteTrackEnum(class UMovieSc
 
 	Params::UMovieScenePropertyTrackExtensions_GetByteTrackEnum_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneSectionExtensions
+// (None)
+
+class UClass* UMovieSceneSectionExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSectionExtensions");
+
+	return Clss;
+}
+
+
+// MovieSceneSectionExtensions SequencerScripting.Default__MovieSceneSectionExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSectionExtensions* UMovieSceneSectionExtensions::GetDefaultObj()
+{
+	static class UMovieSceneSectionExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSectionExtensions*>(UMovieSceneSectionExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5399,7 +6208,7 @@ class UEnum* UMovieScenePropertyTrackExtensions::GetByteTrackEnum(class UMovieSc
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              StartTime                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSectionExtensions::SetStartFrameSeconds(class UMovieSceneSection* InSection, float InStartTime)
+void UMovieSceneSectionExtensions::SetStartFrameSeconds(class UMovieSceneSection* Section, float StartTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5408,16 +6217,16 @@ void UMovieSceneSectionExtensions::SetStartFrameSeconds(class UMovieSceneSection
 
 	Params::UMovieSceneSectionExtensions_SetStartFrameSeconds_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.StartTime = InStartTime;
+	Parms.Section = Section;
+	Parms.StartTime = StartTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5428,7 +6237,7 @@ void UMovieSceneSectionExtensions::SetStartFrameSeconds(class UMovieSceneSection
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bIsBounded                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSectionExtensions::SetStartFrameBounded(class UMovieSceneSection* InSection, bool InbIsBounded)
+void UMovieSceneSectionExtensions::SetStartFrameBounded(class UMovieSceneSection* Section, bool bIsBounded)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5437,16 +6246,16 @@ void UMovieSceneSectionExtensions::SetStartFrameBounded(class UMovieSceneSection
 
 	Params::UMovieSceneSectionExtensions_SetStartFrameBounded_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.bIsBounded = InbIsBounded;
+	Parms.Section = Section;
+	Parms.bIsBounded = bIsBounded;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5457,7 +6266,7 @@ void UMovieSceneSectionExtensions::SetStartFrameBounded(class UMovieSceneSection
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              StartFrame                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSectionExtensions::SetStartFrame(class UMovieSceneSection* InSection, int32 InStartFrame)
+void UMovieSceneSectionExtensions::SetStartFrame(class UMovieSceneSection* Section, int32 StartFrame)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5466,16 +6275,16 @@ void UMovieSceneSectionExtensions::SetStartFrame(class UMovieSceneSection* InSec
 
 	Params::UMovieSceneSectionExtensions_SetStartFrame_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.StartFrame = InStartFrame;
+	Parms.Section = Section;
+	Parms.StartFrame = StartFrame;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5487,7 +6296,7 @@ void UMovieSceneSectionExtensions::SetStartFrame(class UMovieSceneSection* InSec
 // float                              StartTime                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              EndTime                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSectionExtensions::SetRangeSeconds(class UMovieSceneSection* InSection, float InStartTime, float InEndTime)
+void UMovieSceneSectionExtensions::SetRangeSeconds(class UMovieSceneSection* Section, float StartTime, float EndTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5496,17 +6305,17 @@ void UMovieSceneSectionExtensions::SetRangeSeconds(class UMovieSceneSection* InS
 
 	Params::UMovieSceneSectionExtensions_SetRangeSeconds_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.StartTime = InStartTime;
-	Parms.EndTime = InEndTime;
+	Parms.Section = Section;
+	Parms.StartTime = StartTime;
+	Parms.EndTime = EndTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5518,7 +6327,7 @@ void UMovieSceneSectionExtensions::SetRangeSeconds(class UMovieSceneSection* InS
 // int32                              StartFrame                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              EndFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSectionExtensions::SetRange(class UMovieSceneSection* InSection, int32 InStartFrame, int32 InEndFrame)
+void UMovieSceneSectionExtensions::SetRange(class UMovieSceneSection* Section, int32 StartFrame, int32 EndFrame)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5527,17 +6336,17 @@ void UMovieSceneSectionExtensions::SetRange(class UMovieSceneSection* InSection,
 
 	Params::UMovieSceneSectionExtensions_SetRange_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.StartFrame = InStartFrame;
-	Parms.EndFrame = InEndFrame;
+	Parms.Section = Section;
+	Parms.StartFrame = StartFrame;
+	Parms.EndFrame = EndFrame;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5548,7 +6357,7 @@ void UMovieSceneSectionExtensions::SetRange(class UMovieSceneSection* InSection,
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              EndTime                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSectionExtensions::SetEndFrameSeconds(class UMovieSceneSection* InSection, float InEndTime)
+void UMovieSceneSectionExtensions::SetEndFrameSeconds(class UMovieSceneSection* Section, float EndTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5557,16 +6366,16 @@ void UMovieSceneSectionExtensions::SetEndFrameSeconds(class UMovieSceneSection* 
 
 	Params::UMovieSceneSectionExtensions_SetEndFrameSeconds_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.EndTime = InEndTime;
+	Parms.Section = Section;
+	Parms.EndTime = EndTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5577,7 +6386,7 @@ void UMovieSceneSectionExtensions::SetEndFrameSeconds(class UMovieSceneSection* 
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bIsBounded                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSectionExtensions::SetEndFrameBounded(class UMovieSceneSection* InSection, bool InbIsBounded)
+void UMovieSceneSectionExtensions::SetEndFrameBounded(class UMovieSceneSection* Section, bool bIsBounded)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5586,16 +6395,16 @@ void UMovieSceneSectionExtensions::SetEndFrameBounded(class UMovieSceneSection* 
 
 	Params::UMovieSceneSectionExtensions_SetEndFrameBounded_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.bIsBounded = InbIsBounded;
+	Parms.Section = Section;
+	Parms.bIsBounded = bIsBounded;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5606,7 +6415,7 @@ void UMovieSceneSectionExtensions::SetEndFrameBounded(class UMovieSceneSection* 
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              EndFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSectionExtensions::SetEndFrame(class UMovieSceneSection* InSection, int32 InEndFrame)
+void UMovieSceneSectionExtensions::SetEndFrame(class UMovieSceneSection* Section, int32 EndFrame)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5615,16 +6424,16 @@ void UMovieSceneSectionExtensions::SetEndFrame(class UMovieSceneSection* InSecti
 
 	Params::UMovieSceneSectionExtensions_SetEndFrame_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.EndFrame = InEndFrame;
+	Parms.Section = Section;
+	Parms.EndFrame = EndFrame;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5635,7 +6444,7 @@ void UMovieSceneSectionExtensions::SetEndFrame(class UMovieSceneSection* InSecti
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneSectionExtensions::HasStartFrame(class UMovieSceneSection* InSection)
+bool UMovieSceneSectionExtensions::HasStartFrame(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5644,15 +6453,15 @@ bool UMovieSceneSectionExtensions::HasStartFrame(class UMovieSceneSection* InSec
 
 	Params::UMovieSceneSectionExtensions_HasStartFrame_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5665,7 +6474,7 @@ bool UMovieSceneSectionExtensions::HasStartFrame(class UMovieSceneSection* InSec
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneSectionExtensions::HasEndFrame(class UMovieSceneSection* InSection)
+bool UMovieSceneSectionExtensions::HasEndFrame(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5674,15 +6483,15 @@ bool UMovieSceneSectionExtensions::HasEndFrame(class UMovieSceneSection* InSecti
 
 	Params::UMovieSceneSectionExtensions_HasEndFrame_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5695,7 +6504,7 @@ bool UMovieSceneSectionExtensions::HasEndFrame(class UMovieSceneSection* InSecti
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMovieSceneSectionExtensions::GetStartFrameSeconds(class UMovieSceneSection* InSection)
+float UMovieSceneSectionExtensions::GetStartFrameSeconds(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5704,15 +6513,15 @@ float UMovieSceneSectionExtensions::GetStartFrameSeconds(class UMovieSceneSectio
 
 	Params::UMovieSceneSectionExtensions_GetStartFrameSeconds_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5725,7 +6534,7 @@ float UMovieSceneSectionExtensions::GetStartFrameSeconds(class UMovieSceneSectio
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSectionExtensions::GetStartFrame(class UMovieSceneSection* InSection)
+int32 UMovieSceneSectionExtensions::GetStartFrame(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5734,15 +6543,15 @@ int32 UMovieSceneSectionExtensions::GetStartFrame(class UMovieSceneSection* InSe
 
 	Params::UMovieSceneSectionExtensions_GetStartFrame_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5757,7 +6566,7 @@ int32 UMovieSceneSectionExtensions::GetStartFrame(class UMovieSceneSection* InSe
 // class UMovieSceneSequence*         ParentSequence                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSectionExtensions::GetParentSequenceFrame(class UMovieSceneSubSection* InSection, int32 InInFrame, class UMovieSceneSequence* InParentSequence)
+int32 UMovieSceneSectionExtensions::GetParentSequenceFrame(class UMovieSceneSubSection* Section, int32 InFrame, class UMovieSceneSequence* ParentSequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5766,17 +6575,17 @@ int32 UMovieSceneSectionExtensions::GetParentSequenceFrame(class UMovieSceneSubS
 
 	Params::UMovieSceneSectionExtensions_GetParentSequenceFrame_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.InFrame = InInFrame;
-	Parms.ParentSequence = InParentSequence;
+	Parms.Section = Section;
+	Parms.InFrame = InFrame;
+	Parms.ParentSequence = ParentSequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5789,7 +6598,7 @@ int32 UMovieSceneSectionExtensions::GetParentSequenceFrame(class UMovieSceneSubS
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMovieSceneSectionExtensions::GetEndFrameSeconds(class UMovieSceneSection* InSection)
+float UMovieSceneSectionExtensions::GetEndFrameSeconds(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5798,15 +6607,15 @@ float UMovieSceneSectionExtensions::GetEndFrameSeconds(class UMovieSceneSection*
 
 	Params::UMovieSceneSectionExtensions_GetEndFrameSeconds_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5819,7 +6628,7 @@ float UMovieSceneSectionExtensions::GetEndFrameSeconds(class UMovieSceneSection*
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSectionExtensions::GetEndFrame(class UMovieSceneSection* InSection)
+int32 UMovieSceneSectionExtensions::GetEndFrame(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5828,15 +6637,15 @@ int32 UMovieSceneSectionExtensions::GetEndFrame(class UMovieSceneSection* InSect
 
 	Params::UMovieSceneSectionExtensions_GetEndFrame_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5850,7 +6659,7 @@ int32 UMovieSceneSectionExtensions::GetEndFrame(class UMovieSceneSection* InSect
 // TSubclassOf<class UMovieSceneScriptingChannel>ChannelType                                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneScriptingChannel*>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetChannelsByType(class UMovieSceneSection* InSection, TSubclassOf<class UMovieSceneScriptingChannel> InChannelType)
+TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetChannelsByType(class UMovieSceneSection* Section, TSubclassOf<class UMovieSceneScriptingChannel> ChannelType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5859,16 +6668,16 @@ TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetChan
 
 	Params::UMovieSceneSectionExtensions_GetChannelsByType_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.ChannelType = InChannelType;
+	Parms.Section = Section;
+	Parms.ChannelType = ChannelType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5881,7 +6690,7 @@ TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetChan
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneScriptingChannel*>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetChannels(class UMovieSceneSection* InSection)
+TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetChannels(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5890,15 +6699,15 @@ TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetChan
 
 	Params::UMovieSceneSectionExtensions_GetChannels_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5911,7 +6720,7 @@ TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetChan
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMovieSceneSectionExtensions::GetAutoSizeStartFrameSeconds(class UMovieSceneSection* InSection)
+float UMovieSceneSectionExtensions::GetAutoSizeStartFrameSeconds(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5920,15 +6729,15 @@ float UMovieSceneSectionExtensions::GetAutoSizeStartFrameSeconds(class UMovieSce
 
 	Params::UMovieSceneSectionExtensions_GetAutoSizeStartFrameSeconds_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5941,7 +6750,7 @@ float UMovieSceneSectionExtensions::GetAutoSizeStartFrameSeconds(class UMovieSce
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSectionExtensions::GetAutoSizeStartFrame(class UMovieSceneSection* InSection)
+int32 UMovieSceneSectionExtensions::GetAutoSizeStartFrame(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5950,15 +6759,15 @@ int32 UMovieSceneSectionExtensions::GetAutoSizeStartFrame(class UMovieSceneSecti
 
 	Params::UMovieSceneSectionExtensions_GetAutoSizeStartFrame_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5971,7 +6780,7 @@ int32 UMovieSceneSectionExtensions::GetAutoSizeStartFrame(class UMovieSceneSecti
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneSectionExtensions::GetAutoSizeHasStartFrame(class UMovieSceneSection* InSection)
+bool UMovieSceneSectionExtensions::GetAutoSizeHasStartFrame(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5980,15 +6789,15 @@ bool UMovieSceneSectionExtensions::GetAutoSizeHasStartFrame(class UMovieSceneSec
 
 	Params::UMovieSceneSectionExtensions_GetAutoSizeHasStartFrame_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6001,7 +6810,7 @@ bool UMovieSceneSectionExtensions::GetAutoSizeHasStartFrame(class UMovieSceneSec
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneSectionExtensions::GetAutoSizeHasEndFrame(class UMovieSceneSection* InSection)
+bool UMovieSceneSectionExtensions::GetAutoSizeHasEndFrame(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6010,15 +6819,15 @@ bool UMovieSceneSectionExtensions::GetAutoSizeHasEndFrame(class UMovieSceneSecti
 
 	Params::UMovieSceneSectionExtensions_GetAutoSizeHasEndFrame_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6031,7 +6840,7 @@ bool UMovieSceneSectionExtensions::GetAutoSizeHasEndFrame(class UMovieSceneSecti
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMovieSceneSectionExtensions::GetAutoSizeEndFrameSeconds(class UMovieSceneSection* InSection)
+float UMovieSceneSectionExtensions::GetAutoSizeEndFrameSeconds(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6040,15 +6849,15 @@ float UMovieSceneSectionExtensions::GetAutoSizeEndFrameSeconds(class UMovieScene
 
 	Params::UMovieSceneSectionExtensions_GetAutoSizeEndFrameSeconds_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6061,7 +6870,7 @@ float UMovieSceneSectionExtensions::GetAutoSizeEndFrameSeconds(class UMovieScene
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSectionExtensions::GetAutoSizeEndFrame(class UMovieSceneSection* InSection)
+int32 UMovieSceneSectionExtensions::GetAutoSizeEndFrame(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6070,15 +6879,15 @@ int32 UMovieSceneSectionExtensions::GetAutoSizeEndFrame(class UMovieSceneSection
 
 	Params::UMovieSceneSectionExtensions_GetAutoSizeEndFrame_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6091,7 +6900,7 @@ int32 UMovieSceneSectionExtensions::GetAutoSizeEndFrame(class UMovieSceneSection
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneScriptingChannel*>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetAllChannels(class UMovieSceneSection* InSection)
+TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetAllChannels(class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6100,15 +6909,15 @@ TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetAllC
 
 	Params::UMovieSceneSectionExtensions_GetAllChannels_Params Parms{};
 
-	Parms.Section = InSection;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6122,7 +6931,7 @@ TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::GetAllC
 // TSubclassOf<class UMovieSceneScriptingChannel>ChannelType                                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneScriptingChannel*>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::FindChannelsByType(class UMovieSceneSection* InSection, TSubclassOf<class UMovieSceneScriptingChannel> InChannelType)
+TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::FindChannelsByType(class UMovieSceneSection* Section, TSubclassOf<class UMovieSceneScriptingChannel> ChannelType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6131,19 +6940,47 @@ TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::FindCha
 
 	Params::UMovieSceneSectionExtensions_FindChannelsByType_Params Parms{};
 
-	Parms.Section = InSection;
-	Parms.ChannelType = InChannelType;
+	Parms.Section = Section;
+	Parms.ChannelType = ChannelType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneSequenceExtensions
+// (None)
+
+class UClass* UMovieSceneSequenceExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneSequenceExtensions");
+
+	return Clss;
+}
+
+
+// MovieSceneSequenceExtensions SequencerScripting.Default__MovieSceneSequenceExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneSequenceExtensions* UMovieSceneSequenceExtensions::GetDefaultObj()
+{
+	static class UMovieSceneSequenceExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneSequenceExtensions*>(UMovieSceneSequenceExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -6152,7 +6989,7 @@ TArray<class UMovieSceneScriptingChannel*> UMovieSceneSectionExtensions::FindCha
 // Parameters:
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SortMarkedFrames(class UMovieSceneSequence* InSequence)
+void UMovieSceneSequenceExtensions::SortMarkedFrames(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6161,15 +6998,15 @@ void UMovieSceneSequenceExtensions::SortMarkedFrames(class UMovieSceneSequence* 
 
 	Params::UMovieSceneSequenceExtensions_SortMarkedFrames_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6180,7 +7017,7 @@ void UMovieSceneSequenceExtensions::SortMarkedFrames(class UMovieSceneSequence* 
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              StartTimeInSeconds                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetWorkRangeStart(class UMovieSceneSequence* InInSequence, float InStartTimeInSeconds)
+void UMovieSceneSequenceExtensions::SetWorkRangeStart(class UMovieSceneSequence* InSequence, float StartTimeInSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6189,16 +7026,16 @@ void UMovieSceneSequenceExtensions::SetWorkRangeStart(class UMovieSceneSequence*
 
 	Params::UMovieSceneSequenceExtensions_SetWorkRangeStart_Params Parms{};
 
-	Parms.InSequence = InInSequence;
-	Parms.StartTimeInSeconds = InStartTimeInSeconds;
+	Parms.InSequence = InSequence;
+	Parms.StartTimeInSeconds = StartTimeInSeconds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6209,7 +7046,7 @@ void UMovieSceneSequenceExtensions::SetWorkRangeStart(class UMovieSceneSequence*
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              EndTimeInSeconds                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetWorkRangeEnd(class UMovieSceneSequence* InInSequence, float InEndTimeInSeconds)
+void UMovieSceneSequenceExtensions::SetWorkRangeEnd(class UMovieSceneSequence* InSequence, float EndTimeInSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6218,16 +7055,16 @@ void UMovieSceneSequenceExtensions::SetWorkRangeEnd(class UMovieSceneSequence* I
 
 	Params::UMovieSceneSequenceExtensions_SetWorkRangeEnd_Params Parms{};
 
-	Parms.InSequence = InInSequence;
-	Parms.EndTimeInSeconds = InEndTimeInSeconds;
+	Parms.InSequence = InSequence;
+	Parms.EndTimeInSeconds = EndTimeInSeconds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6238,7 +7075,7 @@ void UMovieSceneSequenceExtensions::SetWorkRangeEnd(class UMovieSceneSequence* I
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              StartTimeInSeconds                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetViewRangeStart(class UMovieSceneSequence* InInSequence, float InStartTimeInSeconds)
+void UMovieSceneSequenceExtensions::SetViewRangeStart(class UMovieSceneSequence* InSequence, float StartTimeInSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6247,16 +7084,16 @@ void UMovieSceneSequenceExtensions::SetViewRangeStart(class UMovieSceneSequence*
 
 	Params::UMovieSceneSequenceExtensions_SetViewRangeStart_Params Parms{};
 
-	Parms.InSequence = InInSequence;
-	Parms.StartTimeInSeconds = InStartTimeInSeconds;
+	Parms.InSequence = InSequence;
+	Parms.StartTimeInSeconds = StartTimeInSeconds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6267,7 +7104,7 @@ void UMovieSceneSequenceExtensions::SetViewRangeStart(class UMovieSceneSequence*
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              EndTimeInSeconds                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetViewRangeEnd(class UMovieSceneSequence* InInSequence, float InEndTimeInSeconds)
+void UMovieSceneSequenceExtensions::SetViewRangeEnd(class UMovieSceneSequence* InSequence, float EndTimeInSeconds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6276,16 +7113,16 @@ void UMovieSceneSequenceExtensions::SetViewRangeEnd(class UMovieSceneSequence* I
 
 	Params::UMovieSceneSequenceExtensions_SetViewRangeEnd_Params Parms{};
 
-	Parms.InSequence = InInSequence;
-	Parms.EndTimeInSeconds = InEndTimeInSeconds;
+	Parms.InSequence = InSequence;
+	Parms.EndTimeInSeconds = EndTimeInSeconds;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6296,7 +7133,7 @@ void UMovieSceneSequenceExtensions::SetViewRangeEnd(class UMovieSceneSequence* I
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameRate                  TickResolution                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetTickResolutionDirectly(class UMovieSceneSequence* InSequence, const struct FFrameRate& InTickResolution)
+void UMovieSceneSequenceExtensions::SetTickResolutionDirectly(class UMovieSceneSequence* Sequence, const struct FFrameRate& TickResolution)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6305,16 +7142,16 @@ void UMovieSceneSequenceExtensions::SetTickResolutionDirectly(class UMovieSceneS
 
 	Params::UMovieSceneSequenceExtensions_SetTickResolutionDirectly_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.TickResolution = InTickResolution;
+	Parms.Sequence = Sequence;
+	Parms.TickResolution = TickResolution;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6325,7 +7162,7 @@ void UMovieSceneSequenceExtensions::SetTickResolutionDirectly(class UMovieSceneS
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameRate                  TickResolution                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetTickResolution(class UMovieSceneSequence* InSequence, const struct FFrameRate& InTickResolution)
+void UMovieSceneSequenceExtensions::SetTickResolution(class UMovieSceneSequence* Sequence, const struct FFrameRate& TickResolution)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6334,16 +7171,16 @@ void UMovieSceneSequenceExtensions::SetTickResolution(class UMovieSceneSequence*
 
 	Params::UMovieSceneSequenceExtensions_SetTickResolution_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.TickResolution = InTickResolution;
+	Parms.Sequence = Sequence;
+	Parms.TickResolution = TickResolution;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6354,7 +7191,7 @@ void UMovieSceneSequenceExtensions::SetTickResolution(class UMovieSceneSequence*
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bInReadOnly                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetReadOnly(class UMovieSceneSequence* InSequence, bool InbInReadOnly)
+void UMovieSceneSequenceExtensions::SetReadOnly(class UMovieSceneSequence* Sequence, bool bInReadOnly)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6363,16 +7200,16 @@ void UMovieSceneSequenceExtensions::SetReadOnly(class UMovieSceneSequence* InSeq
 
 	Params::UMovieSceneSequenceExtensions_SetReadOnly_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.bInReadOnly = InbInReadOnly;
+	Parms.Sequence = Sequence;
+	Parms.bInReadOnly = bInReadOnly;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6383,7 +7220,7 @@ void UMovieSceneSequenceExtensions::SetReadOnly(class UMovieSceneSequence* InSeq
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              StartTime                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetPlaybackStartSeconds(class UMovieSceneSequence* InSequence, float InStartTime)
+void UMovieSceneSequenceExtensions::SetPlaybackStartSeconds(class UMovieSceneSequence* Sequence, float StartTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6392,16 +7229,16 @@ void UMovieSceneSequenceExtensions::SetPlaybackStartSeconds(class UMovieSceneSeq
 
 	Params::UMovieSceneSequenceExtensions_SetPlaybackStartSeconds_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.StartTime = InStartTime;
+	Parms.Sequence = Sequence;
+	Parms.StartTime = StartTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6412,7 +7249,7 @@ void UMovieSceneSequenceExtensions::SetPlaybackStartSeconds(class UMovieSceneSeq
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              StartFrame                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetPlaybackStart(class UMovieSceneSequence* InSequence, int32 InStartFrame)
+void UMovieSceneSequenceExtensions::SetPlaybackStart(class UMovieSceneSequence* Sequence, int32 StartFrame)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6421,16 +7258,16 @@ void UMovieSceneSequenceExtensions::SetPlaybackStart(class UMovieSceneSequence* 
 
 	Params::UMovieSceneSequenceExtensions_SetPlaybackStart_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.StartFrame = InStartFrame;
+	Parms.Sequence = Sequence;
+	Parms.StartFrame = StartFrame;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6441,7 +7278,7 @@ void UMovieSceneSequenceExtensions::SetPlaybackStart(class UMovieSceneSequence* 
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              EndTime                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetPlaybackEndSeconds(class UMovieSceneSequence* InSequence, float InEndTime)
+void UMovieSceneSequenceExtensions::SetPlaybackEndSeconds(class UMovieSceneSequence* Sequence, float EndTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6450,16 +7287,16 @@ void UMovieSceneSequenceExtensions::SetPlaybackEndSeconds(class UMovieSceneSeque
 
 	Params::UMovieSceneSequenceExtensions_SetPlaybackEndSeconds_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.EndTime = InEndTime;
+	Parms.Sequence = Sequence;
+	Parms.EndTime = EndTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6470,7 +7307,7 @@ void UMovieSceneSequenceExtensions::SetPlaybackEndSeconds(class UMovieSceneSeque
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              EndFrame                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetPlaybackEnd(class UMovieSceneSequence* InSequence, int32 InEndFrame)
+void UMovieSceneSequenceExtensions::SetPlaybackEnd(class UMovieSceneSequence* Sequence, int32 EndFrame)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6479,16 +7316,16 @@ void UMovieSceneSequenceExtensions::SetPlaybackEnd(class UMovieSceneSequence* In
 
 	Params::UMovieSceneSequenceExtensions_SetPlaybackEnd_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.EndFrame = InEndFrame;
+	Parms.Sequence = Sequence;
+	Parms.EndFrame = EndFrame;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6500,7 +7337,7 @@ void UMovieSceneSequenceExtensions::SetPlaybackEnd(class UMovieSceneSequence* In
 // int32                              InMarkIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameNumber                InFrameNumber                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetMarkedFrame(class UMovieSceneSequence* InSequence, int32 InInMarkIndex, const struct FFrameNumber& InInFrameNumber)
+void UMovieSceneSequenceExtensions::SetMarkedFrame(class UMovieSceneSequence* Sequence, int32 InMarkIndex, const struct FFrameNumber& InFrameNumber)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6509,17 +7346,17 @@ void UMovieSceneSequenceExtensions::SetMarkedFrame(class UMovieSceneSequence* In
 
 	Params::UMovieSceneSequenceExtensions_SetMarkedFrame_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.InMarkIndex = InInMarkIndex;
-	Parms.InFrameNumber = InInFrameNumber;
+	Parms.Sequence = Sequence;
+	Parms.InMarkIndex = InMarkIndex;
+	Parms.InFrameNumber = InFrameNumber;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6530,7 +7367,7 @@ void UMovieSceneSequenceExtensions::SetMarkedFrame(class UMovieSceneSequence* In
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EMovieSceneEvaluationTypeInEvaluationType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetEvaluationType(class UMovieSceneSequence* InInSequence, enum class EMovieSceneEvaluationType InInEvaluationType)
+void UMovieSceneSequenceExtensions::SetEvaluationType(class UMovieSceneSequence* InSequence, enum class EMovieSceneEvaluationType InEvaluationType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6539,16 +7376,16 @@ void UMovieSceneSequenceExtensions::SetEvaluationType(class UMovieSceneSequence*
 
 	Params::UMovieSceneSequenceExtensions_SetEvaluationType_Params Parms{};
 
-	Parms.InSequence = InInSequence;
-	Parms.InEvaluationType = InInEvaluationType;
+	Parms.InSequence = InSequence;
+	Parms.InEvaluationType = InEvaluationType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6559,7 +7396,7 @@ void UMovieSceneSequenceExtensions::SetEvaluationType(class UMovieSceneSequence*
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameRate                  DisplayRate                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetDisplayRate(class UMovieSceneSequence* InSequence, const struct FFrameRate& InDisplayRate)
+void UMovieSceneSequenceExtensions::SetDisplayRate(class UMovieSceneSequence* Sequence, const struct FFrameRate& DisplayRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6568,16 +7405,16 @@ void UMovieSceneSequenceExtensions::SetDisplayRate(class UMovieSceneSequence* In
 
 	Params::UMovieSceneSequenceExtensions_SetDisplayRate_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.DisplayRate = InDisplayRate;
+	Parms.Sequence = Sequence;
+	Parms.DisplayRate = DisplayRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6588,7 +7425,7 @@ void UMovieSceneSequenceExtensions::SetDisplayRate(class UMovieSceneSequence* In
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EUpdateClockSource      InClockSource                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::SetClockSource(class UMovieSceneSequence* InInSequence, enum class EUpdateClockSource InInClockSource)
+void UMovieSceneSequenceExtensions::SetClockSource(class UMovieSceneSequence* InSequence, enum class EUpdateClockSource InClockSource)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6597,16 +7434,16 @@ void UMovieSceneSequenceExtensions::SetClockSource(class UMovieSceneSequence* In
 
 	Params::UMovieSceneSequenceExtensions_SetClockSource_Params Parms{};
 
-	Parms.InSequence = InInSequence;
-	Parms.InClockSource = InInClockSource;
+	Parms.InSequence = InSequence;
+	Parms.InClockSource = InClockSource;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6618,7 +7455,7 @@ void UMovieSceneSequenceExtensions::SetClockSource(class UMovieSceneSequence* In
 // struct FMovieSceneObjectBindingID  InObjectBindingID                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMovieSceneBindingProxy     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::ResolveBindingID(class UMovieSceneSequence* InMasterSequence, const struct FMovieSceneObjectBindingID& InInObjectBindingID)
+struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::ResolveBindingID(class UMovieSceneSequence* MasterSequence, const struct FMovieSceneObjectBindingID& InObjectBindingID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6627,16 +7464,16 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::ResolveBindingID(c
 
 	Params::UMovieSceneSequenceExtensions_ResolveBindingID_Params Parms{};
 
-	Parms.MasterSequence = InMasterSequence;
-	Parms.InObjectBindingID = InInObjectBindingID;
+	Parms.MasterSequence = MasterSequence;
+	Parms.InObjectBindingID = InObjectBindingID;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6649,7 +7486,7 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::ResolveBindingID(c
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneFolder*           Folder                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::RemoveRootFolderFromSequence(class UMovieSceneSequence* InSequence, class UMovieSceneFolder* InFolder)
+void UMovieSceneSequenceExtensions::RemoveRootFolderFromSequence(class UMovieSceneSequence* Sequence, class UMovieSceneFolder* Folder)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6658,16 +7495,16 @@ void UMovieSceneSequenceExtensions::RemoveRootFolderFromSequence(class UMovieSce
 
 	Params::UMovieSceneSequenceExtensions_RemoveRootFolderFromSequence_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.Folder = InFolder;
+	Parms.Sequence = Sequence;
+	Parms.Folder = Folder;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6679,7 +7516,7 @@ void UMovieSceneSequenceExtensions::RemoveRootFolderFromSequence(class UMovieSce
 // class UMovieSceneTrack*            MasterTrack                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneSequenceExtensions::RemoveMasterTrack(class UMovieSceneSequence* InSequence, class UMovieSceneTrack* InMasterTrack)
+bool UMovieSceneSequenceExtensions::RemoveMasterTrack(class UMovieSceneSequence* Sequence, class UMovieSceneTrack* MasterTrack)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6688,16 +7525,16 @@ bool UMovieSceneSequenceExtensions::RemoveMasterTrack(class UMovieSceneSequence*
 
 	Params::UMovieSceneSequenceExtensions_RemoveMasterTrack_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.MasterTrack = InMasterTrack;
+	Parms.Sequence = Sequence;
+	Parms.MasterTrack = MasterTrack;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6712,7 +7549,7 @@ bool UMovieSceneSequenceExtensions::RemoveMasterTrack(class UMovieSceneSequence*
 // float                              Duration                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequencerScriptingRange    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequencerScriptingRange UMovieSceneSequenceExtensions::MakeRangeSeconds(class UMovieSceneSequence* InSequence, float InStartTime, float InDuration)
+struct FSequencerScriptingRange UMovieSceneSequenceExtensions::MakeRangeSeconds(class UMovieSceneSequence* Sequence, float StartTime, float Duration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6721,17 +7558,17 @@ struct FSequencerScriptingRange UMovieSceneSequenceExtensions::MakeRangeSeconds(
 
 	Params::UMovieSceneSequenceExtensions_MakeRangeSeconds_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.StartTime = InStartTime;
-	Parms.Duration = InDuration;
+	Parms.Sequence = Sequence;
+	Parms.StartTime = StartTime;
+	Parms.Duration = Duration;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6746,7 +7583,7 @@ struct FSequencerScriptingRange UMovieSceneSequenceExtensions::MakeRangeSeconds(
 // int32                              Duration                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequencerScriptingRange    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequencerScriptingRange UMovieSceneSequenceExtensions::MakeRange(class UMovieSceneSequence* InSequence, int32 InStartFrame, int32 InDuration)
+struct FSequencerScriptingRange UMovieSceneSequenceExtensions::MakeRange(class UMovieSceneSequence* Sequence, int32 StartFrame, int32 Duration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6755,17 +7592,17 @@ struct FSequencerScriptingRange UMovieSceneSequenceExtensions::MakeRange(class U
 
 	Params::UMovieSceneSequenceExtensions_MakeRange_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.StartFrame = InStartFrame;
-	Parms.Duration = InDuration;
+	Parms.Sequence = Sequence;
+	Parms.StartFrame = StartFrame;
+	Parms.Duration = Duration;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6780,7 +7617,7 @@ struct FSequencerScriptingRange UMovieSceneSequenceExtensions::MakeRange(class U
 // enum class EMovieSceneObjectBindingSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMovieSceneObjectBindingID  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::MakeBindingID(class UMovieSceneSequence* InMasterSequence, struct FMovieSceneBindingProxy& InInBinding, enum class EMovieSceneObjectBindingSpace InSpace)
+struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::MakeBindingID(class UMovieSceneSequence* MasterSequence, struct FMovieSceneBindingProxy& InBinding, enum class EMovieSceneObjectBindingSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6789,17 +7626,17 @@ struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::MakeBindingID(c
 
 	Params::UMovieSceneSequenceExtensions_MakeBindingID_Params Parms{};
 
-	Parms.MasterSequence = InMasterSequence;
-	Parms.InBinding = InInBinding;
-	Parms.Space = InSpace;
+	Parms.MasterSequence = MasterSequence;
+	Parms.InBinding = InBinding;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6814,7 +7651,7 @@ struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::MakeBindingID(c
 // class UObject*                     Context                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UObject*>             ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UObject*> UMovieSceneSequenceExtensions::LocateBoundObjects(class UMovieSceneSequence* InSequence, struct FMovieSceneBindingProxy& InInBinding, class UObject* InContext)
+TArray<class UObject*> UMovieSceneSequenceExtensions::LocateBoundObjects(class UMovieSceneSequence* Sequence, struct FMovieSceneBindingProxy& InBinding, class UObject* Context)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6823,17 +7660,17 @@ TArray<class UObject*> UMovieSceneSequenceExtensions::LocateBoundObjects(class U
 
 	Params::UMovieSceneSequenceExtensions_LocateBoundObjects_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.InBinding = InInBinding;
-	Parms.Context = InContext;
+	Parms.Sequence = Sequence;
+	Parms.InBinding = InBinding;
+	Parms.Context = Context;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6846,7 +7683,7 @@ TArray<class UObject*> UMovieSceneSequenceExtensions::LocateBoundObjects(class U
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneSequenceExtensions::IsReadOnly(class UMovieSceneSequence* InSequence)
+bool UMovieSceneSequenceExtensions::IsReadOnly(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6855,15 +7692,15 @@ bool UMovieSceneSequenceExtensions::IsReadOnly(class UMovieSceneSequence* InSequ
 
 	Params::UMovieSceneSequenceExtensions_IsReadOnly_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6876,7 +7713,7 @@ bool UMovieSceneSequenceExtensions::IsReadOnly(class UMovieSceneSequence* InSequ
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMovieSceneSequenceExtensions::GetWorkRangeStart(class UMovieSceneSequence* InInSequence)
+float UMovieSceneSequenceExtensions::GetWorkRangeStart(class UMovieSceneSequence* InSequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6885,15 +7722,15 @@ float UMovieSceneSequenceExtensions::GetWorkRangeStart(class UMovieSceneSequence
 
 	Params::UMovieSceneSequenceExtensions_GetWorkRangeStart_Params Parms{};
 
-	Parms.InSequence = InInSequence;
+	Parms.InSequence = InSequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6906,7 +7743,7 @@ float UMovieSceneSequenceExtensions::GetWorkRangeStart(class UMovieSceneSequence
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMovieSceneSequenceExtensions::GetWorkRangeEnd(class UMovieSceneSequence* InInSequence)
+float UMovieSceneSequenceExtensions::GetWorkRangeEnd(class UMovieSceneSequence* InSequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6915,15 +7752,15 @@ float UMovieSceneSequenceExtensions::GetWorkRangeEnd(class UMovieSceneSequence* 
 
 	Params::UMovieSceneSequenceExtensions_GetWorkRangeEnd_Params Parms{};
 
-	Parms.InSequence = InInSequence;
+	Parms.InSequence = InSequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6936,7 +7773,7 @@ float UMovieSceneSequenceExtensions::GetWorkRangeEnd(class UMovieSceneSequence* 
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMovieSceneSequenceExtensions::GetViewRangeStart(class UMovieSceneSequence* InInSequence)
+float UMovieSceneSequenceExtensions::GetViewRangeStart(class UMovieSceneSequence* InSequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6945,15 +7782,15 @@ float UMovieSceneSequenceExtensions::GetViewRangeStart(class UMovieSceneSequence
 
 	Params::UMovieSceneSequenceExtensions_GetViewRangeStart_Params Parms{};
 
-	Parms.InSequence = InInSequence;
+	Parms.InSequence = InSequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6966,7 +7803,7 @@ float UMovieSceneSequenceExtensions::GetViewRangeStart(class UMovieSceneSequence
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMovieSceneSequenceExtensions::GetViewRangeEnd(class UMovieSceneSequence* InInSequence)
+float UMovieSceneSequenceExtensions::GetViewRangeEnd(class UMovieSceneSequence* InSequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6975,15 +7812,15 @@ float UMovieSceneSequenceExtensions::GetViewRangeEnd(class UMovieSceneSequence* 
 
 	Params::UMovieSceneSequenceExtensions_GetViewRangeEnd_Params Parms{};
 
-	Parms.InSequence = InInSequence;
+	Parms.InSequence = InSequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6996,7 +7833,7 @@ float UMovieSceneSequenceExtensions::GetViewRangeEnd(class UMovieSceneSequence* 
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTimecode                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTimecode UMovieSceneSequenceExtensions::GetTimecodeSource(class UMovieSceneSequence* InSequence)
+struct FTimecode UMovieSceneSequenceExtensions::GetTimecodeSource(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7005,15 +7842,15 @@ struct FTimecode UMovieSceneSequenceExtensions::GetTimecodeSource(class UMovieSc
 
 	Params::UMovieSceneSequenceExtensions_GetTimecodeSource_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7026,7 +7863,7 @@ struct FTimecode UMovieSceneSequenceExtensions::GetTimecodeSource(class UMovieSc
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameRate                  ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameRate UMovieSceneSequenceExtensions::GetTickResolution(class UMovieSceneSequence* InSequence)
+struct FFrameRate UMovieSceneSequenceExtensions::GetTickResolution(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7035,15 +7872,15 @@ struct FFrameRate UMovieSceneSequenceExtensions::GetTickResolution(class UMovieS
 
 	Params::UMovieSceneSequenceExtensions_GetTickResolution_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7056,7 +7893,7 @@ struct FFrameRate UMovieSceneSequenceExtensions::GetTickResolution(class UMovieS
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FMovieSceneBindingProxy>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetSpawnables(class UMovieSceneSequence* InSequence)
+TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetSpawnables(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7065,15 +7902,15 @@ TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetSpawnab
 
 	Params::UMovieSceneSequenceExtensions_GetSpawnables_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7086,7 +7923,7 @@ TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetSpawnab
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneFolder*>   ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneFolder*> UMovieSceneSequenceExtensions::GetRootFoldersInSequence(class UMovieSceneSequence* InSequence)
+TArray<class UMovieSceneFolder*> UMovieSceneSequenceExtensions::GetRootFoldersInSequence(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7095,15 +7932,15 @@ TArray<class UMovieSceneFolder*> UMovieSceneSequenceExtensions::GetRootFoldersIn
 
 	Params::UMovieSceneSequenceExtensions_GetRootFoldersInSequence_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7116,7 +7953,7 @@ TArray<class UMovieSceneFolder*> UMovieSceneSequenceExtensions::GetRootFoldersIn
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FMovieSceneBindingProxy>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetPossessables(class UMovieSceneSequence* InSequence)
+TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetPossessables(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7125,15 +7962,15 @@ TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetPossess
 
 	Params::UMovieSceneSequenceExtensions_GetPossessables_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7148,7 +7985,7 @@ TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetPossess
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FMovieSceneObjectBindingID  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::GetPortableBindingID(class UMovieSceneSequence* InMasterSequence, class UMovieSceneSequence* InDestinationSequence, struct FMovieSceneBindingProxy& InInBinding)
+struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::GetPortableBindingID(class UMovieSceneSequence* MasterSequence, class UMovieSceneSequence* DestinationSequence, struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7157,17 +7994,17 @@ struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::GetPortableBind
 
 	Params::UMovieSceneSequenceExtensions_GetPortableBindingID_Params Parms{};
 
-	Parms.MasterSequence = InMasterSequence;
-	Parms.DestinationSequence = InDestinationSequence;
-	Parms.InBinding = InInBinding;
+	Parms.MasterSequence = MasterSequence;
+	Parms.DestinationSequence = DestinationSequence;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7180,7 +8017,7 @@ struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::GetPortableBind
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMovieSceneSequenceExtensions::GetPlaybackStartSeconds(class UMovieSceneSequence* InSequence)
+float UMovieSceneSequenceExtensions::GetPlaybackStartSeconds(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7189,15 +8026,15 @@ float UMovieSceneSequenceExtensions::GetPlaybackStartSeconds(class UMovieSceneSe
 
 	Params::UMovieSceneSequenceExtensions_GetPlaybackStartSeconds_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7210,7 +8047,7 @@ float UMovieSceneSequenceExtensions::GetPlaybackStartSeconds(class UMovieSceneSe
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSequenceExtensions::GetPlaybackStart(class UMovieSceneSequence* InSequence)
+int32 UMovieSceneSequenceExtensions::GetPlaybackStart(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7219,15 +8056,15 @@ int32 UMovieSceneSequenceExtensions::GetPlaybackStart(class UMovieSceneSequence*
 
 	Params::UMovieSceneSequenceExtensions_GetPlaybackStart_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7240,7 +8077,7 @@ int32 UMovieSceneSequenceExtensions::GetPlaybackStart(class UMovieSceneSequence*
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSequencerScriptingRange    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSequencerScriptingRange UMovieSceneSequenceExtensions::GetPlaybackRange(class UMovieSceneSequence* InSequence)
+struct FSequencerScriptingRange UMovieSceneSequenceExtensions::GetPlaybackRange(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7249,15 +8086,15 @@ struct FSequencerScriptingRange UMovieSceneSequenceExtensions::GetPlaybackRange(
 
 	Params::UMovieSceneSequenceExtensions_GetPlaybackRange_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7270,7 +8107,7 @@ struct FSequencerScriptingRange UMovieSceneSequenceExtensions::GetPlaybackRange(
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMovieSceneSequenceExtensions::GetPlaybackEndSeconds(class UMovieSceneSequence* InSequence)
+float UMovieSceneSequenceExtensions::GetPlaybackEndSeconds(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7279,15 +8116,15 @@ float UMovieSceneSequenceExtensions::GetPlaybackEndSeconds(class UMovieSceneSequ
 
 	Params::UMovieSceneSequenceExtensions_GetPlaybackEndSeconds_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7300,7 +8137,7 @@ float UMovieSceneSequenceExtensions::GetPlaybackEndSeconds(class UMovieSceneSequ
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSequenceExtensions::GetPlaybackEnd(class UMovieSceneSequence* InSequence)
+int32 UMovieSceneSequenceExtensions::GetPlaybackEnd(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7309,15 +8146,15 @@ int32 UMovieSceneSequenceExtensions::GetPlaybackEnd(class UMovieSceneSequence* I
 
 	Params::UMovieSceneSequenceExtensions_GetPlaybackEnd_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7330,7 +8167,7 @@ int32 UMovieSceneSequenceExtensions::GetPlaybackEnd(class UMovieSceneSequence* I
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieScene*                 ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieScene* UMovieSceneSequenceExtensions::GetMovieScene(class UMovieSceneSequence* InSequence)
+class UMovieScene* UMovieSceneSequenceExtensions::GetMovieScene(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7339,15 +8176,15 @@ class UMovieScene* UMovieSceneSequenceExtensions::GetMovieScene(class UMovieScen
 
 	Params::UMovieSceneSequenceExtensions_GetMovieScene_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7360,7 +8197,7 @@ class UMovieScene* UMovieSceneSequenceExtensions::GetMovieScene(class UMovieScen
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneTrack*>    ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::GetMasterTracks(class UMovieSceneSequence* InSequence)
+TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::GetMasterTracks(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7369,15 +8206,15 @@ TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::GetMasterTracks(c
 
 	Params::UMovieSceneSequenceExtensions_GetMasterTracks_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7390,7 +8227,7 @@ TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::GetMasterTracks(c
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FMovieSceneMarkedFrame>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FMovieSceneMarkedFrame> UMovieSceneSequenceExtensions::GetMarkedFrames(class UMovieSceneSequence* InSequence)
+TArray<struct FMovieSceneMarkedFrame> UMovieSceneSequenceExtensions::GetMarkedFrames(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7399,15 +8236,15 @@ TArray<struct FMovieSceneMarkedFrame> UMovieSceneSequenceExtensions::GetMarkedFr
 
 	Params::UMovieSceneSequenceExtensions_GetMarkedFrames_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7420,7 +8257,7 @@ TArray<struct FMovieSceneMarkedFrame> UMovieSceneSequenceExtensions::GetMarkedFr
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EMovieSceneEvaluationTypeReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EMovieSceneEvaluationType UMovieSceneSequenceExtensions::GetEvaluationType(class UMovieSceneSequence* InInSequence)
+enum class EMovieSceneEvaluationType UMovieSceneSequenceExtensions::GetEvaluationType(class UMovieSceneSequence* InSequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7429,15 +8266,15 @@ enum class EMovieSceneEvaluationType UMovieSceneSequenceExtensions::GetEvaluatio
 
 	Params::UMovieSceneSequenceExtensions_GetEvaluationType_Params Parms{};
 
-	Parms.InSequence = InInSequence;
+	Parms.InSequence = InSequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7450,7 +8287,7 @@ enum class EMovieSceneEvaluationType UMovieSceneSequenceExtensions::GetEvaluatio
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameRate                  ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameRate UMovieSceneSequenceExtensions::GetDisplayRate(class UMovieSceneSequence* InSequence)
+struct FFrameRate UMovieSceneSequenceExtensions::GetDisplayRate(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7459,15 +8296,15 @@ struct FFrameRate UMovieSceneSequenceExtensions::GetDisplayRate(class UMovieScen
 
 	Params::UMovieSceneSequenceExtensions_GetDisplayRate_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7480,7 +8317,7 @@ struct FFrameRate UMovieSceneSequenceExtensions::GetDisplayRate(class UMovieScen
 // class UMovieSceneSequence*         InSequence                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EUpdateClockSource      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class EUpdateClockSource UMovieSceneSequenceExtensions::GetClockSource(class UMovieSceneSequence* InInSequence)
+enum class EUpdateClockSource UMovieSceneSequenceExtensions::GetClockSource(class UMovieSceneSequence* InSequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7489,15 +8326,15 @@ enum class EUpdateClockSource UMovieSceneSequenceExtensions::GetClockSource(clas
 
 	Params::UMovieSceneSequenceExtensions_GetClockSource_Params Parms{};
 
-	Parms.InSequence = InInSequence;
+	Parms.InSequence = InSequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7510,7 +8347,7 @@ enum class EUpdateClockSource UMovieSceneSequenceExtensions::GetClockSource(clas
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FMovieSceneBindingProxy>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetBindings(class UMovieSceneSequence* InSequence)
+TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetBindings(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7519,15 +8356,15 @@ TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetBinding
 
 	Params::UMovieSceneSequenceExtensions_GetBindings_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7540,7 +8377,7 @@ TArray<struct FMovieSceneBindingProxy> UMovieSceneSequenceExtensions::GetBinding
 // struct FMovieSceneBindingProxy     InBinding                                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FMovieSceneObjectBindingID  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::GetBindingID(struct FMovieSceneBindingProxy& InInBinding)
+struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::GetBindingID(struct FMovieSceneBindingProxy& InBinding)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7549,15 +8386,15 @@ struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::GetBindingID(st
 
 	Params::UMovieSceneSequenceExtensions_GetBindingID_Params Parms{};
 
-	Parms.InBinding = InInBinding;
+	Parms.InBinding = InBinding;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7572,7 +8409,7 @@ struct FMovieSceneObjectBindingID UMovieSceneSequenceExtensions::GetBindingID(st
 // bool                               bForward                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSequenceExtensions::FindNextMarkedFrame(class UMovieSceneSequence* InSequence, const struct FFrameNumber& InInFrameNumber, bool InbForward)
+int32 UMovieSceneSequenceExtensions::FindNextMarkedFrame(class UMovieSceneSequence* Sequence, const struct FFrameNumber& InFrameNumber, bool bForward)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7581,17 +8418,17 @@ int32 UMovieSceneSequenceExtensions::FindNextMarkedFrame(class UMovieSceneSequen
 
 	Params::UMovieSceneSequenceExtensions_FindNextMarkedFrame_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.InFrameNumber = InInFrameNumber;
-	Parms.bForward = InbForward;
+	Parms.Sequence = Sequence;
+	Parms.InFrameNumber = InFrameNumber;
+	Parms.bForward = bForward;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7605,7 +8442,7 @@ int32 UMovieSceneSequenceExtensions::FindNextMarkedFrame(class UMovieSceneSequen
 // TSubclassOf<class UMovieSceneTrack>TrackType                                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneTrack*>    ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::FindMasterTracksByType(class UMovieSceneSequence* InSequence, TSubclassOf<class UMovieSceneTrack> InTrackType)
+TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::FindMasterTracksByType(class UMovieSceneSequence* Sequence, TSubclassOf<class UMovieSceneTrack> TrackType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7614,16 +8451,16 @@ TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::FindMasterTracksB
 
 	Params::UMovieSceneSequenceExtensions_FindMasterTracksByType_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.TrackType = InTrackType;
+	Parms.Sequence = Sequence;
+	Parms.TrackType = TrackType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7637,7 +8474,7 @@ TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::FindMasterTracksB
 // TSubclassOf<class UMovieSceneTrack>TrackType                                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneTrack*>    ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::FindMasterTracksByExactType(class UMovieSceneSequence* InSequence, TSubclassOf<class UMovieSceneTrack> InTrackType)
+TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::FindMasterTracksByExactType(class UMovieSceneSequence* Sequence, TSubclassOf<class UMovieSceneTrack> TrackType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7646,16 +8483,16 @@ TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::FindMasterTracksB
 
 	Params::UMovieSceneSequenceExtensions_FindMasterTracksByExactType_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.TrackType = InTrackType;
+	Parms.Sequence = Sequence;
+	Parms.TrackType = TrackType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7669,7 +8506,7 @@ TArray<class UMovieSceneTrack*> UMovieSceneSequenceExtensions::FindMasterTracksB
 // class FString                      InLabel                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSequenceExtensions::FindMarkedFrameByLabel(class UMovieSceneSequence* InSequence, const class FString& InInLabel)
+int32 UMovieSceneSequenceExtensions::FindMarkedFrameByLabel(class UMovieSceneSequence* Sequence, const class FString& InLabel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7678,16 +8515,16 @@ int32 UMovieSceneSequenceExtensions::FindMarkedFrameByLabel(class UMovieSceneSeq
 
 	Params::UMovieSceneSequenceExtensions_FindMarkedFrameByLabel_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.InLabel = InInLabel;
+	Parms.Sequence = Sequence;
+	Parms.InLabel = InLabel;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7701,7 +8538,7 @@ int32 UMovieSceneSequenceExtensions::FindMarkedFrameByLabel(class UMovieSceneSeq
 // struct FFrameNumber                InFrameNumber                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSequenceExtensions::FindMarkedFrameByFrameNumber(class UMovieSceneSequence* InSequence, const struct FFrameNumber& InInFrameNumber)
+int32 UMovieSceneSequenceExtensions::FindMarkedFrameByFrameNumber(class UMovieSceneSequence* Sequence, const struct FFrameNumber& InFrameNumber)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7710,16 +8547,16 @@ int32 UMovieSceneSequenceExtensions::FindMarkedFrameByFrameNumber(class UMovieSc
 
 	Params::UMovieSceneSequenceExtensions_FindMarkedFrameByFrameNumber_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.InFrameNumber = InInFrameNumber;
+	Parms.Sequence = Sequence;
+	Parms.InFrameNumber = InFrameNumber;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7733,7 +8570,7 @@ int32 UMovieSceneSequenceExtensions::FindMarkedFrameByFrameNumber(class UMovieSc
 // class FString                      Name                                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMovieSceneBindingProxy     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingByName(class UMovieSceneSequence* InSequence, const class FString& InName)
+struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingByName(class UMovieSceneSequence* Sequence, const class FString& Name)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7742,16 +8579,16 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingByName(
 
 	Params::UMovieSceneSequenceExtensions_FindBindingByName_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.Name = InName;
+	Parms.Sequence = Sequence;
+	Parms.Name = Name;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7765,7 +8602,7 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingByName(
 // struct FGuid                       BindingId                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMovieSceneBindingProxy     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingById(class UMovieSceneSequence* InSequence, const struct FGuid& InBindingId)
+struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingById(class UMovieSceneSequence* Sequence, const struct FGuid& BindingId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7774,16 +8611,16 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingById(cl
 
 	Params::UMovieSceneSequenceExtensions_FindBindingById_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.BindingId = InBindingId;
+	Parms.Sequence = Sequence;
+	Parms.BindingId = BindingId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7795,7 +8632,7 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::FindBindingById(cl
 // Parameters:
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::DeleteMarkedFrames(class UMovieSceneSequence* InSequence)
+void UMovieSceneSequenceExtensions::DeleteMarkedFrames(class UMovieSceneSequence* Sequence)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7804,15 +8641,15 @@ void UMovieSceneSequenceExtensions::DeleteMarkedFrames(class UMovieSceneSequence
 
 	Params::UMovieSceneSequenceExtensions_DeleteMarkedFrames_Params Parms{};
 
-	Parms.Sequence = InSequence;
+	Parms.Sequence = Sequence;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7823,7 +8660,7 @@ void UMovieSceneSequenceExtensions::DeleteMarkedFrames(class UMovieSceneSequence
 // class UMovieSceneSequence*         Sequence                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              DeleteIndex                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneSequenceExtensions::DeleteMarkedFrame(class UMovieSceneSequence* InSequence, int32 InDeleteIndex)
+void UMovieSceneSequenceExtensions::DeleteMarkedFrame(class UMovieSceneSequence* Sequence, int32 DeleteIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7832,16 +8669,16 @@ void UMovieSceneSequenceExtensions::DeleteMarkedFrame(class UMovieSceneSequence*
 
 	Params::UMovieSceneSequenceExtensions_DeleteMarkedFrame_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.DeleteIndex = InDeleteIndex;
+	Parms.Sequence = Sequence;
+	Parms.DeleteIndex = DeleteIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7853,7 +8690,7 @@ void UMovieSceneSequenceExtensions::DeleteMarkedFrame(class UMovieSceneSequence*
 // class UObject*                     ObjectToSpawn                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMovieSceneBindingProxy     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddSpawnableFromInstance(class UMovieSceneSequence* InSequence, class UObject* InObjectToSpawn)
+struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddSpawnableFromInstance(class UMovieSceneSequence* Sequence, class UObject* ObjectToSpawn)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7862,16 +8699,16 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddSpawnableFromIn
 
 	Params::UMovieSceneSequenceExtensions_AddSpawnableFromInstance_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.ObjectToSpawn = InObjectToSpawn;
+	Parms.Sequence = Sequence;
+	Parms.ObjectToSpawn = ObjectToSpawn;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7885,7 +8722,7 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddSpawnableFromIn
 // class UClass*                      ClassToSpawn                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMovieSceneBindingProxy     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddSpawnableFromClass(class UMovieSceneSequence* InSequence, class UClass* InClassToSpawn)
+struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddSpawnableFromClass(class UMovieSceneSequence* Sequence, class UClass* ClassToSpawn)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7894,16 +8731,16 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddSpawnableFromCl
 
 	Params::UMovieSceneSequenceExtensions_AddSpawnableFromClass_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.ClassToSpawn = InClassToSpawn;
+	Parms.Sequence = Sequence;
+	Parms.ClassToSpawn = ClassToSpawn;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7917,7 +8754,7 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddSpawnableFromCl
 // class FString                      NewFolderName                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneFolder*           ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneFolder* UMovieSceneSequenceExtensions::AddRootFolderToSequence(class UMovieSceneSequence* InSequence, const class FString& InNewFolderName)
+class UMovieSceneFolder* UMovieSceneSequenceExtensions::AddRootFolderToSequence(class UMovieSceneSequence* Sequence, const class FString& NewFolderName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7926,16 +8763,16 @@ class UMovieSceneFolder* UMovieSceneSequenceExtensions::AddRootFolderToSequence(
 
 	Params::UMovieSceneSequenceExtensions_AddRootFolderToSequence_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.NewFolderName = InNewFolderName;
+	Parms.Sequence = Sequence;
+	Parms.NewFolderName = NewFolderName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7949,7 +8786,7 @@ class UMovieSceneFolder* UMovieSceneSequenceExtensions::AddRootFolderToSequence(
 // class UObject*                     ObjectToPossess                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMovieSceneBindingProxy     ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddPossessable(class UMovieSceneSequence* InSequence, class UObject* InObjectToPossess)
+struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddPossessable(class UMovieSceneSequence* Sequence, class UObject* ObjectToPossess)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7958,16 +8795,16 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddPossessable(cla
 
 	Params::UMovieSceneSequenceExtensions_AddPossessable_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.ObjectToPossess = InObjectToPossess;
+	Parms.Sequence = Sequence;
+	Parms.ObjectToPossess = ObjectToPossess;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7981,7 +8818,7 @@ struct FMovieSceneBindingProxy UMovieSceneSequenceExtensions::AddPossessable(cla
 // TSubclassOf<class UMovieSceneTrack>TrackType                                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneTrack*            ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneTrack* UMovieSceneSequenceExtensions::AddMasterTrack(class UMovieSceneSequence* InSequence, TSubclassOf<class UMovieSceneTrack> InTrackType)
+class UMovieSceneTrack* UMovieSceneSequenceExtensions::AddMasterTrack(class UMovieSceneSequence* Sequence, TSubclassOf<class UMovieSceneTrack> TrackType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7990,16 +8827,16 @@ class UMovieSceneTrack* UMovieSceneSequenceExtensions::AddMasterTrack(class UMov
 
 	Params::UMovieSceneSequenceExtensions_AddMasterTrack_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.TrackType = InTrackType;
+	Parms.Sequence = Sequence;
+	Parms.TrackType = TrackType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8013,7 +8850,7 @@ class UMovieSceneTrack* UMovieSceneSequenceExtensions::AddMasterTrack(class UMov
 // struct FMovieSceneMarkedFrame      InMarkedFrame                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneSequenceExtensions::AddMarkedFrame(class UMovieSceneSequence* InSequence, struct FMovieSceneMarkedFrame& InInMarkedFrame)
+int32 UMovieSceneSequenceExtensions::AddMarkedFrame(class UMovieSceneSequence* Sequence, struct FMovieSceneMarkedFrame& InMarkedFrame)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8022,19 +8859,47 @@ int32 UMovieSceneSequenceExtensions::AddMarkedFrame(class UMovieSceneSequence* I
 
 	Params::UMovieSceneSequenceExtensions_AddMarkedFrame_Params Parms{};
 
-	Parms.Sequence = InSequence;
-	Parms.InMarkedFrame = InInMarkedFrame;
+	Parms.Sequence = Sequence;
+	Parms.InMarkedFrame = InMarkedFrame;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneTrackExtensions
+// (None)
+
+class UClass* UMovieSceneTrackExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneTrackExtensions");
+
+	return Clss;
+}
+
+
+// MovieSceneTrackExtensions SequencerScripting.Default__MovieSceneTrackExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneTrackExtensions* UMovieSceneTrackExtensions::GetDefaultObj()
+{
+	static class UMovieSceneTrackExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneTrackExtensions*>(UMovieSceneTrackExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8045,7 +8910,7 @@ int32 UMovieSceneSequenceExtensions::AddMarkedFrame(class UMovieSceneSequence* I
 // class FText                        InName                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                              RowIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneTrackExtensions::SetTrackRowDisplayName(class UMovieSceneTrack* InTrack, class FText& InInName, int32 InRowIndex)
+void UMovieSceneTrackExtensions::SetTrackRowDisplayName(class UMovieSceneTrack* Track, class FText& InName, int32 RowIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8054,17 +8919,17 @@ void UMovieSceneTrackExtensions::SetTrackRowDisplayName(class UMovieSceneTrack* 
 
 	Params::UMovieSceneTrackExtensions_SetTrackRowDisplayName_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.InName = InInName;
-	Parms.RowIndex = InRowIndex;
+	Parms.Track = Track;
+	Parms.InName = InName;
+	Parms.RowIndex = RowIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8075,7 +8940,7 @@ void UMovieSceneTrackExtensions::SetTrackRowDisplayName(class UMovieSceneTrack* 
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              SortingOrder                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneTrackExtensions::SetSortingOrder(class UMovieSceneTrack* InTrack, int32 InSortingOrder)
+void UMovieSceneTrackExtensions::SetSortingOrder(class UMovieSceneTrack* Track, int32 SortingOrder)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8084,16 +8949,16 @@ void UMovieSceneTrackExtensions::SetSortingOrder(class UMovieSceneTrack* InTrack
 
 	Params::UMovieSceneTrackExtensions_SetSortingOrder_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.SortingOrder = InSortingOrder;
+	Parms.Track = Track;
+	Parms.SortingOrder = SortingOrder;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8104,7 +8969,7 @@ void UMovieSceneTrackExtensions::SetSortingOrder(class UMovieSceneTrack* InTrack
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneTrackExtensions::SetSectionToKey(class UMovieSceneTrack* InTrack, class UMovieSceneSection* InSection)
+void UMovieSceneTrackExtensions::SetSectionToKey(class UMovieSceneTrack* Track, class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8113,16 +8978,16 @@ void UMovieSceneTrackExtensions::SetSectionToKey(class UMovieSceneTrack* InTrack
 
 	Params::UMovieSceneTrackExtensions_SetSectionToKey_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.Section = InSection;
+	Parms.Track = Track;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8133,7 +8998,7 @@ void UMovieSceneTrackExtensions::SetSectionToKey(class UMovieSceneTrack* InTrack
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FText                        InName                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UMovieSceneTrackExtensions::SetDisplayName(class UMovieSceneTrack* InTrack, class FText& InInName)
+void UMovieSceneTrackExtensions::SetDisplayName(class UMovieSceneTrack* Track, class FText& InName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8142,16 +9007,16 @@ void UMovieSceneTrackExtensions::SetDisplayName(class UMovieSceneTrack* InTrack,
 
 	Params::UMovieSceneTrackExtensions_SetDisplayName_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.InName = InInName;
+	Parms.Track = Track;
+	Parms.InName = InName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8162,7 +9027,7 @@ void UMovieSceneTrackExtensions::SetDisplayName(class UMovieSceneTrack* InTrack,
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FColor                      ColorTint                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneTrackExtensions::SetColorTint(class UMovieSceneTrack* InTrack, struct FColor& InColorTint)
+void UMovieSceneTrackExtensions::SetColorTint(class UMovieSceneTrack* Track, struct FColor& ColorTint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8171,16 +9036,16 @@ void UMovieSceneTrackExtensions::SetColorTint(class UMovieSceneTrack* InTrack, s
 
 	Params::UMovieSceneTrackExtensions_SetColorTint_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.ColorTint = InColorTint;
+	Parms.Track = Track;
+	Parms.ColorTint = ColorTint;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8191,7 +9056,7 @@ void UMovieSceneTrackExtensions::SetColorTint(class UMovieSceneTrack* InTrack, s
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneSection*          Section                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneTrackExtensions::RemoveSection(class UMovieSceneTrack* InTrack, class UMovieSceneSection* InSection)
+void UMovieSceneTrackExtensions::RemoveSection(class UMovieSceneTrack* Track, class UMovieSceneSection* Section)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8200,16 +9065,16 @@ void UMovieSceneTrackExtensions::RemoveSection(class UMovieSceneTrack* InTrack, 
 
 	Params::UMovieSceneTrackExtensions_RemoveSection_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.Section = InSection;
+	Parms.Track = Track;
+	Parms.Section = Section;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8221,7 +9086,7 @@ void UMovieSceneTrackExtensions::RemoveSection(class UMovieSceneTrack* InTrack, 
 // int32                              RowIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FText                        ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-class FText UMovieSceneTrackExtensions::GetTrackRowDisplayName(class UMovieSceneTrack* InTrack, int32 InRowIndex)
+class FText UMovieSceneTrackExtensions::GetTrackRowDisplayName(class UMovieSceneTrack* Track, int32 RowIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8230,16 +9095,16 @@ class FText UMovieSceneTrackExtensions::GetTrackRowDisplayName(class UMovieScene
 
 	Params::UMovieSceneTrackExtensions_GetTrackRowDisplayName_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.RowIndex = InRowIndex;
+	Parms.Track = Track;
+	Parms.RowIndex = RowIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8252,7 +9117,7 @@ class FText UMovieSceneTrackExtensions::GetTrackRowDisplayName(class UMovieScene
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneTrackExtensions::GetSortingOrder(class UMovieSceneTrack* InTrack)
+int32 UMovieSceneTrackExtensions::GetSortingOrder(class UMovieSceneTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8261,15 +9126,15 @@ int32 UMovieSceneTrackExtensions::GetSortingOrder(class UMovieSceneTrack* InTrac
 
 	Params::UMovieSceneTrackExtensions_GetSortingOrder_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8282,7 +9147,7 @@ int32 UMovieSceneTrackExtensions::GetSortingOrder(class UMovieSceneTrack* InTrac
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneSection*          ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneSection* UMovieSceneTrackExtensions::GetSectionToKey(class UMovieSceneTrack* InTrack)
+class UMovieSceneSection* UMovieSceneTrackExtensions::GetSectionToKey(class UMovieSceneTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8291,15 +9156,15 @@ class UMovieSceneSection* UMovieSceneTrackExtensions::GetSectionToKey(class UMov
 
 	Params::UMovieSceneTrackExtensions_GetSectionToKey_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8312,7 +9177,7 @@ class UMovieSceneSection* UMovieSceneTrackExtensions::GetSectionToKey(class UMov
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneSection*>  ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<class UMovieSceneSection*> UMovieSceneTrackExtensions::GetSections(class UMovieSceneTrack* InTrack)
+TArray<class UMovieSceneSection*> UMovieSceneTrackExtensions::GetSections(class UMovieSceneTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8321,15 +9186,15 @@ TArray<class UMovieSceneSection*> UMovieSceneTrackExtensions::GetSections(class 
 
 	Params::UMovieSceneTrackExtensions_GetSections_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8342,7 +9207,7 @@ TArray<class UMovieSceneSection*> UMovieSceneTrackExtensions::GetSections(class 
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FText                        ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-class FText UMovieSceneTrackExtensions::GetDisplayName(class UMovieSceneTrack* InTrack)
+class FText UMovieSceneTrackExtensions::GetDisplayName(class UMovieSceneTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8351,15 +9216,15 @@ class FText UMovieSceneTrackExtensions::GetDisplayName(class UMovieSceneTrack* I
 
 	Params::UMovieSceneTrackExtensions_GetDisplayName_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8372,7 +9237,7 @@ class FText UMovieSceneTrackExtensions::GetDisplayName(class UMovieSceneTrack* I
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FColor                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FColor UMovieSceneTrackExtensions::GetColorTint(class UMovieSceneTrack* InTrack)
+struct FColor UMovieSceneTrackExtensions::GetColorTint(class UMovieSceneTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8381,15 +9246,15 @@ struct FColor UMovieSceneTrackExtensions::GetColorTint(class UMovieSceneTrack* I
 
 	Params::UMovieSceneTrackExtensions_GetColorTint_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8402,7 +9267,7 @@ struct FColor UMovieSceneTrackExtensions::GetColorTint(class UMovieSceneTrack* I
 // class UMovieSceneTrack*            Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneSection*          ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneSection* UMovieSceneTrackExtensions::AddSection(class UMovieSceneTrack* InTrack)
+class UMovieSceneSection* UMovieSceneTrackExtensions::AddSection(class UMovieSceneTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8411,18 +9276,46 @@ class UMovieSceneSection* UMovieSceneTrackExtensions::AddSection(class UMovieSce
 
 	Params::UMovieSceneTrackExtensions_AddSection_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneFloatVectorTrackExtensions
+// (None)
+
+class UClass* UMovieSceneFloatVectorTrackExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneFloatVectorTrackExtensions");
+
+	return Clss;
+}
+
+
+// MovieSceneFloatVectorTrackExtensions SequencerScripting.Default__MovieSceneFloatVectorTrackExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneFloatVectorTrackExtensions* UMovieSceneFloatVectorTrackExtensions::GetDefaultObj()
+{
+	static class UMovieSceneFloatVectorTrackExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneFloatVectorTrackExtensions*>(UMovieSceneFloatVectorTrackExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8432,7 +9325,7 @@ class UMovieSceneSection* UMovieSceneTrackExtensions::AddSection(class UMovieSce
 // class UMovieSceneFloatVectorTrack* Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              InNumChannelsUsed                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneFloatVectorTrackExtensions::SetNumChannelsUsed(class UMovieSceneFloatVectorTrack* InTrack, int32 InInNumChannelsUsed)
+void UMovieSceneFloatVectorTrackExtensions::SetNumChannelsUsed(class UMovieSceneFloatVectorTrack* Track, int32 InNumChannelsUsed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8441,16 +9334,16 @@ void UMovieSceneFloatVectorTrackExtensions::SetNumChannelsUsed(class UMovieScene
 
 	Params::UMovieSceneFloatVectorTrackExtensions_SetNumChannelsUsed_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.InNumChannelsUsed = InInNumChannelsUsed;
+	Parms.Track = Track;
+	Parms.InNumChannelsUsed = InNumChannelsUsed;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8461,7 +9354,7 @@ void UMovieSceneFloatVectorTrackExtensions::SetNumChannelsUsed(class UMovieScene
 // class UMovieSceneFloatVectorTrack* Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneFloatVectorTrackExtensions::GetNumChannelsUsed(class UMovieSceneFloatVectorTrack* InTrack)
+int32 UMovieSceneFloatVectorTrackExtensions::GetNumChannelsUsed(class UMovieSceneFloatVectorTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8470,18 +9363,46 @@ int32 UMovieSceneFloatVectorTrackExtensions::GetNumChannelsUsed(class UMovieScen
 
 	Params::UMovieSceneFloatVectorTrackExtensions_GetNumChannelsUsed_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.MovieSceneDoubleVectorTrackExtensions
+// (None)
+
+class UClass* UMovieSceneDoubleVectorTrackExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneDoubleVectorTrackExtensions");
+
+	return Clss;
+}
+
+
+// MovieSceneDoubleVectorTrackExtensions SequencerScripting.Default__MovieSceneDoubleVectorTrackExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneDoubleVectorTrackExtensions* UMovieSceneDoubleVectorTrackExtensions::GetDefaultObj()
+{
+	static class UMovieSceneDoubleVectorTrackExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneDoubleVectorTrackExtensions*>(UMovieSceneDoubleVectorTrackExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8491,7 +9412,7 @@ int32 UMovieSceneFloatVectorTrackExtensions::GetNumChannelsUsed(class UMovieScen
 // class UMovieSceneDoubleVectorTrack*Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              InNumChannelsUsed                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneDoubleVectorTrackExtensions::SetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* InTrack, int32 InInNumChannelsUsed)
+void UMovieSceneDoubleVectorTrackExtensions::SetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* Track, int32 InNumChannelsUsed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8500,16 +9421,16 @@ void UMovieSceneDoubleVectorTrackExtensions::SetNumChannelsUsed(class UMovieScen
 
 	Params::UMovieSceneDoubleVectorTrackExtensions_SetNumChannelsUsed_Params Parms{};
 
-	Parms.Track = InTrack;
-	Parms.InNumChannelsUsed = InInNumChannelsUsed;
+	Parms.Track = Track;
+	Parms.InNumChannelsUsed = InNumChannelsUsed;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8520,7 +9441,7 @@ void UMovieSceneDoubleVectorTrackExtensions::SetNumChannelsUsed(class UMovieScen
 // class UMovieSceneDoubleVectorTrack*Track                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMovieSceneDoubleVectorTrackExtensions::GetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* InTrack)
+int32 UMovieSceneDoubleVectorTrackExtensions::GetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* Track)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8529,18 +9450,46 @@ int32 UMovieSceneDoubleVectorTrackExtensions::GetNumChannelsUsed(class UMovieSce
 
 	Params::UMovieSceneDoubleVectorTrackExtensions_GetNumChannelsUsed_Params Parms{};
 
-	Parms.Track = InTrack;
+	Parms.Track = Track;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class SequencerScripting.SequencerScriptingRangeExtensions
+// (None)
+
+class UClass* USequencerScriptingRangeExtensions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SequencerScriptingRangeExtensions");
+
+	return Clss;
+}
+
+
+// SequencerScriptingRangeExtensions SequencerScripting.Default__SequencerScriptingRangeExtensions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USequencerScriptingRangeExtensions* USequencerScriptingRangeExtensions::GetDefaultObj()
+{
+	static class USequencerScriptingRangeExtensions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USequencerScriptingRangeExtensions*>(USequencerScriptingRangeExtensions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8550,7 +9499,7 @@ int32 UMovieSceneDoubleVectorTrackExtensions::GetNumChannelsUsed(class UMovieSce
 // struct FSequencerScriptingRange    Range                                                            (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              Start                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USequencerScriptingRangeExtensions::SetStartSeconds(struct FSequencerScriptingRange& InRange, float InStart)
+void USequencerScriptingRangeExtensions::SetStartSeconds(struct FSequencerScriptingRange& Range, float Start)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8559,16 +9508,16 @@ void USequencerScriptingRangeExtensions::SetStartSeconds(struct FSequencerScript
 
 	Params::USequencerScriptingRangeExtensions_SetStartSeconds_Params Parms{};
 
-	Parms.Range = InRange;
-	Parms.Start = InStart;
+	Parms.Range = Range;
+	Parms.Start = Start;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8579,7 +9528,7 @@ void USequencerScriptingRangeExtensions::SetStartSeconds(struct FSequencerScript
 // struct FSequencerScriptingRange    Range                                                            (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // int32                              Start                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USequencerScriptingRangeExtensions::SetStartFrame(struct FSequencerScriptingRange& InRange, int32 InStart)
+void USequencerScriptingRangeExtensions::SetStartFrame(struct FSequencerScriptingRange& Range, int32 Start)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8588,16 +9537,16 @@ void USequencerScriptingRangeExtensions::SetStartFrame(struct FSequencerScriptin
 
 	Params::USequencerScriptingRangeExtensions_SetStartFrame_Params Parms{};
 
-	Parms.Range = InRange;
-	Parms.Start = InStart;
+	Parms.Range = Range;
+	Parms.Start = Start;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8608,7 +9557,7 @@ void USequencerScriptingRangeExtensions::SetStartFrame(struct FSequencerScriptin
 // struct FSequencerScriptingRange    Range                                                            (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              End                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USequencerScriptingRangeExtensions::SetEndSeconds(struct FSequencerScriptingRange& InRange, float InEnd)
+void USequencerScriptingRangeExtensions::SetEndSeconds(struct FSequencerScriptingRange& Range, float End)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8617,16 +9566,16 @@ void USequencerScriptingRangeExtensions::SetEndSeconds(struct FSequencerScriptin
 
 	Params::USequencerScriptingRangeExtensions_SetEndSeconds_Params Parms{};
 
-	Parms.Range = InRange;
-	Parms.End = InEnd;
+	Parms.Range = Range;
+	Parms.End = End;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8637,7 +9586,7 @@ void USequencerScriptingRangeExtensions::SetEndSeconds(struct FSequencerScriptin
 // struct FSequencerScriptingRange    Range                                                            (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // int32                              End                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USequencerScriptingRangeExtensions::SetEndFrame(struct FSequencerScriptingRange& InRange, int32 InEnd)
+void USequencerScriptingRangeExtensions::SetEndFrame(struct FSequencerScriptingRange& Range, int32 End)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8646,16 +9595,16 @@ void USequencerScriptingRangeExtensions::SetEndFrame(struct FSequencerScriptingR
 
 	Params::USequencerScriptingRangeExtensions_SetEndFrame_Params Parms{};
 
-	Parms.Range = InRange;
-	Parms.End = InEnd;
+	Parms.Range = Range;
+	Parms.End = End;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8665,7 +9614,7 @@ void USequencerScriptingRangeExtensions::SetEndFrame(struct FSequencerScriptingR
 // Parameters:
 // struct FSequencerScriptingRange    Range                                                            (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USequencerScriptingRangeExtensions::RemoveStart(struct FSequencerScriptingRange& InRange)
+void USequencerScriptingRangeExtensions::RemoveStart(struct FSequencerScriptingRange& Range)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8674,15 +9623,15 @@ void USequencerScriptingRangeExtensions::RemoveStart(struct FSequencerScriptingR
 
 	Params::USequencerScriptingRangeExtensions_RemoveStart_Params Parms{};
 
-	Parms.Range = InRange;
+	Parms.Range = Range;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8692,7 +9641,7 @@ void USequencerScriptingRangeExtensions::RemoveStart(struct FSequencerScriptingR
 // Parameters:
 // struct FSequencerScriptingRange    Range                                                            (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USequencerScriptingRangeExtensions::RemoveEnd(struct FSequencerScriptingRange& InRange)
+void USequencerScriptingRangeExtensions::RemoveEnd(struct FSequencerScriptingRange& Range)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8701,15 +9650,15 @@ void USequencerScriptingRangeExtensions::RemoveEnd(struct FSequencerScriptingRan
 
 	Params::USequencerScriptingRangeExtensions_RemoveEnd_Params Parms{};
 
-	Parms.Range = InRange;
+	Parms.Range = Range;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8720,7 +9669,7 @@ void USequencerScriptingRangeExtensions::RemoveEnd(struct FSequencerScriptingRan
 // struct FSequencerScriptingRange    Range                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USequencerScriptingRangeExtensions::HasStart(struct FSequencerScriptingRange& InRange)
+bool USequencerScriptingRangeExtensions::HasStart(struct FSequencerScriptingRange& Range)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8729,15 +9678,15 @@ bool USequencerScriptingRangeExtensions::HasStart(struct FSequencerScriptingRang
 
 	Params::USequencerScriptingRangeExtensions_HasStart_Params Parms{};
 
-	Parms.Range = InRange;
+	Parms.Range = Range;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8750,7 +9699,7 @@ bool USequencerScriptingRangeExtensions::HasStart(struct FSequencerScriptingRang
 // struct FSequencerScriptingRange    Range                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USequencerScriptingRangeExtensions::HasEnd(struct FSequencerScriptingRange& InRange)
+bool USequencerScriptingRangeExtensions::HasEnd(struct FSequencerScriptingRange& Range)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8759,15 +9708,15 @@ bool USequencerScriptingRangeExtensions::HasEnd(struct FSequencerScriptingRange&
 
 	Params::USequencerScriptingRangeExtensions_HasEnd_Params Parms{};
 
-	Parms.Range = InRange;
+	Parms.Range = Range;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8780,7 +9729,7 @@ bool USequencerScriptingRangeExtensions::HasEnd(struct FSequencerScriptingRange&
 // struct FSequencerScriptingRange    Range                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USequencerScriptingRangeExtensions::GetStartSeconds(struct FSequencerScriptingRange& InRange)
+float USequencerScriptingRangeExtensions::GetStartSeconds(struct FSequencerScriptingRange& Range)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8789,15 +9738,15 @@ float USequencerScriptingRangeExtensions::GetStartSeconds(struct FSequencerScrip
 
 	Params::USequencerScriptingRangeExtensions_GetStartSeconds_Params Parms{};
 
-	Parms.Range = InRange;
+	Parms.Range = Range;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8810,7 +9759,7 @@ float USequencerScriptingRangeExtensions::GetStartSeconds(struct FSequencerScrip
 // struct FSequencerScriptingRange    Range                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 USequencerScriptingRangeExtensions::GetStartFrame(struct FSequencerScriptingRange& InRange)
+int32 USequencerScriptingRangeExtensions::GetStartFrame(struct FSequencerScriptingRange& Range)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8819,15 +9768,15 @@ int32 USequencerScriptingRangeExtensions::GetStartFrame(struct FSequencerScripti
 
 	Params::USequencerScriptingRangeExtensions_GetStartFrame_Params Parms{};
 
-	Parms.Range = InRange;
+	Parms.Range = Range;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8840,7 +9789,7 @@ int32 USequencerScriptingRangeExtensions::GetStartFrame(struct FSequencerScripti
 // struct FSequencerScriptingRange    Range                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USequencerScriptingRangeExtensions::GetEndSeconds(struct FSequencerScriptingRange& InRange)
+float USequencerScriptingRangeExtensions::GetEndSeconds(struct FSequencerScriptingRange& Range)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8849,15 +9798,15 @@ float USequencerScriptingRangeExtensions::GetEndSeconds(struct FSequencerScripti
 
 	Params::USequencerScriptingRangeExtensions_GetEndSeconds_Params Parms{};
 
-	Parms.Range = InRange;
+	Parms.Range = Range;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8870,7 +9819,7 @@ float USequencerScriptingRangeExtensions::GetEndSeconds(struct FSequencerScripti
 // struct FSequencerScriptingRange    Range                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 USequencerScriptingRangeExtensions::GetEndFrame(struct FSequencerScriptingRange& InRange)
+int32 USequencerScriptingRangeExtensions::GetEndFrame(struct FSequencerScriptingRange& Range)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8879,15 +9828,15 @@ int32 USequencerScriptingRangeExtensions::GetEndFrame(struct FSequencerScripting
 
 	Params::USequencerScriptingRangeExtensions_GetEndFrame_Params Parms{};
 
-	Parms.Range = InRange;
+	Parms.Range = Range;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8895,6 +9844,4 @@ int32 USequencerScriptingRangeExtensions::GetEndFrame(struct FSequencerScripting
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

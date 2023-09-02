@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,11 +16,8 @@ class USlateWidgetStyleAsset : public UObject
 public:
 	class USlateWidgetStyleContainerBase*        CustomStyle;                                       // 0x28(0x8)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SlateWidgetStyleAsset");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USlateWidgetStyleAsset* GetDefaultObj();
 
 };
 
@@ -32,13 +26,10 @@ public:
 class UFontBulkData : public UObject
 {
 public:
-	uint8                                        Pad_202E[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FAE[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("FontBulkData");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UFontBulkData* GetDefaultObj();
 
 };
 
@@ -48,11 +39,8 @@ class IFontFaceInterface : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("FontFaceInterface");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IFontFaceInterface* GetDefaultObj();
 
 };
 
@@ -62,11 +50,8 @@ class IFontProviderInterface : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("FontProviderInterface");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IFontProviderInterface* GetDefaultObj();
 
 };
 
@@ -76,11 +61,8 @@ class USlateTypes : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SlateTypes");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USlateTypes* GetDefaultObj();
 
 };
 
@@ -89,13 +71,10 @@ public:
 class USlateWidgetStyleContainerBase : public UObject
 {
 public:
-	uint8                                        Pad_2030[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1FB0[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SlateWidgetStyleContainerBase");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USlateWidgetStyleContainerBase* GetDefaultObj();
 
 };
 
@@ -105,11 +84,8 @@ class ISlateWidgetStyleContainerInterface : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SlateWidgetStyleContainerInterface");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ISlateWidgetStyleContainerInterface* GetDefaultObj();
 
 };
 
@@ -121,16 +97,11 @@ public:
 	struct FGuid                                 CurrentThemeId;                                    // 0x28(0x10)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FStyleColorList                       ActiveColors;                                      // 0x38(0x988)(Edit, Transient, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("SlateThemeManager");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class USlateThemeManager* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class AudioCapture.AudioCapture
+// (None)
+
+class UClass* UAudioCapture::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioCapture");
+
+	return Clss;
+}
+
+
+// AudioCapture AudioCapture.Default__AudioCapture
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioCapture* UAudioCapture::GetDefaultObj()
+{
+	static class UAudioCapture* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioCapture*>(UAudioCapture::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function AudioCapture.AudioCapture.StopCapturingAudio
@@ -29,13 +54,13 @@ void UAudioCapture::StopCapturingAudio()
 	Params::UAudioCapture_StopCapturingAudio_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -54,13 +79,13 @@ void UAudioCapture::StartCapturingAudio()
 	Params::UAudioCapture_StartCapturingAudio_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -80,13 +105,13 @@ bool UAudioCapture::IsCapturingAudio()
 	Params::UAudioCapture_IsCapturingAudio_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -99,7 +124,7 @@ bool UAudioCapture::IsCapturingAudio()
 // struct FAudioCaptureDeviceInfo     OutInfo                                                          (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAudioCapture::GetAudioCaptureDeviceInfo(struct FAudioCaptureDeviceInfo* InOutInfo)
+bool UAudioCapture::GetAudioCaptureDeviceInfo(struct FAudioCaptureDeviceInfo* OutInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -109,19 +134,47 @@ bool UAudioCapture::GetAudioCaptureDeviceInfo(struct FAudioCaptureDeviceInfo* In
 	Params::UAudioCapture_GetAudioCaptureDeviceInfo_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutInfo != nullptr)
-		*InOutInfo = Parms.OutInfo;
+	if (OutInfo != nullptr)
+		*OutInfo = std::move(Parms.OutInfo);
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AudioCapture.AudioCaptureFunctionLibrary
+// (None)
+
+class UClass* UAudioCaptureFunctionLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioCaptureFunctionLibrary");
+
+	return Clss;
+}
+
+
+// AudioCaptureFunctionLibrary AudioCapture.Default__AudioCaptureFunctionLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioCaptureFunctionLibrary* UAudioCaptureFunctionLibrary::GetDefaultObj()
+{
+	static class UAudioCaptureFunctionLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioCaptureFunctionLibrary*>(UAudioCaptureFunctionLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -140,16 +193,44 @@ class UAudioCapture* UAudioCaptureFunctionLibrary::CreateAudioCapture()
 	Params::UAudioCaptureFunctionLibrary_CreateAudioCapture_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AudioCapture.AudioCaptureBlueprintLibrary
+// (None)
+
+class UClass* UAudioCaptureBlueprintLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioCaptureBlueprintLibrary");
+
+	return Clss;
+}
+
+
+// AudioCaptureBlueprintLibrary AudioCapture.Default__AudioCaptureBlueprintLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioCaptureBlueprintLibrary* UAudioCaptureBlueprintLibrary::GetDefaultObj()
+{
+	static class UAudioCaptureBlueprintLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioCaptureBlueprintLibrary*>(UAudioCaptureBlueprintLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -159,7 +240,7 @@ class UAudioCapture* UAudioCaptureFunctionLibrary::CreateAudioCapture()
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 OnObtainDevicesEvent                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioCaptureBlueprintLibrary::GetAvailableAudioInputDevices(class UObject* InWorldContextObject, FDelegateProperty_& InOnObtainDevicesEvent)
+void UAudioCaptureBlueprintLibrary::GetAvailableAudioInputDevices(class UObject* WorldContextObject, FDelegateProperty_& OnObtainDevicesEvent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -168,16 +249,16 @@ void UAudioCaptureBlueprintLibrary::GetAvailableAudioInputDevices(class UObject*
 
 	Params::UAudioCaptureBlueprintLibrary_GetAvailableAudioInputDevices_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.OnObtainDevicesEvent = InOnObtainDevicesEvent;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.OnObtainDevicesEvent = OnObtainDevicesEvent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -188,7 +269,7 @@ void UAudioCaptureBlueprintLibrary::GetAvailableAudioInputDevices(class UObject*
 // struct FAudioInputDeviceInfo       Info                                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UAudioCaptureBlueprintLibrary::Conv_AudioInputDeviceInfoToString(struct FAudioInputDeviceInfo& InInfo)
+class FString UAudioCaptureBlueprintLibrary::Conv_AudioInputDeviceInfoToString(struct FAudioInputDeviceInfo& Info)
 {
 	static class UFunction* Func = nullptr;
 
@@ -197,22 +278,48 @@ class FString UAudioCaptureBlueprintLibrary::Conv_AudioInputDeviceInfoToString(s
 
 	Params::UAudioCaptureBlueprintLibrary_Conv_AudioInputDeviceInfoToString_Params Parms{};
 
-	Parms.Info = InInfo;
+	Parms.Info = Info;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
 }
 
+
+// Class AudioCapture.AudioCaptureComponent
+// (SceneComponent)
+
+class UClass* UAudioCaptureComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioCaptureComponent");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// AudioCaptureComponent AudioCapture.Default__AudioCaptureComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioCaptureComponent* UAudioCaptureComponent::GetDefaultObj()
+{
+	static class UAudioCaptureComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioCaptureComponent*>(UAudioCaptureComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

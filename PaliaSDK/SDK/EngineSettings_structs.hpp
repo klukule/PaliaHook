@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,33 +11,33 @@ namespace SDK
 
 enum class ETwoPlayerSplitScreenType : uint8
 {
-	ETwoPlayerSplitScreenType__Horizontal = 0,
-	ETwoPlayerSplitScreenType__Vertical = 1,
-	ETwoPlayerSplitScreenType__ETwoPlayerSplitScreenType_MAX = 2,
+	Horizontal                     = 0,
+	Vertical                       = 1,
+	ETwoPlayerSplitScreenType_MAX  = 2,
 };
 
 enum class EThreePlayerSplitScreenType : uint8
 {
-	EThreePlayerSplitScreenType__FavorTop = 0,
-	EThreePlayerSplitScreenType__FavorBottom = 1,
-	EThreePlayerSplitScreenType__Vertical = 2,
-	EThreePlayerSplitScreenType__Horizontal = 3,
-	EThreePlayerSplitScreenType__EThreePlayerSplitScreenType_MAX = 4,
+	FavorTop                       = 0,
+	FavorBottom                    = 1,
+	Vertical                       = 2,
+	Horizontal                     = 3,
+	EThreePlayerSplitScreenType_MAX = 4,
 };
 
 enum class EFourPlayerSplitScreenType : uint8
 {
-	EFourPlayerSplitScreenType__Grid = 0,
-	EFourPlayerSplitScreenType__Vertical = 1,
-	EFourPlayerSplitScreenType__Horizontal = 2,
-	EFourPlayerSplitScreenType__EFourPlayerSplitScreenType_MAX = 3,
+	Grid                           = 0,
+	Vertical                       = 1,
+	Horizontal                     = 2,
+	EFourPlayerSplitScreenType_MAX = 3,
 };
 
 enum class ESubLevelStripMode : uint8
 {
-	ESubLevelStripMode__ExactClass = 0,
-	ESubLevelStripMode__IsChildOf  = 1,
-	ESubLevelStripMode__ESubLevelStripMode_MAX = 2,
+	ExactClass                     = 0,
+	IsChildOf                      = 1,
+	ESubLevelStripMode_MAX         = 2,
 };
 
 
@@ -55,7 +52,7 @@ struct FAutoCompleteCommand
 public:
 	class FString                                Command;                                           // 0x0(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Desc;                                              // 0x10(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1856[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_189E[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -79,6 +76,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

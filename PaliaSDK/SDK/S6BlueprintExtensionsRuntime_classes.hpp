@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,17 +15,12 @@ class US6BPFunctorObjectBase : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6BPFunctorObjectBase");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6BPFunctorObjectBase* GetDefaultObj();
 
 	void SelfDestruct();
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,16 +15,11 @@ class UGE_Fishing_SafeZoneSizeBoostWeak_C : public UGameplayEffect
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GE_Fishing_SafeZoneSizeBoostWeak_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGE_Fishing_SafeZoneSizeBoostWeak_C* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

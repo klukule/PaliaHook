@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,11 +11,11 @@ namespace SDK
 
 enum class EMobileShadowQuality : uint8
 {
-	EMobileShadowQuality__NoFiltering = 0,
-	EMobileShadowQuality__PCF_1x1  = 1,
-	EMobileShadowQuality__PCF_3x3  = 2,
-	EMobileShadowQuality__PCF_5x5  = 3,
-	EMobileShadowQuality__EMobileShadowQuality_MAX = 4,
+	NoFiltering                    = 0,
+	PCF_1x1                        = 1,
+	PCF_3x3                        = 2,
+	PCF_5x5                        = 3,
+	EMobileShadowQuality_MAX       = 4,
 };
 
 
@@ -43,6 +40,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

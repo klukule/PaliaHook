@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,11 +15,8 @@ class UOverlays : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("Overlays");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UOverlays* GetDefaultObj();
 
 };
 
@@ -33,11 +27,8 @@ class UBasicOverlays : public UOverlays
 public:
 	TArray<struct FOverlayItem>                  Overlays;                                          // 0x28(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("BasicOverlays");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UBasicOverlays* GetDefaultObj();
 
 };
 
@@ -49,16 +40,11 @@ public:
 	class UBasicOverlays*                        DefaultOverlays;                                   // 0x28(0x8)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class FString, class UBasicOverlays*>   LocaleToOverlaysMap;                               // 0x30(0x50)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("LocalizedOverlays");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ULocalizedOverlays* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

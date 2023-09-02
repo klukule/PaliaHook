@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,30 +11,30 @@ namespace SDK
 
 enum class EInAppPurchaseState : uint8
 {
-	EInAppPurchaseState__Unknown   = 0,
-	EInAppPurchaseState__Success   = 1,
-	EInAppPurchaseState__Failed    = 2,
-	EInAppPurchaseState__Cancelled = 3,
-	EInAppPurchaseState__Invalid   = 4,
-	EInAppPurchaseState__NotAllowed = 5,
-	EInAppPurchaseState__Restored  = 6,
-	EInAppPurchaseState__AlreadyOwned = 7,
-	EInAppPurchaseState__EInAppPurchaseState_MAX = 8,
+	Unknown                        = 0,
+	Success                        = 1,
+	Failed                         = 2,
+	Cancelled                      = 3,
+	Invalid                        = 4,
+	NotAllowed                     = 5,
+	Restored                       = 6,
+	AlreadyOwned                   = 7,
+	EInAppPurchaseState_MAX        = 8,
 };
 
 enum class EMPMatchOutcome : uint8
 {
-	EMPMatchOutcome__None          = 0,
-	EMPMatchOutcome__Quit          = 1,
-	EMPMatchOutcome__Won           = 2,
-	EMPMatchOutcome__Lost          = 3,
-	EMPMatchOutcome__Tied          = 4,
-	EMPMatchOutcome__TimeExpired   = 5,
-	EMPMatchOutcome__First         = 6,
-	EMPMatchOutcome__Second        = 7,
-	EMPMatchOutcome__Third         = 8,
-	EMPMatchOutcome__Fourth        = 9,
-	EMPMatchOutcome__EMPMatchOutcome_MAX = 10,
+	None                           = 0,
+	Quit                           = 1,
+	Won                            = 2,
+	Lost                           = 3,
+	Tied                           = 4,
+	TimeExpired                    = 5,
+	First                          = 6,
+	Second                         = 7,
+	Third                          = 8,
+	Fourth                         = 9,
+	EMPMatchOutcome_MAX            = 10,
 };
 
 
@@ -65,6 +62,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

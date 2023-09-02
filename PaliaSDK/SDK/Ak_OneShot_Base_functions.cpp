@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,13 +12,41 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// BlueprintGeneratedClass Ak_OneShot_Base.Ak_OneShot_Base_C
+// (None)
+
+class UClass* UAk_OneShot_Base_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("Ak_OneShot_Base_C");
+
+	return Clss;
+}
+
+
+// Ak_OneShot_Base_C Ak_OneShot_Base.Default__Ak_OneShot_Base_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UAk_OneShot_Base_C* UAk_OneShot_Base_C::GetDefaultObj()
+{
+	static class UAk_OneShot_Base_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAk_OneShot_Base_C*>(UAk_OneShot_Base_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function Ak_OneShot_Base.Ak_OneShot_Base_C.GetNotifyName
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 // class FString                      CallFunc_GetDisplayName_ReturnValue                              (ZeroConstructor, HasGetValueTypeHash)
 
-class FString UAk_OneShot_Base_C::GetNotifyName(const class FString& InCallFunc_GetDisplayName_ReturnValue)
+class FString UAk_OneShot_Base_C::GetNotifyName(const class FString& CallFunc_GetDisplayName_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,7 +55,7 @@ class FString UAk_OneShot_Base_C::GetNotifyName(const class FString& InCallFunc_
 
 	Params::UAk_OneShot_Base_C_GetNotifyName_Params Parms{};
 
-	Parms.CallFunc_GetDisplayName_ReturnValue = InCallFunc_GetDisplayName_ReturnValue;
+	Parms.CallFunc_GetDisplayName_ReturnValue = CallFunc_GetDisplayName_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -51,7 +76,7 @@ class FString UAk_OneShot_Base_C::GetNotifyName(const class FString& InCallFunc_
 // class UAkComponent*                CallFunc_AkGetComponent_AkComponent                              (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_AkEventComponent_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAk_OneShot_Base_C::PlayAudio(class USkeletalMeshComponent* InMeshComp, bool* InSuccess, class UAkAudioEvent* InUsedAkEvent, class AActor* InOwner, class UAkComponent* InAk, bool InCallFunc_AkGetComponent_ComponentCreated, class UAkComponent* InCallFunc_AkGetComponent_AkComponent, int32 InCallFunc_AkEventComponent_ReturnValue)
+void UAk_OneShot_Base_C::PlayAudio(class USkeletalMeshComponent* MeshComp, bool* Success, class UAkAudioEvent* UsedAkEvent, class AActor* Owner, class UAkComponent* Ak, bool CallFunc_AkGetComponent_ComponentCreated, class UAkComponent* CallFunc_AkGetComponent_AkComponent, int32 CallFunc_AkEventComponent_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,18 +85,18 @@ void UAk_OneShot_Base_C::PlayAudio(class USkeletalMeshComponent* InMeshComp, boo
 
 	Params::UAk_OneShot_Base_C_PlayAudio_Params Parms{};
 
-	Parms.MeshComp = InMeshComp;
-	Parms.UsedAkEvent = InUsedAkEvent;
-	Parms.Owner = InOwner;
-	Parms.Ak = InAk;
-	Parms.CallFunc_AkGetComponent_ComponentCreated = InCallFunc_AkGetComponent_ComponentCreated;
-	Parms.CallFunc_AkGetComponent_AkComponent = InCallFunc_AkGetComponent_AkComponent;
-	Parms.CallFunc_AkEventComponent_ReturnValue = InCallFunc_AkEventComponent_ReturnValue;
+	Parms.MeshComp = MeshComp;
+	Parms.UsedAkEvent = UsedAkEvent;
+	Parms.Owner = Owner;
+	Parms.Ak = Ak;
+	Parms.CallFunc_AkGetComponent_ComponentCreated = CallFunc_AkGetComponent_ComponentCreated;
+	Parms.CallFunc_AkGetComponent_AkComponent = CallFunc_AkGetComponent_AkComponent;
+	Parms.CallFunc_AkEventComponent_ReturnValue = CallFunc_AkEventComponent_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InSuccess != nullptr)
-		*InSuccess = Parms.Success;
+	if (Success != nullptr)
+		*Success = Parms.Success;
 
 }
 
@@ -91,7 +116,7 @@ void UAk_OneShot_Base_C::PlayAudio(class USkeletalMeshComponent* InMeshComp, boo
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue_1                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAk_OneShot_Base_C::ShouldPlay(class USkeletalMeshComponent* InMeshComp, bool* InShould, bool InCallFunc_IsServer_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, class AActor* InCallFunc_GetOwner_ReturnValue, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class UGameInstance* InCallFunc_GetGameInstance_ReturnValue, bool InCallFunc_IsLocallyControlled_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1)
+void UAk_OneShot_Base_C::ShouldPlay(class USkeletalMeshComponent* MeshComp, bool* Should, bool CallFunc_IsServer_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, class AActor* CallFunc_GetOwner_ReturnValue, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, class UGameInstance* CallFunc_GetGameInstance_ReturnValue, bool CallFunc_IsLocallyControlled_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsValid_ReturnValue_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -100,21 +125,21 @@ void UAk_OneShot_Base_C::ShouldPlay(class USkeletalMeshComponent* InMeshComp, bo
 
 	Params::UAk_OneShot_Base_C_ShouldPlay_Params Parms{};
 
-	Parms.MeshComp = InMeshComp;
-	Parms.CallFunc_IsServer_ReturnValue = InCallFunc_IsServer_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
-	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetGameInstance_ReturnValue = InCallFunc_GetGameInstance_ReturnValue;
-	Parms.CallFunc_IsLocallyControlled_ReturnValue = InCallFunc_IsLocallyControlled_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
+	Parms.MeshComp = MeshComp;
+	Parms.CallFunc_IsServer_ReturnValue = CallFunc_IsServer_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
+	Parms.K2Node_DynamicCast_AsValeria_Character = K2Node_DynamicCast_AsValeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetGameInstance_ReturnValue = CallFunc_GetGameInstance_ReturnValue;
+	Parms.CallFunc_IsLocallyControlled_ReturnValue = CallFunc_IsLocallyControlled_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InShould != nullptr)
-		*InShould = Parms.Should;
+	if (Should != nullptr)
+		*Should = Parms.Should;
 
 }
 
@@ -130,7 +155,7 @@ void UAk_OneShot_Base_C::ShouldPlay(class USkeletalMeshComponent* InMeshComp, bo
 // bool                               CallFunc_PlayAudio_Success                                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_ShouldPlay_Should                                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UAk_OneShot_Base_C::Received_Notify(class USkeletalMeshComponent* InMeshComp, class UAnimSequenceBase* InAnimation, struct FAnimNotifyEventReference& InEventReference, class UAkComponent* InAk, bool InCallFunc_PlayAudio_Success, bool InCallFunc_ShouldPlay_Should)
+bool UAk_OneShot_Base_C::Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, struct FAnimNotifyEventReference& EventReference, class UAkComponent* Ak, bool CallFunc_PlayAudio_Success, bool CallFunc_ShouldPlay_Should)
 {
 	static class UFunction* Func = nullptr;
 
@@ -139,12 +164,12 @@ bool UAk_OneShot_Base_C::Received_Notify(class USkeletalMeshComponent* InMeshCom
 
 	Params::UAk_OneShot_Base_C_Received_Notify_Params Parms{};
 
-	Parms.MeshComp = InMeshComp;
-	Parms.Animation = InAnimation;
-	Parms.EventReference = InEventReference;
-	Parms.Ak = InAk;
-	Parms.CallFunc_PlayAudio_Success = InCallFunc_PlayAudio_Success;
-	Parms.CallFunc_ShouldPlay_Should = InCallFunc_ShouldPlay_Should;
+	Parms.MeshComp = MeshComp;
+	Parms.Animation = Animation;
+	Parms.EventReference = EventReference;
+	Parms.Ak = Ak;
+	Parms.CallFunc_PlayAudio_Success = CallFunc_PlayAudio_Success;
+	Parms.CallFunc_ShouldPlay_Should = CallFunc_ShouldPlay_Should;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -154,6 +179,4 @@ bool UAk_OneShot_Base_C::Received_Notify(class USkeletalMeshComponent* InMeshCom
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

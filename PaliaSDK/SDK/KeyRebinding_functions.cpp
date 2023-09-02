@@ -2,17 +2,70 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class KeyRebinding.AvailableKeysAsset
+// (None)
+
+class UClass* UAvailableKeysAsset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AvailableKeysAsset");
+
+	return Clss;
+}
+
+
+// AvailableKeysAsset KeyRebinding.Default__AvailableKeysAsset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAvailableKeysAsset* UAvailableKeysAsset::GetDefaultObj()
+{
+	static class UAvailableKeysAsset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAvailableKeysAsset*>(UAvailableKeysAsset::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.BindingKeyListenerWidget
+// (None)
+
+class UClass* UBindingKeyListenerWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BindingKeyListenerWidget");
+
+	return Clss;
+}
+
+
+// BindingKeyListenerWidget KeyRebinding.Default__BindingKeyListenerWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UBindingKeyListenerWidget* UBindingKeyListenerWidget::GetDefaultObj()
+{
+	static class UBindingKeyListenerWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBindingKeyListenerWidget*>(UBindingKeyListenerWidget::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function KeyRebinding.BindingKeyListenerWidget.OnDeactivated
@@ -29,13 +82,13 @@ void UBindingKeyListenerWidget::OnDeactivated()
 	Params::UBindingKeyListenerWidget_OnDeactivated_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -54,13 +107,13 @@ void UBindingKeyListenerWidget::OnActivated()
 	Params::UBindingKeyListenerWidget_OnActivated_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -80,16 +133,268 @@ struct FInputKeys UBindingKeyListenerWidget::GetPlayerInputKey()
 	Params::UBindingKeyListenerWidget_GetPlayerInputKey_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class KeyRebinding.CustomKeyRebindingInfo
+// (None)
+
+class UClass* UCustomKeyRebindingInfo::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("CustomKeyRebindingInfo");
+
+	return Clss;
+}
+
+
+// CustomKeyRebindingInfo KeyRebinding.Default__CustomKeyRebindingInfo
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UCustomKeyRebindingInfo* UCustomKeyRebindingInfo::GetDefaultObj()
+{
+	static class UCustomKeyRebindingInfo* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UCustomKeyRebindingInfo*>(UCustomKeyRebindingInfo::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.EnhancedPlayerInputWithKeyRebind
+// (None)
+
+class UClass* UEnhancedPlayerInputWithKeyRebind::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EnhancedPlayerInputWithKeyRebind");
+
+	return Clss;
+}
+
+
+// EnhancedPlayerInputWithKeyRebind KeyRebinding.Default__EnhancedPlayerInputWithKeyRebind
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UEnhancedPlayerInputWithKeyRebind* UEnhancedPlayerInputWithKeyRebind::GetDefaultObj()
+{
+	static class UEnhancedPlayerInputWithKeyRebind* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEnhancedPlayerInputWithKeyRebind*>(UEnhancedPlayerInputWithKeyRebind::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.IARichTextBlockImageDecorator
+// (None)
+
+class UClass* UIARichTextBlockImageDecorator::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("IARichTextBlockImageDecorator");
+
+	return Clss;
+}
+
+
+// IARichTextBlockImageDecorator KeyRebinding.Default__IARichTextBlockImageDecorator
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UIARichTextBlockImageDecorator* UIARichTextBlockImageDecorator::GetDefaultObj()
+{
+	static class UIARichTextBlockImageDecorator* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UIARichTextBlockImageDecorator*>(UIARichTextBlockImageDecorator::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.InputActionDescriptionWidget
+// (None)
+
+class UClass* UInputActionDescriptionWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("InputActionDescriptionWidget");
+
+	return Clss;
+}
+
+
+// InputActionDescriptionWidget KeyRebinding.Default__InputActionDescriptionWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UInputActionDescriptionWidget* UInputActionDescriptionWidget::GetDefaultObj()
+{
+	static class UInputActionDescriptionWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UInputActionDescriptionWidget*>(UInputActionDescriptionWidget::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.InputActionGroupLocalization
+// (None)
+
+class UClass* UInputActionGroupLocalization::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("InputActionGroupLocalization");
+
+	return Clss;
+}
+
+
+// InputActionGroupLocalization KeyRebinding.Default__InputActionGroupLocalization
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UInputActionGroupLocalization* UInputActionGroupLocalization::GetDefaultObj()
+{
+	static class UInputActionGroupLocalization* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UInputActionGroupLocalization*>(UInputActionGroupLocalization::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.InputActionLocalization
+// (None)
+
+class UClass* UInputActionLocalization::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("InputActionLocalization");
+
+	return Clss;
+}
+
+
+// InputActionLocalization KeyRebinding.Default__InputActionLocalization
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UInputActionLocalization* UInputActionLocalization::GetDefaultObj()
+{
+	static class UInputActionLocalization* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UInputActionLocalization*>(UInputActionLocalization::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.KeyRebindingDatasetSettings
+// (None)
+
+class UClass* UKeyRebindingDatasetSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("KeyRebindingDatasetSettings");
+
+	return Clss;
+}
+
+
+// KeyRebindingDatasetSettings KeyRebinding.Default__KeyRebindingDatasetSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UKeyRebindingDatasetSettings* UKeyRebindingDatasetSettings::GetDefaultObj()
+{
+	static class UKeyRebindingDatasetSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UKeyRebindingDatasetSettings*>(UKeyRebindingDatasetSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.KeyRebindingMappingItemsAsset
+// (None)
+
+class UClass* UKeyRebindingMappingItemsAsset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("KeyRebindingMappingItemsAsset");
+
+	return Clss;
+}
+
+
+// KeyRebindingMappingItemsAsset KeyRebinding.Default__KeyRebindingMappingItemsAsset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UKeyRebindingMappingItemsAsset* UKeyRebindingMappingItemsAsset::GetDefaultObj()
+{
+	static class UKeyRebindingMappingItemsAsset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UKeyRebindingMappingItemsAsset*>(UKeyRebindingMappingItemsAsset::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.KeyRebindingToolsLibrary
+// (None)
+
+class UClass* UKeyRebindingToolsLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("KeyRebindingToolsLibrary");
+
+	return Clss;
+}
+
+
+// KeyRebindingToolsLibrary KeyRebinding.Default__KeyRebindingToolsLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UKeyRebindingToolsLibrary* UKeyRebindingToolsLibrary::GetDefaultObj()
+{
+	static class UKeyRebindingToolsLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UKeyRebindingToolsLibrary*>(UKeyRebindingToolsLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -108,13 +413,13 @@ float UKeyRebindingToolsLibrary::GetPromptDelayTime()
 	Params::UKeyRebindingToolsLibrary_GetPromptDelayTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -127,7 +432,7 @@ float UKeyRebindingToolsLibrary::GetPromptDelayTime()
 // struct FKey                        InKey                                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UKeyRebindingToolsLibrary::GetKeyFName(struct FKey& InInKey)
+class FString UKeyRebindingToolsLibrary::GetKeyFName(struct FKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -136,15 +441,15 @@ class FString UKeyRebindingToolsLibrary::GetKeyFName(struct FKey& InInKey)
 
 	Params::UKeyRebindingToolsLibrary_GetKeyFName_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -158,7 +463,7 @@ class FString UKeyRebindingToolsLibrary::GetKeyFName(struct FKey& InInKey)
 // class UInputActionDescriptionWidget*ActionDescWidget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UTexture2D*>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UTexture2D*> UKeyRebindingToolsLibrary::GetImagesWithInputKeys(const struct FInputKeys& InInputKeys, class UInputActionDescriptionWidget* InActionDescWidget)
+TArray<class UTexture2D*> UKeyRebindingToolsLibrary::GetImagesWithInputKeys(const struct FInputKeys& InputKeys, class UInputActionDescriptionWidget* ActionDescWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -167,16 +472,16 @@ TArray<class UTexture2D*> UKeyRebindingToolsLibrary::GetImagesWithInputKeys(cons
 
 	Params::UKeyRebindingToolsLibrary_GetImagesWithInputKeys_Params Parms{};
 
-	Parms.InputKeys = InInputKeys;
-	Parms.ActionDescWidget = InActionDescWidget;
+	Parms.InputKeys = InputKeys;
+	Parms.ActionDescWidget = ActionDescWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -193,7 +498,7 @@ TArray<class UTexture2D*> UKeyRebindingToolsLibrary::GetImagesWithInputKeys(cons
 // bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKeyRebindingIcons          ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FKeyRebindingIcons UKeyRebindingToolsLibrary::GetImagesArrayWithActionName(class FName& InActionName, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget, bool InbIsLockedCurrentInput)
+struct FKeyRebindingIcons UKeyRebindingToolsLibrary::GetImagesArrayWithActionName(class FName& ActionName, bool bIsGamepadKey, class UKeyRebindingSubsystem* KeyRebindingSubsystem, class UInputActionDescriptionWidget* ActionDescWidget, bool bIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -202,19 +507,19 @@ struct FKeyRebindingIcons UKeyRebindingToolsLibrary::GetImagesArrayWithActionNam
 
 	Params::UKeyRebindingToolsLibrary_GetImagesArrayWithActionName_Params Parms{};
 
-	Parms.ActionName = InActionName;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-	Parms.KeyRebindingSubsystem = InKeyRebindingSubsystem;
-	Parms.ActionDescWidget = InActionDescWidget;
-	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
+	Parms.ActionName = ActionName;
+	Parms.bIsGamepadKey = bIsGamepadKey;
+	Parms.KeyRebindingSubsystem = KeyRebindingSubsystem;
+	Parms.ActionDescWidget = ActionDescWidget;
+	Parms.bIsLockedCurrentInput = bIsLockedCurrentInput;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -230,7 +535,7 @@ struct FKeyRebindingIcons UKeyRebindingToolsLibrary::GetImagesArrayWithActionNam
 // class UInputActionDescriptionWidget*ActionDescWidget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKeyRebindingToolsLibrary::GetAllInputActionMappingInfo(TArray<struct FKeyRebindingSettingsInfo>* InOutKeyRebindingSettingsInfo, bool InbIsGamepadKey, class UKeyRebindingSubsystem* InKeyRebindingSubsystem, class UInputActionDescriptionWidget* InActionDescWidget, bool InbIsLockedCurrentInput)
+void UKeyRebindingToolsLibrary::GetAllInputActionMappingInfo(TArray<struct FKeyRebindingSettingsInfo>* OutKeyRebindingSettingsInfo, bool bIsGamepadKey, class UKeyRebindingSubsystem* KeyRebindingSubsystem, class UInputActionDescriptionWidget* ActionDescWidget, bool bIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -239,21 +544,21 @@ void UKeyRebindingToolsLibrary::GetAllInputActionMappingInfo(TArray<struct FKeyR
 
 	Params::UKeyRebindingToolsLibrary_GetAllInputActionMappingInfo_Params Parms{};
 
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-	Parms.KeyRebindingSubsystem = InKeyRebindingSubsystem;
-	Parms.ActionDescWidget = InActionDescWidget;
-	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
+	Parms.bIsGamepadKey = bIsGamepadKey;
+	Parms.KeyRebindingSubsystem = KeyRebindingSubsystem;
+	Parms.ActionDescWidget = ActionDescWidget;
+	Parms.bIsLockedCurrentInput = bIsLockedCurrentInput;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutKeyRebindingSettingsInfo != nullptr)
-		*InOutKeyRebindingSettingsInfo = Parms.OutKeyRebindingSettingsInfo;
+	if (OutKeyRebindingSettingsInfo != nullptr)
+		*OutKeyRebindingSettingsInfo = std::move(Parms.OutKeyRebindingSettingsInfo);
 
 }
 
@@ -268,7 +573,7 @@ void UKeyRebindingToolsLibrary::GetAllInputActionMappingInfo(TArray<struct FKeyR
 // bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FInputKeysImages>    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FInputKeysImages> UKeyRebindingToolsLibrary::GetAllImagesWithAction(class UInputAction* InInputAction, class UEnhancedInputSubsystemWithKeyRebinding* InEnhancedInputSubsystem, class UInputActionDescriptionWidget* InActionDescWidget, bool InbIsGamepadKey, bool InbIsLockedCurrentInput)
+TArray<struct FInputKeysImages> UKeyRebindingToolsLibrary::GetAllImagesWithAction(class UInputAction* InputAction, class UEnhancedInputSubsystemWithKeyRebinding* EnhancedInputSubsystem, class UInputActionDescriptionWidget* ActionDescWidget, bool bIsGamepadKey, bool bIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -277,22 +582,78 @@ TArray<struct FInputKeysImages> UKeyRebindingToolsLibrary::GetAllImagesWithActio
 
 	Params::UKeyRebindingToolsLibrary_GetAllImagesWithAction_Params Parms{};
 
-	Parms.InputAction = InInputAction;
-	Parms.EnhancedInputSubsystem = InEnhancedInputSubsystem;
-	Parms.ActionDescWidget = InActionDescWidget;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
+	Parms.InputAction = InputAction;
+	Parms.EnhancedInputSubsystem = EnhancedInputSubsystem;
+	Parms.ActionDescWidget = ActionDescWidget;
+	Parms.bIsGamepadKey = bIsGamepadKey;
+	Parms.bIsLockedCurrentInput = bIsLockedCurrentInput;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class KeyRebinding.UnAvailableKeysAsset
+// (None)
+
+class UClass* UUnAvailableKeysAsset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("UnAvailableKeysAsset");
+
+	return Clss;
+}
+
+
+// UnAvailableKeysAsset KeyRebinding.Default__UnAvailableKeysAsset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UUnAvailableKeysAsset* UUnAvailableKeysAsset::GetDefaultObj()
+{
+	static class UUnAvailableKeysAsset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UUnAvailableKeysAsset*>(UUnAvailableKeysAsset::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.EnhancedInputSubsystemWithKeyRebinding
+// (None)
+
+class UClass* UEnhancedInputSubsystemWithKeyRebinding::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EnhancedInputSubsystemWithKeyRebinding");
+
+	return Clss;
+}
+
+
+// EnhancedInputSubsystemWithKeyRebinding KeyRebinding.Default__EnhancedInputSubsystemWithKeyRebinding
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEnhancedInputSubsystemWithKeyRebinding* UEnhancedInputSubsystemWithKeyRebinding::GetDefaultObj()
+{
+	static class UEnhancedInputSubsystemWithKeyRebinding* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEnhancedInputSubsystemWithKeyRebinding*>(UEnhancedInputSubsystemWithKeyRebinding::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -302,7 +663,7 @@ TArray<struct FInputKeysImages> UKeyRebindingToolsLibrary::GetAllImagesWithActio
 // class UInputAction*                InputAction                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 RefreshKeysDelegate                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UEnhancedInputSubsystemWithKeyRebinding::UnRegisterDelegateToRefreshKeys(class UInputAction* InInputAction, FDelegateProperty_& InRefreshKeysDelegate)
+void UEnhancedInputSubsystemWithKeyRebinding::UnRegisterDelegateToRefreshKeys(class UInputAction* InputAction, FDelegateProperty_& RefreshKeysDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -311,16 +672,16 @@ void UEnhancedInputSubsystemWithKeyRebinding::UnRegisterDelegateToRefreshKeys(cl
 
 	Params::UEnhancedInputSubsystemWithKeyRebinding_UnRegisterDelegateToRefreshKeys_Params Parms{};
 
-	Parms.InputAction = InInputAction;
-	Parms.RefreshKeysDelegate = InRefreshKeysDelegate;
+	Parms.InputAction = InputAction;
+	Parms.RefreshKeysDelegate = RefreshKeysDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -331,7 +692,7 @@ void UEnhancedInputSubsystemWithKeyRebinding::UnRegisterDelegateToRefreshKeys(cl
 // struct FModifyContextOptions       Options                                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // enum class EInputMappingRebuildTypeRebuildType                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UEnhancedInputSubsystemWithKeyRebinding::RequestRebuildControlMappings(struct FModifyContextOptions& InOptions, enum class EInputMappingRebuildType InRebuildType)
+void UEnhancedInputSubsystemWithKeyRebinding::RequestRebuildControlMappings(struct FModifyContextOptions& Options, enum class EInputMappingRebuildType RebuildType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -340,16 +701,16 @@ void UEnhancedInputSubsystemWithKeyRebinding::RequestRebuildControlMappings(stru
 
 	Params::UEnhancedInputSubsystemWithKeyRebinding_RequestRebuildControlMappings_Params Parms{};
 
-	Parms.Options = InOptions;
-	Parms.RebuildType = InRebuildType;
+	Parms.Options = Options;
+	Parms.RebuildType = RebuildType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -360,7 +721,7 @@ void UEnhancedInputSubsystemWithKeyRebinding::RequestRebuildControlMappings(stru
 // class UInputMappingContext*        MappingContext                                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FModifyContextOptions       Options                                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UEnhancedInputSubsystemWithKeyRebinding::RemoveMappingContext(class UInputMappingContext* InMappingContext, struct FModifyContextOptions& InOptions)
+void UEnhancedInputSubsystemWithKeyRebinding::RemoveMappingContext(class UInputMappingContext* MappingContext, struct FModifyContextOptions& Options)
 {
 	static class UFunction* Func = nullptr;
 
@@ -369,16 +730,16 @@ void UEnhancedInputSubsystemWithKeyRebinding::RemoveMappingContext(class UInputM
 
 	Params::UEnhancedInputSubsystemWithKeyRebinding_RemoveMappingContext_Params Parms{};
 
-	Parms.MappingContext = InMappingContext;
-	Parms.Options = InOptions;
+	Parms.MappingContext = MappingContext;
+	Parms.Options = Options;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -389,7 +750,7 @@ void UEnhancedInputSubsystemWithKeyRebinding::RemoveMappingContext(class UInputM
 // class UInputAction*                InputAction                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 RefreshKeysDelegate                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UEnhancedInputSubsystemWithKeyRebinding::RegisterDelegateToRefreshKeys(class UInputAction* InInputAction, FDelegateProperty_& InRefreshKeysDelegate)
+void UEnhancedInputSubsystemWithKeyRebinding::RegisterDelegateToRefreshKeys(class UInputAction* InputAction, FDelegateProperty_& RefreshKeysDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -398,16 +759,16 @@ void UEnhancedInputSubsystemWithKeyRebinding::RegisterDelegateToRefreshKeys(clas
 
 	Params::UEnhancedInputSubsystemWithKeyRebinding_RegisterDelegateToRefreshKeys_Params Parms{};
 
-	Parms.InputAction = InInputAction;
-	Parms.RefreshKeysDelegate = InRefreshKeysDelegate;
+	Parms.InputAction = InputAction;
+	Parms.RefreshKeysDelegate = RefreshKeysDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -420,7 +781,7 @@ void UEnhancedInputSubsystemWithKeyRebinding::RegisterDelegateToRefreshKeys(clas
 // bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FInputKeys>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FInputKeys> UEnhancedInputSubsystemWithKeyRebinding::GetKeysForInputAction(class UInputAction* InInputAction, bool InbIsGamepadKey, bool InbIsLockedCurrentInput)
+TArray<struct FInputKeys> UEnhancedInputSubsystemWithKeyRebinding::GetKeysForInputAction(class UInputAction* InputAction, bool bIsGamepadKey, bool bIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -429,17 +790,17 @@ TArray<struct FInputKeys> UEnhancedInputSubsystemWithKeyRebinding::GetKeysForInp
 
 	Params::UEnhancedInputSubsystemWithKeyRebinding_GetKeysForInputAction_Params Parms{};
 
-	Parms.InputAction = InInputAction;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
+	Parms.InputAction = InputAction;
+	Parms.bIsGamepadKey = bIsGamepadKey;
+	Parms.bIsLockedCurrentInput = bIsLockedCurrentInput;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -453,7 +814,7 @@ TArray<struct FInputKeys> UEnhancedInputSubsystemWithKeyRebinding::GetKeysForInp
 // int32                              Priority                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FModifyContextOptions       Options                                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UEnhancedInputSubsystemWithKeyRebinding::AddMappingContext(class UInputMappingContext* InMappingContext, int32 InPriority, struct FModifyContextOptions& InOptions)
+void UEnhancedInputSubsystemWithKeyRebinding::AddMappingContext(class UInputMappingContext* MappingContext, int32 Priority, struct FModifyContextOptions& Options)
 {
 	static class UFunction* Func = nullptr;
 
@@ -462,18 +823,74 @@ void UEnhancedInputSubsystemWithKeyRebinding::AddMappingContext(class UInputMapp
 
 	Params::UEnhancedInputSubsystemWithKeyRebinding_AddMappingContext_Params Parms{};
 
-	Parms.MappingContext = InMappingContext;
-	Parms.Priority = InPriority;
-	Parms.Options = InOptions;
+	Parms.MappingContext = MappingContext;
+	Parms.Priority = Priority;
+	Parms.Options = Options;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class KeyRebinding.KeyRebindingMappingDataset
+// (None)
+
+class UClass* UKeyRebindingMappingDataset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("KeyRebindingMappingDataset");
+
+	return Clss;
+}
+
+
+// KeyRebindingMappingDataset KeyRebinding.Default__KeyRebindingMappingDataset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UKeyRebindingMappingDataset* UKeyRebindingMappingDataset::GetDefaultObj()
+{
+	static class UKeyRebindingMappingDataset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UKeyRebindingMappingDataset*>(UKeyRebindingMappingDataset::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class KeyRebinding.KeyRebindingSubsystem
+// (None)
+
+class UClass* UKeyRebindingSubsystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("KeyRebindingSubsystem");
+
+	return Clss;
+}
+
+
+// KeyRebindingSubsystem KeyRebinding.Default__KeyRebindingSubsystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UKeyRebindingSubsystem* UKeyRebindingSubsystem::GetDefaultObj()
+{
+	static class UKeyRebindingSubsystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UKeyRebindingSubsystem*>(UKeyRebindingSubsystem::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -483,7 +900,7 @@ void UEnhancedInputSubsystemWithKeyRebinding::AddMappingContext(class UInputMapp
 // class FName                        ActionName                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 KeyRebindingCallBackDelegate                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKeyRebindingSubsystem::UnRegisterCompleteKeyRebindingEvent(class FName InActionName, FDelegateProperty_& InKeyRebindingCallBackDelegate)
+void UKeyRebindingSubsystem::UnRegisterCompleteKeyRebindingEvent(class FName ActionName, FDelegateProperty_& KeyRebindingCallBackDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -492,16 +909,16 @@ void UKeyRebindingSubsystem::UnRegisterCompleteKeyRebindingEvent(class FName InA
 
 	Params::UKeyRebindingSubsystem_UnRegisterCompleteKeyRebindingEvent_Params Parms{};
 
-	Parms.ActionName = InActionName;
-	Parms.KeyRebindingCallBackDelegate = InKeyRebindingCallBackDelegate;
+	Parms.ActionName = ActionName;
+	Parms.KeyRebindingCallBackDelegate = KeyRebindingCallBackDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -516,7 +933,7 @@ void UKeyRebindingSubsystem::UnRegisterCompleteKeyRebindingEvent(class FName InA
 // bool                               bIsGamepadKey                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKeyRebindingSubsystem::SetCustomKeyBindingOfAction(class FName InActionName, enum class EKeyRebindingSlot InSlotNum, bool InbIsUnbindingOperation, struct FInputKeys& InInputKeys, bool InbIsGamepadKey)
+bool UKeyRebindingSubsystem::SetCustomKeyBindingOfAction(class FName ActionName, enum class EKeyRebindingSlot SlotNum, bool bIsUnbindingOperation, struct FInputKeys& InputKeys, bool bIsGamepadKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -525,19 +942,19 @@ bool UKeyRebindingSubsystem::SetCustomKeyBindingOfAction(class FName InActionNam
 
 	Params::UKeyRebindingSubsystem_SetCustomKeyBindingOfAction_Params Parms{};
 
-	Parms.ActionName = InActionName;
-	Parms.SlotNum = InSlotNum;
-	Parms.bIsUnbindingOperation = InbIsUnbindingOperation;
-	Parms.InputKeys = InInputKeys;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
+	Parms.ActionName = ActionName;
+	Parms.SlotNum = SlotNum;
+	Parms.bIsUnbindingOperation = bIsUnbindingOperation;
+	Parms.InputKeys = InputKeys;
+	Parms.bIsGamepadKey = bIsGamepadKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -558,13 +975,13 @@ void UKeyRebindingSubsystem::SaveCustomRemappingDataset()
 	Params::UKeyRebindingSubsystem_SaveCustomRemappingDataset_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -583,13 +1000,13 @@ void UKeyRebindingSubsystem::ResetToDefaultKeyMapping()
 	Params::UKeyRebindingSubsystem_ResetToDefaultKeyMapping_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -600,7 +1017,7 @@ void UKeyRebindingSubsystem::ResetToDefaultKeyMapping()
 // class FName                        ActionName                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 KeyRebindingCallBackDelegate                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKeyRebindingSubsystem::RegisterCompleteKeyRebindingEvent(class FName InActionName, FDelegateProperty_& InKeyRebindingCallBackDelegate)
+void UKeyRebindingSubsystem::RegisterCompleteKeyRebindingEvent(class FName ActionName, FDelegateProperty_& KeyRebindingCallBackDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -609,16 +1026,16 @@ void UKeyRebindingSubsystem::RegisterCompleteKeyRebindingEvent(class FName InAct
 
 	Params::UKeyRebindingSubsystem_RegisterCompleteKeyRebindingEvent_Params Parms{};
 
-	Parms.ActionName = InActionName;
-	Parms.KeyRebindingCallBackDelegate = InKeyRebindingCallBackDelegate;
+	Parms.ActionName = ActionName;
+	Parms.KeyRebindingCallBackDelegate = KeyRebindingCallBackDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -632,7 +1049,7 @@ void UKeyRebindingSubsystem::RegisterCompleteKeyRebindingEvent(class FName InAct
 // bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FInputKeys                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FInputKeys UKeyRebindingSubsystem::QueryKeysOfActionAndSlot(class FName& InActionName, enum class EKeyRebindingSlot InSlotNum, bool InbIsGamepadKey, bool InbIsLockedCurrentInput)
+struct FInputKeys UKeyRebindingSubsystem::QueryKeysOfActionAndSlot(class FName& ActionName, enum class EKeyRebindingSlot SlotNum, bool bIsGamepadKey, bool bIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -641,18 +1058,18 @@ struct FInputKeys UKeyRebindingSubsystem::QueryKeysOfActionAndSlot(class FName& 
 
 	Params::UKeyRebindingSubsystem_QueryKeysOfActionAndSlot_Params Parms{};
 
-	Parms.ActionName = InActionName;
-	Parms.SlotNum = InSlotNum;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
+	Parms.ActionName = ActionName;
+	Parms.SlotNum = SlotNum;
+	Parms.bIsGamepadKey = bIsGamepadKey;
+	Parms.bIsLockedCurrentInput = bIsLockedCurrentInput;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -667,7 +1084,7 @@ struct FInputKeys UKeyRebindingSubsystem::QueryKeysOfActionAndSlot(class FName& 
 // bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FInputKeys>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FInputKeys> UKeyRebindingSubsystem::QueryCustomRemappingKeys(class FName& InActionName, bool InbIsGamepadKey, bool InbIsLockedCurrentInput)
+TArray<struct FInputKeys> UKeyRebindingSubsystem::QueryCustomRemappingKeys(class FName& ActionName, bool bIsGamepadKey, bool bIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -676,17 +1093,17 @@ TArray<struct FInputKeys> UKeyRebindingSubsystem::QueryCustomRemappingKeys(class
 
 	Params::UKeyRebindingSubsystem_QueryCustomRemappingKeys_Params Parms{};
 
-	Parms.ActionName = InActionName;
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
+	Parms.ActionName = ActionName;
+	Parms.bIsGamepadKey = bIsGamepadKey;
+	Parms.bIsLockedCurrentInput = bIsLockedCurrentInput;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -700,7 +1117,7 @@ TArray<struct FInputKeys> UKeyRebindingSubsystem::QueryCustomRemappingKeys(class
 // bool                               bIsLockedCurrentInput                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FKey>                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FKey> UKeyRebindingSubsystem::GetAllKeysWithActionBound(bool InbIsGamepadKey, bool InbIsLockedCurrentInput)
+TArray<struct FKey> UKeyRebindingSubsystem::GetAllKeysWithActionBound(bool bIsGamepadKey, bool bIsLockedCurrentInput)
 {
 	static class UFunction* Func = nullptr;
 
@@ -709,16 +1126,16 @@ TArray<struct FKey> UKeyRebindingSubsystem::GetAllKeysWithActionBound(bool InbIs
 
 	Params::UKeyRebindingSubsystem_GetAllKeysWithActionBound_Params Parms{};
 
-	Parms.bIsGamepadKey = InbIsGamepadKey;
-	Parms.bIsLockedCurrentInput = InbIsLockedCurrentInput;
+	Parms.bIsGamepadKey = bIsGamepadKey;
+	Parms.bIsLockedCurrentInput = bIsLockedCurrentInput;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -731,7 +1148,7 @@ TArray<struct FKey> UKeyRebindingSubsystem::GetAllKeysWithActionBound(bool InbIs
 // class UInputAction*                InputAction                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName UKeyRebindingSubsystem::GetActionNameWithAction(class UInputAction* InInputAction)
+class FName UKeyRebindingSubsystem::GetActionNameWithAction(class UInputAction* InputAction)
 {
 	static class UFunction* Func = nullptr;
 
@@ -740,15 +1157,15 @@ class FName UKeyRebindingSubsystem::GetActionNameWithAction(class UInputAction* 
 
 	Params::UKeyRebindingSubsystem_GetActionNameWithAction_Params Parms{};
 
-	Parms.InputAction = InInputAction;
+	Parms.InputAction = InputAction;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -769,13 +1186,13 @@ void UKeyRebindingSubsystem::ApplyLoadKeyRebindingSettings()
 	Params::UKeyRebindingSubsystem_ApplyLoadKeyRebindingSettings_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -794,18 +1211,16 @@ void UKeyRebindingSubsystem::ApplyCustomKeyMapping()
 	Params::UKeyRebindingSubsystem_ApplyCustomKeyMapping_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

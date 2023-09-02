@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,17 +11,17 @@ namespace SDK
 
 enum class ETypedElementChildInclusionMethod : uint8
 {
-	ETypedElementChildInclusionMethod__None = 0,
-	ETypedElementChildInclusionMethod__Immediate = 1,
-	ETypedElementChildInclusionMethod__Recursive = 2,
-	ETypedElementChildInclusionMethod__ETypedElementChildInclusionMethod_MAX = 3,
+	None                           = 0,
+	Immediate                      = 1,
+	Recursive                      = 2,
+	ETypedElementChildInclusionMethod_MAX = 3,
 };
 
 enum class ETypedElementSelectionMethod : uint8
 {
-	ETypedElementSelectionMethod__Primary = 0,
-	ETypedElementSelectionMethod__Secondary = 1,
-	ETypedElementSelectionMethod__ETypedElementSelectionMethod_MAX = 2,
+	Primary                        = 0,
+	Secondary                      = 1,
+	ETypedElementSelectionMethod_MAX = 2,
 };
 
 
@@ -50,7 +47,7 @@ struct FTypedElementSelectionSetState
 {
 public:
 	TWeakObjectPtr<class UTypedElementSelectionSet> CreatedFromSelectionSet;                           // 0x0(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_2477[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2460[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -72,6 +69,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

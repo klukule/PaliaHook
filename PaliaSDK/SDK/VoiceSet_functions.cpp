@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass VoiceSet.VoiceSet_C
+// (None)
+
+class UClass* UVoiceSet_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VoiceSet_C");
+
+	return Clss;
+}
+
+
+// VoiceSet_C VoiceSet.Default__VoiceSet_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UVoiceSet_C* UVoiceSet_C::GetDefaultObj()
+{
+	static class UVoiceSet_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVoiceSet_C*>(UVoiceSet_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function VoiceSet.VoiceSet_C.GetRandomVoiceEvent
@@ -32,7 +57,7 @@ namespace SDK
 // int32                              CallFunc_Array_Add_ReturnValue                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UVoiceSet_C::GetRandomVoiceEvent(class UAkAudioEvent** InValue, const TArray<class UAkAudioEvent*>& InNonNullAudioEvents, int32 InTemp_int_Array_Index_Variable, class UAkAudioEvent* InCallFunc_Array_Random_OutItem, int32 InCallFunc_Array_Random_OutIndex, int32 InTemp_int_Loop_Counter_Variable, int32 InCallFunc_Add_IntInt_ReturnValue, TArray<class UAkAudioEvent*>& InCallFunc_Map_Values_Values, int32 InCallFunc_Array_Length_ReturnValue, class UAkAudioEvent* InCallFunc_Array_Get_Item, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_Array_Add_ReturnValue, bool InCallFunc_IsValid_ReturnValue)
+void UVoiceSet_C::GetRandomVoiceEvent(class UAkAudioEvent** Value, const TArray<class UAkAudioEvent*>& NonNullAudioEvents, int32 Temp_int_Array_Index_Variable, class UAkAudioEvent* CallFunc_Array_Random_OutItem, int32 CallFunc_Array_Random_OutIndex, int32 Temp_int_Loop_Counter_Variable, int32 CallFunc_Add_IntInt_ReturnValue, TArray<class UAkAudioEvent*>& CallFunc_Map_Values_Values, int32 CallFunc_Array_Length_ReturnValue, class UAkAudioEvent* CallFunc_Array_Get_Item, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_Array_Add_ReturnValue, bool CallFunc_IsValid_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -41,23 +66,23 @@ void UVoiceSet_C::GetRandomVoiceEvent(class UAkAudioEvent** InValue, const TArra
 
 	Params::UVoiceSet_C_GetRandomVoiceEvent_Params Parms{};
 
-	Parms.NonNullAudioEvents = InNonNullAudioEvents;
-	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
-	Parms.CallFunc_Array_Random_OutItem = InCallFunc_Array_Random_OutItem;
-	Parms.CallFunc_Array_Random_OutIndex = InCallFunc_Array_Random_OutIndex;
-	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Map_Values_Values = InCallFunc_Map_Values_Values;
-	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
-	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_Array_Add_ReturnValue = InCallFunc_Array_Add_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.NonNullAudioEvents = NonNullAudioEvents;
+	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
+	Parms.CallFunc_Array_Random_OutItem = CallFunc_Array_Random_OutItem;
+	Parms.CallFunc_Array_Random_OutIndex = CallFunc_Array_Random_OutIndex;
+	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Map_Values_Values = CallFunc_Map_Values_Values;
+	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
+	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_Array_Add_ReturnValue = CallFunc_Array_Add_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InValue != nullptr)
-		*InValue = Parms.Value;
+	if (Value != nullptr)
+		*Value = Parms.Value;
 
 }
 
@@ -70,7 +95,7 @@ void UVoiceSet_C::GetRandomVoiceEvent(class UAkAudioEvent** InValue, const TArra
 // class UAkAudioEvent*               CallFunc_Map_Find_Value                                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Map_Find_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UVoiceSet_C::GetVoiceEvent(enum class E_VoiceEffortEvent InEffort, class UAkAudioEvent** InValue, class UAkAudioEvent* InCallFunc_Map_Find_Value, bool InCallFunc_Map_Find_ReturnValue)
+void UVoiceSet_C::GetVoiceEvent(enum class E_VoiceEffortEvent Effort, class UAkAudioEvent** Value, class UAkAudioEvent* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -79,19 +104,17 @@ void UVoiceSet_C::GetVoiceEvent(enum class E_VoiceEffortEvent InEffort, class UA
 
 	Params::UVoiceSet_C_GetVoiceEvent_Params Parms{};
 
-	Parms.Effort = InEffort;
-	Parms.CallFunc_Map_Find_Value = InCallFunc_Map_Find_Value;
-	Parms.CallFunc_Map_Find_ReturnValue = InCallFunc_Map_Find_ReturnValue;
+	Parms.Effort = Effort;
+	Parms.CallFunc_Map_Find_Value = CallFunc_Map_Find_Value;
+	Parms.CallFunc_Map_Find_ReturnValue = CallFunc_Map_Find_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InValue != nullptr)
-		*InValue = Parms.Value;
+	if (Value != nullptr)
+		*Value = Parms.Value;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

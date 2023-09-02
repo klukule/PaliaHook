@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -100,9 +97,9 @@ enum class EPhysicsType : uint8
 
 enum class EBodyCollisionResponse : uint8
 {
-	EBodyCollisionResponse__BodyCollision_Enabled = 0,
-	EBodyCollisionResponse__BodyCollision_Disabled = 1,
-	EBodyCollisionResponse__BodyCollision_MAX = 2,
+	BodyCollision_Enabled          = 0,
+	BodyCollision_Disabled         = 1,
+	BodyCollision_MAX              = 2,
 };
 
 enum class ERadialImpulseFalloff : uint8
@@ -114,10 +111,10 @@ enum class ERadialImpulseFalloff : uint8
 
 enum class ESleepFamily : uint8
 {
-	ESleepFamily__Normal           = 0,
-	ESleepFamily__Sensitive        = 1,
-	ESleepFamily__Custom           = 2,
-	ESleepFamily__ESleepFamily_MAX = 3,
+	Normal                         = 0,
+	Sensitive                      = 1,
+	Custom                         = 2,
+	ESleepFamily_MAX               = 3,
 };
 
 enum class EAngularConstraintMotion : uint8
@@ -130,9 +127,9 @@ enum class EAngularConstraintMotion : uint8
 
 enum class EConstraintFrame : uint8
 {
-	EConstraintFrame__Frame1       = 0,
-	EConstraintFrame__Frame2       = 1,
-	EConstraintFrame__EConstraintFrame_MAX = 2,
+	Frame1                         = 0,
+	Frame2                         = 1,
+	EConstraintFrame_MAX           = 2,
 };
 
 enum class EConstraintPlasticityType : uint8
@@ -153,10 +150,10 @@ enum class ELinearConstraintMotion : uint8
 
 enum class EFrictionCombineMode : uint8
 {
-	EFrictionCombineMode__Average  = 0,
-	EFrictionCombineMode__Min      = 1,
-	EFrictionCombineMode__Multiply = 2,
-	EFrictionCombineMode__Max      = 3,
+	Average                        = 0,
+	Min                            = 1,
+	Multiply                       = 2,
+	Max                            = 3,
 };
 
 
@@ -169,7 +166,7 @@ enum class EFrictionCombineMode : uint8
 struct FBodyInstanceCore
 {
 public:
-	uint8                                        Pad_210E[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_208A[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bSimulatePhysics : 1;                              // Mask: 0x1, PropSize: 0x10x10(0x1)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverrideMass : 1;                                 // Mask: 0x2, PropSize: 0x10x10(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bEnableGravity : 1;                                // Mask: 0x4, PropSize: 0x10x10(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -177,11 +174,9 @@ public:
 	uint8                                        bStartAwake : 1;                                   // Mask: 0x10, PropSize: 0x10x10(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bGenerateWakeEvents : 1;                           // Mask: 0x20, PropSize: 0x10x10(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bUpdateMassWhenScaleChanges : 1;                   // Mask: 0x40, PropSize: 0x10x10(0x1)(Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2111[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2091[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

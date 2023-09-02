@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class S6UICore.S6UI_AsyncAction_OpenModal
+// (None)
+
+class UClass* US6UI_AsyncAction_OpenModal::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_AsyncAction_OpenModal");
+
+	return Clss;
+}
+
+
+// S6UI_AsyncAction_OpenModal S6UICore.Default__S6UI_AsyncAction_OpenModal
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_AsyncAction_OpenModal* US6UI_AsyncAction_OpenModal::GetDefaultObj()
+{
+	static class US6UI_AsyncAction_OpenModal* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_AsyncAction_OpenModal*>(US6UI_AsyncAction_OpenModal::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function S6UICore.S6UI_AsyncAction_OpenModal.OpenModal
@@ -22,7 +47,7 @@ namespace SDK
 // TSoftClassPtr<class US6UI_ModalWidgetBase>WidgetClass                                                      (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class US6UI_AsyncAction_OpenModal* ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class US6UI_AsyncAction_OpenModal* US6UI_AsyncAction_OpenModal::OpenModal(class APlayerController* InPC, TSoftClassPtr<class US6UI_ModalWidgetBase> InWidgetClass)
+class US6UI_AsyncAction_OpenModal* US6UI_AsyncAction_OpenModal::OpenModal(class APlayerController* PC, TSoftClassPtr<class US6UI_ModalWidgetBase> WidgetClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,16 +56,16 @@ class US6UI_AsyncAction_OpenModal* US6UI_AsyncAction_OpenModal::OpenModal(class 
 
 	Params::US6UI_AsyncAction_OpenModal_OpenModal_Params Parms{};
 
-	Parms.PC = InPC;
-	Parms.WidgetClass = InWidgetClass;
+	Parms.PC = PC;
+	Parms.WidgetClass = WidgetClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -52,7 +77,7 @@ class US6UI_AsyncAction_OpenModal* US6UI_AsyncAction_OpenModal::OpenModal(class 
 // Parameters:
 // class US6UI_ModalWidgetBase*       ModalWidget                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_AsyncAction_OpenModal::OnOpened__DelegateSignature(class US6UI_ModalWidgetBase* InModalWidget)
+void US6UI_AsyncAction_OpenModal::OnOpened__DelegateSignature(class US6UI_ModalWidgetBase* ModalWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61,7 +86,7 @@ void US6UI_AsyncAction_OpenModal::OnOpened__DelegateSignature(class US6UI_ModalW
 
 	Params::US6UI_AsyncAction_OpenModal_OnOpened__DelegateSignature_Params Parms{};
 
-	Parms.ModalWidget = InModalWidget;
+	Parms.ModalWidget = ModalWidget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -87,12 +112,68 @@ void US6UI_AsyncAction_OpenModal::OnFailed__DelegateSignature()
 }
 
 
+// Class S6UICore.S6UI_InputActionHandlingUserWidget
+// (None)
+
+class UClass* US6UI_InputActionHandlingUserWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_InputActionHandlingUserWidget");
+
+	return Clss;
+}
+
+
+// S6UI_InputActionHandlingUserWidget S6UICore.Default__S6UI_InputActionHandlingUserWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_InputActionHandlingUserWidget* US6UI_InputActionHandlingUserWidget::GetDefaultObj()
+{
+	static class US6UI_InputActionHandlingUserWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_InputActionHandlingUserWidget*>(US6UI_InputActionHandlingUserWidget::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICore.S6UI_ModalWidgetBase
+// (None)
+
+class UClass* US6UI_ModalWidgetBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_ModalWidgetBase");
+
+	return Clss;
+}
+
+
+// S6UI_ModalWidgetBase S6UICore.Default__S6UI_ModalWidgetBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_ModalWidgetBase* US6UI_ModalWidgetBase::GetDefaultObj()
+{
+	static class US6UI_ModalWidgetBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_ModalWidgetBase*>(US6UI_ModalWidgetBase::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function S6UICore.S6UI_ModalWidgetBase.SetWantsCursor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                               bValue                                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_ModalWidgetBase::SetWantsCursor(bool InbValue)
+void US6UI_ModalWidgetBase::SetWantsCursor(bool bValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -101,15 +182,15 @@ void US6UI_ModalWidgetBase::SetWantsCursor(bool InbValue)
 
 	Params::US6UI_ModalWidgetBase_SetWantsCursor_Params Parms{};
 
-	Parms.bValue = InbValue;
+	Parms.bValue = bValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -119,7 +200,7 @@ void US6UI_ModalWidgetBase::SetWantsCursor(bool InbValue)
 // Parameters:
 // class UWidget*                     Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_ModalWidgetBase::OnStartedClosing__DelegateSignature(class UWidget* InWidget)
+void US6UI_ModalWidgetBase::OnStartedClosing__DelegateSignature(class UWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -128,7 +209,7 @@ void US6UI_ModalWidgetBase::OnStartedClosing__DelegateSignature(class UWidget* I
 
 	Params::US6UI_ModalWidgetBase_OnStartedClosing__DelegateSignature_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -140,7 +221,7 @@ void US6UI_ModalWidgetBase::OnStartedClosing__DelegateSignature(class UWidget* I
 // Parameters:
 // class UWidget*                     Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_ModalWidgetBase::OnFinishedOpening__DelegateSignature(class UWidget* InWidget)
+void US6UI_ModalWidgetBase::OnFinishedOpening__DelegateSignature(class UWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -149,7 +230,7 @@ void US6UI_ModalWidgetBase::OnFinishedOpening__DelegateSignature(class UWidget* 
 
 	Params::US6UI_ModalWidgetBase_OnFinishedOpening__DelegateSignature_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -161,7 +242,7 @@ void US6UI_ModalWidgetBase::OnFinishedOpening__DelegateSignature(class UWidget* 
 // Parameters:
 // class UWidget*                     Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_ModalWidgetBase::OnFinishedClosing__DelegateSignature(class UWidget* InWidget)
+void US6UI_ModalWidgetBase::OnFinishedClosing__DelegateSignature(class UWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -170,7 +251,7 @@ void US6UI_ModalWidgetBase::OnFinishedClosing__DelegateSignature(class UWidget* 
 
 	Params::US6UI_ModalWidgetBase_OnFinishedClosing__DelegateSignature_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -182,7 +263,7 @@ void US6UI_ModalWidgetBase::OnFinishedClosing__DelegateSignature(class UWidget* 
 // Parameters:
 // bool                               bOutHasLatentOpeningLogic                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_ModalWidgetBase::HandleStartOpening_BP(bool* InbOutHasLatentOpeningLogic)
+void US6UI_ModalWidgetBase::HandleStartOpening_BP(bool* bOutHasLatentOpeningLogic)
 {
 	static class UFunction* Func = nullptr;
 
@@ -194,8 +275,8 @@ void US6UI_ModalWidgetBase::HandleStartOpening_BP(bool* InbOutHasLatentOpeningLo
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InbOutHasLatentOpeningLogic != nullptr)
-		*InbOutHasLatentOpeningLogic = Parms.bOutHasLatentOpeningLogic;
+	if (bOutHasLatentOpeningLogic != nullptr)
+		*bOutHasLatentOpeningLogic = Parms.bOutHasLatentOpeningLogic;
 
 }
 
@@ -206,7 +287,7 @@ void US6UI_ModalWidgetBase::HandleStartOpening_BP(bool* InbOutHasLatentOpeningLo
 // bool                               bPermitLatentClosing                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bOutHasLatentClosingLogic                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_ModalWidgetBase::HandleStartClosing_BP(bool InbPermitLatentClosing, bool* InbOutHasLatentClosingLogic)
+void US6UI_ModalWidgetBase::HandleStartClosing_BP(bool bPermitLatentClosing, bool* bOutHasLatentClosingLogic)
 {
 	static class UFunction* Func = nullptr;
 
@@ -215,12 +296,12 @@ void US6UI_ModalWidgetBase::HandleStartClosing_BP(bool InbPermitLatentClosing, b
 
 	Params::US6UI_ModalWidgetBase_HandleStartClosing_BP_Params Parms{};
 
-	Parms.bPermitLatentClosing = InbPermitLatentClosing;
+	Parms.bPermitLatentClosing = bPermitLatentClosing;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InbOutHasLatentClosingLogic != nullptr)
-		*InbOutHasLatentClosingLogic = Parms.bOutHasLatentClosingLogic;
+	if (bOutHasLatentClosingLogic != nullptr)
+		*bOutHasLatentClosingLogic = Parms.bOutHasLatentClosingLogic;
 
 }
 
@@ -252,7 +333,7 @@ void US6UI_ModalWidgetBase::HandleOpened_BP()
 // float                              TriggeredTime                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UInputAction*                SourceAction                                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_ModalWidgetBase::HandleInputAction_UIBack_Triggered(const struct FInputActionValue& InActionValue, float InElapsedTime, float InTriggeredTime, class UInputAction* InSourceAction)
+void US6UI_ModalWidgetBase::HandleInputAction_UIBack_Triggered(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
@@ -261,18 +342,18 @@ void US6UI_ModalWidgetBase::HandleInputAction_UIBack_Triggered(const struct FInp
 
 	Params::US6UI_ModalWidgetBase_HandleInputAction_UIBack_Triggered_Params Parms{};
 
-	Parms.ActionValue = InActionValue;
-	Parms.ElapsedTime = InElapsedTime;
-	Parms.TriggeredTime = InTriggeredTime;
-	Parms.SourceAction = InSourceAction;
+	Parms.ActionValue = ActionValue;
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -311,13 +392,13 @@ enum class ES6UI_ModalWidgetState US6UI_ModalWidgetBase::GetModalWidgetState()
 	Params::US6UI_ModalWidgetBase_GetModalWidgetState_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -338,13 +419,13 @@ void US6UI_ModalWidgetBase::FinishOpening()
 	Params::US6UI_ModalWidgetBase_FinishOpening_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -363,13 +444,13 @@ void US6UI_ModalWidgetBase::FinishClosing()
 	Params::US6UI_ModalWidgetBase_FinishClosing_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -389,16 +470,72 @@ bool US6UI_ModalWidgetBase::CanClose()
 	Params::US6UI_ModalWidgetBase_CanClose_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class S6UICore.S6UI_CommandMenu
+// (None)
+
+class UClass* US6UI_CommandMenu::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_CommandMenu");
+
+	return Clss;
+}
+
+
+// S6UI_CommandMenu S6UICore.Default__S6UI_CommandMenu
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_CommandMenu* US6UI_CommandMenu::GetDefaultObj()
+{
+	static class US6UI_CommandMenu* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_CommandMenu*>(US6UI_CommandMenu::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICore.S6UI_CustomNavigationGroup
+// (None)
+
+class UClass* US6UI_CustomNavigationGroup::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_CustomNavigationGroup");
+
+	return Clss;
+}
+
+
+// S6UI_CustomNavigationGroup S6UICore.Default__S6UI_CustomNavigationGroup
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_CustomNavigationGroup* US6UI_CustomNavigationGroup::GetDefaultObj()
+{
+	static class US6UI_CustomNavigationGroup* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_CustomNavigationGroup*>(US6UI_CustomNavigationGroup::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -407,7 +544,7 @@ bool US6UI_ModalWidgetBase::CanClose()
 // Parameters:
 // TArray<enum class EUINavigation>   InEdgeEscapeDirections                                           (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::SetAutoEdgeEscapeDirections(const TArray<enum class EUINavigation>& InInEdgeEscapeDirections)
+void US6UI_CustomNavigationGroup::SetAutoEdgeEscapeDirections(const TArray<enum class EUINavigation>& InEdgeEscapeDirections)
 {
 	static class UFunction* Func = nullptr;
 
@@ -416,15 +553,15 @@ void US6UI_CustomNavigationGroup::SetAutoEdgeEscapeDirections(const TArray<enum 
 
 	Params::US6UI_CustomNavigationGroup_SetAutoEdgeEscapeDirections_Params Parms{};
 
-	Parms.InEdgeEscapeDirections = InInEdgeEscapeDirections;
+	Parms.InEdgeEscapeDirections = InEdgeEscapeDirections;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -435,7 +572,7 @@ void US6UI_CustomNavigationGroup::SetAutoEdgeEscapeDirections(const TArray<enum 
 // class UObject*                     NavObject                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6UI_CustomNavigationGroup::OnIsWidgetValiedToNavigate__DelegateSignature(class UObject* InNavObject)
+bool US6UI_CustomNavigationGroup::OnIsWidgetValiedToNavigate__DelegateSignature(class UObject* NavObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -444,7 +581,7 @@ bool US6UI_CustomNavigationGroup::OnIsWidgetValiedToNavigate__DelegateSignature(
 
 	Params::US6UI_CustomNavigationGroup_OnIsWidgetValiedToNavigate__DelegateSignature_Params Parms{};
 
-	Parms.NavObject = InNavObject;
+	Parms.NavObject = NavObject;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -462,7 +599,7 @@ bool US6UI_CustomNavigationGroup::OnIsWidgetValiedToNavigate__DelegateSignature(
 // int32                              InTargetWidgetIndex                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6UI_CustomNavigationGroup::OnCustomNavigationGroupTransitionEvent__DelegateSignature(enum class EUINavigation InInNavigationType, class US6UI_CustomNavigationGroup* InInOriginNavigationGroup, int32 InInOriginWidgetIndex, int32 InInTargetWidgetIndex)
+bool US6UI_CustomNavigationGroup::OnCustomNavigationGroupTransitionEvent__DelegateSignature(enum class EUINavigation InNavigationType, class US6UI_CustomNavigationGroup* InOriginNavigationGroup, int32 InOriginWidgetIndex, int32 InTargetWidgetIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -471,10 +608,10 @@ bool US6UI_CustomNavigationGroup::OnCustomNavigationGroupTransitionEvent__Delega
 
 	Params::US6UI_CustomNavigationGroup_OnCustomNavigationGroupTransitionEvent__DelegateSignature_Params Parms{};
 
-	Parms.InNavigationType = InInNavigationType;
-	Parms.InOriginNavigationGroup = InInOriginNavigationGroup;
-	Parms.InOriginWidgetIndex = InInOriginWidgetIndex;
-	Parms.InTargetWidgetIndex = InInTargetWidgetIndex;
+	Parms.InNavigationType = InNavigationType;
+	Parms.InOriginNavigationGroup = InOriginNavigationGroup;
+	Parms.InOriginWidgetIndex = InOriginWidgetIndex;
+	Parms.InTargetWidgetIndex = InTargetWidgetIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -508,7 +645,7 @@ void US6UI_CustomNavigationGroup::OnCustomNavigationGroupInitialized__DelegateSi
 // int32                              InTargetWidgetIndex                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bDelayActive                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::NavigateToTargetWidget(int32 InInTargetWidgetIndex, bool InbDelayActive)
+void US6UI_CustomNavigationGroup::NavigateToTargetWidget(int32 InTargetWidgetIndex, bool bDelayActive)
 {
 	static class UFunction* Func = nullptr;
 
@@ -517,16 +654,16 @@ void US6UI_CustomNavigationGroup::NavigateToTargetWidget(int32 InInTargetWidgetI
 
 	Params::US6UI_CustomNavigationGroup_NavigateToTargetWidget_Params Parms{};
 
-	Parms.InTargetWidgetIndex = InInTargetWidgetIndex;
-	Parms.bDelayActive = InbDelayActive;
+	Parms.InTargetWidgetIndex = InTargetWidgetIndex;
+	Parms.bDelayActive = bDelayActive;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -536,7 +673,7 @@ void US6UI_CustomNavigationGroup::NavigateToTargetWidget(int32 InInTargetWidgetI
 // Parameters:
 // bool                               bInAutoEdgeEscape                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::EnableAutoEdgeEscape(bool InbInAutoEdgeEscape)
+void US6UI_CustomNavigationGroup::EnableAutoEdgeEscape(bool bInAutoEdgeEscape)
 {
 	static class UFunction* Func = nullptr;
 
@@ -545,15 +682,15 @@ void US6UI_CustomNavigationGroup::EnableAutoEdgeEscape(bool InbInAutoEdgeEscape)
 
 	Params::US6UI_CustomNavigationGroup_EnableAutoEdgeEscape_Params Parms{};
 
-	Parms.bInAutoEdgeEscape = InbInAutoEdgeEscape;
+	Parms.bInAutoEdgeEscape = bInAutoEdgeEscape;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -563,7 +700,7 @@ void US6UI_CustomNavigationGroup::EnableAutoEdgeEscape(bool InbInAutoEdgeEscape)
 // Parameters:
 // struct FFocusEvent                 InFocusEvent                                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::DelayExcuteNavigationFromParentGroup(struct FFocusEvent& InInFocusEvent)
+void US6UI_CustomNavigationGroup::DelayExcuteNavigationFromParentGroup(struct FFocusEvent& InFocusEvent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -572,15 +709,15 @@ void US6UI_CustomNavigationGroup::DelayExcuteNavigationFromParentGroup(struct FF
 
 	Params::US6UI_CustomNavigationGroup_DelayExcuteNavigationFromParentGroup_Params Parms{};
 
-	Parms.InFocusEvent = InInFocusEvent;
+	Parms.InFocusEvent = InFocusEvent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -599,13 +736,13 @@ void US6UI_CustomNavigationGroup::ClearNavigationGroupTransitionDatas()
 	Params::US6UI_CustomNavigationGroup_ClearNavigationGroupTransitionDatas_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -615,7 +752,7 @@ void US6UI_CustomNavigationGroup::ClearNavigationGroupTransitionDatas()
 // Parameters:
 // bool                               bInClearNavWidgets                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::ClearNavigationData(bool InbInClearNavWidgets)
+void US6UI_CustomNavigationGroup::ClearNavigationData(bool bInClearNavWidgets)
 {
 	static class UFunction* Func = nullptr;
 
@@ -624,15 +761,15 @@ void US6UI_CustomNavigationGroup::ClearNavigationData(bool InbInClearNavWidgets)
 
 	Params::US6UI_CustomNavigationGroup_ClearNavigationData_Params Parms{};
 
-	Parms.bInClearNavWidgets = InbInClearNavWidgets;
+	Parms.bInClearNavWidgets = bInClearNavWidgets;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -642,7 +779,7 @@ void US6UI_CustomNavigationGroup::ClearNavigationData(bool InbInClearNavWidgets)
 // Parameters:
 // bool                               bInImmediately                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::BuildNavigation(bool InbInImmediately)
+void US6UI_CustomNavigationGroup::BuildNavigation(bool bInImmediately)
 {
 	static class UFunction* Func = nullptr;
 
@@ -651,15 +788,15 @@ void US6UI_CustomNavigationGroup::BuildNavigation(bool InbInImmediately)
 
 	Params::US6UI_CustomNavigationGroup_BuildNavigation_Params Parms{};
 
-	Parms.bInImmediately = InbInImmediately;
+	Parms.bInImmediately = bInImmediately;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -670,7 +807,7 @@ void US6UI_CustomNavigationGroup::BuildNavigation(bool InbInImmediately)
 // TArray<class UWidget*>             InWidgetArray                                                    (ConstParm, Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                               bInBuildNavigationImmediately                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::AddNavWidgets(const TArray<class UWidget*>& InInWidgetArray, bool InbInBuildNavigationImmediately)
+void US6UI_CustomNavigationGroup::AddNavWidgets(const TArray<class UWidget*>& InWidgetArray, bool bInBuildNavigationImmediately)
 {
 	static class UFunction* Func = nullptr;
 
@@ -679,16 +816,16 @@ void US6UI_CustomNavigationGroup::AddNavWidgets(const TArray<class UWidget*>& In
 
 	Params::US6UI_CustomNavigationGroup_AddNavWidgets_Params Parms{};
 
-	Parms.InWidgetArray = InInWidgetArray;
-	Parms.bInBuildNavigationImmediately = InbInBuildNavigationImmediately;
+	Parms.InWidgetArray = InWidgetArray;
+	Parms.bInBuildNavigationImmediately = bInBuildNavigationImmediately;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -699,7 +836,7 @@ void US6UI_CustomNavigationGroup::AddNavWidgets(const TArray<class UWidget*>& In
 // struct FS6UI_NavigationGroupTranstionDataInTransitionData                                                 (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                               bInBidirectional                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::AddNavigationGroupTransitionData(const struct FS6UI_NavigationGroupTranstionData& InInTransitionData, bool InbInBidirectional)
+void US6UI_CustomNavigationGroup::AddNavigationGroupTransitionData(const struct FS6UI_NavigationGroupTranstionData& InTransitionData, bool bInBidirectional)
 {
 	static class UFunction* Func = nullptr;
 
@@ -708,16 +845,16 @@ void US6UI_CustomNavigationGroup::AddNavigationGroupTransitionData(const struct 
 
 	Params::US6UI_CustomNavigationGroup_AddNavigationGroupTransitionData_Params Parms{};
 
-	Parms.InTransitionData = InInTransitionData;
-	Parms.bInBidirectional = InbInBidirectional;
+	Parms.InTransitionData = InTransitionData;
+	Parms.bInBidirectional = bInBidirectional;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -727,7 +864,7 @@ void US6UI_CustomNavigationGroup::AddNavigationGroupTransitionData(const struct 
 // Parameters:
 // struct FS6UI_NavExplicitData       InNavExplicitData                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::AddNavExplicitData(struct FS6UI_NavExplicitData& InInNavExplicitData)
+void US6UI_CustomNavigationGroup::AddNavExplicitData(struct FS6UI_NavExplicitData& InNavExplicitData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -736,15 +873,15 @@ void US6UI_CustomNavigationGroup::AddNavExplicitData(struct FS6UI_NavExplicitDat
 
 	Params::US6UI_CustomNavigationGroup_AddNavExplicitData_Params Parms{};
 
-	Parms.InNavExplicitData = InInNavExplicitData;
+	Parms.InNavExplicitData = InNavExplicitData;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -755,7 +892,7 @@ void US6UI_CustomNavigationGroup::AddNavExplicitData(struct FS6UI_NavExplicitDat
 // bool                               bDelayActive                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              InAutoSelectNavWidgetID                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::ActiveNavigationGroup(bool InbDelayActive, int32 InInAutoSelectNavWidgetID)
+void US6UI_CustomNavigationGroup::ActiveNavigationGroup(bool bDelayActive, int32 InAutoSelectNavWidgetID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -764,17 +901,101 @@ void US6UI_CustomNavigationGroup::ActiveNavigationGroup(bool InbDelayActive, int
 
 	Params::US6UI_CustomNavigationGroup_ActiveNavigationGroup_Params Parms{};
 
-	Parms.bDelayActive = InbDelayActive;
-	Parms.InAutoSelectNavWidgetID = InInAutoSelectNavWidgetID;
+	Parms.bDelayActive = bDelayActive;
+	Parms.InAutoSelectNavWidgetID = InAutoSelectNavWidgetID;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class S6UICore.S6UI_CustomNavigationWidgetInterface
+// (None)
+
+class UClass* IS6UI_CustomNavigationWidgetInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_CustomNavigationWidgetInterface");
+
+	return Clss;
+}
+
+
+// S6UI_CustomNavigationWidgetInterface S6UICore.Default__S6UI_CustomNavigationWidgetInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IS6UI_CustomNavigationWidgetInterface* IS6UI_CustomNavigationWidgetInterface::GetDefaultObj()
+{
+	static class IS6UI_CustomNavigationWidgetInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IS6UI_CustomNavigationWidgetInterface*>(IS6UI_CustomNavigationWidgetInterface::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICore.S6UI_GameViewportClient
+// (None)
+
+class UClass* US6UI_GameViewportClient::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_GameViewportClient");
+
+	return Clss;
+}
+
+
+// S6UI_GameViewportClient S6UICore.Default__S6UI_GameViewportClient
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_GameViewportClient* US6UI_GameViewportClient::GetDefaultObj()
+{
+	static class US6UI_GameViewportClient* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_GameViewportClient*>(US6UI_GameViewportClient::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICore.S6UI_InputActionHandlingWidgetComponent
+// (None)
+
+class UClass* US6UI_InputActionHandlingWidgetComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_InputActionHandlingWidgetComponent");
+
+	return Clss;
+}
+
+
+// S6UI_InputActionHandlingWidgetComponent S6UICore.Default__S6UI_InputActionHandlingWidgetComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_InputActionHandlingWidgetComponent* US6UI_InputActionHandlingWidgetComponent::GetDefaultObj()
+{
+	static class US6UI_InputActionHandlingWidgetComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_InputActionHandlingWidgetComponent*>(US6UI_InputActionHandlingWidgetComponent::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -783,7 +1004,7 @@ void US6UI_CustomNavigationGroup::ActiveNavigationGroup(bool InbDelayActive, int
 // Parameters:
 // struct FGuid                       BindingId                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_InputActionHandlingWidgetComponent::UnregisterInputActionBinding(struct FGuid& InBindingId)
+void US6UI_InputActionHandlingWidgetComponent::UnregisterInputActionBinding(struct FGuid& BindingId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -792,15 +1013,15 @@ void US6UI_InputActionHandlingWidgetComponent::UnregisterInputActionBinding(stru
 
 	Params::US6UI_InputActionHandlingWidgetComponent_UnregisterInputActionBinding_Params Parms{};
 
-	Parms.BindingId = InBindingId;
+	Parms.BindingId = BindingId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -810,7 +1031,7 @@ void US6UI_InputActionHandlingWidgetComponent::UnregisterInputActionBinding(stru
 // Parameters:
 // bool                               bValue                                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_InputActionHandlingWidgetComponent::SetIsEnabled(bool InbValue)
+void US6UI_InputActionHandlingWidgetComponent::SetIsEnabled(bool bValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -819,15 +1040,15 @@ void US6UI_InputActionHandlingWidgetComponent::SetIsEnabled(bool InbValue)
 
 	Params::US6UI_InputActionHandlingWidgetComponent_SetIsEnabled_Params Parms{};
 
-	Parms.bValue = InbValue;
+	Parms.bValue = bValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -840,7 +1061,7 @@ void US6UI_InputActionHandlingWidgetComponent::SetIsEnabled(bool InbValue)
 // FDelegateProperty_                 Delegate                                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGuid                       ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FGuid US6UI_InputActionHandlingWidgetComponent::RegisterInputActionBinding(class UInputAction* InInputAction, enum class ETriggerEvent InTriggerEventType, FDelegateProperty_& InDelegate)
+struct FGuid US6UI_InputActionHandlingWidgetComponent::RegisterInputActionBinding(class UInputAction* InputAction, enum class ETriggerEvent TriggerEventType, FDelegateProperty_& Delegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -849,17 +1070,17 @@ struct FGuid US6UI_InputActionHandlingWidgetComponent::RegisterInputActionBindin
 
 	Params::US6UI_InputActionHandlingWidgetComponent_RegisterInputActionBinding_Params Parms{};
 
-	Parms.InputAction = InInputAction;
-	Parms.TriggerEventType = InTriggerEventType;
-	Parms.Delegate = InDelegate;
+	Parms.InputAction = InputAction;
+	Parms.TriggerEventType = TriggerEventType;
+	Parms.Delegate = Delegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -871,7 +1092,7 @@ struct FGuid US6UI_InputActionHandlingWidgetComponent::RegisterInputActionBindin
 // Parameters:
 // class US6UI_InputActionHandlingWidgetComponent*AffectedComponent                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_InputActionHandlingWidgetComponent::OnInputActionBindingsChanged__DelegateSignature(class US6UI_InputActionHandlingWidgetComponent* InAffectedComponent)
+void US6UI_InputActionHandlingWidgetComponent::OnInputActionBindingsChanged__DelegateSignature(class US6UI_InputActionHandlingWidgetComponent* AffectedComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -880,7 +1101,7 @@ void US6UI_InputActionHandlingWidgetComponent::OnInputActionBindingsChanged__Del
 
 	Params::US6UI_InputActionHandlingWidgetComponent_OnInputActionBindingsChanged__DelegateSignature_Params Parms{};
 
-	Parms.AffectedComponent = InAffectedComponent;
+	Parms.AffectedComponent = AffectedComponent;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -892,7 +1113,7 @@ void US6UI_InputActionHandlingWidgetComponent::OnInputActionBindingsChanged__Del
 // Parameters:
 // class US6UI_InputActionHandlingWidgetComponent*AffectedComponent                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_InputActionHandlingWidgetComponent::OnEnabledStateChanged__DelegateSignature(class US6UI_InputActionHandlingWidgetComponent* InAffectedComponent)
+void US6UI_InputActionHandlingWidgetComponent::OnEnabledStateChanged__DelegateSignature(class US6UI_InputActionHandlingWidgetComponent* AffectedComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -901,7 +1122,7 @@ void US6UI_InputActionHandlingWidgetComponent::OnEnabledStateChanged__DelegateSi
 
 	Params::US6UI_InputActionHandlingWidgetComponent_OnEnabledStateChanged__DelegateSignature_Params Parms{};
 
-	Parms.AffectedComponent = InAffectedComponent;
+	Parms.AffectedComponent = AffectedComponent;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -923,16 +1144,44 @@ TArray<struct FS6UI_RegisteredInputActionBinding> US6UI_InputActionHandlingWidge
 	Params::US6UI_InputActionHandlingWidgetComponent_GetRegisteredInputActionBindings_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class S6UICore.S6UI_InputActionHandlingWidgetInterface
+// (None)
+
+class UClass* IS6UI_InputActionHandlingWidgetInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_InputActionHandlingWidgetInterface");
+
+	return Clss;
+}
+
+
+// S6UI_InputActionHandlingWidgetInterface S6UICore.Default__S6UI_InputActionHandlingWidgetInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IS6UI_InputActionHandlingWidgetInterface* IS6UI_InputActionHandlingWidgetInterface::GetDefaultObj()
+{
+	static class IS6UI_InputActionHandlingWidgetInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IS6UI_InputActionHandlingWidgetInterface*>(IS6UI_InputActionHandlingWidgetInterface::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -951,16 +1200,72 @@ class US6UI_InputActionHandlingWidgetComponent* IS6UI_InputActionHandlingWidgetI
 	Params::IS6UI_InputActionHandlingWidgetInterface_GetInputActionHandlingComponent_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class S6UICore.S6UI_InputActionRouter
+// (None)
+
+class UClass* US6UI_InputActionRouter::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_InputActionRouter");
+
+	return Clss;
+}
+
+
+// S6UI_InputActionRouter S6UICore.Default__S6UI_InputActionRouter
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_InputActionRouter* US6UI_InputActionRouter::GetDefaultObj()
+{
+	static class US6UI_InputActionRouter* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_InputActionRouter*>(US6UI_InputActionRouter::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICore.S6UI_InputRouterSubsystem
+// (None)
+
+class UClass* US6UI_InputRouterSubsystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_InputRouterSubsystem");
+
+	return Clss;
+}
+
+
+// S6UI_InputRouterSubsystem S6UICore.Default__S6UI_InputRouterSubsystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_InputRouterSubsystem* US6UI_InputRouterSubsystem::GetDefaultObj()
+{
+	static class US6UI_InputRouterSubsystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_InputRouterSubsystem*>(US6UI_InputRouterSubsystem::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -969,7 +1274,7 @@ class US6UI_InputActionHandlingWidgetComponent* IS6UI_InputActionHandlingWidgetI
 // Parameters:
 // class US6UI_InputActionHandlingWidgetComponent*InputActionHandler                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_InputRouterSubsystem::UnregisterInputActionHandler(class US6UI_InputActionHandlingWidgetComponent* InInputActionHandler)
+void US6UI_InputRouterSubsystem::UnregisterInputActionHandler(class US6UI_InputActionHandlingWidgetComponent* InputActionHandler)
 {
 	static class UFunction* Func = nullptr;
 
@@ -978,15 +1283,15 @@ void US6UI_InputRouterSubsystem::UnregisterInputActionHandler(class US6UI_InputA
 
 	Params::US6UI_InputRouterSubsystem_UnregisterInputActionHandler_Params Parms{};
 
-	Parms.InputActionHandler = InInputActionHandler;
+	Parms.InputActionHandler = InputActionHandler;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -996,7 +1301,7 @@ void US6UI_InputRouterSubsystem::UnregisterInputActionHandler(class US6UI_InputA
 // Parameters:
 // class US6UI_InputActionHandlingWidgetComponent*InputActionHandler                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_InputRouterSubsystem::RegisterInputActionHandler(class US6UI_InputActionHandlingWidgetComponent* InInputActionHandler)
+void US6UI_InputRouterSubsystem::RegisterInputActionHandler(class US6UI_InputActionHandlingWidgetComponent* InputActionHandler)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1005,15 +1310,15 @@ void US6UI_InputRouterSubsystem::RegisterInputActionHandler(class US6UI_InputAct
 
 	Params::US6UI_InputRouterSubsystem_RegisterInputActionHandler_Params Parms{};
 
-	Parms.InputActionHandler = InInputActionHandler;
+	Parms.InputActionHandler = InputActionHandler;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1023,7 +1328,7 @@ void US6UI_InputRouterSubsystem::RegisterInputActionHandler(class US6UI_InputAct
 // Parameters:
 // class US6UI_InputActionHandlingWidgetComponent*AffectedComponent                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_InputRouterSubsystem::HandleInputActionHandlingComponentEnabledStateChanged(class US6UI_InputActionHandlingWidgetComponent* InAffectedComponent)
+void US6UI_InputRouterSubsystem::HandleInputActionHandlingComponentEnabledStateChanged(class US6UI_InputActionHandlingWidgetComponent* AffectedComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1032,15 +1337,15 @@ void US6UI_InputRouterSubsystem::HandleInputActionHandlingComponentEnabledStateC
 
 	Params::US6UI_InputRouterSubsystem_HandleInputActionHandlingComponentEnabledStateChanged_Params Parms{};
 
-	Parms.AffectedComponent = InAffectedComponent;
+	Parms.AffectedComponent = AffectedComponent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1050,7 +1355,7 @@ void US6UI_InputRouterSubsystem::HandleInputActionHandlingComponentEnabledStateC
 // Parameters:
 // class US6UI_InputActionHandlingWidgetComponent*AffectedComponent                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_InputRouterSubsystem::HandleInputActionHandlingComponentBindingsChanged(class US6UI_InputActionHandlingWidgetComponent* InAffectedComponent)
+void US6UI_InputRouterSubsystem::HandleInputActionHandlingComponentBindingsChanged(class US6UI_InputActionHandlingWidgetComponent* AffectedComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1059,16 +1364,44 @@ void US6UI_InputRouterSubsystem::HandleInputActionHandlingComponentBindingsChang
 
 	Params::US6UI_InputRouterSubsystem_HandleInputActionHandlingComponentBindingsChanged_Params Parms{};
 
-	Parms.AffectedComponent = InAffectedComponent;
+	Parms.AffectedComponent = AffectedComponent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class S6UICore.S6UI_StateUserWidget
+// (None)
+
+class UClass* US6UI_StateUserWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_StateUserWidget");
+
+	return Clss;
+}
+
+
+// S6UI_StateUserWidget S6UICore.Default__S6UI_StateUserWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_StateUserWidget* US6UI_StateUserWidget::GetDefaultObj()
+{
+	static class US6UI_StateUserWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_StateUserWidget*>(US6UI_StateUserWidget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1087,13 +1420,13 @@ struct FMVVMViewModelContext US6UI_StateUserWidget::GetViewModelContext()
 	Params::US6UI_StateUserWidget_GetViewModelContext_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1115,13 +1448,13 @@ class US6UI_StateViewModel* US6UI_StateUserWidget::GetViewModel()
 	Params::US6UI_StateUserWidget_GetViewModel_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1143,16 +1476,72 @@ struct FS6UI_InputMode US6UI_StateUserWidget::GetInputMode()
 	Params::US6UI_StateUserWidget_GetInputMode_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class S6UICore.S6UI_StateViewModel
+// (None)
+
+class UClass* US6UI_StateViewModel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_StateViewModel");
+
+	return Clss;
+}
+
+
+// S6UI_StateViewModel S6UICore.Default__S6UI_StateViewModel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_StateViewModel* US6UI_StateViewModel::GetDefaultObj()
+{
+	static class US6UI_StateViewModel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_StateViewModel*>(US6UI_StateViewModel::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICore.S6UI_ToolTipWidgetInterface
+// (None)
+
+class UClass* IS6UI_ToolTipWidgetInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_ToolTipWidgetInterface");
+
+	return Clss;
+}
+
+
+// S6UI_ToolTipWidgetInterface S6UICore.Default__S6UI_ToolTipWidgetInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IS6UI_ToolTipWidgetInterface* IS6UI_ToolTipWidgetInterface::GetDefaultObj()
+{
+	static class IS6UI_ToolTipWidgetInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IS6UI_ToolTipWidgetInterface*>(IS6UI_ToolTipWidgetInterface::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1161,7 +1550,7 @@ struct FS6UI_InputMode US6UI_StateUserWidget::GetInputMode()
 // Parameters:
 // class FText                        Text                                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void IS6UI_ToolTipWidgetInterface::UpdateToolTipText(class FText& InText)
+void IS6UI_ToolTipWidgetInterface::UpdateToolTipText(class FText& Text)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1170,7 +1559,7 @@ void IS6UI_ToolTipWidgetInterface::UpdateToolTipText(class FText& InText)
 
 	Params::IS6UI_ToolTipWidgetInterface_UpdateToolTipText_Params Parms{};
 
-	Parms.Text = InText;
+	Parms.Text = Text;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1215,12 +1604,68 @@ void IS6UI_ToolTipWidgetInterface::HandleOnClosed()
 }
 
 
+// Class S6UICore.S6UI_InputAction
+// (None)
+
+class UClass* US6UI_InputAction::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_InputAction");
+
+	return Clss;
+}
+
+
+// S6UI_InputAction S6UICore.Default__S6UI_InputAction
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_InputAction* US6UI_InputAction::GetDefaultObj()
+{
+	static class US6UI_InputAction* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_InputAction*>(US6UI_InputAction::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICore.S6UI_UIManagerWidgetBase
+// (None)
+
+class UClass* US6UI_UIManagerWidgetBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_UIManagerWidgetBase");
+
+	return Clss;
+}
+
+
+// S6UI_UIManagerWidgetBase S6UICore.Default__S6UI_UIManagerWidgetBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_UIManagerWidgetBase* US6UI_UIManagerWidgetBase::GetDefaultObj()
+{
+	static class US6UI_UIManagerWidgetBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_UIManagerWidgetBase*>(US6UI_UIManagerWidgetBase::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function S6UICore.S6UI_UIManagerWidgetBase.RemoveModalWidget
 // (Final, Native, Public)
 // Parameters:
 // class UWidget*                     Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_UIManagerWidgetBase::RemoveModalWidget(class UWidget* InWidget)
+void US6UI_UIManagerWidgetBase::RemoveModalWidget(class UWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1229,15 +1674,15 @@ void US6UI_UIManagerWidgetBase::RemoveModalWidget(class UWidget* InWidget)
 
 	Params::US6UI_UIManagerWidgetBase_RemoveModalWidget_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1247,7 +1692,7 @@ void US6UI_UIManagerWidgetBase::RemoveModalWidget(class UWidget* InWidget)
 // Parameters:
 // class UUserWidget*                 Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_UIManagerWidgetBase::RemoveLoadingScreenWidget(class UUserWidget* InWidget)
+void US6UI_UIManagerWidgetBase::RemoveLoadingScreenWidget(class UUserWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1256,7 +1701,7 @@ void US6UI_UIManagerWidgetBase::RemoveLoadingScreenWidget(class UUserWidget* InW
 
 	Params::US6UI_UIManagerWidgetBase_RemoveLoadingScreenWidget_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1268,7 +1713,7 @@ void US6UI_UIManagerWidgetBase::RemoveLoadingScreenWidget(class UUserWidget* InW
 // Parameters:
 // class US6UI_StateUserWidget*       StateWidget                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_UIManagerWidgetBase::PushState(class US6UI_StateUserWidget* InStateWidget)
+void US6UI_UIManagerWidgetBase::PushState(class US6UI_StateUserWidget* StateWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1277,15 +1722,15 @@ void US6UI_UIManagerWidgetBase::PushState(class US6UI_StateUserWidget* InStateWi
 
 	Params::US6UI_UIManagerWidgetBase_PushState_Params Parms{};
 
-	Parms.StateWidget = InStateWidget;
+	Parms.StateWidget = StateWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1295,7 +1740,7 @@ void US6UI_UIManagerWidgetBase::PushState(class US6UI_StateUserWidget* InStateWi
 // Parameters:
 // class US6UI_StateUserWidget*       StateWidget                                                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_UIManagerWidgetBase::PopState(class US6UI_StateUserWidget* InStateWidget)
+void US6UI_UIManagerWidgetBase::PopState(class US6UI_StateUserWidget* StateWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1304,15 +1749,15 @@ void US6UI_UIManagerWidgetBase::PopState(class US6UI_StateUserWidget* InStateWid
 
 	Params::US6UI_UIManagerWidgetBase_PopState_Params Parms{};
 
-	Parms.StateWidget = InStateWidget;
+	Parms.StateWidget = StateWidget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1322,7 +1767,7 @@ void US6UI_UIManagerWidgetBase::PopState(class US6UI_StateUserWidget* InStateWid
 // Parameters:
 // class UWidget*                     Widget                                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_UIManagerWidgetBase::OpenModalWidget(class UWidget* InWidget)
+void US6UI_UIManagerWidgetBase::OpenModalWidget(class UWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1331,15 +1776,15 @@ void US6UI_UIManagerWidgetBase::OpenModalWidget(class UWidget* InWidget)
 
 	Params::US6UI_UIManagerWidgetBase_OpenModalWidget_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1359,13 +1804,13 @@ bool US6UI_UIManagerWidgetBase::IsModalWidgetActive()
 	Params::US6UI_UIManagerWidgetBase_IsModalWidgetActive_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1378,7 +1823,7 @@ bool US6UI_UIManagerWidgetBase::IsModalWidgetActive()
 // class UObject*                     Object                                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFieldNotificationId        Field                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_UIManagerWidgetBase::HandleOnStateInputModeChanged(class UObject* InObject, const struct FFieldNotificationId& InField)
+void US6UI_UIManagerWidgetBase::HandleOnStateInputModeChanged(class UObject* Object, const struct FFieldNotificationId& Field)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1387,16 +1832,16 @@ void US6UI_UIManagerWidgetBase::HandleOnStateInputModeChanged(class UObject* InO
 
 	Params::US6UI_UIManagerWidgetBase_HandleOnStateInputModeChanged_Params Parms{};
 
-	Parms.Object = InObject;
-	Parms.Field = InField;
+	Parms.Object = Object;
+	Parms.Field = Field;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1407,7 +1852,7 @@ void US6UI_UIManagerWidgetBase::HandleOnStateInputModeChanged(class UObject* InO
 // class APlayerController*           PC                                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class US6UI_UIManagerWidgetBase*   ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class US6UI_UIManagerWidgetBase* US6UI_UIManagerWidgetBase::GetUIManagerWidget(class APlayerController* InPC)
+class US6UI_UIManagerWidgetBase* US6UI_UIManagerWidgetBase::GetUIManagerWidget(class APlayerController* PC)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1416,15 +1861,15 @@ class US6UI_UIManagerWidgetBase* US6UI_UIManagerWidgetBase::GetUIManagerWidget(c
 
 	Params::US6UI_UIManagerWidgetBase_GetUIManagerWidget_Params Parms{};
 
-	Parms.PC = InPC;
+	Parms.PC = PC;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1446,13 +1891,13 @@ class US6UI_StateUserWidget* US6UI_UIManagerWidgetBase::GetCurrentStateWidget()
 	Params::US6UI_UIManagerWidgetBase_GetCurrentStateWidget_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1474,13 +1919,13 @@ class US6UI_StateViewModel* US6UI_UIManagerWidgetBase::GetCurrentStateViewModel(
 	Params::US6UI_UIManagerWidgetBase_GetCurrentStateViewModel_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1501,13 +1946,13 @@ void US6UI_UIManagerWidgetBase::ForceCloseAllModalWidgets()
 	Params::US6UI_UIManagerWidgetBase_ForceCloseAllModalWidgets_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1526,13 +1971,13 @@ void US6UI_UIManagerWidgetBase::DeactivateTopModalWidget()
 	Params::US6UI_UIManagerWidgetBase_DeactivateTopModalWidget_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1542,7 +1987,7 @@ void US6UI_UIManagerWidgetBase::DeactivateTopModalWidget()
 // Parameters:
 // class UWidget*                     Widget                                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_UIManagerWidgetBase::DeactivateModalWidget(class UWidget* InWidget)
+void US6UI_UIManagerWidgetBase::DeactivateModalWidget(class UWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1551,15 +1996,15 @@ void US6UI_UIManagerWidgetBase::DeactivateModalWidget(class UWidget* InWidget)
 
 	Params::US6UI_UIManagerWidgetBase_DeactivateModalWidget_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1578,13 +2023,13 @@ void US6UI_UIManagerWidgetBase::CreateDefaultStateWidget()
 	Params::US6UI_UIManagerWidgetBase_CreateDefaultStateWidget_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1596,7 +2041,7 @@ void US6UI_UIManagerWidgetBase::CreateDefaultStateWidget()
 // bool                               bPermitLatentClosing                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6UI_UIManagerWidgetBase::CloseTopModalWidget(bool InbShouldForceClose, bool InbPermitLatentClosing)
+bool US6UI_UIManagerWidgetBase::CloseTopModalWidget(bool bShouldForceClose, bool bPermitLatentClosing)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1605,16 +2050,16 @@ bool US6UI_UIManagerWidgetBase::CloseTopModalWidget(bool InbShouldForceClose, bo
 
 	Params::US6UI_UIManagerWidgetBase_CloseTopModalWidget_Params Parms{};
 
-	Parms.bShouldForceClose = InbShouldForceClose;
-	Parms.bPermitLatentClosing = InbPermitLatentClosing;
+	Parms.bShouldForceClose = bShouldForceClose;
+	Parms.bPermitLatentClosing = bPermitLatentClosing;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1628,7 +2073,7 @@ bool US6UI_UIManagerWidgetBase::CloseTopModalWidget(bool InbShouldForceClose, bo
 // bool                               bShouldForceClose                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPermitLatentClosing                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_UIManagerWidgetBase::CloseModalWidget(class UWidget* InWidget, bool InbShouldForceClose, bool InbPermitLatentClosing)
+void US6UI_UIManagerWidgetBase::CloseModalWidget(class UWidget* Widget, bool bShouldForceClose, bool bPermitLatentClosing)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1637,17 +2082,17 @@ void US6UI_UIManagerWidgetBase::CloseModalWidget(class UWidget* InWidget, bool I
 
 	Params::US6UI_UIManagerWidgetBase_CloseModalWidget_Params Parms{};
 
-	Parms.Widget = InWidget;
-	Parms.bShouldForceClose = InbShouldForceClose;
-	Parms.bPermitLatentClosing = InbPermitLatentClosing;
+	Parms.Widget = Widget;
+	Parms.bShouldForceClose = bShouldForceClose;
+	Parms.bPermitLatentClosing = bPermitLatentClosing;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1657,7 +2102,7 @@ void US6UI_UIManagerWidgetBase::CloseModalWidget(class UWidget* InWidget, bool I
 // Parameters:
 // class UUserWidget*                 Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_UIManagerWidgetBase::AddLoadingScreenWidget(class UUserWidget* InWidget)
+void US6UI_UIManagerWidgetBase::AddLoadingScreenWidget(class UUserWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1666,7 +2111,7 @@ void US6UI_UIManagerWidgetBase::AddLoadingScreenWidget(class UUserWidget* InWidg
 
 	Params::US6UI_UIManagerWidgetBase_AddLoadingScreenWidget_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1678,7 +2123,7 @@ void US6UI_UIManagerWidgetBase::AddLoadingScreenWidget(class UUserWidget* InWidg
 // Parameters:
 // class UWidget*                     Widget                                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_UIManagerWidgetBase::ActivateModalWidget(class UWidget* InWidget)
+void US6UI_UIManagerWidgetBase::ActivateModalWidget(class UWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1687,16 +2132,44 @@ void US6UI_UIManagerWidgetBase::ActivateModalWidget(class UWidget* InWidget)
 
 	Params::US6UI_UIManagerWidgetBase_ActivateModalWidget_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class S6UICore.S6UI_UIManagerHUDBase
+// (Actor)
+
+class UClass* AS6UI_UIManagerHUDBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_UIManagerHUDBase");
+
+	return Clss;
+}
+
+
+// S6UI_UIManagerHUDBase S6UICore.Default__S6UI_UIManagerHUDBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AS6UI_UIManagerHUDBase* AS6UI_UIManagerHUDBase::GetDefaultObj()
+{
+	static class AS6UI_UIManagerHUDBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AS6UI_UIManagerHUDBase*>(AS6UI_UIManagerHUDBase::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1715,16 +2188,44 @@ class US6UI_UIManagerWidgetBase* AS6UI_UIManagerHUDBase::GetUIManagerWidget()
 	Params::AS6UI_UIManagerHUDBase_GetUIManagerWidget_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class S6UICore.S6UI_UIManagerCrossPlatformHelper
+// (None)
+
+class UClass* US6UI_UIManagerCrossPlatformHelper::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_UIManagerCrossPlatformHelper");
+
+	return Clss;
+}
+
+
+// S6UI_UIManagerCrossPlatformHelper S6UICore.Default__S6UI_UIManagerCrossPlatformHelper
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_UIManagerCrossPlatformHelper* US6UI_UIManagerCrossPlatformHelper::GetDefaultObj()
+{
+	static class US6UI_UIManagerCrossPlatformHelper* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_UIManagerCrossPlatformHelper*>(US6UI_UIManagerCrossPlatformHelper::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1734,7 +2235,7 @@ class US6UI_UIManagerWidgetBase* AS6UI_UIManagerHUDBase::GetUIManagerWidget()
 // TSoftClassPtr<class US6UI_StateUserWidget>DefaultStateType                                                 (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSoftClassPtr<class US6UI_StateUserWidget>ReturnValue                                                      (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TSoftClassPtr<class US6UI_StateUserWidget> US6UI_UIManagerCrossPlatformHelper::RedirectStateType(TSoftClassPtr<class US6UI_StateUserWidget> InDefaultStateType)
+TSoftClassPtr<class US6UI_StateUserWidget> US6UI_UIManagerCrossPlatformHelper::RedirectStateType(TSoftClassPtr<class US6UI_StateUserWidget> DefaultStateType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1743,15 +2244,15 @@ TSoftClassPtr<class US6UI_StateUserWidget> US6UI_UIManagerCrossPlatformHelper::R
 
 	Params::US6UI_UIManagerCrossPlatformHelper_RedirectStateType_Params Parms{};
 
-	Parms.DefaultStateType = InDefaultStateType;
+	Parms.DefaultStateType = DefaultStateType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1764,7 +2265,7 @@ TSoftClassPtr<class US6UI_StateUserWidget> US6UI_UIManagerCrossPlatformHelper::R
 // TSoftClassPtr<class US6UI_ModalWidgetBase>DefaultModalType                                                 (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSoftClassPtr<class US6UI_ModalWidgetBase>ReturnValue                                                      (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TSoftClassPtr<class US6UI_ModalWidgetBase> US6UI_UIManagerCrossPlatformHelper::RedirectModalType(TSoftClassPtr<class US6UI_ModalWidgetBase> InDefaultModalType)
+TSoftClassPtr<class US6UI_ModalWidgetBase> US6UI_UIManagerCrossPlatformHelper::RedirectModalType(TSoftClassPtr<class US6UI_ModalWidgetBase> DefaultModalType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1773,18 +2274,46 @@ TSoftClassPtr<class US6UI_ModalWidgetBase> US6UI_UIManagerCrossPlatformHelper::R
 
 	Params::US6UI_UIManagerCrossPlatformHelper_RedirectModalType_Params Parms{};
 
-	Parms.DefaultModalType = InDefaultModalType;
+	Parms.DefaultModalType = DefaultModalType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class S6UICore.S6UI_Utils
+// (None)
+
+class UClass* US6UI_Utils::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_Utils");
+
+	return Clss;
+}
+
+
+// S6UI_Utils S6UICore.Default__S6UI_Utils
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_Utils* US6UI_Utils::GetDefaultObj()
+{
+	static class US6UI_Utils* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_Utils*>(US6UI_Utils::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1798,7 +2327,7 @@ TSoftClassPtr<class US6UI_ModalWidgetBase> US6UI_UIManagerCrossPlatformHelper::R
 // struct FS6UI_ContextMenu           OutContextMenu                                                   (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6UI_Utils::SummonContextMenuAtPosition(class UObject* InWorldContextObject, class UWidget* InParentWidget, struct FVector2D& InPosition, TSubclassOf<class UUserWidget>& InContentWidgetClass, struct FS6UI_ContextMenu* InOutContextMenu)
+bool US6UI_Utils::SummonContextMenuAtPosition(class UObject* WorldContextObject, class UWidget* ParentWidget, struct FVector2D& Position, TSubclassOf<class UUserWidget>& ContentWidgetClass, struct FS6UI_ContextMenu* OutContextMenu)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1807,21 +2336,21 @@ bool US6UI_Utils::SummonContextMenuAtPosition(class UObject* InWorldContextObjec
 
 	Params::US6UI_Utils_SummonContextMenuAtPosition_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ParentWidget = InParentWidget;
-	Parms.Position = InPosition;
-	Parms.ContentWidgetClass = InContentWidgetClass;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ParentWidget = ParentWidget;
+	Parms.Position = Position;
+	Parms.ContentWidgetClass = ContentWidgetClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutContextMenu != nullptr)
-		*InOutContextMenu = Parms.OutContextMenu;
+	if (OutContextMenu != nullptr)
+		*OutContextMenu = std::move(Parms.OutContextMenu);
 
 	return Parms.ReturnValue;
 
@@ -1837,7 +2366,7 @@ bool US6UI_Utils::SummonContextMenuAtPosition(class UObject* InWorldContextObjec
 // struct FS6UI_ContextMenu           OutContextMenu                                                   (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool US6UI_Utils::SummonContextMenu(class UObject* InWorldContextObject, struct FPointerEvent& InMouseEvent, TSubclassOf<class UUserWidget>& InContentWidgetClass, struct FS6UI_ContextMenu* InOutContextMenu)
+bool US6UI_Utils::SummonContextMenu(class UObject* WorldContextObject, struct FPointerEvent& MouseEvent, TSubclassOf<class UUserWidget>& ContentWidgetClass, struct FS6UI_ContextMenu* OutContextMenu)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1846,20 +2375,20 @@ bool US6UI_Utils::SummonContextMenu(class UObject* InWorldContextObject, struct 
 
 	Params::US6UI_Utils_SummonContextMenu_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.MouseEvent = InMouseEvent;
-	Parms.ContentWidgetClass = InContentWidgetClass;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.MouseEvent = MouseEvent;
+	Parms.ContentWidgetClass = ContentWidgetClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutContextMenu != nullptr)
-		*InOutContextMenu = Parms.OutContextMenu;
+	if (OutContextMenu != nullptr)
+		*OutContextMenu = std::move(Parms.OutContextMenu);
 
 	return Parms.ReturnValue;
 
@@ -1881,13 +2410,13 @@ bool US6UI_Utils::IsShowCommonUI()
 	Params::US6UI_Utils_IsShowCommonUI_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1900,7 +2429,7 @@ bool US6UI_Utils::IsShowCommonUI()
 // struct FS6UI_ContextMenu           ContextMenu                                                      (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // class UUserWidget*                 ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UUserWidget* US6UI_Utils::GetContextMenuContentWidget(struct FS6UI_ContextMenu& InContextMenu)
+class UUserWidget* US6UI_Utils::GetContextMenuContentWidget(struct FS6UI_ContextMenu& ContextMenu)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1909,15 +2438,15 @@ class UUserWidget* US6UI_Utils::GetContextMenuContentWidget(struct FS6UI_Context
 
 	Params::US6UI_Utils_GetContextMenuContentWidget_Params Parms{};
 
-	Parms.ContextMenu = InContextMenu;
+	Parms.ContextMenu = ContextMenu;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1929,7 +2458,7 @@ class UUserWidget* US6UI_Utils::GetContextMenuContentWidget(struct FS6UI_Context
 // Parameters:
 // struct FS6UI_ContextMenu           ContextMenu                                                      (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void US6UI_Utils::DismissContextMenu(struct FS6UI_ContextMenu& InContextMenu)
+void US6UI_Utils::DismissContextMenu(struct FS6UI_ContextMenu& ContextMenu)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1938,15 +2467,15 @@ void US6UI_Utils::DismissContextMenu(struct FS6UI_ContextMenu& InContextMenu)
 
 	Params::US6UI_Utils_DismissContextMenu_Params Parms{};
 
-	Parms.ContextMenu = InContextMenu;
+	Parms.ContextMenu = ContextMenu;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1966,16 +2495,44 @@ bool US6UI_Utils::AreCapsLocked()
 	Params::US6UI_Utils_AreCapsLocked_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class S6UICore.S6UI_StateStatics
+// (None)
+
+class UClass* US6UI_StateStatics::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_StateStatics");
+
+	return Clss;
+}
+
+
+// S6UI_StateStatics S6UICore.Default__S6UI_StateStatics
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_StateStatics* US6UI_StateStatics::GetDefaultObj()
+{
+	static class US6UI_StateStatics* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_StateStatics*>(US6UI_StateStatics::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1984,7 +2541,7 @@ bool US6UI_Utils::AreCapsLocked()
 // Parameters:
 // class US6UI_StateUserWidget*       Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_StateStatics::PushState(class US6UI_StateUserWidget* InWidget)
+void US6UI_StateStatics::PushState(class US6UI_StateUserWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1993,15 +2550,15 @@ void US6UI_StateStatics::PushState(class US6UI_StateUserWidget* InWidget)
 
 	Params::US6UI_StateStatics_PushState_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2011,7 +2568,7 @@ void US6UI_StateStatics::PushState(class US6UI_StateUserWidget* InWidget)
 // Parameters:
 // class US6UI_StateUserWidget*       Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_StateStatics::PopState(class US6UI_StateUserWidget* InWidget)
+void US6UI_StateStatics::PopState(class US6UI_StateUserWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2020,15 +2577,15 @@ void US6UI_StateStatics::PopState(class US6UI_StateUserWidget* InWidget)
 
 	Params::US6UI_StateStatics_PopState_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2041,7 +2598,7 @@ void US6UI_StateStatics::PopState(class US6UI_StateUserWidget* InWidget)
 // bool                               bShowCursor                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FS6UI_InputMode             ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FS6UI_InputMode US6UI_StateStatics::CreateInputMode_UIOnly(class UWidget* InWidgetToFocus, enum class ES6UI_MouseLockMode InMouseLockMode, bool InbShowCursor)
+struct FS6UI_InputMode US6UI_StateStatics::CreateInputMode_UIOnly(class UWidget* WidgetToFocus, enum class ES6UI_MouseLockMode MouseLockMode, bool bShowCursor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2050,17 +2607,17 @@ struct FS6UI_InputMode US6UI_StateStatics::CreateInputMode_UIOnly(class UWidget*
 
 	Params::US6UI_StateStatics_CreateInputMode_UIOnly_Params Parms{};
 
-	Parms.WidgetToFocus = InWidgetToFocus;
-	Parms.MouseLockMode = InMouseLockMode;
-	Parms.bShowCursor = InbShowCursor;
+	Parms.WidgetToFocus = WidgetToFocus;
+	Parms.MouseLockMode = MouseLockMode;
+	Parms.bShowCursor = bShowCursor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2082,13 +2639,13 @@ struct FS6UI_InputMode US6UI_StateStatics::CreateInputMode_GameOnly()
 	Params::US6UI_StateStatics_CreateInputMode_GameOnly_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2104,7 +2661,7 @@ struct FS6UI_InputMode US6UI_StateStatics::CreateInputMode_GameOnly()
 // bool                               bShowCursor                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FS6UI_InputMode             ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FS6UI_InputMode US6UI_StateStatics::CreateInputMode_GameAndUI(class UWidget* InWidgetToFocus, enum class ES6UI_MouseLockMode InMouseLockMode, bool InbHideCursorDuringCapture, bool InbShowCursor)
+struct FS6UI_InputMode US6UI_StateStatics::CreateInputMode_GameAndUI(class UWidget* WidgetToFocus, enum class ES6UI_MouseLockMode MouseLockMode, bool bHideCursorDuringCapture, bool bShowCursor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2113,18 +2670,18 @@ struct FS6UI_InputMode US6UI_StateStatics::CreateInputMode_GameAndUI(class UWidg
 
 	Params::US6UI_StateStatics_CreateInputMode_GameAndUI_Params Parms{};
 
-	Parms.WidgetToFocus = InWidgetToFocus;
-	Parms.MouseLockMode = InMouseLockMode;
-	Parms.bHideCursorDuringCapture = InbHideCursorDuringCapture;
-	Parms.bShowCursor = InbShowCursor;
+	Parms.WidgetToFocus = WidgetToFocus;
+	Parms.MouseLockMode = MouseLockMode;
+	Parms.bHideCursorDuringCapture = bHideCursorDuringCapture;
+	Parms.bShowCursor = bShowCursor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2132,6 +2689,4 @@ struct FS6UI_InputMode US6UI_StateStatics::CreateInputMode_GameAndUI(class UWidg
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

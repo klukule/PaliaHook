@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,18 +15,13 @@ class UBPFL_Matchmaking_C : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("BPFL_Matchmaking_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UBPFL_Matchmaking_C* GetDefaultObj();
 
-	void GetAlreadyMatchmakingErrorText(class UObject* In__WorldContext, class FText* InText);
-	void CreateErrorPayloadForMatchmakingResult(const struct FOSSVAL_MatchmakingResult& InResult, class UObject* In__WorldContext, struct FF_GenericErrorModalPayload* InPayload, class FText InSubErrorText, int64 InCallFunc_Conv_IntToInt64_ReturnValue, class FText InCallFunc_Map_Find_Value, bool InCallFunc_Map_Find_ReturnValue, const struct FFormatArgumentData& InK2Node_MakeStruct_FormatArgumentData, TArray<struct FFormatArgumentData>& InK2Node_MakeArray_Array, class FText InCallFunc_Format_ReturnValue, int64 InCallFunc_Conv_IntToInt64_ReturnValue_1, const struct FFormatArgumentData& InK2Node_MakeStruct_FormatArgumentData_1, bool InCallFunc_EqualEqual_IntInt_ReturnValue, TArray<struct FFormatArgumentData>& InK2Node_MakeArray_Array_1, class FText InCallFunc_Format_ReturnValue_1, bool InCallFunc_EqualEqual_ByteByte_ReturnValue, bool InTemp_bool_Variable, const struct FF_GenericErrorModalPayload& InK2Node_MakeStruct_F_GenericErrorModalPayload, const struct FOSSVAL_MatchmakingCustomErrorContainer& InK2Node_Select_Default, class FText InCallFunc_Map_Find_Value_1, bool InCallFunc_Map_Find_ReturnValue_1);
+	void GetAlreadyMatchmakingErrorText(class UObject* __WorldContext, class FText* Text);
+	void CreateErrorPayloadForMatchmakingResult(const struct FOSSVAL_MatchmakingResult& Result, class UObject* __WorldContext, struct FF_GenericErrorModalPayload* Payload, class FText SubErrorText, int64 CallFunc_Conv_IntToInt64_ReturnValue, class FText CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, const struct FFormatArgumentData& K2Node_MakeStruct_FormatArgumentData, TArray<struct FFormatArgumentData>& K2Node_MakeArray_Array, class FText CallFunc_Format_ReturnValue, int64 CallFunc_Conv_IntToInt64_ReturnValue_1, const struct FFormatArgumentData& K2Node_MakeStruct_FormatArgumentData_1, bool CallFunc_EqualEqual_IntInt_ReturnValue, TArray<struct FFormatArgumentData>& K2Node_MakeArray_Array_1, class FText CallFunc_Format_ReturnValue_1, bool CallFunc_EqualEqual_ByteByte_ReturnValue, bool Temp_bool_Variable, const struct FF_GenericErrorModalPayload& K2Node_MakeStruct_F_GenericErrorModalPayload, const struct FOSSVAL_MatchmakingCustomErrorContainer& K2Node_Select_Default, class FText CallFunc_Map_Find_Value_1, bool CallFunc_Map_Find_ReturnValue_1);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,13 +12,41 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class ControlRig.RigHierarchy
+// (None)
+
+class UClass* URigHierarchy::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("RigHierarchy");
+
+	return Clss;
+}
+
+
+// RigHierarchy ControlRig.Default__RigHierarchy
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class URigHierarchy* URigHierarchy::GetDefaultObj()
+{
+	static class URigHierarchy* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<URigHierarchy*>(URigHierarchy::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function ControlRig.RigHierarchy.UnsetCurveValueByIndex
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                              InElementIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::UnsetCurveValueByIndex(int32 InInElementIndex, bool InbSetupUndo)
+void URigHierarchy::UnsetCurveValueByIndex(int32 InElementIndex, bool bSetupUndo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,16 +55,16 @@ void URigHierarchy::UnsetCurveValueByIndex(int32 InInElementIndex, bool InbSetup
 
 	Params::URigHierarchy_UnsetCurveValueByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.bSetupUndo = InbSetupUndo;
+	Parms.InElementIndex = InElementIndex;
+	Parms.bSetupUndo = bSetupUndo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -50,7 +75,7 @@ void URigHierarchy::UnsetCurveValueByIndex(int32 InInElementIndex, bool InbSetup
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::UnsetCurveValue(const struct FRigElementKey& InInKey, bool InbSetupUndo)
+void URigHierarchy::UnsetCurveValue(const struct FRigElementKey& InKey, bool bSetupUndo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -59,16 +84,16 @@ void URigHierarchy::UnsetCurveValue(const struct FRigElementKey& InInKey, bool I
 
 	Params::URigHierarchy_UnsetCurveValue_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bSetupUndo = InbSetupUndo;
+	Parms.InKey = InKey;
+	Parms.bSetupUndo = bSetupUndo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -81,7 +106,7 @@ void URigHierarchy::UnsetCurveValue(const struct FRigElementKey& InInKey, bool I
 // bool                               bAffectChildren                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SwitchToWorldSpace(const struct FRigElementKey& InInChild, bool InbInitial, bool InbAffectChildren)
+bool URigHierarchy::SwitchToWorldSpace(const struct FRigElementKey& InChild, bool bInitial, bool bAffectChildren)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,17 +115,17 @@ bool URigHierarchy::SwitchToWorldSpace(const struct FRigElementKey& InInChild, b
 
 	Params::URigHierarchy_SwitchToWorldSpace_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
+	Parms.InChild = InChild;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -116,7 +141,7 @@ bool URigHierarchy::SwitchToWorldSpace(const struct FRigElementKey& InInChild, b
 // bool                               bAffectChildren                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SwitchToParent(const struct FRigElementKey& InInChild, const struct FRigElementKey& InInParent, bool InbInitial, bool InbAffectChildren)
+bool URigHierarchy::SwitchToParent(const struct FRigElementKey& InChild, const struct FRigElementKey& InParent, bool bInitial, bool bAffectChildren)
 {
 	static class UFunction* Func = nullptr;
 
@@ -125,18 +150,18 @@ bool URigHierarchy::SwitchToParent(const struct FRigElementKey& InInChild, const
 
 	Params::URigHierarchy_SwitchToParent_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.InParent = InInParent;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
+	Parms.InChild = InChild;
+	Parms.InParent = InParent;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -151,7 +176,7 @@ bool URigHierarchy::SwitchToParent(const struct FRigElementKey& InInChild, const
 // bool                               bAffectChildren                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SwitchToDefaultParent(const struct FRigElementKey& InInChild, bool InbInitial, bool InbAffectChildren)
+bool URigHierarchy::SwitchToDefaultParent(const struct FRigElementKey& InChild, bool bInitial, bool bAffectChildren)
 {
 	static class UFunction* Func = nullptr;
 
@@ -160,17 +185,17 @@ bool URigHierarchy::SwitchToDefaultParent(const struct FRigElementKey& InInChild
 
 	Params::URigHierarchy_SwitchToDefaultParent_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
+	Parms.InChild = InChild;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -183,7 +208,7 @@ bool URigHierarchy::SwitchToDefaultParent(const struct FRigElementKey& InInChild
 // TArray<struct FRigElementKey>      InKeys                                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::SortKeys(TArray<struct FRigElementKey>& InInKeys)
+TArray<struct FRigElementKey> URigHierarchy::SortKeys(TArray<struct FRigElementKey>& InKeys)
 {
 	static class UFunction* Func = nullptr;
 
@@ -192,15 +217,15 @@ TArray<struct FRigElementKey> URigHierarchy::SortKeys(TArray<struct FRigElementK
 
 	Params::URigHierarchy_SortKeys_Params Parms{};
 
-	Parms.InKeys = InInKeys;
+	Parms.InKeys = InKeys;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -215,7 +240,7 @@ TArray<struct FRigElementKey> URigHierarchy::SortKeys(TArray<struct FRigElementK
 // struct FVector                     InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetVectorMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FVector& InInValue)
+bool URigHierarchy::SetVectorMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FVector& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -224,17 +249,17 @@ bool URigHierarchy::SetVectorMetadata(const struct FRigElementKey& InInItem, cla
 
 	Params::URigHierarchy_SetVectorMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -249,7 +274,7 @@ bool URigHierarchy::SetVectorMetadata(const struct FRigElementKey& InInItem, cla
 // TArray<struct FVector>             InValue                                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetVectorArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const TArray<struct FVector>& InInValue)
+bool URigHierarchy::SetVectorArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const TArray<struct FVector>& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -258,17 +283,17 @@ bool URigHierarchy::SetVectorArrayMetadata(const struct FRigElementKey& InInItem
 
 	Params::URigHierarchy_SetVectorArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -283,7 +308,7 @@ bool URigHierarchy::SetVectorArrayMetadata(const struct FRigElementKey& InInItem
 // struct FTransform                  InValue                                                          (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetTransformMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FTransform& InInValue)
+bool URigHierarchy::SetTransformMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FTransform& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -292,17 +317,17 @@ bool URigHierarchy::SetTransformMetadata(const struct FRigElementKey& InInItem, 
 
 	Params::URigHierarchy_SetTransformMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -317,7 +342,7 @@ bool URigHierarchy::SetTransformMetadata(const struct FRigElementKey& InInItem, 
 // TArray<struct FTransform>          InValue                                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetTransformArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const TArray<struct FTransform>& InInValue)
+bool URigHierarchy::SetTransformArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const TArray<struct FTransform>& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -326,17 +351,17 @@ bool URigHierarchy::SetTransformArrayMetadata(const struct FRigElementKey& InInI
 
 	Params::URigHierarchy_SetTransformArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -350,7 +375,7 @@ bool URigHierarchy::SetTransformArrayMetadata(const struct FRigElementKey& InInI
 // class FName                        InTag                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetTag(const struct FRigElementKey& InInItem, class FName InInTag)
+bool URigHierarchy::SetTag(const struct FRigElementKey& InItem, class FName InTag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -359,16 +384,16 @@ bool URigHierarchy::SetTag(const struct FRigElementKey& InInItem, class FName In
 
 	Params::URigHierarchy_SetTag_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InTag = InInTag;
+	Parms.InItem = InItem;
+	Parms.InTag = InTag;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -383,7 +408,7 @@ bool URigHierarchy::SetTag(const struct FRigElementKey& InInItem, class FName In
 // struct FRotator                    InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetRotatorMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FRotator& InInValue)
+bool URigHierarchy::SetRotatorMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FRotator& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -392,17 +417,17 @@ bool URigHierarchy::SetRotatorMetadata(const struct FRigElementKey& InInItem, cl
 
 	Params::URigHierarchy_SetRotatorMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -417,7 +442,7 @@ bool URigHierarchy::SetRotatorMetadata(const struct FRigElementKey& InInItem, cl
 // TArray<struct FRotator>            InValue                                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetRotatorArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const TArray<struct FRotator>& InInValue)
+bool URigHierarchy::SetRotatorArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const TArray<struct FRotator>& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -426,17 +451,17 @@ bool URigHierarchy::SetRotatorArrayMetadata(const struct FRigElementKey& InInIte
 
 	Params::URigHierarchy_SetRotatorArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -451,7 +476,7 @@ bool URigHierarchy::SetRotatorArrayMetadata(const struct FRigElementKey& InInIte
 // struct FRigElementKey              InValue                                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetRigElementKeyMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FRigElementKey& InInValue)
+bool URigHierarchy::SetRigElementKeyMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FRigElementKey& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -460,17 +485,17 @@ bool URigHierarchy::SetRigElementKeyMetadata(const struct FRigElementKey& InInIt
 
 	Params::URigHierarchy_SetRigElementKeyMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -485,7 +510,7 @@ bool URigHierarchy::SetRigElementKeyMetadata(const struct FRigElementKey& InInIt
 // TArray<struct FRigElementKey>      InValue                                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetRigElementKeyArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const TArray<struct FRigElementKey>& InInValue)
+bool URigHierarchy::SetRigElementKeyArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const TArray<struct FRigElementKey>& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -494,17 +519,17 @@ bool URigHierarchy::SetRigElementKeyArrayMetadata(const struct FRigElementKey& I
 
 	Params::URigHierarchy_SetRigElementKeyArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -519,7 +544,7 @@ bool URigHierarchy::SetRigElementKeyArrayMetadata(const struct FRigElementKey& I
 // struct FQuat                       InValue                                                          (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetQuatMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FQuat& InInValue)
+bool URigHierarchy::SetQuatMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FQuat& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -528,17 +553,17 @@ bool URigHierarchy::SetQuatMetadata(const struct FRigElementKey& InInItem, class
 
 	Params::URigHierarchy_SetQuatMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -553,7 +578,7 @@ bool URigHierarchy::SetQuatMetadata(const struct FRigElementKey& InInItem, class
 // TArray<struct FQuat>               InValue                                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetQuatArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const TArray<struct FQuat>& InInValue)
+bool URigHierarchy::SetQuatArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const TArray<struct FQuat>& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -562,17 +587,17 @@ bool URigHierarchy::SetQuatArrayMetadata(const struct FRigElementKey& InInItem, 
 
 	Params::URigHierarchy_SetQuatArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -584,7 +609,7 @@ bool URigHierarchy::SetQuatArrayMetadata(const struct FRigElementKey& InInItem, 
 // Parameters:
 // struct FRigPose                    InPose                                                           (Parm, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetPose_ForBlueprint(const struct FRigPose& InInPose)
+void URigHierarchy::SetPose_ForBlueprint(const struct FRigPose& InPose)
 {
 	static class UFunction* Func = nullptr;
 
@@ -593,15 +618,15 @@ void URigHierarchy::SetPose_ForBlueprint(const struct FRigPose& InInPose)
 
 	Params::URigHierarchy_SetPose_ForBlueprint_Params Parms{};
 
-	Parms.InPose = InInPose;
+	Parms.InPose = InPose;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -615,7 +640,7 @@ void URigHierarchy::SetPose_ForBlueprint(const struct FRigPose& InInPose)
 // bool                               bAffectChildren                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetParentWeightArray(const struct FRigElementKey& InInChild, const TArray<struct FRigElementWeight>& InInWeights, bool InbInitial, bool InbAffectChildren)
+bool URigHierarchy::SetParentWeightArray(const struct FRigElementKey& InChild, const TArray<struct FRigElementWeight>& InWeights, bool bInitial, bool bAffectChildren)
 {
 	static class UFunction* Func = nullptr;
 
@@ -624,18 +649,18 @@ bool URigHierarchy::SetParentWeightArray(const struct FRigElementKey& InInChild,
 
 	Params::URigHierarchy_SetParentWeightArray_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.InWeights = InInWeights;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
+	Parms.InChild = InChild;
+	Parms.InWeights = InWeights;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -652,7 +677,7 @@ bool URigHierarchy::SetParentWeightArray(const struct FRigElementKey& InInChild,
 // bool                               bAffectChildren                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetParentWeight(const struct FRigElementKey& InInChild, const struct FRigElementKey& InInParent, const struct FRigElementWeight& InInWeight, bool InbInitial, bool InbAffectChildren)
+bool URigHierarchy::SetParentWeight(const struct FRigElementKey& InChild, const struct FRigElementKey& InParent, const struct FRigElementWeight& InWeight, bool bInitial, bool bAffectChildren)
 {
 	static class UFunction* Func = nullptr;
 
@@ -661,19 +686,19 @@ bool URigHierarchy::SetParentWeight(const struct FRigElementKey& InInChild, cons
 
 	Params::URigHierarchy_SetParentWeight_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.InParent = InInParent;
-	Parms.InWeight = InInWeight;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
+	Parms.InChild = InChild;
+	Parms.InParent = InParent;
+	Parms.InWeight = InWeight;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -688,7 +713,7 @@ bool URigHierarchy::SetParentWeight(const struct FRigElementKey& InInChild, cons
 // class FName                        InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetNameMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, class FName InInValue)
+bool URigHierarchy::SetNameMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, class FName InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -697,17 +722,17 @@ bool URigHierarchy::SetNameMetadata(const struct FRigElementKey& InInItem, class
 
 	Params::URigHierarchy_SetNameMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -722,7 +747,7 @@ bool URigHierarchy::SetNameMetadata(const struct FRigElementKey& InInItem, class
 // TArray<class FName>                InValue                                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetNameArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const TArray<class FName>& InInValue)
+bool URigHierarchy::SetNameArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const TArray<class FName>& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -731,17 +756,17 @@ bool URigHierarchy::SetNameArrayMetadata(const struct FRigElementKey& InInItem, 
 
 	Params::URigHierarchy_SetNameArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -758,7 +783,7 @@ bool URigHierarchy::SetNameArrayMetadata(const struct FRigElementKey& InInItem, 
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetLocalTransformByIndex(int32 InInElementIndex, const struct FTransform& InInTransform, bool InbInitial, bool InbAffectChildren, bool InbSetupUndo, bool InbPrintPythonCommands)
+void URigHierarchy::SetLocalTransformByIndex(int32 InElementIndex, const struct FTransform& InTransform, bool bInitial, bool bAffectChildren, bool bSetupUndo, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -767,20 +792,20 @@ void URigHierarchy::SetLocalTransformByIndex(int32 InInElementIndex, const struc
 
 	Params::URigHierarchy_SetLocalTransformByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.InTransform = InInTransform;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InElementIndex = InElementIndex;
+	Parms.InTransform = InTransform;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -795,7 +820,7 @@ void URigHierarchy::SetLocalTransformByIndex(int32 InInElementIndex, const struc
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetLocalTransform(const struct FRigElementKey& InInKey, const struct FTransform& InInTransform, bool InbInitial, bool InbAffectChildren, bool InbSetupUndo, bool InbPrintPythonCommands)
+void URigHierarchy::SetLocalTransform(const struct FRigElementKey& InKey, const struct FTransform& InTransform, bool bInitial, bool bAffectChildren, bool bSetupUndo, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -804,20 +829,20 @@ void URigHierarchy::SetLocalTransform(const struct FRigElementKey& InInKey, cons
 
 	Params::URigHierarchy_SetLocalTransform_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.InTransform = InInTransform;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InKey = InKey;
+	Parms.InTransform = InTransform;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -830,7 +855,7 @@ void URigHierarchy::SetLocalTransform(const struct FRigElementKey& InInKey, cons
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetLinearColorMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FLinearColor& InInValue)
+bool URigHierarchy::SetLinearColorMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -839,17 +864,17 @@ bool URigHierarchy::SetLinearColorMetadata(const struct FRigElementKey& InInItem
 
 	Params::URigHierarchy_SetLinearColorMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -864,7 +889,7 @@ bool URigHierarchy::SetLinearColorMetadata(const struct FRigElementKey& InInItem
 // TArray<struct FLinearColor>        InValue                                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetLinearColorArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const TArray<struct FLinearColor>& InInValue)
+bool URigHierarchy::SetLinearColorArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const TArray<struct FLinearColor>& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -873,17 +898,17 @@ bool URigHierarchy::SetLinearColorArrayMetadata(const struct FRigElementKey& InI
 
 	Params::URigHierarchy_SetLinearColorArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -898,7 +923,7 @@ bool URigHierarchy::SetLinearColorArrayMetadata(const struct FRigElementKey& InI
 // int32                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetInt32Metadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, int32 InInValue)
+bool URigHierarchy::SetInt32Metadata(const struct FRigElementKey& InItem, class FName InMetadataName, int32 InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -907,17 +932,17 @@ bool URigHierarchy::SetInt32Metadata(const struct FRigElementKey& InInItem, clas
 
 	Params::URigHierarchy_SetInt32Metadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -932,7 +957,7 @@ bool URigHierarchy::SetInt32Metadata(const struct FRigElementKey& InInItem, clas
 // TArray<int32>                      InValue                                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetInt32ArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const TArray<int32>& InInValue)
+bool URigHierarchy::SetInt32ArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const TArray<int32>& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -941,17 +966,17 @@ bool URigHierarchy::SetInt32ArrayMetadata(const struct FRigElementKey& InInItem,
 
 	Params::URigHierarchy_SetInt32ArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -968,7 +993,7 @@ bool URigHierarchy::SetInt32ArrayMetadata(const struct FRigElementKey& InInItem,
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetGlobalTransformByIndex(int32 InInElementIndex, const struct FTransform& InInTransform, bool InbInitial, bool InbAffectChildren, bool InbSetupUndo, bool InbPrintPythonCommand)
+void URigHierarchy::SetGlobalTransformByIndex(int32 InElementIndex, const struct FTransform& InTransform, bool bInitial, bool bAffectChildren, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -977,20 +1002,20 @@ void URigHierarchy::SetGlobalTransformByIndex(int32 InInElementIndex, const stru
 
 	Params::URigHierarchy_SetGlobalTransformByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.InTransform = InInTransform;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InElementIndex = InElementIndex;
+	Parms.InTransform = InTransform;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1005,7 +1030,7 @@ void URigHierarchy::SetGlobalTransformByIndex(int32 InInElementIndex, const stru
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetGlobalTransform(const struct FRigElementKey& InInKey, const struct FTransform& InInTransform, bool InbInitial, bool InbAffectChildren, bool InbSetupUndo, bool InbPrintPythonCommand)
+void URigHierarchy::SetGlobalTransform(const struct FRigElementKey& InKey, const struct FTransform& InTransform, bool bInitial, bool bAffectChildren, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1014,20 +1039,20 @@ void URigHierarchy::SetGlobalTransform(const struct FRigElementKey& InInKey, con
 
 	Params::URigHierarchy_SetGlobalTransform_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.InTransform = InInTransform;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InKey = InKey;
+	Parms.InTransform = InTransform;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1040,7 +1065,7 @@ void URigHierarchy::SetGlobalTransform(const struct FRigElementKey& InInKey, con
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetFloatMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, float InInValue)
+bool URigHierarchy::SetFloatMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1049,17 +1074,17 @@ bool URigHierarchy::SetFloatMetadata(const struct FRigElementKey& InInItem, clas
 
 	Params::URigHierarchy_SetFloatMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1074,7 +1099,7 @@ bool URigHierarchy::SetFloatMetadata(const struct FRigElementKey& InInItem, clas
 // TArray<float>                      InValue                                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetFloatArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const TArray<float>& InInValue)
+bool URigHierarchy::SetFloatArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const TArray<float>& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1083,17 +1108,17 @@ bool URigHierarchy::SetFloatArrayMetadata(const struct FRigElementKey& InInItem,
 
 	Params::URigHierarchy_SetFloatArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1107,7 +1132,7 @@ bool URigHierarchy::SetFloatArrayMetadata(const struct FRigElementKey& InInItem,
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetCurveValueByIndex(int32 InInElementIndex, float InInValue, bool InbSetupUndo)
+void URigHierarchy::SetCurveValueByIndex(int32 InElementIndex, float InValue, bool bSetupUndo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1116,17 +1141,17 @@ void URigHierarchy::SetCurveValueByIndex(int32 InInElementIndex, float InInValue
 
 	Params::URigHierarchy_SetCurveValueByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.InValue = InInValue;
-	Parms.bSetupUndo = InbSetupUndo;
+	Parms.InElementIndex = InElementIndex;
+	Parms.InValue = InValue;
+	Parms.bSetupUndo = bSetupUndo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1138,7 +1163,7 @@ void URigHierarchy::SetCurveValueByIndex(int32 InInElementIndex, float InInValue
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetCurveValue(const struct FRigElementKey& InInKey, float InInValue, bool InbSetupUndo)
+void URigHierarchy::SetCurveValue(const struct FRigElementKey& InKey, float InValue, bool bSetupUndo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1147,17 +1172,17 @@ void URigHierarchy::SetCurveValue(const struct FRigElementKey& InInKey, float In
 
 	Params::URigHierarchy_SetCurveValue_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.InValue = InInValue;
-	Parms.bSetupUndo = InbSetupUndo;
+	Parms.InKey = InKey;
+	Parms.InValue = InValue;
+	Parms.bSetupUndo = bSetupUndo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1168,7 +1193,7 @@ void URigHierarchy::SetCurveValue(const struct FRigElementKey& InInKey, float In
 // int32                              InElementIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bVisibility                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlVisibilityByIndex(int32 InInElementIndex, bool InbVisibility)
+void URigHierarchy::SetControlVisibilityByIndex(int32 InElementIndex, bool bVisibility)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1177,16 +1202,16 @@ void URigHierarchy::SetControlVisibilityByIndex(int32 InInElementIndex, bool Inb
 
 	Params::URigHierarchy_SetControlVisibilityByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.bVisibility = InbVisibility;
+	Parms.InElementIndex = InElementIndex;
+	Parms.bVisibility = bVisibility;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1197,7 +1222,7 @@ void URigHierarchy::SetControlVisibilityByIndex(int32 InInElementIndex, bool Inb
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bVisibility                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlVisibility(const struct FRigElementKey& InInKey, bool InbVisibility)
+void URigHierarchy::SetControlVisibility(const struct FRigElementKey& InKey, bool bVisibility)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1206,16 +1231,16 @@ void URigHierarchy::SetControlVisibility(const struct FRigElementKey& InInKey, b
 
 	Params::URigHierarchy_SetControlVisibility_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bVisibility = InbVisibility;
+	Parms.InKey = InKey;
+	Parms.bVisibility = bVisibility;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1229,7 +1254,7 @@ void URigHierarchy::SetControlVisibility(const struct FRigElementKey& InInKey, b
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlValueByIndex(int32 InInElementIndex, const struct FRigControlValue& InInValue, enum class ERigControlValueType InInValueType, bool InbSetupUndo, bool InbPrintPythonCommands)
+void URigHierarchy::SetControlValueByIndex(int32 InElementIndex, const struct FRigControlValue& InValue, enum class ERigControlValueType InValueType, bool bSetupUndo, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1238,19 +1263,19 @@ void URigHierarchy::SetControlValueByIndex(int32 InInElementIndex, const struct 
 
 	Params::URigHierarchy_SetControlValueByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.InValue = InInValue;
-	Parms.InValueType = InInValueType;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InElementIndex = InElementIndex;
+	Parms.InValue = InValue;
+	Parms.InValueType = InValueType;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1264,7 +1289,7 @@ void URigHierarchy::SetControlValueByIndex(int32 InInElementIndex, const struct 
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlValue(const struct FRigElementKey& InInKey, const struct FRigControlValue& InInValue, enum class ERigControlValueType InInValueType, bool InbSetupUndo, bool InbPrintPythonCommands)
+void URigHierarchy::SetControlValue(const struct FRigElementKey& InKey, const struct FRigControlValue& InValue, enum class ERigControlValueType InValueType, bool bSetupUndo, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1273,19 +1298,19 @@ void URigHierarchy::SetControlValue(const struct FRigElementKey& InInKey, const 
 
 	Params::URigHierarchy_SetControlValue_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.InValue = InInValue;
-	Parms.InValueType = InInValueType;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InKey = InKey;
+	Parms.InValue = InValue;
+	Parms.InValueType = InValueType;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1298,7 +1323,7 @@ void URigHierarchy::SetControlValue(const struct FRigElementKey& InInKey, const 
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlShapeTransformByIndex(int32 InInElementIndex, const struct FTransform& InInTransform, bool InbInitial, bool InbSetupUndo)
+void URigHierarchy::SetControlShapeTransformByIndex(int32 InElementIndex, const struct FTransform& InTransform, bool bInitial, bool bSetupUndo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1307,18 +1332,18 @@ void URigHierarchy::SetControlShapeTransformByIndex(int32 InInElementIndex, cons
 
 	Params::URigHierarchy_SetControlShapeTransformByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.InTransform = InInTransform;
-	Parms.bInitial = InbInitial;
-	Parms.bSetupUndo = InbSetupUndo;
+	Parms.InElementIndex = InElementIndex;
+	Parms.InTransform = InTransform;
+	Parms.bInitial = bInitial;
+	Parms.bSetupUndo = bSetupUndo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1331,7 +1356,7 @@ void URigHierarchy::SetControlShapeTransformByIndex(int32 InInElementIndex, cons
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlShapeTransform(const struct FRigElementKey& InInKey, const struct FTransform& InInTransform, bool InbInitial, bool InbSetupUndo)
+void URigHierarchy::SetControlShapeTransform(const struct FRigElementKey& InKey, const struct FTransform& InTransform, bool bInitial, bool bSetupUndo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1340,18 +1365,18 @@ void URigHierarchy::SetControlShapeTransform(const struct FRigElementKey& InInKe
 
 	Params::URigHierarchy_SetControlShapeTransform_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.InTransform = InInTransform;
-	Parms.bInitial = InbInitial;
-	Parms.bSetupUndo = InbSetupUndo;
+	Parms.InKey = InKey;
+	Parms.InTransform = InTransform;
+	Parms.bInitial = bInitial;
+	Parms.bSetupUndo = bSetupUndo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1365,7 +1390,7 @@ void URigHierarchy::SetControlShapeTransform(const struct FRigElementKey& InInKe
 // bool                               bForce                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlSettingsByIndex(int32 InInElementIndex, const struct FRigControlSettings& InInSettings, bool InbSetupUndo, bool InbForce, bool InbPrintPythonCommands)
+void URigHierarchy::SetControlSettingsByIndex(int32 InElementIndex, const struct FRigControlSettings& InSettings, bool bSetupUndo, bool bForce, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1374,19 +1399,19 @@ void URigHierarchy::SetControlSettingsByIndex(int32 InInElementIndex, const stru
 
 	Params::URigHierarchy_SetControlSettingsByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.InSettings = InInSettings;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bForce = InbForce;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InElementIndex = InElementIndex;
+	Parms.InSettings = InSettings;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bForce = bForce;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1400,7 +1425,7 @@ void URigHierarchy::SetControlSettingsByIndex(int32 InInElementIndex, const stru
 // bool                               bForce                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlSettings(const struct FRigElementKey& InInKey, const struct FRigControlSettings& InInSettings, bool InbSetupUndo, bool InbForce, bool InbPrintPythonCommands)
+void URigHierarchy::SetControlSettings(const struct FRigElementKey& InKey, const struct FRigControlSettings& InSettings, bool bSetupUndo, bool bForce, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1409,19 +1434,19 @@ void URigHierarchy::SetControlSettings(const struct FRigElementKey& InInKey, con
 
 	Params::URigHierarchy_SetControlSettings_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.InSettings = InInSettings;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bForce = InbForce;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InKey = InKey;
+	Parms.InSettings = InSettings;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bForce = bForce;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1434,7 +1459,7 @@ void URigHierarchy::SetControlSettings(const struct FRigElementKey& InInKey, con
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bFixEulerFlips                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlPreferredRotatorByIndex(int32 InInElementIndex, struct FRotator& InInValue, bool InbInitial, bool InbFixEulerFlips)
+void URigHierarchy::SetControlPreferredRotatorByIndex(int32 InElementIndex, struct FRotator& InValue, bool bInitial, bool bFixEulerFlips)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1443,18 +1468,18 @@ void URigHierarchy::SetControlPreferredRotatorByIndex(int32 InInElementIndex, st
 
 	Params::URigHierarchy_SetControlPreferredRotatorByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.InValue = InInValue;
-	Parms.bInitial = InbInitial;
-	Parms.bFixEulerFlips = InbFixEulerFlips;
+	Parms.InElementIndex = InElementIndex;
+	Parms.InValue = InValue;
+	Parms.bInitial = bInitial;
+	Parms.bFixEulerFlips = bFixEulerFlips;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1467,7 +1492,7 @@ void URigHierarchy::SetControlPreferredRotatorByIndex(int32 InInElementIndex, st
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bFixEulerFlips                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlPreferredRotator(const struct FRigElementKey& InInKey, struct FRotator& InInValue, bool InbInitial, bool InbFixEulerFlips)
+void URigHierarchy::SetControlPreferredRotator(const struct FRigElementKey& InKey, struct FRotator& InValue, bool bInitial, bool bFixEulerFlips)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1476,18 +1501,18 @@ void URigHierarchy::SetControlPreferredRotator(const struct FRigElementKey& InIn
 
 	Params::URigHierarchy_SetControlPreferredRotator_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.InValue = InInValue;
-	Parms.bInitial = InbInitial;
-	Parms.bFixEulerFlips = InbFixEulerFlips;
+	Parms.InKey = InKey;
+	Parms.InValue = InValue;
+	Parms.bInitial = bInitial;
+	Parms.bFixEulerFlips = bFixEulerFlips;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1502,7 +1527,7 @@ void URigHierarchy::SetControlPreferredRotator(const struct FRigElementKey& InIn
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlOffsetTransformByIndex(int32 InInElementIndex, const struct FTransform& InInTransform, bool InbInitial, bool InbAffectChildren, bool InbSetupUndo, bool InbPrintPythonCommands)
+void URigHierarchy::SetControlOffsetTransformByIndex(int32 InElementIndex, const struct FTransform& InTransform, bool bInitial, bool bAffectChildren, bool bSetupUndo, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1511,20 +1536,20 @@ void URigHierarchy::SetControlOffsetTransformByIndex(int32 InInElementIndex, con
 
 	Params::URigHierarchy_SetControlOffsetTransformByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.InTransform = InInTransform;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InElementIndex = InElementIndex;
+	Parms.InTransform = InTransform;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1539,7 +1564,7 @@ void URigHierarchy::SetControlOffsetTransformByIndex(int32 InInElementIndex, con
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SetControlOffsetTransform(const struct FRigElementKey& InInKey, const struct FTransform& InInTransform, bool InbInitial, bool InbAffectChildren, bool InbSetupUndo, bool InbPrintPythonCommands)
+void URigHierarchy::SetControlOffsetTransform(const struct FRigElementKey& InKey, const struct FTransform& InTransform, bool bInitial, bool bAffectChildren, bool bSetupUndo, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1548,20 +1573,20 @@ void URigHierarchy::SetControlOffsetTransform(const struct FRigElementKey& InInK
 
 	Params::URigHierarchy_SetControlOffsetTransform_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.InTransform = InInTransform;
-	Parms.bInitial = InbInitial;
-	Parms.bAffectChildren = InbAffectChildren;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InKey = InKey;
+	Parms.InTransform = InTransform;
+	Parms.bInitial = bInitial;
+	Parms.bAffectChildren = bAffectChildren;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1574,7 +1599,7 @@ void URigHierarchy::SetControlOffsetTransform(const struct FRigElementKey& InInK
 // bool                               InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetBoolMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, bool InInValue)
+bool URigHierarchy::SetBoolMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, bool InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1583,17 +1608,17 @@ bool URigHierarchy::SetBoolMetadata(const struct FRigElementKey& InInItem, class
 
 	Params::URigHierarchy_SetBoolMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1608,7 +1633,7 @@ bool URigHierarchy::SetBoolMetadata(const struct FRigElementKey& InInItem, class
 // TArray<bool>                       InValue                                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::SetBoolArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const TArray<bool>& InInValue)
+bool URigHierarchy::SetBoolArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const TArray<bool>& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1617,17 +1642,17 @@ bool URigHierarchy::SetBoolArrayMetadata(const struct FRigElementKey& InInItem, 
 
 	Params::URigHierarchy_SetBoolArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.InValue = InInValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1641,7 +1666,7 @@ bool URigHierarchy::SetBoolArrayMetadata(const struct FRigElementKey& InInItem, 
 // float                              InOffsetInSeconds                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bAsynchronous                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::SendAutoKeyEvent(const struct FRigElementKey& InInElement, float InInOffsetInSeconds, bool InbAsynchronous)
+void URigHierarchy::SendAutoKeyEvent(const struct FRigElementKey& InElement, float InOffsetInSeconds, bool bAsynchronous)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1650,17 +1675,17 @@ void URigHierarchy::SendAutoKeyEvent(const struct FRigElementKey& InInElement, f
 
 	Params::URigHierarchy_SendAutoKeyEvent_Params Parms{};
 
-	Parms.InElement = InInElement;
-	Parms.InOffsetInSeconds = InInOffsetInSeconds;
-	Parms.bAsynchronous = InbAsynchronous;
+	Parms.InElement = InElement;
+	Parms.InOffsetInSeconds = InOffsetInSeconds;
+	Parms.bAsynchronous = bAsynchronous;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1679,13 +1704,13 @@ void URigHierarchy::ResetToDefault()
 	Params::URigHierarchy_ResetToDefault_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1695,7 +1720,7 @@ void URigHierarchy::ResetToDefault()
 // Parameters:
 // enum class ERigElementType         InTypeFilter                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::ResetPoseToInitial(enum class ERigElementType InInTypeFilter)
+void URigHierarchy::ResetPoseToInitial(enum class ERigElementType InTypeFilter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1704,15 +1729,15 @@ void URigHierarchy::ResetPoseToInitial(enum class ERigElementType InInTypeFilter
 
 	Params::URigHierarchy_ResetPoseToInitial_Params Parms{};
 
-	Parms.InTypeFilter = InInTypeFilter;
+	Parms.InTypeFilter = InTypeFilter;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1731,13 +1756,13 @@ void URigHierarchy::ResetCurveValues()
 	Params::URigHierarchy_ResetCurveValues_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1756,13 +1781,13 @@ void URigHierarchy::Reset()
 	Params::URigHierarchy_Reset_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1774,7 +1799,7 @@ void URigHierarchy::Reset()
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::RemoveMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+bool URigHierarchy::RemoveMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1783,16 +1808,16 @@ bool URigHierarchy::RemoveMetadata(const struct FRigElementKey& InInItem, class 
 
 	Params::URigHierarchy_RemoveMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1805,7 +1830,7 @@ bool URigHierarchy::RemoveMetadata(const struct FRigElementKey& InInItem, class 
 // struct FRigElementKey              InItem                                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::RemoveAllMetadata(const struct FRigElementKey& InInItem)
+bool URigHierarchy::RemoveAllMetadata(const struct FRigElementKey& InItem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1814,15 +1839,15 @@ bool URigHierarchy::RemoveAllMetadata(const struct FRigElementKey& InInItem)
 
 	Params::URigHierarchy_RemoveAllMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
+	Parms.InItem = InItem;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1844,13 +1869,13 @@ int32 URigHierarchy::Num()
 	Params::URigHierarchy_Num_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1863,7 +1888,7 @@ int32 URigHierarchy::Num()
 // struct FVector2D                   InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::MakeControlValueFromVector2D(const struct FVector2D& InInValue)
+struct FRigControlValue URigHierarchy::MakeControlValueFromVector2D(const struct FVector2D& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1872,15 +1897,15 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromVector2D(const struct
 
 	Params::URigHierarchy_MakeControlValueFromVector2D_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1893,7 +1918,7 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromVector2D(const struct
 // struct FVector                     InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::MakeControlValueFromVector(const struct FVector& InInValue)
+struct FRigControlValue URigHierarchy::MakeControlValueFromVector(const struct FVector& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1902,15 +1927,15 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromVector(const struct F
 
 	Params::URigHierarchy_MakeControlValueFromVector_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1923,7 +1948,7 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromVector(const struct F
 // struct FTransformNoScale           InValue                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::MakeControlValueFromTransformNoScale(const struct FTransformNoScale& InInValue)
+struct FRigControlValue URigHierarchy::MakeControlValueFromTransformNoScale(const struct FTransformNoScale& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1932,15 +1957,15 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromTransformNoScale(cons
 
 	Params::URigHierarchy_MakeControlValueFromTransformNoScale_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1953,7 +1978,7 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromTransformNoScale(cons
 // struct FTransform                  InValue                                                          (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::MakeControlValueFromTransform(const struct FTransform& InInValue)
+struct FRigControlValue URigHierarchy::MakeControlValueFromTransform(const struct FTransform& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1962,15 +1987,15 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromTransform(const struc
 
 	Params::URigHierarchy_MakeControlValueFromTransform_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1983,7 +2008,7 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromTransform(const struc
 // struct FRotator                    InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::MakeControlValueFromRotator(const struct FRotator& InInValue)
+struct FRigControlValue URigHierarchy::MakeControlValueFromRotator(const struct FRotator& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1992,15 +2017,15 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromRotator(const struct 
 
 	Params::URigHierarchy_MakeControlValueFromRotator_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2013,7 +2038,7 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromRotator(const struct 
 // int32                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::MakeControlValueFromInt(int32 InInValue)
+struct FRigControlValue URigHierarchy::MakeControlValueFromInt(int32 InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2022,15 +2047,15 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromInt(int32 InInValue)
 
 	Params::URigHierarchy_MakeControlValueFromInt_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2043,7 +2068,7 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromInt(int32 InInValue)
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::MakeControlValueFromFloat(float InInValue)
+struct FRigControlValue URigHierarchy::MakeControlValueFromFloat(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2052,15 +2077,15 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromFloat(float InInValue
 
 	Params::URigHierarchy_MakeControlValueFromFloat_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2073,7 +2098,7 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromFloat(float InInValue
 // struct FEulerTransform             InValue                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::MakeControlValueFromEulerTransform(const struct FEulerTransform& InInValue)
+struct FRigControlValue URigHierarchy::MakeControlValueFromEulerTransform(const struct FEulerTransform& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2082,15 +2107,15 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromEulerTransform(const 
 
 	Params::URigHierarchy_MakeControlValueFromEulerTransform_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2103,7 +2128,7 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromEulerTransform(const 
 // bool                               InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::MakeControlValueFromBool(bool InInValue)
+struct FRigControlValue URigHierarchy::MakeControlValueFromBool(bool InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2112,15 +2137,15 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromBool(bool InInValue)
 
 	Params::URigHierarchy_MakeControlValueFromBool_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2133,7 +2158,7 @@ struct FRigControlValue URigHierarchy::MakeControlValueFromBool(bool InInValue)
 // int32                              InElementIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::IsValidIndex(int32 InInElementIndex)
+bool URigHierarchy::IsValidIndex(int32 InElementIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2142,15 +2167,15 @@ bool URigHierarchy::IsValidIndex(int32 InInElementIndex)
 
 	Params::URigHierarchy_IsValidIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
+	Parms.InElementIndex = InElementIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2163,7 +2188,7 @@ bool URigHierarchy::IsValidIndex(int32 InInElementIndex)
 // int32                              InIndex                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::IsSelectedByIndex(int32 InInIndex)
+bool URigHierarchy::IsSelectedByIndex(int32 InIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2172,15 +2197,15 @@ bool URigHierarchy::IsSelectedByIndex(int32 InInIndex)
 
 	Params::URigHierarchy_IsSelectedByIndex_Params Parms{};
 
-	Parms.InIndex = InInIndex;
+	Parms.InIndex = InIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2193,7 +2218,7 @@ bool URigHierarchy::IsSelectedByIndex(int32 InInIndex)
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::IsSelected(const struct FRigElementKey& InInKey)
+bool URigHierarchy::IsSelected(const struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2202,15 +2227,15 @@ bool URigHierarchy::IsSelected(const struct FRigElementKey& InInKey)
 
 	Params::URigHierarchy_IsSelected_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2223,7 +2248,7 @@ bool URigHierarchy::IsSelected(const struct FRigElementKey& InInKey)
 // struct FRigElementKey              InKey                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::IsProcedural(struct FRigElementKey& InInKey)
+bool URigHierarchy::IsProcedural(struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2232,15 +2257,15 @@ bool URigHierarchy::IsProcedural(struct FRigElementKey& InInKey)
 
 	Params::URigHierarchy_IsProcedural_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2254,7 +2279,7 @@ bool URigHierarchy::IsProcedural(struct FRigElementKey& InInKey)
 // struct FRigElementKey              InParent                                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::IsParentedTo(const struct FRigElementKey& InInChild, const struct FRigElementKey& InInParent)
+bool URigHierarchy::IsParentedTo(const struct FRigElementKey& InChild, const struct FRigElementKey& InParent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2263,16 +2288,16 @@ bool URigHierarchy::IsParentedTo(const struct FRigElementKey& InInChild, const s
 
 	Params::URigHierarchy_IsParentedTo_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.InParent = InInParent;
+	Parms.InChild = InChild;
+	Parms.InParent = InParent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2285,7 +2310,7 @@ bool URigHierarchy::IsParentedTo(const struct FRigElementKey& InInChild, const s
 // int32                              InElementIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::IsCurveValueSetByIndex(int32 InInElementIndex)
+bool URigHierarchy::IsCurveValueSetByIndex(int32 InElementIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2294,15 +2319,15 @@ bool URigHierarchy::IsCurveValueSetByIndex(int32 InInElementIndex)
 
 	Params::URigHierarchy_IsCurveValueSetByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
+	Parms.InElementIndex = InElementIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2315,7 +2340,7 @@ bool URigHierarchy::IsCurveValueSetByIndex(int32 InInElementIndex)
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::IsCurveValueSet(const struct FRigElementKey& InInKey)
+bool URigHierarchy::IsCurveValueSet(const struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2324,15 +2349,15 @@ bool URigHierarchy::IsCurveValueSet(const struct FRigElementKey& InInKey)
 
 	Params::URigHierarchy_IsCurveValueSet_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2354,13 +2379,13 @@ bool URigHierarchy::IsControllerAvailable()
 	Params::URigHierarchy_IsControllerAvailable_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2374,7 +2399,7 @@ bool URigHierarchy::IsControllerAvailable()
 // class FName                        InTag                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::HasTag(const struct FRigElementKey& InInItem, class FName InInTag)
+bool URigHierarchy::HasTag(const struct FRigElementKey& InItem, class FName InTag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2383,16 +2408,16 @@ bool URigHierarchy::HasTag(const struct FRigElementKey& InInItem, class FName In
 
 	Params::URigHierarchy_HasTag_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InTag = InInTag;
+	Parms.InItem = InItem;
+	Parms.InTag = InTag;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2407,7 +2432,7 @@ bool URigHierarchy::HasTag(const struct FRigElementKey& InInItem, class FName In
 // struct FVector                     DefaultValue                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector URigHierarchy::GetVectorMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FVector& InDefaultValue)
+struct FVector URigHierarchy::GetVectorMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FVector& DefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2416,17 +2441,17 @@ struct FVector URigHierarchy::GetVectorMetadata(const struct FRigElementKey& InI
 
 	Params::URigHierarchy_GetVectorMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.DefaultValue = InDefaultValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.DefaultValue = DefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2439,7 +2464,7 @@ struct FVector URigHierarchy::GetVectorMetadata(const struct FRigElementKey& InI
 // struct FRigControlValue            InValue                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector URigHierarchy::GetVectorFromControlValue(const struct FRigControlValue& InInValue)
+struct FVector URigHierarchy::GetVectorFromControlValue(const struct FRigControlValue& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2448,15 +2473,15 @@ struct FVector URigHierarchy::GetVectorFromControlValue(const struct FRigControl
 
 	Params::URigHierarchy_GetVectorFromControlValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2470,7 +2495,7 @@ struct FVector URigHierarchy::GetVectorFromControlValue(const struct FRigControl
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVector>             ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FVector> URigHierarchy::GetVectorArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+TArray<struct FVector> URigHierarchy::GetVectorArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2479,16 +2504,16 @@ TArray<struct FVector> URigHierarchy::GetVectorArrayMetadata(const struct FRigEl
 
 	Params::URigHierarchy_GetVectorArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2501,7 +2526,7 @@ TArray<struct FVector> URigHierarchy::GetVectorArrayMetadata(const struct FRigEl
 // struct FRigControlValue            InValue                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector2D                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector2D URigHierarchy::GetVector2DFromControlValue(const struct FRigControlValue& InInValue)
+struct FVector2D URigHierarchy::GetVector2DFromControlValue(const struct FRigControlValue& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2510,15 +2535,15 @@ struct FVector2D URigHierarchy::GetVector2DFromControlValue(const struct FRigCon
 
 	Params::URigHierarchy_GetVector2DFromControlValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2531,7 +2556,7 @@ struct FVector2D URigHierarchy::GetVector2DFromControlValue(const struct FRigCon
 // struct FRigControlValue            InValue                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FTransformNoScale           ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FTransformNoScale URigHierarchy::GetTransformNoScaleFromControlValue(const struct FRigControlValue& InInValue)
+struct FTransformNoScale URigHierarchy::GetTransformNoScaleFromControlValue(const struct FRigControlValue& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2540,15 +2565,15 @@ struct FTransformNoScale URigHierarchy::GetTransformNoScaleFromControlValue(cons
 
 	Params::URigHierarchy_GetTransformNoScaleFromControlValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2563,7 +2588,7 @@ struct FTransformNoScale URigHierarchy::GetTransformNoScaleFromControlValue(cons
 // struct FTransform                  DefaultValue                                                     (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetTransformMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FTransform& InDefaultValue)
+struct FTransform URigHierarchy::GetTransformMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FTransform& DefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2572,17 +2597,17 @@ struct FTransform URigHierarchy::GetTransformMetadata(const struct FRigElementKe
 
 	Params::URigHierarchy_GetTransformMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.DefaultValue = InDefaultValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.DefaultValue = DefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2595,7 +2620,7 @@ struct FTransform URigHierarchy::GetTransformMetadata(const struct FRigElementKe
 // struct FRigControlValue            InValue                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetTransformFromControlValue(const struct FRigControlValue& InInValue)
+struct FTransform URigHierarchy::GetTransformFromControlValue(const struct FRigControlValue& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2604,15 +2629,15 @@ struct FTransform URigHierarchy::GetTransformFromControlValue(const struct FRigC
 
 	Params::URigHierarchy_GetTransformFromControlValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2626,7 +2651,7 @@ struct FTransform URigHierarchy::GetTransformFromControlValue(const struct FRigC
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FTransform>          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FTransform> URigHierarchy::GetTransformArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+TArray<struct FTransform> URigHierarchy::GetTransformArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2635,16 +2660,16 @@ TArray<struct FTransform> URigHierarchy::GetTransformArrayMetadata(const struct 
 
 	Params::URigHierarchy_GetTransformArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2657,7 +2682,7 @@ TArray<struct FTransform> URigHierarchy::GetTransformArrayMetadata(const struct 
 // struct FRigElementKey              InItem                                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class FName> URigHierarchy::GetTags(const struct FRigElementKey& InInItem)
+TArray<class FName> URigHierarchy::GetTags(const struct FRigElementKey& InItem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2666,15 +2691,15 @@ TArray<class FName> URigHierarchy::GetTags(const struct FRigElementKey& InInItem
 
 	Params::URigHierarchy_GetTags_Params Parms{};
 
-	Parms.InItem = InInItem;
+	Parms.InItem = InItem;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2687,7 +2712,7 @@ TArray<class FName> URigHierarchy::GetTags(const struct FRigElementKey& InInItem
 // enum class ERigElementType         InTypeFilter                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetSelectedKeys(enum class ERigElementType InInTypeFilter)
+TArray<struct FRigElementKey> URigHierarchy::GetSelectedKeys(enum class ERigElementType InTypeFilter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2696,15 +2721,15 @@ TArray<struct FRigElementKey> URigHierarchy::GetSelectedKeys(enum class ERigElem
 
 	Params::URigHierarchy_GetSelectedKeys_Params Parms{};
 
-	Parms.InTypeFilter = InInTypeFilter;
+	Parms.InTypeFilter = InTypeFilter;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2719,7 +2744,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetSelectedKeys(enum class ERigElem
 // struct FRotator                    DefaultValue                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // struct FRotator                    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRotator URigHierarchy::GetRotatorMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FRotator& InDefaultValue)
+struct FRotator URigHierarchy::GetRotatorMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FRotator& DefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2728,17 +2753,17 @@ struct FRotator URigHierarchy::GetRotatorMetadata(const struct FRigElementKey& I
 
 	Params::URigHierarchy_GetRotatorMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.DefaultValue = InDefaultValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.DefaultValue = DefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2751,7 +2776,7 @@ struct FRotator URigHierarchy::GetRotatorMetadata(const struct FRigElementKey& I
 // struct FRigControlValue            InValue                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FRotator                    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRotator URigHierarchy::GetRotatorFromControlValue(const struct FRigControlValue& InInValue)
+struct FRotator URigHierarchy::GetRotatorFromControlValue(const struct FRigControlValue& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2760,15 +2785,15 @@ struct FRotator URigHierarchy::GetRotatorFromControlValue(const struct FRigContr
 
 	Params::URigHierarchy_GetRotatorFromControlValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2782,7 +2807,7 @@ struct FRotator URigHierarchy::GetRotatorFromControlValue(const struct FRigContr
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRotator>            ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRotator> URigHierarchy::GetRotatorArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+TArray<struct FRotator> URigHierarchy::GetRotatorArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2791,16 +2816,16 @@ TArray<struct FRotator> URigHierarchy::GetRotatorArrayMetadata(const struct FRig
 
 	Params::URigHierarchy_GetRotatorArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2813,7 +2838,7 @@ TArray<struct FRotator> URigHierarchy::GetRotatorArrayMetadata(const struct FRig
 // bool                               bTraverse                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetRigidBodyKeys(bool InbTraverse)
+TArray<struct FRigElementKey> URigHierarchy::GetRigidBodyKeys(bool bTraverse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2822,15 +2847,15 @@ TArray<struct FRigElementKey> URigHierarchy::GetRigidBodyKeys(bool InbTraverse)
 
 	Params::URigHierarchy_GetRigidBodyKeys_Params Parms{};
 
-	Parms.bTraverse = InbTraverse;
+	Parms.bTraverse = bTraverse;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2845,7 +2870,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetRigidBodyKeys(bool InbTraverse)
 // struct FRigElementKey              DefaultValue                                                     (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchy::GetRigElementKeyMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FRigElementKey& InDefaultValue)
+struct FRigElementKey URigHierarchy::GetRigElementKeyMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FRigElementKey& DefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2854,17 +2879,17 @@ struct FRigElementKey URigHierarchy::GetRigElementKeyMetadata(const struct FRigE
 
 	Params::URigHierarchy_GetRigElementKeyMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.DefaultValue = InDefaultValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.DefaultValue = DefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2878,7 +2903,7 @@ struct FRigElementKey URigHierarchy::GetRigElementKeyMetadata(const struct FRigE
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetRigElementKeyArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+TArray<struct FRigElementKey> URigHierarchy::GetRigElementKeyArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2887,16 +2912,16 @@ TArray<struct FRigElementKey> URigHierarchy::GetRigElementKeyArrayMetadata(const
 
 	Params::URigHierarchy_GetRigElementKeyArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2909,7 +2934,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetRigElementKeyArrayMetadata(const
 // bool                               bTraverse                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetReferenceKeys(bool InbTraverse)
+TArray<struct FRigElementKey> URigHierarchy::GetReferenceKeys(bool bTraverse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2918,15 +2943,15 @@ TArray<struct FRigElementKey> URigHierarchy::GetReferenceKeys(bool InbTraverse)
 
 	Params::URigHierarchy_GetReferenceKeys_Params Parms{};
 
-	Parms.bTraverse = InbTraverse;
+	Parms.bTraverse = bTraverse;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2941,7 +2966,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetReferenceKeys(bool InbTraverse)
 // struct FQuat                       DefaultValue                                                     (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FQuat                       ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FQuat URigHierarchy::GetQuatMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FQuat& InDefaultValue)
+struct FQuat URigHierarchy::GetQuatMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FQuat& DefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2950,17 +2975,17 @@ struct FQuat URigHierarchy::GetQuatMetadata(const struct FRigElementKey& InInIte
 
 	Params::URigHierarchy_GetQuatMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.DefaultValue = InDefaultValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.DefaultValue = DefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2974,7 +2999,7 @@ struct FQuat URigHierarchy::GetQuatMetadata(const struct FRigElementKey& InInIte
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FQuat>               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FQuat> URigHierarchy::GetQuatArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+TArray<struct FQuat> URigHierarchy::GetQuatArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2983,16 +3008,16 @@ TArray<struct FQuat> URigHierarchy::GetQuatArrayMetadata(const struct FRigElemen
 
 	Params::URigHierarchy_GetQuatArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3005,7 +3030,7 @@ TArray<struct FQuat> URigHierarchy::GetQuatArrayMetadata(const struct FRigElemen
 // struct FRigElementKey              InKey                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchy::GetPreviousParent(struct FRigElementKey& InInKey)
+struct FRigElementKey URigHierarchy::GetPreviousParent(struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3014,15 +3039,15 @@ struct FRigElementKey URigHierarchy::GetPreviousParent(struct FRigElementKey& In
 
 	Params::URigHierarchy_GetPreviousParent_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3035,7 +3060,7 @@ struct FRigElementKey URigHierarchy::GetPreviousParent(struct FRigElementKey& In
 // struct FRigElementKey              InKey                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName URigHierarchy::GetPreviousName(struct FRigElementKey& InInKey)
+class FName URigHierarchy::GetPreviousName(struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3044,15 +3069,15 @@ class FName URigHierarchy::GetPreviousName(struct FRigElementKey& InInKey)
 
 	Params::URigHierarchy_GetPreviousName_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3065,7 +3090,7 @@ class FName URigHierarchy::GetPreviousName(struct FRigElementKey& InInKey)
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigPose                    ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FRigPose URigHierarchy::GetPose(bool InbInitial)
+struct FRigPose URigHierarchy::GetPose(bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3074,15 +3099,15 @@ struct FRigPose URigHierarchy::GetPose(bool InbInitial)
 
 	Params::URigHierarchy_GetPose_Params Parms{};
 
-	Parms.bInitial = InbInitial;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3096,7 +3121,7 @@ struct FRigPose URigHierarchy::GetPose(bool InbInitial)
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementWeight>   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementWeight> URigHierarchy::GetParentWeightArray(const struct FRigElementKey& InInChild, bool InbInitial)
+TArray<struct FRigElementWeight> URigHierarchy::GetParentWeightArray(const struct FRigElementKey& InChild, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3105,16 +3130,16 @@ TArray<struct FRigElementWeight> URigHierarchy::GetParentWeightArray(const struc
 
 	Params::URigHierarchy_GetParentWeightArray_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.bInitial = InbInitial;
+	Parms.InChild = InChild;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3129,7 +3154,7 @@ TArray<struct FRigElementWeight> URigHierarchy::GetParentWeightArray(const struc
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementWeight           ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigElementWeight URigHierarchy::GetParentWeight(const struct FRigElementKey& InInChild, const struct FRigElementKey& InInParent, bool InbInitial)
+struct FRigElementWeight URigHierarchy::GetParentWeight(const struct FRigElementKey& InChild, const struct FRigElementKey& InParent, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3138,17 +3163,17 @@ struct FRigElementWeight URigHierarchy::GetParentWeight(const struct FRigElement
 
 	Params::URigHierarchy_GetParentWeight_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.InParent = InInParent;
-	Parms.bInitial = InbInitial;
+	Parms.InChild = InChild;
+	Parms.InParent = InParent;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3162,7 +3187,7 @@ struct FRigElementWeight URigHierarchy::GetParentWeight(const struct FRigElement
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetParentTransformByIndex(int32 InInElementIndex, bool InbInitial)
+struct FTransform URigHierarchy::GetParentTransformByIndex(int32 InElementIndex, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3171,16 +3196,16 @@ struct FTransform URigHierarchy::GetParentTransformByIndex(int32 InInElementInde
 
 	Params::URigHierarchy_GetParentTransformByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.bInitial = InbInitial;
+	Parms.InElementIndex = InElementIndex;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3194,7 +3219,7 @@ struct FTransform URigHierarchy::GetParentTransformByIndex(int32 InInElementInde
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetParentTransform(const struct FRigElementKey& InInKey, bool InbInitial)
+struct FTransform URigHierarchy::GetParentTransform(const struct FRigElementKey& InKey, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3203,16 +3228,16 @@ struct FTransform URigHierarchy::GetParentTransform(const struct FRigElementKey&
 
 	Params::URigHierarchy_GetParentTransform_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bInitial = InbInitial;
+	Parms.InKey = InKey;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3226,7 +3251,7 @@ struct FTransform URigHierarchy::GetParentTransform(const struct FRigElementKey&
 // bool                               bRecursive                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetParents(const struct FRigElementKey& InInKey, bool InbRecursive)
+TArray<struct FRigElementKey> URigHierarchy::GetParents(const struct FRigElementKey& InKey, bool bRecursive)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3235,16 +3260,16 @@ TArray<struct FRigElementKey> URigHierarchy::GetParents(const struct FRigElement
 
 	Params::URigHierarchy_GetParents_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bRecursive = InbRecursive;
+	Parms.InKey = InKey;
+	Parms.bRecursive = bRecursive;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3257,7 +3282,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetParents(const struct FRigElement
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 URigHierarchy::GetNumberOfParents(const struct FRigElementKey& InInKey)
+int32 URigHierarchy::GetNumberOfParents(const struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3266,15 +3291,15 @@ int32 URigHierarchy::GetNumberOfParents(const struct FRigElementKey& InInKey)
 
 	Params::URigHierarchy_GetNumberOfParents_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3287,7 +3312,7 @@ int32 URigHierarchy::GetNumberOfParents(const struct FRigElementKey& InInKey)
 // bool                               bTraverse                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetNullKeys(bool InbTraverse)
+TArray<struct FRigElementKey> URigHierarchy::GetNullKeys(bool bTraverse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3296,15 +3321,15 @@ TArray<struct FRigElementKey> URigHierarchy::GetNullKeys(bool InbTraverse)
 
 	Params::URigHierarchy_GetNullKeys_Params Parms{};
 
-	Parms.bTraverse = InbTraverse;
+	Parms.bTraverse = bTraverse;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3319,7 +3344,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetNullKeys(bool InbTraverse)
 // class FName                        DefaultValue                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName URigHierarchy::GetNameMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, class FName InDefaultValue)
+class FName URigHierarchy::GetNameMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, class FName DefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3328,17 +3353,17 @@ class FName URigHierarchy::GetNameMetadata(const struct FRigElementKey& InInItem
 
 	Params::URigHierarchy_GetNameMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.DefaultValue = InDefaultValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.DefaultValue = DefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3352,7 +3377,7 @@ class FName URigHierarchy::GetNameMetadata(const struct FRigElementKey& InInItem
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class FName> URigHierarchy::GetNameArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+TArray<class FName> URigHierarchy::GetNameArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3361,16 +3386,16 @@ TArray<class FName> URigHierarchy::GetNameArrayMetadata(const struct FRigElement
 
 	Params::URigHierarchy_GetNameArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3384,7 +3409,7 @@ TArray<class FName> URigHierarchy::GetNameArrayMetadata(const struct FRigElement
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ERigMetadataType        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-enum class ERigMetadataType URigHierarchy::GetMetadataType(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+enum class ERigMetadataType URigHierarchy::GetMetadataType(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3393,16 +3418,16 @@ enum class ERigMetadataType URigHierarchy::GetMetadataType(const struct FRigElem
 
 	Params::URigHierarchy_GetMetadataType_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3415,7 +3440,7 @@ enum class ERigMetadataType URigHierarchy::GetMetadataType(const struct FRigElem
 // struct FRigElementKey              InItem                                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class FName> URigHierarchy::GetMetadataNames(const struct FRigElementKey& InInItem)
+TArray<class FName> URigHierarchy::GetMetadataNames(const struct FRigElementKey& InItem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3424,15 +3449,15 @@ TArray<class FName> URigHierarchy::GetMetadataNames(const struct FRigElementKey&
 
 	Params::URigHierarchy_GetMetadataNames_Params Parms{};
 
-	Parms.InItem = InInItem;
+	Parms.InItem = InItem;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3446,7 +3471,7 @@ TArray<class FName> URigHierarchy::GetMetadataNames(const struct FRigElementKey&
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetLocalTransformByIndex(int32 InInElementIndex, bool InbInitial)
+struct FTransform URigHierarchy::GetLocalTransformByIndex(int32 InElementIndex, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3455,16 +3480,16 @@ struct FTransform URigHierarchy::GetLocalTransformByIndex(int32 InInElementIndex
 
 	Params::URigHierarchy_GetLocalTransformByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.bInitial = InbInitial;
+	Parms.InElementIndex = InElementIndex;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3478,7 +3503,7 @@ struct FTransform URigHierarchy::GetLocalTransformByIndex(int32 InInElementIndex
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetLocalTransform(const struct FRigElementKey& InInKey, bool InbInitial)
+struct FTransform URigHierarchy::GetLocalTransform(const struct FRigElementKey& InKey, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3487,16 +3512,16 @@ struct FTransform URigHierarchy::GetLocalTransform(const struct FRigElementKey& 
 
 	Params::URigHierarchy_GetLocalTransform_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bInitial = InbInitial;
+	Parms.InKey = InKey;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3510,7 +3535,7 @@ struct FTransform URigHierarchy::GetLocalTransform(const struct FRigElementKey& 
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetLocalControlShapeTransformByIndex(int32 InInElementIndex, bool InbInitial)
+struct FTransform URigHierarchy::GetLocalControlShapeTransformByIndex(int32 InElementIndex, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3519,16 +3544,16 @@ struct FTransform URigHierarchy::GetLocalControlShapeTransformByIndex(int32 InIn
 
 	Params::URigHierarchy_GetLocalControlShapeTransformByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.bInitial = InbInitial;
+	Parms.InElementIndex = InElementIndex;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3542,7 +3567,7 @@ struct FTransform URigHierarchy::GetLocalControlShapeTransformByIndex(int32 InIn
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetLocalControlShapeTransform(const struct FRigElementKey& InInKey, bool InbInitial)
+struct FTransform URigHierarchy::GetLocalControlShapeTransform(const struct FRigElementKey& InKey, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3551,16 +3576,16 @@ struct FTransform URigHierarchy::GetLocalControlShapeTransform(const struct FRig
 
 	Params::URigHierarchy_GetLocalControlShapeTransform_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bInitial = InbInitial;
+	Parms.InKey = InKey;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3575,7 +3600,7 @@ struct FTransform URigHierarchy::GetLocalControlShapeTransform(const struct FRig
 // struct FLinearColor                DefaultValue                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FLinearColor                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FLinearColor URigHierarchy::GetLinearColorMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, const struct FLinearColor& InDefaultValue)
+struct FLinearColor URigHierarchy::GetLinearColorMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, const struct FLinearColor& DefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3584,17 +3609,17 @@ struct FLinearColor URigHierarchy::GetLinearColorMetadata(const struct FRigEleme
 
 	Params::URigHierarchy_GetLinearColorMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.DefaultValue = InDefaultValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.DefaultValue = DefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3608,7 +3633,7 @@ struct FLinearColor URigHierarchy::GetLinearColorMetadata(const struct FRigEleme
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FLinearColor>        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FLinearColor> URigHierarchy::GetLinearColorArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+TArray<struct FLinearColor> URigHierarchy::GetLinearColorArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3617,16 +3642,16 @@ TArray<struct FLinearColor> URigHierarchy::GetLinearColorArrayMetadata(const str
 
 	Params::URigHierarchy_GetLinearColorArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3639,7 +3664,7 @@ TArray<struct FLinearColor> URigHierarchy::GetLinearColorArrayMetadata(const str
 // TArray<int32>                      InElementIndices                                                 (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetKeys(const TArray<int32>& InInElementIndices)
+TArray<struct FRigElementKey> URigHierarchy::GetKeys(const TArray<int32>& InElementIndices)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3648,15 +3673,15 @@ TArray<struct FRigElementKey> URigHierarchy::GetKeys(const TArray<int32>& InInEl
 
 	Params::URigHierarchy_GetKeys_Params Parms{};
 
-	Parms.InElementIndices = InInElementIndices;
+	Parms.InElementIndices = InElementIndices;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3669,7 +3694,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetKeys(const TArray<int32>& InInEl
 // int32                              InElementIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchy::GetKey(int32 InInElementIndex)
+struct FRigElementKey URigHierarchy::GetKey(int32 InElementIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3678,15 +3703,15 @@ struct FRigElementKey URigHierarchy::GetKey(int32 InInElementIndex)
 
 	Params::URigHierarchy_GetKey_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
+	Parms.InElementIndex = InElementIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3699,7 +3724,7 @@ struct FRigElementKey URigHierarchy::GetKey(int32 InInElementIndex)
 // struct FRigControlValue            InValue                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 URigHierarchy::GetIntFromControlValue(const struct FRigControlValue& InInValue)
+int32 URigHierarchy::GetIntFromControlValue(const struct FRigControlValue& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3708,15 +3733,15 @@ int32 URigHierarchy::GetIntFromControlValue(const struct FRigControlValue& InInV
 
 	Params::URigHierarchy_GetIntFromControlValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3731,7 +3756,7 @@ int32 URigHierarchy::GetIntFromControlValue(const struct FRigControlValue& InInV
 // int32                              DefaultValue                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 URigHierarchy::GetInt32Metadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, int32 InDefaultValue)
+int32 URigHierarchy::GetInt32Metadata(const struct FRigElementKey& InItem, class FName InMetadataName, int32 DefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3740,17 +3765,17 @@ int32 URigHierarchy::GetInt32Metadata(const struct FRigElementKey& InInItem, cla
 
 	Params::URigHierarchy_GetInt32Metadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.DefaultValue = InDefaultValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.DefaultValue = DefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3764,7 +3789,7 @@ int32 URigHierarchy::GetInt32Metadata(const struct FRigElementKey& InInItem, cla
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<int32>                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<int32> URigHierarchy::GetInt32ArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+TArray<int32> URigHierarchy::GetInt32ArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3773,16 +3798,16 @@ TArray<int32> URigHierarchy::GetInt32ArrayMetadata(const struct FRigElementKey& 
 
 	Params::URigHierarchy_GetInt32ArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3795,7 +3820,7 @@ TArray<int32> URigHierarchy::GetInt32ArrayMetadata(const struct FRigElementKey& 
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 URigHierarchy::GetIndex_ForBlueprint(const struct FRigElementKey& InInKey)
+int32 URigHierarchy::GetIndex_ForBlueprint(const struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3804,15 +3829,15 @@ int32 URigHierarchy::GetIndex_ForBlueprint(const struct FRigElementKey& InInKey)
 
 	Params::URigHierarchy_GetIndex_ForBlueprint_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3826,7 +3851,7 @@ int32 URigHierarchy::GetIndex_ForBlueprint(const struct FRigElementKey& InInKey)
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetGlobalTransformByIndex(int32 InInElementIndex, bool InbInitial)
+struct FTransform URigHierarchy::GetGlobalTransformByIndex(int32 InElementIndex, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3835,16 +3860,16 @@ struct FTransform URigHierarchy::GetGlobalTransformByIndex(int32 InInElementInde
 
 	Params::URigHierarchy_GetGlobalTransformByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.bInitial = InbInitial;
+	Parms.InElementIndex = InElementIndex;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3858,7 +3883,7 @@ struct FTransform URigHierarchy::GetGlobalTransformByIndex(int32 InInElementInde
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetGlobalTransform(const struct FRigElementKey& InInKey, bool InbInitial)
+struct FTransform URigHierarchy::GetGlobalTransform(const struct FRigElementKey& InKey, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3867,16 +3892,16 @@ struct FTransform URigHierarchy::GetGlobalTransform(const struct FRigElementKey&
 
 	Params::URigHierarchy_GetGlobalTransform_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bInitial = InbInitial;
+	Parms.InKey = InKey;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3890,7 +3915,7 @@ struct FTransform URigHierarchy::GetGlobalTransform(const struct FRigElementKey&
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetGlobalControlShapeTransformByIndex(int32 InInElementIndex, bool InbInitial)
+struct FTransform URigHierarchy::GetGlobalControlShapeTransformByIndex(int32 InElementIndex, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3899,16 +3924,16 @@ struct FTransform URigHierarchy::GetGlobalControlShapeTransformByIndex(int32 InI
 
 	Params::URigHierarchy_GetGlobalControlShapeTransformByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.bInitial = InbInitial;
+	Parms.InElementIndex = InElementIndex;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3922,7 +3947,7 @@ struct FTransform URigHierarchy::GetGlobalControlShapeTransformByIndex(int32 InI
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetGlobalControlShapeTransform(const struct FRigElementKey& InInKey, bool InbInitial)
+struct FTransform URigHierarchy::GetGlobalControlShapeTransform(const struct FRigElementKey& InKey, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3931,16 +3956,16 @@ struct FTransform URigHierarchy::GetGlobalControlShapeTransform(const struct FRi
 
 	Params::URigHierarchy_GetGlobalControlShapeTransform_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bInitial = InbInitial;
+	Parms.InKey = InKey;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3954,7 +3979,7 @@ struct FTransform URigHierarchy::GetGlobalControlShapeTransform(const struct FRi
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetGlobalControlOffsetTransformByIndex(int32 InInElementIndex, bool InbInitial)
+struct FTransform URigHierarchy::GetGlobalControlOffsetTransformByIndex(int32 InElementIndex, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3963,16 +3988,16 @@ struct FTransform URigHierarchy::GetGlobalControlOffsetTransformByIndex(int32 In
 
 	Params::URigHierarchy_GetGlobalControlOffsetTransformByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.bInitial = InbInitial;
+	Parms.InElementIndex = InElementIndex;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3986,7 +4011,7 @@ struct FTransform URigHierarchy::GetGlobalControlOffsetTransformByIndex(int32 In
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform URigHierarchy::GetGlobalControlOffsetTransform(const struct FRigElementKey& InInKey, bool InbInitial)
+struct FTransform URigHierarchy::GetGlobalControlOffsetTransform(const struct FRigElementKey& InKey, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3995,16 +4020,16 @@ struct FTransform URigHierarchy::GetGlobalControlOffsetTransform(const struct FR
 
 	Params::URigHierarchy_GetGlobalControlOffsetTransform_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bInitial = InbInitial;
+	Parms.InKey = InKey;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4019,7 +4044,7 @@ struct FTransform URigHierarchy::GetGlobalControlOffsetTransform(const struct FR
 // float                              DefaultValue                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float URigHierarchy::GetFloatMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, float InDefaultValue)
+float URigHierarchy::GetFloatMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, float DefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4028,17 +4053,17 @@ float URigHierarchy::GetFloatMetadata(const struct FRigElementKey& InInItem, cla
 
 	Params::URigHierarchy_GetFloatMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.DefaultValue = InDefaultValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.DefaultValue = DefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4051,7 +4076,7 @@ float URigHierarchy::GetFloatMetadata(const struct FRigElementKey& InInItem, cla
 // struct FRigControlValue            InValue                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float URigHierarchy::GetFloatFromControlValue(const struct FRigControlValue& InInValue)
+float URigHierarchy::GetFloatFromControlValue(const struct FRigControlValue& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4060,15 +4085,15 @@ float URigHierarchy::GetFloatFromControlValue(const struct FRigControlValue& InI
 
 	Params::URigHierarchy_GetFloatFromControlValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4082,7 +4107,7 @@ float URigHierarchy::GetFloatFromControlValue(const struct FRigControlValue& InI
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<float>                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<float> URigHierarchy::GetFloatArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+TArray<float> URigHierarchy::GetFloatArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4091,16 +4116,16 @@ TArray<float> URigHierarchy::GetFloatArrayMetadata(const struct FRigElementKey& 
 
 	Params::URigHierarchy_GetFloatArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4113,7 +4138,7 @@ TArray<float> URigHierarchy::GetFloatArrayMetadata(const struct FRigElementKey& 
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchy::GetFirstParent(const struct FRigElementKey& InInKey)
+struct FRigElementKey URigHierarchy::GetFirstParent(const struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4122,15 +4147,15 @@ struct FRigElementKey URigHierarchy::GetFirstParent(const struct FRigElementKey&
 
 	Params::URigHierarchy_GetFirstParent_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4143,7 +4168,7 @@ struct FRigElementKey URigHierarchy::GetFirstParent(const struct FRigElementKey&
 // struct FRigControlValue            InValue                                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FEulerTransform             ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FEulerTransform URigHierarchy::GetEulerTransformFromControlValue(const struct FRigControlValue& InInValue)
+struct FEulerTransform URigHierarchy::GetEulerTransformFromControlValue(const struct FRigControlValue& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4152,15 +4177,15 @@ struct FEulerTransform URigHierarchy::GetEulerTransformFromControlValue(const st
 
 	Params::URigHierarchy_GetEulerTransformFromControlValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4173,7 +4198,7 @@ struct FEulerTransform URigHierarchy::GetEulerTransformFromControlValue(const st
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchy::GetDefaultParent(const struct FRigElementKey& InInKey)
+struct FRigElementKey URigHierarchy::GetDefaultParent(const struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4182,15 +4207,15 @@ struct FRigElementKey URigHierarchy::GetDefaultParent(const struct FRigElementKe
 
 	Params::URigHierarchy_GetDefaultParent_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4203,7 +4228,7 @@ struct FRigElementKey URigHierarchy::GetDefaultParent(const struct FRigElementKe
 // int32                              InElementIndex                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float URigHierarchy::GetCurveValueByIndex(int32 InInElementIndex)
+float URigHierarchy::GetCurveValueByIndex(int32 InElementIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4212,15 +4237,15 @@ float URigHierarchy::GetCurveValueByIndex(int32 InInElementIndex)
 
 	Params::URigHierarchy_GetCurveValueByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
+	Parms.InElementIndex = InElementIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4233,7 +4258,7 @@ float URigHierarchy::GetCurveValueByIndex(int32 InInElementIndex)
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float URigHierarchy::GetCurveValue(const struct FRigElementKey& InInKey)
+float URigHierarchy::GetCurveValue(const struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4242,15 +4267,15 @@ float URigHierarchy::GetCurveValue(const struct FRigElementKey& InInKey)
 
 	Params::URigHierarchy_GetCurveValue_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4272,13 +4297,13 @@ TArray<struct FRigElementKey> URigHierarchy::GetCurveKeys()
 	Params::URigHierarchy_GetCurveKeys_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4292,7 +4317,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetCurveKeys()
 // enum class ERigControlValueType    InValueType                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::GetControlValueByIndex(int32 InInElementIndex, enum class ERigControlValueType InInValueType)
+struct FRigControlValue URigHierarchy::GetControlValueByIndex(int32 InElementIndex, enum class ERigControlValueType InValueType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4301,16 +4326,16 @@ struct FRigControlValue URigHierarchy::GetControlValueByIndex(int32 InInElementI
 
 	Params::URigHierarchy_GetControlValueByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.InValueType = InInValueType;
+	Parms.InElementIndex = InElementIndex;
+	Parms.InValueType = InValueType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4324,7 +4349,7 @@ struct FRigControlValue URigHierarchy::GetControlValueByIndex(int32 InInElementI
 // enum class ERigControlValueType    InValueType                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigControlValue            ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRigControlValue URigHierarchy::GetControlValue(const struct FRigElementKey& InInKey, enum class ERigControlValueType InInValueType)
+struct FRigControlValue URigHierarchy::GetControlValue(const struct FRigElementKey& InKey, enum class ERigControlValueType InValueType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4333,16 +4358,16 @@ struct FRigControlValue URigHierarchy::GetControlValue(const struct FRigElementK
 
 	Params::URigHierarchy_GetControlValue_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.InValueType = InInValueType;
+	Parms.InKey = InKey;
+	Parms.InValueType = InValueType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4356,7 +4381,7 @@ struct FRigControlValue URigHierarchy::GetControlValue(const struct FRigElementK
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRotator                    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRotator URigHierarchy::GetControlPreferredRotatorByIndex(int32 InInElementIndex, bool InbInitial)
+struct FRotator URigHierarchy::GetControlPreferredRotatorByIndex(int32 InElementIndex, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4365,16 +4390,16 @@ struct FRotator URigHierarchy::GetControlPreferredRotatorByIndex(int32 InInEleme
 
 	Params::URigHierarchy_GetControlPreferredRotatorByIndex_Params Parms{};
 
-	Parms.InElementIndex = InInElementIndex;
-	Parms.bInitial = InbInitial;
+	Parms.InElementIndex = InElementIndex;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4388,7 +4413,7 @@ struct FRotator URigHierarchy::GetControlPreferredRotatorByIndex(int32 InInEleme
 // bool                               bInitial                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRotator                    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRotator URigHierarchy::GetControlPreferredRotator(const struct FRigElementKey& InInKey, bool InbInitial)
+struct FRotator URigHierarchy::GetControlPreferredRotator(const struct FRigElementKey& InKey, bool bInitial)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4397,16 +4422,16 @@ struct FRotator URigHierarchy::GetControlPreferredRotator(const struct FRigEleme
 
 	Params::URigHierarchy_GetControlPreferredRotator_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bInitial = InbInitial;
+	Parms.InKey = InKey;
+	Parms.bInitial = bInitial;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4419,7 +4444,7 @@ struct FRotator URigHierarchy::GetControlPreferredRotator(const struct FRigEleme
 // bool                               bCreateIfNeeded                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class URigHierarchyController*     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class URigHierarchyController* URigHierarchy::GetController(bool InbCreateIfNeeded)
+class URigHierarchyController* URigHierarchy::GetController(bool bCreateIfNeeded)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4428,15 +4453,15 @@ class URigHierarchyController* URigHierarchy::GetController(bool InbCreateIfNeed
 
 	Params::URigHierarchy_GetController_Params Parms{};
 
-	Parms.bCreateIfNeeded = InbCreateIfNeeded;
+	Parms.bCreateIfNeeded = bCreateIfNeeded;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4449,7 +4474,7 @@ class URigHierarchyController* URigHierarchy::GetController(bool InbCreateIfNeed
 // bool                               bTraverse                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetControlKeys(bool InbTraverse)
+TArray<struct FRigElementKey> URigHierarchy::GetControlKeys(bool bTraverse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4458,15 +4483,15 @@ TArray<struct FRigElementKey> URigHierarchy::GetControlKeys(bool InbTraverse)
 
 	Params::URigHierarchy_GetControlKeys_Params Parms{};
 
-	Parms.bTraverse = InbTraverse;
+	Parms.bTraverse = bTraverse;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4480,7 +4505,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetControlKeys(bool InbTraverse)
 // bool                               bRecursive                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetChildren(const struct FRigElementKey& InInKey, bool InbRecursive)
+TArray<struct FRigElementKey> URigHierarchy::GetChildren(const struct FRigElementKey& InKey, bool bRecursive)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4489,16 +4514,16 @@ TArray<struct FRigElementKey> URigHierarchy::GetChildren(const struct FRigElemen
 
 	Params::URigHierarchy_GetChildren_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bRecursive = InbRecursive;
+	Parms.InKey = InKey;
+	Parms.bRecursive = bRecursive;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4513,7 +4538,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetChildren(const struct FRigElemen
 // bool                               DefaultValue                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::GetBoolMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName, bool InDefaultValue)
+bool URigHierarchy::GetBoolMetadata(const struct FRigElementKey& InItem, class FName InMetadataName, bool DefaultValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4522,17 +4547,17 @@ bool URigHierarchy::GetBoolMetadata(const struct FRigElementKey& InInItem, class
 
 	Params::URigHierarchy_GetBoolMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
-	Parms.DefaultValue = InDefaultValue;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
+	Parms.DefaultValue = DefaultValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4546,7 +4571,7 @@ bool URigHierarchy::GetBoolMetadata(const struct FRigElementKey& InInItem, class
 // class FName                        InMetadataName                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<bool>                       ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<bool> URigHierarchy::GetBoolArrayMetadata(const struct FRigElementKey& InInItem, class FName InInMetadataName)
+TArray<bool> URigHierarchy::GetBoolArrayMetadata(const struct FRigElementKey& InItem, class FName InMetadataName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4555,16 +4580,16 @@ TArray<bool> URigHierarchy::GetBoolArrayMetadata(const struct FRigElementKey& In
 
 	Params::URigHierarchy_GetBoolArrayMetadata_Params Parms{};
 
-	Parms.InItem = InInItem;
-	Parms.InMetadataName = InInMetadataName;
+	Parms.InItem = InItem;
+	Parms.InMetadataName = InMetadataName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4577,7 +4602,7 @@ TArray<bool> URigHierarchy::GetBoolArrayMetadata(const struct FRigElementKey& In
 // bool                               bTraverse                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetBoneKeys(bool InbTraverse)
+TArray<struct FRigElementKey> URigHierarchy::GetBoneKeys(bool bTraverse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4586,15 +4611,15 @@ TArray<struct FRigElementKey> URigHierarchy::GetBoneKeys(bool InbTraverse)
 
 	Params::URigHierarchy_GetBoneKeys_Params Parms{};
 
-	Parms.bTraverse = InbTraverse;
+	Parms.bTraverse = bTraverse;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4607,7 +4632,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetBoneKeys(bool InbTraverse)
 // bool                               bTraverse                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchy::GetAllKeys_ForBlueprint(bool InbTraverse)
+TArray<struct FRigElementKey> URigHierarchy::GetAllKeys_ForBlueprint(bool bTraverse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4616,15 +4641,15 @@ TArray<struct FRigElementKey> URigHierarchy::GetAllKeys_ForBlueprint(bool InbTra
 
 	Params::URigHierarchy_GetAllKeys_ForBlueprint_Params Parms{};
 
-	Parms.bTraverse = InbTraverse;
+	Parms.bTraverse = bTraverse;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4637,7 +4662,7 @@ TArray<struct FRigElementKey> URigHierarchy::GetAllKeys_ForBlueprint(bool InbTra
 // struct FRigElementKey              InKey                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigNullElement             ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FRigNullElement URigHierarchy::FindNull_ForBlueprintOnly(struct FRigElementKey& InInKey)
+struct FRigNullElement URigHierarchy::FindNull_ForBlueprintOnly(struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4646,15 +4671,15 @@ struct FRigNullElement URigHierarchy::FindNull_ForBlueprintOnly(struct FRigEleme
 
 	Params::URigHierarchy_FindNull_ForBlueprintOnly_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4667,7 +4692,7 @@ struct FRigNullElement URigHierarchy::FindNull_ForBlueprintOnly(struct FRigEleme
 // struct FRigElementKey              InKey                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigControlElement          ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FRigControlElement URigHierarchy::FindControl_ForBlueprintOnly(struct FRigElementKey& InInKey)
+struct FRigControlElement URigHierarchy::FindControl_ForBlueprintOnly(struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4676,15 +4701,15 @@ struct FRigControlElement URigHierarchy::FindControl_ForBlueprintOnly(struct FRi
 
 	Params::URigHierarchy_FindControl_ForBlueprintOnly_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4697,7 +4722,7 @@ struct FRigControlElement URigHierarchy::FindControl_ForBlueprintOnly(struct FRi
 // struct FRigElementKey              InKey                                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigBoneElement             ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FRigBoneElement URigHierarchy::FindBone_ForBlueprintOnly(struct FRigElementKey& InInKey)
+struct FRigBoneElement URigHierarchy::FindBone_ForBlueprintOnly(struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4706,15 +4731,15 @@ struct FRigBoneElement URigHierarchy::FindBone_ForBlueprintOnly(struct FRigEleme
 
 	Params::URigHierarchy_FindBone_ForBlueprintOnly_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4730,7 +4755,7 @@ struct FRigBoneElement URigHierarchy::FindBone_ForBlueprintOnly(struct FRigEleme
 // bool                               bWeights                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bMatchPoseInGlobalIfNeeded                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::CopyPose(class URigHierarchy* InInHierarchy, bool InbCurrent, bool InbInitial, bool InbWeights, bool InbMatchPoseInGlobalIfNeeded)
+void URigHierarchy::CopyPose(class URigHierarchy* InHierarchy, bool bCurrent, bool bInitial, bool bWeights, bool bMatchPoseInGlobalIfNeeded)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4739,19 +4764,19 @@ void URigHierarchy::CopyPose(class URigHierarchy* InInHierarchy, bool InbCurrent
 
 	Params::URigHierarchy_CopyPose_Params Parms{};
 
-	Parms.InHierarchy = InInHierarchy;
-	Parms.bCurrent = InbCurrent;
-	Parms.bInitial = InbInitial;
-	Parms.bWeights = InbWeights;
-	Parms.bMatchPoseInGlobalIfNeeded = InbMatchPoseInGlobalIfNeeded;
+	Parms.InHierarchy = InHierarchy;
+	Parms.bCurrent = bCurrent;
+	Parms.bInitial = bInitial;
+	Parms.bWeights = bWeights;
+	Parms.bMatchPoseInGlobalIfNeeded = bMatchPoseInGlobalIfNeeded;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4761,7 +4786,7 @@ void URigHierarchy::CopyPose(class URigHierarchy* InInHierarchy, bool InbCurrent
 // Parameters:
 // class URigHierarchy*               InHierarchy                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchy::CopyHierarchy(class URigHierarchy* InInHierarchy)
+void URigHierarchy::CopyHierarchy(class URigHierarchy* InHierarchy)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4770,15 +4795,15 @@ void URigHierarchy::CopyHierarchy(class URigHierarchy* InInHierarchy)
 
 	Params::URigHierarchy_CopyHierarchy_Params Parms{};
 
-	Parms.InHierarchy = InInHierarchy;
+	Parms.InHierarchy = InHierarchy;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4789,7 +4814,7 @@ void URigHierarchy::CopyHierarchy(class URigHierarchy* InInHierarchy)
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchy::Contains_ForBlueprint(const struct FRigElementKey& InInKey)
+bool URigHierarchy::Contains_ForBlueprint(const struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4798,18 +4823,74 @@ bool URigHierarchy::Contains_ForBlueprint(const struct FRigElementKey& InInKey)
 
 	Params::URigHierarchy_Contains_ForBlueprint_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ControlRig.TransformableControlHandle
+// (None)
+
+class UClass* UTransformableControlHandle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TransformableControlHandle");
+
+	return Clss;
+}
+
+
+// TransformableControlHandle ControlRig.Default__TransformableControlHandle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTransformableControlHandle* UTransformableControlHandle::GetDefaultObj()
+{
+	static class UTransformableControlHandle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTransformableControlHandle*>(UTransformableControlHandle::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRig
+// (None)
+
+class UClass* UControlRig::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRig");
+
+	return Clss;
+}
+
+
+// ControlRig ControlRig.Default__ControlRig
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRig* UControlRig::GetDefaultObj()
+{
+	static class UControlRig* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRig*>(UControlRig::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4819,7 +4900,7 @@ bool URigHierarchy::Contains_ForBlueprint(const struct FRigElementKey& InInKey)
 // class FName                        InEventName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRig::SupportsEvent(class FName& InInEventName)
+bool UControlRig::SupportsEvent(class FName& InEventName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4828,15 +4909,15 @@ bool UControlRig::SupportsEvent(class FName& InInEventName)
 
 	Params::UControlRig_SupportsEvent_Params Parms{};
 
-	Parms.InEventName = InInEventName;
+	Parms.InEventName = InEventName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4850,7 +4931,7 @@ bool UControlRig::SupportsEvent(class FName& InInEventName)
 // class FString                      InValue                                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRig::SetVariableFromString(class FName& InInVariableName, const class FString& InInValue)
+bool UControlRig::SetVariableFromString(class FName& InVariableName, const class FString& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4859,16 +4940,16 @@ bool UControlRig::SetVariableFromString(class FName& InInVariableName, const cla
 
 	Params::UControlRig_SetVariableFromString_Params Parms{};
 
-	Parms.InVariableName = InInVariableName;
-	Parms.InValue = InInValue;
+	Parms.InVariableName = InVariableName;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4880,7 +4961,7 @@ bool UControlRig::SetVariableFromString(class FName& InInVariableName, const cla
 // Parameters:
 // TSubclassOf<class UControlRig>     InInteractionRigClass                                            (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRig::SetInteractionRigClass(TSubclassOf<class UControlRig> InInInteractionRigClass)
+void UControlRig::SetInteractionRigClass(TSubclassOf<class UControlRig> InInteractionRigClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4889,15 +4970,15 @@ void UControlRig::SetInteractionRigClass(TSubclassOf<class UControlRig> InInInte
 
 	Params::UControlRig_SetInteractionRigClass_Params Parms{};
 
-	Parms.InInteractionRigClass = InInInteractionRigClass;
+	Parms.InInteractionRigClass = InInteractionRigClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4907,7 +4988,7 @@ void UControlRig::SetInteractionRigClass(TSubclassOf<class UControlRig> InInInte
 // Parameters:
 // class UControlRig*                 InInteractionRig                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRig::SetInteractionRig(class UControlRig* InInInteractionRig)
+void UControlRig::SetInteractionRig(class UControlRig* InInteractionRig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4916,15 +4997,15 @@ void UControlRig::SetInteractionRig(class UControlRig* InInInteractionRig)
 
 	Params::UControlRig_SetInteractionRig_Params Parms{};
 
-	Parms.InInteractionRig = InInInteractionRig;
+	Parms.InInteractionRig = InInteractionRig;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4934,7 +5015,7 @@ void UControlRig::SetInteractionRig(class UControlRig* InInInteractionRig)
 // Parameters:
 // float                              InFramesPerSecond                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRig::SetFramesPerSecond(float InInFramesPerSecond)
+void UControlRig::SetFramesPerSecond(float InFramesPerSecond)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4943,15 +5024,15 @@ void UControlRig::SetFramesPerSecond(float InInFramesPerSecond)
 
 	Params::UControlRig_SetFramesPerSecond_Params Parms{};
 
-	Parms.InFramesPerSecond = InInFramesPerSecond;
+	Parms.InFramesPerSecond = InFramesPerSecond;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4961,7 +5042,7 @@ void UControlRig::SetFramesPerSecond(float InInFramesPerSecond)
 // Parameters:
 // float                              InDeltaTime                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRig::SetDeltaTime(float InInDeltaTime)
+void UControlRig::SetDeltaTime(float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4970,15 +5051,15 @@ void UControlRig::SetDeltaTime(float InInDeltaTime)
 
 	Params::UControlRig_SetDeltaTime_Params Parms{};
 
-	Parms.InDeltaTime = InInDeltaTime;
+	Parms.InDeltaTime = InDeltaTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4989,7 +5070,7 @@ void UControlRig::SetDeltaTime(float InInDeltaTime)
 // float                              InAbsoluteTime                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               InSetDeltaTimeZero                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRig::SetAbsoluteTime(float InInAbsoluteTime, bool InInSetDeltaTimeZero)
+void UControlRig::SetAbsoluteTime(float InAbsoluteTime, bool InSetDeltaTimeZero)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4998,16 +5079,16 @@ void UControlRig::SetAbsoluteTime(float InInAbsoluteTime, bool InInSetDeltaTimeZ
 
 	Params::UControlRig_SetAbsoluteTime_Params Parms{};
 
-	Parms.InAbsoluteTime = InInAbsoluteTime;
-	Parms.InSetDeltaTimeZero = InInSetDeltaTimeZero;
+	Parms.InAbsoluteTime = InAbsoluteTime;
+	Parms.InSetDeltaTimeZero = InSetDeltaTimeZero;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5018,7 +5099,7 @@ void UControlRig::SetAbsoluteTime(float InInAbsoluteTime, bool InInSetDeltaTimeZ
 // float                              InAbsoluteTime                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              InDeltaTime                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRig::SetAbsoluteAndDeltaTime(float InInAbsoluteTime, float InInDeltaTime)
+void UControlRig::SetAbsoluteAndDeltaTime(float InAbsoluteTime, float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5027,16 +5108,16 @@ void UControlRig::SetAbsoluteAndDeltaTime(float InInAbsoluteTime, float InInDelt
 
 	Params::UControlRig_SetAbsoluteAndDeltaTime_Params Parms{};
 
-	Parms.InAbsoluteTime = InInAbsoluteTime;
-	Parms.InDeltaTime = InInDeltaTime;
+	Parms.InAbsoluteTime = InAbsoluteTime;
+	Parms.InDeltaTime = InDeltaTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5047,7 +5128,7 @@ void UControlRig::SetAbsoluteAndDeltaTime(float InInAbsoluteTime, float InInDelt
 // class FName                        InControlName                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bSelect                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRig::SelectControl(class FName& InInControlName, bool InbSelect)
+void UControlRig::SelectControl(class FName& InControlName, bool bSelect)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5056,16 +5137,16 @@ void UControlRig::SelectControl(class FName& InInControlName, bool InbSelect)
 
 	Params::UControlRig_SelectControl_Params Parms{};
 
-	Parms.InControlName = InInControlName;
-	Parms.bSelect = InbSelect;
+	Parms.InControlName = InControlName;
+	Parms.bSelect = bSelect;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5084,13 +5165,13 @@ void UControlRig::RequestInit()
 	Params::UControlRig_RequestInit_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5109,13 +5190,13 @@ void UControlRig::RequestConstruction()
 	Params::UControlRig_RequestConstruction_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5127,7 +5208,7 @@ void UControlRig::RequestConstruction()
 // struct FRigControlElement          Control                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               bSelected                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRig::OnControlSelectedBP__DelegateSignature(class UControlRig* InRig, struct FRigControlElement& InControl, bool InbSelected)
+void UControlRig::OnControlSelectedBP__DelegateSignature(class UControlRig* Rig, struct FRigControlElement& Control, bool bSelected)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5136,9 +5217,9 @@ void UControlRig::OnControlSelectedBP__DelegateSignature(class UControlRig* InRi
 
 	Params::UControlRig_OnControlSelectedBP__DelegateSignature_Params Parms{};
 
-	Parms.Rig = InRig;
-	Parms.Control = InControl;
-	Parms.bSelected = InbSelected;
+	Parms.Rig = Rig;
+	Parms.Control = Control;
+	Parms.bSelected = bSelected;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -5151,7 +5232,7 @@ void UControlRig::OnControlSelectedBP__DelegateSignature(class UControlRig* InRi
 // class FName                        InControlName                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRig::IsControlSelected(class FName& InInControlName)
+bool UControlRig::IsControlSelected(class FName& InControlName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5160,15 +5241,15 @@ bool UControlRig::IsControlSelected(class FName& InInControlName)
 
 	Params::UControlRig_IsControlSelected_Params Parms{};
 
-	Parms.InControlName = InInControlName;
+	Parms.InControlName = InControlName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5190,13 +5271,13 @@ class URigVM* UControlRig::GetVM()
 	Params::UControlRig_GetVM_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5209,7 +5290,7 @@ class URigVM* UControlRig::GetVM()
 // class FName                        InVariableName                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName UControlRig::GetVariableType(class FName& InInVariableName)
+class FName UControlRig::GetVariableType(class FName& InVariableName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5218,15 +5299,15 @@ class FName UControlRig::GetVariableType(class FName& InInVariableName)
 
 	Params::UControlRig_GetVariableType_Params Parms{};
 
-	Parms.InVariableName = InInVariableName;
+	Parms.InVariableName = InVariableName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5239,7 +5320,7 @@ class FName UControlRig::GetVariableType(class FName& InInVariableName)
 // class FName                        InVariableName                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UControlRig::GetVariableAsString(class FName& InInVariableName)
+class FString UControlRig::GetVariableAsString(class FName& InVariableName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5248,15 +5329,15 @@ class FString UControlRig::GetVariableAsString(class FName& InInVariableName)
 
 	Params::UControlRig_GetVariableAsString_Params Parms{};
 
-	Parms.InVariableName = InInVariableName;
+	Parms.InVariableName = InVariableName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5278,13 +5359,13 @@ TArray<class FName> UControlRig::GetSupportedEvents()
 	Params::UControlRig_GetSupportedEvents_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5306,13 +5387,13 @@ TArray<class FName> UControlRig::GetScriptAccessibleVariables()
 	Params::UControlRig_GetScriptAccessibleVariables_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5334,13 +5415,13 @@ TSubclassOf<class UControlRig> UControlRig::GetInteractionRigClass()
 	Params::UControlRig_GetInteractionRigClass_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5362,13 +5443,13 @@ class UControlRig* UControlRig::GetInteractionRig()
 	Params::UControlRig_GetInteractionRig_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5390,13 +5471,13 @@ class AActor* UControlRig::GetHostingActor()
 	Params::UControlRig_GetHostingActor_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5418,13 +5499,13 @@ class URigHierarchy* UControlRig::GetHierarchy()
 	Params::UControlRig_GetHierarchy_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5446,13 +5527,13 @@ TArray<class FName> UControlRig::GetEvents()
 	Params::UControlRig_GetEvents_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5474,13 +5555,13 @@ float UControlRig::GetCurrentFramesPerSecond()
 	Params::UControlRig_GetCurrentFramesPerSecond_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5502,13 +5583,13 @@ float UControlRig::GetAbsoluteTime()
 	Params::UControlRig_GetAbsoluteTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5522,7 +5603,7 @@ float UControlRig::GetAbsoluteTime()
 // TSubclassOf<class UControlRig>     OptionalClass                                                    (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UControlRig*>         ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class UControlRig*> UControlRig::FindControlRigs(class UObject* InOuter, TSubclassOf<class UControlRig> InOptionalClass)
+TArray<class UControlRig*> UControlRig::FindControlRigs(class UObject* Outer, TSubclassOf<class UControlRig> OptionalClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5531,16 +5612,16 @@ TArray<class UControlRig*> UControlRig::FindControlRigs(class UObject* InOuter, 
 
 	Params::UControlRig_FindControlRigs_Params Parms{};
 
-	Parms.Outer = InOuter;
-	Parms.OptionalClass = InOptionalClass;
+	Parms.Outer = Outer;
+	Parms.OptionalClass = OptionalClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5553,7 +5634,7 @@ TArray<class UControlRig*> UControlRig::FindControlRigs(class UObject* InOuter, 
 // class FName                        InEventName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRig::ExecuteEvent(class FName& InInEventName)
+bool UControlRig::ExecuteEvent(class FName& InEventName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5562,15 +5643,15 @@ bool UControlRig::ExecuteEvent(class FName& InInEventName)
 
 	Params::UControlRig_ExecuteEvent_Params Parms{};
 
-	Parms.InEventName = InInEventName;
+	Parms.InEventName = InEventName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5584,7 +5665,7 @@ bool UControlRig::ExecuteEvent(class FName& InInEventName)
 // class FName                        InEventName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRig::Execute(enum class EControlRigState InState, class FName& InInEventName)
+bool UControlRig::Execute(enum class EControlRigState State, class FName& InEventName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5593,16 +5674,16 @@ bool UControlRig::Execute(enum class EControlRigState InState, class FName& InIn
 
 	Params::UControlRig_Execute_Params Parms{};
 
-	Parms.State = InState;
-	Parms.InEventName = InInEventName;
+	Parms.State = State;
+	Parms.InEventName = InEventName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5624,13 +5705,13 @@ TArray<class FName> UControlRig::CurrentControlSelection()
 	Params::UControlRig_CurrentControlSelection_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5644,7 +5725,7 @@ TArray<class FName> UControlRig::CurrentControlSelection()
 // class FName                        ControlName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTransformableControlHandle* ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UTransformableControlHandle* UControlRig::CreateTransformableControlHandle(class UObject* InOuter, class FName& InControlName)
+class UTransformableControlHandle* UControlRig::CreateTransformableControlHandle(class UObject* Outer, class FName& ControlName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5653,16 +5734,16 @@ class UTransformableControlHandle* UControlRig::CreateTransformableControlHandle
 
 	Params::UControlRig_CreateTransformableControlHandle_Params Parms{};
 
-	Parms.Outer = InOuter;
-	Parms.ControlName = InControlName;
+	Parms.Outer = Outer;
+	Parms.ControlName = ControlName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5675,7 +5756,7 @@ class UTransformableControlHandle* UControlRig::CreateTransformableControlHandle
 // class FName                        InEventName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRig::ContainsEvent(class FName& InInEventName)
+bool UControlRig::ContainsEvent(class FName& InEventName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5684,15 +5765,15 @@ bool UControlRig::ContainsEvent(class FName& InInEventName)
 
 	Params::UControlRig_ContainsEvent_Params Parms{};
 
-	Parms.InEventName = InInEventName;
+	Parms.InEventName = InEventName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5714,13 +5795,13 @@ bool UControlRig::ClearControlSelection()
 	Params::UControlRig_ClearControlSelection_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5742,16 +5823,100 @@ bool UControlRig::CanExecute()
 	Params::UControlRig_CanExecute_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ControlRig.ControlRigAnimInstance
+// (None)
+
+class UClass* UControlRigAnimInstance::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigAnimInstance");
+
+	return Clss;
+}
+
+
+// ControlRigAnimInstance ControlRig.Default__ControlRigAnimInstance
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigAnimInstance* UControlRigAnimInstance::GetDefaultObj()
+{
+	static class UControlRigAnimInstance* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigAnimInstance*>(UControlRigAnimInstance::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigBlueprintGeneratedClass
+// (Field, Struct, Class)
+
+class UClass* UControlRigBlueprintGeneratedClass::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigBlueprintGeneratedClass");
+
+	return Clss;
+}
+
+
+// ControlRigBlueprintGeneratedClass ControlRig.Default__ControlRigBlueprintGeneratedClass
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigBlueprintGeneratedClass* UControlRigBlueprintGeneratedClass::GetDefaultObj()
+{
+	static class UControlRigBlueprintGeneratedClass* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigBlueprintGeneratedClass*>(UControlRigBlueprintGeneratedClass::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigComponent
+// (SceneComponent, PrimitiveComponent)
+
+class UClass* UControlRigComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigComponent");
+
+	return Clss;
+}
+
+
+// ControlRigComponent ControlRig.Default__ControlRigComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigComponent* UControlRigComponent::GetDefaultObj()
+{
+	static class UControlRigComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigComponent*>(UControlRigComponent::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5760,7 +5925,7 @@ bool UControlRig::CanExecute()
 // Parameters:
 // float                              DeltaTime                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::Update(float InDeltaTime)
+void UControlRigComponent::Update(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5769,15 +5934,15 @@ void UControlRigComponent::Update(float InDeltaTime)
 
 	Params::UControlRigComponent_Update_Params Parms{};
 
-	Parms.DeltaTime = InDeltaTime;
+	Parms.DeltaTime = DeltaTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5787,7 +5952,7 @@ void UControlRigComponent::Update(float InDeltaTime)
 // Parameters:
 // class UObject*                     InObjectToBind                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetObjectBinding(class UObject* InInObjectToBind)
+void UControlRigComponent::SetObjectBinding(class UObject* InObjectToBind)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5796,15 +5961,15 @@ void UControlRigComponent::SetObjectBinding(class UObject* InInObjectToBind)
 
 	Params::UControlRigComponent_SetObjectBinding_Params Parms{};
 
-	Parms.InObjectToBind = InInObjectToBind;
+	Parms.InObjectToBind = InObjectToBind;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5814,7 +5979,7 @@ void UControlRigComponent::SetObjectBinding(class UObject* InInObjectToBind)
 // Parameters:
 // TArray<struct FControlRigComponentMappedElement>NewMappedElements                                                (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetMappedElements(const TArray<struct FControlRigComponentMappedElement>& InNewMappedElements)
+void UControlRigComponent::SetMappedElements(const TArray<struct FControlRigComponentMappedElement>& NewMappedElements)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5823,15 +5988,15 @@ void UControlRigComponent::SetMappedElements(const TArray<struct FControlRigComp
 
 	Params::UControlRigComponent_SetMappedElements_Params Parms{};
 
-	Parms.NewMappedElements = InNewMappedElements;
+	Parms.NewMappedElements = NewMappedElements;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5843,7 +6008,7 @@ void UControlRigComponent::SetMappedElements(const TArray<struct FControlRigComp
 // struct FTransform                  InitialTransform                                                 (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetInitialSpaceTransform(class FName InSpaceName, const struct FTransform& InInitialTransform, enum class EControlRigComponentSpace InSpace)
+void UControlRigComponent::SetInitialSpaceTransform(class FName SpaceName, const struct FTransform& InitialTransform, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5852,17 +6017,17 @@ void UControlRigComponent::SetInitialSpaceTransform(class FName InSpaceName, con
 
 	Params::UControlRigComponent_SetInitialSpaceTransform_Params Parms{};
 
-	Parms.SpaceName = InSpaceName;
-	Parms.InitialTransform = InInitialTransform;
-	Parms.Space = InSpace;
+	Parms.SpaceName = SpaceName;
+	Parms.InitialTransform = InitialTransform;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5875,7 +6040,7 @@ void UControlRigComponent::SetInitialSpaceTransform(class FName InSpaceName, con
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPropagateToChildren                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetInitialBoneTransform(class FName InBoneName, const struct FTransform& InInitialTransform, enum class EControlRigComponentSpace InSpace, bool InbPropagateToChildren)
+void UControlRigComponent::SetInitialBoneTransform(class FName BoneName, const struct FTransform& InitialTransform, enum class EControlRigComponentSpace Space, bool bPropagateToChildren)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5884,18 +6049,18 @@ void UControlRigComponent::SetInitialBoneTransform(class FName InBoneName, const
 
 	Params::UControlRigComponent_SetInitialBoneTransform_Params Parms{};
 
-	Parms.BoneName = InBoneName;
-	Parms.InitialTransform = InInitialTransform;
-	Parms.Space = InSpace;
-	Parms.bPropagateToChildren = InbPropagateToChildren;
+	Parms.BoneName = BoneName;
+	Parms.InitialTransform = InitialTransform;
+	Parms.Space = Space;
+	Parms.bPropagateToChildren = bPropagateToChildren;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5906,7 +6071,7 @@ void UControlRigComponent::SetInitialBoneTransform(class FName InBoneName, const
 // class FName                        ControlName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetControlVector2D(class FName InControlName, const struct FVector2D& InValue)
+void UControlRigComponent::SetControlVector2D(class FName ControlName, const struct FVector2D& Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5915,16 +6080,16 @@ void UControlRigComponent::SetControlVector2D(class FName InControlName, const s
 
 	Params::UControlRigComponent_SetControlVector2D_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Value = InValue;
+	Parms.ControlName = ControlName;
+	Parms.Value = Value;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5936,7 +6101,7 @@ void UControlRigComponent::SetControlVector2D(class FName InControlName, const s
 // struct FTransform                  Value                                                            (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetControlTransform(class FName InControlName, const struct FTransform& InValue, enum class EControlRigComponentSpace InSpace)
+void UControlRigComponent::SetControlTransform(class FName ControlName, const struct FTransform& Value, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5945,17 +6110,17 @@ void UControlRigComponent::SetControlTransform(class FName InControlName, const 
 
 	Params::UControlRigComponent_SetControlTransform_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Value = InValue;
-	Parms.Space = InSpace;
+	Parms.ControlName = ControlName;
+	Parms.Value = Value;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5967,7 +6132,7 @@ void UControlRigComponent::SetControlTransform(class FName InControlName, const 
 // struct FVector                     Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetControlScale(class FName InControlName, const struct FVector& InValue, enum class EControlRigComponentSpace InSpace)
+void UControlRigComponent::SetControlScale(class FName ControlName, const struct FVector& Value, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5976,17 +6141,17 @@ void UControlRigComponent::SetControlScale(class FName InControlName, const stru
 
 	Params::UControlRigComponent_SetControlScale_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Value = InValue;
-	Parms.Space = InSpace;
+	Parms.ControlName = ControlName;
+	Parms.Value = Value;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5998,7 +6163,7 @@ void UControlRigComponent::SetControlScale(class FName InControlName, const stru
 // struct FRotator                    Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetControlRotator(class FName InControlName, const struct FRotator& InValue, enum class EControlRigComponentSpace InSpace)
+void UControlRigComponent::SetControlRotator(class FName ControlName, const struct FRotator& Value, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6007,17 +6172,17 @@ void UControlRigComponent::SetControlRotator(class FName InControlName, const st
 
 	Params::UControlRigComponent_SetControlRotator_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Value = InValue;
-	Parms.Space = InSpace;
+	Parms.ControlName = ControlName;
+	Parms.Value = Value;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6027,7 +6192,7 @@ void UControlRigComponent::SetControlRotator(class FName InControlName, const st
 // Parameters:
 // TSubclassOf<class UControlRig>     InControlRigClass                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetControlRigClass(TSubclassOf<class UControlRig> InInControlRigClass)
+void UControlRigComponent::SetControlRigClass(TSubclassOf<class UControlRig> InControlRigClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6036,15 +6201,15 @@ void UControlRigComponent::SetControlRigClass(TSubclassOf<class UControlRig> InI
 
 	Params::UControlRigComponent_SetControlRigClass_Params Parms{};
 
-	Parms.InControlRigClass = InInControlRigClass;
+	Parms.InControlRigClass = InControlRigClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6056,7 +6221,7 @@ void UControlRigComponent::SetControlRigClass(TSubclassOf<class UControlRig> InI
 // struct FVector                     Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetControlPosition(class FName InControlName, const struct FVector& InValue, enum class EControlRigComponentSpace InSpace)
+void UControlRigComponent::SetControlPosition(class FName ControlName, const struct FVector& Value, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6065,17 +6230,17 @@ void UControlRigComponent::SetControlPosition(class FName InControlName, const s
 
 	Params::UControlRigComponent_SetControlPosition_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Value = InValue;
-	Parms.Space = InSpace;
+	Parms.ControlName = ControlName;
+	Parms.Value = Value;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6087,7 +6252,7 @@ void UControlRigComponent::SetControlPosition(class FName InControlName, const s
 // struct FTransform                  OffsetTransform                                                  (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetControlOffset(class FName InControlName, const struct FTransform& InOffsetTransform, enum class EControlRigComponentSpace InSpace)
+void UControlRigComponent::SetControlOffset(class FName ControlName, const struct FTransform& OffsetTransform, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6096,17 +6261,17 @@ void UControlRigComponent::SetControlOffset(class FName InControlName, const str
 
 	Params::UControlRigComponent_SetControlOffset_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.OffsetTransform = InOffsetTransform;
-	Parms.Space = InSpace;
+	Parms.ControlName = ControlName;
+	Parms.OffsetTransform = OffsetTransform;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6117,7 +6282,7 @@ void UControlRigComponent::SetControlOffset(class FName InControlName, const str
 // class FName                        ControlName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetControlInt(class FName InControlName, int32 InValue)
+void UControlRigComponent::SetControlInt(class FName ControlName, int32 Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6126,16 +6291,16 @@ void UControlRigComponent::SetControlInt(class FName InControlName, int32 InValu
 
 	Params::UControlRigComponent_SetControlInt_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Value = InValue;
+	Parms.ControlName = ControlName;
+	Parms.Value = Value;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6146,7 +6311,7 @@ void UControlRigComponent::SetControlInt(class FName InControlName, int32 InValu
 // class FName                        ControlName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetControlFloat(class FName InControlName, float InValue)
+void UControlRigComponent::SetControlFloat(class FName ControlName, float Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6155,16 +6320,16 @@ void UControlRigComponent::SetControlFloat(class FName InControlName, float InVa
 
 	Params::UControlRigComponent_SetControlFloat_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Value = InValue;
+	Parms.ControlName = ControlName;
+	Parms.Value = Value;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6175,7 +6340,7 @@ void UControlRigComponent::SetControlFloat(class FName InControlName, float InVa
 // class FName                        ControlName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               Value                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetControlBool(class FName InControlName, bool InValue)
+void UControlRigComponent::SetControlBool(class FName ControlName, bool Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6184,16 +6349,16 @@ void UControlRigComponent::SetControlBool(class FName InControlName, bool InValu
 
 	Params::UControlRigComponent_SetControlBool_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Value = InValue;
+	Parms.ControlName = ControlName;
+	Parms.Value = Value;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6207,7 +6372,7 @@ void UControlRigComponent::SetControlBool(class FName InControlName, bool InValu
 // float                              Weight                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bPropagateToChildren                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetBoneTransform(class FName InBoneName, const struct FTransform& InTransform, enum class EControlRigComponentSpace InSpace, float InWeight, bool InbPropagateToChildren)
+void UControlRigComponent::SetBoneTransform(class FName BoneName, const struct FTransform& Transform, enum class EControlRigComponentSpace Space, float Weight, bool bPropagateToChildren)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6216,19 +6381,19 @@ void UControlRigComponent::SetBoneTransform(class FName InBoneName, const struct
 
 	Params::UControlRigComponent_SetBoneTransform_Params Parms{};
 
-	Parms.BoneName = InBoneName;
-	Parms.Transform = InTransform;
-	Parms.Space = InSpace;
-	Parms.Weight = InWeight;
-	Parms.bPropagateToChildren = InbPropagateToChildren;
+	Parms.BoneName = BoneName;
+	Parms.Transform = Transform;
+	Parms.Space = Space;
+	Parms.Weight = Weight;
+	Parms.bPropagateToChildren = bPropagateToChildren;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6238,7 +6403,7 @@ void UControlRigComponent::SetBoneTransform(class FName InBoneName, const struct
 // Parameters:
 // class USkeletalMesh*               InSkeletalMesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::SetBoneInitialTransformsFromSkeletalMesh(class USkeletalMesh* InInSkeletalMesh)
+void UControlRigComponent::SetBoneInitialTransformsFromSkeletalMesh(class USkeletalMesh* InSkeletalMesh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6247,15 +6412,15 @@ void UControlRigComponent::SetBoneInitialTransformsFromSkeletalMesh(class USkele
 
 	Params::UControlRigComponent_SetBoneInitialTransformsFromSkeletalMesh_Params Parms{};
 
-	Parms.InSkeletalMesh = InInSkeletalMesh;
+	Parms.InSkeletalMesh = InSkeletalMesh;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6265,7 +6430,7 @@ void UControlRigComponent::SetBoneInitialTransformsFromSkeletalMesh(class USkele
 // Parameters:
 // class UControlRigComponent*        Component                                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::OnPreInitialize(class UControlRigComponent* InComponent)
+void UControlRigComponent::OnPreInitialize(class UControlRigComponent* Component)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6274,15 +6439,15 @@ void UControlRigComponent::OnPreInitialize(class UControlRigComponent* InCompone
 
 	Params::UControlRigComponent_OnPreInitialize_Params Parms{};
 
-	Parms.Component = InComponent;
+	Parms.Component = Component;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6292,7 +6457,7 @@ void UControlRigComponent::OnPreInitialize(class UControlRigComponent* InCompone
 // Parameters:
 // class UControlRigComponent*        Component                                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::OnPreForwardsSolve(class UControlRigComponent* InComponent)
+void UControlRigComponent::OnPreForwardsSolve(class UControlRigComponent* Component)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6301,15 +6466,15 @@ void UControlRigComponent::OnPreForwardsSolve(class UControlRigComponent* InComp
 
 	Params::UControlRigComponent_OnPreForwardsSolve_Params Parms{};
 
-	Parms.Component = InComponent;
+	Parms.Component = Component;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6319,7 +6484,7 @@ void UControlRigComponent::OnPreForwardsSolve(class UControlRigComponent* InComp
 // Parameters:
 // class UControlRigComponent*        Component                                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::OnPreConstruction(class UControlRigComponent* InComponent)
+void UControlRigComponent::OnPreConstruction(class UControlRigComponent* Component)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6328,15 +6493,15 @@ void UControlRigComponent::OnPreConstruction(class UControlRigComponent* InCompo
 
 	Params::UControlRigComponent_OnPreConstruction_Params Parms{};
 
-	Parms.Component = InComponent;
+	Parms.Component = Component;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6346,7 +6511,7 @@ void UControlRigComponent::OnPreConstruction(class UControlRigComponent* InCompo
 // Parameters:
 // class UControlRigComponent*        Component                                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::OnPostInitialize(class UControlRigComponent* InComponent)
+void UControlRigComponent::OnPostInitialize(class UControlRigComponent* Component)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6355,15 +6520,15 @@ void UControlRigComponent::OnPostInitialize(class UControlRigComponent* InCompon
 
 	Params::UControlRigComponent_OnPostInitialize_Params Parms{};
 
-	Parms.Component = InComponent;
+	Parms.Component = Component;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6373,7 +6538,7 @@ void UControlRigComponent::OnPostInitialize(class UControlRigComponent* InCompon
 // Parameters:
 // class UControlRigComponent*        Component                                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::OnPostForwardsSolve(class UControlRigComponent* InComponent)
+void UControlRigComponent::OnPostForwardsSolve(class UControlRigComponent* Component)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6382,15 +6547,15 @@ void UControlRigComponent::OnPostForwardsSolve(class UControlRigComponent* InCom
 
 	Params::UControlRigComponent_OnPostForwardsSolve_Params Parms{};
 
-	Parms.Component = InComponent;
+	Parms.Component = Component;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6400,7 +6565,7 @@ void UControlRigComponent::OnPostForwardsSolve(class UControlRigComponent* InCom
 // Parameters:
 // class UControlRigComponent*        Component                                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::OnPostConstruction(class UControlRigComponent* InComponent)
+void UControlRigComponent::OnPostConstruction(class UControlRigComponent* Component)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6409,15 +6574,15 @@ void UControlRigComponent::OnPostConstruction(class UControlRigComponent* InComp
 
 	Params::UControlRigComponent_OnPostConstruction_Params Parms{};
 
-	Parms.Component = InComponent;
+	Parms.Component = Component;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6436,13 +6601,13 @@ void UControlRigComponent::Initialize()
 	Params::UControlRigComponent_Initialize_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6454,7 +6619,7 @@ void UControlRigComponent::Initialize()
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform UControlRigComponent::GetSpaceTransform(class FName InSpaceName, enum class EControlRigComponentSpace InSpace)
+struct FTransform UControlRigComponent::GetSpaceTransform(class FName SpaceName, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6463,16 +6628,16 @@ struct FTransform UControlRigComponent::GetSpaceTransform(class FName InSpaceNam
 
 	Params::UControlRigComponent_GetSpaceTransform_Params Parms{};
 
-	Parms.SpaceName = InSpaceName;
-	Parms.Space = InSpace;
+	Parms.SpaceName = SpaceName;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6486,7 +6651,7 @@ struct FTransform UControlRigComponent::GetSpaceTransform(class FName InSpaceNam
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform UControlRigComponent::GetInitialSpaceTransform(class FName InSpaceName, enum class EControlRigComponentSpace InSpace)
+struct FTransform UControlRigComponent::GetInitialSpaceTransform(class FName SpaceName, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6495,16 +6660,16 @@ struct FTransform UControlRigComponent::GetInitialSpaceTransform(class FName InS
 
 	Params::UControlRigComponent_GetInitialSpaceTransform_Params Parms{};
 
-	Parms.SpaceName = InSpaceName;
-	Parms.Space = InSpace;
+	Parms.SpaceName = SpaceName;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6518,7 +6683,7 @@ struct FTransform UControlRigComponent::GetInitialSpaceTransform(class FName InS
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform UControlRigComponent::GetInitialBoneTransform(class FName InBoneName, enum class EControlRigComponentSpace InSpace)
+struct FTransform UControlRigComponent::GetInitialBoneTransform(class FName BoneName, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6527,16 +6692,16 @@ struct FTransform UControlRigComponent::GetInitialBoneTransform(class FName InBo
 
 	Params::UControlRigComponent_GetInitialBoneTransform_Params Parms{};
 
-	Parms.BoneName = InBoneName;
-	Parms.Space = InSpace;
+	Parms.BoneName = BoneName;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6549,7 +6714,7 @@ struct FTransform UControlRigComponent::GetInitialBoneTransform(class FName InBo
 // enum class ERigElementType         ElementType                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class FName> UControlRigComponent::GetElementNames(enum class ERigElementType InElementType)
+TArray<class FName> UControlRigComponent::GetElementNames(enum class ERigElementType ElementType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6558,15 +6723,15 @@ TArray<class FName> UControlRigComponent::GetElementNames(enum class ERigElement
 
 	Params::UControlRigComponent_GetElementNames_Params Parms{};
 
-	Parms.ElementType = InElementType;
+	Parms.ElementType = ElementType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6579,7 +6744,7 @@ TArray<class FName> UControlRigComponent::GetElementNames(enum class ERigElement
 // class FName                        ControlName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector2D UControlRigComponent::GetControlVector2D(class FName InControlName)
+struct FVector2D UControlRigComponent::GetControlVector2D(class FName ControlName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6588,15 +6753,15 @@ struct FVector2D UControlRigComponent::GetControlVector2D(class FName InControlN
 
 	Params::UControlRigComponent_GetControlVector2D_Params Parms{};
 
-	Parms.ControlName = InControlName;
+	Parms.ControlName = ControlName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6610,7 +6775,7 @@ struct FVector2D UControlRigComponent::GetControlVector2D(class FName InControlN
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform UControlRigComponent::GetControlTransform(class FName InControlName, enum class EControlRigComponentSpace InSpace)
+struct FTransform UControlRigComponent::GetControlTransform(class FName ControlName, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6619,16 +6784,16 @@ struct FTransform UControlRigComponent::GetControlTransform(class FName InContro
 
 	Params::UControlRigComponent_GetControlTransform_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Space = InSpace;
+	Parms.ControlName = ControlName;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6642,7 +6807,7 @@ struct FTransform UControlRigComponent::GetControlTransform(class FName InContro
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UControlRigComponent::GetControlScale(class FName InControlName, enum class EControlRigComponentSpace InSpace)
+struct FVector UControlRigComponent::GetControlScale(class FName ControlName, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6651,16 +6816,16 @@ struct FVector UControlRigComponent::GetControlScale(class FName InControlName, 
 
 	Params::UControlRigComponent_GetControlScale_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Space = InSpace;
+	Parms.ControlName = ControlName;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6674,7 +6839,7 @@ struct FVector UControlRigComponent::GetControlScale(class FName InControlName, 
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRotator                    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FRotator UControlRigComponent::GetControlRotator(class FName InControlName, enum class EControlRigComponentSpace InSpace)
+struct FRotator UControlRigComponent::GetControlRotator(class FName ControlName, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6683,16 +6848,16 @@ struct FRotator UControlRigComponent::GetControlRotator(class FName InControlNam
 
 	Params::UControlRigComponent_GetControlRotator_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Space = InSpace;
+	Parms.ControlName = ControlName;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6714,13 +6879,13 @@ class UControlRig* UControlRigComponent::GetControlRig()
 	Params::UControlRigComponent_GetControlRig_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6734,7 +6899,7 @@ class UControlRig* UControlRigComponent::GetControlRig()
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UControlRigComponent::GetControlPosition(class FName InControlName, enum class EControlRigComponentSpace InSpace)
+struct FVector UControlRigComponent::GetControlPosition(class FName ControlName, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6743,16 +6908,16 @@ struct FVector UControlRigComponent::GetControlPosition(class FName InControlNam
 
 	Params::UControlRigComponent_GetControlPosition_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Space = InSpace;
+	Parms.ControlName = ControlName;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6766,7 +6931,7 @@ struct FVector UControlRigComponent::GetControlPosition(class FName InControlNam
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform UControlRigComponent::GetControlOffset(class FName InControlName, enum class EControlRigComponentSpace InSpace)
+struct FTransform UControlRigComponent::GetControlOffset(class FName ControlName, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6775,16 +6940,16 @@ struct FTransform UControlRigComponent::GetControlOffset(class FName InControlNa
 
 	Params::UControlRigComponent_GetControlOffset_Params Parms{};
 
-	Parms.ControlName = InControlName;
-	Parms.Space = InSpace;
+	Parms.ControlName = ControlName;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6797,7 +6962,7 @@ struct FTransform UControlRigComponent::GetControlOffset(class FName InControlNa
 // class FName                        ControlName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UControlRigComponent::GetControlInt(class FName InControlName)
+int32 UControlRigComponent::GetControlInt(class FName ControlName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6806,15 +6971,15 @@ int32 UControlRigComponent::GetControlInt(class FName InControlName)
 
 	Params::UControlRigComponent_GetControlInt_Params Parms{};
 
-	Parms.ControlName = InControlName;
+	Parms.ControlName = ControlName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6827,7 +6992,7 @@ int32 UControlRigComponent::GetControlInt(class FName InControlName)
 // class FName                        ControlName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UControlRigComponent::GetControlFloat(class FName InControlName)
+float UControlRigComponent::GetControlFloat(class FName ControlName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6836,15 +7001,15 @@ float UControlRigComponent::GetControlFloat(class FName InControlName)
 
 	Params::UControlRigComponent_GetControlFloat_Params Parms{};
 
-	Parms.ControlName = InControlName;
+	Parms.ControlName = ControlName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6857,7 +7022,7 @@ float UControlRigComponent::GetControlFloat(class FName InControlName)
 // class FName                        ControlName                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRigComponent::GetControlBool(class FName InControlName)
+bool UControlRigComponent::GetControlBool(class FName ControlName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6866,15 +7031,15 @@ bool UControlRigComponent::GetControlBool(class FName InControlName)
 
 	Params::UControlRigComponent_GetControlBool_Params Parms{};
 
-	Parms.ControlName = InControlName;
+	Parms.ControlName = ControlName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6888,7 +7053,7 @@ bool UControlRigComponent::GetControlBool(class FName InControlName)
 // enum class EControlRigComponentSpaceSpace                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                  ReturnValue                                                      (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FTransform UControlRigComponent::GetBoneTransform(class FName InBoneName, enum class EControlRigComponentSpace InSpace)
+struct FTransform UControlRigComponent::GetBoneTransform(class FName BoneName, enum class EControlRigComponentSpace Space)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6897,16 +7062,16 @@ struct FTransform UControlRigComponent::GetBoneTransform(class FName InBoneName,
 
 	Params::UControlRigComponent_GetBoneTransform_Params Parms{};
 
-	Parms.BoneName = InBoneName;
-	Parms.Space = InSpace;
+	Parms.BoneName = BoneName;
+	Parms.Space = Space;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6928,13 +7093,13 @@ float UControlRigComponent::GetAbsoluteTime()
 	Params::UControlRigComponent_GetAbsoluteTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6948,7 +7113,7 @@ float UControlRigComponent::GetAbsoluteTime()
 // enum class ERigElementType         ElementType                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRigComponent::DoesElementExist(class FName InName, enum class ERigElementType InElementType)
+bool UControlRigComponent::DoesElementExist(class FName Name, enum class ERigElementType ElementType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6957,16 +7122,16 @@ bool UControlRigComponent::DoesElementExist(class FName InName, enum class ERigE
 
 	Params::UControlRigComponent_DoesElementExist_Params Parms{};
 
-	Parms.Name = InName;
-	Parms.ElementType = InElementType;
+	Parms.Name = Name;
+	Parms.ElementType = ElementType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6987,13 +7152,13 @@ void UControlRigComponent::ClearMappedElements()
 	Params::UControlRigComponent_ClearMappedElements_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7013,13 +7178,13 @@ bool UControlRigComponent::CanExecute()
 	Params::UControlRigComponent_CanExecute_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7033,7 +7198,7 @@ bool UControlRigComponent::CanExecute()
 // TArray<struct FControlRigComponentMappedBone>Bones                                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // TArray<struct FControlRigComponentMappedCurve>Curves                                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::AddMappedSkeletalMesh(class USkeletalMeshComponent* InSkeletalMeshComponent, const TArray<struct FControlRigComponentMappedBone>& InBones, const TArray<struct FControlRigComponentMappedCurve>& InCurves)
+void UControlRigComponent::AddMappedSkeletalMesh(class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<struct FControlRigComponentMappedBone>& Bones, const TArray<struct FControlRigComponentMappedCurve>& Curves)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7042,17 +7207,17 @@ void UControlRigComponent::AddMappedSkeletalMesh(class USkeletalMeshComponent* I
 
 	Params::UControlRigComponent_AddMappedSkeletalMesh_Params Parms{};
 
-	Parms.SkeletalMeshComponent = InSkeletalMeshComponent;
-	Parms.Bones = InBones;
-	Parms.Curves = InCurves;
+	Parms.SkeletalMeshComponent = SkeletalMeshComponent;
+	Parms.Bones = Bones;
+	Parms.Curves = Curves;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7062,7 +7227,7 @@ void UControlRigComponent::AddMappedSkeletalMesh(class USkeletalMeshComponent* I
 // Parameters:
 // TArray<struct FControlRigComponentMappedElement>NewMappedElements                                                (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::AddMappedElements(const TArray<struct FControlRigComponentMappedElement>& InNewMappedElements)
+void UControlRigComponent::AddMappedElements(const TArray<struct FControlRigComponentMappedElement>& NewMappedElements)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7071,15 +7236,15 @@ void UControlRigComponent::AddMappedElements(const TArray<struct FControlRigComp
 
 	Params::UControlRigComponent_AddMappedElements_Params Parms{};
 
-	Parms.NewMappedElements = InNewMappedElements;
+	Parms.NewMappedElements = NewMappedElements;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7089,7 +7254,7 @@ void UControlRigComponent::AddMappedElements(const TArray<struct FControlRigComp
 // Parameters:
 // TArray<struct FControlRigComponentMappedComponent>Components                                                       (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::AddMappedComponents(const TArray<struct FControlRigComponentMappedComponent>& InComponents)
+void UControlRigComponent::AddMappedComponents(const TArray<struct FControlRigComponentMappedComponent>& Components)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7098,15 +7263,15 @@ void UControlRigComponent::AddMappedComponents(const TArray<struct FControlRigCo
 
 	Params::UControlRigComponent_AddMappedComponents_Params Parms{};
 
-	Parms.Components = InComponents;
+	Parms.Components = Components;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7116,7 +7281,7 @@ void UControlRigComponent::AddMappedComponents(const TArray<struct FControlRigCo
 // Parameters:
 // class USkeletalMeshComponent*      SkeletalMeshComponent                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigComponent::AddMappedCompleteSkeletalMesh(class USkeletalMeshComponent* InSkeletalMeshComponent)
+void UControlRigComponent::AddMappedCompleteSkeletalMesh(class USkeletalMeshComponent* SkeletalMeshComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7125,16 +7290,44 @@ void UControlRigComponent::AddMappedCompleteSkeletalMesh(class USkeletalMeshComp
 
 	Params::UControlRigComponent_AddMappedCompleteSkeletalMesh_Params Parms{};
 
-	Parms.SkeletalMeshComponent = InSkeletalMeshComponent;
+	Parms.SkeletalMeshComponent = SkeletalMeshComponent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ControlRig.ControlRigControlActor
+// (Actor)
+
+class UClass* AControlRigControlActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigControlActor");
+
+	return Clss;
+}
+
+
+// ControlRigControlActor ControlRig.Default__ControlRigControlActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AControlRigControlActor* AControlRigControlActor::GetDefaultObj()
+{
+	static class AControlRigControlActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AControlRigControlActor*>(AControlRigControlActor::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -7152,13 +7345,13 @@ void AControlRigControlActor::ResetControlActor()
 	Params::AControlRigControlActor_ResetControlActor_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7177,13 +7370,13 @@ void AControlRigControlActor::Refresh()
 	Params::AControlRigControlActor_Refresh_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7202,14 +7395,42 @@ void AControlRigControlActor::Clear()
 	Params::AControlRigControlActor_Clear_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ControlRig.ControlRigShapeActor
+// (Actor)
+
+class UClass* AControlRigShapeActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigShapeActor");
+
+	return Clss;
+}
+
+
+// ControlRigShapeActor ControlRig.Default__ControlRigShapeActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AControlRigShapeActor* AControlRigShapeActor::GetDefaultObj()
+{
+	static class AControlRigShapeActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AControlRigShapeActor*>(AControlRigShapeActor::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -7218,7 +7439,7 @@ void AControlRigControlActor::Clear()
 // Parameters:
 // bool                               bInSelected                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AControlRigShapeActor::SetSelected(bool InbInSelected)
+void AControlRigShapeActor::SetSelected(bool bInSelected)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7227,15 +7448,15 @@ void AControlRigShapeActor::SetSelected(bool InbInSelected)
 
 	Params::AControlRigShapeActor_SetSelected_Params Parms{};
 
-	Parms.bInSelected = InbInSelected;
+	Parms.bInSelected = bInSelected;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7245,7 +7466,7 @@ void AControlRigShapeActor::SetSelected(bool InbInSelected)
 // Parameters:
 // bool                               bInSelectable                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AControlRigShapeActor::SetSelectable(bool InbInSelectable)
+void AControlRigShapeActor::SetSelectable(bool bInSelectable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7254,15 +7475,15 @@ void AControlRigShapeActor::SetSelectable(bool InbInSelectable)
 
 	Params::AControlRigShapeActor_SetSelectable_Params Parms{};
 
-	Parms.bInSelectable = InbInSelectable;
+	Parms.bInSelectable = bInSelectable;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7272,7 +7493,7 @@ void AControlRigShapeActor::SetSelectable(bool InbInSelectable)
 // Parameters:
 // bool                               bInHovered                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AControlRigShapeActor::SetHovered(bool InbInHovered)
+void AControlRigShapeActor::SetHovered(bool bInHovered)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7281,15 +7502,15 @@ void AControlRigShapeActor::SetHovered(bool InbInHovered)
 
 	Params::AControlRigShapeActor_SetHovered_Params Parms{};
 
-	Parms.bInHovered = InbInHovered;
+	Parms.bInHovered = bInHovered;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7299,7 +7520,7 @@ void AControlRigShapeActor::SetHovered(bool InbInHovered)
 // Parameters:
 // struct FTransform                  InTransform                                                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AControlRigShapeActor::SetGlobalTransform(struct FTransform& InInTransform)
+void AControlRigShapeActor::SetGlobalTransform(struct FTransform& InTransform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7308,15 +7529,15 @@ void AControlRigShapeActor::SetGlobalTransform(struct FTransform& InInTransform)
 
 	Params::AControlRigShapeActor_SetGlobalTransform_Params Parms{};
 
-	Parms.InTransform = InInTransform;
+	Parms.InTransform = InTransform;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7326,7 +7547,7 @@ void AControlRigShapeActor::SetGlobalTransform(struct FTransform& InInTransform)
 // Parameters:
 // bool                               bInEnabled                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AControlRigShapeActor::SetEnabled(bool InbInEnabled)
+void AControlRigShapeActor::SetEnabled(bool bInEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7335,15 +7556,15 @@ void AControlRigShapeActor::SetEnabled(bool InbInEnabled)
 
 	Params::AControlRigShapeActor_SetEnabled_Params Parms{};
 
-	Parms.bInEnabled = InbInEnabled;
+	Parms.bInEnabled = bInEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7353,7 +7574,7 @@ void AControlRigShapeActor::SetEnabled(bool InbInEnabled)
 // Parameters:
 // struct FTransform                  NewTransform                                                     (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AControlRigShapeActor::OnTransformChanged(struct FTransform& InNewTransform)
+void AControlRigShapeActor::OnTransformChanged(struct FTransform& NewTransform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7362,7 +7583,7 @@ void AControlRigShapeActor::OnTransformChanged(struct FTransform& InNewTransform
 
 	Params::AControlRigShapeActor_OnTransformChanged_Params Parms{};
 
-	Parms.NewTransform = InNewTransform;
+	Parms.NewTransform = NewTransform;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7374,7 +7595,7 @@ void AControlRigShapeActor::OnTransformChanged(struct FTransform& InNewTransform
 // Parameters:
 // bool                               bIsSelected                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AControlRigShapeActor::OnSelectionChanged(bool InbIsSelected)
+void AControlRigShapeActor::OnSelectionChanged(bool bIsSelected)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7383,7 +7604,7 @@ void AControlRigShapeActor::OnSelectionChanged(bool InbIsSelected)
 
 	Params::AControlRigShapeActor_OnSelectionChanged_Params Parms{};
 
-	Parms.bIsSelected = InbIsSelected;
+	Parms.bIsSelected = bIsSelected;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7395,7 +7616,7 @@ void AControlRigShapeActor::OnSelectionChanged(bool InbIsSelected)
 // Parameters:
 // bool                               bIsManipulating                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AControlRigShapeActor::OnManipulatingChanged(bool InbIsManipulating)
+void AControlRigShapeActor::OnManipulatingChanged(bool bIsManipulating)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7404,7 +7625,7 @@ void AControlRigShapeActor::OnManipulatingChanged(bool InbIsManipulating)
 
 	Params::AControlRigShapeActor_OnManipulatingChanged_Params Parms{};
 
-	Parms.bIsManipulating = InbIsManipulating;
+	Parms.bIsManipulating = bIsManipulating;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7416,7 +7637,7 @@ void AControlRigShapeActor::OnManipulatingChanged(bool InbIsManipulating)
 // Parameters:
 // bool                               bIsSelected                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AControlRigShapeActor::OnHoveredChanged(bool InbIsSelected)
+void AControlRigShapeActor::OnHoveredChanged(bool bIsSelected)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7425,7 +7646,7 @@ void AControlRigShapeActor::OnHoveredChanged(bool InbIsSelected)
 
 	Params::AControlRigShapeActor_OnHoveredChanged_Params Parms{};
 
-	Parms.bIsSelected = InbIsSelected;
+	Parms.bIsSelected = bIsSelected;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7437,7 +7658,7 @@ void AControlRigShapeActor::OnHoveredChanged(bool InbIsSelected)
 // Parameters:
 // bool                               bIsEnabled                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AControlRigShapeActor::OnEnabledChanged(bool InbIsEnabled)
+void AControlRigShapeActor::OnEnabledChanged(bool bIsEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7446,7 +7667,7 @@ void AControlRigShapeActor::OnEnabledChanged(bool InbIsEnabled)
 
 	Params::AControlRigShapeActor_OnEnabledChanged_Params Parms{};
 
-	Parms.bIsEnabled = InbIsEnabled;
+	Parms.bIsEnabled = bIsEnabled;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -7468,13 +7689,13 @@ bool AControlRigShapeActor::IsSelectedInEditor()
 	Params::AControlRigShapeActor_IsSelectedInEditor_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7496,13 +7717,13 @@ bool AControlRigShapeActor::IsHovered()
 	Params::AControlRigShapeActor_IsHovered_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7524,13 +7745,13 @@ bool AControlRigShapeActor::IsEnabled()
 	Params::AControlRigShapeActor_IsEnabled_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7552,16 +7773,184 @@ struct FTransform AControlRigShapeActor::GetGlobalTransform()
 	Params::AControlRigShapeActor_GetGlobalTransform_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ControlRig.ControlRigShapeLibrary
+// (None)
+
+class UClass* UControlRigShapeLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigShapeLibrary");
+
+	return Clss;
+}
+
+
+// ControlRigShapeLibrary ControlRig.Default__ControlRigShapeLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigShapeLibrary* UControlRigShapeLibrary::GetDefaultObj()
+{
+	static class UControlRigShapeLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigShapeLibrary*>(UControlRigShapeLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigValidator
+// (None)
+
+class UClass* UControlRigValidator::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigValidator");
+
+	return Clss;
+}
+
+
+// ControlRigValidator ControlRig.Default__ControlRigValidator
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigValidator* UControlRigValidator::GetDefaultObj()
+{
+	static class UControlRigValidator* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigValidator*>(UControlRigValidator::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigValidationPass
+// (None)
+
+class UClass* UControlRigValidationPass::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigValidationPass");
+
+	return Clss;
+}
+
+
+// ControlRigValidationPass ControlRig.Default__ControlRigValidationPass
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigValidationPass* UControlRigValidationPass::GetDefaultObj()
+{
+	static class UControlRigValidationPass* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigValidationPass*>(UControlRigValidationPass::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.AdditiveControlRig
+// (None)
+
+class UClass* UAdditiveControlRig::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AdditiveControlRig");
+
+	return Clss;
+}
+
+
+// AdditiveControlRig ControlRig.Default__AdditiveControlRig
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAdditiveControlRig* UAdditiveControlRig::GetDefaultObj()
+{
+	static class UAdditiveControlRig* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAdditiveControlRig*>(UAdditiveControlRig::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.FKControlRig
+// (None)
+
+class UClass* UFKControlRig::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("FKControlRig");
+
+	return Clss;
+}
+
+
+// FKControlRig ControlRig.Default__FKControlRig
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UFKControlRig* UFKControlRig::GetDefaultObj()
+{
+	static class UFKControlRig* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UFKControlRig*>(UFKControlRig::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.RigHierarchyController
+// (None)
+
+class UClass* URigHierarchyController::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("RigHierarchyController");
+
+	return Clss;
+}
+
+
+// RigHierarchyController ControlRig.Default__RigHierarchyController
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class URigHierarchyController* URigHierarchyController::GetDefaultObj()
+{
+	static class URigHierarchyController* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<URigHierarchyController*>(URigHierarchyController::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -7572,7 +7961,7 @@ struct FTransform AControlRigShapeActor::GetGlobalTransform()
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchyController::SetSelection(TArray<struct FRigElementKey>& InInKeys, bool InbPrintPythonCommand)
+bool URigHierarchyController::SetSelection(TArray<struct FRigElementKey>& InKeys, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7581,16 +7970,16 @@ bool URigHierarchyController::SetSelection(TArray<struct FRigElementKey>& InInKe
 
 	Params::URigHierarchyController_SetSelection_Params Parms{};
 
-	Parms.InKeys = InInKeys;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InKeys = InKeys;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7607,7 +7996,7 @@ bool URigHierarchyController::SetSelection(TArray<struct FRigElementKey>& InInKe
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchyController::SetParent(const struct FRigElementKey& InInChild, const struct FRigElementKey& InInParent, bool InbMaintainGlobalTransform, bool InbSetupUndo, bool InbPrintPythonCommand)
+bool URigHierarchyController::SetParent(const struct FRigElementKey& InChild, const struct FRigElementKey& InParent, bool bMaintainGlobalTransform, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7616,19 +8005,19 @@ bool URigHierarchyController::SetParent(const struct FRigElementKey& InInChild, 
 
 	Params::URigHierarchyController_SetParent_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.InParent = InInParent;
-	Parms.bMaintainGlobalTransform = InbMaintainGlobalTransform;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InChild = InChild;
+	Parms.InParent = InParent;
+	Parms.bMaintainGlobalTransform = bMaintainGlobalTransform;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7640,7 +8029,7 @@ bool URigHierarchyController::SetParent(const struct FRigElementKey& InInChild, 
 // Parameters:
 // class URigHierarchy*               InHierarchy                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void URigHierarchyController::SetHierarchy(class URigHierarchy* InInHierarchy)
+void URigHierarchyController::SetHierarchy(class URigHierarchy* InHierarchy)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7649,15 +8038,15 @@ void URigHierarchyController::SetHierarchy(class URigHierarchy* InInHierarchy)
 
 	Params::URigHierarchyController_SetHierarchy_Params Parms{};
 
-	Parms.InHierarchy = InInHierarchy;
+	Parms.InHierarchy = InHierarchy;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -7672,7 +8061,7 @@ void URigHierarchyController::SetHierarchy(class URigHierarchy* InInHierarchy)
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName URigHierarchyController::SetDisplayName(const struct FRigElementKey& InInControl, class FName InInDisplayName, bool InbRenameElement, bool InbSetupUndo, bool InbPrintPythonCommand)
+class FName URigHierarchyController::SetDisplayName(const struct FRigElementKey& InControl, class FName InDisplayName, bool bRenameElement, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7681,19 +8070,19 @@ class FName URigHierarchyController::SetDisplayName(const struct FRigElementKey&
 
 	Params::URigHierarchyController_SetDisplayName_Params Parms{};
 
-	Parms.InControl = InInControl;
-	Parms.InDisplayName = InInDisplayName;
-	Parms.bRenameElement = InbRenameElement;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InControl = InControl;
+	Parms.InDisplayName = InDisplayName;
+	Parms.bRenameElement = bRenameElement;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7708,7 +8097,7 @@ class FName URigHierarchyController::SetDisplayName(const struct FRigElementKey&
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchyController::SetControlSettings(const struct FRigElementKey& InInKey, const struct FRigControlSettings& InInSettings, bool InbSetupUndo)
+bool URigHierarchyController::SetControlSettings(const struct FRigElementKey& InKey, const struct FRigControlSettings& InSettings, bool bSetupUndo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7717,17 +8106,17 @@ bool URigHierarchyController::SetControlSettings(const struct FRigElementKey& In
 
 	Params::URigHierarchyController_SetControlSettings_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.InSettings = InInSettings;
-	Parms.bSetupUndo = InbSetupUndo;
+	Parms.InKey = InKey;
+	Parms.InSettings = InSettings;
+	Parms.bSetupUndo = bSetupUndo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7742,7 +8131,7 @@ bool URigHierarchyController::SetControlSettings(const struct FRigElementKey& In
 // bool                               bClearSelection                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchyController::SelectElement(const struct FRigElementKey& InInKey, bool InbSelect, bool InbClearSelection)
+bool URigHierarchyController::SelectElement(const struct FRigElementKey& InKey, bool bSelect, bool bClearSelection)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7751,17 +8140,17 @@ bool URigHierarchyController::SelectElement(const struct FRigElementKey& InInKey
 
 	Params::URigHierarchyController_SelectElement_Params Parms{};
 
-	Parms.InKey = InInKey;
-	Parms.bSelect = InbSelect;
-	Parms.bClearSelection = InbClearSelection;
+	Parms.InKey = InKey;
+	Parms.bSelect = bSelect;
+	Parms.bClearSelection = bClearSelection;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7778,7 +8167,7 @@ bool URigHierarchyController::SelectElement(const struct FRigElementKey& InInKey
 // bool                               bClearSelection                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchyController::RenameElement(const struct FRigElementKey& InInElement, class FName InInName, bool InbSetupUndo, bool InbPrintPythonCommand, bool InbClearSelection)
+struct FRigElementKey URigHierarchyController::RenameElement(const struct FRigElementKey& InElement, class FName InName, bool bSetupUndo, bool bPrintPythonCommand, bool bClearSelection)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7787,19 +8176,19 @@ struct FRigElementKey URigHierarchyController::RenameElement(const struct FRigEl
 
 	Params::URigHierarchyController_RenameElement_Params Parms{};
 
-	Parms.InElement = InInElement;
-	Parms.InName = InInName;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
-	Parms.bClearSelection = InbClearSelection;
+	Parms.InElement = InElement;
+	Parms.InName = InName;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
+	Parms.bClearSelection = bClearSelection;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7816,7 +8205,7 @@ struct FRigElementKey URigHierarchyController::RenameElement(const struct FRigEl
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchyController::RemoveParent(const struct FRigElementKey& InInChild, const struct FRigElementKey& InInParent, bool InbMaintainGlobalTransform, bool InbSetupUndo, bool InbPrintPythonCommand)
+bool URigHierarchyController::RemoveParent(const struct FRigElementKey& InChild, const struct FRigElementKey& InParent, bool bMaintainGlobalTransform, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7825,19 +8214,19 @@ bool URigHierarchyController::RemoveParent(const struct FRigElementKey& InInChil
 
 	Params::URigHierarchyController_RemoveParent_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.InParent = InInParent;
-	Parms.bMaintainGlobalTransform = InbMaintainGlobalTransform;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InChild = InChild;
+	Parms.InParent = InParent;
+	Parms.bMaintainGlobalTransform = bMaintainGlobalTransform;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7852,7 +8241,7 @@ bool URigHierarchyController::RemoveParent(const struct FRigElementKey& InInChil
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchyController::RemoveElement(const struct FRigElementKey& InInElement, bool InbSetupUndo, bool InbPrintPythonCommand)
+bool URigHierarchyController::RemoveElement(const struct FRigElementKey& InElement, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7861,17 +8250,17 @@ bool URigHierarchyController::RemoveElement(const struct FRigElementKey& InInEle
 
 	Params::URigHierarchyController_RemoveElement_Params Parms{};
 
-	Parms.InElement = InInElement;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InElement = InElement;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7887,7 +8276,7 @@ bool URigHierarchyController::RemoveElement(const struct FRigElementKey& InInEle
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchyController::RemoveAllParents(const struct FRigElementKey& InInChild, bool InbMaintainGlobalTransform, bool InbSetupUndo, bool InbPrintPythonCommand)
+bool URigHierarchyController::RemoveAllParents(const struct FRigElementKey& InChild, bool bMaintainGlobalTransform, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7896,18 +8285,18 @@ bool URigHierarchyController::RemoveAllParents(const struct FRigElementKey& InIn
 
 	Params::URigHierarchyController_RemoveAllParents_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.bMaintainGlobalTransform = InbMaintainGlobalTransform;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InChild = InChild;
+	Parms.bMaintainGlobalTransform = bMaintainGlobalTransform;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7924,7 +8313,7 @@ bool URigHierarchyController::RemoveAllParents(const struct FRigElementKey& InIn
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchyController::MirrorElements(const TArray<struct FRigElementKey>& InInKeys, const struct FRigMirrorSettings& InInSettings, bool InbSelectNewElements, bool InbSetupUndo, bool InbPrintPythonCommands)
+TArray<struct FRigElementKey> URigHierarchyController::MirrorElements(const TArray<struct FRigElementKey>& InKeys, const struct FRigMirrorSettings& InSettings, bool bSelectNewElements, bool bSetupUndo, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7933,19 +8322,19 @@ TArray<struct FRigElementKey> URigHierarchyController::MirrorElements(const TArr
 
 	Params::URigHierarchyController_MirrorElements_Params Parms{};
 
-	Parms.InKeys = InInKeys;
-	Parms.InSettings = InInSettings;
-	Parms.bSelectNewElements = InbSelectNewElements;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InKeys = InKeys;
+	Parms.InSettings = InSettings;
+	Parms.bSelectNewElements = bSelectNewElements;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -7962,7 +8351,7 @@ TArray<struct FRigElementKey> URigHierarchyController::MirrorElements(const TArr
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchyController::ImportFromText(const class FString& InInContent, bool InbReplaceExistingElements, bool InbSelectNewElements, bool InbSetupUndo, bool InbPrintPythonCommands)
+TArray<struct FRigElementKey> URigHierarchyController::ImportFromText(const class FString& InContent, bool bReplaceExistingElements, bool bSelectNewElements, bool bSetupUndo, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7971,19 +8360,19 @@ TArray<struct FRigElementKey> URigHierarchyController::ImportFromText(const clas
 
 	Params::URigHierarchyController_ImportFromText_Params Parms{};
 
-	Parms.InContent = InInContent;
-	Parms.bReplaceExistingElements = InbReplaceExistingElements;
-	Parms.bSelectNewElements = InbSelectNewElements;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InContent = InContent;
+	Parms.bReplaceExistingElements = bReplaceExistingElements;
+	Parms.bSelectNewElements = bSelectNewElements;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8000,7 +8389,7 @@ TArray<struct FRigElementKey> URigHierarchyController::ImportFromText(const clas
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchyController::ImportCurves(class USkeleton* InInSkeleton, class FName InInNameSpace, bool InbSelectCurves, bool InbSetupUndo, bool InbPrintPythonCommand)
+TArray<struct FRigElementKey> URigHierarchyController::ImportCurves(class USkeleton* InSkeleton, class FName InNameSpace, bool bSelectCurves, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8009,19 +8398,19 @@ TArray<struct FRigElementKey> URigHierarchyController::ImportCurves(class USkele
 
 	Params::URigHierarchyController_ImportCurves_Params Parms{};
 
-	Parms.InSkeleton = InInSkeleton;
-	Parms.InNameSpace = InInNameSpace;
-	Parms.bSelectCurves = InbSelectCurves;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InSkeleton = InSkeleton;
+	Parms.InNameSpace = InNameSpace;
+	Parms.bSelectCurves = bSelectCurves;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8040,7 +8429,7 @@ TArray<struct FRigElementKey> URigHierarchyController::ImportCurves(class USkele
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchyController::ImportBones(class USkeleton* InInSkeleton, class FName InInNameSpace, bool InbReplaceExistingBones, bool InbRemoveObsoleteBones, bool InbSelectBones, bool InbSetupUndo, bool InbPrintPythonCommand)
+TArray<struct FRigElementKey> URigHierarchyController::ImportBones(class USkeleton* InSkeleton, class FName InNameSpace, bool bReplaceExistingBones, bool bRemoveObsoleteBones, bool bSelectBones, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8049,21 +8438,21 @@ TArray<struct FRigElementKey> URigHierarchyController::ImportBones(class USkelet
 
 	Params::URigHierarchyController_ImportBones_Params Parms{};
 
-	Parms.InSkeleton = InInSkeleton;
-	Parms.InNameSpace = InInNameSpace;
-	Parms.bReplaceExistingBones = InbReplaceExistingBones;
-	Parms.bRemoveObsoleteBones = InbRemoveObsoleteBones;
-	Parms.bSelectBones = InbSelectBones;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InSkeleton = InSkeleton;
+	Parms.InNameSpace = InNameSpace;
+	Parms.bReplaceExistingBones = bReplaceExistingBones;
+	Parms.bRemoveObsoleteBones = bRemoveObsoleteBones;
+	Parms.bSelectBones = bSelectBones;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8085,13 +8474,13 @@ class URigHierarchy* URigHierarchyController::GetHierarchy()
 	Params::URigHierarchyController_GetHierarchy_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8104,7 +8493,7 @@ class URigHierarchy* URigHierarchyController::GetHierarchy()
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigControlSettings         ReturnValue                                                      (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigControlSettings URigHierarchyController::GetControlSettings(const struct FRigElementKey& InInKey)
+struct FRigControlSettings URigHierarchyController::GetControlSettings(const struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8113,15 +8502,15 @@ struct FRigControlSettings URigHierarchyController::GetControlSettings(const str
 
 	Params::URigHierarchyController_GetControlSettings_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8134,7 +8523,7 @@ struct FRigControlSettings URigHierarchyController::GetControlSettings(const str
 // TArray<struct FRigElementKey>      InKeys                                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString URigHierarchyController::ExportToText(const TArray<struct FRigElementKey>& InInKeys)
+class FString URigHierarchyController::ExportToText(const TArray<struct FRigElementKey>& InKeys)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8143,15 +8532,15 @@ class FString URigHierarchyController::ExportToText(const TArray<struct FRigElem
 
 	Params::URigHierarchyController_ExportToText_Params Parms{};
 
-	Parms.InKeys = InInKeys;
+	Parms.InKeys = InKeys;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8173,13 +8562,13 @@ class FString URigHierarchyController::ExportSelectionToText()
 	Params::URigHierarchyController_ExportSelectionToText_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8195,7 +8584,7 @@ class FString URigHierarchyController::ExportSelectionToText()
 // bool                               bPrintPythonCommands                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigElementKey>      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FRigElementKey> URigHierarchyController::DuplicateElements(const TArray<struct FRigElementKey>& InInKeys, bool InbSelectNewElements, bool InbSetupUndo, bool InbPrintPythonCommands)
+TArray<struct FRigElementKey> URigHierarchyController::DuplicateElements(const TArray<struct FRigElementKey>& InKeys, bool bSelectNewElements, bool bSetupUndo, bool bPrintPythonCommands)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8204,18 +8593,18 @@ TArray<struct FRigElementKey> URigHierarchyController::DuplicateElements(const T
 
 	Params::URigHierarchyController_DuplicateElements_Params Parms{};
 
-	Parms.InKeys = InInKeys;
-	Parms.bSelectNewElements = InbSelectNewElements;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommands = InbPrintPythonCommands;
+	Parms.InKeys = InKeys;
+	Parms.bSelectNewElements = bSelectNewElements;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommands = bPrintPythonCommands;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8228,7 +8617,7 @@ TArray<struct FRigElementKey> URigHierarchyController::DuplicateElements(const T
 // struct FRigElementKey              InKey                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchyController::DeselectElement(const struct FRigElementKey& InInKey)
+bool URigHierarchyController::DeselectElement(const struct FRigElementKey& InKey)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8237,15 +8626,15 @@ bool URigHierarchyController::DeselectElement(const struct FRigElementKey& InInK
 
 	Params::URigHierarchyController_DeselectElement_Params Parms{};
 
-	Parms.InKey = InInKey;
+	Parms.InKey = InKey;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8267,13 +8656,13 @@ bool URigHierarchyController::ClearSelection()
 	Params::URigHierarchyController_ClearSelection_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8291,7 +8680,7 @@ bool URigHierarchyController::ClearSelection()
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchyController::AddRigidBody(class FName InInName, const struct FRigElementKey& InInParent, const struct FRigRigidBodySettings& InInSettings, const struct FTransform& InInLocalTransform, bool InbSetupUndo, bool InbPrintPythonCommand)
+struct FRigElementKey URigHierarchyController::AddRigidBody(class FName InName, const struct FRigElementKey& InParent, const struct FRigRigidBodySettings& InSettings, const struct FTransform& InLocalTransform, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8300,20 +8689,20 @@ struct FRigElementKey URigHierarchyController::AddRigidBody(class FName InInName
 
 	Params::URigHierarchyController_AddRigidBody_Params Parms{};
 
-	Parms.InName = InInName;
-	Parms.InParent = InInParent;
-	Parms.InSettings = InInSettings;
-	Parms.InLocalTransform = InInLocalTransform;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InName = InName;
+	Parms.InParent = InParent;
+	Parms.InSettings = InSettings;
+	Parms.InLocalTransform = InLocalTransform;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8330,7 +8719,7 @@ struct FRigElementKey URigHierarchyController::AddRigidBody(class FName InInName
 // bool                               bSetupUndo                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool URigHierarchyController::AddParent(const struct FRigElementKey& InInChild, const struct FRigElementKey& InInParent, float InInWeight, bool InbMaintainGlobalTransform, bool InbSetupUndo)
+bool URigHierarchyController::AddParent(const struct FRigElementKey& InChild, const struct FRigElementKey& InParent, float InWeight, bool bMaintainGlobalTransform, bool bSetupUndo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8339,19 +8728,19 @@ bool URigHierarchyController::AddParent(const struct FRigElementKey& InInChild, 
 
 	Params::URigHierarchyController_AddParent_Params Parms{};
 
-	Parms.InChild = InInChild;
-	Parms.InParent = InInParent;
-	Parms.InWeight = InInWeight;
-	Parms.bMaintainGlobalTransform = InbMaintainGlobalTransform;
-	Parms.bSetupUndo = InbSetupUndo;
+	Parms.InChild = InChild;
+	Parms.InParent = InParent;
+	Parms.InWeight = InWeight;
+	Parms.bMaintainGlobalTransform = bMaintainGlobalTransform;
+	Parms.bSetupUndo = bSetupUndo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8369,7 +8758,7 @@ bool URigHierarchyController::AddParent(const struct FRigElementKey& InInChild, 
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchyController::AddNull(class FName InInName, const struct FRigElementKey& InInParent, const struct FTransform& InInTransform, bool InbTransformInGlobal, bool InbSetupUndo, bool InbPrintPythonCommand)
+struct FRigElementKey URigHierarchyController::AddNull(class FName InName, const struct FRigElementKey& InParent, const struct FTransform& InTransform, bool bTransformInGlobal, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8378,20 +8767,20 @@ struct FRigElementKey URigHierarchyController::AddNull(class FName InInName, con
 
 	Params::URigHierarchyController_AddNull_Params Parms{};
 
-	Parms.InName = InInName;
-	Parms.InParent = InInParent;
-	Parms.InTransform = InInTransform;
-	Parms.bTransformInGlobal = InbTransformInGlobal;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InName = InName;
+	Parms.InParent = InParent;
+	Parms.InTransform = InTransform;
+	Parms.bTransformInGlobal = bTransformInGlobal;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8407,7 +8796,7 @@ struct FRigElementKey URigHierarchyController::AddNull(class FName InInName, con
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchyController::AddCurve(class FName InInName, float InInValue, bool InbSetupUndo, bool InbPrintPythonCommand)
+struct FRigElementKey URigHierarchyController::AddCurve(class FName InName, float InValue, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8416,18 +8805,18 @@ struct FRigElementKey URigHierarchyController::AddCurve(class FName InInName, fl
 
 	Params::URigHierarchyController_AddCurve_Params Parms{};
 
-	Parms.InName = InInName;
-	Parms.InValue = InInValue;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InName = InName;
+	Parms.InValue = InValue;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8445,7 +8834,7 @@ struct FRigElementKey URigHierarchyController::AddCurve(class FName InInName, fl
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchyController::AddControl_ForBlueprint(class FName InInName, const struct FRigElementKey& InInParent, const struct FRigControlSettings& InInSettings, const struct FRigControlValue& InInValue, bool InbSetupUndo, bool InbPrintPythonCommand)
+struct FRigElementKey URigHierarchyController::AddControl_ForBlueprint(class FName InName, const struct FRigElementKey& InParent, const struct FRigControlSettings& InSettings, const struct FRigControlValue& InValue, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8454,20 +8843,20 @@ struct FRigElementKey URigHierarchyController::AddControl_ForBlueprint(class FNa
 
 	Params::URigHierarchyController_AddControl_ForBlueprint_Params Parms{};
 
-	Parms.InName = InInName;
-	Parms.InParent = InInParent;
-	Parms.InSettings = InInSettings;
-	Parms.InValue = InInValue;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InName = InName;
+	Parms.InParent = InParent;
+	Parms.InSettings = InSettings;
+	Parms.InValue = InValue;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8486,7 +8875,7 @@ struct FRigElementKey URigHierarchyController::AddControl_ForBlueprint(class FNa
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchyController::AddBone(class FName InInName, const struct FRigElementKey& InInParent, const struct FTransform& InInTransform, bool InbTransformInGlobal, enum class ERigBoneType InInBoneType, bool InbSetupUndo, bool InbPrintPythonCommand)
+struct FRigElementKey URigHierarchyController::AddBone(class FName InName, const struct FRigElementKey& InParent, const struct FTransform& InTransform, bool bTransformInGlobal, enum class ERigBoneType InBoneType, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8495,21 +8884,21 @@ struct FRigElementKey URigHierarchyController::AddBone(class FName InInName, con
 
 	Params::URigHierarchyController_AddBone_Params Parms{};
 
-	Parms.InName = InInName;
-	Parms.InParent = InInParent;
-	Parms.InTransform = InInTransform;
-	Parms.bTransformInGlobal = InbTransformInGlobal;
-	Parms.InBoneType = InInBoneType;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InName = InName;
+	Parms.InParent = InParent;
+	Parms.InTransform = InTransform;
+	Parms.bTransformInGlobal = bTransformInGlobal;
+	Parms.InBoneType = InBoneType;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8526,7 +8915,7 @@ struct FRigElementKey URigHierarchyController::AddBone(class FName InInName, con
 // bool                               bPrintPythonCommand                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRigElementKey              ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRigElementKey URigHierarchyController::AddAnimationChannel_ForBlueprint(class FName InInName, const struct FRigElementKey& InInParentControl, const struct FRigControlSettings& InInSettings, bool InbSetupUndo, bool InbPrintPythonCommand)
+struct FRigElementKey URigHierarchyController::AddAnimationChannel_ForBlueprint(class FName InName, const struct FRigElementKey& InParentControl, const struct FRigControlSettings& InSettings, bool bSetupUndo, bool bPrintPythonCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8535,22 +8924,246 @@ struct FRigElementKey URigHierarchyController::AddAnimationChannel_ForBlueprint(
 
 	Params::URigHierarchyController_AddAnimationChannel_ForBlueprint_Params Parms{};
 
-	Parms.InName = InInName;
-	Parms.InParentControl = InInParentControl;
-	Parms.InSettings = InInSettings;
-	Parms.bSetupUndo = InbSetupUndo;
-	Parms.bPrintPythonCommand = InbPrintPythonCommand;
+	Parms.InName = InName;
+	Parms.InParentControl = InParentControl;
+	Parms.InSettings = InSettings;
+	Parms.bSetupUndo = bSetupUndo;
+	Parms.bPrintPythonCommand = bPrintPythonCommand;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ControlRig.ControlRigLayerInstance
+// (None)
+
+class UClass* UControlRigLayerInstance::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigLayerInstance");
+
+	return Clss;
+}
+
+
+// ControlRigLayerInstance ControlRig.Default__ControlRigLayerInstance
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigLayerInstance* UControlRigLayerInstance::GetDefaultObj()
+{
+	static class UControlRigLayerInstance* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigLayerInstance*>(UControlRigLayerInstance::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigObjectHolder
+// (None)
+
+class UClass* UControlRigObjectHolder::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigObjectHolder");
+
+	return Clss;
+}
+
+
+// ControlRigObjectHolder ControlRig.Default__ControlRigObjectHolder
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigObjectHolder* UControlRigObjectHolder::GetDefaultObj()
+{
+	static class UControlRigObjectHolder* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigObjectHolder*>(UControlRigObjectHolder::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigSequence
+// (None)
+
+class UClass* UControlRigSequence::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigSequence");
+
+	return Clss;
+}
+
+
+// ControlRigSequence ControlRig.Default__ControlRigSequence
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigSequence* UControlRigSequence::GetDefaultObj()
+{
+	static class UControlRigSequence* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigSequence*>(UControlRigSequence::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.MovieSceneControlRigParameterSection
+// (None)
+
+class UClass* UMovieSceneControlRigParameterSection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneControlRigParameterSection");
+
+	return Clss;
+}
+
+
+// MovieSceneControlRigParameterSection ControlRig.Default__MovieSceneControlRigParameterSection
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneControlRigParameterSection* UMovieSceneControlRigParameterSection::GetDefaultObj()
+{
+	static class UMovieSceneControlRigParameterSection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneControlRigParameterSection*>(UMovieSceneControlRigParameterSection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.MovieSceneControlRigParameterTrack
+// (None)
+
+class UClass* UMovieSceneControlRigParameterTrack::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MovieSceneControlRigParameterTrack");
+
+	return Clss;
+}
+
+
+// MovieSceneControlRigParameterTrack ControlRig.Default__MovieSceneControlRigParameterTrack
+// (Public, Transactional, ClassDefaultObject, ArchetypeObject)
+
+class UMovieSceneControlRigParameterTrack* UMovieSceneControlRigParameterTrack::GetDefaultObj()
+{
+	static class UMovieSceneControlRigParameterTrack* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMovieSceneControlRigParameterTrack*>(UMovieSceneControlRigParameterTrack::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigSettings
+// (None)
+
+class UClass* UControlRigSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigSettings");
+
+	return Clss;
+}
+
+
+// ControlRigSettings ControlRig.Default__ControlRigSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigSettings* UControlRigSettings::GetDefaultObj()
+{
+	static class UControlRigSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigSettings*>(UControlRigSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigEditorSettings
+// (None)
+
+class UClass* UControlRigEditorSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigEditorSettings");
+
+	return Clss;
+}
+
+
+// ControlRigEditorSettings ControlRig.Default__ControlRigEditorSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigEditorSettings* UControlRigEditorSettings::GetDefaultObj()
+{
+	static class UControlRigEditorSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigEditorSettings*>(UControlRigEditorSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigPoseAsset
+// (None)
+
+class UClass* UControlRigPoseAsset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigPoseAsset");
+
+	return Clss;
+}
+
+
+// ControlRigPoseAsset ControlRig.Default__ControlRigPoseAsset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigPoseAsset* UControlRigPoseAsset::GetDefaultObj()
+{
+	static class UControlRigPoseAsset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigPoseAsset*>(UControlRigPoseAsset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8560,7 +9173,7 @@ struct FRigElementKey URigHierarchyController::AddAnimationChannel_ForBlueprint(
 // class UControlRig*                 InControlRig                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bDoMirror                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigPoseAsset::SelectControls(class UControlRig* InInControlRig, bool InbDoMirror)
+void UControlRigPoseAsset::SelectControls(class UControlRig* InControlRig, bool bDoMirror)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8569,16 +9182,16 @@ void UControlRigPoseAsset::SelectControls(class UControlRig* InInControlRig, boo
 
 	Params::UControlRigPoseAsset_SelectControls_Params Parms{};
 
-	Parms.InControlRig = InInControlRig;
-	Parms.bDoMirror = InbDoMirror;
+	Parms.InControlRig = InControlRig;
+	Parms.bDoMirror = bDoMirror;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8589,7 +9202,7 @@ void UControlRigPoseAsset::SelectControls(class UControlRig* InInControlRig, boo
 // class UControlRig*                 InControlRig                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bUseAll                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigPoseAsset::SavePose(class UControlRig* InInControlRig, bool InbUseAll)
+void UControlRigPoseAsset::SavePose(class UControlRig* InControlRig, bool bUseAll)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8598,16 +9211,16 @@ void UControlRigPoseAsset::SavePose(class UControlRig* InInControlRig, bool InbU
 
 	Params::UControlRigPoseAsset_SavePose_Params Parms{};
 
-	Parms.InControlRig = InInControlRig;
-	Parms.bUseAll = InbUseAll;
+	Parms.InControlRig = InControlRig;
+	Parms.bUseAll = bUseAll;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8618,7 +9231,7 @@ void UControlRigPoseAsset::SavePose(class UControlRig* InInControlRig, bool InbU
 // class FName                        CurrentName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        NewName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigPoseAsset::ReplaceControlName(class FName& InCurrentName, class FName& InNewName)
+void UControlRigPoseAsset::ReplaceControlName(class FName& CurrentName, class FName& NewName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8627,16 +9240,16 @@ void UControlRigPoseAsset::ReplaceControlName(class FName& InCurrentName, class 
 
 	Params::UControlRigPoseAsset_ReplaceControlName_Params Parms{};
 
-	Parms.CurrentName = InCurrentName;
-	Parms.NewName = InNewName;
+	Parms.CurrentName = CurrentName;
+	Parms.NewName = NewName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8648,7 +9261,7 @@ void UControlRigPoseAsset::ReplaceControlName(class FName& InCurrentName, class 
 // bool                               bDoKey                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bDoMirror                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlRigPoseAsset::PastePose(class UControlRig* InInControlRig, bool InbDoKey, bool InbDoMirror)
+void UControlRigPoseAsset::PastePose(class UControlRig* InControlRig, bool bDoKey, bool bDoMirror)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8657,17 +9270,17 @@ void UControlRigPoseAsset::PastePose(class UControlRig* InInControlRig, bool Inb
 
 	Params::UControlRigPoseAsset_PastePose_Params Parms{};
 
-	Parms.InControlRig = InInControlRig;
-	Parms.bDoKey = InbDoKey;
-	Parms.bDoMirror = InbDoMirror;
+	Parms.InControlRig = InControlRig;
+	Parms.bDoKey = bDoKey;
+	Parms.bDoMirror = bDoMirror;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -8678,7 +9291,7 @@ void UControlRigPoseAsset::PastePose(class UControlRig* InInControlRig, bool Inb
 // class UControlRig*                 InControlRig                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FControlRigControlPose      OutPose                                                          (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void UControlRigPoseAsset::GetCurrentPose(class UControlRig* InInControlRig, struct FControlRigControlPose* InOutPose)
+void UControlRigPoseAsset::GetCurrentPose(class UControlRig* InControlRig, struct FControlRigControlPose* OutPose)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8687,18 +9300,18 @@ void UControlRigPoseAsset::GetCurrentPose(class UControlRig* InInControlRig, str
 
 	Params::UControlRigPoseAsset_GetCurrentPose_Params Parms{};
 
-	Parms.InControlRig = InInControlRig;
+	Parms.InControlRig = InControlRig;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutPose != nullptr)
-		*InOutPose = Parms.OutPose;
+	if (OutPose != nullptr)
+		*OutPose = std::move(Parms.OutPose);
 
 }
 
@@ -8718,13 +9331,13 @@ TArray<class FName> UControlRigPoseAsset::GetControlNames()
 	Params::UControlRigPoseAsset_GetControlNames_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -8738,7 +9351,7 @@ TArray<class FName> UControlRigPoseAsset::GetControlNames()
 // class FName                        ControlName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRigPoseAsset::DoesMirrorMatch(class UControlRig* InControlRig, class FName& InControlName)
+bool UControlRigPoseAsset::DoesMirrorMatch(class UControlRig* ControlRig, class FName& ControlName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8747,19 +9360,131 @@ bool UControlRigPoseAsset::DoesMirrorMatch(class UControlRig* InControlRig, clas
 
 	Params::UControlRigPoseAsset_DoesMirrorMatch_Params Parms{};
 
-	Parms.ControlRig = InControlRig;
-	Parms.ControlName = InControlName;
+	Parms.ControlRig = ControlRig;
+	Parms.ControlName = ControlName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ControlRig.ControlRigPoseMirrorSettings
+// (None)
+
+class UClass* UControlRigPoseMirrorSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigPoseMirrorSettings");
+
+	return Clss;
+}
+
+
+// ControlRigPoseMirrorSettings ControlRig.Default__ControlRigPoseMirrorSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigPoseMirrorSettings* UControlRigPoseMirrorSettings::GetDefaultObj()
+{
+	static class UControlRigPoseMirrorSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigPoseMirrorSettings*>(UControlRigPoseMirrorSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigPoseProjectSettings
+// (None)
+
+class UClass* UControlRigPoseProjectSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigPoseProjectSettings");
+
+	return Clss;
+}
+
+
+// ControlRigPoseProjectSettings ControlRig.Default__ControlRigPoseProjectSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigPoseProjectSettings* UControlRigPoseProjectSettings::GetDefaultObj()
+{
+	static class UControlRigPoseProjectSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigPoseProjectSettings*>(UControlRigPoseProjectSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigSnapSettings
+// (None)
+
+class UClass* UControlRigSnapSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigSnapSettings");
+
+	return Clss;
+}
+
+
+// ControlRigSnapSettings ControlRig.Default__ControlRigSnapSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigSnapSettings* UControlRigSnapSettings::GetDefaultObj()
+{
+	static class UControlRigSnapSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigSnapSettings*>(UControlRigSnapSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class ControlRig.ControlRigWorkflowOptions
+// (None)
+
+class UClass* UControlRigWorkflowOptions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigWorkflowOptions");
+
+	return Clss;
+}
+
+
+// ControlRigWorkflowOptions ControlRig.Default__ControlRigWorkflowOptions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigWorkflowOptions* UControlRigWorkflowOptions::GetDefaultObj()
+{
+	static class UControlRigWorkflowOptions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigWorkflowOptions*>(UControlRigWorkflowOptions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8778,16 +9503,44 @@ bool UControlRigWorkflowOptions::EnsureAtLeastOneRigElementSelected()
 	Params::UControlRigWorkflowOptions_EnsureAtLeastOneRigElementSelected_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ControlRig.ControlRigTransformWorkflowOptions
+// (None)
+
+class UClass* UControlRigTransformWorkflowOptions::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigTransformWorkflowOptions");
+
+	return Clss;
+}
+
+
+// ControlRigTransformWorkflowOptions ControlRig.Default__ControlRigTransformWorkflowOptions
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigTransformWorkflowOptions* UControlRigTransformWorkflowOptions::GetDefaultObj()
+{
+	static class UControlRigTransformWorkflowOptions* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigTransformWorkflowOptions*>(UControlRigTransformWorkflowOptions::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -8797,7 +9550,7 @@ bool UControlRigWorkflowOptions::EnsureAtLeastOneRigElementSelected()
 // class UObject*                     InSubject                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FRigVMUserWorkflow>  ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<struct FRigVMUserWorkflow> UControlRigTransformWorkflowOptions::ProvideWorkflows(class UObject* InInSubject)
+TArray<struct FRigVMUserWorkflow> UControlRigTransformWorkflowOptions::ProvideWorkflows(class UObject* InSubject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8806,22 +9559,48 @@ TArray<struct FRigVMUserWorkflow> UControlRigTransformWorkflowOptions::ProvideWo
 
 	Params::UControlRigTransformWorkflowOptions_ProvideWorkflows_Params Parms{};
 
-	Parms.InSubject = InInSubject;
+	Parms.InSubject = InSubject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
 }
 
+
+// Class ControlRig.ControlRigNumericalValidationPass
+// (None)
+
+class UClass* UControlRigNumericalValidationPass::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ControlRigNumericalValidationPass");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// ControlRigNumericalValidationPass ControlRig.Default__ControlRigNumericalValidationPass
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UControlRigNumericalValidationPass* UControlRigNumericalValidationPass::GetDefaultObj()
+{
+	static class UControlRigNumericalValidationPass* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UControlRigNumericalValidationPass*>(UControlRigNumericalValidationPass::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

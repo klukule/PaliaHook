@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,13 +12,97 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class GeometryCollectionEngine.GeometryCollectionISMPoolActor
+// (Actor)
+
+class UClass* AGeometryCollectionISMPoolActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GeometryCollectionISMPoolActor");
+
+	return Clss;
+}
+
+
+// GeometryCollectionISMPoolActor GeometryCollectionEngine.Default__GeometryCollectionISMPoolActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AGeometryCollectionISMPoolActor* AGeometryCollectionISMPoolActor::GetDefaultObj()
+{
+	static class AGeometryCollectionISMPoolActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AGeometryCollectionISMPoolActor*>(AGeometryCollectionISMPoolActor::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GeometryCollectionEngine.GeometryCollectionISMPoolComponent
+// (SceneComponent)
+
+class UClass* UGeometryCollectionISMPoolComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GeometryCollectionISMPoolComponent");
+
+	return Clss;
+}
+
+
+// GeometryCollectionISMPoolComponent GeometryCollectionEngine.Default__GeometryCollectionISMPoolComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGeometryCollectionISMPoolComponent* UGeometryCollectionISMPoolComponent::GetDefaultObj()
+{
+	static class UGeometryCollectionISMPoolComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGeometryCollectionISMPoolComponent*>(UGeometryCollectionISMPoolComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GeometryCollectionEngine.ChaosDestructionListener
+// (SceneComponent)
+
+class UClass* UChaosDestructionListener::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ChaosDestructionListener");
+
+	return Clss;
+}
+
+
+// ChaosDestructionListener GeometryCollectionEngine.Default__ChaosDestructionListener
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UChaosDestructionListener* UChaosDestructionListener::GetDefaultObj()
+{
+	static class UChaosDestructionListener* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UChaosDestructionListener*>(UChaosDestructionListener::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function GeometryCollectionEngine.ChaosDestructionListener.SortTrailingEvents
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TArray<struct FChaosTrailingEventData>TrailingEvents                                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // enum class EChaosTrailingSortMethodSortMethod                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SortTrailingEvents(TArray<struct FChaosTrailingEventData>& InTrailingEvents, enum class EChaosTrailingSortMethod InSortMethod)
+void UChaosDestructionListener::SortTrailingEvents(TArray<struct FChaosTrailingEventData>& TrailingEvents, enum class EChaosTrailingSortMethod SortMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -30,16 +111,16 @@ void UChaosDestructionListener::SortTrailingEvents(TArray<struct FChaosTrailingE
 
 	Params::UChaosDestructionListener_SortTrailingEvents_Params Parms{};
 
-	Parms.TrailingEvents = InTrailingEvents;
-	Parms.SortMethod = InSortMethod;
+	Parms.TrailingEvents = TrailingEvents;
+	Parms.SortMethod = SortMethod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -50,7 +131,7 @@ void UChaosDestructionListener::SortTrailingEvents(TArray<struct FChaosTrailingE
 // TArray<struct FChaosRemovalEventData>RemovalEvents                                                    (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // enum class EChaosRemovalSortMethod SortMethod                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SortRemovalEvents(TArray<struct FChaosRemovalEventData>& InRemovalEvents, enum class EChaosRemovalSortMethod InSortMethod)
+void UChaosDestructionListener::SortRemovalEvents(TArray<struct FChaosRemovalEventData>& RemovalEvents, enum class EChaosRemovalSortMethod SortMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -59,16 +140,16 @@ void UChaosDestructionListener::SortRemovalEvents(TArray<struct FChaosRemovalEve
 
 	Params::UChaosDestructionListener_SortRemovalEvents_Params Parms{};
 
-	Parms.RemovalEvents = InRemovalEvents;
-	Parms.SortMethod = InSortMethod;
+	Parms.RemovalEvents = RemovalEvents;
+	Parms.SortMethod = SortMethod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -79,7 +160,7 @@ void UChaosDestructionListener::SortRemovalEvents(TArray<struct FChaosRemovalEve
 // TArray<struct FChaosCollisionEventData>CollisionEvents                                                  (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // enum class EChaosCollisionSortMethodSortMethod                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SortCollisionEvents(TArray<struct FChaosCollisionEventData>& InCollisionEvents, enum class EChaosCollisionSortMethod InSortMethod)
+void UChaosDestructionListener::SortCollisionEvents(TArray<struct FChaosCollisionEventData>& CollisionEvents, enum class EChaosCollisionSortMethod SortMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -88,16 +169,16 @@ void UChaosDestructionListener::SortCollisionEvents(TArray<struct FChaosCollisio
 
 	Params::UChaosDestructionListener_SortCollisionEvents_Params Parms{};
 
-	Parms.CollisionEvents = InCollisionEvents;
-	Parms.SortMethod = InSortMethod;
+	Parms.CollisionEvents = CollisionEvents;
+	Parms.SortMethod = SortMethod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -108,7 +189,7 @@ void UChaosDestructionListener::SortCollisionEvents(TArray<struct FChaosCollisio
 // TArray<struct FChaosBreakingEventData>BreakingEvents                                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // enum class EChaosBreakingSortMethodSortMethod                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SortBreakingEvents(TArray<struct FChaosBreakingEventData>& InBreakingEvents, enum class EChaosBreakingSortMethod InSortMethod)
+void UChaosDestructionListener::SortBreakingEvents(TArray<struct FChaosBreakingEventData>& BreakingEvents, enum class EChaosBreakingSortMethod SortMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -117,16 +198,16 @@ void UChaosDestructionListener::SortBreakingEvents(TArray<struct FChaosBreakingE
 
 	Params::UChaosDestructionListener_SortBreakingEvents_Params Parms{};
 
-	Parms.BreakingEvents = InBreakingEvents;
-	Parms.SortMethod = InSortMethod;
+	Parms.BreakingEvents = BreakingEvents;
+	Parms.SortMethod = SortMethod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -136,7 +217,7 @@ void UChaosDestructionListener::SortBreakingEvents(TArray<struct FChaosBreakingE
 // Parameters:
 // struct FChaosTrailingEventRequestSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SetTrailingEventRequestSettings(struct FChaosTrailingEventRequestSettings& InInSettings)
+void UChaosDestructionListener::SetTrailingEventRequestSettings(struct FChaosTrailingEventRequestSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -145,15 +226,15 @@ void UChaosDestructionListener::SetTrailingEventRequestSettings(struct FChaosTra
 
 	Params::UChaosDestructionListener_SetTrailingEventRequestSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -163,7 +244,7 @@ void UChaosDestructionListener::SetTrailingEventRequestSettings(struct FChaosTra
 // Parameters:
 // bool                               bIsEnabled                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SetTrailingEventEnabled(bool InbIsEnabled)
+void UChaosDestructionListener::SetTrailingEventEnabled(bool bIsEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -172,15 +253,15 @@ void UChaosDestructionListener::SetTrailingEventEnabled(bool InbIsEnabled)
 
 	Params::UChaosDestructionListener_SetTrailingEventEnabled_Params Parms{};
 
-	Parms.bIsEnabled = InbIsEnabled;
+	Parms.bIsEnabled = bIsEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -190,7 +271,7 @@ void UChaosDestructionListener::SetTrailingEventEnabled(bool InbIsEnabled)
 // Parameters:
 // struct FChaosRemovalEventRequestSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SetRemovalEventRequestSettings(struct FChaosRemovalEventRequestSettings& InInSettings)
+void UChaosDestructionListener::SetRemovalEventRequestSettings(struct FChaosRemovalEventRequestSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -199,15 +280,15 @@ void UChaosDestructionListener::SetRemovalEventRequestSettings(struct FChaosRemo
 
 	Params::UChaosDestructionListener_SetRemovalEventRequestSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -217,7 +298,7 @@ void UChaosDestructionListener::SetRemovalEventRequestSettings(struct FChaosRemo
 // Parameters:
 // bool                               bIsEnabled                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SetRemovalEventEnabled(bool InbIsEnabled)
+void UChaosDestructionListener::SetRemovalEventEnabled(bool bIsEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -226,15 +307,15 @@ void UChaosDestructionListener::SetRemovalEventEnabled(bool InbIsEnabled)
 
 	Params::UChaosDestructionListener_SetRemovalEventEnabled_Params Parms{};
 
-	Parms.bIsEnabled = InbIsEnabled;
+	Parms.bIsEnabled = bIsEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -244,7 +325,7 @@ void UChaosDestructionListener::SetRemovalEventEnabled(bool InbIsEnabled)
 // Parameters:
 // struct FChaosCollisionEventRequestSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SetCollisionEventRequestSettings(struct FChaosCollisionEventRequestSettings& InInSettings)
+void UChaosDestructionListener::SetCollisionEventRequestSettings(struct FChaosCollisionEventRequestSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -253,15 +334,15 @@ void UChaosDestructionListener::SetCollisionEventRequestSettings(struct FChaosCo
 
 	Params::UChaosDestructionListener_SetCollisionEventRequestSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -271,7 +352,7 @@ void UChaosDestructionListener::SetCollisionEventRequestSettings(struct FChaosCo
 // Parameters:
 // bool                               bIsEnabled                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SetCollisionEventEnabled(bool InbIsEnabled)
+void UChaosDestructionListener::SetCollisionEventEnabled(bool bIsEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -280,15 +361,15 @@ void UChaosDestructionListener::SetCollisionEventEnabled(bool InbIsEnabled)
 
 	Params::UChaosDestructionListener_SetCollisionEventEnabled_Params Parms{};
 
-	Parms.bIsEnabled = InbIsEnabled;
+	Parms.bIsEnabled = bIsEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -298,7 +379,7 @@ void UChaosDestructionListener::SetCollisionEventEnabled(bool InbIsEnabled)
 // Parameters:
 // struct FChaosBreakingEventRequestSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SetBreakingEventRequestSettings(struct FChaosBreakingEventRequestSettings& InInSettings)
+void UChaosDestructionListener::SetBreakingEventRequestSettings(struct FChaosBreakingEventRequestSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -307,15 +388,15 @@ void UChaosDestructionListener::SetBreakingEventRequestSettings(struct FChaosBre
 
 	Params::UChaosDestructionListener_SetBreakingEventRequestSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -325,7 +406,7 @@ void UChaosDestructionListener::SetBreakingEventRequestSettings(struct FChaosBre
 // Parameters:
 // bool                               bIsEnabled                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::SetBreakingEventEnabled(bool InbIsEnabled)
+void UChaosDestructionListener::SetBreakingEventEnabled(bool bIsEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -334,15 +415,15 @@ void UChaosDestructionListener::SetBreakingEventEnabled(bool InbIsEnabled)
 
 	Params::UChaosDestructionListener_SetBreakingEventEnabled_Params Parms{};
 
-	Parms.bIsEnabled = InbIsEnabled;
+	Parms.bIsEnabled = bIsEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -352,7 +433,7 @@ void UChaosDestructionListener::SetBreakingEventEnabled(bool InbIsEnabled)
 // Parameters:
 // class AGeometryCollectionActor*    GeometryCollectionActor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::RemoveGeometryCollectionActor(class AGeometryCollectionActor* InGeometryCollectionActor)
+void UChaosDestructionListener::RemoveGeometryCollectionActor(class AGeometryCollectionActor* GeometryCollectionActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -361,15 +442,15 @@ void UChaosDestructionListener::RemoveGeometryCollectionActor(class AGeometryCol
 
 	Params::UChaosDestructionListener_RemoveGeometryCollectionActor_Params Parms{};
 
-	Parms.GeometryCollectionActor = InGeometryCollectionActor;
+	Parms.GeometryCollectionActor = GeometryCollectionActor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -379,7 +460,7 @@ void UChaosDestructionListener::RemoveGeometryCollectionActor(class AGeometryCol
 // Parameters:
 // class AChaosSolverActor*           ChaosSolverActor                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::RemoveChaosSolverActor(class AChaosSolverActor* InChaosSolverActor)
+void UChaosDestructionListener::RemoveChaosSolverActor(class AChaosSolverActor* ChaosSolverActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -388,15 +469,15 @@ void UChaosDestructionListener::RemoveChaosSolverActor(class AChaosSolverActor* 
 
 	Params::UChaosDestructionListener_RemoveChaosSolverActor_Params Parms{};
 
-	Parms.ChaosSolverActor = InChaosSolverActor;
+	Parms.ChaosSolverActor = ChaosSolverActor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -416,13 +497,13 @@ bool UChaosDestructionListener::IsEventListening()
 	Params::UChaosDestructionListener_IsEventListening_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -434,7 +515,7 @@ bool UChaosDestructionListener::IsEventListening()
 // Parameters:
 // class AGeometryCollectionActor*    GeometryCollectionActor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::AddGeometryCollectionActor(class AGeometryCollectionActor* InGeometryCollectionActor)
+void UChaosDestructionListener::AddGeometryCollectionActor(class AGeometryCollectionActor* GeometryCollectionActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -443,15 +524,15 @@ void UChaosDestructionListener::AddGeometryCollectionActor(class AGeometryCollec
 
 	Params::UChaosDestructionListener_AddGeometryCollectionActor_Params Parms{};
 
-	Parms.GeometryCollectionActor = InGeometryCollectionActor;
+	Parms.GeometryCollectionActor = GeometryCollectionActor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -461,7 +542,7 @@ void UChaosDestructionListener::AddGeometryCollectionActor(class AGeometryCollec
 // Parameters:
 // class AChaosSolverActor*           ChaosSolverActor                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChaosDestructionListener::AddChaosSolverActor(class AChaosSolverActor* InChaosSolverActor)
+void UChaosDestructionListener::AddChaosSolverActor(class AChaosSolverActor* ChaosSolverActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -470,16 +551,44 @@ void UChaosDestructionListener::AddChaosSolverActor(class AChaosSolverActor* InC
 
 	Params::UChaosDestructionListener_AddChaosSolverActor_Params Parms{};
 
-	Parms.ChaosSolverActor = InChaosSolverActor;
+	Parms.ChaosSolverActor = ChaosSolverActor;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class GeometryCollectionEngine.GeometryCollectionActor
+// (Actor)
+
+class UClass* AGeometryCollectionActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GeometryCollectionActor");
+
+	return Clss;
+}
+
+
+// GeometryCollectionActor GeometryCollectionEngine.Default__GeometryCollectionActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AGeometryCollectionActor* AGeometryCollectionActor::GetDefaultObj()
+{
+	static class AGeometryCollectionActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AGeometryCollectionActor*>(AGeometryCollectionActor::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -491,7 +600,7 @@ void UChaosDestructionListener::AddChaosSolverActor(class AChaosSolverActor* InC
 // struct FHitResult                  OutHit                                                           (Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool AGeometryCollectionActor::RaycastSingle(const struct FVector& InStart, const struct FVector& InEnd, struct FHitResult* InOutHit)
+bool AGeometryCollectionActor::RaycastSingle(const struct FVector& Start, const struct FVector& End, struct FHitResult* OutHit)
 {
 	static class UFunction* Func = nullptr;
 
@@ -500,22 +609,78 @@ bool AGeometryCollectionActor::RaycastSingle(const struct FVector& InStart, cons
 
 	Params::AGeometryCollectionActor_RaycastSingle_Params Parms{};
 
-	Parms.Start = InStart;
-	Parms.End = InEnd;
+	Parms.Start = Start;
+	Parms.End = End;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutHit != nullptr)
-		*InOutHit = Parms.OutHit;
+	if (OutHit != nullptr)
+		*OutHit = std::move(Parms.OutHit);
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class GeometryCollectionEngine.GeometryCollectionCache
+// (None)
+
+class UClass* UGeometryCollectionCache::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GeometryCollectionCache");
+
+	return Clss;
+}
+
+
+// GeometryCollectionCache GeometryCollectionEngine.Default__GeometryCollectionCache
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGeometryCollectionCache* UGeometryCollectionCache::GetDefaultObj()
+{
+	static class UGeometryCollectionCache* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGeometryCollectionCache*>(UGeometryCollectionCache::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GeometryCollectionEngine.GeometryCollectionComponent
+// (SceneComponent, PrimitiveComponent)
+
+class UClass* UGeometryCollectionComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GeometryCollectionComponent");
+
+	return Clss;
+}
+
+
+// GeometryCollectionComponent GeometryCollectionEngine.Default__GeometryCollectionComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGeometryCollectionComponent* UGeometryCollectionComponent::GetDefaultObj()
+{
+	static class UGeometryCollectionComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGeometryCollectionComponent*>(UGeometryCollectionComponent::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -524,7 +689,7 @@ bool AGeometryCollectionActor::RaycastSingle(const struct FVector& InStart, cons
 // Parameters:
 // class UGeometryCollection*         RestCollectionIn                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::SetRestCollection(class UGeometryCollection* InRestCollectionIn)
+void UGeometryCollectionComponent::SetRestCollection(class UGeometryCollection* RestCollectionIn)
 {
 	static class UFunction* Func = nullptr;
 
@@ -533,15 +698,15 @@ void UGeometryCollectionComponent::SetRestCollection(class UGeometryCollection* 
 
 	Params::UGeometryCollectionComponent_SetRestCollection_Params Parms{};
 
-	Parms.RestCollectionIn = InRestCollectionIn;
+	Parms.RestCollectionIn = RestCollectionIn;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -551,7 +716,7 @@ void UGeometryCollectionComponent::SetRestCollection(class UGeometryCollection* 
 // Parameters:
 // bool                               bNewNotifyRemovals                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::SetNotifyRemovals(bool InbNewNotifyRemovals)
+void UGeometryCollectionComponent::SetNotifyRemovals(bool bNewNotifyRemovals)
 {
 	static class UFunction* Func = nullptr;
 
@@ -560,15 +725,15 @@ void UGeometryCollectionComponent::SetNotifyRemovals(bool InbNewNotifyRemovals)
 
 	Params::UGeometryCollectionComponent_SetNotifyRemovals_Params Parms{};
 
-	Parms.bNewNotifyRemovals = InbNewNotifyRemovals;
+	Parms.bNewNotifyRemovals = bNewNotifyRemovals;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -578,7 +743,7 @@ void UGeometryCollectionComponent::SetNotifyRemovals(bool InbNewNotifyRemovals)
 // Parameters:
 // bool                               bNewNotifyCrumblings                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::SetNotifyCrumblings(bool InbNewNotifyCrumblings)
+void UGeometryCollectionComponent::SetNotifyCrumblings(bool bNewNotifyCrumblings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -587,15 +752,15 @@ void UGeometryCollectionComponent::SetNotifyCrumblings(bool InbNewNotifyCrumblin
 
 	Params::UGeometryCollectionComponent_SetNotifyCrumblings_Params Parms{};
 
-	Parms.bNewNotifyCrumblings = InbNewNotifyCrumblings;
+	Parms.bNewNotifyCrumblings = bNewNotifyCrumblings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -605,7 +770,7 @@ void UGeometryCollectionComponent::SetNotifyCrumblings(bool InbNewNotifyCrumblin
 // Parameters:
 // bool                               bNewNotifyBreaks                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::SetNotifyBreaks(bool InbNewNotifyBreaks)
+void UGeometryCollectionComponent::SetNotifyBreaks(bool bNewNotifyBreaks)
 {
 	static class UFunction* Func = nullptr;
 
@@ -614,15 +779,15 @@ void UGeometryCollectionComponent::SetNotifyBreaks(bool InbNewNotifyBreaks)
 
 	Params::UGeometryCollectionComponent_SetNotifyBreaks_Params Parms{};
 
-	Parms.bNewNotifyBreaks = InbNewNotifyBreaks;
+	Parms.bNewNotifyBreaks = bNewNotifyBreaks;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -641,13 +806,13 @@ void UGeometryCollectionComponent::RemoveAllAnchors()
 	Params::UGeometryCollectionComponent_RemoveAllAnchors_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -657,7 +822,7 @@ void UGeometryCollectionComponent::RemoveAllAnchors()
 // Parameters:
 // struct FChaosPhysicsCollisionInfo  CollisionInfo                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::ReceivePhysicsCollision(struct FChaosPhysicsCollisionInfo& InCollisionInfo)
+void UGeometryCollectionComponent::ReceivePhysicsCollision(struct FChaosPhysicsCollisionInfo& CollisionInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -666,7 +831,7 @@ void UGeometryCollectionComponent::ReceivePhysicsCollision(struct FChaosPhysicsC
 
 	Params::UGeometryCollectionComponent_ReceivePhysicsCollision_Params Parms{};
 
-	Parms.CollisionInfo = InCollisionInfo;
+	Parms.CollisionInfo = CollisionInfo;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -678,7 +843,7 @@ void UGeometryCollectionComponent::ReceivePhysicsCollision(struct FChaosPhysicsC
 // Parameters:
 // class UGeometryCollectionComponent*FracturedComponent                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::NotifyGeometryCollectionPhysicsStateChange__DelegateSignature(class UGeometryCollectionComponent* InFracturedComponent)
+void UGeometryCollectionComponent::NotifyGeometryCollectionPhysicsStateChange__DelegateSignature(class UGeometryCollectionComponent* FracturedComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -687,7 +852,7 @@ void UGeometryCollectionComponent::NotifyGeometryCollectionPhysicsStateChange__D
 
 	Params::UGeometryCollectionComponent_NotifyGeometryCollectionPhysicsStateChange__DelegateSignature_Params Parms{};
 
-	Parms.FracturedComponent = InFracturedComponent;
+	Parms.FracturedComponent = FracturedComponent;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -699,7 +864,7 @@ void UGeometryCollectionComponent::NotifyGeometryCollectionPhysicsStateChange__D
 // Parameters:
 // class UGeometryCollectionComponent*FracturedComponent                                               (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::NotifyGeometryCollectionPhysicsLoadingStateChange__DelegateSignature(class UGeometryCollectionComponent* InFracturedComponent)
+void UGeometryCollectionComponent::NotifyGeometryCollectionPhysicsLoadingStateChange__DelegateSignature(class UGeometryCollectionComponent* FracturedComponent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -708,7 +873,7 @@ void UGeometryCollectionComponent::NotifyGeometryCollectionPhysicsLoadingStateCh
 
 	Params::UGeometryCollectionComponent_NotifyGeometryCollectionPhysicsLoadingStateChange__DelegateSignature_Params Parms{};
 
-	Parms.FracturedComponent = InFracturedComponent;
+	Parms.FracturedComponent = FracturedComponent;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -722,7 +887,7 @@ void UGeometryCollectionComponent::NotifyGeometryCollectionPhysicsLoadingStateCh
 // float                              OutMass                                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBox                        OutExtents                                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::GetMassAndExtents(int32 InItemIndex, float* InOutMass, struct FBox* InOutExtents)
+void UGeometryCollectionComponent::GetMassAndExtents(int32 ItemIndex, float* OutMass, struct FBox* OutExtents)
 {
 	static class UFunction* Func = nullptr;
 
@@ -731,21 +896,21 @@ void UGeometryCollectionComponent::GetMassAndExtents(int32 InItemIndex, float* I
 
 	Params::UGeometryCollectionComponent_GetMassAndExtents_Params Parms{};
 
-	Parms.ItemIndex = InItemIndex;
+	Parms.ItemIndex = ItemIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutMass != nullptr)
-		*InOutMass = Parms.OutMass;
+	if (OutMass != nullptr)
+		*OutMass = Parms.OutMass;
 
-	if (InOutExtents != nullptr)
-		*InOutExtents = Parms.OutExtents;
+	if (OutExtents != nullptr)
+		*OutExtents = std::move(Parms.OutExtents);
 
 }
 
@@ -756,7 +921,7 @@ void UGeometryCollectionComponent::GetMassAndExtents(int32 InItemIndex, float* I
 // int32                              ItemIndex                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UGeometryCollectionComponent::GetInitialLevel(int32 InItemIndex)
+int32 UGeometryCollectionComponent::GetInitialLevel(int32 ItemIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -765,15 +930,15 @@ int32 UGeometryCollectionComponent::GetInitialLevel(int32 InItemIndex)
 
 	Params::UGeometryCollectionComponent_GetInitialLevel_Params Parms{};
 
-	Parms.ItemIndex = InItemIndex;
+	Parms.ItemIndex = ItemIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -785,7 +950,7 @@ int32 UGeometryCollectionComponent::GetInitialLevel(int32 InItemIndex)
 // Parameters:
 // int32                              ItemIndex                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::CrumbleCluster(int32 InItemIndex)
+void UGeometryCollectionComponent::CrumbleCluster(int32 ItemIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -794,15 +959,15 @@ void UGeometryCollectionComponent::CrumbleCluster(int32 InItemIndex)
 
 	Params::UGeometryCollectionComponent_CrumbleCluster_Params Parms{};
 
-	Parms.ItemIndex = InItemIndex;
+	Parms.ItemIndex = ItemIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -821,13 +986,13 @@ void UGeometryCollectionComponent::CrumbleActiveClusters()
 	Params::UGeometryCollectionComponent_CrumbleActiveClusters_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -840,7 +1005,7 @@ void UGeometryCollectionComponent::CrumbleActiveClusters()
 // class UFieldSystemMetaData*        MetaData                                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UFieldNodeBase*              Field                                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::ApplyPhysicsField(bool InEnabled, enum class EGeometryCollectionPhysicsTypeEnum InTarget, class UFieldSystemMetaData* InMetaData, class UFieldNodeBase* InField)
+void UGeometryCollectionComponent::ApplyPhysicsField(bool Enabled, enum class EGeometryCollectionPhysicsTypeEnum Target, class UFieldSystemMetaData* MetaData, class UFieldNodeBase* Field)
 {
 	static class UFunction* Func = nullptr;
 
@@ -849,18 +1014,18 @@ void UGeometryCollectionComponent::ApplyPhysicsField(bool InEnabled, enum class 
 
 	Params::UGeometryCollectionComponent_ApplyPhysicsField_Params Parms{};
 
-	Parms.Enabled = InEnabled;
-	Parms.Target = InTarget;
-	Parms.MetaData = InMetaData;
-	Parms.Field = InField;
+	Parms.Enabled = Enabled;
+	Parms.Target = Target;
+	Parms.MetaData = MetaData;
+	Parms.Field = Field;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -871,7 +1036,7 @@ void UGeometryCollectionComponent::ApplyPhysicsField(bool InEnabled, enum class 
 // int32                              ItemIndex                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     LinearVelocity                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::ApplyLinearVelocity(int32 InItemIndex, struct FVector& InLinearVelocity)
+void UGeometryCollectionComponent::ApplyLinearVelocity(int32 ItemIndex, struct FVector& LinearVelocity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -880,16 +1045,16 @@ void UGeometryCollectionComponent::ApplyLinearVelocity(int32 InItemIndex, struct
 
 	Params::UGeometryCollectionComponent_ApplyLinearVelocity_Params Parms{};
 
-	Parms.ItemIndex = InItemIndex;
-	Parms.LinearVelocity = InLinearVelocity;
+	Parms.ItemIndex = ItemIndex;
+	Parms.LinearVelocity = LinearVelocity;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -900,7 +1065,7 @@ void UGeometryCollectionComponent::ApplyLinearVelocity(int32 InItemIndex, struct
 // float                              Radius                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     Position                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::ApplyKinematicField(float InRadius, const struct FVector& InPosition)
+void UGeometryCollectionComponent::ApplyKinematicField(float Radius, const struct FVector& Position)
 {
 	static class UFunction* Func = nullptr;
 
@@ -909,16 +1074,16 @@ void UGeometryCollectionComponent::ApplyKinematicField(float InRadius, const str
 
 	Params::UGeometryCollectionComponent_ApplyKinematicField_Params Parms{};
 
-	Parms.Radius = InRadius;
-	Parms.Position = InPosition;
+	Parms.Radius = Radius;
+	Parms.Position = Position;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -933,7 +1098,7 @@ void UGeometryCollectionComponent::ApplyKinematicField(float InRadius, const str
 // float                              PropagationFactor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Strain                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::ApplyInternalStrain(int32 InItemIndex, struct FVector& InLocation, float InRadius, int32 InPropagationDepth, float InPropagationFactor, float InStrain)
+void UGeometryCollectionComponent::ApplyInternalStrain(int32 ItemIndex, struct FVector& Location, float Radius, int32 PropagationDepth, float PropagationFactor, float Strain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -942,20 +1107,20 @@ void UGeometryCollectionComponent::ApplyInternalStrain(int32 InItemIndex, struct
 
 	Params::UGeometryCollectionComponent_ApplyInternalStrain_Params Parms{};
 
-	Parms.ItemIndex = InItemIndex;
-	Parms.Location = InLocation;
-	Parms.Radius = InRadius;
-	Parms.PropagationDepth = InPropagationDepth;
-	Parms.PropagationFactor = InPropagationFactor;
-	Parms.Strain = InStrain;
+	Parms.ItemIndex = ItemIndex;
+	Parms.Location = Location;
+	Parms.Radius = Radius;
+	Parms.PropagationDepth = PropagationDepth;
+	Parms.PropagationFactor = PropagationFactor;
+	Parms.Strain = Strain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -970,7 +1135,7 @@ void UGeometryCollectionComponent::ApplyInternalStrain(int32 InItemIndex, struct
 // float                              PropagationFactor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Strain                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::ApplyExternalStrain(int32 InItemIndex, struct FVector& InLocation, float InRadius, int32 InPropagationDepth, float InPropagationFactor, float InStrain)
+void UGeometryCollectionComponent::ApplyExternalStrain(int32 ItemIndex, struct FVector& Location, float Radius, int32 PropagationDepth, float PropagationFactor, float Strain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -979,20 +1144,20 @@ void UGeometryCollectionComponent::ApplyExternalStrain(int32 InItemIndex, struct
 
 	Params::UGeometryCollectionComponent_ApplyExternalStrain_Params Parms{};
 
-	Parms.ItemIndex = InItemIndex;
-	Parms.Location = InLocation;
-	Parms.Radius = InRadius;
-	Parms.PropagationDepth = InPropagationDepth;
-	Parms.PropagationFactor = InPropagationFactor;
-	Parms.Strain = InStrain;
+	Parms.ItemIndex = ItemIndex;
+	Parms.Location = Location;
+	Parms.Radius = Radius;
+	Parms.PropagationDepth = PropagationDepth;
+	Parms.PropagationFactor = PropagationFactor;
+	Parms.Strain = Strain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1003,7 +1168,7 @@ void UGeometryCollectionComponent::ApplyExternalStrain(int32 InItemIndex, struct
 // int32                              ItemIndex                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     LinearVelocity                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::ApplyBreakingLinearVelocity(int32 InItemIndex, struct FVector& InLinearVelocity)
+void UGeometryCollectionComponent::ApplyBreakingLinearVelocity(int32 ItemIndex, struct FVector& LinearVelocity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1012,16 +1177,16 @@ void UGeometryCollectionComponent::ApplyBreakingLinearVelocity(int32 InItemIndex
 
 	Params::UGeometryCollectionComponent_ApplyBreakingLinearVelocity_Params Parms{};
 
-	Parms.ItemIndex = InItemIndex;
-	Parms.LinearVelocity = InLinearVelocity;
+	Parms.ItemIndex = ItemIndex;
+	Parms.LinearVelocity = LinearVelocity;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1032,7 +1197,7 @@ void UGeometryCollectionComponent::ApplyBreakingLinearVelocity(int32 InItemIndex
 // int32                              ItemIndex                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     AngularVelocity                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::ApplyBreakingAngularVelocity(int32 InItemIndex, struct FVector& InAngularVelocity)
+void UGeometryCollectionComponent::ApplyBreakingAngularVelocity(int32 ItemIndex, struct FVector& AngularVelocity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1041,16 +1206,16 @@ void UGeometryCollectionComponent::ApplyBreakingAngularVelocity(int32 InItemInde
 
 	Params::UGeometryCollectionComponent_ApplyBreakingAngularVelocity_Params Parms{};
 
-	Parms.ItemIndex = InItemIndex;
-	Parms.AngularVelocity = InAngularVelocity;
+	Parms.ItemIndex = ItemIndex;
+	Parms.AngularVelocity = AngularVelocity;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1061,7 +1226,7 @@ void UGeometryCollectionComponent::ApplyBreakingAngularVelocity(int32 InItemInde
 // int32                              ItemIndex                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                     AngularVelocity                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGeometryCollectionComponent::ApplyAngularVelocity(int32 InItemIndex, struct FVector& InAngularVelocity)
+void UGeometryCollectionComponent::ApplyAngularVelocity(int32 ItemIndex, struct FVector& AngularVelocity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1070,21 +1235,131 @@ void UGeometryCollectionComponent::ApplyAngularVelocity(int32 InItemIndex, struc
 
 	Params::UGeometryCollectionComponent_ApplyAngularVelocity_Params Parms{};
 
-	Parms.ItemIndex = InItemIndex;
-	Parms.AngularVelocity = InAngularVelocity;
+	Parms.ItemIndex = ItemIndex;
+	Parms.AngularVelocity = AngularVelocity;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class GeometryCollectionEngine.GeometryCollectionDebugDrawActor
+// (Actor)
+
+class UClass* AGeometryCollectionDebugDrawActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GeometryCollectionDebugDrawActor");
+
+	return Clss;
+}
+
+
+// GeometryCollectionDebugDrawActor GeometryCollectionEngine.Default__GeometryCollectionDebugDrawActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AGeometryCollectionDebugDrawActor* AGeometryCollectionDebugDrawActor::GetDefaultObj()
+{
+	static class AGeometryCollectionDebugDrawActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AGeometryCollectionDebugDrawActor*>(AGeometryCollectionDebugDrawActor::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GeometryCollectionEngine.GeometryCollectionDebugDrawComponent
+// (None)
+
+class UClass* UGeometryCollectionDebugDrawComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GeometryCollectionDebugDrawComponent");
+
+	return Clss;
+}
+
+
+// GeometryCollectionDebugDrawComponent GeometryCollectionEngine.Default__GeometryCollectionDebugDrawComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGeometryCollectionDebugDrawComponent* UGeometryCollectionDebugDrawComponent::GetDefaultObj()
+{
+	static class UGeometryCollectionDebugDrawComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGeometryCollectionDebugDrawComponent*>(UGeometryCollectionDebugDrawComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GeometryCollectionEngine.GeometryCollection
+// (None)
+
+class UClass* UGeometryCollection::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GeometryCollection");
+
+	return Clss;
+}
+
+
+// GeometryCollection GeometryCollectionEngine.Default__GeometryCollection
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGeometryCollection* UGeometryCollection::GetDefaultObj()
+{
+	static class UGeometryCollection* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGeometryCollection*>(UGeometryCollection::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GeometryCollectionEngine.GeometryCollectionRenderLevelSetActor
+// (Actor)
+
+class UClass* AGeometryCollectionRenderLevelSetActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GeometryCollectionRenderLevelSetActor");
+
+	return Clss;
+}
+
+
+// GeometryCollectionRenderLevelSetActor GeometryCollectionEngine.Default__GeometryCollectionRenderLevelSetActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AGeometryCollectionRenderLevelSetActor* AGeometryCollectionRenderLevelSetActor::GetDefaultObj()
+{
+	static class AGeometryCollectionRenderLevelSetActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AGeometryCollectionRenderLevelSetActor*>(AGeometryCollectionRenderLevelSetActor::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,41 +11,41 @@ namespace SDK
 
 enum class EDataRegistryAcquireStatus : uint8
 {
-	EDataRegistryAcquireStatus__NotStarted = 0,
-	EDataRegistryAcquireStatus__WaitingForInitialAcquire = 1,
-	EDataRegistryAcquireStatus__InitialAcquireFinished = 2,
-	EDataRegistryAcquireStatus__WaitingForResources = 3,
-	EDataRegistryAcquireStatus__AcquireFinished = 4,
-	EDataRegistryAcquireStatus__AcquireError = 5,
-	EDataRegistryAcquireStatus__DoesNotExist = 6,
-	EDataRegistryAcquireStatus__EDataRegistryAcquireStatus_MAX = 7,
+	NotStarted                     = 0,
+	WaitingForInitialAcquire       = 1,
+	InitialAcquireFinished         = 2,
+	WaitingForResources            = 3,
+	AcquireFinished                = 4,
+	AcquireError                   = 5,
+	DoesNotExist                   = 6,
+	EDataRegistryAcquireStatus_MAX = 7,
 };
 
 enum class EMetaDataRegistrySourceAssetUsage : uint8
 {
-	EMetaDataRegistrySourceAssetUsage__NoAssets = 0,
-	EMetaDataRegistrySourceAssetUsage__SearchAssets = 1,
-	EMetaDataRegistrySourceAssetUsage__RegisterAssets = 2,
-	EMetaDataRegistrySourceAssetUsage__SearchAndRegisterAssets = 3,
-	EMetaDataRegistrySourceAssetUsage__EMetaDataRegistrySourceAssetUsage_MAX = 4,
+	NoAssets                       = 0,
+	SearchAssets                   = 1,
+	RegisterAssets                 = 2,
+	SearchAndRegisterAssets        = 3,
+	EMetaDataRegistrySourceAssetUsage_MAX = 4,
 };
 
 enum class EDataRegistrySubsystemGetItemResult : uint8
 {
-	EDataRegistrySubsystemGetItemResult__Found = 0,
-	EDataRegistrySubsystemGetItemResult__NotFound = 1,
-	EDataRegistrySubsystemGetItemResult__EDataRegistrySubsystemGetItemResult_MAX = 2,
+	Found                          = 0,
+	NotFound                       = 1,
+	EDataRegistrySubsystemGetItemResult_MAX = 2,
 };
 
 enum class EDataRegistryAvailability : uint8
 {
-	EDataRegistryAvailability__DoesNotExist = 0,
-	EDataRegistryAvailability__Unknown = 1,
-	EDataRegistryAvailability__Remote = 2,
-	EDataRegistryAvailability__OnDisk = 3,
-	EDataRegistryAvailability__LocalAsset = 4,
-	EDataRegistryAvailability__PreCached = 5,
-	EDataRegistryAvailability__EDataRegistryAvailability_MAX = 6,
+	DoesNotExist                   = 0,
+	Unknown                        = 1,
+	Remote                         = 2,
+	OnDisk                         = 3,
+	LocalAsset                     = 4,
+	PreCached                      = 5,
+	EDataRegistryAvailability_MAX  = 6,
 };
 
 
@@ -61,7 +58,7 @@ enum class EDataRegistryAvailability : uint8
 struct FDataRegistryLookup
 {
 public:
-	uint8                                        Pad_4E2[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_5B2[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -87,7 +84,7 @@ struct FDataRegistrySource_DataTableRules
 {
 public:
 	bool                                         bPrecacheTable;                                    // 0x0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_4F5[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_5BA[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        CachedTableKeepSeconds;                            // 0x4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -106,7 +103,7 @@ struct FDataRegistryCachePolicy
 public:
 	bool                                         bCacheIsAlwaysVolatile;                            // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUseCurveTableCacheVersion;                        // 0x1(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_4FB[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_5BE[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        MinNumberKept;                                     // 0x4(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaxNumberKept;                                     // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ForceKeepSeconds;                                  // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -118,11 +115,9 @@ public:
 struct FDataRegistrySourceItemId
 {
 public:
-	uint8                                        Pad_4FD[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_5C1[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,32 +11,32 @@ namespace SDK
 
 enum class E_VoiceEffortEvent : uint8
 {
-	E_VoiceEffortEvent__NewEnumerator5 = 0,
-	E_VoiceEffortEvent__NewEnumerator3 = 1,
-	E_VoiceEffortEvent__NewEnumerator6 = 2,
-	E_VoiceEffortEvent__NewEnumerator7 = 3,
-	E_VoiceEffortEvent__NewEnumerator8 = 4,
-	E_VoiceEffortEvent__NewEnumerator9 = 5,
-	E_VoiceEffortEvent__NewEnumerator10 = 6,
-	E_VoiceEffortEvent__NewEnumerator11 = 7,
-	E_VoiceEffortEvent__NewEnumerator12 = 8,
-	E_VoiceEffortEvent__NewEnumerator13 = 9,
-	E_VoiceEffortEvent__NewEnumerator14 = 10,
-	E_VoiceEffortEvent__NewEnumerator2 = 11,
-	E_VoiceEffortEvent__NewEnumerator4 = 12,
-	E_VoiceEffortEvent__NewEnumerator17 = 13,
-	E_VoiceEffortEvent__NewEnumerator16 = 14,
-	E_VoiceEffortEvent__NewEnumerator15 = 15,
-	E_VoiceEffortEvent__NewEnumerator1 = 16,
-	E_VoiceEffortEvent__NewEnumerator0 = 17,
-	E_VoiceEffortEvent__NewEnumerator18 = 18,
-	E_VoiceEffortEvent__NewEnumerator19 = 19,
-	E_VoiceEffortEvent__NewEnumerator20 = 20,
-	E_VoiceEffortEvent__NewEnumerator21 = 21,
-	E_VoiceEffortEvent__NewEnumerator22 = 22,
-	E_VoiceEffortEvent__NewEnumerator23 = 23,
-	E_VoiceEffortEvent__NewEnumerator24 = 24,
-	E_VoiceEffortEvent__E_MAX      = 25,
+	NewEnumerator5                 = 0,
+	NewEnumerator3                 = 1,
+	NewEnumerator6                 = 2,
+	NewEnumerator7                 = 3,
+	NewEnumerator8                 = 4,
+	NewEnumerator9                 = 5,
+	NewEnumerator10                = 6,
+	NewEnumerator11                = 7,
+	NewEnumerator12                = 8,
+	NewEnumerator13                = 9,
+	NewEnumerator14                = 10,
+	NewEnumerator2                 = 11,
+	NewEnumerator4                 = 12,
+	NewEnumerator17                = 13,
+	NewEnumerator16                = 14,
+	NewEnumerator15                = 15,
+	NewEnumerator1                 = 16,
+	NewEnumerator0                 = 17,
+	NewEnumerator18                = 18,
+	NewEnumerator19                = 19,
+	NewEnumerator20                = 20,
+	NewEnumerator21                = 21,
+	NewEnumerator22                = 22,
+	NewEnumerator23                = 23,
+	NewEnumerator24                = 24,
+	E_MAX                          = 25,
 };
 
 
@@ -49,6 +46,4 @@ enum class E_VoiceEffortEvent : uint8
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

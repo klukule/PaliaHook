@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass MAP_Character_Lighting_CharacterCreation_LevelInstance_3.MAP_Character_Lighting_CharacterCreation_C
+// (Actor)
+
+class UClass* AMAP_Character_Lighting_CharacterCreation_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MAP_Character_Lighting_CharacterCreation_C");
+
+	return Clss;
+}
+
+
+// MAP_Character_Lighting_CharacterCreation_C MAP_Character_Lighting_CharacterCreation_LevelInstance_3.Default__MAP_Character_Lighting_CharacterCreation_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class AMAP_Character_Lighting_CharacterCreation_C* AMAP_Character_Lighting_CharacterCreation_C::GetDefaultObj()
+{
+	static class AMAP_Character_Lighting_CharacterCreation_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AMAP_Character_Lighting_CharacterCreation_C*>(AMAP_Character_Lighting_CharacterCreation_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function MAP_Character_Lighting_CharacterCreation_LevelInstance_3.MAP_Character_Lighting_CharacterCreation_C.ReceiveBeginPlay
@@ -39,7 +64,7 @@ void AMAP_Character_Lighting_CharacterCreation_C::ReceiveBeginPlay()
 // Parameters:
 // enum class EEndPlayReason          EndPlayReason                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AMAP_Character_Lighting_CharacterCreation_C::ReceiveEndPlay(enum class EEndPlayReason InEndPlayReason)
+void AMAP_Character_Lighting_CharacterCreation_C::ReceiveEndPlay(enum class EEndPlayReason EndPlayReason)
 {
 	static class UFunction* Func = nullptr;
 
@@ -48,7 +73,7 @@ void AMAP_Character_Lighting_CharacterCreation_C::ReceiveEndPlay(enum class EEnd
 
 	Params::AMAP_Character_Lighting_CharacterCreation_C_ReceiveEndPlay_Params Parms{};
 
-	Parms.EndPlayReason = InEndPlayReason;
+	Parms.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -64,7 +89,7 @@ void AMAP_Character_Lighting_CharacterCreation_C::ReceiveEndPlay(enum class EEnd
 // struct FLinearColor                CallFunc_Conv_VectorToLinearColor_ReturnValue                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // enum class EEndPlayReason          K2Node_Event_EndPlayReason                                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AMAP_Character_Lighting_CharacterCreation_C::ExecuteUbergraph_MAP_Character_Lighting_CharacterCreation(int32 InEntryPoint, const struct FVector& InCallFunc_GetForwardVector_ReturnValue, const struct FLinearColor& InCallFunc_GetLightColor_ReturnValue, const struct FLinearColor& InCallFunc_Conv_VectorToLinearColor_ReturnValue, enum class EEndPlayReason InK2Node_Event_EndPlayReason)
+void AMAP_Character_Lighting_CharacterCreation_C::ExecuteUbergraph_MAP_Character_Lighting_CharacterCreation(int32 EntryPoint, const struct FVector& CallFunc_GetForwardVector_ReturnValue, const struct FLinearColor& CallFunc_GetLightColor_ReturnValue, const struct FLinearColor& CallFunc_Conv_VectorToLinearColor_ReturnValue, enum class EEndPlayReason K2Node_Event_EndPlayReason)
 {
 	static class UFunction* Func = nullptr;
 
@@ -73,11 +98,11 @@ void AMAP_Character_Lighting_CharacterCreation_C::ExecuteUbergraph_MAP_Character
 
 	Params::AMAP_Character_Lighting_CharacterCreation_C_ExecuteUbergraph_MAP_Character_Lighting_CharacterCreation_Params Parms{};
 
-	Parms.EntryPoint = InEntryPoint;
-	Parms.CallFunc_GetForwardVector_ReturnValue = InCallFunc_GetForwardVector_ReturnValue;
-	Parms.CallFunc_GetLightColor_ReturnValue = InCallFunc_GetLightColor_ReturnValue;
-	Parms.CallFunc_Conv_VectorToLinearColor_ReturnValue = InCallFunc_Conv_VectorToLinearColor_ReturnValue;
-	Parms.K2Node_Event_EndPlayReason = InK2Node_Event_EndPlayReason;
+	Parms.EntryPoint = EntryPoint;
+	Parms.CallFunc_GetForwardVector_ReturnValue = CallFunc_GetForwardVector_ReturnValue;
+	Parms.CallFunc_GetLightColor_ReturnValue = CallFunc_GetLightColor_ReturnValue;
+	Parms.CallFunc_Conv_VectorToLinearColor_ReturnValue = CallFunc_Conv_VectorToLinearColor_ReturnValue;
+	Parms.K2Node_Event_EndPlayReason = K2Node_Event_EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -85,6 +110,4 @@ void AMAP_Character_Lighting_CharacterCreation_C::ExecuteUbergraph_MAP_Character
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

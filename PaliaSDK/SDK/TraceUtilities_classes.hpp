@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,29 +15,24 @@ class UTraceUtilLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TraceUtilLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UTraceUtilLibrary* GetDefaultObj();
 
-	void TraceMarkRegionStart(const class FString& InName);
-	void TraceMarkRegionEnd(const class FString& InName);
-	void TraceBookmark(const class FString& InName);
-	bool ToggleChannel(const class FString& InChannelName, bool InEnabled);
+	void TraceMarkRegionStart(const class FString& Name);
+	void TraceMarkRegionEnd(const class FString& Name);
+	void TraceBookmark(const class FString& Name);
+	bool ToggleChannel(const class FString& ChannelName, bool Enabled);
 	bool StopTracing();
-	bool StartTraceToFile(const class FString& InFilename, TArray<class FString>& InChannels);
-	bool StartTraceSendTo(const class FString& InTarget, TArray<class FString>& InChannels);
+	bool StartTraceToFile(const class FString& Filename, TArray<class FString>& Channels);
+	bool StartTraceSendTo(const class FString& Target, TArray<class FString>& Channels);
 	bool ResumeTracing();
 	bool PauseTracing();
 	bool IsTracing();
-	bool IsChannelEnabled(const class FString& InChannelName);
+	bool IsChannelEnabled(const class FString& ChannelName);
 	TArray<class FString> GetEnabledChannels();
 	TArray<class FString> GetAllChannels();
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

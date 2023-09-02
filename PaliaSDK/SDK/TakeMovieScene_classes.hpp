@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -24,11 +21,8 @@ public:
 	struct FMovieSceneFloatChannel               SubFramesCurve;                                    // 0x4F0(0x110)(NativeAccessSpecifierPublic)
 	struct FMovieSceneStringChannel              Slate;                                             // 0x600(0x110)(NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneTakeSection");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneTakeSection* GetDefaultObj();
 
 };
 
@@ -44,11 +38,8 @@ public:
 	class FString                                SubFramesName;                                     // 0x68(0x10)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                SlateName;                                         // 0x78(0x10)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneTakeSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneTakeSettings* GetDefaultObj();
 
 };
 
@@ -59,16 +50,11 @@ class UMovieSceneTakeTrack : public UMovieSceneNameableTrack
 public:
 	TArray<class UMovieSceneSection*>            Sections;                                          // 0x98(0x10)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneTakeTrack");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneTakeTrack* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

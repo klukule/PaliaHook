@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,18 +15,13 @@ class UImgMediaPlaybackComponent : public UActorComponent
 {
 public:
 	float                                        LODBias;                                           // 0xA0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1959[0x24];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_19AE[0x24];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ImgMediaPlaybackComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UImgMediaPlaybackComponent* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

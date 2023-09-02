@@ -2,16 +2,43 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
+//---------------------------------------------------------------------------------------------------------------------
+// FUNCTIONS
+//---------------------------------------------------------------------------------------------------------------------
+
+
+// Class UdpMessaging.UdpMessagingSettings
+// (None)
+
+class UClass* UUdpMessagingSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("UdpMessagingSettings");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// UdpMessagingSettings UdpMessaging.Default__UdpMessagingSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UUdpMessagingSettings* UUdpMessagingSettings::GetDefaultObj()
+{
+	static class UUdpMessagingSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UUdpMessagingSettings*>(UUdpMessagingSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

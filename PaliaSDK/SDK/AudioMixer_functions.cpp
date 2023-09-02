@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class AudioMixer.SynthComponent
+// (SceneComponent)
+
+class UClass* USynthComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SynthComponent");
+
+	return Clss;
+}
+
+
+// SynthComponent AudioMixer.Default__SynthComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USynthComponent* USynthComponent::GetDefaultObj()
+{
+	static class USynthComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USynthComponent*>(USynthComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function AudioMixer.SynthComponent.Stop
@@ -29,13 +54,13 @@ void USynthComponent::Stop()
 	Params::USynthComponent_Stop_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -54,13 +79,13 @@ void USynthComponent::Start()
 	Params::USynthComponent_Start_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -70,7 +95,7 @@ void USynthComponent::Start()
 // Parameters:
 // float                              VolumeMultiplier                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponent::SetVolumeMultiplier(float InVolumeMultiplier)
+void USynthComponent::SetVolumeMultiplier(float VolumeMultiplier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -79,15 +104,15 @@ void USynthComponent::SetVolumeMultiplier(float InVolumeMultiplier)
 
 	Params::USynthComponent_SetVolumeMultiplier_Params Parms{};
 
-	Parms.VolumeMultiplier = InVolumeMultiplier;
+	Parms.VolumeMultiplier = VolumeMultiplier;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -98,7 +123,7 @@ void USynthComponent::SetVolumeMultiplier(float InVolumeMultiplier)
 // class USoundSubmixBase*            Submix                                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              SendLevel                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponent::SetSubmixSend(class USoundSubmixBase* InSubmix, float InSendLevel)
+void USynthComponent::SetSubmixSend(class USoundSubmixBase* Submix, float SendLevel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -107,16 +132,16 @@ void USynthComponent::SetSubmixSend(class USoundSubmixBase* InSubmix, float InSe
 
 	Params::USynthComponent_SetSubmixSend_Params Parms{};
 
-	Parms.Submix = InSubmix;
-	Parms.SendLevel = InSendLevel;
+	Parms.Submix = Submix;
+	Parms.SendLevel = SendLevel;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -126,7 +151,7 @@ void USynthComponent::SetSubmixSend(class USoundSubmixBase* InSubmix, float InSe
 // Parameters:
 // bool                               bInOutputToBusOnly                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponent::SetOutputToBusOnly(bool InbInOutputToBusOnly)
+void USynthComponent::SetOutputToBusOnly(bool bInOutputToBusOnly)
 {
 	static class UFunction* Func = nullptr;
 
@@ -135,15 +160,15 @@ void USynthComponent::SetOutputToBusOnly(bool InbInOutputToBusOnly)
 
 	Params::USynthComponent_SetOutputToBusOnly_Params Parms{};
 
-	Parms.bInOutputToBusOnly = InbInOutputToBusOnly;
+	Parms.bInOutputToBusOnly = bInOutputToBusOnly;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -153,7 +178,7 @@ void USynthComponent::SetOutputToBusOnly(bool InbInOutputToBusOnly)
 // Parameters:
 // float                              InLowPassFilterFrequency                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponent::SetLowPassFilterFrequency(float InInLowPassFilterFrequency)
+void USynthComponent::SetLowPassFilterFrequency(float InLowPassFilterFrequency)
 {
 	static class UFunction* Func = nullptr;
 
@@ -162,15 +187,15 @@ void USynthComponent::SetLowPassFilterFrequency(float InInLowPassFilterFrequency
 
 	Params::USynthComponent_SetLowPassFilterFrequency_Params Parms{};
 
-	Parms.InLowPassFilterFrequency = InInLowPassFilterFrequency;
+	Parms.InLowPassFilterFrequency = InLowPassFilterFrequency;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -180,7 +205,7 @@ void USynthComponent::SetLowPassFilterFrequency(float InInLowPassFilterFrequency
 // Parameters:
 // bool                               InLowPassFilterEnabled                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponent::SetLowPassFilterEnabled(bool InInLowPassFilterEnabled)
+void USynthComponent::SetLowPassFilterEnabled(bool InLowPassFilterEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -189,15 +214,15 @@ void USynthComponent::SetLowPassFilterEnabled(bool InInLowPassFilterEnabled)
 
 	Params::USynthComponent_SetLowPassFilterEnabled_Params Parms{};
 
-	Parms.InLowPassFilterEnabled = InInLowPassFilterEnabled;
+	Parms.InLowPassFilterEnabled = InLowPassFilterEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -217,13 +242,13 @@ bool USynthComponent::IsPlaying()
 	Params::USynthComponent_IsPlaying_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -237,7 +262,7 @@ bool USynthComponent::IsPlaying()
 // float                              FadeVolumeLevel                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EAudioFaderCurve        FadeCurve                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponent::FadeOut(float InFadeOutDuration, float InFadeVolumeLevel, enum class EAudioFaderCurve InFadeCurve)
+void USynthComponent::FadeOut(float FadeOutDuration, float FadeVolumeLevel, enum class EAudioFaderCurve FadeCurve)
 {
 	static class UFunction* Func = nullptr;
 
@@ -246,17 +271,17 @@ void USynthComponent::FadeOut(float InFadeOutDuration, float InFadeVolumeLevel, 
 
 	Params::USynthComponent_FadeOut_Params Parms{};
 
-	Parms.FadeOutDuration = InFadeOutDuration;
-	Parms.FadeVolumeLevel = InFadeVolumeLevel;
-	Parms.FadeCurve = InFadeCurve;
+	Parms.FadeOutDuration = FadeOutDuration;
+	Parms.FadeVolumeLevel = FadeVolumeLevel;
+	Parms.FadeCurve = FadeCurve;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -269,7 +294,7 @@ void USynthComponent::FadeOut(float InFadeOutDuration, float InFadeVolumeLevel, 
 // float                              StartTime                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EAudioFaderCurve        FadeCurve                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponent::FadeIn(float InFadeInDuration, float InFadeVolumeLevel, float InStartTime, enum class EAudioFaderCurve InFadeCurve)
+void USynthComponent::FadeIn(float FadeInDuration, float FadeVolumeLevel, float StartTime, enum class EAudioFaderCurve FadeCurve)
 {
 	static class UFunction* Func = nullptr;
 
@@ -278,18 +303,18 @@ void USynthComponent::FadeIn(float InFadeInDuration, float InFadeVolumeLevel, fl
 
 	Params::USynthComponent_FadeIn_Params Parms{};
 
-	Parms.FadeInDuration = InFadeInDuration;
-	Parms.FadeVolumeLevel = InFadeVolumeLevel;
-	Parms.StartTime = InStartTime;
-	Parms.FadeCurve = InFadeCurve;
+	Parms.FadeInDuration = FadeInDuration;
+	Parms.FadeVolumeLevel = FadeVolumeLevel;
+	Parms.StartTime = StartTime;
+	Parms.FadeCurve = FadeCurve;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -301,7 +326,7 @@ void USynthComponent::FadeIn(float InFadeInDuration, float InFadeVolumeLevel, fl
 // float                              AdjustVolumeLevel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EAudioFaderCurve        FadeCurve                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponent::AdjustVolume(float InAdjustVolumeDuration, float InAdjustVolumeLevel, enum class EAudioFaderCurve InFadeCurve)
+void USynthComponent::AdjustVolume(float AdjustVolumeDuration, float AdjustVolumeLevel, enum class EAudioFaderCurve FadeCurve)
 {
 	static class UFunction* Func = nullptr;
 
@@ -310,18 +335,102 @@ void USynthComponent::AdjustVolume(float InAdjustVolumeDuration, float InAdjustV
 
 	Params::USynthComponent_AdjustVolume_Params Parms{};
 
-	Parms.AdjustVolumeDuration = InAdjustVolumeDuration;
-	Parms.AdjustVolumeLevel = InAdjustVolumeLevel;
-	Parms.FadeCurve = InFadeCurve;
+	Parms.AdjustVolumeDuration = AdjustVolumeDuration;
+	Parms.AdjustVolumeLevel = AdjustVolumeLevel;
+	Parms.FadeCurve = FadeCurve;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class AudioMixer.AudioGenerator
+// (None)
+
+class UClass* UAudioGenerator::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioGenerator");
+
+	return Clss;
+}
+
+
+// AudioGenerator AudioMixer.Default__AudioGenerator
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioGenerator* UAudioGenerator::GetDefaultObj()
+{
+	static class UAudioGenerator* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioGenerator*>(UAudioGenerator::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AudioMixer.AudioDeviceNotificationSubsystem
+// (None)
+
+class UClass* UAudioDeviceNotificationSubsystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioDeviceNotificationSubsystem");
+
+	return Clss;
+}
+
+
+// AudioDeviceNotificationSubsystem AudioMixer.Default__AudioDeviceNotificationSubsystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioDeviceNotificationSubsystem* UAudioDeviceNotificationSubsystem::GetDefaultObj()
+{
+	static class UAudioDeviceNotificationSubsystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioDeviceNotificationSubsystem*>(UAudioDeviceNotificationSubsystem::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AudioMixer.AudioMixerBlueprintLibrary
+// (None)
+
+class UClass* UAudioMixerBlueprintLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioMixerBlueprintLibrary");
+
+	return Clss;
+}
+
+
+// AudioMixerBlueprintLibrary AudioMixer.Default__AudioMixerBlueprintLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioMixerBlueprintLibrary* UAudioMixerBlueprintLibrary::GetDefaultObj()
+{
+	static class UAudioMixerBlueprintLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioMixerBlueprintLibrary*>(UAudioMixerBlueprintLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -331,7 +440,7 @@ void USynthComponent::AdjustVolume(float InAdjustVolumeDuration, float InAdjustV
 // float                              InMegabytesToFree                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UAudioMixerBlueprintLibrary::TrimAudioCache(float InInMegabytesToFree)
+float UAudioMixerBlueprintLibrary::TrimAudioCache(float InMegabytesToFree)
 {
 	static class UFunction* Func = nullptr;
 
@@ -340,15 +449,15 @@ float UAudioMixerBlueprintLibrary::TrimAudioCache(float InInMegabytesToFree)
 
 	Params::UAudioMixerBlueprintLibrary_TrimAudioCache_Params Parms{};
 
-	Parms.InMegabytesToFree = InInMegabytesToFree;
+	Parms.InMegabytesToFree = InMegabytesToFree;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -362,7 +471,7 @@ float UAudioMixerBlueprintLibrary::TrimAudioCache(float InInMegabytesToFree)
 // class FString                      NewDeviceId                                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 OnCompletedDeviceSwap                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::SwapAudioOutputDevice(class UObject* InWorldContextObject, const class FString& InNewDeviceId, FDelegateProperty_& InOnCompletedDeviceSwap)
+void UAudioMixerBlueprintLibrary::SwapAudioOutputDevice(class UObject* WorldContextObject, const class FString& NewDeviceId, FDelegateProperty_& OnCompletedDeviceSwap)
 {
 	static class UFunction* Func = nullptr;
 
@@ -371,17 +480,17 @@ void UAudioMixerBlueprintLibrary::SwapAudioOutputDevice(class UObject* InWorldCo
 
 	Params::UAudioMixerBlueprintLibrary_SwapAudioOutputDevice_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.NewDeviceId = InNewDeviceId;
-	Parms.OnCompletedDeviceSwap = InOnCompletedDeviceSwap;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.NewDeviceId = NewDeviceId;
+	Parms.OnCompletedDeviceSwap = OnCompletedDeviceSwap;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -397,7 +506,7 @@ void UAudioMixerBlueprintLibrary::SwapAudioOutputDevice(class UObject* InWorldCo
 // class USoundWave*                  ExistingSoundWaveToOverwrite                                     (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundWave*                  ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class USoundWave* UAudioMixerBlueprintLibrary::StopRecordingOutput(class UObject* InWorldContextObject, enum class EAudioRecordingExportType InExportType, const class FString& InName, const class FString& InPath, class USoundSubmix* InSubmixToRecord, class USoundWave* InExistingSoundWaveToOverwrite)
+class USoundWave* UAudioMixerBlueprintLibrary::StopRecordingOutput(class UObject* WorldContextObject, enum class EAudioRecordingExportType ExportType, const class FString& Name, const class FString& Path, class USoundSubmix* SubmixToRecord, class USoundWave* ExistingSoundWaveToOverwrite)
 {
 	static class UFunction* Func = nullptr;
 
@@ -406,20 +515,20 @@ class USoundWave* UAudioMixerBlueprintLibrary::StopRecordingOutput(class UObject
 
 	Params::UAudioMixerBlueprintLibrary_StopRecordingOutput_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ExportType = InExportType;
-	Parms.Name = InName;
-	Parms.Path = InPath;
-	Parms.SubmixToRecord = InSubmixToRecord;
-	Parms.ExistingSoundWaveToOverwrite = InExistingSoundWaveToOverwrite;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ExportType = ExportType;
+	Parms.Name = Name;
+	Parms.Path = Path;
+	Parms.SubmixToRecord = SubmixToRecord;
+	Parms.ExistingSoundWaveToOverwrite = ExistingSoundWaveToOverwrite;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -432,7 +541,7 @@ class USoundWave* UAudioMixerBlueprintLibrary::StopRecordingOutput(class UObject
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAudioBus*                   AudioBus                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::StopAudioBus(class UObject* InWorldContextObject, class UAudioBus* InAudioBus)
+void UAudioMixerBlueprintLibrary::StopAudioBus(class UObject* WorldContextObject, class UAudioBus* AudioBus)
 {
 	static class UFunction* Func = nullptr;
 
@@ -441,16 +550,16 @@ void UAudioMixerBlueprintLibrary::StopAudioBus(class UObject* InWorldContextObje
 
 	Params::UAudioMixerBlueprintLibrary_StopAudioBus_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.AudioBus = InAudioBus;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.AudioBus = AudioBus;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -461,7 +570,7 @@ void UAudioMixerBlueprintLibrary::StopAudioBus(class UObject* InWorldContextObje
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundSubmix*                SubmixToStopAnalyzing                                            (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::StopAnalyzingOutput(class UObject* InWorldContextObject, class USoundSubmix* InSubmixToStopAnalyzing)
+void UAudioMixerBlueprintLibrary::StopAnalyzingOutput(class UObject* WorldContextObject, class USoundSubmix* SubmixToStopAnalyzing)
 {
 	static class UFunction* Func = nullptr;
 
@@ -470,16 +579,16 @@ void UAudioMixerBlueprintLibrary::StopAnalyzingOutput(class UObject* InWorldCont
 
 	Params::UAudioMixerBlueprintLibrary_StopAnalyzingOutput_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SubmixToStopAnalyzing = InSubmixToStopAnalyzing;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SubmixToStopAnalyzing = SubmixToStopAnalyzing;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -491,7 +600,7 @@ void UAudioMixerBlueprintLibrary::StopAnalyzingOutput(class UObject* InWorldCont
 // float                              ExpectedDuration                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundSubmix*                SubmixToRecord                                                   (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::StartRecordingOutput(class UObject* InWorldContextObject, float InExpectedDuration, class USoundSubmix* InSubmixToRecord)
+void UAudioMixerBlueprintLibrary::StartRecordingOutput(class UObject* WorldContextObject, float ExpectedDuration, class USoundSubmix* SubmixToRecord)
 {
 	static class UFunction* Func = nullptr;
 
@@ -500,17 +609,17 @@ void UAudioMixerBlueprintLibrary::StartRecordingOutput(class UObject* InWorldCon
 
 	Params::UAudioMixerBlueprintLibrary_StartRecordingOutput_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ExpectedDuration = InExpectedDuration;
-	Parms.SubmixToRecord = InSubmixToRecord;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ExpectedDuration = ExpectedDuration;
+	Parms.SubmixToRecord = SubmixToRecord;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -521,7 +630,7 @@ void UAudioMixerBlueprintLibrary::StartRecordingOutput(class UObject* InWorldCon
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAudioBus*                   AudioBus                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::StartAudioBus(class UObject* InWorldContextObject, class UAudioBus* InAudioBus)
+void UAudioMixerBlueprintLibrary::StartAudioBus(class UObject* WorldContextObject, class UAudioBus* AudioBus)
 {
 	static class UFunction* Func = nullptr;
 
@@ -530,16 +639,16 @@ void UAudioMixerBlueprintLibrary::StartAudioBus(class UObject* InWorldContextObj
 
 	Params::UAudioMixerBlueprintLibrary_StartAudioBus_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.AudioBus = InAudioBus;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.AudioBus = AudioBus;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -555,7 +664,7 @@ void UAudioMixerBlueprintLibrary::StartAudioBus(class UObject* InWorldContextObj
 // float                              HopSize                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EAudioSpectrumType      SpectrumType                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::StartAnalyzingOutput(class UObject* InWorldContextObject, class USoundSubmix* InSubmixToAnalyze, enum class EFFTSize InFFTSize, enum class EFFTPeakInterpolationMethod InInterpolationMethod, enum class EFFTWindowType InWindowType, float InHopSize, enum class EAudioSpectrumType InSpectrumType)
+void UAudioMixerBlueprintLibrary::StartAnalyzingOutput(class UObject* WorldContextObject, class USoundSubmix* SubmixToAnalyze, enum class EFFTSize FFTSize, enum class EFFTPeakInterpolationMethod InterpolationMethod, enum class EFFTWindowType WindowType, float HopSize, enum class EAudioSpectrumType SpectrumType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -564,21 +673,21 @@ void UAudioMixerBlueprintLibrary::StartAnalyzingOutput(class UObject* InWorldCon
 
 	Params::UAudioMixerBlueprintLibrary_StartAnalyzingOutput_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SubmixToAnalyze = InSubmixToAnalyze;
-	Parms.FFTSize = InFFTSize;
-	Parms.InterpolationMethod = InInterpolationMethod;
-	Parms.WindowType = InWindowType;
-	Parms.HopSize = InHopSize;
-	Parms.SpectrumType = InSpectrumType;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SubmixToAnalyze = SubmixToAnalyze;
+	Parms.FFTSize = FFTSize;
+	Parms.InterpolationMethod = InterpolationMethod;
+	Parms.WindowType = WindowType;
+	Parms.HopSize = HopSize;
+	Parms.SpectrumType = SpectrumType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -591,7 +700,7 @@ void UAudioMixerBlueprintLibrary::StartAnalyzingOutput(class UObject* InWorldCon
 // TArray<class USoundEffectSubmixPreset*>SubmixEffectPresetChain                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // float                              FadeTimeSec                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::SetSubmixEffectChainOverride(class UObject* InWorldContextObject, class USoundSubmix* InSoundSubmix, const TArray<class USoundEffectSubmixPreset*>& InSubmixEffectPresetChain, float InFadeTimeSec)
+void UAudioMixerBlueprintLibrary::SetSubmixEffectChainOverride(class UObject* WorldContextObject, class USoundSubmix* SoundSubmix, const TArray<class USoundEffectSubmixPreset*>& SubmixEffectPresetChain, float FadeTimeSec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -600,18 +709,18 @@ void UAudioMixerBlueprintLibrary::SetSubmixEffectChainOverride(class UObject* In
 
 	Params::UAudioMixerBlueprintLibrary_SetSubmixEffectChainOverride_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SoundSubmix = InSoundSubmix;
-	Parms.SubmixEffectPresetChain = InSubmixEffectPresetChain;
-	Parms.FadeTimeSec = InFadeTimeSec;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SoundSubmix = SoundSubmix;
+	Parms.SubmixEffectPresetChain = SubmixEffectPresetChain;
+	Parms.FadeTimeSec = FadeTimeSec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -624,7 +733,7 @@ void UAudioMixerBlueprintLibrary::SetSubmixEffectChainOverride(class UObject* In
 // int32                              EntryIndex                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bBypassed                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::SetBypassSourceEffectChainEntry(class UObject* InWorldContextObject, class USoundEffectSourcePresetChain* InPresetChain, int32 InEntryIndex, bool InbBypassed)
+void UAudioMixerBlueprintLibrary::SetBypassSourceEffectChainEntry(class UObject* WorldContextObject, class USoundEffectSourcePresetChain* PresetChain, int32 EntryIndex, bool bBypassed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -633,18 +742,18 @@ void UAudioMixerBlueprintLibrary::SetBypassSourceEffectChainEntry(class UObject*
 
 	Params::UAudioMixerBlueprintLibrary_SetBypassSourceEffectChainEntry_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.PresetChain = InPresetChain;
-	Parms.EntryIndex = InEntryIndex;
-	Parms.bBypassed = InbBypassed;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.PresetChain = PresetChain;
+	Parms.EntryIndex = EntryIndex;
+	Parms.bBypassed = bBypassed;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -655,7 +764,7 @@ void UAudioMixerBlueprintLibrary::SetBypassSourceEffectChainEntry(class UObject*
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundSubmix*                SubmixToPause                                                    (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::ResumeRecordingOutput(class UObject* InWorldContextObject, class USoundSubmix* InSubmixToPause)
+void UAudioMixerBlueprintLibrary::ResumeRecordingOutput(class UObject* WorldContextObject, class USoundSubmix* SubmixToPause)
 {
 	static class UFunction* Func = nullptr;
 
@@ -664,16 +773,16 @@ void UAudioMixerBlueprintLibrary::ResumeRecordingOutput(class UObject* InWorldCo
 
 	Params::UAudioMixerBlueprintLibrary_ResumeRecordingOutput_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SubmixToPause = InSubmixToPause;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SubmixToPause = SubmixToPause;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -686,7 +795,7 @@ void UAudioMixerBlueprintLibrary::ResumeRecordingOutput(class UObject* InWorldCo
 // int32                              SubmixChainIndex                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundEffectSubmixPreset*    SubmixEffectPreset                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::ReplaceSubmixEffect(class UObject* InWorldContextObject, class USoundSubmix* InInSoundSubmix, int32 InSubmixChainIndex, class USoundEffectSubmixPreset* InSubmixEffectPreset)
+void UAudioMixerBlueprintLibrary::ReplaceSubmixEffect(class UObject* WorldContextObject, class USoundSubmix* InSoundSubmix, int32 SubmixChainIndex, class USoundEffectSubmixPreset* SubmixEffectPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -695,18 +804,18 @@ void UAudioMixerBlueprintLibrary::ReplaceSubmixEffect(class UObject* InWorldCont
 
 	Params::UAudioMixerBlueprintLibrary_ReplaceSubmixEffect_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.InSoundSubmix = InInSoundSubmix;
-	Parms.SubmixChainIndex = InSubmixChainIndex;
-	Parms.SubmixEffectPreset = InSubmixEffectPreset;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InSoundSubmix = InSoundSubmix;
+	Parms.SubmixChainIndex = SubmixChainIndex;
+	Parms.SubmixEffectPreset = SubmixEffectPreset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -719,7 +828,7 @@ void UAudioMixerBlueprintLibrary::ReplaceSubmixEffect(class UObject* InWorldCont
 // int32                              SubmixChainIndex                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundEffectSubmixPreset*    SubmixEffectPreset                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::ReplaceSoundEffectSubmix(class UObject* InWorldContextObject, class USoundSubmix* InInSoundSubmix, int32 InSubmixChainIndex, class USoundEffectSubmixPreset* InSubmixEffectPreset)
+void UAudioMixerBlueprintLibrary::ReplaceSoundEffectSubmix(class UObject* WorldContextObject, class USoundSubmix* InSoundSubmix, int32 SubmixChainIndex, class USoundEffectSubmixPreset* SubmixEffectPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -728,18 +837,18 @@ void UAudioMixerBlueprintLibrary::ReplaceSoundEffectSubmix(class UObject* InWorl
 
 	Params::UAudioMixerBlueprintLibrary_ReplaceSoundEffectSubmix_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.InSoundSubmix = InInSoundSubmix;
-	Parms.SubmixChainIndex = InSubmixChainIndex;
-	Parms.SubmixEffectPreset = InSubmixEffectPreset;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InSoundSubmix = InSoundSubmix;
+	Parms.SubmixChainIndex = SubmixChainIndex;
+	Parms.SubmixEffectPreset = SubmixEffectPreset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -751,7 +860,7 @@ void UAudioMixerBlueprintLibrary::ReplaceSoundEffectSubmix(class UObject* InWorl
 // class USoundSubmix*                SoundSubmix                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              SubmixChainIndex                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::RemoveSubmixEffectPresetAtIndex(class UObject* InWorldContextObject, class USoundSubmix* InSoundSubmix, int32 InSubmixChainIndex)
+void UAudioMixerBlueprintLibrary::RemoveSubmixEffectPresetAtIndex(class UObject* WorldContextObject, class USoundSubmix* SoundSubmix, int32 SubmixChainIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -760,17 +869,17 @@ void UAudioMixerBlueprintLibrary::RemoveSubmixEffectPresetAtIndex(class UObject*
 
 	Params::UAudioMixerBlueprintLibrary_RemoveSubmixEffectPresetAtIndex_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SoundSubmix = InSoundSubmix;
-	Parms.SubmixChainIndex = InSubmixChainIndex;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SoundSubmix = SoundSubmix;
+	Parms.SubmixChainIndex = SubmixChainIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -782,7 +891,7 @@ void UAudioMixerBlueprintLibrary::RemoveSubmixEffectPresetAtIndex(class UObject*
 // class USoundSubmix*                SoundSubmix                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundEffectSubmixPreset*    SubmixEffectPreset                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::RemoveSubmixEffectPreset(class UObject* InWorldContextObject, class USoundSubmix* InSoundSubmix, class USoundEffectSubmixPreset* InSubmixEffectPreset)
+void UAudioMixerBlueprintLibrary::RemoveSubmixEffectPreset(class UObject* WorldContextObject, class USoundSubmix* SoundSubmix, class USoundEffectSubmixPreset* SubmixEffectPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -791,17 +900,17 @@ void UAudioMixerBlueprintLibrary::RemoveSubmixEffectPreset(class UObject* InWorl
 
 	Params::UAudioMixerBlueprintLibrary_RemoveSubmixEffectPreset_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SoundSubmix = InSoundSubmix;
-	Parms.SubmixEffectPreset = InSubmixEffectPreset;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SoundSubmix = SoundSubmix;
+	Parms.SubmixEffectPreset = SubmixEffectPreset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -813,7 +922,7 @@ void UAudioMixerBlueprintLibrary::RemoveSubmixEffectPreset(class UObject* InWorl
 // class USoundSubmix*                SoundSubmix                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              SubmixChainIndex                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::RemoveSubmixEffectAtIndex(class UObject* InWorldContextObject, class USoundSubmix* InSoundSubmix, int32 InSubmixChainIndex)
+void UAudioMixerBlueprintLibrary::RemoveSubmixEffectAtIndex(class UObject* WorldContextObject, class USoundSubmix* SoundSubmix, int32 SubmixChainIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -822,17 +931,17 @@ void UAudioMixerBlueprintLibrary::RemoveSubmixEffectAtIndex(class UObject* InWor
 
 	Params::UAudioMixerBlueprintLibrary_RemoveSubmixEffectAtIndex_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SoundSubmix = InSoundSubmix;
-	Parms.SubmixChainIndex = InSubmixChainIndex;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SoundSubmix = SoundSubmix;
+	Parms.SubmixChainIndex = SubmixChainIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -844,7 +953,7 @@ void UAudioMixerBlueprintLibrary::RemoveSubmixEffectAtIndex(class UObject* InWor
 // class USoundSubmix*                SoundSubmix                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundEffectSubmixPreset*    SubmixEffectPreset                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::RemoveSubmixEffect(class UObject* InWorldContextObject, class USoundSubmix* InSoundSubmix, class USoundEffectSubmixPreset* InSubmixEffectPreset)
+void UAudioMixerBlueprintLibrary::RemoveSubmixEffect(class UObject* WorldContextObject, class USoundSubmix* SoundSubmix, class USoundEffectSubmixPreset* SubmixEffectPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -853,17 +962,17 @@ void UAudioMixerBlueprintLibrary::RemoveSubmixEffect(class UObject* InWorldConte
 
 	Params::UAudioMixerBlueprintLibrary_RemoveSubmixEffect_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SoundSubmix = InSoundSubmix;
-	Parms.SubmixEffectPreset = InSubmixEffectPreset;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SoundSubmix = SoundSubmix;
+	Parms.SubmixEffectPreset = SubmixEffectPreset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -875,7 +984,7 @@ void UAudioMixerBlueprintLibrary::RemoveSubmixEffect(class UObject* InWorldConte
 // class USoundEffectSourcePresetChain*PresetChain                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              EntryIndex                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::RemoveSourceEffectFromPresetChain(class UObject* InWorldContextObject, class USoundEffectSourcePresetChain* InPresetChain, int32 InEntryIndex)
+void UAudioMixerBlueprintLibrary::RemoveSourceEffectFromPresetChain(class UObject* WorldContextObject, class USoundEffectSourcePresetChain* PresetChain, int32 EntryIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -884,17 +993,17 @@ void UAudioMixerBlueprintLibrary::RemoveSourceEffectFromPresetChain(class UObjec
 
 	Params::UAudioMixerBlueprintLibrary_RemoveSourceEffectFromPresetChain_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.PresetChain = InPresetChain;
-	Parms.EntryIndex = InEntryIndex;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.PresetChain = PresetChain;
+	Parms.EntryIndex = EntryIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -905,7 +1014,7 @@ void UAudioMixerBlueprintLibrary::RemoveSourceEffectFromPresetChain(class UObjec
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundEffectSubmixPreset*    SubmixEffectPreset                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::RemoveMasterSubmixEffect(class UObject* InWorldContextObject, class USoundEffectSubmixPreset* InSubmixEffectPreset)
+void UAudioMixerBlueprintLibrary::RemoveMasterSubmixEffect(class UObject* WorldContextObject, class USoundEffectSubmixPreset* SubmixEffectPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -914,16 +1023,16 @@ void UAudioMixerBlueprintLibrary::RemoveMasterSubmixEffect(class UObject* InWorl
 
 	Params::UAudioMixerBlueprintLibrary_RemoveMasterSubmixEffect_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SubmixEffectPreset = InSubmixEffectPreset;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SubmixEffectPreset = SubmixEffectPreset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -934,7 +1043,7 @@ void UAudioMixerBlueprintLibrary::RemoveMasterSubmixEffect(class UObject* InWorl
 // class USoundWave*                  SoundWave                                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 OnLoadCompletion                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::PrimeSoundForPlayback(class USoundWave* InSoundWave, FDelegateProperty_ InOnLoadCompletion)
+void UAudioMixerBlueprintLibrary::PrimeSoundForPlayback(class USoundWave* SoundWave, FDelegateProperty_ OnLoadCompletion)
 {
 	static class UFunction* Func = nullptr;
 
@@ -943,16 +1052,16 @@ void UAudioMixerBlueprintLibrary::PrimeSoundForPlayback(class USoundWave* InSoun
 
 	Params::UAudioMixerBlueprintLibrary_PrimeSoundForPlayback_Params Parms{};
 
-	Parms.SoundWave = InSoundWave;
-	Parms.OnLoadCompletion = InOnLoadCompletion;
+	Parms.SoundWave = SoundWave;
+	Parms.OnLoadCompletion = OnLoadCompletion;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -962,7 +1071,7 @@ void UAudioMixerBlueprintLibrary::PrimeSoundForPlayback(class USoundWave* InSoun
 // Parameters:
 // class USoundCue*                   SoundCue                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::PrimeSoundCueForPlayback(class USoundCue* InSoundCue)
+void UAudioMixerBlueprintLibrary::PrimeSoundCueForPlayback(class USoundCue* SoundCue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -971,15 +1080,15 @@ void UAudioMixerBlueprintLibrary::PrimeSoundCueForPlayback(class USoundCue* InSo
 
 	Params::UAudioMixerBlueprintLibrary_PrimeSoundCueForPlayback_Params Parms{};
 
-	Parms.SoundCue = InSoundCue;
+	Parms.SoundCue = SoundCue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -990,7 +1099,7 @@ void UAudioMixerBlueprintLibrary::PrimeSoundCueForPlayback(class USoundCue* InSo
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundSubmix*                SubmixToPause                                                    (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::PauseRecordingOutput(class UObject* InWorldContextObject, class USoundSubmix* InSubmixToPause)
+void UAudioMixerBlueprintLibrary::PauseRecordingOutput(class UObject* WorldContextObject, class USoundSubmix* SubmixToPause)
 {
 	static class UFunction* Func = nullptr;
 
@@ -999,16 +1108,16 @@ void UAudioMixerBlueprintLibrary::PauseRecordingOutput(class UObject* InWorldCon
 
 	Params::UAudioMixerBlueprintLibrary_PauseRecordingOutput_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SubmixToPause = InSubmixToPause;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SubmixToPause = SubmixToPause;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1022,7 +1131,7 @@ void UAudioMixerBlueprintLibrary::PauseRecordingOutput(class UObject* InWorldCon
 // int32                              InReleaseTimeMsec                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FSoundSubmixSpectralAnalysisBandSettings>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibrary::MakePresetSpectralAnalysisBandSettings(enum class EAudioSpectrumBandPresetType InInBandPresetType, int32 InInNumBands, int32 InInAttackTimeMsec, int32 InInReleaseTimeMsec)
+TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibrary::MakePresetSpectralAnalysisBandSettings(enum class EAudioSpectrumBandPresetType InBandPresetType, int32 InNumBands, int32 InAttackTimeMsec, int32 InReleaseTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1031,18 +1140,18 @@ TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibr
 
 	Params::UAudioMixerBlueprintLibrary_MakePresetSpectralAnalysisBandSettings_Params Parms{};
 
-	Parms.InBandPresetType = InInBandPresetType;
-	Parms.InNumBands = InInNumBands;
-	Parms.InAttackTimeMsec = InInAttackTimeMsec;
-	Parms.InReleaseTimeMsec = InInReleaseTimeMsec;
+	Parms.InBandPresetType = InBandPresetType;
+	Parms.InNumBands = InNumBands;
+	Parms.InAttackTimeMsec = InAttackTimeMsec;
+	Parms.InReleaseTimeMsec = InReleaseTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1059,7 +1168,7 @@ TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibr
 // int32                              InReleaseTimeMsec                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FSoundSubmixSpectralAnalysisBandSettings>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibrary::MakeMusicalSpectralAnalysisBandSettings(int32 InInNumSemitones, enum class EMusicalNoteName InInStartingMusicalNote, int32 InInStartingOctave, int32 InInAttackTimeMsec, int32 InInReleaseTimeMsec)
+TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibrary::MakeMusicalSpectralAnalysisBandSettings(int32 InNumSemitones, enum class EMusicalNoteName InStartingMusicalNote, int32 InStartingOctave, int32 InAttackTimeMsec, int32 InReleaseTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1068,19 +1177,19 @@ TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibr
 
 	Params::UAudioMixerBlueprintLibrary_MakeMusicalSpectralAnalysisBandSettings_Params Parms{};
 
-	Parms.InNumSemitones = InInNumSemitones;
-	Parms.InStartingMusicalNote = InInStartingMusicalNote;
-	Parms.InStartingOctave = InInStartingOctave;
-	Parms.InAttackTimeMsec = InInAttackTimeMsec;
-	Parms.InReleaseTimeMsec = InInReleaseTimeMsec;
+	Parms.InNumSemitones = InNumSemitones;
+	Parms.InStartingMusicalNote = InStartingMusicalNote;
+	Parms.InStartingOctave = InStartingOctave;
+	Parms.InAttackTimeMsec = InAttackTimeMsec;
+	Parms.InReleaseTimeMsec = InReleaseTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1097,7 +1206,7 @@ TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibr
 // int32                              InReleaseTimeMsec                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FSoundSubmixSpectralAnalysisBandSettings>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibrary::MakeFullSpectrumSpectralAnalysisBandSettings(int32 InInNumBands, float InInMinimumFrequency, float InInMaximumFrequency, int32 InInAttackTimeMsec, int32 InInReleaseTimeMsec)
+TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibrary::MakeFullSpectrumSpectralAnalysisBandSettings(int32 InNumBands, float InMinimumFrequency, float InMaximumFrequency, int32 InAttackTimeMsec, int32 InReleaseTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1106,19 +1215,19 @@ TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibr
 
 	Params::UAudioMixerBlueprintLibrary_MakeFullSpectrumSpectralAnalysisBandSettings_Params Parms{};
 
-	Parms.InNumBands = InInNumBands;
-	Parms.InMinimumFrequency = InInMinimumFrequency;
-	Parms.InMaximumFrequency = InInMaximumFrequency;
-	Parms.InAttackTimeMsec = InInAttackTimeMsec;
-	Parms.InReleaseTimeMsec = InInReleaseTimeMsec;
+	Parms.InNumBands = InNumBands;
+	Parms.InMinimumFrequency = InMinimumFrequency;
+	Parms.InMaximumFrequency = InMaximumFrequency;
+	Parms.InAttackTimeMsec = InAttackTimeMsec;
+	Parms.InReleaseTimeMsec = InReleaseTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1132,7 +1241,7 @@ TArray<struct FSoundSubmixSpectralAnalysisBandSettings> UAudioMixerBlueprintLibr
 // class UAudioBus*                   AudioBus                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UAudioMixerBlueprintLibrary::IsAudioBusActive(class UObject* InWorldContextObject, class UAudioBus* InAudioBus)
+bool UAudioMixerBlueprintLibrary::IsAudioBusActive(class UObject* WorldContextObject, class UAudioBus* AudioBus)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1141,16 +1250,16 @@ bool UAudioMixerBlueprintLibrary::IsAudioBusActive(class UObject* InWorldContext
 
 	Params::UAudioMixerBlueprintLibrary_IsAudioBusActive_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.AudioBus = InAudioBus;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.AudioBus = AudioBus;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1165,7 +1274,7 @@ bool UAudioMixerBlueprintLibrary::IsAudioBusActive(class UObject* InWorldContext
 // TArray<float>                      Phases                                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // class USoundSubmix*                SubmixToAnalyze                                                  (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::GetPhaseForFrequencies(class UObject* InWorldContextObject, TArray<float>& InFrequencies, TArray<float>* InPhases, class USoundSubmix* InSubmixToAnalyze)
+void UAudioMixerBlueprintLibrary::GetPhaseForFrequencies(class UObject* WorldContextObject, TArray<float>& Frequencies, TArray<float>* Phases, class USoundSubmix* SubmixToAnalyze)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1174,20 +1283,20 @@ void UAudioMixerBlueprintLibrary::GetPhaseForFrequencies(class UObject* InWorldC
 
 	Params::UAudioMixerBlueprintLibrary_GetPhaseForFrequencies_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.Frequencies = InFrequencies;
-	Parms.SubmixToAnalyze = InSubmixToAnalyze;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Frequencies = Frequencies;
+	Parms.SubmixToAnalyze = SubmixToAnalyze;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InPhases != nullptr)
-		*InPhases = Parms.Phases;
+	if (Phases != nullptr)
+		*Phases = std::move(Parms.Phases);
 
 }
 
@@ -1199,7 +1308,7 @@ void UAudioMixerBlueprintLibrary::GetPhaseForFrequencies(class UObject* InWorldC
 // class USoundEffectSourcePresetChain*PresetChain                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UAudioMixerBlueprintLibrary::GetNumberOfEntriesInSourceEffectChain(class UObject* InWorldContextObject, class USoundEffectSourcePresetChain* InPresetChain)
+int32 UAudioMixerBlueprintLibrary::GetNumberOfEntriesInSourceEffectChain(class UObject* WorldContextObject, class USoundEffectSourcePresetChain* PresetChain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1208,16 +1317,16 @@ int32 UAudioMixerBlueprintLibrary::GetNumberOfEntriesInSourceEffectChain(class U
 
 	Params::UAudioMixerBlueprintLibrary_GetNumberOfEntriesInSourceEffectChain_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.PresetChain = InPresetChain;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.PresetChain = PresetChain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1232,7 +1341,7 @@ int32 UAudioMixerBlueprintLibrary::GetNumberOfEntriesInSourceEffectChain(class U
 // TArray<float>                      Magnitudes                                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // class USoundSubmix*                SubmixToAnalyze                                                  (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::GetMagnitudeForFrequencies(class UObject* InWorldContextObject, TArray<float>& InFrequencies, TArray<float>* InMagnitudes, class USoundSubmix* InSubmixToAnalyze)
+void UAudioMixerBlueprintLibrary::GetMagnitudeForFrequencies(class UObject* WorldContextObject, TArray<float>& Frequencies, TArray<float>* Magnitudes, class USoundSubmix* SubmixToAnalyze)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1241,20 +1350,20 @@ void UAudioMixerBlueprintLibrary::GetMagnitudeForFrequencies(class UObject* InWo
 
 	Params::UAudioMixerBlueprintLibrary_GetMagnitudeForFrequencies_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.Frequencies = InFrequencies;
-	Parms.SubmixToAnalyze = InSubmixToAnalyze;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Frequencies = Frequencies;
+	Parms.SubmixToAnalyze = SubmixToAnalyze;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InMagnitudes != nullptr)
-		*InMagnitudes = Parms.Magnitudes;
+	if (Magnitudes != nullptr)
+		*Magnitudes = std::move(Parms.Magnitudes);
 
 }
 
@@ -1265,7 +1374,7 @@ void UAudioMixerBlueprintLibrary::GetMagnitudeForFrequencies(class UObject* InWo
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 OnObtainCurrentDeviceEvent                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::GetCurrentAudioOutputDeviceName(class UObject* InWorldContextObject, FDelegateProperty_& InOnObtainCurrentDeviceEvent)
+void UAudioMixerBlueprintLibrary::GetCurrentAudioOutputDeviceName(class UObject* WorldContextObject, FDelegateProperty_& OnObtainCurrentDeviceEvent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1274,16 +1383,16 @@ void UAudioMixerBlueprintLibrary::GetCurrentAudioOutputDeviceName(class UObject*
 
 	Params::UAudioMixerBlueprintLibrary_GetCurrentAudioOutputDeviceName_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.OnObtainCurrentDeviceEvent = InOnObtainCurrentDeviceEvent;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.OnObtainCurrentDeviceEvent = OnObtainCurrentDeviceEvent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1294,7 +1403,7 @@ void UAudioMixerBlueprintLibrary::GetCurrentAudioOutputDeviceName(class UObject*
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 OnObtainDevicesEvent                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::GetAvailableAudioOutputDevices(class UObject* InWorldContextObject, FDelegateProperty_& InOnObtainDevicesEvent)
+void UAudioMixerBlueprintLibrary::GetAvailableAudioOutputDevices(class UObject* WorldContextObject, FDelegateProperty_& OnObtainDevicesEvent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1303,16 +1412,16 @@ void UAudioMixerBlueprintLibrary::GetAvailableAudioOutputDevices(class UObject* 
 
 	Params::UAudioMixerBlueprintLibrary_GetAvailableAudioOutputDevices_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.OnObtainDevicesEvent = InOnObtainDevicesEvent;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.OnObtainDevicesEvent = OnObtainDevicesEvent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1323,7 +1432,7 @@ void UAudioMixerBlueprintLibrary::GetAvailableAudioOutputDevices(class UObject* 
 // struct FAudioOutputDeviceInfo      Info                                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UAudioMixerBlueprintLibrary::Conv_AudioOutputDeviceInfoToString(struct FAudioOutputDeviceInfo& InInfo)
+class FString UAudioMixerBlueprintLibrary::Conv_AudioOutputDeviceInfoToString(struct FAudioOutputDeviceInfo& Info)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1332,15 +1441,15 @@ class FString UAudioMixerBlueprintLibrary::Conv_AudioOutputDeviceInfoToString(st
 
 	Params::UAudioMixerBlueprintLibrary_Conv_AudioOutputDeviceInfoToString_Params Parms{};
 
-	Parms.Info = InInfo;
+	Parms.Info = Info;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1353,7 +1462,7 @@ class FString UAudioMixerBlueprintLibrary::Conv_AudioOutputDeviceInfoToString(st
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundSubmix*                SoundSubmix                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::ClearSubmixEffects(class UObject* InWorldContextObject, class USoundSubmix* InSoundSubmix)
+void UAudioMixerBlueprintLibrary::ClearSubmixEffects(class UObject* WorldContextObject, class USoundSubmix* SoundSubmix)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1362,16 +1471,16 @@ void UAudioMixerBlueprintLibrary::ClearSubmixEffects(class UObject* InWorldConte
 
 	Params::UAudioMixerBlueprintLibrary_ClearSubmixEffects_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SoundSubmix = InSoundSubmix;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SoundSubmix = SoundSubmix;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1383,7 +1492,7 @@ void UAudioMixerBlueprintLibrary::ClearSubmixEffects(class UObject* InWorldConte
 // class USoundSubmix*                SoundSubmix                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              FadeTimeSec                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::ClearSubmixEffectChainOverride(class UObject* InWorldContextObject, class USoundSubmix* InSoundSubmix, float InFadeTimeSec)
+void UAudioMixerBlueprintLibrary::ClearSubmixEffectChainOverride(class UObject* WorldContextObject, class USoundSubmix* SoundSubmix, float FadeTimeSec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1392,17 +1501,17 @@ void UAudioMixerBlueprintLibrary::ClearSubmixEffectChainOverride(class UObject* 
 
 	Params::UAudioMixerBlueprintLibrary_ClearSubmixEffectChainOverride_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SoundSubmix = InSoundSubmix;
-	Parms.FadeTimeSec = InFadeTimeSec;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SoundSubmix = SoundSubmix;
+	Parms.FadeTimeSec = FadeTimeSec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1412,7 +1521,7 @@ void UAudioMixerBlueprintLibrary::ClearSubmixEffectChainOverride(class UObject* 
 // Parameters:
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::ClearMasterSubmixEffects(class UObject* InWorldContextObject)
+void UAudioMixerBlueprintLibrary::ClearMasterSubmixEffects(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1421,15 +1530,15 @@ void UAudioMixerBlueprintLibrary::ClearMasterSubmixEffects(class UObject* InWorl
 
 	Params::UAudioMixerBlueprintLibrary_ClearMasterSubmixEffects_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1442,7 +1551,7 @@ void UAudioMixerBlueprintLibrary::ClearMasterSubmixEffects(class UObject* InWorl
 // class USoundEffectSubmixPreset*    SubmixEffectPreset                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UAudioMixerBlueprintLibrary::AddSubmixEffect(class UObject* InWorldContextObject, class USoundSubmix* InSoundSubmix, class USoundEffectSubmixPreset* InSubmixEffectPreset)
+int32 UAudioMixerBlueprintLibrary::AddSubmixEffect(class UObject* WorldContextObject, class USoundSubmix* SoundSubmix, class USoundEffectSubmixPreset* SubmixEffectPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1451,17 +1560,17 @@ int32 UAudioMixerBlueprintLibrary::AddSubmixEffect(class UObject* InWorldContext
 
 	Params::UAudioMixerBlueprintLibrary_AddSubmixEffect_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SoundSubmix = InSoundSubmix;
-	Parms.SubmixEffectPreset = InSubmixEffectPreset;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SoundSubmix = SoundSubmix;
+	Parms.SubmixEffectPreset = SubmixEffectPreset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1475,7 +1584,7 @@ int32 UAudioMixerBlueprintLibrary::AddSubmixEffect(class UObject* InWorldContext
 // class USoundEffectSourcePresetChain*PresetChain                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSourceEffectChainEntry     Entry                                                            (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::AddSourceEffectToPresetChain(class UObject* InWorldContextObject, class USoundEffectSourcePresetChain* InPresetChain, const struct FSourceEffectChainEntry& InEntry)
+void UAudioMixerBlueprintLibrary::AddSourceEffectToPresetChain(class UObject* WorldContextObject, class USoundEffectSourcePresetChain* PresetChain, const struct FSourceEffectChainEntry& Entry)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1484,17 +1593,17 @@ void UAudioMixerBlueprintLibrary::AddSourceEffectToPresetChain(class UObject* In
 
 	Params::UAudioMixerBlueprintLibrary_AddSourceEffectToPresetChain_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.PresetChain = InPresetChain;
-	Parms.Entry = InEntry;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.PresetChain = PresetChain;
+	Parms.Entry = Entry;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1505,7 +1614,7 @@ void UAudioMixerBlueprintLibrary::AddSourceEffectToPresetChain(class UObject* In
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USoundEffectSubmixPreset*    SubmixEffectPreset                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioMixerBlueprintLibrary::AddMasterSubmixEffect(class UObject* InWorldContextObject, class USoundEffectSubmixPreset* InSubmixEffectPreset)
+void UAudioMixerBlueprintLibrary::AddMasterSubmixEffect(class UObject* WorldContextObject, class USoundEffectSubmixPreset* SubmixEffectPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1514,17 +1623,73 @@ void UAudioMixerBlueprintLibrary::AddMasterSubmixEffect(class UObject* InWorldCo
 
 	Params::UAudioMixerBlueprintLibrary_AddMasterSubmixEffect_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.SubmixEffectPreset = InSubmixEffectPreset;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SubmixEffectPreset = SubmixEffectPreset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class AudioMixer.SynthSound
+// (None)
+
+class UClass* USynthSound::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SynthSound");
+
+	return Clss;
+}
+
+
+// SynthSound AudioMixer.Default__SynthSound
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USynthSound* USynthSound::GetDefaultObj()
+{
+	static class USynthSound* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USynthSound*>(USynthSound::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AudioMixer.SubmixEffectDynamicsProcessorPreset
+// (None)
+
+class UClass* USubmixEffectDynamicsProcessorPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectDynamicsProcessorPreset");
+
+	return Clss;
+}
+
+
+// SubmixEffectDynamicsProcessorPreset AudioMixer.Default__SubmixEffectDynamicsProcessorPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectDynamicsProcessorPreset* USubmixEffectDynamicsProcessorPreset::GetDefaultObj()
+{
+	static class USubmixEffectDynamicsProcessorPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectDynamicsProcessorPreset*>(USubmixEffectDynamicsProcessorPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1533,7 +1698,7 @@ void UAudioMixerBlueprintLibrary::AddMasterSubmixEffect(class UObject* InWorldCo
 // Parameters:
 // struct FSubmixEffectDynamicsProcessorSettingsSettings                                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectDynamicsProcessorPreset::SetSettings(struct FSubmixEffectDynamicsProcessorSettings& InSettings)
+void USubmixEffectDynamicsProcessorPreset::SetSettings(struct FSubmixEffectDynamicsProcessorSettings& Settings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1542,15 +1707,15 @@ void USubmixEffectDynamicsProcessorPreset::SetSettings(struct FSubmixEffectDynam
 
 	Params::USubmixEffectDynamicsProcessorPreset_SetSettings_Params Parms{};
 
-	Parms.Settings = InSettings;
+	Parms.Settings = Settings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1560,7 +1725,7 @@ void USubmixEffectDynamicsProcessorPreset::SetSettings(struct FSubmixEffectDynam
 // Parameters:
 // class USoundSubmix*                Submix                                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectDynamicsProcessorPreset::SetExternalSubmix(class USoundSubmix* InSubmix)
+void USubmixEffectDynamicsProcessorPreset::SetExternalSubmix(class USoundSubmix* Submix)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1569,15 +1734,15 @@ void USubmixEffectDynamicsProcessorPreset::SetExternalSubmix(class USoundSubmix*
 
 	Params::USubmixEffectDynamicsProcessorPreset_SetExternalSubmix_Params Parms{};
 
-	Parms.Submix = InSubmix;
+	Parms.Submix = Submix;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1587,7 +1752,7 @@ void USubmixEffectDynamicsProcessorPreset::SetExternalSubmix(class USoundSubmix*
 // Parameters:
 // class UAudioBus*                   AudioBus                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectDynamicsProcessorPreset::SetAudioBus(class UAudioBus* InAudioBus)
+void USubmixEffectDynamicsProcessorPreset::SetAudioBus(class UAudioBus* AudioBus)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1596,15 +1761,15 @@ void USubmixEffectDynamicsProcessorPreset::SetAudioBus(class UAudioBus* InAudioB
 
 	Params::USubmixEffectDynamicsProcessorPreset_SetAudioBus_Params Parms{};
 
-	Parms.AudioBus = InAudioBus;
+	Parms.AudioBus = AudioBus;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1623,14 +1788,42 @@ void USubmixEffectDynamicsProcessorPreset::ResetKey()
 	Params::USubmixEffectDynamicsProcessorPreset_ResetKey_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class AudioMixer.SubmixEffectSubmixEQPreset
+// (None)
+
+class UClass* USubmixEffectSubmixEQPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectSubmixEQPreset");
+
+	return Clss;
+}
+
+
+// SubmixEffectSubmixEQPreset AudioMixer.Default__SubmixEffectSubmixEQPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectSubmixEQPreset* USubmixEffectSubmixEQPreset::GetDefaultObj()
+{
+	static class USubmixEffectSubmixEQPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectSubmixEQPreset*>(USubmixEffectSubmixEQPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1639,7 +1832,7 @@ void USubmixEffectDynamicsProcessorPreset::ResetKey()
 // Parameters:
 // struct FSubmixEffectSubmixEQSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USubmixEffectSubmixEQPreset::SetSettings(struct FSubmixEffectSubmixEQSettings& InInSettings)
+void USubmixEffectSubmixEQPreset::SetSettings(struct FSubmixEffectSubmixEQSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1648,16 +1841,44 @@ void USubmixEffectSubmixEQPreset::SetSettings(struct FSubmixEffectSubmixEQSettin
 
 	Params::USubmixEffectSubmixEQPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class AudioMixer.SubmixEffectReverbPreset
+// (None)
+
+class UClass* USubmixEffectReverbPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectReverbPreset");
+
+	return Clss;
+}
+
+
+// SubmixEffectReverbPreset AudioMixer.Default__SubmixEffectReverbPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectReverbPreset* USubmixEffectReverbPreset::GetDefaultObj()
+{
+	static class USubmixEffectReverbPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectReverbPreset*>(USubmixEffectReverbPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1668,7 +1889,7 @@ void USubmixEffectSubmixEQPreset::SetSettings(struct FSubmixEffectSubmixEQSettin
 // float                              WetLevel                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              DryLevel                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectReverbPreset::SetSettingsWithReverbEffect(class UReverbEffect* InInReverbEffect, float InWetLevel, float InDryLevel)
+void USubmixEffectReverbPreset::SetSettingsWithReverbEffect(class UReverbEffect* InReverbEffect, float WetLevel, float DryLevel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1677,17 +1898,17 @@ void USubmixEffectReverbPreset::SetSettingsWithReverbEffect(class UReverbEffect*
 
 	Params::USubmixEffectReverbPreset_SetSettingsWithReverbEffect_Params Parms{};
 
-	Parms.InReverbEffect = InInReverbEffect;
-	Parms.WetLevel = InWetLevel;
-	Parms.DryLevel = InDryLevel;
+	Parms.InReverbEffect = InReverbEffect;
+	Parms.WetLevel = WetLevel;
+	Parms.DryLevel = DryLevel;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1697,7 +1918,7 @@ void USubmixEffectReverbPreset::SetSettingsWithReverbEffect(class UReverbEffect*
 // Parameters:
 // struct FSubmixEffectReverbSettings InSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectReverbPreset::SetSettings(struct FSubmixEffectReverbSettings& InInSettings)
+void USubmixEffectReverbPreset::SetSettings(struct FSubmixEffectReverbSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1706,16 +1927,44 @@ void USubmixEffectReverbPreset::SetSettings(struct FSubmixEffectReverbSettings& 
 
 	Params::USubmixEffectReverbPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class AudioMixer.QuartzClockHandle
+// (None)
+
+class UClass* UQuartzClockHandle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("QuartzClockHandle");
+
+	return Clss;
+}
+
+
+// QuartzClockHandle AudioMixer.Default__QuartzClockHandle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UQuartzClockHandle* UQuartzClockHandle::GetDefaultObj()
+{
+	static class UQuartzClockHandle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UQuartzClockHandle*>(UQuartzClockHandle::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1726,7 +1975,7 @@ void USubmixEffectReverbPreset::SetSettings(struct FSubmixEffectReverbSettings& 
 // enum class EQuartzCommandQuantizationInQuantizationBoundary                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::UnsubscribeFromTimeDivision(class UObject* InWorldContextObject, enum class EQuartzCommandQuantization InInQuantizationBoundary, class UQuartzClockHandle** InClockHandle)
+void UQuartzClockHandle::UnsubscribeFromTimeDivision(class UObject* WorldContextObject, enum class EQuartzCommandQuantization InQuantizationBoundary, class UQuartzClockHandle** ClockHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1735,19 +1984,19 @@ void UQuartzClockHandle::UnsubscribeFromTimeDivision(class UObject* InWorldConte
 
 	Params::UQuartzClockHandle_UnsubscribeFromTimeDivision_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.InQuantizationBoundary = InInQuantizationBoundary;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InQuantizationBoundary = InQuantizationBoundary;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -1758,7 +2007,7 @@ void UQuartzClockHandle::UnsubscribeFromTimeDivision(class UObject* InWorldConte
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::UnsubscribeFromAllTimeDivisions(class UObject* InWorldContextObject, class UQuartzClockHandle** InClockHandle)
+void UQuartzClockHandle::UnsubscribeFromAllTimeDivisions(class UObject* WorldContextObject, class UQuartzClockHandle** ClockHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1767,18 +2016,18 @@ void UQuartzClockHandle::UnsubscribeFromAllTimeDivisions(class UObject* InWorldC
 
 	Params::UQuartzClockHandle_UnsubscribeFromAllTimeDivisions_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -1791,7 +2040,7 @@ void UQuartzClockHandle::UnsubscribeFromAllTimeDivisions(class UObject* InWorldC
 // FDelegateProperty_                 OnQuantizationEvent                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::SubscribeToQuantizationEvent(class UObject* InWorldContextObject, enum class EQuartzCommandQuantization InInQuantizationBoundary, FDelegateProperty_& InOnQuantizationEvent, class UQuartzClockHandle** InClockHandle)
+void UQuartzClockHandle::SubscribeToQuantizationEvent(class UObject* WorldContextObject, enum class EQuartzCommandQuantization InQuantizationBoundary, FDelegateProperty_& OnQuantizationEvent, class UQuartzClockHandle** ClockHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1800,20 +2049,20 @@ void UQuartzClockHandle::SubscribeToQuantizationEvent(class UObject* InWorldCont
 
 	Params::UQuartzClockHandle_SubscribeToQuantizationEvent_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.InQuantizationBoundary = InInQuantizationBoundary;
-	Parms.OnQuantizationEvent = InOnQuantizationEvent;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InQuantizationBoundary = InQuantizationBoundary;
+	Parms.OnQuantizationEvent = OnQuantizationEvent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -1825,7 +2074,7 @@ void UQuartzClockHandle::SubscribeToQuantizationEvent(class UObject* InWorldCont
 // FDelegateProperty_                 OnQuantizationEvent                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::SubscribeToAllQuantizationEvents(class UObject* InWorldContextObject, FDelegateProperty_& InOnQuantizationEvent, class UQuartzClockHandle** InClockHandle)
+void UQuartzClockHandle::SubscribeToAllQuantizationEvents(class UObject* WorldContextObject, FDelegateProperty_& OnQuantizationEvent, class UQuartzClockHandle** ClockHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1834,19 +2083,19 @@ void UQuartzClockHandle::SubscribeToAllQuantizationEvents(class UObject* InWorld
 
 	Params::UQuartzClockHandle_SubscribeToAllQuantizationEvents_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.OnQuantizationEvent = InOnQuantizationEvent;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.OnQuantizationEvent = OnQuantizationEvent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -1858,7 +2107,7 @@ void UQuartzClockHandle::SubscribeToAllQuantizationEvents(class UObject* InWorld
 // bool                               CancelPendingEvents                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::StopClock(class UObject* InWorldContextObject, bool InCancelPendingEvents, class UQuartzClockHandle** InClockHandle)
+void UQuartzClockHandle::StopClock(class UObject* WorldContextObject, bool CancelPendingEvents, class UQuartzClockHandle** ClockHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1867,19 +2116,19 @@ void UQuartzClockHandle::StopClock(class UObject* InWorldContextObject, bool InC
 
 	Params::UQuartzClockHandle_StopClock_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.CancelPendingEvents = InCancelPendingEvents;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.CancelPendingEvents = CancelPendingEvents;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -1892,7 +2141,7 @@ void UQuartzClockHandle::StopClock(class UObject* InWorldContextObject, bool InC
 // struct FQuartzQuantizationBoundary InQuantizationBoundary                                           (Parm, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 InDelegate                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::StartOtherClock(class UObject* InWorldContextObject, class FName InOtherClockName, const struct FQuartzQuantizationBoundary& InInQuantizationBoundary, FDelegateProperty_& InInDelegate)
+void UQuartzClockHandle::StartOtherClock(class UObject* WorldContextObject, class FName OtherClockName, const struct FQuartzQuantizationBoundary& InQuantizationBoundary, FDelegateProperty_& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1901,18 +2150,18 @@ void UQuartzClockHandle::StartOtherClock(class UObject* InWorldContextObject, cl
 
 	Params::UQuartzClockHandle_StartOtherClock_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.OtherClockName = InOtherClockName;
-	Parms.InQuantizationBoundary = InInQuantizationBoundary;
-	Parms.InDelegate = InInDelegate;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.OtherClockName = OtherClockName;
+	Parms.InQuantizationBoundary = InQuantizationBoundary;
+	Parms.InDelegate = InDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1923,7 +2172,7 @@ void UQuartzClockHandle::StartOtherClock(class UObject* InWorldContextObject, cl
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::StartClock(class UObject* InWorldContextObject, class UQuartzClockHandle** InClockHandle)
+void UQuartzClockHandle::StartClock(class UObject* WorldContextObject, class UQuartzClockHandle** ClockHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1932,18 +2181,18 @@ void UQuartzClockHandle::StartClock(class UObject* InWorldContextObject, class U
 
 	Params::UQuartzClockHandle_StartClock_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -1957,7 +2206,7 @@ void UQuartzClockHandle::StartClock(class UObject* InWorldContextObject, class U
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              TicksPerSecond                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::SetTicksPerSecond(class UObject* InWorldContextObject, struct FQuartzQuantizationBoundary& InQuantizationBoundary, FDelegateProperty_& InDelegate, class UQuartzClockHandle** InClockHandle, float InTicksPerSecond)
+void UQuartzClockHandle::SetTicksPerSecond(class UObject* WorldContextObject, struct FQuartzQuantizationBoundary& QuantizationBoundary, FDelegateProperty_& Delegate, class UQuartzClockHandle** ClockHandle, float TicksPerSecond)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1966,21 +2215,21 @@ void UQuartzClockHandle::SetTicksPerSecond(class UObject* InWorldContextObject, 
 
 	Params::UQuartzClockHandle_SetTicksPerSecond_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.QuantizationBoundary = InQuantizationBoundary;
-	Parms.Delegate = InDelegate;
-	Parms.TicksPerSecond = InTicksPerSecond;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.QuantizationBoundary = QuantizationBoundary;
+	Parms.Delegate = Delegate;
+	Parms.TicksPerSecond = TicksPerSecond;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -1994,7 +2243,7 @@ void UQuartzClockHandle::SetTicksPerSecond(class UObject* InWorldContextObject, 
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ThirtySecondsNotesPerMinute                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::SetThirtySecondNotesPerMinute(class UObject* InWorldContextObject, struct FQuartzQuantizationBoundary& InQuantizationBoundary, FDelegateProperty_& InDelegate, class UQuartzClockHandle** InClockHandle, float InThirtySecondsNotesPerMinute)
+void UQuartzClockHandle::SetThirtySecondNotesPerMinute(class UObject* WorldContextObject, struct FQuartzQuantizationBoundary& QuantizationBoundary, FDelegateProperty_& Delegate, class UQuartzClockHandle** ClockHandle, float ThirtySecondsNotesPerMinute)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2003,21 +2252,21 @@ void UQuartzClockHandle::SetThirtySecondNotesPerMinute(class UObject* InWorldCon
 
 	Params::UQuartzClockHandle_SetThirtySecondNotesPerMinute_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.QuantizationBoundary = InQuantizationBoundary;
-	Parms.Delegate = InDelegate;
-	Parms.ThirtySecondsNotesPerMinute = InThirtySecondsNotesPerMinute;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.QuantizationBoundary = QuantizationBoundary;
+	Parms.Delegate = Delegate;
+	Parms.ThirtySecondsNotesPerMinute = ThirtySecondsNotesPerMinute;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -2031,7 +2280,7 @@ void UQuartzClockHandle::SetThirtySecondNotesPerMinute(class UObject* InWorldCon
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              SecondsPerTick                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::SetSecondsPerTick(class UObject* InWorldContextObject, struct FQuartzQuantizationBoundary& InQuantizationBoundary, FDelegateProperty_& InDelegate, class UQuartzClockHandle** InClockHandle, float InSecondsPerTick)
+void UQuartzClockHandle::SetSecondsPerTick(class UObject* WorldContextObject, struct FQuartzQuantizationBoundary& QuantizationBoundary, FDelegateProperty_& Delegate, class UQuartzClockHandle** ClockHandle, float SecondsPerTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2040,21 +2289,21 @@ void UQuartzClockHandle::SetSecondsPerTick(class UObject* InWorldContextObject, 
 
 	Params::UQuartzClockHandle_SetSecondsPerTick_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.QuantizationBoundary = InQuantizationBoundary;
-	Parms.Delegate = InDelegate;
-	Parms.SecondsPerTick = InSecondsPerTick;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.QuantizationBoundary = QuantizationBoundary;
+	Parms.Delegate = Delegate;
+	Parms.SecondsPerTick = SecondsPerTick;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -2068,7 +2317,7 @@ void UQuartzClockHandle::SetSecondsPerTick(class UObject* InWorldContextObject, 
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              MillisecondsPerTick                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::SetMillisecondsPerTick(class UObject* InWorldContextObject, struct FQuartzQuantizationBoundary& InQuantizationBoundary, FDelegateProperty_& InDelegate, class UQuartzClockHandle** InClockHandle, float InMillisecondsPerTick)
+void UQuartzClockHandle::SetMillisecondsPerTick(class UObject* WorldContextObject, struct FQuartzQuantizationBoundary& QuantizationBoundary, FDelegateProperty_& Delegate, class UQuartzClockHandle** ClockHandle, float MillisecondsPerTick)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2077,21 +2326,21 @@ void UQuartzClockHandle::SetMillisecondsPerTick(class UObject* InWorldContextObj
 
 	Params::UQuartzClockHandle_SetMillisecondsPerTick_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.QuantizationBoundary = InQuantizationBoundary;
-	Parms.Delegate = InDelegate;
-	Parms.MillisecondsPerTick = InMillisecondsPerTick;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.QuantizationBoundary = QuantizationBoundary;
+	Parms.Delegate = Delegate;
+	Parms.MillisecondsPerTick = MillisecondsPerTick;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -2105,7 +2354,7 @@ void UQuartzClockHandle::SetMillisecondsPerTick(class UObject* InWorldContextObj
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              BeatsPerMinute                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::SetBeatsPerMinute(class UObject* InWorldContextObject, struct FQuartzQuantizationBoundary& InQuantizationBoundary, FDelegateProperty_& InDelegate, class UQuartzClockHandle** InClockHandle, float InBeatsPerMinute)
+void UQuartzClockHandle::SetBeatsPerMinute(class UObject* WorldContextObject, struct FQuartzQuantizationBoundary& QuantizationBoundary, FDelegateProperty_& Delegate, class UQuartzClockHandle** ClockHandle, float BeatsPerMinute)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2114,21 +2363,21 @@ void UQuartzClockHandle::SetBeatsPerMinute(class UObject* InWorldContextObject, 
 
 	Params::UQuartzClockHandle_SetBeatsPerMinute_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.QuantizationBoundary = InQuantizationBoundary;
-	Parms.Delegate = InDelegate;
-	Parms.BeatsPerMinute = InBeatsPerMinute;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.QuantizationBoundary = QuantizationBoundary;
+	Parms.Delegate = Delegate;
+	Parms.BeatsPerMinute = BeatsPerMinute;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -2139,7 +2388,7 @@ void UQuartzClockHandle::SetBeatsPerMinute(class UObject* InWorldContextObject, 
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::ResumeClock(class UObject* InWorldContextObject, class UQuartzClockHandle** InClockHandle)
+void UQuartzClockHandle::ResumeClock(class UObject* WorldContextObject, class UQuartzClockHandle** ClockHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2148,18 +2397,18 @@ void UQuartzClockHandle::ResumeClock(class UObject* InWorldContextObject, class 
 
 	Params::UQuartzClockHandle_ResumeClock_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -2172,7 +2421,7 @@ void UQuartzClockHandle::ResumeClock(class UObject* InWorldContextObject, class 
 // FDelegateProperty_                 InDelegate                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::ResetTransportQuantized(class UObject* InWorldContextObject, const struct FQuartzQuantizationBoundary& InInQuantizationBoundary, FDelegateProperty_& InInDelegate, class UQuartzClockHandle** InClockHandle)
+void UQuartzClockHandle::ResetTransportQuantized(class UObject* WorldContextObject, const struct FQuartzQuantizationBoundary& InQuantizationBoundary, FDelegateProperty_& InDelegate, class UQuartzClockHandle** ClockHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2181,20 +2430,20 @@ void UQuartzClockHandle::ResetTransportQuantized(class UObject* InWorldContextOb
 
 	Params::UQuartzClockHandle_ResetTransportQuantized_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.InQuantizationBoundary = InInQuantizationBoundary;
-	Parms.InDelegate = InInDelegate;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InQuantizationBoundary = InQuantizationBoundary;
+	Parms.InDelegate = InDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -2205,7 +2454,7 @@ void UQuartzClockHandle::ResetTransportQuantized(class UObject* InWorldContextOb
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // FDelegateProperty_                 InDelegate                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::ResetTransport(class UObject* InWorldContextObject, FDelegateProperty_& InInDelegate)
+void UQuartzClockHandle::ResetTransport(class UObject* WorldContextObject, FDelegateProperty_& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2214,16 +2463,16 @@ void UQuartzClockHandle::ResetTransport(class UObject* InWorldContextObject, FDe
 
 	Params::UQuartzClockHandle_ResetTransport_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.InDelegate = InInDelegate;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InDelegate = InDelegate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2234,7 +2483,7 @@ void UQuartzClockHandle::ResetTransport(class UObject* InWorldContextObject, FDe
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ClockHandle                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzClockHandle::PauseClock(class UObject* InWorldContextObject, class UQuartzClockHandle** InClockHandle)
+void UQuartzClockHandle::PauseClock(class UObject* WorldContextObject, class UQuartzClockHandle** ClockHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2243,18 +2492,18 @@ void UQuartzClockHandle::PauseClock(class UObject* InWorldContextObject, class U
 
 	Params::UQuartzClockHandle_PauseClock_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InClockHandle != nullptr)
-		*InClockHandle = Parms.ClockHandle;
+	if (ClockHandle != nullptr)
+		*ClockHandle = Parms.ClockHandle;
 
 }
 
@@ -2265,7 +2514,7 @@ void UQuartzClockHandle::PauseClock(class UObject* InWorldContextObject, class U
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UQuartzClockHandle::IsClockRunning(class UObject* InWorldContextObject)
+bool UQuartzClockHandle::IsClockRunning(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2274,15 +2523,15 @@ bool UQuartzClockHandle::IsClockRunning(class UObject* InWorldContextObject)
 
 	Params::UQuartzClockHandle_IsClockRunning_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2295,7 +2544,7 @@ bool UQuartzClockHandle::IsClockRunning(class UObject* InWorldContextObject)
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzClockHandle::GetTicksPerSecond(class UObject* InWorldContextObject)
+float UQuartzClockHandle::GetTicksPerSecond(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2304,15 +2553,15 @@ float UQuartzClockHandle::GetTicksPerSecond(class UObject* InWorldContextObject)
 
 	Params::UQuartzClockHandle_GetTicksPerSecond_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2325,7 +2574,7 @@ float UQuartzClockHandle::GetTicksPerSecond(class UObject* InWorldContextObject)
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzClockHandle::GetThirtySecondNotesPerMinute(class UObject* InWorldContextObject)
+float UQuartzClockHandle::GetThirtySecondNotesPerMinute(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2334,15 +2583,15 @@ float UQuartzClockHandle::GetThirtySecondNotesPerMinute(class UObject* InWorldCo
 
 	Params::UQuartzClockHandle_GetThirtySecondNotesPerMinute_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2355,7 +2604,7 @@ float UQuartzClockHandle::GetThirtySecondNotesPerMinute(class UObject* InWorldCo
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzClockHandle::GetSecondsPerTick(class UObject* InWorldContextObject)
+float UQuartzClockHandle::GetSecondsPerTick(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2364,15 +2613,15 @@ float UQuartzClockHandle::GetSecondsPerTick(class UObject* InWorldContextObject)
 
 	Params::UQuartzClockHandle_GetSecondsPerTick_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2385,7 +2634,7 @@ float UQuartzClockHandle::GetSecondsPerTick(class UObject* InWorldContextObject)
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzClockHandle::GetMillisecondsPerTick(class UObject* InWorldContextObject)
+float UQuartzClockHandle::GetMillisecondsPerTick(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2394,15 +2643,15 @@ float UQuartzClockHandle::GetMillisecondsPerTick(class UObject* InWorldContextOb
 
 	Params::UQuartzClockHandle_GetMillisecondsPerTick_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2415,7 +2664,7 @@ float UQuartzClockHandle::GetMillisecondsPerTick(class UObject* InWorldContextOb
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzClockHandle::GetEstimatedRunTime(class UObject* InWorldContextObject)
+float UQuartzClockHandle::GetEstimatedRunTime(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2424,15 +2673,15 @@ float UQuartzClockHandle::GetEstimatedRunTime(class UObject* InWorldContextObjec
 
 	Params::UQuartzClockHandle_GetEstimatedRunTime_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2447,7 +2696,7 @@ float UQuartzClockHandle::GetEstimatedRunTime(class UObject* InWorldContextObjec
 // float                              Multiplier                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzClockHandle::GetDurationOfQuantizationTypeInSeconds(class UObject* InWorldContextObject, enum class EQuartzCommandQuantization& InQuantizationType, float InMultiplier)
+float UQuartzClockHandle::GetDurationOfQuantizationTypeInSeconds(class UObject* WorldContextObject, enum class EQuartzCommandQuantization& QuantizationType, float Multiplier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2456,17 +2705,17 @@ float UQuartzClockHandle::GetDurationOfQuantizationTypeInSeconds(class UObject* 
 
 	Params::UQuartzClockHandle_GetDurationOfQuantizationTypeInSeconds_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.QuantizationType = InQuantizationType;
-	Parms.Multiplier = InMultiplier;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.QuantizationType = QuantizationType;
+	Parms.Multiplier = Multiplier;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2479,7 +2728,7 @@ float UQuartzClockHandle::GetDurationOfQuantizationTypeInSeconds(class UObject* 
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FQuartzTransportTimeStamp   ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FQuartzTransportTimeStamp UQuartzClockHandle::GetCurrentTimestamp(class UObject* InWorldContextObject)
+struct FQuartzTransportTimeStamp UQuartzClockHandle::GetCurrentTimestamp(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2488,15 +2737,15 @@ struct FQuartzTransportTimeStamp UQuartzClockHandle::GetCurrentTimestamp(class U
 
 	Params::UQuartzClockHandle_GetCurrentTimestamp_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2509,7 +2758,7 @@ struct FQuartzTransportTimeStamp UQuartzClockHandle::GetCurrentTimestamp(class U
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzClockHandle::GetBeatsPerMinute(class UObject* InWorldContextObject)
+float UQuartzClockHandle::GetBeatsPerMinute(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2518,18 +2767,46 @@ float UQuartzClockHandle::GetBeatsPerMinute(class UObject* InWorldContextObject)
 
 	Params::UQuartzClockHandle_GetBeatsPerMinute_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class AudioMixer.QuartzSubsystem
+// (None)
+
+class UClass* UQuartzSubsystem::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("QuartzSubsystem");
+
+	return Clss;
+}
+
+
+// QuartzSubsystem AudioMixer.Default__QuartzSubsystem
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UQuartzSubsystem* UQuartzSubsystem::GetDefaultObj()
+{
+	static class UQuartzSubsystem* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UQuartzSubsystem*>(UQuartzSubsystem::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2548,13 +2825,13 @@ bool UQuartzSubsystem::IsQuartzEnabled()
 	Params::UQuartzSubsystem_IsQuartzEnabled_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2568,7 +2845,7 @@ bool UQuartzSubsystem::IsQuartzEnabled()
 // class FName                        ClockName                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UQuartzSubsystem::IsClockRunning(class UObject* InWorldContextObject, class FName InClockName)
+bool UQuartzSubsystem::IsClockRunning(class UObject* WorldContextObject, class FName ClockName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2577,16 +2854,16 @@ bool UQuartzSubsystem::IsClockRunning(class UObject* InWorldContextObject, class
 
 	Params::UQuartzSubsystem_IsClockRunning_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ClockName = InClockName;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ClockName = ClockName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2599,7 +2876,7 @@ bool UQuartzSubsystem::IsClockRunning(class UObject* InWorldContextObject, class
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzSubsystem::GetRoundTripMinLatency(class UObject* InWorldContextObject)
+float UQuartzSubsystem::GetRoundTripMinLatency(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2608,15 +2885,15 @@ float UQuartzSubsystem::GetRoundTripMinLatency(class UObject* InWorldContextObje
 
 	Params::UQuartzSubsystem_GetRoundTripMinLatency_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2629,7 +2906,7 @@ float UQuartzSubsystem::GetRoundTripMinLatency(class UObject* InWorldContextObje
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzSubsystem::GetRoundTripMaxLatency(class UObject* InWorldContextObject)
+float UQuartzSubsystem::GetRoundTripMaxLatency(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2638,15 +2915,15 @@ float UQuartzSubsystem::GetRoundTripMaxLatency(class UObject* InWorldContextObje
 
 	Params::UQuartzSubsystem_GetRoundTripMaxLatency_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2659,7 +2936,7 @@ float UQuartzSubsystem::GetRoundTripMaxLatency(class UObject* InWorldContextObje
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzSubsystem::GetRoundTripAverageLatency(class UObject* InWorldContextObject)
+float UQuartzSubsystem::GetRoundTripAverageLatency(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2668,15 +2945,15 @@ float UQuartzSubsystem::GetRoundTripAverageLatency(class UObject* InWorldContext
 
 	Params::UQuartzSubsystem_GetRoundTripAverageLatency_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2690,7 +2967,7 @@ float UQuartzSubsystem::GetRoundTripAverageLatency(class UObject* InWorldContext
 // class FName                        ClockName                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UQuartzClockHandle* UQuartzSubsystem::GetHandleForClock(class UObject* InWorldContextObject, class FName InClockName)
+class UQuartzClockHandle* UQuartzSubsystem::GetHandleForClock(class UObject* WorldContextObject, class FName ClockName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2699,16 +2976,16 @@ class UQuartzClockHandle* UQuartzSubsystem::GetHandleForClock(class UObject* InW
 
 	Params::UQuartzSubsystem_GetHandleForClock_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ClockName = InClockName;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ClockName = ClockName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2721,7 +2998,7 @@ class UQuartzClockHandle* UQuartzSubsystem::GetHandleForClock(class UObject* InW
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMinLatency(class UObject* InWorldContextObject)
+float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMinLatency(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2730,15 +3007,15 @@ float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMinLatency(class UObject
 
 	Params::UQuartzSubsystem_GetGameThreadToAudioRenderThreadMinLatency_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2751,7 +3028,7 @@ float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMinLatency(class UObject
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMaxLatency(class UObject* InWorldContextObject)
+float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMaxLatency(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2760,15 +3037,15 @@ float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMaxLatency(class UObject
 
 	Params::UQuartzSubsystem_GetGameThreadToAudioRenderThreadMaxLatency_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2781,7 +3058,7 @@ float UQuartzSubsystem::GetGameThreadToAudioRenderThreadMaxLatency(class UObject
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzSubsystem::GetGameThreadToAudioRenderThreadAverageLatency(class UObject* InWorldContextObject)
+float UQuartzSubsystem::GetGameThreadToAudioRenderThreadAverageLatency(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2790,15 +3067,15 @@ float UQuartzSubsystem::GetGameThreadToAudioRenderThreadAverageLatency(class UOb
 
 	Params::UQuartzSubsystem_GetGameThreadToAudioRenderThreadAverageLatency_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
+	Parms.WorldContextObject = WorldContextObject;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2812,7 +3089,7 @@ float UQuartzSubsystem::GetGameThreadToAudioRenderThreadAverageLatency(class UOb
 // class FName                        InClockName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzSubsystem::GetEstimatedClockRunTime(class UObject* InWorldContextObject, class FName& InInClockName)
+float UQuartzSubsystem::GetEstimatedClockRunTime(class UObject* WorldContextObject, class FName& InClockName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2821,16 +3098,16 @@ float UQuartzSubsystem::GetEstimatedClockRunTime(class UObject* InWorldContextOb
 
 	Params::UQuartzSubsystem_GetEstimatedClockRunTime_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.InClockName = InInClockName;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InClockName = InClockName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2846,7 +3123,7 @@ float UQuartzSubsystem::GetEstimatedClockRunTime(class UObject* InWorldContextOb
 // float                              Multiplier                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UQuartzSubsystem::GetDurationOfQuantizationTypeInSeconds(class UObject* InWorldContextObject, class FName InClockName, enum class EQuartzCommandQuantization& InQuantizationType, float InMultiplier)
+float UQuartzSubsystem::GetDurationOfQuantizationTypeInSeconds(class UObject* WorldContextObject, class FName ClockName, enum class EQuartzCommandQuantization& QuantizationType, float Multiplier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2855,18 +3132,18 @@ float UQuartzSubsystem::GetDurationOfQuantizationTypeInSeconds(class UObject* In
 
 	Params::UQuartzSubsystem_GetDurationOfQuantizationTypeInSeconds_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ClockName = InClockName;
-	Parms.QuantizationType = InQuantizationType;
-	Parms.Multiplier = InMultiplier;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ClockName = ClockName;
+	Parms.QuantizationType = QuantizationType;
+	Parms.Multiplier = Multiplier;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2880,7 +3157,7 @@ float UQuartzSubsystem::GetDurationOfQuantizationTypeInSeconds(class UObject* In
 // class FName                        InClockName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FQuartzTransportTimeStamp   ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FQuartzTransportTimeStamp UQuartzSubsystem::GetCurrentClockTimestamp(class UObject* InWorldContextObject, class FName& InInClockName)
+struct FQuartzTransportTimeStamp UQuartzSubsystem::GetCurrentClockTimestamp(class UObject* WorldContextObject, class FName& InClockName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2889,16 +3166,16 @@ struct FQuartzTransportTimeStamp UQuartzSubsystem::GetCurrentClockTimestamp(clas
 
 	Params::UQuartzSubsystem_GetCurrentClockTimestamp_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.InClockName = InInClockName;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InClockName = InClockName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2920,13 +3197,13 @@ float UQuartzSubsystem::GetAudioRenderThreadToGameThreadMinLatency()
 	Params::UQuartzSubsystem_GetAudioRenderThreadToGameThreadMinLatency_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2948,13 +3225,13 @@ float UQuartzSubsystem::GetAudioRenderThreadToGameThreadMaxLatency()
 	Params::UQuartzSubsystem_GetAudioRenderThreadToGameThreadMaxLatency_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2976,13 +3253,13 @@ float UQuartzSubsystem::GetAudioRenderThreadToGameThreadAverageLatency()
 	Params::UQuartzSubsystem_GetAudioRenderThreadToGameThreadAverageLatency_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2996,7 +3273,7 @@ float UQuartzSubsystem::GetAudioRenderThreadToGameThreadAverageLatency()
 // class FName                        ClockName                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UQuartzSubsystem::DoesClockExist(class UObject* InWorldContextObject, class FName InClockName)
+bool UQuartzSubsystem::DoesClockExist(class UObject* WorldContextObject, class FName ClockName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3005,16 +3282,16 @@ bool UQuartzSubsystem::DoesClockExist(class UObject* InWorldContextObject, class
 
 	Params::UQuartzSubsystem_DoesClockExist_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ClockName = InClockName;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ClockName = ClockName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3027,7 +3304,7 @@ bool UQuartzSubsystem::DoesClockExist(class UObject* InWorldContextObject, class
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ClockName                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzSubsystem::DeleteClockByName(class UObject* InWorldContextObject, class FName InClockName)
+void UQuartzSubsystem::DeleteClockByName(class UObject* WorldContextObject, class FName ClockName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3036,16 +3313,16 @@ void UQuartzSubsystem::DeleteClockByName(class UObject* InWorldContextObject, cl
 
 	Params::UQuartzSubsystem_DeleteClockByName_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ClockName = InClockName;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ClockName = ClockName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3056,7 +3333,7 @@ void UQuartzSubsystem::DeleteClockByName(class UObject* InWorldContextObject, cl
 // class UObject*                     WorldContextObject                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          InClockHandle                                                    (Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UQuartzSubsystem::DeleteClockByHandle(class UObject* InWorldContextObject, class UQuartzClockHandle*& InInClockHandle)
+void UQuartzSubsystem::DeleteClockByHandle(class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3065,16 +3342,16 @@ void UQuartzSubsystem::DeleteClockByHandle(class UObject* InWorldContextObject, 
 
 	Params::UQuartzSubsystem_DeleteClockByHandle_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.InClockHandle = InInClockHandle;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InClockHandle = InClockHandle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3089,7 +3366,7 @@ void UQuartzSubsystem::DeleteClockByHandle(class UObject* InWorldContextObject, 
 // bool                               bUseAudioEngineClockManager                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*          ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UQuartzClockHandle* UQuartzSubsystem::CreateNewClock(class UObject* InWorldContextObject, class FName InClockName, const struct FQuartzClockSettings& InInSettings, bool InbOverrideSettingsIfClockExists, bool InbUseAudioEngineClockManager)
+class UQuartzClockHandle* UQuartzSubsystem::CreateNewClock(class UObject* WorldContextObject, class FName ClockName, const struct FQuartzClockSettings& InSettings, bool bOverrideSettingsIfClockExists, bool bUseAudioEngineClockManager)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3098,19 +3375,19 @@ class UQuartzClockHandle* UQuartzSubsystem::CreateNewClock(class UObject* InWorl
 
 	Params::UQuartzSubsystem_CreateNewClock_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ClockName = InClockName;
-	Parms.InSettings = InInSettings;
-	Parms.bOverrideSettingsIfClockExists = InbOverrideSettingsIfClockExists;
-	Parms.bUseAudioEngineClockManager = InbUseAudioEngineClockManager;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ClockName = ClockName;
+	Parms.InSettings = InSettings;
+	Parms.bOverrideSettingsIfClockExists = bOverrideSettingsIfClockExists;
+	Parms.bUseAudioEngineClockManager = bUseAudioEngineClockManager;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3118,6 +3395,4 @@ class UQuartzClockHandle* UQuartzSubsystem::CreateNewClock(class UObject* InWorl
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

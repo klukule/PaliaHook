@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,46 +11,46 @@ namespace SDK
 
 enum class ENiagaraMipMapGenerationType : uint8
 {
-	ENiagaraMipMapGenerationType__Unfiltered = 0,
-	ENiagaraMipMapGenerationType__Linear = 1,
-	ENiagaraMipMapGenerationType__Blur1 = 2,
-	ENiagaraMipMapGenerationType__Blur2 = 3,
-	ENiagaraMipMapGenerationType__Blur3 = 4,
-	ENiagaraMipMapGenerationType__Blur4 = 5,
-	ENiagaraMipMapGenerationType__ENiagaraMipMapGenerationType_MAX = 6,
+	Unfiltered                     = 0,
+	Linear                         = 1,
+	Blur1                          = 2,
+	Blur2                          = 3,
+	Blur3                          = 4,
+	Blur4                          = 5,
+	ENiagaraMipMapGenerationType_MAX = 6,
 };
 
 enum class ENiagaraGpuDispatchType : uint8
 {
-	ENiagaraGpuDispatchType__OneD  = 0,
-	ENiagaraGpuDispatchType__TwoD  = 1,
-	ENiagaraGpuDispatchType__ThreeD = 2,
-	ENiagaraGpuDispatchType__Custom = 3,
-	ENiagaraGpuDispatchType__ENiagaraGpuDispatchType_MAX = 4,
+	OneD                           = 0,
+	TwoD                           = 1,
+	ThreeD                         = 2,
+	Custom                         = 3,
+	ENiagaraGpuDispatchType_MAX    = 4,
 };
 
 enum class ENiagaraSimStageExecuteBehavior : uint8
 {
-	ENiagaraSimStageExecuteBehavior__Always = 0,
-	ENiagaraSimStageExecuteBehavior__OnSimulationReset = 1,
-	ENiagaraSimStageExecuteBehavior__NotOnSimulationReset = 2,
-	ENiagaraSimStageExecuteBehavior__ENiagaraSimStageExecuteBehavior_MAX = 3,
+	Always                         = 0,
+	OnSimulationReset              = 1,
+	NotOnSimulationReset           = 2,
+	ENiagaraSimStageExecuteBehavior_MAX = 3,
 };
 
 enum class EFNiagaraCompileEventSeverity : uint8
 {
-	FNiagaraCompileEventSeverity__Log = 0,
-	FNiagaraCompileEventSeverity__Display = 1,
-	FNiagaraCompileEventSeverity__Warning = 2,
-	FNiagaraCompileEventSeverity__Error = 3,
-	FNiagaraCompileEventSeverity__FNiagaraCompileEventSeverity_MAX = 4,
+	Log                            = 0,
+	Display                        = 1,
+	Warning                        = 2,
+	Error                          = 3,
+	FNiagaraCompileEventSeverity_MAX = 4,
 };
 
 enum class EFNiagaraCompileEventSource : uint8
 {
-	FNiagaraCompileEventSource__Unset = 0,
-	FNiagaraCompileEventSource__ScriptDependency = 1,
-	FNiagaraCompileEventSource__FNiagaraCompileEventSource_MAX = 2,
+	Unset                          = 0,
+	ScriptDependency               = 1,
+	FNiagaraCompileEventSource_MAX = 2,
 };
 
 
@@ -73,25 +70,25 @@ public:
 	class FName                                  ElementCountZBinding;                              // 0x20(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  IterationSource;                                   // 0x28(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ENiagaraSimStageExecuteBehavior   ExecuteBehavior;                                   // 0x30(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_9C[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_51[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bWritesParticles : 1;                              // Mask: 0x1, PropSize: 0x10x34(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bPartialParticleUpdate : 1;                        // Mask: 0x2, PropSize: 0x10x34(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bParticleIterationStateEnabled : 1;                // Mask: 0x4, PropSize: 0x10x34(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverrideElementCount : 1;                         // Mask: 0x8, PropSize: 0x10x34(0x1)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        BitPad_4 : 4;                                      // Fixing Bit-Field Size  [ Dumper-7 ]
-	uint8                                        Pad_9D[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_0 : 4;                                      // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_52[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  ParticleIterationStateBinding;                     // 0x38(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A0[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_56[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FIntPoint                             ParticleIterationStateRange;                       // 0x44(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A1[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_58[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class FName>                          OutputDestinations;                                // 0x50(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class FName>                          InputDataInterfaces;                               // 0x60(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                        NumIterations;                                     // 0x70(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  NumIterationsBinding;                              // 0x74(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ENiagaraGpuDispatchType           GpuDispatchType;                                   // 0x7C(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A2[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_5A[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FIntVector                            GpuDispatchNumThreads;                             // 0x80(0xC)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A3[0x4];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_5B[0x4];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -99,7 +96,7 @@ public:
 struct FNiagaraDataInterfaceGeneratedFunction
 {
 public:
-	uint8                                        Pad_A4[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_5D[0x28];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -110,7 +107,7 @@ public:
 	class FString                                DataInterfaceHLSLSymbol;                           // 0x0(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                DIClassName;                                       // 0x10(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                       ShaderParametersOffset;                            // 0x20(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A6[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_5F[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FNiagaraDataInterfaceGeneratedFunction> GeneratedFunctions;                                // 0x28(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -131,9 +128,9 @@ public:
 	TArray<struct FNiagaraDataInterfaceGPUParamInfo> DataInterfaceParamInfo;                            // 0x0(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class FString>                        LooseMetadataNames;                                // 0x10(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                         bExternalConstantsInterpolated;                    // 0x20(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A7[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_64[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FNiagaraShaderScriptExternalConstant> ExternalConstants;                                 // 0x28(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A8[0x20];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_65[0x20];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -142,21 +139,19 @@ struct FNiagaraCompileEvent
 {
 public:
 	enum class EFNiagaraCompileEventSeverity     Severity;                                          // 0x0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A9[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_67[0x7];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Message;                                           // 0x8(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                ShortDescription;                                  // 0x18(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bDismissable;                                      // 0x28(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_AA[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_68[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGuid                                 NodeGuid;                                          // 0x2C(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 PinGuid;                                           // 0x3C(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_AB[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_69[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FGuid>                         StackGuids;                                        // 0x50(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	enum class EFNiagaraCompileEventSource       Source;                                            // 0x60(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_AC[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_6A[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

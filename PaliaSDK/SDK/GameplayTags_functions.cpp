@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class GameplayTags.BlueprintGameplayTagLibrary
+// (None)
+
+class UClass* UBlueprintGameplayTagLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BlueprintGameplayTagLibrary");
+
+	return Clss;
+}
+
+
+// BlueprintGameplayTagLibrary GameplayTags.Default__BlueprintGameplayTagLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UBlueprintGameplayTagLibrary* UBlueprintGameplayTagLibrary::GetDefaultObj()
+{
+	static class UBlueprintGameplayTagLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBlueprintGameplayTagLibrary*>(UBlueprintGameplayTagLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function GameplayTags.BlueprintGameplayTagLibrary.RemoveGameplayTag
@@ -22,7 +47,7 @@ namespace SDK
 // struct FGameplayTag                Tag                                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::RemoveGameplayTag(struct FGameplayTagContainer& InTagContainer, const struct FGameplayTag& InTag)
+bool UBlueprintGameplayTagLibrary::RemoveGameplayTag(struct FGameplayTagContainer& TagContainer, const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,16 +56,16 @@ bool UBlueprintGameplayTagLibrary::RemoveGameplayTag(struct FGameplayTagContaine
 
 	Params::UBlueprintGameplayTagLibrary_RemoveGameplayTag_Params Parms{};
 
-	Parms.TagContainer = InTagContainer;
-	Parms.Tag = InTag;
+	Parms.TagContainer = TagContainer;
+	Parms.Tag = Tag;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -54,7 +79,7 @@ bool UBlueprintGameplayTagLibrary::RemoveGameplayTag(struct FGameplayTagContaine
 // class FString                      B                                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::NotEqual_TagTag(const struct FGameplayTag& InA, const class FString& InB)
+bool UBlueprintGameplayTagLibrary::NotEqual_TagTag(const struct FGameplayTag& A, const class FString& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -63,16 +88,16 @@ bool UBlueprintGameplayTagLibrary::NotEqual_TagTag(const struct FGameplayTag& In
 
 	Params::UBlueprintGameplayTagLibrary_NotEqual_TagTag_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -86,7 +111,7 @@ bool UBlueprintGameplayTagLibrary::NotEqual_TagTag(const struct FGameplayTag& In
 // class FString                      B                                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::NotEqual_TagContainerTagContainer(const struct FGameplayTagContainer& InA, const class FString& InB)
+bool UBlueprintGameplayTagLibrary::NotEqual_TagContainerTagContainer(const struct FGameplayTagContainer& A, const class FString& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -95,16 +120,16 @@ bool UBlueprintGameplayTagLibrary::NotEqual_TagContainerTagContainer(const struc
 
 	Params::UBlueprintGameplayTagLibrary_NotEqual_TagContainerTagContainer_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -118,7 +143,7 @@ bool UBlueprintGameplayTagLibrary::NotEqual_TagContainerTagContainer(const struc
 // struct FGameplayTagContainer       B                                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::NotEqual_GameplayTagContainer(struct FGameplayTagContainer& InA, struct FGameplayTagContainer& InB)
+bool UBlueprintGameplayTagLibrary::NotEqual_GameplayTagContainer(struct FGameplayTagContainer& A, struct FGameplayTagContainer& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -127,16 +152,16 @@ bool UBlueprintGameplayTagLibrary::NotEqual_GameplayTagContainer(struct FGamepla
 
 	Params::UBlueprintGameplayTagLibrary_NotEqual_GameplayTagContainer_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -150,7 +175,7 @@ bool UBlueprintGameplayTagLibrary::NotEqual_GameplayTagContainer(struct FGamepla
 // struct FGameplayTag                B                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::NotEqual_GameplayTag(const struct FGameplayTag& InA, const struct FGameplayTag& InB)
+bool UBlueprintGameplayTagLibrary::NotEqual_GameplayTag(const struct FGameplayTag& A, const struct FGameplayTag& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -159,16 +184,16 @@ bool UBlueprintGameplayTagLibrary::NotEqual_GameplayTag(const struct FGameplayTa
 
 	Params::UBlueprintGameplayTagLibrary_NotEqual_GameplayTag_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -183,7 +208,7 @@ bool UBlueprintGameplayTagLibrary::NotEqual_GameplayTag(const struct FGameplayTa
 // bool                               bExactMatch                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::MatchesTag(const struct FGameplayTag& InTagOne, const struct FGameplayTag& InTagTwo, bool InbExactMatch)
+bool UBlueprintGameplayTagLibrary::MatchesTag(const struct FGameplayTag& TagOne, const struct FGameplayTag& TagTwo, bool bExactMatch)
 {
 	static class UFunction* Func = nullptr;
 
@@ -192,17 +217,17 @@ bool UBlueprintGameplayTagLibrary::MatchesTag(const struct FGameplayTag& InTagOn
 
 	Params::UBlueprintGameplayTagLibrary_MatchesTag_Params Parms{};
 
-	Parms.TagOne = InTagOne;
-	Parms.TagTwo = InTagTwo;
-	Parms.bExactMatch = InbExactMatch;
+	Parms.TagOne = TagOne;
+	Parms.TagTwo = TagTwo;
+	Parms.bExactMatch = bExactMatch;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -217,7 +242,7 @@ bool UBlueprintGameplayTagLibrary::MatchesTag(const struct FGameplayTag& InTagOn
 // bool                               bExactMatch                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::MatchesAnyTags(const struct FGameplayTag& InTagOne, struct FGameplayTagContainer& InOtherContainer, bool InbExactMatch)
+bool UBlueprintGameplayTagLibrary::MatchesAnyTags(const struct FGameplayTag& TagOne, struct FGameplayTagContainer& OtherContainer, bool bExactMatch)
 {
 	static class UFunction* Func = nullptr;
 
@@ -226,17 +251,17 @@ bool UBlueprintGameplayTagLibrary::MatchesAnyTags(const struct FGameplayTag& InT
 
 	Params::UBlueprintGameplayTagLibrary_MatchesAnyTags_Params Parms{};
 
-	Parms.TagOne = InTagOne;
-	Parms.OtherContainer = InOtherContainer;
-	Parms.bExactMatch = InbExactMatch;
+	Parms.TagOne = TagOne;
+	Parms.OtherContainer = OtherContainer;
+	Parms.bExactMatch = bExactMatch;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -249,7 +274,7 @@ bool UBlueprintGameplayTagLibrary::MatchesAnyTags(const struct FGameplayTag& InT
 // struct FGameplayTagContainer       Value                                                            (Parm, NativeAccessSpecifierPublic)
 // struct FGameplayTagContainer       ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeLiteralGameplayTagContainer(const struct FGameplayTagContainer& InValue)
+struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeLiteralGameplayTagContainer(const struct FGameplayTagContainer& Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -258,15 +283,15 @@ struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeLiteralGameplayTa
 
 	Params::UBlueprintGameplayTagLibrary_MakeLiteralGameplayTagContainer_Params Parms{};
 
-	Parms.Value = InValue;
+	Parms.Value = Value;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -279,7 +304,7 @@ struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeLiteralGameplayTa
 // struct FGameplayTag                Value                                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayTag                ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FGameplayTag UBlueprintGameplayTagLibrary::MakeLiteralGameplayTag(const struct FGameplayTag& InValue)
+struct FGameplayTag UBlueprintGameplayTagLibrary::MakeLiteralGameplayTag(const struct FGameplayTag& Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -288,15 +313,15 @@ struct FGameplayTag UBlueprintGameplayTagLibrary::MakeLiteralGameplayTag(const s
 
 	Params::UBlueprintGameplayTagLibrary_MakeLiteralGameplayTag_Params Parms{};
 
-	Parms.Value = InValue;
+	Parms.Value = Value;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -309,7 +334,7 @@ struct FGameplayTag UBlueprintGameplayTagLibrary::MakeLiteralGameplayTag(const s
 // struct FGameplayTagQuery           TagQuery                                                         (Parm, NativeAccessSpecifierPublic)
 // struct FGameplayTagQuery           ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FGameplayTagQuery UBlueprintGameplayTagLibrary::MakeGameplayTagQuery(const struct FGameplayTagQuery& InTagQuery)
+struct FGameplayTagQuery UBlueprintGameplayTagLibrary::MakeGameplayTagQuery(const struct FGameplayTagQuery& TagQuery)
 {
 	static class UFunction* Func = nullptr;
 
@@ -318,15 +343,15 @@ struct FGameplayTagQuery UBlueprintGameplayTagLibrary::MakeGameplayTagQuery(cons
 
 	Params::UBlueprintGameplayTagLibrary_MakeGameplayTagQuery_Params Parms{};
 
-	Parms.TagQuery = InTagQuery;
+	Parms.TagQuery = TagQuery;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -339,7 +364,7 @@ struct FGameplayTagQuery UBlueprintGameplayTagLibrary::MakeGameplayTagQuery(cons
 // struct FGameplayTag                SingleTag                                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayTagContainer       ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeGameplayTagContainerFromTag(const struct FGameplayTag& InSingleTag)
+struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeGameplayTagContainerFromTag(const struct FGameplayTag& SingleTag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -348,15 +373,15 @@ struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeGameplayTagContai
 
 	Params::UBlueprintGameplayTagLibrary_MakeGameplayTagContainerFromTag_Params Parms{};
 
-	Parms.SingleTag = InSingleTag;
+	Parms.SingleTag = SingleTag;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -369,7 +394,7 @@ struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeGameplayTagContai
 // TArray<struct FGameplayTag>        GameplayTags                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FGameplayTagContainer       ReturnValue                                                      (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeGameplayTagContainerFromArray(TArray<struct FGameplayTag>& InGameplayTags)
+struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeGameplayTagContainerFromArray(TArray<struct FGameplayTag>& GameplayTags)
 {
 	static class UFunction* Func = nullptr;
 
@@ -378,15 +403,15 @@ struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeGameplayTagContai
 
 	Params::UBlueprintGameplayTagLibrary_MakeGameplayTagContainerFromArray_Params Parms{};
 
-	Parms.GameplayTags = InGameplayTags;
+	Parms.GameplayTags = GameplayTags;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -399,7 +424,7 @@ struct FGameplayTagContainer UBlueprintGameplayTagLibrary::MakeGameplayTagContai
 // struct FGameplayTagQuery           TagQuery                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::IsTagQueryEmpty(struct FGameplayTagQuery& InTagQuery)
+bool UBlueprintGameplayTagLibrary::IsTagQueryEmpty(struct FGameplayTagQuery& TagQuery)
 {
 	static class UFunction* Func = nullptr;
 
@@ -408,15 +433,15 @@ bool UBlueprintGameplayTagLibrary::IsTagQueryEmpty(struct FGameplayTagQuery& InT
 
 	Params::UBlueprintGameplayTagLibrary_IsTagQueryEmpty_Params Parms{};
 
-	Parms.TagQuery = InTagQuery;
+	Parms.TagQuery = TagQuery;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -429,7 +454,7 @@ bool UBlueprintGameplayTagLibrary::IsTagQueryEmpty(struct FGameplayTagQuery& InT
 // struct FGameplayTag                GameplayTag                                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::IsGameplayTagValid(const struct FGameplayTag& InGameplayTag)
+bool UBlueprintGameplayTagLibrary::IsGameplayTagValid(const struct FGameplayTag& GameplayTag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -438,15 +463,15 @@ bool UBlueprintGameplayTagLibrary::IsGameplayTagValid(const struct FGameplayTag&
 
 	Params::UBlueprintGameplayTagLibrary_IsGameplayTagValid_Params Parms{};
 
-	Parms.GameplayTag = InGameplayTag;
+	Parms.GameplayTag = GameplayTag;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -461,7 +486,7 @@ bool UBlueprintGameplayTagLibrary::IsGameplayTagValid(const struct FGameplayTag&
 // bool                               bExactMatch                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::HasTag(struct FGameplayTagContainer& InTagContainer, const struct FGameplayTag& InTag, bool InbExactMatch)
+bool UBlueprintGameplayTagLibrary::HasTag(struct FGameplayTagContainer& TagContainer, const struct FGameplayTag& Tag, bool bExactMatch)
 {
 	static class UFunction* Func = nullptr;
 
@@ -470,17 +495,17 @@ bool UBlueprintGameplayTagLibrary::HasTag(struct FGameplayTagContainer& InTagCon
 
 	Params::UBlueprintGameplayTagLibrary_HasTag_Params Parms{};
 
-	Parms.TagContainer = InTagContainer;
-	Parms.Tag = InTag;
-	Parms.bExactMatch = InbExactMatch;
+	Parms.TagContainer = TagContainer;
+	Parms.Tag = Tag;
+	Parms.bExactMatch = bExactMatch;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -495,7 +520,7 @@ bool UBlueprintGameplayTagLibrary::HasTag(struct FGameplayTagContainer& InTagCon
 // bool                               bExactMatch                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::HasAnyTags(struct FGameplayTagContainer& InTagContainer, struct FGameplayTagContainer& InOtherContainer, bool InbExactMatch)
+bool UBlueprintGameplayTagLibrary::HasAnyTags(struct FGameplayTagContainer& TagContainer, struct FGameplayTagContainer& OtherContainer, bool bExactMatch)
 {
 	static class UFunction* Func = nullptr;
 
@@ -504,17 +529,17 @@ bool UBlueprintGameplayTagLibrary::HasAnyTags(struct FGameplayTagContainer& InTa
 
 	Params::UBlueprintGameplayTagLibrary_HasAnyTags_Params Parms{};
 
-	Parms.TagContainer = InTagContainer;
-	Parms.OtherContainer = InOtherContainer;
-	Parms.bExactMatch = InbExactMatch;
+	Parms.TagContainer = TagContainer;
+	Parms.OtherContainer = OtherContainer;
+	Parms.bExactMatch = bExactMatch;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -529,7 +554,7 @@ bool UBlueprintGameplayTagLibrary::HasAnyTags(struct FGameplayTagContainer& InTa
 // bool                               bExactMatch                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::HasAllTags(struct FGameplayTagContainer& InTagContainer, struct FGameplayTagContainer& InOtherContainer, bool InbExactMatch)
+bool UBlueprintGameplayTagLibrary::HasAllTags(struct FGameplayTagContainer& TagContainer, struct FGameplayTagContainer& OtherContainer, bool bExactMatch)
 {
 	static class UFunction* Func = nullptr;
 
@@ -538,17 +563,17 @@ bool UBlueprintGameplayTagLibrary::HasAllTags(struct FGameplayTagContainer& InTa
 
 	Params::UBlueprintGameplayTagLibrary_HasAllTags_Params Parms{};
 
-	Parms.TagContainer = InTagContainer;
-	Parms.OtherContainer = InOtherContainer;
-	Parms.bExactMatch = InbExactMatch;
+	Parms.TagContainer = TagContainer;
+	Parms.OtherContainer = OtherContainer;
+	Parms.bExactMatch = bExactMatch;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -562,7 +587,7 @@ bool UBlueprintGameplayTagLibrary::HasAllTags(struct FGameplayTagContainer& InTa
 // struct FGameplayTagContainer       OtherContainer                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::HasAllMatchingGameplayTags(TScriptInterface<class IGameplayTagAssetInterface> InTagContainerInterface, struct FGameplayTagContainer& InOtherContainer)
+bool UBlueprintGameplayTagLibrary::HasAllMatchingGameplayTags(TScriptInterface<class IGameplayTagAssetInterface> TagContainerInterface, struct FGameplayTagContainer& OtherContainer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -571,16 +596,16 @@ bool UBlueprintGameplayTagLibrary::HasAllMatchingGameplayTags(TScriptInterface<c
 
 	Params::UBlueprintGameplayTagLibrary_HasAllMatchingGameplayTags_Params Parms{};
 
-	Parms.TagContainerInterface = InTagContainerInterface;
-	Parms.OtherContainer = InOtherContainer;
+	Parms.TagContainerInterface = TagContainerInterface;
+	Parms.OtherContainer = OtherContainer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -593,7 +618,7 @@ bool UBlueprintGameplayTagLibrary::HasAllMatchingGameplayTags(TScriptInterface<c
 // struct FGameplayTag                GameplayTag                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                        ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName UBlueprintGameplayTagLibrary::GetTagName(struct FGameplayTag& InGameplayTag)
+class FName UBlueprintGameplayTagLibrary::GetTagName(struct FGameplayTag& GameplayTag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -602,15 +627,15 @@ class FName UBlueprintGameplayTagLibrary::GetTagName(struct FGameplayTag& InGame
 
 	Params::UBlueprintGameplayTagLibrary_GetTagName_Params Parms{};
 
-	Parms.GameplayTag = InGameplayTag;
+	Parms.GameplayTag = GameplayTag;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -623,7 +648,7 @@ class FName UBlueprintGameplayTagLibrary::GetTagName(struct FGameplayTag& InGame
 // struct FGameplayTagContainer       TagContainer                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UBlueprintGameplayTagLibrary::GetNumGameplayTagsInContainer(struct FGameplayTagContainer& InTagContainer)
+int32 UBlueprintGameplayTagLibrary::GetNumGameplayTagsInContainer(struct FGameplayTagContainer& TagContainer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -632,15 +657,15 @@ int32 UBlueprintGameplayTagLibrary::GetNumGameplayTagsInContainer(struct FGamepl
 
 	Params::UBlueprintGameplayTagLibrary_GetNumGameplayTagsInContainer_Params Parms{};
 
-	Parms.TagContainer = InTagContainer;
+	Parms.TagContainer = TagContainer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -653,7 +678,7 @@ int32 UBlueprintGameplayTagLibrary::GetNumGameplayTagsInContainer(struct FGamepl
 // struct FGameplayTagContainer       TagContainer                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTagContainer(struct FGameplayTagContainer& InTagContainer)
+class FString UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTagContainer(struct FGameplayTagContainer& TagContainer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -662,15 +687,15 @@ class FString UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTagContain
 
 	Params::UBlueprintGameplayTagLibrary_GetDebugStringFromGameplayTagContainer_Params Parms{};
 
-	Parms.TagContainer = InTagContainer;
+	Parms.TagContainer = TagContainer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -683,7 +708,7 @@ class FString UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTagContain
 // struct FGameplayTag                GameplayTag                                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTag(const struct FGameplayTag& InGameplayTag)
+class FString UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTag(const struct FGameplayTag& GameplayTag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -692,15 +717,15 @@ class FString UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTag(const 
 
 	Params::UBlueprintGameplayTagLibrary_GetDebugStringFromGameplayTag_Params Parms{};
 
-	Parms.GameplayTag = InGameplayTag;
+	Parms.GameplayTag = GameplayTag;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -715,7 +740,7 @@ class FString UBlueprintGameplayTagLibrary::GetDebugStringFromGameplayTag(const 
 // struct FGameplayTagQuery           GameplayTagQuery                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<class AActor*>              OutActors                                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UBlueprintGameplayTagLibrary::GetAllActorsOfClassMatchingTagQuery(class UObject* InWorldContextObject, TSubclassOf<class AActor> InActorClass, struct FGameplayTagQuery& InGameplayTagQuery, TArray<class AActor*>* InOutActors)
+void UBlueprintGameplayTagLibrary::GetAllActorsOfClassMatchingTagQuery(class UObject* WorldContextObject, TSubclassOf<class AActor> ActorClass, struct FGameplayTagQuery& GameplayTagQuery, TArray<class AActor*>* OutActors)
 {
 	static class UFunction* Func = nullptr;
 
@@ -724,20 +749,20 @@ void UBlueprintGameplayTagLibrary::GetAllActorsOfClassMatchingTagQuery(class UOb
 
 	Params::UBlueprintGameplayTagLibrary_GetAllActorsOfClassMatchingTagQuery_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.ActorClass = InActorClass;
-	Parms.GameplayTagQuery = InGameplayTagQuery;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ActorClass = ActorClass;
+	Parms.GameplayTagQuery = GameplayTagQuery;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutActors != nullptr)
-		*InOutActors = Parms.OutActors;
+	if (OutActors != nullptr)
+		*OutActors = std::move(Parms.OutActors);
 
 }
 
@@ -749,7 +774,7 @@ void UBlueprintGameplayTagLibrary::GetAllActorsOfClassMatchingTagQuery(class UOb
 // struct FGameplayTagContainer       B                                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::EqualEqual_GameplayTagContainer(struct FGameplayTagContainer& InA, struct FGameplayTagContainer& InB)
+bool UBlueprintGameplayTagLibrary::EqualEqual_GameplayTagContainer(struct FGameplayTagContainer& A, struct FGameplayTagContainer& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -758,16 +783,16 @@ bool UBlueprintGameplayTagLibrary::EqualEqual_GameplayTagContainer(struct FGamep
 
 	Params::UBlueprintGameplayTagLibrary_EqualEqual_GameplayTagContainer_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -781,7 +806,7 @@ bool UBlueprintGameplayTagLibrary::EqualEqual_GameplayTagContainer(struct FGamep
 // struct FGameplayTag                B                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::EqualEqual_GameplayTag(const struct FGameplayTag& InA, const struct FGameplayTag& InB)
+bool UBlueprintGameplayTagLibrary::EqualEqual_GameplayTag(const struct FGameplayTag& A, const struct FGameplayTag& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -790,16 +815,16 @@ bool UBlueprintGameplayTagLibrary::EqualEqual_GameplayTag(const struct FGameplay
 
 	Params::UBlueprintGameplayTagLibrary_EqualEqual_GameplayTag_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -813,7 +838,7 @@ bool UBlueprintGameplayTagLibrary::EqualEqual_GameplayTag(const struct FGameplay
 // struct FGameplayTag                Tag                                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::DoesTagAssetInterfaceHaveTag(TScriptInterface<class IGameplayTagAssetInterface> InTagContainerInterface, const struct FGameplayTag& InTag)
+bool UBlueprintGameplayTagLibrary::DoesTagAssetInterfaceHaveTag(TScriptInterface<class IGameplayTagAssetInterface> TagContainerInterface, const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -822,16 +847,16 @@ bool UBlueprintGameplayTagLibrary::DoesTagAssetInterfaceHaveTag(TScriptInterface
 
 	Params::UBlueprintGameplayTagLibrary_DoesTagAssetInterfaceHaveTag_Params Parms{};
 
-	Parms.TagContainerInterface = InTagContainerInterface;
-	Parms.Tag = InTag;
+	Parms.TagContainerInterface = TagContainerInterface;
+	Parms.Tag = Tag;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -845,7 +870,7 @@ bool UBlueprintGameplayTagLibrary::DoesTagAssetInterfaceHaveTag(TScriptInterface
 // struct FGameplayTagQuery           TagQuery                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBlueprintGameplayTagLibrary::DoesContainerMatchTagQuery(struct FGameplayTagContainer& InTagContainer, struct FGameplayTagQuery& InTagQuery)
+bool UBlueprintGameplayTagLibrary::DoesContainerMatchTagQuery(struct FGameplayTagContainer& TagContainer, struct FGameplayTagQuery& TagQuery)
 {
 	static class UFunction* Func = nullptr;
 
@@ -854,16 +879,16 @@ bool UBlueprintGameplayTagLibrary::DoesContainerMatchTagQuery(struct FGameplayTa
 
 	Params::UBlueprintGameplayTagLibrary_DoesContainerMatchTagQuery_Params Parms{};
 
-	Parms.TagContainer = InTagContainer;
-	Parms.TagQuery = InTagQuery;
+	Parms.TagContainer = TagContainer;
+	Parms.TagQuery = TagQuery;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -876,7 +901,7 @@ bool UBlueprintGameplayTagLibrary::DoesContainerMatchTagQuery(struct FGameplayTa
 // struct FGameplayTagContainer       GameplayTagContainer                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FGameplayTag>        GameplayTags                                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UBlueprintGameplayTagLibrary::BreakGameplayTagContainer(struct FGameplayTagContainer& InGameplayTagContainer, TArray<struct FGameplayTag>* InGameplayTags)
+void UBlueprintGameplayTagLibrary::BreakGameplayTagContainer(struct FGameplayTagContainer& GameplayTagContainer, TArray<struct FGameplayTag>* GameplayTags)
 {
 	static class UFunction* Func = nullptr;
 
@@ -885,18 +910,18 @@ void UBlueprintGameplayTagLibrary::BreakGameplayTagContainer(struct FGameplayTag
 
 	Params::UBlueprintGameplayTagLibrary_BreakGameplayTagContainer_Params Parms{};
 
-	Parms.GameplayTagContainer = InGameplayTagContainer;
+	Parms.GameplayTagContainer = GameplayTagContainer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InGameplayTags != nullptr)
-		*InGameplayTags = Parms.GameplayTags;
+	if (GameplayTags != nullptr)
+		*GameplayTags = std::move(Parms.GameplayTags);
 
 }
 
@@ -907,7 +932,7 @@ void UBlueprintGameplayTagLibrary::BreakGameplayTagContainer(struct FGameplayTag
 // struct FGameplayTagContainer       InOutTagContainer                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FGameplayTagContainer       InTagContainer                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UBlueprintGameplayTagLibrary::AppendGameplayTagContainers(struct FGameplayTagContainer& InInOutTagContainer, struct FGameplayTagContainer& InInTagContainer)
+void UBlueprintGameplayTagLibrary::AppendGameplayTagContainers(struct FGameplayTagContainer& InOutTagContainer, struct FGameplayTagContainer& InTagContainer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -916,16 +941,16 @@ void UBlueprintGameplayTagLibrary::AppendGameplayTagContainers(struct FGameplayT
 
 	Params::UBlueprintGameplayTagLibrary_AppendGameplayTagContainers_Params Parms{};
 
-	Parms.InOutTagContainer = InInOutTagContainer;
-	Parms.InTagContainer = InInTagContainer;
+	Parms.InOutTagContainer = InOutTagContainer;
+	Parms.InTagContainer = InTagContainer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -936,7 +961,7 @@ void UBlueprintGameplayTagLibrary::AppendGameplayTagContainers(struct FGameplayT
 // struct FGameplayTagContainer       TagContainer                                                     (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FGameplayTag                Tag                                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBlueprintGameplayTagLibrary::AddGameplayTag(struct FGameplayTagContainer& InTagContainer, const struct FGameplayTag& InTag)
+void UBlueprintGameplayTagLibrary::AddGameplayTag(struct FGameplayTagContainer& TagContainer, const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -945,17 +970,45 @@ void UBlueprintGameplayTagLibrary::AddGameplayTag(struct FGameplayTagContainer& 
 
 	Params::UBlueprintGameplayTagLibrary_AddGameplayTag_Params Parms{};
 
-	Parms.TagContainer = InTagContainer;
-	Parms.Tag = InTag;
+	Parms.TagContainer = TagContainer;
+	Parms.Tag = Tag;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class GameplayTags.GameplayTagAssetInterface
+// (None)
+
+class UClass* IGameplayTagAssetInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GameplayTagAssetInterface");
+
+	return Clss;
+}
+
+
+// GameplayTagAssetInterface GameplayTags.Default__GameplayTagAssetInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IGameplayTagAssetInterface* IGameplayTagAssetInterface::GetDefaultObj()
+{
+	static class IGameplayTagAssetInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IGameplayTagAssetInterface*>(IGameplayTagAssetInterface::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -965,7 +1018,7 @@ void UBlueprintGameplayTagLibrary::AddGameplayTag(struct FGameplayTagContainer& 
 // struct FGameplayTag                TagToCheck                                                       (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool IGameplayTagAssetInterface::HasMatchingGameplayTag(const struct FGameplayTag& InTagToCheck)
+bool IGameplayTagAssetInterface::HasMatchingGameplayTag(const struct FGameplayTag& TagToCheck)
 {
 	static class UFunction* Func = nullptr;
 
@@ -974,15 +1027,15 @@ bool IGameplayTagAssetInterface::HasMatchingGameplayTag(const struct FGameplayTa
 
 	Params::IGameplayTagAssetInterface_HasMatchingGameplayTag_Params Parms{};
 
-	Parms.TagToCheck = InTagToCheck;
+	Parms.TagToCheck = TagToCheck;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -995,7 +1048,7 @@ bool IGameplayTagAssetInterface::HasMatchingGameplayTag(const struct FGameplayTa
 // struct FGameplayTagContainer       TagContainer                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool IGameplayTagAssetInterface::HasAnyMatchingGameplayTags(struct FGameplayTagContainer& InTagContainer)
+bool IGameplayTagAssetInterface::HasAnyMatchingGameplayTags(struct FGameplayTagContainer& TagContainer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1004,15 +1057,15 @@ bool IGameplayTagAssetInterface::HasAnyMatchingGameplayTags(struct FGameplayTagC
 
 	Params::IGameplayTagAssetInterface_HasAnyMatchingGameplayTags_Params Parms{};
 
-	Parms.TagContainer = InTagContainer;
+	Parms.TagContainer = TagContainer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1025,7 +1078,7 @@ bool IGameplayTagAssetInterface::HasAnyMatchingGameplayTags(struct FGameplayTagC
 // struct FGameplayTagContainer       TagContainer                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool IGameplayTagAssetInterface::HasAllMatchingGameplayTags(struct FGameplayTagContainer& InTagContainer)
+bool IGameplayTagAssetInterface::HasAllMatchingGameplayTags(struct FGameplayTagContainer& TagContainer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1034,15 +1087,15 @@ bool IGameplayTagAssetInterface::HasAllMatchingGameplayTags(struct FGameplayTagC
 
 	Params::IGameplayTagAssetInterface_HasAllMatchingGameplayTags_Params Parms{};
 
-	Parms.TagContainer = InTagContainer;
+	Parms.TagContainer = TagContainer;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1054,7 +1107,7 @@ bool IGameplayTagAssetInterface::HasAllMatchingGameplayTags(struct FGameplayTagC
 // Parameters:
 // struct FGameplayTagContainer       TagContainer                                                     (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void IGameplayTagAssetInterface::GetOwnedGameplayTags(struct FGameplayTagContainer* InTagContainer)
+void IGameplayTagAssetInterface::GetOwnedGameplayTags(struct FGameplayTagContainer* TagContainer)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1064,21 +1117,383 @@ void IGameplayTagAssetInterface::GetOwnedGameplayTags(struct FGameplayTagContain
 	Params::IGameplayTagAssetInterface_GetOwnedGameplayTags_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InTagContainer != nullptr)
-		*InTagContainer = Parms.TagContainer;
+	if (TagContainer != nullptr)
+		*TagContainer = std::move(Parms.TagContainer);
 
+}
+
+
+// Class GameplayTags.EditableGameplayTagQuery
+// (None)
+
+class UClass* UEditableGameplayTagQuery::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EditableGameplayTagQuery");
+
+	return Clss;
+}
+
+
+// EditableGameplayTagQuery GameplayTags.Default__EditableGameplayTagQuery
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEditableGameplayTagQuery* UEditableGameplayTagQuery::GetDefaultObj()
+{
+	static class UEditableGameplayTagQuery* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEditableGameplayTagQuery*>(UEditableGameplayTagQuery::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.EditableGameplayTagQueryExpression
+// (None)
+
+class UClass* UEditableGameplayTagQueryExpression::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression");
+
+	return Clss;
+}
+
+
+// EditableGameplayTagQueryExpression GameplayTags.Default__EditableGameplayTagQueryExpression
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEditableGameplayTagQueryExpression* UEditableGameplayTagQueryExpression::GetDefaultObj()
+{
+	static class UEditableGameplayTagQueryExpression* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEditableGameplayTagQueryExpression*>(UEditableGameplayTagQueryExpression::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.EditableGameplayTagQueryExpression_AnyTagsMatch
+// (None)
+
+class UClass* UEditableGameplayTagQueryExpression_AnyTagsMatch::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AnyTagsMatch");
+
+	return Clss;
+}
+
+
+// EditableGameplayTagQueryExpression_AnyTagsMatch GameplayTags.Default__EditableGameplayTagQueryExpression_AnyTagsMatch
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEditableGameplayTagQueryExpression_AnyTagsMatch* UEditableGameplayTagQueryExpression_AnyTagsMatch::GetDefaultObj()
+{
+	static class UEditableGameplayTagQueryExpression_AnyTagsMatch* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEditableGameplayTagQueryExpression_AnyTagsMatch*>(UEditableGameplayTagQueryExpression_AnyTagsMatch::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.EditableGameplayTagQueryExpression_AllTagsMatch
+// (None)
+
+class UClass* UEditableGameplayTagQueryExpression_AllTagsMatch::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AllTagsMatch");
+
+	return Clss;
+}
+
+
+// EditableGameplayTagQueryExpression_AllTagsMatch GameplayTags.Default__EditableGameplayTagQueryExpression_AllTagsMatch
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEditableGameplayTagQueryExpression_AllTagsMatch* UEditableGameplayTagQueryExpression_AllTagsMatch::GetDefaultObj()
+{
+	static class UEditableGameplayTagQueryExpression_AllTagsMatch* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEditableGameplayTagQueryExpression_AllTagsMatch*>(UEditableGameplayTagQueryExpression_AllTagsMatch::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.EditableGameplayTagQueryExpression_NoTagsMatch
+// (None)
+
+class UClass* UEditableGameplayTagQueryExpression_NoTagsMatch::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_NoTagsMatch");
+
+	return Clss;
+}
+
+
+// EditableGameplayTagQueryExpression_NoTagsMatch GameplayTags.Default__EditableGameplayTagQueryExpression_NoTagsMatch
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEditableGameplayTagQueryExpression_NoTagsMatch* UEditableGameplayTagQueryExpression_NoTagsMatch::GetDefaultObj()
+{
+	static class UEditableGameplayTagQueryExpression_NoTagsMatch* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEditableGameplayTagQueryExpression_NoTagsMatch*>(UEditableGameplayTagQueryExpression_NoTagsMatch::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.EditableGameplayTagQueryExpression_AnyExprMatch
+// (None)
+
+class UClass* UEditableGameplayTagQueryExpression_AnyExprMatch::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AnyExprMatch");
+
+	return Clss;
+}
+
+
+// EditableGameplayTagQueryExpression_AnyExprMatch GameplayTags.Default__EditableGameplayTagQueryExpression_AnyExprMatch
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEditableGameplayTagQueryExpression_AnyExprMatch* UEditableGameplayTagQueryExpression_AnyExprMatch::GetDefaultObj()
+{
+	static class UEditableGameplayTagQueryExpression_AnyExprMatch* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEditableGameplayTagQueryExpression_AnyExprMatch*>(UEditableGameplayTagQueryExpression_AnyExprMatch::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.EditableGameplayTagQueryExpression_AllExprMatch
+// (None)
+
+class UClass* UEditableGameplayTagQueryExpression_AllExprMatch::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_AllExprMatch");
+
+	return Clss;
+}
+
+
+// EditableGameplayTagQueryExpression_AllExprMatch GameplayTags.Default__EditableGameplayTagQueryExpression_AllExprMatch
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEditableGameplayTagQueryExpression_AllExprMatch* UEditableGameplayTagQueryExpression_AllExprMatch::GetDefaultObj()
+{
+	static class UEditableGameplayTagQueryExpression_AllExprMatch* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEditableGameplayTagQueryExpression_AllExprMatch*>(UEditableGameplayTagQueryExpression_AllExprMatch::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.EditableGameplayTagQueryExpression_NoExprMatch
+// (None)
+
+class UClass* UEditableGameplayTagQueryExpression_NoExprMatch::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EditableGameplayTagQueryExpression_NoExprMatch");
+
+	return Clss;
+}
+
+
+// EditableGameplayTagQueryExpression_NoExprMatch GameplayTags.Default__EditableGameplayTagQueryExpression_NoExprMatch
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEditableGameplayTagQueryExpression_NoExprMatch* UEditableGameplayTagQueryExpression_NoExprMatch::GetDefaultObj()
+{
+	static class UEditableGameplayTagQueryExpression_NoExprMatch* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEditableGameplayTagQueryExpression_NoExprMatch*>(UEditableGameplayTagQueryExpression_NoExprMatch::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.GameplayTagsManager
+// (None)
+
+class UClass* UGameplayTagsManager::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GameplayTagsManager");
+
+	return Clss;
+}
+
+
+// GameplayTagsManager GameplayTags.Default__GameplayTagsManager
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGameplayTagsManager* UGameplayTagsManager::GetDefaultObj()
+{
+	static class UGameplayTagsManager* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGameplayTagsManager*>(UGameplayTagsManager::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.GameplayTagsList
+// (None)
+
+class UClass* UGameplayTagsList::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GameplayTagsList");
+
+	return Clss;
+}
+
+
+// GameplayTagsList GameplayTags.Default__GameplayTagsList
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGameplayTagsList* UGameplayTagsList::GetDefaultObj()
+{
+	static class UGameplayTagsList* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGameplayTagsList*>(UGameplayTagsList::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.RestrictedGameplayTagsList
+// (None)
+
+class UClass* URestrictedGameplayTagsList::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("RestrictedGameplayTagsList");
+
+	return Clss;
+}
+
+
+// RestrictedGameplayTagsList GameplayTags.Default__RestrictedGameplayTagsList
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class URestrictedGameplayTagsList* URestrictedGameplayTagsList::GetDefaultObj()
+{
+	static class URestrictedGameplayTagsList* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<URestrictedGameplayTagsList*>(URestrictedGameplayTagsList::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.GameplayTagsSettings
+// (None)
+
+class UClass* UGameplayTagsSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GameplayTagsSettings");
+
+	return Clss;
+}
+
+
+// GameplayTagsSettings GameplayTags.Default__GameplayTagsSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGameplayTagsSettings* UGameplayTagsSettings::GetDefaultObj()
+{
+	static class UGameplayTagsSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGameplayTagsSettings*>(UGameplayTagsSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class GameplayTags.GameplayTagsDeveloperSettings
+// (None)
+
+class UClass* UGameplayTagsDeveloperSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GameplayTagsDeveloperSettings");
+
+	return Clss;
+}
+
+
+// GameplayTagsDeveloperSettings GameplayTags.Default__GameplayTagsDeveloperSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGameplayTagsDeveloperSettings* UGameplayTagsDeveloperSettings::GetDefaultObj()
+{
+	static class UGameplayTagsDeveloperSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGameplayTagsDeveloperSettings*>(UGameplayTagsDeveloperSettings::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

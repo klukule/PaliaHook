@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class LocationServicesBPLibrary.LocationServices
+// (None)
+
+class UClass* ULocationServices::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("LocationServices");
+
+	return Clss;
+}
+
+
+// LocationServices LocationServicesBPLibrary.Default__LocationServices
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ULocationServices* ULocationServices::GetDefaultObj()
+{
+	static class ULocationServices* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ULocationServices*>(ULocationServices::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function LocationServicesBPLibrary.LocationServices.StopLocationServices
@@ -30,13 +55,13 @@ bool ULocationServices::StopLocationServices()
 	Params::ULocationServices_StopLocationServices_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -58,13 +83,13 @@ bool ULocationServices::StartLocationServices()
 	Params::ULocationServices_StartLocationServices_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -77,7 +102,7 @@ bool ULocationServices::StartLocationServices()
 // enum class ELocationAccuracy       Accuracy                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ULocationServices::IsLocationAccuracyAvailable(enum class ELocationAccuracy InAccuracy)
+bool ULocationServices::IsLocationAccuracyAvailable(enum class ELocationAccuracy Accuracy)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,15 +111,15 @@ bool ULocationServices::IsLocationAccuracyAvailable(enum class ELocationAccuracy
 
 	Params::ULocationServices_IsLocationAccuracyAvailable_Params Parms{};
 
-	Parms.Accuracy = InAccuracy;
+	Parms.Accuracy = Accuracy;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -109,7 +134,7 @@ bool ULocationServices::IsLocationAccuracyAvailable(enum class ELocationAccuracy
 // float                              MinDistanceFilter                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ULocationServices::InitLocationServices(enum class ELocationAccuracy InAccuracy, float InUpdateFrequency, float InMinDistanceFilter)
+bool ULocationServices::InitLocationServices(enum class ELocationAccuracy Accuracy, float UpdateFrequency, float MinDistanceFilter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -118,17 +143,17 @@ bool ULocationServices::InitLocationServices(enum class ELocationAccuracy InAccu
 
 	Params::ULocationServices_InitLocationServices_Params Parms{};
 
-	Parms.Accuracy = InAccuracy;
-	Parms.UpdateFrequency = InUpdateFrequency;
-	Parms.MinDistanceFilter = InMinDistanceFilter;
+	Parms.Accuracy = Accuracy;
+	Parms.UpdateFrequency = UpdateFrequency;
+	Parms.MinDistanceFilter = MinDistanceFilter;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -150,13 +175,13 @@ class ULocationServicesImpl* ULocationServices::GetLocationServicesImpl()
 	Params::ULocationServices_GetLocationServicesImpl_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -178,13 +203,13 @@ struct FLocationServicesData ULocationServices::GetLastKnownLocation()
 	Params::ULocationServices_GetLastKnownLocation_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -206,20 +231,46 @@ bool ULocationServices::AreLocationServicesEnabled()
 	Params::ULocationServices_AreLocationServicesEnabled_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
 }
 
+
+// Class LocationServicesBPLibrary.LocationServicesImpl
+// (None)
+
+class UClass* ULocationServicesImpl::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("LocationServicesImpl");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// LocationServicesImpl LocationServicesBPLibrary.Default__LocationServicesImpl
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class ULocationServicesImpl* ULocationServicesImpl::GetDefaultObj()
+{
+	static class ULocationServicesImpl* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ULocationServicesImpl*>(ULocationServicesImpl::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

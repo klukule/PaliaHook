@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -17,13 +14,10 @@ namespace SDK
 class UChaosDebugDrawComponent : public UActorComponent
 {
 public:
-	uint8                                        Pad_2235[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_220E[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosDebugDrawComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UChaosDebugDrawComponent* GetDefaultObj();
 
 };
 
@@ -32,13 +26,10 @@ public:
 class UChaosEventListenerComponent : public UActorComponent
 {
 public:
-	uint8                                        Pad_2238[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2211[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosEventListenerComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UChaosEventListenerComponent* GetDefaultObj();
 
 };
 
@@ -47,18 +38,15 @@ public:
 class UChaosGameplayEventDispatcher : public UChaosEventListenerComponent
 {
 public:
-	uint8                                        Pad_223C[0x110];                                   // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2215[0x110];                                   // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<class UPrimitiveComponent*, struct FChaosHandlerSet> CollisionEventRegistrations;                       // 0x1B8(0x50)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	TMap<class UPrimitiveComponent*, struct FBreakEventCallbackWrapper> BreakEventRegistrations;                           // 0x208(0x50)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	TMap<class UPrimitiveComponent*, struct FRemovalEventCallbackWrapper> RemovalEventRegistrations;                         // 0x258(0x50)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	TMap<class UPrimitiveComponent*, struct FCrumblingEventCallbackWrapper> CrumblingEventRegistrations;                       // 0x2A8(0x50)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_2240[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2219[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosGameplayEventDispatcher");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UChaosGameplayEventDispatcher* GetDefaultObj();
 
 };
 
@@ -68,11 +56,8 @@ class IChaosNotifyHandlerInterface : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosNotifyHandlerInterface");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IChaosNotifyHandlerInterface* GetDefaultObj();
 
 };
 
@@ -82,13 +67,10 @@ class UChaosSolverEngineBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosSolverEngineBlueprintLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UChaosSolverEngineBlueprintLibrary* GetDefaultObj();
 
-	struct FHitResult ConvertPhysicsCollisionToHitResult(struct FChaosPhysicsCollisionInfo& InPhysicsCollision);
+	struct FHitResult ConvertPhysicsCollisionToHitResult(struct FChaosPhysicsCollisionInfo& PhysicsCollision);
 };
 
 // 0x0 (0x28 - 0x28)
@@ -97,11 +79,8 @@ class UChaosSolver : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosSolver");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UChaosSolver* GetDefaultObj();
 
 };
 
@@ -118,32 +97,29 @@ public:
 	float                                        ClusterConnectionFactor;                           // 0x308(0x4)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EClusterConnectionTypeEnum        ClusterUnionConnectionType;                        // 0x30C(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         DoGenerateCollisionData;                           // 0x30D(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2251[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2234[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSolverCollisionFilterSettings        CollisionFilterSettings;                           // 0x310(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         DoGenerateBreakingData;                            // 0x320(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2252[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2236[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSolverBreakingFilterSettings         BreakingFilterSettings;                            // 0x324(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         DoGenerateTrailingData;                            // 0x334(0x1)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2254[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_223A[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSolverTrailingFilterSettings         TrailingFilterSettings;                            // 0x338(0x10)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	float                                        MassScale;                                         // 0x348(0x4)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHasFloor;                                         // 0x34C(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2256[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_223E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        FloorHeight;                                       // 0x350(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FChaosDebugSubstepControl             ChaosDebugSubstepControl;                          // 0x354(0x3)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2258[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2241[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UBillboardComponent*                   SpriteComponent;                                   // 0x358(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2259[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2242[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UChaosGameplayEventDispatcher*         GameplayEventDispatcherComponent;                  // 0x378(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_225A[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2243[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosSolverActor");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class AChaosSolverActor* GetDefaultObj();
 
-	void SetSolverActive(bool InbActive);
+	void SetSolverActive(bool bActive);
 	void SetAsCurrentWorldSolver();
 };
 
@@ -152,19 +128,14 @@ public:
 class UChaosSolverSettings : public UDeveloperSettings
 {
 public:
-	uint8                                        Pad_225C[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_224A[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSoftClassPath                        DefaultChaosSolverActorClass;                      // 0x40(0x20)(Edit, ZeroConstructor, Config, NoClear, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("ChaosSolverSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UChaosSolverSettings* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

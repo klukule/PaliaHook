@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class ImageWriteQueue.ImageWriteBlueprintLibrary
+// (None)
+
+class UClass* UImageWriteBlueprintLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ImageWriteBlueprintLibrary");
+
+	return Clss;
+}
+
+
+// ImageWriteBlueprintLibrary ImageWriteQueue.Default__ImageWriteBlueprintLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UImageWriteBlueprintLibrary* UImageWriteBlueprintLibrary::GetDefaultObj()
+{
+	static class UImageWriteBlueprintLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UImageWriteBlueprintLibrary*>(UImageWriteBlueprintLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function ImageWriteQueue.ImageWriteBlueprintLibrary.ExportToDisk
@@ -22,7 +47,7 @@ namespace SDK
 // class FString                      Filename                                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FImageWriteOptions          Options                                                          (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UImageWriteBlueprintLibrary::ExportToDisk(class UTexture* InTexture, const class FString& InFilename, struct FImageWriteOptions& InOptions)
+void UImageWriteBlueprintLibrary::ExportToDisk(class UTexture* Texture, const class FString& Filename, struct FImageWriteOptions& Options)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,22 +56,20 @@ void UImageWriteBlueprintLibrary::ExportToDisk(class UTexture* InTexture, const 
 
 	Params::UImageWriteBlueprintLibrary_ExportToDisk_Params Parms{};
 
-	Parms.Texture = InTexture;
-	Parms.Filename = InFilename;
-	Parms.Options = InOptions;
+	Parms.Texture = Texture;
+	Parms.Filename = Filename;
+	Parms.Options = Options;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

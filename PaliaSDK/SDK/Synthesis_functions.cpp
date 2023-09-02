@@ -2,17 +2,98 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class Synthesis.AudioImpulseResponse
+// (None)
+
+class UClass* UAudioImpulseResponse::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AudioImpulseResponse");
+
+	return Clss;
+}
+
+
+// AudioImpulseResponse Synthesis.Default__AudioImpulseResponse
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAudioImpulseResponse* UAudioImpulseResponse::GetDefaultObj()
+{
+	static class UAudioImpulseResponse* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAudioImpulseResponse*>(UAudioImpulseResponse::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Synthesis.ModularSynthPresetBank
+// (None)
+
+class UClass* UModularSynthPresetBank::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ModularSynthPresetBank");
+
+	return Clss;
+}
+
+
+// ModularSynthPresetBank Synthesis.Default__ModularSynthPresetBank
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UModularSynthPresetBank* UModularSynthPresetBank::GetDefaultObj()
+{
+	static class UModularSynthPresetBank* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UModularSynthPresetBank*>(UModularSynthPresetBank::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Synthesis.ModularSynthLibrary
+// (None)
+
+class UClass* UModularSynthLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ModularSynthLibrary");
+
+	return Clss;
+}
+
+
+// ModularSynthLibrary Synthesis.Default__ModularSynthLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UModularSynthLibrary* UModularSynthLibrary::GetDefaultObj()
+{
+	static class UModularSynthLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UModularSynthLibrary*>(UModularSynthLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function Synthesis.ModularSynthLibrary.AddModularSynthPresetToBankAsset
@@ -22,7 +103,7 @@ namespace SDK
 // struct FModularSynthPreset         Preset                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class FString                      PresetName                                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthLibrary::AddModularSynthPresetToBankAsset(class UModularSynthPresetBank* InInBank, struct FModularSynthPreset& InPreset, const class FString& InPresetName)
+void UModularSynthLibrary::AddModularSynthPresetToBankAsset(class UModularSynthPresetBank* InBank, struct FModularSynthPreset& Preset, const class FString& PresetName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,18 +112,46 @@ void UModularSynthLibrary::AddModularSynthPresetToBankAsset(class UModularSynthP
 
 	Params::UModularSynthLibrary_AddModularSynthPresetToBankAsset_Params Parms{};
 
-	Parms.InBank = InInBank;
-	Parms.Preset = InPreset;
-	Parms.PresetName = InPresetName;
+	Parms.InBank = InBank;
+	Parms.Preset = Preset;
+	Parms.PresetName = PresetName;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.ModularSynthComponent
+// (SceneComponent)
+
+class UClass* UModularSynthComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ModularSynthComponent");
+
+	return Clss;
+}
+
+
+// ModularSynthComponent Synthesis.Default__ModularSynthComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UModularSynthComponent* UModularSynthComponent::GetDefaultObj()
+{
+	static class UModularSynthComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UModularSynthComponent*>(UModularSynthComponent::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -51,7 +160,7 @@ void UModularSynthLibrary::AddModularSynthPresetToBankAsset(class UModularSynthP
 // Parameters:
 // struct FModularSynthPreset         SynthPreset                                                      (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetSynthPreset(struct FModularSynthPreset& InSynthPreset)
+void UModularSynthComponent::SetSynthPreset(struct FModularSynthPreset& SynthPreset)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,15 +169,15 @@ void UModularSynthComponent::SetSynthPreset(struct FModularSynthPreset& InSynthP
 
 	Params::UModularSynthComponent_SetSynthPreset_Params Parms{};
 
-	Parms.SynthPreset = InSynthPreset;
+	Parms.SynthPreset = SynthPreset;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -78,7 +187,7 @@ void UModularSynthComponent::SetSynthPreset(struct FModularSynthPreset& InSynthP
 // Parameters:
 // float                              SustainGain                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetSustainGain(float InSustainGain)
+void UModularSynthComponent::SetSustainGain(float SustainGain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -87,15 +196,15 @@ void UModularSynthComponent::SetSustainGain(float InSustainGain)
 
 	Params::UModularSynthComponent_SetSustainGain_Params Parms{};
 
-	Parms.SustainGain = InSustainGain;
+	Parms.SustainGain = SustainGain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -105,7 +214,7 @@ void UModularSynthComponent::SetSustainGain(float InSustainGain)
 // Parameters:
 // float                              DelayWetlevel                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetStereoDelayWetlevel(float InDelayWetlevel)
+void UModularSynthComponent::SetStereoDelayWetlevel(float DelayWetlevel)
 {
 	static class UFunction* Func = nullptr;
 
@@ -114,15 +223,15 @@ void UModularSynthComponent::SetStereoDelayWetlevel(float InDelayWetlevel)
 
 	Params::UModularSynthComponent_SetStereoDelayWetlevel_Params Parms{};
 
-	Parms.DelayWetlevel = InDelayWetlevel;
+	Parms.DelayWetlevel = DelayWetlevel;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -132,7 +241,7 @@ void UModularSynthComponent::SetStereoDelayWetlevel(float InDelayWetlevel)
 // Parameters:
 // float                              DelayTimeMsec                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetStereoDelayTime(float InDelayTimeMsec)
+void UModularSynthComponent::SetStereoDelayTime(float DelayTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -141,15 +250,15 @@ void UModularSynthComponent::SetStereoDelayTime(float InDelayTimeMsec)
 
 	Params::UModularSynthComponent_SetStereoDelayTime_Params Parms{};
 
-	Parms.DelayTimeMsec = InDelayTimeMsec;
+	Parms.DelayTimeMsec = DelayTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -159,7 +268,7 @@ void UModularSynthComponent::SetStereoDelayTime(float InDelayTimeMsec)
 // Parameters:
 // float                              DelayRatio                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetStereoDelayRatio(float InDelayRatio)
+void UModularSynthComponent::SetStereoDelayRatio(float DelayRatio)
 {
 	static class UFunction* Func = nullptr;
 
@@ -168,15 +277,15 @@ void UModularSynthComponent::SetStereoDelayRatio(float InDelayRatio)
 
 	Params::UModularSynthComponent_SetStereoDelayRatio_Params Parms{};
 
-	Parms.DelayRatio = InDelayRatio;
+	Parms.DelayRatio = DelayRatio;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -186,7 +295,7 @@ void UModularSynthComponent::SetStereoDelayRatio(float InDelayRatio)
 // Parameters:
 // enum class ESynthStereoDelayMode   StereoDelayMode                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetStereoDelayMode(enum class ESynthStereoDelayMode InStereoDelayMode)
+void UModularSynthComponent::SetStereoDelayMode(enum class ESynthStereoDelayMode StereoDelayMode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -195,15 +304,15 @@ void UModularSynthComponent::SetStereoDelayMode(enum class ESynthStereoDelayMode
 
 	Params::UModularSynthComponent_SetStereoDelayMode_Params Parms{};
 
-	Parms.StereoDelayMode = InStereoDelayMode;
+	Parms.StereoDelayMode = StereoDelayMode;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -213,7 +322,7 @@ void UModularSynthComponent::SetStereoDelayMode(enum class ESynthStereoDelayMode
 // Parameters:
 // bool                               StereoDelayEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetStereoDelayIsEnabled(bool InStereoDelayEnabled)
+void UModularSynthComponent::SetStereoDelayIsEnabled(bool StereoDelayEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -222,15 +331,15 @@ void UModularSynthComponent::SetStereoDelayIsEnabled(bool InStereoDelayEnabled)
 
 	Params::UModularSynthComponent_SetStereoDelayIsEnabled_Params Parms{};
 
-	Parms.StereoDelayEnabled = InStereoDelayEnabled;
+	Parms.StereoDelayEnabled = StereoDelayEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -240,7 +349,7 @@ void UModularSynthComponent::SetStereoDelayIsEnabled(bool InStereoDelayEnabled)
 // Parameters:
 // float                              DelayFeedback                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetStereoDelayFeedback(float InDelayFeedback)
+void UModularSynthComponent::SetStereoDelayFeedback(float DelayFeedback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -249,15 +358,15 @@ void UModularSynthComponent::SetStereoDelayFeedback(float InDelayFeedback)
 
 	Params::UModularSynthComponent_SetStereoDelayFeedback_Params Parms{};
 
-	Parms.DelayFeedback = InDelayFeedback;
+	Parms.DelayFeedback = DelayFeedback;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -267,7 +376,7 @@ void UModularSynthComponent::SetStereoDelayFeedback(float InDelayFeedback)
 // Parameters:
 // float                              Spread                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetSpread(float InSpread)
+void UModularSynthComponent::SetSpread(float Spread)
 {
 	static class UFunction* Func = nullptr;
 
@@ -276,15 +385,15 @@ void UModularSynthComponent::SetSpread(float InSpread)
 
 	Params::UModularSynthComponent_SetSpread_Params Parms{};
 
-	Parms.Spread = InSpread;
+	Parms.Spread = Spread;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -294,7 +403,7 @@ void UModularSynthComponent::SetSpread(float InSpread)
 // Parameters:
 // float                              ReleaseTimeMsec                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetReleaseTime(float InReleaseTimeMsec)
+void UModularSynthComponent::SetReleaseTime(float ReleaseTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -303,15 +412,15 @@ void UModularSynthComponent::SetReleaseTime(float InReleaseTimeMsec)
 
 	Params::UModularSynthComponent_SetReleaseTime_Params Parms{};
 
-	Parms.ReleaseTimeMsec = InReleaseTimeMsec;
+	Parms.ReleaseTimeMsec = ReleaseTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -321,7 +430,7 @@ void UModularSynthComponent::SetReleaseTime(float InReleaseTimeMsec)
 // Parameters:
 // float                              Portamento                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetPortamento(float InPortamento)
+void UModularSynthComponent::SetPortamento(float Portamento)
 {
 	static class UFunction* Func = nullptr;
 
@@ -330,15 +439,15 @@ void UModularSynthComponent::SetPortamento(float InPortamento)
 
 	Params::UModularSynthComponent_SetPortamento_Params Parms{};
 
-	Parms.Portamento = InPortamento;
+	Parms.Portamento = Portamento;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -348,7 +457,7 @@ void UModularSynthComponent::SetPortamento(float InPortamento)
 // Parameters:
 // float                              PitchBend                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetPitchBend(float InPitchBend)
+void UModularSynthComponent::SetPitchBend(float PitchBend)
 {
 	static class UFunction* Func = nullptr;
 
@@ -357,15 +466,15 @@ void UModularSynthComponent::SetPitchBend(float InPitchBend)
 
 	Params::UModularSynthComponent_SetPitchBend_Params Parms{};
 
-	Parms.PitchBend = InPitchBend;
+	Parms.PitchBend = PitchBend;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -375,7 +484,7 @@ void UModularSynthComponent::SetPitchBend(float InPitchBend)
 // Parameters:
 // float                              Pan                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetPan(float InPan)
+void UModularSynthComponent::SetPan(float Pan)
 {
 	static class UFunction* Func = nullptr;
 
@@ -384,15 +493,15 @@ void UModularSynthComponent::SetPan(float InPan)
 
 	Params::UModularSynthComponent_SetPan_Params Parms{};
 
-	Parms.Pan = InPan;
+	Parms.Pan = Pan;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -403,7 +512,7 @@ void UModularSynthComponent::SetPan(float InPan)
 // int32                              OscIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESynth1OscType          OscType                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetOscType(int32 InOscIndex, enum class ESynth1OscType InOscType)
+void UModularSynthComponent::SetOscType(int32 OscIndex, enum class ESynth1OscType OscType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -412,16 +521,16 @@ void UModularSynthComponent::SetOscType(int32 InOscIndex, enum class ESynth1OscT
 
 	Params::UModularSynthComponent_SetOscType_Params Parms{};
 
-	Parms.OscIndex = InOscIndex;
-	Parms.OscType = InOscType;
+	Parms.OscIndex = OscIndex;
+	Parms.OscType = OscType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -431,7 +540,7 @@ void UModularSynthComponent::SetOscType(int32 InOscIndex, enum class ESynth1OscT
 // Parameters:
 // bool                               bIsSynced                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetOscSync(bool InbIsSynced)
+void UModularSynthComponent::SetOscSync(bool bIsSynced)
 {
 	static class UFunction* Func = nullptr;
 
@@ -440,15 +549,15 @@ void UModularSynthComponent::SetOscSync(bool InbIsSynced)
 
 	Params::UModularSynthComponent_SetOscSync_Params Parms{};
 
-	Parms.bIsSynced = InbIsSynced;
+	Parms.bIsSynced = bIsSynced;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -459,7 +568,7 @@ void UModularSynthComponent::SetOscSync(bool InbIsSynced)
 // int32                              OscIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Semitones                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetOscSemitones(int32 InOscIndex, float InSemitones)
+void UModularSynthComponent::SetOscSemitones(int32 OscIndex, float Semitones)
 {
 	static class UFunction* Func = nullptr;
 
@@ -468,16 +577,16 @@ void UModularSynthComponent::SetOscSemitones(int32 InOscIndex, float InSemitones
 
 	Params::UModularSynthComponent_SetOscSemitones_Params Parms{};
 
-	Parms.OscIndex = InOscIndex;
-	Parms.Semitones = InSemitones;
+	Parms.OscIndex = OscIndex;
+	Parms.Semitones = Semitones;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -488,7 +597,7 @@ void UModularSynthComponent::SetOscSemitones(int32 InOscIndex, float InSemitones
 // int32                              OscIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Pulsewidth                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetOscPulsewidth(int32 InOscIndex, float InPulsewidth)
+void UModularSynthComponent::SetOscPulsewidth(int32 OscIndex, float Pulsewidth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -497,16 +606,16 @@ void UModularSynthComponent::SetOscPulsewidth(int32 InOscIndex, float InPulsewid
 
 	Params::UModularSynthComponent_SetOscPulsewidth_Params Parms{};
 
-	Parms.OscIndex = InOscIndex;
-	Parms.Pulsewidth = InPulsewidth;
+	Parms.OscIndex = OscIndex;
+	Parms.Pulsewidth = Pulsewidth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -517,7 +626,7 @@ void UModularSynthComponent::SetOscPulsewidth(int32 InOscIndex, float InPulsewid
 // int32                              OscIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Octave                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetOscOctave(int32 InOscIndex, float InOctave)
+void UModularSynthComponent::SetOscOctave(int32 OscIndex, float Octave)
 {
 	static class UFunction* Func = nullptr;
 
@@ -526,16 +635,16 @@ void UModularSynthComponent::SetOscOctave(int32 InOscIndex, float InOctave)
 
 	Params::UModularSynthComponent_SetOscOctave_Params Parms{};
 
-	Parms.OscIndex = InOscIndex;
-	Parms.Octave = InOctave;
+	Parms.OscIndex = OscIndex;
+	Parms.Octave = Octave;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -546,7 +655,7 @@ void UModularSynthComponent::SetOscOctave(int32 InOscIndex, float InOctave)
 // int32                              OscIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              OscGainMod                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetOscGainMod(int32 InOscIndex, float InOscGainMod)
+void UModularSynthComponent::SetOscGainMod(int32 OscIndex, float OscGainMod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -555,16 +664,16 @@ void UModularSynthComponent::SetOscGainMod(int32 InOscIndex, float InOscGainMod)
 
 	Params::UModularSynthComponent_SetOscGainMod_Params Parms{};
 
-	Parms.OscIndex = InOscIndex;
-	Parms.OscGainMod = InOscGainMod;
+	Parms.OscIndex = OscIndex;
+	Parms.OscGainMod = OscGainMod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -575,7 +684,7 @@ void UModularSynthComponent::SetOscGainMod(int32 InOscIndex, float InOscGainMod)
 // int32                              OscIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              OscGain                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetOscGain(int32 InOscIndex, float InOscGain)
+void UModularSynthComponent::SetOscGain(int32 OscIndex, float OscGain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -584,16 +693,16 @@ void UModularSynthComponent::SetOscGain(int32 InOscIndex, float InOscGain)
 
 	Params::UModularSynthComponent_SetOscGain_Params Parms{};
 
-	Parms.OscIndex = InOscIndex;
-	Parms.OscGain = InOscGain;
+	Parms.OscIndex = OscIndex;
+	Parms.OscGain = OscGain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -604,7 +713,7 @@ void UModularSynthComponent::SetOscGain(int32 InOscIndex, float InOscGain)
 // int32                              OscIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              OscFreqMod                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetOscFrequencyMod(int32 InOscIndex, float InOscFreqMod)
+void UModularSynthComponent::SetOscFrequencyMod(int32 OscIndex, float OscFreqMod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -613,16 +722,16 @@ void UModularSynthComponent::SetOscFrequencyMod(int32 InOscIndex, float InOscFre
 
 	Params::UModularSynthComponent_SetOscFrequencyMod_Params Parms{};
 
-	Parms.OscIndex = InOscIndex;
-	Parms.OscFreqMod = InOscFreqMod;
+	Parms.OscIndex = OscIndex;
+	Parms.OscFreqMod = OscFreqMod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -633,7 +742,7 @@ void UModularSynthComponent::SetOscFrequencyMod(int32 InOscIndex, float InOscFre
 // int32                              OscIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Cents                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetOscCents(int32 InOscIndex, float InCents)
+void UModularSynthComponent::SetOscCents(int32 OscIndex, float Cents)
 {
 	static class UFunction* Func = nullptr;
 
@@ -642,16 +751,16 @@ void UModularSynthComponent::SetOscCents(int32 InOscIndex, float InCents)
 
 	Params::UModularSynthComponent_SetOscCents_Params Parms{};
 
-	Parms.OscIndex = InOscIndex;
-	Parms.Cents = InCents;
+	Parms.OscIndex = OscIndex;
+	Parms.Cents = Cents;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -661,7 +770,7 @@ void UModularSynthComponent::SetOscCents(int32 InOscIndex, float InCents)
 // Parameters:
 // float                              SustainGain                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetModEnvSustainGain(float InSustainGain)
+void UModularSynthComponent::SetModEnvSustainGain(float SustainGain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -670,15 +779,15 @@ void UModularSynthComponent::SetModEnvSustainGain(float InSustainGain)
 
 	Params::UModularSynthComponent_SetModEnvSustainGain_Params Parms{};
 
-	Parms.SustainGain = InSustainGain;
+	Parms.SustainGain = SustainGain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -688,7 +797,7 @@ void UModularSynthComponent::SetModEnvSustainGain(float InSustainGain)
 // Parameters:
 // float                              Release                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetModEnvReleaseTime(float InRelease)
+void UModularSynthComponent::SetModEnvReleaseTime(float Release)
 {
 	static class UFunction* Func = nullptr;
 
@@ -697,15 +806,15 @@ void UModularSynthComponent::SetModEnvReleaseTime(float InRelease)
 
 	Params::UModularSynthComponent_SetModEnvReleaseTime_Params Parms{};
 
-	Parms.Release = InRelease;
+	Parms.Release = Release;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -715,7 +824,7 @@ void UModularSynthComponent::SetModEnvReleaseTime(float InRelease)
 // Parameters:
 // enum class ESynthModEnvPatch       InPatchType                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetModEnvPatch(enum class ESynthModEnvPatch InInPatchType)
+void UModularSynthComponent::SetModEnvPatch(enum class ESynthModEnvPatch InPatchType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -724,15 +833,15 @@ void UModularSynthComponent::SetModEnvPatch(enum class ESynthModEnvPatch InInPat
 
 	Params::UModularSynthComponent_SetModEnvPatch_Params Parms{};
 
-	Parms.InPatchType = InInPatchType;
+	Parms.InPatchType = InPatchType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -742,7 +851,7 @@ void UModularSynthComponent::SetModEnvPatch(enum class ESynthModEnvPatch InInPat
 // Parameters:
 // bool                               bInvert                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetModEnvInvert(bool InbInvert)
+void UModularSynthComponent::SetModEnvInvert(bool bInvert)
 {
 	static class UFunction* Func = nullptr;
 
@@ -751,15 +860,15 @@ void UModularSynthComponent::SetModEnvInvert(bool InbInvert)
 
 	Params::UModularSynthComponent_SetModEnvInvert_Params Parms{};
 
-	Parms.bInvert = InbInvert;
+	Parms.bInvert = bInvert;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -769,7 +878,7 @@ void UModularSynthComponent::SetModEnvInvert(bool InbInvert)
 // Parameters:
 // float                              Depth                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetModEnvDepth(float InDepth)
+void UModularSynthComponent::SetModEnvDepth(float Depth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -778,15 +887,15 @@ void UModularSynthComponent::SetModEnvDepth(float InDepth)
 
 	Params::UModularSynthComponent_SetModEnvDepth_Params Parms{};
 
-	Parms.Depth = InDepth;
+	Parms.Depth = Depth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -796,7 +905,7 @@ void UModularSynthComponent::SetModEnvDepth(float InDepth)
 // Parameters:
 // float                              DecayTimeMsec                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetModEnvDecayTime(float InDecayTimeMsec)
+void UModularSynthComponent::SetModEnvDecayTime(float DecayTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -805,15 +914,15 @@ void UModularSynthComponent::SetModEnvDecayTime(float InDecayTimeMsec)
 
 	Params::UModularSynthComponent_SetModEnvDecayTime_Params Parms{};
 
-	Parms.DecayTimeMsec = InDecayTimeMsec;
+	Parms.DecayTimeMsec = DecayTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -823,7 +932,7 @@ void UModularSynthComponent::SetModEnvDecayTime(float InDecayTimeMsec)
 // Parameters:
 // enum class ESynthModEnvBiasPatch   InPatchType                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetModEnvBiasPatch(enum class ESynthModEnvBiasPatch InInPatchType)
+void UModularSynthComponent::SetModEnvBiasPatch(enum class ESynthModEnvBiasPatch InPatchType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -832,15 +941,15 @@ void UModularSynthComponent::SetModEnvBiasPatch(enum class ESynthModEnvBiasPatch
 
 	Params::UModularSynthComponent_SetModEnvBiasPatch_Params Parms{};
 
-	Parms.InPatchType = InInPatchType;
+	Parms.InPatchType = InPatchType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -850,7 +959,7 @@ void UModularSynthComponent::SetModEnvBiasPatch(enum class ESynthModEnvBiasPatch
 // Parameters:
 // bool                               bInvert                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetModEnvBiasInvert(bool InbInvert)
+void UModularSynthComponent::SetModEnvBiasInvert(bool bInvert)
 {
 	static class UFunction* Func = nullptr;
 
@@ -859,15 +968,15 @@ void UModularSynthComponent::SetModEnvBiasInvert(bool InbInvert)
 
 	Params::UModularSynthComponent_SetModEnvBiasInvert_Params Parms{};
 
-	Parms.bInvert = InbInvert;
+	Parms.bInvert = bInvert;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -877,7 +986,7 @@ void UModularSynthComponent::SetModEnvBiasInvert(bool InbInvert)
 // Parameters:
 // float                              AttackTimeMsec                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetModEnvAttackTime(float InAttackTimeMsec)
+void UModularSynthComponent::SetModEnvAttackTime(float AttackTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -886,15 +995,15 @@ void UModularSynthComponent::SetModEnvAttackTime(float InAttackTimeMsec)
 
 	Params::UModularSynthComponent_SetModEnvAttackTime_Params Parms{};
 
-	Parms.AttackTimeMsec = InAttackTimeMsec;
+	Parms.AttackTimeMsec = AttackTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -905,7 +1014,7 @@ void UModularSynthComponent::SetModEnvAttackTime(float InAttackTimeMsec)
 // int32                              LFOIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESynthLFOType           LFOType                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetLFOType(int32 InLFOIndex, enum class ESynthLFOType InLFOType)
+void UModularSynthComponent::SetLFOType(int32 LFOIndex, enum class ESynthLFOType LFOType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -914,16 +1023,16 @@ void UModularSynthComponent::SetLFOType(int32 InLFOIndex, enum class ESynthLFOTy
 
 	Params::UModularSynthComponent_SetLFOType_Params Parms{};
 
-	Parms.LFOIndex = InLFOIndex;
-	Parms.LFOType = InLFOType;
+	Parms.LFOIndex = LFOIndex;
+	Parms.LFOType = LFOType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -934,7 +1043,7 @@ void UModularSynthComponent::SetLFOType(int32 InLFOIndex, enum class ESynthLFOTy
 // int32                              LFOIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESynthLFOPatchType      LFOPatchType                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetLFOPatch(int32 InLFOIndex, enum class ESynthLFOPatchType InLFOPatchType)
+void UModularSynthComponent::SetLFOPatch(int32 LFOIndex, enum class ESynthLFOPatchType LFOPatchType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -943,16 +1052,16 @@ void UModularSynthComponent::SetLFOPatch(int32 InLFOIndex, enum class ESynthLFOP
 
 	Params::UModularSynthComponent_SetLFOPatch_Params Parms{};
 
-	Parms.LFOIndex = InLFOIndex;
-	Parms.LFOPatchType = InLFOPatchType;
+	Parms.LFOIndex = LFOIndex;
+	Parms.LFOPatchType = LFOPatchType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -963,7 +1072,7 @@ void UModularSynthComponent::SetLFOPatch(int32 InLFOIndex, enum class ESynthLFOP
 // int32                              LFOIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class ESynthLFOMode           LFOMode                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetLFOMode(int32 InLFOIndex, enum class ESynthLFOMode InLFOMode)
+void UModularSynthComponent::SetLFOMode(int32 LFOIndex, enum class ESynthLFOMode LFOMode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -972,16 +1081,16 @@ void UModularSynthComponent::SetLFOMode(int32 InLFOIndex, enum class ESynthLFOMo
 
 	Params::UModularSynthComponent_SetLFOMode_Params Parms{};
 
-	Parms.LFOIndex = InLFOIndex;
-	Parms.LFOMode = InLFOMode;
+	Parms.LFOIndex = LFOIndex;
+	Parms.LFOMode = LFOMode;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -992,7 +1101,7 @@ void UModularSynthComponent::SetLFOMode(int32 InLFOIndex, enum class ESynthLFOMo
 // int32                              LFOIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              GainMod                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetLFOGainMod(int32 InLFOIndex, float InGainMod)
+void UModularSynthComponent::SetLFOGainMod(int32 LFOIndex, float GainMod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1001,16 +1110,16 @@ void UModularSynthComponent::SetLFOGainMod(int32 InLFOIndex, float InGainMod)
 
 	Params::UModularSynthComponent_SetLFOGainMod_Params Parms{};
 
-	Parms.LFOIndex = InLFOIndex;
-	Parms.GainMod = InGainMod;
+	Parms.LFOIndex = LFOIndex;
+	Parms.GainMod = GainMod;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1021,7 +1130,7 @@ void UModularSynthComponent::SetLFOGainMod(int32 InLFOIndex, float InGainMod)
 // int32                              LFOIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Gain                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetLFOGain(int32 InLFOIndex, float InGain)
+void UModularSynthComponent::SetLFOGain(int32 LFOIndex, float Gain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1030,16 +1139,16 @@ void UModularSynthComponent::SetLFOGain(int32 InLFOIndex, float InGain)
 
 	Params::UModularSynthComponent_SetLFOGain_Params Parms{};
 
-	Parms.LFOIndex = InLFOIndex;
-	Parms.Gain = InGain;
+	Parms.LFOIndex = LFOIndex;
+	Parms.Gain = Gain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1050,7 +1159,7 @@ void UModularSynthComponent::SetLFOGain(int32 InLFOIndex, float InGain)
 // int32                              LFOIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              FrequencyModHz                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetLFOFrequencyMod(int32 InLFOIndex, float InFrequencyModHz)
+void UModularSynthComponent::SetLFOFrequencyMod(int32 LFOIndex, float FrequencyModHz)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1059,16 +1168,16 @@ void UModularSynthComponent::SetLFOFrequencyMod(int32 InLFOIndex, float InFreque
 
 	Params::UModularSynthComponent_SetLFOFrequencyMod_Params Parms{};
 
-	Parms.LFOIndex = InLFOIndex;
-	Parms.FrequencyModHz = InFrequencyModHz;
+	Parms.LFOIndex = LFOIndex;
+	Parms.FrequencyModHz = FrequencyModHz;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1079,7 +1188,7 @@ void UModularSynthComponent::SetLFOFrequencyMod(int32 InLFOIndex, float InFreque
 // int32                              LFOIndex                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              FrequencyHz                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetLFOFrequency(int32 InLFOIndex, float InFrequencyHz)
+void UModularSynthComponent::SetLFOFrequency(int32 LFOIndex, float FrequencyHz)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1088,16 +1197,16 @@ void UModularSynthComponent::SetLFOFrequency(int32 InLFOIndex, float InFrequency
 
 	Params::UModularSynthComponent_SetLFOFrequency_Params Parms{};
 
-	Parms.LFOIndex = InLFOIndex;
-	Parms.FrequencyHz = InFrequencyHz;
+	Parms.LFOIndex = LFOIndex;
+	Parms.FrequencyHz = FrequencyHz;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1107,7 +1216,7 @@ void UModularSynthComponent::SetLFOFrequency(int32 InLFOIndex, float InFrequency
 // Parameters:
 // float                              GainDb                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetGainDb(float InGainDb)
+void UModularSynthComponent::SetGainDb(float GainDb)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1116,15 +1225,15 @@ void UModularSynthComponent::SetGainDb(float InGainDb)
 
 	Params::UModularSynthComponent_SetGainDb_Params Parms{};
 
-	Parms.GainDb = InGainDb;
+	Parms.GainDb = GainDb;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1134,7 +1243,7 @@ void UModularSynthComponent::SetGainDb(float InGainDb)
 // Parameters:
 // enum class ESynthFilterType        FilterType                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetFilterType(enum class ESynthFilterType InFilterType)
+void UModularSynthComponent::SetFilterType(enum class ESynthFilterType FilterType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1143,15 +1252,15 @@ void UModularSynthComponent::SetFilterType(enum class ESynthFilterType InFilterT
 
 	Params::UModularSynthComponent_SetFilterType_Params Parms{};
 
-	Parms.FilterType = InFilterType;
+	Parms.FilterType = FilterType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1161,7 +1270,7 @@ void UModularSynthComponent::SetFilterType(enum class ESynthFilterType InFilterT
 // Parameters:
 // float                              FilterQ                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetFilterQMod(float InFilterQ)
+void UModularSynthComponent::SetFilterQMod(float FilterQ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1170,15 +1279,15 @@ void UModularSynthComponent::SetFilterQMod(float InFilterQ)
 
 	Params::UModularSynthComponent_SetFilterQMod_Params Parms{};
 
-	Parms.FilterQ = InFilterQ;
+	Parms.FilterQ = FilterQ;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1188,7 +1297,7 @@ void UModularSynthComponent::SetFilterQMod(float InFilterQ)
 // Parameters:
 // float                              FilterQ                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetFilterQ(float InFilterQ)
+void UModularSynthComponent::SetFilterQ(float FilterQ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1197,15 +1306,15 @@ void UModularSynthComponent::SetFilterQ(float InFilterQ)
 
 	Params::UModularSynthComponent_SetFilterQ_Params Parms{};
 
-	Parms.FilterQ = InFilterQ;
+	Parms.FilterQ = FilterQ;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1215,7 +1324,7 @@ void UModularSynthComponent::SetFilterQ(float InFilterQ)
 // Parameters:
 // float                              FilterFrequencyHz                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetFilterFrequencyMod(float InFilterFrequencyHz)
+void UModularSynthComponent::SetFilterFrequencyMod(float FilterFrequencyHz)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1224,15 +1333,15 @@ void UModularSynthComponent::SetFilterFrequencyMod(float InFilterFrequencyHz)
 
 	Params::UModularSynthComponent_SetFilterFrequencyMod_Params Parms{};
 
-	Parms.FilterFrequencyHz = InFilterFrequencyHz;
+	Parms.FilterFrequencyHz = FilterFrequencyHz;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1242,7 +1351,7 @@ void UModularSynthComponent::SetFilterFrequencyMod(float InFilterFrequencyHz)
 // Parameters:
 // float                              FilterFrequencyHz                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetFilterFrequency(float InFilterFrequencyHz)
+void UModularSynthComponent::SetFilterFrequency(float FilterFrequencyHz)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1251,15 +1360,15 @@ void UModularSynthComponent::SetFilterFrequency(float InFilterFrequencyHz)
 
 	Params::UModularSynthComponent_SetFilterFrequency_Params Parms{};
 
-	Parms.FilterFrequencyHz = InFilterFrequencyHz;
+	Parms.FilterFrequencyHz = FilterFrequencyHz;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1269,7 +1378,7 @@ void UModularSynthComponent::SetFilterFrequency(float InFilterFrequencyHz)
 // Parameters:
 // enum class ESynthFilterAlgorithm   FilterAlgorithm                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetFilterAlgorithm(enum class ESynthFilterAlgorithm InFilterAlgorithm)
+void UModularSynthComponent::SetFilterAlgorithm(enum class ESynthFilterAlgorithm FilterAlgorithm)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1278,15 +1387,15 @@ void UModularSynthComponent::SetFilterAlgorithm(enum class ESynthFilterAlgorithm
 
 	Params::UModularSynthComponent_SetFilterAlgorithm_Params Parms{};
 
-	Parms.FilterAlgorithm = InFilterAlgorithm;
+	Parms.FilterAlgorithm = FilterAlgorithm;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1296,7 +1405,7 @@ void UModularSynthComponent::SetFilterAlgorithm(enum class ESynthFilterAlgorithm
 // Parameters:
 // bool                               EnableUnison                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetEnableUnison(bool InEnableUnison)
+void UModularSynthComponent::SetEnableUnison(bool EnableUnison)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1305,15 +1414,15 @@ void UModularSynthComponent::SetEnableUnison(bool InEnableUnison)
 
 	Params::UModularSynthComponent_SetEnableUnison_Params Parms{};
 
-	Parms.EnableUnison = InEnableUnison;
+	Parms.EnableUnison = EnableUnison;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1323,7 +1432,7 @@ void UModularSynthComponent::SetEnableUnison(bool InEnableUnison)
 // Parameters:
 // bool                               RetriggerEnabled                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetEnableRetrigger(bool InRetriggerEnabled)
+void UModularSynthComponent::SetEnableRetrigger(bool RetriggerEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1332,15 +1441,15 @@ void UModularSynthComponent::SetEnableRetrigger(bool InRetriggerEnabled)
 
 	Params::UModularSynthComponent_SetEnableRetrigger_Params Parms{};
 
-	Parms.RetriggerEnabled = InRetriggerEnabled;
+	Parms.RetriggerEnabled = RetriggerEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1350,7 +1459,7 @@ void UModularSynthComponent::SetEnableRetrigger(bool InRetriggerEnabled)
 // Parameters:
 // bool                               bEnablePolyphony                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetEnablePolyphony(bool InbEnablePolyphony)
+void UModularSynthComponent::SetEnablePolyphony(bool bEnablePolyphony)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1359,15 +1468,15 @@ void UModularSynthComponent::SetEnablePolyphony(bool InbEnablePolyphony)
 
 	Params::UModularSynthComponent_SetEnablePolyphony_Params Parms{};
 
-	Parms.bEnablePolyphony = InbEnablePolyphony;
+	Parms.bEnablePolyphony = bEnablePolyphony;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1379,7 +1488,7 @@ void UModularSynthComponent::SetEnablePolyphony(bool InbEnablePolyphony)
 // bool                               bIsEnabled                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UModularSynthComponent::SetEnablePatch(const struct FPatchId& InPatchId, bool InbIsEnabled)
+bool UModularSynthComponent::SetEnablePatch(const struct FPatchId& PatchId, bool bIsEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1388,16 +1497,16 @@ bool UModularSynthComponent::SetEnablePatch(const struct FPatchId& InPatchId, bo
 
 	Params::UModularSynthComponent_SetEnablePatch_Params Parms{};
 
-	Parms.PatchId = InPatchId;
-	Parms.bIsEnabled = InbIsEnabled;
+	Parms.PatchId = PatchId;
+	Parms.bIsEnabled = bIsEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -1409,7 +1518,7 @@ bool UModularSynthComponent::SetEnablePatch(const struct FPatchId& InPatchId, bo
 // Parameters:
 // bool                               LegatoEnabled                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetEnableLegato(bool InLegatoEnabled)
+void UModularSynthComponent::SetEnableLegato(bool LegatoEnabled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1418,15 +1527,15 @@ void UModularSynthComponent::SetEnableLegato(bool InLegatoEnabled)
 
 	Params::UModularSynthComponent_SetEnableLegato_Params Parms{};
 
-	Parms.LegatoEnabled = InLegatoEnabled;
+	Parms.LegatoEnabled = LegatoEnabled;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1436,7 +1545,7 @@ void UModularSynthComponent::SetEnableLegato(bool InLegatoEnabled)
 // Parameters:
 // float                              DecayTimeMsec                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetDecayTime(float InDecayTimeMsec)
+void UModularSynthComponent::SetDecayTime(float DecayTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1445,15 +1554,15 @@ void UModularSynthComponent::SetDecayTime(float InDecayTimeMsec)
 
 	Params::UModularSynthComponent_SetDecayTime_Params Parms{};
 
-	Parms.DecayTimeMsec = InDecayTimeMsec;
+	Parms.DecayTimeMsec = DecayTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1463,7 +1572,7 @@ void UModularSynthComponent::SetDecayTime(float InDecayTimeMsec)
 // Parameters:
 // float                              Frequency                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetChorusFrequency(float InFrequency)
+void UModularSynthComponent::SetChorusFrequency(float Frequency)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1472,15 +1581,15 @@ void UModularSynthComponent::SetChorusFrequency(float InFrequency)
 
 	Params::UModularSynthComponent_SetChorusFrequency_Params Parms{};
 
-	Parms.Frequency = InFrequency;
+	Parms.Frequency = Frequency;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1490,7 +1599,7 @@ void UModularSynthComponent::SetChorusFrequency(float InFrequency)
 // Parameters:
 // float                              Feedback                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetChorusFeedback(float InFeedback)
+void UModularSynthComponent::SetChorusFeedback(float Feedback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1499,15 +1608,15 @@ void UModularSynthComponent::SetChorusFeedback(float InFeedback)
 
 	Params::UModularSynthComponent_SetChorusFeedback_Params Parms{};
 
-	Parms.Feedback = InFeedback;
+	Parms.Feedback = Feedback;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1517,7 +1626,7 @@ void UModularSynthComponent::SetChorusFeedback(float InFeedback)
 // Parameters:
 // bool                               EnableChorus                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetChorusEnabled(bool InEnableChorus)
+void UModularSynthComponent::SetChorusEnabled(bool EnableChorus)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1526,15 +1635,15 @@ void UModularSynthComponent::SetChorusEnabled(bool InEnableChorus)
 
 	Params::UModularSynthComponent_SetChorusEnabled_Params Parms{};
 
-	Parms.EnableChorus = InEnableChorus;
+	Parms.EnableChorus = EnableChorus;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1544,7 +1653,7 @@ void UModularSynthComponent::SetChorusEnabled(bool InEnableChorus)
 // Parameters:
 // float                              Depth                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetChorusDepth(float InDepth)
+void UModularSynthComponent::SetChorusDepth(float Depth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1553,15 +1662,15 @@ void UModularSynthComponent::SetChorusDepth(float InDepth)
 
 	Params::UModularSynthComponent_SetChorusDepth_Params Parms{};
 
-	Parms.Depth = InDepth;
+	Parms.Depth = Depth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1571,7 +1680,7 @@ void UModularSynthComponent::SetChorusDepth(float InDepth)
 // Parameters:
 // float                              AttackTimeMsec                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::SetAttackTime(float InAttackTimeMsec)
+void UModularSynthComponent::SetAttackTime(float AttackTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1580,15 +1689,15 @@ void UModularSynthComponent::SetAttackTime(float InAttackTimeMsec)
 
 	Params::UModularSynthComponent_SetAttackTime_Params Parms{};
 
-	Parms.AttackTimeMsec = InAttackTimeMsec;
+	Parms.AttackTimeMsec = AttackTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1600,7 +1709,7 @@ void UModularSynthComponent::SetAttackTime(float InAttackTimeMsec)
 // int32                              Velocity                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Duration                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::NoteOn(float InNote, int32 InVelocity, float InDuration)
+void UModularSynthComponent::NoteOn(float Note, int32 Velocity, float Duration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1609,17 +1718,17 @@ void UModularSynthComponent::NoteOn(float InNote, int32 InVelocity, float InDura
 
 	Params::UModularSynthComponent_NoteOn_Params Parms{};
 
-	Parms.Note = InNote;
-	Parms.Velocity = InVelocity;
-	Parms.Duration = InDuration;
+	Parms.Note = Note;
+	Parms.Velocity = Velocity;
+	Parms.Duration = Duration;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1631,7 +1740,7 @@ void UModularSynthComponent::NoteOn(float InNote, int32 InVelocity, float InDura
 // bool                               bAllNotesOff                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bKillAllNotes                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UModularSynthComponent::NoteOff(float InNote, bool InbAllNotesOff, bool InbKillAllNotes)
+void UModularSynthComponent::NoteOff(float Note, bool bAllNotesOff, bool bKillAllNotes)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1640,17 +1749,17 @@ void UModularSynthComponent::NoteOff(float InNote, bool InbAllNotesOff, bool Inb
 
 	Params::UModularSynthComponent_NoteOff_Params Parms{};
 
-	Parms.Note = InNote;
-	Parms.bAllNotesOff = InbAllNotesOff;
-	Parms.bKillAllNotes = InbKillAllNotes;
+	Parms.Note = Note;
+	Parms.bAllNotesOff = bAllNotesOff;
+	Parms.bKillAllNotes = bKillAllNotes;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1663,7 +1772,7 @@ void UModularSynthComponent::NoteOff(float InNote, bool InbAllNotesOff, bool Inb
 // bool                               bEnableByDefault                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPatchId                    ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FPatchId UModularSynthComponent::CreatePatch(enum class ESynth1PatchSource InPatchSource, TArray<struct FSynth1PatchCable>& InPatchCables, bool InbEnableByDefault)
+struct FPatchId UModularSynthComponent::CreatePatch(enum class ESynth1PatchSource PatchSource, TArray<struct FSynth1PatchCable>& PatchCables, bool bEnableByDefault)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1672,20 +1781,48 @@ struct FPatchId UModularSynthComponent::CreatePatch(enum class ESynth1PatchSourc
 
 	Params::UModularSynthComponent_CreatePatch_Params Parms{};
 
-	Parms.PatchSource = InPatchSource;
-	Parms.PatchCables = InPatchCables;
-	Parms.bEnableByDefault = InbEnableByDefault;
+	Parms.PatchSource = PatchSource;
+	Parms.PatchCables = PatchCables;
+	Parms.bEnableByDefault = bEnableByDefault;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class Synthesis.SourceEffectBitCrusherPreset
+// (None)
+
+class UClass* USourceEffectBitCrusherPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectBitCrusherPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectBitCrusherPreset Synthesis.Default__SourceEffectBitCrusherPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectBitCrusherPreset* USourceEffectBitCrusherPreset::GetDefaultObj()
+{
+	static class USourceEffectBitCrusherPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectBitCrusherPreset*>(USourceEffectBitCrusherPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1694,7 +1831,7 @@ struct FPatchId UModularSynthComponent::CreatePatch(enum class ESynth1PatchSourc
 // Parameters:
 // struct FSourceEffectBitCrusherBaseSettingsSettings                                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectBitCrusherPreset::SetSettings(struct FSourceEffectBitCrusherBaseSettings& InSettings)
+void USourceEffectBitCrusherPreset::SetSettings(struct FSourceEffectBitCrusherBaseSettings& Settings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1703,15 +1840,15 @@ void USourceEffectBitCrusherPreset::SetSettings(struct FSourceEffectBitCrusherBa
 
 	Params::USourceEffectBitCrusherPreset_SetSettings_Params Parms{};
 
-	Parms.Settings = InSettings;
+	Parms.Settings = Settings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1721,7 +1858,7 @@ void USourceEffectBitCrusherPreset::SetSettings(struct FSourceEffectBitCrusherBa
 // Parameters:
 // TSet<class USoundModulatorBase*>   InModulators                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectBitCrusherPreset::SetSampleRateModulators(TSet<class USoundModulatorBase*>& InInModulators)
+void USourceEffectBitCrusherPreset::SetSampleRateModulators(TSet<class USoundModulatorBase*>& InModulators)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1730,15 +1867,15 @@ void USourceEffectBitCrusherPreset::SetSampleRateModulators(TSet<class USoundMod
 
 	Params::USourceEffectBitCrusherPreset_SetSampleRateModulators_Params Parms{};
 
-	Parms.InModulators = InInModulators;
+	Parms.InModulators = InModulators;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1748,7 +1885,7 @@ void USourceEffectBitCrusherPreset::SetSampleRateModulators(TSet<class USoundMod
 // Parameters:
 // class USoundModulatorBase*         Modulator                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectBitCrusherPreset::SetSampleRateModulator(class USoundModulatorBase* InModulator)
+void USourceEffectBitCrusherPreset::SetSampleRateModulator(class USoundModulatorBase* Modulator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1757,15 +1894,15 @@ void USourceEffectBitCrusherPreset::SetSampleRateModulator(class USoundModulator
 
 	Params::USourceEffectBitCrusherPreset_SetSampleRateModulator_Params Parms{};
 
-	Parms.Modulator = InModulator;
+	Parms.Modulator = Modulator;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1775,7 +1912,7 @@ void USourceEffectBitCrusherPreset::SetSampleRateModulator(class USoundModulator
 // Parameters:
 // float                              SampleRate                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectBitCrusherPreset::SetSampleRate(float InSampleRate)
+void USourceEffectBitCrusherPreset::SetSampleRate(float SampleRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1784,15 +1921,15 @@ void USourceEffectBitCrusherPreset::SetSampleRate(float InSampleRate)
 
 	Params::USourceEffectBitCrusherPreset_SetSampleRate_Params Parms{};
 
-	Parms.SampleRate = InSampleRate;
+	Parms.SampleRate = SampleRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1802,7 +1939,7 @@ void USourceEffectBitCrusherPreset::SetSampleRate(float InSampleRate)
 // Parameters:
 // struct FSourceEffectBitCrusherSettingsModulationSettings                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectBitCrusherPreset::SetModulationSettings(struct FSourceEffectBitCrusherSettings& InModulationSettings)
+void USourceEffectBitCrusherPreset::SetModulationSettings(struct FSourceEffectBitCrusherSettings& ModulationSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1811,15 +1948,15 @@ void USourceEffectBitCrusherPreset::SetModulationSettings(struct FSourceEffectBi
 
 	Params::USourceEffectBitCrusherPreset_SetModulationSettings_Params Parms{};
 
-	Parms.ModulationSettings = InModulationSettings;
+	Parms.ModulationSettings = ModulationSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1829,7 +1966,7 @@ void USourceEffectBitCrusherPreset::SetModulationSettings(struct FSourceEffectBi
 // Parameters:
 // float                              Bits                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectBitCrusherPreset::SetBits(float InBits)
+void USourceEffectBitCrusherPreset::SetBits(float Bits)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1838,15 +1975,15 @@ void USourceEffectBitCrusherPreset::SetBits(float InBits)
 
 	Params::USourceEffectBitCrusherPreset_SetBits_Params Parms{};
 
-	Parms.Bits = InBits;
+	Parms.Bits = Bits;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1856,7 +1993,7 @@ void USourceEffectBitCrusherPreset::SetBits(float InBits)
 // Parameters:
 // TSet<class USoundModulatorBase*>   InModulators                                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectBitCrusherPreset::SetBitModulators(TSet<class USoundModulatorBase*>& InInModulators)
+void USourceEffectBitCrusherPreset::SetBitModulators(TSet<class USoundModulatorBase*>& InModulators)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1865,15 +2002,15 @@ void USourceEffectBitCrusherPreset::SetBitModulators(TSet<class USoundModulatorB
 
 	Params::USourceEffectBitCrusherPreset_SetBitModulators_Params Parms{};
 
-	Parms.InModulators = InInModulators;
+	Parms.InModulators = InModulators;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1883,7 +2020,7 @@ void USourceEffectBitCrusherPreset::SetBitModulators(TSet<class USoundModulatorB
 // Parameters:
 // class USoundModulatorBase*         Modulator                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectBitCrusherPreset::SetBitModulator(class USoundModulatorBase* InModulator)
+void USourceEffectBitCrusherPreset::SetBitModulator(class USoundModulatorBase* Modulator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1892,16 +2029,44 @@ void USourceEffectBitCrusherPreset::SetBitModulator(class USoundModulatorBase* I
 
 	Params::USourceEffectBitCrusherPreset_SetBitModulator_Params Parms{};
 
-	Parms.Modulator = InModulator;
+	Parms.Modulator = Modulator;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectChorusPreset
+// (None)
+
+class UClass* USourceEffectChorusPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectChorusPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectChorusPreset Synthesis.Default__SourceEffectChorusPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectChorusPreset* USourceEffectChorusPreset::GetDefaultObj()
+{
+	static class USourceEffectChorusPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectChorusPreset*>(USourceEffectChorusPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -1910,7 +2075,7 @@ void USourceEffectBitCrusherPreset::SetBitModulator(class USoundModulatorBase* I
 // Parameters:
 // TSet<class USoundModulatorBase*>   Modulators                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetWetModulators(TSet<class USoundModulatorBase*>& InModulators)
+void USourceEffectChorusPreset::SetWetModulators(TSet<class USoundModulatorBase*>& Modulators)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1919,15 +2084,15 @@ void USourceEffectChorusPreset::SetWetModulators(TSet<class USoundModulatorBase*
 
 	Params::USourceEffectChorusPreset_SetWetModulators_Params Parms{};
 
-	Parms.Modulators = InModulators;
+	Parms.Modulators = Modulators;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1937,7 +2102,7 @@ void USourceEffectChorusPreset::SetWetModulators(TSet<class USoundModulatorBase*
 // Parameters:
 // class USoundModulatorBase*         Modulator                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetWetModulator(class USoundModulatorBase* InModulator)
+void USourceEffectChorusPreset::SetWetModulator(class USoundModulatorBase* Modulator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1946,15 +2111,15 @@ void USourceEffectChorusPreset::SetWetModulator(class USoundModulatorBase* InMod
 
 	Params::USourceEffectChorusPreset_SetWetModulator_Params Parms{};
 
-	Parms.Modulator = InModulator;
+	Parms.Modulator = Modulator;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1964,7 +2129,7 @@ void USourceEffectChorusPreset::SetWetModulator(class USoundModulatorBase* InMod
 // Parameters:
 // float                              WetAmount                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetWet(float InWetAmount)
+void USourceEffectChorusPreset::SetWet(float WetAmount)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1973,15 +2138,15 @@ void USourceEffectChorusPreset::SetWet(float InWetAmount)
 
 	Params::USourceEffectChorusPreset_SetWet_Params Parms{};
 
-	Parms.WetAmount = InWetAmount;
+	Parms.WetAmount = WetAmount;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -1991,7 +2156,7 @@ void USourceEffectChorusPreset::SetWet(float InWetAmount)
 // Parameters:
 // TSet<class USoundModulatorBase*>   Modulators                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetSpreadModulators(TSet<class USoundModulatorBase*>& InModulators)
+void USourceEffectChorusPreset::SetSpreadModulators(TSet<class USoundModulatorBase*>& Modulators)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2000,15 +2165,15 @@ void USourceEffectChorusPreset::SetSpreadModulators(TSet<class USoundModulatorBa
 
 	Params::USourceEffectChorusPreset_SetSpreadModulators_Params Parms{};
 
-	Parms.Modulators = InModulators;
+	Parms.Modulators = Modulators;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2018,7 +2183,7 @@ void USourceEffectChorusPreset::SetSpreadModulators(TSet<class USoundModulatorBa
 // Parameters:
 // class USoundModulatorBase*         Modulator                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetSpreadModulator(class USoundModulatorBase* InModulator)
+void USourceEffectChorusPreset::SetSpreadModulator(class USoundModulatorBase* Modulator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2027,15 +2192,15 @@ void USourceEffectChorusPreset::SetSpreadModulator(class USoundModulatorBase* In
 
 	Params::USourceEffectChorusPreset_SetSpreadModulator_Params Parms{};
 
-	Parms.Modulator = InModulator;
+	Parms.Modulator = Modulator;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2045,7 +2210,7 @@ void USourceEffectChorusPreset::SetSpreadModulator(class USoundModulatorBase* In
 // Parameters:
 // float                              Spread                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetSpread(float InSpread)
+void USourceEffectChorusPreset::SetSpread(float Spread)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2054,15 +2219,15 @@ void USourceEffectChorusPreset::SetSpread(float InSpread)
 
 	Params::USourceEffectChorusPreset_SetSpread_Params Parms{};
 
-	Parms.Spread = InSpread;
+	Parms.Spread = Spread;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2072,7 +2237,7 @@ void USourceEffectChorusPreset::SetSpread(float InSpread)
 // Parameters:
 // struct FSourceEffectChorusBaseSettingsSettings                                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetSettings(struct FSourceEffectChorusBaseSettings& InSettings)
+void USourceEffectChorusPreset::SetSettings(struct FSourceEffectChorusBaseSettings& Settings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2081,15 +2246,15 @@ void USourceEffectChorusPreset::SetSettings(struct FSourceEffectChorusBaseSettin
 
 	Params::USourceEffectChorusPreset_SetSettings_Params Parms{};
 
-	Parms.Settings = InSettings;
+	Parms.Settings = Settings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2099,7 +2264,7 @@ void USourceEffectChorusPreset::SetSettings(struct FSourceEffectChorusBaseSettin
 // Parameters:
 // struct FSourceEffectChorusSettings ModulationSettings                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetModulationSettings(struct FSourceEffectChorusSettings& InModulationSettings)
+void USourceEffectChorusPreset::SetModulationSettings(struct FSourceEffectChorusSettings& ModulationSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2108,15 +2273,15 @@ void USourceEffectChorusPreset::SetModulationSettings(struct FSourceEffectChorus
 
 	Params::USourceEffectChorusPreset_SetModulationSettings_Params Parms{};
 
-	Parms.ModulationSettings = InModulationSettings;
+	Parms.ModulationSettings = ModulationSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2126,7 +2291,7 @@ void USourceEffectChorusPreset::SetModulationSettings(struct FSourceEffectChorus
 // Parameters:
 // TSet<class USoundModulatorBase*>   Modulators                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetFrequencyModulators(TSet<class USoundModulatorBase*>& InModulators)
+void USourceEffectChorusPreset::SetFrequencyModulators(TSet<class USoundModulatorBase*>& Modulators)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2135,15 +2300,15 @@ void USourceEffectChorusPreset::SetFrequencyModulators(TSet<class USoundModulato
 
 	Params::USourceEffectChorusPreset_SetFrequencyModulators_Params Parms{};
 
-	Parms.Modulators = InModulators;
+	Parms.Modulators = Modulators;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2153,7 +2318,7 @@ void USourceEffectChorusPreset::SetFrequencyModulators(TSet<class USoundModulato
 // Parameters:
 // class USoundModulatorBase*         Modulator                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetFrequencyModulator(class USoundModulatorBase* InModulator)
+void USourceEffectChorusPreset::SetFrequencyModulator(class USoundModulatorBase* Modulator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2162,15 +2327,15 @@ void USourceEffectChorusPreset::SetFrequencyModulator(class USoundModulatorBase*
 
 	Params::USourceEffectChorusPreset_SetFrequencyModulator_Params Parms{};
 
-	Parms.Modulator = InModulator;
+	Parms.Modulator = Modulator;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2180,7 +2345,7 @@ void USourceEffectChorusPreset::SetFrequencyModulator(class USoundModulatorBase*
 // Parameters:
 // float                              Frequency                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetFrequency(float InFrequency)
+void USourceEffectChorusPreset::SetFrequency(float Frequency)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2189,15 +2354,15 @@ void USourceEffectChorusPreset::SetFrequency(float InFrequency)
 
 	Params::USourceEffectChorusPreset_SetFrequency_Params Parms{};
 
-	Parms.Frequency = InFrequency;
+	Parms.Frequency = Frequency;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2207,7 +2372,7 @@ void USourceEffectChorusPreset::SetFrequency(float InFrequency)
 // Parameters:
 // TSet<class USoundModulatorBase*>   Modulators                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetFeedbackModulators(TSet<class USoundModulatorBase*>& InModulators)
+void USourceEffectChorusPreset::SetFeedbackModulators(TSet<class USoundModulatorBase*>& Modulators)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2216,15 +2381,15 @@ void USourceEffectChorusPreset::SetFeedbackModulators(TSet<class USoundModulator
 
 	Params::USourceEffectChorusPreset_SetFeedbackModulators_Params Parms{};
 
-	Parms.Modulators = InModulators;
+	Parms.Modulators = Modulators;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2234,7 +2399,7 @@ void USourceEffectChorusPreset::SetFeedbackModulators(TSet<class USoundModulator
 // Parameters:
 // class USoundModulatorBase*         Modulator                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetFeedbackModulator(class USoundModulatorBase* InModulator)
+void USourceEffectChorusPreset::SetFeedbackModulator(class USoundModulatorBase* Modulator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2243,15 +2408,15 @@ void USourceEffectChorusPreset::SetFeedbackModulator(class USoundModulatorBase* 
 
 	Params::USourceEffectChorusPreset_SetFeedbackModulator_Params Parms{};
 
-	Parms.Modulator = InModulator;
+	Parms.Modulator = Modulator;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2261,7 +2426,7 @@ void USourceEffectChorusPreset::SetFeedbackModulator(class USoundModulatorBase* 
 // Parameters:
 // float                              Feedback                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetFeedback(float InFeedback)
+void USourceEffectChorusPreset::SetFeedback(float Feedback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2270,15 +2435,15 @@ void USourceEffectChorusPreset::SetFeedback(float InFeedback)
 
 	Params::USourceEffectChorusPreset_SetFeedback_Params Parms{};
 
-	Parms.Feedback = InFeedback;
+	Parms.Feedback = Feedback;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2288,7 +2453,7 @@ void USourceEffectChorusPreset::SetFeedback(float InFeedback)
 // Parameters:
 // TSet<class USoundModulatorBase*>   Modulators                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetDryModulators(TSet<class USoundModulatorBase*>& InModulators)
+void USourceEffectChorusPreset::SetDryModulators(TSet<class USoundModulatorBase*>& Modulators)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2297,15 +2462,15 @@ void USourceEffectChorusPreset::SetDryModulators(TSet<class USoundModulatorBase*
 
 	Params::USourceEffectChorusPreset_SetDryModulators_Params Parms{};
 
-	Parms.Modulators = InModulators;
+	Parms.Modulators = Modulators;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2315,7 +2480,7 @@ void USourceEffectChorusPreset::SetDryModulators(TSet<class USoundModulatorBase*
 // Parameters:
 // class USoundModulatorBase*         Modulator                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetDryModulator(class USoundModulatorBase* InModulator)
+void USourceEffectChorusPreset::SetDryModulator(class USoundModulatorBase* Modulator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2324,15 +2489,15 @@ void USourceEffectChorusPreset::SetDryModulator(class USoundModulatorBase* InMod
 
 	Params::USourceEffectChorusPreset_SetDryModulator_Params Parms{};
 
-	Parms.Modulator = InModulator;
+	Parms.Modulator = Modulator;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2342,7 +2507,7 @@ void USourceEffectChorusPreset::SetDryModulator(class USoundModulatorBase* InMod
 // Parameters:
 // float                              DryAmount                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetDry(float InDryAmount)
+void USourceEffectChorusPreset::SetDry(float DryAmount)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2351,15 +2516,15 @@ void USourceEffectChorusPreset::SetDry(float InDryAmount)
 
 	Params::USourceEffectChorusPreset_SetDry_Params Parms{};
 
-	Parms.DryAmount = InDryAmount;
+	Parms.DryAmount = DryAmount;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2369,7 +2534,7 @@ void USourceEffectChorusPreset::SetDry(float InDryAmount)
 // Parameters:
 // TSet<class USoundModulatorBase*>   Modulators                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetDepthModulators(TSet<class USoundModulatorBase*>& InModulators)
+void USourceEffectChorusPreset::SetDepthModulators(TSet<class USoundModulatorBase*>& Modulators)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2378,15 +2543,15 @@ void USourceEffectChorusPreset::SetDepthModulators(TSet<class USoundModulatorBas
 
 	Params::USourceEffectChorusPreset_SetDepthModulators_Params Parms{};
 
-	Parms.Modulators = InModulators;
+	Parms.Modulators = Modulators;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2396,7 +2561,7 @@ void USourceEffectChorusPreset::SetDepthModulators(TSet<class USoundModulatorBas
 // Parameters:
 // class USoundModulatorBase*         Modulator                                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetDepthModulator(class USoundModulatorBase* InModulator)
+void USourceEffectChorusPreset::SetDepthModulator(class USoundModulatorBase* Modulator)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2405,15 +2570,15 @@ void USourceEffectChorusPreset::SetDepthModulator(class USoundModulatorBase* InM
 
 	Params::USourceEffectChorusPreset_SetDepthModulator_Params Parms{};
 
-	Parms.Modulator = InModulator;
+	Parms.Modulator = Modulator;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2423,7 +2588,7 @@ void USourceEffectChorusPreset::SetDepthModulator(class USoundModulatorBase* InM
 // Parameters:
 // float                              Depth                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetDepth(float InDepth)
+void USourceEffectChorusPreset::SetDepth(float Depth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2432,16 +2597,44 @@ void USourceEffectChorusPreset::SetDepth(float InDepth)
 
 	Params::USourceEffectChorusPreset_SetDepth_Params Parms{};
 
-	Parms.Depth = InDepth;
+	Parms.Depth = Depth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectConvolutionReverbPreset
+// (None)
+
+class UClass* USourceEffectConvolutionReverbPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectConvolutionReverbPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectConvolutionReverbPreset Synthesis.Default__SourceEffectConvolutionReverbPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectConvolutionReverbPreset* USourceEffectConvolutionReverbPreset::GetDefaultObj()
+{
+	static class USourceEffectConvolutionReverbPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectConvolutionReverbPreset*>(USourceEffectConvolutionReverbPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2450,7 +2643,7 @@ void USourceEffectChorusPreset::SetDepth(float InDepth)
 // Parameters:
 // struct FSourceEffectConvolutionReverbSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectConvolutionReverbPreset::SetSettings(struct FSourceEffectConvolutionReverbSettings& InInSettings)
+void USourceEffectConvolutionReverbPreset::SetSettings(struct FSourceEffectConvolutionReverbSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2459,15 +2652,15 @@ void USourceEffectConvolutionReverbPreset::SetSettings(struct FSourceEffectConvo
 
 	Params::USourceEffectConvolutionReverbPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2477,7 +2670,7 @@ void USourceEffectConvolutionReverbPreset::SetSettings(struct FSourceEffectConvo
 // Parameters:
 // class UAudioImpulseResponse*       InImpulseResponse                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectConvolutionReverbPreset::SetImpulseResponse(class UAudioImpulseResponse* InInImpulseResponse)
+void USourceEffectConvolutionReverbPreset::SetImpulseResponse(class UAudioImpulseResponse* InImpulseResponse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2486,16 +2679,44 @@ void USourceEffectConvolutionReverbPreset::SetImpulseResponse(class UAudioImpuls
 
 	Params::USourceEffectConvolutionReverbPreset_SetImpulseResponse_Params Parms{};
 
-	Parms.InImpulseResponse = InInImpulseResponse;
+	Parms.InImpulseResponse = InImpulseResponse;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectDynamicsProcessorPreset
+// (None)
+
+class UClass* USourceEffectDynamicsProcessorPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectDynamicsProcessorPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectDynamicsProcessorPreset Synthesis.Default__SourceEffectDynamicsProcessorPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectDynamicsProcessorPreset* USourceEffectDynamicsProcessorPreset::GetDefaultObj()
+{
+	static class USourceEffectDynamicsProcessorPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectDynamicsProcessorPreset*>(USourceEffectDynamicsProcessorPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2504,7 +2725,7 @@ void USourceEffectConvolutionReverbPreset::SetImpulseResponse(class UAudioImpuls
 // Parameters:
 // struct FSourceEffectDynamicsProcessorSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectDynamicsProcessorPreset::SetSettings(struct FSourceEffectDynamicsProcessorSettings& InInSettings)
+void USourceEffectDynamicsProcessorPreset::SetSettings(struct FSourceEffectDynamicsProcessorSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2513,16 +2734,72 @@ void USourceEffectDynamicsProcessorPreset::SetSettings(struct FSourceEffectDynam
 
 	Params::USourceEffectDynamicsProcessorPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.EnvelopeFollowerListener
+// (None)
+
+class UClass* UEnvelopeFollowerListener::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("EnvelopeFollowerListener");
+
+	return Clss;
+}
+
+
+// EnvelopeFollowerListener Synthesis.Default__EnvelopeFollowerListener
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UEnvelopeFollowerListener* UEnvelopeFollowerListener::GetDefaultObj()
+{
+	static class UEnvelopeFollowerListener* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UEnvelopeFollowerListener*>(UEnvelopeFollowerListener::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Synthesis.SourceEffectEnvelopeFollowerPreset
+// (None)
+
+class UClass* USourceEffectEnvelopeFollowerPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectEnvelopeFollowerPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectEnvelopeFollowerPreset Synthesis.Default__SourceEffectEnvelopeFollowerPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectEnvelopeFollowerPreset* USourceEffectEnvelopeFollowerPreset::GetDefaultObj()
+{
+	static class USourceEffectEnvelopeFollowerPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectEnvelopeFollowerPreset*>(USourceEffectEnvelopeFollowerPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2531,7 +2808,7 @@ void USourceEffectDynamicsProcessorPreset::SetSettings(struct FSourceEffectDynam
 // Parameters:
 // class UEnvelopeFollowerListener*   EnvelopeFollowerListener                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectEnvelopeFollowerPreset::UnregisterEnvelopeFollowerListener(class UEnvelopeFollowerListener* InEnvelopeFollowerListener)
+void USourceEffectEnvelopeFollowerPreset::UnregisterEnvelopeFollowerListener(class UEnvelopeFollowerListener* EnvelopeFollowerListener)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2540,15 +2817,15 @@ void USourceEffectEnvelopeFollowerPreset::UnregisterEnvelopeFollowerListener(cla
 
 	Params::USourceEffectEnvelopeFollowerPreset_UnregisterEnvelopeFollowerListener_Params Parms{};
 
-	Parms.EnvelopeFollowerListener = InEnvelopeFollowerListener;
+	Parms.EnvelopeFollowerListener = EnvelopeFollowerListener;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2558,7 +2835,7 @@ void USourceEffectEnvelopeFollowerPreset::UnregisterEnvelopeFollowerListener(cla
 // Parameters:
 // struct FSourceEffectEnvelopeFollowerSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectEnvelopeFollowerPreset::SetSettings(struct FSourceEffectEnvelopeFollowerSettings& InInSettings)
+void USourceEffectEnvelopeFollowerPreset::SetSettings(struct FSourceEffectEnvelopeFollowerSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2567,15 +2844,15 @@ void USourceEffectEnvelopeFollowerPreset::SetSettings(struct FSourceEffectEnvelo
 
 	Params::USourceEffectEnvelopeFollowerPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2585,7 +2862,7 @@ void USourceEffectEnvelopeFollowerPreset::SetSettings(struct FSourceEffectEnvelo
 // Parameters:
 // class UEnvelopeFollowerListener*   EnvelopeFollowerListener                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USourceEffectEnvelopeFollowerPreset::RegisterEnvelopeFollowerListener(class UEnvelopeFollowerListener* InEnvelopeFollowerListener)
+void USourceEffectEnvelopeFollowerPreset::RegisterEnvelopeFollowerListener(class UEnvelopeFollowerListener* EnvelopeFollowerListener)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2594,16 +2871,44 @@ void USourceEffectEnvelopeFollowerPreset::RegisterEnvelopeFollowerListener(class
 
 	Params::USourceEffectEnvelopeFollowerPreset_RegisterEnvelopeFollowerListener_Params Parms{};
 
-	Parms.EnvelopeFollowerListener = InEnvelopeFollowerListener;
+	Parms.EnvelopeFollowerListener = EnvelopeFollowerListener;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectEQPreset
+// (None)
+
+class UClass* USourceEffectEQPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectEQPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectEQPreset Synthesis.Default__SourceEffectEQPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectEQPreset* USourceEffectEQPreset::GetDefaultObj()
+{
+	static class USourceEffectEQPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectEQPreset*>(USourceEffectEQPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2612,7 +2917,7 @@ void USourceEffectEnvelopeFollowerPreset::RegisterEnvelopeFollowerListener(class
 // Parameters:
 // struct FSourceEffectEQSettings     InSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectEQPreset::SetSettings(struct FSourceEffectEQSettings& InInSettings)
+void USourceEffectEQPreset::SetSettings(struct FSourceEffectEQSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2621,16 +2926,44 @@ void USourceEffectEQPreset::SetSettings(struct FSourceEffectEQSettings& InInSett
 
 	Params::USourceEffectEQPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectFilterPreset
+// (None)
+
+class UClass* USourceEffectFilterPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectFilterPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectFilterPreset Synthesis.Default__SourceEffectFilterPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectFilterPreset* USourceEffectFilterPreset::GetDefaultObj()
+{
+	static class USourceEffectFilterPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectFilterPreset*>(USourceEffectFilterPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2639,7 +2972,7 @@ void USourceEffectEQPreset::SetSettings(struct FSourceEffectEQSettings& InInSett
 // Parameters:
 // struct FSourceEffectFilterSettings InSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectFilterPreset::SetSettings(struct FSourceEffectFilterSettings& InInSettings)
+void USourceEffectFilterPreset::SetSettings(struct FSourceEffectFilterSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2648,16 +2981,44 @@ void USourceEffectFilterPreset::SetSettings(struct FSourceEffectFilterSettings& 
 
 	Params::USourceEffectFilterPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectFoldbackDistortionPreset
+// (None)
+
+class UClass* USourceEffectFoldbackDistortionPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectFoldbackDistortionPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectFoldbackDistortionPreset Synthesis.Default__SourceEffectFoldbackDistortionPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectFoldbackDistortionPreset* USourceEffectFoldbackDistortionPreset::GetDefaultObj()
+{
+	static class USourceEffectFoldbackDistortionPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectFoldbackDistortionPreset*>(USourceEffectFoldbackDistortionPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2666,7 +3027,7 @@ void USourceEffectFilterPreset::SetSettings(struct FSourceEffectFilterSettings& 
 // Parameters:
 // struct FSourceEffectFoldbackDistortionSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectFoldbackDistortionPreset::SetSettings(struct FSourceEffectFoldbackDistortionSettings& InInSettings)
+void USourceEffectFoldbackDistortionPreset::SetSettings(struct FSourceEffectFoldbackDistortionSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2675,16 +3036,44 @@ void USourceEffectFoldbackDistortionPreset::SetSettings(struct FSourceEffectFold
 
 	Params::USourceEffectFoldbackDistortionPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectMidSideSpreaderPreset
+// (None)
+
+class UClass* USourceEffectMidSideSpreaderPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectMidSideSpreaderPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectMidSideSpreaderPreset Synthesis.Default__SourceEffectMidSideSpreaderPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectMidSideSpreaderPreset* USourceEffectMidSideSpreaderPreset::GetDefaultObj()
+{
+	static class USourceEffectMidSideSpreaderPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectMidSideSpreaderPreset*>(USourceEffectMidSideSpreaderPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2693,7 +3082,7 @@ void USourceEffectFoldbackDistortionPreset::SetSettings(struct FSourceEffectFold
 // Parameters:
 // struct FSourceEffectMidSideSpreaderSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectMidSideSpreaderPreset::SetSettings(struct FSourceEffectMidSideSpreaderSettings& InInSettings)
+void USourceEffectMidSideSpreaderPreset::SetSettings(struct FSourceEffectMidSideSpreaderSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2702,16 +3091,44 @@ void USourceEffectMidSideSpreaderPreset::SetSettings(struct FSourceEffectMidSide
 
 	Params::USourceEffectMidSideSpreaderPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectMotionFilterPreset
+// (None)
+
+class UClass* USourceEffectMotionFilterPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectMotionFilterPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectMotionFilterPreset Synthesis.Default__SourceEffectMotionFilterPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectMotionFilterPreset* USourceEffectMotionFilterPreset::GetDefaultObj()
+{
+	static class USourceEffectMotionFilterPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectMotionFilterPreset*>(USourceEffectMotionFilterPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2720,7 +3137,7 @@ void USourceEffectMidSideSpreaderPreset::SetSettings(struct FSourceEffectMidSide
 // Parameters:
 // struct FSourceEffectMotionFilterSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USourceEffectMotionFilterPreset::SetSettings(struct FSourceEffectMotionFilterSettings& InInSettings)
+void USourceEffectMotionFilterPreset::SetSettings(struct FSourceEffectMotionFilterSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2729,16 +3146,44 @@ void USourceEffectMotionFilterPreset::SetSettings(struct FSourceEffectMotionFilt
 
 	Params::USourceEffectMotionFilterPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectPannerPreset
+// (None)
+
+class UClass* USourceEffectPannerPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectPannerPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectPannerPreset Synthesis.Default__SourceEffectPannerPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectPannerPreset* USourceEffectPannerPreset::GetDefaultObj()
+{
+	static class USourceEffectPannerPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectPannerPreset*>(USourceEffectPannerPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2747,7 +3192,7 @@ void USourceEffectMotionFilterPreset::SetSettings(struct FSourceEffectMotionFilt
 // Parameters:
 // struct FSourceEffectPannerSettings InSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectPannerPreset::SetSettings(struct FSourceEffectPannerSettings& InInSettings)
+void USourceEffectPannerPreset::SetSettings(struct FSourceEffectPannerSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2756,16 +3201,44 @@ void USourceEffectPannerPreset::SetSettings(struct FSourceEffectPannerSettings& 
 
 	Params::USourceEffectPannerPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectPhaserPreset
+// (None)
+
+class UClass* USourceEffectPhaserPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectPhaserPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectPhaserPreset Synthesis.Default__SourceEffectPhaserPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectPhaserPreset* USourceEffectPhaserPreset::GetDefaultObj()
+{
+	static class USourceEffectPhaserPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectPhaserPreset*>(USourceEffectPhaserPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2774,7 +3247,7 @@ void USourceEffectPannerPreset::SetSettings(struct FSourceEffectPannerSettings& 
 // Parameters:
 // struct FSourceEffectPhaserSettings InSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectPhaserPreset::SetSettings(struct FSourceEffectPhaserSettings& InInSettings)
+void USourceEffectPhaserPreset::SetSettings(struct FSourceEffectPhaserSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2783,16 +3256,44 @@ void USourceEffectPhaserPreset::SetSettings(struct FSourceEffectPhaserSettings& 
 
 	Params::USourceEffectPhaserPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectRingModulationPreset
+// (None)
+
+class UClass* USourceEffectRingModulationPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectRingModulationPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectRingModulationPreset Synthesis.Default__SourceEffectRingModulationPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectRingModulationPreset* USourceEffectRingModulationPreset::GetDefaultObj()
+{
+	static class USourceEffectRingModulationPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectRingModulationPreset*>(USourceEffectRingModulationPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2801,7 +3302,7 @@ void USourceEffectPhaserPreset::SetSettings(struct FSourceEffectPhaserSettings& 
 // Parameters:
 // struct FSourceEffectRingModulationSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectRingModulationPreset::SetSettings(struct FSourceEffectRingModulationSettings& InInSettings)
+void USourceEffectRingModulationPreset::SetSettings(struct FSourceEffectRingModulationSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2810,16 +3311,44 @@ void USourceEffectRingModulationPreset::SetSettings(struct FSourceEffectRingModu
 
 	Params::USourceEffectRingModulationPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectSimpleDelayPreset
+// (None)
+
+class UClass* USourceEffectSimpleDelayPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectSimpleDelayPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectSimpleDelayPreset Synthesis.Default__SourceEffectSimpleDelayPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectSimpleDelayPreset* USourceEffectSimpleDelayPreset::GetDefaultObj()
+{
+	static class USourceEffectSimpleDelayPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectSimpleDelayPreset*>(USourceEffectSimpleDelayPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2828,7 +3357,7 @@ void USourceEffectRingModulationPreset::SetSettings(struct FSourceEffectRingModu
 // Parameters:
 // struct FSourceEffectSimpleDelaySettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectSimpleDelayPreset::SetSettings(struct FSourceEffectSimpleDelaySettings& InInSettings)
+void USourceEffectSimpleDelayPreset::SetSettings(struct FSourceEffectSimpleDelaySettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2837,16 +3366,44 @@ void USourceEffectSimpleDelayPreset::SetSettings(struct FSourceEffectSimpleDelay
 
 	Params::USourceEffectSimpleDelayPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectStereoDelayPreset
+// (None)
+
+class UClass* USourceEffectStereoDelayPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectStereoDelayPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectStereoDelayPreset Synthesis.Default__SourceEffectStereoDelayPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectStereoDelayPreset* USourceEffectStereoDelayPreset::GetDefaultObj()
+{
+	static class USourceEffectStereoDelayPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectStereoDelayPreset*>(USourceEffectStereoDelayPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2855,7 +3412,7 @@ void USourceEffectSimpleDelayPreset::SetSettings(struct FSourceEffectSimpleDelay
 // Parameters:
 // struct FSourceEffectStereoDelaySettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectStereoDelayPreset::SetSettings(struct FSourceEffectStereoDelaySettings& InInSettings)
+void USourceEffectStereoDelayPreset::SetSettings(struct FSourceEffectStereoDelaySettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2864,16 +3421,44 @@ void USourceEffectStereoDelayPreset::SetSettings(struct FSourceEffectStereoDelay
 
 	Params::USourceEffectStereoDelayPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SourceEffectWaveShaperPreset
+// (None)
+
+class UClass* USourceEffectWaveShaperPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SourceEffectWaveShaperPreset");
+
+	return Clss;
+}
+
+
+// SourceEffectWaveShaperPreset Synthesis.Default__SourceEffectWaveShaperPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USourceEffectWaveShaperPreset* USourceEffectWaveShaperPreset::GetDefaultObj()
+{
+	static class USourceEffectWaveShaperPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USourceEffectWaveShaperPreset*>(USourceEffectWaveShaperPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2882,7 +3467,7 @@ void USourceEffectStereoDelayPreset::SetSettings(struct FSourceEffectStereoDelay
 // Parameters:
 // struct FSourceEffectWaveShaperSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectWaveShaperPreset::SetSettings(struct FSourceEffectWaveShaperSettings& InInSettings)
+void USourceEffectWaveShaperPreset::SetSettings(struct FSourceEffectWaveShaperSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2891,16 +3476,44 @@ void USourceEffectWaveShaperPreset::SetSettings(struct FSourceEffectWaveShaperSe
 
 	Params::USourceEffectWaveShaperPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SubmixEffectConvolutionReverbPreset
+// (None)
+
+class UClass* USubmixEffectConvolutionReverbPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectConvolutionReverbPreset");
+
+	return Clss;
+}
+
+
+// SubmixEffectConvolutionReverbPreset Synthesis.Default__SubmixEffectConvolutionReverbPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectConvolutionReverbPreset* USubmixEffectConvolutionReverbPreset::GetDefaultObj()
+{
+	static class USubmixEffectConvolutionReverbPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectConvolutionReverbPreset*>(USubmixEffectConvolutionReverbPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2909,7 +3522,7 @@ void USourceEffectWaveShaperPreset::SetSettings(struct FSourceEffectWaveShaperSe
 // Parameters:
 // struct FSubmixEffectConvolutionReverbSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectConvolutionReverbPreset::SetSettings(struct FSubmixEffectConvolutionReverbSettings& InInSettings)
+void USubmixEffectConvolutionReverbPreset::SetSettings(struct FSubmixEffectConvolutionReverbSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2918,15 +3531,15 @@ void USubmixEffectConvolutionReverbPreset::SetSettings(struct FSubmixEffectConvo
 
 	Params::USubmixEffectConvolutionReverbPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -2936,7 +3549,7 @@ void USubmixEffectConvolutionReverbPreset::SetSettings(struct FSubmixEffectConvo
 // Parameters:
 // class UAudioImpulseResponse*       InImpulseResponse                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectConvolutionReverbPreset::SetImpulseResponse(class UAudioImpulseResponse* InInImpulseResponse)
+void USubmixEffectConvolutionReverbPreset::SetImpulseResponse(class UAudioImpulseResponse* InImpulseResponse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2945,16 +3558,44 @@ void USubmixEffectConvolutionReverbPreset::SetImpulseResponse(class UAudioImpuls
 
 	Params::USubmixEffectConvolutionReverbPreset_SetImpulseResponse_Params Parms{};
 
-	Parms.InImpulseResponse = InInImpulseResponse;
+	Parms.InImpulseResponse = InImpulseResponse;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SubmixEffectDelayStatics
+// (None)
+
+class UClass* USubmixEffectDelayStatics::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectDelayStatics");
+
+	return Clss;
+}
+
+
+// SubmixEffectDelayStatics Synthesis.Default__SubmixEffectDelayStatics
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectDelayStatics* USubmixEffectDelayStatics::GetDefaultObj()
+{
+	static class USubmixEffectDelayStatics* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectDelayStatics*>(USubmixEffectDelayStatics::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -2965,7 +3606,7 @@ void USubmixEffectConvolutionReverbPreset::SetImpulseResponse(class UAudioImpuls
 // float                              MaximumDelayLength                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSubmixEffectDelaySettings  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetMaximumDelayLength(struct FSubmixEffectDelaySettings& InDelaySettings, float InMaximumDelayLength)
+struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetMaximumDelayLength(struct FSubmixEffectDelaySettings& DelaySettings, float MaximumDelayLength)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2974,16 +3615,16 @@ struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetMaximumDelayLeng
 
 	Params::USubmixEffectDelayStatics_SetMaximumDelayLength_Params Parms{};
 
-	Parms.DelaySettings = InDelaySettings;
-	Parms.MaximumDelayLength = InMaximumDelayLength;
+	Parms.DelaySettings = DelaySettings;
+	Parms.MaximumDelayLength = MaximumDelayLength;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -2997,7 +3638,7 @@ struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetMaximumDelayLeng
 // float                              InterpolationTime                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSubmixEffectDelaySettings  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetInterpolationTime(struct FSubmixEffectDelaySettings& InDelaySettings, float InInterpolationTime)
+struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetInterpolationTime(struct FSubmixEffectDelaySettings& DelaySettings, float InterpolationTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3006,16 +3647,16 @@ struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetInterpolationTim
 
 	Params::USubmixEffectDelayStatics_SetInterpolationTime_Params Parms{};
 
-	Parms.DelaySettings = InDelaySettings;
-	Parms.InterpolationTime = InInterpolationTime;
+	Parms.DelaySettings = DelaySettings;
+	Parms.InterpolationTime = InterpolationTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3029,7 +3670,7 @@ struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetInterpolationTim
 // float                              DelayLength                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSubmixEffectDelaySettings  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetDelayLength(struct FSubmixEffectDelaySettings& InDelaySettings, float InDelayLength)
+struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetDelayLength(struct FSubmixEffectDelaySettings& DelaySettings, float DelayLength)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3038,19 +3679,47 @@ struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetDelayLength(stru
 
 	Params::USubmixEffectDelayStatics_SetDelayLength_Params Parms{};
 
-	Parms.DelaySettings = InDelaySettings;
-	Parms.DelayLength = InDelayLength;
+	Parms.DelaySettings = DelaySettings;
+	Parms.DelayLength = DelayLength;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class Synthesis.SubmixEffectDelayPreset
+// (None)
+
+class UClass* USubmixEffectDelayPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectDelayPreset");
+
+	return Clss;
+}
+
+
+// SubmixEffectDelayPreset Synthesis.Default__SubmixEffectDelayPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectDelayPreset* USubmixEffectDelayPreset::GetDefaultObj()
+{
+	static class USubmixEffectDelayPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectDelayPreset*>(USubmixEffectDelayPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3059,7 +3728,7 @@ struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetDelayLength(stru
 // Parameters:
 // struct FSubmixEffectDelaySettings  InSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectDelayPreset::SetSettings(struct FSubmixEffectDelaySettings& InInSettings)
+void USubmixEffectDelayPreset::SetSettings(struct FSubmixEffectDelaySettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3068,15 +3737,15 @@ void USubmixEffectDelayPreset::SetSettings(struct FSubmixEffectDelaySettings& In
 
 	Params::USubmixEffectDelayPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3086,7 +3755,7 @@ void USubmixEffectDelayPreset::SetSettings(struct FSubmixEffectDelaySettings& In
 // Parameters:
 // float                              Time                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectDelayPreset::SetInterpolationTime(float InTime)
+void USubmixEffectDelayPreset::SetInterpolationTime(float Time)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3095,15 +3764,15 @@ void USubmixEffectDelayPreset::SetInterpolationTime(float InTime)
 
 	Params::USubmixEffectDelayPreset_SetInterpolationTime_Params Parms{};
 
-	Parms.Time = InTime;
+	Parms.Time = Time;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3113,7 +3782,7 @@ void USubmixEffectDelayPreset::SetInterpolationTime(float InTime)
 // Parameters:
 // float                              Length                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectDelayPreset::SetDelay(float InLength)
+void USubmixEffectDelayPreset::SetDelay(float Length)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3122,15 +3791,15 @@ void USubmixEffectDelayPreset::SetDelay(float InLength)
 
 	Params::USubmixEffectDelayPreset_SetDelay_Params Parms{};
 
-	Parms.Length = InLength;
+	Parms.Length = Length;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3140,7 +3809,7 @@ void USubmixEffectDelayPreset::SetDelay(float InLength)
 // Parameters:
 // struct FSubmixEffectDelaySettings  InSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectDelayPreset::SetDefaultSettings(struct FSubmixEffectDelaySettings& InInSettings)
+void USubmixEffectDelayPreset::SetDefaultSettings(struct FSubmixEffectDelaySettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3149,15 +3818,15 @@ void USubmixEffectDelayPreset::SetDefaultSettings(struct FSubmixEffectDelaySetti
 
 	Params::USubmixEffectDelayPreset_SetDefaultSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3177,16 +3846,44 @@ float USubmixEffectDelayPreset::GetMaxDelayInMilliseconds()
 	Params::USubmixEffectDelayPreset_GetMaxDelayInMilliseconds_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class Synthesis.SubmixEffectFilterPreset
+// (None)
+
+class UClass* USubmixEffectFilterPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectFilterPreset");
+
+	return Clss;
+}
+
+
+// SubmixEffectFilterPreset Synthesis.Default__SubmixEffectFilterPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectFilterPreset* USubmixEffectFilterPreset::GetDefaultObj()
+{
+	static class USubmixEffectFilterPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectFilterPreset*>(USubmixEffectFilterPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3195,7 +3892,7 @@ float USubmixEffectDelayPreset::GetMaxDelayInMilliseconds()
 // Parameters:
 // struct FSubmixEffectFilterSettings InSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectFilterPreset::SetSettings(struct FSubmixEffectFilterSettings& InInSettings)
+void USubmixEffectFilterPreset::SetSettings(struct FSubmixEffectFilterSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3204,15 +3901,15 @@ void USubmixEffectFilterPreset::SetSettings(struct FSubmixEffectFilterSettings& 
 
 	Params::USubmixEffectFilterPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3222,7 +3919,7 @@ void USubmixEffectFilterPreset::SetSettings(struct FSubmixEffectFilterSettings& 
 // Parameters:
 // enum class ESubmixFilterType       InType                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectFilterPreset::SetFilterType(enum class ESubmixFilterType InInType)
+void USubmixEffectFilterPreset::SetFilterType(enum class ESubmixFilterType InType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3231,15 +3928,15 @@ void USubmixEffectFilterPreset::SetFilterType(enum class ESubmixFilterType InInT
 
 	Params::USubmixEffectFilterPreset_SetFilterType_Params Parms{};
 
-	Parms.InType = InInType;
+	Parms.InType = InType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3249,7 +3946,7 @@ void USubmixEffectFilterPreset::SetFilterType(enum class ESubmixFilterType InInT
 // Parameters:
 // float                              InQ                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectFilterPreset::SetFilterQMod(float InInQ)
+void USubmixEffectFilterPreset::SetFilterQMod(float InQ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3258,15 +3955,15 @@ void USubmixEffectFilterPreset::SetFilterQMod(float InInQ)
 
 	Params::USubmixEffectFilterPreset_SetFilterQMod_Params Parms{};
 
-	Parms.InQ = InInQ;
+	Parms.InQ = InQ;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3276,7 +3973,7 @@ void USubmixEffectFilterPreset::SetFilterQMod(float InInQ)
 // Parameters:
 // float                              InQ                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectFilterPreset::SetFilterQ(float InInQ)
+void USubmixEffectFilterPreset::SetFilterQ(float InQ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3285,15 +3982,15 @@ void USubmixEffectFilterPreset::SetFilterQ(float InInQ)
 
 	Params::USubmixEffectFilterPreset_SetFilterQ_Params Parms{};
 
-	Parms.InQ = InInQ;
+	Parms.InQ = InQ;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3303,7 +4000,7 @@ void USubmixEffectFilterPreset::SetFilterQ(float InInQ)
 // Parameters:
 // float                              InFrequency                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectFilterPreset::SetFilterCutoffFrequencyMod(float InInFrequency)
+void USubmixEffectFilterPreset::SetFilterCutoffFrequencyMod(float InFrequency)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3312,15 +4009,15 @@ void USubmixEffectFilterPreset::SetFilterCutoffFrequencyMod(float InInFrequency)
 
 	Params::USubmixEffectFilterPreset_SetFilterCutoffFrequencyMod_Params Parms{};
 
-	Parms.InFrequency = InInFrequency;
+	Parms.InFrequency = InFrequency;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3330,7 +4027,7 @@ void USubmixEffectFilterPreset::SetFilterCutoffFrequencyMod(float InInFrequency)
 // Parameters:
 // float                              InFrequency                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectFilterPreset::SetFilterCutoffFrequency(float InInFrequency)
+void USubmixEffectFilterPreset::SetFilterCutoffFrequency(float InFrequency)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3339,15 +4036,15 @@ void USubmixEffectFilterPreset::SetFilterCutoffFrequency(float InInFrequency)
 
 	Params::USubmixEffectFilterPreset_SetFilterCutoffFrequency_Params Parms{};
 
-	Parms.InFrequency = InInFrequency;
+	Parms.InFrequency = InFrequency;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3357,7 +4054,7 @@ void USubmixEffectFilterPreset::SetFilterCutoffFrequency(float InInFrequency)
 // Parameters:
 // enum class ESubmixFilterAlgorithm  InAlgorithm                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectFilterPreset::SetFilterAlgorithm(enum class ESubmixFilterAlgorithm InInAlgorithm)
+void USubmixEffectFilterPreset::SetFilterAlgorithm(enum class ESubmixFilterAlgorithm InAlgorithm)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3366,16 +4063,44 @@ void USubmixEffectFilterPreset::SetFilterAlgorithm(enum class ESubmixFilterAlgor
 
 	Params::USubmixEffectFilterPreset_SetFilterAlgorithm_Params Parms{};
 
-	Parms.InAlgorithm = InInAlgorithm;
+	Parms.InAlgorithm = InAlgorithm;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SubmixEffectFlexiverbPreset
+// (None)
+
+class UClass* USubmixEffectFlexiverbPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectFlexiverbPreset");
+
+	return Clss;
+}
+
+
+// SubmixEffectFlexiverbPreset Synthesis.Default__SubmixEffectFlexiverbPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectFlexiverbPreset* USubmixEffectFlexiverbPreset::GetDefaultObj()
+{
+	static class USubmixEffectFlexiverbPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectFlexiverbPreset*>(USubmixEffectFlexiverbPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3384,7 +4109,7 @@ void USubmixEffectFilterPreset::SetFilterAlgorithm(enum class ESubmixFilterAlgor
 // Parameters:
 // struct FSubmixEffectFlexiverbSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectFlexiverbPreset::SetSettings(struct FSubmixEffectFlexiverbSettings& InInSettings)
+void USubmixEffectFlexiverbPreset::SetSettings(struct FSubmixEffectFlexiverbSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3393,16 +4118,44 @@ void USubmixEffectFlexiverbPreset::SetSettings(struct FSubmixEffectFlexiverbSett
 
 	Params::USubmixEffectFlexiverbPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SubmixEffectMultibandCompressorPreset
+// (None)
+
+class UClass* USubmixEffectMultibandCompressorPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectMultibandCompressorPreset");
+
+	return Clss;
+}
+
+
+// SubmixEffectMultibandCompressorPreset Synthesis.Default__SubmixEffectMultibandCompressorPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectMultibandCompressorPreset* USubmixEffectMultibandCompressorPreset::GetDefaultObj()
+{
+	static class USubmixEffectMultibandCompressorPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectMultibandCompressorPreset*>(USubmixEffectMultibandCompressorPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3411,7 +4164,7 @@ void USubmixEffectFlexiverbPreset::SetSettings(struct FSubmixEffectFlexiverbSett
 // Parameters:
 // struct FSubmixEffectMultibandCompressorSettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USubmixEffectMultibandCompressorPreset::SetSettings(struct FSubmixEffectMultibandCompressorSettings& InInSettings)
+void USubmixEffectMultibandCompressorPreset::SetSettings(struct FSubmixEffectMultibandCompressorSettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3420,15 +4173,15 @@ void USubmixEffectMultibandCompressorPreset::SetSettings(struct FSubmixEffectMul
 
 	Params::USubmixEffectMultibandCompressorPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3438,7 +4191,7 @@ void USubmixEffectMultibandCompressorPreset::SetSettings(struct FSubmixEffectMul
 // Parameters:
 // class USoundSubmix*                Submix                                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectMultibandCompressorPreset::SetExternalSubmix(class USoundSubmix* InSubmix)
+void USubmixEffectMultibandCompressorPreset::SetExternalSubmix(class USoundSubmix* Submix)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3447,15 +4200,15 @@ void USubmixEffectMultibandCompressorPreset::SetExternalSubmix(class USoundSubmi
 
 	Params::USubmixEffectMultibandCompressorPreset_SetExternalSubmix_Params Parms{};
 
-	Parms.Submix = InSubmix;
+	Parms.Submix = Submix;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3465,7 +4218,7 @@ void USubmixEffectMultibandCompressorPreset::SetExternalSubmix(class USoundSubmi
 // Parameters:
 // class UAudioBus*                   AudioBus                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectMultibandCompressorPreset::SetAudioBus(class UAudioBus* InAudioBus)
+void USubmixEffectMultibandCompressorPreset::SetAudioBus(class UAudioBus* AudioBus)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3474,15 +4227,15 @@ void USubmixEffectMultibandCompressorPreset::SetAudioBus(class UAudioBus* InAudi
 
 	Params::USubmixEffectMultibandCompressorPreset_SetAudioBus_Params Parms{};
 
-	Parms.AudioBus = InAudioBus;
+	Parms.AudioBus = AudioBus;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3501,14 +4254,42 @@ void USubmixEffectMultibandCompressorPreset::ResetKey()
 	Params::USubmixEffectMultibandCompressorPreset_ResetKey_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SubmixEffectStereoDelayPreset
+// (None)
+
+class UClass* USubmixEffectStereoDelayPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectStereoDelayPreset");
+
+	return Clss;
+}
+
+
+// SubmixEffectStereoDelayPreset Synthesis.Default__SubmixEffectStereoDelayPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectStereoDelayPreset* USubmixEffectStereoDelayPreset::GetDefaultObj()
+{
+	static class USubmixEffectStereoDelayPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectStereoDelayPreset*>(USubmixEffectStereoDelayPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3517,7 +4298,7 @@ void USubmixEffectMultibandCompressorPreset::ResetKey()
 // Parameters:
 // struct FSubmixEffectStereoDelaySettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectStereoDelayPreset::SetSettings(struct FSubmixEffectStereoDelaySettings& InInSettings)
+void USubmixEffectStereoDelayPreset::SetSettings(struct FSubmixEffectStereoDelaySettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3526,16 +4307,44 @@ void USubmixEffectStereoDelayPreset::SetSettings(struct FSubmixEffectStereoDelay
 
 	Params::USubmixEffectStereoDelayPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SubmixEffectTapDelayPreset
+// (None)
+
+class UClass* USubmixEffectTapDelayPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SubmixEffectTapDelayPreset");
+
+	return Clss;
+}
+
+
+// SubmixEffectTapDelayPreset Synthesis.Default__SubmixEffectTapDelayPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USubmixEffectTapDelayPreset* USubmixEffectTapDelayPreset::GetDefaultObj()
+{
+	static class USubmixEffectTapDelayPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USubmixEffectTapDelayPreset*>(USubmixEffectTapDelayPreset::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3545,7 +4354,7 @@ void USubmixEffectStereoDelayPreset::SetSettings(struct FSubmixEffectStereoDelay
 // int32                              TapId                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTapDelayInfo               TapInfo                                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectTapDelayPreset::SetTap(int32 InTapId, struct FTapDelayInfo& InTapInfo)
+void USubmixEffectTapDelayPreset::SetTap(int32 TapId, struct FTapDelayInfo& TapInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3554,16 +4363,16 @@ void USubmixEffectTapDelayPreset::SetTap(int32 InTapId, struct FTapDelayInfo& In
 
 	Params::USubmixEffectTapDelayPreset_SetTap_Params Parms{};
 
-	Parms.TapId = InTapId;
-	Parms.TapInfo = InTapInfo;
+	Parms.TapId = TapId;
+	Parms.TapInfo = TapInfo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3573,7 +4382,7 @@ void USubmixEffectTapDelayPreset::SetTap(int32 InTapId, struct FTapDelayInfo& In
 // Parameters:
 // struct FSubmixEffectTapDelaySettingsInSettings                                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void USubmixEffectTapDelayPreset::SetSettings(struct FSubmixEffectTapDelaySettings& InInSettings)
+void USubmixEffectTapDelayPreset::SetSettings(struct FSubmixEffectTapDelaySettings& InSettings)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3582,15 +4391,15 @@ void USubmixEffectTapDelayPreset::SetSettings(struct FSubmixEffectTapDelaySettin
 
 	Params::USubmixEffectTapDelayPreset_SetSettings_Params Parms{};
 
-	Parms.InSettings = InInSettings;
+	Parms.InSettings = InSettings;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3600,7 +4409,7 @@ void USubmixEffectTapDelayPreset::SetSettings(struct FSubmixEffectTapDelaySettin
 // Parameters:
 // float                              Time                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectTapDelayPreset::SetInterpolationTime(float InTime)
+void USubmixEffectTapDelayPreset::SetInterpolationTime(float Time)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3609,15 +4418,15 @@ void USubmixEffectTapDelayPreset::SetInterpolationTime(float InTime)
 
 	Params::USubmixEffectTapDelayPreset_SetInterpolationTime_Params Parms{};
 
-	Parms.Time = InTime;
+	Parms.Time = Time;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3627,7 +4436,7 @@ void USubmixEffectTapDelayPreset::SetInterpolationTime(float InTime)
 // Parameters:
 // int32                              TapId                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectTapDelayPreset::RemoveTap(int32 InTapId)
+void USubmixEffectTapDelayPreset::RemoveTap(int32 TapId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3636,15 +4445,15 @@ void USubmixEffectTapDelayPreset::RemoveTap(int32 InTapId)
 
 	Params::USubmixEffectTapDelayPreset_RemoveTap_Params Parms{};
 
-	Parms.TapId = InTapId;
+	Parms.TapId = TapId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3654,7 +4463,7 @@ void USubmixEffectTapDelayPreset::RemoveTap(int32 InTapId)
 // Parameters:
 // TArray<int32>                      TapIds                                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectTapDelayPreset::GetTapIds(TArray<int32>* InTapIds)
+void USubmixEffectTapDelayPreset::GetTapIds(TArray<int32>* TapIds)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3664,16 +4473,16 @@ void USubmixEffectTapDelayPreset::GetTapIds(TArray<int32>* InTapIds)
 	Params::USubmixEffectTapDelayPreset_GetTapIds_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InTapIds != nullptr)
-		*InTapIds = Parms.TapIds;
+	if (TapIds != nullptr)
+		*TapIds = std::move(Parms.TapIds);
 
 }
 
@@ -3684,7 +4493,7 @@ void USubmixEffectTapDelayPreset::GetTapIds(TArray<int32>* InTapIds)
 // int32                              TapId                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTapDelayInfo               TapInfo                                                          (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USubmixEffectTapDelayPreset::GetTap(int32 InTapId, struct FTapDelayInfo* InTapInfo)
+void USubmixEffectTapDelayPreset::GetTap(int32 TapId, struct FTapDelayInfo* TapInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3693,18 +4502,18 @@ void USubmixEffectTapDelayPreset::GetTap(int32 InTapId, struct FTapDelayInfo* In
 
 	Params::USubmixEffectTapDelayPreset_GetTap_Params Parms{};
 
-	Parms.TapId = InTapId;
+	Parms.TapId = TapId;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InTapInfo != nullptr)
-		*InTapInfo = Parms.TapInfo;
+	if (TapInfo != nullptr)
+		*TapInfo = std::move(Parms.TapInfo);
 
 }
 
@@ -3724,13 +4533,13 @@ float USubmixEffectTapDelayPreset::GetMaxDelayInMilliseconds()
 	Params::USubmixEffectTapDelayPreset_GetMaxDelayInMilliseconds_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -3742,7 +4551,7 @@ float USubmixEffectTapDelayPreset::GetMaxDelayInMilliseconds()
 // Parameters:
 // int32                              TapId                                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USubmixEffectTapDelayPreset::AddTap(int32* InTapId)
+void USubmixEffectTapDelayPreset::AddTap(int32* TapId)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3752,17 +4561,45 @@ void USubmixEffectTapDelayPreset::AddTap(int32* InTapId)
 	Params::USubmixEffectTapDelayPreset_AddTap_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InTapId != nullptr)
-		*InTapId = Parms.TapId;
+	if (TapId != nullptr)
+		*TapId = Parms.TapId;
 
+}
+
+
+// Class Synthesis.GranularSynth
+// (SceneComponent)
+
+class UClass* UGranularSynth::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GranularSynth");
+
+	return Clss;
+}
+
+
+// GranularSynth Synthesis.Default__GranularSynth
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGranularSynth* UGranularSynth::GetDefaultObj()
+{
+	static class UGranularSynth* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGranularSynth*>(UGranularSynth::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -3771,7 +4608,7 @@ void USubmixEffectTapDelayPreset::AddTap(int32* InTapId)
 // Parameters:
 // float                              SustainGain                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetSustainGain(float InSustainGain)
+void UGranularSynth::SetSustainGain(float SustainGain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3780,15 +4617,15 @@ void UGranularSynth::SetSustainGain(float InSustainGain)
 
 	Params::UGranularSynth_SetSustainGain_Params Parms{};
 
-	Parms.SustainGain = InSustainGain;
+	Parms.SustainGain = SustainGain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3798,7 +4635,7 @@ void UGranularSynth::SetSustainGain(float InSustainGain)
 // Parameters:
 // class USoundWave*                  InSoundWave                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetSoundWave(class USoundWave* InInSoundWave)
+void UGranularSynth::SetSoundWave(class USoundWave* InSoundWave)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3807,15 +4644,15 @@ void UGranularSynth::SetSoundWave(class USoundWave* InInSoundWave)
 
 	Params::UGranularSynth_SetSoundWave_Params Parms{};
 
-	Parms.InSoundWave = InInSoundWave;
+	Parms.InSoundWave = InSoundWave;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3825,7 +4662,7 @@ void UGranularSynth::SetSoundWave(class USoundWave* InInSoundWave)
 // Parameters:
 // bool                               bScrubMode                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetScrubMode(bool InbScrubMode)
+void UGranularSynth::SetScrubMode(bool bScrubMode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3834,15 +4671,15 @@ void UGranularSynth::SetScrubMode(bool InbScrubMode)
 
 	Params::UGranularSynth_SetScrubMode_Params Parms{};
 
-	Parms.bScrubMode = InbScrubMode;
+	Parms.bScrubMode = bScrubMode;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3852,7 +4689,7 @@ void UGranularSynth::SetScrubMode(bool InbScrubMode)
 // Parameters:
 // float                              ReleaseTimeMsec                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetReleaseTimeMsec(float InReleaseTimeMsec)
+void UGranularSynth::SetReleaseTimeMsec(float ReleaseTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3861,15 +4698,15 @@ void UGranularSynth::SetReleaseTimeMsec(float InReleaseTimeMsec)
 
 	Params::UGranularSynth_SetReleaseTimeMsec_Params Parms{};
 
-	Parms.ReleaseTimeMsec = InReleaseTimeMsec;
+	Parms.ReleaseTimeMsec = ReleaseTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3881,7 +4718,7 @@ void UGranularSynth::SetReleaseTimeMsec(float InReleaseTimeMsec)
 // float                              LerpTimeSec                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // enum class EGranularSynthSeekType  SeekType                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetPlayheadTime(float InInPositionSec, float InLerpTimeSec, enum class EGranularSynthSeekType InSeekType)
+void UGranularSynth::SetPlayheadTime(float InPositionSec, float LerpTimeSec, enum class EGranularSynthSeekType SeekType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3890,17 +4727,17 @@ void UGranularSynth::SetPlayheadTime(float InInPositionSec, float InLerpTimeSec,
 
 	Params::UGranularSynth_SetPlayheadTime_Params Parms{};
 
-	Parms.InPositionSec = InInPositionSec;
-	Parms.LerpTimeSec = InLerpTimeSec;
-	Parms.SeekType = InSeekType;
+	Parms.InPositionSec = InPositionSec;
+	Parms.LerpTimeSec = LerpTimeSec;
+	Parms.SeekType = SeekType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3910,7 +4747,7 @@ void UGranularSynth::SetPlayheadTime(float InInPositionSec, float InLerpTimeSec,
 // Parameters:
 // float                              InPlayheadRate                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetPlaybackSpeed(float InInPlayheadRate)
+void UGranularSynth::SetPlaybackSpeed(float InPlayheadRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3919,15 +4756,15 @@ void UGranularSynth::SetPlaybackSpeed(float InInPlayheadRate)
 
 	Params::UGranularSynth_SetPlaybackSpeed_Params Parms{};
 
-	Parms.InPlayheadRate = InInPlayheadRate;
+	Parms.InPlayheadRate = InPlayheadRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3938,7 +4775,7 @@ void UGranularSynth::SetPlaybackSpeed(float InInPlayheadRate)
 // float                              BaseVolume                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   VolumeRange                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetGrainVolume(float InBaseVolume, const struct FVector2D& InVolumeRange)
+void UGranularSynth::SetGrainVolume(float BaseVolume, const struct FVector2D& VolumeRange)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3947,16 +4784,16 @@ void UGranularSynth::SetGrainVolume(float InBaseVolume, const struct FVector2D& 
 
 	Params::UGranularSynth_SetGrainVolume_Params Parms{};
 
-	Parms.BaseVolume = InBaseVolume;
-	Parms.VolumeRange = InVolumeRange;
+	Parms.BaseVolume = BaseVolume;
+	Parms.VolumeRange = VolumeRange;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3966,7 +4803,7 @@ void UGranularSynth::SetGrainVolume(float InBaseVolume, const struct FVector2D& 
 // Parameters:
 // float                              InGrainsPerSecond                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetGrainsPerSecond(float InInGrainsPerSecond)
+void UGranularSynth::SetGrainsPerSecond(float InGrainsPerSecond)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3975,15 +4812,15 @@ void UGranularSynth::SetGrainsPerSecond(float InInGrainsPerSecond)
 
 	Params::UGranularSynth_SetGrainsPerSecond_Params Parms{};
 
-	Parms.InGrainsPerSecond = InInGrainsPerSecond;
+	Parms.InGrainsPerSecond = InGrainsPerSecond;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -3993,7 +4830,7 @@ void UGranularSynth::SetGrainsPerSecond(float InInGrainsPerSecond)
 // Parameters:
 // float                              InGrainProbability                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetGrainProbability(float InInGrainProbability)
+void UGranularSynth::SetGrainProbability(float InGrainProbability)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4002,15 +4839,15 @@ void UGranularSynth::SetGrainProbability(float InInGrainProbability)
 
 	Params::UGranularSynth_SetGrainProbability_Params Parms{};
 
-	Parms.InGrainProbability = InInGrainProbability;
+	Parms.InGrainProbability = InGrainProbability;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4021,7 +4858,7 @@ void UGranularSynth::SetGrainProbability(float InInGrainProbability)
 // float                              BasePitch                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   PitchRange                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetGrainPitch(float InBasePitch, const struct FVector2D& InPitchRange)
+void UGranularSynth::SetGrainPitch(float BasePitch, const struct FVector2D& PitchRange)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4030,16 +4867,16 @@ void UGranularSynth::SetGrainPitch(float InBasePitch, const struct FVector2D& In
 
 	Params::UGranularSynth_SetGrainPitch_Params Parms{};
 
-	Parms.BasePitch = InBasePitch;
-	Parms.PitchRange = InPitchRange;
+	Parms.BasePitch = BasePitch;
+	Parms.PitchRange = PitchRange;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4050,7 +4887,7 @@ void UGranularSynth::SetGrainPitch(float InBasePitch, const struct FVector2D& In
 // float                              BasePan                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   PanRange                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetGrainPan(float InBasePan, const struct FVector2D& InPanRange)
+void UGranularSynth::SetGrainPan(float BasePan, const struct FVector2D& PanRange)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4059,16 +4896,16 @@ void UGranularSynth::SetGrainPan(float InBasePan, const struct FVector2D& InPanR
 
 	Params::UGranularSynth_SetGrainPan_Params Parms{};
 
-	Parms.BasePan = InBasePan;
-	Parms.PanRange = InPanRange;
+	Parms.BasePan = BasePan;
+	Parms.PanRange = PanRange;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4078,7 +4915,7 @@ void UGranularSynth::SetGrainPan(float InBasePan, const struct FVector2D& InPanR
 // Parameters:
 // enum class EGranularSynthEnvelopeTypeEnvelopeType                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetGrainEnvelopeType(enum class EGranularSynthEnvelopeType InEnvelopeType)
+void UGranularSynth::SetGrainEnvelopeType(enum class EGranularSynthEnvelopeType EnvelopeType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4087,15 +4924,15 @@ void UGranularSynth::SetGrainEnvelopeType(enum class EGranularSynthEnvelopeType 
 
 	Params::UGranularSynth_SetGrainEnvelopeType_Params Parms{};
 
-	Parms.EnvelopeType = InEnvelopeType;
+	Parms.EnvelopeType = EnvelopeType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4106,7 +4943,7 @@ void UGranularSynth::SetGrainEnvelopeType(enum class EGranularSynthEnvelopeType 
 // float                              BaseDurationMsec                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                   DurationRange                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetGrainDuration(float InBaseDurationMsec, const struct FVector2D& InDurationRange)
+void UGranularSynth::SetGrainDuration(float BaseDurationMsec, const struct FVector2D& DurationRange)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4115,16 +4952,16 @@ void UGranularSynth::SetGrainDuration(float InBaseDurationMsec, const struct FVe
 
 	Params::UGranularSynth_SetGrainDuration_Params Parms{};
 
-	Parms.BaseDurationMsec = InBaseDurationMsec;
-	Parms.DurationRange = InDurationRange;
+	Parms.BaseDurationMsec = BaseDurationMsec;
+	Parms.DurationRange = DurationRange;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4134,7 +4971,7 @@ void UGranularSynth::SetGrainDuration(float InBaseDurationMsec, const struct FVe
 // Parameters:
 // float                              DecayTimeMsec                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetDecayTime(float InDecayTimeMsec)
+void UGranularSynth::SetDecayTime(float DecayTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4143,15 +4980,15 @@ void UGranularSynth::SetDecayTime(float InDecayTimeMsec)
 
 	Params::UGranularSynth_SetDecayTime_Params Parms{};
 
-	Parms.DecayTimeMsec = InDecayTimeMsec;
+	Parms.DecayTimeMsec = DecayTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4161,7 +4998,7 @@ void UGranularSynth::SetDecayTime(float InDecayTimeMsec)
 // Parameters:
 // float                              AttackTimeMsec                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::SetAttackTime(float InAttackTimeMsec)
+void UGranularSynth::SetAttackTime(float AttackTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4170,15 +5007,15 @@ void UGranularSynth::SetAttackTime(float InAttackTimeMsec)
 
 	Params::UGranularSynth_SetAttackTime_Params Parms{};
 
-	Parms.AttackTimeMsec = InAttackTimeMsec;
+	Parms.AttackTimeMsec = AttackTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4190,7 +5027,7 @@ void UGranularSynth::SetAttackTime(float InAttackTimeMsec)
 // int32                              Velocity                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              Duration                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::NoteOn(float InNote, int32 InVelocity, float InDuration)
+void UGranularSynth::NoteOn(float Note, int32 Velocity, float Duration)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4199,17 +5036,17 @@ void UGranularSynth::NoteOn(float InNote, int32 InVelocity, float InDuration)
 
 	Params::UGranularSynth_NoteOn_Params Parms{};
 
-	Parms.Note = InNote;
-	Parms.Velocity = InVelocity;
-	Parms.Duration = InDuration;
+	Parms.Note = Note;
+	Parms.Velocity = Velocity;
+	Parms.Duration = Duration;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4220,7 +5057,7 @@ void UGranularSynth::NoteOn(float InNote, int32 InVelocity, float InDuration)
 // float                              Note                                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bKill                                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGranularSynth::NoteOff(float InNote, bool InbKill)
+void UGranularSynth::NoteOff(float Note, bool bKill)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4229,16 +5066,16 @@ void UGranularSynth::NoteOff(float InNote, bool InbKill)
 
 	Params::UGranularSynth_NoteOff_Params Parms{};
 
-	Parms.Note = InNote;
-	Parms.bKill = InbKill;
+	Parms.Note = Note;
+	Parms.bKill = bKill;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4258,13 +5095,13 @@ bool UGranularSynth::IsLoaded()
 	Params::UGranularSynth_IsLoaded_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4286,13 +5123,13 @@ float UGranularSynth::GetSampleDuration()
 	Params::UGranularSynth_GetSampleDuration_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -4314,16 +5151,72 @@ float UGranularSynth::GetCurrentPlayheadTime()
 	Params::UGranularSynth_GetCurrentPlayheadTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class Synthesis.MonoWaveTableSynthPreset
+// (None)
+
+class UClass* UMonoWaveTableSynthPreset::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("MonoWaveTableSynthPreset");
+
+	return Clss;
+}
+
+
+// MonoWaveTableSynthPreset Synthesis.Default__MonoWaveTableSynthPreset
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UMonoWaveTableSynthPreset* UMonoWaveTableSynthPreset::GetDefaultObj()
+{
+	static class UMonoWaveTableSynthPreset* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UMonoWaveTableSynthPreset*>(UMonoWaveTableSynthPreset::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Synthesis.SynthComponentMonoWaveTable
+// (SceneComponent)
+
+class UClass* USynthComponentMonoWaveTable::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SynthComponentMonoWaveTable");
+
+	return Clss;
+}
+
+
+// SynthComponentMonoWaveTable Synthesis.Default__SynthComponentMonoWaveTable
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USynthComponentMonoWaveTable* USynthComponentMonoWaveTable::GetDefaultObj()
+{
+	static class USynthComponentMonoWaveTable* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USynthComponentMonoWaveTable*>(USynthComponentMonoWaveTable::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -4332,7 +5225,7 @@ float UGranularSynth::GetCurrentPlayheadTime()
 // Parameters:
 // float                              InPosition                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetWaveTablePosition(float InInPosition)
+void USynthComponentMonoWaveTable::SetWaveTablePosition(float InPosition)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4341,15 +5234,15 @@ void USynthComponentMonoWaveTable::SetWaveTablePosition(float InInPosition)
 
 	Params::USynthComponentMonoWaveTable_SetWaveTablePosition_Params Parms{};
 
-	Parms.InPosition = InInPosition;
+	Parms.InPosition = InPosition;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4359,7 +5252,7 @@ void USynthComponentMonoWaveTable::SetWaveTablePosition(float InInPosition)
 // Parameters:
 // bool                               InSustainPedalState                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetSustainPedalState(bool InInSustainPedalState)
+void USynthComponentMonoWaveTable::SetSustainPedalState(bool InSustainPedalState)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4368,15 +5261,15 @@ void USynthComponentMonoWaveTable::SetSustainPedalState(bool InInSustainPedalSta
 
 	Params::USynthComponentMonoWaveTable_SetSustainPedalState_Params Parms{};
 
-	Parms.InSustainPedalState = InInSustainPedalState;
+	Parms.InSustainPedalState = InSustainPedalState;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4386,7 +5279,7 @@ void USynthComponentMonoWaveTable::SetSustainPedalState(bool InInSustainPedalSta
 // Parameters:
 // enum class ESynthLFOType           InLfoType                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPosLfoType(enum class ESynthLFOType InInLfoType)
+void USynthComponentMonoWaveTable::SetPosLfoType(enum class ESynthLFOType InLfoType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4395,15 +5288,15 @@ void USynthComponentMonoWaveTable::SetPosLfoType(enum class ESynthLFOType InInLf
 
 	Params::USynthComponentMonoWaveTable_SetPosLfoType_Params Parms{};
 
-	Parms.InLfoType = InInLfoType;
+	Parms.InLfoType = InLfoType;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4413,7 +5306,7 @@ void USynthComponentMonoWaveTable::SetPosLfoType(enum class ESynthLFOType InInLf
 // Parameters:
 // float                              InLfoFrequency                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPosLfoFrequency(float InInLfoFrequency)
+void USynthComponentMonoWaveTable::SetPosLfoFrequency(float InLfoFrequency)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4422,15 +5315,15 @@ void USynthComponentMonoWaveTable::SetPosLfoFrequency(float InInLfoFrequency)
 
 	Params::USynthComponentMonoWaveTable_SetPosLfoFrequency_Params Parms{};
 
-	Parms.InLfoFrequency = InInLfoFrequency;
+	Parms.InLfoFrequency = InLfoFrequency;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4440,7 +5333,7 @@ void USynthComponentMonoWaveTable::SetPosLfoFrequency(float InInLfoFrequency)
 // Parameters:
 // float                              InLfoDepth                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPosLfoDepth(float InInLfoDepth)
+void USynthComponentMonoWaveTable::SetPosLfoDepth(float InLfoDepth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4449,15 +5342,15 @@ void USynthComponentMonoWaveTable::SetPosLfoDepth(float InInLfoDepth)
 
 	Params::USynthComponentMonoWaveTable_SetPosLfoDepth_Params Parms{};
 
-	Parms.InLfoDepth = InInLfoDepth;
+	Parms.InLfoDepth = InLfoDepth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4467,7 +5360,7 @@ void USynthComponentMonoWaveTable::SetPosLfoDepth(float InInLfoDepth)
 // Parameters:
 // float                              InSustainGain                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPositionEnvelopeSustainGain(float InInSustainGain)
+void USynthComponentMonoWaveTable::SetPositionEnvelopeSustainGain(float InSustainGain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4476,15 +5369,15 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeSustainGain(float InInSust
 
 	Params::USynthComponentMonoWaveTable_SetPositionEnvelopeSustainGain_Params Parms{};
 
-	Parms.InSustainGain = InInSustainGain;
+	Parms.InSustainGain = InSustainGain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4494,7 +5387,7 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeSustainGain(float InInSust
 // Parameters:
 // float                              InReleaseTimeMsec                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPositionEnvelopeReleaseTime(float InInReleaseTimeMsec)
+void USynthComponentMonoWaveTable::SetPositionEnvelopeReleaseTime(float InReleaseTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4503,15 +5396,15 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeReleaseTime(float InInRele
 
 	Params::USynthComponentMonoWaveTable_SetPositionEnvelopeReleaseTime_Params Parms{};
 
-	Parms.InReleaseTimeMsec = InInReleaseTimeMsec;
+	Parms.InReleaseTimeMsec = InReleaseTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4521,7 +5414,7 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeReleaseTime(float InInRele
 // Parameters:
 // bool                               bInInvert                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPositionEnvelopeInvert(bool InbInInvert)
+void USynthComponentMonoWaveTable::SetPositionEnvelopeInvert(bool bInInvert)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4530,15 +5423,15 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeInvert(bool InbInInvert)
 
 	Params::USynthComponentMonoWaveTable_SetPositionEnvelopeInvert_Params Parms{};
 
-	Parms.bInInvert = InbInInvert;
+	Parms.bInInvert = bInInvert;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4548,7 +5441,7 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeInvert(bool InbInInvert)
 // Parameters:
 // float                              InDepth                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPositionEnvelopeDepth(float InInDepth)
+void USynthComponentMonoWaveTable::SetPositionEnvelopeDepth(float InDepth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4557,15 +5450,15 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeDepth(float InInDepth)
 
 	Params::USynthComponentMonoWaveTable_SetPositionEnvelopeDepth_Params Parms{};
 
-	Parms.InDepth = InInDepth;
+	Parms.InDepth = InDepth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4575,7 +5468,7 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeDepth(float InInDepth)
 // Parameters:
 // float                              InDecayTimeMsec                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPositionEnvelopeDecayTime(float InInDecayTimeMsec)
+void USynthComponentMonoWaveTable::SetPositionEnvelopeDecayTime(float InDecayTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4584,15 +5477,15 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeDecayTime(float InInDecayT
 
 	Params::USynthComponentMonoWaveTable_SetPositionEnvelopeDecayTime_Params Parms{};
 
-	Parms.InDecayTimeMsec = InInDecayTimeMsec;
+	Parms.InDecayTimeMsec = InDecayTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4602,7 +5495,7 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeDecayTime(float InInDecayT
 // Parameters:
 // bool                               bInBiasInvert                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPositionEnvelopeBiasInvert(bool InbInBiasInvert)
+void USynthComponentMonoWaveTable::SetPositionEnvelopeBiasInvert(bool bInBiasInvert)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4611,15 +5504,15 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeBiasInvert(bool InbInBiasI
 
 	Params::USynthComponentMonoWaveTable_SetPositionEnvelopeBiasInvert_Params Parms{};
 
-	Parms.bInBiasInvert = InbInBiasInvert;
+	Parms.bInBiasInvert = bInBiasInvert;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4629,7 +5522,7 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeBiasInvert(bool InbInBiasI
 // Parameters:
 // float                              InDepth                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPositionEnvelopeBiasDepth(float InInDepth)
+void USynthComponentMonoWaveTable::SetPositionEnvelopeBiasDepth(float InDepth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4638,15 +5531,15 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeBiasDepth(float InInDepth)
 
 	Params::USynthComponentMonoWaveTable_SetPositionEnvelopeBiasDepth_Params Parms{};
 
-	Parms.InDepth = InInDepth;
+	Parms.InDepth = InDepth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4656,7 +5549,7 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeBiasDepth(float InInDepth)
 // Parameters:
 // float                              InAttackTimeMsec                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetPositionEnvelopeAttackTime(float InInAttackTimeMsec)
+void USynthComponentMonoWaveTable::SetPositionEnvelopeAttackTime(float InAttackTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4665,15 +5558,15 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeAttackTime(float InInAttac
 
 	Params::USynthComponentMonoWaveTable_SetPositionEnvelopeAttackTime_Params Parms{};
 
-	Parms.InAttackTimeMsec = InInAttackTimeMsec;
+	Parms.InAttackTimeMsec = InAttackTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4683,7 +5576,7 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeAttackTime(float InInAttac
 // Parameters:
 // float                              InNewQ                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetLowPassFilterResonance(float InInNewQ)
+void USynthComponentMonoWaveTable::SetLowPassFilterResonance(float InNewQ)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4692,15 +5585,15 @@ void USynthComponentMonoWaveTable::SetLowPassFilterResonance(float InInNewQ)
 
 	Params::USynthComponentMonoWaveTable_SetLowPassFilterResonance_Params Parms{};
 
-	Parms.InNewQ = InInNewQ;
+	Parms.InNewQ = InNewQ;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4710,7 +5603,7 @@ void USynthComponentMonoWaveTable::SetLowPassFilterResonance(float InInNewQ)
 // Parameters:
 // float                              InMidiNote                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFrequencyWithMidiNote(float InInMidiNote)
+void USynthComponentMonoWaveTable::SetFrequencyWithMidiNote(float InMidiNote)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4719,15 +5612,15 @@ void USynthComponentMonoWaveTable::SetFrequencyWithMidiNote(float InInMidiNote)
 
 	Params::USynthComponentMonoWaveTable_SetFrequencyWithMidiNote_Params Parms{};
 
-	Parms.InMidiNote = InInMidiNote;
+	Parms.InMidiNote = InMidiNote;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4737,7 +5630,7 @@ void USynthComponentMonoWaveTable::SetFrequencyWithMidiNote(float InInMidiNote)
 // Parameters:
 // float                              FrequencyOffsetCents                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFrequencyPitchBend(float InFrequencyOffsetCents)
+void USynthComponentMonoWaveTable::SetFrequencyPitchBend(float FrequencyOffsetCents)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4746,15 +5639,15 @@ void USynthComponentMonoWaveTable::SetFrequencyPitchBend(float InFrequencyOffset
 
 	Params::USynthComponentMonoWaveTable_SetFrequencyPitchBend_Params Parms{};
 
-	Parms.FrequencyOffsetCents = InFrequencyOffsetCents;
+	Parms.FrequencyOffsetCents = FrequencyOffsetCents;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4764,7 +5657,7 @@ void USynthComponentMonoWaveTable::SetFrequencyPitchBend(float InFrequencyOffset
 // Parameters:
 // float                              FrequencyHz                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFrequency(float InFrequencyHz)
+void USynthComponentMonoWaveTable::SetFrequency(float FrequencyHz)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4773,15 +5666,15 @@ void USynthComponentMonoWaveTable::SetFrequency(float InFrequencyHz)
 
 	Params::USynthComponentMonoWaveTable_SetFrequency_Params Parms{};
 
-	Parms.FrequencyHz = InFrequencyHz;
+	Parms.FrequencyHz = FrequencyHz;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4791,7 +5684,7 @@ void USynthComponentMonoWaveTable::SetFrequency(float InFrequencyHz)
 // Parameters:
 // float                              InSustainGain                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFilterEnvelopeSustainGain(float InInSustainGain)
+void USynthComponentMonoWaveTable::SetFilterEnvelopeSustainGain(float InSustainGain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4800,15 +5693,15 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeSustainGain(float InInSustai
 
 	Params::USynthComponentMonoWaveTable_SetFilterEnvelopeSustainGain_Params Parms{};
 
-	Parms.InSustainGain = InInSustainGain;
+	Parms.InSustainGain = InSustainGain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4818,7 +5711,7 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeSustainGain(float InInSustai
 // Parameters:
 // float                              InReleaseTimeMsec                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFilterEnvelopeReleaseTime(float InInReleaseTimeMsec)
+void USynthComponentMonoWaveTable::SetFilterEnvelopeReleaseTime(float InReleaseTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4827,15 +5720,15 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeReleaseTime(float InInReleas
 
 	Params::USynthComponentMonoWaveTable_SetFilterEnvelopeReleaseTime_Params Parms{};
 
-	Parms.InReleaseTimeMsec = InInReleaseTimeMsec;
+	Parms.InReleaseTimeMsec = InReleaseTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4845,7 +5738,7 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeReleaseTime(float InInReleas
 // Parameters:
 // float                              InDecayTimeMsec                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFilterEnvelopenDecayTime(float InInDecayTimeMsec)
+void USynthComponentMonoWaveTable::SetFilterEnvelopenDecayTime(float InDecayTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4854,15 +5747,15 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopenDecayTime(float InInDecayTi
 
 	Params::USynthComponentMonoWaveTable_SetFilterEnvelopenDecayTime_Params Parms{};
 
-	Parms.InDecayTimeMsec = InInDecayTimeMsec;
+	Parms.InDecayTimeMsec = InDecayTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4872,7 +5765,7 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopenDecayTime(float InInDecayTi
 // Parameters:
 // bool                               bInInvert                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFilterEnvelopeInvert(bool InbInInvert)
+void USynthComponentMonoWaveTable::SetFilterEnvelopeInvert(bool bInInvert)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4881,15 +5774,15 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeInvert(bool InbInInvert)
 
 	Params::USynthComponentMonoWaveTable_SetFilterEnvelopeInvert_Params Parms{};
 
-	Parms.bInInvert = InbInInvert;
+	Parms.bInInvert = bInInvert;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4899,7 +5792,7 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeInvert(bool InbInInvert)
 // Parameters:
 // float                              InDepth                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFilterEnvelopeDepth(float InInDepth)
+void USynthComponentMonoWaveTable::SetFilterEnvelopeDepth(float InDepth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4908,15 +5801,15 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeDepth(float InInDepth)
 
 	Params::USynthComponentMonoWaveTable_SetFilterEnvelopeDepth_Params Parms{};
 
-	Parms.InDepth = InInDepth;
+	Parms.InDepth = InDepth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4926,7 +5819,7 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeDepth(float InInDepth)
 // Parameters:
 // bool                               bInBiasInvert                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFilterEnvelopeBiasInvert(bool InbInBiasInvert)
+void USynthComponentMonoWaveTable::SetFilterEnvelopeBiasInvert(bool bInBiasInvert)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4935,15 +5828,15 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeBiasInvert(bool InbInBiasInv
 
 	Params::USynthComponentMonoWaveTable_SetFilterEnvelopeBiasInvert_Params Parms{};
 
-	Parms.bInBiasInvert = InbInBiasInvert;
+	Parms.bInBiasInvert = bInBiasInvert;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4953,7 +5846,7 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeBiasInvert(bool InbInBiasInv
 // Parameters:
 // float                              InDepth                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFilterEnvelopeBiasDepth(float InInDepth)
+void USynthComponentMonoWaveTable::SetFilterEnvelopeBiasDepth(float InDepth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4962,15 +5855,15 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeBiasDepth(float InInDepth)
 
 	Params::USynthComponentMonoWaveTable_SetFilterEnvelopeBiasDepth_Params Parms{};
 
-	Parms.InDepth = InInDepth;
+	Parms.InDepth = InDepth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -4980,7 +5873,7 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeBiasDepth(float InInDepth)
 // Parameters:
 // float                              InAttackTimeMsec                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetFilterEnvelopeAttackTime(float InInAttackTimeMsec)
+void USynthComponentMonoWaveTable::SetFilterEnvelopeAttackTime(float InAttackTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4989,15 +5882,15 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeAttackTime(float InInAttackT
 
 	Params::USynthComponentMonoWaveTable_SetFilterEnvelopeAttackTime_Params Parms{};
 
-	Parms.InAttackTimeMsec = InInAttackTimeMsec;
+	Parms.InAttackTimeMsec = InAttackTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5010,7 +5903,7 @@ void USynthComponentMonoWaveTable::SetFilterEnvelopeAttackTime(float InInAttackT
 // float                              NewValue                                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USynthComponentMonoWaveTable::SetCurveValue(int32 InTableIndex, int32 InKeyframeIndex, float InNewValue)
+bool USynthComponentMonoWaveTable::SetCurveValue(int32 TableIndex, int32 KeyframeIndex, float NewValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5019,17 +5912,17 @@ bool USynthComponentMonoWaveTable::SetCurveValue(int32 InTableIndex, int32 InKey
 
 	Params::USynthComponentMonoWaveTable_SetCurveValue_Params Parms{};
 
-	Parms.TableIndex = InTableIndex;
-	Parms.KeyframeIndex = InKeyframeIndex;
-	Parms.NewValue = InNewValue;
+	Parms.TableIndex = TableIndex;
+	Parms.KeyframeIndex = KeyframeIndex;
+	Parms.NewValue = NewValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5043,7 +5936,7 @@ bool USynthComponentMonoWaveTable::SetCurveValue(int32 InTableIndex, int32 InKey
 // float                              InNewTangent                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USynthComponentMonoWaveTable::SetCurveTangent(int32 InTableIndex, float InInNewTangent)
+bool USynthComponentMonoWaveTable::SetCurveTangent(int32 TableIndex, float InNewTangent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5052,16 +5945,16 @@ bool USynthComponentMonoWaveTable::SetCurveTangent(int32 InTableIndex, float InI
 
 	Params::USynthComponentMonoWaveTable_SetCurveTangent_Params Parms{};
 
-	Parms.TableIndex = InTableIndex;
-	Parms.InNewTangent = InInNewTangent;
+	Parms.TableIndex = TableIndex;
+	Parms.InNewTangent = InNewTangent;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5075,7 +5968,7 @@ bool USynthComponentMonoWaveTable::SetCurveTangent(int32 InTableIndex, float InI
 // int32                              TableIndex                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool USynthComponentMonoWaveTable::SetCurveInterpolationType(enum class ECurveInterpolationType InInterpolationType, int32 InTableIndex)
+bool USynthComponentMonoWaveTable::SetCurveInterpolationType(enum class ECurveInterpolationType InterpolationType, int32 TableIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5084,16 +5977,16 @@ bool USynthComponentMonoWaveTable::SetCurveInterpolationType(enum class ECurveIn
 
 	Params::USynthComponentMonoWaveTable_SetCurveInterpolationType_Params Parms{};
 
-	Parms.InterpolationType = InInterpolationType;
-	Parms.TableIndex = InTableIndex;
+	Parms.InterpolationType = InterpolationType;
+	Parms.TableIndex = TableIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5105,7 +5998,7 @@ bool USynthComponentMonoWaveTable::SetCurveInterpolationType(enum class ECurveIn
 // Parameters:
 // float                              InSustainGain                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetAmpEnvelopeSustainGain(float InInSustainGain)
+void USynthComponentMonoWaveTable::SetAmpEnvelopeSustainGain(float InSustainGain)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5114,15 +6007,15 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeSustainGain(float InInSustainGa
 
 	Params::USynthComponentMonoWaveTable_SetAmpEnvelopeSustainGain_Params Parms{};
 
-	Parms.InSustainGain = InInSustainGain;
+	Parms.InSustainGain = InSustainGain;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5132,7 +6025,7 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeSustainGain(float InInSustainGa
 // Parameters:
 // float                              InReleaseTimeMsec                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetAmpEnvelopeReleaseTime(float InInReleaseTimeMsec)
+void USynthComponentMonoWaveTable::SetAmpEnvelopeReleaseTime(float InReleaseTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5141,15 +6034,15 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeReleaseTime(float InInReleaseTi
 
 	Params::USynthComponentMonoWaveTable_SetAmpEnvelopeReleaseTime_Params Parms{};
 
-	Parms.InReleaseTimeMsec = InInReleaseTimeMsec;
+	Parms.InReleaseTimeMsec = InReleaseTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5159,7 +6052,7 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeReleaseTime(float InInReleaseTi
 // Parameters:
 // bool                               bInInvert                                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetAmpEnvelopeInvert(bool InbInInvert)
+void USynthComponentMonoWaveTable::SetAmpEnvelopeInvert(bool bInInvert)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5168,15 +6061,15 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeInvert(bool InbInInvert)
 
 	Params::USynthComponentMonoWaveTable_SetAmpEnvelopeInvert_Params Parms{};
 
-	Parms.bInInvert = InbInInvert;
+	Parms.bInInvert = bInInvert;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5186,7 +6079,7 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeInvert(bool InbInInvert)
 // Parameters:
 // float                              InDepth                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetAmpEnvelopeDepth(float InInDepth)
+void USynthComponentMonoWaveTable::SetAmpEnvelopeDepth(float InDepth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5195,15 +6088,15 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeDepth(float InInDepth)
 
 	Params::USynthComponentMonoWaveTable_SetAmpEnvelopeDepth_Params Parms{};
 
-	Parms.InDepth = InInDepth;
+	Parms.InDepth = InDepth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5213,7 +6106,7 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeDepth(float InInDepth)
 // Parameters:
 // float                              InDecayTimeMsec                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetAmpEnvelopeDecayTime(float InInDecayTimeMsec)
+void USynthComponentMonoWaveTable::SetAmpEnvelopeDecayTime(float InDecayTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5222,15 +6115,15 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeDecayTime(float InInDecayTimeMs
 
 	Params::USynthComponentMonoWaveTable_SetAmpEnvelopeDecayTime_Params Parms{};
 
-	Parms.InDecayTimeMsec = InInDecayTimeMsec;
+	Parms.InDecayTimeMsec = InDecayTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5240,7 +6133,7 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeDecayTime(float InInDecayTimeMs
 // Parameters:
 // bool                               bInBiasInvert                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetAmpEnvelopeBiasInvert(bool InbInBiasInvert)
+void USynthComponentMonoWaveTable::SetAmpEnvelopeBiasInvert(bool bInBiasInvert)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5249,15 +6142,15 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeBiasInvert(bool InbInBiasInvert
 
 	Params::USynthComponentMonoWaveTable_SetAmpEnvelopeBiasInvert_Params Parms{};
 
-	Parms.bInBiasInvert = InbInBiasInvert;
+	Parms.bInBiasInvert = bInBiasInvert;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5267,7 +6160,7 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeBiasInvert(bool InbInBiasInvert
 // Parameters:
 // float                              InDepth                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetAmpEnvelopeBiasDepth(float InInDepth)
+void USynthComponentMonoWaveTable::SetAmpEnvelopeBiasDepth(float InDepth)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5276,15 +6169,15 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeBiasDepth(float InInDepth)
 
 	Params::USynthComponentMonoWaveTable_SetAmpEnvelopeBiasDepth_Params Parms{};
 
-	Parms.InDepth = InInDepth;
+	Parms.InDepth = InDepth;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5294,7 +6187,7 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeBiasDepth(float InInDepth)
 // Parameters:
 // float                              InAttackTimeMsec                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::SetAmpEnvelopeAttackTime(float InInAttackTimeMsec)
+void USynthComponentMonoWaveTable::SetAmpEnvelopeAttackTime(float InAttackTimeMsec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5303,15 +6196,15 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeAttackTime(float InInAttackTime
 
 	Params::USynthComponentMonoWaveTable_SetAmpEnvelopeAttackTime_Params Parms{};
 
-	Parms.InAttackTimeMsec = InInAttackTimeMsec;
+	Parms.InAttackTimeMsec = InAttackTimeMsec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5321,7 +6214,7 @@ void USynthComponentMonoWaveTable::SetAmpEnvelopeAttackTime(float InInAttackTime
 // Parameters:
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::RefreshWaveTable(int32 InIndex)
+void USynthComponentMonoWaveTable::RefreshWaveTable(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5330,15 +6223,15 @@ void USynthComponentMonoWaveTable::RefreshWaveTable(int32 InIndex)
 
 	Params::USynthComponentMonoWaveTable_RefreshWaveTable_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5357,13 +6250,13 @@ void USynthComponentMonoWaveTable::RefreshAllWaveTables()
 	Params::USynthComponentMonoWaveTable_RefreshAllWaveTables_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5374,7 +6267,7 @@ void USynthComponentMonoWaveTable::RefreshAllWaveTables()
 // float                              InMidiNote                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              InVelocity                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::NoteOn(float InInMidiNote, float InInVelocity)
+void USynthComponentMonoWaveTable::NoteOn(float InMidiNote, float InVelocity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5383,16 +6276,16 @@ void USynthComponentMonoWaveTable::NoteOn(float InInMidiNote, float InInVelocity
 
 	Params::USynthComponentMonoWaveTable_NoteOn_Params Parms{};
 
-	Parms.InMidiNote = InInMidiNote;
-	Parms.InVelocity = InInVelocity;
+	Parms.InMidiNote = InMidiNote;
+	Parms.InVelocity = InVelocity;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5402,7 +6295,7 @@ void USynthComponentMonoWaveTable::NoteOn(float InInMidiNote, float InInVelocity
 // Parameters:
 // float                              InMidiNote                                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::NoteOff(float InInMidiNote)
+void USynthComponentMonoWaveTable::NoteOff(float InMidiNote)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5411,15 +6304,15 @@ void USynthComponentMonoWaveTable::NoteOff(float InInMidiNote)
 
 	Params::USynthComponentMonoWaveTable_NoteOff_Params Parms{};
 
-	Parms.InMidiNote = InInMidiNote;
+	Parms.InMidiNote = InMidiNote;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5439,13 +6332,13 @@ int32 USynthComponentMonoWaveTable::GetNumTableEntries()
 	Params::USynthComponentMonoWaveTable_GetNumTableEntries_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5467,13 +6360,13 @@ int32 USynthComponentMonoWaveTable::GetMaxTableIndex()
 	Params::USynthComponentMonoWaveTable_GetMaxTableIndex_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5486,7 +6379,7 @@ int32 USynthComponentMonoWaveTable::GetMaxTableIndex()
 // float                              TableIndex                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<float>                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<float> USynthComponentMonoWaveTable::GetKeyFrameValuesForTable(float InTableIndex)
+TArray<float> USynthComponentMonoWaveTable::GetKeyFrameValuesForTable(float TableIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5495,15 +6388,15 @@ TArray<float> USynthComponentMonoWaveTable::GetKeyFrameValuesForTable(float InTa
 
 	Params::USynthComponentMonoWaveTable_GetKeyFrameValuesForTable_Params Parms{};
 
-	Parms.TableIndex = InTableIndex;
+	Parms.TableIndex = TableIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5516,7 +6409,7 @@ TArray<float> USynthComponentMonoWaveTable::GetKeyFrameValuesForTable(float InTa
 // int32                              TableIndex                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USynthComponentMonoWaveTable::GetCurveTangent(int32 InTableIndex)
+float USynthComponentMonoWaveTable::GetCurveTangent(int32 TableIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5525,18 +6418,46 @@ float USynthComponentMonoWaveTable::GetCurveTangent(int32 InTableIndex)
 
 	Params::USynthComponentMonoWaveTable_GetCurveTangent_Params Parms{};
 
-	Parms.TableIndex = InTableIndex;
+	Parms.TableIndex = TableIndex;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class Synthesis.SynthComponentToneGenerator
+// (SceneComponent)
+
+class UClass* USynthComponentToneGenerator::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SynthComponentToneGenerator");
+
+	return Clss;
+}
+
+
+// SynthComponentToneGenerator Synthesis.Default__SynthComponentToneGenerator
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USynthComponentToneGenerator* USynthComponentToneGenerator::GetDefaultObj()
+{
+	static class USynthComponentToneGenerator* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USynthComponentToneGenerator*>(USynthComponentToneGenerator::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5545,7 +6466,7 @@ float USynthComponentMonoWaveTable::GetCurveTangent(int32 InTableIndex)
 // Parameters:
 // float                              InVolume                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentToneGenerator::SetVolume(float InInVolume)
+void USynthComponentToneGenerator::SetVolume(float InVolume)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5554,15 +6475,15 @@ void USynthComponentToneGenerator::SetVolume(float InInVolume)
 
 	Params::USynthComponentToneGenerator_SetVolume_Params Parms{};
 
-	Parms.InVolume = InInVolume;
+	Parms.InVolume = InVolume;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5572,7 +6493,7 @@ void USynthComponentToneGenerator::SetVolume(float InInVolume)
 // Parameters:
 // float                              InFrequency                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentToneGenerator::SetFrequency(float InInFrequency)
+void USynthComponentToneGenerator::SetFrequency(float InFrequency)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5581,16 +6502,44 @@ void USynthComponentToneGenerator::SetFrequency(float InInFrequency)
 
 	Params::USynthComponentToneGenerator_SetFrequency_Params Parms{};
 
-	Parms.InFrequency = InInFrequency;
+	Parms.InFrequency = InFrequency;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Synthesis.SynthSamplePlayer
+// (SceneComponent)
+
+class UClass* USynthSamplePlayer::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SynthSamplePlayer");
+
+	return Clss;
+}
+
+
+// SynthSamplePlayer Synthesis.Default__SynthSamplePlayer
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USynthSamplePlayer* USynthSamplePlayer::GetDefaultObj()
+{
+	static class USynthSamplePlayer* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USynthSamplePlayer*>(USynthSamplePlayer::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5599,7 +6548,7 @@ void USynthComponentToneGenerator::SetFrequency(float InInFrequency)
 // Parameters:
 // class USoundWave*                  InSoundWave                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthSamplePlayer::SetSoundWave(class USoundWave* InInSoundWave)
+void USynthSamplePlayer::SetSoundWave(class USoundWave* InSoundWave)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5608,15 +6557,15 @@ void USynthSamplePlayer::SetSoundWave(class USoundWave* InInSoundWave)
 
 	Params::USynthSamplePlayer_SetSoundWave_Params Parms{};
 
-	Parms.InSoundWave = InInSoundWave;
+	Parms.InSoundWave = InSoundWave;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5626,7 +6575,7 @@ void USynthSamplePlayer::SetSoundWave(class USoundWave* InInSoundWave)
 // Parameters:
 // float                              InScrubTimeWidthSec                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthSamplePlayer::SetScrubTimeWidth(float InInScrubTimeWidthSec)
+void USynthSamplePlayer::SetScrubTimeWidth(float InScrubTimeWidthSec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5635,15 +6584,15 @@ void USynthSamplePlayer::SetScrubTimeWidth(float InInScrubTimeWidthSec)
 
 	Params::USynthSamplePlayer_SetScrubTimeWidth_Params Parms{};
 
-	Parms.InScrubTimeWidthSec = InInScrubTimeWidthSec;
+	Parms.InScrubTimeWidthSec = InScrubTimeWidthSec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5653,7 +6602,7 @@ void USynthSamplePlayer::SetScrubTimeWidth(float InInScrubTimeWidthSec)
 // Parameters:
 // bool                               bScrubMode                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthSamplePlayer::SetScrubMode(bool InbScrubMode)
+void USynthSamplePlayer::SetScrubMode(bool bScrubMode)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5662,15 +6611,15 @@ void USynthSamplePlayer::SetScrubMode(bool InbScrubMode)
 
 	Params::USynthSamplePlayer_SetScrubMode_Params Parms{};
 
-	Parms.bScrubMode = InbScrubMode;
+	Parms.bScrubMode = bScrubMode;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5681,7 +6630,7 @@ void USynthSamplePlayer::SetScrubMode(bool InbScrubMode)
 // float                              InPitch                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              TimeSec                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthSamplePlayer::SetPitch(float InInPitch, float InTimeSec)
+void USynthSamplePlayer::SetPitch(float InPitch, float TimeSec)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5690,16 +6639,16 @@ void USynthSamplePlayer::SetPitch(float InInPitch, float InTimeSec)
 
 	Params::USynthSamplePlayer_SetPitch_Params Parms{};
 
-	Parms.InPitch = InInPitch;
-	Parms.TimeSec = InTimeSec;
+	Parms.InPitch = InPitch;
+	Parms.TimeSec = TimeSec;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5711,7 +6660,7 @@ void USynthSamplePlayer::SetPitch(float InInPitch, float InTimeSec)
 // enum class ESamplePlayerSeekType   SeekType                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               bWrap                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthSamplePlayer::SeekToTime(float InTimeSec, enum class ESamplePlayerSeekType InSeekType, bool InbWrap)
+void USynthSamplePlayer::SeekToTime(float TimeSec, enum class ESamplePlayerSeekType SeekType, bool bWrap)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5720,17 +6669,17 @@ void USynthSamplePlayer::SeekToTime(float InTimeSec, enum class ESamplePlayerSee
 
 	Params::USynthSamplePlayer_SeekToTime_Params Parms{};
 
-	Parms.TimeSec = InTimeSec;
-	Parms.SeekType = InSeekType;
-	Parms.bWrap = InbWrap;
+	Parms.TimeSec = TimeSec;
+	Parms.SeekType = SeekType;
+	Parms.bWrap = bWrap;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5750,13 +6699,13 @@ bool USynthSamplePlayer::IsLoaded()
 	Params::USynthSamplePlayer_IsLoaded_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5778,13 +6727,13 @@ float USynthSamplePlayer::GetSampleDuration()
 	Params::USynthSamplePlayer_GetSampleDuration_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5806,13 +6755,13 @@ float USynthSamplePlayer::GetCurrentPlaybackProgressTime()
 	Params::USynthSamplePlayer_GetCurrentPlaybackProgressTime_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5834,16 +6783,44 @@ float USynthSamplePlayer::GetCurrentPlaybackProgressPercent()
 	Params::USynthSamplePlayer_GetCurrentPlaybackProgressPercent_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class Synthesis.SynthesisUtilitiesBlueprintFunctionLibrary
+// (None)
+
+class UClass* USynthesisUtilitiesBlueprintFunctionLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SynthesisUtilitiesBlueprintFunctionLibrary");
+
+	return Clss;
+}
+
+
+// SynthesisUtilitiesBlueprintFunctionLibrary Synthesis.Default__SynthesisUtilitiesBlueprintFunctionLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USynthesisUtilitiesBlueprintFunctionLibrary* USynthesisUtilitiesBlueprintFunctionLibrary::GetDefaultObj()
+{
+	static class USynthesisUtilitiesBlueprintFunctionLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USynthesisUtilitiesBlueprintFunctionLibrary*>(USynthesisUtilitiesBlueprintFunctionLibrary::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5857,7 +6834,7 @@ float USynthSamplePlayer::GetCurrentPlaybackProgressPercent()
 // float                              InRangeMax                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USynthesisUtilitiesBlueprintFunctionLibrary::GetLogFrequency(float InInLinearValue, float InInDomainMin, float InInDomainMax, float InInRangeMin, float InInRangeMax)
+float USynthesisUtilitiesBlueprintFunctionLibrary::GetLogFrequency(float InLinearValue, float InDomainMin, float InDomainMax, float InRangeMin, float InRangeMax)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5866,19 +6843,19 @@ float USynthesisUtilitiesBlueprintFunctionLibrary::GetLogFrequency(float InInLin
 
 	Params::USynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequency_Params Parms{};
 
-	Parms.InLinearValue = InInLinearValue;
-	Parms.InDomainMin = InInDomainMin;
-	Parms.InDomainMax = InInDomainMax;
-	Parms.InRangeMin = InInRangeMin;
-	Parms.InRangeMax = InInRangeMax;
+	Parms.InLinearValue = InLinearValue;
+	Parms.InDomainMin = InDomainMin;
+	Parms.InDomainMax = InDomainMax;
+	Parms.InRangeMin = InRangeMin;
+	Parms.InRangeMax = InRangeMax;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -5895,7 +6872,7 @@ float USynthesisUtilitiesBlueprintFunctionLibrary::GetLogFrequency(float InInLin
 // float                              InRangeMax                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USynthesisUtilitiesBlueprintFunctionLibrary::GetLinearFrequency(float InInLogFrequencyValue, float InInDomainMin, float InInDomainMax, float InInRangeMin, float InInRangeMax)
+float USynthesisUtilitiesBlueprintFunctionLibrary::GetLinearFrequency(float InLogFrequencyValue, float InDomainMin, float InDomainMax, float InRangeMin, float InRangeMax)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5904,22 +6881,50 @@ float USynthesisUtilitiesBlueprintFunctionLibrary::GetLinearFrequency(float InIn
 
 	Params::USynthesisUtilitiesBlueprintFunctionLibrary_GetLinearFrequency_Params Parms{};
 
-	Parms.InLogFrequencyValue = InInLogFrequencyValue;
-	Parms.InDomainMin = InInDomainMin;
-	Parms.InDomainMax = InInDomainMax;
-	Parms.InRangeMin = InInRangeMin;
-	Parms.InRangeMax = InInRangeMax;
+	Parms.InLogFrequencyValue = InLogFrequencyValue;
+	Parms.InDomainMin = InDomainMin;
+	Parms.InDomainMax = InDomainMax;
+	Parms.InRangeMin = InRangeMin;
+	Parms.InRangeMax = InRangeMax;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class Synthesis.Synth2DSlider
+// (None)
+
+class UClass* USynth2DSlider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("Synth2DSlider");
+
+	return Clss;
+}
+
+
+// Synth2DSlider Synthesis.Default__Synth2DSlider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USynth2DSlider* USynth2DSlider::GetDefaultObj()
+{
+	static class USynth2DSlider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USynth2DSlider*>(USynth2DSlider::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -5928,7 +6933,7 @@ float USynthesisUtilitiesBlueprintFunctionLibrary::GetLinearFrequency(float InIn
 // Parameters:
 // struct FVector2D                   InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynth2DSlider::SetValue(const struct FVector2D& InInValue)
+void USynth2DSlider::SetValue(const struct FVector2D& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5937,15 +6942,15 @@ void USynth2DSlider::SetValue(const struct FVector2D& InInValue)
 
 	Params::USynth2DSlider_SetValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5955,7 +6960,7 @@ void USynth2DSlider::SetValue(const struct FVector2D& InInValue)
 // Parameters:
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynth2DSlider::SetStepSize(float InInValue)
+void USynth2DSlider::SetStepSize(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5964,15 +6969,15 @@ void USynth2DSlider::SetStepSize(float InInValue)
 
 	Params::USynth2DSlider_SetStepSize_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -5982,7 +6987,7 @@ void USynth2DSlider::SetStepSize(float InInValue)
 // Parameters:
 // struct FLinearColor                InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynth2DSlider::SetSliderHandleColor(const struct FLinearColor& InInValue)
+void USynth2DSlider::SetSliderHandleColor(const struct FLinearColor& InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5991,15 +6996,15 @@ void USynth2DSlider::SetSliderHandleColor(const struct FLinearColor& InInValue)
 
 	Params::USynth2DSlider_SetSliderHandleColor_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6009,7 +7014,7 @@ void USynth2DSlider::SetSliderHandleColor(const struct FLinearColor& InInValue)
 // Parameters:
 // bool                               InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynth2DSlider::SetLocked(bool InInValue)
+void USynth2DSlider::SetLocked(bool InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6018,15 +7023,15 @@ void USynth2DSlider::SetLocked(bool InInValue)
 
 	Params::USynth2DSlider_SetLocked_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6036,7 +7041,7 @@ void USynth2DSlider::SetLocked(bool InInValue)
 // Parameters:
 // bool                               InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynth2DSlider::SetIndentHandle(bool InInValue)
+void USynth2DSlider::SetIndentHandle(bool InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6045,15 +7050,15 @@ void USynth2DSlider::SetIndentHandle(bool InInValue)
 
 	Params::USynth2DSlider_SetIndentHandle_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6073,16 +7078,44 @@ struct FVector2D USynth2DSlider::GetValue()
 	Params::USynth2DSlider_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class Synthesis.SynthKnob
+// (None)
+
+class UClass* USynthKnob::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("SynthKnob");
+
+	return Clss;
+}
+
+
+// SynthKnob Synthesis.Default__SynthKnob
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class USynthKnob* USynthKnob::GetDefaultObj()
+{
+	static class USynthKnob* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<USynthKnob*>(USynthKnob::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -6091,7 +7124,7 @@ struct FVector2D USynth2DSlider::GetValue()
 // Parameters:
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthKnob::SetValue(float InInValue)
+void USynthKnob::SetValue(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6100,15 +7133,15 @@ void USynthKnob::SetValue(float InInValue)
 
 	Params::USynthKnob_SetValue_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6118,7 +7151,7 @@ void USynthKnob::SetValue(float InInValue)
 // Parameters:
 // float                              InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthKnob::SetStepSize(float InInValue)
+void USynthKnob::SetStepSize(float InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6127,15 +7160,15 @@ void USynthKnob::SetStepSize(float InInValue)
 
 	Params::USynthKnob_SetStepSize_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6145,7 +7178,7 @@ void USynthKnob::SetStepSize(float InInValue)
 // Parameters:
 // bool                               InValue                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthKnob::SetLocked(bool InInValue)
+void USynthKnob::SetLocked(bool InValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -6154,15 +7187,15 @@ void USynthKnob::SetLocked(bool InInValue)
 
 	Params::USynthKnob_SetLocked_Params Parms{};
 
-	Parms.InValue = InInValue;
+	Parms.InValue = InValue;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -6182,13 +7215,13 @@ float USynthKnob::GetValue()
 	Params::USynthKnob_GetValue_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -6196,6 +7229,4 @@ float USynthKnob::GetValue()
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -22,7 +19,7 @@ namespace SDK
 struct FScriptTypedElementHandle
 {
 public:
-	uint8                                        Pad_2205[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_219A[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -30,11 +27,9 @@ public:
 struct FScriptTypedElementListProxy
 {
 public:
-	uint8                                        Pad_2207[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_219C[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

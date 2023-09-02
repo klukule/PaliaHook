@@ -2,11 +2,8 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
@@ -15,12 +12,152 @@ namespace SDK
 //---------------------------------------------------------------------------------------------------------------------
 
 
+// Class S6UICommonWidgets.S6UI_Settings
+// (None)
+
+class UClass* US6UI_Settings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_Settings");
+
+	return Clss;
+}
+
+
+// S6UI_Settings S6UICommonWidgets.Default__S6UI_Settings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_Settings* US6UI_Settings::GetDefaultObj()
+{
+	static class US6UI_Settings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_Settings*>(US6UI_Settings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICommonWidgets.S6UI_BackgroundBlur
+// (None)
+
+class UClass* US6UI_BackgroundBlur::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_BackgroundBlur");
+
+	return Clss;
+}
+
+
+// S6UI_BackgroundBlur S6UICommonWidgets.Default__S6UI_BackgroundBlur
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_BackgroundBlur* US6UI_BackgroundBlur::GetDefaultObj()
+{
+	static class US6UI_BackgroundBlur* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_BackgroundBlur*>(US6UI_BackgroundBlur::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICommonWidgets.S6UI_CommonButtonStyle
+// (None)
+
+class UClass* US6UI_CommonButtonStyle::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_CommonButtonStyle");
+
+	return Clss;
+}
+
+
+// S6UI_CommonButtonStyle S6UICommonWidgets.Default__S6UI_CommonButtonStyle
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_CommonButtonStyle* US6UI_CommonButtonStyle::GetDefaultObj()
+{
+	static class US6UI_CommonButtonStyle* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_CommonButtonStyle*>(US6UI_CommonButtonStyle::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICommonWidgets.S6UI_CommonButtonInternalBase
+// (None)
+
+class UClass* US6UI_CommonButtonInternalBase::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_CommonButtonInternalBase");
+
+	return Clss;
+}
+
+
+// S6UI_CommonButtonInternalBase S6UICommonWidgets.Default__S6UI_CommonButtonInternalBase
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_CommonButtonInternalBase* US6UI_CommonButtonInternalBase::GetDefaultObj()
+{
+	static class US6UI_CommonButtonInternalBase* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_CommonButtonInternalBase*>(US6UI_CommonButtonInternalBase::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICommonWidgets.S6UI_CommonButton_Styled
+// (None)
+
+class UClass* US6UI_CommonButton_Styled::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_CommonButton_Styled");
+
+	return Clss;
+}
+
+
+// S6UI_CommonButton_Styled S6UICommonWidgets.Default__S6UI_CommonButton_Styled
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_CommonButton_Styled* US6UI_CommonButton_Styled::GetDefaultObj()
+{
+	static class US6UI_CommonButton_Styled* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_CommonButton_Styled*>(US6UI_CommonButton_Styled::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Function S6UICommonWidgets.S6UI_CommonButton_Styled.SetIsDropShadow
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                               bEnable                                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CommonButton_Styled::SetIsDropShadow(bool InbEnable)
+void US6UI_CommonButton_Styled::SetIsDropShadow(bool bEnable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29,15 +166,15 @@ void US6UI_CommonButton_Styled::SetIsDropShadow(bool InbEnable)
 
 	Params::US6UI_CommonButton_Styled_SetIsDropShadow_Params Parms{};
 
-	Parms.bEnable = InbEnable;
+	Parms.bEnable = bEnable;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -47,7 +184,7 @@ void US6UI_CommonButton_Styled::SetIsDropShadow(bool InbEnable)
 // Parameters:
 // TSubclassOf<class US6UI_CommonButtonStyle>InStyle                                                          (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CommonButton_Styled::SetCommonButtonStyle(TSubclassOf<class US6UI_CommonButtonStyle> InInStyle)
+void US6UI_CommonButton_Styled::SetCommonButtonStyle(TSubclassOf<class US6UI_CommonButtonStyle> InStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,16 +193,44 @@ void US6UI_CommonButton_Styled::SetCommonButtonStyle(TSubclassOf<class US6UI_Com
 
 	Params::US6UI_CommonButton_Styled_SetCommonButtonStyle_Params Parms{};
 
-	Parms.InStyle = InInStyle;
+	Parms.InStyle = InStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class S6UICommonWidgets.S6UI_EditableRichText
+// (None)
+
+class UClass* US6UI_EditableRichText::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_EditableRichText");
+
+	return Clss;
+}
+
+
+// S6UI_EditableRichText S6UICommonWidgets.Default__S6UI_EditableRichText
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_EditableRichText* US6UI_EditableRichText::GetDefaultObj()
+{
+	static class US6UI_EditableRichText* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_EditableRichText*>(US6UI_EditableRichText::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -83,13 +248,13 @@ void US6UI_EditableRichText::Undo()
 	Params::US6UI_EditableRichText_Undo_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -99,7 +264,7 @@ void US6UI_EditableRichText::Undo()
 // Parameters:
 // class UDataTable*                  NewTextStyleSet                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetTextStyleSet(class UDataTable* InNewTextStyleSet)
+void US6UI_EditableRichText::SetTextStyleSet(class UDataTable* NewTextStyleSet)
 {
 	static class UFunction* Func = nullptr;
 
@@ -108,15 +273,15 @@ void US6UI_EditableRichText::SetTextStyleSet(class UDataTable* InNewTextStyleSet
 
 	Params::US6UI_EditableRichText_SetTextStyleSet_Params Parms{};
 
-	Parms.NewTextStyleSet = InNewTextStyleSet;
+	Parms.NewTextStyleSet = NewTextStyleSet;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -126,7 +291,7 @@ void US6UI_EditableRichText::SetTextStyleSet(class UDataTable* InNewTextStyleSet
 // Parameters:
 // class FText                        InText                                                           (Parm, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetText(class FText InInText)
+void US6UI_EditableRichText::SetText(class FText InText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -135,15 +300,15 @@ void US6UI_EditableRichText::SetText(class FText InInText)
 
 	Params::US6UI_EditableRichText_SetText_Params Parms{};
 
-	Parms.InText = InInText;
+	Parms.InText = InText;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -153,7 +318,7 @@ void US6UI_EditableRichText::SetText(class FText InInText)
 // Parameters:
 // enum class ETextJustify            InJustification                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetJustification(enum class ETextJustify InInJustification)
+void US6UI_EditableRichText::SetJustification(enum class ETextJustify InJustification)
 {
 	static class UFunction* Func = nullptr;
 
@@ -162,15 +327,15 @@ void US6UI_EditableRichText::SetJustification(enum class ETextJustify InInJustif
 
 	Params::US6UI_EditableRichText_SetJustification_Params Parms{};
 
-	Parms.InJustification = InInJustification;
+	Parms.InJustification = InJustification;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -180,7 +345,7 @@ void US6UI_EditableRichText::SetJustification(enum class ETextJustify InInJustif
 // Parameters:
 // bool                               InbIsReadyOnly                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetIsReadOnly(bool InInbIsReadyOnly)
+void US6UI_EditableRichText::SetIsReadOnly(bool InbIsReadyOnly)
 {
 	static class UFunction* Func = nullptr;
 
@@ -189,15 +354,15 @@ void US6UI_EditableRichText::SetIsReadOnly(bool InInbIsReadyOnly)
 
 	Params::US6UI_EditableRichText_SetIsReadOnly_Params Parms{};
 
-	Parms.InbIsReadyOnly = InInbIsReadyOnly;
+	Parms.InbIsReadyOnly = InbIsReadyOnly;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -207,7 +372,7 @@ void US6UI_EditableRichText::SetIsReadOnly(bool InInbIsReadyOnly)
 // Parameters:
 // class FText                        InHintText                                                       (Parm, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetHintText(class FText InInHintText)
+void US6UI_EditableRichText::SetHintText(class FText InHintText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -216,15 +381,15 @@ void US6UI_EditableRichText::SetHintText(class FText InInHintText)
 
 	Params::US6UI_EditableRichText_SetHintText_Params Parms{};
 
-	Parms.InHintText = InInHintText;
+	Parms.InHintText = InHintText;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -234,7 +399,7 @@ void US6UI_EditableRichText::SetHintText(class FText InInHintText)
 // Parameters:
 // struct FEditableTextStyle          InDefaultTextStyle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetDefaultTextStyle(struct FEditableTextStyle& InInDefaultTextStyle)
+void US6UI_EditableRichText::SetDefaultTextStyle(struct FEditableTextStyle& InDefaultTextStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -243,15 +408,15 @@ void US6UI_EditableRichText::SetDefaultTextStyle(struct FEditableTextStyle& InIn
 
 	Params::US6UI_EditableRichText_SetDefaultTextStyle_Params Parms{};
 
-	Parms.InDefaultTextStyle = InInDefaultTextStyle;
+	Parms.InDefaultTextStyle = InDefaultTextStyle;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -261,7 +426,7 @@ void US6UI_EditableRichText::SetDefaultTextStyle(struct FEditableTextStyle& InIn
 // Parameters:
 // struct FSlateFontInfo              InFontInfo                                                       (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetDefaultFont(const struct FSlateFontInfo& InInFontInfo)
+void US6UI_EditableRichText::SetDefaultFont(const struct FSlateFontInfo& InFontInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -270,15 +435,15 @@ void US6UI_EditableRichText::SetDefaultFont(const struct FSlateFontInfo& InInFon
 
 	Params::US6UI_EditableRichText_SetDefaultFont_Params Parms{};
 
-	Parms.InFontInfo = InInFontInfo;
+	Parms.InFontInfo = InFontInfo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -288,7 +453,7 @@ void US6UI_EditableRichText::SetDefaultFont(const struct FSlateFontInfo& InInFon
 // Parameters:
 // struct FSlateColor                 InColorAndOpacity                                                (Parm, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetDefaultColorAndOpacity(const struct FSlateColor& InInColorAndOpacity)
+void US6UI_EditableRichText::SetDefaultColorAndOpacity(const struct FSlateColor& InColorAndOpacity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -297,15 +462,15 @@ void US6UI_EditableRichText::SetDefaultColorAndOpacity(const struct FSlateColor&
 
 	Params::US6UI_EditableRichText_SetDefaultColorAndOpacity_Params Parms{};
 
-	Parms.InColorAndOpacity = InInColorAndOpacity;
+	Parms.InColorAndOpacity = InColorAndOpacity;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -315,7 +480,7 @@ void US6UI_EditableRichText::SetDefaultColorAndOpacity(const struct FSlateColor&
 // Parameters:
 // struct FSlateBrush                 InCaretImage                                                     (Parm, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetDefaultCaretImage(const struct FSlateBrush& InInCaretImage)
+void US6UI_EditableRichText::SetDefaultCaretImage(const struct FSlateBrush& InCaretImage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -324,15 +489,15 @@ void US6UI_EditableRichText::SetDefaultCaretImage(const struct FSlateBrush& InIn
 
 	Params::US6UI_EditableRichText_SetDefaultCaretImage_Params Parms{};
 
-	Parms.InCaretImage = InInCaretImage;
+	Parms.InCaretImage = InCaretImage;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -342,7 +507,7 @@ void US6UI_EditableRichText::SetDefaultCaretImage(const struct FSlateBrush& InIn
 // Parameters:
 // struct FSlateBrush                 InBackgroundImageSelected                                        (Parm, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetDefaultBackgroundImageSelected(const struct FSlateBrush& InInBackgroundImageSelected)
+void US6UI_EditableRichText::SetDefaultBackgroundImageSelected(const struct FSlateBrush& InBackgroundImageSelected)
 {
 	static class UFunction* Func = nullptr;
 
@@ -351,15 +516,15 @@ void US6UI_EditableRichText::SetDefaultBackgroundImageSelected(const struct FSla
 
 	Params::US6UI_EditableRichText_SetDefaultBackgroundImageSelected_Params Parms{};
 
-	Parms.InBackgroundImageSelected = InInBackgroundImageSelected;
+	Parms.InBackgroundImageSelected = InBackgroundImageSelected;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -369,7 +534,7 @@ void US6UI_EditableRichText::SetDefaultBackgroundImageSelected(const struct FSla
 // Parameters:
 // struct FSlateBrush                 InBackgroundImageComposing                                       (Parm, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::SetDefaultBackgroundImageComposing(const struct FSlateBrush& InInBackgroundImageComposing)
+void US6UI_EditableRichText::SetDefaultBackgroundImageComposing(const struct FSlateBrush& InBackgroundImageComposing)
 {
 	static class UFunction* Func = nullptr;
 
@@ -378,15 +543,15 @@ void US6UI_EditableRichText::SetDefaultBackgroundImageComposing(const struct FSl
 
 	Params::US6UI_EditableRichText_SetDefaultBackgroundImageComposing_Params Parms{};
 
-	Parms.InBackgroundImageComposing = InInBackgroundImageComposing;
+	Parms.InBackgroundImageComposing = InBackgroundImageComposing;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -405,13 +570,13 @@ void US6UI_EditableRichText::SelectAllText()
 	Params::US6UI_EditableRichText_SelectAllText_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -422,7 +587,7 @@ void US6UI_EditableRichText::SelectAllText()
 // class FText                        Text                                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // enum class ETextCommit             CommitMethod                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::S6UI_OnEditableTextCommittedEvent__DelegateSignature(class FText& InText, enum class ETextCommit InCommitMethod)
+void US6UI_EditableRichText::S6UI_OnEditableTextCommittedEvent__DelegateSignature(class FText& Text, enum class ETextCommit CommitMethod)
 {
 	static class UFunction* Func = nullptr;
 
@@ -431,8 +596,8 @@ void US6UI_EditableRichText::S6UI_OnEditableTextCommittedEvent__DelegateSignatur
 
 	Params::US6UI_EditableRichText_S6UI_OnEditableTextCommittedEvent__DelegateSignature_Params Parms{};
 
-	Parms.Text = InText;
-	Parms.CommitMethod = InCommitMethod;
+	Parms.Text = Text;
+	Parms.CommitMethod = CommitMethod;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -444,7 +609,7 @@ void US6UI_EditableRichText::S6UI_OnEditableTextCommittedEvent__DelegateSignatur
 // Parameters:
 // class FText                        Text                                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::S6UI_OnEditableTextChangedEvent__DelegateSignature(class FText& InText)
+void US6UI_EditableRichText::S6UI_OnEditableTextChangedEvent__DelegateSignature(class FText& Text)
 {
 	static class UFunction* Func = nullptr;
 
@@ -453,7 +618,7 @@ void US6UI_EditableRichText::S6UI_OnEditableTextChangedEvent__DelegateSignature(
 
 	Params::US6UI_EditableRichText_S6UI_OnEditableTextChangedEvent__DelegateSignature_Params Parms{};
 
-	Parms.Text = InText;
+	Parms.Text = Text;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -474,13 +639,13 @@ void US6UI_EditableRichText::Redo()
 	Params::US6UI_EditableRichText_Redo_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -499,13 +664,13 @@ void US6UI_EditableRichText::PasteTextFromClipboard()
 	Params::US6UI_EditableRichText_PasteTextFromClipboard_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -515,7 +680,7 @@ void US6UI_EditableRichText::PasteTextFromClipboard()
 // Parameters:
 // class FText                        InText                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void US6UI_EditableRichText::InsertTextAtCursor(class FText& InInText)
+void US6UI_EditableRichText::InsertTextAtCursor(class FText& InText)
 {
 	static class UFunction* Func = nullptr;
 
@@ -524,15 +689,15 @@ void US6UI_EditableRichText::InsertTextAtCursor(class FText& InInText)
 
 	Params::US6UI_EditableRichText_InsertTextAtCursor_Params Parms{};
 
-	Parms.InText = InInText;
+	Parms.InText = InText;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -552,13 +717,13 @@ class FText US6UI_EditableRichText::GetText()
 	Params::US6UI_EditableRichText_GetText_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -580,13 +745,13 @@ class FText US6UI_EditableRichText::GetSelectedText()
 	Params::US6UI_EditableRichText_GetSelectedText_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -608,13 +773,13 @@ class FText US6UI_EditableRichText::GetPlainText()
 	Params::US6UI_EditableRichText_GetPlainText_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -627,7 +792,7 @@ class FText US6UI_EditableRichText::GetPlainText()
 // TSubclassOf<class US6UI_EditableRichTextDecorator>DecoratorClass                                                   (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class US6UI_EditableRichTextDecorator*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class US6UI_EditableRichTextDecorator* US6UI_EditableRichText::GetDecoratorByClass(TSubclassOf<class US6UI_EditableRichTextDecorator> InDecoratorClass)
+class US6UI_EditableRichTextDecorator* US6UI_EditableRichText::GetDecoratorByClass(TSubclassOf<class US6UI_EditableRichTextDecorator> DecoratorClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -636,15 +801,15 @@ class US6UI_EditableRichTextDecorator* US6UI_EditableRichText::GetDecoratorByCla
 
 	Params::US6UI_EditableRichText_GetDecoratorByClass_Params Parms{};
 
-	Parms.DecoratorClass = InDecoratorClass;
+	Parms.DecoratorClass = DecoratorClass;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -665,13 +830,13 @@ void US6UI_EditableRichText::DeleteSelectedText()
 	Params::US6UI_EditableRichText_DeleteSelectedText_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -690,13 +855,13 @@ void US6UI_EditableRichText::CutSelectedTextToClipboard()
 	Params::US6UI_EditableRichText_CutSelectedTextToClipboard_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -715,13 +880,13 @@ void US6UI_EditableRichText::CopySelectedTextToClipboard()
 	Params::US6UI_EditableRichText_CopySelectedTextToClipboard_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -740,13 +905,13 @@ void US6UI_EditableRichText::ClearAllDefaultStyleOverrides()
 	Params::US6UI_EditableRichText_ClearAllDefaultStyleOverrides_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -766,16 +931,128 @@ bool US6UI_EditableRichText::AnyTextSelected()
 	Params::US6UI_EditableRichText_AnyTextSelected_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class S6UICommonWidgets.S6UI_EditableRichTextDecorator
+// (None)
+
+class UClass* US6UI_EditableRichTextDecorator::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_EditableRichTextDecorator");
+
+	return Clss;
+}
+
+
+// S6UI_EditableRichTextDecorator S6UICommonWidgets.Default__S6UI_EditableRichTextDecorator
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_EditableRichTextDecorator* US6UI_EditableRichTextDecorator::GetDefaultObj()
+{
+	static class US6UI_EditableRichTextDecorator* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_EditableRichTextDecorator*>(US6UI_EditableRichTextDecorator::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICommonWidgets.S6UI_EditableRichTextDecorator_Image
+// (None)
+
+class UClass* US6UI_EditableRichTextDecorator_Image::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_EditableRichTextDecorator_Image");
+
+	return Clss;
+}
+
+
+// S6UI_EditableRichTextDecorator_Image S6UICommonWidgets.Default__S6UI_EditableRichTextDecorator_Image
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_EditableRichTextDecorator_Image* US6UI_EditableRichTextDecorator_Image::GetDefaultObj()
+{
+	static class US6UI_EditableRichTextDecorator_Image* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_EditableRichTextDecorator_Image*>(US6UI_EditableRichTextDecorator_Image::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICommonWidgets.S6UI_EditableRichTextDecorator_Style
+// (None)
+
+class UClass* US6UI_EditableRichTextDecorator_Style::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_EditableRichTextDecorator_Style");
+
+	return Clss;
+}
+
+
+// S6UI_EditableRichTextDecorator_Style S6UICommonWidgets.Default__S6UI_EditableRichTextDecorator_Style
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_EditableRichTextDecorator_Style* US6UI_EditableRichTextDecorator_Style::GetDefaultObj()
+{
+	static class US6UI_EditableRichTextDecorator_Style* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_EditableRichTextDecorator_Style*>(US6UI_EditableRichTextDecorator_Style::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICommonWidgets.S6UI_GridPanel
+// (None)
+
+class UClass* US6UI_GridPanel::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_GridPanel");
+
+	return Clss;
+}
+
+
+// S6UI_GridPanel S6UICommonWidgets.Default__S6UI_GridPanel
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_GridPanel* US6UI_GridPanel::GetDefaultObj()
+{
+	static class US6UI_GridPanel* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_GridPanel*>(US6UI_GridPanel::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -793,14 +1070,70 @@ void US6UI_GridPanel::ClearFill()
 	Params::US6UI_GridPanel_ClearFill_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class S6UICommonWidgets.S6UI_OverlaySwitcherSlot
+// (None)
+
+class UClass* US6UI_OverlaySwitcherSlot::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_OverlaySwitcherSlot");
+
+	return Clss;
+}
+
+
+// S6UI_OverlaySwitcherSlot S6UICommonWidgets.Default__S6UI_OverlaySwitcherSlot
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_OverlaySwitcherSlot* US6UI_OverlaySwitcherSlot::GetDefaultObj()
+{
+	static class US6UI_OverlaySwitcherSlot* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_OverlaySwitcherSlot*>(US6UI_OverlaySwitcherSlot::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICommonWidgets.S6UI_OverlaySwitcher
+// (None)
+
+class UClass* US6UI_OverlaySwitcher::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_OverlaySwitcher");
+
+	return Clss;
+}
+
+
+// S6UI_OverlaySwitcher S6UICommonWidgets.Default__S6UI_OverlaySwitcher
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_OverlaySwitcher* US6UI_OverlaySwitcher::GetDefaultObj()
+{
+	static class US6UI_OverlaySwitcher* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_OverlaySwitcher*>(US6UI_OverlaySwitcher::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -809,7 +1142,7 @@ void US6UI_GridPanel::ClearFill()
 // Parameters:
 // int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_OverlaySwitcher::SetActiveWidgetIndex(int32 InIndex)
+void US6UI_OverlaySwitcher::SetActiveWidgetIndex(int32 Index)
 {
 	static class UFunction* Func = nullptr;
 
@@ -818,15 +1151,15 @@ void US6UI_OverlaySwitcher::SetActiveWidgetIndex(int32 InIndex)
 
 	Params::US6UI_OverlaySwitcher_SetActiveWidgetIndex_Params Parms{};
 
-	Parms.Index = InIndex;
+	Parms.Index = Index;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -836,7 +1169,7 @@ void US6UI_OverlaySwitcher::SetActiveWidgetIndex(int32 InIndex)
 // Parameters:
 // class UWidget*                     Widget                                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_OverlaySwitcher::SetActiveWidget(class UWidget* InWidget)
+void US6UI_OverlaySwitcher::SetActiveWidget(class UWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -845,15 +1178,15 @@ void US6UI_OverlaySwitcher::SetActiveWidget(class UWidget* InWidget)
 
 	Params::US6UI_OverlaySwitcher_SetActiveWidget_Params Parms{};
 
-	Parms.Widget = InWidget;
+	Parms.Widget = Widget;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 }
 
@@ -873,13 +1206,13 @@ int32 US6UI_OverlaySwitcher::GetActiveWidgetIndex()
 	Params::US6UI_OverlaySwitcher_GetActiveWidgetIndex_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -901,13 +1234,13 @@ class UWidget* US6UI_OverlaySwitcher::GetActiveWidget()
 	Params::US6UI_OverlaySwitcher_GetActiveWidget_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -920,7 +1253,7 @@ class UWidget* US6UI_OverlaySwitcher::GetActiveWidget()
 // class UWidget*                     Content                                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class US6UI_OverlaySwitcherSlot*   ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class US6UI_OverlaySwitcherSlot* US6UI_OverlaySwitcher::AddChildToOverlaySwitcher(class UWidget* InContent)
+class US6UI_OverlaySwitcherSlot* US6UI_OverlaySwitcher::AddChildToOverlaySwitcher(class UWidget* Content)
 {
 	static class UFunction* Func = nullptr;
 
@@ -929,22 +1262,104 @@ class US6UI_OverlaySwitcherSlot* US6UI_OverlaySwitcher::AddChildToOverlaySwitche
 
 	Params::US6UI_OverlaySwitcher_AddChildToOverlaySwitcher_Params Parms{};
 
-	Parms.Content = InContent;
+	Parms.Content = Content;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
 }
 
+
+// Class S6UICommonWidgets.S6UI_RichTextBlockDecorator_SoftImage
+// (None)
+
+class UClass* US6UI_RichTextBlockDecorator_SoftImage::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_RichTextBlockDecorator_SoftImage");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// S6UI_RichTextBlockDecorator_SoftImage S6UICommonWidgets.Default__S6UI_RichTextBlockDecorator_SoftImage
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_RichTextBlockDecorator_SoftImage* US6UI_RichTextBlockDecorator_SoftImage::GetDefaultObj()
+{
+	static class US6UI_RichTextBlockDecorator_SoftImage* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_RichTextBlockDecorator_SoftImage*>(US6UI_RichTextBlockDecorator_SoftImage::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICommonWidgets.S6UI_RichTextBlockDecorator_Style
+// (None)
+
+class UClass* US6UI_RichTextBlockDecorator_Style::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_RichTextBlockDecorator_Style");
+
+	return Clss;
+}
+
+
+// S6UI_RichTextBlockDecorator_Style S6UICommonWidgets.Default__S6UI_RichTextBlockDecorator_Style
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_RichTextBlockDecorator_Style* US6UI_RichTextBlockDecorator_Style::GetDefaultObj()
+{
+	static class US6UI_RichTextBlockDecorator_Style* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_RichTextBlockDecorator_Style*>(US6UI_RichTextBlockDecorator_Style::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class S6UICommonWidgets.S6UI_RichTextBlockDecorator_URL
+// (None)
+
+class UClass* US6UI_RichTextBlockDecorator_URL::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_RichTextBlockDecorator_URL");
+
+	return Clss;
+}
+
+
+// S6UI_RichTextBlockDecorator_URL S6UICommonWidgets.Default__S6UI_RichTextBlockDecorator_URL
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_RichTextBlockDecorator_URL* US6UI_RichTextBlockDecorator_URL::GetDefaultObj()
+{
+	static class US6UI_RichTextBlockDecorator_URL* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_RichTextBlockDecorator_URL*>(US6UI_RichTextBlockDecorator_URL::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

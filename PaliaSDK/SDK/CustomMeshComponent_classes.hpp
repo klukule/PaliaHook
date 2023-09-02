@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -17,21 +14,16 @@ namespace SDK
 class UCustomMeshComponent : public UMeshComponent
 {
 public:
-	uint8                                        Pad_1AEB[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1BE3[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("CustomMeshComponent");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UCustomMeshComponent* GetDefaultObj();
 
-	bool SetCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& InTriangles);
+	bool SetCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& Triangles);
 	void ClearCustomMeshTriangles();
-	void AddCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& InTriangles);
+	void AddCustomMeshTriangles(TArray<struct FCustomMeshTriangle>& Triangles);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

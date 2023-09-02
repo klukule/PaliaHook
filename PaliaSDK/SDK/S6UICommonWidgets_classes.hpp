@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -17,15 +14,12 @@ namespace SDK
 class US6UI_Settings : public UDeveloperSettings
 {
 public:
-	uint8                                        Pad_872[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8A5[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FS6UI_BackgroundBlurSettings          BackgroundBlurSettings;                            // 0x40(0x100)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           BackgroundFallbackImage;                           // 0x140(0xD0)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_Settings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_Settings* GetDefaultObj();
 
 };
 
@@ -35,15 +29,12 @@ class US6UI_BackgroundBlur : public UBackgroundBlur
 {
 public:
 	bool                                         bOverrideBlurSettings;                             // 0x290(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_87B[0xF];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8AF[0xF];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FS6UI_BackgroundBlurSettings          BlurSettings;                                      // 0x2A0(0x100)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_87C[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_8B0[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_BackgroundBlur");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_BackgroundBlur* GetDefaultObj();
 
 };
 
@@ -53,7 +44,7 @@ class US6UI_CommonButtonStyle : public UCommonButtonStyle
 {
 public:
 	bool                                         bDropShadow;                                       // 0x7B0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_87F[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8BC[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        DropShadowCornerRadius;                            // 0x7B4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             ShadowOffset_Normal;                               // 0x7B8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                             ShadowOffset_Pressed;                              // 0x7C8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -62,11 +53,8 @@ public:
 	struct FLinearColor                          ShadowColor_Normal;                                // 0x7E0(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                          ShadowColor_Pressed;                               // 0x7F0(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_CommonButtonStyle");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_CommonButtonStyle* GetDefaultObj();
 
 };
 
@@ -76,20 +64,17 @@ class US6UI_CommonButtonInternalBase : public UCommonButtonInternalBase
 {
 public:
 	float                                        DropShadowCornerRadius;                            // 0x658(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_88B[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8C4[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             ShadowOffset_Normal;                               // 0x660(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FVector2D                             ShadowOffset_Pressed;                              // 0x670(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                        ShadowHardness_Normal;                             // 0x680(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                        ShadowHardness_Pressed;                            // 0x684(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FLinearColor                          ShadowColor_Normal;                                // 0x688(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FLinearColor                          ShadowColor_Pressed;                               // 0x698(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_897[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_8C7[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_CommonButtonInternalBase");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_CommonButtonInternalBase* GetDefaultObj();
 
 };
 
@@ -101,16 +86,13 @@ public:
 	FMulticastInlineDelegateProperty_            OnButtonPressed;                                   // 0x14F0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	FMulticastInlineDelegateProperty_            OnButtonReleased;                                  // 0x1500(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	uint8                                        bTransparent : 1;                                  // Mask: 0x1, PropSize: 0x10x1510(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_8AF[0xF];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_8DC[0xF];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_CommonButton_Styled");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_CommonButton_Styled* GetDefaultObj();
 
-	void SetIsDropShadow(bool InbEnable);
-	void SetCommonButtonStyle(TSubclassOf<class US6UI_CommonButtonStyle> InInStyle);
+	void SetIsDropShadow(bool bEnable);
+	void SetCommonButtonStyle(TSubclassOf<class US6UI_CommonButtonStyle> InStyle);
 };
 
 // 0x6C0 (0x810 - 0x150)
@@ -123,7 +105,7 @@ public:
 	class FText                                  HintText;                                          // 0x178(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	FDelegateProperty_                           HintTextDelegate;                                  // 0x190(0x10)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsReadOnly;                                        // 0x1A0(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_995[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_98E[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MinimumDesiredWidth;                               // 0x1A4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsCaretMovedWhenGainFocus;                         // 0x1A8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         SelectAllTextWhenFocused;                          // 0x1A9(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -148,36 +130,33 @@ public:
 	struct FEditableTextStyle                    DefaultTextStyleOverride;                          // 0x200(0x2F0)(Edit, Protected, NativeAccessSpecifierProtected)
 	struct FEditableTextStyle                    DefaultTextStyle;                                  // 0x4F0(0x2F0)(Transient, Protected, NativeAccessSpecifierProtected)
 	TArray<class US6UI_EditableRichTextDecorator*> InstanceDecorators;                                // 0x7E0(0x10)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_9AA[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9A8[0x20];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_EditableRichText");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_EditableRichText* GetDefaultObj();
 
 	void Undo();
-	void SetTextStyleSet(class UDataTable* InNewTextStyleSet);
-	void SetText(class FText InInText);
-	void SetJustification(enum class ETextJustify InInJustification);
-	void SetIsReadOnly(bool InInbIsReadyOnly);
-	void SetHintText(class FText InInHintText);
-	void SetDefaultTextStyle(struct FEditableTextStyle& InInDefaultTextStyle);
-	void SetDefaultFont(const struct FSlateFontInfo& InInFontInfo);
-	void SetDefaultColorAndOpacity(const struct FSlateColor& InInColorAndOpacity);
-	void SetDefaultCaretImage(const struct FSlateBrush& InInCaretImage);
-	void SetDefaultBackgroundImageSelected(const struct FSlateBrush& InInBackgroundImageSelected);
-	void SetDefaultBackgroundImageComposing(const struct FSlateBrush& InInBackgroundImageComposing);
+	void SetTextStyleSet(class UDataTable* NewTextStyleSet);
+	void SetText(class FText InText);
+	void SetJustification(enum class ETextJustify InJustification);
+	void SetIsReadOnly(bool InbIsReadyOnly);
+	void SetHintText(class FText InHintText);
+	void SetDefaultTextStyle(struct FEditableTextStyle& InDefaultTextStyle);
+	void SetDefaultFont(const struct FSlateFontInfo& InFontInfo);
+	void SetDefaultColorAndOpacity(const struct FSlateColor& InColorAndOpacity);
+	void SetDefaultCaretImage(const struct FSlateBrush& InCaretImage);
+	void SetDefaultBackgroundImageSelected(const struct FSlateBrush& InBackgroundImageSelected);
+	void SetDefaultBackgroundImageComposing(const struct FSlateBrush& InBackgroundImageComposing);
 	void SelectAllText();
-	void S6UI_OnEditableTextCommittedEvent__DelegateSignature(class FText& InText, enum class ETextCommit InCommitMethod);
-	void S6UI_OnEditableTextChangedEvent__DelegateSignature(class FText& InText);
+	void S6UI_OnEditableTextCommittedEvent__DelegateSignature(class FText& Text, enum class ETextCommit CommitMethod);
+	void S6UI_OnEditableTextChangedEvent__DelegateSignature(class FText& Text);
 	void Redo();
 	void PasteTextFromClipboard();
-	void InsertTextAtCursor(class FText& InInText);
+	void InsertTextAtCursor(class FText& InText);
 	class FText GetText();
 	class FText GetSelectedText();
 	class FText GetPlainText();
-	class US6UI_EditableRichTextDecorator* GetDecoratorByClass(TSubclassOf<class US6UI_EditableRichTextDecorator> InDecoratorClass);
+	class US6UI_EditableRichTextDecorator* GetDecoratorByClass(TSubclassOf<class US6UI_EditableRichTextDecorator> DecoratorClass);
 	void DeleteSelectedText();
 	void CutSelectedTextToClipboard();
 	void CopySelectedTextToClipboard();
@@ -191,11 +170,8 @@ class US6UI_EditableRichTextDecorator : public UObject
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_EditableRichTextDecorator");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_EditableRichTextDecorator* GetDefaultObj();
 
 };
 
@@ -207,11 +183,8 @@ public:
 	TSoftObjectPtr<class UDataTable>             ImageSet;                                          // 0x28(0x30)(Edit, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class USlateBrushAsset*                      ImageBrushAsset;                                   // 0x58(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_EditableRichTextDecorator_Image");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_EditableRichTextDecorator_Image* GetDefaultObj();
 
 };
 
@@ -221,11 +194,8 @@ class US6UI_EditableRichTextDecorator_Style : public US6UI_EditableRichTextDecor
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_EditableRichTextDecorator_Style");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_EditableRichTextDecorator_Style* GetDefaultObj();
 
 };
 
@@ -235,15 +205,12 @@ class US6UI_GridPanel : public UGridPanel
 {
 public:
 	bool                                         bHasUniformSlotPadding;                            // 0x198(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_9CE[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9D2[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FMargin                               UniformSlotPadding;                                // 0x19C(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_9CF[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9D4[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_GridPanel");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_GridPanel* GetDefaultObj();
 
 	void ClearFill();
 };
@@ -253,13 +220,10 @@ public:
 class US6UI_OverlaySwitcherSlot : public UOverlaySlot
 {
 public:
-	uint8                                        Pad_9D1[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9DC[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_OverlaySwitcherSlot");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_OverlaySwitcherSlot* GetDefaultObj();
 
 };
 
@@ -268,21 +232,18 @@ public:
 class US6UI_OverlaySwitcher : public UPanelWidget
 {
 public:
-	uint8                                        Pad_9EC[0x28];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9F9[0x28];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ActiveWidgetIndex;                                 // 0x190(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_9EE[0x1C];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9FA[0x1C];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_OverlaySwitcher");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_OverlaySwitcher* GetDefaultObj();
 
-	void SetActiveWidgetIndex(int32 InIndex);
-	void SetActiveWidget(class UWidget* InWidget);
+	void SetActiveWidgetIndex(int32 Index);
+	void SetActiveWidget(class UWidget* Widget);
 	int32 GetActiveWidgetIndex();
 	class UWidget* GetActiveWidget();
-	class US6UI_OverlaySwitcherSlot* AddChildToOverlaySwitcher(class UWidget* InContent);
+	class US6UI_OverlaySwitcherSlot* AddChildToOverlaySwitcher(class UWidget* Content);
 };
 
 // 0x40 (0x68 - 0x28)
@@ -294,11 +255,8 @@ public:
 	class USlateBrushAsset*                      ImageBrushAsset;                                   // 0x58(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UDataTable*                            LoadedImageSet;                                    // 0x60(0x8)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_RichTextBlockDecorator_SoftImage");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_RichTextBlockDecorator_SoftImage* GetDefaultObj();
 
 };
 
@@ -308,11 +266,8 @@ class US6UI_RichTextBlockDecorator_Style : public URichTextBlockDecorator
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_RichTextBlockDecorator_Style");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_RichTextBlockDecorator_Style* GetDefaultObj();
 
 };
 
@@ -323,16 +278,11 @@ class US6UI_RichTextBlockDecorator_URL : public URichTextBlockDecorator
 public:
 	class UDataTable*                            StyleTable;                                        // 0x28(0x8)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6UI_RichTextBlockDecorator_URL");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6UI_RichTextBlockDecorator_URL* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

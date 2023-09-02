@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,25 +11,25 @@ namespace SDK
 
 enum class ETextureRotationDirection : uint8
 {
-	ETextureRotationDirection__None = 0,
-	ETextureRotationDirection__Left = 1,
-	ETextureRotationDirection__Right = 2,
-	ETextureRotationDirection__Down = 3,
-	ETextureRotationDirection__LeftMirrored = 4,
-	ETextureRotationDirection__RightMirrored = 5,
-	ETextureRotationDirection__DownMirrored = 6,
-	ETextureRotationDirection__UpMirrored = 7,
-	ETextureRotationDirection__ETextureRotationDirection_MAX = 8,
+	None                           = 0,
+	Left                           = 1,
+	Right                          = 2,
+	Down                           = 3,
+	LeftMirrored                   = 4,
+	RightMirrored                  = 5,
+	DownMirrored                   = 6,
+	UpMirrored                     = 7,
+	ETextureRotationDirection_MAX  = 8,
 };
 
 enum class EAppleTextureType : uint8
 {
-	EAppleTextureType__Unknown     = 0,
-	EAppleTextureType__Image       = 1,
-	EAppleTextureType__PixelBuffer = 2,
-	EAppleTextureType__Surface     = 3,
-	EAppleTextureType__MetalTexture = 4,
-	EAppleTextureType__EAppleTextureType_MAX = 5,
+	Unknown                        = 0,
+	Image                          = 1,
+	PixelBuffer                    = 2,
+	Surface                        = 3,
+	MetalTexture                   = 4,
+	EAppleTextureType_MAX          = 5,
 };
 
 
@@ -51,6 +48,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

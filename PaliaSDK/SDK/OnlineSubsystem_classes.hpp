@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,13 +16,10 @@ class UNamedInterfaces : public UObject
 public:
 	TArray<struct FNamedInterface>               NamedInterfaces;                                   // 0x28(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<struct FNamedInterfaceDef>            NamedInterfaceDefs;                                // 0x38(0x10)(ZeroConstructor, Config, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_518[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_6B4[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("NamedInterfaces");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UNamedInterfaces* GetDefaultObj();
 
 };
 
@@ -35,18 +29,13 @@ class ITurnBasedMatchInterface : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("TurnBasedMatchInterface");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class ITurnBasedMatchInterface* GetDefaultObj();
 
-	void OnMatchReceivedTurn(const class FString& InMatch, bool InbDidBecomeActive);
-	void OnMatchEnded(const class FString& InMatch);
+	void OnMatchReceivedTurn(const class FString& Match, bool bDidBecomeActive);
+	void OnMatchEnded(const class FString& Match);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

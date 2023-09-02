@@ -2,17 +2,210 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class Foliage.FoliageInstancedStaticMeshComponent
+// (SceneComponent, PrimitiveComponent, StaticMeshComponent)
+
+class UClass* UFoliageInstancedStaticMeshComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("FoliageInstancedStaticMeshComponent");
+
+	return Clss;
+}
+
+
+// FoliageInstancedStaticMeshComponent Foliage.Default__FoliageInstancedStaticMeshComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UFoliageInstancedStaticMeshComponent* UFoliageInstancedStaticMeshComponent::GetDefaultObj()
+{
+	static class UFoliageInstancedStaticMeshComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UFoliageInstancedStaticMeshComponent*>(UFoliageInstancedStaticMeshComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Foliage.FoliageType
+// (None)
+
+class UClass* UFoliageType::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("FoliageType");
+
+	return Clss;
+}
+
+
+// FoliageType Foliage.Default__FoliageType
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UFoliageType* UFoliageType::GetDefaultObj()
+{
+	static class UFoliageType* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UFoliageType*>(UFoliageType::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Foliage.FoliageType_Actor
+// (None)
+
+class UClass* UFoliageType_Actor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("FoliageType_Actor");
+
+	return Clss;
+}
+
+
+// FoliageType_Actor Foliage.Default__FoliageType_Actor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UFoliageType_Actor* UFoliageType_Actor::GetDefaultObj()
+{
+	static class UFoliageType_Actor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UFoliageType_Actor*>(UFoliageType_Actor::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Foliage.FoliageType_InstancedStaticMesh
+// (None)
+
+class UClass* UFoliageType_InstancedStaticMesh::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("FoliageType_InstancedStaticMesh");
+
+	return Clss;
+}
+
+
+// FoliageType_InstancedStaticMesh Foliage.Default__FoliageType_InstancedStaticMesh
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UFoliageType_InstancedStaticMesh* UFoliageType_InstancedStaticMesh::GetDefaultObj()
+{
+	static class UFoliageType_InstancedStaticMesh* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UFoliageType_InstancedStaticMesh*>(UFoliageType_InstancedStaticMesh::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Foliage.InstancedFoliageActor
+// (Actor)
+
+class UClass* AInstancedFoliageActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("InstancedFoliageActor");
+
+	return Clss;
+}
+
+
+// InstancedFoliageActor Foliage.Default__InstancedFoliageActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AInstancedFoliageActor* AInstancedFoliageActor::GetDefaultObj()
+{
+	static class AInstancedFoliageActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AInstancedFoliageActor*>(AInstancedFoliageActor::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Foliage.InteractiveFoliageComponent
+// (SceneComponent, PrimitiveComponent, StaticMeshComponent)
+
+class UClass* UInteractiveFoliageComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("InteractiveFoliageComponent");
+
+	return Clss;
+}
+
+
+// InteractiveFoliageComponent Foliage.Default__InteractiveFoliageComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UInteractiveFoliageComponent* UInteractiveFoliageComponent::GetDefaultObj()
+{
+	static class UInteractiveFoliageComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UInteractiveFoliageComponent*>(UInteractiveFoliageComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Foliage.FoliageStatistics
+// (None)
+
+class UClass* UFoliageStatistics::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("FoliageStatistics");
+
+	return Clss;
+}
+
+
+// FoliageStatistics Foliage.Default__FoliageStatistics
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UFoliageStatistics* UFoliageStatistics::GetDefaultObj()
+{
+	static class UFoliageStatistics* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UFoliageStatistics*>(UFoliageStatistics::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function Foliage.FoliageStatistics.FoliageOverlappingSphereCount
@@ -24,7 +217,7 @@ namespace SDK
 // float                              Radius                                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UFoliageStatistics::FoliageOverlappingSphereCount(class UObject* InWorldContextObject, class UStaticMesh* InStaticMesh, const struct FVector& InCenterPosition, float InRadius)
+int32 UFoliageStatistics::FoliageOverlappingSphereCount(class UObject* WorldContextObject, class UStaticMesh* StaticMesh, const struct FVector& CenterPosition, float Radius)
 {
 	static class UFunction* Func = nullptr;
 
@@ -33,18 +226,18 @@ int32 UFoliageStatistics::FoliageOverlappingSphereCount(class UObject* InWorldCo
 
 	Params::UFoliageStatistics_FoliageOverlappingSphereCount_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.StaticMesh = InStaticMesh;
-	Parms.CenterPosition = InCenterPosition;
-	Parms.Radius = InRadius;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.StaticMesh = StaticMesh;
+	Parms.CenterPosition = CenterPosition;
+	Parms.Radius = Radius;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -59,7 +252,7 @@ int32 UFoliageStatistics::FoliageOverlappingSphereCount(class UObject* InWorldCo
 // struct FBox                        Box                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // TArray<struct FTransform>          OutTransforms                                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UFoliageStatistics::FoliageOverlappingBoxTransforms(class UObject* InWorldContextObject, class UStaticMesh* InStaticMesh, const struct FBox& InBox, TArray<struct FTransform>* InOutTransforms)
+void UFoliageStatistics::FoliageOverlappingBoxTransforms(class UObject* WorldContextObject, class UStaticMesh* StaticMesh, const struct FBox& Box, TArray<struct FTransform>* OutTransforms)
 {
 	static class UFunction* Func = nullptr;
 
@@ -68,20 +261,20 @@ void UFoliageStatistics::FoliageOverlappingBoxTransforms(class UObject* InWorldC
 
 	Params::UFoliageStatistics_FoliageOverlappingBoxTransforms_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.StaticMesh = InStaticMesh;
-	Parms.Box = InBox;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.StaticMesh = StaticMesh;
+	Parms.Box = Box;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
-	if (InOutTransforms != nullptr)
-		*InOutTransforms = Parms.OutTransforms;
+	if (OutTransforms != nullptr)
+		*OutTransforms = std::move(Parms.OutTransforms);
 
 }
 
@@ -94,7 +287,7 @@ void UFoliageStatistics::FoliageOverlappingBoxTransforms(class UObject* InWorldC
 // struct FBox                        Box                                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UFoliageStatistics::FoliageOverlappingBoxCount(class UObject* InWorldContextObject, class UStaticMesh* InStaticMesh, const struct FBox& InBox)
+int32 UFoliageStatistics::FoliageOverlappingBoxCount(class UObject* WorldContextObject, class UStaticMesh* StaticMesh, const struct FBox& Box)
 {
 	static class UFunction* Func = nullptr;
 
@@ -103,20 +296,76 @@ int32 UFoliageStatistics::FoliageOverlappingBoxCount(class UObject* InWorldConte
 
 	Params::UFoliageStatistics_FoliageOverlappingBoxCount_Params Parms{};
 
-	Parms.WorldContextObject = InWorldContextObject;
-	Parms.StaticMesh = InStaticMesh;
-	Parms.Box = InBox;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.StaticMesh = StaticMesh;
+	Parms.Box = Box;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class Foliage.GrassInstancedStaticMeshComponent
+// (SceneComponent, PrimitiveComponent, StaticMeshComponent)
+
+class UClass* UGrassInstancedStaticMeshComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GrassInstancedStaticMeshComponent");
+
+	return Clss;
+}
+
+
+// GrassInstancedStaticMeshComponent Foliage.Default__GrassInstancedStaticMeshComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGrassInstancedStaticMeshComponent* UGrassInstancedStaticMeshComponent::GetDefaultObj()
+{
+	static class UGrassInstancedStaticMeshComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGrassInstancedStaticMeshComponent*>(UGrassInstancedStaticMeshComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Foliage.InteractiveFoliageActor
+// (Actor)
+
+class UClass* AInteractiveFoliageActor::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("InteractiveFoliageActor");
+
+	return Clss;
+}
+
+
+// InteractiveFoliageActor Foliage.Default__InteractiveFoliageActor
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AInteractiveFoliageActor* AInteractiveFoliageActor::GetDefaultObj()
+{
+	static class AInteractiveFoliageActor* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AInteractiveFoliageActor*>(AInteractiveFoliageActor::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -130,7 +379,7 @@ int32 UFoliageStatistics::FoliageOverlappingBoxCount(class UObject* InWorldConte
 // bool                               bFromSweep                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FHitResult                  OverlapInfo                                                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void AInteractiveFoliageActor::CapsuleTouched(class UPrimitiveComponent* InOverlappedComp, class AActor* InOther, class UPrimitiveComponent* InOtherComp, int32 InOtherBodyIndex, bool InbFromSweep, struct FHitResult& InOverlapInfo)
+void AInteractiveFoliageActor::CapsuleTouched(class UPrimitiveComponent* OverlappedComp, class AActor* Other, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, struct FHitResult& OverlapInfo)
 {
 	static class UFunction* Func = nullptr;
 
@@ -139,21 +388,105 @@ void AInteractiveFoliageActor::CapsuleTouched(class UPrimitiveComponent* InOverl
 
 	Params::AInteractiveFoliageActor_CapsuleTouched_Params Parms{};
 
-	Parms.OverlappedComp = InOverlappedComp;
-	Parms.Other = InOther;
-	Parms.OtherComp = InOtherComp;
-	Parms.OtherBodyIndex = InOtherBodyIndex;
-	Parms.bFromSweep = InbFromSweep;
-	Parms.OverlapInfo = InOverlapInfo;
+	Parms.OverlappedComp = OverlappedComp;
+	Parms.Other = Other;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.OverlapInfo = OverlapInfo;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Foliage.ProceduralFoliageBlockingVolume
+// (Actor)
+
+class UClass* AProceduralFoliageBlockingVolume::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ProceduralFoliageBlockingVolume");
+
+	return Clss;
+}
+
+
+// ProceduralFoliageBlockingVolume Foliage.Default__ProceduralFoliageBlockingVolume
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AProceduralFoliageBlockingVolume* AProceduralFoliageBlockingVolume::GetDefaultObj()
+{
+	static class AProceduralFoliageBlockingVolume* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AProceduralFoliageBlockingVolume*>(AProceduralFoliageBlockingVolume::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Foliage.ProceduralFoliageComponent
+// (None)
+
+class UClass* UProceduralFoliageComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ProceduralFoliageComponent");
+
+	return Clss;
+}
+
+
+// ProceduralFoliageComponent Foliage.Default__ProceduralFoliageComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UProceduralFoliageComponent* UProceduralFoliageComponent::GetDefaultObj()
+{
+	static class UProceduralFoliageComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UProceduralFoliageComponent*>(UProceduralFoliageComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Foliage.ProceduralFoliageSpawner
+// (None)
+
+class UClass* UProceduralFoliageSpawner::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ProceduralFoliageSpawner");
+
+	return Clss;
+}
+
+
+// ProceduralFoliageSpawner Foliage.Default__ProceduralFoliageSpawner
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UProceduralFoliageSpawner* UProceduralFoliageSpawner::GetDefaultObj()
+{
+	static class UProceduralFoliageSpawner* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UProceduralFoliageSpawner*>(UProceduralFoliageSpawner::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -162,7 +495,7 @@ void AInteractiveFoliageActor::CapsuleTouched(class UPrimitiveComponent* InOverl
 // Parameters:
 // int32                              NumSteps                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UProceduralFoliageSpawner::Simulate(int32 InNumSteps)
+void UProceduralFoliageSpawner::Simulate(int32 NumSteps)
 {
 	static class UFunction* Func = nullptr;
 
@@ -171,20 +504,74 @@ void UProceduralFoliageSpawner::Simulate(int32 InNumSteps)
 
 	Params::UProceduralFoliageSpawner_Simulate_Params Parms{};
 
-	Parms.NumSteps = InNumSteps;
+	Parms.NumSteps = NumSteps;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class Foliage.ProceduralFoliageTile
+// (None)
+
+class UClass* UProceduralFoliageTile::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ProceduralFoliageTile");
+
+	return Clss;
+}
+
+
+// ProceduralFoliageTile Foliage.Default__ProceduralFoliageTile
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UProceduralFoliageTile* UProceduralFoliageTile::GetDefaultObj()
+{
+	static class UProceduralFoliageTile* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UProceduralFoliageTile*>(UProceduralFoliageTile::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class Foliage.ProceduralFoliageVolume
+// (Actor)
+
+class UClass* AProceduralFoliageVolume::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("ProceduralFoliageVolume");
+
+	return Clss;
+}
+
+
+// ProceduralFoliageVolume Foliage.Default__ProceduralFoliageVolume
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class AProceduralFoliageVolume* AProceduralFoliageVolume::GetDefaultObj()
+{
+	static class AProceduralFoliageVolume* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<AProceduralFoliageVolume*>(AProceduralFoliageVolume::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

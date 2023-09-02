@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -18,18 +15,13 @@ class IBPI_LoadingScreen_C : public IInterface
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("BPI_LoadingScreen_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class IBPI_LoadingScreen_C* GetDefaultObj();
 
-	void AddLoadingExtension(class UUserWidget* InWidget);
-	void DisplayLoadingExtension(bool InDisplay);
+	void AddLoadingExtension(class UUserWidget* Widget);
+	void DisplayLoadingExtension(bool Display);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,30 +11,30 @@ namespace SDK
 
 enum class EEulerRotationOrder : uint8
 {
-	EEulerRotationOrder__XYZ       = 0,
-	EEulerRotationOrder__XZY       = 1,
-	EEulerRotationOrder__YXZ       = 2,
-	EEulerRotationOrder__YZX       = 3,
-	EEulerRotationOrder__ZXY       = 4,
-	EEulerRotationOrder__ZYX       = 5,
-	EEulerRotationOrder__EEulerRotationOrder_MAX = 6,
+	XYZ                            = 0,
+	XZY                            = 1,
+	YXZ                            = 2,
+	YZX                            = 3,
+	ZXY                            = 4,
+	ZYX                            = 5,
+	EEulerRotationOrder_MAX        = 6,
 };
 
 enum class EConstraintType : uint8
 {
-	EConstraintType__Transform     = 0,
-	EConstraintType__Aim           = 1,
-	EConstraintType__MAX           = 2,
+	Transform                      = 0,
+	Aim                            = 1,
+	MAX                            = 2,
 };
 
 enum class ETransformConstraintType : uint8
 {
-	ETransformConstraintType__Translation = 0,
-	ETransformConstraintType__Rotation = 1,
-	ETransformConstraintType__Scale = 2,
-	ETransformConstraintType__Parent = 3,
-	ETransformConstraintType__LookAt = 4,
-	ETransformConstraintType__ETransformConstraintType_MAX = 5,
+	Translation                    = 0,
+	Rotation                       = 1,
+	Scale                          = 2,
+	Parent                         = 3,
+	LookAt                         = 4,
+	ETransformConstraintType_MAX   = 5,
 };
 
 
@@ -75,12 +72,12 @@ struct FTransformConstraint
 {
 public:
 	struct FConstraintDescription                Operator;                                          // 0x0(0xD)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19F1[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A77[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  SourceNode;                                        // 0x10(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  TargetNode;                                        // 0x18(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Weight;                                            // 0x20(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bMaintainOffset;                                   // 0x24(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19F2[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A79[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC0 (0xC0 - 0x0)
@@ -89,10 +86,10 @@ struct FConstraintOffset
 {
 public:
 	struct FVector                               Translation;                                       // 0x0(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19F4[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A7B[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuat                                 Rotation;                                          // 0x20(0x20)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Scale;                                             // 0x40(0x18)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19F5[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A7C[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTransform                            Parent;                                            // 0x60(0x60)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -120,7 +117,7 @@ public:
 struct FNodeHierarchyWithUserData
 {
 public:
-	uint8                                        Pad_19F9[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A88[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FNodeHierarchyData                    Hierarchy;                                         // 0x8(0x70)(Protected, NativeAccessSpecifierProtected)
 };
 
@@ -150,7 +147,7 @@ struct FConstraintDescriptor
 {
 public:
 	enum class EConstraintType                   Type;                                              // 0x0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19FA[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A91[0xF];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xE0 (0xE0 - 0x0)
@@ -161,7 +158,7 @@ public:
 	struct FConstraintDescriptor                 Constraint;                                        // 0x0(0x10)(NativeAccessSpecifierPublic)
 	float                                        Weight;                                            // 0x10(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bMaintainOffset;                                   // 0x14(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19FC[0xB];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A93[0xB];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTransform                            Offset;                                            // 0x20(0x60)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FTransform                            CurrentTransform;                                  // 0x80(0x60)(Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -171,7 +168,7 @@ public:
 struct FCCDIKChainLink
 {
 public:
-	uint8                                        Pad_19FD[0xE0];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A95[0xE0];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -179,7 +176,7 @@ public:
 struct FFABRIKChainLink
 {
 public:
-	uint8                                        Pad_19FE[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A97[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -189,7 +186,7 @@ struct FAxis
 public:
 	struct FVector                               Axis;                                              // 0x0(0x18)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bInLocalSpace;                                     // 0x18(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19FF[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1A9A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -205,9 +202,9 @@ public:
 struct FConstraintDescriptionEx
 {
 public:
-	uint8                                        Pad_1A01[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1A9D[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FFilterOptionPerAxis                  AxesFilterOption;                                  // 0x8(0x3)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A02[0x5];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1AA0[0x5];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x18 - 0x10)
@@ -216,7 +213,7 @@ struct FTransformConstraintDescription : public FConstraintDescriptionEx
 {
 public:
 	enum class ETransformConstraintType          TransformType;                                     // 0x10(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A03[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1AA7[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x70 - 0x10)
@@ -227,7 +224,7 @@ public:
 	struct FAxis                                 LookAt_Axis;                                       // 0x10(0x20)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FAxis                                 LookUp_Axis;                                       // 0x30(0x20)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                         bUseLookUp;                                        // 0x50(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A05[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1AAA[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               LookUpTarget;                                      // 0x58(0x18)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -237,12 +234,10 @@ struct FTransformNoScale
 {
 public:
 	struct FVector                               Location;                                          // 0x0(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1A06[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1AAB[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FQuat                                 Rotation;                                          // 0x20(0x20)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

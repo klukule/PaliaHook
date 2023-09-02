@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,97 +11,97 @@ namespace SDK
 
 enum class EOnlineProxyStoreOfferDiscountType : uint8
 {
-	EOnlineProxyStoreOfferDiscountType__NotOnSale = 0,
-	EOnlineProxyStoreOfferDiscountType__Percentage = 1,
-	EOnlineProxyStoreOfferDiscountType__DiscountAmount = 2,
-	EOnlineProxyStoreOfferDiscountType__PayAmount = 3,
-	EOnlineProxyStoreOfferDiscountType__EOnlineProxyStoreOfferDiscountType_MAX = 4,
+	NotOnSale                      = 0,
+	Percentage                     = 1,
+	DiscountAmount                 = 2,
+	PayAmount                      = 3,
+	EOnlineProxyStoreOfferDiscountType_MAX = 4,
 };
 
 enum class EInAppPurchaseStatus : uint8
 {
-	EInAppPurchaseStatus__Invalid  = 0,
-	EInAppPurchaseStatus__Failed   = 1,
-	EInAppPurchaseStatus__Deferred = 2,
-	EInAppPurchaseStatus__Canceled = 3,
-	EInAppPurchaseStatus__Purchased = 4,
-	EInAppPurchaseStatus__Restored = 5,
-	EInAppPurchaseStatus__EInAppPurchaseStatus_MAX = 6,
+	Invalid                        = 0,
+	Failed                         = 1,
+	Deferred                       = 2,
+	Canceled                       = 3,
+	Purchased                      = 4,
+	Restored                       = 5,
+	EInAppPurchaseStatus_MAX       = 6,
 };
 
 enum class EBeaconConnectionState : uint8
 {
-	EBeaconConnectionState__Invalid = 0,
-	EBeaconConnectionState__Closed = 1,
-	EBeaconConnectionState__Pending = 2,
-	EBeaconConnectionState__Open   = 3,
-	EBeaconConnectionState__EBeaconConnectionState_MAX = 4,
+	Invalid                        = 0,
+	Closed                         = 1,
+	Pending                        = 2,
+	Open                           = 3,
+	EBeaconConnectionState_MAX     = 4,
 };
 
 enum class EClientRequestType : uint8
 {
-	EClientRequestType__NonePending = 0,
-	EClientRequestType__ExistingSessionReservation = 1,
-	EClientRequestType__ReservationUpdate = 2,
-	EClientRequestType__EmptyServerReservation = 3,
-	EClientRequestType__Reconnect  = 4,
-	EClientRequestType__Abandon    = 5,
-	EClientRequestType__ReservationRemoveMembers = 6,
-	EClientRequestType__AddOrUpdateReservation = 7,
-	EClientRequestType__EClientRequestType_MAX = 8,
+	NonePending                    = 0,
+	ExistingSessionReservation     = 1,
+	ReservationUpdate              = 2,
+	EmptyServerReservation         = 3,
+	Reconnect                      = 4,
+	Abandon                        = 5,
+	ReservationRemoveMembers       = 6,
+	AddOrUpdateReservation         = 7,
+	EClientRequestType_MAX         = 8,
 };
 
 enum class EPartyReservationResult : uint8
 {
-	EPartyReservationResult__NoResult = 0,
-	EPartyReservationResult__RequestPending = 1,
-	EPartyReservationResult__GeneralError = 2,
-	EPartyReservationResult__PartyLimitReached = 3,
-	EPartyReservationResult__IncorrectPlayerCount = 4,
-	EPartyReservationResult__RequestTimedOut = 5,
-	EPartyReservationResult__ReservationDuplicate = 6,
-	EPartyReservationResult__ReservationNotFound = 7,
-	EPartyReservationResult__ReservationAccepted = 8,
-	EPartyReservationResult__ReservationDenied = 9,
-	EPartyReservationResult__ReservationDenied_CrossPlayRestriction = 10,
-	EPartyReservationResult__ReservationDenied_Banned = 11,
-	EPartyReservationResult__ReservationRequestCanceled = 12,
-	EPartyReservationResult__ReservationInvalid = 13,
-	EPartyReservationResult__BadSessionId = 14,
-	EPartyReservationResult__ReservationDenied_ContainsExistingPlayers = 15,
-	EPartyReservationResult__EPartyReservationResult_MAX = 16,
+	NoResult                       = 0,
+	RequestPending                 = 1,
+	GeneralError                   = 2,
+	PartyLimitReached              = 3,
+	IncorrectPlayerCount           = 4,
+	RequestTimedOut                = 5,
+	ReservationDuplicate           = 6,
+	ReservationNotFound            = 7,
+	ReservationAccepted            = 8,
+	ReservationDenied              = 9,
+	ReservationDenied_CrossPlayRestriction = 10,
+	ReservationDenied_Banned       = 11,
+	ReservationRequestCanceled     = 12,
+	ReservationInvalid             = 13,
+	BadSessionId                   = 14,
+	ReservationDenied_ContainsExistingPlayers = 15,
+	EPartyReservationResult_MAX    = 16,
 };
 
 enum class ESpectatorClientRequestType : uint8
 {
-	ESpectatorClientRequestType__NonePending = 0,
-	ESpectatorClientRequestType__ExistingSessionReservation = 1,
-	ESpectatorClientRequestType__ReservationUpdate = 2,
-	ESpectatorClientRequestType__EmptyServerReservation = 3,
-	ESpectatorClientRequestType__Reconnect = 4,
-	ESpectatorClientRequestType__Abandon = 5,
-	ESpectatorClientRequestType__ESpectatorClientRequestType_MAX = 6,
+	NonePending                    = 0,
+	ExistingSessionReservation     = 1,
+	ReservationUpdate              = 2,
+	EmptyServerReservation         = 3,
+	Reconnect                      = 4,
+	Abandon                        = 5,
+	ESpectatorClientRequestType_MAX = 6,
 };
 
 enum class ESpectatorReservationResult : uint8
 {
-	ESpectatorReservationResult__NoResult = 0,
-	ESpectatorReservationResult__RequestPending = 1,
-	ESpectatorReservationResult__GeneralError = 2,
-	ESpectatorReservationResult__SpectatorLimitReached = 3,
-	ESpectatorReservationResult__IncorrectPlayerCount = 4,
-	ESpectatorReservationResult__RequestTimedOut = 5,
-	ESpectatorReservationResult__ReservationDuplicate = 6,
-	ESpectatorReservationResult__ReservationNotFound = 7,
-	ESpectatorReservationResult__ReservationAccepted = 8,
-	ESpectatorReservationResult__ReservationDenied = 9,
-	ESpectatorReservationResult__ReservationDenied_CrossPlayRestriction = 10,
-	ESpectatorReservationResult__ReservationDenied_Banned = 11,
-	ESpectatorReservationResult__ReservationRequestCanceled = 12,
-	ESpectatorReservationResult__ReservationInvalid = 13,
-	ESpectatorReservationResult__BadSessionId = 14,
-	ESpectatorReservationResult__ReservationDenied_ContainsExistingPlayers = 15,
-	ESpectatorReservationResult__ESpectatorReservationResult_MAX = 16,
+	NoResult                       = 0,
+	RequestPending                 = 1,
+	GeneralError                   = 2,
+	SpectatorLimitReached          = 3,
+	IncorrectPlayerCount           = 4,
+	RequestTimedOut                = 5,
+	ReservationDuplicate           = 6,
+	ReservationNotFound            = 7,
+	ReservationAccepted            = 8,
+	ReservationDenied              = 9,
+	ReservationDenied_CrossPlayRestriction = 10,
+	ReservationDenied_Banned       = 11,
+	ReservationRequestCanceled     = 12,
+	ReservationInvalid             = 13,
+	BadSessionId                   = 14,
+	ReservationDenied_ContainsExistingPlayers = 15,
+	ESpectatorReservationResult_MAX = 16,
 };
 
 
@@ -117,7 +114,7 @@ enum class ESpectatorReservationResult : uint8
 struct FBlueprintSessionResult
 {
 public:
-	uint8                                        Pad_8D6[0x120];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_976[0x120];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x110 (0x110 - 0x0)
@@ -131,15 +128,15 @@ public:
 	class FText                                  LongDescription;                                   // 0x40(0x18)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	class FText                                  RegularPriceText;                                  // 0x58(0x18)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	int32                                        RegularPrice;                                      // 0x70(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8E1[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_979[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  PriceText;                                         // 0x78(0x18)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	int32                                        NumericPrice;                                      // 0x90(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8E6[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_97B[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                CurrencyCode;                                      // 0x98(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDateTime                             ReleaseDate;                                       // 0xA8(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDateTime                             ExpirationDate;                                    // 0xB0(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EOnlineProxyStoreOfferDiscountType DiscountType;                                      // 0xB8(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8ED[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_980[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<class FString, class FString>           DynamicFields;                                     // 0xC0(0x50)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
 
@@ -172,7 +169,7 @@ public:
 	class FString                                ValidationStr;                                     // 0x30(0x10)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Platform;                                          // 0x40(0x10)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowCrossplay;                                   // 0x50(0x1)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_913[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_990[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ElapsedTime;                                       // 0x54(0x4)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -183,7 +180,7 @@ struct FInAppPurchaseProductRequest2
 public:
 	class FString                                ProductIdentifier;                                 // 0x0(0x10)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsConsumable;                                     // 0x10(0x1)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_917[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_9B4[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xF8 (0xF8 - 0x0)
@@ -197,7 +194,7 @@ public:
 	class FString                                DisplayDescription;                                // 0x30(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                DisplayPrice;                                      // 0x40(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        RawPrice;                                          // 0x50(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_921[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9BB[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                CurrencyCode;                                      // 0x58(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                CurrencySymbol;                                    // 0x68(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                DecimalSeparator;                                  // 0x78(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -223,7 +220,7 @@ struct FPartyReservation
 {
 public:
 	int32                                        TeamNum;                                           // 0x0(0x4)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_929[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9C6[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FUniqueNetIdRepl                      PartyLeader;                                       // 0x8(0x30)(Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FPlayerReservation>            PartyMembers;                                      // 0x38(0x10)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 	TArray<struct FPlayerReservation>            RemovedPartyMembers;                               // 0x48(0x10)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
@@ -249,6 +246,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

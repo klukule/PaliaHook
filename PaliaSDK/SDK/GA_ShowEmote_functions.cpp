@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass GA_ShowEmote.GA_ShowEmote_C
+// (None)
+
+class UClass* UGA_ShowEmote_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GA_ShowEmote_C");
+
+	return Clss;
+}
+
+
+// GA_ShowEmote_C GA_ShowEmote.Default__GA_ShowEmote_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UGA_ShowEmote_C* UGA_ShowEmote_C::GetDefaultObj()
+{
+	static class UGA_ShowEmote_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGA_ShowEmote_C*>(UGA_ShowEmote_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function GA_ShowEmote.GA_ShowEmote_C.GetMovement
@@ -22,7 +47,7 @@ namespace SDK
 // class AValeriaCharacter*           CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UValeriaCharacterMoveComponent*CallFunc_GetValeriaCharacterMovementComponent_ReturnValue        (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ShowEmote_C::GetMovement(class UValeriaCharacterMoveComponent** InMovement, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, class UValeriaCharacterMoveComponent* InCallFunc_GetValeriaCharacterMovementComponent_ReturnValue)
+void UGA_ShowEmote_C::GetMovement(class UValeriaCharacterMoveComponent** Movement, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, class UValeriaCharacterMoveComponent* CallFunc_GetValeriaCharacterMovementComponent_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,13 +56,13 @@ void UGA_ShowEmote_C::GetMovement(class UValeriaCharacterMoveComponent** InMovem
 
 	Params::UGA_ShowEmote_C_GetMovement_Params Parms{};
 
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
-	Parms.CallFunc_GetValeriaCharacterMovementComponent_ReturnValue = InCallFunc_GetValeriaCharacterMovementComponent_ReturnValue;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
+	Parms.CallFunc_GetValeriaCharacterMovementComponent_ReturnValue = CallFunc_GetValeriaCharacterMovementComponent_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InMovement != nullptr)
-		*InMovement = Parms.Movement;
+	if (Movement != nullptr)
+		*Movement = Parms.Movement;
 
 }
 
@@ -142,7 +167,7 @@ void UGA_ShowEmote_C::OnCompleted_59A6B96C433AC83C58B90AAE9ED05BB8()
 // Parameters:
 // class FName                        NotifyName                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ShowEmote_C::OnNotifyEnd_FA732F674D534A664E9F799589F10E40(class FName InNotifyName)
+void UGA_ShowEmote_C::OnNotifyEnd_FA732F674D534A664E9F799589F10E40(class FName NotifyName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -151,7 +176,7 @@ void UGA_ShowEmote_C::OnNotifyEnd_FA732F674D534A664E9F799589F10E40(class FName I
 
 	Params::UGA_ShowEmote_C_OnNotifyEnd_FA732F674D534A664E9F799589F10E40_Params Parms{};
 
-	Parms.NotifyName = InNotifyName;
+	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -163,7 +188,7 @@ void UGA_ShowEmote_C::OnNotifyEnd_FA732F674D534A664E9F799589F10E40(class FName I
 // Parameters:
 // class FName                        NotifyName                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ShowEmote_C::OnNotifyBegin_FA732F674D534A664E9F799589F10E40(class FName InNotifyName)
+void UGA_ShowEmote_C::OnNotifyBegin_FA732F674D534A664E9F799589F10E40(class FName NotifyName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -172,7 +197,7 @@ void UGA_ShowEmote_C::OnNotifyBegin_FA732F674D534A664E9F799589F10E40(class FName
 
 	Params::UGA_ShowEmote_C_OnNotifyBegin_FA732F674D534A664E9F799589F10E40_Params Parms{};
 
-	Parms.NotifyName = InNotifyName;
+	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -184,7 +209,7 @@ void UGA_ShowEmote_C::OnNotifyBegin_FA732F674D534A664E9F799589F10E40(class FName
 // Parameters:
 // class FName                        NotifyName                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ShowEmote_C::OnInterrupted_FA732F674D534A664E9F799589F10E40(class FName InNotifyName)
+void UGA_ShowEmote_C::OnInterrupted_FA732F674D534A664E9F799589F10E40(class FName NotifyName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -193,7 +218,7 @@ void UGA_ShowEmote_C::OnInterrupted_FA732F674D534A664E9F799589F10E40(class FName
 
 	Params::UGA_ShowEmote_C_OnInterrupted_FA732F674D534A664E9F799589F10E40_Params Parms{};
 
-	Parms.NotifyName = InNotifyName;
+	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -205,7 +230,7 @@ void UGA_ShowEmote_C::OnInterrupted_FA732F674D534A664E9F799589F10E40(class FName
 // Parameters:
 // class FName                        NotifyName                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ShowEmote_C::OnBlendOut_FA732F674D534A664E9F799589F10E40(class FName InNotifyName)
+void UGA_ShowEmote_C::OnBlendOut_FA732F674D534A664E9F799589F10E40(class FName NotifyName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -214,7 +239,7 @@ void UGA_ShowEmote_C::OnBlendOut_FA732F674D534A664E9F799589F10E40(class FName In
 
 	Params::UGA_ShowEmote_C_OnBlendOut_FA732F674D534A664E9F799589F10E40_Params Parms{};
 
-	Parms.NotifyName = InNotifyName;
+	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -226,7 +251,7 @@ void UGA_ShowEmote_C::OnBlendOut_FA732F674D534A664E9F799589F10E40(class FName In
 // Parameters:
 // class FName                        NotifyName                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ShowEmote_C::OnCompleted_FA732F674D534A664E9F799589F10E40(class FName InNotifyName)
+void UGA_ShowEmote_C::OnCompleted_FA732F674D534A664E9F799589F10E40(class FName NotifyName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -235,7 +260,7 @@ void UGA_ShowEmote_C::OnCompleted_FA732F674D534A664E9F799589F10E40(class FName I
 
 	Params::UGA_ShowEmote_C_OnCompleted_FA732F674D534A664E9F799589F10E40_Params Parms{};
 
-	Parms.NotifyName = InNotifyName;
+	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -249,7 +274,7 @@ void UGA_ShowEmote_C::OnCompleted_FA732F674D534A664E9F799589F10E40(class FName I
 // struct FVector                     OldLocation                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                     OldVelocity                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ShowEmote_C::HandleMovement(float InDeltaSeconds, const struct FVector& InOldLocation, const struct FVector& InOldVelocity)
+void UGA_ShowEmote_C::HandleMovement(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity)
 {
 	static class UFunction* Func = nullptr;
 
@@ -258,9 +283,9 @@ void UGA_ShowEmote_C::HandleMovement(float InDeltaSeconds, const struct FVector&
 
 	Params::UGA_ShowEmote_C_HandleMovement_Params Parms{};
 
-	Parms.DeltaSeconds = InDeltaSeconds;
-	Parms.OldLocation = InOldLocation;
-	Parms.OldVelocity = InOldVelocity;
+	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.OldLocation = OldLocation;
+	Parms.OldVelocity = OldVelocity;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -272,7 +297,7 @@ void UGA_ShowEmote_C::HandleMovement(float InDeltaSeconds, const struct FVector&
 // Parameters:
 // struct FGameplayEventData          EventData                                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UGA_ShowEmote_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData& InEventData)
+void UGA_ShowEmote_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData& EventData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -281,7 +306,7 @@ void UGA_ShowEmote_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData& InE
 
 	Params::UGA_ShowEmote_C_K2_ActivateAbilityFromEvent_Params Parms{};
 
-	Parms.EventData = InEventData;
+	Parms.EventData = EventData;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -293,7 +318,7 @@ void UGA_ShowEmote_C::K2_ActivateAbilityFromEvent(struct FGameplayEventData& InE
 // Parameters:
 // bool                               bWasCancelled                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ShowEmote_C::K2_OnEndAbility(bool InbWasCancelled)
+void UGA_ShowEmote_C::K2_OnEndAbility(bool bWasCancelled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -302,7 +327,7 @@ void UGA_ShowEmote_C::K2_OnEndAbility(bool InbWasCancelled)
 
 	Params::UGA_ShowEmote_C_K2_OnEndAbility_Params Parms{};
 
-	Parms.bWasCancelled = InbWasCancelled;
+	Parms.bWasCancelled = bWasCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -392,7 +417,7 @@ void UGA_ShowEmote_C::K2_OnEndAbility(bool InbWasCancelled)
 // class AValeriaCharacter*           CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_9          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UValeriaEmoteComponent*      CallFunc_GetEmoteComponent_ReturnValue_2                         (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void UGA_ShowEmote_C::ExecuteUbergraph_GA_ShowEmote(int32 InEntryPoint, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, class UValeriaEmoteComponent* InCallFunc_GetEmoteComponent_ReturnValue, class USkeletalMeshComponent* InTemp_object_Variable, class FName InK2Node_CustomEvent_NotifyName_4, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate, class FName InK2Node_CustomEvent_NotifyName_3, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_1, class FName InK2Node_CustomEvent_NotifyName_2, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_2, class FName InK2Node_CustomEvent_NotifyName_1, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_3, class FName InK2Node_CustomEvent_NotifyName, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_4, class FName InTemp_name_Variable, class USkeletalMeshComponent* InTemp_object_Variable_1, class UAnimInstance* InCallFunc_GetAnimInstance_ReturnValue, class FName InTemp_name_Variable_1, class FName InTemp_name_Variable_2, bool InCallFunc_K2_CommitAbility_ReturnValue, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_5, float InCallFunc_GetEmoteDuration_ReturnValue, class UAbilityTask_WaitDelay* InCallFunc_WaitDelay_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_DoesEmoteHave3D_ReturnValue, class UAbilityTask_PlayMontageAndWait* InCallFunc_CreatePlayMontageAndWaitProxy_ReturnValue, class UPlayMontageCallbackProxy* InCallFunc_CreateProxyObjectForPlayMontage_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue_2, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue, double InCallFunc_BreakVector_X, double InCallFunc_BreakVector_Y, double InCallFunc_BreakVector_Z, const struct FVector& InCallFunc_MakeVector_ReturnValue, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_2, class UValeriaEmoteComponent* InCallFunc_GetEmoteComponent_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue_3, class UValeriaGASComponent* InCallFunc_GetGAS_ReturnValue, bool InCallFunc_IsValid_ReturnValue_4, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue_5, double InCallFunc_BreakVector_X_1, double InCallFunc_BreakVector_Y_1, double InCallFunc_BreakVector_Z_1, const struct FVector& InCallFunc_MakeVector_ReturnValue_1, const struct FRotator& InCallFunc_FindLookAtRotation_ReturnValue, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_6, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_7, class UValeriaCharacterMoveComponent* InCallFunc_GetMovement_Movement, class UValeriaCharacterMoveComponent* InCallFunc_GetMovement_Movement_1, class UValeriaCharacterMoveComponent* InCallFunc_GetMovement_Movement_2, bool InCallFunc_IsExceedingMaxSpeed_ReturnValue, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_3, float InK2Node_CustomEvent_DeltaSeconds, const struct FVector& InK2Node_CustomEvent_OldLocation, const struct FVector& InK2Node_CustomEvent_OldVelocity, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_4, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_8, const struct FGameplayEventData& InK2Node_Event_EventData, bool InK2Node_Event_bWasCancelled, class UEmoteDataAsset* InK2Node_DynamicCast_AsEmote_Data_Asset, bool InK2Node_DynamicCast_bSuccess, class UValeriaCharacterMoveComponent* InCallFunc_GetMovement_Movement_3, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_9, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_5, TScriptInterface<class IVAL_CustomizableCharacterInterface> InK2Node_DynamicCast_AsVAL_Customizable_Character_Interface, bool InK2Node_DynamicCast_bSuccess_1, class USkeletalMeshComponent* InCallFunc_GetHeadMeshComponent_ReturnValue, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_10, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_6, TScriptInterface<class IVAL_CustomizableCharacterInterface> InK2Node_DynamicCast_AsVAL_Customizable_Character_Interface_1, bool InK2Node_DynamicCast_bSuccess_2, FDelegateProperty_ InK2Node_CreateDelegate_OutputDelegate_11, class USkeletalMeshComponent* InCallFunc_GetHeadMeshComponent_ReturnValue_1, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_7, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_8, class AValeriaCharacter* InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_9, class UValeriaEmoteComponent* InCallFunc_GetEmoteComponent_ReturnValue_2)
+void UGA_ShowEmote_C::ExecuteUbergraph_GA_ShowEmote(int32 EntryPoint, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, class UValeriaEmoteComponent* CallFunc_GetEmoteComponent_ReturnValue, class USkeletalMeshComponent* Temp_object_Variable, class FName K2Node_CustomEvent_NotifyName_4, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, class FName K2Node_CustomEvent_NotifyName_3, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_1, class FName K2Node_CustomEvent_NotifyName_2, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_2, class FName K2Node_CustomEvent_NotifyName_1, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_3, class FName K2Node_CustomEvent_NotifyName, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_4, class FName Temp_name_Variable, class USkeletalMeshComponent* Temp_object_Variable_1, class UAnimInstance* CallFunc_GetAnimInstance_ReturnValue, class FName Temp_name_Variable_1, class FName Temp_name_Variable_2, bool CallFunc_K2_CommitAbility_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_5, float CallFunc_GetEmoteDuration_ReturnValue, class UAbilityTask_WaitDelay* CallFunc_WaitDelay_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool CallFunc_DoesEmoteHave3D_ReturnValue, class UAbilityTask_PlayMontageAndWait* CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue, class UPlayMontageCallbackProxy* CallFunc_CreateProxyObjectForPlayMontage_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_2, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, double CallFunc_BreakVector_X, double CallFunc_BreakVector_Y, double CallFunc_BreakVector_Z, const struct FVector& CallFunc_MakeVector_ReturnValue, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_2, class UValeriaEmoteComponent* CallFunc_GetEmoteComponent_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_3, class UValeriaGASComponent* CallFunc_GetGAS_ReturnValue, bool CallFunc_IsValid_ReturnValue_4, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_5, double CallFunc_BreakVector_X_1, double CallFunc_BreakVector_Y_1, double CallFunc_BreakVector_Z_1, const struct FVector& CallFunc_MakeVector_ReturnValue_1, const struct FRotator& CallFunc_FindLookAtRotation_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_6, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_7, class UValeriaCharacterMoveComponent* CallFunc_GetMovement_Movement, class UValeriaCharacterMoveComponent* CallFunc_GetMovement_Movement_1, class UValeriaCharacterMoveComponent* CallFunc_GetMovement_Movement_2, bool CallFunc_IsExceedingMaxSpeed_ReturnValue, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_3, float K2Node_CustomEvent_DeltaSeconds, const struct FVector& K2Node_CustomEvent_OldLocation, const struct FVector& K2Node_CustomEvent_OldVelocity, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_4, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_8, const struct FGameplayEventData& K2Node_Event_EventData, bool K2Node_Event_bWasCancelled, class UEmoteDataAsset* K2Node_DynamicCast_AsEmote_Data_Asset, bool K2Node_DynamicCast_bSuccess, class UValeriaCharacterMoveComponent* CallFunc_GetMovement_Movement_3, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_9, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_5, TScriptInterface<class IVAL_CustomizableCharacterInterface> K2Node_DynamicCast_AsVAL_Customizable_Character_Interface, bool K2Node_DynamicCast_bSuccess_1, class USkeletalMeshComponent* CallFunc_GetHeadMeshComponent_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_10, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_6, TScriptInterface<class IVAL_CustomizableCharacterInterface> K2Node_DynamicCast_AsVAL_Customizable_Character_Interface_1, bool K2Node_DynamicCast_bSuccess_2, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_11, class USkeletalMeshComponent* CallFunc_GetHeadMeshComponent_ReturnValue_1, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_7, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_8, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_9, class UValeriaEmoteComponent* CallFunc_GetEmoteComponent_ReturnValue_2)
 {
 	static class UFunction* Func = nullptr;
 
@@ -401,85 +426,85 @@ void UGA_ShowEmote_C::ExecuteUbergraph_GA_ShowEmote(int32 InEntryPoint, class AV
 
 	Params::UGA_ShowEmote_C_ExecuteUbergraph_GA_ShowEmote_Params Parms{};
 
-	Parms.EntryPoint = InEntryPoint;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
-	Parms.CallFunc_GetEmoteComponent_ReturnValue = InCallFunc_GetEmoteComponent_ReturnValue;
-	Parms.Temp_object_Variable = InTemp_object_Variable;
-	Parms.K2Node_CustomEvent_NotifyName_4 = InK2Node_CustomEvent_NotifyName_4;
-	Parms.K2Node_CreateDelegate_OutputDelegate = InK2Node_CreateDelegate_OutputDelegate;
-	Parms.K2Node_CustomEvent_NotifyName_3 = InK2Node_CustomEvent_NotifyName_3;
-	Parms.K2Node_CreateDelegate_OutputDelegate_1 = InK2Node_CreateDelegate_OutputDelegate_1;
-	Parms.K2Node_CustomEvent_NotifyName_2 = InK2Node_CustomEvent_NotifyName_2;
-	Parms.K2Node_CreateDelegate_OutputDelegate_2 = InK2Node_CreateDelegate_OutputDelegate_2;
-	Parms.K2Node_CustomEvent_NotifyName_1 = InK2Node_CustomEvent_NotifyName_1;
-	Parms.K2Node_CreateDelegate_OutputDelegate_3 = InK2Node_CreateDelegate_OutputDelegate_3;
-	Parms.K2Node_CustomEvent_NotifyName = InK2Node_CustomEvent_NotifyName;
-	Parms.K2Node_CreateDelegate_OutputDelegate_4 = InK2Node_CreateDelegate_OutputDelegate_4;
-	Parms.Temp_name_Variable = InTemp_name_Variable;
-	Parms.Temp_object_Variable_1 = InTemp_object_Variable_1;
-	Parms.CallFunc_GetAnimInstance_ReturnValue = InCallFunc_GetAnimInstance_ReturnValue;
-	Parms.Temp_name_Variable_1 = InTemp_name_Variable_1;
-	Parms.Temp_name_Variable_2 = InTemp_name_Variable_2;
-	Parms.CallFunc_K2_CommitAbility_ReturnValue = InCallFunc_K2_CommitAbility_ReturnValue;
-	Parms.K2Node_CreateDelegate_OutputDelegate_5 = InK2Node_CreateDelegate_OutputDelegate_5;
-	Parms.CallFunc_GetEmoteDuration_ReturnValue = InCallFunc_GetEmoteDuration_ReturnValue;
-	Parms.CallFunc_WaitDelay_ReturnValue = InCallFunc_WaitDelay_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_DoesEmoteHave3D_ReturnValue = InCallFunc_DoesEmoteHave3D_ReturnValue;
-	Parms.CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue = InCallFunc_CreatePlayMontageAndWaitProxy_ReturnValue;
-	Parms.CallFunc_CreateProxyObjectForPlayMontage_ReturnValue = InCallFunc_CreateProxyObjectForPlayMontage_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_IsValid_ReturnValue_2 = InCallFunc_IsValid_ReturnValue_2;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1 = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue = InCallFunc_K2_GetActorLocation_ReturnValue;
-	Parms.CallFunc_BreakVector_X = InCallFunc_BreakVector_X;
-	Parms.CallFunc_BreakVector_Y = InCallFunc_BreakVector_Y;
-	Parms.CallFunc_BreakVector_Z = InCallFunc_BreakVector_Z;
-	Parms.CallFunc_MakeVector_ReturnValue = InCallFunc_MakeVector_ReturnValue;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_2 = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_2;
-	Parms.CallFunc_GetEmoteComponent_ReturnValue_1 = InCallFunc_GetEmoteComponent_ReturnValue_1;
-	Parms.CallFunc_IsValid_ReturnValue_3 = InCallFunc_IsValid_ReturnValue_3;
-	Parms.CallFunc_GetGAS_ReturnValue = InCallFunc_GetGAS_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_4 = InCallFunc_IsValid_ReturnValue_4;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue_1 = InCallFunc_K2_GetActorLocation_ReturnValue_1;
-	Parms.CallFunc_IsValid_ReturnValue_5 = InCallFunc_IsValid_ReturnValue_5;
-	Parms.CallFunc_BreakVector_X_1 = InCallFunc_BreakVector_X_1;
-	Parms.CallFunc_BreakVector_Y_1 = InCallFunc_BreakVector_Y_1;
-	Parms.CallFunc_BreakVector_Z_1 = InCallFunc_BreakVector_Z_1;
-	Parms.CallFunc_MakeVector_ReturnValue_1 = InCallFunc_MakeVector_ReturnValue_1;
-	Parms.CallFunc_FindLookAtRotation_ReturnValue = InCallFunc_FindLookAtRotation_ReturnValue;
-	Parms.K2Node_CreateDelegate_OutputDelegate_6 = InK2Node_CreateDelegate_OutputDelegate_6;
-	Parms.K2Node_CreateDelegate_OutputDelegate_7 = InK2Node_CreateDelegate_OutputDelegate_7;
-	Parms.CallFunc_GetMovement_Movement = InCallFunc_GetMovement_Movement;
-	Parms.CallFunc_GetMovement_Movement_1 = InCallFunc_GetMovement_Movement_1;
-	Parms.CallFunc_GetMovement_Movement_2 = InCallFunc_GetMovement_Movement_2;
-	Parms.CallFunc_IsExceedingMaxSpeed_ReturnValue = InCallFunc_IsExceedingMaxSpeed_ReturnValue;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_3 = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_3;
-	Parms.K2Node_CustomEvent_DeltaSeconds = InK2Node_CustomEvent_DeltaSeconds;
-	Parms.K2Node_CustomEvent_OldLocation = InK2Node_CustomEvent_OldLocation;
-	Parms.K2Node_CustomEvent_OldVelocity = InK2Node_CustomEvent_OldVelocity;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_4 = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_4;
-	Parms.K2Node_CreateDelegate_OutputDelegate_8 = InK2Node_CreateDelegate_OutputDelegate_8;
-	Parms.K2Node_Event_EventData = InK2Node_Event_EventData;
-	Parms.K2Node_Event_bWasCancelled = InK2Node_Event_bWasCancelled;
-	Parms.K2Node_DynamicCast_AsEmote_Data_Asset = InK2Node_DynamicCast_AsEmote_Data_Asset;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetMovement_Movement_3 = InCallFunc_GetMovement_Movement_3;
-	Parms.K2Node_CreateDelegate_OutputDelegate_9 = InK2Node_CreateDelegate_OutputDelegate_9;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_5 = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_5;
-	Parms.K2Node_DynamicCast_AsVAL_Customizable_Character_Interface = InK2Node_DynamicCast_AsVAL_Customizable_Character_Interface;
-	Parms.K2Node_DynamicCast_bSuccess_1 = InK2Node_DynamicCast_bSuccess_1;
-	Parms.CallFunc_GetHeadMeshComponent_ReturnValue = InCallFunc_GetHeadMeshComponent_ReturnValue;
-	Parms.K2Node_CreateDelegate_OutputDelegate_10 = InK2Node_CreateDelegate_OutputDelegate_10;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_6 = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_6;
-	Parms.K2Node_DynamicCast_AsVAL_Customizable_Character_Interface_1 = InK2Node_DynamicCast_AsVAL_Customizable_Character_Interface_1;
-	Parms.K2Node_DynamicCast_bSuccess_2 = InK2Node_DynamicCast_bSuccess_2;
-	Parms.K2Node_CreateDelegate_OutputDelegate_11 = InK2Node_CreateDelegate_OutputDelegate_11;
-	Parms.CallFunc_GetHeadMeshComponent_ReturnValue_1 = InCallFunc_GetHeadMeshComponent_ReturnValue_1;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_7 = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_7;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_8 = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_8;
-	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_9 = InCallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_9;
-	Parms.CallFunc_GetEmoteComponent_ReturnValue_2 = InCallFunc_GetEmoteComponent_ReturnValue_2;
+	Parms.EntryPoint = EntryPoint;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
+	Parms.CallFunc_GetEmoteComponent_ReturnValue = CallFunc_GetEmoteComponent_ReturnValue;
+	Parms.Temp_object_Variable = Temp_object_Variable;
+	Parms.K2Node_CustomEvent_NotifyName_4 = K2Node_CustomEvent_NotifyName_4;
+	Parms.K2Node_CreateDelegate_OutputDelegate = K2Node_CreateDelegate_OutputDelegate;
+	Parms.K2Node_CustomEvent_NotifyName_3 = K2Node_CustomEvent_NotifyName_3;
+	Parms.K2Node_CreateDelegate_OutputDelegate_1 = K2Node_CreateDelegate_OutputDelegate_1;
+	Parms.K2Node_CustomEvent_NotifyName_2 = K2Node_CustomEvent_NotifyName_2;
+	Parms.K2Node_CreateDelegate_OutputDelegate_2 = K2Node_CreateDelegate_OutputDelegate_2;
+	Parms.K2Node_CustomEvent_NotifyName_1 = K2Node_CustomEvent_NotifyName_1;
+	Parms.K2Node_CreateDelegate_OutputDelegate_3 = K2Node_CreateDelegate_OutputDelegate_3;
+	Parms.K2Node_CustomEvent_NotifyName = K2Node_CustomEvent_NotifyName;
+	Parms.K2Node_CreateDelegate_OutputDelegate_4 = K2Node_CreateDelegate_OutputDelegate_4;
+	Parms.Temp_name_Variable = Temp_name_Variable;
+	Parms.Temp_object_Variable_1 = Temp_object_Variable_1;
+	Parms.CallFunc_GetAnimInstance_ReturnValue = CallFunc_GetAnimInstance_ReturnValue;
+	Parms.Temp_name_Variable_1 = Temp_name_Variable_1;
+	Parms.Temp_name_Variable_2 = Temp_name_Variable_2;
+	Parms.CallFunc_K2_CommitAbility_ReturnValue = CallFunc_K2_CommitAbility_ReturnValue;
+	Parms.K2Node_CreateDelegate_OutputDelegate_5 = K2Node_CreateDelegate_OutputDelegate_5;
+	Parms.CallFunc_GetEmoteDuration_ReturnValue = CallFunc_GetEmoteDuration_ReturnValue;
+	Parms.CallFunc_WaitDelay_ReturnValue = CallFunc_WaitDelay_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_DoesEmoteHave3D_ReturnValue = CallFunc_DoesEmoteHave3D_ReturnValue;
+	Parms.CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue = CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue;
+	Parms.CallFunc_CreateProxyObjectForPlayMontage_ReturnValue = CallFunc_CreateProxyObjectForPlayMontage_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_IsValid_ReturnValue_2 = CallFunc_IsValid_ReturnValue_2;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1 = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_1;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
+	Parms.CallFunc_BreakVector_X = CallFunc_BreakVector_X;
+	Parms.CallFunc_BreakVector_Y = CallFunc_BreakVector_Y;
+	Parms.CallFunc_BreakVector_Z = CallFunc_BreakVector_Z;
+	Parms.CallFunc_MakeVector_ReturnValue = CallFunc_MakeVector_ReturnValue;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_2 = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_2;
+	Parms.CallFunc_GetEmoteComponent_ReturnValue_1 = CallFunc_GetEmoteComponent_ReturnValue_1;
+	Parms.CallFunc_IsValid_ReturnValue_3 = CallFunc_IsValid_ReturnValue_3;
+	Parms.CallFunc_GetGAS_ReturnValue = CallFunc_GetGAS_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_4 = CallFunc_IsValid_ReturnValue_4;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue_1 = CallFunc_K2_GetActorLocation_ReturnValue_1;
+	Parms.CallFunc_IsValid_ReturnValue_5 = CallFunc_IsValid_ReturnValue_5;
+	Parms.CallFunc_BreakVector_X_1 = CallFunc_BreakVector_X_1;
+	Parms.CallFunc_BreakVector_Y_1 = CallFunc_BreakVector_Y_1;
+	Parms.CallFunc_BreakVector_Z_1 = CallFunc_BreakVector_Z_1;
+	Parms.CallFunc_MakeVector_ReturnValue_1 = CallFunc_MakeVector_ReturnValue_1;
+	Parms.CallFunc_FindLookAtRotation_ReturnValue = CallFunc_FindLookAtRotation_ReturnValue;
+	Parms.K2Node_CreateDelegate_OutputDelegate_6 = K2Node_CreateDelegate_OutputDelegate_6;
+	Parms.K2Node_CreateDelegate_OutputDelegate_7 = K2Node_CreateDelegate_OutputDelegate_7;
+	Parms.CallFunc_GetMovement_Movement = CallFunc_GetMovement_Movement;
+	Parms.CallFunc_GetMovement_Movement_1 = CallFunc_GetMovement_Movement_1;
+	Parms.CallFunc_GetMovement_Movement_2 = CallFunc_GetMovement_Movement_2;
+	Parms.CallFunc_IsExceedingMaxSpeed_ReturnValue = CallFunc_IsExceedingMaxSpeed_ReturnValue;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_3 = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_3;
+	Parms.K2Node_CustomEvent_DeltaSeconds = K2Node_CustomEvent_DeltaSeconds;
+	Parms.K2Node_CustomEvent_OldLocation = K2Node_CustomEvent_OldLocation;
+	Parms.K2Node_CustomEvent_OldVelocity = K2Node_CustomEvent_OldVelocity;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_4 = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_4;
+	Parms.K2Node_CreateDelegate_OutputDelegate_8 = K2Node_CreateDelegate_OutputDelegate_8;
+	Parms.K2Node_Event_EventData = K2Node_Event_EventData;
+	Parms.K2Node_Event_bWasCancelled = K2Node_Event_bWasCancelled;
+	Parms.K2Node_DynamicCast_AsEmote_Data_Asset = K2Node_DynamicCast_AsEmote_Data_Asset;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetMovement_Movement_3 = CallFunc_GetMovement_Movement_3;
+	Parms.K2Node_CreateDelegate_OutputDelegate_9 = K2Node_CreateDelegate_OutputDelegate_9;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_5 = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_5;
+	Parms.K2Node_DynamicCast_AsVAL_Customizable_Character_Interface = K2Node_DynamicCast_AsVAL_Customizable_Character_Interface;
+	Parms.K2Node_DynamicCast_bSuccess_1 = K2Node_DynamicCast_bSuccess_1;
+	Parms.CallFunc_GetHeadMeshComponent_ReturnValue = CallFunc_GetHeadMeshComponent_ReturnValue;
+	Parms.K2Node_CreateDelegate_OutputDelegate_10 = K2Node_CreateDelegate_OutputDelegate_10;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_6 = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_6;
+	Parms.K2Node_DynamicCast_AsVAL_Customizable_Character_Interface_1 = K2Node_DynamicCast_AsVAL_Customizable_Character_Interface_1;
+	Parms.K2Node_DynamicCast_bSuccess_2 = K2Node_DynamicCast_bSuccess_2;
+	Parms.K2Node_CreateDelegate_OutputDelegate_11 = K2Node_CreateDelegate_OutputDelegate_11;
+	Parms.CallFunc_GetHeadMeshComponent_ReturnValue_1 = CallFunc_GetHeadMeshComponent_ReturnValue_1;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_7 = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_7;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_8 = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_8;
+	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_9 = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue_9;
+	Parms.CallFunc_GetEmoteComponent_ReturnValue_2 = CallFunc_GetEmoteComponent_ReturnValue_2;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -487,6 +512,4 @@ void UGA_ShowEmote_C::ExecuteUbergraph_GA_ShowEmote(int32 InEntryPoint, class AV
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

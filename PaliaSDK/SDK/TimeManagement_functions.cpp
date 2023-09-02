@@ -2,17 +2,154 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// Class TimeManagement.FixedFrameRateCustomTimeStep
+// (None)
+
+class UClass* UFixedFrameRateCustomTimeStep::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("FixedFrameRateCustomTimeStep");
+
+	return Clss;
+}
+
+
+// FixedFrameRateCustomTimeStep TimeManagement.Default__FixedFrameRateCustomTimeStep
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UFixedFrameRateCustomTimeStep* UFixedFrameRateCustomTimeStep::GetDefaultObj()
+{
+	static class UFixedFrameRateCustomTimeStep* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UFixedFrameRateCustomTimeStep*>(UFixedFrameRateCustomTimeStep::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class TimeManagement.GenlockedCustomTimeStep
+// (None)
+
+class UClass* UGenlockedCustomTimeStep::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GenlockedCustomTimeStep");
+
+	return Clss;
+}
+
+
+// GenlockedCustomTimeStep TimeManagement.Default__GenlockedCustomTimeStep
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGenlockedCustomTimeStep* UGenlockedCustomTimeStep::GetDefaultObj()
+{
+	static class UGenlockedCustomTimeStep* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGenlockedCustomTimeStep*>(UGenlockedCustomTimeStep::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class TimeManagement.GenlockedFixedRateCustomTimeStep
+// (None)
+
+class UClass* UGenlockedFixedRateCustomTimeStep::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GenlockedFixedRateCustomTimeStep");
+
+	return Clss;
+}
+
+
+// GenlockedFixedRateCustomTimeStep TimeManagement.Default__GenlockedFixedRateCustomTimeStep
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGenlockedFixedRateCustomTimeStep* UGenlockedFixedRateCustomTimeStep::GetDefaultObj()
+{
+	static class UGenlockedFixedRateCustomTimeStep* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGenlockedFixedRateCustomTimeStep*>(UGenlockedFixedRateCustomTimeStep::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class TimeManagement.GenlockedTimecodeProvider
+// (None)
+
+class UClass* UGenlockedTimecodeProvider::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("GenlockedTimecodeProvider");
+
+	return Clss;
+}
+
+
+// GenlockedTimecodeProvider TimeManagement.Default__GenlockedTimecodeProvider
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UGenlockedTimecodeProvider* UGenlockedTimecodeProvider::GetDefaultObj()
+{
+	static class UGenlockedTimecodeProvider* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UGenlockedTimecodeProvider*>(UGenlockedTimecodeProvider::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class TimeManagement.TimeManagementBlueprintLibrary
+// (None)
+
+class UClass* UTimeManagementBlueprintLibrary::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TimeManagementBlueprintLibrary");
+
+	return Clss;
+}
+
+
+// TimeManagementBlueprintLibrary TimeManagement.Default__TimeManagementBlueprintLibrary
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTimeManagementBlueprintLibrary* UTimeManagementBlueprintLibrary::GetDefaultObj()
+{
+	static class UTimeManagementBlueprintLibrary* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTimeManagementBlueprintLibrary*>(UTimeManagementBlueprintLibrary::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function TimeManagement.TimeManagementBlueprintLibrary.TransformTime
@@ -23,7 +160,7 @@ namespace SDK
 // struct FFrameRate                  DestinationRate                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UTimeManagementBlueprintLibrary::TransformTime(struct FFrameTime& InSourceTime, struct FFrameRate& InSourceRate, struct FFrameRate& InDestinationRate)
+struct FFrameTime UTimeManagementBlueprintLibrary::TransformTime(struct FFrameTime& SourceTime, struct FFrameRate& SourceRate, struct FFrameRate& DestinationRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,17 +169,17 @@ struct FFrameTime UTimeManagementBlueprintLibrary::TransformTime(struct FFrameTi
 
 	Params::UTimeManagementBlueprintLibrary_TransformTime_Params Parms{};
 
-	Parms.SourceTime = InSourceTime;
-	Parms.SourceRate = InSourceRate;
-	Parms.DestinationRate = InDestinationRate;
+	Parms.SourceTime = SourceTime;
+	Parms.SourceRate = SourceRate;
+	Parms.DestinationRate = DestinationRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -56,7 +193,7 @@ struct FFrameTime UTimeManagementBlueprintLibrary::TransformTime(struct FFrameTi
 // int32                              B                                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameNumber                ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameNumber UTimeManagementBlueprintLibrary::Subtract_FrameNumberInteger(const struct FFrameNumber& InA, int32 InB)
+struct FFrameNumber UTimeManagementBlueprintLibrary::Subtract_FrameNumberInteger(const struct FFrameNumber& A, int32 B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -65,16 +202,16 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Subtract_FrameNumberInteger
 
 	Params::UTimeManagementBlueprintLibrary_Subtract_FrameNumberInteger_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -88,7 +225,7 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Subtract_FrameNumberInteger
 // struct FFrameNumber                B                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameNumber                ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameNumber UTimeManagementBlueprintLibrary::Subtract_FrameNumberFrameNumber(const struct FFrameNumber& InA, const struct FFrameNumber& InB)
+struct FFrameNumber UTimeManagementBlueprintLibrary::Subtract_FrameNumberFrameNumber(const struct FFrameNumber& A, const struct FFrameNumber& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -97,16 +234,16 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Subtract_FrameNumberFrameNu
 
 	Params::UTimeManagementBlueprintLibrary_Subtract_FrameNumberFrameNumber_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -121,7 +258,7 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Subtract_FrameNumberFrameNu
 // struct FFrameRate                  SnapToRate                                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UTimeManagementBlueprintLibrary::SnapFrameTimeToRate(struct FFrameTime& InSourceTime, struct FFrameRate& InSourceRate, struct FFrameRate& InSnapToRate)
+struct FFrameTime UTimeManagementBlueprintLibrary::SnapFrameTimeToRate(struct FFrameTime& SourceTime, struct FFrameRate& SourceRate, struct FFrameRate& SnapToRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -130,17 +267,17 @@ struct FFrameTime UTimeManagementBlueprintLibrary::SnapFrameTimeToRate(struct FF
 
 	Params::UTimeManagementBlueprintLibrary_SnapFrameTimeToRate_Params Parms{};
 
-	Parms.SourceTime = InSourceTime;
-	Parms.SourceRate = InSourceRate;
-	Parms.SnapToRate = InSnapToRate;
+	Parms.SourceTime = SourceTime;
+	Parms.SourceRate = SourceRate;
+	Parms.SnapToRate = SnapToRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -154,7 +291,7 @@ struct FFrameTime UTimeManagementBlueprintLibrary::SnapFrameTimeToRate(struct FF
 // struct FFrameRate                  FrameRate                                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                  ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameTime UTimeManagementBlueprintLibrary::Multiply_SecondsFrameRate(float InTimeInSeconds, struct FFrameRate& InFrameRate)
+struct FFrameTime UTimeManagementBlueprintLibrary::Multiply_SecondsFrameRate(float TimeInSeconds, struct FFrameRate& FrameRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -163,16 +300,16 @@ struct FFrameTime UTimeManagementBlueprintLibrary::Multiply_SecondsFrameRate(flo
 
 	Params::UTimeManagementBlueprintLibrary_Multiply_SecondsFrameRate_Params Parms{};
 
-	Parms.TimeInSeconds = InTimeInSeconds;
-	Parms.FrameRate = InFrameRate;
+	Parms.TimeInSeconds = TimeInSeconds;
+	Parms.FrameRate = FrameRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -186,7 +323,7 @@ struct FFrameTime UTimeManagementBlueprintLibrary::Multiply_SecondsFrameRate(flo
 // int32                              B                                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameNumber                ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameNumber UTimeManagementBlueprintLibrary::Multiply_FrameNumberInteger(const struct FFrameNumber& InA, int32 InB)
+struct FFrameNumber UTimeManagementBlueprintLibrary::Multiply_FrameNumberInteger(const struct FFrameNumber& A, int32 B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -195,16 +332,16 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Multiply_FrameNumberInteger
 
 	Params::UTimeManagementBlueprintLibrary_Multiply_FrameNumberInteger_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -218,7 +355,7 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Multiply_FrameNumberInteger
 // struct FFrameRate                  OtherFramerate                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTimeManagementBlueprintLibrary::IsValid_MultipleOf(struct FFrameRate& InInFrameRate, struct FFrameRate& InOtherFramerate)
+bool UTimeManagementBlueprintLibrary::IsValid_MultipleOf(struct FFrameRate& InFrameRate, struct FFrameRate& OtherFramerate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -227,16 +364,16 @@ bool UTimeManagementBlueprintLibrary::IsValid_MultipleOf(struct FFrameRate& InIn
 
 	Params::UTimeManagementBlueprintLibrary_IsValid_MultipleOf_Params Parms{};
 
-	Parms.InFrameRate = InInFrameRate;
-	Parms.OtherFramerate = InOtherFramerate;
+	Parms.InFrameRate = InFrameRate;
+	Parms.OtherFramerate = OtherFramerate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -249,7 +386,7 @@ bool UTimeManagementBlueprintLibrary::IsValid_MultipleOf(struct FFrameRate& InIn
 // struct FFrameRate                  InFrameRate                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UTimeManagementBlueprintLibrary::IsValid_Framerate(struct FFrameRate& InInFrameRate)
+bool UTimeManagementBlueprintLibrary::IsValid_Framerate(struct FFrameRate& InFrameRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -258,15 +395,15 @@ bool UTimeManagementBlueprintLibrary::IsValid_Framerate(struct FFrameRate& InInF
 
 	Params::UTimeManagementBlueprintLibrary_IsValid_Framerate_Params Parms{};
 
-	Parms.InFrameRate = InInFrameRate;
+	Parms.InFrameRate = InFrameRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -288,13 +425,13 @@ struct FFrameRate UTimeManagementBlueprintLibrary::GetTimecodeFrameRate()
 	Params::UTimeManagementBlueprintLibrary_GetTimecodeFrameRate_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -316,13 +453,13 @@ struct FTimecode UTimeManagementBlueprintLibrary::GetTimecode()
 	Params::UTimeManagementBlueprintLibrary_GetTimecode_Params Parms{};
 
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -336,7 +473,7 @@ struct FTimecode UTimeManagementBlueprintLibrary::GetTimecode()
 // int32                              B                                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameNumber                ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameNumber UTimeManagementBlueprintLibrary::Divide_FrameNumberInteger(const struct FFrameNumber& InA, int32 InB)
+struct FFrameNumber UTimeManagementBlueprintLibrary::Divide_FrameNumberInteger(const struct FFrameNumber& A, int32 B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -345,16 +482,16 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Divide_FrameNumberInteger(c
 
 	Params::UTimeManagementBlueprintLibrary_Divide_FrameNumberInteger_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -368,7 +505,7 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Divide_FrameNumberInteger(c
 // bool                               bForceSignDisplay                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UTimeManagementBlueprintLibrary::Conv_TimecodeToString(struct FTimecode& InInTimecode, bool InbForceSignDisplay)
+class FString UTimeManagementBlueprintLibrary::Conv_TimecodeToString(struct FTimecode& InTimecode, bool bForceSignDisplay)
 {
 	static class UFunction* Func = nullptr;
 
@@ -377,16 +514,16 @@ class FString UTimeManagementBlueprintLibrary::Conv_TimecodeToString(struct FTim
 
 	Params::UTimeManagementBlueprintLibrary_Conv_TimecodeToString_Params Parms{};
 
-	Parms.InTimecode = InInTimecode;
-	Parms.bForceSignDisplay = InbForceSignDisplay;
+	Parms.InTimecode = InTimecode;
+	Parms.bForceSignDisplay = bForceSignDisplay;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -399,7 +536,7 @@ class FString UTimeManagementBlueprintLibrary::Conv_TimecodeToString(struct FTim
 // struct FQualifiedFrameTime         InFrameTime                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UTimeManagementBlueprintLibrary::Conv_QualifiedFrameTimeToSeconds(struct FQualifiedFrameTime& InInFrameTime)
+float UTimeManagementBlueprintLibrary::Conv_QualifiedFrameTimeToSeconds(struct FQualifiedFrameTime& InFrameTime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -408,15 +545,15 @@ float UTimeManagementBlueprintLibrary::Conv_QualifiedFrameTimeToSeconds(struct F
 
 	Params::UTimeManagementBlueprintLibrary_Conv_QualifiedFrameTimeToSeconds_Params Parms{};
 
-	Parms.InFrameTime = InInFrameTime;
+	Parms.InFrameTime = InFrameTime;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -429,7 +566,7 @@ float UTimeManagementBlueprintLibrary::Conv_QualifiedFrameTimeToSeconds(struct F
 // struct FFrameRate                  InFrameRate                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UTimeManagementBlueprintLibrary::Conv_FrameRateToSeconds(struct FFrameRate& InInFrameRate)
+float UTimeManagementBlueprintLibrary::Conv_FrameRateToSeconds(struct FFrameRate& InFrameRate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -438,15 +575,15 @@ float UTimeManagementBlueprintLibrary::Conv_FrameRateToSeconds(struct FFrameRate
 
 	Params::UTimeManagementBlueprintLibrary_Conv_FrameRateToSeconds_Params Parms{};
 
-	Parms.InFrameRate = InInFrameRate;
+	Parms.InFrameRate = InFrameRate;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -459,7 +596,7 @@ float UTimeManagementBlueprintLibrary::Conv_FrameRateToSeconds(struct FFrameRate
 // struct FFrameNumber                InFrameNumber                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UTimeManagementBlueprintLibrary::Conv_FrameNumberToInteger(struct FFrameNumber& InInFrameNumber)
+int32 UTimeManagementBlueprintLibrary::Conv_FrameNumberToInteger(struct FFrameNumber& InFrameNumber)
 {
 	static class UFunction* Func = nullptr;
 
@@ -468,15 +605,15 @@ int32 UTimeManagementBlueprintLibrary::Conv_FrameNumberToInteger(struct FFrameNu
 
 	Params::UTimeManagementBlueprintLibrary_Conv_FrameNumberToInteger_Params Parms{};
 
-	Parms.InFrameNumber = InInFrameNumber;
+	Parms.InFrameNumber = InFrameNumber;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -490,7 +627,7 @@ int32 UTimeManagementBlueprintLibrary::Conv_FrameNumberToInteger(struct FFrameNu
 // int32                              B                                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameNumber                ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameNumber UTimeManagementBlueprintLibrary::Add_FrameNumberInteger(const struct FFrameNumber& InA, int32 InB)
+struct FFrameNumber UTimeManagementBlueprintLibrary::Add_FrameNumberInteger(const struct FFrameNumber& A, int32 B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -499,16 +636,16 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Add_FrameNumberInteger(cons
 
 	Params::UTimeManagementBlueprintLibrary_Add_FrameNumberInteger_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
@@ -522,7 +659,7 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Add_FrameNumberInteger(cons
 // struct FFrameNumber                B                                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameNumber                ReturnValue                                                      (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FFrameNumber UTimeManagementBlueprintLibrary::Add_FrameNumberFrameNumber(const struct FFrameNumber& InA, const struct FFrameNumber& InB)
+struct FFrameNumber UTimeManagementBlueprintLibrary::Add_FrameNumberFrameNumber(const struct FFrameNumber& A, const struct FFrameNumber& B)
 {
 	static class UFunction* Func = nullptr;
 
@@ -531,23 +668,49 @@ struct FFrameNumber UTimeManagementBlueprintLibrary::Add_FrameNumberFrameNumber(
 
 	Params::UTimeManagementBlueprintLibrary_Add_FrameNumberFrameNumber_Params Parms{};
 
-	Parms.A = InA;
-	Parms.B = InB;
+	Parms.A = A;
+	Parms.B = B;
 
-	auto Flags = Func->FunctionFlags;
+	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 
-	Func->FunctionFlags = Flags;
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 
 }
 
+
+// Class TimeManagement.TimeSynchronizationSource
+// (None)
+
+class UClass* UTimeSynchronizationSource::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("TimeSynchronizationSource");
+
+	return Clss;
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
+// TimeSynchronizationSource TimeManagement.Default__TimeSynchronizationSource
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UTimeSynchronizationSource* UTimeSynchronizationSource::GetDefaultObj()
+{
+	static class UTimeSynchronizationSource* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UTimeSynchronizationSource*>(UTimeSynchronizationSource::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+}
+
+

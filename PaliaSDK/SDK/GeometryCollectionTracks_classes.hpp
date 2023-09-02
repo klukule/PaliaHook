@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,11 +16,8 @@ class UMovieSceneGeometryCollectionSection : public UMovieSceneSection
 public:
 	struct FMovieSceneGeometryCollectionParams   Params;                                            // 0xF0(0x38)(Edit, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneGeometryCollectionSection");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneGeometryCollectionSection* GetDefaultObj();
 
 };
 
@@ -32,19 +26,14 @@ public:
 class UMovieSceneGeometryCollectionTrack : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                        Pad_17E2[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_181D[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UMovieSceneSection*>            AnimationSections;                                 // 0xA0(0x10)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("MovieSceneGeometryCollectionTrack");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UMovieSceneGeometryCollectionTrack* GetDefaultObj();
 
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

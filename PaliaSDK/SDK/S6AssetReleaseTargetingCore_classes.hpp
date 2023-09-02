@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -19,11 +16,8 @@ class US6ReleaseVersioningSettings : public UDeveloperSettings
 public:
 	TSet<struct FS6ReleaseVersionSpecification>  KnownReleaseVersions;                              // 0x38(0x50)(Edit, Config, NativeAccessSpecifierPublic)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6ReleaseVersioningSettings");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6ReleaseVersioningSettings* GetDefaultObj();
 
 	void SanitizeReleaseVersions();
 };
@@ -34,30 +28,25 @@ class US6ReleaseVersioningLibrary : public UBlueprintFunctionLibrary
 {
 public:
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("S6ReleaseVersioningLibrary");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class US6ReleaseVersioningLibrary* GetDefaultObj();
 
-	bool TryParse(const class FString& InVersionString, struct FS6ReleaseVersionSpecification* InOutReleaseVersion);
-	class FString ToString(struct FS6ReleaseVersionSpecification& InValue);
-	bool NotEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
-	struct FS6ReleaseVersionSpecification Min(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
-	struct FS6ReleaseVersionSpecification Max(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
-	bool LessEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
-	bool Less(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
-	bool IsValid(struct FS6ReleaseVersionSpecification& InValue);
-	bool GreaterEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
-	bool Greater(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
+	bool TryParse(const class FString& VersionString, struct FS6ReleaseVersionSpecification* OutReleaseVersion);
+	class FString ToString(struct FS6ReleaseVersionSpecification& Value);
+	bool NotEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
+	struct FS6ReleaseVersionSpecification Min(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
+	struct FS6ReleaseVersionSpecification Max(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
+	bool LessEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
+	bool Less(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
+	bool IsValid(struct FS6ReleaseVersionSpecification& Value);
+	bool GreaterEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
+	bool Greater(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
 	struct FS6ReleaseVersionSpecification GetUnspecifiedReleaseVersionSpec();
 	struct FS6ReleaseVersionSpecification GetFutureReleaseVersionSpec();
 	struct FS6ReleaseVersionSpecification GetCurrentReleaseVersionSpec();
-	bool EqualEqual(const struct FS6ReleaseVersionSpecification& InA, const struct FS6ReleaseVersionSpecification& InB);
+	bool EqualEqual(const struct FS6ReleaseVersionSpecification& A, const struct FS6ReleaseVersionSpecification& B);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

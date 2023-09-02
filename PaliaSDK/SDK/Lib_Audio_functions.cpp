@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass Lib_Audio.Lib_Audio_C
+// (None)
+
+class UClass* ULib_Audio_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("Lib_Audio_C");
+
+	return Clss;
+}
+
+
+// Lib_Audio_C Lib_Audio.Default__Lib_Audio_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class ULib_Audio_C* ULib_Audio_C::GetDefaultObj()
+{
+	static class ULib_Audio_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<ULib_Audio_C*>(ULib_Audio_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function Lib_Audio.Lib_Audio_C.GetMusicManager
@@ -27,7 +52,7 @@ namespace SDK
 // class UBP_MusicManager_C*          K2Node_DynamicCast_AsBP_Music_Manager                            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_DynamicCast_bSuccess_1                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::GetMusicManager(class UObject* In__WorldContext, class UBP_MusicManager_C** InAsBP_Music_Manager, class UGameInstance* InCallFunc_GetGameInstance_ReturnValue, class UValeriaGameInstance* InK2Node_DynamicCast_AsValeria_Game_Instance, bool InK2Node_DynamicCast_bSuccess, class UMusicManager* InCallFunc_GetMusicManager_ReturnValue, class UBP_MusicManager_C* InK2Node_DynamicCast_AsBP_Music_Manager, bool InK2Node_DynamicCast_bSuccess_1)
+void ULib_Audio_C::GetMusicManager(class UObject* __WorldContext, class UBP_MusicManager_C** AsBP_Music_Manager, class UGameInstance* CallFunc_GetGameInstance_ReturnValue, class UValeriaGameInstance* K2Node_DynamicCast_AsValeria_Game_Instance, bool K2Node_DynamicCast_bSuccess, class UMusicManager* CallFunc_GetMusicManager_ReturnValue, class UBP_MusicManager_C* K2Node_DynamicCast_AsBP_Music_Manager, bool K2Node_DynamicCast_bSuccess_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -36,18 +61,18 @@ void ULib_Audio_C::GetMusicManager(class UObject* In__WorldContext, class UBP_Mu
 
 	Params::ULib_Audio_C_GetMusicManager_Params Parms{};
 
-	Parms.__WorldContext = In__WorldContext;
-	Parms.CallFunc_GetGameInstance_ReturnValue = InCallFunc_GetGameInstance_ReturnValue;
-	Parms.K2Node_DynamicCast_AsValeria_Game_Instance = InK2Node_DynamicCast_AsValeria_Game_Instance;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetMusicManager_ReturnValue = InCallFunc_GetMusicManager_ReturnValue;
-	Parms.K2Node_DynamicCast_AsBP_Music_Manager = InK2Node_DynamicCast_AsBP_Music_Manager;
-	Parms.K2Node_DynamicCast_bSuccess_1 = InK2Node_DynamicCast_bSuccess_1;
+	Parms.__WorldContext = __WorldContext;
+	Parms.CallFunc_GetGameInstance_ReturnValue = CallFunc_GetGameInstance_ReturnValue;
+	Parms.K2Node_DynamicCast_AsValeria_Game_Instance = K2Node_DynamicCast_AsValeria_Game_Instance;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetMusicManager_ReturnValue = CallFunc_GetMusicManager_ReturnValue;
+	Parms.K2Node_DynamicCast_AsBP_Music_Manager = K2Node_DynamicCast_AsBP_Music_Manager;
+	Parms.K2Node_DynamicCast_bSuccess_1 = K2Node_DynamicCast_bSuccess_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InAsBP_Music_Manager != nullptr)
-		*InAsBP_Music_Manager = Parms.AsBP_Music_Manager;
+	if (AsBP_Music_Manager != nullptr)
+		*AsBP_Music_Manager = Parms.AsBP_Music_Manager;
 
 }
 
@@ -65,7 +90,7 @@ void ULib_Audio_C::GetMusicManager(class UObject* In__WorldContext, class UBP_Mu
 // class UComp_RtpcTracker_C*         CallFunc_GetComponentByClass_ReturnValue                         (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue_2                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::Try_to_Propagate_Rtpcs(class AActor* InActor, class UAkComponent* InAkComponent, class UObject* In__WorldContext, bool* InSuccess, class UComp_RtpcTracker_C* InTracker, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, class UComp_RtpcTracker_C* InCallFunc_GetComponentByClass_ReturnValue, bool InCallFunc_IsValid_ReturnValue_2)
+void ULib_Audio_C::Try_to_Propagate_Rtpcs(class AActor* Actor, class UAkComponent* AkComponent, class UObject* __WorldContext, bool* Success, class UComp_RtpcTracker_C* Tracker, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, class UComp_RtpcTracker_C* CallFunc_GetComponentByClass_ReturnValue, bool CallFunc_IsValid_ReturnValue_2)
 {
 	static class UFunction* Func = nullptr;
 
@@ -74,19 +99,19 @@ void ULib_Audio_C::Try_to_Propagate_Rtpcs(class AActor* InActor, class UAkCompon
 
 	Params::ULib_Audio_C_Try_to_Propagate_Rtpcs_Params Parms{};
 
-	Parms.Actor = InActor;
-	Parms.AkComponent = InAkComponent;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.Tracker = InTracker;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_GetComponentByClass_ReturnValue = InCallFunc_GetComponentByClass_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_2 = InCallFunc_IsValid_ReturnValue_2;
+	Parms.Actor = Actor;
+	Parms.AkComponent = AkComponent;
+	Parms.__WorldContext = __WorldContext;
+	Parms.Tracker = Tracker;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_2 = CallFunc_IsValid_ReturnValue_2;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InSuccess != nullptr)
-		*InSuccess = Parms.Success;
+	if (Success != nullptr)
+		*Success = Parms.Success;
 
 }
 
@@ -105,7 +130,7 @@ void ULib_Audio_C::Try_to_Propagate_Rtpcs(class AActor* InActor, class UAkCompon
 // bool                               CallFunc_VAkGetComponent_ComponentCreated                        (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAkComponent*                CallFunc_VAkGetComponent_ReturnValue                             (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::AkGetComponent(class USceneComponent* InAttachToComponent, class FName InAttachPointName, const struct FVector& InLocation, enum class EAttachLocation InLocationType, bool InbAutoDestroy, class UObject* In__WorldContext, bool* InComponentCreated, class UAkComponent** InAkComponent, bool InCallFunc_VAkGetComponent_ComponentCreated, class UAkComponent* InCallFunc_VAkGetComponent_ReturnValue)
+void ULib_Audio_C::AkGetComponent(class USceneComponent* AttachToComponent, class FName AttachPointName, const struct FVector& Location, enum class EAttachLocation LocationType, bool bAutoDestroy, class UObject* __WorldContext, bool* ComponentCreated, class UAkComponent** AkComponent, bool CallFunc_VAkGetComponent_ComponentCreated, class UAkComponent* CallFunc_VAkGetComponent_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -114,22 +139,22 @@ void ULib_Audio_C::AkGetComponent(class USceneComponent* InAttachToComponent, cl
 
 	Params::ULib_Audio_C_AkGetComponent_Params Parms{};
 
-	Parms.AttachToComponent = InAttachToComponent;
-	Parms.AttachPointName = InAttachPointName;
-	Parms.Location = InLocation;
-	Parms.LocationType = InLocationType;
-	Parms.bAutoDestroy = InbAutoDestroy;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.CallFunc_VAkGetComponent_ComponentCreated = InCallFunc_VAkGetComponent_ComponentCreated;
-	Parms.CallFunc_VAkGetComponent_ReturnValue = InCallFunc_VAkGetComponent_ReturnValue;
+	Parms.AttachToComponent = AttachToComponent;
+	Parms.AttachPointName = AttachPointName;
+	Parms.Location = Location;
+	Parms.LocationType = LocationType;
+	Parms.bAutoDestroy = bAutoDestroy;
+	Parms.__WorldContext = __WorldContext;
+	Parms.CallFunc_VAkGetComponent_ComponentCreated = CallFunc_VAkGetComponent_ComponentCreated;
+	Parms.CallFunc_VAkGetComponent_ReturnValue = CallFunc_VAkGetComponent_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InComponentCreated != nullptr)
-		*InComponentCreated = Parms.ComponentCreated;
+	if (ComponentCreated != nullptr)
+		*ComponentCreated = Parms.ComponentCreated;
 
-	if (InAkComponent != nullptr)
-		*InAkComponent = Parms.AkComponent;
+	if (AkComponent != nullptr)
+		*AkComponent = Parms.AkComponent;
 
 }
 
@@ -143,7 +168,7 @@ void ULib_Audio_C::AkGetComponent(class USceneComponent* InAttachToComponent, cl
 // enum class EAkCurveInterpolation   FadeCurve                                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::AkExecuteActionOnPlayingID(enum class EAkActionOnEventType InActionType, int32 InPlayingID, int32 InTransitionDuration, enum class EAkCurveInterpolation InFadeCurve, class UObject* In__WorldContext)
+void ULib_Audio_C::AkExecuteActionOnPlayingID(enum class EAkActionOnEventType ActionType, int32 PlayingID, int32 TransitionDuration, enum class EAkCurveInterpolation FadeCurve, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -152,11 +177,11 @@ void ULib_Audio_C::AkExecuteActionOnPlayingID(enum class EAkActionOnEventType In
 
 	Params::ULib_Audio_C_AkExecuteActionOnPlayingID_Params Parms{};
 
-	Parms.ActionType = InActionType;
-	Parms.PlayingID = InPlayingID;
-	Parms.TransitionDuration = InTransitionDuration;
-	Parms.FadeCurve = InFadeCurve;
-	Parms.__WorldContext = In__WorldContext;
+	Parms.ActionType = ActionType;
+	Parms.PlayingID = PlayingID;
+	Parms.TransitionDuration = TransitionDuration;
+	Parms.FadeCurve = FadeCurve;
+	Parms.__WorldContext = __WorldContext;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -191,7 +216,7 @@ void ULib_Audio_C::AkExecuteActionOnPlayingID(enum class EAkActionOnEventType In
 // int32                              CallFunc_Add_IntInt_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanAND_ReturnValue_1                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::IsInside(const struct FVector& InLocation, class UObject* In__WorldContext, bool* InIsInside, bool InInside, bool InTemp_bool_True_if_break_was_hit_Variable, class UAkRoomComponent* InCallFunc_GetAkAudioRoomAtLocation_HighestPriorityRoom, TArray<class UAkRoomComponent*>& InCallFunc_GetAkAudioRoomAtLocation_AllRooms, bool InCallFunc_IsValid_ReturnValue, class AActor* InCallFunc_GetOwner_ReturnValue, class AAkSpatialAudioVolume* InK2Node_DynamicCast_AsAk_Spatial_Audio_Volume, bool InK2Node_DynamicCast_bSuccess, TArray<class UComp_CV_Local_RTPC_C*>& InCallFunc_K2_GetComponentsByClass_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, int32 InTemp_int_Array_Index_Variable, class UComp_CV_Local_RTPC_C* InCallFunc_Array_Get_Item, bool InCallFunc_EqualEqual_DoubleDouble_ReturnValue, bool InCallFunc_EqualEqual_ObjectObject_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue, int32 InTemp_int_Loop_Counter_Variable, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue, bool InCallFunc_BooleanAND_ReturnValue_1)
+void ULib_Audio_C::IsInside(const struct FVector& Location, class UObject* __WorldContext, bool* IsInside, bool Inside, bool Temp_bool_True_if_break_was_hit_Variable, class UAkRoomComponent* CallFunc_GetAkAudioRoomAtLocation_HighestPriorityRoom, TArray<class UAkRoomComponent*>& CallFunc_GetAkAudioRoomAtLocation_AllRooms, bool CallFunc_IsValid_ReturnValue, class AActor* CallFunc_GetOwner_ReturnValue, class AAkSpatialAudioVolume* K2Node_DynamicCast_AsAk_Spatial_Audio_Volume, bool K2Node_DynamicCast_bSuccess, TArray<class UComp_CV_Local_RTPC_C*>& CallFunc_K2_GetComponentsByClass_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, int32 Temp_int_Array_Index_Variable, class UComp_CV_Local_RTPC_C* CallFunc_Array_Get_Item, bool CallFunc_EqualEqual_DoubleDouble_ReturnValue, bool CallFunc_EqualEqual_ObjectObject_ReturnValue, bool CallFunc_BooleanAND_ReturnValue, int32 Temp_int_Loop_Counter_Variable, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue, bool CallFunc_BooleanAND_ReturnValue_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -200,34 +225,34 @@ void ULib_Audio_C::IsInside(const struct FVector& InLocation, class UObject* In_
 
 	Params::ULib_Audio_C_IsInside_Params Parms{};
 
-	Parms.Location = InLocation;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.Inside = InInside;
-	Parms.Temp_bool_True_if_break_was_hit_Variable = InTemp_bool_True_if_break_was_hit_Variable;
-	Parms.CallFunc_GetAkAudioRoomAtLocation_HighestPriorityRoom = InCallFunc_GetAkAudioRoomAtLocation_HighestPriorityRoom;
-	Parms.CallFunc_GetAkAudioRoomAtLocation_AllRooms = InCallFunc_GetAkAudioRoomAtLocation_AllRooms;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
-	Parms.K2Node_DynamicCast_AsAk_Spatial_Audio_Volume = InK2Node_DynamicCast_AsAk_Spatial_Audio_Volume;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_K2_GetComponentsByClass_ReturnValue = InCallFunc_K2_GetComponentsByClass_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
-	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
-	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
-	Parms.CallFunc_EqualEqual_DoubleDouble_ReturnValue = InCallFunc_EqualEqual_DoubleDouble_ReturnValue;
-	Parms.CallFunc_EqualEqual_ObjectObject_ReturnValue = InCallFunc_EqualEqual_ObjectObject_ReturnValue;
-	Parms.CallFunc_BooleanAND_ReturnValue = InCallFunc_BooleanAND_ReturnValue;
-	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_BooleanAND_ReturnValue_1 = InCallFunc_BooleanAND_ReturnValue_1;
+	Parms.Location = Location;
+	Parms.__WorldContext = __WorldContext;
+	Parms.Inside = Inside;
+	Parms.Temp_bool_True_if_break_was_hit_Variable = Temp_bool_True_if_break_was_hit_Variable;
+	Parms.CallFunc_GetAkAudioRoomAtLocation_HighestPriorityRoom = CallFunc_GetAkAudioRoomAtLocation_HighestPriorityRoom;
+	Parms.CallFunc_GetAkAudioRoomAtLocation_AllRooms = CallFunc_GetAkAudioRoomAtLocation_AllRooms;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
+	Parms.K2Node_DynamicCast_AsAk_Spatial_Audio_Volume = K2Node_DynamicCast_AsAk_Spatial_Audio_Volume;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_K2_GetComponentsByClass_ReturnValue = CallFunc_K2_GetComponentsByClass_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
+	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
+	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
+	Parms.CallFunc_EqualEqual_DoubleDouble_ReturnValue = CallFunc_EqualEqual_DoubleDouble_ReturnValue;
+	Parms.CallFunc_EqualEqual_ObjectObject_ReturnValue = CallFunc_EqualEqual_ObjectObject_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
+	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_BooleanAND_ReturnValue_1 = CallFunc_BooleanAND_ReturnValue_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InIsInside != nullptr)
-		*InIsInside = Parms.IsInside;
+	if (IsInside != nullptr)
+		*IsInside = Parms.IsInside;
 
 }
 
@@ -240,10 +265,10 @@ void ULib_Audio_C::IsInside(const struct FVector& InLocation, class UObject* In_
 // bool                               IsWet                                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UValeriaWeather*             CallFunc_GetWorldSubsystem_ReturnValue                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsInside_IsInside                                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FWeatherStateProperties     CallFunc_GetCurrentWorldWeatherState_ReturnValue                 ()
+// struct FWeatherStateProperties     CallFunc_GetCurrentWorldWeatherState_ReturnValue                 (None)
 // bool                               CallFunc_HasTag_ReturnValue                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::IsWet(const struct FVector& InLocation, class UObject* In__WorldContext, bool* InIsWet, class UValeriaWeather* InCallFunc_GetWorldSubsystem_ReturnValue, bool InCallFunc_IsInside_IsInside, const struct FWeatherStateProperties& InCallFunc_GetCurrentWorldWeatherState_ReturnValue, bool InCallFunc_HasTag_ReturnValue)
+void ULib_Audio_C::IsWet(const struct FVector& Location, class UObject* __WorldContext, bool* IsWet, class UValeriaWeather* CallFunc_GetWorldSubsystem_ReturnValue, bool CallFunc_IsInside_IsInside, const struct FWeatherStateProperties& CallFunc_GetCurrentWorldWeatherState_ReturnValue, bool CallFunc_HasTag_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -252,17 +277,17 @@ void ULib_Audio_C::IsWet(const struct FVector& InLocation, class UObject* In__Wo
 
 	Params::ULib_Audio_C_IsWet_Params Parms{};
 
-	Parms.Location = InLocation;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.CallFunc_GetWorldSubsystem_ReturnValue = InCallFunc_GetWorldSubsystem_ReturnValue;
-	Parms.CallFunc_IsInside_IsInside = InCallFunc_IsInside_IsInside;
-	Parms.CallFunc_GetCurrentWorldWeatherState_ReturnValue = InCallFunc_GetCurrentWorldWeatherState_ReturnValue;
-	Parms.CallFunc_HasTag_ReturnValue = InCallFunc_HasTag_ReturnValue;
+	Parms.Location = Location;
+	Parms.__WorldContext = __WorldContext;
+	Parms.CallFunc_GetWorldSubsystem_ReturnValue = CallFunc_GetWorldSubsystem_ReturnValue;
+	Parms.CallFunc_IsInside_IsInside = CallFunc_IsInside_IsInside;
+	Parms.CallFunc_GetCurrentWorldWeatherState_ReturnValue = CallFunc_GetCurrentWorldWeatherState_ReturnValue;
+	Parms.CallFunc_HasTag_ReturnValue = CallFunc_HasTag_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InIsWet != nullptr)
-		*InIsWet = Parms.IsWet;
+	if (IsWet != nullptr)
+		*IsWet = Parms.IsWet;
 
 }
 
@@ -277,7 +302,7 @@ void ULib_Audio_C::IsWet(const struct FVector& InLocation, class UObject* In__Wo
 // bool                               CallFunc_IsDedicatedServer_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::AkCulledAssignAndStart(class UAkAudioEvent* InAkEvent, class UAkCulledComponent* InAkCulledComponent, class UObject* In__WorldContext, double InLocallyControlled, bool InCallFunc_IsDedicatedServer_ReturnValue, bool InCallFunc_IsValid_ReturnValue)
+void ULib_Audio_C::AkCulledAssignAndStart(class UAkAudioEvent* AkEvent, class UAkCulledComponent* AkCulledComponent, class UObject* __WorldContext, double LocallyControlled, bool CallFunc_IsDedicatedServer_ReturnValue, bool CallFunc_IsValid_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -286,12 +311,12 @@ void ULib_Audio_C::AkCulledAssignAndStart(class UAkAudioEvent* InAkEvent, class 
 
 	Params::ULib_Audio_C_AkCulledAssignAndStart_Params Parms{};
 
-	Parms.AkEvent = InAkEvent;
-	Parms.AkCulledComponent = InAkCulledComponent;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.LocallyControlled = InLocallyControlled;
-	Parms.CallFunc_IsDedicatedServer_ReturnValue = InCallFunc_IsDedicatedServer_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.AkEvent = AkEvent;
+	Parms.AkCulledComponent = AkCulledComponent;
+	Parms.__WorldContext = __WorldContext;
+	Parms.LocallyControlled = LocallyControlled;
+	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -350,7 +375,7 @@ void ULib_Audio_C::AkCulledAssignAndStart(class UAkAudioEvent* InAkEvent, class 
 // double                             CallFunc_Greater_DoubleDouble_A_ImplicitCast                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             K2Node_VariableSet_LHighestPriority_ImplicitCast                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::GetAkAudioRoomAtLocation(const struct FVector& InLocation, class UObject* In__WorldContext, class UAkRoomComponent** InHighestPriorityRoom, TArray<class UAkRoomComponent*>* InAllRooms, const TArray<class UAkRoomComponent*>& InLRoomComponents, class UAkRoomComponent* InLHighestPriorityRoom, double InLHighestPriority, int32 InTemp_int_Loop_Counter_Variable, int32 InTemp_int_Loop_Counter_Variable_1, int32 InCallFunc_Add_IntInt_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue_1, int32 InTemp_int_Loop_Counter_Variable_2, int32 InCallFunc_Add_IntInt_ReturnValue_2, int32 InTemp_int_Array_Index_Variable, int32 InTemp_int_Array_Index_Variable_1, int32 InTemp_int_Array_Index_Variable_2, int32 InTemp_int_Loop_Counter_Variable_3, int32 InCallFunc_Add_IntInt_ReturnValue_3, int32 InTemp_int_Array_Index_Variable_3, class UAkRoomComponent* InCallFunc_Array_Get_Item, int32 InCallFunc_Array_Length_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue, TArray<class AActor*>& InTemp_object_Variable, TArray<class AActor*>& InTemp_object_Variable_1, TArray<enum class EObjectTypeQuery>& InK2Node_MakeArray_Array, TArray<class UPrimitiveComponent*>& InCallFunc_SphereOverlapComponents_OutComponents, bool InCallFunc_SphereOverlapComponents_ReturnValue, bool InCallFunc_Greater_DoubleDouble_ReturnValue, class UPrimitiveComponent* InCallFunc_Array_Get_Item_1, TArray<class USceneComponent*>& InCallFunc_GetChildrenComponents_Children, int32 InCallFunc_Array_Length_ReturnValue_1, class USceneComponent* InCallFunc_Array_Get_Item_2, bool InCallFunc_Less_IntInt_ReturnValue_1, class UAkRoomComponent* InK2Node_DynamicCast_AsAk_Room_Component, bool InK2Node_DynamicCast_bSuccess, int32 InCallFunc_Array_AddUnique_ReturnValue, int32 InCallFunc_Array_Length_ReturnValue_2, TArray<class AActor*>& InCallFunc_SphereOverlapActors_OutActors, bool InCallFunc_SphereOverlapActors_ReturnValue, bool InCallFunc_Less_IntInt_ReturnValue_2, class AActor* InCallFunc_Array_Get_Item_3, class AValeriaSpatialAudioVolume* InK2Node_DynamicCast_AsValeria_Spatial_Audio_Volume, bool InK2Node_DynamicCast_bSuccess_1, int32 InCallFunc_Array_Length_ReturnValue_3, bool InCallFunc_Less_IntInt_ReturnValue_3, int32 InCallFunc_Array_AddUnique_ReturnValue_1, double InCallFunc_Greater_DoubleDouble_A_ImplicitCast, double InK2Node_VariableSet_LHighestPriority_ImplicitCast)
+void ULib_Audio_C::GetAkAudioRoomAtLocation(const struct FVector& Location, class UObject* __WorldContext, class UAkRoomComponent** HighestPriorityRoom, TArray<class UAkRoomComponent*>* AllRooms, const TArray<class UAkRoomComponent*>& LRoomComponents, class UAkRoomComponent* LHighestPriorityRoom, double LHighestPriority, int32 Temp_int_Loop_Counter_Variable, int32 Temp_int_Loop_Counter_Variable_1, int32 CallFunc_Add_IntInt_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue_1, int32 Temp_int_Loop_Counter_Variable_2, int32 CallFunc_Add_IntInt_ReturnValue_2, int32 Temp_int_Array_Index_Variable, int32 Temp_int_Array_Index_Variable_1, int32 Temp_int_Array_Index_Variable_2, int32 Temp_int_Loop_Counter_Variable_3, int32 CallFunc_Add_IntInt_ReturnValue_3, int32 Temp_int_Array_Index_Variable_3, class UAkRoomComponent* CallFunc_Array_Get_Item, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, TArray<class AActor*>& Temp_object_Variable, TArray<class AActor*>& Temp_object_Variable_1, TArray<enum class EObjectTypeQuery>& K2Node_MakeArray_Array, TArray<class UPrimitiveComponent*>& CallFunc_SphereOverlapComponents_OutComponents, bool CallFunc_SphereOverlapComponents_ReturnValue, bool CallFunc_Greater_DoubleDouble_ReturnValue, class UPrimitiveComponent* CallFunc_Array_Get_Item_1, TArray<class USceneComponent*>& CallFunc_GetChildrenComponents_Children, int32 CallFunc_Array_Length_ReturnValue_1, class USceneComponent* CallFunc_Array_Get_Item_2, bool CallFunc_Less_IntInt_ReturnValue_1, class UAkRoomComponent* K2Node_DynamicCast_AsAk_Room_Component, bool K2Node_DynamicCast_bSuccess, int32 CallFunc_Array_AddUnique_ReturnValue, int32 CallFunc_Array_Length_ReturnValue_2, TArray<class AActor*>& CallFunc_SphereOverlapActors_OutActors, bool CallFunc_SphereOverlapActors_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue_2, class AActor* CallFunc_Array_Get_Item_3, class AValeriaSpatialAudioVolume* K2Node_DynamicCast_AsValeria_Spatial_Audio_Volume, bool K2Node_DynamicCast_bSuccess_1, int32 CallFunc_Array_Length_ReturnValue_3, bool CallFunc_Less_IntInt_ReturnValue_3, int32 CallFunc_Array_AddUnique_ReturnValue_1, double CallFunc_Greater_DoubleDouble_A_ImplicitCast, double K2Node_VariableSet_LHighestPriority_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -359,60 +384,60 @@ void ULib_Audio_C::GetAkAudioRoomAtLocation(const struct FVector& InLocation, cl
 
 	Params::ULib_Audio_C_GetAkAudioRoomAtLocation_Params Parms{};
 
-	Parms.Location = InLocation;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.LRoomComponents = InLRoomComponents;
-	Parms.LHighestPriorityRoom = InLHighestPriorityRoom;
-	Parms.LHighestPriority = InLHighestPriority;
-	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
-	Parms.Temp_int_Loop_Counter_Variable_1 = InTemp_int_Loop_Counter_Variable_1;
-	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue_1 = InCallFunc_Add_IntInt_ReturnValue_1;
-	Parms.Temp_int_Loop_Counter_Variable_2 = InTemp_int_Loop_Counter_Variable_2;
-	Parms.CallFunc_Add_IntInt_ReturnValue_2 = InCallFunc_Add_IntInt_ReturnValue_2;
-	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
-	Parms.Temp_int_Array_Index_Variable_1 = InTemp_int_Array_Index_Variable_1;
-	Parms.Temp_int_Array_Index_Variable_2 = InTemp_int_Array_Index_Variable_2;
-	Parms.Temp_int_Loop_Counter_Variable_3 = InTemp_int_Loop_Counter_Variable_3;
-	Parms.CallFunc_Add_IntInt_ReturnValue_3 = InCallFunc_Add_IntInt_ReturnValue_3;
-	Parms.Temp_int_Array_Index_Variable_3 = InTemp_int_Array_Index_Variable_3;
-	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
-	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
-	Parms.Temp_object_Variable = InTemp_object_Variable;
-	Parms.Temp_object_Variable_1 = InTemp_object_Variable_1;
-	Parms.K2Node_MakeArray_Array = InK2Node_MakeArray_Array;
-	Parms.CallFunc_SphereOverlapComponents_OutComponents = InCallFunc_SphereOverlapComponents_OutComponents;
-	Parms.CallFunc_SphereOverlapComponents_ReturnValue = InCallFunc_SphereOverlapComponents_ReturnValue;
-	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = InCallFunc_Greater_DoubleDouble_ReturnValue;
-	Parms.CallFunc_Array_Get_Item_1 = InCallFunc_Array_Get_Item_1;
-	Parms.CallFunc_GetChildrenComponents_Children = InCallFunc_GetChildrenComponents_Children;
-	Parms.CallFunc_Array_Length_ReturnValue_1 = InCallFunc_Array_Length_ReturnValue_1;
-	Parms.CallFunc_Array_Get_Item_2 = InCallFunc_Array_Get_Item_2;
-	Parms.CallFunc_Less_IntInt_ReturnValue_1 = InCallFunc_Less_IntInt_ReturnValue_1;
-	Parms.K2Node_DynamicCast_AsAk_Room_Component = InK2Node_DynamicCast_AsAk_Room_Component;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_Array_AddUnique_ReturnValue = InCallFunc_Array_AddUnique_ReturnValue;
-	Parms.CallFunc_Array_Length_ReturnValue_2 = InCallFunc_Array_Length_ReturnValue_2;
-	Parms.CallFunc_SphereOverlapActors_OutActors = InCallFunc_SphereOverlapActors_OutActors;
-	Parms.CallFunc_SphereOverlapActors_ReturnValue = InCallFunc_SphereOverlapActors_ReturnValue;
-	Parms.CallFunc_Less_IntInt_ReturnValue_2 = InCallFunc_Less_IntInt_ReturnValue_2;
-	Parms.CallFunc_Array_Get_Item_3 = InCallFunc_Array_Get_Item_3;
-	Parms.K2Node_DynamicCast_AsValeria_Spatial_Audio_Volume = InK2Node_DynamicCast_AsValeria_Spatial_Audio_Volume;
-	Parms.K2Node_DynamicCast_bSuccess_1 = InK2Node_DynamicCast_bSuccess_1;
-	Parms.CallFunc_Array_Length_ReturnValue_3 = InCallFunc_Array_Length_ReturnValue_3;
-	Parms.CallFunc_Less_IntInt_ReturnValue_3 = InCallFunc_Less_IntInt_ReturnValue_3;
-	Parms.CallFunc_Array_AddUnique_ReturnValue_1 = InCallFunc_Array_AddUnique_ReturnValue_1;
-	Parms.CallFunc_Greater_DoubleDouble_A_ImplicitCast = InCallFunc_Greater_DoubleDouble_A_ImplicitCast;
-	Parms.K2Node_VariableSet_LHighestPriority_ImplicitCast = InK2Node_VariableSet_LHighestPriority_ImplicitCast;
+	Parms.Location = Location;
+	Parms.__WorldContext = __WorldContext;
+	Parms.LRoomComponents = LRoomComponents;
+	Parms.LHighestPriorityRoom = LHighestPriorityRoom;
+	Parms.LHighestPriority = LHighestPriority;
+	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
+	Parms.Temp_int_Loop_Counter_Variable_1 = Temp_int_Loop_Counter_Variable_1;
+	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue_1 = CallFunc_Add_IntInt_ReturnValue_1;
+	Parms.Temp_int_Loop_Counter_Variable_2 = Temp_int_Loop_Counter_Variable_2;
+	Parms.CallFunc_Add_IntInt_ReturnValue_2 = CallFunc_Add_IntInt_ReturnValue_2;
+	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
+	Parms.Temp_int_Array_Index_Variable_1 = Temp_int_Array_Index_Variable_1;
+	Parms.Temp_int_Array_Index_Variable_2 = Temp_int_Array_Index_Variable_2;
+	Parms.Temp_int_Loop_Counter_Variable_3 = Temp_int_Loop_Counter_Variable_3;
+	Parms.CallFunc_Add_IntInt_ReturnValue_3 = CallFunc_Add_IntInt_ReturnValue_3;
+	Parms.Temp_int_Array_Index_Variable_3 = Temp_int_Array_Index_Variable_3;
+	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
+	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
+	Parms.Temp_object_Variable = Temp_object_Variable;
+	Parms.Temp_object_Variable_1 = Temp_object_Variable_1;
+	Parms.K2Node_MakeArray_Array = K2Node_MakeArray_Array;
+	Parms.CallFunc_SphereOverlapComponents_OutComponents = CallFunc_SphereOverlapComponents_OutComponents;
+	Parms.CallFunc_SphereOverlapComponents_ReturnValue = CallFunc_SphereOverlapComponents_ReturnValue;
+	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = CallFunc_Greater_DoubleDouble_ReturnValue;
+	Parms.CallFunc_Array_Get_Item_1 = CallFunc_Array_Get_Item_1;
+	Parms.CallFunc_GetChildrenComponents_Children = CallFunc_GetChildrenComponents_Children;
+	Parms.CallFunc_Array_Length_ReturnValue_1 = CallFunc_Array_Length_ReturnValue_1;
+	Parms.CallFunc_Array_Get_Item_2 = CallFunc_Array_Get_Item_2;
+	Parms.CallFunc_Less_IntInt_ReturnValue_1 = CallFunc_Less_IntInt_ReturnValue_1;
+	Parms.K2Node_DynamicCast_AsAk_Room_Component = K2Node_DynamicCast_AsAk_Room_Component;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_Array_AddUnique_ReturnValue = CallFunc_Array_AddUnique_ReturnValue;
+	Parms.CallFunc_Array_Length_ReturnValue_2 = CallFunc_Array_Length_ReturnValue_2;
+	Parms.CallFunc_SphereOverlapActors_OutActors = CallFunc_SphereOverlapActors_OutActors;
+	Parms.CallFunc_SphereOverlapActors_ReturnValue = CallFunc_SphereOverlapActors_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue_2 = CallFunc_Less_IntInt_ReturnValue_2;
+	Parms.CallFunc_Array_Get_Item_3 = CallFunc_Array_Get_Item_3;
+	Parms.K2Node_DynamicCast_AsValeria_Spatial_Audio_Volume = K2Node_DynamicCast_AsValeria_Spatial_Audio_Volume;
+	Parms.K2Node_DynamicCast_bSuccess_1 = K2Node_DynamicCast_bSuccess_1;
+	Parms.CallFunc_Array_Length_ReturnValue_3 = CallFunc_Array_Length_ReturnValue_3;
+	Parms.CallFunc_Less_IntInt_ReturnValue_3 = CallFunc_Less_IntInt_ReturnValue_3;
+	Parms.CallFunc_Array_AddUnique_ReturnValue_1 = CallFunc_Array_AddUnique_ReturnValue_1;
+	Parms.CallFunc_Greater_DoubleDouble_A_ImplicitCast = CallFunc_Greater_DoubleDouble_A_ImplicitCast;
+	Parms.K2Node_VariableSet_LHighestPriority_ImplicitCast = K2Node_VariableSet_LHighestPriority_ImplicitCast;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InHighestPriorityRoom != nullptr)
-		*InHighestPriorityRoom = Parms.HighestPriorityRoom;
+	if (HighestPriorityRoom != nullptr)
+		*HighestPriorityRoom = Parms.HighestPriorityRoom;
 
-	if (InAllRooms != nullptr)
-		*InAllRooms = Parms.AllRooms;
+	if (AllRooms != nullptr)
+		*AllRooms = std::move(Parms.AllRooms);
 
 }
 
@@ -429,7 +454,7 @@ void ULib_Audio_C::GetAkAudioRoomAtLocation(const struct FVector& InLocation, cl
 // int32                              CallFunc_AkEventLocation_Playing_ID                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_AkEventGlobal_ReturnValue                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-int32 ULib_Audio_C::PlayTempBeep(bool InGlobal, const struct FVector& InLocation, class UObject* In__WorldContext, bool InCallFunc_BuildIsShipping_ReturnValue, class UAkComponent* InCallFunc_AkEventLocation_AkComponent, int32 InCallFunc_AkEventLocation_Playing_ID, int32 InCallFunc_AkEventGlobal_ReturnValue)
+int32 ULib_Audio_C::PlayTempBeep(bool Global, const struct FVector& Location, class UObject* __WorldContext, bool CallFunc_BuildIsShipping_ReturnValue, class UAkComponent* CallFunc_AkEventLocation_AkComponent, int32 CallFunc_AkEventLocation_Playing_ID, int32 CallFunc_AkEventGlobal_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -438,13 +463,13 @@ int32 ULib_Audio_C::PlayTempBeep(bool InGlobal, const struct FVector& InLocation
 
 	Params::ULib_Audio_C_PlayTempBeep_Params Parms{};
 
-	Parms.Global = InGlobal;
-	Parms.Location = InLocation;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.CallFunc_BuildIsShipping_ReturnValue = InCallFunc_BuildIsShipping_ReturnValue;
-	Parms.CallFunc_AkEventLocation_AkComponent = InCallFunc_AkEventLocation_AkComponent;
-	Parms.CallFunc_AkEventLocation_Playing_ID = InCallFunc_AkEventLocation_Playing_ID;
-	Parms.CallFunc_AkEventGlobal_ReturnValue = InCallFunc_AkEventGlobal_ReturnValue;
+	Parms.Global = Global;
+	Parms.Location = Location;
+	Parms.__WorldContext = __WorldContext;
+	Parms.CallFunc_BuildIsShipping_ReturnValue = CallFunc_BuildIsShipping_ReturnValue;
+	Parms.CallFunc_AkEventLocation_AkComponent = CallFunc_AkEventLocation_AkComponent;
+	Parms.CallFunc_AkEventLocation_Playing_ID = CallFunc_AkEventLocation_Playing_ID;
+	Parms.CallFunc_AkEventGlobal_ReturnValue = CallFunc_AkEventGlobal_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -469,7 +494,7 @@ int32 ULib_Audio_C::PlayTempBeep(bool InGlobal, const struct FVector& InLocation
 // double                             CallFunc_AkSetRTPC_Value_ImplicitCast_2                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_AkSetRTPC_Value_ImplicitCast_3                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::LoadAudioUserSettings(class UObject* In__WorldContext, class UAkStateValue* InTemp_object_Variable, class UAkStateValue* InTemp_object_Variable_1, class UAkStateValue* InTemp_object_Variable_2, enum class EAudioMixProfiles InTemp_byte_Variable, class UValeriaGameUserSettings* InCallFunc_GetValeriaGameUserSettings_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class UAkStateValue* InK2Node_Select_Default, double InCallFunc_AkSetRTPC_Value_ImplicitCast, double InCallFunc_AkSetRTPC_Value_ImplicitCast_1, double InCallFunc_AkSetRTPC_Value_ImplicitCast_2, double InCallFunc_AkSetRTPC_Value_ImplicitCast_3)
+void ULib_Audio_C::LoadAudioUserSettings(class UObject* __WorldContext, class UAkStateValue* Temp_object_Variable, class UAkStateValue* Temp_object_Variable_1, class UAkStateValue* Temp_object_Variable_2, enum class EAudioMixProfiles Temp_byte_Variable, class UValeriaGameUserSettings* CallFunc_GetValeriaGameUserSettings_ReturnValue, bool CallFunc_IsValid_ReturnValue, class UAkStateValue* K2Node_Select_Default, double CallFunc_AkSetRTPC_Value_ImplicitCast, double CallFunc_AkSetRTPC_Value_ImplicitCast_1, double CallFunc_AkSetRTPC_Value_ImplicitCast_2, double CallFunc_AkSetRTPC_Value_ImplicitCast_3)
 {
 	static class UFunction* Func = nullptr;
 
@@ -478,18 +503,18 @@ void ULib_Audio_C::LoadAudioUserSettings(class UObject* In__WorldContext, class 
 
 	Params::ULib_Audio_C_LoadAudioUserSettings_Params Parms{};
 
-	Parms.__WorldContext = In__WorldContext;
-	Parms.Temp_object_Variable = InTemp_object_Variable;
-	Parms.Temp_object_Variable_1 = InTemp_object_Variable_1;
-	Parms.Temp_object_Variable_2 = InTemp_object_Variable_2;
-	Parms.Temp_byte_Variable = InTemp_byte_Variable;
-	Parms.CallFunc_GetValeriaGameUserSettings_ReturnValue = InCallFunc_GetValeriaGameUserSettings_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.K2Node_Select_Default = InK2Node_Select_Default;
-	Parms.CallFunc_AkSetRTPC_Value_ImplicitCast = InCallFunc_AkSetRTPC_Value_ImplicitCast;
-	Parms.CallFunc_AkSetRTPC_Value_ImplicitCast_1 = InCallFunc_AkSetRTPC_Value_ImplicitCast_1;
-	Parms.CallFunc_AkSetRTPC_Value_ImplicitCast_2 = InCallFunc_AkSetRTPC_Value_ImplicitCast_2;
-	Parms.CallFunc_AkSetRTPC_Value_ImplicitCast_3 = InCallFunc_AkSetRTPC_Value_ImplicitCast_3;
+	Parms.__WorldContext = __WorldContext;
+	Parms.Temp_object_Variable = Temp_object_Variable;
+	Parms.Temp_object_Variable_1 = Temp_object_Variable_1;
+	Parms.Temp_object_Variable_2 = Temp_object_Variable_2;
+	Parms.Temp_byte_Variable = Temp_byte_Variable;
+	Parms.CallFunc_GetValeriaGameUserSettings_ReturnValue = CallFunc_GetValeriaGameUserSettings_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.CallFunc_AkSetRTPC_Value_ImplicitCast = CallFunc_AkSetRTPC_Value_ImplicitCast;
+	Parms.CallFunc_AkSetRTPC_Value_ImplicitCast_1 = CallFunc_AkSetRTPC_Value_ImplicitCast_1;
+	Parms.CallFunc_AkSetRTPC_Value_ImplicitCast_2 = CallFunc_AkSetRTPC_Value_ImplicitCast_2;
+	Parms.CallFunc_AkSetRTPC_Value_ImplicitCast_3 = CallFunc_AkSetRTPC_Value_ImplicitCast_3;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -512,7 +537,7 @@ void ULib_Audio_C::LoadAudioUserSettings(class UObject* In__WorldContext, class 
 // bool                               CallFunc_IsValid_ReturnValue_2                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Not_PreBool_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::Ak_Music_Switch(class UAkSwitchValue* InSwitchValue, bool InIgnoreTimeOfDay, class UObject* In__WorldContext, bool InCallFunc_IsDedicatedServer_ReturnValue, class APlayerController* InCallFunc_GetPlayerController_ReturnValue, class APawn* InCallFunc_K2_GetPawn_ReturnValue, class UBP_MusicManager_C* InCallFunc_GetMusicManager_AsBP_Music_Manager, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, class UComp_Listener_Padding_C* InCallFunc_GetComponentByClass_ReturnValue, bool InCallFunc_IsValid_ReturnValue_2, bool InCallFunc_Not_PreBool_ReturnValue)
+void ULib_Audio_C::Ak_Music_Switch(class UAkSwitchValue* SwitchValue, bool IgnoreTimeOfDay, class UObject* __WorldContext, bool CallFunc_IsDedicatedServer_ReturnValue, class APlayerController* CallFunc_GetPlayerController_ReturnValue, class APawn* CallFunc_K2_GetPawn_ReturnValue, class UBP_MusicManager_C* CallFunc_GetMusicManager_AsBP_Music_Manager, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, class UComp_Listener_Padding_C* CallFunc_GetComponentByClass_ReturnValue, bool CallFunc_IsValid_ReturnValue_2, bool CallFunc_Not_PreBool_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -521,18 +546,18 @@ void ULib_Audio_C::Ak_Music_Switch(class UAkSwitchValue* InSwitchValue, bool InI
 
 	Params::ULib_Audio_C_Ak_Music_Switch_Params Parms{};
 
-	Parms.SwitchValue = InSwitchValue;
-	Parms.IgnoreTimeOfDay = InIgnoreTimeOfDay;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.CallFunc_IsDedicatedServer_ReturnValue = InCallFunc_IsDedicatedServer_ReturnValue;
-	Parms.CallFunc_GetPlayerController_ReturnValue = InCallFunc_GetPlayerController_ReturnValue;
-	Parms.CallFunc_K2_GetPawn_ReturnValue = InCallFunc_K2_GetPawn_ReturnValue;
-	Parms.CallFunc_GetMusicManager_AsBP_Music_Manager = InCallFunc_GetMusicManager_AsBP_Music_Manager;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_GetComponentByClass_ReturnValue = InCallFunc_GetComponentByClass_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_2 = InCallFunc_IsValid_ReturnValue_2;
-	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
+	Parms.SwitchValue = SwitchValue;
+	Parms.IgnoreTimeOfDay = IgnoreTimeOfDay;
+	Parms.__WorldContext = __WorldContext;
+	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
+	Parms.CallFunc_GetPlayerController_ReturnValue = CallFunc_GetPlayerController_ReturnValue;
+	Parms.CallFunc_K2_GetPawn_ReturnValue = CallFunc_K2_GetPawn_ReturnValue;
+	Parms.CallFunc_GetMusicManager_AsBP_Music_Manager = CallFunc_GetMusicManager_AsBP_Music_Manager;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_2 = CallFunc_IsValid_ReturnValue_2;
+	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -560,7 +585,7 @@ void ULib_Audio_C::Ak_Music_Switch(class UAkSwitchValue* InSwitchValue, bool InI
 // bool                               CallFunc_Less_DoubleDouble_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_Vector_Distance_ReturnValue                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::FindClosestVector(TArray<struct FVector>& InInVectors, const struct FVector& InReferencePoint, class UObject* In__WorldContext, struct FVector* InClosestVector, int32* InIndex, double InIterateDistance, int32 InClosestInd, const struct FVector& InClosestVect, double InDistance, int32 InTemp_int_Array_Index_Variable, int32 InCallFunc_Array_Length_ReturnValue, const struct FVector& InCallFunc_Array_Get_Item, int32 InTemp_int_Loop_Counter_Variable, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue, bool InCallFunc_Less_DoubleDouble_ReturnValue, double InCallFunc_Vector_Distance_ReturnValue)
+void ULib_Audio_C::FindClosestVector(TArray<struct FVector>& InVectors, const struct FVector& ReferencePoint, class UObject* __WorldContext, struct FVector* ClosestVector, int32* Index, double IterateDistance, int32 ClosestInd, const struct FVector& ClosestVect, double Distance, int32 Temp_int_Array_Index_Variable, int32 CallFunc_Array_Length_ReturnValue, const struct FVector& CallFunc_Array_Get_Item, int32 Temp_int_Loop_Counter_Variable, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue, bool CallFunc_Less_DoubleDouble_ReturnValue, double CallFunc_Vector_Distance_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -569,29 +594,29 @@ void ULib_Audio_C::FindClosestVector(TArray<struct FVector>& InInVectors, const 
 
 	Params::ULib_Audio_C_FindClosestVector_Params Parms{};
 
-	Parms.InVectors = InInVectors;
-	Parms.ReferencePoint = InReferencePoint;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.IterateDistance = InIterateDistance;
-	Parms.ClosestInd = InClosestInd;
-	Parms.ClosestVect = InClosestVect;
-	Parms.Distance = InDistance;
-	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
-	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
-	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_Less_DoubleDouble_ReturnValue = InCallFunc_Less_DoubleDouble_ReturnValue;
-	Parms.CallFunc_Vector_Distance_ReturnValue = InCallFunc_Vector_Distance_ReturnValue;
+	Parms.InVectors = InVectors;
+	Parms.ReferencePoint = ReferencePoint;
+	Parms.__WorldContext = __WorldContext;
+	Parms.IterateDistance = IterateDistance;
+	Parms.ClosestInd = ClosestInd;
+	Parms.ClosestVect = ClosestVect;
+	Parms.Distance = Distance;
+	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
+	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
+	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_Less_DoubleDouble_ReturnValue = CallFunc_Less_DoubleDouble_ReturnValue;
+	Parms.CallFunc_Vector_Distance_ReturnValue = CallFunc_Vector_Distance_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InClosestVector != nullptr)
-		*InClosestVector = Parms.ClosestVector;
+	if (ClosestVector != nullptr)
+		*ClosestVector = std::move(Parms.ClosestVector);
 
-	if (InIndex != nullptr)
-		*InIndex = Parms.Index;
+	if (Index != nullptr)
+		*Index = Parms.Index;
 
 }
 
@@ -625,7 +650,7 @@ void ULib_Audio_C::FindClosestVector(TArray<struct FVector>& InInVectors, const 
 // double                             CallFunc_Dot_VectorVector_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_Dot_VectorVector_ReturnValue_1                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::GetDopplerPitchMultiplier(class AActor* InListener, class AActor* InObject, double InDopplerIntensity, class UObject* In__WorldContext, double* InPitchMultiplier, double InFinalPitchScale, double InPitchScale, double InDopplerPitchScale, double InListenerVelocityMagnitude, double InSourceVelocityMagnitude, double InCallFunc_Divide_DoubleDouble_ReturnValue, double InCallFunc_Subtract_DoubleDouble_ReturnValue, double InCallFunc_Subtract_DoubleDouble_ReturnValue_1, double InCallFunc_Multiply_DoubleDouble_ReturnValue, double InCallFunc_Divide_DoubleDouble_ReturnValue_1, double InCallFunc_Add_DoubleDouble_ReturnValue, double InCallFunc_Subtract_DoubleDouble_ReturnValue_2, const struct FVector& InCallFunc_GetVelocity_ReturnValue, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue, const struct FVector& InCallFunc_GetVelocity_ReturnValue_1, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue_1, const struct FVector& InCallFunc_Subtract_VectorVector_ReturnValue, const struct FVector& InCallFunc_Normal_ReturnValue, double InCallFunc_Dot_VectorVector_ReturnValue, double InCallFunc_Dot_VectorVector_ReturnValue_1)
+void ULib_Audio_C::GetDopplerPitchMultiplier(class AActor* Listener, class AActor* Object, double DopplerIntensity, class UObject* __WorldContext, double* PitchMultiplier, double FinalPitchScale, double PitchScale, double DopplerPitchScale, double ListenerVelocityMagnitude, double SourceVelocityMagnitude, double CallFunc_Divide_DoubleDouble_ReturnValue, double CallFunc_Subtract_DoubleDouble_ReturnValue, double CallFunc_Subtract_DoubleDouble_ReturnValue_1, double CallFunc_Multiply_DoubleDouble_ReturnValue, double CallFunc_Divide_DoubleDouble_ReturnValue_1, double CallFunc_Add_DoubleDouble_ReturnValue, double CallFunc_Subtract_DoubleDouble_ReturnValue_2, const struct FVector& CallFunc_GetVelocity_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, const struct FVector& CallFunc_GetVelocity_ReturnValue_1, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue_1, const struct FVector& CallFunc_Subtract_VectorVector_ReturnValue, const struct FVector& CallFunc_Normal_ReturnValue, double CallFunc_Dot_VectorVector_ReturnValue, double CallFunc_Dot_VectorVector_ReturnValue_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -634,35 +659,35 @@ void ULib_Audio_C::GetDopplerPitchMultiplier(class AActor* InListener, class AAc
 
 	Params::ULib_Audio_C_GetDopplerPitchMultiplier_Params Parms{};
 
-	Parms.Listener = InListener;
-	Parms.Object = InObject;
-	Parms.DopplerIntensity = InDopplerIntensity;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.FinalPitchScale = InFinalPitchScale;
-	Parms.PitchScale = InPitchScale;
-	Parms.DopplerPitchScale = InDopplerPitchScale;
-	Parms.ListenerVelocityMagnitude = InListenerVelocityMagnitude;
-	Parms.SourceVelocityMagnitude = InSourceVelocityMagnitude;
-	Parms.CallFunc_Divide_DoubleDouble_ReturnValue = InCallFunc_Divide_DoubleDouble_ReturnValue;
-	Parms.CallFunc_Subtract_DoubleDouble_ReturnValue = InCallFunc_Subtract_DoubleDouble_ReturnValue;
-	Parms.CallFunc_Subtract_DoubleDouble_ReturnValue_1 = InCallFunc_Subtract_DoubleDouble_ReturnValue_1;
-	Parms.CallFunc_Multiply_DoubleDouble_ReturnValue = InCallFunc_Multiply_DoubleDouble_ReturnValue;
-	Parms.CallFunc_Divide_DoubleDouble_ReturnValue_1 = InCallFunc_Divide_DoubleDouble_ReturnValue_1;
-	Parms.CallFunc_Add_DoubleDouble_ReturnValue = InCallFunc_Add_DoubleDouble_ReturnValue;
-	Parms.CallFunc_Subtract_DoubleDouble_ReturnValue_2 = InCallFunc_Subtract_DoubleDouble_ReturnValue_2;
-	Parms.CallFunc_GetVelocity_ReturnValue = InCallFunc_GetVelocity_ReturnValue;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue = InCallFunc_K2_GetActorLocation_ReturnValue;
-	Parms.CallFunc_GetVelocity_ReturnValue_1 = InCallFunc_GetVelocity_ReturnValue_1;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue_1 = InCallFunc_K2_GetActorLocation_ReturnValue_1;
-	Parms.CallFunc_Subtract_VectorVector_ReturnValue = InCallFunc_Subtract_VectorVector_ReturnValue;
-	Parms.CallFunc_Normal_ReturnValue = InCallFunc_Normal_ReturnValue;
-	Parms.CallFunc_Dot_VectorVector_ReturnValue = InCallFunc_Dot_VectorVector_ReturnValue;
-	Parms.CallFunc_Dot_VectorVector_ReturnValue_1 = InCallFunc_Dot_VectorVector_ReturnValue_1;
+	Parms.Listener = Listener;
+	Parms.Object = Object;
+	Parms.DopplerIntensity = DopplerIntensity;
+	Parms.__WorldContext = __WorldContext;
+	Parms.FinalPitchScale = FinalPitchScale;
+	Parms.PitchScale = PitchScale;
+	Parms.DopplerPitchScale = DopplerPitchScale;
+	Parms.ListenerVelocityMagnitude = ListenerVelocityMagnitude;
+	Parms.SourceVelocityMagnitude = SourceVelocityMagnitude;
+	Parms.CallFunc_Divide_DoubleDouble_ReturnValue = CallFunc_Divide_DoubleDouble_ReturnValue;
+	Parms.CallFunc_Subtract_DoubleDouble_ReturnValue = CallFunc_Subtract_DoubleDouble_ReturnValue;
+	Parms.CallFunc_Subtract_DoubleDouble_ReturnValue_1 = CallFunc_Subtract_DoubleDouble_ReturnValue_1;
+	Parms.CallFunc_Multiply_DoubleDouble_ReturnValue = CallFunc_Multiply_DoubleDouble_ReturnValue;
+	Parms.CallFunc_Divide_DoubleDouble_ReturnValue_1 = CallFunc_Divide_DoubleDouble_ReturnValue_1;
+	Parms.CallFunc_Add_DoubleDouble_ReturnValue = CallFunc_Add_DoubleDouble_ReturnValue;
+	Parms.CallFunc_Subtract_DoubleDouble_ReturnValue_2 = CallFunc_Subtract_DoubleDouble_ReturnValue_2;
+	Parms.CallFunc_GetVelocity_ReturnValue = CallFunc_GetVelocity_ReturnValue;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
+	Parms.CallFunc_GetVelocity_ReturnValue_1 = CallFunc_GetVelocity_ReturnValue_1;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue_1 = CallFunc_K2_GetActorLocation_ReturnValue_1;
+	Parms.CallFunc_Subtract_VectorVector_ReturnValue = CallFunc_Subtract_VectorVector_ReturnValue;
+	Parms.CallFunc_Normal_ReturnValue = CallFunc_Normal_ReturnValue;
+	Parms.CallFunc_Dot_VectorVector_ReturnValue = CallFunc_Dot_VectorVector_ReturnValue;
+	Parms.CallFunc_Dot_VectorVector_ReturnValue_1 = CallFunc_Dot_VectorVector_ReturnValue_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InPitchMultiplier != nullptr)
-		*InPitchMultiplier = Parms.PitchMultiplier;
+	if (PitchMultiplier != nullptr)
+		*PitchMultiplier = Parms.PitchMultiplier;
 
 }
 
@@ -693,7 +718,7 @@ void ULib_Audio_C::GetDopplerPitchMultiplier(class AActor* InListener, class AAc
 // float                              CallFunc_SetRTPCValue_Value_ImplicitCast_1                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_SetRTPCValue_Value_ImplicitCast_2                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::AkSetRTPC(class UAkRtpc* InRTPCValue, double InValue, int32 InInterpolationTimeMs, class AActor* InActor, class UObject* In__WorldContext, const TArray<class UAkComponent*>& InAkComponents, class UComp_RtpcTracker_C* InRtpcTracker, bool InCallFunc_IsValid_ReturnValue, int32 InCallFunc_Array_Length_ReturnValue, TArray<class UAkComponent*>& InCallFunc_K2_GetComponentsByClass_ReturnValue, int32 InCallFunc_Array_Length_ReturnValue_1, bool InCallFunc_Greater_IntInt_ReturnValue, int32 InTemp_int_Array_Index_Variable, class UAkComponent* InCallFunc_Array_Get_Item, int32 InTemp_int_Loop_Counter_Variable, bool InCallFunc_Less_IntInt_ReturnValue, int32 InCallFunc_Add_IntInt_ReturnValue, class UComp_RtpcTracker_C* InCallFunc_GetComponentByClass_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, float InCallFunc_SetRTPCValue_Value_ImplicitCast, float InCallFunc_SetRTPCValue_Value_ImplicitCast_1, float InCallFunc_SetRTPCValue_Value_ImplicitCast_2)
+void ULib_Audio_C::AkSetRTPC(class UAkRtpc* RTPCValue, double Value, int32 InterpolationTimeMs, class AActor* Actor, class UObject* __WorldContext, const TArray<class UAkComponent*>& AkComponents, class UComp_RtpcTracker_C* RtpcTracker, bool CallFunc_IsValid_ReturnValue, int32 CallFunc_Array_Length_ReturnValue, TArray<class UAkComponent*>& CallFunc_K2_GetComponentsByClass_ReturnValue, int32 CallFunc_Array_Length_ReturnValue_1, bool CallFunc_Greater_IntInt_ReturnValue, int32 Temp_int_Array_Index_Variable, class UAkComponent* CallFunc_Array_Get_Item, int32 Temp_int_Loop_Counter_Variable, bool CallFunc_Less_IntInt_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue, class UComp_RtpcTracker_C* CallFunc_GetComponentByClass_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, float CallFunc_SetRTPCValue_Value_ImplicitCast, float CallFunc_SetRTPCValue_Value_ImplicitCast_1, float CallFunc_SetRTPCValue_Value_ImplicitCast_2)
 {
 	static class UFunction* Func = nullptr;
 
@@ -702,28 +727,28 @@ void ULib_Audio_C::AkSetRTPC(class UAkRtpc* InRTPCValue, double InValue, int32 I
 
 	Params::ULib_Audio_C_AkSetRTPC_Params Parms{};
 
-	Parms.RTPCValue = InRTPCValue;
-	Parms.Value = InValue;
-	Parms.InterpolationTimeMs = InInterpolationTimeMs;
-	Parms.Actor = InActor;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.AkComponents = InAkComponents;
-	Parms.RtpcTracker = InRtpcTracker;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_Array_Length_ReturnValue = InCallFunc_Array_Length_ReturnValue;
-	Parms.CallFunc_K2_GetComponentsByClass_ReturnValue = InCallFunc_K2_GetComponentsByClass_ReturnValue;
-	Parms.CallFunc_Array_Length_ReturnValue_1 = InCallFunc_Array_Length_ReturnValue_1;
-	Parms.CallFunc_Greater_IntInt_ReturnValue = InCallFunc_Greater_IntInt_ReturnValue;
-	Parms.Temp_int_Array_Index_Variable = InTemp_int_Array_Index_Variable;
-	Parms.CallFunc_Array_Get_Item = InCallFunc_Array_Get_Item;
-	Parms.Temp_int_Loop_Counter_Variable = InTemp_int_Loop_Counter_Variable;
-	Parms.CallFunc_Less_IntInt_ReturnValue = InCallFunc_Less_IntInt_ReturnValue;
-	Parms.CallFunc_Add_IntInt_ReturnValue = InCallFunc_Add_IntInt_ReturnValue;
-	Parms.CallFunc_GetComponentByClass_ReturnValue = InCallFunc_GetComponentByClass_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = InCallFunc_SetRTPCValue_Value_ImplicitCast;
-	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast_1 = InCallFunc_SetRTPCValue_Value_ImplicitCast_1;
-	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast_2 = InCallFunc_SetRTPCValue_Value_ImplicitCast_2;
+	Parms.RTPCValue = RTPCValue;
+	Parms.Value = Value;
+	Parms.InterpolationTimeMs = InterpolationTimeMs;
+	Parms.Actor = Actor;
+	Parms.__WorldContext = __WorldContext;
+	Parms.AkComponents = AkComponents;
+	Parms.RtpcTracker = RtpcTracker;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_K2_GetComponentsByClass_ReturnValue = CallFunc_K2_GetComponentsByClass_ReturnValue;
+	Parms.CallFunc_Array_Length_ReturnValue_1 = CallFunc_Array_Length_ReturnValue_1;
+	Parms.CallFunc_Greater_IntInt_ReturnValue = CallFunc_Greater_IntInt_ReturnValue;
+	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
+	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
+	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
+	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = CallFunc_SetRTPCValue_Value_ImplicitCast;
+	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast_1 = CallFunc_SetRTPCValue_Value_ImplicitCast_1;
+	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast_2 = CallFunc_SetRTPCValue_Value_ImplicitCast_2;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -745,7 +770,7 @@ void ULib_Audio_C::AkSetRTPC(class UAkRtpc* InRTPCValue, double InValue, int32 I
 // bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                     CallFunc_K2_GetActorLocation_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::Broadcast_Ak_Event_Location(class AActor* InActorHit, bool InWasDamaged, class AActor* InInstigator, int32 InSearch_Radius, class APlayerController* InPCT_To_Exclude, TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> InHeld_ItemType, class UObject* In__WorldContext, double InLocallyControlled, class AValeriaPlayerController* InK2Node_DynamicCast_AsValeria_Player_Controller, bool InK2Node_DynamicCast_bSuccess, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue)
+void ULib_Audio_C::Broadcast_Ak_Event_Location(class AActor* ActorHit, bool WasDamaged, class AActor* Instigator, int32 Search_Radius, class APlayerController* PCT_To_Exclude, TSoftObjectPtr<class UVAL_ItemTypeDefinitionAsset> Held_ItemType, class UObject* __WorldContext, double LocallyControlled, class AValeriaPlayerController* K2Node_DynamicCast_AsValeria_Player_Controller, bool K2Node_DynamicCast_bSuccess, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -754,17 +779,17 @@ void ULib_Audio_C::Broadcast_Ak_Event_Location(class AActor* InActorHit, bool In
 
 	Params::ULib_Audio_C_Broadcast_Ak_Event_Location_Params Parms{};
 
-	Parms.ActorHit = InActorHit;
-	Parms.WasDamaged = InWasDamaged;
-	Parms.Instigator = InInstigator;
-	Parms.Search_Radius = InSearch_Radius;
-	Parms.PCT_To_Exclude = InPCT_To_Exclude;
-	Parms.Held_ItemType = InHeld_ItemType;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.LocallyControlled = InLocallyControlled;
-	Parms.K2Node_DynamicCast_AsValeria_Player_Controller = InK2Node_DynamicCast_AsValeria_Player_Controller;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue = InCallFunc_K2_GetActorLocation_ReturnValue;
+	Parms.ActorHit = ActorHit;
+	Parms.WasDamaged = WasDamaged;
+	Parms.Instigator = Instigator;
+	Parms.Search_Radius = Search_Radius;
+	Parms.PCT_To_Exclude = PCT_To_Exclude;
+	Parms.Held_ItemType = Held_ItemType;
+	Parms.__WorldContext = __WorldContext;
+	Parms.LocallyControlled = LocallyControlled;
+	Parms.K2Node_DynamicCast_AsValeria_Player_Controller = K2Node_DynamicCast_AsValeria_Player_Controller;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -804,7 +829,7 @@ void ULib_Audio_C::Broadcast_Ak_Event_Location(class AActor* InActorHit, bool In
 // int32                              CallFunc_PostAkEvent_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_SetRTPCValue_Value_ImplicitCast                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::AkEventSpawnAttached(class UAkAudioEvent* InAkEvent, class AActor* InInstigator, class USceneComponent* InOwner, class FName InSocketName, bool InAutoDestroy, bool InGetRtpcFromOwner, class UObject* In__WorldContext, class UAkComponent** InAk, int32* InID, int32 InPlayingID, class UAkComponent* InAkComponent, double InLocallyControlled, bool InCallFunc_IsDedicatedServer_ReturnValue, bool InCallFunc_IsValid_ReturnValue, class AActor* InCallFunc_GetOwner_ReturnValue, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue, bool InCallFunc_Try_to_Propagate_Rtpcs_Success, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue_1, class APawn* InK2Node_DynamicCast_AsPawn, bool InK2Node_DynamicCast_bSuccess, bool InCallFunc_IsLocallyControlled_ReturnValue, const struct FVector& InCallFunc_GetSocketLocation_ReturnValue, bool InCallFunc_IsWithinAttenuation_Within, FDelegateProperty_ InTemp_delegate_Variable, class UAkComponent* InCallFunc_SpawnAkComponentAtLocation_ReturnValue, bool InCallFunc_K2_AttachToComponent_ReturnValue, TArray<struct FAkExternalSourceInfo>& InTemp_struct_Variable, int32 InCallFunc_PostAkEvent_ReturnValue, float InCallFunc_SetRTPCValue_Value_ImplicitCast)
+void ULib_Audio_C::AkEventSpawnAttached(class UAkAudioEvent* AkEvent, class AActor* Instigator, class USceneComponent* Owner, class FName SocketName, bool AutoDestroy, bool GetRtpcFromOwner, class UObject* __WorldContext, class UAkComponent** Ak, int32* ID, int32 PlayingID, class UAkComponent* AkComponent, double LocallyControlled, bool CallFunc_IsDedicatedServer_ReturnValue, bool CallFunc_IsValid_ReturnValue, class AActor* CallFunc_GetOwner_ReturnValue, const struct FVector& CallFunc_K2_GetComponentLocation_ReturnValue, bool CallFunc_Try_to_Propagate_Rtpcs_Success, const struct FVector& CallFunc_K2_GetComponentLocation_ReturnValue_1, class APawn* K2Node_DynamicCast_AsPawn, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsLocallyControlled_ReturnValue, const struct FVector& CallFunc_GetSocketLocation_ReturnValue, bool CallFunc_IsWithinAttenuation_Within, FDelegateProperty_ Temp_delegate_Variable, class UAkComponent* CallFunc_SpawnAkComponentAtLocation_ReturnValue, bool CallFunc_K2_AttachToComponent_ReturnValue, TArray<struct FAkExternalSourceInfo>& Temp_struct_Variable, int32 CallFunc_PostAkEvent_ReturnValue, float CallFunc_SetRTPCValue_Value_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -813,41 +838,41 @@ void ULib_Audio_C::AkEventSpawnAttached(class UAkAudioEvent* InAkEvent, class AA
 
 	Params::ULib_Audio_C_AkEventSpawnAttached_Params Parms{};
 
-	Parms.AkEvent = InAkEvent;
-	Parms.Instigator = InInstigator;
-	Parms.Owner = InOwner;
-	Parms.SocketName = InSocketName;
-	Parms.AutoDestroy = InAutoDestroy;
-	Parms.GetRtpcFromOwner = InGetRtpcFromOwner;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.PlayingID = InPlayingID;
-	Parms.AkComponent = InAkComponent;
-	Parms.LocallyControlled = InLocallyControlled;
-	Parms.CallFunc_IsDedicatedServer_ReturnValue = InCallFunc_IsDedicatedServer_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
-	Parms.CallFunc_K2_GetComponentLocation_ReturnValue = InCallFunc_K2_GetComponentLocation_ReturnValue;
-	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = InCallFunc_Try_to_Propagate_Rtpcs_Success;
-	Parms.CallFunc_K2_GetComponentLocation_ReturnValue_1 = InCallFunc_K2_GetComponentLocation_ReturnValue_1;
-	Parms.K2Node_DynamicCast_AsPawn = InK2Node_DynamicCast_AsPawn;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_IsLocallyControlled_ReturnValue = InCallFunc_IsLocallyControlled_ReturnValue;
-	Parms.CallFunc_GetSocketLocation_ReturnValue = InCallFunc_GetSocketLocation_ReturnValue;
-	Parms.CallFunc_IsWithinAttenuation_Within = InCallFunc_IsWithinAttenuation_Within;
-	Parms.Temp_delegate_Variable = InTemp_delegate_Variable;
-	Parms.CallFunc_SpawnAkComponentAtLocation_ReturnValue = InCallFunc_SpawnAkComponentAtLocation_ReturnValue;
-	Parms.CallFunc_K2_AttachToComponent_ReturnValue = InCallFunc_K2_AttachToComponent_ReturnValue;
-	Parms.Temp_struct_Variable = InTemp_struct_Variable;
-	Parms.CallFunc_PostAkEvent_ReturnValue = InCallFunc_PostAkEvent_ReturnValue;
-	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = InCallFunc_SetRTPCValue_Value_ImplicitCast;
+	Parms.AkEvent = AkEvent;
+	Parms.Instigator = Instigator;
+	Parms.Owner = Owner;
+	Parms.SocketName = SocketName;
+	Parms.AutoDestroy = AutoDestroy;
+	Parms.GetRtpcFromOwner = GetRtpcFromOwner;
+	Parms.__WorldContext = __WorldContext;
+	Parms.PlayingID = PlayingID;
+	Parms.AkComponent = AkComponent;
+	Parms.LocallyControlled = LocallyControlled;
+	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
+	Parms.CallFunc_K2_GetComponentLocation_ReturnValue = CallFunc_K2_GetComponentLocation_ReturnValue;
+	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = CallFunc_Try_to_Propagate_Rtpcs_Success;
+	Parms.CallFunc_K2_GetComponentLocation_ReturnValue_1 = CallFunc_K2_GetComponentLocation_ReturnValue_1;
+	Parms.K2Node_DynamicCast_AsPawn = K2Node_DynamicCast_AsPawn;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_IsLocallyControlled_ReturnValue = CallFunc_IsLocallyControlled_ReturnValue;
+	Parms.CallFunc_GetSocketLocation_ReturnValue = CallFunc_GetSocketLocation_ReturnValue;
+	Parms.CallFunc_IsWithinAttenuation_Within = CallFunc_IsWithinAttenuation_Within;
+	Parms.Temp_delegate_Variable = Temp_delegate_Variable;
+	Parms.CallFunc_SpawnAkComponentAtLocation_ReturnValue = CallFunc_SpawnAkComponentAtLocation_ReturnValue;
+	Parms.CallFunc_K2_AttachToComponent_ReturnValue = CallFunc_K2_AttachToComponent_ReturnValue;
+	Parms.Temp_struct_Variable = Temp_struct_Variable;
+	Parms.CallFunc_PostAkEvent_ReturnValue = CallFunc_PostAkEvent_ReturnValue;
+	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = CallFunc_SetRTPCValue_Value_ImplicitCast;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InAk != nullptr)
-		*InAk = Parms.Ak;
+	if (Ak != nullptr)
+		*Ak = Parms.Ak;
 
-	if (InID != nullptr)
-		*InID = Parms.ID;
+	if (ID != nullptr)
+		*ID = Parms.ID;
 
 }
 
@@ -889,7 +914,7 @@ void ULib_Audio_C::AkEventSpawnAttached(class UAkAudioEvent* InAkEvent, class AA
 // class UGameInstance*               CallFunc_GetGameInstance_ReturnValue                             (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::SurfaceDTPM(class AActor* InActor, class UDataTable* InDataTable, class UPhysicalMaterial* InPhysMat, class UObject* In__WorldContext, class UAkAudioEvent** InSound, class UMaterialInstance** InDecal_Left_Foot, class UMaterialInstance** InDecal_Right_Foot, class UNiagaraSystem** InNiagara_System, class FName InDefaultInGamePhysmat, class FName InRowNamePhysmat, enum class EPhysicalSurface InDefaultPhysmatEditorAudition, const class FString& InCallFunc_GetDisplayName_ReturnValue, bool InCallFunc_EqualEqual_StrStr_ReturnValue, bool InCallFunc_EqualEqual_StrStr_ReturnValue_1, bool InCallFunc_EqualEqual_StrStr_ReturnValue_2, const class FString& InCallFunc_RightChop_ReturnValue, bool InCallFunc_BooleanOR_ReturnValue, class FName InCallFunc_Conv_StringToName_ReturnValue, bool InCallFunc_BooleanOR_ReturnValue_1, bool InCallFunc_IsPackagedForDistribution_ReturnValue, bool InCallFunc_Not_PreBool_ReturnValue, const class FString& InCallFunc_GetDisplayName_ReturnValue_1, const class FString& InCallFunc_Concat_StrStr_ReturnValue, const class FString& InCallFunc_Concat_StrStr_ReturnValue_1, bool InCallFunc_EqualEqual_ByteByte_ReturnValue, const class FString& InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue, class FName InCallFunc_Conv_StringToName_ReturnValue_1, const struct FStruct_Physmat& InCallFunc_GetDataTableRowFromName_OutRow, bool InCallFunc_GetDataTableRowFromName_ReturnValue, const class FString& InCallFunc_Conv_NameToString_ReturnValue, const class FString& InCallFunc_Concat_StrStr_ReturnValue_2, class UGameInstance* InCallFunc_GetGameInstance_ReturnValue, bool InCallFunc_IsValid_ReturnValue)
+void ULib_Audio_C::SurfaceDTPM(class AActor* Actor, class UDataTable* DataTable, class UPhysicalMaterial* PhysMat, class UObject* __WorldContext, class UAkAudioEvent** Sound, class UMaterialInstance** Decal_Left_Foot, class UMaterialInstance** Decal_Right_Foot, class UNiagaraSystem** Niagara_System, class FName DefaultInGamePhysmat, class FName RowNamePhysmat, enum class EPhysicalSurface DefaultPhysmatEditorAudition, const class FString& CallFunc_GetDisplayName_ReturnValue, bool CallFunc_EqualEqual_StrStr_ReturnValue, bool CallFunc_EqualEqual_StrStr_ReturnValue_1, bool CallFunc_EqualEqual_StrStr_ReturnValue_2, const class FString& CallFunc_RightChop_ReturnValue, bool CallFunc_BooleanOR_ReturnValue, class FName CallFunc_Conv_StringToName_ReturnValue, bool CallFunc_BooleanOR_ReturnValue_1, bool CallFunc_IsPackagedForDistribution_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, const class FString& CallFunc_GetDisplayName_ReturnValue_1, const class FString& CallFunc_Concat_StrStr_ReturnValue, const class FString& CallFunc_Concat_StrStr_ReturnValue_1, bool CallFunc_EqualEqual_ByteByte_ReturnValue, const class FString& CallFunc_GetEnumeratorUserFriendlyName_ReturnValue, class FName CallFunc_Conv_StringToName_ReturnValue_1, const struct FStruct_Physmat& CallFunc_GetDataTableRowFromName_OutRow, bool CallFunc_GetDataTableRowFromName_ReturnValue, const class FString& CallFunc_Conv_NameToString_ReturnValue, const class FString& CallFunc_Concat_StrStr_ReturnValue_2, class UGameInstance* CallFunc_GetGameInstance_ReturnValue, bool CallFunc_IsValid_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -898,49 +923,49 @@ void ULib_Audio_C::SurfaceDTPM(class AActor* InActor, class UDataTable* InDataTa
 
 	Params::ULib_Audio_C_SurfaceDTPM_Params Parms{};
 
-	Parms.Actor = InActor;
-	Parms.DataTable = InDataTable;
-	Parms.PhysMat = InPhysMat;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.DefaultInGamePhysmat = InDefaultInGamePhysmat;
-	Parms.RowNamePhysmat = InRowNamePhysmat;
-	Parms.DefaultPhysmatEditorAudition = InDefaultPhysmatEditorAudition;
-	Parms.CallFunc_GetDisplayName_ReturnValue = InCallFunc_GetDisplayName_ReturnValue;
-	Parms.CallFunc_EqualEqual_StrStr_ReturnValue = InCallFunc_EqualEqual_StrStr_ReturnValue;
-	Parms.CallFunc_EqualEqual_StrStr_ReturnValue_1 = InCallFunc_EqualEqual_StrStr_ReturnValue_1;
-	Parms.CallFunc_EqualEqual_StrStr_ReturnValue_2 = InCallFunc_EqualEqual_StrStr_ReturnValue_2;
-	Parms.CallFunc_RightChop_ReturnValue = InCallFunc_RightChop_ReturnValue;
-	Parms.CallFunc_BooleanOR_ReturnValue = InCallFunc_BooleanOR_ReturnValue;
-	Parms.CallFunc_Conv_StringToName_ReturnValue = InCallFunc_Conv_StringToName_ReturnValue;
-	Parms.CallFunc_BooleanOR_ReturnValue_1 = InCallFunc_BooleanOR_ReturnValue_1;
-	Parms.CallFunc_IsPackagedForDistribution_ReturnValue = InCallFunc_IsPackagedForDistribution_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue = InCallFunc_Not_PreBool_ReturnValue;
-	Parms.CallFunc_GetDisplayName_ReturnValue_1 = InCallFunc_GetDisplayName_ReturnValue_1;
-	Parms.CallFunc_Concat_StrStr_ReturnValue = InCallFunc_Concat_StrStr_ReturnValue;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_1 = InCallFunc_Concat_StrStr_ReturnValue_1;
-	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = InCallFunc_EqualEqual_ByteByte_ReturnValue;
-	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
-	Parms.CallFunc_Conv_StringToName_ReturnValue_1 = InCallFunc_Conv_StringToName_ReturnValue_1;
-	Parms.CallFunc_GetDataTableRowFromName_OutRow = InCallFunc_GetDataTableRowFromName_OutRow;
-	Parms.CallFunc_GetDataTableRowFromName_ReturnValue = InCallFunc_GetDataTableRowFromName_ReturnValue;
-	Parms.CallFunc_Conv_NameToString_ReturnValue = InCallFunc_Conv_NameToString_ReturnValue;
-	Parms.CallFunc_Concat_StrStr_ReturnValue_2 = InCallFunc_Concat_StrStr_ReturnValue_2;
-	Parms.CallFunc_GetGameInstance_ReturnValue = InCallFunc_GetGameInstance_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
+	Parms.Actor = Actor;
+	Parms.DataTable = DataTable;
+	Parms.PhysMat = PhysMat;
+	Parms.__WorldContext = __WorldContext;
+	Parms.DefaultInGamePhysmat = DefaultInGamePhysmat;
+	Parms.RowNamePhysmat = RowNamePhysmat;
+	Parms.DefaultPhysmatEditorAudition = DefaultPhysmatEditorAudition;
+	Parms.CallFunc_GetDisplayName_ReturnValue = CallFunc_GetDisplayName_ReturnValue;
+	Parms.CallFunc_EqualEqual_StrStr_ReturnValue = CallFunc_EqualEqual_StrStr_ReturnValue;
+	Parms.CallFunc_EqualEqual_StrStr_ReturnValue_1 = CallFunc_EqualEqual_StrStr_ReturnValue_1;
+	Parms.CallFunc_EqualEqual_StrStr_ReturnValue_2 = CallFunc_EqualEqual_StrStr_ReturnValue_2;
+	Parms.CallFunc_RightChop_ReturnValue = CallFunc_RightChop_ReturnValue;
+	Parms.CallFunc_BooleanOR_ReturnValue = CallFunc_BooleanOR_ReturnValue;
+	Parms.CallFunc_Conv_StringToName_ReturnValue = CallFunc_Conv_StringToName_ReturnValue;
+	Parms.CallFunc_BooleanOR_ReturnValue_1 = CallFunc_BooleanOR_ReturnValue_1;
+	Parms.CallFunc_IsPackagedForDistribution_ReturnValue = CallFunc_IsPackagedForDistribution_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_GetDisplayName_ReturnValue_1 = CallFunc_GetDisplayName_ReturnValue_1;
+	Parms.CallFunc_Concat_StrStr_ReturnValue = CallFunc_Concat_StrStr_ReturnValue;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_1 = CallFunc_Concat_StrStr_ReturnValue_1;
+	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = CallFunc_EqualEqual_ByteByte_ReturnValue;
+	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = CallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
+	Parms.CallFunc_Conv_StringToName_ReturnValue_1 = CallFunc_Conv_StringToName_ReturnValue_1;
+	Parms.CallFunc_GetDataTableRowFromName_OutRow = CallFunc_GetDataTableRowFromName_OutRow;
+	Parms.CallFunc_GetDataTableRowFromName_ReturnValue = CallFunc_GetDataTableRowFromName_ReturnValue;
+	Parms.CallFunc_Conv_NameToString_ReturnValue = CallFunc_Conv_NameToString_ReturnValue;
+	Parms.CallFunc_Concat_StrStr_ReturnValue_2 = CallFunc_Concat_StrStr_ReturnValue_2;
+	Parms.CallFunc_GetGameInstance_ReturnValue = CallFunc_GetGameInstance_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InSound != nullptr)
-		*InSound = Parms.Sound;
+	if (Sound != nullptr)
+		*Sound = Parms.Sound;
 
-	if (InDecal_Left_Foot != nullptr)
-		*InDecal_Left_Foot = Parms.Decal_Left_Foot;
+	if (Decal_Left_Foot != nullptr)
+		*Decal_Left_Foot = Parms.Decal_Left_Foot;
 
-	if (InDecal_Right_Foot != nullptr)
-		*InDecal_Right_Foot = Parms.Decal_Right_Foot;
+	if (Decal_Right_Foot != nullptr)
+		*Decal_Right_Foot = Parms.Decal_Right_Foot;
 
-	if (InNiagara_System != nullptr)
-		*InNiagara_System = Parms.Niagara_System;
+	if (Niagara_System != nullptr)
+		*Niagara_System = Parms.Niagara_System;
 
 }
 
@@ -985,7 +1010,7 @@ void ULib_Audio_C::SurfaceDTPM(class AActor* InActor, class UDataTable* InDataTa
 // class UMaterialInstance*           CallFunc_SurfaceDTPM_Decal_Right_Foot_1                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UNiagaraSystem*              CallFunc_SurfaceDTPM_Niagara_System_1                            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::Surface_DT(class AActor* InActor, class UDataTable* InDataTable, class UPhysicalMaterial* InPhysMat, class UObject* In__WorldContext, class UAkAudioEvent** InSound, class UMaterialInstance** InDecal_Left_Foot, class UMaterialInstance** InDecal_Right_Foot, class UNiagaraSystem** InNiagaraSystem, class UNiagaraSystem* InNS, enum class E_Footwear InFootwearDebug, class FName InFootwear, class UMaterialInstance* InDR, class UMaterialInstance* InDL, class UAkAudioEvent* InS, class FName InRowNamePhysmat, enum class EPhysicalSurface InDefaultPhysmatEditorAudition, enum class EPhysicalSurface InDefaultPhysmatInGame, const class FString& InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue, class FName InCallFunc_Conv_StringToName_ReturnValue, class UComp_Actor_Audio_Data_C* InCallFunc_GetComponentByClass_ReturnValue, bool InCallFunc_IsValid_ReturnValue, const class FString& InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1, class FName InCallFunc_Conv_StringToName_ReturnValue_1, const struct FStruct_Footwear& InCallFunc_GetDataTableRowFromName_OutRow, bool InCallFunc_GetDataTableRowFromName_ReturnValue, const class FString& InCallFunc_GetObjectName_ReturnValue, const class FString& InCallFunc_Left_ReturnValue, bool InK2Node_SwitchString_CmpSuccess, class UAkAudioEvent* InCallFunc_SurfaceDTPM_Sound, class UMaterialInstance* InCallFunc_SurfaceDTPM_Decal_Left_Foot, class UMaterialInstance* InCallFunc_SurfaceDTPM_Decal_Right_Foot, class UNiagaraSystem* InCallFunc_SurfaceDTPM_Niagara_System, class UAkAudioEvent* InCallFunc_SurfaceDTPM_Sound_1, class UMaterialInstance* InCallFunc_SurfaceDTPM_Decal_Left_Foot_1, class UMaterialInstance* InCallFunc_SurfaceDTPM_Decal_Right_Foot_1, class UNiagaraSystem* InCallFunc_SurfaceDTPM_Niagara_System_1)
+void ULib_Audio_C::Surface_DT(class AActor* Actor, class UDataTable* DataTable, class UPhysicalMaterial* PhysMat, class UObject* __WorldContext, class UAkAudioEvent** Sound, class UMaterialInstance** Decal_Left_Foot, class UMaterialInstance** Decal_Right_Foot, class UNiagaraSystem** NiagaraSystem, class UNiagaraSystem* NS, enum class E_Footwear FootwearDebug, class FName Footwear, class UMaterialInstance* DR, class UMaterialInstance* DL, class UAkAudioEvent* S, class FName RowNamePhysmat, enum class EPhysicalSurface DefaultPhysmatEditorAudition, enum class EPhysicalSurface DefaultPhysmatInGame, const class FString& CallFunc_GetEnumeratorUserFriendlyName_ReturnValue, class FName CallFunc_Conv_StringToName_ReturnValue, class UComp_Actor_Audio_Data_C* CallFunc_GetComponentByClass_ReturnValue, bool CallFunc_IsValid_ReturnValue, const class FString& CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1, class FName CallFunc_Conv_StringToName_ReturnValue_1, const struct FStruct_Footwear& CallFunc_GetDataTableRowFromName_OutRow, bool CallFunc_GetDataTableRowFromName_ReturnValue, const class FString& CallFunc_GetObjectName_ReturnValue, const class FString& CallFunc_Left_ReturnValue, bool K2Node_SwitchString_CmpSuccess, class UAkAudioEvent* CallFunc_SurfaceDTPM_Sound, class UMaterialInstance* CallFunc_SurfaceDTPM_Decal_Left_Foot, class UMaterialInstance* CallFunc_SurfaceDTPM_Decal_Right_Foot, class UNiagaraSystem* CallFunc_SurfaceDTPM_Niagara_System, class UAkAudioEvent* CallFunc_SurfaceDTPM_Sound_1, class UMaterialInstance* CallFunc_SurfaceDTPM_Decal_Left_Foot_1, class UMaterialInstance* CallFunc_SurfaceDTPM_Decal_Right_Foot_1, class UNiagaraSystem* CallFunc_SurfaceDTPM_Niagara_System_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -994,52 +1019,52 @@ void ULib_Audio_C::Surface_DT(class AActor* InActor, class UDataTable* InDataTab
 
 	Params::ULib_Audio_C_Surface_DT_Params Parms{};
 
-	Parms.Actor = InActor;
-	Parms.DataTable = InDataTable;
-	Parms.PhysMat = InPhysMat;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.NS = InNS;
-	Parms.FootwearDebug = InFootwearDebug;
-	Parms.Footwear = InFootwear;
-	Parms.DR = InDR;
-	Parms.DL = InDL;
-	Parms.S = InS;
-	Parms.RowNamePhysmat = InRowNamePhysmat;
-	Parms.DefaultPhysmatEditorAudition = InDefaultPhysmatEditorAudition;
-	Parms.DefaultPhysmatInGame = InDefaultPhysmatInGame;
-	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
-	Parms.CallFunc_Conv_StringToName_ReturnValue = InCallFunc_Conv_StringToName_ReturnValue;
-	Parms.CallFunc_GetComponentByClass_ReturnValue = InCallFunc_GetComponentByClass_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1 = InCallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1;
-	Parms.CallFunc_Conv_StringToName_ReturnValue_1 = InCallFunc_Conv_StringToName_ReturnValue_1;
-	Parms.CallFunc_GetDataTableRowFromName_OutRow = InCallFunc_GetDataTableRowFromName_OutRow;
-	Parms.CallFunc_GetDataTableRowFromName_ReturnValue = InCallFunc_GetDataTableRowFromName_ReturnValue;
-	Parms.CallFunc_GetObjectName_ReturnValue = InCallFunc_GetObjectName_ReturnValue;
-	Parms.CallFunc_Left_ReturnValue = InCallFunc_Left_ReturnValue;
-	Parms.K2Node_SwitchString_CmpSuccess = InK2Node_SwitchString_CmpSuccess;
-	Parms.CallFunc_SurfaceDTPM_Sound = InCallFunc_SurfaceDTPM_Sound;
-	Parms.CallFunc_SurfaceDTPM_Decal_Left_Foot = InCallFunc_SurfaceDTPM_Decal_Left_Foot;
-	Parms.CallFunc_SurfaceDTPM_Decal_Right_Foot = InCallFunc_SurfaceDTPM_Decal_Right_Foot;
-	Parms.CallFunc_SurfaceDTPM_Niagara_System = InCallFunc_SurfaceDTPM_Niagara_System;
-	Parms.CallFunc_SurfaceDTPM_Sound_1 = InCallFunc_SurfaceDTPM_Sound_1;
-	Parms.CallFunc_SurfaceDTPM_Decal_Left_Foot_1 = InCallFunc_SurfaceDTPM_Decal_Left_Foot_1;
-	Parms.CallFunc_SurfaceDTPM_Decal_Right_Foot_1 = InCallFunc_SurfaceDTPM_Decal_Right_Foot_1;
-	Parms.CallFunc_SurfaceDTPM_Niagara_System_1 = InCallFunc_SurfaceDTPM_Niagara_System_1;
+	Parms.Actor = Actor;
+	Parms.DataTable = DataTable;
+	Parms.PhysMat = PhysMat;
+	Parms.__WorldContext = __WorldContext;
+	Parms.NS = NS;
+	Parms.FootwearDebug = FootwearDebug;
+	Parms.Footwear = Footwear;
+	Parms.DR = DR;
+	Parms.DL = DL;
+	Parms.S = S;
+	Parms.RowNamePhysmat = RowNamePhysmat;
+	Parms.DefaultPhysmatEditorAudition = DefaultPhysmatEditorAudition;
+	Parms.DefaultPhysmatInGame = DefaultPhysmatInGame;
+	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue = CallFunc_GetEnumeratorUserFriendlyName_ReturnValue;
+	Parms.CallFunc_Conv_StringToName_ReturnValue = CallFunc_Conv_StringToName_ReturnValue;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1 = CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1;
+	Parms.CallFunc_Conv_StringToName_ReturnValue_1 = CallFunc_Conv_StringToName_ReturnValue_1;
+	Parms.CallFunc_GetDataTableRowFromName_OutRow = CallFunc_GetDataTableRowFromName_OutRow;
+	Parms.CallFunc_GetDataTableRowFromName_ReturnValue = CallFunc_GetDataTableRowFromName_ReturnValue;
+	Parms.CallFunc_GetObjectName_ReturnValue = CallFunc_GetObjectName_ReturnValue;
+	Parms.CallFunc_Left_ReturnValue = CallFunc_Left_ReturnValue;
+	Parms.K2Node_SwitchString_CmpSuccess = K2Node_SwitchString_CmpSuccess;
+	Parms.CallFunc_SurfaceDTPM_Sound = CallFunc_SurfaceDTPM_Sound;
+	Parms.CallFunc_SurfaceDTPM_Decal_Left_Foot = CallFunc_SurfaceDTPM_Decal_Left_Foot;
+	Parms.CallFunc_SurfaceDTPM_Decal_Right_Foot = CallFunc_SurfaceDTPM_Decal_Right_Foot;
+	Parms.CallFunc_SurfaceDTPM_Niagara_System = CallFunc_SurfaceDTPM_Niagara_System;
+	Parms.CallFunc_SurfaceDTPM_Sound_1 = CallFunc_SurfaceDTPM_Sound_1;
+	Parms.CallFunc_SurfaceDTPM_Decal_Left_Foot_1 = CallFunc_SurfaceDTPM_Decal_Left_Foot_1;
+	Parms.CallFunc_SurfaceDTPM_Decal_Right_Foot_1 = CallFunc_SurfaceDTPM_Decal_Right_Foot_1;
+	Parms.CallFunc_SurfaceDTPM_Niagara_System_1 = CallFunc_SurfaceDTPM_Niagara_System_1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InSound != nullptr)
-		*InSound = Parms.Sound;
+	if (Sound != nullptr)
+		*Sound = Parms.Sound;
 
-	if (InDecal_Left_Foot != nullptr)
-		*InDecal_Left_Foot = Parms.Decal_Left_Foot;
+	if (Decal_Left_Foot != nullptr)
+		*Decal_Left_Foot = Parms.Decal_Left_Foot;
 
-	if (InDecal_Right_Foot != nullptr)
-		*InDecal_Right_Foot = Parms.Decal_Right_Foot;
+	if (Decal_Right_Foot != nullptr)
+		*Decal_Right_Foot = Parms.Decal_Right_Foot;
 
-	if (InNiagaraSystem != nullptr)
-		*InNiagaraSystem = Parms.NiagaraSystem;
+	if (NiagaraSystem != nullptr)
+		*NiagaraSystem = Parms.NiagaraSystem;
 
 }
 
@@ -1053,7 +1078,7 @@ void ULib_Audio_C::Surface_DT(class AActor* InActor, class UDataTable* InDataTab
 // bool                               Within                                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_VIsWithinAttenuation_ReturnValue                        (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::IsWithinAttenuation(class UAkAudioEvent* InEvent, const struct FVector& InLocation, class UObject* In__WorldContext, bool* InWithin, bool InCallFunc_VIsWithinAttenuation_ReturnValue)
+void ULib_Audio_C::IsWithinAttenuation(class UAkAudioEvent* Event, const struct FVector& Location, class UObject* __WorldContext, bool* Within, bool CallFunc_VIsWithinAttenuation_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1062,15 +1087,15 @@ void ULib_Audio_C::IsWithinAttenuation(class UAkAudioEvent* InEvent, const struc
 
 	Params::ULib_Audio_C_IsWithinAttenuation_Params Parms{};
 
-	Parms.Event = InEvent;
-	Parms.Location = InLocation;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.CallFunc_VIsWithinAttenuation_ReturnValue = InCallFunc_VIsWithinAttenuation_ReturnValue;
+	Parms.Event = Event;
+	Parms.Location = Location;
+	Parms.__WorldContext = __WorldContext;
+	Parms.CallFunc_VIsWithinAttenuation_ReturnValue = CallFunc_VIsWithinAttenuation_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InWithin != nullptr)
-		*InWithin = Parms.Within;
+	if (Within != nullptr)
+		*Within = Parms.Within;
 
 }
 
@@ -1102,7 +1127,7 @@ void ULib_Audio_C::IsWithinAttenuation(class UAkAudioEvent* InEvent, const struc
 // bool                               CallFunc_IsValid_ReturnValue_1                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_SetRTPCValue_Value_ImplicitCast                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::AkEventLocationWithActor(class UAkAudioEvent* InAkEvent, const struct FVector& InLocation, class AActor* InActor, bool InGetRtpcFromActor, class UObject* In__WorldContext, class UAkComponent** InAkComponent, int32* InPlaying_ID, class UAkComponent* InAkComp, double InLocallyControlled, bool InCallFunc_IsDedicatedServer_ReturnValue, FDelegateProperty_ InTemp_delegate_Variable, bool InCallFunc_Try_to_Propagate_Rtpcs_Success, class APawn* InK2Node_DynamicCast_AsPawn, bool InK2Node_DynamicCast_bSuccess, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsLocallyControlled_ReturnValue, bool InCallFunc_IsLocallyControlled_ReturnValue_1, class UAkComponent* InCallFunc_AkSpawnAtLocation_ReturnValue, TArray<struct FAkExternalSourceInfo>& InTemp_struct_Variable, int32 InCallFunc_PostAkEvent_ReturnValue, bool InCallFunc_IsWithinAttenuation_Within, bool InCallFunc_IsValid_ReturnValue_1, float InCallFunc_SetRTPCValue_Value_ImplicitCast)
+void ULib_Audio_C::AkEventLocationWithActor(class UAkAudioEvent* AkEvent, const struct FVector& Location, class AActor* Actor, bool GetRtpcFromActor, class UObject* __WorldContext, class UAkComponent** AkComponent, int32* Playing_ID, class UAkComponent* AkComp, double LocallyControlled, bool CallFunc_IsDedicatedServer_ReturnValue, FDelegateProperty_ Temp_delegate_Variable, bool CallFunc_Try_to_Propagate_Rtpcs_Success, class APawn* K2Node_DynamicCast_AsPawn, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsLocallyControlled_ReturnValue, bool CallFunc_IsLocallyControlled_ReturnValue_1, class UAkComponent* CallFunc_AkSpawnAtLocation_ReturnValue, TArray<struct FAkExternalSourceInfo>& Temp_struct_Variable, int32 CallFunc_PostAkEvent_ReturnValue, bool CallFunc_IsWithinAttenuation_Within, bool CallFunc_IsValid_ReturnValue_1, float CallFunc_SetRTPCValue_Value_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1111,35 +1136,35 @@ void ULib_Audio_C::AkEventLocationWithActor(class UAkAudioEvent* InAkEvent, cons
 
 	Params::ULib_Audio_C_AkEventLocationWithActor_Params Parms{};
 
-	Parms.AkEvent = InAkEvent;
-	Parms.Location = InLocation;
-	Parms.Actor = InActor;
-	Parms.GetRtpcFromActor = InGetRtpcFromActor;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.AkComp = InAkComp;
-	Parms.LocallyControlled = InLocallyControlled;
-	Parms.CallFunc_IsDedicatedServer_ReturnValue = InCallFunc_IsDedicatedServer_ReturnValue;
-	Parms.Temp_delegate_Variable = InTemp_delegate_Variable;
-	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = InCallFunc_Try_to_Propagate_Rtpcs_Success;
-	Parms.K2Node_DynamicCast_AsPawn = InK2Node_DynamicCast_AsPawn;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_IsLocallyControlled_ReturnValue = InCallFunc_IsLocallyControlled_ReturnValue;
-	Parms.CallFunc_IsLocallyControlled_ReturnValue_1 = InCallFunc_IsLocallyControlled_ReturnValue_1;
-	Parms.CallFunc_AkSpawnAtLocation_ReturnValue = InCallFunc_AkSpawnAtLocation_ReturnValue;
-	Parms.Temp_struct_Variable = InTemp_struct_Variable;
-	Parms.CallFunc_PostAkEvent_ReturnValue = InCallFunc_PostAkEvent_ReturnValue;
-	Parms.CallFunc_IsWithinAttenuation_Within = InCallFunc_IsWithinAttenuation_Within;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = InCallFunc_SetRTPCValue_Value_ImplicitCast;
+	Parms.AkEvent = AkEvent;
+	Parms.Location = Location;
+	Parms.Actor = Actor;
+	Parms.GetRtpcFromActor = GetRtpcFromActor;
+	Parms.__WorldContext = __WorldContext;
+	Parms.AkComp = AkComp;
+	Parms.LocallyControlled = LocallyControlled;
+	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
+	Parms.Temp_delegate_Variable = Temp_delegate_Variable;
+	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = CallFunc_Try_to_Propagate_Rtpcs_Success;
+	Parms.K2Node_DynamicCast_AsPawn = K2Node_DynamicCast_AsPawn;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsLocallyControlled_ReturnValue = CallFunc_IsLocallyControlled_ReturnValue;
+	Parms.CallFunc_IsLocallyControlled_ReturnValue_1 = CallFunc_IsLocallyControlled_ReturnValue_1;
+	Parms.CallFunc_AkSpawnAtLocation_ReturnValue = CallFunc_AkSpawnAtLocation_ReturnValue;
+	Parms.Temp_struct_Variable = Temp_struct_Variable;
+	Parms.CallFunc_PostAkEvent_ReturnValue = CallFunc_PostAkEvent_ReturnValue;
+	Parms.CallFunc_IsWithinAttenuation_Within = CallFunc_IsWithinAttenuation_Within;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = CallFunc_SetRTPCValue_Value_ImplicitCast;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InAkComponent != nullptr)
-		*InAkComponent = Parms.AkComponent;
+	if (AkComponent != nullptr)
+		*AkComponent = Parms.AkComponent;
 
-	if (InPlaying_ID != nullptr)
-		*InPlaying_ID = Parms.Playing_ID;
+	if (Playing_ID != nullptr)
+		*Playing_ID = Parms.Playing_ID;
 
 }
 
@@ -1161,7 +1186,7 @@ void ULib_Audio_C::AkEventLocationWithActor(class UAkAudioEvent* InAkEvent, cons
 // int32                              CallFunc_VAkEventLocation_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Try_to_Propagate_Rtpcs_Success                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::AkEventLocation(class UAkAudioEvent* InAkEvent, const struct FVector& InLocation, class AActor* InInstigator, bool InGetRtpcsFromInstigator, class UObject* In__WorldContext, class UAkComponent** InAkComponent, int32* InPlaying_ID, int32 InPlayingID, class UAkComponent* InAkComp, double InLocallyControlled, class UAkComponent* InCallFunc_VAkEventLocation_OutComponent, int32 InCallFunc_VAkEventLocation_ReturnValue, bool InCallFunc_Try_to_Propagate_Rtpcs_Success)
+void ULib_Audio_C::AkEventLocation(class UAkAudioEvent* AkEvent, const struct FVector& Location, class AActor* Instigator, bool GetRtpcsFromInstigator, class UObject* __WorldContext, class UAkComponent** AkComponent, int32* Playing_ID, int32 PlayingID, class UAkComponent* AkComp, double LocallyControlled, class UAkComponent* CallFunc_VAkEventLocation_OutComponent, int32 CallFunc_VAkEventLocation_ReturnValue, bool CallFunc_Try_to_Propagate_Rtpcs_Success)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1170,25 +1195,25 @@ void ULib_Audio_C::AkEventLocation(class UAkAudioEvent* InAkEvent, const struct 
 
 	Params::ULib_Audio_C_AkEventLocation_Params Parms{};
 
-	Parms.AkEvent = InAkEvent;
-	Parms.Location = InLocation;
-	Parms.Instigator = InInstigator;
-	Parms.GetRtpcsFromInstigator = InGetRtpcsFromInstigator;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.PlayingID = InPlayingID;
-	Parms.AkComp = InAkComp;
-	Parms.LocallyControlled = InLocallyControlled;
-	Parms.CallFunc_VAkEventLocation_OutComponent = InCallFunc_VAkEventLocation_OutComponent;
-	Parms.CallFunc_VAkEventLocation_ReturnValue = InCallFunc_VAkEventLocation_ReturnValue;
-	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = InCallFunc_Try_to_Propagate_Rtpcs_Success;
+	Parms.AkEvent = AkEvent;
+	Parms.Location = Location;
+	Parms.Instigator = Instigator;
+	Parms.GetRtpcsFromInstigator = GetRtpcsFromInstigator;
+	Parms.__WorldContext = __WorldContext;
+	Parms.PlayingID = PlayingID;
+	Parms.AkComp = AkComp;
+	Parms.LocallyControlled = LocallyControlled;
+	Parms.CallFunc_VAkEventLocation_OutComponent = CallFunc_VAkEventLocation_OutComponent;
+	Parms.CallFunc_VAkEventLocation_ReturnValue = CallFunc_VAkEventLocation_ReturnValue;
+	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = CallFunc_Try_to_Propagate_Rtpcs_Success;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InAkComponent != nullptr)
-		*InAkComponent = Parms.AkComponent;
+	if (AkComponent != nullptr)
+		*AkComponent = Parms.AkComponent;
 
-	if (InPlaying_ID != nullptr)
-		*InPlaying_ID = Parms.Playing_ID;
+	if (Playing_ID != nullptr)
+		*Playing_ID = Parms.Playing_ID;
 
 }
 
@@ -1223,7 +1248,7 @@ void ULib_Audio_C::AkEventLocation(class UAkAudioEvent* InAkEvent, const struct 
 // int32                              CallFunc_PostAkEvent_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_SetRTPCValue_Value_ImplicitCast                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-int32 ULib_Audio_C::AkEventComponentCallback(class UAkAudioEvent* InAkEvent, class UAkComponent* InAkComponent, int32 InCallbackMask, FDelegateProperty_& InPostEventCallback, bool InCheckAttenuation, bool InGetRtpcFromOwner, class UObject* In__WorldContext, double InLocallyControlled, bool InCallFunc_IsDedicatedServer_ReturnValue, class AActor* InCallFunc_GetOwner_ReturnValue, bool InCallFunc_Try_to_Propagate_Rtpcs_Success, bool InCallFunc_GetAutoDestroy_ReturnValue, class AActor* InCallFunc_GetOwner_ReturnValue_1, class APawn* InK2Node_DynamicCast_AsPawn, bool InK2Node_DynamicCast_bSuccess, bool InCallFunc_IsLocallyControlled_ReturnValue, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsLocallyControlled_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue_1, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue, bool InCallFunc_VIsWithinAttenuation_ReturnValue, TArray<struct FAkExternalSourceInfo>& InTemp_struct_Variable, bool InCallFunc_IsValid_ReturnValue_2, int32 InCallFunc_PostAkEvent_ReturnValue, float InCallFunc_SetRTPCValue_Value_ImplicitCast)
+int32 ULib_Audio_C::AkEventComponentCallback(class UAkAudioEvent* AkEvent, class UAkComponent* AkComponent, int32 CallbackMask, FDelegateProperty_& PostEventCallback, bool CheckAttenuation, bool GetRtpcFromOwner, class UObject* __WorldContext, double LocallyControlled, bool CallFunc_IsDedicatedServer_ReturnValue, class AActor* CallFunc_GetOwner_ReturnValue, bool CallFunc_Try_to_Propagate_Rtpcs_Success, bool CallFunc_GetAutoDestroy_ReturnValue, class AActor* CallFunc_GetOwner_ReturnValue_1, class APawn* K2Node_DynamicCast_AsPawn, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsLocallyControlled_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsLocallyControlled_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_1, const struct FVector& CallFunc_K2_GetComponentLocation_ReturnValue, bool CallFunc_VIsWithinAttenuation_ReturnValue, TArray<struct FAkExternalSourceInfo>& Temp_struct_Variable, bool CallFunc_IsValid_ReturnValue_2, int32 CallFunc_PostAkEvent_ReturnValue, float CallFunc_SetRTPCValue_Value_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1232,31 +1257,31 @@ int32 ULib_Audio_C::AkEventComponentCallback(class UAkAudioEvent* InAkEvent, cla
 
 	Params::ULib_Audio_C_AkEventComponentCallback_Params Parms{};
 
-	Parms.AkEvent = InAkEvent;
-	Parms.AkComponent = InAkComponent;
-	Parms.CallbackMask = InCallbackMask;
-	Parms.PostEventCallback = InPostEventCallback;
-	Parms.CheckAttenuation = InCheckAttenuation;
-	Parms.GetRtpcFromOwner = InGetRtpcFromOwner;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.LocallyControlled = InLocallyControlled;
-	Parms.CallFunc_IsDedicatedServer_ReturnValue = InCallFunc_IsDedicatedServer_ReturnValue;
-	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
-	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = InCallFunc_Try_to_Propagate_Rtpcs_Success;
-	Parms.CallFunc_GetAutoDestroy_ReturnValue = InCallFunc_GetAutoDestroy_ReturnValue;
-	Parms.CallFunc_GetOwner_ReturnValue_1 = InCallFunc_GetOwner_ReturnValue_1;
-	Parms.K2Node_DynamicCast_AsPawn = InK2Node_DynamicCast_AsPawn;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_IsLocallyControlled_ReturnValue = InCallFunc_IsLocallyControlled_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_IsLocallyControlled_ReturnValue_1 = InCallFunc_IsLocallyControlled_ReturnValue_1;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
-	Parms.CallFunc_K2_GetComponentLocation_ReturnValue = InCallFunc_K2_GetComponentLocation_ReturnValue;
-	Parms.CallFunc_VIsWithinAttenuation_ReturnValue = InCallFunc_VIsWithinAttenuation_ReturnValue;
-	Parms.Temp_struct_Variable = InTemp_struct_Variable;
-	Parms.CallFunc_IsValid_ReturnValue_2 = InCallFunc_IsValid_ReturnValue_2;
-	Parms.CallFunc_PostAkEvent_ReturnValue = InCallFunc_PostAkEvent_ReturnValue;
-	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = InCallFunc_SetRTPCValue_Value_ImplicitCast;
+	Parms.AkEvent = AkEvent;
+	Parms.AkComponent = AkComponent;
+	Parms.CallbackMask = CallbackMask;
+	Parms.PostEventCallback = PostEventCallback;
+	Parms.CheckAttenuation = CheckAttenuation;
+	Parms.GetRtpcFromOwner = GetRtpcFromOwner;
+	Parms.__WorldContext = __WorldContext;
+	Parms.LocallyControlled = LocallyControlled;
+	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
+	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
+	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = CallFunc_Try_to_Propagate_Rtpcs_Success;
+	Parms.CallFunc_GetAutoDestroy_ReturnValue = CallFunc_GetAutoDestroy_ReturnValue;
+	Parms.CallFunc_GetOwner_ReturnValue_1 = CallFunc_GetOwner_ReturnValue_1;
+	Parms.K2Node_DynamicCast_AsPawn = K2Node_DynamicCast_AsPawn;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_IsLocallyControlled_ReturnValue = CallFunc_IsLocallyControlled_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsLocallyControlled_ReturnValue_1 = CallFunc_IsLocallyControlled_ReturnValue_1;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.CallFunc_K2_GetComponentLocation_ReturnValue = CallFunc_K2_GetComponentLocation_ReturnValue;
+	Parms.CallFunc_VIsWithinAttenuation_ReturnValue = CallFunc_VIsWithinAttenuation_ReturnValue;
+	Parms.Temp_struct_Variable = Temp_struct_Variable;
+	Parms.CallFunc_IsValid_ReturnValue_2 = CallFunc_IsValid_ReturnValue_2;
+	Parms.CallFunc_PostAkEvent_ReturnValue = CallFunc_PostAkEvent_ReturnValue;
+	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = CallFunc_SetRTPCValue_Value_ImplicitCast;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1278,7 +1303,7 @@ int32 ULib_Audio_C::AkEventComponentCallback(class UAkAudioEvent* InAkEvent, cla
 // int32                              CallFunc_VAkEventComponent_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Try_to_Propagate_Rtpcs_Success                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-int32 ULib_Audio_C::AkEventComponent(class UAkAudioEvent* InAkEvent, class UAkComponent* InAkComponent, bool InGetRtpcFromOwner, class UObject* In__WorldContext, double InLocallyControlled, class AActor* InCallFunc_GetOwner_ReturnValue, int32 InCallFunc_VAkEventComponent_ReturnValue, bool InCallFunc_Try_to_Propagate_Rtpcs_Success)
+int32 ULib_Audio_C::AkEventComponent(class UAkAudioEvent* AkEvent, class UAkComponent* AkComponent, bool GetRtpcFromOwner, class UObject* __WorldContext, double LocallyControlled, class AActor* CallFunc_GetOwner_ReturnValue, int32 CallFunc_VAkEventComponent_ReturnValue, bool CallFunc_Try_to_Propagate_Rtpcs_Success)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1287,14 +1312,14 @@ int32 ULib_Audio_C::AkEventComponent(class UAkAudioEvent* InAkEvent, class UAkCo
 
 	Params::ULib_Audio_C_AkEventComponent_Params Parms{};
 
-	Parms.AkEvent = InAkEvent;
-	Parms.AkComponent = InAkComponent;
-	Parms.GetRtpcFromOwner = InGetRtpcFromOwner;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.LocallyControlled = InLocallyControlled;
-	Parms.CallFunc_GetOwner_ReturnValue = InCallFunc_GetOwner_ReturnValue;
-	Parms.CallFunc_VAkEventComponent_ReturnValue = InCallFunc_VAkEventComponent_ReturnValue;
-	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = InCallFunc_Try_to_Propagate_Rtpcs_Success;
+	Parms.AkEvent = AkEvent;
+	Parms.AkComponent = AkComponent;
+	Parms.GetRtpcFromOwner = GetRtpcFromOwner;
+	Parms.__WorldContext = __WorldContext;
+	Parms.LocallyControlled = LocallyControlled;
+	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
+	Parms.CallFunc_VAkEventComponent_ReturnValue = CallFunc_VAkEventComponent_ReturnValue;
+	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = CallFunc_Try_to_Propagate_Rtpcs_Success;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1329,7 +1354,7 @@ int32 ULib_Audio_C::AkEventComponent(class UAkAudioEvent* InAkEvent, class UAkCo
 // bool                               CallFunc_IsWithinAttenuation_Within                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue_2                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-int32 ULib_Audio_C::AkEventActor(class UAkAudioEvent* InAkEvent, class AActor* InActor, class UObject* In__WorldContext, double InLocallyControlled, bool InCallFunc_IsDedicatedServer_ReturnValue, class APawn* InK2Node_DynamicCast_AsPawn, bool InK2Node_DynamicCast_bSuccess, bool InCallFunc_IsLocallyControlled_ReturnValue, class USceneComponent* InCallFunc_K2_GetRootComponent_ReturnValue, bool InCallFunc_AkGetComponent_ComponentCreated, class UAkComponent* InCallFunc_AkGetComponent_AkComponent, bool InCallFunc_Try_to_Propagate_Rtpcs_Success, bool InCallFunc_IsValid_ReturnValue, bool InCallFunc_IsLocallyControlled_ReturnValue_1, bool InCallFunc_IsValid_ReturnValue_1, FDelegateProperty_ InTemp_delegate_Variable, TArray<struct FAkExternalSourceInfo>& InTemp_struct_Variable, int32 InCallFunc_PostAkEvent_ReturnValue, const struct FVector& InCallFunc_K2_GetActorLocation_ReturnValue, bool InCallFunc_IsWithinAttenuation_Within, bool InCallFunc_IsValid_ReturnValue_2)
+int32 ULib_Audio_C::AkEventActor(class UAkAudioEvent* AkEvent, class AActor* Actor, class UObject* __WorldContext, double LocallyControlled, bool CallFunc_IsDedicatedServer_ReturnValue, class APawn* K2Node_DynamicCast_AsPawn, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsLocallyControlled_ReturnValue, class USceneComponent* CallFunc_K2_GetRootComponent_ReturnValue, bool CallFunc_AkGetComponent_ComponentCreated, class UAkComponent* CallFunc_AkGetComponent_AkComponent, bool CallFunc_Try_to_Propagate_Rtpcs_Success, bool CallFunc_IsValid_ReturnValue, bool CallFunc_IsLocallyControlled_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_1, FDelegateProperty_ Temp_delegate_Variable, TArray<struct FAkExternalSourceInfo>& Temp_struct_Variable, int32 CallFunc_PostAkEvent_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, bool CallFunc_IsWithinAttenuation_Within, bool CallFunc_IsValid_ReturnValue_2)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1338,27 +1363,27 @@ int32 ULib_Audio_C::AkEventActor(class UAkAudioEvent* InAkEvent, class AActor* I
 
 	Params::ULib_Audio_C_AkEventActor_Params Parms{};
 
-	Parms.AkEvent = InAkEvent;
-	Parms.Actor = InActor;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.LocallyControlled = InLocallyControlled;
-	Parms.CallFunc_IsDedicatedServer_ReturnValue = InCallFunc_IsDedicatedServer_ReturnValue;
-	Parms.K2Node_DynamicCast_AsPawn = InK2Node_DynamicCast_AsPawn;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_IsLocallyControlled_ReturnValue = InCallFunc_IsLocallyControlled_ReturnValue;
-	Parms.CallFunc_K2_GetRootComponent_ReturnValue = InCallFunc_K2_GetRootComponent_ReturnValue;
-	Parms.CallFunc_AkGetComponent_ComponentCreated = InCallFunc_AkGetComponent_ComponentCreated;
-	Parms.CallFunc_AkGetComponent_AkComponent = InCallFunc_AkGetComponent_AkComponent;
-	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = InCallFunc_Try_to_Propagate_Rtpcs_Success;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_IsLocallyControlled_ReturnValue_1 = InCallFunc_IsLocallyControlled_ReturnValue_1;
-	Parms.CallFunc_IsValid_ReturnValue_1 = InCallFunc_IsValid_ReturnValue_1;
-	Parms.Temp_delegate_Variable = InTemp_delegate_Variable;
-	Parms.Temp_struct_Variable = InTemp_struct_Variable;
-	Parms.CallFunc_PostAkEvent_ReturnValue = InCallFunc_PostAkEvent_ReturnValue;
-	Parms.CallFunc_K2_GetActorLocation_ReturnValue = InCallFunc_K2_GetActorLocation_ReturnValue;
-	Parms.CallFunc_IsWithinAttenuation_Within = InCallFunc_IsWithinAttenuation_Within;
-	Parms.CallFunc_IsValid_ReturnValue_2 = InCallFunc_IsValid_ReturnValue_2;
+	Parms.AkEvent = AkEvent;
+	Parms.Actor = Actor;
+	Parms.__WorldContext = __WorldContext;
+	Parms.LocallyControlled = LocallyControlled;
+	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
+	Parms.K2Node_DynamicCast_AsPawn = K2Node_DynamicCast_AsPawn;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_IsLocallyControlled_ReturnValue = CallFunc_IsLocallyControlled_ReturnValue;
+	Parms.CallFunc_K2_GetRootComponent_ReturnValue = CallFunc_K2_GetRootComponent_ReturnValue;
+	Parms.CallFunc_AkGetComponent_ComponentCreated = CallFunc_AkGetComponent_ComponentCreated;
+	Parms.CallFunc_AkGetComponent_AkComponent = CallFunc_AkGetComponent_AkComponent;
+	Parms.CallFunc_Try_to_Propagate_Rtpcs_Success = CallFunc_Try_to_Propagate_Rtpcs_Success;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_IsLocallyControlled_ReturnValue_1 = CallFunc_IsLocallyControlled_ReturnValue_1;
+	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
+	Parms.Temp_delegate_Variable = Temp_delegate_Variable;
+	Parms.Temp_struct_Variable = Temp_struct_Variable;
+	Parms.CallFunc_PostAkEvent_ReturnValue = CallFunc_PostAkEvent_ReturnValue;
+	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
+	Parms.CallFunc_IsWithinAttenuation_Within = CallFunc_IsWithinAttenuation_Within;
+	Parms.CallFunc_IsValid_ReturnValue_2 = CallFunc_IsValid_ReturnValue_2;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1377,7 +1402,7 @@ int32 ULib_Audio_C::AkEventActor(class UAkAudioEvent* InAkEvent, class AActor* I
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_PostGlobalEvent_ReturnValue                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-int32 ULib_Audio_C::AkEventGlobal(class UAkAudioEvent* InAkEvent, class UObject* In__WorldContext, bool InCallFunc_IsDedicatedServer_ReturnValue, bool InCallFunc_IsValid_ReturnValue, int32 InCallFunc_PostGlobalEvent_ReturnValue)
+int32 ULib_Audio_C::AkEventGlobal(class UAkAudioEvent* AkEvent, class UObject* __WorldContext, bool CallFunc_IsDedicatedServer_ReturnValue, bool CallFunc_IsValid_ReturnValue, int32 CallFunc_PostGlobalEvent_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1386,11 +1411,11 @@ int32 ULib_Audio_C::AkEventGlobal(class UAkAudioEvent* InAkEvent, class UObject*
 
 	Params::ULib_Audio_C_AkEventGlobal_Params Parms{};
 
-	Parms.AkEvent = InAkEvent;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.CallFunc_IsDedicatedServer_ReturnValue = InCallFunc_IsDedicatedServer_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_PostGlobalEvent_ReturnValue = InCallFunc_PostGlobalEvent_ReturnValue;
+	Parms.AkEvent = AkEvent;
+	Parms.__WorldContext = __WorldContext;
+	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_PostGlobalEvent_ReturnValue = CallFunc_PostGlobalEvent_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1425,7 +1450,7 @@ int32 ULib_Audio_C::AkEventGlobal(class UAkAudioEvent* InAkEvent, class UObject*
 // double                             CallFunc_Divide_DoubleDouble_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_SetRTPCValue_Value_ImplicitCast                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ULib_Audio_C::Ak_Object_Velocity(class UAkComponent* InAk, double InVectorLengthMax, double InDelta_Time, const struct FVector& InGet_Previous_Location, int32 InInterpTimeMs, class UObject* In__WorldContext, struct FVector* InSet_Previous_Location, double* InVectorLength, double* InVectorLengthClamped, double InLengthClamped, double InLength, class FName InObject_velocity, double InVectorMax, bool InCallFunc_IsDedicatedServer_ReturnValue, bool InCallFunc_IsValid_ReturnValue, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue, const struct FVector& InCallFunc_K2_GetComponentLocation_ReturnValue_1, const struct FVector& InCallFunc_Subtract_VectorVector_ReturnValue, double InCallFunc_VSize_ReturnValue, double InCallFunc_MapRangeClamped_ReturnValue, double InCallFunc_Divide_DoubleDouble_ReturnValue, float InCallFunc_SetRTPCValue_Value_ImplicitCast)
+void ULib_Audio_C::Ak_Object_Velocity(class UAkComponent* Ak, double VectorLengthMax, double Delta_Time, const struct FVector& Get_Previous_Location, int32 InterpTimeMs, class UObject* __WorldContext, struct FVector* Set_Previous_Location, double* VectorLength, double* VectorLengthClamped, double LengthClamped, double Length, class FName Object_velocity, double VectorMax, bool CallFunc_IsDedicatedServer_ReturnValue, bool CallFunc_IsValid_ReturnValue, const struct FVector& CallFunc_K2_GetComponentLocation_ReturnValue, const struct FVector& CallFunc_K2_GetComponentLocation_ReturnValue_1, const struct FVector& CallFunc_Subtract_VectorVector_ReturnValue, double CallFunc_VSize_ReturnValue, double CallFunc_MapRangeClamped_ReturnValue, double CallFunc_Divide_DoubleDouble_ReturnValue, float CallFunc_SetRTPCValue_Value_ImplicitCast)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1434,41 +1459,39 @@ void ULib_Audio_C::Ak_Object_Velocity(class UAkComponent* InAk, double InVectorL
 
 	Params::ULib_Audio_C_Ak_Object_Velocity_Params Parms{};
 
-	Parms.Ak = InAk;
-	Parms.VectorLengthMax = InVectorLengthMax;
-	Parms.Delta_Time = InDelta_Time;
-	Parms.Get_Previous_Location = InGet_Previous_Location;
-	Parms.InterpTimeMs = InInterpTimeMs;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.LengthClamped = InLengthClamped;
-	Parms.Length = InLength;
-	Parms.Object_velocity = InObject_velocity;
-	Parms.VectorMax = InVectorMax;
-	Parms.CallFunc_IsDedicatedServer_ReturnValue = InCallFunc_IsDedicatedServer_ReturnValue;
-	Parms.CallFunc_IsValid_ReturnValue = InCallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_K2_GetComponentLocation_ReturnValue = InCallFunc_K2_GetComponentLocation_ReturnValue;
-	Parms.CallFunc_K2_GetComponentLocation_ReturnValue_1 = InCallFunc_K2_GetComponentLocation_ReturnValue_1;
-	Parms.CallFunc_Subtract_VectorVector_ReturnValue = InCallFunc_Subtract_VectorVector_ReturnValue;
-	Parms.CallFunc_VSize_ReturnValue = InCallFunc_VSize_ReturnValue;
-	Parms.CallFunc_MapRangeClamped_ReturnValue = InCallFunc_MapRangeClamped_ReturnValue;
-	Parms.CallFunc_Divide_DoubleDouble_ReturnValue = InCallFunc_Divide_DoubleDouble_ReturnValue;
-	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = InCallFunc_SetRTPCValue_Value_ImplicitCast;
+	Parms.Ak = Ak;
+	Parms.VectorLengthMax = VectorLengthMax;
+	Parms.Delta_Time = Delta_Time;
+	Parms.Get_Previous_Location = Get_Previous_Location;
+	Parms.InterpTimeMs = InterpTimeMs;
+	Parms.__WorldContext = __WorldContext;
+	Parms.LengthClamped = LengthClamped;
+	Parms.Length = Length;
+	Parms.Object_velocity = Object_velocity;
+	Parms.VectorMax = VectorMax;
+	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_K2_GetComponentLocation_ReturnValue = CallFunc_K2_GetComponentLocation_ReturnValue;
+	Parms.CallFunc_K2_GetComponentLocation_ReturnValue_1 = CallFunc_K2_GetComponentLocation_ReturnValue_1;
+	Parms.CallFunc_Subtract_VectorVector_ReturnValue = CallFunc_Subtract_VectorVector_ReturnValue;
+	Parms.CallFunc_VSize_ReturnValue = CallFunc_VSize_ReturnValue;
+	Parms.CallFunc_MapRangeClamped_ReturnValue = CallFunc_MapRangeClamped_ReturnValue;
+	Parms.CallFunc_Divide_DoubleDouble_ReturnValue = CallFunc_Divide_DoubleDouble_ReturnValue;
+	Parms.CallFunc_SetRTPCValue_Value_ImplicitCast = CallFunc_SetRTPCValue_Value_ImplicitCast;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InSet_Previous_Location != nullptr)
-		*InSet_Previous_Location = Parms.Set_Previous_Location;
+	if (Set_Previous_Location != nullptr)
+		*Set_Previous_Location = std::move(Parms.Set_Previous_Location);
 
-	if (InVectorLength != nullptr)
-		*InVectorLength = Parms.VectorLength;
+	if (VectorLength != nullptr)
+		*VectorLength = Parms.VectorLength;
 
-	if (InVectorLengthClamped != nullptr)
-		*InVectorLengthClamped = Parms.VectorLengthClamped;
-
-}
+	if (VectorLengthClamped != nullptr)
+		*VectorLengthClamped = Parms.VectorLengthClamped;
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+}
+
+

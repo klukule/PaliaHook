@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -17,21 +14,16 @@ namespace SDK
 class UGA_Cooking_OneOff_CollectAnim_C : public UGA_Cooking_OneOff_Base_C
 {
 public:
-	uint8                                        Pad_303D[0x5];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_30D8[0x5];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x4E8(0x8)(ZeroConstructor, Transient, DuplicateTransient)
 
-	static class UClass* StaticClass()
-	{
-		static class UClass* Clss = UObject::FindClassFast("GA_Cooking_OneOff_CollectAnim_C");
-		return Clss;
-	}
+	static class UClass* StaticClass();
+	static class UGA_Cooking_OneOff_CollectAnim_C* GetDefaultObj();
 
-	void K2_ActivateAbilityFromEvent(struct FGameplayEventData& InEventData);
-	void ExecuteUbergraph_GA_Cooking_OneOff_CollectAnim(int32 InEntryPoint, const struct FGameplayEventData& InK2Node_Event_EventData, bool InCallFunc_IsValid_ReturnValue, class UCrafterComponent* InCallFunc_GetComponentByClass_ReturnValue, bool InCallFunc_IsValid_ReturnValue_1, const struct FCrafterConfig& InCallFunc_GetCrafterConfig_ReturnValue, bool InCallFunc_EqualEqual_ByteByte_ReturnValue);
+	void K2_ActivateAbilityFromEvent(struct FGameplayEventData& EventData);
+	void ExecuteUbergraph_GA_Cooking_OneOff_CollectAnim(int32 EntryPoint, const struct FGameplayEventData& K2Node_Event_EventData, bool CallFunc_IsValid_ReturnValue, class UCrafterComponent* CallFunc_GetComponentByClass_ReturnValue, bool CallFunc_IsValid_ReturnValue_1, const struct FCrafterConfig& CallFunc_GetCrafterConfig_ReturnValue, bool CallFunc_EqualEqual_ByteByte_ReturnValue);
 };
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

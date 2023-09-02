@@ -2,17 +2,42 @@
 
 // Dumped with Dumper-7!
 
-#include "SDK.hpp"
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
+#include "../SDK.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 //---------------------------------------------------------------------------------------------------------------------
+
+
+// BlueprintGeneratedClass BPFL_Animation.BPFL_Animation_C
+// (None)
+
+class UClass* UBPFL_Animation_C::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("BPFL_Animation_C");
+
+	return Clss;
+}
+
+
+// BPFL_Animation_C BPFL_Animation.Default__BPFL_Animation_C
+// (Public, ClassDefaultObject, ArchetypeObject, WasLoaded, LoadCompleted)
+
+class UBPFL_Animation_C* UBPFL_Animation_C::GetDefaultObj()
+{
+	static class UBPFL_Animation_C* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UBPFL_Animation_C*>(UBPFL_Animation_C::StaticClass()->DefaultObject);
+
+	return Default;
+}
 
 
 // Function BPFL_Animation.BPFL_Animation_C.GetMappingNameByAbility
@@ -28,7 +53,7 @@ namespace SDK
 // class UAbilityAnimationComponent*  CallFunc_GetAbilityAnimation_ReturnValue                         (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class FName                        CallFunc_GetMappingNameByTag_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_Animation_C::GetMappingNameByAbility(class AActor* InOwner, const struct FGameplayTag& InAnimTag, class UObject* In__WorldContext, class FName* InMapping_Name, class FName InTemp_name_Variable, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class UAbilityAnimationComponent* InCallFunc_GetAbilityAnimation_ReturnValue, class FName InCallFunc_GetMappingNameByTag_ReturnValue)
+void UBPFL_Animation_C::GetMappingNameByAbility(class AActor* Owner, const struct FGameplayTag& AnimTag, class UObject* __WorldContext, class FName* Mapping_Name, class FName Temp_name_Variable, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, class UAbilityAnimationComponent* CallFunc_GetAbilityAnimation_ReturnValue, class FName CallFunc_GetMappingNameByTag_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -37,19 +62,19 @@ void UBPFL_Animation_C::GetMappingNameByAbility(class AActor* InOwner, const str
 
 	Params::UBPFL_Animation_C_GetMappingNameByAbility_Params Parms{};
 
-	Parms.Owner = InOwner;
-	Parms.AnimTag = InAnimTag;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.Temp_name_Variable = InTemp_name_Variable;
-	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetAbilityAnimation_ReturnValue = InCallFunc_GetAbilityAnimation_ReturnValue;
-	Parms.CallFunc_GetMappingNameByTag_ReturnValue = InCallFunc_GetMappingNameByTag_ReturnValue;
+	Parms.Owner = Owner;
+	Parms.AnimTag = AnimTag;
+	Parms.__WorldContext = __WorldContext;
+	Parms.Temp_name_Variable = Temp_name_Variable;
+	Parms.K2Node_DynamicCast_AsValeria_Character = K2Node_DynamicCast_AsValeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetAbilityAnimation_ReturnValue = CallFunc_GetAbilityAnimation_ReturnValue;
+	Parms.CallFunc_GetMappingNameByTag_ReturnValue = CallFunc_GetMappingNameByTag_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InMapping_Name != nullptr)
-		*InMapping_Name = Parms.Mapping_Name;
+	if (Mapping_Name != nullptr)
+		*Mapping_Name = Parms.Mapping_Name;
 
 }
 
@@ -67,7 +92,7 @@ void UBPFL_Animation_C::GetMappingNameByAbility(class AActor* InOwner, const str
 // class UAbilityAnimationComponent*  CallFunc_GetAbilityAnimation_ReturnValue                         (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class UAnimMontage*                CallFunc_GetMontage_ReturnValue                                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_Animation_C::GetMontageByAbility(class AActor* InOwner, const struct FGameplayTag& InAnimTag, class UObject* In__WorldContext, class UAnimMontage** InMontage, class FName InTemp_name_Variable, class AValeriaCharacter* InK2Node_DynamicCast_AsValeria_Character, bool InK2Node_DynamicCast_bSuccess, class UAbilityAnimationComponent* InCallFunc_GetAbilityAnimation_ReturnValue, class UAnimMontage* InCallFunc_GetMontage_ReturnValue)
+void UBPFL_Animation_C::GetMontageByAbility(class AActor* Owner, const struct FGameplayTag& AnimTag, class UObject* __WorldContext, class UAnimMontage** Montage, class FName Temp_name_Variable, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, class UAbilityAnimationComponent* CallFunc_GetAbilityAnimation_ReturnValue, class UAnimMontage* CallFunc_GetMontage_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -76,24 +101,22 @@ void UBPFL_Animation_C::GetMontageByAbility(class AActor* InOwner, const struct 
 
 	Params::UBPFL_Animation_C_GetMontageByAbility_Params Parms{};
 
-	Parms.Owner = InOwner;
-	Parms.AnimTag = InAnimTag;
-	Parms.__WorldContext = In__WorldContext;
-	Parms.Temp_name_Variable = InTemp_name_Variable;
-	Parms.K2Node_DynamicCast_AsValeria_Character = InK2Node_DynamicCast_AsValeria_Character;
-	Parms.K2Node_DynamicCast_bSuccess = InK2Node_DynamicCast_bSuccess;
-	Parms.CallFunc_GetAbilityAnimation_ReturnValue = InCallFunc_GetAbilityAnimation_ReturnValue;
-	Parms.CallFunc_GetMontage_ReturnValue = InCallFunc_GetMontage_ReturnValue;
+	Parms.Owner = Owner;
+	Parms.AnimTag = AnimTag;
+	Parms.__WorldContext = __WorldContext;
+	Parms.Temp_name_Variable = Temp_name_Variable;
+	Parms.K2Node_DynamicCast_AsValeria_Character = K2Node_DynamicCast_AsValeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetAbilityAnimation_ReturnValue = CallFunc_GetAbilityAnimation_ReturnValue;
+	Parms.CallFunc_GetMontage_ReturnValue = CallFunc_GetMontage_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (InMontage != nullptr)
-		*InMontage = Parms.Montage;
+	if (Montage != nullptr)
+		*Montage = Parms.Montage;
 
 }
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+

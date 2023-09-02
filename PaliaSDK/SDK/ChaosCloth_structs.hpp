@@ -2,9 +2,6 @@
 
 // Dumped with Dumper-7!
 
-#ifdef _MSC_VER
-	#pragma pack(push, 0x01)
-#endif
 
 namespace SDK
 {
@@ -14,31 +11,31 @@ namespace SDK
 
 enum class EChaosWeightMapTarget : uint8
 {
-	EChaosWeightMapTarget__None    = 0,
-	EChaosWeightMapTarget__MaxDistance = 1,
-	EChaosWeightMapTarget__BackstopDistance = 2,
-	EChaosWeightMapTarget__BackstopRadius = 3,
-	EChaosWeightMapTarget__AnimDriveStiffness = 4,
-	EChaosWeightMapTarget__AnimDriveDamping = 5,
-	EChaosWeightMapTarget__TetherStiffness = 6,
-	EChaosWeightMapTarget__TetherScale = 7,
-	EChaosWeightMapTarget__Drag    = 8,
-	EChaosWeightMapTarget__Lift    = 9,
-	EChaosWeightMapTarget__EdgeStiffness = 10,
-	EChaosWeightMapTarget__BendingStiffness = 11,
-	EChaosWeightMapTarget__AreaStiffness = 12,
-	EChaosWeightMapTarget__BucklingStiffness = 13,
-	EChaosWeightMapTarget__Pressure = 14,
-	EChaosWeightMapTarget__EChaosWeightMapTarget_MAX = 15,
+	None                           = 0,
+	MaxDistance                    = 1,
+	BackstopDistance               = 2,
+	BackstopRadius                 = 3,
+	AnimDriveStiffness             = 4,
+	AnimDriveDamping               = 5,
+	TetherStiffness                = 6,
+	TetherScale                    = 7,
+	Drag                           = 8,
+	Lift                           = 9,
+	EdgeStiffness                  = 10,
+	BendingStiffness               = 11,
+	AreaStiffness                  = 12,
+	BucklingStiffness              = 13,
+	Pressure                       = 14,
+	EChaosWeightMapTarget_MAX      = 15,
 };
 
 enum class EChaosClothTetherMode : uint8
 {
-	EChaosClothTetherMode__FastTetherFastLength = 0,
-	EChaosClothTetherMode__AccurateTetherFastLength = 1,
-	EChaosClothTetherMode__AccurateTetherAccurateLength = 2,
-	EChaosClothTetherMode__MaxChaosClothTetherMode = 3,
-	EChaosClothTetherMode__EChaosClothTetherMode_MAX = 4,
+	FastTetherFastLength           = 0,
+	AccurateTetherFastLength       = 1,
+	AccurateTetherAccurateLength   = 2,
+	MaxChaosClothTetherMode        = 3,
+	EChaosClothTetherMode_MAX      = 4,
 };
 
 
@@ -57,6 +54,4 @@ public:
 
 }
 
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
+
