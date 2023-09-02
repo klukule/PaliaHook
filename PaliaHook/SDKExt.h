@@ -70,6 +70,27 @@ namespace SDK
 		return Actors;
 	}
 
+	std::vector<AActor*> FindActorsOfType(UWorld* WorldContext, UClass* Class)
+	{
+		std::vector<AActor*> Actors;
+
+		if (!WorldContext || !WorldContext->IsValidLowLevel()) return Actors;
+
+		TArray<AActor*> WorldActors = WorldContext->PersistentLevel->Actors;
+		for (int i = 0; i < WorldActors.Num(); ++i)
+		{
+			AActor* Actor = WorldActors[i];
+
+			if (!Actor || !Actor->IsValidLowLevel()) // TODO: Figure out why sometimes we get 0xffffffffffffffff
+				continue;
+
+			if (Actor->IsA(Class) && !Actor->IsDefaultObject())
+				Actors.push_back(Actor);
+		}
+
+		return Actors;
+	}
+
 	UWorld* GetWorld() {
 		if (UEngine* Engine = GetEngine()) {
 			if (!Engine->GameViewport)

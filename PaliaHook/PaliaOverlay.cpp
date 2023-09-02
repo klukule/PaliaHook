@@ -71,10 +71,12 @@ std::vector<std::string> debugger;
 
 void PaliaOverlay::CacheGatherables() {
 	CachedGatherables.clear();
-	for (AActor* Gatherable : FindActorsOfType<AActor>(GetWorld())) {
-		if (Gatherable->Class->Super->GetFullName().find("Valeria_Gatherable") == std::string::npos) {
-			continue;
-		}
+
+	// For some reason, some gatherables are blueprint only and inherit directly from AActor instead of AGatherableActor like most others do
+	// And since I remove most BP generated classes from the SDK, we have to manually fetch the class
+	// TODO: Clean and optimize this - since we don't have actor iterators, this is more memory efficient, but more cpu intensive than one loop
+
+	for (AActor* Gatherable : FindActorsOfType<AGatherableActor>(GetWorld())) {
 		FVector ActorPosition = Gatherable->K2_GetActorLocation();
 		// HACK: Skip actors that return [0,0,0] due to the hack I had to add to K2_GetActorLocation
 		if (ActorPosition.X == 0 && ActorPosition.Y == 0 && ActorPosition.Z == 0) continue;
@@ -90,6 +92,27 @@ void PaliaOverlay::CacheGatherables() {
 
 		CachedGatherables.push_back({ Gatherable, ActorPosition, Name, Type, Size, Flags });
 	}
+
+	static class UClass* Clss = nullptr;
+	if (!Clss) Clss = UObject::FindClassFast("BP_ValeriaGatherable_C");
+
+	for (AActor* Gatherable : FindActorsOfType(GetWorld(), Clss)) {
+		FVector ActorPosition = Gatherable->K2_GetActorLocation();
+		// HACK: Skip actors that return [0,0,0] due to the hack I had to add to K2_GetActorLocation
+		if (ActorPosition.X == 0 && ActorPosition.Y == 0 && ActorPosition.Z == 0) continue;
+
+		auto ClassName = Gatherable->Class->GetName();
+
+		EGatherableType Type = GetFlagSingle(ClassName, GATHERABLE_TYPE_MAPPINGS);
+		EGatherableSize Size = GetFlagSingle(ClassName, GATHERABLE_SIZE_MAPPINGS);
+		EGatherableFlags Flags = GetFlagMulti(ClassName, GATHERABLE_FLAG_MAPPINGS);
+
+		std::string Name = CLASS_NAME_ALIAS.contains(ClassName) ? CLASS_NAME_ALIAS[ClassName] : ClassName;
+
+
+		CachedGatherables.push_back({ Gatherable, ActorPosition, Name, Type, Size, Flags });
+	}
+
 }
 
 void PaliaOverlay::CacheCreatures()
@@ -211,7 +234,7 @@ void PaliaOverlay::DrawHUD()
 						if (!bVisualizePalium) continue;
 					}
 				}
-				else 
+				else
 				{
 					bool special = false;
 					if ((Entry.Flags & EGatherableFlags::Spices) == EGatherableFlags::Spices) {
