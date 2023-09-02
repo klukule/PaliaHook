@@ -3,6 +3,8 @@
 #include <RendererDetector.h>
 #include <BaseHook.h>
 #include <format>
+#include <bitset>
+#include <string>
 
 #include "ImGuiExt.h"
 #include "SDKExt.h"
@@ -71,6 +73,7 @@ std::vector<std::string> debugger;
 
 void PaliaOverlay::CacheGatherables() {
 	CachedGatherables.clear();
+	debugger.clear();
 
 	// For some reason, some gatherables are blueprint only and inherit directly from AActor instead of AGatherableActor like most others do
 	// And since I remove most BP generated classes from the SDK, we have to manually fetch the class
@@ -80,9 +83,9 @@ void PaliaOverlay::CacheGatherables() {
 		FVector ActorPosition = Gatherable->K2_GetActorLocation();
 		// HACK: Skip actors that return [0,0,0] due to the hack I had to add to K2_GetActorLocation
 		if (ActorPosition.X == 0 && ActorPosition.Y == 0 && ActorPosition.Z == 0) continue;
-
+		
 		auto ClassName = Gatherable->Class->GetName();
-
+			
 		EGatherableType Type = GetFlagSingle(ClassName, GATHERABLE_TYPE_MAPPINGS);
 		EGatherableSize Size = GetFlagSingle(ClassName, GATHERABLE_SIZE_MAPPINGS);
 		EGatherableFlags Flags = GetFlagMulti(ClassName, GATHERABLE_FLAG_MAPPINGS);
@@ -97,10 +100,13 @@ void PaliaOverlay::CacheGatherables() {
 	if (!Clss) Clss = UObject::FindClassFast("BP_ValeriaGatherable_C");
 
 	for (AActor* Gatherable : FindActorsOfType(GetWorld(), Clss)) {
+		// Collision is disabled when collected, this prevent the ESP from showing already collected Gatherables
+		if (!Gatherable->bActorEnableCollision) continue;
+
 		FVector ActorPosition = Gatherable->K2_GetActorLocation();
 		// HACK: Skip actors that return [0,0,0] due to the hack I had to add to K2_GetActorLocation
 		if (ActorPosition.X == 0 && ActorPosition.Y == 0 && ActorPosition.Z == 0) continue;
-
+		
 		auto ClassName = Gatherable->Class->GetName();
 
 		EGatherableType Type = GetFlagSingle(ClassName, GATHERABLE_TYPE_MAPPINGS);
@@ -390,7 +396,7 @@ void PaliaOverlay::DrawOverlay()
 			ImGui::EndGroupPanel();
 
 			// Gatherables ESP controls
-			ImGui::BeginGroupPanel("Gatherables");
+			ImGui::BeginGroupPanel("Harvestables");
 			{
 				ImGui::Checkbox("Show Flow Trees", &bVisualizeCoOp);
 				ImGui::Checkbox("Show Trees", &bVisualizeTrees);
@@ -490,7 +496,7 @@ void PaliaOverlay::DrawOverlay()
 		}
 	}
 	ImGui::End();
-	debugger.clear();
+	
 	if (!show)
 		ShowOverlay(false);
 }
