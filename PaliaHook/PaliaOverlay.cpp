@@ -241,7 +241,7 @@ void PaliaOverlay::DrawHUD()
 				else
 				{
 					bool special = false;
-					if ((Entry.Flags & EGatherableFlags::Spices) == EGatherableFlags::Spices) {
+					if ((Entry.Flags & EGatherableFlags::Spices) == EGatherableFlags::Spices && bVisualizeSpices) {
 						Color = Colors[(int)EESPColorSlot::Spices];
 						special = true;
 					}
