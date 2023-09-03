@@ -441,7 +441,7 @@ void PaliaOverlay::DrawOverlay()
 				ImGui::Spacing();
 			}
 			ImGui::EndGroupPanel();
-			ImGui::BeginGroupPanel("Colors - Gatherables");
+			ImGui::BeginGroupPanel("Colors - Harvestables");
 			{
 				ImGui::ColorPicker("Flow Trees", &Colors[(int)EESPColorSlot::CoOp]);
 				ImGui::ColorPicker("Trees", &Colors[(int)EESPColorSlot::Tree]);
