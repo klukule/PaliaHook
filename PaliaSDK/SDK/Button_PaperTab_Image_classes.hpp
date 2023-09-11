@@ -17,7 +17,7 @@ public:
 	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x650(0x8)(ZeroConstructor, Transient, DuplicateTransient)
 	class UVALUI_ButtonStyle*                    ActiveTabStyle;                                    // 0x658(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UVALUI_ButtonStyle*                    InactiveTabStyle;                                  // 0x660(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_43B6[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_439A[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           IconBrush;                                         // 0x670(0xD0)(Edit, BlueprintVisible)
 	double                                       FixedIconWidth;                                    // 0x740(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                       FixedIconHeight;                                   // 0x748(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

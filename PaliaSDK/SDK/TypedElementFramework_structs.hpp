@@ -19,7 +19,7 @@ namespace SDK
 struct FScriptTypedElementHandle
 {
 public:
-	uint8                                        Pad_219A[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23B7[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -27,7 +27,7 @@ public:
 struct FScriptTypedElementListProxy
 {
 public:
-	uint8                                        Pad_219C[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23B9[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

@@ -100,7 +100,7 @@ struct IGizmoClickMultiTarget_UpdateInteractingState_Params
 {
 public:
 	bool                                         bInteracting;                                      // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8DB[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9BB[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint32                                       InPartIdentifier;                                  // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -110,7 +110,7 @@ struct IGizmoClickMultiTarget_UpdateHoverState_Params
 {
 public:
 	bool                                         bHovering;                                         // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8E3[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9BE[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint32                                       InPartIdentifier;                                  // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -120,7 +120,7 @@ struct IGizmoClickMultiTarget_UpdateHittableState_Params
 {
 public:
 	bool                                         bHittable;                                         // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_8EA[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9C0[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint32                                       InPartIdentifier;                                  // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -130,7 +130,7 @@ struct IGizmoRenderMultiTarget_UpdateVisibilityState_Params
 {
 public:
 	bool                                         bVisible;                                          // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_905[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_9CE[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint32                                       InPartIdentifier;                                  // 0x4(0x4)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 

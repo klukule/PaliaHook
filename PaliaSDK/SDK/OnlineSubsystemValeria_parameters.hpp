@@ -166,7 +166,7 @@ struct AOSSVAL_BeaconClient_RpcClient_SendTicketValidationResponse_Params
 public:
 	struct FGuid                                 RequestId;                                         // 0x0(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAccepted;                                         // 0x10(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_19E6[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1B07[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FOSSVAL_MatchmakingTicket             Ticket;                                            // 0x18(0x98)(ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FOSSVAL_MatchmakingTicketContext      Context;                                           // 0xB0(0x10)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };

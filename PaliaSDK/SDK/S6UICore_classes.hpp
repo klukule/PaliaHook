@@ -16,7 +16,7 @@ class US6UI_AsyncAction_OpenModal : public UBlueprintAsyncActionBase
 public:
 	FMulticastInlineDelegateProperty_            OnOpened;                                          // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailed;                                          // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_84C[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_A20[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TSoftClassPtr<class US6UI_ModalWidgetBase>   ModalClass;                                        // 0x58(0x30)(Transient, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass();
@@ -32,7 +32,7 @@ public:
 class US6UI_InputActionHandlingUserWidget : public UCommonActivatableWidgetInputExtended
 {
 public:
-	uint8                                        Pad_852[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_A29[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class US6UI_InputActionHandlingWidgetComponent* InputActionHandlingWidgetComponent;                // 0x4A8(0x8)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass();
@@ -45,11 +45,11 @@ public:
 class US6UI_ModalWidgetBase : public US6UI_InputActionHandlingUserWidget
 {
 public:
-	uint8                                        Pad_89B[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_A6C[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            OnStartedClosing;                                  // 0x4C0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFinishedClosing;                                 // 0x4D0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	bool                                         bWantsCursor;                                      // 0x4E0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_89D[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_A6F[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6UI_ModalWidgetBase* GetDefaultObj();
@@ -76,7 +76,7 @@ class US6UI_CommandMenu : public US6UI_ModalWidgetBase
 public:
 	TArray<class FName>                          NamespacesToHaveFirst;                             // 0x4E8(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	class UNativeWidgetHost*                     MenuHost;                                          // 0x4F8(0x8)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_8B5[0x78];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_A81[0x78];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6UI_CommandMenu* GetDefaultObj();
@@ -88,26 +88,26 @@ public:
 class US6UI_CustomNavigationGroup : public UPanelWidget
 {
 public:
-	uint8                                        Pad_935[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_AD7[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class ES6UI_NavGroupType                NavGroupType;                                      // 0x178(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bIsNullableNavGroup;                               // 0x179(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_936[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_AD9[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UWidget*>                       UINavWidgets;                                      // 0x180(0x10)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	TArray<struct FS6UI_NavExplicitData>         NavExplicitDatas;                                  // 0x190(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	int32                                        FirstSelectIndex;                                  // 0x1A0(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                        GridDimensionX;                                    // 0x1A4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bWrapHorizontalNavigation;                         // 0x1A8(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bAutoEdgeEscape;                                   // 0x1A9(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_93E[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_AE0[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<enum class EUINavigation>             EdgeEscapeDirections;                              // 0x1B0(0x10)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	FMulticastInlineDelegateProperty_            BP_OnNavigationGroupInitialized;                   // 0x1C0(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	FDelegateProperty_                           BP_OnNavigationGroupTransition;                    // 0x1D0(0x10)(Edit, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	FDelegateProperty_                           BP_OnIsWidgetValiedToNavigate;                     // 0x1E0(0x10)(Edit, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TArray<class UWidget*>                       InternalUINavWidgets;                              // 0x1F0(0x10)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_943[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_AE3[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FS6UI_NavigationGroupTranstionData> DynamicTransitionDatas;                            // 0x208(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	TArray<struct FS6UI_NavigationGroupTranstionData> DynamicBoundaryTransitionDatas;                    // 0x218(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_945[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_AE7[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6UI_CustomNavigationGroup* GetDefaultObj();
@@ -157,7 +157,7 @@ class US6UI_InputActionHandlingWidgetComponent : public UObject
 public:
 	bool                                         bIsEnabled;                                        // 0x28(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bBlockAllUnhandledInputActions;                    // 0x29(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_98D[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B34[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        Priority;                                          // 0x2C(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FS6UI_RegisteredInputMappingContext> RegisteredInputMappingContexts;                    // 0x30(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnInputActionBindingsChanged;                      // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -203,9 +203,9 @@ public:
 class US6UI_InputRouterSubsystem : public ULocalPlayerSubsystem
 {
 public:
-	uint8                                        Pad_A13[0x70];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B60[0x70];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UInputMappingContext*>          AppliedInputMappingContexts;                       // 0xA0(0x10)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_A15[0x150];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B61[0x150];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6UI_InputRouterSubsystem* GetDefaultObj();

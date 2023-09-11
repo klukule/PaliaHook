@@ -36,7 +36,7 @@ struct FS6PLAT_PlayerBehaviorReportCategoryInfo
 public:
 	class FText                                  DisplayName;                                       // 0x0(0x18)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	enum class ES6PLAT_PlayerBehaviorReportType  ReportType;                                        // 0x18(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1376[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14B6[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -61,9 +61,9 @@ public:
 	struct FGuid                                 ReporterCharacterId;                               // 0x30(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ES6PLAT_PlayerBehaviorReportSource ReportSource;                                      // 0x40(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ES6PLAT_PlayerBehaviorReportType  ReportType;                                        // 0x41(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_137E[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_14BE[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  CategoryName;                                      // 0x44(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_137F[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_14C0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Comment;                                           // 0x50(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FS6PLAT_ChatMessage                   ReportedMessage;                                   // 0x60(0x38)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TArray<struct FS6PLAT_ChatMessage>           SurroundingMessages;                               // 0x98(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)

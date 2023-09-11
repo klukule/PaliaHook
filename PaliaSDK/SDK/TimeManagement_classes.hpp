@@ -26,7 +26,7 @@ class UGenlockedCustomTimeStep : public UFixedFrameRateCustomTimeStep
 {
 public:
 	bool                                         bAutoDetectFormat;                                 // 0x28(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2170[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_232B[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UGenlockedCustomTimeStep* GetDefaultObj();
@@ -41,7 +41,7 @@ public:
 	struct FFrameRate                            FrameRate;                                         // 0x30(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShouldBlock;                                      // 0x38(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bForceSingleFrameDeltaTime;                        // 0x39(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2173[0x16];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_232E[0x16];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UGenlockedFixedRateCustomTimeStep* GetDefaultObj();
@@ -54,7 +54,7 @@ class UGenlockedTimecodeProvider : public UTimecodeProvider
 {
 public:
 	bool                                         bUseGenlockToCount;                                // 0x30(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2176[0x27];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2331[0x27];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UGenlockedTimecodeProvider* GetDefaultObj();
@@ -95,7 +95,7 @@ class UTimeSynchronizationSource : public UObject
 {
 public:
 	bool                                         bUseForSynchronization;                            // 0x28(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_21D6[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2384[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        FrameOffset;                                       // 0x2C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass();

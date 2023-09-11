@@ -27,7 +27,7 @@ public:
 class UGuidDataAsset : public UDataAsset
 {
 public:
-	uint8                                        Pad_693[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_71B[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FGuid                                 Guid;                                              // 0x38(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass();
@@ -41,7 +41,7 @@ class US6DataAssetManager : public UEngineSubsystem
 {
 public:
 	TMap<struct FGuid, class UGuidDataAsset*>    GuidToAssetMap;                                    // 0x30(0x50)(NativeAccessSpecifierPrivate)
-	uint8                                        Pad_69C[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_725[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6DataAssetManager* GetDefaultObj();
@@ -66,7 +66,7 @@ public:
 class US6Core_AssetLoader : public UObject
 {
 public:
-	uint8                                        Pad_6A1[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_72C[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6Core_AssetLoader* GetDefaultObj();
@@ -120,7 +120,7 @@ public:
 class US6Core_AsyncAction_LevelTravel : public UBlueprintAsyncActionBase
 {
 public:
-	uint8                                        Pad_702[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7CA[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UObject*                               WorldContextObject;                                // 0x40(0x8)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	FMulticastInlineDelegateProperty_            OnComplete;                                        // 0x48(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	FMulticastInlineDelegateProperty_            OnFail;                                            // 0x58(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
@@ -137,7 +137,7 @@ public:
 class US6Core_AsyncAction_LoadSublevel : public UBlueprintAsyncActionBase
 {
 public:
-	uint8                                        Pad_713[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7DA[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UObject*                               WorldContextObject;                                // 0x50(0x8)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	FMulticastInlineDelegateProperty_            OnComplete;                                        // 0x58(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	FMulticastInlineDelegateProperty_            OnFail;                                            // 0x68(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
@@ -170,9 +170,9 @@ public:
 class US6ServerMetrics : public UGameInstanceSubsystem
 {
 public:
-	uint8                                        Pad_723[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7E8[0x20];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	bool                                         ShouldEmitServerMetrics;                           // 0x50(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_724[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7EA[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6ServerMetrics* GetDefaultObj();
@@ -189,7 +189,7 @@ public:
 	float                                        BackOffMultiplier;                                 // 0x40(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        BackOffJitter;                                     // 0x44(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxBackOffInterval;                                // 0x48(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_727[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7EC[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6TokenProviderConfiguration* GetDefaultObj();
@@ -202,7 +202,7 @@ class US6TokenProvider : public UGameInstanceSubsystem
 {
 public:
 	FMulticastInlineDelegateProperty_            OnTokenReady;                                      // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_72E[0x88];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_7F7[0x88];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6TokenProvider* GetDefaultObj();
@@ -222,7 +222,7 @@ public:
 	class UWorldPartitionStreamingSourceComponent* WorldPartitionStreamingSourceComponent;            // 0x290(0x8)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	FMulticastInlineDelegateProperty_            OnWorldPartitionStreamerAreaLoaded;                // 0x298(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	bool                                         bAreaLoaded;                                       // 0x2A8(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_737[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7FF[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTimerHandle                          AreaLoadedTimerHandle;                             // 0x2B0(0x8)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 	static class UClass* StaticClass();

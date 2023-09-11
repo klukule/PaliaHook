@@ -38,7 +38,7 @@ public:
 class UEnhancedInputComponent : public UInputComponent
 {
 public:
-	uint8                                        Pad_7DF[0x38];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_98E[0x38];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UEnhancedInputComponent* GetDefaultObj();
@@ -53,7 +53,7 @@ class UEnhancedInputDeveloperSettings : public UDeveloperSettingsBackedByCVars
 public:
 	struct FPerPlatformSettings                  PlatformSettings;                                  // 0x38(0x10)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                         bShouldOnlyTriggerLastActionInChord;               // 0x48(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_7E3[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_999[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UEnhancedInputDeveloperSettings* GetDefaultObj();
@@ -102,7 +102,7 @@ public:
 	TArray<TSoftClassPtr<class UEnhancedInputPlatformData>> InputData;                                         // 0x40(0x10)(Edit, ZeroConstructor, Config, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	TArray<TSubclassOf<class UEnhancedInputPlatformData>> InputDataClasses;                                  // 0x50(0x10)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	bool                                         bShouldLogMappingContextRedirects;                 // 0x60(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_86C[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_A3F[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UEnhancedInputPlatformSettings* GetDefaultObj();
@@ -142,7 +142,7 @@ public:
 class UEnhancedInputLocalPlayerSubsystem : public ULocalPlayerSubsystem
 {
 public:
-	uint8                                        Pad_981[0x1A8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B22[0x1A8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	FMulticastInlineDelegateProperty_            ControlMappingsRebuiltDelegate;                    // 0x1D8(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass();
@@ -157,13 +157,13 @@ class UEnhancedPlayerInput : public UPlayerInput
 public:
 	TMap<class UInputMappingContext*, int32>     AppliedInputContexts;                              // 0x498(0x50)(Transient, NativeAccessSpecifierPrivate)
 	TArray<struct FEnhancedActionKeyMapping>     EnhancedActionMappings;                            // 0x4E8(0x10)(ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_985[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B29[0x50];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<class UInputAction*, struct FInputActionInstance> ActionInstanceData;                                // 0x548(0x50)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_987[0xA0];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B2A[0xA0];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<struct FKey, struct FVector>            KeysPressedThisTick;                               // 0x638(0x50)(Transient, NativeAccessSpecifierPrivate)
 	TMap<class UInputAction*, struct FInjectedInputArray> InputsInjectedThisTick;                            // 0x688(0x50)(Transient, NativeAccessSpecifierPrivate)
 	TSet<class UInputAction*>                    LastInjectedActions;                               // 0x6D8(0x50)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_989[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B2D[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UEnhancedPlayerInput* GetDefaultObj();
@@ -180,7 +180,7 @@ public:
 	bool                                         bTriggerWhenPaused;                                // 0x49(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bReserveAllMappings;                               // 0x4A(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EInputActionValueType             ValueType;                                         // 0x4B(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_98F[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_B3A[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UInputTrigger*>                 Triggers;                                          // 0x50(0x10)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class UInputModifier*>                Modifiers;                                         // 0x60(0x10)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 	class UPlayerMappableKeySettings*            PlayerMappableKeySettings;                         // 0x70(0x8)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -241,7 +241,7 @@ public:
 	float                                        LowerThreshold;                                    // 0x28(0x4)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        UpperThreshold;                                    // 0x2C(0x4)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EDeadZoneType                     Type;                                              // 0x30(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A32[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B71[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UInputModifierDeadZone* GetDefaultObj();
@@ -279,7 +279,7 @@ public:
 	bool                                         bX;                                                // 0x28(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bY;                                                // 0x29(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bZ;                                                // 0x2A(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A3B[0x5];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B7F[0x5];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UInputModifierNegate* GetDefaultObj();
@@ -291,7 +291,7 @@ public:
 class UInputModifierSmooth : public UInputModifier
 {
 public:
-	uint8                                        Pad_A43[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B83[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UInputModifierSmooth* GetDefaultObj();
@@ -331,7 +331,7 @@ class UInputModifierFOVScaling : public UInputModifier
 public:
 	float                                        FOVScale;                                          // 0x28(0x4)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EFOVScalingType                   FOVScalingType;                                    // 0x2C(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A59[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B99[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UInputModifierFOVScaling* GetDefaultObj();
@@ -355,7 +355,7 @@ class UInputModifierSwizzleAxis : public UInputModifier
 {
 public:
 	enum class EInputAxisSwizzle                 Order;                                             // 0x28(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A65[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B9D[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UInputModifierSwizzleAxis* GetDefaultObj();
@@ -369,7 +369,7 @@ class UInputTrigger : public UObject
 public:
 	float                                        ActuationThreshold;                                // 0x28(0x4)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShouldAlwaysTick;                                 // 0x2C(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A83[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_BAE[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FInputActionValue                     LastValue;                                         // 0x30(0x20)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass();
@@ -387,7 +387,7 @@ class UInputTriggerTimedBase : public UInputTrigger
 public:
 	float                                        HeldDuration;                                      // 0x50(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                         bAffectedByTimeDilation;                           // 0x54(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A85[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BB8[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UInputTriggerTimedBase* GetDefaultObj();
@@ -432,10 +432,10 @@ public:
 class UInputTriggerHold : public UInputTriggerTimedBase
 {
 public:
-	uint8                                        Pad_A97[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_BCD[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        HoldTimeThreshold;                                 // 0x5C(0x4)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bIsOneShot;                                        // 0x60(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A9B[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BD2[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UInputTriggerHold* GetDefaultObj();
@@ -448,7 +448,7 @@ class UInputTriggerHoldAndRelease : public UInputTriggerTimedBase
 {
 public:
 	float                                        HoldTimeThreshold;                                 // 0x58(0x4)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_AA1[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BD5[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UInputTriggerHoldAndRelease* GetDefaultObj();
@@ -461,7 +461,7 @@ class UInputTriggerTap : public UInputTriggerTimedBase
 {
 public:
 	float                                        TapReleaseTimeThreshold;                           // 0x58(0x4)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_AA9[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BD9[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UInputTriggerTap* GetDefaultObj();
@@ -473,9 +473,9 @@ public:
 class UInputTriggerPulse : public UInputTriggerTimedBase
 {
 public:
-	uint8                                        Pad_AAD[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_BDC[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	bool                                         bTriggerOnStart;                                   // 0x5C(0x1)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_AB2[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_BDD[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Interval;                                          // 0x60(0x4)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        TriggerLimit;                                      // 0x64(0x4)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -530,7 +530,7 @@ public:
 	class FName                                  ConfigName;                                        // 0x30(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class FText                                  ConfigDisplayName;                                 // 0x38(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
 	bool                                         bIsDeprecated;                                     // 0x50(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_B12[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_C22[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class UObject*                               MetaData;                                          // 0x58(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TMap<class UInputMappingContext*, int32>     Contexts;                                          // 0x60(0x50)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
 
