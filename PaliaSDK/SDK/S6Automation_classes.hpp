@@ -71,7 +71,7 @@ class US6Auto_SuiteStepScript : public UObject
 public:
 	class US6Auto_SuiteStepPayload*              Payload;                                           // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class US6Auto_SuiteBlackboard*               Blackboard;                                        // 0x30(0x8)(Edit, BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_6[0x20];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_B[0x20];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6Auto_SuiteStepScript* GetDefaultObj();

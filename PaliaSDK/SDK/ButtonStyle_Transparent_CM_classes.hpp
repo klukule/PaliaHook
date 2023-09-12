@@ -9,17 +9,15 @@ namespace SDK
 // CLASSES
 //---------------------------------------------------------------------------------------------------------------------
 
-// 0x0 (0x28 - 0x28)
-// BlueprintGeneratedClass TeleporterInterface.TeleporterInterface_C
-class ITeleporterInterface_C : public IInterface
+// 0x0 (0x800 - 0x800)
+// BlueprintGeneratedClass ButtonStyle_Transparent_CM.ButtonStyle_Transparent_CM_C
+class UButtonStyle_Transparent_CM_C : public US6UI_CommonButtonStyle
 {
 public:
 
 	static class UClass* StaticClass();
-	static class ITeleporterInterface_C* GetDefaultObj();
+	static class UButtonStyle_Transparent_CM_C* GetDefaultObj();
 
-	void GetTeleportEntrance(class UTeleportFromComponent** TeleportEntrance);
-	void GetTeleporterExitNode(class UTeleportToComponent** TeleporterExitNode);
 };
 
 }

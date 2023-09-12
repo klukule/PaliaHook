@@ -437,6 +437,25 @@ void UComp_Audio_Pool_Manager_C::ReceiveTick(float DeltaSeconds)
 }
 
 
+// Function Comp_Audio_Pool_Manager.Comp_Audio_Pool_Manager_C.OnPossessionChanged
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+
+void UComp_Audio_Pool_Manager_C::OnPossessionChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("Comp_Audio_Pool_Manager_C", "OnPossessionChanged");
+
+	Params::UComp_Audio_Pool_Manager_C_OnPossessionChanged_Params Parms{};
+
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // Function Comp_Audio_Pool_Manager.Comp_Audio_Pool_Manager_C.DrawDebugText
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -485,9 +504,9 @@ void UComp_Audio_Pool_Manager_C::AudioDebugFoliage(bool On)
 // class ABP_AudioPool_StaticLoop_C*  CallFunc_GetAvailableStaticLoopEmitter_Output                    (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_GetAvailableStaticLoopEmitter_Available                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Set_Remove_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<class ABP_Env_Audio_Pool_Base_C*>CallFunc_GetClosestObjects_ClosestFoliage                        (ReferenceParm)
 // int32                              Temp_int_Variable                                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_Add_IntInt_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<class ABP_Env_Audio_Pool_Base_C*>CallFunc_GetClosestObjects_ClosestFoliage                        (ReferenceParm)
 // int32                              Temp_int_Loop_Counter_Variable                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // TArray<class ABP_Env_Audio_Pool_Base_C*>CallFunc_GetClosestStaticLoopObjects_ClosestStaticLoopObjects    (ReferenceParm)
 // int32                              CallFunc_Add_IntInt_ReturnValue_1                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -498,11 +517,11 @@ void UComp_Audio_Pool_Manager_C::AudioDebugFoliage(bool On)
 // struct FVector                     CallFunc_GetValeriaAudioListenerPosition_OutFrontDir             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                     CallFunc_GetValeriaAudioListenerPosition_OutRightDir             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // TArray<enum class EObjectTypeQuery>K2Node_MakeArray_Array                                           (ConstParm, ReferenceParm)
+// int32                              Temp_int_Array_Index_Variable                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // TArray<class AActor*>              CallFunc_SphereOverlapActors_OutActors                           (ReferenceParm)
 // bool                               CallFunc_SphereOverlapActors_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                              Temp_int_Array_Index_Variable                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                              CallFunc_Array_Length_ReturnValue_1                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_Array_Get_Item                                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// int32                              CallFunc_Array_Length_ReturnValue_1                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class ABP_Env_Audio_Pool_Base_C*   K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base                      (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              Temp_int_Loop_Counter_Variable_1                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -534,13 +553,13 @@ void UComp_Audio_Pool_Manager_C::AudioDebugFoliage(bool On)
 // int32                              CallFunc_Add_IntInt_ReturnValue_6                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_LessEqual_IntInt_ReturnValue_2                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FTransform                  CallFunc_MakeTransform_ReturnValue_1                             (IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                              Temp_int_Array_Index_Variable_3                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                      CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class ABP_Env_Audio_Pool_Base_C*   CallFunc_Array_Get_Item_1                                        (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class ABP_AudioPool_RandomLoop_C*  CallFunc_FinishSpawningActor_ReturnValue_1                       (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate                             (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                      CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ABP_AudioPool_RandomLoop_C*  CallFunc_FinishSpawningActor_ReturnValue_1                       (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// int32                              Temp_int_Array_Index_Variable_3                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABP_Env_Audio_Pool_Base_C*   CallFunc_Array_Get_Item_1                                        (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class FString                      CallFunc_Conv_IntToString_ReturnValue                            (ZeroConstructor, HasGetValueTypeHash)
+// bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FTransform                  CallFunc_MakeTransform_ReturnValue_2                             (IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_Set_Length_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -576,7 +595,7 @@ void UComp_Audio_Pool_Manager_C::AudioDebugFoliage(bool On)
 // float                              CallFunc_K2_SetTimer_Time_ImplicitCast                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                              CallFunc_DrawDebugSphere_Duration_ImplicitCast_1                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Audio_Pool_Manager_C::ExecuteUbergraph_Comp_Audio_Pool_Manager(int32 EntryPoint, TArray<class AActor*>& Temp_object_Variable, class ABP_AudioPool_StaticLoop_C* CallFunc_GetAvailableStaticLoopEmitter_Output, bool CallFunc_GetAvailableStaticLoopEmitter_Available, bool CallFunc_Set_Remove_ReturnValue, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_GetClosestObjects_ClosestFoliage, int32 Temp_int_Variable, int32 CallFunc_Add_IntInt_ReturnValue, int32 Temp_int_Loop_Counter_Variable, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_GetClosestStaticLoopObjects_ClosestStaticLoopObjects, int32 CallFunc_Add_IntInt_ReturnValue_1, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, const struct FTransform& CallFunc_MakeTransform_ReturnValue, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutLocation, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutFrontDir, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutRightDir, TArray<enum class EObjectTypeQuery>& K2Node_MakeArray_Array, TArray<class AActor*>& CallFunc_SphereOverlapActors_OutActors, bool CallFunc_SphereOverlapActors_ReturnValue, int32 Temp_int_Array_Index_Variable, int32 CallFunc_Array_Length_ReturnValue_1, class AActor* CallFunc_Array_Get_Item, class ABP_Env_Audio_Pool_Base_C* K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base, bool K2Node_DynamicCast_bSuccess, int32 Temp_int_Loop_Counter_Variable_1, int32 CallFunc_Add_IntInt_ReturnValue_2, int32 Temp_int_Array_Index_Variable_1, int32 Temp_int_Variable_1, int32 CallFunc_Add_IntInt_ReturnValue_3, int32 Temp_int_Loop_Counter_Variable_2, int32 CallFunc_Add_IntInt_ReturnValue_4, int32 Temp_int_Array_Index_Variable_2, float K2Node_Event_DeltaSeconds, class AActor* CallFunc_GetOwner_ReturnValue, class APawn* K2Node_DynamicCast_AsPawn, bool K2Node_DynamicCast_bSuccess_1, bool CallFunc_IsLocallyControlled_ReturnValue, int32 CallFunc_Subtract_IntInt_ReturnValue, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue, class ABP_AudioPool_OneShot_C* CallFunc_FinishSpawningActor_ReturnValue, bool CallFunc_IsServer_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, bool CallFunc_BooleanAND_ReturnValue, int32 Temp_int_Variable_2, int32 CallFunc_Multiply_IntInt_ReturnValue, bool CallFunc_LessEqual_IntInt_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue_5, bool CallFunc_LessEqual_IntInt_ReturnValue_1, int32 Temp_int_Loop_Counter_Variable_3, bool CallFunc_Less_IntInt_ReturnValue_1, int32 CallFunc_Add_IntInt_ReturnValue_6, bool CallFunc_LessEqual_IntInt_ReturnValue_2, const struct FTransform& CallFunc_MakeTransform_ReturnValue_1, int32 Temp_int_Array_Index_Variable_3, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item_1, bool CallFunc_IsValid_ReturnValue, class ABP_AudioPool_RandomLoop_C* CallFunc_FinishSpawningActor_ReturnValue_1, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, const class FString& CallFunc_Conv_IntToString_ReturnValue, const struct FTransform& CallFunc_MakeTransform_ReturnValue_2, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2, int32 CallFunc_Set_Length_ReturnValue, const class FString& CallFunc_Conv_IntToString_ReturnValue_1, class ABP_AudioPool_StaticLoop_C* CallFunc_FinishSpawningActor_ReturnValue_2, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_Set_ToArray_Result, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item_2, int32 CallFunc_Array_Length_ReturnValue_2, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue_2, bool CallFunc_IsValid_ReturnValue_1, int32 CallFunc_Set_Length_ReturnValue_1, TArray<class ABP_AudioPool_RandomLoop_C*>& CallFunc_Set_ToArray_Result_1, const class FString& CallFunc_Conv_IntToString_ReturnValue_2, class ABP_AudioPool_RandomLoop_C* CallFunc_Array_Get_Item_3, const class FString& CallFunc_Concat_StrStr_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue_1, const class FString& CallFunc_Concat_StrStr_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_2, const class FString& CallFunc_Concat_StrStr_ReturnValue_2, const class FString& CallFunc_Concat_StrStr_ReturnValue_3, int32 CallFunc_Array_Length_ReturnValue_3, const class FString& CallFunc_Concat_StrStr_ReturnValue_4, bool CallFunc_Less_IntInt_ReturnValue_3, const class FString& CallFunc_Concat_StrStr_ReturnValue_5, const class FString& CallFunc_Concat_StrStr_ReturnValue_6, bool K2Node_CustomEvent_On, double CallFunc_SelectFloat_ReturnValue, const struct FTimerHandle& CallFunc_K2_SetTimer_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue_2, float CallFunc_SetComponentTickInterval_TickInterval_ImplicitCast, float CallFunc_DrawDebugSphere_Duration_ImplicitCast, float CallFunc_K2_SetTimer_Time_ImplicitCast, float CallFunc_DrawDebugSphere_Duration_ImplicitCast_1)
+void UComp_Audio_Pool_Manager_C::ExecuteUbergraph_Comp_Audio_Pool_Manager(int32 EntryPoint, TArray<class AActor*>& Temp_object_Variable, class ABP_AudioPool_StaticLoop_C* CallFunc_GetAvailableStaticLoopEmitter_Output, bool CallFunc_GetAvailableStaticLoopEmitter_Available, bool CallFunc_Set_Remove_ReturnValue, int32 Temp_int_Variable, int32 CallFunc_Add_IntInt_ReturnValue, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_GetClosestObjects_ClosestFoliage, int32 Temp_int_Loop_Counter_Variable, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_GetClosestStaticLoopObjects_ClosestStaticLoopObjects, int32 CallFunc_Add_IntInt_ReturnValue_1, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, const struct FTransform& CallFunc_MakeTransform_ReturnValue, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutLocation, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutFrontDir, const struct FVector& CallFunc_GetValeriaAudioListenerPosition_OutRightDir, TArray<enum class EObjectTypeQuery>& K2Node_MakeArray_Array, int32 Temp_int_Array_Index_Variable, TArray<class AActor*>& CallFunc_SphereOverlapActors_OutActors, bool CallFunc_SphereOverlapActors_ReturnValue, class AActor* CallFunc_Array_Get_Item, int32 CallFunc_Array_Length_ReturnValue_1, class ABP_Env_Audio_Pool_Base_C* K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base, bool K2Node_DynamicCast_bSuccess, int32 Temp_int_Loop_Counter_Variable_1, int32 CallFunc_Add_IntInt_ReturnValue_2, int32 Temp_int_Array_Index_Variable_1, int32 Temp_int_Variable_1, int32 CallFunc_Add_IntInt_ReturnValue_3, int32 Temp_int_Loop_Counter_Variable_2, int32 CallFunc_Add_IntInt_ReturnValue_4, int32 Temp_int_Array_Index_Variable_2, float K2Node_Event_DeltaSeconds, class AActor* CallFunc_GetOwner_ReturnValue, class APawn* K2Node_DynamicCast_AsPawn, bool K2Node_DynamicCast_bSuccess_1, bool CallFunc_IsLocallyControlled_ReturnValue, int32 CallFunc_Subtract_IntInt_ReturnValue, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue, class ABP_AudioPool_OneShot_C* CallFunc_FinishSpawningActor_ReturnValue, bool CallFunc_IsServer_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, bool CallFunc_BooleanAND_ReturnValue, int32 Temp_int_Variable_2, int32 CallFunc_Multiply_IntInt_ReturnValue, bool CallFunc_LessEqual_IntInt_ReturnValue, int32 CallFunc_Add_IntInt_ReturnValue_5, bool CallFunc_LessEqual_IntInt_ReturnValue_1, int32 Temp_int_Loop_Counter_Variable_3, bool CallFunc_Less_IntInt_ReturnValue_1, int32 CallFunc_Add_IntInt_ReturnValue_6, bool CallFunc_LessEqual_IntInt_ReturnValue_2, const struct FTransform& CallFunc_MakeTransform_ReturnValue_1, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1, class ABP_AudioPool_RandomLoop_C* CallFunc_FinishSpawningActor_ReturnValue_1, int32 Temp_int_Array_Index_Variable_3, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item_1, const class FString& CallFunc_Conv_IntToString_ReturnValue, bool CallFunc_IsValid_ReturnValue, const struct FTransform& CallFunc_MakeTransform_ReturnValue_2, class AActor* CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2, int32 CallFunc_Set_Length_ReturnValue, const class FString& CallFunc_Conv_IntToString_ReturnValue_1, class ABP_AudioPool_StaticLoop_C* CallFunc_FinishSpawningActor_ReturnValue_2, TArray<class ABP_Env_Audio_Pool_Base_C*>& CallFunc_Set_ToArray_Result, class ABP_Env_Audio_Pool_Base_C* CallFunc_Array_Get_Item_2, int32 CallFunc_Array_Length_ReturnValue_2, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue_2, bool CallFunc_IsValid_ReturnValue_1, int32 CallFunc_Set_Length_ReturnValue_1, TArray<class ABP_AudioPool_RandomLoop_C*>& CallFunc_Set_ToArray_Result_1, const class FString& CallFunc_Conv_IntToString_ReturnValue_2, class ABP_AudioPool_RandomLoop_C* CallFunc_Array_Get_Item_3, const class FString& CallFunc_Concat_StrStr_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue_1, const class FString& CallFunc_Concat_StrStr_ReturnValue_1, bool CallFunc_IsValid_ReturnValue_2, const class FString& CallFunc_Concat_StrStr_ReturnValue_2, const class FString& CallFunc_Concat_StrStr_ReturnValue_3, int32 CallFunc_Array_Length_ReturnValue_3, const class FString& CallFunc_Concat_StrStr_ReturnValue_4, bool CallFunc_Less_IntInt_ReturnValue_3, const class FString& CallFunc_Concat_StrStr_ReturnValue_5, const class FString& CallFunc_Concat_StrStr_ReturnValue_6, bool K2Node_CustomEvent_On, double CallFunc_SelectFloat_ReturnValue, const struct FTimerHandle& CallFunc_K2_SetTimer_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue_2, float CallFunc_SetComponentTickInterval_TickInterval_ImplicitCast, float CallFunc_DrawDebugSphere_Duration_ImplicitCast, float CallFunc_K2_SetTimer_Time_ImplicitCast, float CallFunc_DrawDebugSphere_Duration_ImplicitCast_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -590,9 +609,9 @@ void UComp_Audio_Pool_Manager_C::ExecuteUbergraph_Comp_Audio_Pool_Manager(int32 
 	Parms.CallFunc_GetAvailableStaticLoopEmitter_Output = CallFunc_GetAvailableStaticLoopEmitter_Output;
 	Parms.CallFunc_GetAvailableStaticLoopEmitter_Available = CallFunc_GetAvailableStaticLoopEmitter_Available;
 	Parms.CallFunc_Set_Remove_ReturnValue = CallFunc_Set_Remove_ReturnValue;
-	Parms.CallFunc_GetClosestObjects_ClosestFoliage = CallFunc_GetClosestObjects_ClosestFoliage;
 	Parms.Temp_int_Variable = Temp_int_Variable;
 	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_GetClosestObjects_ClosestFoliage = CallFunc_GetClosestObjects_ClosestFoliage;
 	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
 	Parms.CallFunc_GetClosestStaticLoopObjects_ClosestStaticLoopObjects = CallFunc_GetClosestStaticLoopObjects_ClosestStaticLoopObjects;
 	Parms.CallFunc_Add_IntInt_ReturnValue_1 = CallFunc_Add_IntInt_ReturnValue_1;
@@ -603,11 +622,11 @@ void UComp_Audio_Pool_Manager_C::ExecuteUbergraph_Comp_Audio_Pool_Manager(int32 
 	Parms.CallFunc_GetValeriaAudioListenerPosition_OutFrontDir = CallFunc_GetValeriaAudioListenerPosition_OutFrontDir;
 	Parms.CallFunc_GetValeriaAudioListenerPosition_OutRightDir = CallFunc_GetValeriaAudioListenerPosition_OutRightDir;
 	Parms.K2Node_MakeArray_Array = K2Node_MakeArray_Array;
+	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
 	Parms.CallFunc_SphereOverlapActors_OutActors = CallFunc_SphereOverlapActors_OutActors;
 	Parms.CallFunc_SphereOverlapActors_ReturnValue = CallFunc_SphereOverlapActors_ReturnValue;
-	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
-	Parms.CallFunc_Array_Length_ReturnValue_1 = CallFunc_Array_Length_ReturnValue_1;
 	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
+	Parms.CallFunc_Array_Length_ReturnValue_1 = CallFunc_Array_Length_ReturnValue_1;
 	Parms.K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base = K2Node_DynamicCast_AsBP_Env_Audio_Pool_Base;
 	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
 	Parms.Temp_int_Loop_Counter_Variable_1 = Temp_int_Loop_Counter_Variable_1;
@@ -639,13 +658,13 @@ void UComp_Audio_Pool_Manager_C::ExecuteUbergraph_Comp_Audio_Pool_Manager(int32 
 	Parms.CallFunc_Add_IntInt_ReturnValue_6 = CallFunc_Add_IntInt_ReturnValue_6;
 	Parms.CallFunc_LessEqual_IntInt_ReturnValue_2 = CallFunc_LessEqual_IntInt_ReturnValue_2;
 	Parms.CallFunc_MakeTransform_ReturnValue_1 = CallFunc_MakeTransform_ReturnValue_1;
-	Parms.Temp_int_Array_Index_Variable_3 = Temp_int_Array_Index_Variable_3;
-	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1 = CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1;
-	Parms.CallFunc_Array_Get_Item_1 = CallFunc_Array_Get_Item_1;
-	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.CallFunc_FinishSpawningActor_ReturnValue_1 = CallFunc_FinishSpawningActor_ReturnValue_1;
 	Parms.K2Node_CreateDelegate_OutputDelegate = K2Node_CreateDelegate_OutputDelegate;
+	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1 = CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1;
+	Parms.CallFunc_FinishSpawningActor_ReturnValue_1 = CallFunc_FinishSpawningActor_ReturnValue_1;
+	Parms.Temp_int_Array_Index_Variable_3 = Temp_int_Array_Index_Variable_3;
+	Parms.CallFunc_Array_Get_Item_1 = CallFunc_Array_Get_Item_1;
 	Parms.CallFunc_Conv_IntToString_ReturnValue = CallFunc_Conv_IntToString_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
 	Parms.CallFunc_MakeTransform_ReturnValue_2 = CallFunc_MakeTransform_ReturnValue_2;
 	Parms.CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2 = CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2;
 	Parms.CallFunc_Set_Length_ReturnValue = CallFunc_Set_Length_ReturnValue;

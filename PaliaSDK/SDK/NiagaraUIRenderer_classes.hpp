@@ -19,11 +19,11 @@ public:
 	bool                                         AutoActivate;                                      // 0x1A8(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         TickWhenPaused;                                    // 0x1A9(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         FakeDepthScale;                                    // 0x1AA(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_81[0x1];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_57[0x1];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        FakeDepthScaleDistance;                            // 0x1AC(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ShowDebugSystemInWorld;                            // 0x1B0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         DisableWarnings;                                   // 0x1B1(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_84[0x16];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_59[0x16];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class ANiagaraUIActor*                       NiagaraActor;                                      // 0x1C8(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UNiagaraUIComponent*                   NiagaraComponent;                                  // 0x1D0(0x8)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
@@ -53,7 +53,7 @@ public:
 class UNiagaraUIComponent : public UNiagaraComponent
 {
 public:
-	uint8                                        Pad_8F[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_5E[0x10];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UNiagaraUIComponent* GetDefaultObj();

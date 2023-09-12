@@ -53,6 +53,13 @@ public:
 	enum class ECommonInputType                  NewInputType;                                      // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// 0x0 (0x0 - 0x0)
+// Function CommonInput.CommonInputSubsystem.OnControlMappingsRebuilt
+struct UCommonInputSubsystem_OnControlMappingsRebuilt_Params
+{
+public:
+};
+
 // 0x1 (0x1 - 0x0)
 // Function CommonInput.CommonInputSubsystem.IsUsingPointerInput
 struct UCommonInputSubsystem_IsUsingPointerInput_Params

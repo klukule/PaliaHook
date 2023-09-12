@@ -14,7 +14,7 @@ namespace SDK
 class UGA_Cooking_OneOff_AddIngredient_Generic_C : public UGA_Cooking_OneOff_AddIngredient_Base_C
 {
 public:
-	uint8                                        Pad_30FB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2B32[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x4F8(0x8)(ZeroConstructor, Transient, DuplicateTransient)
 	int32                                        NumberOfSections;                                  // 0x500(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

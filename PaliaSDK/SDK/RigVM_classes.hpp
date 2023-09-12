@@ -16,7 +16,7 @@ class URigVMUserWorkflowOptions : public UObject
 public:
 	class UObject*                               Subject;                                           // 0x28(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FRigVMUserWorkflow                    Workflow;                                          // 0x30(0x58)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                        Pad_1576[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1489[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class URigVMUserWorkflowOptions* GetDefaultObj();
@@ -36,20 +36,20 @@ public:
 	class URigVMMemoryStorage*                   WorkMemoryStorageObject;                           // 0x28(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class URigVMMemoryStorage*                   LiteralMemoryStorageObject;                        // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class URigVMMemoryStorage*                   DebugMemoryStorageObject;                          // 0x38(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1615[0x20];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1562[0x20];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRigVMByteCode                        ByteCodeStorage;                                   // 0x60(0x30)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1617[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1568[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FRigVMInstructionArray                Instructions;                                      // 0x98(0x10)(Transient, NativeAccessSpecifierPrivate)
 	struct FRigVMExtendedExecuteContext          Context;                                           // 0xA8(0x78)(Transient, Protected, NativeAccessSpecifierProtected)
 	uint32                                       NumExecutions;                                     // 0x120(0x4)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1618[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1569[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class FName>                          FunctionNamesStorage;                              // 0x128(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_161B[0x38];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_156B[0x38];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FRigVMParameter>               Parameters;                                        // 0x170(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TMap<class FName, int32>                     ParametersNameMap;                                 // 0x180(0x50)(NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1623[0xB8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_156C[0xB8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class URigVM*                                DeferredVMToCopy;                                  // 0x288(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1624[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_156D[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class URigVM* GetDefaultObj();
@@ -85,7 +85,7 @@ public:
 class URigVMMemoryStorageGeneratorClass : public UClass
 {
 public:
-	uint8                                        Pad_165B[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1597[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class URigVMMemoryStorageGeneratorClass* GetDefaultObj();
@@ -108,7 +108,7 @@ public:
 class URigVMNativized : public URigVM
 {
 public:
-	uint8                                        Pad_1669[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15A9[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class URigVMNativized* GetDefaultObj();

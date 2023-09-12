@@ -346,6 +346,31 @@ void UCommonInputSubsystem::SetCurrentInputType(enum class ECommonInputType NewI
 }
 
 
+// Function CommonInput.CommonInputSubsystem.OnControlMappingsRebuilt
+// (Final, Native, Protected)
+// Parameters:
+
+void UCommonInputSubsystem::OnControlMappingsRebuilt()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("CommonInputSubsystem", "OnControlMappingsRebuilt");
+
+	Params::UCommonInputSubsystem_OnControlMappingsRebuilt_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
 // Function CommonInput.CommonInputSubsystem.IsUsingPointerInput
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:

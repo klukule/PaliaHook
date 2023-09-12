@@ -2667,6 +2667,31 @@ void UCommonButtonBase::OnCurrentTextStyleChanged()
 }
 
 
+// Function CommonUI.CommonButtonBase.OnControlMappingsRebuilt
+// (Native, Protected)
+// Parameters:
+
+void UCommonButtonBase::OnControlMappingsRebuilt()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("CommonButtonBase", "OnControlMappingsRebuilt");
+
+	Params::UCommonButtonBase_OnControlMappingsRebuilt_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
 // Function CommonUI.CommonButtonBase.OnActionProgress
 // (Event, Protected, BlueprintEvent)
 // Parameters:

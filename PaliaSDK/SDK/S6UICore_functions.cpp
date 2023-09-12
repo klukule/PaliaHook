@@ -2453,6 +2453,39 @@ class UUserWidget* US6UI_Utils::GetContextMenuContentWidget(struct FS6UI_Context
 }
 
 
+// Function S6UICore.S6UI_Utils.FindDeltaAngleDegrees
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// float                              StartAngle                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                              TargetAngle                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                              DeltaAngle                                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_Utils::FindDeltaAngleDegrees(float StartAngle, float TargetAngle, float* DeltaAngle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_Utils", "FindDeltaAngleDegrees");
+
+	Params::US6UI_Utils_FindDeltaAngleDegrees_Params Parms{};
+
+	Parms.StartAngle = StartAngle;
+	Parms.TargetAngle = TargetAngle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	if (DeltaAngle != nullptr)
+		*DeltaAngle = Parms.DeltaAngle;
+
+}
+
+
 // Function S6UICore.S6UI_Utils.DismissContextMenu
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
