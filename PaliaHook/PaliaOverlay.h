@@ -184,44 +184,44 @@ private:
 	// Class name -> Display name map
 	std::map<std::string, std::string> CLASS_NAME_ALIAS = {
 		// TREES
-		{"BP_TreeChoppable_Birch_Sapling_C", "Birch (S)"},
+		{"BP_TreeChoppable_Birch_Sapling_C", "Birch (Sapling)"},
 		{"BP_TreeChoppable_Birch_Small_C", "Birch (S)"},
 		{"BP_TreeChoppable_Birch_Medium_C", "Birch (M)"},
 		{"BP_TreeChoppable_Birch_Large_C", "Birch (L)"},
 
-		{"BP_TreeChoppable_Juniper_Sapling_C", "Juniper (S)"},
+		{"BP_TreeChoppable_Juniper_Sapling_C", "Juniper (Sapling)"},
 		{"BP_TreeChoppable_Juniper_Small_C", "Juniper (S)"},
 		{"BP_TreeChoppable_Juniper_Medium_C", "Juniper (M)"},
 		{"BP_TreeChoppable_Juniper_Large_C", "Juniper (L)"},
 
-		{"BP_TreeChoppable_Oak_Sapling_C", "Oak (S)"},
+		{"BP_TreeChoppable_Oak_Sapling_C", "Oak (Sapling)"},
 		{"BP_TreeChoppable_Oak_Small_C", "Oak (S)"},
 		{"BP_TreeChoppable_Oak_Medium_C", "Oak (M)"},
 		{"BP_TreeChoppable_Oak_Large_C", "Oak (L)"},
 
-		{"BP_TreeChoppable_Pine_Sapling_C", "Pine (S)"},
+		{"BP_TreeChoppable_Pine_Sapling_C", "Pine (Sapling)"},
 		{"BP_TreeChoppable_Pine_Small_C", "Pine (S)"},
 		{"BP_TreeChoppable_Pine_Medium_C", "Pine (M)"},
 		{"BP_TreeChoppable_Pine_Large_C", "Pine (L)"},
 		{"BP_TreeChoppable_Pine_Large2_C", "Pine (L)"},
 
 		// CO-OP TREES
-		{"BP_TreeChoppable_Birch_Sapling_CoOp_C", "Birch CoOp (S)"},
+		{"BP_TreeChoppable_Birch_Sapling_CoOp_C", "Birch CoOp (Sapling)"},
 		{"BP_TreeChoppable_Birch_Small_CoOp_C", "Birch CoOp (S)"},
 		{"BP_TreeChoppable_Birch_Medium_CoOp_C", "Birch CoOp (M)"},
 		{"BP_TreeChoppable_Birch_Large_CoOp_C", "Birch CoOp (L)"},
 
-		{"BP_TreeChoppable_Juniper_Sapling_CoOp_C", "Juniper CoOp (S)"},
+		{"BP_TreeChoppable_Juniper_Sapling_CoOp_C", "Juniper CoOp (Sapling)"},
 		{"BP_TreeChoppable_Juniper_Small_CoOp_C", "Juniper CoOp (S)"},
 		{"BP_TreeChoppable_Juniper_Medium_CoOp_C", "Juniper CoOp (M)"},
 		{"BP_TreeChoppable_Juniper_Large_CoOp_C", "Juniper CoOp (L)"},
 
-		{"BP_TreeChoppable_Oak_Sapling_CoOp_C", "Oak CoOp (S)"},
+		{"BP_TreeChoppable_Oak_Sapling_CoOp_C", "Oak CoOp (Sapling)"},
 		{"BP_TreeChoppable_Oak_Small_CoOp_C", "Oak CoOp (S)"},
 		{"BP_TreeChoppable_Oak_Medium_CoOp_C", "Oak CoOp (M)"},
 		{"BP_TreeChoppable_Oak_Large_CoOp_C", "Oak CoOp (L)"},
 
-		{"BP_TreeChoppable_Pine_Sapling_CoOp_C", "Pine CoOp (S)"},
+		{"BP_TreeChoppable_Pine_Sapling_CoOp_C", "Pine CoOp (Sapling)"},
 		{"BP_TreeChoppable_Pine_Small_CoOp_C", "Pine CoOp (S)"},
 		{"BP_TreeChoppable_Pine_Medium_CoOp_C", "Pine CoOp (M)"},
 		{"BP_TreeChoppable_Pine_Large_CoOp_C", "Pine CoOp (L)"},
