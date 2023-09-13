@@ -20,7 +20,7 @@ struct FJsonObjectWrapper
 {
 public:
 	class FString                                JsonString;                                        // 0x0(0x10)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2519[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2373[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

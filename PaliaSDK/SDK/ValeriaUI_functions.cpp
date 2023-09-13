@@ -2452,6 +2452,27 @@ class UVALUI_CharacterCreationScreenBase* UVALUI_CharacterCreationScreenBase::Ge
 }
 
 
+// Function ValeriaUI.VALUI_CharacterCreationScreenBase.SetEnableTurntable
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                               bEnable                                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVALUI_CharacterCreationScreenBase::SetEnableTurntable(bool bEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_CharacterCreationScreenBase", "SetEnableTurntable");
+
+	Params::UVALUI_CharacterCreationScreenBase_SetEnableTurntable_Params Parms{};
+
+	Parms.bEnable = bEnable;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // Function ValeriaUI.VALUI_CharacterCreationScreenBase.SetEnableContinueButton
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -3064,6 +3085,110 @@ void UVALUI_CharacterMovementStick_Mobile::InitMovementVirtualStack(const struct
 	Parms.ValidTouchRadius = ValidTouchRadius;
 	Parms.MovementValidDistanceTemp = MovementValidDistanceTemp;
 	Parms.WalkBoundaryDistanceTemp = WalkBoundaryDistanceTemp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Class ValeriaUI.VAL_ChatBubbleWidgetInterface
+// (None)
+
+class UClass* IVAL_ChatBubbleWidgetInterface::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VAL_ChatBubbleWidgetInterface");
+
+	return Clss;
+}
+
+
+// VAL_ChatBubbleWidgetInterface ValeriaUI.Default__VAL_ChatBubbleWidgetInterface
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class IVAL_ChatBubbleWidgetInterface* IVAL_ChatBubbleWidgetInterface::GetDefaultObj()
+{
+	static class IVAL_ChatBubbleWidgetInterface* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<IVAL_ChatBubbleWidgetInterface*>(IVAL_ChatBubbleWidgetInterface::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Function ValeriaUI.VAL_ChatBubbleWidgetInterface.DisplayMessage
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// struct FValeriaChatMessage         Message                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void IVAL_ChatBubbleWidgetInterface::DisplayMessage(struct FValeriaChatMessage& Message)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VAL_ChatBubbleWidgetInterface", "DisplayMessage");
+
+	Params::IVAL_ChatBubbleWidgetInterface_DisplayMessage_Params Parms{};
+
+	Parms.Message = Message;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Class ValeriaUI.VALUI_ChatBubbleManager
+// (None)
+
+class UClass* UVALUI_ChatBubbleManager::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_ChatBubbleManager");
+
+	return Clss;
+}
+
+
+// VALUI_ChatBubbleManager ValeriaUI.Default__VALUI_ChatBubbleManager
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_ChatBubbleManager* UVALUI_ChatBubbleManager::GetDefaultObj()
+{
+	static class UVALUI_ChatBubbleManager* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_ChatBubbleManager*>(UVALUI_ChatBubbleManager::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Function ValeriaUI.VALUI_ChatBubbleManager.HandleOnNewChatMessageReceived
+// (Final, Native, Protected, HasOutParams)
+// Parameters:
+// struct FValeriaChatMessage         Message                                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UVALUI_ChatBubbleManager::HandleOnNewChatMessageReceived(struct FValeriaChatMessage& Message)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_ChatBubbleManager", "HandleOnNewChatMessageReceived");
+
+	Params::UVALUI_ChatBubbleManager_HandleOnNewChatMessageReceived_Params Parms{};
+
+	Parms.Message = Message;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8664,9 +8789,9 @@ void UVALUI_UIManagerWidgetBase::Implementation_OpenHouseUpgrade(class ULevelerC
 // Function ValeriaUI.VALUI_UIManagerWidgetBase.Implementation_OpenHomeTeleporter
 // (BlueprintCosmetic, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATeleporterActor*            Teleporter                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AVAL_TeleporterBase*         Teleporter                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVALUI_UIManagerWidgetBase::Implementation_OpenHomeTeleporter(class ATeleporterActor* Teleporter)
+void UVALUI_UIManagerWidgetBase::Implementation_OpenHomeTeleporter(class AVAL_TeleporterBase* Teleporter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8874,10 +8999,10 @@ void UVALUI_UIManagerWidgetBase::Implementation_NavigateToCharacterCustomization
 // Function ValeriaUI.VALUI_UIManagerWidgetBase.Implementation_HasAnyHousingPlotsTeleportOptions
 // (BlueprintCosmetic, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATeleporterActor*            Teleporter                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AVAL_TeleporterBase*         Teleporter                                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UVALUI_UIManagerWidgetBase::Implementation_HasAnyHousingPlotsTeleportOptions(class ATeleporterActor* Teleporter)
+bool UVALUI_UIManagerWidgetBase::Implementation_HasAnyHousingPlotsTeleportOptions(class AVAL_TeleporterBase* Teleporter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -10254,6 +10379,34 @@ enum class EVALUI_PremiumStoreState UVALUI_PremiumStoreScreenWidgetBase::GetPrem
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.VAL_PremiumStoreSettings
+// (None)
+
+class UClass* UVAL_PremiumStoreSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VAL_PremiumStoreSettings");
+
+	return Clss;
+}
+
+
+// VAL_PremiumStoreSettings ValeriaUI.Default__VAL_PremiumStoreSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVAL_PremiumStoreSettings* UVAL_PremiumStoreSettings::GetDefaultObj()
+{
+	static class UVAL_PremiumStoreSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVAL_PremiumStoreSettings*>(UVAL_PremiumStoreSettings::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 
@@ -12727,6 +12880,36 @@ class UWidget* UVALUI_WidgetBlueprintLibrary::FindOuterMostWidget(class UWidget*
 	Params::UVALUI_WidgetBlueprintLibrary_FindOuterMostWidget_Params Parms{};
 
 	Parms.BaseWidget = BaseWidget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function ValeriaUI.VALUI_WidgetBlueprintLibrary.ColorToHexString
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FLinearColor                Color                                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UVALUI_WidgetBlueprintLibrary::ColorToHexString(struct FLinearColor& Color)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_WidgetBlueprintLibrary", "ColorToHexString");
+
+	Params::UVALUI_WidgetBlueprintLibrary_ColorToHexString_Params Parms{};
+
+	Parms.Color = Color;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

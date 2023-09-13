@@ -71,7 +71,7 @@ struct FSingleTagFilter
 {
 public:
 	enum class ESingleTagFilterType              Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_803[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_6F9[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTagList                              GameplayTags;                                      // 0x8(0x20)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 
@@ -81,7 +81,7 @@ struct FAsyncReadPixelsRequest
 {
 public:
 	class UTextureRenderTarget2D*                RenderTarget;                                      // 0x0(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_806[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_6FB[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -90,7 +90,7 @@ struct FS6AsyncReadPixels
 {
 public:
 	TArray<struct FAsyncReadPixelsRequest>       Queued;                                            // 0x0(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_808[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_6FC[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -103,13 +103,58 @@ public:
 	float                                        Max;                                               // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// 0x20 (0x20 - 0x0)
+// ScriptStruct S6Core.S6HARNVPair
+struct FS6HARNVPair
+{
+public:
+	class FString                                Name;                                              // 0x0(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                Value;                                             // 0x10(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x20 (0x20 - 0x0)
+// ScriptStruct S6Core.S6HARPostData
+struct FS6HARPostData
+{
+public:
+	class FString                                MimeType;                                          // 0x0(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                Text;                                              // 0x10(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0x88 (0x88 - 0x0)
+// ScriptStruct S6Core.S6HARRequest
+struct FS6HARRequest
+{
+public:
+	class FString                                Method;                                            // 0x0(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                URL;                                               // 0x10(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                HttpVersion;                                       // 0x20(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FS6HARNVPair>                  Cookies;                                           // 0x30(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FS6HARNVPair>                  Headers;                                           // 0x40(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FS6HARNVPair>                  QueryString;                                       // 0x50(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FS6HARPostData                        PostData;                                          // 0x60(0x20)(NativeAccessSpecifierPublic)
+	int32                                        HeaderSize;                                        // 0x80(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                        bodySize;                                          // 0x84(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// 0xA0 (0xA0 - 0x0)
+// ScriptStruct S6Core.S6HAREntry
+struct FS6HAREntry
+{
+public:
+	class FString                                StartedDateTime;                                   // 0x0(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                        Time;                                              // 0x10(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                        Pad_704[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	struct FS6HARRequest                         Request;                                           // 0x18(0x88)(NativeAccessSpecifierPublic)
+};
+
 // 0x28 (0x28 - 0x0)
 // ScriptStruct S6Core.TagFilter
 struct FTagFilter
 {
 public:
 	enum class ETagFilterType                    Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_80C[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_707[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTagList                              GameplayTags;                                      // 0x8(0x20)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 
