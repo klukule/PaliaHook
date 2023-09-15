@@ -14,7 +14,7 @@ namespace SDK
 class UGA_Gardening_Seed_C : public UGA_LoopableEvent_Base_C
 {
 public:
-	uint8                                        Pad_3B[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_549[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x540(0x8)(ZeroConstructor, Transient, DuplicateTransient)
 	class AActor*                                BP_seed;                                           // 0x548(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 

@@ -214,7 +214,7 @@ public:
 	struct FLinearColor                          Value;                                             // 0x0(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHasValue;                                         // 0x10(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOverridesChildState;                              // 0x11(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A14[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D45[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -224,7 +224,7 @@ struct FGizmoElementMaterialAttribute
 public:
 	TWeakObjectPtr<class UMaterialInterface>     Value;                                             // 0x0(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOverridesChildState;                              // 0x8(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A17[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D47[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -273,7 +273,7 @@ public:
 struct FBrushStampData
 {
 public:
-	uint8                                        Pad_A37[0x128];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D6C[0x128];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -282,7 +282,7 @@ struct FBehaviorInfo
 {
 public:
 	class UInputBehavior*                        Behavior;                                          // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A38[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D71[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -290,7 +290,7 @@ public:
 struct FInputRayHit
 {
 public:
-	uint8                                        Pad_A3A[0x38];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D73[0x38];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -299,7 +299,7 @@ struct FActiveGizmo
 {
 public:
 	class UInteractiveGizmo*                     Gizmo;                                             // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_A3F[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D76[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

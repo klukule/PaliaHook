@@ -48721,6 +48721,31 @@ void UPersistComponent::OnRep_AnchorSessionId()
 }
 
 
+// Function Palia.PersistComponent.OnRep_ActorPlacementChange
+// (Final, Native, Private)
+// Parameters:
+
+void UPersistComponent::OnRep_ActorPlacementChange()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("PersistComponent", "OnRep_ActorPlacementChange");
+
+	Params::UPersistComponent_OnRep_ActorPlacementChange_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
 // Function Palia.PersistComponent.OnRep_ActorEnableCollisionAndVisibility
 // (Final, Native, Private)
 // Parameters:
