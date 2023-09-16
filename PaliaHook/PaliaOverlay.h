@@ -205,27 +205,27 @@ private:
 		{"BP_TreeChoppable_Pine_Large_C", "Pine (L)"},
 		{"BP_TreeChoppable_Pine_Large2_C", "Pine (L)"},
 
-		// CO-OP TREES
-		{"BP_TreeChoppable_Birch_Sapling_CoOp_C", "Birch CoOp (Sapling)"},
-		{"BP_TreeChoppable_Birch_Small_CoOp_C", "Birch CoOp (S)"},
-		{"BP_TreeChoppable_Birch_Medium_CoOp_C", "Birch CoOp (M)"},
-		{"BP_TreeChoppable_Birch_Large_CoOp_C", "Birch CoOp (L)"},
+		// FLOW TREES (They all drop the same wood, so tree type is omitted)
+		{"BP_TreeChoppable_Birch_Sapling_CoOp_C", "Flow Tree (Sapling)"},
+		{"BP_TreeChoppable_Birch_Small_CoOp_C", "Flow Tree (S)"},
+		{"BP_TreeChoppable_Birch_Medium_CoOp_C", "Flow Tree (M)"},
+		{"BP_TreeChoppable_Birch_Large_CoOp_C", "Flow Tree (L)"},
 
-		{"BP_TreeChoppable_Juniper_Sapling_CoOp_C", "Juniper CoOp (Sapling)"},
-		{"BP_TreeChoppable_Juniper_Small_CoOp_C", "Juniper CoOp (S)"},
-		{"BP_TreeChoppable_Juniper_Medium_CoOp_C", "Juniper CoOp (M)"},
-		{"BP_TreeChoppable_Juniper_Large_CoOp_C", "Juniper CoOp (L)"},
+		{"BP_TreeChoppable_Juniper_Sapling_CoOp_C", "Flow Tree (Sapling)"},
+		{"BP_TreeChoppable_Juniper_Small_CoOp_C", "Flow Tree (S)"},
+		{"BP_TreeChoppable_Juniper_Medium_CoOp_C", "Flow Tree (M)"},
+		{"BP_TreeChoppable_Juniper_Large_CoOp_C", "Flow Tree (L)"},
 
-		{"BP_TreeChoppable_Oak_Sapling_CoOp_C", "Oak CoOp (Sapling)"},
-		{"BP_TreeChoppable_Oak_Small_CoOp_C", "Oak CoOp (S)"},
-		{"BP_TreeChoppable_Oak_Medium_CoOp_C", "Oak CoOp (M)"},
-		{"BP_TreeChoppable_Oak_Large_CoOp_C", "Oak CoOp (L)"},
+		{"BP_TreeChoppable_Oak_Sapling_CoOp_C", "Flow Tree (Sapling)"},
+		{"BP_TreeChoppable_Oak_Small_CoOp_C", "Flow Tree (S)"},
+		{"BP_TreeChoppable_Oak_Medium_CoOp_C", "Flow Tree (M)"},
+		{"BP_TreeChoppable_Oak_Large_CoOp_C", "Flow Tree (L)"},
 
-		{"BP_TreeChoppable_Pine_Sapling_CoOp_C", "Pine CoOp (Sapling)"},
-		{"BP_TreeChoppable_Pine_Small_CoOp_C", "Pine CoOp (S)"},
-		{"BP_TreeChoppable_Pine_Medium_CoOp_C", "Pine CoOp (M)"},
-		{"BP_TreeChoppable_Pine_Large_CoOp_C", "Pine CoOp (L)"},
-		{"BP_TreeChoppable_Pine_Large2_CoOp_C", "Pine CoOp (L)"},
+		{"BP_TreeChoppable_Pine_Sapling_CoOp_C", "Flow Tree (Sapling)"},
+		{"BP_TreeChoppable_Pine_Small_CoOp_C", "Flow Tree (S)"},
+		{"BP_TreeChoppable_Pine_Medium_CoOp_C", "Flow Tree (M)"},
+		{"BP_TreeChoppable_Pine_Large_CoOp_C", "Flow Tree (L)"},
+		{"BP_TreeChoppable_Pine_Large2_CoOp_C", "Flow Tree (L)"},
 
 		// Shrubs
 		{"BP_ShrubChoppable_Bush_C", "Bush"},
@@ -254,9 +254,9 @@ private:
 
 
 		// Creatures
-		{"BP_ValeriaHuntingCreature_Cearnuk_T1_C", "Cearnuk (T1)"},
-		{"BP_ValeriaHuntingCreature_Cearnuk_T2_C", "Cearnuk (T2)"},
-		{"BP_ValeriaHuntingCreature_Cearnuk_T3_C", "Cearnuk (T3)"},
+		{"BP_ValeriaHuntingCreature_Cearnuk_T1_C", "Sernuk (T1)"},
+		{"BP_ValeriaHuntingCreature_Cearnuk_T2_C", "Sernuk (T2)"},
+		{"BP_ValeriaHuntingCreature_Cearnuk_T3_C", "Sernuk (T3)"},
 
 		{"BP_ValeriaHuntingCreature_Chapaa_T1_C", "Chapaa (T1)"},
 		{"BP_ValeriaHuntingCreature_Chapaa_T2_C", "Chapaa (T2)"},
@@ -266,99 +266,97 @@ private:
 		{"BP_ValeriaHuntingCreature_ChapaaChase_Base_C", "Chapaa Chase (Base)"},
 		{"BP_ValeriaHuntingCreature_ChapaaChase_Fast_C", "Chapaa Chase (Fast)"},
 
-		// TODO: Provide names that are the same as their drops ingame
-
 		// Bugs
-		{"BP_Bug_BeeU+_C", "Bee (U)"},
-		{"BP_Bug_BeeR+_C", "Bee (R)"},
-		{"BP_Bug_BeeU_C", "Bee (U)"},
-		{"BP_Bug_BeeR_C", "Bee (R)"},
+		{"BP_Bug_BeeU+_C", "Bahari Bee (U)"},		// Name not sure - this bee only rewards XP and no drop
+		{"BP_Bug_BeeR+_C", "Golden Glory Bee (R)"},	// Name not sure - this bee only rewards XP and no drop		
+		{"BP_Bug_BeeU_C", "Bahari Bee (U)"},
+		{"BP_Bug_BeeR_C", "Golden Glory Bee (R)"},
 
-		{"BP_Bug_BeetleC+_C", "Beetle (C)"},
-		{"BP_Bug_BeetleU+_C", "Beetle (U)"},
-		{"BP_Bug_BeetleR+_C", "Beetle (R)"},
-		{"BP_Bug_BeetleE+_C", "Beetle (E)"},
-		{"BP_Bug_BeetleC_C", "Beetle (C)"},
-		{"BP_Bug_BeetleU_C", "Beetle (U)"},
-		{"BP_Bug_BeetleR_C", "Beetle (R)"},
-		{"BP_Bug_BeetleE_C", "Beetle (E)"},
+		{"BP_Bug_BeetleC+_C", "Spotted Stinkbug (C)"},			// Name not sure - this bug only rewards XP and no drop
+		{"BP_Bug_BeetleU+_C", "Proudhorned Stag Beetle (U)"},	// Name not sure - this bug only rewards XP and no drop
+		{"BP_Bug_BeetleR+_C", "Raspberry Beetle (R)"},			// Name not sure - this bug only rewards XP and no drop
+		{"BP_Bug_BeetleE+_C", "Ancient Amber Beetle (E)"},		// Name not sure - this bug only rewards XP and no drop
+		{"BP_Bug_BeetleC_C", "Spotted Stinkbug (C)"},
+		{"BP_Bug_BeetleU_C", "Proudhorned Stag Beetle (U)"},
+		{"BP_Bug_BeetleR_C", "Raspberry Beetle (R)"},
+		{"BP_Bug_BeetleE_C", "Ancient Amber Beetle (E)"},
 
-		{"BP_Bug_ButterflyC+_C", "Butterfly (C)"},
-		{"BP_Bug_ButterflyU+_C", "Butterfly (U)"},
-		{"BP_Bug_ButterflyR+_C", "Butterfly (R)"},
-		{"BP_Bug_ButterflyE+_C", "Butterfly (E)"},
-		{"BP_Bug_ButterflyC_C", "Butterfly (C)"},
-		{"BP_Bug_ButterflyU_C", "Butterfly (U)"},
-		{"BP_Bug_ButterflyR_C", "Butterfly (R)"},
-		{"BP_Bug_ButterflyE_C", "Butterfly (E)"},
+		{"BP_Bug_ButterflyC+_C", "Common Blue Butterfly (C)"},		// Name not sure - this butterfly only rewards XP and no drop
+		{"BP_Bug_ButterflyU+_C", "Duskwing Butterfly (U)"},			// Name not sure - this butterfly only rewards XP and no drop
+		{"BP_Bug_ButterflyR+_C", "Brighteye Butterfly (R)"},		// Name not sure - this butterfly only rewards XP and no drop
+		{"BP_Bug_ButterflyE+_C", "Rainbow-tipped Butterfly (E)"},	// Name not sure - this butterfly only rewards XP and no drop
+		{"BP_Bug_ButterflyC_C", "Common Blue Butterfly (C)"},
+		{"BP_Bug_ButterflyU_C", "Duskwing Butterfly (U)"},
+		{"BP_Bug_ButterflyR_C", "Brighteye Butterfly (R)"},
+		{"BP_Bug_ButterflyE_C", "Rainbow-tipped Butterfly (E)"},
 
-		{ "BP_Bug_CicadaC+_C", "Cicada (C)" },
-		{ "BP_Bug_CicadaU+_C", "Cicada (U)" },
-		{ "BP_Bug_CicadaR+_C", "Cicada (R)" },
-		{ "BP_Bug_CicadaC_C", "Cicada (C)" },
-		{ "BP_Bug_CicadaU_C", "Cicada (U)" },
-		{ "BP_Bug_CicadaR_C", "Cicada (R)" },
+		{ "BP_Bug_CicadaC+_C", "Common Bark Cicada (C)" },			// Name not sure - this cicada only rewards XP and no drop
+		{ "BP_Bug_CicadaU+_C", "Cerulean Cicada (U)" },				// Name not sure - this cicada only rewards XP and no drop
+		{ "BP_Bug_CicadaR+_C", "Spitfire Cicada (R)" },				// Name not sure - this cicada only rewards XP and no drop
+		{ "BP_Bug_CicadaC_C", "Common Bark Cicada (C)" },
+		{ "BP_Bug_CicadaU_C", "Cerulean Cicada (U)" },
+		{ "BP_Bug_CicadaR_C", "Spitfire Cicada (R)" },
 
-		{ "BP_Bug_CrabC+_C", "Crab (C)" },
-		{ "BP_Bug_CrabU+_C", "Crab (U)" },
-		{ "BP_Bug_CrabR+_C", "Crab (R)" },
-		{ "BP_Bug_CrabC_C", "Crab (C)" },
-		{ "BP_Bug_CrabU_C", "Crab (U)" },
-		{ "BP_Bug_CrabR_C", "Crab (R)" },
+		{ "BP_Bug_CrabC+_C", "Bahari Crab (C)" },					// Name not sure - this crab only rewards XP and no drop
+		{ "BP_Bug_CrabU+_C", "Spineshell Crab (U)" },				// Name not sure - this crab only rewards XP and no drop
+		{ "BP_Bug_CrabR+_C", "Vampire Crab (R)" },					// Name not sure - this crab only rewards XP and no drop
+		{ "BP_Bug_CrabC_C", "Bahari Crab (C)" },
+		{ "BP_Bug_CrabU_C", "Spineshell Crab (U)" },
+		{ "BP_Bug_CrabR_C", "Vampire Crab (R)" },
 
-		{ "BP_Bug_CricketC+_C", "Cricket (C)" },
-		{ "BP_Bug_CricketU+_C", "Cricket (U)" },
-		{ "BP_Bug_CricketR+_C", "Cricket (R)" },
-		{ "BP_Bug_CricketC_C", "Cricket (C)" },
-		{ "BP_Bug_CricketU_C", "Cricket (U)" },
-		{ "BP_Bug_CricketR_C", "Cricket (R)" },
+		{ "BP_Bug_CricketC+_C", "Common Field Cricket (C)" },		// Name not sure - this cricket only rewards XP and no drop
+		{ "BP_Bug_CricketU+_C", "Garden Leafhopper (U)" },			// Name not sure - this cricket only rewards XP and no drop
+		{ "BP_Bug_CricketR+_C", "Azure Stonehopper (R)" },			// Name not sure - this cricket only rewards XP and no drop
+		{ "BP_Bug_CricketC_C", "Common Field Cricket (C)" },
+		{ "BP_Bug_CricketU_C", "Garden Leafhopper (U)" },
+		{ "BP_Bug_CricketR_C", "Azure Stonehopper (R)" },
 
-		{ "BP_Bug_DragonflyC+_C", "Dragonfly (C)" },
-		{ "BP_Bug_DragonflyU+_C", "Dragonfly (U)" },
-		{ "BP_Bug_DragonflyR+_C", "Dragonfly (R)" },
-		{ "BP_Bug_DragonflyE+_C", "Dragonfly (E)" },
-		{ "BP_Bug_DragonflyC_C", "Dragonfly (C)" },
-		{ "BP_Bug_DragonflyU_C", "Dragonfly (U)" },
-		{ "BP_Bug_DragonflyR_C", "Dragonfly (R)" },
-		{ "BP_Bug_DragonflyE_C", "Dragonfly (E)" },
+		{ "BP_Bug_DragonflyC+_C", "Brushtail Dragonfly (C)" },		// Name not sure - this dragonfly only rewards XP and no drop
+		{ "BP_Bug_DragonflyU+_C", "Inky Dragonfly (U)" },			// Name not sure - this dragonfly only rewards XP and no drop
+		{ "BP_Bug_DragonflyR+_C", "Firebreathing Dragonfly (R)" },	// Name not sure - this dragonfly only rewards XP and no drop
+		{ "BP_Bug_DragonflyE+_C", "Jewelwing Dragonfly (E)" },		// Name not sure - this dragonfly only rewards XP and no drop
+		{ "BP_Bug_DragonflyC_C", "Brushtail Dragonfly (C)" },
+		{ "BP_Bug_DragonflyU_C", "Inky Dragonfly (U)" },
+		{ "BP_Bug_DragonflyR_C", "Firebreathing Dragonfly (R)" },
+		{ "BP_Bug_DragonflyE_C", "Jewelwing Dragonfly (E)" },
 
-		{ "BP_Bug_GlowbugC+_C", "Glowbug (C)" },
-		{ "BP_Bug_GlowbugR+_C", "Glowbug (R)" },
-		{ "BP_Bug_GlowbugC_C", "Glowbug (C)" },
-		{ "BP_Bug_GlowbugR_C", "Glowbug (R)" },
+		{ "BP_Bug_GlowbugC+_C", "Paper Lantern Bug (C)" },			// Name not sure - this glowbug only rewards XP and no drop
+		{ "BP_Bug_GlowbugR+_C", "Bahari Glowbug (R)" },				// Name not sure - this glowbug only rewards XP and no drop
+		{ "BP_Bug_GlowbugC_C", "Paper Lantern Bug (C)" },
+		{ "BP_Bug_GlowbugR_C", "Bahari Glowbug (R)" },
 
-		{ "BP_Bug_LadybugU+_C", "Ladybug (U)" },
-		{ "BP_Bug_LadybugR+_C", "Ladybug (R)" },
-		{ "BP_Bug_LadybugU_C", "Ladybug (U)" },
-		{ "BP_Bug_LadybugR_C", "Ladybug (R)" },
+		{ "BP_Bug_LadybugU+_C", "Garden Ladybug (U)" },				// Name not sure - this ladybug only rewards XP and no drop
+		{ "BP_Bug_LadybugR+_C", "Princess Ladybug (R)" },			// Name not sure - this ladybug only rewards XP and no drop
+		{ "BP_Bug_LadybugU_C", "Garden Ladybug (U)" },	
+		{ "BP_Bug_LadybugR_C", "Princess Ladybug (R)" },
 
-		{ "BP_Bug_MantisU+_C", "Mantis (U)" },
-		{ "BP_Bug_MantisR1+_C", "Mantis (R)" },
-		{ "BP_Bug_MantisR2+_C", "Mantis (R)" },
-		{ "BP_Bug_MantisE+_C", "Mantis (E)" },
-		{ "BP_Bug_MantisU_C", "Mantis (U)" },
-		{ "BP_Bug_MantisR1_C", "Mantis (R)" },
-		{ "BP_Bug_MantisR2_C", "Mantis (R)" },
-		{ "BP_Bug_MantisE_C", "Mantis (E)" },
+		{ "BP_Bug_MantisU+_C", "Garden Mantis (U)" },				// Name not sure - this mantis only rewards XP and no drop
+		{ "BP_Bug_MantisR1+_C", "Spotted Mantis (R)" },				// Name not sure - this mantis only rewards XP and no drop
+		{ "BP_Bug_MantisR2+_C", "Leafstalker Mantis (R)" },			// Name not sure - this mantis only rewards XP and no drop
+		{ "BP_Bug_MantisE+_C", "Fairy Mantis (E)" },				// Name not sure - this mantis only rewards XP and no drop
+		{ "BP_Bug_MantisU_C", "Garden Mantis (U)" },
+		{ "BP_Bug_MantisR1_C", "Spotted Mantis (R)" },
+		{ "BP_Bug_MantisR2_C", "Leafstalker Mantis (R)" },
+		{ "BP_Bug_MantisE_C", "Fairy Mantis (E)" },
 
-		{ "BP_Bug_MothC+_C", "Moth (C)" },
-		{ "BP_Bug_MothU+_C", "Moth (U)" },
-		{ "BP_Bug_MothR+_C", "Moth (R)" },
-		{ "BP_Bug_MothC_C", "Moth (C)" },
-		{ "BP_Bug_MothU_C", "Moth (U)" },
-		{ "BP_Bug_MothR_C", "Moth (R)" },
+		{ "BP_Bug_MothC+_C", "Kilima Night Moth (C)" },				// Name not sure - this moth only rewards XP and no drop
+		{ "BP_Bug_MothU+_C", "Lunar Fairy Moth (U)" },				// Name not sure - this moth only rewards XP and no drop
+		{ "BP_Bug_MothR+_C", "Gossamer Veil Moth (R)" },			// Name not sure - this moth only rewards XP and no drop
+		{ "BP_Bug_MothC_C", "Kilima Night Moth (C)" },
+		{ "BP_Bug_MothU_C", "Lunar Fairy Moth (U)" },
+		{ "BP_Bug_MothR_C", "Gossamer Veil Moth (R)" },
 
-		{ "BP_Bug_PedeU+_C", "Pede (U)" },
-		{ "BP_Bug_PedeR1+_C", "Pede (R)" },
-		{ "BP_Bug_PedeR2+_C", "Pede (R)" },
-		{ "BP_Bug_PedeU_C", "Pede (U)" },
-		{ "BP_Bug_PedeR1_C", "Pede (R)" },
-		{ "BP_Bug_PedeR2_C", "Pede (R)" },
+		{ "BP_Bug_PedeU+_C", "Garden Millipede (U)" },				// Name not sure - this millipede only rewards XP and no drop
+		{ "BP_Bug_PedeR1+_C", "Hairy Millipede (R)" },				// Name not sure - this millipede only rewards XP and no drop
+		{ "BP_Bug_PedeR2+_C", "Scintillating Centipede (R)" },		// Name not sure - this centipede only rewards XP and no drop
+		{ "BP_Bug_PedeU_C", "Garden Millipede (U)" },
+		{ "BP_Bug_PedeR1_C", "Hairy Millipede (R)" },
+		{ "BP_Bug_PedeR2_C", "Scintillating Centipede (R)" },
 
-		{ "BP_Bug_SnailU+_C", "Snail (U)" },
-		{ "BP_Bug_SnailR+_C", "Snail (R)" },
-		{ "BP_Bug_SnailU_C", "Snail (U)" },
-		{ "BP_Bug_SnailR_C", "Snail (R)" },
+		{ "BP_Bug_SnailU+_C", "Garden Snail (U)" },					// Name not sure - this snail only rewards XP and no drop
+		{ "BP_Bug_SnailR+_C", "Stripeshell Snail (R)" },			// Name not sure - this snail only rewards XP and no drop
+		{ "BP_Bug_SnailU_C", "Garden Snail (U)" },
+		{ "BP_Bug_SnailR_C", "Stripeshell Snail (R)" },
 
 
 		// Gatherables
