@@ -460,10 +460,10 @@ void PaliaOverlay::DrawOverlay()
 				ImGui::ColorPicker("Cearnuk", &Colors[(int)EESPColorSlot::Cearnuk]);
 				ImGui::ColorPicker("Chapaa", &Colors[(int)EESPColorSlot::Chapaa]);
 				ImGui::Spacing();
-				ImGui::ColorPicker("Rarity - Common", &Colors[(int)EESPColorSlot::CommonGradeBugs]);
-				ImGui::ColorPicker("Rarity - Uncommon", &Colors[(int)EESPColorSlot::UncommonGradeBugs]);
-				ImGui::ColorPicker("Rarity - Rare", &Colors[(int)EESPColorSlot::RareGradeBugs]);
-				ImGui::ColorPicker("Rarity - Epic", &Colors[(int)EESPColorSlot::EpicGradeBugs]);
+				ImGui::ColorPicker("Rarity - Common##1", &Colors[(int)EESPColorSlot::CommonGradeBugs]);
+				ImGui::ColorPicker("Rarity - Uncommon##1", &Colors[(int)EESPColorSlot::UncommonGradeBugs]);
+				ImGui::ColorPicker("Rarity - Rare##1", &Colors[(int)EESPColorSlot::RareGradeBugs]);
+				ImGui::ColorPicker("Rarity - Epic##1", &Colors[(int)EESPColorSlot::EpicGradeBugs]);
 				ImGui::Spacing();
 			}
 			ImGui::EndGroupPanel();
@@ -473,10 +473,10 @@ void PaliaOverlay::DrawOverlay()
 				ImGui::ColorPicker("Oysters", &Colors[(int)EESPColorSlot::Oyster]);
 				ImGui::ColorPicker("Seashells", &Colors[(int)EESPColorSlot::Seashell]);
 				ImGui::ColorPicker("Spices", &Colors[(int)EESPColorSlot::Spices]);
-				ImGui::ColorPicker("Rarity - Common", &Colors[(int)EESPColorSlot::CommonGradePlants]);
-				ImGui::ColorPicker("Rarity - Uncommon", &Colors[(int)EESPColorSlot::UncommonGradePlants]);
-				ImGui::ColorPicker("Rarity - Rare", &Colors[(int)EESPColorSlot::RareGradePlants]);
-				ImGui::ColorPicker("Rarity - Epic", &Colors[(int)EESPColorSlot::EpicGradePlants]);
+				ImGui::ColorPicker("Rarity - Common##2", &Colors[(int)EESPColorSlot::CommonGradePlants]);
+				ImGui::ColorPicker("Rarity - Uncommon##2", &Colors[(int)EESPColorSlot::UncommonGradePlants]);
+				ImGui::ColorPicker("Rarity - Rare##2", &Colors[(int)EESPColorSlot::RareGradePlants]);
+				ImGui::ColorPicker("Rarity - Epic##2", &Colors[(int)EESPColorSlot::EpicGradePlants]);
 				ImGui::Spacing();
 			}
 			ImGui::EndGroupPanel();
