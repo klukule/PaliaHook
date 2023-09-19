@@ -192,6 +192,10 @@ static void DrawHUD(const AHUD* HUD) {
 
 		FVector2D ScreenLocation;
 		if (PlayerController->ProjectWorldLocationToScreen(Entry.WorldPosition, &ScreenLocation, true)) {
+			// Align scren position to full integers to avoid slight shimmer
+			ScreenLocation.X = floor(ScreenLocation.X);
+			ScreenLocation.Y = floor(ScreenLocation.Y);
+
 			ImU32 Color = Overlay->Colors[(int)EESPColorSlot::Default];
 
 			//// NOTE: Probably overcomplicating, simplify
