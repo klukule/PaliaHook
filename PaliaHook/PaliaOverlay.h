@@ -167,11 +167,11 @@ protected:
 	virtual void DrawHUD();
 	virtual void DrawOverlay();
 
-private:
+public:
 	void CacheGatherables();
 	void CacheCreatures();
 
-private:
+public:
 	// Last time gatherables were cached
 	double LastCachedTime;
 
@@ -491,7 +491,7 @@ private:
 
 	bool bVisualizeDefault = false;	// Visualizes other uncategorized gatherables
 	bool bVisualizeCoOp = true; // Visualizes co-op (flow filled trees)
-	bool bVisualizeTrees = true;
+	bool bVisualizeTrees = false;
 	bool bVisualizeStone = true;
 	bool bVisualizeCopper = true;
 	bool bVisualizeClay = true;

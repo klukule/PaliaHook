@@ -3,9 +3,11 @@
 #include <RendererDetector.h>
 #include <BaseHook.h>
 #include <format>
+#include <unordered_set>
 
 #include "ImGuiExt.h"
 #include "SDKExt.h"
+#include "Utils.h"
 
 using namespace SDK;
 
@@ -144,6 +146,240 @@ void PaliaOverlay::CacheCreatures()
 	}
 }
 
+static void(*OriginalProcEvent)(const UObject*, class UFunction*, void*);
+static void* HookedClient = nullptr;
+static void* vmt = nullptr;
+
+static std::unordered_set<std::string> invocations;
+
+static UFont* Roboto = nullptr;
+
+//static void TickHUD(const )
+
+static void DrawHUD(const AHUD* HUD) {
+	auto World = GetWorld();
+	if (!World) return;
+
+	auto GameInstance = World->OwningGameInstance;
+	if (!GameInstance) return;
+
+	if (GameInstance->LocalPlayers.Num() == 0) return;
+
+	ULocalPlayer* LocalPlayer = GameInstance->LocalPlayers[0];
+	if (!LocalPlayer) return;
+
+	APlayerController* PlayerController = LocalPlayer->PlayerController;
+	if (!PlayerController) return;
+
+	PaliaOverlay* Overlay = static_cast<PaliaOverlay*>(OverlayBase::Instance);
+
+	double WorldTime = static_cast<UGameplayStatics*>(UGameplayStatics::StaticClass()->DefaultObject)->GetTimeSeconds(World);
+	if (abs(WorldTime - Overlay->LastCachedTime) > 1.0)
+	{
+		// TODO: Split to separate frames to avoid hitches
+
+		Overlay->LastCachedTime = WorldTime;
+		Overlay->CacheGatherables();
+		Overlay->CacheCreatures();
+	}
+
+	FVector PawnLocation = PlayerController->K2_GetPawn()->K2_GetActorLocation();
+
+	for (FGatherableEntry& Entry : Overlay->CachedGatherables) {
+		double Distance = sqrt(pow(PawnLocation.X - Entry.WorldPosition.X, 2) + pow(PawnLocation.Y - Entry.WorldPosition.Y, 2) + pow(PawnLocation.Z - Entry.WorldPosition.Z, 2)) * 0.01;
+
+		if (Overlay->bEnableESPCulling && Distance > Overlay->CullDistance) continue;
+
+		FVector2D ScreenLocation;
+		if (PlayerController->ProjectWorldLocationToScreen(Entry.WorldPosition, &ScreenLocation, true)) {
+			ImU32 Color = Overlay->Colors[(int)EESPColorSlot::Default];
+
+			//// NOTE: Probably overcomplicating, simplify
+			if (Entry.Type == EGatherableType::Tree)
+			{
+
+				bool bIsCoOp = (Entry.Flags & EGatherableFlags::CoOp) == EGatherableFlags::CoOp;
+
+				if (bIsCoOp)
+					Color = Overlay->Colors[(int)EESPColorSlot::CoOp];
+				else
+					Color = Overlay->Colors[(int)EESPColorSlot::Tree];
+
+				if (bIsCoOp && !Overlay->bVisualizeCoOp) continue;
+				if (!bIsCoOp && !Overlay->bVisualizeTrees) continue;
+			}
+			else if (Entry.Type == EGatherableType::Ore)
+			{
+				if ((Entry.Flags & EGatherableFlags::Stone) == EGatherableFlags::Stone)
+				{
+					Color = Overlay->Colors[(int)EESPColorSlot::Stone];
+					if (!Overlay->bVisualizeStone) continue;
+				}
+				else if ((Entry.Flags & EGatherableFlags::Copper) == EGatherableFlags::Copper)
+				{
+					Color = Overlay->Colors[(int)EESPColorSlot::Copper];
+					if (!Overlay->bVisualizeCopper) continue;
+				}
+				else if ((Entry.Flags & EGatherableFlags::Clay) == EGatherableFlags::Clay)
+				{
+					Color = Overlay->Colors[(int)EESPColorSlot::Clay];
+					if (!Overlay->bVisualizeClay) continue;
+				}
+				else if ((Entry.Flags & EGatherableFlags::Iron) == EGatherableFlags::Iron)
+				{
+					Color = Overlay->Colors[(int)EESPColorSlot::Iron];
+					if (!Overlay->bVisualizeIron) continue;
+				}
+				else if ((Entry.Flags & EGatherableFlags::Silver) == EGatherableFlags::Silver)
+				{
+					Color = Overlay->Colors[(int)EESPColorSlot::Silver];
+					if (!Overlay->bVisualizeSilver) continue;
+				}
+				else if ((Entry.Flags & EGatherableFlags::Gold) == EGatherableFlags::Gold)
+				{
+					Color = Overlay->Colors[(int)EESPColorSlot::Gold];
+					if (!Overlay->bVisualizeGold) continue;
+				}
+				else if ((Entry.Flags & EGatherableFlags::Palium) == EGatherableFlags::Palium)
+				{
+					Color = Overlay->Colors[(int)EESPColorSlot::Palium];
+					if (!Overlay->bVisualizePalium) continue;
+				}
+			}
+			else
+			{
+				bool special = false;
+				if ((Entry.Flags & EGatherableFlags::Spices) == EGatherableFlags::Spices && Overlay->bVisualizeSpices) {
+					Color = Overlay->Colors[(int)EESPColorSlot::Spices];
+					special = true;
+				}
+
+				if (!special) {
+
+					if ((Entry.Flags & EGatherableFlags::CommonPlants) == EGatherableFlags::CommonPlants) {
+						Color = Overlay->Colors[(int)EESPColorSlot::CommonGradePlants];
+						if (!Overlay->bVisualizeCommonPlants) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::UncommonPlants) == EGatherableFlags::UncommonPlants) {
+						Color = Overlay->Colors[(int)EESPColorSlot::UncommonGradePlants];
+						if (!Overlay->bVisualizeUncommonPlants) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::RarePlants) == EGatherableFlags::RarePlants) {
+						Color = Overlay->Colors[(int)EESPColorSlot::RareGradePlants];
+						if (!Overlay->bVisualizeRarePlants) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::EpicPlants) == EGatherableFlags::EpicPlants) {
+						Color = Overlay->Colors[(int)EESPColorSlot::EpicGradePlants];
+						if (!Overlay->bVisualizeEpicPlants) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::Oyster) == EGatherableFlags::Oyster) {
+						Color = Overlay->Colors[(int)EESPColorSlot::Oyster];
+						if (!Overlay->bVisualizeOysters) continue;
+					}
+					else if ((Entry.Flags & EGatherableFlags::Seashell) == EGatherableFlags::Seashell) {
+						Color = Overlay->Colors[(int)EESPColorSlot::Seashell];
+						if (!Overlay->bVisualizeSeashells) continue;
+					}
+				}
+			}
+
+
+			if (Color == Overlay->Colors[(int)EESPColorSlot::Default] && !Overlay->bVisualizeDefault) continue;
+
+			/*StrPrinter*/
+			std::string text = std::format("{} [{:.2f}m]", Entry.DisplayName, Distance);
+			std::wstring wideText(text.begin(), text.end()); // Will not work for non-ascii characters
+			ImColor IMC(Color);
+			FLinearColor UnrealColor = { IMC.Value.x, IMC.Value.y, IMC.Value.z, IMC.Value.w };
+			HUD->Canvas->K2_DrawText(Roboto, FString(wideText.data()), ScreenLocation, { 1.0,1.0 }, UnrealColor, 0, { 0,0,0,1 }, { 1,1 }, true, true, true, { 0,0,0,1 });
+		}
+	}
+
+	for (FCreatureEntry& Entry : Overlay->CachedCreatures) {
+		if (!Entry.Actor || !Entry.Actor->IsValidLowLevel()) continue;
+
+		auto ActorPosition = Entry.Actor->K2_GetActorLocation();
+
+		// HACK: Skip actors that return [0,0,0] due to the hack I had to add to K2_GetActorLocation
+		if (ActorPosition.X == 0 && ActorPosition.Y == 0 && ActorPosition.Z == 0) continue;
+
+		double Distance = sqrt(pow(PawnLocation.X - ActorPosition.X, 2) + pow(PawnLocation.Y - ActorPosition.Y, 2) + pow(PawnLocation.Z - ActorPosition.Z, 2)) * 0.01;
+
+		if (Overlay->bEnableESPCulling && Distance > Overlay->CullDistance) continue;
+
+		FVector2D ScreenLocation;
+		if (PlayerController->ProjectWorldLocationToScreen(ActorPosition, &ScreenLocation, true)) {
+
+			ImU32 Color = Overlay->Colors[(int)EESPColorSlot::Default];
+
+			bool bIsDefault = true;
+			bool bShouldDraw = false;
+			if (Entry.Type == ECreatureType::Creature) {
+				bIsDefault = Entry.CreatureKind == ECreatureKind::Unknown;
+
+				if (Entry.CreatureKind == ECreatureKind::Chapaa && Overlay->bVisualizeChapaa) {
+					bShouldDraw = true;
+					Color = Overlay->Colors[(int)EESPColorSlot::Chapaa];
+				}
+
+				if (Entry.CreatureKind == ECreatureKind::Cearnuk && Overlay->bVisualizeCearnuk) {
+					bShouldDraw = true;
+					Color = Overlay->Colors[(int)EESPColorSlot::Cearnuk];
+				}
+			}
+
+			if (Entry.Type == ECreatureType::Bug && (Overlay->bVisualizeCommonBugs || Overlay->bVisualizeUncommonBugs || Overlay->bVisualizeRareBugs || Overlay->bVisualizeEpicBugs)) {
+				bIsDefault = Entry.BugQuality == EBugQuality::Unknown;
+
+				if (Entry.BugQuality == EBugQuality::Common && Overlay->bVisualizeCommonBugs) {
+					bShouldDraw = true;
+					Color = Overlay->Colors[(int)EESPColorSlot::CommonGradeBugs];
+				}
+				if (Entry.BugQuality == EBugQuality::Uncommon && Overlay->bVisualizeUncommonBugs) {
+					bShouldDraw = true;
+					Color = Overlay->Colors[(int)EESPColorSlot::UncommonGradeBugs];
+				}
+				if (Entry.BugQuality == EBugQuality::Rare && Overlay->bVisualizeRareBugs) {
+					bShouldDraw = true;
+					Color = Overlay->Colors[(int)EESPColorSlot::RareGradeBugs];
+				}
+				if (Entry.BugQuality == EBugQuality::Epic && Overlay->bVisualizeEpicBugs) {
+					bShouldDraw = true;
+					Color = Overlay->Colors[(int)EESPColorSlot::EpicGradeBugs];
+				}
+			}
+
+			if (bIsDefault && !Overlay->bVisualizeDefault) continue;
+			if (!bIsDefault && !bShouldDraw) continue;
+
+
+			/*StrPrinter*/
+			std::string text = std::format("{} [{:.2f}m]", Entry.DisplayName, Distance);
+			std::wstring wideText(text.begin(), text.end()); // Will not work for non-ascii characters
+			ImColor IMC(Color);
+			FLinearColor UnrealColor = { IMC.Value.x, IMC.Value.y, IMC.Value.z, IMC.Value.w };
+			HUD->Canvas->K2_DrawText(Roboto, FString(wideText.data()), ScreenLocation, { 1.0,1.0 }, UnrealColor, 0, { 0,0,0,1 }, { 1,1 }, true, true, true, { 0,0,0,1 });
+			//ImGui::AddText(pDrawList, std::format("{} [{:.2f}m]", Entry.DisplayName, Distance).data(), Color, { static_cast<float>(ScreenLocation.X), static_cast<float>(ScreenLocation.Y) });
+		}
+	}
+}
+
+static void ProcessEvent(const UObject* Class, class UFunction* Function, void* Params)
+{
+	auto fn = Function->GetFullName();
+	invocations.insert(fn);
+
+	if (fn == "Function Engine.Actor.ReceiveTick") {
+		// Custom tick
+	}
+	else if (fn == "Function Engine.HUD.ReceiveDrawHUD") {
+		DrawHUD(reinterpret_cast<const AHUD*>(Class));
+	}
+
+	//GetVFunction<void(*)(const UObject*, class UFunction*, void*)>(this, Offsets::ProcessEventIdx)(this, Function, Parms);
+	OriginalProcEvent(Class, Function, Params);
+}
+
 void PaliaOverlay::DrawHUD()
 {
 	if (bEnableESP) {
@@ -165,183 +401,28 @@ void PaliaOverlay::DrawHUD()
 		APlayerController* PlayerController = LocalPlayer->PlayerController;
 		if (!PlayerController) return;
 
-		double WorldTime = static_cast<UGameplayStatics*>(UGameplayStatics::StaticClass()->DefaultObject)->GetTimeSeconds(World);
-		if (abs(WorldTime - LastCachedTime) > 1.0)
-		{
-			// TODO: Split to separate frames to avoid hitches
 
-			LastCachedTime = WorldTime;
-			CacheGatherables();
-			CacheCreatures();
+		if (!Roboto) {
+			Roboto = reinterpret_cast<UFont*>(UObject::FindObject("Font Roboto.Roboto", EClassCastFlags::None));
 		}
 
-		FVector PawnLocation = PlayerController->K2_GetPawn()->K2_GetActorLocation();
-
-		for (FGatherableEntry& Entry : CachedGatherables) {
-			double Distance = sqrt(pow(PawnLocation.X - Entry.WorldPosition.X, 2) + pow(PawnLocation.Y - Entry.WorldPosition.Y, 2) + pow(PawnLocation.Z - Entry.WorldPosition.Z, 2)) * 0.01;
-
-			if (bEnableESPCulling && Distance > CullDistance) continue;
-
-			FVector2D ScreenLocation;
-			if (PlayerController->ProjectWorldLocationToScreen(Entry.WorldPosition, &ScreenLocation, true)) {
-				ImU32 Color = Colors[(int)EESPColorSlot::Default];
-
-				// NOTE: Probably overcomplicating, simplify
-				if (Entry.Type == EGatherableType::Tree)
-				{
-
-					bool bIsCoOp = (Entry.Flags & EGatherableFlags::CoOp) == EGatherableFlags::CoOp;
-
-					if (bIsCoOp)
-						Color = Colors[(int)EESPColorSlot::CoOp];
-					else
-						Color = Colors[(int)EESPColorSlot::Tree];
-
-					if (bIsCoOp && !bVisualizeCoOp) continue;
-					if (!bIsCoOp && !bVisualizeTrees) continue;
-				}
-				else if (Entry.Type == EGatherableType::Ore)
-				{
-					if ((Entry.Flags & EGatherableFlags::Stone) == EGatherableFlags::Stone)
-					{
-						Color = Colors[(int)EESPColorSlot::Stone];
-						if (!bVisualizeStone) continue;
-					}
-					else if ((Entry.Flags & EGatherableFlags::Copper) == EGatherableFlags::Copper)
-					{
-						Color = Colors[(int)EESPColorSlot::Copper];
-						if (!bVisualizeCopper) continue;
-					}
-					else if ((Entry.Flags & EGatherableFlags::Clay) == EGatherableFlags::Clay)
-					{
-						Color = Colors[(int)EESPColorSlot::Clay];
-						if (!bVisualizeClay) continue;
-					}
-					else if ((Entry.Flags & EGatherableFlags::Iron) == EGatherableFlags::Iron)
-					{
-						Color = Colors[(int)EESPColorSlot::Iron];
-						if (!bVisualizeIron) continue;
-					}
-					else if ((Entry.Flags & EGatherableFlags::Silver) == EGatherableFlags::Silver)
-					{
-						Color = Colors[(int)EESPColorSlot::Silver];
-						if (!bVisualizeSilver) continue;
-					}
-					else if ((Entry.Flags & EGatherableFlags::Gold) == EGatherableFlags::Gold)
-					{
-						Color = Colors[(int)EESPColorSlot::Gold];
-						if (!bVisualizeGold) continue;
-					}
-					else if ((Entry.Flags & EGatherableFlags::Palium) == EGatherableFlags::Palium)
-					{
-						Color = Colors[(int)EESPColorSlot::Palium];
-						if (!bVisualizePalium) continue;
-					}
-				}
-				else
-				{
-					bool special = false;
-					if ((Entry.Flags & EGatherableFlags::Spices) == EGatherableFlags::Spices && bVisualizeSpices) {
-						Color = Colors[(int)EESPColorSlot::Spices];
-						special = true;
-					}
-
-					if (!special) {
-
-						if ((Entry.Flags & EGatherableFlags::CommonPlants) == EGatherableFlags::CommonPlants) {
-							Color = Colors[(int)EESPColorSlot::CommonGradePlants];
-							if (!bVisualizeCommonPlants) continue;
-						}
-						else if ((Entry.Flags & EGatherableFlags::UncommonPlants) == EGatherableFlags::UncommonPlants) {
-							Color = Colors[(int)EESPColorSlot::UncommonGradePlants];
-							if (!bVisualizeUncommonPlants) continue;
-						}
-						else if ((Entry.Flags & EGatherableFlags::RarePlants) == EGatherableFlags::RarePlants) {
-							Color = Colors[(int)EESPColorSlot::RareGradePlants];
-							if (!bVisualizeRarePlants) continue;
-						}
-						else if ((Entry.Flags & EGatherableFlags::EpicPlants) == EGatherableFlags::EpicPlants) {
-							Color = Colors[(int)EESPColorSlot::EpicGradePlants];
-							if (!bVisualizeEpicPlants) continue;
-						}
-						else if ((Entry.Flags & EGatherableFlags::Oyster) == EGatherableFlags::Oyster) {
-							Color = Colors[(int)EESPColorSlot::Oyster];
-							if (!bVisualizeOysters) continue;
-						}
-						else if ((Entry.Flags & EGatherableFlags::Seashell) == EGatherableFlags::Seashell) {
-							Color = Colors[(int)EESPColorSlot::Seashell];
-							if (!bVisualizeSeashells) continue;
-						}
-					}
-				}
-
-
-				if (Color == Colors[(int)EESPColorSlot::Default] && !bVisualizeDefault) continue;
-
-				ImGui::AddText(pDrawList, std::format("{} [{:.2f}m]", Entry.DisplayName, Distance).data(), Color, { static_cast<float>(ScreenLocation.X), static_cast<float>(ScreenLocation.Y) });
-			}
+		// TODO: Move outside of the loop as this needs to be done only once
+		if (HookedClient != PlayerController->MyHUD && PlayerController->MyHUD != nullptr) {
+			void* Instance = PlayerController->MyHUD;
+			const void** Vtable = *reinterpret_cast<const void***>(const_cast<void*>(Instance));
+			vmt = Vtable;
+			DWORD OldProtection;
+			VirtualProtect(Vtable, sizeof(DWORD) * 1024, PAGE_EXECUTE_READWRITE, &OldProtection);
+			int32 Idx = Offsets::ProcessEventIdx;
+			// TODO: Use original content of VTable instead of pointer to UObject::ProcessEvent as the ProcessEvent is overriden by AActor::ProcessEvent and executes some delegates - I have yet to see any negative impact
+			// So this works for now and doesn't cause infinite loop (which is caused by me doing something stoopid)
+			OriginalProcEvent = reinterpret_cast<void(*)(const UObject*, class UFunction*, void*)>(uintptr_t(GetModuleHandle(0)) + Offsets::ProcessEvent);
+			const void* NewProcEvt = ProcessEvent;
+			Vtable[Idx] = NewProcEvt;
+			HookedClient = PlayerController->MyHUD;
+			VirtualProtect(Vtable, sizeof(DWORD) * 1024, OldProtection, &OldProtection);
 		}
 
-		for (FCreatureEntry& Entry : CachedCreatures) {
-			if (!Entry.Actor || !Entry.Actor->IsValidLowLevel()) continue;
-
-			auto ActorPosition = Entry.Actor->K2_GetActorLocation();
-
-			// HACK: Skip actors that return [0,0,0] due to the hack I had to add to K2_GetActorLocation
-			if (ActorPosition.X == 0 && ActorPosition.Y == 0 && ActorPosition.Z == 0) continue;
-
-			double Distance = sqrt(pow(PawnLocation.X - ActorPosition.X, 2) + pow(PawnLocation.Y - ActorPosition.Y, 2) + pow(PawnLocation.Z - ActorPosition.Z, 2)) * 0.01;
-
-			if (bEnableESPCulling && Distance > CullDistance) continue;
-
-			FVector2D ScreenLocation;
-			if (PlayerController->ProjectWorldLocationToScreen(ActorPosition, &ScreenLocation, true)) {
-
-				ImU32 Color = Colors[(int)EESPColorSlot::Default];
-
-				bool bIsDefault = true;
-				bool bShouldDraw = false;
-				if (Entry.Type == ECreatureType::Creature) {
-					bIsDefault = Entry.CreatureKind == ECreatureKind::Unknown;
-
-					if (Entry.CreatureKind == ECreatureKind::Chapaa && bVisualizeChapaa) {
-						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::Chapaa];
-					}
-
-					if (Entry.CreatureKind == ECreatureKind::Cearnuk && bVisualizeCearnuk) {
-						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::Cearnuk];
-					}
-				}
-
-				if (Entry.Type == ECreatureType::Bug && (bVisualizeCommonBugs || bVisualizeUncommonBugs || bVisualizeRareBugs || bVisualizeEpicBugs)) {
-					bIsDefault = Entry.BugQuality == EBugQuality::Unknown;
-
-					if (Entry.BugQuality == EBugQuality::Common && bVisualizeCommonBugs) {
-						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::CommonGradeBugs];
-					}
-					if (Entry.BugQuality == EBugQuality::Uncommon && bVisualizeUncommonBugs) {
-						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::UncommonGradeBugs];
-					}
-					if (Entry.BugQuality == EBugQuality::Rare && bVisualizeRareBugs) {
-						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::RareGradeBugs];
-					}
-					if (Entry.BugQuality == EBugQuality::Epic && bVisualizeEpicBugs) {
-						bShouldDraw = true;
-						Color = Colors[(int)EESPColorSlot::EpicGradeBugs];
-					}
-				}
-
-				if (bIsDefault && !bVisualizeDefault) continue;
-				if (!bIsDefault && !bShouldDraw) continue;
-
-				ImGui::AddText(pDrawList, std::format("{} [{:.2f}m]", Entry.DisplayName, Distance).data(), Color, { static_cast<float>(ScreenLocation.X), static_cast<float>(ScreenLocation.Y) });
-			}
-		}
 	}
 	else {
 		CachedGatherables.clear();
