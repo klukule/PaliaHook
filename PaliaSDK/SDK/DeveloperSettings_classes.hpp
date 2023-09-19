@@ -14,7 +14,7 @@ namespace SDK
 class UDeveloperSettings : public UObject
 {
 public:
-	uint8                                        Pad_4CF[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_489[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UDeveloperSettings* GetDefaultObj();
@@ -37,7 +37,7 @@ public:
 class UPlatformSettings : public UObject
 {
 public:
-	uint8                                        Pad_4D3[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_48E[0x18];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UPlatformSettings* GetDefaultObj();
@@ -50,7 +50,7 @@ class UPlatformSettingsManager : public UObject
 {
 public:
 	TMap<TSubclassOf<class UPlatformSettings>, struct FPlatformSettingsInstances> SettingsMap;                                       // 0x28(0x50)(Transient, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_4D5[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_490[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UPlatformSettingsManager* GetDefaultObj();

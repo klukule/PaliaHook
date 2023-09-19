@@ -7498,10 +7498,9 @@ void UBundlesComponent::RpcServer_RemoveAndApplyBundleItems(TSoftObjectPtr<class
 // Function Palia.BundlesComponent.RpcServer_InitializeBundle
 // (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
-// int32                              BundleConfigId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                              SubBundleConfigId                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBundleShrineConfig*         BundleConfig                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBundlesComponent::RpcServer_InitializeBundle(int32 BundleConfigId, int32 SubBundleConfigId)
+void UBundlesComponent::RpcServer_InitializeBundle(class UBundleShrineConfig* BundleConfig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7510,8 +7509,7 @@ void UBundlesComponent::RpcServer_InitializeBundle(int32 BundleConfigId, int32 S
 
 	Params::UBundlesComponent_RpcServer_InitializeBundle_Params Parms{};
 
-	Parms.BundleConfigId = BundleConfigId;
-	Parms.SubBundleConfigId = SubBundleConfigId;
+	Parms.BundleConfig = BundleConfig;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7872,10 +7870,9 @@ bool UBundlesComponent::Client_RemoveAndApplyBundleItems(TSoftObjectPtr<class UB
 // Function Palia.BundlesComponent.Client_InitializeBundle
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                              BundleConfigId                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                              SubBundleConfigId                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBundleShrineConfig*         BundleConfig                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBundlesComponent::Client_InitializeBundle(int32 BundleConfigId, int32 SubBundleConfigId)
+void UBundlesComponent::Client_InitializeBundle(class UBundleShrineConfig* BundleConfig)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7884,8 +7881,7 @@ void UBundlesComponent::Client_InitializeBundle(int32 BundleConfigId, int32 SubB
 
 	Params::UBundlesComponent_Client_InitializeBundle_Params Parms{};
 
-	Parms.BundleConfigId = BundleConfigId;
-	Parms.SubBundleConfigId = SubBundleConfigId;
+	Parms.BundleConfig = BundleConfig;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

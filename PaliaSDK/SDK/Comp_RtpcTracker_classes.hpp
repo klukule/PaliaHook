@@ -18,7 +18,7 @@ public:
 	TMap<class UAkRtpc*, double>                 RTPC_Map;                                          // 0xA8(0x50)(Edit, BlueprintVisible, Transient, DisableEditOnInstance)
 	FMulticastInlineDelegateProperty_            OnRtpcChanged;                                     // 0xF8(0x10)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	bool                                         Debug;                                             // 0x108(0x1)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
-	uint8                                        Pad_29BB[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_26C6[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<class UAkComponent*>                    TrackedAkComponents;                               // 0x110(0x50)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 	static class UClass* StaticClass();
