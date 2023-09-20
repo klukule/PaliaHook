@@ -129,7 +129,7 @@ void ImGui::EndGroupPanel()
 void ImGui::ColorPicker(const char* name, ImU32* color)
 {
 	ImVec4 c = ImGui::ColorConvertU32ToFloat4(*color);
-	auto flags = ImGuiColorEditFlags_AlphaPreview | ImGuiColorEditFlags_AlphaBar;
+	auto flags = ImGuiColorEditFlags_AlphaPreview | ImGuiColorEditFlags_AlphaBar | ImGuiColorEditFlags_NoInputs;
 	if (ImGui::ColorEdit4(name, (float*)&c, flags)) {
 		*color = ImGui::ColorConvertFloat4ToU32(c);
 	}
