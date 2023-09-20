@@ -8,7 +8,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
     SDK::InitGObjects();
     auto Overlay = new PaliaOverlay();
     OverlayBase::Instance = Overlay;
-    
+    Overlay->SetupColors();
     Overlay->SetupOverlay();
     return TRUE;
 }
