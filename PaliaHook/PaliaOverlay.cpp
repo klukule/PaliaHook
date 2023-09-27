@@ -127,6 +127,22 @@ void PaliaOverlay::SetupColors() {
 
 std::vector<std::string> debugger;
 
+#define STATIC_CLASS(CName)						\
+{												\
+	static class UClass* Clss = nullptr;		\
+	if (!Clss)									\
+		Clss = UObject::FindClassFast(CName);	\
+	SearchClass = Clss;							\
+}
+
+#define STATIC_CLASS_MULT(CName)				\
+{												\
+	static class UClass* Clss = nullptr;		\
+	if (!Clss)									\
+		Clss = UObject::FindClassFast(CName);	\
+	SearchClasses.push_back(Clss);				\
+}
+
 void PaliaOverlay::ProcessActors(int step) {
 	CachedActors.erase(
 		std::remove_if(
@@ -182,32 +198,32 @@ void PaliaOverlay::ProcessActors(int step) {
 	{
 	case EType::Tree:
 		if (AnyTrue2D(Trees)) {
-			SearchClass = UObject::FindClassFast("BP_ValeriaGatherableLoot_Lumber_C");
+			STATIC_CLASS("BP_ValeriaGatherableLoot_Lumber_C");
 		}
 		break;
 	case EType::Ore:
 		if (AnyTrue2D(Ores)) {
-			SearchClass = UObject::FindClassFast("BP_ValeriaGatherableLoot_Mining_C");
+			STATIC_CLASS("BP_ValeriaGatherableLoot_Mining_C");
 		}
 		break;
 	case EType::Bug:
 		if (AnyTrue3D(Bugs)) {
-			SearchClass = UObject::FindClassFast("BP_ValeriaBugCatchingCreature_C");
+			STATIC_CLASS("BP_ValeriaBugCatchingCreature_C");
 		}
 		break;
 	case EType::Animal:
 		if (AnyTrue2D(Animals)) {
-			SearchClass = UObject::FindClassFast("BP_ValeriaHuntingCreature_C");
+			STATIC_CLASS("BP_ValeriaHuntingCreature_C");
 		}
 		break;
 	case EType::Forage:
 		if (AnyTrue2D(Forageables)) {
-			SearchClass = UObject::FindClassFast("BP_Valeria_Gatherable_Placed_C");
+			STATIC_CLASS("BP_Valeria_Gatherable_Placed_C");
 		}
 		break;
 	case EType::Loot:
 		if (Singles[(int)EOneOffs::Loot]) {
-			SearchClass = UObject::FindClassFast("BP_Loot_C");
+			STATIC_CLASS("BP_Loot_C");
 		}
 		break;
 	case EType::Players:
@@ -222,15 +238,15 @@ void PaliaOverlay::ProcessActors(int step) {
 		break;
 	case EType::Quest:
 		if (Singles[(int)EOneOffs::Quest]) {
-			SearchClasses.push_back(UObject::FindClassFast("BP_SimpleInspect_Base_C"));
-			SearchClasses.push_back(UObject::FindClassFast("BP_QuestInspect_Base_C"));
-			SearchClasses.push_back(UObject::FindClassFast("BP_QuestItem_BASE_C"));
+			STATIC_CLASS_MULT("BP_SimpleInspect_Base_C");
+			STATIC_CLASS_MULT("BP_QuestInspect_Base_C");
+			STATIC_CLASS_MULT("BP_QuestItem_BASE_C");
 		}
 		break;
 	case EType::Fish:
 		if (AnyTrue(Fish)) {
-			SearchClasses.push_back(UObject::FindClassFast("BP_WaterPlane_Fishing_Base_SQ_C"));
-			SearchClasses.push_back(UObject::FindClassFast("BP_Minigame_Fish_C"));
+			STATIC_CLASS_MULT("BP_WaterPlane_Fishing_Base_SQ_C");
+			STATIC_CLASS_MULT("BP_Minigame_Fish_C");
 		}
 	};
 
@@ -691,7 +707,7 @@ void PaliaOverlay::DrawOverlay()
 			}
 			ImGui::EndGroupPanel();
 
-			ImGui::BeginGroupPanel("Trees"); 
+			ImGui::BeginGroupPanel("Trees");
 			{
 				ImGui::BeginTable("Trees", 5);
 				{
