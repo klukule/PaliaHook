@@ -14,7 +14,7 @@ namespace SDK
 class UMobileInstalledContent : public UObject
 {
 public:
-	uint8                                        Pad_1B1F[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E2D[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMobileInstalledContent* GetDefaultObj();
@@ -29,7 +29,7 @@ public:
 class UMobilePendingContent : public UMobileInstalledContent
 {
 public:
-	uint8                                        Pad_1B39[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E44[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMobilePendingContent* GetDefaultObj();

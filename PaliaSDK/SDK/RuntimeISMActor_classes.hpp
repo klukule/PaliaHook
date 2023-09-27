@@ -9,12 +9,12 @@ namespace SDK
 // CLASSES
 //---------------------------------------------------------------------------------------------------------------------
 
-// 0x8 (0x298 - 0x290)
+// 0x8 (0x2A8 - 0x2A0)
 // BlueprintGeneratedClass RuntimeISMActor.RuntimeISMActor_C
 class ARuntimeISMActor_C : public AActor
 {
 public:
-	class USceneComponent*                       DefaultSceneRoot;                                  // 0x290(0x8)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                       DefaultSceneRoot;                                  // 0x2A0(0x8)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 	static class UClass* StaticClass();
 	static class ARuntimeISMActor_C* GetDefaultObj();

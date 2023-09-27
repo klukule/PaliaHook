@@ -38,6 +38,19 @@ enum class EOSSVAL_MatchmakingRequestType : uint8
 	EOSSVAL_MAX                    = 3,
 };
 
+enum class EControlMessageType : uint8
+{
+	Informational                  = 0,
+	ServerInvite                   = 1,
+	Party                          = 2,
+	JoinSession                    = 3,
+	PlayerGuild                    = 4,
+	Friend                         = 5,
+	InventoryRequests              = 6,
+	FriendRouterType               = 7,
+	EControlMessageType_MAX        = 8,
+};
+
 enum class EOSSVAL_ChatChannelType : uint8
 {
 	Invalid                        = 0,
@@ -48,10 +61,28 @@ enum class EOSSVAL_ChatChannelType : uint8
 	EOSSVAL_MAX                    = 5,
 };
 
+enum class EOnlineSystemMessageType : uint8
+{
+	Unknown                        = 0,
+	Chat                           = 1,
+	Friends                        = 2,
+	EOnlineSystemMessageType_MAX   = 3,
+};
+
 
 //---------------------------------------------------------------------------------------------------------------------
 // STRUCTS
 //---------------------------------------------------------------------------------------------------------------------
+
+// 0x18 (0x18 - 0x0)
+// ScriptStruct OnlineSubsystemValeria.OSSVAL_ProfanityFilterResponse
+struct FOSSVAL_ProfanityFilterResponse
+{
+public:
+	bool                                         bSuccess;                                          // 0x0(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                        Pad_89A[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	class FString                                Result;                                            // 0x8(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
 
 // 0x30 (0x30 - 0x0)
 // ScriptStruct OnlineSubsystemValeria.OSSVAL_CharacterNameAndId
@@ -85,7 +116,7 @@ public:
 	class FString                                ServerType;                                        // 0x58(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                ServerVersion;                                     // 0x68(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        ServerStatus;                                      // 0x78(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_192F[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8A6[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                ServerAddr;                                        // 0x80(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ServerPort;                                        // 0x90(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        ServerBeaconPort;                                  // 0x94(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -97,7 +128,7 @@ struct FOSSVAL_MatchmakingErrorResult
 {
 public:
 	enum class EOSSVAL_MatchmakingFailErrorType  ErrorType;                                         // 0x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1932[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8AB[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ErrorCode;                                         // 0x4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FText                                  ErrorText;                                         // 0x8(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 };
@@ -109,7 +140,7 @@ struct FOSSVAL_MatchmakingResult
 public:
 	bool                                         bSuccess;                                          // 0x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bInternalRequest;                                  // 0x1(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1935[0x6];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8AF[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FOSSVAL_MatchmakingTicket             Ticket;                                            // 0x8(0x98)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 	struct FOSSVAL_MatchmakingErrorResult        ErrorResult;                                       // 0xA0(0x20)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 };
@@ -120,11 +151,11 @@ struct FOSSVAL_MatchmakingJoinStatusResult
 {
 public:
 	int32                                        JoinNumber;                                        // 0x0(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1939[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8B9[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FOSSVAL_MatchmakingResult             MatchmakingResult;                                 // 0x8(0xC0)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 };
 
-// 0x88 (0x88 - 0x0)
+// 0xA8 (0xA8 - 0x0)
 // ScriptStruct OnlineSubsystemValeria.OSSVAL_MatchmakingRequestContext
 struct FOSSVAL_MatchmakingRequestContext
 {
@@ -132,13 +163,14 @@ public:
 	bool                                         bInternalRequest;                                  // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bJoinAfterGettingTicket;                           // 0x1(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EOSSVAL_MatchmakingRequestType    Type;                                              // 0x2(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1941[0x5];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8BE[0x5];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                ServerType;                                        // 0x8(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                 SpaceId;                                           // 0x18(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FOSSVAL_MatchmakingRequestPlayer      ServerSyncTargetPlayer;                            // 0x28(0x20)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	class FString                                CurrentNetWorkVersion;                             // 0x48(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FOSSVAL_MatchmakingRequestPlayer      CurrentPlayer;                                     // 0x58(0x20)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<struct FOSSVAL_MatchmakingRequestPlayer> PartyMembers;                                      // 0x78(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FOSSVAL_MatchmakingRequestPlayer      PartyLeader;                                       // 0x78(0x20)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FOSSVAL_MatchmakingRequestPlayer> PartyMembers;                                      // 0x98(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // 0x68 (0x68 - 0x0)
@@ -182,7 +214,7 @@ public:
 	struct FVALDTOS_MetaCharacterFormat          CharacterData;                                     // 0x0(0x718)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	class FText                                  ErrorText;                                         // 0x718(0x18)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	int32                                        ErrorCode;                                         // 0x730(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1956[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_8C9[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -214,11 +246,11 @@ public:
 	class FString                                GroupID;                                           // 0x28(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class FString                                Category;                                          // 0x38(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                        Tier;                                              // 0x48(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1958[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8D3[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FText                                  LockedDesc;                                        // 0x50(0x18)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPrivate)
 	class FText                                  UnlockedDesc;                                      // 0x68(0x18)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPrivate)
 	bool                                         bIsHidden;                                         // 0x80(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1959[0x27];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_8D7[0x27];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -232,7 +264,7 @@ public:
 	int32                                        Port;                                              // 0x30(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        BeaconPort;                                        // 0x34(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        AvailableSlots;                                    // 0x38(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_195C[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8D9[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class FString>                        PlayerIds;                                         // 0x40(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -278,7 +310,7 @@ public:
 	class FString                                Name;                                              // 0x0(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Token;                                             // 0x10(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EOSSVAL_ChatChannelType           Kind;                                              // 0x20(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1965[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_8DF[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x48 (0x48 - 0x0)
@@ -287,7 +319,7 @@ struct FOSSVAL_SignInResponse
 {
 public:
 	bool                                         bSuccessful;                                       // 0x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1966[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8E1[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Token;                                             // 0x8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Domain;                                            // 0x18(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Issuer;                                            // 0x28(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -300,7 +332,7 @@ struct FOSSVAL_GetChannelsResponse
 {
 public:
 	bool                                         bSuccessful;                                       // 0x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1968[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8E3[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FOSSVAL_ChatChannel>           Channels;                                          // 0x8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -310,7 +342,7 @@ struct FOSSVAL_ChatCensorResponse
 {
 public:
 	bool                                         bSuccessful;                                       // 0x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_196C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8E5[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        ErrorCode;                                         // 0x4(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Message;                                           // 0x8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -321,6 +353,20 @@ struct FOSSVAL_MatchmakingCustomErrorContainer
 {
 public:
 	TMap<int32, class FText>                     ErrorCodeTextTable;                                // 0x0(0x50)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+
+// 0x30 (0x30 - 0x0)
+// ScriptStruct OnlineSubsystemValeria.OSSVAL_ControlMessage
+struct FOSSVAL_ControlMessage
+{
+public:
+	enum class EOnlineSystemMessageType          RouterType;                                        // 0x0(0x1)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	enum class EControlMessageType               ControlMessageType;                                // 0x1(0x1)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                        Pad_8EA[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	class FString                                Content;                                           // 0x8(0x10)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                FromWorldName;                                     // 0x18(0x10)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                        MessageTargetType;                                 // 0x28(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                        Pad_8EC[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)

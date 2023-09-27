@@ -40,6 +40,49 @@ class UBPFL_UiHelpers_C* UBPFL_UiHelpers_C::GetDefaultObj()
 }
 
 
+// Function BPFL_UiHelpers.BPFL_UiHelpers_C.IsCompassDisplaySettingEnabled
+// (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                              CompassFlags                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// enum class ECompassDisplaySettings Setting                                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               IsEnabled                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// enum class ECompassDisplaySettings Temp_byte_Variable                                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                              Temp_int_Variable                                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                              Temp_int_Variable_1                                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                              Temp_int_Variable_2                                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                              K2Node_Select_Default                                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                              CallFunc_And_IntInt_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_NotEqual_IntInt_ReturnValue                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBPFL_UiHelpers_C::IsCompassDisplaySettingEnabled(int32 CompassFlags, enum class ECompassDisplaySettings Setting, class UObject* __WorldContext, bool* IsEnabled, enum class ECompassDisplaySettings Temp_byte_Variable, int32 Temp_int_Variable, int32 Temp_int_Variable_1, int32 Temp_int_Variable_2, int32 K2Node_Select_Default, int32 CallFunc_And_IntInt_ReturnValue, bool CallFunc_NotEqual_IntInt_ReturnValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BPFL_UiHelpers_C", "IsCompassDisplaySettingEnabled");
+
+	Params::UBPFL_UiHelpers_C_IsCompassDisplaySettingEnabled_Params Parms{};
+
+	Parms.CompassFlags = CompassFlags;
+	Parms.Setting = Setting;
+	Parms.__WorldContext = __WorldContext;
+	Parms.Temp_byte_Variable = Temp_byte_Variable;
+	Parms.Temp_int_Variable = Temp_int_Variable;
+	Parms.Temp_int_Variable_1 = Temp_int_Variable_1;
+	Parms.Temp_int_Variable_2 = Temp_int_Variable_2;
+	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.CallFunc_And_IntInt_ReturnValue = CallFunc_And_IntInt_ReturnValue;
+	Parms.CallFunc_NotEqual_IntInt_ReturnValue = CallFunc_NotEqual_IntInt_ReturnValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (IsEnabled != nullptr)
+		*IsEnabled = Parms.IsEnabled;
+
+}
+
+
 // Function BPFL_UiHelpers.BPFL_UiHelpers_C.TryDisplayBonusReceivedModal
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:

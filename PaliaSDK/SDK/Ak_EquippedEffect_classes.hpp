@@ -15,7 +15,7 @@ class UAk_EquippedEffect_C : public UAnimNotify
 {
 public:
 	enum class E_EquippedEvents                  ToolEvent;                                         // 0x38(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_2791[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E6E[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  Socket;                                            // 0x3C(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         Follow;                                            // 0x44(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

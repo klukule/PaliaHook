@@ -9,14 +9,14 @@ namespace SDK
 // CLASSES
 //---------------------------------------------------------------------------------------------------------------------
 
-// 0x18 (0x2B0 - 0x298)
+// 0x18 (0x2C0 - 0x2A8)
 // BlueprintGeneratedClass MAP_CharacterRender_LevelInstance_4.MAP_CharacterRender_C
 class AMAP_CharacterRender_C : public ALevelScriptActor
 {
 public:
-	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x298(0x8)(ZeroConstructor, Transient, DuplicateTransient)
-	class ACameraActor*                          CameraActor_0_GetDefaultCameraActor_MERGED_RefProperty; // 0x2A0(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class ABP_ValeriaCharacter_C*                BP_ValeriaCharacter_2_GetCharacter_MERGED_RefProperty; // 0x2A8(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x2A8(0x8)(ZeroConstructor, Transient, DuplicateTransient)
+	class ACameraActor*                          CameraActor_0_GetDefaultCameraActor_MERGED_RefProperty; // 0x2B0(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ABP_ValeriaCharacter_C*                BP_ValeriaCharacter_2_GetCharacter_MERGED_RefProperty; // 0x2B8(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 	static class UClass* StaticClass();
 	static class AMAP_CharacterRender_C* GetDefaultObj();

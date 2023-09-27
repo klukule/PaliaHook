@@ -15,7 +15,7 @@ class UResonanceAudioSoundfieldSettings : public USoundfieldEncodingSettingsBase
 {
 public:
 	enum class EResonanceRenderMode              RenderMode;                                        // 0x28(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B4C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E73[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UResonanceAudioSoundfieldSettings* GetDefaultObj();
@@ -35,14 +35,14 @@ public:
 	class UResonanceAudioReverbPluginPreset* GetGlobalReverbPreset();
 };
 
-// 0x80 (0x310 - 0x290)
+// 0x80 (0x320 - 0x2A0)
 // Class ResonanceAudio.ResonanceAudioDirectivityVisualizer
 class AResonanceAudioDirectivityVisualizer : public AActor
 {
 public:
-	uint8                                        Pad_1B56[0x70];                                    // Fixing Size After Last Property  [ Dumper-7 ]
-	class UMaterial*                             Material;                                          // 0x300(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UResonanceAudioSpatializationSourceSettings* Settings;                                          // 0x308(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                        Pad_1E7B[0x70];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	class UMaterial*                             Material;                                          // 0x310(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UResonanceAudioSpatializationSourceSettings* Settings;                                          // 0x318(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass();
 	static class AResonanceAudioDirectivityVisualizer* GetDefaultObj();
@@ -54,7 +54,7 @@ public:
 class UResonanceAudioReverbPluginPreset : public USoundEffectSubmixPreset
 {
 public:
-	uint8                                        Pad_1B6F[0x98];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E88[0x98];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FResonanceAudioReverbPluginSettings   Settings;                                          // 0x100(0x70)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass();
@@ -78,7 +78,7 @@ class UResonanceAudioSettings : public UObject
 public:
 	struct FSoftObjectPath                       OutputSubmix;                                      // 0x28(0x20)(Edit, ZeroConstructor, Config, GlobalConfig, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERaQualityMode                    QualityMode;                                       // 0x48(0x1)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B75[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E8B[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSoftObjectPath                       GlobalReverbPreset;                                // 0x50(0x20)(Edit, ZeroConstructor, Config, GlobalConfig, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSoftObjectPath                       GlobalSourcePreset;                                // 0x70(0x20)(Edit, ZeroConstructor, Config, GlobalConfig, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -93,18 +93,18 @@ class UResonanceAudioSpatializationSourceSettings : public USpatializationPlugin
 {
 public:
 	enum class ERaSpatializationMethod           SpatializationMethod;                              // 0x28(0x1)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B7B[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E93[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Pattern;                                           // 0x2C(0x4)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Sharpness;                                         // 0x30(0x4)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bToggleVisualization;                              // 0x34(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B7C[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E95[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Scale;                                             // 0x38(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Spread;                                            // 0x3C(0x4)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERaDistanceRolloffModel           Rolloff;                                           // 0x40(0x1)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B7D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1E97[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        MinDistance;                                       // 0x44(0x4)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxDistance;                                       // 0x48(0x4)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1B7E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1E98[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UResonanceAudioSpatializationSourceSettings* GetDefaultObj();

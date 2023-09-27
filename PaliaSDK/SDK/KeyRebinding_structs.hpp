@@ -98,7 +98,7 @@ public:
 	bool                                         bCanBeRebind;                                      // 0x14(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bCanBeUnbound;                                     // 0x15(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bUnbound;                                          // 0x16(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_686[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_81C[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FKeyRebindingMappingItem>      MappingItems;                                      // 0x18(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
@@ -168,7 +168,7 @@ public:
 struct FInputActionsWithSameDesc
 {
 public:
-	uint8                                        Pad_695[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_824[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -204,7 +204,7 @@ public:
 	class FName                                  InputActionName;                                   // 0x0(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FText                                  InputActionDescription;                            // 0x8(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, DisableEditOnInstance, EditConst, NativeAccessSpecifierPublic)
 	bool                                         bIsCoreAction;                                     // 0x20(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_69D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_826[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        GroupID;                                           // 0x24(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FText                                  GroupDescription;                                  // 0x28(0x18)(Edit, BlueprintVisible, BlueprintReadOnly, Transient, DisableEditOnInstance, EditConst, NativeAccessSpecifierPublic)
 	TArray<struct FInputKeys>                    DefaultKeysWithAction;                             // 0x40(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, DisableEditOnInstance, EditConst, NativeAccessSpecifierPublic)

@@ -9,13 +9,13 @@ namespace SDK
 // CLASSES
 //---------------------------------------------------------------------------------------------------------------------
 
-// 0x10 (0x2A8 - 0x298)
+// 0x10 (0x2B8 - 0x2A8)
 // BlueprintGeneratedClass MAP_Character_Lighting_CharacterCreation_LevelInstance_3.MAP_Character_Lighting_CharacterCreation_C
 class AMAP_Character_Lighting_CharacterCreation_C : public ALevelScriptActor
 {
 public:
-	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x298(0x8)(ZeroConstructor, Transient, DuplicateTransient)
-	class ADirectionalLight*                     DirectionalLight_0_ExecuteUbergraph_MAP_Character_Lighting_CharacterCreation_RefProperty; // 0x2A0(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x2A8(0x8)(ZeroConstructor, Transient, DuplicateTransient)
+	class ADirectionalLight*                     DirectionalLight_0_ExecuteUbergraph_MAP_Character_Lighting_CharacterCreation_RefProperty; // 0x2B0(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 	static class UClass* StaticClass();
 	static class AMAP_Character_Lighting_CharacterCreation_C* GetDefaultObj();

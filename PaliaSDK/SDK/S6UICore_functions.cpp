@@ -539,6 +539,33 @@ class US6UI_CustomNavigationGroup* US6UI_CustomNavigationGroup::GetDefaultObj()
 }
 
 
+// Function S6UICore.S6UI_CustomNavigationGroup.SetIsFocusable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bInIsFocusable                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_CustomNavigationGroup::SetIsFocusable(bool bInIsFocusable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "SetIsFocusable");
+
+	Params::US6UI_CustomNavigationGroup_SetIsFocusable_Params Parms{};
+
+	Parms.bInIsFocusable = bInIsFocusable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
 // Function S6UICore.S6UI_CustomNavigationGroup.SetAutoEdgeEscapeDirections
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -562,6 +589,27 @@ void US6UI_CustomNavigationGroup::SetAutoEdgeEscapeDirections(const TArray<enum 
 
 
 	Func->FunctionFlags = Flgs;
+
+}
+
+
+// DelegateFunction S6UICore.S6UI_CustomNavigationGroup.OnNavigated__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// class US6UI_CustomNavigationGroup* NavGroup                                                         (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_CustomNavigationGroup::OnNavigated__DelegateSignature(class US6UI_CustomNavigationGroup* NavGroup)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "OnNavigated__DelegateSignature");
+
+	Params::US6UI_CustomNavigationGroup_OnNavigated__DelegateSignature_Params Parms{};
+
+	Parms.NavGroup = NavGroup;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 }
 
@@ -623,8 +671,9 @@ bool US6UI_CustomNavigationGroup::OnCustomNavigationGroupTransitionEvent__Delega
 // DelegateFunction S6UICore.S6UI_CustomNavigationGroup.OnCustomNavigationGroupInitialized__DelegateSignature
 // (MulticastDelegate, Public, Delegate)
 // Parameters:
+// class US6UI_CustomNavigationGroup* NavGroup                                                         (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::OnCustomNavigationGroupInitialized__DelegateSignature()
+void US6UI_CustomNavigationGroup::OnCustomNavigationGroupInitialized__DelegateSignature(class US6UI_CustomNavigationGroup* NavGroup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -633,6 +682,7 @@ void US6UI_CustomNavigationGroup::OnCustomNavigationGroupInitialized__DelegateSi
 
 	Params::US6UI_CustomNavigationGroup_OnCustomNavigationGroupInitialized__DelegateSignature_Params Parms{};
 
+	Parms.NavGroup = NavGroup;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -656,6 +706,31 @@ void US6UI_CustomNavigationGroup::NavigateToTargetWidget(int32 InTargetWidgetInd
 
 	Parms.InTargetWidgetIndex = InTargetWidgetIndex;
 	Parms.bDelayActive = bDelayActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function S6UICore.S6UI_CustomNavigationGroup.ExcuteNavigationFromParentGroup
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+
+void US6UI_CustomNavigationGroup::ExcuteNavigationFromParentGroup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "ExcuteNavigationFromParentGroup");
+
+	Params::US6UI_CustomNavigationGroup_ExcuteNavigationFromParentGroup_Params Parms{};
+
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

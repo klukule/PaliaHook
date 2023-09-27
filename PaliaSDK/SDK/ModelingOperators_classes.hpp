@@ -15,12 +15,12 @@ class URecomputeUVsToolProperties : public UInteractiveToolPropertySet
 {
 public:
 	bool                                         bEnablePolygroupSupport;                           // 0xA8(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_22[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_7[0x3];                                        // Fixing Size After Last Property  [ Dumper-7 ]
 	enum class ERecomputeUVsPropertiesIslandMode IslandGeneration;                                  // 0xAC(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERecomputeUVsPropertiesUnwrapType UnwrapType;                                        // 0xB0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERecomputeUVsToolOrientationMode  AutoRotation;                                      // 0xB4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bPreserveIrregularity;                             // 0xB8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25[0x3];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_8[0x3];                                        // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        SmoothingSteps;                                    // 0xBC(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SmoothingAlpha;                                    // 0xC0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MergingDistortionThreshold;                        // 0xC4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -42,10 +42,10 @@ public:
 	enum class EUVLayoutType                     LayoutType;                                        // 0xA8(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        TextureResolution;                                 // 0xAC(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Scale;                                             // 0xB0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2C[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_10[0x4];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             Translation;                                       // 0xB8(0x10)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAllowFlips;                                       // 0xC8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2D[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11[0x7];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UUVLayoutProperties* GetDefaultObj();
@@ -57,9 +57,9 @@ public:
 class URecomputeUVsOpFactory : public UObject
 {
 public:
-	uint8                                        Pad_31[0x8];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_13[0x8];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	class URecomputeUVsToolProperties*           Settings;                                          // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_32[0xB8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14[0xB8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class URecomputeUVsOpFactory* GetDefaultObj();
@@ -71,9 +71,9 @@ public:
 class UUVLayoutOperatorFactory : public UObject
 {
 public:
-	uint8                                        Pad_34[0x8];                                       // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_18[0x8];                                       // Fixing Size After Last Property  [ Dumper-7 ]
 	class UUVLayoutProperties*                   Settings;                                          // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_35[0xB8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_19[0xB8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UUVLayoutOperatorFactory* GetDefaultObj();

@@ -9,14 +9,14 @@ namespace SDK
 // CLASSES
 //---------------------------------------------------------------------------------------------------------------------
 
-// 0x20 (0x2B8 - 0x298)
+// 0x20 (0x2C8 - 0x2A8)
 // BlueprintGeneratedClass MAP_PreGame.MAP_PreGame_C
 class AMAP_PreGame_C : public ALevelScriptActor
 {
 public:
-	class FString                                CharacterSelectMap;                                // 0x298(0x10)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	class AVAL_CharacterPreviewer*               CharacterPreviewer;                                // 0x2A8(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class ABP_CharacterRenderStudio_C*           BP_CharacterRenderStudio_0_GetCharacterRenderStudio_MERGED_RefProperty; // 0x2B0(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FString                                CharacterSelectMap;                                // 0x2A8(0x10)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class AVAL_CharacterPreviewer*               CharacterPreviewer;                                // 0x2B8(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class ABP_CharacterRenderStudio_C*           BP_CharacterRenderStudio_0_GetCharacterRenderStudio_MERGED_RefProperty; // 0x2C0(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 	static class UClass* StaticClass();
 	static class AMAP_PreGame_C* GetDefaultObj();

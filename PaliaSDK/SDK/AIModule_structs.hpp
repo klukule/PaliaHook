@@ -461,14 +461,14 @@ public:
 	float                                        Age;                                               // 0x0(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        ExpirationAge;                                     // 0x4(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                        Strength;                                          // 0x8(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F4A[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1147[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               StimulusLocation;                                  // 0x10(0x18)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               ReceiverLocation;                                  // 0x28(0x18)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  Tag;                                               // 0x40(0x8)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F4B[0xC];                                      // Fixing Size After Last Property  [ Dumper-7 ]
-	uint8                                        BitPad_99 : 1;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
+	uint8                                        Pad_1148[0xC];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        BitPad_A7 : 1;                                     // Fixing Bit-Field Size  [ Dumper-7 ]
 	uint8                                        bSuccessfullySensed : 1;                           // Mask: 0x2, PropSize: 0x10x54(0x1)(BlueprintVisible, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_F4C[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1149[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x68 (0x68 - 0x0)
@@ -478,7 +478,7 @@ struct FActorPerceptionUpdateInfo
 public:
 	int32                                        TargetId;                                          // 0x0(0x4)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TWeakObjectPtr<class AActor>                 Target;                                            // 0x4(0x8)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F4D[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_114A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAIStimulus                           Stimulus;                                          // 0x10(0x58)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 
@@ -496,7 +496,7 @@ struct FAIMoveRequest
 {
 public:
 	TWeakObjectPtr<class AActor>                 GoalActor;                                         // 0x0(0x8)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_F64[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_114F[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -505,7 +505,7 @@ struct FIntervalCountdown
 {
 public:
 	float                                        Interval;                                          // 0x0(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F66[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1150[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -515,7 +515,7 @@ struct FEnvNamedValue
 public:
 	class FName                                  ParamName;                                         // 0x0(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAIParamType                      ParamType;                                         // 0x8(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F68[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1152[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Value;                                             // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -528,7 +528,7 @@ public:
 	TSubclassOf<class UEnvQueryContext>          LineTo;                                            // 0x8(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UEnvQueryContext>          Rotation;                                          // 0x10(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvDirection                     DirMode;                                           // 0x18(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F6D[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1153[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -537,7 +537,7 @@ struct FEnvTraceData
 {
 public:
 	int32                                        VersionNum;                                        // 0x0(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F72[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1154[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UNavigationQueryFilter>    NavigationFilter;                                  // 0x8(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ProjectDown;                                       // 0x10(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ProjectUp;                                         // 0x14(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -547,18 +547,18 @@ public:
 	float                                        PostProjectionVerticalOffset;                      // 0x24(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ETraceTypeQuery                   TraceChannel;                                      // 0x28(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECollisionChannel                 SerializedChannel;                                 // 0x29(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F73[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1156[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  TraceProfileName;                                  // 0x2C(0x8)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvTraceShape                    TraceShape;                                        // 0x34(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvQueryTrace                    TraceMode;                                         // 0x35(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F74[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1157[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bTraceComplex : 1;                                 // Mask: 0x1, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOnlyBlockingHits : 1;                             // Mask: 0x2, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCanTraceOnNavMesh : 1;                            // Mask: 0x4, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCanTraceOnGeometry : 1;                           // Mask: 0x8, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCanDisableTrace : 1;                              // Mask: 0x10, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bCanProjectDown : 1;                               // Mask: 0x20, PropSize: 0x10x38(0x1)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F75[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1159[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -569,15 +569,15 @@ public:
 	float                                        ExtentX;                                           // 0x0(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ExtentY;                                           // 0x4(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ExtentZ;                                           // 0x8(0x4)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F77[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_115A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               ShapeOffset;                                       // 0x10(0x18)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECollisionChannel                 OverlapChannel;                                    // 0x28(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EEnvOverlapShape                  OverlapShape;                                      // 0x29(0x1)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F78[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_115B[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bOnlyBlockingHits : 1;                             // Mask: 0x1, PropSize: 0x10x2C(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bOverlapComplex : 1;                               // Mask: 0x2, PropSize: 0x10x2C(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bSkipOverlapQuerier : 1;                           // Mask: 0x4, PropSize: 0x10x2C(0x1)(Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F79[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_115C[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -585,12 +585,12 @@ public:
 struct FEnvQueryResult
 {
 public:
-	uint8                                        Pad_F80[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_115D[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	TSubclassOf<class UEnvQueryItemType>         ItemType;                                          // 0x10(0x8)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F81[0x14];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_115E[0x14];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        OptionIndex;                                       // 0x2C(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        QueryID;                                           // 0x30(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F82[0xC];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_115F[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -602,9 +602,9 @@ public:
 	class FName                                  SelectedKeyName;                                   // 0x10(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UBlackboardKeyType>        SelectedKeyType;                                   // 0x18(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        SelectedKeyID;                                     // 0x20(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_F87[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1164[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bNoneIsAllowedValue : 1;                           // Mask: 0x1, PropSize: 0x10x24(0x1)(Edit, BlueprintVisible, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_F88[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1165[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -614,7 +614,7 @@ struct FAIDynamicParam
 public:
 	class FName                                  ParamName;                                         // 0x0(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAIParamType                      ParamType;                                         // 0x8(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F8A[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1166[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        Value;                                             // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBlackboardKeySelector                BBKey;                                             // 0x10(0x28)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
@@ -628,9 +628,9 @@ public:
 	TArray<struct FAIDynamicParam>               QueryConfig;                                       // 0x8(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FBlackboardKeySelector                EQSQueryBlackboardKey;                             // 0x18(0x28)(Edit, NativeAccessSpecifierPublic)
 	enum class EEnvQueryRunMode                  RunMode;                                           // 0x40(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F8D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1167[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint8                                        bUseBBKeyForQueryTemplate : 1;                     // Mask: 0x1, PropSize: 0x10x44(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F8F[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1169[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -646,7 +646,7 @@ public:
 struct FSimpleIndexedHandleBase
 {
 public:
-	uint8                                        Pad_F90[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_116A[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x8 - 0x4)
@@ -654,7 +654,7 @@ public:
 struct FIndexedHandleBase : public FSimpleIndexedHandleBase
 {
 public:
-	uint8                                        Pad_F93[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_116B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -662,7 +662,7 @@ public:
 struct FCompactIndexedHandleBase
 {
 public:
-	uint8                                        Pad_F94[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_116C[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -679,7 +679,7 @@ struct FPawnActionEvent
 {
 public:
 	class UPawnAction*                           Action;                                            // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F95[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_116D[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -697,7 +697,7 @@ struct FBehaviorTreeTemplateInfo
 public:
 	class UBehaviorTree*                         Asset;                                             // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UBTCompositeNode*                      Template;                                          // 0x8(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F99[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1170[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -708,7 +708,7 @@ public:
 	class FName                                  EntryName;                                         // 0x0(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UBlackboardKeyType*                    KeyType;                                           // 0x8(0x8)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bInstanceSynced : 1;                               // Mask: 0x1, PropSize: 0x10x10(0x1)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F9B[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1171[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -717,7 +717,7 @@ struct FBTDecoratorLogic
 {
 public:
 	enum class EBTDecoratorLogic                 Operation;                                         // 0x0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F9C[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1172[0x1];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	uint16                                       Number;                                            // 0x2(0x2)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -737,7 +737,7 @@ public:
 struct FAIDataProviderValue
 {
 public:
-	uint8                                        Pad_F9E[0x10];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1174[0x10];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAIDataProvider*                       DataBinding;                                       // 0x10(0x8)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  DataField;                                         // 0x18(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -748,7 +748,7 @@ struct FAIDataProviderTypedValue : public FAIDataProviderValue
 {
 public:
 	TSubclassOf<class UObject>                   PropertyType;                                      // 0x20(0x8)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA0[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1175[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x30 - 0x20)
@@ -756,7 +756,7 @@ public:
 struct FAIDataProviderStructValue : public FAIDataProviderValue
 {
 public:
-	uint8                                        Pad_FA1[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1177[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x38 - 0x30)
@@ -765,7 +765,7 @@ struct FAIDataProviderIntValue : public FAIDataProviderTypedValue
 {
 public:
 	int32                                        DefaultValue;                                      // 0x30(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA6[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1178[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x38 - 0x30)
@@ -774,7 +774,7 @@ struct FAIDataProviderFloatValue : public FAIDataProviderTypedValue
 {
 public:
 	float                                        DefaultValue;                                      // 0x30(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FAD[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1179[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x38 - 0x30)
@@ -783,7 +783,7 @@ struct FAIDataProviderBoolValue : public FAIDataProviderTypedValue
 {
 public:
 	bool                                         DefaultValue;                                      // 0x30(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FAE[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_117C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -793,9 +793,9 @@ struct FEnvQueryManagerConfig
 public:
 	float                                        MaxAllowedTestingTime;                             // 0x0(0x4)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bTestQueriesUsingBreadth;                          // 0x4(0x1)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FAF[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_117D[0x3];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	int32                                        QueryCountWarningThreshold;                        // 0x8(0x4)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FB0[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_117E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       QueryCountWarningInterval;                         // 0x10(0x8)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                       ExecutionTimeWarningSeconds;                       // 0x18(0x8)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                       HandlingResultTimeWarningSeconds;                  // 0x20(0x8)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -810,7 +810,7 @@ public:
 	class UEnvQuery*                             QueryTemplate;                                     // 0x0(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UObject*                               Owner;                                             // 0x8(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UWorld*                                World;                                             // 0x10(0x8)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_FB3[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1181[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x178 (0x178 - 0x0)
@@ -819,7 +819,7 @@ struct FEnvQueryInstanceCache
 {
 public:
 	class UEnvQuery*                             Template;                                          // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FB6[0x170];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1182[0x170];                                   // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1C (0x1C - 0x0)
@@ -854,7 +854,7 @@ struct FRecastGraphWrapper
 {
 public:
 	class ARecastNavMesh*                        RecastNavMeshActor;                                // 0x0(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_FBA[0xA8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1188[0xA8];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -865,7 +865,7 @@ public:
 	class AActor*                                Target;                                            // 0x0(0x8)(BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FAIStimulus>                   LastSensedStimuli;                                 // 0x8(0x10)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	uint8                                        bIsHostile : 1;                                    // Mask: 0x1, PropSize: 0x10x18(0x1)(BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FBC[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_118A[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x4 - 0x0)
@@ -876,7 +876,7 @@ public:
 	uint8                                        bDetectEnemies : 1;                                // Mask: 0x1, PropSize: 0x10x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bDetectNeutrals : 1;                               // Mask: 0x2, PropSize: 0x10x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                        bDetectFriendlies : 1;                             // Mask: 0x4, PropSize: 0x10x0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FBD[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_118E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -885,7 +885,7 @@ struct FAIDamageEvent
 {
 public:
 	float                                        Amount;                                            // 0x0(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FBF[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1195[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               Location;                                          // 0x8(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               HitLocation;                                       // 0x20(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                DamagedActor;                                      // 0x38(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -898,13 +898,13 @@ public:
 struct FAINoiseEvent
 {
 public:
-	uint8                                        Pad_FC2[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1197[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               NoiseLocation;                                     // 0x8(0x18)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Loudness;                                          // 0x20(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        MaxRange;                                          // 0x24(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                Instigator;                                        // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                  Tag;                                               // 0x30(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FC4[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_119A[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -914,7 +914,7 @@ struct FAIPredictionEvent
 public:
 	class AActor*                                Requestor;                                         // 0x0(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                PredictedActor;                                    // 0x8(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FC6[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_119C[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -922,7 +922,7 @@ public:
 struct FAISightEvent
 {
 public:
-	uint8                                        Pad_FC7[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_119D[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                SeenActor;                                         // 0x8(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                Observer;                                          // 0x10(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -932,7 +932,7 @@ public:
 struct FAITeamStimulusEvent
 {
 public:
-	uint8                                        Pad_FC9[0x40];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_119F[0x40];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                Broadcaster;                                       // 0x40(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class AActor*                                Enemy;                                             // 0x48(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -942,7 +942,7 @@ public:
 struct FAITouchEvent
 {
 public:
-	uint8                                        Pad_FCB[0x18];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_11A0[0x18];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	class AActor*                                TouchReceiver;                                     // 0x18(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                OtherActor;                                        // 0x20(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };

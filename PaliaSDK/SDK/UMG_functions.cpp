@@ -10566,6 +10566,1075 @@ class UWidgetBlueprintGeneratedClassExtension* UWidgetBlueprintGeneratedClassExt
 }
 
 
+// Class UMG.WidgetComponent
+// (SceneComponent, PrimitiveComponent)
+
+class UClass* UWidgetComponent::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("WidgetComponent");
+
+	return Clss;
+}
+
+
+// WidgetComponent UMG.Default__WidgetComponent
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UWidgetComponent* UWidgetComponent::GetDefaultObj()
+{
+	static class UWidgetComponent* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UWidgetComponent*>(UWidgetComponent::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Function UMG.WidgetComponent.SetWindowVisibility
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class EWindowVisibility       InVisibility                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetWindowVisibility(enum class EWindowVisibility InVisibility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetWindowVisibility");
+
+	Params::UWidgetComponent_SetWindowVisibility_Params Parms{};
+
+	Parms.InVisibility = InVisibility;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetWindowFocusable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bInWindowFocusable                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetWindowFocusable(bool bInWindowFocusable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetWindowFocusable");
+
+	Params::UWidgetComponent_SetWindowFocusable_Params Parms{};
+
+	Parms.bInWindowFocusable = bInWindowFocusable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetWidgetSpace
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class EWidgetSpace            NewSpace                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetWidgetSpace(enum class EWidgetSpace NewSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetWidgetSpace");
+
+	Params::UWidgetComponent_SetWidgetSpace_Params Parms{};
+
+	Parms.NewSpace = NewSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetWidget
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class UUserWidget*                 Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetWidget(class UUserWidget* Widget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetWidget");
+
+	Params::UWidgetComponent_SetWidget_Params Parms{};
+
+	Parms.Widget = Widget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetTwoSided
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bWantTwoSided                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetTwoSided(bool bWantTwoSided)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetTwoSided");
+
+	Params::UWidgetComponent_SetTwoSided_Params Parms{};
+
+	Parms.bWantTwoSided = bWantTwoSided;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetTintColorAndOpacity
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FLinearColor                NewTintColorAndOpacity                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetTintColorAndOpacity(const struct FLinearColor& NewTintColorAndOpacity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetTintColorAndOpacity");
+
+	Params::UWidgetComponent_SetTintColorAndOpacity_Params Parms{};
+
+	Parms.NewTintColorAndOpacity = NewTintColorAndOpacity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetTickWhenOffscreen
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bWantTickWhenOffscreen                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetTickWhenOffscreen(bool bWantTickWhenOffscreen)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetTickWhenOffscreen");
+
+	Params::UWidgetComponent_SetTickWhenOffscreen_Params Parms{};
+
+	Parms.bWantTickWhenOffscreen = bWantTickWhenOffscreen;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetTickMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class ETickMode               InTickMode                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetTickMode(enum class ETickMode InTickMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetTickMode");
+
+	Params::UWidgetComponent_SetTickMode_Params Parms{};
+
+	Parms.InTickMode = InTickMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetRedrawTime
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                              InRedrawTime                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetRedrawTime(float InRedrawTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetRedrawTime");
+
+	Params::UWidgetComponent_SetRedrawTime_Params Parms{};
+
+	Parms.InRedrawTime = InRedrawTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetPivot
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                   InPivot                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetPivot(struct FVector2D& InPivot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetPivot");
+
+	Params::UWidgetComponent_SetPivot_Params Parms{};
+
+	Parms.InPivot = InPivot;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetOwnerPlayer
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULocalPlayer*                LocalPlayer                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetOwnerPlayer(class ULocalPlayer* LocalPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetOwnerPlayer");
+
+	Params::UWidgetComponent_SetOwnerPlayer_Params Parms{};
+
+	Parms.LocalPlayer = LocalPlayer;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetManuallyRedraw
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bUseManualRedraw                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetManuallyRedraw(bool bUseManualRedraw)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetManuallyRedraw");
+
+	Params::UWidgetComponent_SetManuallyRedraw_Params Parms{};
+
+	Parms.bUseManualRedraw = bUseManualRedraw;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetGeometryMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// enum class EWidgetGeometryMode     InGeometryMode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetGeometryMode(enum class EWidgetGeometryMode InGeometryMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetGeometryMode");
+
+	Params::UWidgetComponent_SetGeometryMode_Params Parms{};
+
+	Parms.InGeometryMode = InGeometryMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetDrawSize
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                   Size                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetDrawSize(const struct FVector2D& Size)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetDrawSize");
+
+	Params::UWidgetComponent_SetDrawSize_Params Parms{};
+
+	Parms.Size = Size;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetDrawAtDesiredSize
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bInDrawAtDesiredSize                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetDrawAtDesiredSize(bool bInDrawAtDesiredSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetDrawAtDesiredSize");
+
+	Params::UWidgetComponent_SetDrawAtDesiredSize_Params Parms{};
+
+	Parms.bInDrawAtDesiredSize = bInDrawAtDesiredSize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetCylinderArcAngle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                              InCylinderArcAngle                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetCylinderArcAngle(float InCylinderArcAngle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetCylinderArcAngle");
+
+	Params::UWidgetComponent_SetCylinderArcAngle_Params Parms{};
+
+	Parms.InCylinderArcAngle = InCylinderArcAngle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.SetBackgroundColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FLinearColor                NewBackgroundColor                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWidgetComponent::SetBackgroundColor(const struct FLinearColor& NewBackgroundColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "SetBackgroundColor");
+
+	Params::UWidgetComponent_SetBackgroundColor_Params Parms{};
+
+	Parms.NewBackgroundColor = NewBackgroundColor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.RequestRenderUpdate
+// (Native, Public, BlueprintCallable)
+// Parameters:
+
+void UWidgetComponent::RequestRenderUpdate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "RequestRenderUpdate");
+
+	Params::UWidgetComponent_RequestRenderUpdate_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.RequestRedraw
+// (Native, Public, BlueprintCallable)
+// Parameters:
+
+void UWidgetComponent::RequestRedraw()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "RequestRedraw");
+
+	Params::UWidgetComponent_RequestRedraw_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function UMG.WidgetComponent.IsWidgetVisible
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UWidgetComponent::IsWidgetVisible()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "IsWidgetVisible");
+
+	Params::UWidgetComponent_IsWidgetVisible_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetWindowVisiblility
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// enum class EWindowVisibility       ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+enum class EWindowVisibility UWidgetComponent::GetWindowVisiblility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetWindowVisiblility");
+
+	Params::UWidgetComponent_GetWindowVisiblility_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetWindowFocusable
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UWidgetComponent::GetWindowFocusable()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetWindowFocusable");
+
+	Params::UWidgetComponent_GetWindowFocusable_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetWidgetSpace
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// enum class EWidgetSpace            ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+enum class EWidgetSpace UWidgetComponent::GetWidgetSpace()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetWidgetSpace");
+
+	Params::UWidgetComponent_GetWidgetSpace_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetWidget
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUserWidget*                 ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUserWidget* UWidgetComponent::GetWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetWidget");
+
+	Params::UWidgetComponent_GetWidget_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetUserWidgetObject
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUserWidget*                 ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUserWidget* UWidgetComponent::GetUserWidgetObject()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetUserWidgetObject");
+
+	Params::UWidgetComponent_GetUserWidgetObject_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetTwoSided
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UWidgetComponent::GetTwoSided()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetTwoSided");
+
+	Params::UWidgetComponent_GetTwoSided_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetTickWhenOffscreen
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UWidgetComponent::GetTickWhenOffscreen()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetTickWhenOffscreen");
+
+	Params::UWidgetComponent_GetTickWhenOffscreen_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetRenderTarget
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UTextureRenderTarget2D*      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTextureRenderTarget2D* UWidgetComponent::GetRenderTarget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetRenderTarget");
+
+	Params::UWidgetComponent_GetRenderTarget_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetRedrawTime
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UWidgetComponent::GetRedrawTime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetRedrawTime");
+
+	Params::UWidgetComponent_GetRedrawTime_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetPivot
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UWidgetComponent::GetPivot()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetPivot");
+
+	Params::UWidgetComponent_GetPivot_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetOwnerPlayer
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ULocalPlayer*                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULocalPlayer* UWidgetComponent::GetOwnerPlayer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetOwnerPlayer");
+
+	Params::UWidgetComponent_GetOwnerPlayer_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetMaterialInstance
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UMaterialInstanceDynamic*    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMaterialInstanceDynamic* UWidgetComponent::GetMaterialInstance()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetMaterialInstance");
+
+	Params::UWidgetComponent_GetMaterialInstance_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetManuallyRedraw
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UWidgetComponent::GetManuallyRedraw()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetManuallyRedraw");
+
+	Params::UWidgetComponent_GetManuallyRedraw_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetGeometryMode
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// enum class EWidgetGeometryMode     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+enum class EWidgetGeometryMode UWidgetComponent::GetGeometryMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetGeometryMode");
+
+	Params::UWidgetComponent_GetGeometryMode_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetDrawSize
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UWidgetComponent::GetDrawSize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetDrawSize");
+
+	Params::UWidgetComponent_GetDrawSize_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetDrawAtDesiredSize
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UWidgetComponent::GetDrawAtDesiredSize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetDrawAtDesiredSize");
+
+	Params::UWidgetComponent_GetDrawAtDesiredSize_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetCylinderArcAngle
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UWidgetComponent::GetCylinderArcAngle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetCylinderArcAngle");
+
+	Params::UWidgetComponent_GetCylinderArcAngle_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function UMG.WidgetComponent.GetCurrentDrawSize
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UWidgetComponent::GetCurrentDrawSize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("WidgetComponent", "GetCurrentDrawSize");
+
+	Params::UWidgetComponent_GetCurrentDrawSize_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Class UMG.CheckBox
 // (None)
 
@@ -20395,1075 +21464,6 @@ struct FVector UViewport::GetViewLocation()
 		Func = Class->GetFunction("Viewport", "GetViewLocation");
 
 	Params::UViewport_GetViewLocation_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Class UMG.WidgetComponent
-// (SceneComponent, PrimitiveComponent)
-
-class UClass* UWidgetComponent::StaticClass()
-{
-	static class UClass* Clss = nullptr;
-
-	if (!Clss)
-		Clss = UObject::FindClassFast("WidgetComponent");
-
-	return Clss;
-}
-
-
-// WidgetComponent UMG.Default__WidgetComponent
-// (Public, ClassDefaultObject, ArchetypeObject)
-
-class UWidgetComponent* UWidgetComponent::GetDefaultObj()
-{
-	static class UWidgetComponent* Default = nullptr;
-
-	if (!Default)
-		Default = static_cast<UWidgetComponent*>(UWidgetComponent::StaticClass()->DefaultObject);
-
-	return Default;
-}
-
-
-// Function UMG.WidgetComponent.SetWindowVisibility
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class EWindowVisibility       InVisibility                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetWindowVisibility(enum class EWindowVisibility InVisibility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetWindowVisibility");
-
-	Params::UWidgetComponent_SetWindowVisibility_Params Parms{};
-
-	Parms.InVisibility = InVisibility;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetWindowFocusable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                               bInWindowFocusable                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetWindowFocusable(bool bInWindowFocusable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetWindowFocusable");
-
-	Params::UWidgetComponent_SetWindowFocusable_Params Parms{};
-
-	Parms.bInWindowFocusable = bInWindowFocusable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetWidgetSpace
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class EWidgetSpace            NewSpace                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetWidgetSpace(enum class EWidgetSpace NewSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetWidgetSpace");
-
-	Params::UWidgetComponent_SetWidgetSpace_Params Parms{};
-
-	Parms.NewSpace = NewSpace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetWidget
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class UUserWidget*                 Widget                                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetWidget(class UUserWidget* Widget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetWidget");
-
-	Params::UWidgetComponent_SetWidget_Params Parms{};
-
-	Parms.Widget = Widget;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetTwoSided
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                               bWantTwoSided                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetTwoSided(bool bWantTwoSided)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetTwoSided");
-
-	Params::UWidgetComponent_SetTwoSided_Params Parms{};
-
-	Parms.bWantTwoSided = bWantTwoSided;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetTintColorAndOpacity
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FLinearColor                NewTintColorAndOpacity                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetTintColorAndOpacity(const struct FLinearColor& NewTintColorAndOpacity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetTintColorAndOpacity");
-
-	Params::UWidgetComponent_SetTintColorAndOpacity_Params Parms{};
-
-	Parms.NewTintColorAndOpacity = NewTintColorAndOpacity;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetTickWhenOffscreen
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                               bWantTickWhenOffscreen                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetTickWhenOffscreen(bool bWantTickWhenOffscreen)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetTickWhenOffscreen");
-
-	Params::UWidgetComponent_SetTickWhenOffscreen_Params Parms{};
-
-	Parms.bWantTickWhenOffscreen = bWantTickWhenOffscreen;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetTickMode
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class ETickMode               InTickMode                                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetTickMode(enum class ETickMode InTickMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetTickMode");
-
-	Params::UWidgetComponent_SetTickMode_Params Parms{};
-
-	Parms.InTickMode = InTickMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetRedrawTime
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                              InRedrawTime                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetRedrawTime(float InRedrawTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetRedrawTime");
-
-	Params::UWidgetComponent_SetRedrawTime_Params Parms{};
-
-	Parms.InRedrawTime = InRedrawTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetPivot
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector2D                   InPivot                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetPivot(struct FVector2D& InPivot)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetPivot");
-
-	Params::UWidgetComponent_SetPivot_Params Parms{};
-
-	Parms.InPivot = InPivot;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetOwnerPlayer
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ULocalPlayer*                LocalPlayer                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetOwnerPlayer(class ULocalPlayer* LocalPlayer)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetOwnerPlayer");
-
-	Params::UWidgetComponent_SetOwnerPlayer_Params Parms{};
-
-	Parms.LocalPlayer = LocalPlayer;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetManuallyRedraw
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                               bUseManualRedraw                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetManuallyRedraw(bool bUseManualRedraw)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetManuallyRedraw");
-
-	Params::UWidgetComponent_SetManuallyRedraw_Params Parms{};
-
-	Parms.bUseManualRedraw = bUseManualRedraw;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetGeometryMode
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// enum class EWidgetGeometryMode     InGeometryMode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetGeometryMode(enum class EWidgetGeometryMode InGeometryMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetGeometryMode");
-
-	Params::UWidgetComponent_SetGeometryMode_Params Parms{};
-
-	Parms.InGeometryMode = InGeometryMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetDrawSize
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector2D                   Size                                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetDrawSize(const struct FVector2D& Size)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetDrawSize");
-
-	Params::UWidgetComponent_SetDrawSize_Params Parms{};
-
-	Parms.Size = Size;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetDrawAtDesiredSize
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                               bInDrawAtDesiredSize                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetDrawAtDesiredSize(bool bInDrawAtDesiredSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetDrawAtDesiredSize");
-
-	Params::UWidgetComponent_SetDrawAtDesiredSize_Params Parms{};
-
-	Parms.bInDrawAtDesiredSize = bInDrawAtDesiredSize;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetCylinderArcAngle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                              InCylinderArcAngle                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetCylinderArcAngle(float InCylinderArcAngle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetCylinderArcAngle");
-
-	Params::UWidgetComponent_SetCylinderArcAngle_Params Parms{};
-
-	Parms.InCylinderArcAngle = InCylinderArcAngle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.SetBackgroundColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FLinearColor                NewBackgroundColor                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWidgetComponent::SetBackgroundColor(const struct FLinearColor& NewBackgroundColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "SetBackgroundColor");
-
-	Params::UWidgetComponent_SetBackgroundColor_Params Parms{};
-
-	Parms.NewBackgroundColor = NewBackgroundColor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.RequestRenderUpdate
-// (Native, Public, BlueprintCallable)
-// Parameters:
-
-void UWidgetComponent::RequestRenderUpdate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "RequestRenderUpdate");
-
-	Params::UWidgetComponent_RequestRenderUpdate_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.RequestRedraw
-// (Native, Public, BlueprintCallable)
-// Parameters:
-
-void UWidgetComponent::RequestRedraw()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "RequestRedraw");
-
-	Params::UWidgetComponent_RequestRedraw_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-}
-
-
-// Function UMG.WidgetComponent.IsWidgetVisible
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UWidgetComponent::IsWidgetVisible()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "IsWidgetVisible");
-
-	Params::UWidgetComponent_IsWidgetVisible_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetWindowVisiblility
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// enum class EWindowVisibility       ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-enum class EWindowVisibility UWidgetComponent::GetWindowVisiblility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetWindowVisiblility");
-
-	Params::UWidgetComponent_GetWindowVisiblility_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetWindowFocusable
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UWidgetComponent::GetWindowFocusable()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetWindowFocusable");
-
-	Params::UWidgetComponent_GetWindowFocusable_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetWidgetSpace
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// enum class EWidgetSpace            ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-enum class EWidgetSpace UWidgetComponent::GetWidgetSpace()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetWidgetSpace");
-
-	Params::UWidgetComponent_GetWidgetSpace_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetWidget
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUserWidget*                 ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUserWidget* UWidgetComponent::GetWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetWidget");
-
-	Params::UWidgetComponent_GetWidget_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetUserWidgetObject
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUserWidget*                 ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUserWidget* UWidgetComponent::GetUserWidgetObject()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetUserWidgetObject");
-
-	Params::UWidgetComponent_GetUserWidgetObject_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetTwoSided
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UWidgetComponent::GetTwoSided()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetTwoSided");
-
-	Params::UWidgetComponent_GetTwoSided_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetTickWhenOffscreen
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UWidgetComponent::GetTickWhenOffscreen()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetTickWhenOffscreen");
-
-	Params::UWidgetComponent_GetTickWhenOffscreen_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetRenderTarget
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UTextureRenderTarget2D*      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UTextureRenderTarget2D* UWidgetComponent::GetRenderTarget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetRenderTarget");
-
-	Params::UWidgetComponent_GetRenderTarget_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetRedrawTime
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UWidgetComponent::GetRedrawTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetRedrawTime");
-
-	Params::UWidgetComponent_GetRedrawTime_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetPivot
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D UWidgetComponent::GetPivot()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetPivot");
-
-	Params::UWidgetComponent_GetPivot_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetOwnerPlayer
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ULocalPlayer*                ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULocalPlayer* UWidgetComponent::GetOwnerPlayer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetOwnerPlayer");
-
-	Params::UWidgetComponent_GetOwnerPlayer_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetMaterialInstance
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UMaterialInstanceDynamic*    ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMaterialInstanceDynamic* UWidgetComponent::GetMaterialInstance()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetMaterialInstance");
-
-	Params::UWidgetComponent_GetMaterialInstance_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetManuallyRedraw
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UWidgetComponent::GetManuallyRedraw()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetManuallyRedraw");
-
-	Params::UWidgetComponent_GetManuallyRedraw_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetGeometryMode
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// enum class EWidgetGeometryMode     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-enum class EWidgetGeometryMode UWidgetComponent::GetGeometryMode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetGeometryMode");
-
-	Params::UWidgetComponent_GetGeometryMode_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetDrawSize
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D UWidgetComponent::GetDrawSize()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetDrawSize");
-
-	Params::UWidgetComponent_GetDrawSize_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetDrawAtDesiredSize
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UWidgetComponent::GetDrawAtDesiredSize()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetDrawAtDesiredSize");
-
-	Params::UWidgetComponent_GetDrawAtDesiredSize_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetCylinderArcAngle
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UWidgetComponent::GetCylinderArcAngle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetCylinderArcAngle");
-
-	Params::UWidgetComponent_GetCylinderArcAngle_Params Parms{};
-
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function UMG.WidgetComponent.GetCurrentDrawSize
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                   ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D UWidgetComponent::GetCurrentDrawSize()
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("WidgetComponent", "GetCurrentDrawSize");
-
-	Params::UWidgetComponent_GetCurrentDrawSize_Params Parms{};
 
 
 	auto Flgs = Func->FunctionFlags;

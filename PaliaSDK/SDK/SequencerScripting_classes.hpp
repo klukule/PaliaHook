@@ -14,7 +14,7 @@ namespace SDK
 class UMovieSceneScriptingKey : public UObject
 {
 public:
-	uint8                                        Pad_10B0[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1382[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingKey* GetDefaultObj();
@@ -26,7 +26,7 @@ public:
 class UMovieSceneScriptingActorReferenceKey : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                        Pad_10CD[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1395[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingActorReferenceKey* GetDefaultObj();
@@ -54,7 +54,7 @@ public:
 class UMovieSceneScriptingActorReferenceChannel : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                        Pad_10EF[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13A6[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingActorReferenceChannel* GetDefaultObj();
@@ -73,7 +73,7 @@ public:
 class UMovieSceneScriptingBoolKey : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                        Pad_10FA[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13BA[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingBoolKey* GetDefaultObj();
@@ -89,7 +89,7 @@ public:
 class UMovieSceneScriptingBoolChannel : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                        Pad_1127[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13DF[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingBoolChannel* GetDefaultObj();
@@ -111,7 +111,7 @@ public:
 class UMovieSceneScriptingByteKey : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                        Pad_113A[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_13EE[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingByteKey* GetDefaultObj();
@@ -127,7 +127,7 @@ public:
 class UMovieSceneScriptingByteChannel : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                        Pad_1150[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1404[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingByteChannel* GetDefaultObj();
@@ -146,7 +146,7 @@ public:
 class UMovieSceneScriptingDoubleKey : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                        Pad_1194[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1441[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingDoubleKey* GetDefaultObj();
@@ -176,7 +176,7 @@ public:
 class UMovieSceneScriptingDoubleChannel : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                        Pad_11CB[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1481[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingDoubleChannel* GetDefaultObj();
@@ -202,7 +202,7 @@ public:
 class UMovieSceneScriptingEventKey : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                        Pad_11F7[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14A2[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingEventKey* GetDefaultObj();
@@ -218,7 +218,7 @@ public:
 class UMovieSceneScriptingEventChannel : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                        Pad_121E[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_14C1[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingEventChannel* GetDefaultObj();
@@ -262,7 +262,7 @@ public:
 class UMovieSceneScriptingActualFloatKey : public UMovieSceneScriptingFloatKey
 {
 public:
-	uint8                                        Pad_12A9[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1519[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingActualFloatKey* GetDefaultObj();
@@ -274,7 +274,7 @@ public:
 class UMovieSceneScriptingDoubleAsFloatKey : public UMovieSceneScriptingFloatKey
 {
 public:
-	uint8                                        Pad_12AF[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_151B[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingDoubleAsFloatKey* GetDefaultObj();
@@ -286,7 +286,7 @@ public:
 class UMovieSceneScriptingFloatChannel : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                        Pad_1301[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_158A[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingFloatChannel* GetDefaultObj();
@@ -312,7 +312,7 @@ public:
 class UMovieSceneScriptingIntegerKey : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                        Pad_131C[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15B1[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingIntegerKey* GetDefaultObj();
@@ -328,7 +328,7 @@ public:
 class UMovieSceneScriptingIntegerChannel : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                        Pad_1332[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15D5[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingIntegerChannel* GetDefaultObj();
@@ -347,7 +347,7 @@ public:
 class UMovieSceneScriptingObjectPathKey : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                        Pad_134D[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15E1[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingObjectPathKey* GetDefaultObj();
@@ -363,7 +363,7 @@ public:
 class UMovieSceneScriptingObjectPathChannel : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                        Pad_1372[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_15F9[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingObjectPathChannel* GetDefaultObj();
@@ -382,7 +382,7 @@ public:
 class UMovieSceneScriptingStringKey : public UMovieSceneScriptingKey
 {
 public:
-	uint8                                        Pad_1384[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1609[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingStringKey* GetDefaultObj();
@@ -398,7 +398,7 @@ public:
 class UMovieSceneScriptingStringChannel : public UMovieSceneScriptingChannel
 {
 public:
-	uint8                                        Pad_13A1[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1635[0x30];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMovieSceneScriptingStringChannel* GetDefaultObj();

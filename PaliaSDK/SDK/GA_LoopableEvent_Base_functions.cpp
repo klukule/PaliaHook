@@ -40,6 +40,83 @@ class UGA_LoopableEvent_Base_C* UGA_LoopableEvent_Base_C::GetDefaultObj()
 }
 
 
+// Function GA_LoopableEvent_Base.GA_LoopableEvent_Base_C.GetProbeSphere
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FBoxSphereBounds            NewParam                                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_LoopableEvent_Base_C::GetProbeSphere(struct FBoxSphereBounds* NewParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("GA_LoopableEvent_Base_C", "GetProbeSphere");
+
+	Params::UGA_LoopableEvent_Base_C_GetProbeSphere_Params Parms{};
+
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = std::move(Parms.NewParam);
+
+}
+
+
+// Function GA_LoopableEvent_Base.GA_LoopableEvent_Base_C.GetGASComponentForTargetActor
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class AActor*                      Actor                                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UValeriaGASComponent*        GasComponent                                                     (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UValeriaGASComponent*        CallFunc_GetComponentByClass_ReturnValue                         (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UGA_LoopableEvent_Base_C::GetGASComponentForTargetActor(class AActor* Actor, class UValeriaGASComponent** GasComponent, class UValeriaGASComponent* CallFunc_GetComponentByClass_ReturnValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("GA_LoopableEvent_Base_C", "GetGASComponentForTargetActor");
+
+	Params::UGA_LoopableEvent_Base_C_GetGASComponentForTargetActor_Params Parms{};
+
+	Parms.Actor = Actor;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (GasComponent != nullptr)
+		*GasComponent = Parms.GasComponent;
+
+}
+
+
+// Function GA_LoopableEvent_Base.GA_LoopableEvent_Base_C.GetVitalsComponentForTargetActor
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class AActor*                      Actor                                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UVitalsComponent*            VitalsComponent                                                  (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UVitalsComponent*            CallFunc_GetComponentByClass_ReturnValue                         (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UGA_LoopableEvent_Base_C::GetVitalsComponentForTargetActor(class AActor* Actor, class UVitalsComponent** VitalsComponent, class UVitalsComponent* CallFunc_GetComponentByClass_ReturnValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("GA_LoopableEvent_Base_C", "GetVitalsComponentForTargetActor");
+
+	Params::UGA_LoopableEvent_Base_C_GetVitalsComponentForTargetActor_Params Parms{};
+
+	Parms.Actor = Actor;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (VitalsComponent != nullptr)
+		*VitalsComponent = Parms.VitalsComponent;
+
+}
+
+
 // Function GA_LoopableEvent_Base.GA_LoopableEvent_Base_C.LoadAbilityAssets
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -293,16 +370,16 @@ void UGA_LoopableEvent_Base_C::OnGatherClient(class AActor* Actor)
 // Parameters:
 // class AActor*                      Actor                                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               DidProgressGather                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UVitalsComponent*            VitalsComponent                                                  (Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // bool                               WasDamageDealt                                                   (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UVitalsComponent*            CallFunc_GetVitalsComponentForTargetActor_VitalsComponent        (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// TSubclassOf<class UGameplayEffect> Temp_class_Variable                                              (ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // bool                               CallFunc_IsServer_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UVitalsComponent*            CallFunc_GetComponentByClass_ReturnValue                         (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Not_PreBool_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_GetVital_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UValeriaGASComponent*        CallFunc_GetComponentByClass_ReturnValue_1                       (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_LessEqual_IntInt_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_Not_PreBool_ReturnValue_1                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TSubclassOf<class UGameplayEffect> Temp_class_Variable                                              (ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class AValeriaCharacter*           CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue            (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_Not_PreBool_ReturnValue_1                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsGodModeEnabled_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UValeriaGASComponent*        CallFunc_GetGAS_ReturnValue                                      (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwningActorFromActorInfo_ReturnValue                 (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -312,6 +389,7 @@ void UGA_LoopableEvent_Base_C::OnGatherClient(class AActor* Actor)
 // bool                               CallFunc_IsServer_ReturnValue_1                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_EqualEqual_ByteByte_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwningActorFromActorInfo_ReturnValue_1               (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UValeriaGASComponent*        CallFunc_GetGASComponentForTargetActor_GASComponent              (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwningActorFromActorInfo_ReturnValue_2               (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FVitalsChangeContext        K2Node_MakeStruct_VitalsChangeContext                            (None)
 // TSubclassOf<class UGameplayEffect> K2Node_Select_Default                                            (ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
@@ -319,7 +397,7 @@ void UGA_LoopableEvent_Base_C::OnGatherClient(class AActor* Actor)
 // struct FActiveGameplayEffectHandle CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue              (NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_FilterChange_ReturnValue                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::OnGather(class AActor* Actor, bool* DidProgressGather, bool WasDamageDealt, bool CallFunc_IsServer_ReturnValue, class UVitalsComponent* CallFunc_GetComponentByClass_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, int32 CallFunc_GetVital_ReturnValue, class UValeriaGASComponent* CallFunc_GetComponentByClass_ReturnValue_1, bool CallFunc_LessEqual_IntInt_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue_1, TSubclassOf<class UGameplayEffect> Temp_class_Variable, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, bool CallFunc_IsGodModeEnabled_ReturnValue, class UValeriaGASComponent* CallFunc_GetGAS_ReturnValue, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, bool Temp_bool_Variable, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, enum class ENetRole CallFunc_GetLocalRole_ReturnValue, bool CallFunc_IsServer_ReturnValue_1, bool CallFunc_EqualEqual_ByteByte_ReturnValue, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue_2, const struct FVitalsChangeContext& K2Node_MakeStruct_VitalsChangeContext, TSubclassOf<class UGameplayEffect> K2Node_Select_Default, const struct FVitalsChange& K2Node_MakeStruct_VitalsChange, const struct FActiveGameplayEffectHandle& CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue, bool CallFunc_FilterChange_ReturnValue)
+void UGA_LoopableEvent_Base_C::OnGather(class AActor* Actor, bool* DidProgressGather, class UVitalsComponent* VitalsComponent, bool WasDamageDealt, class UVitalsComponent* CallFunc_GetVitalsComponentForTargetActor_VitalsComponent, TSubclassOf<class UGameplayEffect> Temp_class_Variable, bool CallFunc_IsServer_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, int32 CallFunc_GetVital_ReturnValue, bool CallFunc_LessEqual_IntInt_ReturnValue, class AValeriaCharacter* CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue_1, bool CallFunc_IsGodModeEnabled_ReturnValue, class UValeriaGASComponent* CallFunc_GetGAS_ReturnValue, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, bool Temp_bool_Variable, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, enum class ENetRole CallFunc_GetLocalRole_ReturnValue, bool CallFunc_IsServer_ReturnValue_1, bool CallFunc_EqualEqual_ByteByte_ReturnValue, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue_1, class UValeriaGASComponent* CallFunc_GetGASComponentForTargetActor_GASComponent, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue_2, const struct FVitalsChangeContext& K2Node_MakeStruct_VitalsChangeContext, TSubclassOf<class UGameplayEffect> K2Node_Select_Default, const struct FVitalsChange& K2Node_MakeStruct_VitalsChange, const struct FActiveGameplayEffectHandle& CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue, bool CallFunc_FilterChange_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -329,16 +407,16 @@ void UGA_LoopableEvent_Base_C::OnGather(class AActor* Actor, bool* DidProgressGa
 	Params::UGA_LoopableEvent_Base_C_OnGather_Params Parms{};
 
 	Parms.Actor = Actor;
+	Parms.VitalsComponent = VitalsComponent;
 	Parms.WasDamageDealt = WasDamageDealt;
+	Parms.CallFunc_GetVitalsComponentForTargetActor_VitalsComponent = CallFunc_GetVitalsComponentForTargetActor_VitalsComponent;
+	Parms.Temp_class_Variable = Temp_class_Variable;
 	Parms.CallFunc_IsServer_ReturnValue = CallFunc_IsServer_ReturnValue;
-	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
 	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
 	Parms.CallFunc_GetVital_ReturnValue = CallFunc_GetVital_ReturnValue;
-	Parms.CallFunc_GetComponentByClass_ReturnValue_1 = CallFunc_GetComponentByClass_ReturnValue_1;
 	Parms.CallFunc_LessEqual_IntInt_ReturnValue = CallFunc_LessEqual_IntInt_ReturnValue;
-	Parms.CallFunc_Not_PreBool_ReturnValue_1 = CallFunc_Not_PreBool_ReturnValue_1;
-	Parms.Temp_class_Variable = Temp_class_Variable;
 	Parms.CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue = CallFunc_GetValeriaCharacterFromActorInfo_ReturnValue;
+	Parms.CallFunc_Not_PreBool_ReturnValue_1 = CallFunc_Not_PreBool_ReturnValue_1;
 	Parms.CallFunc_IsGodModeEnabled_ReturnValue = CallFunc_IsGodModeEnabled_ReturnValue;
 	Parms.CallFunc_GetGAS_ReturnValue = CallFunc_GetGAS_ReturnValue;
 	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue = CallFunc_GetOwningActorFromActorInfo_ReturnValue;
@@ -348,6 +426,7 @@ void UGA_LoopableEvent_Base_C::OnGather(class AActor* Actor, bool* DidProgressGa
 	Parms.CallFunc_IsServer_ReturnValue_1 = CallFunc_IsServer_ReturnValue_1;
 	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = CallFunc_EqualEqual_ByteByte_ReturnValue;
 	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_1 = CallFunc_GetOwningActorFromActorInfo_ReturnValue_1;
+	Parms.CallFunc_GetGASComponentForTargetActor_GASComponent = CallFunc_GetGASComponentForTargetActor_GASComponent;
 	Parms.CallFunc_GetOwningActorFromActorInfo_ReturnValue_2 = CallFunc_GetOwningActorFromActorInfo_ReturnValue_2;
 	Parms.K2Node_MakeStruct_VitalsChangeContext = K2Node_MakeStruct_VitalsChangeContext;
 	Parms.K2Node_Select_Default = K2Node_Select_Default;
@@ -364,13 +443,15 @@ void UGA_LoopableEvent_Base_C::OnGather(class AActor* Actor, bool* DidProgressGa
 
 
 // Function GA_LoopableEvent_Base.GA_LoopableEvent_Base_C.TriggerGather
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
+// class AActor*                      TargetActor                                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                      LocalTargetActor                                                 (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_K2_HasAuthority_ReturnValue                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetTargetActor_Actor                                    (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::TriggerGather(bool CallFunc_K2_HasAuthority_ReturnValue, class AActor* CallFunc_GetTargetActor_Actor, bool CallFunc_IsValid_ReturnValue)
+void UGA_LoopableEvent_Base_C::TriggerGather(class AActor** TargetActor, class AActor* LocalTargetActor, bool CallFunc_K2_HasAuthority_ReturnValue, class AActor* CallFunc_GetTargetActor_Actor, bool CallFunc_IsValid_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -379,11 +460,15 @@ void UGA_LoopableEvent_Base_C::TriggerGather(bool CallFunc_K2_HasAuthority_Retur
 
 	Params::UGA_LoopableEvent_Base_C_TriggerGather_Params Parms{};
 
+	Parms.LocalTargetActor = LocalTargetActor;
 	Parms.CallFunc_K2_HasAuthority_ReturnValue = CallFunc_K2_HasAuthority_ReturnValue;
 	Parms.CallFunc_GetTargetActor_Actor = CallFunc_GetTargetActor_Actor;
 	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (TargetActor != nullptr)
+		*TargetActor = Parms.TargetActor;
 
 }
 
@@ -609,8 +694,9 @@ void UGA_LoopableEvent_Base_C::ClearSetMontage()
 // class UValeriaCharacterMoveComponent*CallFunc_GetValeriaCharacterMovementComponent_ReturnValue        (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // int64                              CallFunc_Subtract_Int64Int64_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Less_Int64Int64_ReturnValue                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                      CallFunc_TriggerGather_TargetActor                               (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LoopableEvent_Base_C::HandleEvent(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData, bool GameplayTagsK2Node_SwitchGameplayTag_CmpSuccess, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, int64 CallFunc_GetValeriaTimestampMs64_ReturnValue, class UValeriaCharacterMoveComponent* CallFunc_GetValeriaCharacterMovementComponent_ReturnValue, int64 CallFunc_Subtract_Int64Int64_ReturnValue, bool CallFunc_Less_Int64Int64_ReturnValue)
+void UGA_LoopableEvent_Base_C::HandleEvent(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData, bool GameplayTagsK2Node_SwitchGameplayTag_CmpSuccess, class AActor* CallFunc_GetOwningActorFromActorInfo_ReturnValue, class AValeriaCharacter* K2Node_DynamicCast_AsValeria_Character, bool K2Node_DynamicCast_bSuccess, int64 CallFunc_GetValeriaTimestampMs64_ReturnValue, class UValeriaCharacterMoveComponent* CallFunc_GetValeriaCharacterMovementComponent_ReturnValue, int64 CallFunc_Subtract_Int64Int64_ReturnValue, bool CallFunc_Less_Int64Int64_ReturnValue, class AActor* CallFunc_TriggerGather_TargetActor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -629,6 +715,7 @@ void UGA_LoopableEvent_Base_C::HandleEvent(const struct FGameplayTag& EventTag, 
 	Parms.CallFunc_GetValeriaCharacterMovementComponent_ReturnValue = CallFunc_GetValeriaCharacterMovementComponent_ReturnValue;
 	Parms.CallFunc_Subtract_Int64Int64_ReturnValue = CallFunc_Subtract_Int64Int64_ReturnValue;
 	Parms.CallFunc_Less_Int64Int64_ReturnValue = CallFunc_Less_Int64Int64_ReturnValue;
+	Parms.CallFunc_TriggerGather_TargetActor = CallFunc_TriggerGather_TargetActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 

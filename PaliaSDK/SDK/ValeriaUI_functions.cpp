@@ -4421,6 +4421,33 @@ void UVALUI_ChatPanelBase::HandleOnStateChanged(enum class EVALUI_ChatPanelState
 }
 
 
+// Function ValeriaUI.VALUI_ChatPanelBase.HandleOnServerIdUpdated
+// (Final, Native, Protected)
+// Parameters:
+// class FString                      ID                                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVALUI_ChatPanelBase::HandleOnServerIdUpdated(const class FString& ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_ChatPanelBase", "HandleOnServerIdUpdated");
+
+	Params::UVALUI_ChatPanelBase_HandleOnServerIdUpdated_Params Parms{};
+
+	Parms.ID = ID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
 // Function ValeriaUI.VALUI_ChatPanelBase.HandleOnPawnChanged
 // (Final, Native, Private)
 // Parameters:
@@ -4914,6 +4941,38 @@ TArray<struct FMessageTarget> UVALUI_ChatStatics::GetMessageTargetsOfChannel(cla
 
 	Parms.WorldContext = WorldContext;
 	Parms.InChannel = InChannel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function ValeriaUI.VALUI_ChatStatics.FetchChatMessages
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UObject*                     WorldContextObject                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVALUI_ChatMessageFetchFilterFilter                                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FValeriaChatMessage> ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FValeriaChatMessage> UVALUI_ChatStatics::FetchChatMessages(class UObject* WorldContextObject, struct FVALUI_ChatMessageFetchFilter& Filter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_ChatStatics", "FetchChatMessages");
+
+	Params::UVALUI_ChatStatics_FetchChatMessages_Params Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Filter = Filter;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11065,6 +11124,34 @@ void UVALUI_RadioSlider::BuildElementsAndSlider()
 
 	Func->FunctionFlags = Flgs;
 
+}
+
+
+// Class ValeriaUI.VALUI_RichTextBlockDecorator_RequestLink
+// (None)
+
+class UClass* UVALUI_RichTextBlockDecorator_RequestLink::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("VALUI_RichTextBlockDecorator_RequestLink");
+
+	return Clss;
+}
+
+
+// VALUI_RichTextBlockDecorator_RequestLink ValeriaUI.Default__VALUI_RichTextBlockDecorator_RequestLink
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UVALUI_RichTextBlockDecorator_RequestLink* UVALUI_RichTextBlockDecorator_RequestLink::GetDefaultObj()
+{
+	static class UVALUI_RichTextBlockDecorator_RequestLink* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UVALUI_RichTextBlockDecorator_RequestLink*>(UVALUI_RichTextBlockDecorator_RequestLink::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 

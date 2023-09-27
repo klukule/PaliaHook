@@ -782,6 +782,39 @@ TMap<class FName, struct FS6Core_StatData> US6Core_General_BlueprintFunctionLibr
 }
 
 
+// Function S6Core.S6Core_General_BlueprintFunctionLibrary.GetAllKnownPlayerPawns
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class ULocalPlayer*                LocalPlayer                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TMap<struct FUniqueNetIdRepl, class APawn*>PlayerPawns                                                      (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool                               bIncludeLocalPawn                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6Core_General_BlueprintFunctionLibrary::GetAllKnownPlayerPawns(class ULocalPlayer* LocalPlayer, TMap<struct FUniqueNetIdRepl, class APawn*>* PlayerPawns, bool bIncludeLocalPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6Core_General_BlueprintFunctionLibrary", "GetAllKnownPlayerPawns");
+
+	Params::US6Core_General_BlueprintFunctionLibrary_GetAllKnownPlayerPawns_Params Parms{};
+
+	Parms.LocalPlayer = LocalPlayer;
+	Parms.bIncludeLocalPawn = bIncludeLocalPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	if (PlayerPawns != nullptr)
+		*PlayerPawns = Parms.PlayerPawns;
+
+}
+
+
 // Function S6Core.S6Core_General_BlueprintFunctionLibrary.GetActorBounds
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -1251,6 +1284,34 @@ enum class ERedirectsPlatform US6PlatformUtils::GetPlatformType()
 		Func = Class->GetFunction("S6PlatformUtils", "GetPlatformType");
 
 	Params::US6PlatformUtils_GetPlatformType_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function S6Core.S6PlatformUtils.GetEnvironment
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString US6PlatformUtils::GetEnvironment()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6PlatformUtils", "GetEnvironment");
+
+	Params::US6PlatformUtils_GetEnvironment_Params Parms{};
 
 
 	auto Flgs = Func->FunctionFlags;

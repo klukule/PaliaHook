@@ -25,7 +25,7 @@ public:
 
 };
 
-// 0x78 (0xA8 - 0x30)
+// 0x100 (0x130 - 0x30)
 // Class S6Automation.S6Auto_SuiteSubsystem
 class US6Auto_SuiteSubsystem : public UGameInstanceSubsystem
 {
@@ -34,7 +34,7 @@ public:
 	struct FS6Auto_SuiteCollection               SuiteCollection;                                   // 0x38(0x10)(NativeAccessSpecifierPrivate)
 	TArray<class US6Auto_SuiteStepScript*>       ScriptObjects;                                     // 0x48(0x10)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
 	class US6Auto_SuiteBlackboard*               Blackboard;                                        // 0x58(0x8)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_2[0x48];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2[0xD0];                                       // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6Auto_SuiteSubsystem* GetDefaultObj();
@@ -71,7 +71,7 @@ class US6Auto_SuiteStepScript : public UObject
 public:
 	class US6Auto_SuiteStepPayload*              Payload;                                           // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class US6Auto_SuiteBlackboard*               Blackboard;                                        // 0x30(0x8)(Edit, BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_C[0x20];                                       // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1B[0x20];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6Auto_SuiteStepScript* GetDefaultObj();

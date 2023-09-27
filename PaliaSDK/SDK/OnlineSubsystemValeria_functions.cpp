@@ -618,6 +618,87 @@ class UOSSVAL_AsyncActionGetCharactersByAccountId* UOSSVAL_AsyncActionGetCharact
 }
 
 
+// Class OnlineSubsystemValeria.OSSVAL_AsyncActionProfanityFilterString
+// (None)
+
+class UClass* UOSSVAL_AsyncActionProfanityFilterString::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("OSSVAL_AsyncActionProfanityFilterString");
+
+	return Clss;
+}
+
+
+// OSSVAL_AsyncActionProfanityFilterString OnlineSubsystemValeria.Default__OSSVAL_AsyncActionProfanityFilterString
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UOSSVAL_AsyncActionProfanityFilterString* UOSSVAL_AsyncActionProfanityFilterString::GetDefaultObj()
+{
+	static class UOSSVAL_AsyncActionProfanityFilterString* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UOSSVAL_AsyncActionProfanityFilterString*>(UOSSVAL_AsyncActionProfanityFilterString::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// DelegateFunction OnlineSubsystemValeria.OSSVAL_AsyncActionProfanityFilterString.OnResultObtained__DelegateSignature
+// (MulticastDelegate, Public, Delegate, HasOutParams)
+// Parameters:
+// struct FOSSVAL_ProfanityFilterResponseResponse                                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UOSSVAL_AsyncActionProfanityFilterString::OnResultObtained__DelegateSignature(struct FOSSVAL_ProfanityFilterResponse& Response)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("OSSVAL_AsyncActionProfanityFilterString", "OnResultObtained__DelegateSignature");
+
+	Params::UOSSVAL_AsyncActionProfanityFilterString_OnResultObtained__DelegateSignature_Params Parms{};
+
+	Parms.Response = Response;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function OnlineSubsystemValeria.OSSVAL_AsyncActionProfanityFilterString.FilterString
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class ULocalPlayer*                LocalPlayer                                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                      Str                                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UOSSVAL_AsyncActionProfanityFilterString*ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UOSSVAL_AsyncActionProfanityFilterString* UOSSVAL_AsyncActionProfanityFilterString::FilterString(class ULocalPlayer* LocalPlayer, const class FString& Str)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("OSSVAL_AsyncActionProfanityFilterString", "FilterString");
+
+	Params::UOSSVAL_AsyncActionProfanityFilterString_FilterString_Params Parms{};
+
+	Parms.LocalPlayer = LocalPlayer;
+	Parms.Str = Str;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Class OnlineSubsystemValeria.OSSVAL_BeaconClient
 // (Actor)
 

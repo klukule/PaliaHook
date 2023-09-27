@@ -149,6 +149,24 @@ public:
 	class UOSSVAL_AsyncActionGetCharactersByAccountId* ReturnValue;                                       // 0x18(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// 0x18 (0x18 - 0x0)
+// DelegateFunction OnlineSubsystemValeria.OSSVAL_AsyncActionProfanityFilterString.OnResultObtained__DelegateSignature
+struct UOSSVAL_AsyncActionProfanityFilterString_OnResultObtained__DelegateSignature_Params
+{
+public:
+	struct FOSSVAL_ProfanityFilterResponse       Response;                                          // 0x0(0x18)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// 0x20 (0x20 - 0x0)
+// Function OnlineSubsystemValeria.OSSVAL_AsyncActionProfanityFilterString.FilterString
+struct UOSSVAL_AsyncActionProfanityFilterString_FilterString_Params
+{
+public:
+	class ULocalPlayer*                          LocalPlayer;                                       // 0x0(0x8)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                Str;                                               // 0x8(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UOSSVAL_AsyncActionProfanityFilterString* ReturnValue;                                       // 0x18(0x8)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // 0xB8 (0xB8 - 0x0)
 // Function OnlineSubsystemValeria.OSSVAL_BeaconClient.RpcServer_ValidateTicket
 struct AOSSVAL_BeaconClient_RpcServer_ValidateTicket_Params
@@ -166,7 +184,7 @@ struct AOSSVAL_BeaconClient_RpcClient_SendTicketValidationResponse_Params
 public:
 	struct FGuid                                 RequestId;                                         // 0x0(0x10)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bAccepted;                                         // 0x10(0x1)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1927[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_881[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FOSSVAL_MatchmakingTicket             Ticket;                                            // 0x18(0x98)(ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FOSSVAL_MatchmakingTicketContext      Context;                                           // 0xB0(0x10)(ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
