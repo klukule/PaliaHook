@@ -14,7 +14,7 @@ namespace SDK
 class UMVVMViewModelBase : public UObject
 {
 public:
-	uint8                                        Pad_100[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D5[0x40];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMVVMViewModelBase* GetDefaultObj();
@@ -64,7 +64,7 @@ class UMVVMViewModelBlueprintGeneratedClass : public UBlueprintGeneratedClass
 {
 public:
 	TArray<struct FFieldNotificationId>          FieldNotifyNames;                                  // 0x380(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_134[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_115[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMVVMViewModelBlueprintGeneratedClass* GetDefaultObj();
@@ -77,7 +77,7 @@ class UMVVMView : public UUserWidgetExtension
 {
 public:
 	class UMVVMViewClass*                        ClassExtension;                                    // 0x28(0x8)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_13C[0x38];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11A[0x38];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMVVMView* GetDefaultObj();
@@ -93,7 +93,7 @@ public:
 	TArray<struct FMVVMViewClass_SourceCreator>  SourceCreators;                                    // 0x28(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<struct FMVVMViewClass_CompiledBinding> CompiledBindings;                                  // 0x38(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	struct FMVVMCompiledBindingLibrary           BindingLibrary;                                    // 0x48(0x60)(NativeAccessSpecifierPrivate)
-	uint8                                        Pad_142[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_11E[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMVVMViewClass* GetDefaultObj();
