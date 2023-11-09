@@ -14,7 +14,7 @@ namespace SDK
 class UMeshDescriptionBase : public UObject
 {
 public:
-	uint8                                        Pad_246E[0x2C8];                                   // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2643[0x2C8];                                   // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UMeshDescriptionBase* GetDefaultObj();

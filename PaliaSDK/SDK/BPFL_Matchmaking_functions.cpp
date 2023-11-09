@@ -72,25 +72,27 @@ void UBPFL_Matchmaking_C::GetAlreadyMatchmakingErrorText(class UObject* __WorldC
 // class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FF_GenericErrorModalPayload Payload                                                          (Parm, OutParm, HasGetValueTypeHash)
 // class FText                        SubErrorText                                                     (Edit, BlueprintVisible)
+// enum class ERedirectsPlatform      CallFunc_GetPlatformType_ReturnValue                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_EqualEqual_ByteByte_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int64                              CallFunc_Conv_IntToInt64_ReturnValue                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int64                              CallFunc_Conv_IntToInt64_ReturnValue_1                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FFormatArgumentData         K2Node_MakeStruct_FormatArgumentData                             (HasGetValueTypeHash)
+// struct FFormatArgumentData         K2Node_MakeStruct_FormatArgumentData_1                           (HasGetValueTypeHash)
+// TArray<struct FFormatArgumentData> K2Node_MakeArray_Array                                           (ReferenceParm)
+// TArray<struct FFormatArgumentData> K2Node_MakeArray_Array_1                                         (ReferenceParm)
+// bool                               CallFunc_EqualEqual_IntInt_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FText                        CallFunc_Format_ReturnValue                                      (None)
+// bool                               CallFunc_EqualEqual_ByteByte_ReturnValue_1                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FText                        CallFunc_Format_ReturnValue_1                                    (None)
 // class FText                        CallFunc_Map_Find_Value                                          (None)
 // bool                               CallFunc_Map_Find_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FFormatArgumentData         K2Node_MakeStruct_FormatArgumentData                             (HasGetValueTypeHash)
-// TArray<struct FFormatArgumentData> K2Node_MakeArray_Array                                           (ReferenceParm)
-// class FText                        CallFunc_Format_ReturnValue                                      (None)
-// int64                              CallFunc_Conv_IntToInt64_ReturnValue_1                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FFormatArgumentData         K2Node_MakeStruct_FormatArgumentData_1                           (HasGetValueTypeHash)
-// bool                               CallFunc_EqualEqual_IntInt_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FFormatArgumentData> K2Node_MakeArray_Array_1                                         (ReferenceParm)
-// class FText                        CallFunc_Format_ReturnValue_1                                    (None)
-// bool                               CallFunc_EqualEqual_ByteByte_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               Temp_bool_Variable                                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FF_GenericErrorModalPayload K2Node_MakeStruct_F_GenericErrorModalPayload                     (HasGetValueTypeHash)
 // struct FOSSVAL_MatchmakingCustomErrorContainerK2Node_Select_Default                                            (ConstParm)
+// struct FF_GenericErrorModalPayload K2Node_MakeStruct_F_GenericErrorModalPayload                     (HasGetValueTypeHash)
 // class FText                        CallFunc_Map_Find_Value_1                                        (None)
 // bool                               CallFunc_Map_Find_ReturnValue_1                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_Matchmaking_C::CreateErrorPayloadForMatchmakingResult(const struct FOSSVAL_MatchmakingResult& Result, class UObject* __WorldContext, struct FF_GenericErrorModalPayload* Payload, class FText SubErrorText, int64 CallFunc_Conv_IntToInt64_ReturnValue, class FText CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, const struct FFormatArgumentData& K2Node_MakeStruct_FormatArgumentData, TArray<struct FFormatArgumentData>& K2Node_MakeArray_Array, class FText CallFunc_Format_ReturnValue, int64 CallFunc_Conv_IntToInt64_ReturnValue_1, const struct FFormatArgumentData& K2Node_MakeStruct_FormatArgumentData_1, bool CallFunc_EqualEqual_IntInt_ReturnValue, TArray<struct FFormatArgumentData>& K2Node_MakeArray_Array_1, class FText CallFunc_Format_ReturnValue_1, bool CallFunc_EqualEqual_ByteByte_ReturnValue, bool Temp_bool_Variable, const struct FF_GenericErrorModalPayload& K2Node_MakeStruct_F_GenericErrorModalPayload, const struct FOSSVAL_MatchmakingCustomErrorContainer& K2Node_Select_Default, class FText CallFunc_Map_Find_Value_1, bool CallFunc_Map_Find_ReturnValue_1)
+void UBPFL_Matchmaking_C::CreateErrorPayloadForMatchmakingResult(const struct FOSSVAL_MatchmakingResult& Result, class UObject* __WorldContext, struct FF_GenericErrorModalPayload* Payload, class FText SubErrorText, enum class ERedirectsPlatform CallFunc_GetPlatformType_ReturnValue, bool CallFunc_EqualEqual_ByteByte_ReturnValue, int64 CallFunc_Conv_IntToInt64_ReturnValue, int64 CallFunc_Conv_IntToInt64_ReturnValue_1, const struct FFormatArgumentData& K2Node_MakeStruct_FormatArgumentData, const struct FFormatArgumentData& K2Node_MakeStruct_FormatArgumentData_1, TArray<struct FFormatArgumentData>& K2Node_MakeArray_Array, TArray<struct FFormatArgumentData>& K2Node_MakeArray_Array_1, bool CallFunc_EqualEqual_IntInt_ReturnValue, class FText CallFunc_Format_ReturnValue, bool CallFunc_EqualEqual_ByteByte_ReturnValue_1, class FText CallFunc_Format_ReturnValue_1, class FText CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, bool Temp_bool_Variable, const struct FOSSVAL_MatchmakingCustomErrorContainer& K2Node_Select_Default, const struct FF_GenericErrorModalPayload& K2Node_MakeStruct_F_GenericErrorModalPayload, class FText CallFunc_Map_Find_Value_1, bool CallFunc_Map_Find_ReturnValue_1)
 {
 	static class UFunction* Func = nullptr;
 
@@ -102,21 +104,23 @@ void UBPFL_Matchmaking_C::CreateErrorPayloadForMatchmakingResult(const struct FO
 	Parms.Result = Result;
 	Parms.__WorldContext = __WorldContext;
 	Parms.SubErrorText = SubErrorText;
+	Parms.CallFunc_GetPlatformType_ReturnValue = CallFunc_GetPlatformType_ReturnValue;
+	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = CallFunc_EqualEqual_ByteByte_ReturnValue;
 	Parms.CallFunc_Conv_IntToInt64_ReturnValue = CallFunc_Conv_IntToInt64_ReturnValue;
+	Parms.CallFunc_Conv_IntToInt64_ReturnValue_1 = CallFunc_Conv_IntToInt64_ReturnValue_1;
+	Parms.K2Node_MakeStruct_FormatArgumentData = K2Node_MakeStruct_FormatArgumentData;
+	Parms.K2Node_MakeStruct_FormatArgumentData_1 = K2Node_MakeStruct_FormatArgumentData_1;
+	Parms.K2Node_MakeArray_Array = K2Node_MakeArray_Array;
+	Parms.K2Node_MakeArray_Array_1 = K2Node_MakeArray_Array_1;
+	Parms.CallFunc_EqualEqual_IntInt_ReturnValue = CallFunc_EqualEqual_IntInt_ReturnValue;
+	Parms.CallFunc_Format_ReturnValue = CallFunc_Format_ReturnValue;
+	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue_1 = CallFunc_EqualEqual_ByteByte_ReturnValue_1;
+	Parms.CallFunc_Format_ReturnValue_1 = CallFunc_Format_ReturnValue_1;
 	Parms.CallFunc_Map_Find_Value = CallFunc_Map_Find_Value;
 	Parms.CallFunc_Map_Find_ReturnValue = CallFunc_Map_Find_ReturnValue;
-	Parms.K2Node_MakeStruct_FormatArgumentData = K2Node_MakeStruct_FormatArgumentData;
-	Parms.K2Node_MakeArray_Array = K2Node_MakeArray_Array;
-	Parms.CallFunc_Format_ReturnValue = CallFunc_Format_ReturnValue;
-	Parms.CallFunc_Conv_IntToInt64_ReturnValue_1 = CallFunc_Conv_IntToInt64_ReturnValue_1;
-	Parms.K2Node_MakeStruct_FormatArgumentData_1 = K2Node_MakeStruct_FormatArgumentData_1;
-	Parms.CallFunc_EqualEqual_IntInt_ReturnValue = CallFunc_EqualEqual_IntInt_ReturnValue;
-	Parms.K2Node_MakeArray_Array_1 = K2Node_MakeArray_Array_1;
-	Parms.CallFunc_Format_ReturnValue_1 = CallFunc_Format_ReturnValue_1;
-	Parms.CallFunc_EqualEqual_ByteByte_ReturnValue = CallFunc_EqualEqual_ByteByte_ReturnValue;
 	Parms.Temp_bool_Variable = Temp_bool_Variable;
-	Parms.K2Node_MakeStruct_F_GenericErrorModalPayload = K2Node_MakeStruct_F_GenericErrorModalPayload;
 	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.K2Node_MakeStruct_F_GenericErrorModalPayload = K2Node_MakeStruct_F_GenericErrorModalPayload;
 	Parms.CallFunc_Map_Find_Value_1 = CallFunc_Map_Find_Value_1;
 	Parms.CallFunc_Map_Find_ReturnValue_1 = CallFunc_Map_Find_ReturnValue_1;
 

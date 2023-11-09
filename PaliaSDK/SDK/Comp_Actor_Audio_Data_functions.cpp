@@ -580,36 +580,34 @@ void UComp_Actor_Audio_Data_C::PlayDialogBookend(bool Intro, class UAkAudioEvent
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                              EntryPoint                                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_IsDedicatedServer_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate                             (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_FClamp_ReturnValue                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_FClamp_ReturnValue_1                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_LessEqual_DoubleDouble_ReturnValue                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_CustomEvent_True_1                                        (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_IsDedicatedServer_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanOR_ReturnValue                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_CustomEvent_True                                          (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_WeatherManagerIsRaining_bIsRaining                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanOR_ReturnValue_1                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FWeatherStateProperties     K2Node_CustomEvent_state                                         (ConstParm)
+// bool                               CallFunc_WeatherManagerIsRaining_bIsRaining_1                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_Add_DoubleDouble_ReturnValue                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_FClamp_ReturnValue_2                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_GreaterEqual_DoubleDouble_ReturnValue                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_WeatherManagerIsRaining_bIsRaining_1                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UValeriaWeather*             CallFunc_GetWorldSubsystem_ReturnValue                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_Subtract_DoubleDouble_ReturnValue                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                             CallFunc_Subtract_DoubleDouble_ReturnValue_1                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                             CallFunc_FClamp_ReturnValue_3                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwner_ReturnValue                                    (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // struct FVector                     CallFunc_K2_GetActorLocation_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_IsInside_IsInside                                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Not_PreBool_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_IsInside_IsInside                                       (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Greater_DoubleDouble_ReturnValue                        (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                      CallFunc_GetOwner_ReturnValue_1                                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Not_PreBool_ReturnValue_1                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UDialogueComponent*          CallFunc_GetComponentByClass_ReturnValue                         (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class AActor*                      CallFunc_GetOwner_ReturnValue_1                                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_BooleanAND_ReturnValue_1                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UDialogueComponent*          CallFunc_GetComponentByClass_ReturnValue                         (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate                             (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_GreaterEqual_DoubleDouble_ReturnValue                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_1                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UDialogueComponent*          K2Node_CustomEvent_diag_1                                        (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class AValeriaCharacter*           K2Node_CustomEvent_playerParticipant_1                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -619,22 +617,28 @@ void UComp_Actor_Audio_Data_C::PlayDialogBookend(bool Intro, class UAkAudioEvent
 // class AValeriaCharacter*           K2Node_CustomEvent_playerParticipant                             (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UAkAudioEvent*               CallFunc_GetDialogBookend_DialogEvent_1                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwner_ReturnValue_2                                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AValeriaVillagerCharacter*   K2Node_DynamicCast_AsValeria_Villager_Character                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_NotEqual_ByteByte_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                      CallFunc_GetOwner_ReturnValue_3                                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                      CallFunc_GetOwner_ReturnValue_4                                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // enum class EAkCallbackType         K2Node_CustomEvent_CallbackType_1                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAkCallbackInfo*             K2Node_CustomEvent_CallbackInfo_1                                (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // enum class EAkCallbackType         K2Node_CustomEvent_CallbackType                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAkCallbackInfo*             K2Node_CustomEvent_CallbackInfo                                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UValeriaWeather*             CallFunc_GetWorldSubsystem_ReturnValue                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UAkComponent*                CallFunc_Get_Voice_Audio_Component_AkComponent                   (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_3                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsValid_ReturnValue_1                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_CustomEvent_Intro                                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAkAudioEvent*               K2Node_CustomEvent_AkEvent                                       (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                               Temp_bool_Variable                                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                             CallFunc_Subtract_DoubleDouble_ReturnValue_1                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_3                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // FDelegateProperty_                 K2Node_CreateDelegate_OutputDelegate_4                           (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               Temp_bool_Variable                                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // FDelegateProperty_                 K2Node_Select_Default                                            (ConstParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                              CallFunc_AkEventComponentCallback_ReturnValue                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_Actor_Audio_Data_C::ExecuteUbergraph_Comp_Actor_Audio_Data(int32 EntryPoint, bool CallFunc_IsDedicatedServer_ReturnValue, double CallFunc_FClamp_ReturnValue, double CallFunc_FClamp_ReturnValue_1, bool CallFunc_LessEqual_DoubleDouble_ReturnValue, bool K2Node_CustomEvent_True_1, bool CallFunc_BooleanOR_ReturnValue, bool K2Node_CustomEvent_True, bool CallFunc_WeatherManagerIsRaining_bIsRaining, bool CallFunc_BooleanOR_ReturnValue_1, const struct FWeatherStateProperties& K2Node_CustomEvent_state, double CallFunc_Add_DoubleDouble_ReturnValue, double CallFunc_FClamp_ReturnValue_2, bool CallFunc_GreaterEqual_DoubleDouble_ReturnValue, bool CallFunc_WeatherManagerIsRaining_bIsRaining_1, class UValeriaWeather* CallFunc_GetWorldSubsystem_ReturnValue, double CallFunc_Subtract_DoubleDouble_ReturnValue, double CallFunc_Subtract_DoubleDouble_ReturnValue_1, double CallFunc_FClamp_ReturnValue_3, class AActor* CallFunc_GetOwner_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, bool CallFunc_IsInside_IsInside, bool CallFunc_Not_PreBool_ReturnValue, bool CallFunc_BooleanAND_ReturnValue, bool CallFunc_Greater_DoubleDouble_ReturnValue, class AActor* CallFunc_GetOwner_ReturnValue_1, bool CallFunc_Not_PreBool_ReturnValue_1, class UDialogueComponent* CallFunc_GetComponentByClass_ReturnValue, bool CallFunc_BooleanAND_ReturnValue_1, bool CallFunc_IsValid_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_1, class UDialogueComponent* K2Node_CustomEvent_diag_1, class AValeriaCharacter* K2Node_CustomEvent_playerParticipant_1, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_2, class UAkAudioEvent* CallFunc_GetDialogBookend_DialogEvent, class UDialogueComponent* K2Node_CustomEvent_diag, class AValeriaCharacter* K2Node_CustomEvent_playerParticipant, class UAkAudioEvent* CallFunc_GetDialogBookend_DialogEvent_1, class AActor* CallFunc_GetOwner_ReturnValue_2, class AActor* CallFunc_GetOwner_ReturnValue_3, enum class EAkCallbackType K2Node_CustomEvent_CallbackType_1, class UAkCallbackInfo* K2Node_CustomEvent_CallbackInfo_1, enum class EAkCallbackType K2Node_CustomEvent_CallbackType, class UAkCallbackInfo* K2Node_CustomEvent_CallbackInfo, class UAkComponent* CallFunc_Get_Voice_Audio_Component_AkComponent, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_3, bool CallFunc_IsValid_ReturnValue_1, bool K2Node_CustomEvent_Intro, class UAkAudioEvent* K2Node_CustomEvent_AkEvent, bool Temp_bool_Variable, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_4, FDelegateProperty_ K2Node_Select_Default, int32 CallFunc_AkEventComponentCallback_ReturnValue)
+void UComp_Actor_Audio_Data_C::ExecuteUbergraph_Comp_Actor_Audio_Data(int32 EntryPoint, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate, double CallFunc_FClamp_ReturnValue, double CallFunc_FClamp_ReturnValue_1, bool CallFunc_LessEqual_DoubleDouble_ReturnValue, bool K2Node_CustomEvent_True_1, bool CallFunc_IsDedicatedServer_ReturnValue, bool CallFunc_BooleanOR_ReturnValue, bool K2Node_CustomEvent_True, bool CallFunc_WeatherManagerIsRaining_bIsRaining, bool CallFunc_BooleanOR_ReturnValue_1, const struct FWeatherStateProperties& K2Node_CustomEvent_state, bool CallFunc_WeatherManagerIsRaining_bIsRaining_1, double CallFunc_Add_DoubleDouble_ReturnValue, double CallFunc_FClamp_ReturnValue_2, double CallFunc_Subtract_DoubleDouble_ReturnValue, double CallFunc_FClamp_ReturnValue_3, class AActor* CallFunc_GetOwner_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue, bool CallFunc_IsInside_IsInside, bool CallFunc_BooleanAND_ReturnValue, bool CallFunc_Greater_DoubleDouble_ReturnValue, bool CallFunc_Not_PreBool_ReturnValue_1, class AActor* CallFunc_GetOwner_ReturnValue_1, bool CallFunc_BooleanAND_ReturnValue_1, class UDialogueComponent* CallFunc_GetComponentByClass_ReturnValue, bool CallFunc_IsValid_ReturnValue, bool CallFunc_GreaterEqual_DoubleDouble_ReturnValue, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_1, class UDialogueComponent* K2Node_CustomEvent_diag_1, class AValeriaCharacter* K2Node_CustomEvent_playerParticipant_1, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_2, class UAkAudioEvent* CallFunc_GetDialogBookend_DialogEvent, class UDialogueComponent* K2Node_CustomEvent_diag, class AValeriaCharacter* K2Node_CustomEvent_playerParticipant, class UAkAudioEvent* CallFunc_GetDialogBookend_DialogEvent_1, class AActor* CallFunc_GetOwner_ReturnValue_2, class AValeriaVillagerCharacter* K2Node_DynamicCast_AsValeria_Villager_Character, bool K2Node_DynamicCast_bSuccess, bool CallFunc_NotEqual_ByteByte_ReturnValue, class AActor* CallFunc_GetOwner_ReturnValue_3, class AActor* CallFunc_GetOwner_ReturnValue_4, enum class EAkCallbackType K2Node_CustomEvent_CallbackType_1, class UAkCallbackInfo* K2Node_CustomEvent_CallbackInfo_1, enum class EAkCallbackType K2Node_CustomEvent_CallbackType, class UAkCallbackInfo* K2Node_CustomEvent_CallbackInfo, class UValeriaWeather* CallFunc_GetWorldSubsystem_ReturnValue, class UAkComponent* CallFunc_Get_Voice_Audio_Component_AkComponent, bool CallFunc_IsValid_ReturnValue_1, bool K2Node_CustomEvent_Intro, class UAkAudioEvent* K2Node_CustomEvent_AkEvent, double CallFunc_Subtract_DoubleDouble_ReturnValue_1, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_3, FDelegateProperty_ K2Node_CreateDelegate_OutputDelegate_4, bool Temp_bool_Variable, FDelegateProperty_ K2Node_Select_Default, int32 CallFunc_AkEventComponentCallback_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -644,36 +648,34 @@ void UComp_Actor_Audio_Data_C::ExecuteUbergraph_Comp_Actor_Audio_Data(int32 Entr
 	Params::UComp_Actor_Audio_Data_C_ExecuteUbergraph_Comp_Actor_Audio_Data_Params Parms{};
 
 	Parms.EntryPoint = EntryPoint;
-	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
+	Parms.K2Node_CreateDelegate_OutputDelegate = K2Node_CreateDelegate_OutputDelegate;
 	Parms.CallFunc_FClamp_ReturnValue = CallFunc_FClamp_ReturnValue;
 	Parms.CallFunc_FClamp_ReturnValue_1 = CallFunc_FClamp_ReturnValue_1;
 	Parms.CallFunc_LessEqual_DoubleDouble_ReturnValue = CallFunc_LessEqual_DoubleDouble_ReturnValue;
 	Parms.K2Node_CustomEvent_True_1 = K2Node_CustomEvent_True_1;
+	Parms.CallFunc_IsDedicatedServer_ReturnValue = CallFunc_IsDedicatedServer_ReturnValue;
 	Parms.CallFunc_BooleanOR_ReturnValue = CallFunc_BooleanOR_ReturnValue;
 	Parms.K2Node_CustomEvent_True = K2Node_CustomEvent_True;
 	Parms.CallFunc_WeatherManagerIsRaining_bIsRaining = CallFunc_WeatherManagerIsRaining_bIsRaining;
 	Parms.CallFunc_BooleanOR_ReturnValue_1 = CallFunc_BooleanOR_ReturnValue_1;
 	Parms.K2Node_CustomEvent_state = K2Node_CustomEvent_state;
+	Parms.CallFunc_WeatherManagerIsRaining_bIsRaining_1 = CallFunc_WeatherManagerIsRaining_bIsRaining_1;
 	Parms.CallFunc_Add_DoubleDouble_ReturnValue = CallFunc_Add_DoubleDouble_ReturnValue;
 	Parms.CallFunc_FClamp_ReturnValue_2 = CallFunc_FClamp_ReturnValue_2;
-	Parms.CallFunc_GreaterEqual_DoubleDouble_ReturnValue = CallFunc_GreaterEqual_DoubleDouble_ReturnValue;
-	Parms.CallFunc_WeatherManagerIsRaining_bIsRaining_1 = CallFunc_WeatherManagerIsRaining_bIsRaining_1;
-	Parms.CallFunc_GetWorldSubsystem_ReturnValue = CallFunc_GetWorldSubsystem_ReturnValue;
 	Parms.CallFunc_Subtract_DoubleDouble_ReturnValue = CallFunc_Subtract_DoubleDouble_ReturnValue;
-	Parms.CallFunc_Subtract_DoubleDouble_ReturnValue_1 = CallFunc_Subtract_DoubleDouble_ReturnValue_1;
 	Parms.CallFunc_FClamp_ReturnValue_3 = CallFunc_FClamp_ReturnValue_3;
 	Parms.CallFunc_GetOwner_ReturnValue = CallFunc_GetOwner_ReturnValue;
 	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
-	Parms.CallFunc_IsInside_IsInside = CallFunc_IsInside_IsInside;
 	Parms.CallFunc_Not_PreBool_ReturnValue = CallFunc_Not_PreBool_ReturnValue;
+	Parms.CallFunc_IsInside_IsInside = CallFunc_IsInside_IsInside;
 	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
 	Parms.CallFunc_Greater_DoubleDouble_ReturnValue = CallFunc_Greater_DoubleDouble_ReturnValue;
-	Parms.CallFunc_GetOwner_ReturnValue_1 = CallFunc_GetOwner_ReturnValue_1;
 	Parms.CallFunc_Not_PreBool_ReturnValue_1 = CallFunc_Not_PreBool_ReturnValue_1;
-	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
+	Parms.CallFunc_GetOwner_ReturnValue_1 = CallFunc_GetOwner_ReturnValue_1;
 	Parms.CallFunc_BooleanAND_ReturnValue_1 = CallFunc_BooleanAND_ReturnValue_1;
+	Parms.CallFunc_GetComponentByClass_ReturnValue = CallFunc_GetComponentByClass_ReturnValue;
 	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
-	Parms.K2Node_CreateDelegate_OutputDelegate = K2Node_CreateDelegate_OutputDelegate;
+	Parms.CallFunc_GreaterEqual_DoubleDouble_ReturnValue = CallFunc_GreaterEqual_DoubleDouble_ReturnValue;
 	Parms.K2Node_CreateDelegate_OutputDelegate_1 = K2Node_CreateDelegate_OutputDelegate_1;
 	Parms.K2Node_CustomEvent_diag_1 = K2Node_CustomEvent_diag_1;
 	Parms.K2Node_CustomEvent_playerParticipant_1 = K2Node_CustomEvent_playerParticipant_1;
@@ -683,18 +685,24 @@ void UComp_Actor_Audio_Data_C::ExecuteUbergraph_Comp_Actor_Audio_Data(int32 Entr
 	Parms.K2Node_CustomEvent_playerParticipant = K2Node_CustomEvent_playerParticipant;
 	Parms.CallFunc_GetDialogBookend_DialogEvent_1 = CallFunc_GetDialogBookend_DialogEvent_1;
 	Parms.CallFunc_GetOwner_ReturnValue_2 = CallFunc_GetOwner_ReturnValue_2;
+	Parms.K2Node_DynamicCast_AsValeria_Villager_Character = K2Node_DynamicCast_AsValeria_Villager_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_NotEqual_ByteByte_ReturnValue = CallFunc_NotEqual_ByteByte_ReturnValue;
 	Parms.CallFunc_GetOwner_ReturnValue_3 = CallFunc_GetOwner_ReturnValue_3;
+	Parms.CallFunc_GetOwner_ReturnValue_4 = CallFunc_GetOwner_ReturnValue_4;
 	Parms.K2Node_CustomEvent_CallbackType_1 = K2Node_CustomEvent_CallbackType_1;
 	Parms.K2Node_CustomEvent_CallbackInfo_1 = K2Node_CustomEvent_CallbackInfo_1;
 	Parms.K2Node_CustomEvent_CallbackType = K2Node_CustomEvent_CallbackType;
 	Parms.K2Node_CustomEvent_CallbackInfo = K2Node_CustomEvent_CallbackInfo;
+	Parms.CallFunc_GetWorldSubsystem_ReturnValue = CallFunc_GetWorldSubsystem_ReturnValue;
 	Parms.CallFunc_Get_Voice_Audio_Component_AkComponent = CallFunc_Get_Voice_Audio_Component_AkComponent;
-	Parms.K2Node_CreateDelegate_OutputDelegate_3 = K2Node_CreateDelegate_OutputDelegate_3;
 	Parms.CallFunc_IsValid_ReturnValue_1 = CallFunc_IsValid_ReturnValue_1;
 	Parms.K2Node_CustomEvent_Intro = K2Node_CustomEvent_Intro;
 	Parms.K2Node_CustomEvent_AkEvent = K2Node_CustomEvent_AkEvent;
-	Parms.Temp_bool_Variable = Temp_bool_Variable;
+	Parms.CallFunc_Subtract_DoubleDouble_ReturnValue_1 = CallFunc_Subtract_DoubleDouble_ReturnValue_1;
+	Parms.K2Node_CreateDelegate_OutputDelegate_3 = K2Node_CreateDelegate_OutputDelegate_3;
 	Parms.K2Node_CreateDelegate_OutputDelegate_4 = K2Node_CreateDelegate_OutputDelegate_4;
+	Parms.Temp_bool_Variable = Temp_bool_Variable;
 	Parms.K2Node_Select_Default = K2Node_Select_Default;
 	Parms.CallFunc_AkEventComponentCallback_ReturnValue = CallFunc_AkEventComponentCallback_ReturnValue;
 

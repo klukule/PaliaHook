@@ -29,11 +29,11 @@ public:
 	class UChaosCacheCollection*                 CacheCollection;                                   // 0x2A0(0x8)(Edit, ZeroConstructor, DisableEditOnTemplate, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ECacheMode                        CacheMode;                                         // 0x2A8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EStartMode                        StartMode;                                         // 0x2A9(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1626[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_192E[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        StartTime;                                         // 0x2AC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1629[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1930[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FObservedComponent>            ObservedComponents;                                // 0x2B8(0x10)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_162A[0x80];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1931[0x80];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class AChaosCacheManager* GetDefaultObj();
@@ -72,7 +72,7 @@ public:
 	struct FCacheSpawnableTemplate               Spawnable;                                         // 0x140(0xD0)(Edit, EditConst, NoDestructor, NativeAccessSpecifierPrivate)
 	struct FGuid                                 AdapterGuid;                                       // 0x210(0x10)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                        Version;                                           // 0x220(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_163A[0x2C];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1939[0x2C];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UChaosCache* GetDefaultObj();
@@ -96,7 +96,7 @@ public:
 class UMovieSceneChaosCacheTrack : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                        Pad_1643[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1943[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<class UMovieSceneSection*>            AnimationSections;                                 // 0xA0(0x10)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 
 	static class UClass* StaticClass();

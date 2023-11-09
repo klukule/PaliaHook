@@ -71,7 +71,7 @@ struct FSingleTagFilter
 {
 public:
 	enum class ESingleTagFilterType              Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_875[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_376[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTagList                              GameplayTags;                                      // 0x8(0x20)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 
@@ -81,7 +81,7 @@ struct FAsyncReadPixelsRequest
 {
 public:
 	class UTextureRenderTarget2D*                RenderTarget;                                      // 0x0(0x8)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_877[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_378[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -90,7 +90,7 @@ struct FS6AsyncReadPixels
 {
 public:
 	TArray<struct FAsyncReadPixelsRequest>       Queued;                                            // 0x0(0x10)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_879[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_379[0x40];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -144,7 +144,7 @@ struct FS6HAREntry
 public:
 	class FString                                StartedDateTime;                                   // 0x0(0x10)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        Time;                                              // 0x10(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_883[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_383[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FS6HARRequest                         Request;                                           // 0x18(0x88)(NativeAccessSpecifierPublic)
 };
 
@@ -154,7 +154,7 @@ struct FTagFilter
 {
 public:
 	enum class ETagFilterType                    Type;                                              // 0x0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_889[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_385[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FTagList                              GameplayTags;                                      // 0x8(0x20)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 

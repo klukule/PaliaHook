@@ -16,12 +16,12 @@ class US6PersistConfiguration : public UDeveloperSettings
 public:
 	enum class ES6PersistConfigurationSerializationFormat Format;                                            // 0x38(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ES6PersistConfigurationStorageLocation Location;                                          // 0x39(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27AE[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1529[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        PersistInterval;                                   // 0x3C(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        BatchSizeLimitKB;                                  // 0x40(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        MaxSyncRetries;                                    // 0x44(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        OperationsPerBatchLimit;                           // 0x48(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27B0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1530[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FDirectoryPath                        DiskPersistDirectory;                              // 0x50(0x10)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass();
@@ -36,7 +36,7 @@ class US6PersistSubsystem : public UGameInstanceSubsystem
 public:
 	struct FS6PersistOperationSet                QueuedOperationSet;                                // 0x30(0x78)(NativeAccessSpecifierPrivate)
 	struct FS6PersistOperationSet                PendingOperationSet;                               // 0xA8(0x78)(NativeAccessSpecifierPrivate)
-	uint8                                        Pad_27BB[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1545[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class US6PersistSubsystem* GetDefaultObj();

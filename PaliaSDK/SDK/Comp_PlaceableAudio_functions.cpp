@@ -40,6 +40,38 @@ class UComp_PlaceableAudio_C* UComp_PlaceableAudio_C::GetDefaultObj()
 }
 
 
+// Function Comp_PlaceableAudio.Comp_PlaceableAudio_C.PlayPersistSoundAtLocation
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UAkAudioEvent*               AkEvent                                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// struct FVector                     Location                                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                              ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_Am_I_Visible_On_Plot_ReturnValue                        (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAkComponent*                CallFunc_AkEventLocation_AkComponent                             (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// int32                              CallFunc_AkEventLocation_Playing_ID                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 UComp_PlaceableAudio_C::PlayPersistSoundAtLocation(class UAkAudioEvent* AkEvent, const struct FVector& Location, bool CallFunc_Am_I_Visible_On_Plot_ReturnValue, class UAkComponent* CallFunc_AkEventLocation_AkComponent, int32 CallFunc_AkEventLocation_Playing_ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("Comp_PlaceableAudio_C", "PlayPersistSoundAtLocation");
+
+	Params::UComp_PlaceableAudio_C_PlayPersistSoundAtLocation_Params Parms{};
+
+	Parms.AkEvent = AkEvent;
+	Parms.Location = Location;
+	Parms.CallFunc_Am_I_Visible_On_Plot_ReturnValue = CallFunc_Am_I_Visible_On_Plot_ReturnValue;
+	Parms.CallFunc_AkEventLocation_AkComponent = CallFunc_AkEventLocation_AkComponent;
+	Parms.CallFunc_AkEventLocation_Playing_ID = CallFunc_AkEventLocation_Playing_ID;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function Comp_PlaceableAudio.Comp_PlaceableAudio_C.StopPersistSoundLoopCulled
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -135,37 +167,15 @@ void UComp_PlaceableAudio_C::StopPersistantLoopsCulled(int32 Temp_int_Array_Inde
 }
 
 
-// Function Comp_PlaceableAudio.Comp_PlaceableAudio_C.PlayPersistSoundCulled
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UAkCulledComponent*          CulledComponent                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_Am_I_Visible_On_Plot_ReturnValue                        (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UComp_PlaceableAudio_C::PlayPersistSoundCulled(class UAkCulledComponent* CulledComponent, bool CallFunc_Am_I_Visible_On_Plot_ReturnValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("Comp_PlaceableAudio_C", "PlayPersistSoundCulled");
-
-	Params::UComp_PlaceableAudio_C_PlayPersistSoundCulled_Params Parms{};
-
-	Parms.CulledComponent = CulledComponent;
-	Parms.CallFunc_Am_I_Visible_On_Plot_ReturnValue = CallFunc_Am_I_Visible_On_Plot_ReturnValue;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-}
-
-
 // Function Comp_PlaceableAudio.Comp_PlaceableAudio_C.PlayPersistSoundLoopCulled
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UAkCulledComponent*          AkCulledComponent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // TArray<class UAkAudioEvent*>       AudioEvents                                                      (Edit, BlueprintVisible)
 // bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_Am_I_Visible_On_Plot_ReturnValue                        (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UComp_PlaceableAudio_C::PlayPersistSoundLoopCulled(class UAkCulledComponent* AkCulledComponent, const TArray<class UAkAudioEvent*>& AudioEvents, bool CallFunc_IsValid_ReturnValue)
+void UComp_PlaceableAudio_C::PlayPersistSoundLoopCulled(class UAkCulledComponent* AkCulledComponent, const TArray<class UAkAudioEvent*>& AudioEvents, bool CallFunc_IsValid_ReturnValue, bool CallFunc_Am_I_Visible_On_Plot_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -177,6 +187,7 @@ void UComp_PlaceableAudio_C::PlayPersistSoundLoopCulled(class UAkCulledComponent
 	Parms.AkCulledComponent = AkCulledComponent;
 	Parms.AudioEvents = AudioEvents;
 	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.CallFunc_Am_I_Visible_On_Plot_ReturnValue = CallFunc_Am_I_Visible_On_Plot_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 

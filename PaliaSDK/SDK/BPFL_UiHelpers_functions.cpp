@@ -40,6 +40,61 @@ class UBPFL_UiHelpers_C* UBPFL_UiHelpers_C::GetDefaultObj()
 }
 
 
+// Function BPFL_UiHelpers.BPFL_UiHelpers_C.TryDisplayBonusReceivedModal_CM
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVALUI_PremiumStorefrontResponseStorefrontResponse                                               (BlueprintVisible, BlueprintReadOnly, Parm)
+// TSet<struct FGuid>                 NewEntitlements                                                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UWBP_PetsBonusReceived_ModalWidget_CM_C*Bonus_Received_Modal                                             (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UWBP_PetsBonusReceived_ModalWidget_CM_C*Modal                                                            (Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// struct FVAL_CharacterCustomization_PetPurchaseBonusPetPurchaseBonus                                                 (Edit, BlueprintVisible)
+// class AValeriaPlayerController*    ValeriaPlayerController                                          (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
+// TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>NewPets                                                          (Edit, BlueprintVisible)
+// enum class EValeriaFuncResult      CallFunc_GetValeriaPlayerController_OutResult                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AValeriaPlayerController*    CallFunc_GetValeriaPlayerController_ReturnValue                  (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               K2Node_SwitchEnum_CmpSuccess                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class US6UI_UIManagerWidgetBase*   CallFunc_GetUIManagerWidget_ReturnValue                          (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UWBP_PetsBonusReceived_ModalWidget_CM_C*CallFunc_Create_ReturnValue                                      (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>CallFunc_GetNewPetsForBonusReceivedModal_ReturnValue             (ReferenceParm)
+// struct FVAL_CharacterCustomization_PetPurchaseBonusCallFunc_GetPetPurchaseBonusFromPurchaseRewards_ReturnValue      (None)
+// int32                              CallFunc_Array_Length_ReturnValue                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_Greater_IntInt_ReturnValue                              (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBPFL_UiHelpers_C::TryDisplayBonusReceivedModal_CM(const struct FVALUI_PremiumStorefrontResponse& StorefrontResponse, TSet<struct FGuid> NewEntitlements, class UObject* __WorldContext, class UWBP_PetsBonusReceived_ModalWidget_CM_C** Bonus_Received_Modal, class UWBP_PetsBonusReceived_ModalWidget_CM_C* Modal, const struct FVAL_CharacterCustomization_PetPurchaseBonus& PetPurchaseBonus, class AValeriaPlayerController* ValeriaPlayerController, const TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>& NewPets, enum class EValeriaFuncResult CallFunc_GetValeriaPlayerController_OutResult, class AValeriaPlayerController* CallFunc_GetValeriaPlayerController_ReturnValue, bool K2Node_SwitchEnum_CmpSuccess, class US6UI_UIManagerWidgetBase* CallFunc_GetUIManagerWidget_ReturnValue, class UWBP_PetsBonusReceived_ModalWidget_CM_C* CallFunc_Create_ReturnValue, TArray<TSoftObjectPtr<class UVAL_CharacterCustomizationItem_Pet>>& CallFunc_GetNewPetsForBonusReceivedModal_ReturnValue, const struct FVAL_CharacterCustomization_PetPurchaseBonus& CallFunc_GetPetPurchaseBonusFromPurchaseRewards_ReturnValue, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Greater_IntInt_ReturnValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BPFL_UiHelpers_C", "TryDisplayBonusReceivedModal_CM");
+
+	Params::UBPFL_UiHelpers_C_TryDisplayBonusReceivedModal_CM_Params Parms{};
+
+	Parms.StorefrontResponse = StorefrontResponse;
+	Parms.NewEntitlements = NewEntitlements;
+	Parms.__WorldContext = __WorldContext;
+	Parms.Modal = Modal;
+	Parms.PetPurchaseBonus = PetPurchaseBonus;
+	Parms.ValeriaPlayerController = ValeriaPlayerController;
+	Parms.NewPets = NewPets;
+	Parms.CallFunc_GetValeriaPlayerController_OutResult = CallFunc_GetValeriaPlayerController_OutResult;
+	Parms.CallFunc_GetValeriaPlayerController_ReturnValue = CallFunc_GetValeriaPlayerController_ReturnValue;
+	Parms.K2Node_SwitchEnum_CmpSuccess = K2Node_SwitchEnum_CmpSuccess;
+	Parms.CallFunc_GetUIManagerWidget_ReturnValue = CallFunc_GetUIManagerWidget_ReturnValue;
+	Parms.CallFunc_Create_ReturnValue = CallFunc_Create_ReturnValue;
+	Parms.CallFunc_GetNewPetsForBonusReceivedModal_ReturnValue = CallFunc_GetNewPetsForBonusReceivedModal_ReturnValue;
+	Parms.CallFunc_GetPetPurchaseBonusFromPurchaseRewards_ReturnValue = CallFunc_GetPetPurchaseBonusFromPurchaseRewards_ReturnValue;
+	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Greater_IntInt_ReturnValue = CallFunc_Greater_IntInt_ReturnValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Bonus_Received_Modal != nullptr)
+		*Bonus_Received_Modal = Parms.Bonus_Received_Modal;
+
+}
+
+
 // Function BPFL_UiHelpers.BPFL_UiHelpers_C.IsCompassDisplaySettingEnabled
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -469,16 +524,15 @@ void UBPFL_UiHelpers_C::SortUniformGridPanelByVisibility(class UUniformGridPanel
 // class FString                      CallFunc_GetCurrentLevelName_ReturnValue                         (ZeroConstructor, HasGetValueTypeHash)
 // struct FVector                     CallFunc_K2_GetActorLocation_ReturnValue                         (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                              Temp_int_Loop_Counter_Variable                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FConfigsManager             CallFunc_GetConfigsManager_ConfigsManager                        (None)
-// bool                               CallFunc_GetConfigsManager_IsValid                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                              CallFunc_Add_IntInt_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<struct FWorldMapConfig>     CallFunc_GetWorldMapConfigs_WorldMaps                            (ReferenceParm)
 // struct FWorldMapConfig             CallFunc_Array_Get_Item                                          (None)
 // int32                              CallFunc_Array_Length_ReturnValue                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Less_IntInt_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsWithinMap_InsideOf                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                              CallFunc_Add_IntInt_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_Contains_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::Get_World_Map_by_Player_Position(class UObject* __WorldContext, struct FWorldMapConfig* WorldMapConfig, bool* Found, int32 Temp_int_Array_Index_Variable, class APlayerController* CallFunc_GetPlayerController_ReturnValue, class APawn* CallFunc_K2_GetPawn_ReturnValue, const class FString& CallFunc_GetCurrentLevelName_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, int32 Temp_int_Loop_Counter_Variable, const struct FConfigsManager& CallFunc_GetConfigsManager_ConfigsManager, bool CallFunc_GetConfigsManager_IsValid, int32 CallFunc_Add_IntInt_ReturnValue, const struct FWorldMapConfig& CallFunc_Array_Get_Item, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, bool CallFunc_IsWithinMap_InsideOf, bool CallFunc_Contains_ReturnValue)
+void UBPFL_UiHelpers_C::Get_World_Map_by_Player_Position(class UObject* __WorldContext, struct FWorldMapConfig* WorldMapConfig, bool* Found, int32 Temp_int_Array_Index_Variable, class APlayerController* CallFunc_GetPlayerController_ReturnValue, class APawn* CallFunc_K2_GetPawn_ReturnValue, const class FString& CallFunc_GetCurrentLevelName_ReturnValue, const struct FVector& CallFunc_K2_GetActorLocation_ReturnValue, int32 Temp_int_Loop_Counter_Variable, TArray<struct FWorldMapConfig>& CallFunc_GetWorldMapConfigs_WorldMaps, const struct FWorldMapConfig& CallFunc_Array_Get_Item, int32 CallFunc_Array_Length_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue, bool CallFunc_IsWithinMap_InsideOf, int32 CallFunc_Add_IntInt_ReturnValue, bool CallFunc_Contains_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -494,13 +548,12 @@ void UBPFL_UiHelpers_C::Get_World_Map_by_Player_Position(class UObject* __WorldC
 	Parms.CallFunc_GetCurrentLevelName_ReturnValue = CallFunc_GetCurrentLevelName_ReturnValue;
 	Parms.CallFunc_K2_GetActorLocation_ReturnValue = CallFunc_K2_GetActorLocation_ReturnValue;
 	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
-	Parms.CallFunc_GetConfigsManager_ConfigsManager = CallFunc_GetConfigsManager_ConfigsManager;
-	Parms.CallFunc_GetConfigsManager_IsValid = CallFunc_GetConfigsManager_IsValid;
-	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
+	Parms.CallFunc_GetWorldMapConfigs_WorldMaps = CallFunc_GetWorldMapConfigs_WorldMaps;
 	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
 	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
 	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
 	Parms.CallFunc_IsWithinMap_InsideOf = CallFunc_IsWithinMap_InsideOf;
+	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
 	Parms.CallFunc_Contains_ReturnValue = CallFunc_Contains_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -510,39 +563,6 @@ void UBPFL_UiHelpers_C::Get_World_Map_by_Player_Position(class UObject* __WorldC
 
 	if (Found != nullptr)
 		*Found = Parms.Found;
-
-}
-
-
-// Function BPFL_UiHelpers.BPFL_UiHelpers_C.GetConfigsManager
-// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FConfigsManager             ConfigsManager                                                   (Parm, OutParm)
-// bool                               IsValid                                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FConfigsManager             CallFunc_GetConfigsManagerForBP_ConfigsManager                   (None)
-// bool                               CallFunc_GetConfigsManagerForBP_ReturnValue                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBPFL_UiHelpers_C::GetConfigsManager(class UObject* __WorldContext, struct FConfigsManager* ConfigsManager, bool* IsValid, const struct FConfigsManager& CallFunc_GetConfigsManagerForBP_ConfigsManager, bool CallFunc_GetConfigsManagerForBP_ReturnValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("BPFL_UiHelpers_C", "GetConfigsManager");
-
-	Params::UBPFL_UiHelpers_C_GetConfigsManager_Params Parms{};
-
-	Parms.__WorldContext = __WorldContext;
-	Parms.CallFunc_GetConfigsManagerForBP_ConfigsManager = CallFunc_GetConfigsManagerForBP_ConfigsManager;
-	Parms.CallFunc_GetConfigsManagerForBP_ReturnValue = CallFunc_GetConfigsManagerForBP_ReturnValue;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (ConfigsManager != nullptr)
-		*ConfigsManager = std::move(Parms.ConfigsManager);
-
-	if (IsValid != nullptr)
-		*IsValid = Parms.IsValid;
 
 }
 

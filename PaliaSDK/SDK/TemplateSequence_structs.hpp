@@ -40,7 +40,7 @@ struct FTemplateSequenceBindingOverrideData
 public:
 	TWeakObjectPtr<class UObject>                Object;                                            // 0x0(0x8)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bOverridesDefault;                                 // 0x8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1441[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_170A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

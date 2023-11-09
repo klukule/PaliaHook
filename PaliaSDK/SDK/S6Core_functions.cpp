@@ -1215,6 +1215,34 @@ bool US6PlatformUtils::IsMobile()
 }
 
 
+// Function S6Core.S6PlatformUtils.IsInParentalControl
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool US6PlatformUtils::IsInParentalControl()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6PlatformUtils", "IsInParentalControl");
+
+	Params::US6PlatformUtils_IsInParentalControl_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function S6Core.S6PlatformUtils.IsDesktop
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:

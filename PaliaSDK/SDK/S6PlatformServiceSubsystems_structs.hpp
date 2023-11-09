@@ -36,10 +36,10 @@ struct FS6PLAT_PlayerBehaviorReportCategoryInfo
 public:
 	class FText                                  DisplayName;                                       // 0x0(0x18)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	enum class ES6PLAT_PlayerBehaviorReportType  ReportType;                                        // 0x18(0x1)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11EA[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1196[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
-// 0x38 (0x38 - 0x0)
+// 0x48 (0x48 - 0x0)
 // ScriptStruct S6PlatformServiceSubsystems.S6PLAT_ChatMessage
 struct FS6PLAT_ChatMessage
 {
@@ -48,9 +48,10 @@ public:
 	class FString                                ChannelName;                                       // 0x10(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                Content;                                           // 0x20(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDateTime                             CreatedAt;                                         // 0x30(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                CharacterName;                                     // 0x38(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// 0xA8 (0xA8 - 0x0)
+// 0xB8 (0xB8 - 0x0)
 // ScriptStruct S6PlatformServiceSubsystems.S6PLAT_PlayerBehaviorReportForm
 struct FS6PLAT_PlayerBehaviorReportForm
 {
@@ -61,12 +62,12 @@ public:
 	struct FGuid                                 ReporterCharacterId;                               // 0x30(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ES6PLAT_PlayerBehaviorReportSource ReportSource;                                      // 0x40(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ES6PLAT_PlayerBehaviorReportType  ReportType;                                        // 0x41(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11F3[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_11A0[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FName                                  CategoryName;                                      // 0x44(0x8)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_11F5[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_11A1[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Comment;                                           // 0x50(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FS6PLAT_ChatMessage                   ReportedMessage;                                   // 0x60(0x38)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<struct FS6PLAT_ChatMessage>           SurroundingMessages;                               // 0x98(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FS6PLAT_ChatMessage                   ReportedMessage;                                   // 0x60(0x48)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FS6PLAT_ChatMessage>           SurroundingMessages;                               // 0xA8(0x10)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 }

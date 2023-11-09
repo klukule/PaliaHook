@@ -27,7 +27,7 @@ class UBindingKeyListenerWidget : public UUserWidget
 {
 public:
 	FMulticastInlineDelegateProperty_            OnAnyKeyTriggered;                                 // 0x278(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_7A1[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BB0[0x48];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UBindingKeyListenerWidget* GetDefaultObj();
@@ -60,20 +60,18 @@ class UEnhancedPlayerInputWithKeyRebind : public UEnhancedPlayerInput
 {
 public:
 	enum class ECommonInputType                  CurrentInputType;                                  // 0x740(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_7B5[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BBF[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UEnhancedPlayerInputWithKeyRebind* GetDefaultObj();
 
 };
 
-// 0x58 (0x80 - 0x28)
+// 0x0 (0x28 - 0x28)
 // Class KeyRebinding.IARichTextBlockImageDecorator
 class UIARichTextBlockImageDecorator : public URichTextBlockDecorator
 {
 public:
-	class UDataTable*                            IconTable;                                         // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                        Pad_7B8[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UIARichTextBlockImageDecorator* GetDefaultObj();
@@ -116,14 +114,15 @@ public:
 
 };
 
-// 0x58 (0x90 - 0x38)
+// 0x68 (0xA0 - 0x38)
 // Class KeyRebinding.KeyRebindingDatasetSettings
 class UKeyRebindingDatasetSettings : public UDeveloperSettings
 {
 public:
 	TMap<enum class ERedirectsPlatform, TSubclassOf<class UKeyRebindingMappingDataset>> KeyRebindingDatasetOfAllPlatform;                  // 0x38(0x50)(Edit, Config, NoClear, UObjectWrapper, NativeAccessSpecifierPublic)
 	float                                        TipDelayTime;                                      // 0x88(0x4)(Edit, ZeroConstructor, Config, NoClear, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_7BF[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_BD9[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	TArray<struct FIARichTextBlockBrushConfiguration> IARichTextBlockBrushConfigurations;                // 0x90(0x10)(Edit, ZeroConstructor, Config, NoClear, NativeAccessSpecifierPublic)
 
 	static class UClass* StaticClass();
 	static class UKeyRebindingDatasetSettings* GetDefaultObj();
@@ -167,7 +166,7 @@ class UUnAvailableKeysAsset : public UDataAsset
 public:
 	TSet<struct FKey>                            UnAvailableKeySet;                                 // 0x30(0x50)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	enum class EInputControlsType                InputControlsType;                                 // 0x80(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_7E1[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_C8F[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UUnAvailableKeysAsset* GetDefaultObj();
@@ -180,10 +179,10 @@ class UEnhancedInputSubsystemWithKeyRebinding : public UEnhancedInputLocalPlayer
 {
 public:
 	TMap<class UInputMappingContext*, class UInputMappingContext*> ContextRedirects;                                  // 0x1E8(0x50)(Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                        Pad_7F9[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_D29[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TMap<class UInputAction*, struct FMulticastRefreshKeys> RefreshKeysCallBackMap;                            // 0x240(0x50)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	TSet<class UInputMappingContext*>            AppliedIMC;                                        // 0x290(0x50)(NativeAccessSpecifierPrivate)
-	uint8                                        Pad_7FA[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_D2C[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UEnhancedInputSubsystemWithKeyRebinding* GetDefaultObj();
@@ -193,6 +192,7 @@ public:
 	void RemoveMappingContext(class UInputMappingContext* MappingContext, struct FModifyContextOptions& Options);
 	void RegisterDelegateToRefreshKeys(class UInputAction* InputAction, FDelegateProperty_& RefreshKeysDelegate);
 	TArray<struct FInputKeys> GetKeysForInputAction(class UInputAction* InputAction, bool bIsGamepadKey, bool bIsLockedCurrentInput);
+	class UInputAction* FindChordInputAction(class UInputAction* InputAction);
 	void AddMappingContext(class UInputMappingContext* MappingContext, int32 Priority, struct FModifyContextOptions& Options);
 };
 
@@ -229,7 +229,7 @@ public:
 	class UKeyRebindingMappingDataset*           KeyRebindingDataset;                               // 0x30(0x8)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TMap<class FName, FDelegateProperty_>        KeyRebindingCallBackMap;                           // 0x38(0x50)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	TMap<class FName, class UInputMappingContext*> KeyRebindingMap;                                   // 0x88(0x50)(UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_828[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_DB0[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UKeyRebindingSubsystem* GetDefaultObj();

@@ -14,7 +14,7 @@ namespace SDK
 class UThirdPerson_AnimBP_C : public UAnimInstance
 {
 public:
-	uint8                                        Pad_7AF[0x8];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3197[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x350(0x8)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimBlueprintGeneratedMutableData    __AnimBlueprintMutables;                           // 0x358(0x8)(HasGetValueTypeHash)
 	struct FAnimSubsystemInstance                AnimBlueprintExtension_PropertyAccess;             // 0x360(0x8)(None)
@@ -34,7 +34,7 @@ public:
 	struct FAnimNode_StateResult                 AnimGraphNode_StateResult;                         // 0x5D8(0x20)(None)
 	struct FAnimNode_StateMachine                AnimGraphNode_StateMachine;                        // 0x5F8(0xC8)(None)
 	bool                                         IsInAir_;                                          // 0x6C0(0x1)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_7B3[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3199[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	double                                       Speed;                                             // 0x6C8(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 	static class UClass* StaticClass();

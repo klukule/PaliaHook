@@ -1277,6 +1277,34 @@ class US6UI_OverlaySwitcherSlot* US6UI_OverlaySwitcher::AddChildToOverlaySwitche
 }
 
 
+// Class S6UICommonWidgets.S6UI_RichTextBlock
+// (None)
+
+class UClass* US6UI_RichTextBlock::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_RichTextBlock");
+
+	return Clss;
+}
+
+
+// S6UI_RichTextBlock S6UICommonWidgets.Default__S6UI_RichTextBlock
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_RichTextBlock* US6UI_RichTextBlock::GetDefaultObj()
+{
+	static class US6UI_RichTextBlock* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_RichTextBlock*>(US6UI_RichTextBlock::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Class S6UICommonWidgets.S6UI_RichTextBlockDecorator_SoftImage
 // (None)
 

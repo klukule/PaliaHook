@@ -68,7 +68,7 @@ public:
 	struct FVector                               LinearVelocity;                                    // 0x40(0x18)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               AngularVelocity;                                   // 0x58(0x18)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Mass;                                              // 0x70(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23C2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_250E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FBox                                  LocalBounds;                                       // 0x78(0x38)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                Children;                                          // 0xB0(0x10)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
@@ -81,7 +81,7 @@ public:
 	class UPrimitiveComponent*                   Component;                                         // 0x0(0x8)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                               Location;                                          // 0x8(0x18)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Mass;                                              // 0x20(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_23C7[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_250F[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -89,7 +89,7 @@ public:
 struct FBreakEventCallbackWrapper
 {
 public:
-	uint8                                        Pad_23CB[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2510[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -97,7 +97,7 @@ public:
 struct FRemovalEventCallbackWrapper
 {
 public:
-	uint8                                        Pad_23CE[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2511[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -105,7 +105,7 @@ public:
 struct FCrumblingEventCallbackWrapper
 {
 public:
-	uint8                                        Pad_23CF[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2515[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x58 (0x58 - 0x0)
@@ -113,7 +113,7 @@ public:
 struct FChaosHandlerSet
 {
 public:
-	uint8                                        Pad_23D0[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2519[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TSet<class UObject*>                         ChaosHandlers;                                     // 0x8(0x50)(UObjectWrapper, NativeAccessSpecifierPublic)
 };
 

@@ -26,7 +26,7 @@ public:
 struct FPolymorphicStructNetSerializerConfig : public FNetSerializerConfig
 {
 public:
-	uint8                                        Pad_25D2[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26A8[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -34,7 +34,7 @@ public:
 struct FPolymorphicArrayStructNetSerializerConfig : public FNetSerializerConfig
 {
 public:
-	uint8                                        Pad_25D5[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26A9[0x1];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

@@ -5928,6 +5928,90 @@ class UAkPS4PlatformInfo* UAkPS4PlatformInfo::GetDefaultObj()
 }
 
 
+// Class AkAudio.AkPS5InitializationSettings
+// (None)
+
+class UClass* UAkPS5InitializationSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AkPS5InitializationSettings");
+
+	return Clss;
+}
+
+
+// AkPS5InitializationSettings AkAudio.Default__AkPS5InitializationSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAkPS5InitializationSettings* UAkPS5InitializationSettings::GetDefaultObj()
+{
+	static class UAkPS5InitializationSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAkPS5InitializationSettings*>(UAkPS5InitializationSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AkAudio.AkDPXInitializationSettings
+// (None)
+
+class UClass* UAkDPXInitializationSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AkDPXInitializationSettings");
+
+	return Clss;
+}
+
+
+// AkDPXInitializationSettings AkAudio.Default__AkDPXInitializationSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAkDPXInitializationSettings* UAkDPXInitializationSettings::GetDefaultObj()
+{
+	static class UAkDPXInitializationSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAkDPXInitializationSettings*>(UAkDPXInitializationSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AkAudio.AkPS5PlatformInfo
+// (None)
+
+class UClass* UAkPS5PlatformInfo::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AkPS5PlatformInfo");
+
+	return Clss;
+}
+
+
+// AkPS5PlatformInfo AkAudio.Default__AkPS5PlatformInfo
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAkPS5PlatformInfo* UAkPS5PlatformInfo::GetDefaultObj()
+{
+	static class UAkPS5PlatformInfo* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAkPS5PlatformInfo*>(UAkPS5PlatformInfo::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
 // Class AkAudio.AkReverbVolume
 // (Actor)
 
@@ -8194,6 +8278,117 @@ class UAkXboxOnePlatformInfo* UAkXboxOnePlatformInfo::GetDefaultObj()
 
 	if (!Default)
 		Default = static_cast<UAkXboxOnePlatformInfo*>(UAkXboxOnePlatformInfo::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AkAudio.AkXSXInitializationSettings
+// (None)
+
+class UClass* UAkXSXInitializationSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AkXSXInitializationSettings");
+
+	return Clss;
+}
+
+
+// AkXSXInitializationSettings AkAudio.Default__AkXSXInitializationSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAkXSXInitializationSettings* UAkXSXInitializationSettings::GetDefaultObj()
+{
+	static class UAkXSXInitializationSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAkXSXInitializationSettings*>(UAkXSXInitializationSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Function AkAudio.AkXSXInitializationSettings.MigrateMultiCoreRendering
+// (Final, Native, Public)
+// Parameters:
+// bool                               NewValue                                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAkXSXInitializationSettings::MigrateMultiCoreRendering(bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("AkXSXInitializationSettings", "MigrateMultiCoreRendering");
+
+	Params::UAkXSXInitializationSettings_MigrateMultiCoreRendering_Params Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Class AkAudio.AkMPXInitializationSettings
+// (None)
+
+class UClass* UAkMPXInitializationSettings::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AkMPXInitializationSettings");
+
+	return Clss;
+}
+
+
+// AkMPXInitializationSettings AkAudio.Default__AkMPXInitializationSettings
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAkMPXInitializationSettings* UAkMPXInitializationSettings::GetDefaultObj()
+{
+	static class UAkMPXInitializationSettings* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAkMPXInitializationSettings*>(UAkMPXInitializationSettings::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Class AkAudio.AkXSXPlatformInfo
+// (None)
+
+class UClass* UAkXSXPlatformInfo::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("AkXSXPlatformInfo");
+
+	return Clss;
+}
+
+
+// AkXSXPlatformInfo AkAudio.Default__AkXSXPlatformInfo
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UAkXSXPlatformInfo* UAkXSXPlatformInfo::GetDefaultObj()
+{
+	static class UAkXSXPlatformInfo* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UAkXSXPlatformInfo*>(UAkXSXPlatformInfo::StaticClass()->DefaultObject);
 
 	return Default;
 }

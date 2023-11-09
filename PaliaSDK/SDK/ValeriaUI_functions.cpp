@@ -667,6 +667,67 @@ bool UMailboxViewerUserWidget::TryCollectReward(int32 Index, int32 RewardIndex)
 }
 
 
+// Function ValeriaUI.MailboxViewerUserWidget.TryCollectAllRewards
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// enum class EValeriaFuncResult      OutResult                                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMailboxViewerUserWidget::TryCollectAllRewards(int32 Index, enum class EValeriaFuncResult* OutResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("MailboxViewerUserWidget", "TryCollectAllRewards");
+
+	Params::UMailboxViewerUserWidget_TryCollectAllRewards_Params Parms{};
+
+	Parms.Index = Index;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutResult != nullptr)
+		*OutResult = Parms.OutResult;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function ValeriaUI.MailboxViewerUserWidget.RemoveLoadedMessage
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMailboxViewerUserWidget::RemoveLoadedMessage(int32 Index)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("MailboxViewerUserWidget", "RemoveLoadedMessage");
+
+	Params::UMailboxViewerUserWidget_RemoveLoadedMessage_Params Parms{};
+
+	Parms.Index = Index;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
 // Function ValeriaUI.MailboxViewerUserWidget.RefreshMailMessages
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1082,6 +1143,36 @@ enum class EMailboxViewerFilter UMailboxViewerUserWidget::GetCurrentFilter()
 
 	Params::UMailboxViewerUserWidget_GetCurrentFilter_Params Parms{};
 
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function ValeriaUI.MailboxViewerUserWidget.AreAllRewardsCollected
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMailboxViewerUserWidget::AreAllRewardsCollected(int32 Index)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("MailboxViewerUserWidget", "AreAllRewardsCollected");
+
+	Params::UMailboxViewerUserWidget_AreAllRewardsCollected_Params Parms{};
+
+	Parms.Index = Index;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2945,9 +3036,10 @@ void UVALUI_CharacterCustomizationPanelBase::GenerateLoadoutSlotItems()
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // struct FVAL_CharCustomization_AssetDataAssetData                                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class UWidget*                     ViewWidget                                                       (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                     ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObject* UVALUI_CharacterCustomizationPanelBase::GenerateItemObject(struct FVAL_CharCustomization_AssetData& AssetData)
+class UObject* UVALUI_CharacterCustomizationPanelBase::GenerateItemObject(struct FVAL_CharCustomization_AssetData& AssetData, class UWidget* ViewWidget)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2957,6 +3049,7 @@ class UObject* UVALUI_CharacterCustomizationPanelBase::GenerateItemObject(struct
 	Params::UVALUI_CharacterCustomizationPanelBase_GenerateItemObject_Params Parms{};
 
 	Parms.AssetData = AssetData;
+	Parms.ViewWidget = ViewWidget;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -3425,6 +3518,64 @@ void UVALUI_ChatInputBar::TryUpdateChatChannel()
 
 
 	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function ValeriaUI.VALUI_ChatInputBar.TrySendMessageToCurrentTargetBySelf
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVALUI_ChatInputBar::TrySendMessageToCurrentTargetBySelf()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_ChatInputBar", "TrySendMessageToCurrentTargetBySelf");
+
+	Params::UVALUI_ChatInputBar_TrySendMessageToCurrentTargetBySelf_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function ValeriaUI.VALUI_ChatInputBar.SwitchToNextChannel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bSwitchUp                                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FMessageTarget              ReturnValue                                                      (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FMessageTarget UVALUI_ChatInputBar::SwitchToNextChannel(bool bSwitchUp)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_ChatInputBar", "SwitchToNextChannel");
+
+	Params::UVALUI_ChatInputBar_SwitchToNextChannel_Params Parms{};
+
+	Parms.bSwitchUp = bSwitchUp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 
 }
 
@@ -4327,6 +4478,38 @@ void UVALUI_ChatPanelBase::OnNewChatMessageAdded(struct FValeriaChatMessage& Cha
 	Parms.ChatMessage = ChatMessage;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function ValeriaUI.VALUI_ChatPanelBase.IsTabChannelEnabled
+// (Final, Native, Protected, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FMessageTarget              MessageTarget                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVALUI_ChatPanelBase::IsTabChannelEnabled(class FName& TabName, struct FMessageTarget& MessageTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_ChatPanelBase", "IsTabChannelEnabled");
+
+	Params::UVALUI_ChatPanelBase_IsTabChannelEnabled_Params Parms{};
+
+	Parms.TabName = TabName;
+	Parms.MessageTarget = MessageTarget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 
 }
 
@@ -6846,6 +7029,33 @@ bool UVALUI_ListView_Styled::ShouldScrollBarBeVisible()
 }
 
 
+// Function ValeriaUI.VALUI_ListView_Styled.SetEntryWidgetClass
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UUserWidget>     NewWidgetClass                                                   (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVALUI_ListView_Styled::SetEntryWidgetClass(TSubclassOf<class UUserWidget> NewWidgetClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_ListView_Styled", "SetEntryWidgetClass");
+
+	Params::UVALUI_ListView_Styled_SetEntryWidgetClass_Params Parms{};
+
+	Parms.NewWidgetClass = NewWidgetClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
 // DelegateFunction ValeriaUI.VALUI_ListView_Styled.OnListItemSelectionChangedWithInputTypeDynamic__DelegateSignature
 // (MulticastDelegate, Public, Delegate)
 // Parameters:
@@ -8467,6 +8677,29 @@ void UVALUI_UIManagerWidgetBase::Implementation_ToggleCollectionsMenu(enum class
 	Params::UVALUI_UIManagerWidgetBase_Implementation_ToggleCollectionsMenu_Params Parms{};
 
 	Parms.TabState = TabState;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function ValeriaUI.VALUI_UIManagerWidgetBase.Implementation_OpenWishView
+// (BlueprintCosmetic, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FWishTreeEntry>      Wishes                                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// class UVillagerWishDataAsset*      VillagerWishOverride                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVALUI_UIManagerWidgetBase::Implementation_OpenWishView(TArray<struct FWishTreeEntry>& Wishes, class UVillagerWishDataAsset* VillagerWishOverride)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_UIManagerWidgetBase", "Implementation_OpenWishView");
+
+	Params::UVALUI_UIManagerWidgetBase_Implementation_OpenWishView_Params Parms{};
+
+	Parms.Wishes = Wishes;
+	Parms.VillagerWishOverride = VillagerWishOverride;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -11975,6 +12208,29 @@ bool UVALUI_TabButtonHostBase::TryGetTabInfo(class FName& TabName, struct FVALUI
 }
 
 
+// Function ValeriaUI.VALUI_TabButtonHostBase.ShowTabButton
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVALUI_InstantiatedTabButtonInfoInfo                                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UVALUI_TabButtonHostBase::ShowTabButton(class FName& TabName, struct FVALUI_InstantiatedTabButtonInfo& Info)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_TabButtonHostBase", "ShowTabButton");
+
+	Params::UVALUI_TabButtonHostBase_ShowTabButton_Params Parms{};
+
+	Parms.TabName = TabName;
+	Parms.Info = Info;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // Function ValeriaUI.VALUI_TabButtonHostBase.SetTabButtonVisibility
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -12079,6 +12335,29 @@ void UVALUI_TabButtonHostBase::OnDifferentActiveTabSet__DelegateSignature(class 
 	Params::UVALUI_TabButtonHostBase_OnDifferentActiveTabSet__DelegateSignature_Params Parms{};
 
 	Parms.TabButtonHost = TabButtonHost;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function ValeriaUI.VALUI_TabButtonHostBase.HideTabButton
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// class FName                        TabName                                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVALUI_InstantiatedTabButtonInfoInfo                                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UVALUI_TabButtonHostBase::HideTabButton(class FName& TabName, struct FVALUI_InstantiatedTabButtonInfo& Info)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_TabButtonHostBase", "HideTabButton");
+
+	Params::UVALUI_TabButtonHostBase_HideTabButton_Params Parms{};
+
+	Parms.TabName = TabName;
+	Parms.Info = Info;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -13040,6 +13319,34 @@ struct FEventReply UVALUI_WidgetBlueprintLibrary::CaptureMouseWithHighPrecision(
 
 	return Parms.ReturnValue;
 
+}
+
+
+// Class ValeriaUI.WishViewWidget
+// (None)
+
+class UClass* UWishViewWidget::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("WishViewWidget");
+
+	return Clss;
+}
+
+
+// WishViewWidget ValeriaUI.Default__WishViewWidget
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class UWishViewWidget* UWishViewWidget::GetDefaultObj()
+{
+	static class UWishViewWidget* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<UWishViewWidget*>(UWishViewWidget::StaticClass()->DefaultObject);
+
+	return Default;
 }
 
 }

@@ -807,6 +807,36 @@ TArray<struct FInputKeys> UEnhancedInputSubsystemWithKeyRebinding::GetKeysForInp
 }
 
 
+// Function KeyRebinding.EnhancedInputSubsystemWithKeyRebinding.FindChordInputAction
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UInputAction*                InputAction                                                      (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UInputAction*                ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UInputAction* UEnhancedInputSubsystemWithKeyRebinding::FindChordInputAction(class UInputAction* InputAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("EnhancedInputSubsystemWithKeyRebinding", "FindChordInputAction");
+
+	Params::UEnhancedInputSubsystemWithKeyRebinding_FindChordInputAction_Params Parms{};
+
+	Parms.InputAction = InputAction;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function KeyRebinding.EnhancedInputSubsystemWithKeyRebinding.AddMappingContext
 // (BlueprintCosmetic, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:

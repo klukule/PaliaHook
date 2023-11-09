@@ -539,6 +539,33 @@ class US6UI_CustomNavigationGroup* US6UI_CustomNavigationGroup::GetDefaultObj()
 }
 
 
+// Function S6UICore.S6UI_CustomNavigationGroup.SetIsGroupEnabled
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                               bInIsEnabled                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_CustomNavigationGroup::SetIsGroupEnabled(bool bInIsEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "SetIsGroupEnabled");
+
+	Params::US6UI_CustomNavigationGroup_SetIsGroupEnabled_Params Parms{};
+
+	Parms.bInIsEnabled = bInIsEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
 // Function S6UICore.S6UI_CustomNavigationGroup.SetIsFocusable
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -638,6 +665,29 @@ bool US6UI_CustomNavigationGroup::OnIsWidgetValiedToNavigate__DelegateSignature(
 }
 
 
+// DelegateFunction S6UICore.S6UI_CustomNavigationGroup.OnGroupEnableChanged__DelegateSignature
+// (MulticastDelegate, Public, Delegate)
+// Parameters:
+// class US6UI_CustomNavigationGroup* InNavGroup                                                       (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               InbIsEnabled                                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_CustomNavigationGroup::OnGroupEnableChanged__DelegateSignature(class US6UI_CustomNavigationGroup* InNavGroup, bool InbIsEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "OnGroupEnableChanged__DelegateSignature");
+
+	Params::US6UI_CustomNavigationGroup_OnGroupEnableChanged__DelegateSignature_Params Parms{};
+
+	Parms.InNavGroup = InNavGroup;
+	Parms.InbIsEnabled = InbIsEnabled;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // DelegateFunction S6UICore.S6UI_CustomNavigationGroup.OnCustomNavigationGroupTransitionEvent__DelegateSignature
 // (Public, Delegate)
 // Parameters:
@@ -714,6 +764,34 @@ void US6UI_CustomNavigationGroup::NavigateToTargetWidget(int32 InTargetWidgetInd
 
 
 	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function S6UICore.S6UI_CustomNavigationGroup.GetIsGroupEnabled
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool US6UI_CustomNavigationGroup::GetIsGroupEnabled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_CustomNavigationGroup", "GetIsGroupEnabled");
+
+	Params::US6UI_CustomNavigationGroup_GetIsGroupEnabled_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 
 }
 
@@ -910,8 +988,9 @@ void US6UI_CustomNavigationGroup::AddNavWidgets(const TArray<class UWidget*>& In
 // Parameters:
 // struct FS6UI_NavigationGroupTranstionDataInTransitionData                                                 (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                               bInBidirectional                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               bClearMatchingGroupNavigations                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void US6UI_CustomNavigationGroup::AddNavigationGroupTransitionData(const struct FS6UI_NavigationGroupTranstionData& InTransitionData, bool bInBidirectional)
+void US6UI_CustomNavigationGroup::AddNavigationGroupTransitionData(const struct FS6UI_NavigationGroupTranstionData& InTransitionData, bool bInBidirectional, bool bClearMatchingGroupNavigations)
 {
 	static class UFunction* Func = nullptr;
 
@@ -922,6 +1001,7 @@ void US6UI_CustomNavigationGroup::AddNavigationGroupTransitionData(const struct 
 
 	Parms.InTransitionData = InTransitionData;
 	Parms.bInBidirectional = bInBidirectional;
+	Parms.bClearMatchingGroupNavigations = bClearMatchingGroupNavigations;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
