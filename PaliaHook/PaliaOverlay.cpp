@@ -130,7 +130,7 @@ std::vector<std::string> debugger;
 #define STATIC_CLASS(CName)						\
 {												\
 	static class UClass* Clss = nullptr;		\
-	if (!Clss)									\
+	if (!Clss || !Clss->IsValidLowLevel())		\
 		Clss = UObject::FindClassFast(CName);	\
 	SearchClass = Clss;							\
 }
@@ -138,7 +138,7 @@ std::vector<std::string> debugger;
 #define STATIC_CLASS_MULT(CName)				\
 {												\
 	static class UClass* Clss = nullptr;		\
-	if (!Clss)									\
+	if (!Clss || !Clss->IsValidLowLevel())		\
 		Clss = UObject::FindClassFast(CName);	\
 	SearchClasses.push_back(Clss);				\
 }
