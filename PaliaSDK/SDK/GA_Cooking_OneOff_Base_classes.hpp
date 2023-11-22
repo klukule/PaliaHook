@@ -14,11 +14,11 @@ namespace SDK
 class UGA_Cooking_OneOff_Base_C : public UGA_MontageEvent_Base_C
 {
 public:
-	uint8                                        Pad_E[0x7];                                        // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_293C[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x4C0(0x8)(ZeroConstructor, Transient, DuplicateTransient)
 	class UInteractableComponent*                CrafterInteractable;                               // 0x4C8(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	enum class ECharacterState                   CSM_Locked_State;                                  // 0x4D0(0x1)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_F[0x7];                                        // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_293D[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UCrafterComponent*                     CrafterComponent;                                  // 0x4D8(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                         ShouldEnforcePosition;                             // 0x4E0(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                         ShouldEnforceFacingTowardsInteractableOnly;        // 0x4E1(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

@@ -37,7 +37,7 @@ public:
 struct FAudioMeterStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_1D8C[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D2D[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           MeterValueImage;                                   // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           BackgroundImage;                                   // 0xE0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           MeterBackgroundImage;                              // 0x1B0(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -50,14 +50,14 @@ public:
 	struct FVector2D                             ValueRangeDb;                                      // 0x448(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bShowScale;                                        // 0x458(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bScaleSide;                                        // 0x459(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D8F[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D2E[0x2];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ScaleHashOffset;                                   // 0x45C(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ScaleHashWidth;                                    // 0x460(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        ScaleHashHeight;                                   // 0x464(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                        DecibelsPerHash;                                   // 0x468(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D90[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D2F[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateFontInfo                        Font;                                              // 0x470(0x58)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D91[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D30[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xF8 (0x100 - 0x8)
@@ -65,10 +65,10 @@ public:
 struct FAudioTextBoxStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_1D93[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D31[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSlateBrush                           BackgroundImage;                                   // 0x10(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           BackgroundColor;                                   // 0xE0(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D94[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D32[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x748 (0x750 - 0x8)
@@ -76,18 +76,18 @@ public:
 struct FAudioSliderStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_1D95[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D33[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FSliderStyle                          SliderStyle;                                       // 0x10(0x500)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FAudioTextBoxStyle                    TextBoxStyle;                                      // 0x510(0x100)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                           WidgetBackgroundImage;                             // 0x610(0xD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           SliderBackgroundColor;                             // 0x6E0(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D96[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D34[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector2D                             SliderBackgroundSize;                              // 0x6F8(0x10)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        LabelPadding;                                      // 0x708(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSlateColor                           SliderBarColor;                                    // 0x70C(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           SliderThumbColor;                                  // 0x720(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           WidgetBackgroundColor;                             // 0x734(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D98[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D35[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x158 (0x160 - 0x8)
@@ -95,14 +95,14 @@ public:
 struct FAudioRadialSliderStyle : public FSlateWidgetStyle
 {
 public:
-	uint8                                        Pad_1D9B[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D36[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAudioTextBoxStyle                    TextBoxStyle;                                      // 0x10(0x100)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           CenterBackgroundColor;                             // 0x110(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           SliderBarColor;                                    // 0x124(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                           SliderProgressColor;                               // 0x138(0x14)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	float                                        LabelPadding;                                      // 0x14C(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        DefaultSliderRadius;                               // 0x150(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D9D[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1D37[0xC];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

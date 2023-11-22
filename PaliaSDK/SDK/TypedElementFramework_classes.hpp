@@ -71,7 +71,7 @@ public:
 class UTypedElementRegistry : public UObject
 {
 public:
-	uint8                                        Pad_243C[0x920];                                   // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2229[0x920];                                   // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UTypedElementRegistry* GetDefaultObj();
@@ -122,7 +122,7 @@ public:
 class UTestTypedElementInterfaceA_ImplTyped : public UObject
 {
 public:
-	uint8                                        Pad_245E[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_223C[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UTestTypedElementInterfaceA_ImplTyped* GetDefaultObj();
@@ -134,7 +134,7 @@ public:
 class UTestTypedElementInterfaceA_ImplUntyped : public UObject
 {
 public:
-	uint8                                        Pad_2466[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_223E[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UTestTypedElementInterfaceA_ImplUntyped* GetDefaultObj();
@@ -146,7 +146,7 @@ public:
 class UTestTypedElementInterfaceBAndC_Typed : public UObject
 {
 public:
-	uint8                                        Pad_246B[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2240[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UTestTypedElementInterfaceBAndC_Typed* GetDefaultObj();

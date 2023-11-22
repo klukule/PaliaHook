@@ -14,7 +14,7 @@ namespace SDK
 class UGA_Gather_C : public UGA_LoopableEvent_Base_C
 {
 public:
-	uint8                                        Pad_2FFF[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_175A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FPointerToUberGraphFrame              UberGraphFrame;                                    // 0x540(0x8)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FGameplayEventData                    GatherEventData;                                   // 0x548(0xB0)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FActiveGameplayEffectHandle           GameplayEffect_GatherBlocker;                      // 0x5F8(0x8)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)

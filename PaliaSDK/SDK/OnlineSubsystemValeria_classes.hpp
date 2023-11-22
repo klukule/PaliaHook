@@ -55,7 +55,7 @@ class UOSSVAL_GetCharacterNamesByAccountIdProxy : public UBlueprintAsyncActionBa
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailure;                                         // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27E2[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26C7[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UOSSVAL_GetCharacterNamesByAccountIdProxy* GetDefaultObj();
@@ -72,7 +72,7 @@ class UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy : public UBlueprint
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailure;                                         // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_27FF[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26EA[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UOSSVAL_GetCharacterNameByAccountIdAndCharacterIdProxy* GetDefaultObj();
@@ -89,7 +89,7 @@ class UOSSVAL_GetCharacterNameByCharacterIdProxy : public UBlueprintAsyncActionB
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailure;                                         // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2805[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_26FA[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UOSSVAL_GetCharacterNameByCharacterIdProxy* GetDefaultObj();
@@ -106,7 +106,7 @@ class UOSSVAL_GetNetIdByCharacterIdProxy : public UBlueprintAsyncActionBase
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailure;                                         // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2807[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_270D[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UOSSVAL_GetNetIdByCharacterIdProxy* GetDefaultObj();
@@ -134,7 +134,7 @@ class UOSSVAL_AsyncActionGetCharactersByAccountId : public UBlueprintAsyncAction
 public:
 	FMulticastInlineDelegateProperty_            OnSuccess;                                         // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_            OnFailed;                                          // 0x40(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_280D[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_272A[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UOSSVAL_AsyncActionGetCharactersByAccountId* GetDefaultObj();
@@ -150,7 +150,7 @@ class UOSSVAL_AsyncActionProfanityFilterString : public UBlueprintAsyncActionBas
 {
 public:
 	FMulticastInlineDelegateProperty_            OnResultObtained;                                  // 0x30(0x10)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2819[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2739[0x18];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UOSSVAL_AsyncActionProfanityFilterString* GetDefaultObj();
@@ -164,7 +164,7 @@ public:
 class AOSSVAL_BeaconClient : public AOnlineBeaconClient
 {
 public:
-	uint8                                        Pad_2820[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2741[0x20];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class AOSSVAL_BeaconClient* GetDefaultObj();
@@ -189,7 +189,7 @@ public:
 class AOSSVAL_BeaconHostObject : public AOnlineBeaconHostObject
 {
 public:
-	uint8                                        Pad_2823[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2747[0x48];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class AOSSVAL_BeaconHostObject* GetDefaultObj();

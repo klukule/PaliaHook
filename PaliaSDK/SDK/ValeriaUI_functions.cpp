@@ -1157,6 +1157,36 @@ enum class EMailboxViewerFilter UMailboxViewerUserWidget::GetCurrentFilter()
 }
 
 
+// Function ValeriaUI.MailboxViewerUserWidget.CanAllRewardsBeCollected
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                              Index                                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMailboxViewerUserWidget::CanAllRewardsBeCollected(int32 Index)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("MailboxViewerUserWidget", "CanAllRewardsBeCollected");
+
+	Params::UMailboxViewerUserWidget_CanAllRewardsBeCollected_Params Parms{};
+
+	Parms.Index = Index;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function ValeriaUI.MailboxViewerUserWidget.AreAllRewardsCollected
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -1751,6 +1781,31 @@ class UVALUI_Border_Styled* UVALUI_Border_Styled::GetDefaultObj()
 		Default = static_cast<UVALUI_Border_Styled*>(UVALUI_Border_Styled::StaticClass()->DefaultObject);
 
 	return Default;
+}
+
+
+// Function ValeriaUI.VALUI_Border_Styled.StyleLoadComplete
+// (Final, Native, Private)
+// Parameters:
+
+void UVALUI_Border_Styled::StyleLoadComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_Border_Styled", "StyleLoadComplete");
+
+	Params::UVALUI_Border_Styled_StyleLoadComplete_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
 }
 
 
@@ -3960,6 +4015,33 @@ class UVALUI_EditableRichText_Styled* UVALUI_EditableRichText_Styled::GetDefault
 		Default = static_cast<UVALUI_EditableRichText_Styled*>(UVALUI_EditableRichText_Styled::StaticClass()->DefaultObject);
 
 	return Default;
+}
+
+
+// Function ValeriaUI.VALUI_EditableRichText_Styled.SetTextBlockStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UVALUI_EditableRichTextStyle*NewStyle                                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVALUI_EditableRichText_Styled::SetTextBlockStyle(class UVALUI_EditableRichTextStyle* NewStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_EditableRichText_Styled", "SetTextBlockStyle");
+
+	Params::UVALUI_EditableRichText_Styled_SetTextBlockStyle_Params Parms{};
+
+	Parms.NewStyle = NewStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
 }
 
 
@@ -8475,6 +8557,35 @@ class UVALUI_UIManagerWidgetBase* UVALUI_UIManagerWidgetBase::GetDefaultObj()
 }
 
 
+// Function ValeriaUI.VALUI_UIManagerWidgetBase.SetStoredCrafterUIState
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                        CrafterName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FCrafterUIState             CrafterUIState                                                   (Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UVALUI_UIManagerWidgetBase::SetStoredCrafterUIState(class FName& CrafterName, const struct FCrafterUIState& CrafterUIState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_UIManagerWidgetBase", "SetStoredCrafterUIState");
+
+	Params::UVALUI_UIManagerWidgetBase_SetStoredCrafterUIState_Params Parms{};
+
+	Parms.CrafterName = CrafterName;
+	Parms.CrafterUIState = CrafterUIState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
 // Function ValeriaUI.VALUI_UIManagerWidgetBase.RegisterCallbacksAndBroadcastNewDragDrop
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -8525,6 +8636,27 @@ void UVALUI_UIManagerWidgetBase::OpenVillagerStore(int32 VillagerConfigId)
 
 
 	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function ValeriaUI.VALUI_UIManagerWidgetBase.OpenTutorialModal
+// (BlueprintCosmetic, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                        TutorialModalName                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVALUI_UIManagerWidgetBase::OpenTutorialModal(class FName& TutorialModalName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_UIManagerWidgetBase", "OpenTutorialModal");
+
+	Params::UVALUI_UIManagerWidgetBase_OpenTutorialModal_Params Parms{};
+
+	Parms.TutorialModalName = TutorialModalName;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 }
 
@@ -9327,6 +9459,40 @@ void UVALUI_UIManagerWidgetBase::Implementation_CloseSubgameScreen()
 
 
 	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
+// Function ValeriaUI.VALUI_UIManagerWidgetBase.GetStoredCrafterUIState
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                        CrafterName                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FCrafterUIState             OutCrafterUIState                                                (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UVALUI_UIManagerWidgetBase::GetStoredCrafterUIState(class FName& CrafterName, struct FCrafterUIState* OutCrafterUIState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_UIManagerWidgetBase", "GetStoredCrafterUIState");
+
+	Params::UVALUI_UIManagerWidgetBase_GetStoredCrafterUIState_Params Parms{};
+
+	Parms.CrafterName = CrafterName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutCrafterUIState != nullptr)
+		*OutCrafterUIState = std::move(Parms.OutCrafterUIState);
+
+	return Parms.ReturnValue;
 
 }
 
@@ -10730,6 +10896,33 @@ class UVALUI_PremiumStoreFunctionLibrary* UVALUI_PremiumStoreFunctionLibrary::Ge
 }
 
 
+// Function ValeriaUI.VALUI_PremiumStoreFunctionLibrary.SortItemsByItemSlot
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class UVAL_CharacterCustomizationItemBase*>OutItems                                                         (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UVALUI_PremiumStoreFunctionLibrary::SortItemsByItemSlot(TArray<class UVAL_CharacterCustomizationItemBase*>& OutItems)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_PremiumStoreFunctionLibrary", "SortItemsByItemSlot");
+
+	Params::UVALUI_PremiumStoreFunctionLibrary_SortItemsByItemSlot_Params Parms{};
+
+	Parms.OutItems = OutItems;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
 // Function ValeriaUI.VALUI_PremiumStoreFunctionLibrary.GetPetPurchaseBonusFromPurchaseRewards
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -11468,6 +11661,31 @@ class UVALUI_RichTextBlock_Styled* UVALUI_RichTextBlock_Styled::GetDefaultObj()
 		Default = static_cast<UVALUI_RichTextBlock_Styled*>(UVALUI_RichTextBlock_Styled::StaticClass()->DefaultObject);
 
 	return Default;
+}
+
+
+// Function ValeriaUI.VALUI_RichTextBlock_Styled.StyleLoadComplete
+// (Final, Native, Private)
+// Parameters:
+
+void UVALUI_RichTextBlock_Styled::StyleLoadComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_RichTextBlock_Styled", "StyleLoadComplete");
+
+	Params::UVALUI_RichTextBlock_Styled_StyleLoadComplete_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
 }
 
 
@@ -12599,6 +12817,31 @@ class UVALUI_TextBlock_Styled* UVALUI_TextBlock_Styled::GetDefaultObj()
 		Default = static_cast<UVALUI_TextBlock_Styled*>(UVALUI_TextBlock_Styled::StaticClass()->DefaultObject);
 
 	return Default;
+}
+
+
+// Function ValeriaUI.VALUI_TextBlock_Styled.StyleLoadComplete
+// (Final, Native, Private)
+// Parameters:
+
+void UVALUI_TextBlock_Styled::StyleLoadComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("VALUI_TextBlock_Styled", "StyleLoadComplete");
+
+	Params::UVALUI_TextBlock_Styled_StyleLoadComplete_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
 }
 
 

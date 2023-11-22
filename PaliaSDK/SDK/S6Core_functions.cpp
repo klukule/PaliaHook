@@ -360,6 +360,34 @@ class FString US6VersioningFunctionLibrary::GetVersionString()
 }
 
 
+// Function S6Core.S6VersioningFunctionLibrary.GetNetworkCompatibilityString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString US6VersioningFunctionLibrary::GetNetworkCompatibilityString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6VersioningFunctionLibrary", "GetNetworkCompatibilityString");
+
+	Params::US6VersioningFunctionLibrary_GetNetworkCompatibilityString_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Class S6Core.S6Core_General_BlueprintFunctionLibrary
 // (None)
 
@@ -1271,6 +1299,34 @@ bool US6PlatformUtils::IsDesktop()
 }
 
 
+// Function S6Core.S6PlatformUtils.IsConstrainedPlatform
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                               ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool US6PlatformUtils::IsConstrainedPlatform()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6PlatformUtils", "IsConstrainedPlatform");
+
+	Params::US6PlatformUtils_IsConstrainedPlatform_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
 // Function S6Core.S6PlatformUtils.IsConsole
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -1312,6 +1368,34 @@ enum class ERedirectsPlatform US6PlatformUtils::GetPlatformType()
 		Func = Class->GetFunction("S6PlatformUtils", "GetPlatformType");
 
 	Params::US6PlatformUtils_GetPlatformType_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function S6Core.S6PlatformUtils.GetPlatformString
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class FString                      ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString US6PlatformUtils::GetPlatformString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6PlatformUtils", "GetPlatformString");
+
+	Params::US6PlatformUtils_GetPlatformString_Params Parms{};
 
 
 	auto Flgs = Func->FunctionFlags;

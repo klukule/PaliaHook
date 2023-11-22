@@ -1609,16 +1609,18 @@ void UBPFL_UiHelpers_C::IsShiftDown_(class APlayerController* PlayerController, 
 // bool                               TmpWasVisible                                                    (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UUserWidget*                 TmpUserWidgetToToggle                                            (Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // enum class ESlateVisibility        Temp_byte_Variable                                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_IsConsole_ReturnValue                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // enum class ESlateVisibility        Temp_byte_Variable_1                                             (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               Temp_bool_Variable                                               (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // enum class ESlateVisibility        K2Node_Select_Default                                            (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_BooleanAND_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_NotEqual_BoolBool_ReturnValue                           (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // TScriptInterface<class IBPI_VisibilityChanges_C>K2Node_DynamicCast_AsBPI_Visibility_Changes                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                               CallFunc_IsVisible_ReturnValue                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_IsDesktop_ReturnValue                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPFL_UiHelpers_C::ShowHideWidget(class UUserWidget* UserWidget, bool IsVisible_, bool UiBlocksInput_, class UObject* __WorldContext, bool TmpWasVisible, class UUserWidget* TmpUserWidgetToToggle, enum class ESlateVisibility Temp_byte_Variable, enum class ESlateVisibility Temp_byte_Variable_1, bool Temp_bool_Variable, bool CallFunc_BooleanAND_ReturnValue, enum class ESlateVisibility K2Node_Select_Default, bool CallFunc_NotEqual_BoolBool_ReturnValue, TScriptInterface<class IBPI_VisibilityChanges_C> K2Node_DynamicCast_AsBPI_Visibility_Changes, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsVisible_ReturnValue)
+void UBPFL_UiHelpers_C::ShowHideWidget(class UUserWidget* UserWidget, bool IsVisible_, bool UiBlocksInput_, class UObject* __WorldContext, bool TmpWasVisible, class UUserWidget* TmpUserWidgetToToggle, enum class ESlateVisibility Temp_byte_Variable, bool CallFunc_IsConsole_ReturnValue, enum class ESlateVisibility Temp_byte_Variable_1, bool Temp_bool_Variable, enum class ESlateVisibility K2Node_Select_Default, bool CallFunc_BooleanAND_ReturnValue, bool CallFunc_NotEqual_BoolBool_ReturnValue, TScriptInterface<class IBPI_VisibilityChanges_C> K2Node_DynamicCast_AsBPI_Visibility_Changes, bool K2Node_DynamicCast_bSuccess, bool CallFunc_IsVisible_ReturnValue, bool CallFunc_IsDesktop_ReturnValue)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1634,14 +1636,16 @@ void UBPFL_UiHelpers_C::ShowHideWidget(class UUserWidget* UserWidget, bool IsVis
 	Parms.TmpWasVisible = TmpWasVisible;
 	Parms.TmpUserWidgetToToggle = TmpUserWidgetToToggle;
 	Parms.Temp_byte_Variable = Temp_byte_Variable;
+	Parms.CallFunc_IsConsole_ReturnValue = CallFunc_IsConsole_ReturnValue;
 	Parms.Temp_byte_Variable_1 = Temp_byte_Variable_1;
 	Parms.Temp_bool_Variable = Temp_bool_Variable;
-	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
 	Parms.K2Node_Select_Default = K2Node_Select_Default;
+	Parms.CallFunc_BooleanAND_ReturnValue = CallFunc_BooleanAND_ReturnValue;
 	Parms.CallFunc_NotEqual_BoolBool_ReturnValue = CallFunc_NotEqual_BoolBool_ReturnValue;
 	Parms.K2Node_DynamicCast_AsBPI_Visibility_Changes = K2Node_DynamicCast_AsBPI_Visibility_Changes;
 	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
 	Parms.CallFunc_IsVisible_ReturnValue = CallFunc_IsVisible_ReturnValue;
+	Parms.CallFunc_IsDesktop_ReturnValue = CallFunc_IsDesktop_ReturnValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 

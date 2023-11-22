@@ -40,6 +40,37 @@ class UPhotographyFunctionLibrary_C* UPhotographyFunctionLibrary_C::GetDefaultOb
 }
 
 
+// Function PhotographyFunctionLibrary.PhotographyFunctionLibrary_C.Open Photo Camera Screen Ex
+// (Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class APlayerController*           OwningPlayer                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UClass*                      WidgetClass                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UUserWidget*                 CallFunc_Create_ReturnValue                                      (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class US6UI_StateUserWidget*       K2Node_DynamicCast_AsS6UI_State_User_Widget                      (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPhotographyFunctionLibrary_C::Open_Photo_Camera_Screen_Ex(class APlayerController* OwningPlayer, class UClass* WidgetClass, class UObject* __WorldContext, class UUserWidget* CallFunc_Create_ReturnValue, class US6UI_StateUserWidget* K2Node_DynamicCast_AsS6UI_State_User_Widget, bool K2Node_DynamicCast_bSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("PhotographyFunctionLibrary_C", "Open Photo Camera Screen Ex");
+
+	Params::UPhotographyFunctionLibrary_C_Open_Photo_Camera_Screen_Ex_Params Parms{};
+
+	Parms.OwningPlayer = OwningPlayer;
+	Parms.WidgetClass = WidgetClass;
+	Parms.__WorldContext = __WorldContext;
+	Parms.CallFunc_Create_ReturnValue = CallFunc_Create_ReturnValue;
+	Parms.K2Node_DynamicCast_AsS6UI_State_User_Widget = K2Node_DynamicCast_AsS6UI_State_User_Widget;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // Function PhotographyFunctionLibrary.PhotographyFunctionLibrary_C.OpenPhotoCameraScreen
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:

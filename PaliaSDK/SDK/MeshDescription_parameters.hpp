@@ -19,7 +19,7 @@ struct UMeshDescriptionBase_SetVertexPosition_Params
 {
 public:
 	struct FVertexID                             VertexID;                                          // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2446[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2225[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               Position;                                          // 0x8(0x18)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -29,7 +29,7 @@ struct UMeshDescriptionBase_SetPolygonVertexInstances_Params
 {
 public:
 	struct FPolygonID                            PolygonID;                                         // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2449[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2226[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexInstanceID>             VertexInstanceIDs;                                 // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
@@ -105,7 +105,7 @@ struct UMeshDescriptionBase_IsVertexValid_Params
 public:
 	struct FVertexID                             VertexID;                                          // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_247A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2236[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -115,7 +115,7 @@ struct UMeshDescriptionBase_IsVertexOrphaned_Params
 public:
 	struct FVertexID                             VertexID;                                          // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2483[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2237[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -125,7 +125,7 @@ struct UMeshDescriptionBase_IsVertexInstanceValid_Params
 public:
 	struct FVertexInstanceID                     VertexInstanceID;                                  // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2485[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_223A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -135,7 +135,7 @@ struct UMeshDescriptionBase_IsTriangleValid_Params
 public:
 	struct FTriangleID                           TriangleID;                                        // 0x0(0x4)(ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2488[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_223F[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -145,7 +145,7 @@ struct UMeshDescriptionBase_IsTrianglePartOfNgon_Params
 public:
 	struct FTriangleID                           TriangleID;                                        // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_248D[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2249[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -155,7 +155,7 @@ struct UMeshDescriptionBase_IsPolygonValid_Params
 public:
 	struct FPolygonID                            PolygonID;                                         // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2495[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_224E[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -165,7 +165,7 @@ struct UMeshDescriptionBase_IsPolygonGroupValid_Params
 public:
 	struct FPolygonGroupID                       PolygonGroupID;                                    // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2499[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2251[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x1 (0x1 - 0x0)
@@ -183,7 +183,7 @@ struct UMeshDescriptionBase_IsEdgeValid_Params
 public:
 	struct FEdgeID                               EdgeID;                                            // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24A3[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_225B[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -194,7 +194,7 @@ public:
 	struct FEdgeID                               EdgeID;                                            // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FPolygonID                            PolygonID;                                         // 0x4(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x8(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24A6[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_226A[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -204,7 +204,7 @@ struct UMeshDescriptionBase_IsEdgeInternal_Params
 public:
 	struct FEdgeID                               EdgeID;                                            // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x4(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24A9[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_226D[0x3];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -213,7 +213,7 @@ struct UMeshDescriptionBase_GetVertexVertexInstances_Params
 {
 public:
 	struct FVertexID                             VertexID;                                          // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24B0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2271[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexInstanceID>             OutVertexInstanceIDs;                              // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -223,7 +223,7 @@ struct UMeshDescriptionBase_GetVertexPosition_Params
 {
 public:
 	struct FVertexID                             VertexID;                                          // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24B7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2273[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FVector                               ReturnValue;                                       // 0x8(0x18)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -290,7 +290,7 @@ struct UMeshDescriptionBase_GetVertexInstanceConnectedTriangles_Params
 {
 public:
 	struct FVertexInstanceID                     VertexInstanceID;                                  // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24F0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2290[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FTriangleID>                   OutConnectedTriangleIDs;                           // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -300,7 +300,7 @@ struct UMeshDescriptionBase_GetVertexInstanceConnectedPolygons_Params
 {
 public:
 	struct FVertexInstanceID                     VertexInstanceID;                                  // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_24F7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2297[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FPolygonID>                    OutConnectedPolygonIDs;                            // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -318,7 +318,7 @@ struct UMeshDescriptionBase_GetVertexConnectedTriangles_Params
 {
 public:
 	struct FVertexID                             VertexID;                                          // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2501[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_229F[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FTriangleID>                   OutConnectedTriangleIDs;                           // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -328,7 +328,7 @@ struct UMeshDescriptionBase_GetVertexConnectedPolygons_Params
 {
 public:
 	struct FVertexID                             VertexID;                                          // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2505[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22AF[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FPolygonID>                    OutConnectedPolygonIDs;                            // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -338,7 +338,7 @@ struct UMeshDescriptionBase_GetVertexConnectedEdges_Params
 {
 public:
 	struct FVertexID                             VertexID;                                          // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2508[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22B7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FEdgeID>                       OutEdgeIDs;                                        // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -348,7 +348,7 @@ struct UMeshDescriptionBase_GetVertexAdjacentVertices_Params
 {
 public:
 	struct FVertexID                             VertexID;                                          // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2512[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22C0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexID>                     OutAdjacentVertexIDs;                              // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -358,7 +358,7 @@ struct UMeshDescriptionBase_GetTriangleVertices_Params
 {
 public:
 	struct FTriangleID                           TriangleID;                                        // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_251A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22C6[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexID>                     OutVertexIDs;                                      // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -368,7 +368,7 @@ struct UMeshDescriptionBase_GetTriangleVertexInstances_Params
 {
 public:
 	struct FTriangleID                           TriangleID;                                        // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2520[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22CB[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexInstanceID>             OutVertexInstanceIDs;                              // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -406,7 +406,7 @@ struct UMeshDescriptionBase_GetTriangleEdges_Params
 {
 public:
 	struct FTriangleID                           TriangleID;                                        // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2540[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22DD[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FEdgeID>                       OutEdgeIDs;                                        // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -424,7 +424,7 @@ struct UMeshDescriptionBase_GetTriangleAdjacentTriangles_Params
 {
 public:
 	struct FTriangleID                           TriangleID;                                        // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2544[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22E2[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FTriangleID>                   OutTriangleIDs;                                    // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -434,7 +434,7 @@ struct UMeshDescriptionBase_GetPolygonVertices_Params
 {
 public:
 	struct FPolygonID                            PolygonID;                                         // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_254A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22E6[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexID>                     OutVertexIDs;                                      // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -444,7 +444,7 @@ struct UMeshDescriptionBase_GetPolygonVertexInstances_Params
 {
 public:
 	struct FPolygonID                            PolygonID;                                         // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2550[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22EA[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexInstanceID>             OutVertexInstanceIDs;                              // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -454,7 +454,7 @@ struct UMeshDescriptionBase_GetPolygonTriangles_Params
 {
 public:
 	struct FPolygonID                            PolygonID;                                         // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2556[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22F1[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FTriangleID>                   OutTriangleIDs;                                    // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -473,7 +473,7 @@ struct UMeshDescriptionBase_GetPolygonPerimeterEdges_Params
 {
 public:
 	struct FPolygonID                            PolygonID;                                         // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2567[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22F9[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FEdgeID>                       OutEdgeIDs;                                        // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -483,7 +483,7 @@ struct UMeshDescriptionBase_GetPolygonInternalEdges_Params
 {
 public:
 	struct FPolygonID                            PolygonID;                                         // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2579[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_22FE[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FEdgeID>                       OutEdgeIDs;                                        // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -493,7 +493,7 @@ struct UMeshDescriptionBase_GetPolygonGroupPolygons_Params
 {
 public:
 	struct FPolygonGroupID                       PolygonGroupID;                                    // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2584[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2305[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FPolygonID>                    OutPolygonIDs;                                     // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -519,7 +519,7 @@ struct UMeshDescriptionBase_GetPolygonAdjacentPolygons_Params
 {
 public:
 	struct FPolygonID                            PolygonID;                                         // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2596[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_230F[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FPolygonID>                    OutPolygonIDs;                                     // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -637,7 +637,7 @@ struct UMeshDescriptionBase_GetEdgeVertices_Params
 {
 public:
 	struct FEdgeID                               EdgeID;                                            // 0x0(0x4)(ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25E6[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2347[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexID>                     OutVertexIDs;                                      // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -665,7 +665,7 @@ struct UMeshDescriptionBase_GetEdgeConnectedTriangles_Params
 {
 public:
 	struct FEdgeID                               EdgeID;                                            // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25F3[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2358[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FTriangleID>                   OutConnectedTriangleIDs;                           // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -675,7 +675,7 @@ struct UMeshDescriptionBase_GetEdgeConnectedPolygons_Params
 {
 public:
 	struct FEdgeID                               EdgeID;                                            // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_25F7[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_235E[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FPolygonID>                    OutConnectedPolygonIDs;                            // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -692,7 +692,7 @@ struct UMeshDescriptionBase_DeleteVertexInstance_Params
 {
 public:
 	struct FVertexInstanceID                     VertexInstanceID;                                  // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2605[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2366[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexID>                     OrphanedVertices;                                  // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -710,7 +710,7 @@ struct UMeshDescriptionBase_DeleteTriangle_Params
 {
 public:
 	struct FTriangleID                           TriangleID;                                        // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_260D[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2376[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FEdgeID>                       OrphanedEdges;                                     // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FVertexInstanceID>             OrphanedVertexInstances;                           // 0x18(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FPolygonGroupID>               OrphanedPolygonGroupsPtr;                          // 0x28(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
@@ -730,7 +730,7 @@ struct UMeshDescriptionBase_DeletePolygon_Params
 {
 public:
 	struct FPolygonID                            PolygonID;                                         // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_261A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_2385[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FEdgeID>                       OrphanedEdges;                                     // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FVertexInstanceID>             OrphanedVertexInstances;                           // 0x18(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FPolygonGroupID>               OrphanedPolygonGroups;                             // 0x28(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
@@ -742,7 +742,7 @@ struct UMeshDescriptionBase_DeleteEdge_Params
 {
 public:
 	struct FEdgeID                               EdgeID;                                            // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_261D[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_238A[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexID>                     OrphanedVertices;                                  // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -797,11 +797,11 @@ struct UMeshDescriptionBase_CreateTriangle_Params
 {
 public:
 	struct FPolygonGroupID                       PolygonGroupID;                                    // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_262D[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_23B1[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexInstanceID>             VertexInstanceIDs;                                 // 0x8(0x10)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	TArray<struct FEdgeID>                       NewEdgeIDs;                                        // 0x18(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FTriangleID                           ReturnValue;                                       // 0x28(0x4)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_262E[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23B3[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -837,11 +837,11 @@ struct UMeshDescriptionBase_CreatePolygon_Params
 {
 public:
 	struct FPolygonGroupID                       PolygonGroupID;                                    // 0x0(0x4)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2639[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_23D0[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<struct FVertexInstanceID>             VertexInstanceIDs;                                 // 0x8(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FEdgeID>                       NewEdgeIDs;                                        // 0x18(0x10)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FPolygonID                            ReturnValue;                                       // 0x28(0x4)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_263B[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_23D1[0x4];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)

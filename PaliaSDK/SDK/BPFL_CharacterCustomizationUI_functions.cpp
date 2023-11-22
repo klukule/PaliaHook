@@ -40,6 +40,106 @@ class UBPFL_CharacterCustomizationUI_C* UBPFL_CharacterCustomizationUI_C::GetDef
 }
 
 
+// Function BPFL_CharacterCustomizationUI.BPFL_CharacterCustomizationUI_C.GetBestItemForPreview
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TMap<class UClass*, class UVAL_CharacterCustomizationItemBase*>Items                                                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UVAL_CharacterCustomizationItemBase*BestItem                                                         (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// TArray<class UClass*>              ItemClassOrder                                                   (Edit, BlueprintVisible)
+// int32                              Temp_int_Array_Index_Variable                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                              Temp_int_Loop_Counter_Variable                                   (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                              CallFunc_Add_IntInt_ReturnValue                                  (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<class UClass*>              K2Node_MakeArray_Array                                           (ReferenceParm)
+// TArray<class UVAL_CharacterCustomizationItemBase*>CallFunc_Map_Values_Values                                       (ReferenceParm)
+// class UVAL_CharacterCustomizationItemBase*CallFunc_Array_Get_Item                                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UClass*                      CallFunc_Array_Get_Item_1                                        (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// int32                              CallFunc_Array_Length_ReturnValue                                (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UVAL_CharacterCustomizationItemBase*CallFunc_Map_Find_Value                                          (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_Map_Find_ReturnValue                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_Less_IntInt_ReturnValue                                 (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBPFL_CharacterCustomizationUI_C::GetBestItemForPreview(TMap<class UClass*, class UVAL_CharacterCustomizationItemBase*> Items, class UObject* __WorldContext, class UVAL_CharacterCustomizationItemBase** BestItem, const TArray<class UClass*>& ItemClassOrder, int32 Temp_int_Array_Index_Variable, int32 Temp_int_Loop_Counter_Variable, int32 CallFunc_Add_IntInt_ReturnValue, TArray<class UClass*>& K2Node_MakeArray_Array, TArray<class UVAL_CharacterCustomizationItemBase*>& CallFunc_Map_Values_Values, class UVAL_CharacterCustomizationItemBase* CallFunc_Array_Get_Item, class UClass* CallFunc_Array_Get_Item_1, int32 CallFunc_Array_Length_ReturnValue, class UVAL_CharacterCustomizationItemBase* CallFunc_Map_Find_Value, bool CallFunc_Map_Find_ReturnValue, bool CallFunc_Less_IntInt_ReturnValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BPFL_CharacterCustomizationUI_C", "GetBestItemForPreview");
+
+	Params::UBPFL_CharacterCustomizationUI_C_GetBestItemForPreview_Params Parms{};
+
+	Parms.Items = Items;
+	Parms.__WorldContext = __WorldContext;
+	Parms.ItemClassOrder = ItemClassOrder;
+	Parms.Temp_int_Array_Index_Variable = Temp_int_Array_Index_Variable;
+	Parms.Temp_int_Loop_Counter_Variable = Temp_int_Loop_Counter_Variable;
+	Parms.CallFunc_Add_IntInt_ReturnValue = CallFunc_Add_IntInt_ReturnValue;
+	Parms.K2Node_MakeArray_Array = K2Node_MakeArray_Array;
+	Parms.CallFunc_Map_Values_Values = CallFunc_Map_Values_Values;
+	Parms.CallFunc_Array_Get_Item = CallFunc_Array_Get_Item;
+	Parms.CallFunc_Array_Get_Item_1 = CallFunc_Array_Get_Item_1;
+	Parms.CallFunc_Array_Length_ReturnValue = CallFunc_Array_Length_ReturnValue;
+	Parms.CallFunc_Map_Find_Value = CallFunc_Map_Find_Value;
+	Parms.CallFunc_Map_Find_ReturnValue = CallFunc_Map_Find_ReturnValue;
+	Parms.CallFunc_Less_IntInt_ReturnValue = CallFunc_Less_IntInt_ReturnValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (BestItem != nullptr)
+		*BestItem = Parms.BestItem;
+
+}
+
+
+// Function BPFL_CharacterCustomizationUI.BPFL_CharacterCustomizationUI_C.SetPreviewCharacterGliding
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AValeriaCharacter*           Preview_Character                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               IsGliding                                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                     __WorldContext                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UABP_PC_Female_C*            ABP                                                              (Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ABP_ValeriaCharacter_C*      ValeriaCharacter                                                 (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
+// class USkeletalMeshComponent*      Temp_object_Variable                                             (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class ABP_ValeriaCharacter_C*      K2Node_DynamicCast_AsBP_Valeria_Character                        (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               K2Node_DynamicCast_bSuccess                                      (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAnimInstance*               CallFunc_GetAnimInstance_ReturnValue                             (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               CallFunc_IsValid_ReturnValue                                     (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UABP_PC_Female_C*            K2Node_DynamicCast_AsABP_PC_Female                               (ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                               K2Node_DynamicCast_bSuccess_1                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TScriptInterface<class IVAL_CustomizableCharacterInterface>K2Node_DynamicCast_AsVAL_Customizable_Character_Interface        (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                               K2Node_DynamicCast_bSuccess_2                                    (ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USkeletalMeshComponent*      CallFunc_GetRootSkeletonMeshComponent_ReturnValue                (ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UBPFL_CharacterCustomizationUI_C::SetPreviewCharacterGliding(class AValeriaCharacter* Preview_Character, bool IsGliding, class UObject* __WorldContext, class UABP_PC_Female_C* ABP, class ABP_ValeriaCharacter_C* ValeriaCharacter, class USkeletalMeshComponent* Temp_object_Variable, class ABP_ValeriaCharacter_C* K2Node_DynamicCast_AsBP_Valeria_Character, bool K2Node_DynamicCast_bSuccess, class UAnimInstance* CallFunc_GetAnimInstance_ReturnValue, bool CallFunc_IsValid_ReturnValue, class UABP_PC_Female_C* K2Node_DynamicCast_AsABP_PC_Female, bool K2Node_DynamicCast_bSuccess_1, TScriptInterface<class IVAL_CustomizableCharacterInterface> K2Node_DynamicCast_AsVAL_Customizable_Character_Interface, bool K2Node_DynamicCast_bSuccess_2, class USkeletalMeshComponent* CallFunc_GetRootSkeletonMeshComponent_ReturnValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BPFL_CharacterCustomizationUI_C", "SetPreviewCharacterGliding");
+
+	Params::UBPFL_CharacterCustomizationUI_C_SetPreviewCharacterGliding_Params Parms{};
+
+	Parms.Preview_Character = Preview_Character;
+	Parms.IsGliding = IsGliding;
+	Parms.__WorldContext = __WorldContext;
+	Parms.ABP = ABP;
+	Parms.ValeriaCharacter = ValeriaCharacter;
+	Parms.Temp_object_Variable = Temp_object_Variable;
+	Parms.K2Node_DynamicCast_AsBP_Valeria_Character = K2Node_DynamicCast_AsBP_Valeria_Character;
+	Parms.K2Node_DynamicCast_bSuccess = K2Node_DynamicCast_bSuccess;
+	Parms.CallFunc_GetAnimInstance_ReturnValue = CallFunc_GetAnimInstance_ReturnValue;
+	Parms.CallFunc_IsValid_ReturnValue = CallFunc_IsValid_ReturnValue;
+	Parms.K2Node_DynamicCast_AsABP_PC_Female = K2Node_DynamicCast_AsABP_PC_Female;
+	Parms.K2Node_DynamicCast_bSuccess_1 = K2Node_DynamicCast_bSuccess_1;
+	Parms.K2Node_DynamicCast_AsVAL_Customizable_Character_Interface = K2Node_DynamicCast_AsVAL_Customizable_Character_Interface;
+	Parms.K2Node_DynamicCast_bSuccess_2 = K2Node_DynamicCast_bSuccess_2;
+	Parms.CallFunc_GetRootSkeletonMeshComponent_ReturnValue = CallFunc_GetRootSkeletonMeshComponent_ReturnValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // Function BPFL_CharacterCustomizationUI.BPFL_CharacterCustomizationUI_C.CheckHasAllItemEntitlementsForIdSet
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:

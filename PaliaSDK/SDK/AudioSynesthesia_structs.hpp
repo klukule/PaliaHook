@@ -93,7 +93,7 @@ struct FSynesthesiaSpectrumResults
 {
 public:
 	float                                        TimeSeconds;                                       // 0x0(0x4)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_875[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1D21[0x4];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<float>                                SpectrumValues;                                    // 0x8(0x10)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 

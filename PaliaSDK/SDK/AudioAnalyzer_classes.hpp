@@ -37,9 +37,9 @@ class UAudioAnalyzer : public UObject
 {
 public:
 	class UAudioBus*                             AudioBus;                                          // 0x28(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D60[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_1CEB[0x8];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UAudioAnalyzerSubsystem*               AudioAnalyzerSubsystem;                            // 0x38(0x8)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1D61[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CEC[0x50];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UAudioAnalyzer* GetDefaultObj();
@@ -66,7 +66,7 @@ class UAudioAnalyzerNRT : public UAudioAnalyzerAssetBase
 public:
 	class USoundWave*                            Sound;                                             // 0x28(0x8)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        DurationInSeconds;                                 // 0x30(0x4)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_1D63[0x44];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CEE[0x44];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UAudioAnalyzerNRT* GetDefaultObj();
@@ -79,7 +79,7 @@ class UAudioAnalyzerSubsystem : public UEngineSubsystem
 {
 public:
 	TArray<class UAudioAnalyzer*>                AudioAnalyzers;                                    // 0x30(0x10)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_1D64[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_1CEF[0x10];                                    // Fixing Size Of Struct [ Dumper-7 ]
 
 	static class UClass* StaticClass();
 	static class UAudioAnalyzerSubsystem* GetDefaultObj();

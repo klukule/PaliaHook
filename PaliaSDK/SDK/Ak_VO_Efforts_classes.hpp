@@ -15,7 +15,7 @@ class UAk_VO_Efforts_C : public UAnimNotify
 {
 public:
 	enum class E_VoiceEffortEvent                VoiceEvent;                                        // 0x38(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                        Pad_4532[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_4415[0x7];                                     // Fixing Size After Last Property  [ Dumper-7 ]
 	class UVoiceSet_C*                           DummyData;                                         // 0x40(0x8)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
 
 	static class UClass* StaticClass();

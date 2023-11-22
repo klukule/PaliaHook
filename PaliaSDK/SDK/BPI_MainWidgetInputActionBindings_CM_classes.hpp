@@ -18,6 +18,7 @@ public:
 	static class UClass* StaticClass();
 	static class IBPI_MainWidgetInputActionBindings_CM_C* GetDefaultObj();
 
+	void OnToggleMenuHub(bool IsPressed);
 	void OnToggleSocialRequests();
 	void OnPmenuToggleEmotesTab();
 	void OnPmenuToggleAccomplishmentsTab();

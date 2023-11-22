@@ -455,7 +455,7 @@ enum class EAkFitToGeometryMode : uint8
 struct FAKWaapiJsonObject
 {
 public:
-	uint8                                        Pad_F10[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F39[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -463,7 +463,7 @@ public:
 struct FAkWaapiSubscriptionId
 {
 public:
-	uint8                                        Pad_F11[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F3A[0x8];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2C (0x2C - 0x0)
@@ -475,15 +475,15 @@ public:
 	uint32                                       IO_Granularity;                                    // 0x4(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        TargetAutoStreamBufferLength;                      // 0x8(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         UseStreamCache;                                    // 0xC(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F41[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F54[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint32                                       MaximumPinnedBytesInCache;                         // 0x10(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         EnableGameSyncPreparation;                         // 0x14(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F42[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F56[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint32                                       ContinuousPlaybackLookAhead;                       // 0x18(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                       MonitorQueuePoolSize;                              // 0x1C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                       MaximumHardwareTimeoutMs;                          // 0x20(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         DebugOutOfRangeCheckEnabled;                       // 0x24(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F47[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F58[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        DebugOutOfRangeLimit;                              // 0x28(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -493,7 +493,7 @@ struct FAkAdvancedInitializationSettingsWithMultiCoreRendering : public FAkAdvan
 {
 public:
 	bool                                         EnableMultiCoreRendering;                          // 0x2C(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F4A[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F5A[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x38 - 0x30)
@@ -503,7 +503,7 @@ struct FAkAndroidAdvancedInitializationSettings : public FAkAdvancedInitializati
 public:
 	uint32                                       AudioAPI;                                          // 0x30(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         RoundFrameSizeToHardwareSize;                      // 0x34(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F4C[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F60[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0xC (0xC - 0x0)
@@ -533,7 +533,7 @@ public:
 	int32                                        IdDevice;                                          // 0x10(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EPanningRule                      PanRule;                                           // 0x14(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAkChannelConfiguration           ChannelConfig;                                     // 0x15(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F5E[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F68[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x2 (0x2 - 0x0)
@@ -630,11 +630,11 @@ struct FAkExternalSourceInfo
 public:
 	class FString                                ExternalSrcName;                                   // 0x0(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class EAkCodecId                        CodecID;                                           // 0x10(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F75[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F77[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Filename;                                          // 0x18(0x10)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAkExternalMediaAsset*                 ExternalSourceAsset;                               // 0x28(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         IsStreamed;                                        // 0x30(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F77[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F7A[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -647,7 +647,7 @@ public:
 	uint8                                        Pad_F7D[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        OcclusionValue;                                    // 0xC(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        SurfaceArea;                                       // 0x10(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_F7F[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F7E[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -689,7 +689,7 @@ struct FAkHololensAdvancedInitializationSettings : public FAkAdvancedInitializat
 {
 public:
 	bool                                         UseHeadMountedDisplayAudioDevice;                  // 0x30(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F87[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F91[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -699,7 +699,7 @@ struct FAkPluginInfo
 public:
 	class FString                                Name;                                              // 0x0(0x10)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                       PluginID;                                          // 0x10(0x4)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F89[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_F93[0x4];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                Dll;                                               // 0x18(0x10)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -714,7 +714,7 @@ public:
 	enum class EAkChannelConfigType              ChannelConfigType;                                 // 0x18(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                       ChannelMask;                                       // 0x1C(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                       NumberOfChannels;                                  // 0x20(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F8F[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F99[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -733,7 +733,7 @@ public:
 	bool                                         CalcEmitterVirtualPosition;                        // 0x1A(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         UseObstruction;                                    // 0x1B(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         UseOcclusion;                                      // 0x1C(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F97[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_F9F[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x20 (0x20 - 0x0)
@@ -745,7 +745,7 @@ public:
 	uint16                                       DiscoveryBroadcastPort;                            // 0x4(0x2)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint16                                       CommandPort;                                       // 0x6(0x2)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint16                                       NotificationPort;                                  // 0x8(0x2)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F99[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FA8[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                NetworkName;                                       // 0x10(0x10)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -755,7 +755,7 @@ struct FAkCommunicationSettingsWithSystemInitialization : public FAkCommunicatio
 {
 public:
 	bool                                         InitializeSystemComms;                             // 0x20(0x1)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F9B[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FA9[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x28 - 0x20)
@@ -764,7 +764,7 @@ struct FAkCommunicationSettingsWithCommSelection : public FAkCommunicationSettin
 {
 public:
 	enum class EAkCommSystem                     CommunicationSystem;                               // 0x20(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_F9C[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FB1[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x60 (0x60 - 0x0)
@@ -779,7 +779,7 @@ public:
 	struct FAkMainOutputSettings                 MainOutputSettings;                                // 0x10(0x28)(Edit, NativeAccessSpecifierPublic)
 	float                                        StreamingLookAheadRatio;                           // 0x38(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint16                                       NumberOfRefillsInVoice;                            // 0x3C(0x2)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA3[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FB4[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FAkSpatialAudioSettings               SpatialAudioSettings;                              // 0x40(0x20)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 };
 
@@ -789,7 +789,7 @@ struct FAkCommonInitializationSettingsWithSampleRate : public FAkCommonInitializ
 {
 public:
 	uint32                                       SampleRate;                                        // 0x60(0x4)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA4[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FB6[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -815,7 +815,7 @@ struct FAkPS4AdvancedInitializationSettings : public FAkAdvancedInitializationSe
 public:
 	uint32                                       ACPBatchBufferSize;                                // 0x30(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         UseHardwareCodecLowLatencyMode;                    // 0x34(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA8[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FBA[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x4 (0x34 - 0x30)
@@ -825,7 +825,7 @@ struct FAkPS5AdvancedInitializationSettings : public FAkAdvancedInitializationSe
 public:
 	bool                                         UseHardwareCodecLowLatencyMode;                    // 0x30(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bVorbisHwAcceleration;                             // 0x31(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FA9[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FBD[0x2];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x28 - 0x0)
@@ -833,7 +833,7 @@ public:
 struct FAkReverbDescriptor
 {
 public:
-	uint8                                        Pad_FAA[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FBE[0x28];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x38 (0x38 - 0x0)
@@ -843,7 +843,7 @@ struct FAkGeometrySurfacePropertiesToMap
 public:
 	TSoftObjectPtr<class UAkAcousticTexture>     AcousticTexture;                                   // 0x0(0x30)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        OcclusionValue;                                    // 0x30(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FAC[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FC3[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -852,7 +852,7 @@ struct FAkAcousticTextureParams
 {
 public:
 	struct FVector4                              AbsorptionValues;                                  // 0x0(0x20)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FAD[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FC5[0x10];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x30 (0x30 - 0x0)
@@ -879,7 +879,7 @@ public:
 struct FAkSurfaceEdgeVerts
 {
 public:
-	uint8                                        Pad_FAF[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FC7[0x30];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x50 (0x50 - 0x0)
@@ -887,7 +887,7 @@ public:
 struct FAkSurfaceEdgeInfo
 {
 public:
-	uint8                                        Pad_FB0[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FC8[0x50];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x18 (0x18 - 0x0)
@@ -898,9 +898,9 @@ public:
 	class UAkAcousticTexture*                    Texture;                                           // 0x0(0x8)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        Occlusion;                                         // 0x8(0x4)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         EnableSurface;                                     // 0xC(0x1)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FB2[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FD1[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        SurfaceArea;                                       // 0x10(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                        Pad_FB3[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FD2[0x4];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x10 (0x10 - 0x0)
@@ -925,7 +925,7 @@ struct FAkWindowsAdvancedInitializationSettings : public FAkAdvancedInitializati
 {
 public:
 	bool                                         UseHeadMountedDisplayAudioDevice;                  // 0x30(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FBE[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FD8[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint32                                       MaxSystemAudioObjects;                             // 0x34(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -936,7 +936,7 @@ struct FAkXboxOneAdvancedInitializationSettings : public FAkAdvancedInitializati
 public:
 	uint16                                       MaximumNumberOfXMAVoices;                          // 0x30(0x2)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         UseHardwareCodecLowLatencyMode;                    // 0x32(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FBF[0x1];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FDD[0x1];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -955,9 +955,9 @@ struct FAkXSXAdvancedInitializationSettings : public FAkAdvancedInitializationSe
 public:
 	uint16                                       MaximumNumberOfXMAVoices;                          // 0x30(0x2)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         UseHardwareCodecLowLatencyMode;                    // 0x32(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FC2[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FE0[0x1];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint16                                       MaximumNumberOfOpusVoices;                         // 0x34(0x2)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FC4[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FE2[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	uint32                                       UMaxSystemAudioObjects;                            // 0x38(0x4)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -994,7 +994,7 @@ public:
 	float                                        ArriveTangent;                                     // 0x0(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        LeaveTangent;                                      // 0x4(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERichCurveTangentWeightMode       TangentWeightMode;                                 // 0x8(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FCA[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FE8[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	float                                        ArriveTangentWeight;                               // 0xC(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                        LeaveTangentWeight;                                // 0x10(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1007,7 +1007,7 @@ public:
 	float                                        Value;                                             // 0x0(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERichCurveInterpMode              InterpMode;                                        // 0x4(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERichCurveTangentMode             TangentMode;                                       // 0x5(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FCF[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FEC[0x2];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FMovieSceneTangentDataSerializationHelper Tangent;                                           // 0x8(0x14)(NoDestructor, NativeAccessSpecifierPublic)
 };
 
@@ -1018,12 +1018,12 @@ struct FMovieSceneFloatChannelSerializationHelper
 public:
 	enum class ERichCurveExtrapolation           PreInfinityExtrap;                                 // 0x0(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	enum class ERichCurveExtrapolation           PostInfinityExtrap;                                // 0x1(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FD1[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_FEE[0x6];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	TArray<int32>                                Times;                                             // 0x8(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FMovieSceneFloatValueSerializationHelper> Values;                                            // 0x18(0x10)(ZeroConstructor, NativeAccessSpecifierPublic)
 	float                                        DefaultValue;                                      // 0x28(0x4)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         bHasDefaultValue;                                  // 0x2C(0x1)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_FD2[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_FF0[0x3];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

@@ -13,6 +13,14 @@ namespace Params
 // PARAMETERS
 //---------------------------------------------------------------------------------------------------------------------
 
+// 0x1 (0x1 - 0x0)
+// Function BPI_MainWidgetInputActionBindings_CM.BPI_MainWidgetInputActionBindings_CM_C.OnToggleMenuHub
+struct IBPI_MainWidgetInputActionBindings_CM_C_OnToggleMenuHub_Params
+{
+public:
+	bool                                         IsPressed;                                         // 0x0(0x1)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // 0x0 (0x0 - 0x0)
 // Function BPI_MainWidgetInputActionBindings_CM.BPI_MainWidgetInputActionBindings_CM_C.OnToggleSocialRequests
 struct IBPI_MainWidgetInputActionBindings_CM_C_OnToggleSocialRequests_Params

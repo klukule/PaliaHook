@@ -19,9 +19,9 @@ namespace SDK
 struct FDataflowNode
 {
 public:
-	uint8                                        Pad_2925[0xC8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_295B[0xC8];                                    // Fixing Size After Last Property  [ Dumper-7 ]
 	bool                                         bActive;                                           // 0xC8(0x1)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_2926[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_295C[0x7];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x40 (0x40 - 0x0)
@@ -29,7 +29,7 @@ public:
 struct FDataflowConnection
 {
 public:
-	uint8                                        Pad_2928[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_295D[0x40];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x48 - 0x40)
@@ -37,7 +37,7 @@ public:
 struct FDataflowInput : public FDataflowConnection
 {
 public:
-	uint8                                        Pad_292E[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_295E[0x8];                                     // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x28 (0x68 - 0x40)
@@ -45,7 +45,7 @@ public:
 struct FDataflowOutput : public FDataflowConnection
 {
 public:
-	uint8                                        Pad_2930[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_2960[0x28];                                    // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 }

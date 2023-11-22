@@ -883,10 +883,10 @@ TArray<struct FKey> IEnhancedInputSubsystemInterface::QueryKeysMappedToAction(cl
 // Function EnhancedInput.EnhancedInputSubsystemInterface.QueryActionKeyMappings
 // (BlueprintCosmetic, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UInputAction*                Action                                                           (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                        InputAction                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FEnhancedActionKeyMapping>ReturnValue                                                      (Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-TArray<struct FEnhancedActionKeyMapping> IEnhancedInputSubsystemInterface::QueryActionKeyMappings(class UInputAction* Action)
+TArray<struct FEnhancedActionKeyMapping> IEnhancedInputSubsystemInterface::QueryActionKeyMappings(class FName InputAction)
 {
 	static class UFunction* Func = nullptr;
 
@@ -895,7 +895,7 @@ TArray<struct FEnhancedActionKeyMapping> IEnhancedInputSubsystemInterface::Query
 
 	Params::IEnhancedInputSubsystemInterface_QueryActionKeyMappings_Params Parms{};
 
-	Parms.Action = Action;
+	Parms.InputAction = InputAction;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1026,36 +1026,6 @@ struct FKey IEnhancedInputSubsystemInterface::GetPlayerMappedKey(class FName Map
 	Params::IEnhancedInputSubsystemInterface_GetPlayerMappedKey_Params Parms{};
 
 	Parms.MappingName = MappingName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-
-}
-
-
-// Function EnhancedInput.EnhancedInputSubsystemInterface.GetInputActionWithName
-// (BlueprintCosmetic, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                        InputAction                                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UInputAction*                ReturnValue                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UInputAction* IEnhancedInputSubsystemInterface::GetInputActionWithName(class FName InputAction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (!Func)
-		Func = Class->GetFunction("EnhancedInputSubsystemInterface", "GetInputActionWithName");
-
-	Params::IEnhancedInputSubsystemInterface_GetInputActionWithName_Params Parms{};
-
-	Parms.InputAction = InputAction;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

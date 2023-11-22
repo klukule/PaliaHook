@@ -2875,6 +2875,149 @@ struct FS6UI_InputMode US6UI_StateStatics::CreateInputMode_GameAndUI(class UWidg
 
 }
 
+
+// Class S6UICore.S6UI_WidgetPoolManager
+// (None)
+
+class UClass* US6UI_WidgetPoolManager::StaticClass()
+{
+	static class UClass* Clss = nullptr;
+
+	if (!Clss)
+		Clss = UObject::FindClassFast("S6UI_WidgetPoolManager");
+
+	return Clss;
+}
+
+
+// S6UI_WidgetPoolManager S6UICore.Default__S6UI_WidgetPoolManager
+// (Public, ClassDefaultObject, ArchetypeObject)
+
+class US6UI_WidgetPoolManager* US6UI_WidgetPoolManager::GetDefaultObj()
+{
+	static class US6UI_WidgetPoolManager* Default = nullptr;
+
+	if (!Default)
+		Default = static_cast<US6UI_WidgetPoolManager*>(US6UI_WidgetPoolManager::StaticClass()->DefaultObject);
+
+	return Default;
+}
+
+
+// Function S6UICore.S6UI_WidgetPoolManager.ReturnWidgetToPool
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUserWidget*                 WidgetToReturn                                                   (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_WidgetPoolManager::ReturnWidgetToPool(class UUserWidget* WidgetToReturn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_WidgetPoolManager", "ReturnWidgetToPool");
+
+	Params::US6UI_WidgetPoolManager_ReturnWidgetToPool_Params Parms{};
+
+	Parms.WidgetToReturn = WidgetToReturn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function S6UICore.S6UI_WidgetPoolManager.ProvisionPool
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                     Context                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSoftClassPtr<class UUserWidget>   WidgetClass                                                      (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                              TotalSizeOfWidgetsProvisioned                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void US6UI_WidgetPoolManager::ProvisionPool(class UObject* Context, TSoftClassPtr<class UUserWidget> WidgetClass, int32 TotalSizeOfWidgetsProvisioned)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_WidgetPoolManager", "ProvisionPool");
+
+	Params::US6UI_WidgetPoolManager_ProvisionPool_Params Parms{};
+
+	Parms.Context = Context;
+	Parms.WidgetClass = WidgetClass;
+	Parms.TotalSizeOfWidgetsProvisioned = TotalSizeOfWidgetsProvisioned;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
+
+// Function S6UICore.S6UI_WidgetPoolManager.GetWidgetFromPool
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                     Context                                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSoftClassPtr<class UUserWidget>   WidgetClass                                                      (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUserWidget*                 ReturnValue                                                      (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUserWidget* US6UI_WidgetPoolManager::GetWidgetFromPool(class UObject* Context, TSoftClassPtr<class UUserWidget> WidgetClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_WidgetPoolManager", "GetWidgetFromPool");
+
+	Params::US6UI_WidgetPoolManager_GetWidgetFromPool_Params Parms{};
+
+	Parms.Context = Context;
+	Parms.WidgetClass = WidgetClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+
+}
+
+
+// Function S6UICore.S6UI_WidgetPoolManager.DestroyAllWidgets
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+
+void US6UI_WidgetPoolManager::DestroyAllWidgets()
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("S6UI_WidgetPoolManager", "DestroyAllWidgets");
+
+	Params::US6UI_WidgetPoolManager_DestroyAllWidgets_Params Parms{};
+
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+
+	Func->FunctionFlags = Flgs;
+
+}
+
 }
 
 

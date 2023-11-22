@@ -40,6 +40,27 @@ class IBPI_MainWidgetInputActionBindings_CM_C* IBPI_MainWidgetInputActionBinding
 }
 
 
+// Function BPI_MainWidgetInputActionBindings_CM.BPI_MainWidgetInputActionBindings_CM_C.OnToggleMenuHub
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                               IsPressed                                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void IBPI_MainWidgetInputActionBindings_CM_C::OnToggleMenuHub(bool IsPressed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (!Func)
+		Func = Class->GetFunction("BPI_MainWidgetInputActionBindings_CM_C", "OnToggleMenuHub");
+
+	Params::IBPI_MainWidgetInputActionBindings_CM_C_OnToggleMenuHub_Params Parms{};
+
+	Parms.IsPressed = IsPressed;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+}
+
+
 // Function BPI_MainWidgetInputActionBindings_CM.BPI_MainWidgetInputActionBindings_CM_C.OnToggleSocialRequests
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

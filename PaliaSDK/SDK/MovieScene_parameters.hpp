@@ -263,7 +263,7 @@ struct UMovieSceneSequencePlayer_ScrubToMarkedFrame_Params
 public:
 	class FString                                InLabel;                                           // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_54C[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_37D[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -303,7 +303,7 @@ struct UMovieSceneSequencePlayer_RPC_ExplicitServerUpdateEvent_Params
 {
 public:
 	enum class EUpdatePositionMethod             Method;                                            // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_559[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_38B[0x3];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	struct FFrameTime                            RelevantTime;                                      // 0x4(0x8)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -329,7 +329,7 @@ struct UMovieSceneSequencePlayer_PlayToMarkedFrame_Params
 public:
 	class FString                                InLabel;                                           // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_561[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_391[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -347,7 +347,7 @@ struct UMovieSceneSequencePlayer_PlayTo_Params
 public:
 	struct FMovieSceneSequencePlaybackParams     PlaybackParams;                                    // 0x0(0x28)(Parm, NativeAccessSpecifierPublic)
 	struct FMovieSceneSequencePlayToParams       PlayToParams;                                      // 0x28(0x1)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                        Pad_56E[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_398[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x0 (0x0 - 0x0)
@@ -394,7 +394,7 @@ struct UMovieSceneSequencePlayer_JumpToMarkedFrame_Params
 public:
 	class FString                                InLabel;                                           // 0x0(0x10)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                         ReturnValue;                                       // 0x10(0x1)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_587[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
+	uint8                                        Pad_3AA[0x7];                                      // Fixing Size Of Struct [ Dumper-7 ]
 };
 
 // 0x8 (0x8 - 0x0)
@@ -450,7 +450,7 @@ struct UMovieSceneSequencePlayer_GetSequenceName_Params
 {
 public:
 	bool                                         bAddClientInfo;                                    // 0x0(0x1)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                        Pad_59E[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
+	uint8                                        Pad_3B9[0x7];                                      // Fixing Size After Last Property  [ Dumper-7 ]
 	class FString                                ReturnValue;                                       // 0x8(0x10)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
